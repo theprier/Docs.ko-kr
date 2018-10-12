@@ -1,33 +1,33 @@
 ---
-title: Swagger/Open API를 사용한 ASP.NET Core Web API 도움말 페이지
+title: Swagger/OpenAPI를 사용한 ASP.NET Core Web API 도움말 페이지
 author: rsuter
 description: 이 자습서에서는 Swagger를 추가하여 Web API 앱에 대한 설명서 및 도움말 페이지를 생성하는 연습을 제공합니다.
 ms.author: scaddie
 ms.custom: mvc
-ms.date: 03/09/2018
+ms.date: 09/20/2018
 uid: tutorials/web-api-help-pages-using-swagger
-ms.openlocfilehash: 56e146337ad9e94298f72abf5ede009eea65fb46
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 586195e3a29130c0b638ed6763ea5c9032ca6b2b
+ms.sourcegitcommit: c12ebdab65853f27fbb418204646baf6ce69515e
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36272253"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "46523131"
 ---
-# <a name="aspnet-core-web-api-help-pages-with-swagger--open-api"></a>Swagger/Open API를 사용한 ASP.NET Core Web API 도움말 페이지
+# <a name="aspnet-core-web-api-help-pages-with-swagger--openapi"></a>Swagger/OpenAPI를 사용한 ASP.NET Core Web API 도움말 페이지
 
 작성자: [Christoph Nienaber](https://twitter.com/zuckerthoben) 및 [Rico Suter](http://rsuter.com)
 
-Web API를 사용할 때 여러 메서드를 이해하는 것이 개발자에게 어려울 수 있습니다. [Swagger](https://swagger.io/)(Open API라고도 함)는 Web API에 대한 유용한 설명서 및 도움말 페이지를 생성하는 문제를 해결합니다. 대화형 설명서, 클라이언트 SDK 생성 및 API 검색 기능과 같은 이점을 제공합니다.
+Web API를 사용할 때 여러 메서드를 이해하는 것이 개발자에게 어려울 수 있습니다. [Swagger](https://swagger.io/)([OpenAPI](https://www.openapis.org/)라고도 함)는 Web API에 대한 유용한 설명서 및 도움말 페이지를 생성하는 문제를 해결합니다. 대화형 설명서, 클라이언트 SDK 생성 및 API 검색 기능과 같은 이점을 제공합니다.
 
 이 아티클에서는 [Swashbuckle.AspNetCore](https://github.com/domaindrivendev/Swashbuckle.AspNetCore) 및 [NSwag](https://github.com/RSuter/NSwag) .NET Swagger 구현을 보여 줍니다.
 
 * **Swashbuckle.AspNetCore**는 ASP.NET Core Web API에 대한 Swagger 문서를 생성하기 위한 오픈 소스 프로젝트입니다.
 
-* **NSwag**는 [Swagger UI](https://swagger.io/swagger-ui/) 또는 [ReDoc](https://github.com/Rebilly/ReDoc)을 ASP.NET Core Web API에 통합하기 위한 또 다른 오픈 소스 프로젝트입니다. API용 C# 및 TypeScript 클라이언트 코드를 생성하는 방법을 제공합니다.
+* **NSwag**는 Swagger 문서를 생성하고 [Swagger UI](https://swagger.io/swagger-ui/) 또는 [ReDoc](https://github.com/Rebilly/ReDoc)를 ASP.NET Core Web API에 통합하기 위한 또 다른 오픈 소스 프로젝트입니다. 또한 NSwag는 API용 C# 및 TypeScript 클라이언트 코드를 생성하는 방법을 제공합니다.
 
-## <a name="what-is-swagger--open-api"></a>Swagger/Open API란?
+## <a name="what-is-swagger--openapi"></a>Swagger/OpenAPI란?
 
-Swagger는 [REST](https://en.wikipedia.org/wiki/Representational_state_transfer) API를 설명하는 언어 중립적 사양입니다. Swagger 프로젝트는 [OpenAPI 이니셔티브](https://www.openapis.org/)에 기부되었으며, 현재는 Open API라고 합니다. 두 이름은 교대로 사용되지만 Open API를 사용하는 것이 좋습니다. 컴퓨터와 사람 모두 구현(소스 코드, 네트워크 액세스, 설명서)에 직접 액세스하지 않고도 서비스의 기능을 이해할 수 있습니다. 단일 목표는 분리된 서비스를 연결하는 데 필요한 작업량을 최소화하는 것입니다. 또 다른 목표는 서비스를 정확하게 문서화하는 데 필요한 시간을 줄이는 것입니다.
+Swagger는 [REST](https://en.wikipedia.org/wiki/Representational_state_transfer) API를 설명하는 언어 중립적 사양입니다. Swagger 프로젝트는 [OpenAPI 이니셔티브](https://www.openapis.org/)에 기부되었으며, 현재는 OpenAPI라고 합니다. 두 이름은 동일한 의미로 사용되지만 OpenAPI를 사용하는 것이 좋습니다. 컴퓨터와 사람 모두 구현(소스 코드, 네트워크 액세스, 설명서)에 직접 액세스하지 않고도 서비스의 기능을 이해할 수 있습니다. 단일 목표는 분리된 서비스를 연결하는 데 필요한 작업량을 최소화하는 것입니다. 또 다른 목표는 서비스를 정확하게 문서화하는 데 필요한 시간을 줄이는 것입니다.
 
 ## <a name="swagger-specification-swaggerjson"></a>Swagger 사양(swagger.json)
 

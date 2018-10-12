@@ -6,12 +6,12 @@ monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 08/07/2017
 uid: tutorials/razor-pages/validation
-ms.openlocfilehash: e27253e3f02fa808136494ed5373059ef6e0df0d
-ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
+ms.openlocfilehash: 6144bfb9e731ace51b4f23870fdb06519fd4a9ea
+ms.sourcegitcommit: 599ebae5c2d6fcb22dfa6ae7d1f4bdfcacb79af4
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46011595"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47211028"
 ---
 # <a name="add-validation-to-an-aspnet-core-razor-page"></a>ASP.NET Core Razor 페이지에 유효성 검사 추가
 
@@ -160,7 +160,7 @@ public DateTime ReleaseDate { get; set; }
 
 ### <a name="publish-to-azure"></a>Azure에 게시
 
-Azure에 이 앱을 게시하는 방법에 관한 지침은 [Visual Studio를 사용하여 Azure App Service에 ASP.NET Core 웹앱 게시](xref:tutorials/publish-to-azure-webapp-using-vs)를 참조하세요.
+Azure에 배포하는 방법에 대한 자세한 내용은 [자습서: Azure에서 SQL Database를 사용하여 ASP.NET 앱 빌드](/azure/app-service/app-service-web-tutorial-dotnet-sqldatabase)를 참조하세요. ASP.NET Core 앱이 아니라 ASP.NET 앱에 대한 지침이지만 단계는 동일합니다.
 
 Razor 페이지에 대한 이 소개를 완료해 주셔서 감사합니다. 소중한 의견에 감사합니다. [Razor Pages 및 EF Core 시작](xref:data/ef-rp/intro)은 이 자습서의 유용한 후속편입니다.
 

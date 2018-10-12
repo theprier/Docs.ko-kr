@@ -3,14 +3,14 @@ title: ASP.NET Core의 컨트롤러 작업에 라우팅
 author: rick-anderson
 description: ASP.NET Core MVC가 라우팅 미들웨어를 사용하여 들어오는 요청의 URL을 일치시키고 이를 작업에 매핑하는 방법을 알아봅니다.
 ms.author: riande
-ms.date: 03/14/2017
+ms.date: 09/17/2018
 uid: mvc/controllers/routing
-ms.openlocfilehash: 0d328d930ecb932c22fec524babb1c856b656b95
-ms.sourcegitcommit: 4e34ce61e1e7f1317102b16012ce0742abf2cca6
+ms.openlocfilehash: d66c2f14adf55dd0c4a7c3adfad7e5737e4deda1
+ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/04/2018
-ms.locfileid: "39514780"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46011655"
 ---
 # <a name="routing-to-controller-actions-in-aspnet-core"></a>ASP.NET Core의 컨트롤러 작업에 라우팅
 
@@ -376,6 +376,8 @@ public class HomeController : Controller
 
 > [!TIP]
 > `Order`를 사용하지 마세요. URL 공간에 올바른 라우팅을 위한 명시적 순서 값이 필요한 경우 클라이언트에서도 혼란이 발생할 수 있습니다. 일반적으로 특성 라우팅은 URL이 일치하는 올바른 경로를 선택합니다. URL 생성에 사용되는 기본 순서가 작동하지 않는 경우 일반적으로 경로 이름을 재정의로 사용하는 것이 `Order` 속성을 적용하는 것보다 간단합니다.
+
+Razor Pages 라우팅과 MVC 컨트롤러 라우팅은 구현을 공유합니다. Razor Pages 항목의 경로 순서에 대한 정보는 [Razor Pages 라우팅 및 앱 규칙: 경로 순서](xref:razor-pages/razor-pages-conventions#route-order)를 참조할 수 있습니다.
 
 <a name="routing-token-replacement-templates-ref-label"></a>
 

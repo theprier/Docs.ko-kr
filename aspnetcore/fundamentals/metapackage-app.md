@@ -6,12 +6,12 @@ monikerRange: '>= aspnetcore-2.1'
 ms.author: riande
 ms.date: 09/20/2017
 uid: fundamentals/metapackage-app
-ms.openlocfilehash: d27c3aa53d6edd235006dc136f09558395e15b6e
-ms.sourcegitcommit: a742b55e4b8276a48b8b4394784554fecd883c84
+ms.openlocfilehash: 68b5aca60273a8c6ef03c0a29842e6a5305adeb3
+ms.sourcegitcommit: 517bb1366da2a28b0014e384fa379755c21b47d8
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45538455"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47230167"
 ---
 # <a name="microsoftaspnetcoreapp-metapackage-for-aspnet-core-21"></a>ASP.NET Core 2.1용 Microsoft.AspNetCore.App 메타패키지
 
@@ -45,13 +45,26 @@ ASP.NET Core 2.1 이상 Entity Framework Core 2.1 이상의 모든 기능은 `Mi
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.App" Version="2.1.4" />
+    <PackageReference Include="Microsoft.AspNetCore.App" />
   </ItemGroup>
 
 </Project>
 ```
 
-`Microsoft.AspNetCore.App` 참조의 버전 번호는 해당 버전의 공유 프레임워크가 선택된다고 보장할 수 **없습니다**. 예를 들어 `2.1.1` 버전을 지정했는데 `2.1.3`이 설치되는 경우가 있습니다. 이 경우 앱은 `2.1.3`을 사용합니다. 권장되는 방법은 아니지만 롤포워드 동작을 비활성화할 수 있습니다(패치 및/또는 부 버전). 패키지 버전 롤포워드 동작에 대한 자세한 내용은 [dotnet 호스트 롤포워드](https://github.com/dotnet/core-setup/blob/master/Documentation/design-docs/roll-forward-on-no-candidate-fx.md)를 참조하세요.
+이전의 표시는 일반적인 ASP.NET Core 2.1 이상의 템플릿을 나타냅니다. `Microsoft.AspNetCore.App` 패키지 참조의 버전 번호는 지정하지 않습니다. 버전이 지정되지 않은 경우 SDK에서 [암시적](https://github.com/dotnet/core/blob/master/release-notes/1.0/sdk/1.0-rc3-implicit-package-refs.md) 버전, 즉 `Microsoft.NET.Sdk.Web`을 지정합니다. SDK에서 지정하는 암시적 버전을 사용하고, 패키지 참조에 버전 번호를 명시적으로 설정하지 않는 것이 좋습니다. 이 접근 방식에 대한 질문이 있는 경우 GitHub의 [Microsoft.AspNetCore.App 암시적 버전에 대한 토론](https://github.com/aspnet/Docs/issues/6430)에 의견을 남겨 주세요.
+
+휴대용 앱의 암시적 버전은 `major.minor.0`으로 설정됩니다. 공유 프레임워크 롤포워드 메커니즘은 설치된 공유 프레임워크 중 최신 호환 버전에서 앱을 실행합니다. 개발, 테스트 및 프로덕션에서 동일한 버전이 사용되도록 하려면 모든 환경에 동일한 버전의 공유 프레임워크를 설치하도록 하세요. 자체 포함 앱의 경우 암시적 버전 번호가 설치된 SDK에 포함된 공유 프레임워크의 `major.minor.patch`로 설정됩니다.
+
+`Microsoft.AspNetCore.App` 참조에 버전 번호를 지정해도 해당 버전의 고유 프레임워크가 선택된다고 보장할 수 **없습니다**. 예를 들어 "2.1.1" 버전을 지정했는데 "2.1.3"이 설치되는 경우가 있습니다. 이 경우 앱은 "2.1.3"을 사용합니다. 권장되는 방법은 아니지만 롤포워드를 비활성화할 수 있습니다(패치 및/또는 부 버전). DotNet 호스트 롤포워드 및 이 동작을 구성하는 방법에 대한 자세한 내용은 [DotNet 호스트 롤포워드](https://github.com/dotnet/core-setup/blob/master/Documentation/design-docs/roll-forward-on-no-candidate-fx.md)를 참조하세요.
+
+암시적 버전 `Microsoft.AspNetCore.App`을 사용하려면 `<Project Sdk`를 `Microsoft.NET.Sdk.Web`으로 설정해야 합니다.  `<Project Sdk="Microsoft.NET.Sdk">`가 후행 `.Web` 없이 사용되는 경우:
+
+* 다음 경고가 생성됩니다.
+
+     *경고 NU1604: 프로젝트 종속성 Microsoft.AspNetCore.App에 포함 하한이 포함되어 있지 않습니다. 일관된 복원 결과를 얻으려면 종속 버전의 하한을 포함하세요.*
+* 이는 .NET Core 2.1 SDK의 알려진 문제이며 .NET Core 2.2 SDK에서 수정될 예정입니다.
+
+<a name="update"></a>
 
 ## <a name="update-aspnet-core"></a>ASP.NET Core 업데이트
 

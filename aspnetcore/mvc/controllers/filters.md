@@ -5,12 +5,12 @@ description: 필터 작동 방법 및 ASP.NET Core MVC에서 사용하는 방법
 ms.author: riande
 ms.date: 08/15/2018
 uid: mvc/controllers/filters
-ms.openlocfilehash: 6b3d5446b1c9aafc02d4c31ad57a234f16513e3f
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: e20d934a17337d404249220d703ac4bb7164dfa6
+ms.sourcegitcommit: 9bdba90b2c97a4016188434657194b2d7027d6e3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41751757"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47402161"
 ---
 # <a name="filters-in-aspnet-core"></a>ASP.NET Core에서 필터링
 
@@ -232,6 +232,8 @@ System.InvalidOperationException: No service for type
 
 [!code-csharp[](../../mvc/controllers/filters/sample/src/FiltersSample/Controllers/HomeController.cs?name=snippet_TypeFilter&highlight=1,2)]
 
+### <a name="ifilterfactory-implemented-on-your-attribute"></a>특성에서 구현된 IFilterFactory
+
 다음과 같은 필터가 있는 경우:
 
 * 인수가 필요하지 않습니다.
@@ -334,7 +336,7 @@ System.InvalidOperationException: No service for type
 * MVC 작업 내에서 발생하는 트래핑 예외에 좋습니다.
 * 오류 처리 미들웨어만큼 유연하지 않습니다. 
 
-예외 처리의 경우 미들웨어를 선호합니다. 선택한 MVC 작업에 따라 오류 처리를 *다르게* 수행해야 하는 경우에만 예외 필터를 사용합니다. 예를 들어 앱에는 API 끝점 및 보기/HTML 모두에 대한 작업 메서드가 있을 수 있습니다. API 끝점은 JSON으로 오류 정보를 반환할 수 있습니다. 반면 보기 기반 작업은 HTML로 오류 페이지를 반환할 수 있습니다.
+예외 처리의 경우 미들웨어를 선호합니다. 선택한 MVC 작업에 따라 오류 처리를 *다르게* 수행해야 하는 경우에만 예외 필터를 사용합니다. 예를 들어 앱에는 API 엔드포인트 및 보기/HTML 모두에 대한 작업 메서드가 있을 수 있습니다. API 엔드포인트는 JSON으로 오류 정보를 반환할 수 있습니다. 반면 보기 기반 작업은 HTML로 오류 페이지를 반환할 수 있습니다.
 
 `ExceptionFilterAttribute`을 서브클래스할 수 있습니다. 
 

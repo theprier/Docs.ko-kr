@@ -5,12 +5,12 @@ description: 이 자습서에서는 외래 키 필드 및 탐색 속성을 업�
 ms.author: riande
 ms.date: 11/15/2017
 uid: data/ef-rp/update-related-data
-ms.openlocfilehash: e987971f60e5c5a9fb79e30440c7c986df64447e
-ms.sourcegitcommit: b8a2f14bf8dd346d7592977642b610bbcb0b0757
+ms.openlocfilehash: c9d0e97dc612744f0023c48a27eb1c89fd153b95
+ms.sourcegitcommit: c12ebdab65853f27fbb418204646baf6ce69515e
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38189304"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "46523170"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---update-related-data---7-of-8"></a>ASP.NET Core에서 EF Core를 사용한 Razor 페이지 - 관련 데이터 업데이트 - 7/8
 
@@ -18,7 +18,7 @@ ms.locfileid: "38189304"
 
 [!INCLUDE [about the series](../../includes/RP-EF/intro.md)]
 
-이 자습서에서는 관련된 데이터 업데이트를 보여 줍니다. 해결할 수 없는 문제가 발생한 경우 [이 단계에 완성된 앱](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples/StageSnapShots/cu-part7)을 다운로드합니다.
+이 자습서에서는 관련된 데이터 업데이트를 보여 줍니다. 해결할 수 없는 문제가 발생할 경우 [완성된 앱을 다운로드하거나 봅니다](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples). [지침을 다운로드하세요](xref:tutorials/index#how-to-download-a-sample).
 
 다음 그림은 완료된 페이지의 일부를 보여 줍니다.
 

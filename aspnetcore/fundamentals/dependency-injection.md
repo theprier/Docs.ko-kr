@@ -6,18 +6,18 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 07/02/2018
 uid: fundamentals/dependency-injection
-ms.openlocfilehash: b9c322e56c0902c2a78bbbf2563dd01ce79fdc9a
-ms.sourcegitcommit: 25150f4398de83132965a89f12d3a030f6cce48d
+ms.openlocfilehash: 50986eeb4c5c8b06c739ee9f860665b877853d78
+ms.sourcegitcommit: 517bb1366da2a28b0014e384fa379755c21b47d8
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/25/2018
-ms.locfileid: "42927899"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47230193"
 ---
 # <a name="dependency-injection-in-aspnet-core"></a>ASP.NET Core에서 종속성 주입
 
 작성자: [Steve Smith](https://ardalis.com/), [Scott Addie](https://scottaddie.com) 및 [Luke Latham](https://github.com/guardrex)
 
-ASP.NET Core는 클래스와 해당 종속성 간의 [IoC(Inversion of Control)](https://deviq.com/inversion-of-control/)를 실현하는 기술인 DI(종속성 주입) 소프트웨어 디자인 패턴을 지원합니다.
+ASP.NET Core는 클래스와 해당 종속성 간의 [IoC(Inversion of Control)](/dotnet/standard/modern-web-apps-azure-architecture/architectural-principles#dependency-inversion)를 실현하는 기술인 DI(종속성 주입) 소프트웨어 디자인 패턴을 지원합니다.
 
 MVC 컨트롤러 내의 종속성 주입에 대한 자세한 내용은 <xref:mvc/controllers/dependency-injection>을 참조하세요.
 
@@ -243,7 +243,7 @@ Singleton 수명 서비스는 처음 요청할 때(또는 `ConfigureServices`를
 다음 두 가지 메커니즘으로 서비스를 해결할 수 있습니다.
 
 * `IServiceProvider`
-* [ActivatorUtilities](/dotnet/api/microsoft.extensions.dependencyinjection.activatorutilities) &ndash; 종속성 주입 컨테이너에서 서비스 등록 없이 개체를 생성할 수 있습니다. `ActivatorUtilities`는 태그 도우미, MVC 컨트롤러, SignalR 허브 및 모델 바인더와 같은 사용자용 추상화에 사용됩니다.
+* [ActivatorUtilities](/dotnet/api/microsoft.extensions.dependencyinjection.activatorutilities) &ndash; 종속성 주입 컨테이너에서 서비스 등록 없이 개체를 생성할 수 있습니다. `ActivatorUtilities`는 태그 도우미, MVC 컨트롤러 및 모델 바인더와 같은 사용자용 추상화에 사용됩니다.
 
 생성자에는 종속성 주입으로 제공되지 않는 인수를 사용할 수 있지만, 인수에 기본값을 할당해야 합니다.
 
@@ -442,7 +442,7 @@ public static void Main(string[] args)
 
 [개체 지향 디자인의 SOLID 원칙](https://deviq.com/solid/)에 따라 앱 클래스는 당연히 작고 잘 구성되며 쉽게 테스트되는 편입니다.
 
-클래스에 주입된 종속성이 너무 많아 보이면 일반적으로 클래스에 역할이 너무 많고 [SRP(단일 책임 원칙)](https://deviq.com/single-responsibility-principle/)를 위반하는 것일 수 있습니다. 해당 책임 몇 가지를 새로운 클래스로 이동하여 클래스를 리팩터링해 보세요. Razor 페이지의 페이지 모델 클래스 및 MVC 컨트롤러 클래스는 UI 고려 사항에 집중해야 합니다. 비즈니스 규칙 및 데이터 액세스 구현 세부 정보는 이러한 [별도의 문제](https://deviq.com/separation-of-concerns/)에 적합한 클래스에 유지되어야 합니다.
+클래스에 주입된 종속성이 너무 많아 보이면 일반적으로 클래스에 역할이 너무 많고 [SRP(단일 책임 원칙)](/dotnet/standard/modern-web-apps-azure-architecture/architectural-principles#single-responsibility)를 위반하는 것일 수 있습니다. 해당 책임 몇 가지를 새로운 클래스로 이동하여 클래스를 리팩터링해 보세요. Razor 페이지의 페이지 모델 클래스 및 MVC 컨트롤러 클래스는 UI 고려 사항에 집중해야 합니다. 비즈니스 규칙 및 데이터 액세스 구현 세부 정보는 이러한 [별도의 문제](/dotnet/standard/modern-web-apps-azure-architecture/architectural-principles#separation-of-concerns)에 적합한 클래스에 유지되어야 합니다.
 
 ### <a name="disposal-of-services"></a>서비스 삭제
 
@@ -563,6 +563,7 @@ Singleton 서비스는 스레드로부터 안전해야 합니다. Singleton 서�
 * <xref:fundamentals/middleware/extensibility>
 * [종속성 주입으로 ASP.NET Core에 정리 코드 작성(MSDN)](https://msdn.microsoft.com/magazine/mt703433.aspx)
 * [컨테이너 관리 응용 프로그램 디자인, 서막: 컨테이너는 어디에 속합니까?](https://blogs.msdn.microsoft.com/nblumhardt/2008/12/26/container-managed-application-design-prelude-where-does-the-container-belong/)
-* [명시적 종속성 원칙](https://deviq.com/explicit-dependencies-principle/)
+* [명시적 종속성 원칙](/dotnet/standard/modern-web-apps-azure-architecture/architectural-principles#explicit-dependencies)
 * [Inversion of Control 컨테이너 및 종속성 주입 패턴(Martin Fowler)](https://www.martinfowler.com/articles/injection.html)
 * [New is Glue ("gluing" code to a particular implementation)](https://ardalis.com/new-is-glue)(최신 붙이기 방법(특정 구현에 코드 “붙이기”))
+* [How to register a service with multiple interfaces in ASP.NET Core DI](https://andrewlock.net/how-to-register-a-service-with-multiple-interfaces-for-in-asp-net-core-di/)(ASP.NET Core DI의 여러 인터페이스를 사용하여 서비스를 등록하는 방법)

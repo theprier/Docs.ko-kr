@@ -5,12 +5,12 @@ description: ASP.NET Core에서 보기 구성 요소가 사용되는 방법 및 
 ms.author: riande
 ms.date: 02/14/2017
 uid: mvc/views/view-components
-ms.openlocfilehash: 0410e2025019bae45d941e61f556f4b2b57bd30f
-ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
+ms.openlocfilehash: cf2cfcdb07271503b844e31940e90b7376db0a6f
+ms.sourcegitcommit: 599ebae5c2d6fcb22dfa6ae7d1f4bdfcacb79af4
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46010912"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47211067"
 ---
 # <a name="view-components-in-aspnet-core"></a>ASP.NET Core의 보기 구성 요소
 
@@ -95,6 +95,8 @@ ms.locfileid: "46010912"
 
 [!code-cshtml[](view-components/sample/ViewCompFinal/Views/Todo/IndexFinal.cshtml?range=35)]
 
+::: moniker range=">= aspnetcore-1.1"
+
 ## <a name="invoking-a-view-component-as-a-tag-helper"></a>태그 도우미로 뷰 구성 요소 호출
 
 ASP.NET Core 1.1 이상에서는 뷰 구성 요소를 [태그 도우미](xref:mvc/views/tag-helpers/intro)로 호출할 수 있습니다.
@@ -110,13 +112,13 @@ ASP.NET Core 1.1 이상에서는 뷰 구성 요소를 [태그 도우미](xref:mv
 </vc:[view-component-name]>
 ```
 
-참고: 태그 도우미로 뷰 구성 요소를 사용하려면 `@addTagHelper` 지시문을 사용하여 뷰 구성 요소가 포함된 어셈블리를 등록해야 합니다. 예를 들어 뷰 구성 요소가 "MyWebApp"이라는 어셈블리에 있으면 다음 지시문을 `_ViewImports.cshtml` 파일에 추가합니다.
+뷰 구성 요소를 태그 도우미로 사용하려면 `@addTagHelper` 지시문을 사용하여 뷰 구성 요소가 포함된 어셈블리를 등록합니다. 뷰 구성 요소가 `MyWebApp`이라는 어셈블리에 있는 경우 다음 지시문을 *_ViewImports.cshtml* 파일에 추가합니다.
 
 ```cshtml
 @addTagHelper *, MyWebApp
 ```
 
-뷰 구성 요소를 참조하는 모든 파일에 태그 도우미로 뷰 구성 요소를 등록할 수 있습니다. 태그 도우미를 등록하는 방법에 대한 자세한 내용은 [태그 도우미 범위 관리](xref:mvc/views/tag-helpers/intro#managing-tag-helper-scope)를 참조하세요.
+뷰 구성 요소를 참조하는 모든 파일에 뷰 구성 요소를 태그 도우미로 등록할 수 있습니다. 태그 도우미를 등록하는 방법에 대한 자세한 내용은 [태그 도우미 범위 관리](xref:mvc/views/tag-helpers/intro#managing-tag-helper-scope)를 참조하세요.
 
 이 자습서에 사용된 `InvokeAsync` 메서드:
 
@@ -127,6 +129,8 @@ ASP.NET Core 1.1 이상에서는 뷰 구성 요소를 [태그 도우미](xref:mv
 [!code-cshtml[](view-components/sample/ViewCompFinal/Views/Todo/IndexTagHelper.cshtml?range=37-38)]
 
 위의 샘플에서 `PriorityList` 뷰 구성 요소는 `priority-list`가 됩니다. 뷰 구성 요소에 대한 매개 변수는 kebab 소문자의 특성으로 전달됩니다.
+
+::: moniker-end
 
 ### <a name="invoking-a-view-component-directly-from-a-controller"></a>컨트롤러에서 뷰 구성 요소 직접 호출
 
@@ -243,6 +247,76 @@ PVC 뷰가 렌더링되지 않는 경우 우선 순위가 4 이상인 뷰 구성
 `using` 문을 Razor 뷰 파일에 추가하고 `nameof` 연산자를 사용합니다.
 
 [!code-cshtml[](view-components/sample/ViewCompFinal/Views/Todo/IndexNameof.cshtml?range=1-6,35-)]
+
+## <a name="perform-synchronous-work"></a>동기 작업 수행
+
+비동기 작업을 수행할 필요가 없는 경우 프레임워크에서 동기 `Invoke` 메서드 호출을 처리합니다. 다음 메서드는 동기 `Invoke` 뷰 구성 요소를 만듭니다.
+
+```csharp
+public class PriorityList : ViewComponent
+{
+    public IViewComponentResult Invoke(int maxPriority, bool isDone)
+    {
+        var items = new List<string> { $"maxPriority: {maxPriority}", $"isDone: {isDone}" };
+        return View(items);
+    }
+}
+```
+
+뷰 구성 요소의 Razor 파일 목록은 `Invoke` 메서드(*Views/Home/Components/PriorityList/Default.cshtml*)에 전달된 문자열을 나열합니다.
+
+```cshtml
+@model List<string>
+
+<h3>Priority Items</h3>
+<ul>
+    @foreach (var item in Model)
+    {
+        <li>@item</li>
+    }
+</ul>
+```
+
+::: moniker range=">= aspnetcore-1.1"
+
+뷰 구성 요소는 다음 방법 중 하나를 사용하여 Razor 파일(예: *Views/Home/Index.cshtml*)에서 호출됩니다.
+
+* <xref:Microsoft.AspNetCore.Mvc.IViewComponentHelper>
+* [태그 도우미](xref:mvc/views/tag-helpers/intro)
+
+<xref:Microsoft.AspNetCore.Mvc.IViewComponentHelper> 접근 방법을 사용하려면 `Component.InvokeAsync`를 호출합니다.
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-1.1"
+
+뷰 구성 요소는 <xref:Microsoft.AspNetCore.Mvc.IViewComponentHelper>를 사용하여 Razor 파일(예: *Views/Home/Index.cshtml*)에서 호출됩니다.
+
+`Component.InvokeAsync`를 호출합니다.
+
+::: moniker-end
+
+```cshtml
+@await Component.InvokeAsync(nameof(PriorityList), new { maxPriority = 4, isDone = true })
+```
+
+::: moniker range=">= aspnetcore-1.1"
+
+태그 도우미를 사용하려면 `@addTagHelper` 지시문을 사용하여 뷰 구성 요소가 포함된 어셈블리를 등록합니다(뷰 구성 요소는 `MyWebApp`이라는 어셈블리에 있음).
+
+```cshtml
+@addTagHelper *, MyWebApp
+```
+
+Razor 태그 파일의 뷰 구성 요소 태그 도우미를 사용합니다.
+
+```cshtml
+<vc:priority-list max-priority="999" is-done="false">
+</vc:priority-list>
+```
+::: moniker-end
+
+`PriorityList.Invoke`의 메서드 시그니처는 동기이지만, Razor는 태그 파일에 `Component.InvokeAsync`를 사용하여 메서드를 찾고 호출합니다.
 
 ## <a name="additional-resources"></a>추가 자료
 

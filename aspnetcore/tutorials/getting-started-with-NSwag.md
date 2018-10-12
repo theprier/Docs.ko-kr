@@ -4,14 +4,14 @@ author: zuckerthoben
 description: NSwag를 사용하여 ASP.NET Core Web API의 설명서 및 도움말 페이지를 생성하는 방법을 알아봅니다.
 ms.author: scaddie
 ms.custom: mvc
-ms.date: 06/29/2018
+ms.date: 09/20/2018
 uid: tutorials/get-started-with-nswag
-ms.openlocfilehash: c0811593609b7d1e3529d5253e8b053f180281f3
-ms.sourcegitcommit: 2941e24d7f3fd3d5e88d27e5f852aaedd564deda
+ms.openlocfilehash: b9266e2df75563be6bad1a1f464cef788c333d4c
+ms.sourcegitcommit: 4d5f8680d68b39c411b46c73f7014f8aa0f12026
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37126276"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "47028170"
 ---
 # <a name="get-started-with-nswag-and-aspnet-core"></a>NSwag 및 ASP.NET Core 시작
 
@@ -29,9 +29,14 @@ ms.locfileid: "37126276"
 
 ::: moniker-end
 
-ASP.NET Core 미들웨어에서 [NSwag](https://github.com/RSuter/NSwag)를 사용하려면 [NSwag.AspNetCore](https://www.nuget.org/packages/NSwag.AspNetCore/) NuGet 패키지가 필요합니다. 이 패키지는 Swagger 생성기, Swagger UI(v2 및 v3) 및 [ReDoc UI](https://github.com/Rebilly/ReDoc)로 구성됩니다.
+다음 작업을 수행하려면 NSwag 미들웨어를 등록합니다.
 
-NSwag의 코드 생성 기능을 사용하는 것이 좋습니다. 코드 생성을 위해 다음 옵션 중 하나를 선택합니다.
+* 구현된 Web API에 대한 Swagger 사양을 생성합니다.
+* Web API를 찾아보고 테스트하는 Swagger UI를 제공합니다.
+
+[NSwag](https://github.com/RSuter/NSwag) ASP.NET Core 미들웨어를 사용하려면 [NSwag.AspNetCore](https://www.nuget.org/packages/NSwag.AspNetCore/) NuGet 패키지를 설치합니다. 이 패키지에는 Swagger 사양, Swagger UI(v2 및 v3) 및 [ReDoc UI](https://github.com/Rebilly/ReDoc)를 생성하고 제공하는 미들웨어가 포함되어 있습니다.
+
+또한 NSwag의 코드 생성 기능을 사용하는 것이 좋습니다. 코드 생성 기능을 사용하려면 다음 옵션 중 하나를 선택합니다.
 
 * API에 C# 및 TypeScript로 클라이언트 코드를 생성하는 Windows 데스크톱 앱인 [NSwagStudio](https://github.com/NSwag/NSwag/wiki/NSwagStudio)를 사용합니다.
 * 프로젝트 내에서 코드 생성을 수행하기 위해 [NSwag.CodeGeneration.CSharp](https://www.nuget.org/packages/NSwag.CodeGeneration.CSharp/) 또는 [NSwag.CodeGeneration.TypeScript](https://www.nuget.org/packages/NSwag.CodeGeneration.TypeScript/) NuGet 패키지를 사용합니다.
@@ -40,7 +45,7 @@ NSwag의 코드 생성 기능을 사용하는 것이 좋습니다. 코드 생성
 
 ## <a name="features"></a>기능
 
-NSwag를 사용하는 주요 이유는 UI Swagger 및 Swagger 생성기를 도입할 뿐만 아니라 유연한 코드 생성 기능을 사용하기 위함입니다. 기존 API가 필요하지 않으므로 Swagger를 통합하고 NSwag가 클라이언트 구현을 생성하도록 하는 타사 API를 사용할 수 있습니다. 어느 쪽이든 개발 주기가 빠르며 API 변경에 보다 쉽게 대응할 수 있습니다.
+NSwag를 사용하는 주요 이유는 Swagger UI 및 Swagger 생성기를 도입할 뿐만 아니라 유연한 코드 생성 기능을 이용할 수 있기 때문입니다. 기존 API가 필요하지 않으므로 Swagger를 통합하고 NSwag가 클라이언트 구현을 생성하도록 하는 타사 API를 사용할 수 있습니다. 어느 쪽이든 개발 주기가 빠르며 API 변경에 보다 쉽게 대응할 수 있습니다.
 
 ## <a name="package-installation"></a>패키지 설치
 
@@ -94,7 +99,11 @@ dotnet add TodoApi.csproj package NSwag.AspNetCore
 
 [!code-csharp[](../tutorials/web-api-help-pages-using-swagger/samples/2.0/TodoApi.NSwag/Startup.cs?name=snippet_StartupConfigureImports)]
 
-`Startup.Configure` 메서드에서 생성된 Swagger 사양 및 Swagger UI를 지원하기 위해 미들웨어를 사용하도록 설정합니다.
+`Startup.ConfigureServices` 메서드에서 필수 Swagger 서비스를 등록합니다. 
+
+[!code-csharp[](../tutorials/web-api-help-pages-using-swagger/samples/2.0/TodoApi.NSwag/Startup.cs?name=snippet_ConfigureServices&highlight=8)]
+
+`Startup.Configure` 메서드에서 미들웨어가 생성된 Swagger 사양 및 Swagger UI v3를 제공할 수 있도록 설정합니다.
 
 [!code-csharp[](../tutorials/web-api-help-pages-using-swagger/samples/2.0/TodoApi.NSwag/Startup.cs?name=snippet_Configure&highlight=6-10)]
 
@@ -254,6 +263,7 @@ XML 주석은 다음과 같은 방법으로 활성화됩니다.
 ### <a name="data-annotations"></a>데이터 주석
 
 ::: moniker range="<= aspnetcore-2.0"
+
 NSwag는 [리플렉션](/dotnet/csharp/programming-guide/concepts/reflection)을 사용하며, Web API 작업의 가장 좋은 반환 형식은 [IActionResult](/dotnet/api/microsoft.aspnetcore.mvc.iactionresult)입니다. 따라서 NSwag는 사용자가 무슨 작업을 수행하고 반환하는지 유추할 없습니다. 다음 예제를 참조하세요.
 
 [!code-csharp[](../tutorials/web-api-help-pages-using-swagger/samples/2.0/TodoApi.NSwag/Controllers/TodoController.cs?name=snippet_CreateAction)]
@@ -261,8 +271,11 @@ NSwag는 [리플렉션](/dotnet/csharp/programming-guide/concepts/reflection)을
 이전 작업은 `IActionResult`를 반환하지만 작업 내에서는 [CreatedAtRoute](/dotnet/api/system.web.http.apicontroller.createdatroute) 또는 [BadRequest](/dotnet/api/system.web.http.apicontroller.badrequest)를 반환합니다. 데이터 주석을 사용하여 이 작업이 반환하는 것으로 알려진 HTTP 상태 코드를 클라이언트에 알립니다. 다음 특성으로 작업을 데코레이트하세요.
 
 [!code-csharp[](../tutorials/web-api-help-pages-using-swagger/samples/2.0/TodoApi.NSwag/Controllers/TodoController.cs?name=snippet_CreateActionAttributes)]
+
 ::: moniker-end
+
 ::: moniker range=">= aspnetcore-2.1"
+
 NSwag는 [리플렉션](/dotnet/csharp/programming-guide/concepts/reflection)을 사용하며, Web API 작업의 가장 좋은 반환 형식은 [ActionResult\<T>](/dotnet/api/microsoft.aspnetcore.mvc.actionresult-1)입니다. 따라서 NSwag만이 `T`에서 정의한 반환 형식을 유추할 수 있습니다. 작업에서 가능한 다른 반환 형식은 유추할 수 없습니다. 다음 예제를 참조하세요.
 
 [!code-csharp[](../tutorials/web-api-help-pages-using-swagger/samples/2.1/TodoApi.NSwag/Controllers/TodoController.cs?name=snippet_CreateAction)]
@@ -270,6 +283,7 @@ NSwag는 [리플렉션](/dotnet/csharp/programming-guide/concepts/reflection)을
 이전 작업은 `ActionResult<T>`를 반환하지만 작업 내에서는 [CreatedAtRoute](/dotnet/api/system.web.http.apicontroller.createdatroute)를 반환합니다. 컨트롤러가 [[ApiController]](/dotnet/api/microsoft.aspnetcore.mvc.apicontrollerattribute) 특성을 사용하여 데코레이트되므로 [BadRequest](/dotnet/api/system.web.http.apicontroller.badrequest) 응답도 가능합니다. 자세한 정보는 [자동 HTTP 400 응답](xref:web-api/index#automatic-http-400-responses)을 참조하세요. 데이터 주석을 사용하여 이 작업이 반환하는 것으로 알려진 HTTP 상태 코드를 클라이언트에 알립니다. 다음 특성으로 작업을 데코레이트하세요.
 
 [!code-csharp[](../tutorials/web-api-help-pages-using-swagger/samples/2.1/TodoApi.NSwag/Controllers/TodoController.cs?name=snippet_CreateActionAttributes)]
+
 ::: moniker-end
 
 이제 Swagger 생성기는 이 작업을 정확하게 설명할 수 있으며, 생성된 클라이언트가 엔드포인트를 호출할 때 수신한 내용을 알 수 있습니다. 이러한 특성으로 모든 작업을 데코레이트하는 것이 좋습니다. API 작업에서 반환해야 하는 HTTP 응답에 대한 지침은 [RFC 7231 사양](https://tools.ietf.org/html/rfc7231#section-4.3)을 참조하세요.

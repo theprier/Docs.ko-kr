@@ -5,12 +5,12 @@ description: 이 자습서에는 여러 사용자가 동시에 같은 엔터티�
 ms.author: riande
 ms.date: 11/15/2017
 uid: data/ef-rp/concurrency
-ms.openlocfilehash: a010e2ed660bea56b112799e850f2fb0ff37579e
-ms.sourcegitcommit: 8f8924ce4eb9effeaf489f177fb01b66867da16f
+ms.openlocfilehash: 722676b6765c32f3d11d5a3e23a5bea6ebe5488d
+ms.sourcegitcommit: c12ebdab65853f27fbb418204646baf6ce69515e
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/24/2018
-ms.locfileid: "39219396"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "46523261"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---concurrency---8-of-8"></a>ASP.NET Core에서 EF Core를 사용한 Razor 페이지 - 동시성 - 8/8
 
@@ -18,7 +18,7 @@ ms.locfileid: "39219396"
 
 [!INCLUDE [about the series](../../includes/RP-EF/intro.md)]
 
-이 자습서에는 여러 사용자가 동시에(같은 시간에) 엔터티를 업데이트하는 경우 충돌을 처리하는 방법을 보여 줍니다. 해결할 수 없는 문제가 발생한 경우 [이 단계에 완성된 앱](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples/StageSnapShots/cu-part8)을 다운로드합니다.
+이 자습서에는 여러 사용자가 동시에(같은 시간에) 엔터티를 업데이트하는 경우 충돌을 처리하는 방법을 보여 줍니다. 해결할 수 없는 문제가 발생할 경우 [완성된 앱을 다운로드하거나 봅니다](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples). [지침을 다운로드하세요](xref:tutorials/index#how-to-download-a-sample).
 
 ## <a name="concurrency-conflicts"></a>동시성 충돌
 

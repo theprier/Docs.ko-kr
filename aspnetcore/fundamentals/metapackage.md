@@ -1,17 +1,17 @@
 ---
 title: ASP.NET Core 2.0용 Microsoft.AspNetCore.All 메타패키지
 author: Rick-Anderson
-description: Microsoft.AspNetCore.All 메타패키지에는 지원되는 모든 ASP.NET Core 및 Entity Framework Core 패키지와 해당 종속성이 포함됩니다.
+description: ASP.NET Core 2.1 이상은 Microsoft.AspNetCore.All 메타패키지를 사용하는 것이 좋습니다.
 monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
-ms.date: 09/20/2017
+ms.date: 09/20/2018
 uid: fundamentals/metapackage
-ms.openlocfilehash: fbc0f5465dc37a612b81c293f1a58b53ea4b2238
-ms.sourcegitcommit: cb0c27fa0184f954fce591d417e6ab2a51d8bb22
+ms.openlocfilehash: 1942426dbd5c15ae4a5fa5fbb931b94f50aa6043
+ms.sourcegitcommit: 32f5ee0690604d451f61e9a5c28881c9fcf85738
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39123829"
+ms.lasthandoff: 09/29/2018
+ms.locfileid: "47454741"
 ---
 # <a name="microsoftaspnetcoreall-metapackage-for-aspnet-core-20"></a>ASP.NET Core 2.0용 Microsoft.AspNetCore.All 메타패키지
 
@@ -65,3 +65,11 @@ ASP.NET Core 2.x 및 Entity Framework Core 2.x의 모든 기능은 `Microsoft.As
 
 * `Microsoft.Extensions.Caching.Redis`의 종속성 `StackExchange.Redis`
 * `Microsoft.AspNetCore.ApplicationInsights.HostingStartup`의 종속성 `Microsoft.ApplicationInsights`
+
+## <a name="update-aspnet-core-21"></a>ASP.NET Core 2.1 업데이트
+
+2.1 이상의 경우 `Microsoft.AspNetCore.App` 메타패키지로 마이그레이션하는 것이 좋습니다. `Microsoft.AspNetCore.All` 메타패키지를 계속 사용하고 최신 패치 버전이 배포되었는지 확인하려면:
+
+* 개발 머신 및 빌드 서버: 최신 [.NET Core SDK](https://www.microsoft.com/net/download)를 설치합니다.
+* 배포 서버: 최신 [.NET Core 런타임](https://www.microsoft.com/net/download)을 설치합니다.
+ 응용 프로그램을 다시 시작하면 앱이 최신 설치 버전으로 롤포워드됩니다.

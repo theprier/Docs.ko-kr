@@ -1,18 +1,18 @@
 ---
 title: ASP.NET Core에서 Razor 페이지 시작
 author: rick-anderson
-description: ASP.NET Core Razor 페이지 웹앱을 빌드하는 작업의 기본 사항을 알아봅니다. Razor 페이지는 ASP.NET Core의 웹 워크로드에 권장됩니다.
+description: 이 자습서 시리즈는 ASP.NET Core에서 Razor Pages를 사용하는 방법을 보여 줍니다. 모델을 만들고, Razor Pages에 대한 코드를 생성하고, Entity Framework Core 및 SQL Server를 데이터 액세스에 사용하고, 검색 기능을 추가하고, 입력 유효성 검사를 추가하고, 마이그레이션을 사용하여 모델을 업데이트하는 방법을 알아봅니다.
 ms.author: riande
 ms.date: 05/30/2018
 uid: tutorials/razor-pages/razor-pages-start
-ms.openlocfilehash: bc18ec3ad3bb7e3afe38030a34b2e748ce9e341b
-ms.sourcegitcommit: 74c09caec8992635825b45b7f065f871d33c077a
+ms.openlocfilehash: 2e1c84a704856a22e1e105f56612194d4bb9c234
+ms.sourcegitcommit: 599ebae5c2d6fcb22dfa6ae7d1f4bdfcacb79af4
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "42634979"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47211002"
 ---
-# <a name="get-started-with-razor-pages-in-aspnet-core"></a>ASP.NET Core에서 Razor 페이지 시작
+# <a name="tutorial-get-started-with-razor-pages-in-aspnet-core"></a>자습서: ASP.NET Core에서 Razor Pages 시작
 
 작성자: [Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -61,7 +61,7 @@ Visual Studio 템플릿은 시작 프로젝트를 만듭니다.
 
 ![홈 또는 인덱스 페이지](razor-pages-start/_static/home2.1.png)
 
-* Visual Studio가 [IIS Express](/iis/extensions/introduction-to-iis-express/iis-express-overview)를 시작하고 앱을 실행합니다. 주소 표시줄에 `localhost:port#`이 표시되고 `example.com` 등은 표시되지 않습니다. 그 이유는 `localhost`가 로컬 컴퓨터의 표준 이름이기 때문입니다. Localhost는 로컬 컴퓨터의 웹 요청만 지원합니다. Visual Studio에서 웹 프로젝트를 만들 경우 웹 서버에는 임의 포트가 사용됩니다. 이전 이미지에서 포트 번호는 5000입니다. 앱을 실행할 경우 다른 포트 번호가 표시됩니다.
+* Visual Studio가 [IIS Express](/iis/extensions/introduction-to-iis-express/iis-express-overview)를 시작하고 앱을 실행합니다. 주소 표시줄에 `localhost:port#`이 표시되고 `example.com` 등은 표시되지 않습니다. 그 이유는 `localhost`가 로컬 컴퓨터의 표준 이름이기 때문입니다. Localhost는 로컬 컴퓨터의 웹 요청만 지원합니다. Visual Studio에서 웹 프로젝트를 만들 경우 웹 서버에는 임의 포트가 사용됩니다. 이전 이미지에서 포트 번호는 5001입니다. 앱을 실행할 경우 다른 포트 번호가 표시됩니다.
 * **Ctrl+F5**(디버그 이외 모드)를 사용하여 앱을 시작하면 코드를 변경하고, 파일을 저장하고, 브라우저를 새로 고치고, 코드 변경 내용을 확인할 수 있습니다. 대부분의 개발자는 앱을 빠르게 시작하고 변경 내용을 확인하기 위해 디버그 이외 모드를 사용하려고 합니다.
 
 [!INCLUDE [razor-pages-start](~/includes/RP/2.1/razor-pages-start.md)]

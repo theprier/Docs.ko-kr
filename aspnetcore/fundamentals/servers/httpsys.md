@@ -4,14 +4,15 @@ author: guardrex
 description: Windows의 ASP.NET Core에 대한 웹 서버인 HTTP.sys에 대해 알아봅니다. HTTP.sys 커널 모드 드라이버를 기반으로 한 HTTP.sys는 IIS 없이 인터넷에 대한 직접 연결에 사용될 수 있는 Kestrel에 대한 대안입니다.
 monikerRange: '>= aspnetcore-2.0'
 ms.author: tdykstra
-ms.date: 08/15/2018
+ms.custom: mvc
+ms.date: 09/13/2018
 uid: fundamentals/servers/httpsys
-ms.openlocfilehash: 58f71596b8ad54dd500699265ab022dc57c4f7a3
-ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
+ms.openlocfilehash: e845cb4eb7fe805e3d2195124073f7ab646d66cb
+ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41751777"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46011670"
 ---
 # <a name="httpsys-web-server-implementation-in-aspnet-core"></a>ASP.NET Core에서 HTTP.sys 웹 서버 구현
 
@@ -55,6 +56,28 @@ HTTP.sys는 다음과 같은 배포에 유용합니다.
   ![HTTP.sys는 내부 네트워크와 직접 통신합니다.](httpsys/_static/httpsys-to-internal.png)
 
 HTTP.sys는 많은 유형의 공격으로부터 보호하고 모든 기능을 갖춘 웹 서버의 견고성, 보안 및 확장성을 제공하는 완성도 높은 기술입니다. IIS 자체는 HTTP.sys 위에 HTTP 수신기로 실행됩니다.
+
+## <a name="http2-support"></a>HTTP/2 지원
+
+다음 기본 요구 사항이 충족되는 경우 ASP.NET Core 앱에 대해[HTTP/2](https://httpwg.org/specs/rfc7540.html)가 사용됩니다.
+
+* Windows Server 2016/Windows 10 이상
+* [ALPN(Application-Layer Protocol Negotiation)](https://tools.ietf.org/html/rfc7301#section-3) 연결
+* TLS 1.2 이상 연결
+
+::: moniker range=">= aspnetcore-2.2"
+
+HTTP/2 연결이 설정된 경우 [HttpRequest.Protocol](xref:Microsoft.AspNetCore.Http.HttpRequest.Protocol*)에서 `HTTP/2`를 보고합니다.
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.2"
+
+HTTP/2 연결이 설정된 경우 [HttpRequest.Protocol](xref:Microsoft.AspNetCore.Http.HttpRequest.Protocol*)에서 `HTTP/1.1`을 보고합니다.
+
+::: moniker-end
+
+HTTP/2는 기본적으로 사용됩니다. HTTP/2 연결이 설정되지 않는 경우 연결이 HTTP/1.1로 대체됩니다. Windows의 이후 릴리스에서는 HTTP.sys를 사용하여 HTTP/2를 사용하지 않도록 하는 기능을 포함하여 HTTP/2 구성 플래그를 사용할 수 있습니다.
 
 ## <a name="kernel-mode-authentication-with-kerberos"></a>Kerberos를 사용하여 커널 모드 인증
 

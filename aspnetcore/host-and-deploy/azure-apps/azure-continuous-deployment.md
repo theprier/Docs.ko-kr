@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/14/2016
 uid: host-and-deploy/azure-apps/azure-continuous-deployment
-ms.openlocfilehash: 3470d9278574a95115b14f25b90a0a93bb3b8a67
-ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
+ms.openlocfilehash: 5ae8ce01610828417fc76ed6626e518c8493bd0f
+ms.sourcegitcommit: 57eccdea7d89a62989272f71aad655465f1c600a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41751743"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44340201"
 ---
 # <a name="continuous-deployment-to-azure-with-visual-studio-and-git-with-aspnet-core"></a>ASP.NET Core와 함께 Visual Studio 및 Git을 사용하여 Azure에 지속적인 배포
 
@@ -21,7 +21,7 @@ ms.locfileid: "41751743"
 
 이 자습서에서는 Visual Studio를 사용하여 ASP.NET Core 웹앱을 만들고 지속적인 배포를 사용하여 Visual Studio에서 Azure App Service에 배포하는 방법을 알아봅니다.
 
-또한 [연속 배포를 사용하여 Azure Web App을 빌드하고 게시하기 위해 VSTS 사용](/vsts/build-release/archive/apps/aspnet/aspnet-4-ci-cd-azure-automatic)을 참조하세요. 여기서는 Visual Studio Team Services를 사용하여 [Azure App Service](/azure/app-service/app-service-web-overview)에 대한 CD(지속적인 업데이트) 워크플로를 구성하는 방법을 보여줍니다. Team Services의 Azure 지속적인 업데이트는 Azure App Service에서 호스트되는 앱의 업데이트를 게시하는 강력한 배포 파이프라인을 간단하게 설정합니다. 파이프라인을 빌드하고, 테스트를 실행하고, 스테이징 슬롯에 배포하고, 프로덕션에 배포하도록 Azure Portal에서 구성할 수 있습니다.
+Azure DevOps Services를 사용하여 [Azure App Service](/azure/app-service/app-service-web-overview)에 대한 CD(지속적인 업데이트) 워크플로를 구성하는 방법을 보여 주는 [Azure Pipelines를 사용하여 첫 번째 파이프라인 만들기](/azure/devops/pipelines/get-started-yaml)를 참조하세요. Azure Pipelines는 Azure DevOps Services의 서비스 중 하나로, Azure App Service에서 호스트되는 앱의 업데이트를 게시하는 강력한 배포 파이프라인을 간단하게 설정합니다. 파이프라인을 빌드하고, 테스트를 실행하고, 스테이징 슬롯에 배포하고, 프로덕션에 배포하도록 Azure Portal에서 구성할 수 있습니다.
 
 > [!NOTE]
 > 이 자습서를 완료하려면 Microsoft Azure 계정이 필요합니다. 계정을 얻으려면 [MSDN 구독자 혜택을 활성화](https://azure.microsoft.com/pricing/member-offers/credit-for-visual-studio-subscribers/?WT.mc_id=A261C142F)하거나 [평가판에 등록](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)합니다.
@@ -228,5 +228,5 @@ Azure Portal의 웹앱 블레이드에서 **찾아보기**를 선택하거나 �
 
 ## <a name="additional-resources"></a>추가 자료
 
-* [지속적인 배포를 사용하여 Azure 웹앱을 빌드하고 게시하기 위해 VSTS 사용](/vsts/build-release/archive/apps/aspnet/aspnet-4-ci-cd-azure-automatic)
+* [Azure Pipelines를 사용하여 첫 번째 파이프라인 만들기](/azure/devops/pipelines/get-started-yaml)
 * [프로젝트 Kudu](https://github.com/projectkudu/kudu/wiki)

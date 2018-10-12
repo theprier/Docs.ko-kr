@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 09/06/2018
 uid: host-and-deploy/proxy-load-balancer
-ms.openlocfilehash: 1833b5bb77b199bb5fd0257e9f33b4d6f0c23ec5
-ms.sourcegitcommit: 8268cc67beb1bb1ca470abb0e28b15a7a71b8204
+ms.openlocfilehash: a03250d6cafe7279c3fcf3957d33214a9b4ed514
+ms.sourcegitcommit: c12ebdab65853f27fbb418204646baf6ce69515e
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44126737"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "46523053"
 ---
 # <a name="configure-aspnet-core-to-work-with-proxy-servers-and-load-balancers"></a>프록시 서버 및 부하 분산 장치를 사용하도록 ASP.NET Core 구성
 
@@ -121,6 +121,7 @@ services.Configure<ForwardedHeadersOptions>(options =>
 ```
 
 ::: moniker range=">= aspnetcore-2.1"
+
 | 옵션 | 설명 |
 | ------ | ----------- |
 | AllowedHosts | `X-Forwarded-Host` 헤더에 의한 호스트를 제공된 값으로 제한합니다.<ul><li>값은 ordinal-ignore-case를 사용하여 비교됩니다.</li><li>포트 번호는 제외해야 합니다.</li><li>목록이 비어 있으면 모든 호스트가 허용됩니다.</li><li>최상위 수준 와일드카드 `*`는 비어 있지 않은 모든 호스트를 허용합니다.</li><li>하위 도메인 와일드카드는 허용되지만 루트 도메인과 일치하지 않습니다. 예를 들어 `*.contoso.com`은 하위 도메인 `foo.contoso.com`과 일치하지만 루트 도메인 `contoso.com`과 일치하지 않습니다.</li><li>유니코드 호스트 이름은 허용되지만 일치시킬 [Punycode](https://tools.ietf.org/html/rfc3492)로 변환됩니다.</li><li>[IPv6 주소](https://tools.ietf.org/html/rfc4291)는 경계 대괄호를 포함하고 [기존 형식](https://tools.ietf.org/html/rfc4291#section-2.2)이어야 합니다(예: `[ABCD:EF01:2345:6789:ABCD:EF01:2345:6789]`). IPv6 주소는 서로 다른 형식 간에 논리적 같음을 확인하기 위해 특별히 처리되지 않으며 정규화가 수행되지 않습니다.</li><li>허용된 호스트를 제한하지 못하면 공격자가 서비스에서 생성된 링크를 스푸핑할 수 있습니다.</li></ul>기본값은 빈 [IList\<string>](/dotnet/api/system.collections.generic.ilist-1)입니다. |
@@ -135,8 +136,11 @@ services.Configure<ForwardedHeadersOptions>(options =>
 | [OriginalHostHeaderName](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.originalhostheadername) | [ForwardedHeadersDefaults.XOriginalHostHeaderName](/dotnet/api/microsoft.aspnetcore.httpoverrides.forwardedheadersdefaults.xoriginalhostheadername)에서 지정된 헤더 대신 이 속성에서 지정된 헤더를 사용합니다.<br><br>기본값은 `X-Original-Host`입니다. |
 | [OriginalProtoHeaderName](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.originalprotoheadername) | [ForwardedHeadersDefaults.XOriginalProtoHeaderName](/dotnet/api/microsoft.aspnetcore.httpoverrides.forwardedheadersdefaults.xoriginalprotoheadername)에서 지정된 헤더 대신 이 속성에서 지정된 헤더를 사용합니다.<br><br>기본값은 `X-Original-Proto`입니다. |
 | [RequireHeaderSymmetry](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.requireheadersymmetry) | 처리 중인 [ForwardedHeadersOptions.ForwardedHeaders](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.forwardedheaders) 간에 동기화할 헤더 값 수가 필요합니다.<br><br>ASP.NET Core 1.x의 기본값은 `true`입니다. ASP.NET Core 2.0 이상의 기본값은 `false`입니다. |
+
 ::: moniker-end
+
 ::: moniker range="<= aspnetcore-2.0"
+
 | 옵션 | 설명 |
 | ------ | ----------- |
 | [ForwardedForHeaderName](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.forwardedforheadername) | [ForwardedHeadersDefaults.XForwardedForHeaderName](/dotnet/api/microsoft.aspnetcore.httpoverrides.forwardedheadersdefaults.xforwardedforheadername)에서 지정된 헤더 대신 이 속성에서 지정된 헤더를 사용합니다. 이 옵션은 프록시/전달자가 `X-Forwarded-For` 헤더를 사용하지 않고 일부 다른 헤더를 사용하여 정보를 전달할 때 사용됩니다.<br><br>기본값은 `X-Forwarded-For`입니다. |
@@ -150,6 +154,7 @@ services.Configure<ForwardedHeadersOptions>(options =>
 | [OriginalHostHeaderName](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.originalhostheadername) | [ForwardedHeadersDefaults.XOriginalHostHeaderName](/dotnet/api/microsoft.aspnetcore.httpoverrides.forwardedheadersdefaults.xoriginalhostheadername)에서 지정된 헤더 대신 이 속성에서 지정된 헤더를 사용합니다.<br><br>기본값은 `X-Original-Host`입니다. |
 | [OriginalProtoHeaderName](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.originalprotoheadername) | [ForwardedHeadersDefaults.XOriginalProtoHeaderName](/dotnet/api/microsoft.aspnetcore.httpoverrides.forwardedheadersdefaults.xoriginalprotoheadername)에서 지정된 헤더 대신 이 속성에서 지정된 헤더를 사용합니다.<br><br>기본값은 `X-Original-Proto`입니다. |
 | [RequireHeaderSymmetry](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.requireheadersymmetry) | 처리 중인 [ForwardedHeadersOptions.ForwardedHeaders](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.forwardedheaders) 간에 동기화할 헤더 값 수가 필요합니다.<br><br>ASP.NET Core 1.x의 기본값은 `true`입니다. ASP.NET Core 2.0 이상의 기본값은 `false`입니다. |
+
 ::: moniker-end
 
 ## <a name="scenarios-and-use-cases"></a>시나리오 및 사용 사례
@@ -244,44 +249,85 @@ services.Configure<ForwardedHeadersOptions>(options =>
 
 ## <a name="troubleshoot"></a>문제 해결
 
-헤더가 예상대로 전달되지 않으면 [로깅](xref:fundamentals/logging/index)을 사용하도록 설정합니다. 로그가 문제를 해결하기에 충분한 정보를 제공하지 않으면 서버가 수신하는 요청 헤더를 열거합니다. 인라인 미들웨어를 사용하여 앱 응답에 헤더를 기록할 수 있습니다.
+헤더가 예상대로 전달되지 않으면 [로깅](xref:fundamentals/logging/index)을 사용하도록 설정합니다. 로그가 문제를 해결하기에 충분한 정보를 제공하지 않으면 서버가 수신하는 요청 헤더를 열거합니다. 인라인 미들웨어를 사용하여 앱 응답에 요청 헤더를 쓰거나 헤더를 기록합니다. `Startup.Configure`에서 <xref:Microsoft.AspNetCore.Builder.ForwardedHeadersExtensions.UseForwardedHeaders*> 호출 바로 뒤에 다음 코드 예제 중 하나를 넣습니다.
+
+앱 응답에 헤더를 쓰려면 다음 터미널 인라인 미들웨어를 사용합니다.
 
 ```csharp
-public void Configure(IApplicationBuilder app, ILoggerFactory loggerfactory)
+app.Run(async (context) =>
 {
-    app.Run(async (context) =>
+    context.Response.ContentType = "text/plain";
+
+    // Request method, scheme, and path
+    await context.Response.WriteAsync(
+        $"Request Method: {context.Request.Method}{Environment.NewLine}");
+    await context.Response.WriteAsync(
+        $"Request Scheme: {context.Request.Scheme}{Environment.NewLine}");
+    await context.Response.WriteAsync(
+        $"Request Path: {context.Request.Path}{Environment.NewLine}");
+
+    // Headers
+    await context.Response.WriteAsync($"Request Headers:{Environment.NewLine}");
+
+    foreach (var header in context.Request.Headers)
     {
-        context.Response.ContentType = "text/plain";
+        await context.Response.WriteAsync($"{header.Key}: " +
+            $"{header.Value}{Environment.NewLine}");
+    }
 
-        // Request method, scheme, and path
-        await context.Response.WriteAsync(
-            $"Request Method: {context.Request.Method}{Environment.NewLine}");
-        await context.Response.WriteAsync(
-            $"Request Scheme: {context.Request.Scheme}{Environment.NewLine}");
-        await context.Response.WriteAsync(
-            $"Request Path: {context.Request.Path}{Environment.NewLine}");
+    await context.Response.WriteAsync(Environment.NewLine);
 
-        // Headers
-        await context.Response.WriteAsync($"Request Headers:{Environment.NewLine}");
-
-        foreach (var header in context.Request.Headers)
-        {
-            await context.Response.WriteAsync($"{header.Key}: " +
-                $"{header.Value}{Environment.NewLine}");
-        }
-
-        await context.Response.WriteAsync(Environment.NewLine);
-
-        // Connection: RemoteIp
-        await context.Response.WriteAsync(
-            $"Request RemoteIp: {context.Connection.RemoteIpAddress}");
-    });
-}
+    // Connection: RemoteIp
+    await context.Response.WriteAsync(
+        $"Request RemoteIp: {context.Connection.RemoteIpAddress}");
+});
 ```
 
-X-Forwarded-* 헤더가 서버에서 예상한 값으로 수신되는지 확인합니다. 제공된 헤더에 여러 값이 있는 경우 전달된 헤더 미들웨어는 오른쪽에서 왼쪽으로 역순으로 헤더를 처리합니다.
+다음 인라인 미들웨어를 사용하여 응답 본문 대신 로그에 쓸 수도 있습니다. 이렇게 하면 디버그하는 동안 사이트가 정상적으로 작동할 수 있습니다.
 
-요청의 원래 원격 IP는`X-Forwarded-For`가 처리되기 전에 `KnownProxies` 또는 `KnownNetworks` 목록의 항목과 일치해야 합니다. 이렇게 하면 신뢰할 수 없는 프록시에서 전달자가 허용되지 않아 헤더 스푸핑이 제한됩니다.
+```csharp
+var logger = _loggerFactory.CreateLogger<Startup>();
+
+app.Use(async (context, next) =>
+{
+    // Request method, scheme, and path
+    logger.LogDebug("Request Method: {METHOD}", context.Request.Method);
+    logger.LogDebug("Request Scheme: {SCHEME}", context.Request.Scheme);
+    logger.LogDebug("Request Path: {PATH}", context.Request.Path);
+
+    // Headers
+    foreach (var header in context.Request.Headers)
+    {
+        logger.LogDebug("Header: {KEY}: {VALUE}", header.Key, header.Value);
+    }
+
+    // Connection: RemoteIp
+    logger.LogDebug("Request RemoteIp: {REMOTE_IP_ADDRESS}", 
+        context.Connection.RemoteIpAddress);
+
+    await next();
+});
+```
+
+처리 시 `X-Forwarded-{For|Proto|Host}` 값이 `X-Original-{For|Proto|Host}`로 이동됩니다. 제공된 헤더에 여러 값이 있는 경우 전달된 헤더 미들웨어는 오른쪽에서 왼쪽으로 역순으로 헤더를 처리합니다. 기본 `ForwardLimit`는 1이므로 `ForwardLimit`의 값을 늘리지 않는 한, 헤더에서 맨 오른쪽 값만 처리됩니다.
+
+요청의 원래 원격 IP는 전달된 헤더가 처리되기 전에 `KnownProxies` 또는 `KnownNetworks` 목록의 항목과 일치해야 합니다. 이렇게 하면 신뢰할 수 없는 프록시에서 전달자가 허용되지 않아 헤더 스푸핑이 제한됩니다. 알 수 없는 프록시가 검색되면 로그에 프록시 주소가 기록됩니다.
+
+```console
+September 20th 2018, 15:49:44.168 Unknown proxy: 10.0.0.100:54321
+```
+
+앞의 예제에서 10.0.0.100은 프록시 서버입니다. 서버가 신뢰할 수 있는 프록시인 경우 서버의 IP 주소를 `Startup.ConfigureServices`의 `KnownProxies`에 추가합니다(또는 신뢰할 수 있는 네트워크를 `KnownNetworks`에 추가). 자세한 내용은 [전달된 헤더 미들웨어 옵션](#forwarded-headers-middleware-options) 섹션을 참조하세요.
+
+```csharp
+services.Configure<ForwardedHeadersOptions>(options =>
+{
+    options.KnownProxies.Add(IPAddress.Parse("10.0.0.100"));
+});
+```
+
+> [!IMPORTANT]
+> 신뢰할 수 있는 프록시 및 네트워크만 헤더를 전달할 수 있습니다. 그렇지 않을 경우 [IP 스푸핑](https://www.iplocation.net/ip-spoofing) 공격이 가능합니다.
 
 ## <a name="additional-resources"></a>추가 자료
 

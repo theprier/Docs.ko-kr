@@ -4,14 +4,14 @@ author: guardrex
 description: Windows 서비스에서 ASP.NET Core 앱을 호스트하는 방법을 알아봅니다.
 ms.author: tdykstra
 ms.custom: mvc
-ms.date: 06/04/2018
+ms.date: 09/25/2018
 uid: host-and-deploy/windows-service
-ms.openlocfilehash: 68afe77b05a717cffecc32188f18e9fde208b81f
-ms.sourcegitcommit: 3ca20ed63bf1469f4365f0c1fbd00c98a3191c84
+ms.openlocfilehash: eb88b0bb2e9ce4cfd3a7db2081ad7d62d5dcb08e
+ms.sourcegitcommit: 599ebae5c2d6fcb22dfa6ae7d1f4bdfcacb79af4
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/17/2018
-ms.locfileid: "41751534"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47211041"
 ---
 # <a name="host-aspnet-core-in-a-windows-service"></a>Windows 서비스에서 ASP.NET Core 호스트
 
@@ -21,13 +21,13 @@ IIS를 [Windows 서비스](/dotnet/framework/windows-services/introduction-to-wi
 
 [예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/host-and-deploy/windows-service/samples)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
 
-## <a name="get-started"></a>시작
+## <a name="convert-a-project-into-a-windows-service"></a>프로젝트를 Windows 서비스로 변환
 
-기존 ASP.NET Core 프로젝트를 서비스에서 실행하도록 설정하려면 다음과 같은 최소 변경 내용이 필요합니다.
+기존 ASP.NET Core 프로젝트를 서비스로 실행되도록 설정하려면 다음과 같은 최소 변경 작업이 필요합니다.
 
 1. 프로젝트 파일에서:
 
-   1. 런타임 식별자의 존재 여부를 확인하거나 이를 대상 프레임워크를 포함하는 **\<PropertyGroup>** 에 추가합니다.
+   * Windows [RID(런타임 식별자)](/dotnet/core/rid-catalog)가 있는지 확인하거나, 대상 프레임워크가 포함된 `<PropertyGroup>`에 추가합니다.
 
       ::: moniker range=">= aspnetcore-2.1"
 
@@ -62,7 +62,14 @@ IIS를 [Windows 서비스](/dotnet/framework/windows-services/introduction-to-wi
 
       ::: moniker-end
 
-   1. [Microsoft.AspNetCore.Hosting.WindowsServices](https://www.nuget.org/packages/Microsoft.AspNetCore.Hosting.WindowsServices/)에 패키지 참조를 추가합니다.
+      여러 개의 RID를 게시하려면
+
+      * 세미콜론으로 구분된 목록으로 RID를 제공합니다.
+      * 속성 이름 `<RuntimeIdentifiers>`(복수)를 사용합니다.
+
+      자세한 내용은 [.NET Core RID 카탈로그](/dotnet/core/rid-catalog)를 참조하세요.
+
+   * [Microsoft.AspNetCore.Hosting.WindowsServices](https://www.nuget.org/packages/Microsoft.AspNetCore.Hosting.WindowsServices)에 패키지 참조를 추가합니다.
 
 1. `Program.Main`에서 다음과 같이 변경합니다.
 
@@ -84,10 +91,10 @@ IIS를 [Windows 서비스](/dotnet/framework/windows-services/introduction-to-wi
 
 1. 앱을 게시합니다. [dotnet publish](/dotnet/articles/core/tools/dotnet-publish) 또는 [Visual Studio 게시 프로필](xref:host-and-deploy/visual-studio-publish-profiles)을 사용합니다. Visual Studio를 사용할 때 **FolderProfile**을 선택합니다.
 
-   명령줄에서 샘플 앱을 게시하려면 프로젝트 폴더의 콘솔 창에서 다음 명령을 실행합니다.
+   CLI(명령줄 인터페이스) 도구를 사용하여 샘플 앱을 게시하려면 프로젝트 폴더의 명령 프롬프트에서 [dotnet publish](/dotnet/core/tools/dotnet-publish) 명령을 실행합니다. 프로젝트 파일의 `<RuntimeIdenfifier>`(또는 `<RuntimeIdentifiers>`) 속성에 RID를 지정해야 합니다. 다음 예제에서는 `win7-x64` 런타임에 대한 릴리스 구성에 앱이 게시됩니다.
 
    ```console
-   dotnet publish --configuration Release
+   dotnet publish --configuration Release --runtime win7-x64
    ```
 
 1. [sc.exe](https://technet.microsoft.com/library/bb490995) 명령줄 도구를 사용하여 서비스를 만듭니다. `binPath` 값은 실행 파일 이름을 포함하는 앱의 실행 파일 경로입니다. **경로의 시작 부분에서 등호와 인용 문자 사이에 공간이 필요합니다.**
@@ -98,7 +105,7 @@ IIS를 [Windows 서비스](/dotnet/framework/windows-services/introduction-to-wi
 
    프로젝트 폴더에서 게시된 서비스의 경우 *publish* 폴더에 대한 경로를 사용하여 서비스를 만듭니다. 다음 예제에서는
 
-   * 프로젝트는 `c:\my_services\AspNetCoreService` 폴더에 있습니다.
+   * 프로젝트가 *c:\\my_services\\AspNetCoreService* 폴더에 있습니다.
    * 프로젝트는 `Release` 구성에 게시됩니다.
    * TFM(대상 프레임워크 모니커)은 `netcoreapp2.1`입니다.
    * RID(런타임 ID)는 `win7-x64`입니다.
@@ -110,14 +117,14 @@ IIS를 [Windows 서비스](/dotnet/framework/windows-services/introduction-to-wi
    ```console
    sc create MyService binPath= "c:\my_services\AspNetCoreService\bin\Release\netcoreapp2.1\win7-x64\publish\AspNetCoreService.exe"
    ```
-   
+
    > [!IMPORTANT]
    > `binPath=` 인수와 해당 값 사이에 공간이 있어야 합니다.
-   
+
    다른 폴더의 서비스를 게시하고 시작하려면:
-   
-      1. `dotnet publish` 명령에 대해 [--output &lt;OUTPUT_DIRECTORY&gt;](/dotnet/core/tools/dotnet-publish#options) 옵션을 사용합니다. Visual Studio를 사용하는 경우 **게시** 단추를 선택하기 전에 **FolderProfile** 게시 속성 페이지에 **대상 위치**를 구성하세요.
-   1. 출력 폴더 경로를 사용하는 `sc.exe` 명령으로 서비스를 만듭니다. `binPath`에 제공된 경로에 서비스의 실행 파일 이름을 포함합니다.
+
+      * `dotnet publish` 명령에 대해 [--output &lt;OUTPUT_DIRECTORY&gt;](/dotnet/core/tools/dotnet-publish#options) 옵션을 사용합니다. Visual Studio를 사용하는 경우 **게시** 단추를 선택하기 전에 **FolderProfile** 게시 속성 페이지에 **대상 위치**를 구성하세요.
+      * 출력 폴더 경로를 사용하는 `sc.exe` 명령으로 서비스를 만듭니다. `binPath`에 제공된 경로에 서비스의 실행 파일 이름을 포함합니다.
 
 1. `sc start <SERVICE_NAME>` 명령을 사용하여 서비스를 시작합니다.
 
@@ -129,7 +136,7 @@ IIS를 [Windows 서비스](/dotnet/framework/windows-services/introduction-to-wi
 
    명령은 서비스를 시작하는 데 몇 초 정도 걸립니다.
 
-1. `sc query <SERVICE_NAME>` 명령을 사용하여 해당 상태를 확인하기 위해 서비스의 상태를 확인합니다.
+1. 서비스 상태를 확인하려면 `sc query <SERVICE_NAME>` 명령을 사용합니다. 상태는 다음 값 중 하나로 보고됩니다.
 
    * `START_PENDING`
    * `RUNNING`
@@ -168,7 +175,7 @@ IIS를 [Windows 서비스](/dotnet/framework/windows-services/introduction-to-wi
    sc delete MyService
    ```
 
-## <a name="provide-a-way-to-run-outside-of-a-service"></a>서비스 외부에서 실행할 방법을 제공합니다.
+## <a name="run-the-app-outside-of-a-service"></a>서비스 외부에서 앱 실행
 
 서비스 외부에서 실행하면 테스트하고 디버그하기가 더 쉬우므로 특정 조건에서만 `RunAsService`를 호출하는 코드를 추가하는 것이 좋습니다. 예를 들어 `--console` 명령줄 인수를 사용하거나 디버거가 연결된 경우 앱을 콘솔 앱으로 실행할 수 있습니다.
 
@@ -232,7 +239,7 @@ ASP.NET Core 구성에 명령줄 인수에 대한 이름 값 쌍이 필요하기
 
 ## <a name="current-directory-and-content-root"></a>현재 디렉터리 및 콘텐츠 루트
 
-Windows 서비스에 대해 `Directory.GetCurrentDirectory()`를 호출하여 반환된 현재 작업 디렉터리는 *C:\WINDOWS\system32* 폴더입니다. *system32* 폴더는 서비스의 파일(예: 설정 파일)을 저장을 저장하는 데 적절한 위치가 아닙니다. 다음 방법 중 하나를 사용하여 [IConfigurationBuilder](/dotnet/api/microsoft.extensions.configuration.iconfigurationbuilder)를 사용할 때 [FileConfigurationExtensions.SetBasePath](/dotnet/api/microsoft.extensions.configuration.fileconfigurationextensions.setbasepath)로 서비스의 자산 및 설정 파일을 유지 관리 및 액세스합니다.
+Windows 서비스에 대해 `Directory.GetCurrentDirectory()`를 호출하여 반환된 현재 작업 디렉터리는 *C:\\WINDOWS\\system32* 폴더입니다. *system32* 폴더는 서비스의 파일(예: 설정 파일)을 저장을 저장하는 데 적절한 위치가 아닙니다. 다음 방법 중 하나를 사용하여 [IConfigurationBuilder](/dotnet/api/microsoft.extensions.configuration.iconfigurationbuilder)를 사용할 때 [FileConfigurationExtensions.SetBasePath](/dotnet/api/microsoft.extensions.configuration.fileconfigurationextensions.setbasepath)로 서비스의 자산 및 설정 파일을 유지 관리 및 액세스합니다.
 
 * 콘텐츠 루트 경로를 사용합니다. `IHostingEnvironment.ContentRootPath`는 서비스가 만들어질 때 `binPath` 인수에 제공된 동일한 경로입니다. 설정 파일에 대한 경로를 만들려면 `Directory.GetCurrentDirectory()`를 사용하는 대신 콘텐츠 루트 경로를 사용하고 앱의 콘텐츠 루트의 파일을 유지 관리합니다.
 * 디스크의 적합한 위치에 파일을 저장합니다. 파일을 포함하는 폴더에 `SetBasePath`로 절대 경로를 지정합니다.

@@ -4,14 +4,14 @@ author: spboyer
 description: Visual Studio 2017 도구 및 Windows용 Docker를 사용하여 ASP.NET Core 앱을 컨테이너화하는 방법에 대해 알아봅니다.
 ms.author: scaddie
 ms.custom: mvc
-ms.date: 07/26/2018
+ms.date: 09/12/2018
 uid: host-and-deploy/docker/visual-studio-tools-for-docker
-ms.openlocfilehash: 962c35cb1487dacd93fd78d09e2417ef77387e42
-ms.sourcegitcommit: 75bf5fdbfdcb6a7cfe8fe207b9ff37655ccbacd4
+ms.openlocfilehash: 4bb28e7644997c50c14046bc0c89338fa35a5f14
+ms.sourcegitcommit: a742b55e4b8276a48b8b4394784554fecd883c84
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39275865"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45538481"
 ---
 # <a name="visual-studio-tools-for-docker-with-aspnet-core"></a>Visual Studio Tools for Docker 및 ASP.NET Core
 
@@ -102,6 +102,10 @@ Visual Studio Tools for Docker는 다음 파일을 통해 솔루션에 *docker-c
 앞의 예제에서 `image: hellodockertools`는 앱이 **디버그** 모드에서 실행될 때 `hellodockertools:dev` 이미지를 생성합니다. 앱이 **릴리스** 모드에서 실행될 때 `hellodockertools:latest` 이미지가 생성됩니다.
 
 이미지가 레지스트리로 푸시되는 경우 이미지 이름 앞에 [Docker 허브](https://hub.docker.com/) 사용자 이름을 추가합니다(예: `dockerhubusername/hellodockertools`). 또는 구성에 따라 개인 레지스트리 URL을 포함하도록 이미지 이름을 변경합니다(예: `privateregistry.domain.com/hellodockertools`).
+
+빌드 구성(예: 디버그 또는 릴리스)에 따라 다른 동작을 원하는 경우 구성별 *docker-compose* 파일을 추가합니다. 파일은 빌드 구성에 따라 이름이 지정되어야(예: *docker-compose.vs.debug.yml* 및 *docker-compose.vs.release.yml*) 하며 *docker-compose-override.yml* 파일과 동일한 위치에 배치됩니다. 
+
+구성별 재정의 파일을 사용하여 디버그 및 릴리스 빌드 구성에 대해 서로 다른 구성 설정(예: 환경 변수 또는 진입점)을 지정할 수 있습니다.
 
 ### <a name="service-fabric"></a>Service Fabric
 
@@ -227,6 +231,7 @@ microsoft/aspnetcore        2.0     c69d39472da9  13 days ago     347MB
 
 ## <a name="additional-resources"></a>추가 자료
 
+* [Visual Studio를 사용한 컨테이너 개발](/visualstudio/containers)
 * [Azure Service Fabric: 개발 환경 준비](/azure/service-fabric/service-fabric-get-started)
 * [Azure Service Fabric에 Windows 컨테이너의 .NET 앱 배포](/azure/service-fabric/service-fabric-host-app-in-a-container)
 * [Docker 관련 Visual Studio 2017 개발 문제 해결](/azure/vs-azure-tools-docker-troubleshooting-docker-errors)

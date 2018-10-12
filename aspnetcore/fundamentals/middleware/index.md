@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 08/21/2018
 uid: fundamentals/middleware/index
-ms.openlocfilehash: e6dc76b7cb80e0dfda102df5aefb5d9ce9b821ed
-ms.sourcegitcommit: 847cc1de5526ff42a7303491e6336c2dbdb45de4
+ms.openlocfilehash: 84e79df7fcf5790e658a20c80f21d73cdc76c054
+ms.sourcegitcommit: 8bf4dff3069e62972c1b0839a93fb444e502afe7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43055808"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46483011"
 ---
 # <a name="aspnet-core-middleware"></a>ASP.NET Core 미들웨어
 
@@ -58,14 +58,18 @@ ASP.NET Core 요청 파이프라인은 하나씩 차례로 호출되는 요청 �
 
 미들웨어 구성 요소가 `Startup.Configure` 메서드에 추가되는 순서는 요청에서 미들웨어 구성 요소가 호출되는 순서와 응답에 대한 역순서를 정의합니다. 순서는 보안, 성능 및 기능에 중요합니다.
 
-다음 `Configure` 메서드는 다음 미들웨어 구성 요소를 추가합니다.
-
-1. 예외/오류 처리
-2. 정적 파일 서버
-3. 인증
-4. MVC
+다음 `Startup.Configure` 메서드는 공통 앱 시나리오를 위한 미들웨어 구성 요소를 추가합니다.
 
 ::: moniker range=">= aspnetcore-2.0"
+
+1. 예외/오류 처리
+1. HTTP 엄격한 전송 보안 프로토콜
+1. HTTPS 리디렉션
+1. 정적 파일 서버
+1. 쿠키 정책 적용
+1. 인증
+1. 세션
+1. MVC
 
 ```csharp
 public void Configure(IApplicationBuilder app)
@@ -96,11 +100,15 @@ public void Configure(IApplicationBuilder app)
     app.UseStaticFiles();
 
     // Use Cookie Policy Middleware to conform to EU General Data 
-    //   Protection Regulation (GDPR) regulations.
+    // Protection Regulation (GDPR) regulations.
     app.UseCookiePolicy();
 
     // Authenticate before the user accesses secure resources.
     app.UseAuthentication();
+
+    // If the app uses session state, call Session Middleware after Cookie 
+    // Policy Middleware and before MVC Middleware.
+    app.UseSession();
 
     // Add MVC to the request pipeline.
     app.UseMvc();
@@ -110,6 +118,12 @@ public void Configure(IApplicationBuilder app)
 ::: moniker-end
 
 ::: moniker range="< aspnetcore-2.0"
+
+1. 예외/오류 처리
+1. 정적 파일
+1. 인증
+1. 세션
+1. MVC
 
 ```csharp
 public void Configure(IApplicationBuilder app)
@@ -123,6 +137,10 @@ public void Configure(IApplicationBuilder app)
 
     // Authenticate before you access secure resources.
     app.UseIdentity();
+
+    // If the app uses session state, call UseSession before 
+    // MVC Middleware.
+    app.UseSession();
 
     // Add MVC to the request pipeline.
     app.UseMvcWithDefaultRoute();
@@ -215,12 +233,13 @@ ASP.NET Core는 다음과 같은 미들웨어 구성 요소가 함께 제공됩�
 | 미들웨어 | 설명 | 순서 |
 | ---------- | ----------- | ----- |
 | [인증](xref:security/authentication/identity) | 인증 지원을 제공합니다. | `HttpContext.User`가 필요하기 전에. OAuth 콜백에 대한 터미널. |
+| [쿠키 정책](xref:security/gdpr) | 개인 정보 저장과 관련한 사용자의 동의를 추적하고 쿠키 필드(예: `secure` 및 `SameSite`)에 대해 최소한의 표준을 적용합니다. | 쿠키를 발행하는 미들웨어 전에. 예: 인증, 세션, MVC(TempData). |
 | [CORS](xref:security/cors) | 원본 간 리소스 공유를 구성합니다. | CORS를 사용하는 구성 요소 이전. |
 | [진단](xref:fundamentals/error-handling) | 진단을 구성합니다. | 오류를 생성하는 구성 요소 이전. |
-| [전달된 헤더](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersextensions) | 프록시된 헤더를 현재 요청에 전달합니다. | 구성 요소가 업데이트된 필드를 사용하기 이전입니다(예: 체계, 호스트, 클라이언트 IP, 메서드). |
+| [전달된 헤더](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersextensions) | 프록시된 헤더를 현재 요청에 전달합니다. | 업데이트된 필드를 사용하는 구성 요소 전에. 예: 체계, 호스트, 클라이언트 IP, 메서드. |
 | [HTTP 메서드 재정의](/dotnet/api/microsoft.aspnetcore.builder.httpmethodoverrideextensions) | 들어오는 POST 요청이 메서드를 재정의하도록 허용합니다. | 업데이트된 메서드를 사용하는 구성 요소 앞입니다. |
 | [HTTPS 리디렉션](xref:security/enforcing-ssl#require-https) | HTTPS로 모든 HTTP 요청을 리디렉션합니다(ASP.NET Core 2.1 이상). | URL을 사용하는 구성 요소 이전. |
-| [HSTS(HTTP 엄격한 전송 보안)](xref:security/enforcing-ssl#http-strict-transport-security-protocol-hsts) | 특별한 응답 헤더를 추가하는 보안 향상 미들웨어입니다(ASP.NET Core 2.1 이상). | 응답이 보내지기 이전 및 구성 요소가 요청을 수정한 이후입니다(예: 전달된 헤더, URL 다시 쓰기). |
+| [HSTS(HTTP 엄격한 전송 보안)](xref:security/enforcing-ssl#http-strict-transport-security-protocol-hsts) | 특별한 응답 헤더를 추가하는 보안 향상 미들웨어입니다(ASP.NET Core 2.1 이상). | 응답이 전송되기 이전, 요청을 수정하는 구성 요소 이후에. 예: 전달된 헤더, URL 재작성. |
 | [MVC](xref:mvc/overview) | MVC/Razor Pages(ASP.NET Core 2.0 이상)를 사용하여 요청을 처리합니다. | 요청이 경로와 일치하는 경우 터미널입니다. |
 | [OWIN](xref:fundamentals/owin) | OWIN 기반 앱, 서버 및 미들웨어와 상호 운용됩니다. | OWIN 미들웨어가 요청을 완벽하게 처리하는 경우 터미널입니다. |
 | [응답 캐싱](xref:performance/caching/middleware) | 응답 캐시에 대한 지원을 제공합니다. | 캐싱이 필요한 구성 요소 이전. |

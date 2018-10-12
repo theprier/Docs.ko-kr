@@ -5,12 +5,12 @@ description: 이 자습서에서는 관련된 데이터 즉, Entity Framework에
 ms.author: riande
 ms.date: 11/05/2017
 uid: data/ef-rp/read-related-data
-ms.openlocfilehash: bb1d087a5449c6e26c40e572d161dd9644ac2323
-ms.sourcegitcommit: 8f8924ce4eb9effeaf489f177fb01b66867da16f
+ms.openlocfilehash: f57853fae7fb1cb7df130f38a6996c87a5c08e83
+ms.sourcegitcommit: c12ebdab65853f27fbb418204646baf6ce69515e
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/24/2018
-ms.locfileid: "39219344"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "46523287"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---read-related-data---6-of-8"></a>ASP.NET Core에서 EF Core를 사용한 Razor 페이지 - 관련 데이터 읽기 - 6/8
 
@@ -20,7 +20,7 @@ ms.locfileid: "39219344"
 
 이 자습서에서는 관련된 데이터를 읽고 표시합니다. 관련된 데이터는 EF Core에서 탐색 속성에 로드하는 데이터입니다.
 
-해결할 수 없는 문제가 발생한 경우 [이 단계에 완성된 앱](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples/StageSnapShots/cu-part6-related)을 다운로드합니다.
+해결할 수 없는 문제가 발생할 경우 [완성된 앱을 다운로드하거나 봅니다](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples). [지침을 다운로드하세요](xref:tutorials/index#how-to-download-a-sample).
 
 다음 그림은 이 자습서에 대해 완료된 페이지를 보여 줍니다.
 

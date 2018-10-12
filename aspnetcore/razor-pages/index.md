@@ -6,12 +6,12 @@ monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 05/12/2018
 uid: razor-pages/index
-ms.openlocfilehash: f5549a24c5b5fe2e6b33bd55960f87a8bf86bd19
-ms.sourcegitcommit: 5a2456cbf429069dc48aaa2823cde14100e4c438
+ms.openlocfilehash: f55d0e534dafb0709f1411bad9b038a87abde7ab
+ms.sourcegitcommit: c12ebdab65853f27fbb418204646baf6ce69515e
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "41870882"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "46523313"
 ---
 # <a name="introduction-to-razor-pages-in-aspnet-core"></a>ASP.NET Core의 Razor 페이지 소개
 
@@ -41,8 +41,6 @@ Visual Studio를 사용하여 Razor 페이지 프로젝트를 만드는 방법�
 
 명령줄에서 `dotnet new webapp`를 실행합니다.
 
-[!INCLUDE[](~/includes/webapp-alias-notice.md)]
-
 ::: moniker-end
 
 ::: moniker range="= aspnetcore-2.0"
@@ -59,8 +57,6 @@ Mac용 Visual Studio에서 생성된 *.csproj* 파일을 엽니다.
 
 명령줄에서 `dotnet new webapp`를 실행합니다.
 
-[!INCLUDE[](~/includes/webapp-alias-notice.md)]
-
 ::: moniker-end
 
 ::: moniker range="= aspnetcore-2.0"
@@ -74,8 +70,6 @@ Mac용 Visual Studio에서 생성된 *.csproj* 파일을 엽니다.
 ::: moniker range=">= aspnetcore-2.1"
 
 명령줄에서 `dotnet new webapp`를 실행합니다.
-
-[!INCLUDE[](~/includes/webapp-alias-notice.md)]
 
 ::: moniker-end
 
@@ -376,6 +370,8 @@ Razor 페이지의 뷰 검색에는 *Pages* 폴더가 포함됩니다. MVC 컨�
 
 [Razor 페이지 시작 프로젝트](#rpvs17)에는 클라이언트 쪽 유효성 검사를 연결하는 *Pages/_ValidationScriptsPartial.cshtml*이 포함됩니다.
 
+부분 뷰에 대한 자세한 내용은 <xref:mvc/views/partial>을 참조하세요.
+
 <a name="url_gen"></a>
 
 ## <a name="url-generation-for-pages"></a>페이지에 대한 URL 생성
@@ -417,6 +413,7 @@ Razor 페이지의 뷰 검색에는 *Pages* 폴더가 포함됩니다. MVC 컨�
 상대적 이름 연결은 구조가 복잡한 사이트를 빌드할 때 유용합니다. 상대적 이름을 사용하여 한 폴더의 여러 페이지 간을 연결하는 경우 해당 폴더의 이름을 바꿀 수 있습니다. 그래도 모든 링크가 작동합니다(폴더 이름을 포함하지 않기 때문).
 
 ::: moniker range=">= aspnetcore-2.1"
+
 ## <a name="viewdata-attribute"></a>ViewData 특성
 
 [ViewDataAttribute](/dotnet/api/microsoft.aspnetcore.mvc.viewdataattribute)를 사용하여 데이터를 페이지에 전달할 수 있습니다. `[ViewData]`로 데코레이팅된 컨트롤러 또는 Razor 페이지 모델의 속성은 값을 [ViewDataDictionary](/dotnet/api/microsoft.aspnetcore.mvc.viewfeatures.viewdatadictionary)에 저장하고 로드됩니다.
@@ -450,6 +447,7 @@ public class AboutModel : PageModel
     <title>@ViewData["Title"] - WebApplication</title>
     ...
 ```
+
 ::: moniker-end
 
 ## <a name="tempdata"></a>TempData
@@ -558,11 +556,12 @@ services.AddMvc()
     .WithRazorPagesRoot("/path/to/razor/pages");
 ```
 
-## <a name="see-also"></a>참고 항목
+## <a name="additional-resources"></a>추가 자료
 
-* [ASP.NET Core 소개](xref:index)
-* [Razor 구문](xref:mvc/views/razor)
-* [Razor 페이지 시작](xref:tutorials/razor-pages/razor-pages-start)
-* [Razor 페이지 권한 부여 규칙](xref:security/authorization/razor-pages-authorization)
-* [Razor 페이지 사용자 지정 경로 및 페이지 모델 공급자](xref:razor-pages/razor-pages-conventions)
-* [Razor 페이지 단위 테스트](xref:test/razor-pages-tests)
+* <xref:index>
+* <xref:mvc/views/razor>
+* <xref:tutorials/razor-pages/razor-pages-start>
+* <xref:security/authorization/razor-pages-authorization>
+* <xref:razor-pages/razor-pages-conventions>
+* <xref:test/razor-pages-tests>
+* <xref:mvc/views/partial>

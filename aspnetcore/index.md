@@ -3,14 +3,14 @@ title: ASP.NET Core 소개
 author: rick-anderson
 description: 클라우드 기반 인터넷에 연결된 최신 응용 프로그램을 빌드하기 위한 플랫폼 간 고성능 오픈 소스 프레임워크인 ASP.NET Core에 대한 소개를 가져옵니다.
 ms.author: riande
-ms.date: 02/28/2018
+ms.date: 9/28/2018
 uid: index
-ms.openlocfilehash: 6de7f1bc8229c5de519e4064dda0a7061cf8b9c6
-ms.sourcegitcommit: 931b6a2d7eb28a0f1295e8a95690b8c4c5f58477
+ms.openlocfilehash: 85f2aa04e4b6692dd03a63f14bcebdec97ee270e
+ms.sourcegitcommit: 32f5ee0690604d451f61e9a5c28881c9fcf85738
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37077714"
+ms.lasthandoff: 09/29/2018
+ms.locfileid: "47454780"
 ---
 # <a name="introduction-to-aspnet-core"></a>ASP.NET Core 소개
 
@@ -40,8 +40,6 @@ ASP.NET Core는 다음과 같은 이점을 제공합니다.
 * Windows, macOS 및 Linux에서 빌드하고 실행할 수 있습니다.
 * 오픈 소스이며 [커뮤니티에 중점](https://live.asp.net/)을 둡니다.
 
-ASP.NET Core는 완전히 [NuGet](https://www.nuget.org/) 패키지로 제공됩니다. NuGet 패키지를 사용하면 필요한 종속성만 포함하도록 앱을 최적화할 수 있습니다. 실제로 .NET Core를 대상으로 하는 ASP.NET Core 2.x 앱에는 [단일 NuGet 패키지](xref:fundamentals/metapackage)만 필요합니다. 작은 앱 노출 영역의 혜택에는 보안 강화, 서비스 절감, 성능 향상이 포함됩니다.
-
 ## <a name="build-web-apis-and-web-ui-using-aspnet-core-mvc"></a>ASP.NET Core MVC를 사용하여 웹 API 및 웹 UI 빌드
 
 ASP.NET Core MVC에서는 [Web API](xref:tutorials/index#build-web-apis) 및 [웹앱](xref:tutorials/index#build-web-apps)을 빌드하는 기능을 제공합니다.
@@ -52,7 +50,7 @@ ASP.NET Core MVC에서는 [Web API](xref:tutorials/index#build-web-apis) 및 [�
 * [태그 도우미](xref:mvc/views/tag-helpers/intro)를 사용하면 서버 쪽 코드를 Razor 파일에서 HTML 요소를 만들고 렌더링하는 데 사용할 수 있습니다.
 * [여러 데이터 형식 및 콘텐츠 협상](xref:web-api/advanced/formatting)에 대한 기본 제공 지원을 통해 웹 API를 브라우저 및 모바일 장치를 포함한 다양한 클라이언트에 연결할 수 있습니다.
 * [모델 바인딩](xref:mvc/models/model-binding)은 작업 메서드 매개 변수에 HTTP 요청의 데이터를 자동으로 매핑합니다.
-* [유효성 검사 모델](xref:mvc/models/validation)은 자동으로 클라이언트와 서버 쪽 유효성 검사를 수행합니다.
+* [모델 유효성 검사](xref:mvc/models/validation)는 자동으로 클라이언트 쪽 및 서버 쪽 유효성 검사를 수행합니다.
 
 ## <a name="client-side-development"></a>클라이언트 쪽 개발
 
@@ -78,5 +76,6 @@ ASP.NET Core는 .NET Core 또는 .NET Framework를 대상으로 지정할 수 �
 
 * [Razor 페이지 시작](xref:tutorials/razor-pages/razor-pages-start)
 * [ASP.NET Core 자습서](xref:tutorials/index)
+* <xref:tutorials/publish-to-azure-webapp-using-vs>
 * [ASP.NET Core 기본 사항](xref:fundamentals/index)
 * [매주 ASP.NET 커뮤니티 스탠드업](https://live.asp.net/)은 팀의 진행률 및 계획을 다루고 새 블로그 및 타사 소프트웨어를 설명합니다.
