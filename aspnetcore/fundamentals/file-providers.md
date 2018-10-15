@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 08/01/2018
 uid: fundamentals/file-providers
-ms.openlocfilehash: 512229cfe7d7efdcd9050fa13dbdbf793be29a0b
-ms.sourcegitcommit: 571d76fbbff05e84406b6d909c8fe9cbea2c8ff1
+ms.openlocfilehash: a0d326f5fc995cb903380315879d39a8ce851d06
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/01/2018
-ms.locfileid: "39410158"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48913218"
 ---
 # <a name="file-providers-in-aspnet-core"></a>ASP.NET Core의 파일 공급자
 
@@ -38,7 +38,7 @@ ASP.NET Core에서 파일 공급자를 사용하여 파일 시스템 액세스�
 
 * [Exists](/dotnet/api/microsoft.extensions.fileproviders.ifileinfo.exists)
 * [IsDirectory](/dotnet/api/microsoft.extensions.fileproviders.ifileinfo.isdirectory)
-* [Name](/dotnet/api/microsoft.extensions.fileproviders.ifileinfo.name)
+* [이름](/dotnet/api/microsoft.extensions.fileproviders.ifileinfo.name)
 * [Length](/dotnet/api/microsoft.extensions.fileproviders.ifileinfo.length)(바이트)
 * [LastModified](/dotnet/api/microsoft.extensions.fileproviders.ifileinfo.lastmodified) 날짜
 
@@ -141,7 +141,7 @@ var physicalProvider = _env.ContentRootFileProvider;
 [ManifestEmbeddedFileProvider](/dotnet/api/microsoft.extensions.fileproviders.manifestembeddedfileprovider)는 어셈블리에 포함된 파일에 액세스하기 위해서 사용됩니다. `ManifestEmbeddedFileProvider`는 어셈블리로 컴파일된 매니페스트를 사용하여 포함된 파일의 원래 경로를 재구성합니다.
 
 > [!NOTE]
-> `ManifestEmbeddedFileProvider`는 ASP.NET Core 2.1 이상에서 사용할 수 있습니다. ASP.NET Core 2.0 또는 그 이전 버전의 어셈블리에 포함된 파일에 액세스하려면 [이 항목의 ASP.NET Core 1.x 버전](xref:fundamentals/file-providers?view=aspnetcore-1.1)을 참조하세요.
+> `ManifestEmbeddedFileProvider`는 ASP.NET Core 2.1 이상에서 사용할 수 있습니다. ASP.NET Core 2.0 또는 그 이전 버전의 어셈블리에 포함된 파일에 액세스하려면 [이 항목의 ASP.NET Core 1.x 버전](/aspnet/core/fundamentals/file-providers?view=aspnetcore-1.1)을 참조하세요.
 
 포함된 파일의 매니페스트를 생성하려면 `<GenerateEmbeddedFilesManifest>` 속성을 `true`로 설정합니다. [&lt;EmbeddedResource&gt;](/dotnet/core/tools/csproj#default-compilation-includes-in-net-core-projects)를 사용하여 포함할 파일을 지정합니다.
 
