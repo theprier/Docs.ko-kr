@@ -5,12 +5,12 @@ description: 이 문서에는 ASP.NET Core 응용 프로그램에서 Entity Fram
 ms.author: tdykstra
 ms.date: 02/24/2017
 uid: data/entity-framework-6
-ms.openlocfilehash: 500954bdf8ea592e0ed706943e0f5ba4f4594dbc
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: ba3ee137bfefd53cf2b7be2f328651ad38104ab5
+ms.sourcegitcommit: 70fb7c9d5f2ddfcf4747382a9f7159feca7a6aa7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36274081"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45601745"
 ---
 # <a name="get-started-with-aspnet-core-and-entity-framework-6"></a>ASP.NET Core 및 Entity Framework 6 시작
 
@@ -66,9 +66,10 @@ Visual Studio에서 다음 단계에 따라 이 샘플을 처음부터 만들 �
 
 * 솔루션을 만듭니다.
 
-* **[새 프로젝트 추가] > [웹] > [ASP.NET Core 웹 응용 프로그램(.NET Framework)]**
+* ph id="ph1" xmlns="urn:oasis:names:tc:xliff:document:1.2"> &gt; </ph>**새 프로젝트** > **웹** > **ASP.NET Core 웹 응용 프로그램** **추가**
+  * 프로젝트 템플릿 선택 대화 상자의 드롭다운에서 API 및 .NET Framework 선택
 
-* **[새 프로젝트 추가] > [Windows 클래식 바탕 화면] > [클래스 라이브러리(.NET Framework)]**
+* ph id="ph1" xmlns="urn:oasis:names:tc:xliff:document:1.2"> &gt; </ph>**새 프로젝트** > **Windows 데스크톱** > **클래스 라이브러리(.NET Framework)** **추가**
 
 * 두 프로젝트에 대한 **PMC(패키지 관리자 콘솔)** 에서 `Install-Package Entityframework` 명령을 실행합니다.
 
