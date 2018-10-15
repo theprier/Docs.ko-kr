@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 09/15/2018
 uid: performance/caching/memory
-ms.openlocfilehash: 2570ad7d939d67530b3de8cd0147815c2e25ecc8
-ms.sourcegitcommit: 8bf4dff3069e62972c1b0839a93fb444e502afe7
+ms.openlocfilehash: 960aa18f9d14f633118ccd716201e61464085c05
+ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "46482985"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49325928"
 ---
 # <a name="cache-in-memory-in-aspnet-core"></a>ASP.NET Core의 메모리 내 캐시
 
@@ -27,7 +27,11 @@ ASP.NET Core는 몇 가지 다른 종류의 캐시를 지원합니다. 가장 �
 
 웹 팜에서 비-고정 세션을 사용할 경우에는 캐시 일관성 문제가 발생하지 않도록 [분산 캐시](distributed.md)가 필요합니다. 일부 앱에서는 분산된 된 캐시는 메모리 내 캐시 보다 더 높은 규모를 지원할 수 있습니다. 분산 캐시를 사용하면 캐시 메모리를 외부 프로세스에서 관리합니다.
 
+::: moniker range="< aspnetcore-2.0"
+
 `IMemoryCache` 캐시는 [캐시 우선 순위](/dotnet/api/microsoft.extensions.caching.memory.cacheitempriority)가 `CacheItemPriority.NeverRemove`로 설정되지 않은 캐시 항목을 메모리 부하에 따라 제거합니다. `CacheItemPriority`를 설정하면 메모리에 부하가 걸렸을 때 캐시가 항목을 제거하는 우선 순위를 조정할 수 있습니다.
+
+::: moniker-end
 
 메모리 내 캐시는 모든 개체를 저장할 수 있는 반면, 분산 캐시 인터페이스는 `byte[]`만 저장할 수 있습니다.
 

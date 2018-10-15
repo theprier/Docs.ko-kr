@@ -4,14 +4,14 @@ author: steve-smith
 description: 악성 웹 사이트는 클라이언트 브라우저와 앱 간의 상호 작용에 영향을 줄 수 있는 웹 앱에 대 한 공격을 방지 하는 방법을 알아봅니다.
 ms.author: riande
 ms.custom: mvc
-ms.date: 03/19/2018
+ms.date: 10/11/2018
 uid: security/anti-request-forgery
-ms.openlocfilehash: 6a30e1e2321ca3a81d6e1a320d1d87dddb3033c7
-ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
+ms.openlocfilehash: 213d6d09501b5428bdaad454ec487702ef2a02a6
+ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39095790"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49325915"
 ---
 # <a name="prevent-cross-site-request-forgery-xsrfcsrf-attacks-in-aspnet-core"></a>ASP.NET Core에서 방지 교차 사이트 요청 위조 (XSRF/CSRF) 공격
 
@@ -179,6 +179,31 @@ ASP.NET Core를 포함 세 [필터](xref:mvc/controllers/filters) 위조 방지 
 
 사용자 지정 [위조 방지 옵션](/dotnet/api/Microsoft.AspNetCore.Antiforgery.AntiforgeryOptions) 에서 `Startup.ConfigureServices`:
 
+::: moniker range=">= aspnetcore-2.0"
+
+```csharp
+services.AddAntiforgery(options => 
+{
+    // Set Cookie properties using CookieBuilder properties†.
+    options.FormFieldName = "AntiforgeryFieldname";
+    options.HeaderName = "X-CSRF-TOKEN-HEADERNAME";
+    options.SuppressXFrameOptionsHeader = false;
+});
+```
+
+&dagger;antiforgery 설정 `Cookie` 의 속성을 사용 하 여 속성을 [CookieBuilder](/dotnet/api/microsoft.aspnetcore.http.cookiebuilder) 클래스입니다.
+
+| 옵션 | 설명 |
+| ------ | ----------- |
+| [쿠키](/dotnet/api/microsoft.aspnetcore.antiforgery.antiforgeryoptions.cookie) | 위조 방지 쿠키를 만드는 데 설정을 결정 합니다. |
+| [FormFieldName](/dotnet/api/microsoft.aspnetcore.antiforgery.antiforgeryoptions.formfieldname) | 위조 방지 토큰 보기에서 렌더링할 위조 방지 시스템에서 사용 하는 숨겨진된 폼 필드의 이름입니다. |
+| [HeaderName](/dotnet/api/microsoft.aspnetcore.antiforgery.antiforgeryoptions.headername) | 위조 방지 시스템에서 사용 하는 헤더의 이름입니다. 경우 `null`, 시스템 데이터 형식에만 고려 합니다. |
+| [SuppressXFrameOptionsHeader](/dotnet/api/microsoft.aspnetcore.antiforgery.antiforgeryoptions.suppressxframeoptionsheader) | 생성을 보류할 지 여부를 지정 된 `X-Frame-Options` 헤더입니다. 기본적으로 헤더는 "SAMEORIGIN"의 값을 사용 하 여 생성 됩니다. 기본값은 `false`입니다. |
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
+
 ```csharp
 services.AddAntiforgery(options => 
 {
@@ -202,6 +227,8 @@ services.AddAntiforgery(options =>
 | [HeaderName](/dotnet/api/microsoft.aspnetcore.antiforgery.antiforgeryoptions.headername) | 위조 방지 시스템에서 사용 하는 헤더의 이름입니다. 경우 `null`, 시스템 데이터 형식에만 고려 합니다. |
 | [RequireSsl](/dotnet/api/microsoft.aspnetcore.antiforgery.antiforgeryoptions.requiressl) | SSL이 위조 방지 시스템에서 여부를 지정 합니다. 경우 `true`, 비 SSL 요청은 실패 합니다. 기본값은 `false`입니다. 이 속성은 사용 되지 않습니다 및 이후 버전에서 제거 됩니다. 권장된 대안 Cookie.SecurePolicy를 설정 하는 것입니다. |
 | [SuppressXFrameOptionsHeader](/dotnet/api/microsoft.aspnetcore.antiforgery.antiforgeryoptions.suppressxframeoptionsheader) | 생성을 보류할 지 여부를 지정 된 `X-Frame-Options` 헤더입니다. 기본적으로 헤더는 "SAMEORIGIN"의 값을 사용 하 여 생성 됩니다. 기본값은 `false`입니다. |
+
+::: moniker-end
 
 자세한 내용은 [CookieAuthenticationOptions](/dotnet/api/Microsoft.AspNetCore.Builder.CookieAuthenticationOptions)합니다.
 

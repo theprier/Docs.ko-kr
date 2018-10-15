@@ -8,12 +8,12 @@ ms.date: 06/06/2012
 ms.assetid: a585c9a2-7c8e-478b-9706-90f3739c50d1
 msc.legacyurl: /web-forms/overview/performance-and-caching/using-asynchronous-methods-in-aspnet-45
 msc.type: authoredcontent
-ms.openlocfilehash: eeb8ac4402b5e3d233082a749ad16ed98d4a71fc
-ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
+ms.openlocfilehash: 61bb977af9dca6fc080151ffd6ea3d966f1b1592
+ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48577810"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49325421"
 ---
 <a name="using-asynchronous-methods-in-aspnet-45"></a>ASP.NET 4.5에서에서 비동기 메서드 사용
 ====================
@@ -62,7 +62,7 @@ ms.locfileid: "48577810"
 - 단순성이 효율성 보다 더 중요 합니다.
 - 작업에는 광범위 한 디스크 또는 네트워크 오버 헤드를 포함 하는 작업이 아닌 주로 CPU 작업 인 경우 CPU 바인딩된 작업에 비동기 메서드를 사용 하 여 장점을 제공 하지 않습니다 하 고 오버 헤드만 증가 합니다.
 
-  일반적으로 다음 조건에 대 한 비동기 메서드를 사용 합니다.
+일반적으로 다음 조건에 대 한 비동기 메서드를 사용 합니다.
 
 - 비동기 메서드를 통해 사용할 수 있는 서비스를 호출 하 고.NET 4.5 이상을 사용 하는 합니다.
 - 작업은 네트워크 또는 I/o-바인딩된 CPU 바인딩된 대신입니다.

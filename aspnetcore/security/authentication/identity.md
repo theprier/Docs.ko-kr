@@ -5,12 +5,12 @@ description: ASP.NET Core 앱을 사용 하 여 Id를 사용 합니다. 암호 �
 ms.author: riande
 ms.date: 08/08/2018
 uid: security/authentication/identity
-ms.openlocfilehash: d427932bb175c09105534379be4d71760f4e04e5
-ms.sourcegitcommit: 13940eb53c68664b11a2d685ee17c78faab1945d
+ms.openlocfilehash: e0494afd807080f4cd71127abce7bdb93f952dca
+ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/01/2018
-ms.locfileid: "47860955"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49325512"
 ---
 # <a name="introduction-to-identity-on-aspnet-core"></a>ASP.NET Core Identity 소개
 
@@ -160,7 +160,7 @@ PowerShell 명령 구분 기호로 세미콜론을 사용합니다. PowerShell�
 로그인 양식이 표시 되는 경우:
 
 * 합니다 **로그인** 링크를 선택 합니다.
-* 사용자는 인증 되지 않은 페이지를 액세스 하는 경우 **또는** 로그인 페이지로 리디렉션되어 인증 합니다.
+* 사용자가 이러한 권한이 없는 제한 된 페이지에 액세스 하려고 액세스할 **또는** 시스템에 의해 인증 된 하지 않은 경우.
 
 로그인 페이지의 양식을 제출 되 면는 `OnPostAsync` 작업 이라고 합니다. `PasswordSignInAsync` 라고 하는 `_signInManager` 개체 (종속성 주입으로 제공 됨).
 

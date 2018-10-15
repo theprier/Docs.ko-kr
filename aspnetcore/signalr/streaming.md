@@ -7,12 +7,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 06/07/2018
 uid: signalr/streaming
-ms.openlocfilehash: 0001eed830249ac46ba35331759187bb4e7e8fd3
-ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
+ms.openlocfilehash: 3ae9b83d60019eaa3196f35645bf9b4b03f6d8c6
+ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39095264"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49325642"
 ---
 # <a name="use-streaming-in-aspnet-core-signalr"></a>ASP.NET Core SignalR의 스트리밍 사용
 
@@ -62,7 +62,7 @@ JavaScript 클라이언트를 사용 하 여 허브에서 스트리밍 메서드
 
 [!code-javascript[Streaming javascript](streaming/sample/wwwroot/js/stream.js?range=19-36)]
 
-클라이언트 호출에서 스트림을 종료 하려면 합니다 `dispose` 메서드를 `ISubscription` 에서 반환 되는 `subscribe` 메서드.
+클라이언트에서 스트림에 호출 합니다 `dispose` 메서드를 `ISubscription` 에서 반환 되는 `subscribe` 메서드.
 
 ## <a name="related-resources"></a>관련 참고 자료
 

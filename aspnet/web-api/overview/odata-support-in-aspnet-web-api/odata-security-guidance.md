@@ -8,12 +8,12 @@ ms.date: 02/06/2013
 ms.assetid: b91e6424-1544-4747-bd0b-d1f8418c9653
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-security-guidance
 msc.type: authoredcontent
-ms.openlocfilehash: 2a5b776a81cb3e3cf809dd3c4229448988086a32
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 4ba53e15dab83368097a58ba4d0d2e46d113d1d2
+ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41828354"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49325720"
 ---
 <a name="security-guidance-for-aspnet-web-api-2-odata"></a>ASP.NET Web API 2에 대 한 보안 지침 OData
 ====================
@@ -59,7 +59,7 @@ ASP.NET Web API에서 OData 쿼리 옵션을 사용 하는 방법에 대 한 자
 - 속도가 느려질 수 있습니다 이러한 any () 및 all ()과 함수를 사용 하지 않도록 설정 살펴봅니다. 
 
     [!code-csharp[Main](odata-security-guidance/samples/sample7.cs)]
-- 큰 문자열 및 #8212for 예제, 제품 설명 또는 블로그 항목 및 문자열 함수를 사용 하지 않도록 설정 하는 #8212consider 모든 문자열 속성에 포함 되어 있습니다. 
+- 모든 문자열 속성 큰 문자열을 포함 하는 경우&#8212;예를 들어, 제품 설명 또는 블로그 항목&#8212;문자열 함수를 사용 하지 않도록 설정 하는 것이 좋습니다. 
 
     [!code-csharp[Main](odata-security-guidance/samples/sample8.cs)]
 - 탐색 속성에 대해 필터링을 허용 하지 않는 것이 좋습니다. 데이터베이스 스키마에 따라 저하 될 수 있는 조인에서는 탐색 속성에 대해 필터링 될 수 있습니다. 다음 코드에서는 탐색 속성에 대해 필터링을 방지 하는 쿼리 검사기를 보여 줍니다. 쿼리 유효성 검사기에 대 한 자세한 내용은 참조 하세요. [쿼리 유효성 검사](supporting-odata-query-options.md#query-validation)합니다. 
