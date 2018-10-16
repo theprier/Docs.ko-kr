@@ -1,7 +1,7 @@
 ---
 title: ASP.NET Core SignalR 지원 플랫폼
 author: tdykstra
-description: ASP.NET Core SignalR을 지원하는 플랫폼
+description: ASP.NET Core SignalR 지원 플랫폼
 monikerRange: '>= aspnetcore-2.1'
 ms.author: tdykstra
 ms.custom: mvc
@@ -28,15 +28,15 @@ ASP.NET Core SignalR은 ASP.NET Core가 지원하는 모든 서버 플랫폼을 
 | ------- | ------- |
 | Microsoft Edge | 현재 |
 | Mozilla Firefox | 현재 |
-| Google Chrome (Android 포함) | 현재 |
-| Safari (iOS 포함) | 현재 |
+| Google Chrome(Android 포함) | 현재 |
+| Safari(iOS 포함) | 현재 |
 | Microsoft Internet Explorer | 11 |
  
 ## <a name="net-client"></a>.NET 클라이언트
 
 [.NET 클라이언트](https://www.nuget.org/packages/Microsoft.AspNetCore.SignalR/)는 ASP.NET Core가 지원하는 모든 서버 플랫폼에서 실행됩니다.
 
-IIS를 서버로 사용할 경우, WebSockets 전송을 사용하려면 Windows Server 2012 이상에서 IIS 8.0 이상의 버전이 필요합니다. 다른 전송 방식들은 모든 플랫폼에서 지원됩니다.
+서버에서 IIS를 실행하는 경우 WebSockets 전송을 사용하려면 Windows Server 2012 이상에서 IIS 8.0 이상의 버전이 필요합니다. 다른 전송 방식들은 모든 플랫폼에서 지원됩니다.
 
 ## <a name="java-client"></a>Java 클라이언트
 
