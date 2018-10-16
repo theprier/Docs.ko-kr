@@ -18,15 +18,15 @@ ms.locfileid: "45538364"
 
 작성자: [Rachel Appel](https://twitter.com/rachelappel) 및 [Kevin Griffin](https://twitter.com/1kevgriff)
 
-[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/signalr/hubs/sample/ ) [(다운로드 방법)](xref:tutorials/index#how-to-download-a-sample)
+[샘플 코드 보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/signalr/hubs/sample/ ) [(다운로드 방법)](xref:tutorials/index#how-to-download-a-sample)
 
-## <a name="what-is-a-signalr-hub"></a>SignalR 허브란
+## <a name="what-is-a-signalr-hub"></a>SignalR 허브 기능
 
 SignalR 허브 API를 사용하면 서버에서 연결된 클라이언트의 메서드를 호출할 수 있습니다. 서버 코드는 클라이언트에 의해서 호출되는 메서드를 정의합니다. 클라이언트 코드는 서버에 의해서 호출되는 메서드를 정의합니다. SignalR은 클라이언트에서 서버로 그리고 서버에서 클라이언트로 실시간 통신을 가능하게 만들어주는 모든 작업을 내부적으로 처리합니다.
 
 ## <a name="configure-signalr-hubs"></a>SignalR 허브 구성하기
 
-SignalR 미들웨어는 `services.AddSignalR` 호출을 통해서 구성되는 일부 서비스를 필요로 합니다.
+SignalR 미들웨어에는 `services.AddSignalR` 호출을 통해 구성되는 몇 가지 서비스가 필요합니다.
 
 [!code-csharp[Configure service](hubs/sample/startup.cs?range=38)]
 
@@ -52,7 +52,7 @@ ASP.NET Core 앱에 SignalR 기능을 추가할 때, `Startup.Configure` 메서�
 | `UserIdentifier` | [사용자 식별자](xref:signalr/groups)를 가져옵니다. SignalR은 기본적으로 연결과 관련된 `ClaimsPrincipal`의 `ClaimTypes.NameIdentifier`를 사용자 식별자로 사용합니다. |
 | `User` | 현재 사용자와 관련된 `ClaimsPrincipal`을 가져옵니다. |
 | `Items` | 연결의 범위 내에서 데이터 공유를 위해 사용할 수 있는 키/값 컬렉션을 가져옵니다. 이 컬렉션에 데이터를 저장할 수 있으며 저장된 데이터는 연결에 대한 다른 허브 메서드들의 호출 간에 유지됩니다. |
-| `Features` | 연결에서 사용할 수 있는 기능들의 컬렉션을 가져옵니다. 이 컬렉션은 대부분의 시나리오에서 사용되지 않기 때문에, 지금은 아직 자세히 문서화 되지 않았습니다. |
+| `Features` | 연결에서 사용할 수 있는 기능들의 컬렉션을 가져옵니다. 이 컬렉션은 대부분의 시나리오에서 사용되지 않기 때문에, 지금은 아직 자세히 문서화되지 않았습니다. |
 | `ConnectionAborted` | 연결이 중단될 때 이를 알려주는 `CancellationToken`을 가져옵니다. |
 
 `Hub.Context`는 다음 메서드도 포함하고 있습니다.
@@ -102,7 +102,7 @@ ASP.NET Core 앱에 SignalR 기능을 추가할 때, `Startup.Configure` 메서�
 
 [!code-csharp[Interface for IChatClient](hubs/sample/hubs/ichatclient.cs?name=snippet_IChatClient)]
 
-이 인터페이스를 사용해서 기존의 `ChatHub` 예제를 리팩터링 할 수 있습니다.
+이 인터페이스를 사용해서 기존의 `ChatHub` 예제를 리팩터링할 수 있습니다.
 
 [!code-csharp[Strongly typed ChatHub](hubs/sample/hubs/StronglyTypedChatHub.cs?range=8-18,36)]
 
@@ -112,13 +112,13 @@ ASP.NET Core 앱에 SignalR 기능을 추가할 때, `Startup.Configure` 메서�
 
 ## <a name="handle-events-for-a-connection"></a>연결에 관한 이벤트 처리하기
 
-SignalR 허브 API는 연결을 관리하고 추적하기 위한 `OnConnectedAsync` 및 `OnDisconnectedAsync` 가상 메서드를 제공합니다. 클라이언트가 허브에 연결할 때, 클라이언트를 그룹에 추가하는 등과 같은 작업을 수행하려면 `OnConnectedAsync` 가상 메서드를 제정의 합니다.
+SignalR 허브 API는 연결을 관리하고 추적하기 위한 `OnConnectedAsync` 및 `OnDisconnectedAsync` 가상 메서드를 제공합니다. 클라이언트가 허브에 연결할 때, 클라이언트를 그룹에 추가하는 등과 같은 작업을 수행하려면 `OnConnectedAsync` 가상 메서드를 재정의합니다.
 
 [!code-csharp[Handle events](hubs/sample/hubs/chathub.cs?range=26-36)]
 
 ## <a name="handle-errors"></a>오류 처리
 
-허브 메서드에서 던져진 예외는 메서드를 호출한 클라이언트로 전송됩니다. JavaScript 클라이언트에서 `invoke` 메서드는 [JavaScript Promise](https://developer.mozilla.org/docs/Web/JavaScript/Guide/Using_promises)를 반환합니다. 클라이언트가 `catch`를 통해서 Promise에 첨부된 처리기로 오류를 수신하면, 오류가 JavaScript `Error` 개체로 전달되어 호출됩니다.
+허브 메서드에서 발생(throw)된 예외는 메서드를 호출한 클라이언트로 전송됩니다. JavaScript 클라이언트에서 `invoke` 메서드는 [JavaScript Promise](https://developer.mozilla.org/docs/Web/JavaScript/Guide/Using_promises)를 반환합니다. 클라이언트가 `catch`를 통해서 Promise에 첨부된 처리기로 오류를 수신하면, 오류가 JavaScript `Error` 개체로 전달되어 호출됩니다.
 
 [!code-javascript[Error](hubs/sample/wwwroot/js/chat.js?range=23)]
 
