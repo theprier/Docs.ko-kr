@@ -8,12 +8,12 @@ ms.date: 01/20/2014
 ms.assetid: 979d6c9f-0129-4e5b-ae56-4507b281b86d
 msc.legacyurl: /web-api/overview/web-api-routing-and-actions/attribute-routing-in-web-api-2
 msc.type: authoredcontent
-ms.openlocfilehash: d16dcc618bf6c60714179601db14f4dd2a9e41ce
-ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
+ms.openlocfilehash: 22eb2fd748d52ec95e813ada8b1bf3b4826ad573
+ms.sourcegitcommit: 6e6002de467cd135a69e5518d4ba9422d693132a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48912154"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49348483"
 ---
 <a name="attribute-routing-in-aspnet-web-api-2"></a>ASP.NET Web API 2에서에서 특성 라우팅
 ====================
@@ -245,11 +245,11 @@ Web API에서 모든 경로는 이름이 있습니다. 경로 이름은 HTTP 응
 <a id="order"></a>
 ## <a name="route-order"></a>경로 순서
 
-프레임 워크 경로 사용 하 여 URI를 찾으려고 하는 경우에 특정 순서 대로 경로 평가 합니다. 순서를 지정 하려면 설정 합니다 **RouteOrder** 속성 경로입니다. 값이 낮을수록 먼저 평가 됩니다. 기본 순서 값은 0입니다.
+프레임 워크 경로 사용 하 여 URI를 찾으려고 하는 경우에 특정 순서 대로 경로 평가 합니다. 순서를 지정 하려면 설정 합니다 **순서** 속성 경로입니다. 값이 낮을수록 먼저 평가 됩니다. 기본 순서 값은 0입니다.
 
 전체 순서를 결정 하는 방법을 다음과 같습니다.
 
-1. 비교는 **RouteOrder** 경로 특성의 속성입니다.
+1. 비교는 **순서** 경로 특성의 속성입니다.
 2. 경로 템플릿에 각 URI 세그먼트를 살펴봅니다. 각 세그먼트에 대 한 다음과 같은 정렬 합니다.
 
     1. 리터럴 세그먼트입니다.
@@ -271,4 +271,4 @@ Web API에서 모든 경로는 이름이 있습니다. 경로 이름은 HTTP 응
 4. orders/{\*date}
 5. orders/pending
 
-"Details" 리터럴 세그먼트 "{id}" 앞에 나타나는 있지만 "pending" 마지막으로 때문에 표시 됩니다 하는 **RouteOrder** 속성은 1입니다. (이 예에서는 고객이 없는 "details" 라고 가정 있습니다 "보류 중" 또는 합니다. 일반적으로 모호한 경로가 것을 방지 하려고 합니다. 이 예에 대 한 더 나은 경로 템플릿 `GetByCustomer` 는 "customers / {customerName}")
+"Details" 리터럴 세그먼트 및 "{id}" 앞에 나타나는 있지만 "pending" 마지막으로 때문에 표시 됩니다는 **순서** 속성은 1입니다. (이 예에서는 고객이 없는 "details" 라고 가정 있습니다 "보류 중" 또는 합니다. 일반적으로 모호한 경로가 것을 방지 하려고 합니다. 이 예에 대 한 더 나은 경로 템플릿 `GetByCustomer` 는 "customers / {customerName}")

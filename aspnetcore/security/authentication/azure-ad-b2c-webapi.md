@@ -6,21 +6,20 @@ ms.author: casoper
 ms.date: 09/21/2018
 ms.custom: mvc
 uid: security/authentication/azure-ad-b2c-webapi
-ms.openlocfilehash: 0efc95f508ef84d2728f503f1edd886ce6ae7a79
-ms.sourcegitcommit: 4d5f8680d68b39c411b46c73f7014f8aa0f12026
+ms.openlocfilehash: a7a109909d66b1016e78eedc8b802068143c65e3
+ms.sourcegitcommit: 6e6002de467cd135a69e5518d4ba9422d693132a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47028260"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49348548"
 ---
 # <a name="cloud-authentication-in-web-apis-with-azure-active-directory-b2c-in-aspnet-core"></a>Web Api ASP.NET Core에서 Azure Active Directory B2C를 사용 하 여의 클라우드 인증
 
 작성자: [Cam Soper](https://twitter.com/camsoper)
 
-[Azure Active Directory B2C](/azure/active-directory-b2c/active-directory-b2c-overview) (Azure AD B2C)는 웹 및 모바일 앱에 대 한 클라우드 id 관리 솔루션입니다. 서비스는 클라우드 및 온-프레미스에서 호스트 되는 앱에 대 한 인증을 제공 합니다. 인증 유형 포함할 개별 계정, 소셜 네트워크 계정 및 enterprise 계정 페더레이션 합니다. 또한 Azure AD B2C는 최소 구성으로 multi-factor authentication 인증을 제공할 수 있습니다.
+[Azure Active Directory B2C](/azure/active-directory-b2c/active-directory-b2c-overview) (Azure AD B2C)는 웹 및 모바일 앱에 대 한 클라우드 id 관리 솔루션입니다. 서비스는 클라우드 및 온-프레미스에서 호스트 되는 앱에 대 한 인증을 제공 합니다. 인증 유형 포함할 개별 계정, 소셜 네트워크 계정 및 enterprise 계정 페더레이션 합니다. Azure AD B2C는 또한 최소 구성으로 multi-factor authentication 인증을 제공합니다.
 
-> [!TIP]
-> Azure Active Directory (Azure AD) 및 Azure AD B2C는 별개 제품입니다. Azure AD 테 넌 트 조직을 나타내고 Azure AD B2C 테 넌 트를 신뢰 당사자 응용 프로그램을 사용 하 여 사용할 id의 컬렉션을 나타냅니다. 자세한 내용은 참조 하세요 [Azure AD B2C: 질문과 대답 (FAQ)](/azure/active-directory-b2c/active-directory-b2c-faqs)합니다.
+Azure Active Directory (Azure AD) 및 Azure AD B2C는 별개 제품입니다. Azure AD 테 넌 트 조직을 나타내고 Azure AD B2C 테 넌 트를 신뢰 당사자 응용 프로그램을 사용 하 여 사용할 id의 컬렉션을 나타냅니다. 자세한 내용은 참조 하세요 [Azure AD B2C: 질문과 대답 (FAQ)](/azure/active-directory-b2c/active-directory-b2c-faqs)합니다.
 
 웹 Api에는 사용자 인터페이스가 없습니다, 이후 이러한 사항을 Azure AD B2C와 같은 보안 토큰 서비스에 사용자를 리디렉션할 수 없습니다. 대신 API 호출에서 이미 Azure AD B2C를 사용 하 여 사용자를 인증 하는 앱에서 전달자 토큰을 전달 됩니다. 다음 API는 직접적인 사용자 개입 없이 토큰 유효성을 검사 합니다.
 
@@ -57,14 +56,14 @@ Azure AD B2C 설명서에서 절차 [등록 또는 로그인 정책 만들기](/
 
 | 설정                       | 값               | 노트                                                                                  |
 |-------------------------------|---------------------|----------------------------------------------------------------------------------------|
-| **이름**                      | *&lt;API 이름&gt;*  | 입력 한 **이름을** 소비자에 게 앱을 설명 하는 앱에 대 한 합니다.                     |
+| **이름**                      | *{0} API 이름}*        | 입력 한 **이름을** 소비자에 게 앱을 설명 하는 앱에 대 한 합니다.                     |
 | **웹 앱/웹 API 포함** | 예                 |                                                                                        |
 | **암시적 흐름 허용**       | 예                 |                                                                                        |
 | **회신 URL**                 | `https://localhost` | 회신 Url은 Azure AD B2C 앱이 요청한 토큰을 반환 하는 위치 끝점입니다. |
 | **앱 ID URI**                | *api*               | URI는 실제 주소를 확인할 필요가 없습니다. 만 고유 해야 합니다.     |
 | **네이티브 클라이언트 포함**     | 아니요                  |                                                                                        |
 
-API를 등록 한 후에 테 넌 트에서 앱 및 Api의 목록이 표시 됩니다. 방금 등록 된 API를 선택 합니다. 선택 합니다 **복사** 아이콘의 오른쪽에는 **응용 프로그램 ID** 클립보드에 복사 하는 필드입니다. 선택 **게시 된 범위** 기본값을 확인 하 고 *user_impersonation* 범위가 존재 합니다.
+API를 등록 한 후에 테 넌 트에서 앱 및 Api의 목록이 표시 됩니다. 이전에 등록 된 API를 선택 합니다. 선택 합니다 **복사** 아이콘의 오른쪽에는 **응용 프로그램 ID** 클립보드에 복사 하는 필드입니다. 선택 **게시 된 범위** 기본값을 확인 하 고 *user_impersonation* 범위가 존재 합니다.
 
 ## <a name="create-an-aspnet-core-app-in-visual-studio-2017"></a>Visual Studio 2017에서 ASP.NET Core 앱 만들기
 
@@ -78,7 +77,7 @@ Visual studio:
 
     ![인증 변경 단추](./azure-ad-b2c-webapi/change-auth-button.png)
 
-4. 에 **인증 변경** 대화 상자에서 **개별 사용자 계정**를 선택한 후 **클라우드에서 기존 사용자 저장소에 연결** 드롭다운 목록에서. 
+4. 에 **인증 변경** 대화 상자에서 **개별 사용자 계정** > **클라우드에서 기존 사용자 저장소에 연결**합니다.
 
     ![인증 대화 상자 변경](./azure-ad-b2c-webapi/change-auth-dialog.png)
 
@@ -86,9 +85,9 @@ Visual studio:
 
     | 설정                       | 값                                                 |
     |-------------------------------|-------------------------------------------------------|
-    | **도메인 이름**               | *&lt;B2C 테 넌 트의 도메인 이름&gt;*          |
-    | **응용 프로그램 ID**            | *&lt;클립보드의 응용 프로그램 ID를 붙여 넣습니다.&gt;* |
-    | **등록 또는 로그인 정책** | `B2C_1_SiUpIn`                                        |
+    | **도메인 이름**               | *{B2C 테 넌 트의 도메인 이름}*                |
+    | **응용 프로그램 ID**            | *{응용 프로그램 ID 클립보드에서 붙여넣을}*       |
+    | **등록 또는 로그인 정책** | B2C_1_SiUpIn                                          |
 
     선택 **확인** 닫으려면 합니다 **인증 변경** 대화 합니다. 선택 **확인** 웹 앱을 만듭니다.
 
@@ -107,7 +106,7 @@ Visual Studio에서 API를 실행 합니다. Visual Studio는 API의 루트 URL�
 
 ### <a name="register-postman-as-a-web-app"></a>Postman에 웹 앱으로 등록
 
-Azure AD B2C 테 넌 트에서 토큰을 가져올 수 있는 웹 앱을 시뮬레이션 하는 Postman, 되므로 웹 앱으로 테 넌 트에 등록 되어야 합니다. Postman을 사용 하 여 등록 [설명서에 나와 있는 단계](/azure/active-directory-b2c/active-directory-b2c-app-registration#register-a-web-app) 아래 합니다 **웹 앱을 등록** 섹션입니다. 중지 된 **웹 앱 클라이언트 비밀 만들기** 섹션입니다. 클라이언트 암호를이 자습서에 필요 하지 않습니다. 
+Azure AD B2C 테 넌 트에서 토큰을 가져옵니다는 웹 앱을 시뮬레이션 하는 Postman, 때문에 웹 앱으로 테 넌 트에 등록 되어야 합니다. Postman을 사용 하 여 등록 [설명서에 나와 있는 단계](/azure/active-directory-b2c/active-directory-b2c-app-registration#register-a-web-app) 아래 합니다 **웹 앱을 등록** 섹션입니다. 중지 된 **웹 앱 클라이언트 비밀 만들기** 섹션입니다. 클라이언트 암호를이 자습서에 필요 하지 않습니다. 
 
 다음 값을 사용 합니다.
 
@@ -117,16 +116,16 @@ Azure AD B2C 테 넌 트에서 토큰을 가져올 수 있는 웹 앱을 시뮬�
 | **웹 앱/웹 API 포함** | 예                              |                                 |
 | **암시적 흐름 허용**       | 예                              |                                 |
 | **회신 URL**                 | `https://getpostman.com/postman` |                                 |
-| **앱 ID URI**                | *&lt;비워 둡니다&gt;*            | 이 자습서에 필요 하지 않습니다. |
+| **앱 ID URI**                | *{비워}*                  | 이 자습서에 필요 하지 않습니다. |
 | **네이티브 클라이언트 포함**     | 아니요                               |                                 |
 
 새로 등록 된 웹 앱 사용자를 대신 하 여 웹 API에 액세스 권한이 필요 합니다.  
 
 1. 선택 **Postman** 앱과 선택 목록의 **API 액세스** 왼쪽 메뉴에서.
-2. 선택 **+ 추가**합니다.
-3. 에 **API 선택** 드롭다운에서 웹 API의 이름을 선택 합니다.
-4. 에 **범위 선택** 드롭다운에서 모든 범위 선택 되어 있는지 확인 합니다.
-5. 선택 **확인**합니다.
+1. 선택 **+ 추가**합니다.
+1. 에 **API 선택** 드롭다운에서 웹 API의 이름을 선택 합니다.
+1. 에 **범위 선택** 드롭다운에서 모든 범위 선택 되어 있는지 확인 합니다.
+1. 선택 **확인**합니다.
 
 전달자 토큰을 얻어야 하는 데 필요한 것 처럼 Postman 앱의 응용 프로그램 ID를 note 합니다.
 
@@ -151,7 +150,7 @@ Postman을 시작 합니다. Postman 기본적으로 표시 합니다 **새로 �
 
 된 web API에 인증이 필요한 경우를 확인 하려면 먼저 인증 없이 요청을 확인 합니다.
 
-1. 에 **요청 URL 입력** 상자에 대 한 URL을 입력 `ValuesController`합니다. URL이 사용 하 여 브라우저에 표시 된 것과 동일 **api/값** 추가 합니다. 예로 `https://localhost:44375/api/values`합니다.
+1. 에 **요청 URL 입력** 상자에 대 한 URL을 입력 `ValuesController`합니다. URL이 사용 하 여 브라우저에 표시 된 것과 동일 **api/값** 추가 합니다. 예를 들어, `https://localhost:44375/api/values`을 입력합니다.
 2. 선택 된 **보낼** 단추입니다.
 3. 응답의 상태가 *401 권한 없음*합니다.
 
@@ -173,15 +172,17 @@ Web API에 요청을 인증된 하는 전달자 토큰을 필요 합니다. Post
 
    |                설정                 |                                             값                                             |                                                                                                                                    노트                                                                                                                                     |
    |----------------------------------------|-----------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-   |      <strong>토큰 이름</strong>       |                                  <em>&lt;토큰 이름&gt;</em>                                  |                                                                                                                   토큰에 대 한 설명이 포함 된 이름을 입력 합니다.                                                                                                                    |
+   |      <strong>토큰 이름</strong>       |                                          *{0} 토큰 이름}*                                       |                                                                                                                   토큰에 대 한 설명이 포함 된 이름을 입력 합니다.                                                                                                                    |
    |      <strong>권한 부여 유형</strong>       |                                           암시적 방법                                            |                                                                                                                                                                                                                                                                              |
-   |     <strong>콜백 URL</strong>      |                               `https://getpostman.com/postman`                                |                                                                                                                                                                                                                                                                              |
-   |       <strong>인증 URL</strong>        | `https://login.microsoftonline.com/tfp/<tenant domain name>/B2C_1_SiUpIn/oauth2/v2.0/authorize` |                                                                                                  바꿉니다 <em>&lt;테 넌 트 도메인 이름&gt;</em> 테 넌 트의 도메인 이름입니다.                                                                                                  |
-   |       <strong>클라이언트 ID</strong>       |                <em>&lt;Postman 앱의 입력 <b>응용 프로그램 ID</b>&gt;</em>                 |                                                                                                                                                                                                                                                                              |
-   |         <strong>범위</strong>         |         `https://<tenant domain name>/<api>/user_impersonation openid offline_access`         | 바꿉니다 <em>&lt;테 넌 트 도메인 이름&gt;</em> 테 넌 트의 도메인 이름입니다. 바꿉니다 <em>&lt;api&gt;</em> 앱 ID URI를 사용 하 여 지정한 웹 API 처음 등록할 때 (이때 `api`). URL 패턴은: <em>https://{tenant}.onmicrosoft.com/{api-id-uri}/{scope 이름}</em>합니다. |
-   |         <strong>상태</strong>         |                                 <em>&lt;비워 둡니다&gt;</em>                                  |                                                                                                                                                                                                                                                                              |
+   |     <strong>콜백 URL</strong>      |                                 `https://getpostman.com/postman`                              |                                                                                                                                                                                                                                                                              |
+   |       <strong>인증 URL</strong>        | `https://login.microsoftonline.com/{tenant domain name}/oauth2/v2.0/authorize?p=B2C_1_SiUpIn` |  바꿉니다 *{테 넌 트 도메인 이름}* 테 넌 트의 도메인 이름입니다. **중요**:이 URL에 있는 내용으로 동일한 도메인 이름이 있어야 `AzureAdB2C.Instance` 웹 API의 *appsettings.json* 파일입니다. 참고&dagger;합니다.                                                  |
+   |       <strong>클라이언트 ID</strong>       |                *{Postman 앱의 입력 <b>응용 프로그램 ID</b>}*                              |                                                                                                                                                                                                                                                                              |
+   |         <strong>범위</strong>         |         `https://{tenant domain name}/{api}/user_impersonation openid offline_access`       | 바꿉니다 *{테 넌 트 도메인 이름}* 테 넌 트의 도메인 이름입니다. 바꿉니다 *{api}* 앱 ID URI를 사용 하 여 지정한 웹 API 처음 등록할 때 (이때 `api`). URL 패턴은: `https://{tenant}.onmicrosoft.com/{api-id-uri}/{scope name}`합니다.         |
+   |         <strong>상태</strong>         |                                      *{비워}*                                          |                                                                                                                                                                                                                                                                              |
    | <strong>클라이언트 인증</strong> |                                본문에 클라이언트 자격 증명 보내기                                |                                                                                                                                                                                                                                                                              |
 
+    > [!NOTE]
+    > &dagger; 두 가지 가능한 Url을 표시 하는 Azure Active Directory B2C 포털에서 정책 설정 대화 상자: 형식으로 하나 `https://login.microsoftonline.com/`{테 넌 트 도메인 이름} / {추가 경로 정보} 및 형식으로 기타 `https://{tenant name}.b2clogin.com/`{테 넌 트 도메인 이름} / {추가 경로 정보}입니다. 있기 **중요 한** 도메인에서 발견 되는 `AzureAdB2C.Instance` web API에서에서 *appsettings.json* 파일이 웹 앱에서 사용 하는 것을 일치 *appsettings.json* 파일입니다. Postman에서 인증 URL 필드에 사용 되는 동일한 도메인입니다. Visual Studio 포털에서 표시 되는 항목 보다 약간 다른 URL 형식을 사용 하는 note 합니다. 일치 하는 도메인으로 URL을 사용할 수 있습니다.
 
 3. 선택 된 **토큰 요청** 단추입니다.
 

@@ -4,14 +4,14 @@ author: guardrex
 description: 경로 및 앱 모델 공급자 규칙을 통해 페이지 라우팅, 검색 및 처리를 제어하는 방법을 검색합니다.
 monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
-ms.date: 09/17/2018
+ms.date: 10/12/2018
 uid: razor-pages/razor-pages-conventions
-ms.openlocfilehash: ea4f785dc8a64b430e312fd122a4d3184b61949e
-ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
+ms.openlocfilehash: 13fd6c156afd5ab62739b09296a929120ce3450f
+ms.sourcegitcommit: 6e6002de467cd135a69e5518d4ba9422d693132a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46011864"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49348535"
 ---
 # <a name="razor-pages-route-and-app-conventions-in-aspnet-core"></a>ASP.NET Core에서 Razor 페이지 경로 및 앱 규칙
 
@@ -87,13 +87,13 @@ public void ConfigureServices(IServiceCollection services)
 
 가능 하면 설정 된 경로 처리 순서에 따라 하지 마세요. 일반적으로 라우팅 URL 일치 하는 올바른 경로 선택합니다. 경로 설정 해야 하는 경우 `Order` 아마도 클라이언트로 복잡 하 고 유지 하기 위해 취약 한 응용 프로그램의 라우팅 체계는 속성 경로를 올바르게 요청 합니다. 앱의 라우팅 체계를 간소화 하기 위해 검색 합니다. 샘플 앱은 단일 앱을 사용 하는 여러 라우팅 시나리오를 시연 하려면 처리 명시적인 경로 필요 합니다. 그러나 설정 경로의 연습을 방지 하려고 해야 `Order` 프로덕션 앱에서.
 
-라우팅 razor 페이지 및 MVC 컨트롤러 라우팅 구현 공유 합니다. MVC 항목의 경로 순서에 대 한 정보에서 제공 됩니다 [컨트롤러 작업에 라우팅: 특성 경로 순서 지정](xref:mvc/controllers/routing#ordering-attribute-routes)합니다.
+Razor Pages 라우팅과 MVC 컨트롤러 라우팅은 구현을 공유합니다. MVC 항목의 경로 순서에 대 한 정보에서 제공 됩니다 [컨트롤러 작업에 라우팅: 특성 경로 순서 지정](xref:mvc/controllers/routing#ordering-attribute-routes)합니다.
 
 ## <a name="model-conventions"></a>모델 규칙
 
 [IPageConvention](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.ipageconvention)의 대리자를 추가하여 Razor 페이지에 적용되는 [모델 규칙](xref:mvc/controllers/application-model#conventions)을 추가합니다.
 
-**모든 페이지에 경로 모델 규칙 추가**
+### <a name="add-a-route-model-convention-to-all-pages"></a>모든 페이지에 경로 모델 규칙 추가
 
 [규칙](/dotnet/api/microsoft.aspnetcore.mvc.razorpages.razorpagesoptions.conventions)을 사용하여 [IPageRouteModelConvention](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.ipageroutemodelconvention)을 만들고, 페이지 경로 모델을 구축하는 동안 적용되는 [IPageConvention](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.ipageconvention) 인스턴스의 컬렉션에 추가합니다.
 
@@ -117,7 +117,7 @@ public void ConfigureServices(IServiceCollection services)
 
 ![GlobalRouteValue의 경로 세그먼트를 사용하여 정보 페이지를 요청합니다. 렌더링된 페이지는 경로 데이터 값이 페이지의 OnGet 메서드에서 캡처되었음을 보여줍니다.](razor-pages-conventions/_static/about-page-global-template.png)
 
-**모든 페이지에 앱 모델 규칙 추가**
+### <a name="add-an-app-model-convention-to-all-pages"></a>모든 페이지에 앱 모델 규칙 추가
 
 [규칙](/dotnet/api/microsoft.aspnetcore.mvc.razorpages.razorpagesoptions.conventions)을 사용하여 [IPageApplicationModelConvention](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.ipageapplicationmodelconvention)을 만들고, 페이지 앱 모델을 구축하는 동안 적용되는 [IPageConvention](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.ipageconvention) 인스턴스의 컬렉션에 추가합니다.
 
@@ -137,12 +137,12 @@ public void ConfigureServices(IServiceCollection services)
 
 ::: moniker range=">= aspnetcore-2.1"
 
-**모든 페이지에 처리기 모델 규칙 추가**
+### <a name="add-a-handler-model-convention-to-all-pages"></a>모든 페이지에는 처리기 모델 규칙 추가
 
 [규칙](/dotnet/api/microsoft.aspnetcore.mvc.razorpages.razorpagesoptions.conventions)을 사용하여 [IPageHandlerModelConvention](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.ipagehandlermodelconvention)을 만들고, 페이지 처리기 모델을 구축하는 동안 적용되는 [IPageConvention](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.ipageconvention) 인스턴스의 컬렉션에 추가합니다.
 
 ```csharp
-public class GlobalPageHandlerModelConvention 
+public class GlobalPageHandlerModelConvention
     : IPageHandlerModelConvention
 {
     public void Apply(PageHandlerModel model)
@@ -168,7 +168,7 @@ services.AddMvc()
 
 [IPageRouteModelProvider](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.ipageroutemodelprovider)에서 파생되는 기본 경로 모델 공급자는 페이지 경로를 구성하기 위한 확장성 지점을 제공하도록 설계된 규칙을 호출합니다.
 
-**폴더 경로 모델 규칙**
+### <a name="folder-route-model-convention"></a>폴더 경로 모델 규칙
 
 [AddFolderRouteModelConvention](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.pageconventioncollection.addfolderroutemodelconvention)을 사용하여 지정된 폴더 아래에 있는 모든 페이지에 [PageRouteModel](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.pageroutemodel)에 대한 작업을 호출하는 [IPageRouteModelConvention](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.ipageroutemodelconvention)을 만들고 추가합니다.
 
@@ -184,7 +184,7 @@ services.AddMvc()
 
 ![OtherPages 폴더의 Page1은 GlobalRouteValue 및 OtherPagesRouteValue라는 경로 세그먼트를 사용하여 요청됩니다. 렌더링된 페이지는 경로 데이터 값이 페이지의 OnGet 메서드에서 캡처되었음을 보여줍니다.](razor-pages-conventions/_static/otherpages-page1-global-and-otherpages-templates.png)
 
-**페이지 경로 모델 규칙**
+### <a name="page-route-model-convention"></a>페이지 경로 모델 규칙
 
 [AddPageRouteModelConvention](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.pageconventioncollection.addpageroutemodelconvention)을 사용하여 지정된 이름을 가진 페이지에 [PageRouteModel](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.pageroutemodel)에 대한 작업을 호출하는 [IPageRouteModelConvention](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.ipageroutemodelconvention)을 만들고 추가합니다.
 
@@ -199,6 +199,44 @@ services.AddMvc()
 `localhost:5000/About/GlobalRouteValue/AboutRouteValue`에서 샘플의 정보 페이지를 요청하고 결과를 검사합니다.
 
 ![정보 페이지는 GlobalRouteValue 및 AboutRouteValue에 대한 경로 세그먼트를 사용하여 요청됩니다. 렌더링된 페이지는 경로 데이터 값이 페이지의 OnGet 메서드에서 캡처되었음을 보여줍니다.](razor-pages-conventions/_static/about-page-global-and-about-templates.png)
+
+::: moniker range=">= aspnetcore-2.2"
+
+## <a name="use-a-parameter-transformer-to-customize-page-routes"></a>매개 변수 변환기를 사용 하 여 페이지 경로 사용자 지정
+
+ASP.NET Core에서 생성 된 페이지 경로 매개 변수 변환기를 사용 하 여 사용자 지정할 수 있습니다. 매개 변수 변환기 구현 `IOutboundParameterTransformer` 매개 변수의 값을 변환 합니다. 예를 들어, 사용자 지정 `SlugifyParameterTransformer` transformer 변경 매개 변수를 `SubscriptionManagement` 경로 값을 `subscription-management`입니다.
+
+`PageRouteTransformerConvention` 페이지 경로 모델 규칙 폴더 및 파일 이름 부분은 앱에서 자동으로 생성 된 페이지 경로 매개 변수 변환기를 적용 합니다. 예를 들어, Razor 페이지 파일을 */Pages/SubscriptionManagement/ViewAll.cshtml* 해당 경로에서 다시 작성 해야 `/SubscriptionManagement/ViewAll` 하려면 `/subscription-management/view-all`합니다.
+
+`PageRouteTransformerConvention` Razor 페이지 폴더 및 파일 이름에서 제공 되는 자동으로 생성 된 페이지 경로 세그먼트를만 변환 합니다. 사용 하 여 추가 경로 세그먼트를 변환 하지 않습니다는 `@page` 지시문입니다. 규칙 또한 변형 하지 않습니다 하 여 추가 된 경로 <xref:Microsoft.Extensions.DependencyInjection.PageConventionCollectionExtensions.AddPageRoute*>합니다.
+
+합니다 `PageRouteTransformerConvention` 에 옵션으로 등록 되어 `Startup.ConfigureServices`:
+
+```csharp
+public void ConfigureServices(IServiceCollection services)
+{
+    services.AddMvc()
+        .AddRazorPagesOptions(options =>
+            {
+                options.Conventions.Add(
+                    new PageRouteTransformerConvention(
+                        new SlugifyParameterTransformer()));
+            });
+}
+
+public class SlugifyParameterTransformer : IOutboundParameterTransformer
+{
+    public string TransformOutbound(object value)
+    {
+        if (value == null) { return null; }
+
+        // Slugify value
+        return Regex.Replace(value.ToString(), "([a-z])([A-Z])", "$1-$2").ToLower();
+    }
+}
+```
+
+::: moniker-end
 
 ## <a name="configure-a-page-route"></a>페이지 경로 구성
 
