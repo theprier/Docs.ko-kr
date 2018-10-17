@@ -1,7 +1,7 @@
 ---
-title: SignalR에서 사용자 및 그룹 관리
+title: SignalR의 사용자 및 그룹 관리
 author: tdykstra
-description: ASP.NET Core SignalR 사용자 및 그룹 관리의 개요입니다.
+description: ASP.NET Core SignalR의 사용자 및 그룹 관리에 대한 개요입니다.
 monikerRange: '>= aspnetcore-2.1'
 ms.author: tdykstra
 ms.custom: mvc
@@ -14,22 +14,22 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 07/17/2018
 ms.locfileid: "39095023"
 ---
-# <a name="manage-users-and-groups-in-signalr"></a>SignalR에서 사용자 및 그룹 관리
+# <a name="manage-users-and-groups-in-signalr"></a>SignalR의 사용자 및 그룹 관리
 
-[브 레 넌 Conroy](https://github.com/BrennanConroy)
+작성자: [Brennan Conroy](https://github.com/BrennanConroy)
 
-SignalR 메시지를 특정 사용자와 연결 된 모든 연결에 보낼 뿐만 아니라 명명 된 연결 그룹에 있습니다.
+SignalR을 사용하면 특정 사용자와 관련된 모든 연결뿐만 아니라 명명된 연결 그룹에 메시지를 전송할 수 있습니다.
 
-[샘플 코드 보기 또는 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/signalr/groups/sample/) [(다운로드 하는 방법)](xref:tutorials/index#how-to-download-a-sample)
+[예제 코드 살펴보기 또는 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/signalr/groups/sample/) [(다운로드 방법)](xref:tutorials/index#how-to-download-a-sample)
 
-## <a name="users-in-signalr"></a>SignalR에 대 한 사용자
+## <a name="users-in-signalr"></a>SignalR의 사용자
 
-SignalR을 사용 하면 특정 사용자와 관련 된 모든 연결에 메시지를 보낼 수 있습니다. SignalR 기본적으로 사용 합니다 `ClaimTypes.NameIdentifier` 에서 `ClaimsPrincipal` 사용자 식별자로 연결과 관련 된 합니다. 단일 사용자 SignalR 앱에 여러 연결이 있을 수 있습니다. 예를 들어 휴대폰 뿐만 아니라 데스크톱에 사용자를 연결할 수 없습니다. 각 장치에 별도 SignalR 연결을 있지만 모두 동일한 사용자와 연결 합니다. 사용자에 게 메시지를 보내면 해당 사용자와 연결 된 연결의 모든 메시지를 받습니다. 연결에 대 한 사용자 식별자에서 액세스할 수는 `Context.UserIdentifier` 허브의 속성입니다.
+SignalR을 사용하면 특정 사용자와 관련된 모든 연결에 메시지를 전송할 수 있습니다. SignalR은 기본적으로 연결과 관련된 `ClaimsPrincipal`의 `ClaimTypes.NameIdentifier`를 사용자 식별자로 사용합니다. SignalR 앱에서 단일 사용자는 여러 개의 연결을 가질 수 있습니다. 예를 들어 사용자가 데스크톱은 물론 휴대폰에서도 연결했을 수 있습니다. 각 장치마다 별도의 SignalR 연결을 갖지만, 이는 모두 동일한 사용자와 관련된 연결입니다. 사용자에게 메시지가 전송되면 해당 사용자와 연관된 모든 연결에서 메시지를 수신합니다. 연결의 사용자 식별자는 허브의 `Context.UserIdentifier` 속성을 이용해서 접근할 수 있습니다.
 
-사용자 식별자를 전달 하 여 특정 사용자에 게 메시지를 보내기는 `User` 다음 예제에서와 같이 허브 메서드에서 함수:
+다음 예제와 같이 허브 메서드에서 `User` 함수에 사용자 식별자를 전달해서 특정 사용자에게 메시지를 전송합니다.
 
 > [!NOTE]
-> 사용자 id는 대/소문자 구분 합니다.
+> 사용자 식별자는 대소문자를 구분합니다.
 
 ```csharp
 public Task SendPrivateMessage(string user, string message)
@@ -38,28 +38,28 @@ public Task SendPrivateMessage(string user, string message)
 }
 ```
 
-사용자 id를 만들어 사용자 지정할 수 있습니다는 `IUserIdProvider`, 및에서 등록 `ConfigureServices`합니다.
+사용자 식별자는 `IUserIdProvider`를 생성한 다음, 이를 `ConfigureServices`에서 등록하여 사용자 지정할 수 있습니다.
 
 [!code-csharp[UserIdProvider](groups/sample/customuseridprovider.cs?range=4-10)]
 
 [!code-csharp[Configure service](groups/sample/startup.cs?range=21-22,39-42)]
 
 > [!NOTE]
-> AddSignalR은 사용자 지정 SignalR 서비스를 등록 하기 전에 호출 해야 합니다.
+> 사용자 지정 SignalR 서비스를 등록하기 전에 먼저 AddSignalR을 호출해야 합니다.
 
-## <a name="groups-in-signalr"></a>SignalR에서 그룹
+## <a name="groups-in-signalr"></a>SignalR의 그룹
 
-그룹 이름과 관련 된 연결의 컬렉션입니다. 그룹의 모든 연결에 메시지를 보낼 수 있습니다. 그룹은 그룹 응용 프로그램에 의해 관리 되기 때문에 하나 이상의 여러 연결이 보내기에 대 한 권장된 방법입니다. 연결을 여러 그룹의 멤버일 수 있습니다. 따라서 그룹 적합 한 채팅 응용 프로그램을 같은 그룹으로 각 룸을 나타낼 수 있는 합니다. 연결 수에 추가 되거나를 통해 그룹에서 제거 합니다 `AddToGroupAsync` 고 `RemoveFromGroupAsync` 메서드.
+그룹은 이름이 지정된 연결들의 컬렉션입니다. 그룹의 모든 연결에 메시지를 전송할 수 있습니다. 그룹은 연결이나 다수의 연결에 전송하기에 적합한 방식으로, 그 이유는 그룹은 응용 프로그램에 의해서 관리되기 때문입니다. 연결은 여러 그룹의 멤버일 수 있습니다. 따라서 그룹은 각 방을 그룹으로 표현할 수 있는 채팅 같은 응용 프로그램에 이상적입니다. `AddToGroupAsync` 및 `RemoveFromGroupAsync` 메서드를 통해서 연결을 그룹에 추가하거나 제거할 수 있습니다.
 
 [!code-csharp[Hub methods](groups/sample/hubs/chathub.cs?range=15-27)]
 
-그룹 멤버 자격에는 연결을 다시 연결 될 때 유지 되지 않습니다. 연결을 다시 설정할 때 그룹을 다시 연결 해야 합니다. 이 정보를 여러 서버를 사용 하는 응용 프로그램에서 크기를 조정 하는 경우에 사용할 수 없기 때문에 그룹의 구성원을 계산 하는 것이 불가능 합니다.
+연결이 다시 연결되더라도 그룹의 멤버 자격은 유지되지 않습니다. 연결이 다시 설정될 때 그룹에 다시 추가해야 합니다. 응용 프로그램이 다수의 서버로 확장되는 경우 필요한 정보를 사용할 수 없기 때문에, 그룹의 구성원 수를 계산하는 것은 불가능합니다.
 
 > [!NOTE]
-> 그룹 이름은 대/소문자를 구분 하지 않습니다.
+> 그룹 이름은 대소문자를 구분합니다.
 
-## <a name="related-resources"></a>관련 참고 자료
+## <a name="related-resources"></a>관련 자료
 
-* [시작](xref:tutorials/signalr)
+* [시작하기](xref:tutorials/signalr)
 * [허브](xref:signalr/hubs)
-* [Azure에 게시](xref:signalr/publish-to-azure-web-app)
+* [Azure에 게시하기](xref:signalr/publish-to-azure-web-app)
