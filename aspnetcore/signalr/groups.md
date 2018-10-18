@@ -1,5 +1,5 @@
 ---
-title: SignalR의 사용자 및 그룹 관리
+title: SignalR에서 사용자 및 그룹 관리
 author: tdykstra
 description: ASP.NET Core SignalR의 사용자 및 그룹 관리에 대한 개요입니다.
 monikerRange: '>= aspnetcore-2.1'
@@ -14,13 +14,13 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 07/17/2018
 ms.locfileid: "39095023"
 ---
-# <a name="manage-users-and-groups-in-signalr"></a>SignalR의 사용자 및 그룹 관리
+# <a name="manage-users-and-groups-in-signalr"></a>SignalR에서 사용자 및 그룹 관리
 
 작성자: [Brennan Conroy](https://github.com/BrennanConroy)
 
 SignalR을 사용하면 특정 사용자와 관련된 모든 연결뿐만 아니라 명명된 연결 그룹에 메시지를 전송할 수 있습니다.
 
-[예제 코드 살펴보기 또는 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/signalr/groups/sample/) [(다운로드 방법)](xref:tutorials/index#how-to-download-a-sample)
+[샘플 코드 보기 또는 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/signalr/groups/sample/) [(다운로드 방법)](xref:tutorials/index#how-to-download-a-sample)
 
 ## <a name="users-in-signalr"></a>SignalR의 사용자
 
@@ -49,7 +49,7 @@ public Task SendPrivateMessage(string user, string message)
 
 ## <a name="groups-in-signalr"></a>SignalR의 그룹
 
-그룹은 이름이 지정된 연결들의 컬렉션입니다. 그룹의 모든 연결에 메시지를 전송할 수 있습니다. 그룹은 연결이나 다수의 연결에 전송하기에 적합한 방식으로, 그 이유는 그룹은 응용 프로그램에 의해서 관리되기 때문입니다. 연결은 여러 그룹의 멤버일 수 있습니다. 따라서 그룹은 각 방을 그룹으로 표현할 수 있는 채팅 같은 응용 프로그램에 이상적입니다. `AddToGroupAsync` 및 `RemoveFromGroupAsync` 메서드를 통해서 연결을 그룹에 추가하거나 제거할 수 있습니다.
+그룹은 이름이 연관된 연결들의 컬렉션입니다. 그룹의 모든 연결에 메시지를 전송할 수 있습니다. 그룹이 연결이나 다수의 연결에 전송하기에 적합한 방식인 이유는 그룹이 응용 프로그램에 의해 관리되기 때문입니다. 연결은 여러 그룹의 멤버일 수 있습니다. 따라서 그룹은 각 방을 그룹으로 표현할 수 있는 채팅 같은 응용 프로그램에 이상적입니다. `AddToGroupAsync` 및 `RemoveFromGroupAsync` 메서드를 통해서 연결을 그룹에 추가하거나 제거할 수 있습니다.
 
 [!code-csharp[Hub methods](groups/sample/hubs/chathub.cs?range=15-27)]
 
@@ -60,6 +60,6 @@ public Task SendPrivateMessage(string user, string message)
 
 ## <a name="related-resources"></a>관련 자료
 
-* [시작하기](xref:tutorials/signalr)
+* [시작](xref:tutorials/signalr)
 * [허브](xref:signalr/hubs)
-* [Azure에 게시하기](xref:signalr/publish-to-azure-web-app)
+* [Azure에 게시](xref:signalr/publish-to-azure-web-app)
