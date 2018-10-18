@@ -7,12 +7,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 09/06/2018
 uid: signalr/configuration
-ms.openlocfilehash: 72fc53cad7caf55e85d0668c9dbea1a70fc8674b
-ms.sourcegitcommit: c684eb6c0999d11d19e15e65939e5c7f99ba47df
+ms.openlocfilehash: 855446003ae9d994854d4d8bb7d0f542a22734e4
+ms.sourcegitcommit: f43f430a166a7ec137fcad12ded0372747227498
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46292338"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49391104"
 ---
 # <a name="aspnet-core-signalr-configuration"></a>ASP.NET Core SignalR 구성
 
@@ -120,7 +120,7 @@ WebSocket 전송 사용 하 여 구성할 수 있는 추가 옵션에는 `WebSoc
 
 ### <a name="configure-logging"></a>로깅 구성
 
-로깅을 사용 하 여.NET 클라이언트에서 구성 됩니다는 `ConfigureLogging` 메서드. 서버의 경우와 동일한 방식으로 로깅 공급자 및 필터를 등록할 수 있습니다. 참조를 [ASP.NET Core 로그인](xref:fundamentals/logging/index#how-to-add-providers) 자세한 정보에 대 한 설명서입니다.
+로깅을 사용 하 여.NET 클라이언트에서 구성 됩니다는 `ConfigureLogging` 메서드. 서버의 경우와 동일한 방식으로 로깅 공급자 및 필터를 등록할 수 있습니다. 참조를 [ASP.NET Core 로그인](xref:fundamentals/logging/index) 자세한 정보에 대 한 설명서입니다.
 
 > [!NOTE]
 > 로깅 공급자를 등록 하기 위해 필요한 패키지를 설치 해야 합니다. 참조 된 [기본 제공 로깅 공급자](xref:fundamentals/logging/index#built-in-logging-providers) 전체 목록은 문서 섹션입니다.

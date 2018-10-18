@@ -8,12 +8,12 @@ ms.date: 06/10/2014
 ms.assetid: ed562717-8591-4936-8e10-c7e63dcb570a
 msc.legacyurl: /signalr/overview/security/introduction-to-security
 msc.type: authoredcontent
-ms.openlocfilehash: 765abd36c5182f291499042e787bcb4fcc727997
-ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
+ms.openlocfilehash: 6336d9608f41c367c46d5b9552141546bc782b7d
+ms.sourcegitcommit: 12a8bdb8e83ca9c23c06f3bc6507c9e1a60ea7e5
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48910859"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "49401870"
 ---
 <a name="introduction-to-signalr-security"></a>SignalR 보안 소개
 ====================
@@ -85,6 +85,14 @@ SignalR은 발신자의 id 유효성을 검사 하 여 악의적인 명령을 �
 ![](introduction-to-security/_static/image4.png)
 
 연결 id를 확인 프로세스의 일부 이기 때문에 하지 다른 사용자가 한 사용자의 연결 id를 표시 하거나 클라이언트에서 값을 같은 쿠키에 저장 해야 있습니다.
+
+#### <a name="connection-tokens-vs-other-token-types"></a>다른 토큰 형식 및 연결 토큰
+
+연결 토큰 세션 토큰 또는 노출 하는 경우에 위험이 제기 하는 인증 토큰에 표시 되기 때문에 보안 도구 플래그가 지정 된 경우에 따라 됩니다.
+
+SignalR의 연결 토큰 인증 토큰이 없습니다. 이 요청 하는 사용자 연결을 만든 것과 동일한 지 확인 하는 것이 됩니다. ASP.NET SignalR 서버 간 이동에 대 한 연결을 허용 하므로 연결 토큰이 필요 합니다. 토큰 연결 특정 사용자와 연결 되지만 요청 하는 사용자의 id를 어설션 하지 않습니다. SignalR 요청을 올바르게 인증에 대 한 몇 가지 다른 쿠키와 같은 사용자의 id를 어설션하는 토큰 또는 bearer 토큰 있어야 합니다. 그러나 연결 토큰 자체는 없는 클레임 토큰 내에 포함 된 연결 ID는 해당 사용자가 요청을 해당 사용자와 연결 됩니다.
+
+"세션" 또는 "인증" 간주 되지 않습니다 연결 토큰 자체 없음 인증 클레임을 제공 하므로 토큰입니다. 토큰 지정된 하는 사용자의 연결을 수행 하 고 다른 사용자로 인증 요청 (또는 인증 되지 않은 요청)에서 재생 못하여, 요청의 사용자 id와 토큰에 저장 된 id와 일치 하지 않습니다.
 
 <a id="rejoingroup"></a>
 

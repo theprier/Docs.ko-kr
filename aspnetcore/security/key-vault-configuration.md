@@ -5,14 +5,14 @@ description: Azure 키 자격 증명 모음 구성 공급자를 사용 하 여 �
 monikerRange: '>= aspnetcore-1.1'
 ms.author: riande
 ms.custom: mvc
-ms.date: 08/01/2018
+ms.date: 10/17/2018
 uid: security/key-vault-configuration
-ms.openlocfilehash: 933f4fb1f2c1c412d318af5974cc9653805242ca
-ms.sourcegitcommit: 25150f4398de83132965a89f12d3a030f6cce48d
+ms.openlocfilehash: 474824cccdc63bb3dc3978ed68cf4c89cec12ad5
+ms.sourcegitcommit: f43f430a166a7ec137fcad12ded0372747227498
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/25/2018
-ms.locfileid: "42927989"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49391144"
 ---
 # <a name="azure-key-vault-configuration-provider-in-aspnet-core"></a>ASP.NET Core에서 azure Key Vault 구성 공급자
 
@@ -32,7 +32,7 @@ ms.locfileid: "42927989"
 
 공급자가 사용 하 여 앱의 구성에 추가 된 `AddAzureKeyVault` 확장 합니다. 샘플 앱에서 확장 프로그램에서 로드 된 세 가지 구성 값을 사용 합니다 *appsettings.json* 파일입니다.
 
-| 앱 설정    | 설명                    | 예                                      |
+| 앱 설정    | 설명                    | 예제                                      |
 | -------------- | ------------------------------ | -------------------------------------------- |
 | `Vault`        | Azure Key Vault 이름           | contosovault                                 |
 | `ClientId`     | Azure Active Directory 앱 Id  | 627e911e-43cc-61d4-992e-12db9c81b413         |
@@ -62,6 +62,48 @@ ms.locfileid: "42927989"
 앱을 실행 하는 경우 웹 페이지 로드 비밀 값을 보여줍니다.
 
 ![Azure 키 자격 증명 모음 구성 공급자를 통해 로드 하는 비밀 값을 표시 하는 브라우저 창](key-vault-configuration/_static/sample1.png)
+
+## <a name="bind-an-array-to-a-class"></a>클래스에 배열 바인딩
+
+공급자는 POCO 배열에 대 한 바인딩에 배열로 구성 값을 읽을 수 있습니다.
+
+콜론을 포함 하는 키를 허용 하는 구성 소스에서 읽을 때 (`:`) 구분 기호, 숫자 키 세그먼트 배열을 구성 하는 키를 구분 하기 위해 사용 됩니다 (`:0:`, `:1:`,... `:{n}:`). 자세한 내용은 [구성: 클래스에 배열을 바인딩할](xref:fundamentals/configuration/index#bind-an-array-to-a-class)합니다.
+
+Azure Key Vault 키를 구분 기호로 콜론을 사용할 수 없습니다. 이 항목에서 설명한 접근 방식을 사용 하 여 이중 대시 (`--`) 계층 값 (섹션)에 대 한 구분 기호로 사용 합니다. 배열 키는 이중 대시 및 숫자 키 세그먼트를 사용 하 여 Azure Key Vault에 저장 됩니다 (`--0--`, `--1--`,... `--{n}--`).
+
+다음 검사 [Serilog](https://serilog.net/) 로깅 공급자 구성이 JSON 파일에서 제공 합니다. 두 개체에 정의 된 리터럴을 가지는 `WriteTo` 두 Serilog를 반영 하는 배열 *싱크*, 로깅 출력의 대상을 설명 하는:
+
+```json
+"Serilog": {
+  "WriteTo": [
+    {
+      "Name": "AzureTableStorage",
+      "Args": {
+        "storageTableName": "logs",
+        "connectionString": "DefaultEnd...ountKey=Eby8...GMGw=="
+      }
+    },
+    {
+      "Name": "AzureDocumentDB",
+      "Args": {
+        "endpointUrl": "https://contoso.documents.azure.com:443",
+        "authorizationKey": "Eby8...GMGw=="
+      }
+    }
+  ]
+}
+```
+
+이전 JSON 파일에 표시 된 구성은 이중 대시를 사용 하 여 Azure Key Vault에 저장 됩니다 (`--`) 표기법 및 숫자 세그먼트:
+
+| Key | 값 |
+| --- | ----- |
+| `Serilog--WriteTo--0--Name` | `AzureTableStorage` |
+| `Serilog--WriteTo--0--Args--storageTableName` | `logs` |
+| `Serilog--WriteTo--0--Args--connectionString` | `DefaultEnd...ountKey=Eby8...GMGw==` |
+| `Serilog--WriteTo--1--Name` | `AzureDocumentDB` |
+| `Serilog--WriteTo--1--Args--endpointUrl` | `https://contoso.documents.azure.com:443` |
+| `Serilog--WriteTo--1--Args--authorizationKey` | `Eby8...GMGw==` |
 
 ## <a name="create-prefixed-key-vault-secrets-and-load-configuration-values-key-name-prefix-sample"></a>접두사가 지정 된 key vault 비밀 만들기 및 구성 값 (키-이름-접두사-샘플)를 로드 합니다.
 

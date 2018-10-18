@@ -7,12 +7,12 @@ ms.author: anurse
 ms.custom: mvc
 ms.date: 06/29/2018
 uid: signalr/security
-ms.openlocfilehash: b66c7fbfbaee4c70a68f3132875fbc81018c3e20
-ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
+ms.openlocfilehash: 98b5eb7be87920aacf7a941f76ff652ae7905303
+ms.sourcegitcommit: f43f430a166a7ec137fcad12ded0372747227498
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39095134"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49391260"
 ---
 # <a name="security-considerations-in-aspnet-core-signalr"></a>ASP.NET Core SignalR의 보안 고려 사항
 
@@ -57,6 +57,58 @@ public void Configure(IApplicationBuilder app)
 
 > [!NOTE]
 > SignalR은 Azure App Service의 기본 제공 CORS 기능을 사용 하 여 호환 되지 않습니다.
+
+### <a name="websocket-origin-restriction"></a>WebSocket 원본 제한
+
+CORS에서 제공 하는 보호 websocket 적용 되지 않습니다. 브라우저 사전 CORS 요청을 수행 하지 않습니다 또는에 지정 된 제한 사항을 고려 않는 `Access-Control` WebSocket 요청을 생성할 때 헤더입니다. 그러나 브라우저를 보낼 수행을 `Origin` WebSocket 요청을 발급 하는 경우 헤더입니다. 이러한 헤더는 허용 되는 것이 원하는 원본에서 가져온만 Websocket을 보장 하기 위해 유효성을 검사 하는 응용 프로그램을 구성 해야 합니다.
+
+ASP.NET Core 2.1에서 수행할 수 있습니다 배치할 수 있습니다 하는 사용자 지정 미들웨어를 사용 하 여 **위에 `UseSignalR`, 및 모든 인증 미들웨어** 에서 프로그램 `Configure` 메서드:
+
+```csharp
+// In your Startup class, add a static field listing the allowed Origin values:
+private static readonly HashSet<string> _allowedOrigins = new HashSet<string>()
+{
+    // Add allowed origins here. For example:
+    "http://www.mysite.com",
+    "http://mysite.com",
+};
+
+// In your Configure method:
+public void Configure(IApplicationBuilder app)
+{
+    // ... other middleware ...
+
+    // Validate Origin header on WebSocket requests to prevent unexpected cross-site WebSocket requests
+    app.Use((context, next) =>
+    {
+        // Check for a WebSocket request.
+        if(string.Equals(context.Request.Headers["Upgrade"], "websocket"))
+        {
+            var origin = context.Request.Headers["Origin"];
+
+            // If there is no origin header, or if the origin header doesn't match an allowed value:
+            if(string.IsNullOrEmpty(origin) && !_allowedOrigins.Contains(origin))
+            {
+                // The origin is not allowed, reject the request
+                context.Response.StatusCode = StatusCodes.Status400BadRequest;
+                return Task.CompletedTask;
+            }
+        }
+
+        // The request is not a WebSocket request or is a valid Origin, so let it continue
+        return next();
+    });
+
+    // ... other middleware ...
+
+    app.UseSignalR();
+
+    // ... other middleware ...
+}
+```
+
+> [!NOTE]
+> 합니다 `Origin` 클라이언트에서 그리고 헤더 완전히 제어는 `Referer` 헤더 가짜일 수 있습니다. 이러한 헤더는 인증 메커니즘으로 사용할 수는 없습니다.
 
 ### <a name="access-token-logging"></a>액세스 토큰 로깅
 

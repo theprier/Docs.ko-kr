@@ -1,6 +1,6 @@
 ---
 uid: web-forms/overview/getting-started/creating-a-basic-web-forms-page
-title: 기본 ASP.NET 4.5 Web Forms 페이지 만들기 Visual Studio 2013에서 | Microsoft Docs
+title: Visual Studio 2013을 사용 하 여 기본 ASP.NET 4.5 Web Forms 페이지를 만들려면
 author: Erikre
 description: ''
 ms.author: riande
@@ -8,16 +8,16 @@ ms.date: 03/03/2014
 ms.assetid: a2f1c635-0817-4a9a-8c13-d5b5d29727c0
 msc.legacyurl: /web-forms/overview/getting-started/creating-a-basic-web-forms-page
 msc.type: authoredcontent
-ms.openlocfilehash: fda6922c0703ca442d4f1ebc5b39dabeb5ee58cd
-ms.sourcegitcommit: 8bf4dff3069e62972c1b0839a93fb444e502afe7
+ms.openlocfilehash: eb1a4632caf00097012bd1757da44016a076630f
+ms.sourcegitcommit: f43f430a166a7ec137fcad12ded0372747227498
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "46483024"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49391286"
 ---
-<a name="creating-a-basic-aspnet-45-web-forms-page-in-visual-studio-2013"></a>기본 ASP.NET 4.5 Web Forms 페이지 만들기 Visual Studio 2013
-====================
-[Erik Reitan](https://github.com/Erikre)
+# <a name="using-visual-studio-2013-to-create-a-basic-aspnet-45-web-forms-page"></a>Visual Studio 2013을 사용 하 여 기본 ASP.NET 4.5 Web Forms 페이지를 만들려면
+
+=== 여 [Erik Reitan](https://github.com/Erikre)
 
 [!INCLUDE[](~/includes/rp.md)]
 
@@ -33,7 +33,6 @@ ms.locfileid: "46483024"
 - 실행 하 고 Visual Studio에서 페이지를 테스트 합니다.
 
 ## <a name="prerequisites"></a>전제 조건
-
 
 이 연습을 완료하려면 다음 사항이 필요합니다.
 

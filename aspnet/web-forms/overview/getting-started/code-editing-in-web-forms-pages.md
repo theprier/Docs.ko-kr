@@ -8,12 +8,12 @@ ms.date: 03/03/2014
 ms.assetid: 5344b74e-b888-479a-92bc-601a33bd61a2
 msc.legacyurl: /web-forms/overview/getting-started/code-editing-in-web-forms-pages
 msc.type: authoredcontent
-ms.openlocfilehash: 5bf10a78b106475ffc01b732b21088bad67eb93d
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 670f81ca1ef9923575cb2fee1747f06f426963d8
+ms.sourcegitcommit: f43f430a166a7ec137fcad12ded0372747227498
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41836137"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49391221"
 ---
 <a name="code-editing-aspnet-web-forms-in-visual-studio-2013"></a>Visual Studio 2013의 코드 편집 ASP.NET Web Forms
 ====================
@@ -42,9 +42,6 @@ ms.locfileid: "41836137"
     > Microsoft Visual Studio 2013 및 Microsoft Visual Studio Express 2013 for Web은 종종 라고 Visual Studio이 자습서 시리즈 전체.  
     >   
     > 이 연습을 선택 했다고 가정 Visual Studio를 사용 하는 경우는 **웹 개발** 설정 모음을 처음으로 Visual Studio를 시작 하는 합니다. 자세한 내용은 [방법: 웹 개발 환경 설정 선택](https://msdn.microsoft.com/library/ff521558.aspx)합니다.
-
-  Visual Studio 및 ASP.NET 소개를 참조 하세요 [Visual Studio 2013의 기본 ASP.NET 4.5 Web Forms 페이지 만들기](creating-a-basic-web-forms-page.md)합니다.   
- 
 
 ## <a name="creating-a-web-application-project-and-a-page"></a>웹 응용 프로그램 프로젝트를 만들고 페이지
 
