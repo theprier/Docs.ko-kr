@@ -7,12 +7,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 01/26/2017
 uid: performance/caching/middleware
-ms.openlocfilehash: f4e5a414b92e3ca65e19188ebd2bfaef6f32fee7
-ms.sourcegitcommit: 4cd8dce371d63a66d780e4af1baab2bcf9d61b24
+ms.openlocfilehash: d991bc48ed07ee71b0decaa0bee4df811fdc74c4
+ms.sourcegitcommit: f5d403004f3550e8c46585fdbb16c49e75f495f3
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43893092"
+ms.lasthandoff: 10/20/2018
+ms.locfileid: "49477529"
 ---
 # <a name="response-caching-middleware-in-aspnet-core"></a>ASP.NET Core의 응답 캐싱 미들웨어
 
@@ -159,7 +159,7 @@ if (responseCachingFeature != null)
 * [미들웨어](xref:fundamentals/middleware/index)
 * [메모리 내 캐시](xref:performance/caching/memory)
 * [분산 캐시 사용하기](xref:performance/caching/distributed)
-* [변경 토큰을 이용해서 변경 감지하기](xref:fundamentals/primitives/change-tokens)
+* [변경 토큰을 이용해서 변경 감지하기](xref:fundamentals/change-tokens)
 * [응답 캐싱](xref:performance/caching/response)
 * [캐시 태그 도우미](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper)
 * [분산 캐시 태그 도우미](xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper)

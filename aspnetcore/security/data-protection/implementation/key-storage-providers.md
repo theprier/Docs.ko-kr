@@ -5,12 +5,12 @@ description: ASP.NET Core 및 키 저장소 위치를 구성 하는 방법에 �
 ms.author: riande
 ms.date: 07/16/2018
 uid: security/data-protection/implementation/key-storage-providers
-ms.openlocfilehash: 0e64a65ab1d65efa9f2e4d36a23663b607f206d7
-ms.sourcegitcommit: 9bdba90b2c97a4016188434657194b2d7027d6e3
+ms.openlocfilehash: 35e2cea4b6404af94de95352dc6ebf3071925cb1
+ms.sourcegitcommit: f5d403004f3550e8c46585fdbb16c49e75f495f3
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47402070"
+ms.lasthandoff: 10/20/2018
+ms.locfileid: "49477152"
 ---
 # <a name="key-storage-providers-in-aspnet-core"></a>ASP.NET Core에서 키 저장소 공급자
 
@@ -35,7 +35,19 @@ public void ConfigureServices(IServiceCollection services)
 
 ## <a name="azure-and-redis"></a>Azure 및 Redis
 
-합니다 [Microsoft.AspNetCore.DataProtection.AzureStorage](https://www.nuget.org/packages/Microsoft.AspNetCore.DataProtection.AzureStorage/) 하 고 [Microsoft.AspNetCore.DataProtection.Redis](https://www.nuget.org/packages/Microsoft.AspNetCore.DataProtection.Redis/) 패키지를 사용 하면 Azure Storage 또는 Redis cache에서 데이터 보호 키를 저장 합니다. 웹 앱의 여러 인스턴스 키를 공유할 수 있습니다. 앱에는 여러 서버에서 인증 쿠키 또는 CSRF 보호 공유할 수 있습니다. Azure Blob 저장소 공급자를 구성 하려면 중 하나를 호출 합니다 [PersistKeysToAzureBlobStorage](/dotnet/api/microsoft.aspnetcore.dataprotection.azuredataprotectionbuilderextensions.persistkeystoazureblobstorage) 오버 로드 합니다.
+::: moniker range=">= aspnetcore-2.2"
+
+합니다 [Microsoft.AspNetCore.DataProtection.AzureStorage](https://www.nuget.org/packages/Microsoft.AspNetCore.DataProtection.AzureStorage/) 하 고 [Microsoft.AspNetCore.DataProtection.StackExchangeRedis](https://www.nuget.org/packages/Microsoft.AspNetCore.DataProtection.StackExchangeRedis/) 패키지를 사용 하면 Azure Storage에는 Redis 데이터 보호 키를 저장 합니다. 캐시입니다. 웹 앱의 여러 인스턴스 키를 공유할 수 있습니다. 앱에는 여러 서버에서 인증 쿠키 또는 CSRF 보호 공유할 수 있습니다.
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.2"
+
+합니다 [Microsoft.AspNetCore.DataProtection.AzureStorage](https://www.nuget.org/packages/Microsoft.AspNetCore.DataProtection.AzureStorage/) 하 고 [Microsoft.AspNetCore.DataProtection.Redis](https://www.nuget.org/packages/Microsoft.AspNetCore.DataProtection.Redis/) 패키지를 사용 하면 Azure Storage 또는 Redis cache에서 데이터 보호 키를 저장 합니다. 웹 앱의 여러 인스턴스 키를 공유할 수 있습니다. 앱에는 여러 서버에서 인증 쿠키 또는 CSRF 보호 공유할 수 있습니다.
+
+::: moniker-end
+
+Azure Blob 저장소 공급자를 구성 하려면 중 하나를 호출 합니다 [PersistKeysToAzureBlobStorage](/dotnet/api/microsoft.aspnetcore.dataprotection.azuredataprotectionbuilderextensions.persistkeystoazureblobstorage) 오버 로드 합니다.
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
@@ -44,6 +56,23 @@ public void ConfigureServices(IServiceCollection services)
         .PersistKeysToAzureBlobStorage(new Uri("<blob URI including SAS token>"));
 }
 ```
+
+::: moniker range=">= aspnetcore-2.2"
+
+Redis를 구성 하려면 중 하나를 호출 합니다 [PersistKeysToStackExchangeRedis](/dotnet/api/microsoft.aspnetcore.dataprotection.stackexchangeredisdataprotectionbuilderextensions.persistkeystostackexchangeredis) 오버 로드 합니다.
+
+```csharp
+public void ConfigureServices(IServiceCollection services)
+{
+    var redis = ConnectionMultiplexer.Connect("<URI>");
+    services.AddDataProtection()
+        .PersistKeysToStackExchangeRedis(redis, "DataProtection-Keys");
+}
+```
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.2"
 
 Redis를 구성 하려면 중 하나를 호출 합니다 [PersistKeysToRedis](/dotnet/api/microsoft.aspnetcore.dataprotection.redisdataprotectionbuilderextensions.persistkeystoredis) 오버 로드 합니다.
 
@@ -55,6 +84,8 @@ public void ConfigureServices(IServiceCollection services)
         .PersistKeysToRedis(redis, "DataProtection-Keys");
 }
 ```
+
+::: moniker-end
 
 자세한 내용은 다음 항목을 참조하세요.
 

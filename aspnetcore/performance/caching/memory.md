@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 09/15/2018
 uid: performance/caching/memory
-ms.openlocfilehash: 960aa18f9d14f633118ccd716201e61464085c05
-ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
+ms.openlocfilehash: be2e81d1aa6a89d65414d53a70ca2d2fb5d2d3a3
+ms.sourcegitcommit: f5d403004f3550e8c46585fdbb16c49e75f495f3
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49325928"
+ms.lasthandoff: 10/20/2018
+ms.locfileid: "49477191"
 ---
 # <a name="cache-in-memory-in-aspnet-core"></a>ASP.NET Core의 메모리 내 캐시
 
@@ -173,7 +173,7 @@ ASP.NET Core는 몇 가지 다른 종류의 캐시를 지원합니다. 가장 �
 ## <a name="additional-resources"></a>추가 자료
 
 * [분산 캐시 사용하기](xref:performance/caching/distributed)
-* [변경 토큰을 이용해서 변경 감지하기](xref:fundamentals/primitives/change-tokens)
+* [변경 토큰을 이용해서 변경 감지하기](xref:fundamentals/change-tokens)
 * [응답 캐싱](xref:performance/caching/response)
 * [응답 캐싱 미들웨어](xref:performance/caching/middleware)
 * [캐시 태그 도우미](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper)

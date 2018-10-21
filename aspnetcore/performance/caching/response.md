@@ -1,23 +1,23 @@
 ---
-title: ASP.NET Core의 응답 캐싱
+title: ASP.NET core에서 응답 캐싱
 author: rick-anderson
 description: 낮은 대역폭 요구 사항에 대응하고 ASP.NET Core 응용 프로그램의 성능을 향상시키기 위해 응답 캐싱을 사용하는 방법을 알아봅니다.
 ms.author: riande
 ms.date: 09/20/2017
 uid: performance/caching/response
-ms.openlocfilehash: c53ae3f6ab8d26588533772dd4fdacb36ec12059
-ms.sourcegitcommit: 931b6a2d7eb28a0f1295e8a95690b8c4c5f58477
+ms.openlocfilehash: 4bf61502738d70760679ec98c8f2f303eca9d504
+ms.sourcegitcommit: f5d403004f3550e8c46585fdbb16c49e75f495f3
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37077766"
+ms.lasthandoff: 10/20/2018
+ms.locfileid: "49477491"
 ---
-# <a name="response-caching-in-aspnet-core"></a>ASP.NET Core의 응답 캐싱
+# <a name="response-caching-in-aspnet-core"></a>ASP.NET core에서 응답 캐싱
 
 작성자: [John Luo](https://github.com/JunTaoLuo), [Rick Anderson](https://twitter.com/RickAndMSFT), [Steve Smith](https://ardalis.com/), 및 [Luke Latham](https://github.com/guardrex)
 
 > [!NOTE]
-> Razor 페이지의 캐싱 응답 하는 것은 ASP.NET Core 2.1에서 사용할 수 이상입니다.
+> 응답에서 Razor 페이지 캐싱은 이상 ASP.NET Core 2.1에서 사용할 수 있습니다.
 
 [예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/performance/caching/response/samples)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
 
@@ -101,7 +101,7 @@ HTTP 캐싱의 목적을 고려했을 때 항상 클라이언트의 `Cache-Contr
 
 첫 번째 요청은 서버에서 반환되고 미들웨어에 캐시됩니다. 두 번째 요청은 쿼리 문자열이 이전 요청과 일치하기 때문에 미들웨어에서 반환됩니다. 세 번째 요청은 쿼리 문자열 값이 이전 요청과 일치하지 않기 때문에 미들웨어 캐시에 존재하지 않습니다. 
 
-`ResponseCacheAttribute` 는 [ResponseCacheFilter](/dotnet/api/microsoft.aspnetcore.mvc.internal.responsecachefilter)를 구성하고 생성하기 위해서 (`IFilterFactory`를 통해서) 사용됩니다. `ResponseCacheFilter` 적절 한 HTTP 헤더 및 응답의 기능을 업데이트 하는 작업을 수행 합니다. 필터:
+`ResponseCacheAttribute` 는 [ResponseCacheFilter](/dotnet/api/microsoft.aspnetcore.mvc.internal.responsecachefilter)를 구성하고 생성하기 위해서 (`IFilterFactory`를 통해서) 사용됩니다. `ResponseCacheFilter` 적절 한 HTTP 헤더 및 응답의 기능 업데이트 작업을 수행 합니다. 필터:
 
 * 기존에 존재하는 `Vary`, `Cache-Control` 및 `Pragma` 헤더를 모두 제거합니다. 
 * `ResponseCacheAttribute`에 설정된 속성을 기반으로 적절한 헤더를 작성합니다. 
@@ -232,7 +232,7 @@ Cache-Control: public,max-age=60
 * [Cache-Control](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9)
 * [메모리 내 캐시](xref:performance/caching/memory)
 * [분산 캐시 사용하기](xref:performance/caching/distributed)
-* [변경 토큰을 이용해서 변경 감지하기](xref:fundamentals/primitives/change-tokens)
+* [변경 토큰을 이용해서 변경 감지하기](xref:fundamentals/change-tokens)
 * [응답 캐싱 미들웨어](xref:performance/caching/middleware)
 * [캐시 태그 도우미](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper)
 * [분산 캐시 태그 도우미](xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper)
