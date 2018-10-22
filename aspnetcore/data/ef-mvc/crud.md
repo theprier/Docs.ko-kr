@@ -5,12 +5,12 @@ description: ''
 ms.author: tdykstra
 ms.date: 03/15/2017
 uid: data/ef-mvc/crud
-ms.openlocfilehash: 626b828e2391d3982ff2cf393f0c9e0748c12810
-ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
+ms.openlocfilehash: de9b0bd1e0346d4c12f256e6226353f1ab47ed11
+ms.sourcegitcommit: f5d403004f3550e8c46585fdbb16c49e75f495f3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41751639"
+ms.lasthandoff: 10/20/2018
+ms.locfileid: "49477581"
 ---
 # <a name="aspnet-core-mvc-with-ef-core---crud---2-of-10"></a>ASP.NET Core MVC 및 EF Core - CRUD - 2/10
 
@@ -25,7 +25,7 @@ Contoso University 웹 응용 프로그램 예제는 Entity Framework Core 및 V
 이전 자습서에서 Entity Framework 및 SQL Server LocalDB를 사용하여 데이터를 저장하고 표시하는 MVC 응용 프로그램을 만들었습니다. 이 자습서에서는 MVC 스캐폴딩이 컨트롤러 및 보기에서 자동으로 만드는 CRUD(만들기, 읽기, 업데이트, 삭제) 코드를 검토하고 사용자 지정합니다.
 
 > [!NOTE]
-> 컨트롤러와 데이터 액세스 계층 간에 추상화 계층을 만들기 위해 [리포지토리 패턴](xref:fundamentals/repository-pattern)을 구현하는 일반적인 사례입니다. 이러한 자습서를 간단하고 Entity Framework 자체를 사용하는 방법을 가르치는 데 초점을 두도록 유지하기 위해 리포지토리를 사용하지 않습니다. EF를 사용하는 리포지토리에 대한 자세한 내용은 [이 시리즈의 마지막 자습서](advanced.md)를 참조하세요.
+> 컨트롤러와 데이터 액세스 계층 간에 추상화 계층을 만들기 위해 리포지토리 패턴을 구현하는 일반적인 사례입니다. 이러한 자습서를 간단하고 Entity Framework 자체를 사용하는 방법을 가르치는 데 초점을 두도록 유지하기 위해 리포지토리를 사용하지 않습니다. EF를 사용하는 리포지토리에 대한 자세한 내용은 [이 시리즈의 마지막 자습서](advanced.md)를 참조하세요.
 
 이 자습서에서는 다음 웹 페이지를 사용합니다.
 

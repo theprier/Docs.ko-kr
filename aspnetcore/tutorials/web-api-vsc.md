@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 07/30/2018
 uid: tutorials/web-api-vsc
-ms.openlocfilehash: 4ce808ec4241ab2fc3c2fb81c3fdb15dd853cd90
-ms.sourcegitcommit: 927e510d68f269d8335b5a7c8592621219a90965
+ms.openlocfilehash: b8e5c8b7d3dc04513997997d903295853dd1ff46
+ms.sourcegitcommit: 6e6002de467cd135a69e5518d4ba9422d693132a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39342278"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49348431"
 ---
 # <a name="create-a-web-api-with-aspnet-core-and-visual-studio-code"></a>ASP.NET Core 및 Visual Studio Code를 사용하여 Web API 만들기
 
@@ -32,6 +32,8 @@ ms.locfileid: "39342278"
 ## <a name="prerequisites"></a>전제 조건
 
 [!INCLUDE[prerequisites](~/includes/net-core-prereqs-vscode.md)]
+
+VS Code 사용에 대한 팁은 [Visual Studio Code 도움말](#visual-studio-code-help)을 참조하세요.
 
 ## <a name="create-the-project"></a>프로젝트를 만듭니다.
 
@@ -57,13 +59,13 @@ code TodoApi
 ["value1","value2"]
 ```
 
-VS Code 사용에 대한 팁은 [Visual Studio Code 도움말](#visual-studio-code-help)을 참조하세요.
+
 
 ## <a name="add-support-for-entity-framework-core"></a>Entity Framework Core에 대한 지원 추가
 
 :::moniker range=">= aspnetcore-2.1"
 
-ASP.NET Core 2.1 이상에서 새 프로젝트를 만들면 *TodoApi.csproj* 파일에 [Microsoft.AspNetCore.App](https://www.nuget.org/packages/Microsoft.AspNetCore.App) 패키지 참조를 추가합니다. 아직 지정하지 않았으면 `Version` 특성을 추가합니다.
+ASP.NET Core 2.1 이상에서 새 프로젝트를 만들면 *TodoApi.csproj* 파일에 [Microsoft.AspNetCore.App](https://www.nuget.org/packages/Microsoft.AspNetCore.App) 패키지 참조를 추가합니다.
 
 [!code-xml[](first-web-api/samples/2.1/TodoApi/TodoApi.csproj?name=snippet_Metapackage&highlight=2)]
 

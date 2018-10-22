@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: H1Hack27Feb2017
 ms.date: 08/20/2018
 uid: mvc/views/tag-helpers/authoring
-ms.openlocfilehash: 2d39488caeea0c87d2efc79f265de7feb200f096
-ms.sourcegitcommit: 15d7bd0b2c4e6fe9ac335d658bab71a45ca5bc72
+ms.openlocfilehash: 3bad02c650c717b33386f028cb223d14c0a34ff9
+ms.sourcegitcommit: f5d403004f3550e8c46585fdbb16c49e75f495f3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/20/2018
-ms.locfileid: "41755606"
+ms.lasthandoff: 10/20/2018
+ms.locfileid: "49477633"
 ---
 # <a name="author-tag-helpers-in-aspnet-core"></a>ASP.NET Core의 작성자 태그 도우미
 
@@ -113,6 +113,8 @@ FQN을 사용하여 뷰에 태그 도우미를 추가하려면 먼저 FQN(`Autho
 1. *Views/Home/Contact.cshtml* 파일에서 태그를 다음 변경 내용으로 업데이트합니다. [!code-html[](../../../mvc/views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/Home/ContactCopy.cshtml?highlight=15,16)]
 
 2. 앱을 실행하고 올바른 링크를 생성하는지 확인합니다.
+
+<a name="self-closing"></a>
     
    > [!NOTE]
    > 이메일 태그 자체 닫음(`<email mail-to="Rick" />`)을 작성하려는 경우 최종 출력도 자체로 닫힙니다. 시작 태그(`<email mail-to="Rick">`)만 사용하여 태그를 작성하는 기능을 사용하려면 클래스를 다음과 같이 데코레이트해야 합니다.

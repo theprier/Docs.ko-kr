@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 09/11/2018
 uid: mvc/views/partial
-ms.openlocfilehash: a836ed073dfe769fc3cc0cd0622b17937747928b
-ms.sourcegitcommit: 70fb7c9d5f2ddfcf4747382a9f7159feca7a6aa7
+ms.openlocfilehash: d3d2f55645881dd05f7663e0a9d3e45d6bb6d77f
+ms.sourcegitcommit: f5d403004f3550e8c46585fdbb16c49e75f495f3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45601758"
+ms.lasthandoff: 10/20/2018
+ms.locfileid: "49477685"
 ---
 # <a name="partial-views-in-aspnet-core"></a>ASP.NET Core의 부분 보기
 
@@ -44,7 +44,7 @@ ms.locfileid: "45601758"
 
 ## <a name="declare-partial-views"></a>부분 보기 선언
 
-::: moniker range=">= aspnetcore-2.1"
+::: moniker range=">= aspnetcore-2.0"
 
 부분 보기는 ‘보기’ 폴더(MVC) 또는 *Pages* 폴더(Razor Pages)에서 유지 관리되는 *.cshtml* 태그 파일입니다.
 
@@ -52,11 +52,11 @@ ASP.NET Core MVC에서 컨트롤러의 <xref:Microsoft.AspNetCore.Mvc.ViewResult
 
 MVC 보기 또는 페이지 렌더링과 달리 부분 보기는 *_ViewStart.cshtml*을 실행하지 않습니다. *_ViewStart.cshtml*에 대한 자세한 내용은 <xref:mvc/views/layout>을 참조하세요.
 
-부분 보기 파일 이름은 종종 밑줄(`_`)로 시작됩니다. 이 명명 규칙은 필수는 아니지만 부분 보기를 보기 및 페이지와 시각적으로 구분하는 데 도움이 됩니다. 파일 이름이 밑줄로 시작되는 경우 Razor Pages는 파일의 태그에 `@page` 지시문이 포함되어 있는 경우에도 태그 파일을 Razor Pages 페이지로 처리하지 않습니다.
+부분 보기 파일 이름은 종종 밑줄(`_`)로 시작됩니다. 이 명명 규칙은 필수는 아니지만 부분 보기를 보기 및 페이지와 시각적으로 구분하는 데 도움이 됩니다.
 
 ::: moniker-end
 
-::: moniker range="< aspnetcore-2.1"
+::: moniker range="< aspnetcore-2.0"
 
 부분 보기는 ‘보기’ 폴더에서 유지 관리되는 *.cshtml* 태그 파일입니다.
 
