@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 08/29/2018
 uid: host-and-deploy/azure-apps/index
-ms.openlocfilehash: f2de81af4bd2992aec76a287484d0057021231d8
-ms.sourcegitcommit: 13940eb53c68664b11a2d685ee17c78faab1945d
+ms.openlocfilehash: 315261c4d20970fc399cc2a879dd452bdf3be93f
+ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/01/2018
-ms.locfileid: "47860968"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49326058"
 ---
 # <a name="deploy-aspnet-core-apps-to-azure-app-service"></a>Azure App Service에 ASP.NET Core 앱 배포
 
@@ -59,6 +59,8 @@ ASP.NET Core 2.0 이상에서 다음 NuGet 패키지는 Azure App Service에 배
 
 **응용 프로그램 설정** 블레이드의 **앱 설정** 영역에서는 앱의 환경 변수를 설정할 수 있습니다. 환경 변수는 [환경 변수 구성 공급자](xref:fundamentals/configuration/index#environment-variables-configuration-provider)가 사용할 수 있습니다.
 
+Azure Portal에서 앱 설정을 만들거나 수정하고**저장** 단추를 선택하면 Azure 앱이 다시 시작됩니다. 서비스를 다시 시작한 후에 환경 변수를 앱에서 사용할 수 있습니다.
+
 앱이 [웹 호스트](xref:fundamentals/host/web-host)를 사용하고 [WebHost.CreateDefaultBuilder](/dotnet/api/microsoft.aspnetcore.webhost.createdefaultbuilder)를 사용하여 호스트를 빌드하는 경우 호스트를 구성하는 환경 변수는 `ASPNETCORE_` 접두사를 사용합니다. 자세한 내용은 <xref:fundamentals/host/web-host> 및 [환경 변수 구성 공급자](xref:fundamentals/configuration/index#environment-variables-configuration-provider)를 참조하세요.
 
 앱이 [일반 호스트](xref:fundamentals/host/generic-host)를 사용하는 경우에는 기본적으로 환경 변수가 앱 구성으로 로드되지 않으며 개발자가 구성 공급자를 추가해야 합니다. 개발자가 구성 공급자를 추가할 때 환경 변수 접두사를 결정합니다. 자세한 내용은 <xref:fundamentals/host/generic-host> 및 [환경 변수 구성 공급자](xref:fundamentals/configuration/index#environment-variables-configuration-provider)를 참조하세요.
@@ -101,11 +103,11 @@ Azure App Service/IIS에서 호스트하는 앱의 일반적인 배포 구성 �
 
 ## <a name="deploy-aspnet-core-preview-release-to-azure-app-service"></a>Azure App Service에 ASP.NET Core 미리 보기 릴리스 배포
 
-다음과 같은 방법으로 Azure App Service에 ASP.NET Core 미리 보기 앱을 배포할 수 있습니다.
+다음 방법 중 하나를 사용합니다.
 
-* [미리 보기 사이트 확장 설치](#install-the-preview-site-extension)
-<!-- * [Deploy the app self-contained](#deploy-the-app-self-contained) -->
-* [Web Apps for Containers에서 Docker 사용](#use-docker-with-web-apps-for-containers)
+* [미리 보기 사이트 확장을 설치](#install-the-preview-site-extension)합니다.
+* [자체 포함된 앱을 배포](#deploy-the-app-self-contained)합니다.
+* [Web Apps for Containers에서 Docker를 사용](#use-docker-with-web-apps-for-containers)합니다.
 
 ### <a name="install-the-preview-site-extension"></a>미리 보기 사이트 확장 설치
 
@@ -161,18 +163,46 @@ Azure App Service/IIS에서 호스트하는 앱의 일반적인 배포 구성 �
 
 ARM 템플릿을 사용하여 앱을 만들고 배포하는 경우 `siteextensions` 리소스 형식을 사용하여 웹앱에 사이트 확장을 추가할 수 있습니다. 예:
 
-[!code-json[Main](index/sample/arm.json?highlight=2)]
+[!code-json[](index/sample/arm.json?highlight=2)]
 
-<!--
-### Deploy the app self-contained
+### <a name="deploy-the-app-self-contained"></a>자체 포함된 앱 배포
 
-A [self-contained app](/dotnet/core/deploying/#self-contained-deployments-scd) can be deployed that carries the preview runtime in the deployment. When deploying a self-contained app:
+미리 보기 런타임을 대상으로 하는 [SCD(자체 포함 배포)](/dotnet/core/deploying/#self-contained-deployments-scd)는 배포 시 미리 보기 런타임을 전달합니다.
 
-* The site doesn't need to be prepared.
-* The app must be published differently than when publishing for a framework-dependent deployment with the shared runtime and host on the server.
+자체 포함된 앱을 배포하는 경우:
 
-Self-contained apps are an option for all ASP.NET Core apps.
--->
+* Azure App Service의 사이트에는 [미리 보기 사이트 확장](#install-the-preview-site-extension)이 필요하지 않습니다.
+* 앱은 [FDD(프레임워크 종속 배포)](/dotnet/core/deploying#framework-dependent-deployments-fdd)에 대해 게시할 때와 다른 접근 방식으로 공개해야 합니다.
+
+#### <a name="publish-from-visual-studio"></a>Visual Studio에서 게시
+
+1. Visual Studio 도구 모음에서 **빌드** > **{응용 프로그램 이름} 게시**를 선택합니다.
+1. **공개 대상 선택** 대화 상자에서 **App Service**가 선택되어 있는지 확인합니다.
+1. **고급**을 선택합니다. **게시** 대화 상자가 열립니다.
+1. **게시** 대화 상자에서:
+   * **릴리스** 구성이 선택되었는지 확인합니다.
+   * **배포 모드** 드롭다운 목록을 열고 **자체 포함**을 선택합니다.
+   * **대상 런타임** 드롭다운 목록에서 대상 런타임을 선택합니다. 기본값은 `win-x86`입니다.
+   * 배포 시 추가 파일을 제거해야 하는 경우 **파일 게시 옵션**을 열고 대상에서 추가 파일을 제거하는 확인란을 선택합니다.
+   * **저장**을 선택합니다.
+1. 게시 마법사의 나머지 프롬프트를 따라 새 사이트를 작성하거나 기존 사이트를 업데이트합니다.
+
+#### <a name="publish-using-command-line-interface-cli-tools"></a>CLI(명령줄 인터페이스) 도구를 사용하여 게시합니다.
+
+1. 프로젝트 파일에서 하나 이상의 [RID(런타임 ID)](/dotnet/core/rid-catalog)를 지정합니다. 단일 RID에 `<RuntimeIdentifier>`(단수)을 사용하거나, `<RuntimeIdentifiers>`(복수)를 사용하여 세미콜론으로 구분된 RID 목록을 제공합니다. 다음 예제에서는 `win-x86` RID가 지정됩니다.
+
+   ```xml
+   <PropertyGroup>
+     <TargetFramework>netcoreapp2.1</TargetFramework>
+     <RuntimeIdentifier>win-x86</RuntimeIdentifier>
+   </PropertyGroup>
+   ```
+1. 명령 셸에서 [dotnet publish](/dotnet/core/tools/dotnet-publish) 명령을 사용하여 호스트의 런타임에 대한 릴리스 구성에 있는 앱을 게시합니다. 다음 예제에서 앱은 `win-x86` RID에 게시됩니다. `--runtime` 옵션에 제공된 RID를 프로젝트 파일의 `<RuntimeIdentifier>`(또는 `<RuntimeIdentifiers>`) 속성에 제공해야 합니다.
+
+   ```console
+   dotnet publish --configuration Release --runtime win-x86
+   ```
+1. *bin/Release/{TARGET FRAMEWORK}/{RUNTIME IDENTIFIER}/publish* 디렉터리의 콘텐츠를 App Service의 사이트로 이동합니다.
 
 ### <a name="use-docker-with-web-apps-for-containers"></a>Web Apps for Containers에서 Docker 사용
 

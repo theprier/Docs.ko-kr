@@ -6,12 +6,12 @@ monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 05/12/2018
 uid: razor-pages/index
-ms.openlocfilehash: f55d0e534dafb0709f1411bad9b038a87abde7ab
-ms.sourcegitcommit: c12ebdab65853f27fbb418204646baf6ce69515e
+ms.openlocfilehash: 7bd597acedade65f2be53f4f50a436981e576b1f
+ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "46523313"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49326123"
 ---
 # <a name="introduction-to-razor-pages-in-aspnet-core"></a>ASP.NET Core의 Razor 페이지 소개
 
@@ -221,7 +221,7 @@ Razor 페이지는 기본적으로 GET이 아닌 동사에만 속성을 바인�
 <button type="submit" formaction="/?id=1&amp;handler=delete">delete</button>
 ```
 
-단추를 선택하면 양식 `POST` 요청이 서버에 전송됩니다. 이름 규칙에 따라 `OnPost[handler]Async` 구성표에 해당하는 `handler` 매개 변수 값을 기반으로 처리기 메서드의 이름을 선택합니다.
+단추를 선택하면 양식 `POST` 요청이 서버에 전송됩니다. 규칙에 따라 `OnPost[handler]Async` 구성표에 해당하는 `handler` 매개 변수 값을 기반으로 처리기 메서드의 이름을 선택합니다.
 
 `handler`가 이 예제에서 `delete`이기 때문에 `OnPostDeleteAsync` 처리기 메서드는 `POST` 요청을 처리하는 데 사용됩니다. `asp-page-handler`가 `remove`와 같은 다른 값으로 설정되면 `OnPostRemoveAsync`라는 이름의 페이지 처리기 메서드를 선택합니다.
 
@@ -246,7 +246,9 @@ Razor 페이지는 기본적으로 GET이 아닌 동사에만 속성을 바인�
 
 ## <a name="manage-head-requests-with-the-onget-handler"></a>OnGet 처리기를 사용하여 HEAD 요청 관리
 
-일반적으로 HEAD 처리기는 HEAD 요청에 대해 생성 및 호출됩니다.
+HEAD 요청을 사용하면 특정 리소스의 헤더를 검색할 수 있습니다. GET 요청과 달리 HEAD 요청은 응답 본문을 반환하지 않습니다. 
+
+일반적으로 HEAD 처리기는 HEAD 요청에 대해 생성 및 호출됩니다. 
 
 ```csharp
 public void OnHead()
@@ -255,12 +257,14 @@ public void OnHead()
 }
 ```
 
-HEAD 처리기(`OnHead`)가 정의되지 않으면 Razor 페이지는 ASP.NET Core 2.1 이상에서 GET 페이지 처리기(`OnGet`) 호출로 대체됩니다. ASP.NET Core 2.1~2.x에 대한 `Startup.Configure`의 [SetCompatibilityVersion 메서드](xref:mvc/compatibility-version)로 이 동작을 옵트인(opt in)합니다.
+HEAD 처리기(`OnHead`)가 정의되지 않으면 Razor 페이지는 ASP.NET Core 2.1 이상에서 GET 페이지 처리기(`OnGet`) 호출로 대체됩니다. ASP.NET Core 2.1 및 2.2에서 이 동작은 `Startup.Configure`의 [SetCompatibilityVersion](xref:mvc/compatibility-version)에서 발생합니다.
 
 ```csharp
 services.AddMvc()
     .SetCompatibilityVersion(Microsoft.AspNetCore.Mvc.CompatibilityVersion.Version_2_1);
 ```
+
+기본 템플릿은 ASP.NET Core 2.1 및 2.2에서 `SetCompatibilityVersion` 호출을 생성합니다.
 
 `SetCompatibilityVersion`은 효과적으로 Razor 페이지 옵션 `AllowMappingHeadRequestsToGetHandler`를 `true`로 설정합니다.
 

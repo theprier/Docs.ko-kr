@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 08/20/2018
 uid: fundamentals/index
-ms.openlocfilehash: 68760f179c4d6e806510b727e2284f8c2c4a4ff6
-ms.sourcegitcommit: d27317c16f113e7c111583042ec7e4c5a26adf6f
+ms.openlocfilehash: 83dfb5707700da01c45bae3c0c00e67ca397d402
+ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/20/2018
-ms.locfileid: "41746420"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49325473"
 ---
 # <a name="aspnet-core-fundamentals"></a>ASP.NET Core 기본 사항
 
@@ -119,7 +119,7 @@ ASP.NET Core 앱은 앱의 시작과 수명 관리를 담당하는 *호스트*�
 
 ## <a name="servers"></a>서버
 
-ASP.NET Core의 호스팅 모델은 요청을 직접 수신하지 않습니다.  대신 호스팅 모델은 HTTP 서버 구현에 의존해서 요청을 앱에 전달합니다. 전달된 요청은 인터페이스를 통해서 접근할 수 있는 기능 개체 집합으로 래핑됩니다. ASP.NET Core에는 [Kestrel](xref:fundamentals/servers/kestrel)이라는 관리되는 크로스 플랫폼 웹 서버가 포함되어 있습니다. Kestrel은 일반적으로 역방향 프록시 구성의 [IIS](https://www.iis.net/) 또는 [Nginx](http://nginx.org) 같은 프로덕션 웹 서버 뒤에서 실행됩니다. kestrel은 ASP.NET Core 2.0 이상에서 인터넷에 직접 공개되는 에지 서버로 실행할 수도 있습니다.
+ASP.NET Core의 호스팅 모델은 요청을 직접 수신하지 않습니다.  대신 호스팅 모델은 HTTP 서버 구현에 의존해서 요청을 앱에 전달합니다. 전달된 요청은 인터페이스를 통해서 접근할 수 있는 기능 개체 집합으로 래핑됩니다. ASP.NET Core에는 [Kestrel](xref:fundamentals/servers/kestrel)이라는 관리되는 크로스 플랫폼 웹 서버가 포함되어 있습니다. Kestrel은 일반적으로 역방향 프록시 구성의 [IIS](https://www.iis.net/) 또는 [Nginx](http://nginx.org) 같은 프로덕션 웹 서버 뒤에서 실행됩니다. kestrel은 ASP.NET Core 2.0 이상에서 인터넷에 직접 공개되는 공용 에지 서버로 실행할 수도 있습니다.
 
 자세한 내용은 <xref:fundamentals/servers/index>을 참조하세요.
 

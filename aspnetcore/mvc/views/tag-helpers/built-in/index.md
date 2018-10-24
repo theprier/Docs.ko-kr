@@ -3,23 +3,24 @@ title: 기본 제공 ASP.NET Core 태그 도우미
 author: pkellner
 description: 기본 제공 ASP.NET Core 태그 도우미에서 생산성을 향상시키는 방법을 알아봅니다.
 ms.author: riande
-ms.date: 09/18/2018
+ms.custom: mvc
+ms.date: 10/10/2018
 uid: mvc/views/tag-helpers/builtin-th/Index
-ms.openlocfilehash: 5d9425e0b68578c86a6f9a691322e0bb63a860fb
-ms.sourcegitcommit: c684eb6c0999d11d19e15e65939e5c7f99ba47df
+ms.openlocfilehash: 58840d6ecd09bd2ae7f96c046a0cb93c018f9645
+ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46292312"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49325486"
 ---
 # <a name="aspnet-core-built-in-tag-helpers"></a>기본 제공 ASP.NET Core 태그 도우미
 
 작성자: [Peter Kellner](http://peterkellner.net)
 
-ASP.NET Core에는 생산성을 향상하기 위해 다양한 기본 제공 태그 도우미가 포함되어 있습니다. 이 섹션에서는 기본 제공 태그 도우미의 개요를 제공합니다.
+태그 도우미에 대한 개요는 <xref:mvc/views/tag-helpers/intro>을 참조하세요.
 
 > [!NOTE]
-> [Razor](xref:mvc/views/razor) 뷰 엔진에서 내부적으로 사용하기 때문에 다루지 않는 기본 제공 태그 도우미도 있습니다. 여기에는 웹 사이트의 루트 경로로 확장되는 ~ 문자의 태그 도우미가 포함됩니다.
+> 문서에서 설명하지 않는 기본 제공된 태그 도우미가 있습니다. 이러한 태그 도우미는 [Razor](xref:mvc/views/razor) 뷰 엔진에서 내부적으로 사용됩니다. 여기에는 웹 사이트의 루트 경로로 확장되는 `~`(물결표) 문자의 태그 도우미가 포함됩니다.
 
 ## <a name="built-in-aspnet-core-tag-helpers"></a>기본 제공 ASP.NET Core 태그 도우미
 
