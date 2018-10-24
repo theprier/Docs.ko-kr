@@ -4,25 +4,37 @@ author: rick-anderson
 description: ASP.NET Core의 웹 서버 Kestrel 및 HTTP.sys를 검색합니다. 서버를 선택하는 방법 및 역방향 프록시 서버를 사용하는 시기에 대해 알아봅니다.
 ms.author: tdykstra
 ms.custom: mvc
-ms.date: 09/13/2018
+ms.date: 09/21/2018
 uid: fundamentals/servers/index
-ms.openlocfilehash: 0f1460af5bc1cd879ff11e43775ac16ca36b150e
-ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
+ms.openlocfilehash: 161ab3fdf48e58d8c9af991dc5531e46d9c5adff
+ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46011757"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49325863"
 ---
 # <a name="web-server-implementations-in-aspnet-core"></a>ASP.NET Core의 웹 서버 구현
 
 작성자: [Tom Dykstra](https://github.com/tdykstra), [Steve Smith](https://ardalis.com/), [Stephen Halter](https://twitter.com/halter73) 및 [Chris Ross](https://github.com/Tratcher)
 
-ASP.NET Core 앱은 In-process HTTP 서버 구현을 사용하여 실행됩니다. 서버 구현은 HTTP 요청을 수신하고 [HttpContext](/dotnet/api/system.web.httpcontext)를 구성하는 [요청 기능](xref:fundamentals/request-features) 집합으로 앱에 표시합니다.
+ASP.NET Core 앱은 In-process HTTP 서버 구현을 사용하여 실행됩니다. 서버 구현은 HTTP 요청을 수신하고 <xref:Microsoft.AspNetCore.Http.HttpContext>에 구성된 [요청 기능](xref:fundamentals/request-features)의 집합으로 앱에 표시합니다.
 
-ASP.NET Core는 다음 두 가지 서버 구현을 제공합니다.
+ASP.NET Core는 다음 세 가지 서버 구현을 제공합니다.
+
+::: moniker range=">= aspnetcore-2.2"
+
+* [Kestrel](xref:fundamentals/servers/kestrel)은 ASP.NET Core용 기본 플랫폼 간 HTTP 서버입니다.
+* `IISHttpServer`는 [in-process 호스팅 모델](xref:fundamentals/servers/aspnet-core-module#in-process-hosting-model)과 Windows의 [ASP.NET Core 모듈](xref:fundamentals/servers/aspnet-core-module)에서 사용됩니다.
+* [HTTP.sys](xref:fundamentals/servers/httpsys)는 [Http.Sys 커널 드라이버 및 HTTP 서버 API](https://msdn.microsoft.com/library/windows/desktop/aa364510.aspx)를 기반으로 하는 Windows 전용 HTTP 서버입니다. ASP.NET Core 1.x에서는 HTTP.sys를 [WebListener](xref:fundamentals/servers/weblistener)라고 합니다.
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.2"
 
 * [Kestrel](xref:fundamentals/servers/kestrel)은 ASP.NET Core용 기본 플랫폼 간 HTTP 서버입니다.
 * [HTTP.sys](xref:fundamentals/servers/httpsys)는 [Http.Sys 커널 드라이버 및 HTTP 서버 API](https://msdn.microsoft.com/library/windows/desktop/aa364510.aspx)를 기반으로 하는 Windows 전용 HTTP 서버입니다. ASP.NET Core 1.x에서는 HTTP.sys를 [WebListener](xref:fundamentals/servers/weblistener)라고 합니다.
+
+::: moniker-end
 
 ## <a name="kestrel"></a>Kestrel
 
@@ -50,7 +62,7 @@ Kestrel을 단독으로 사용하거나 IIS, Nginx 또는 Apache 같은 *역방�
 
 ![Kestrel은 IIS, Nginx 또는 Apache 같은 역방향 프록시 서버를 통해 간접적으로 인터넷과 통신합니다.](kestrel/_static/kestrel-to-internet.png)
 
-인터넷에서 트래픽에 노출되는 에지 배포에 역방향 프록시를 사용하는 가장 중요한 이유는 보안입니다. 1.x 버전의 Kestrel에는 인터넷의 공격으로부터 보호하기 위한 중요한 보안 기능이 없습니다. 여기에는 적절한 시간 제한, 요청 크기 제한, 동시 연결 제한을 비롯한 다양한 기능이 포함됩니다.
+인터넷에 직접 노출되는 공용 에지 서버 배포에 역방향 프록시를 사용하는 가장 중요한 이유는 보안입니다. 1.x 버전의 Kestrel에는 인터넷의 공격으로부터 보호하기 위한 중요한 보안 기능이 없습니다. 여기에는 적절한 시간 제한, 요청 크기 제한, 동시 연결 제한을 비롯한 다양한 기능이 포함됩니다.
 
 자세한 내용은 [Kestrel를 역방향 프록시와 함께 사용할 경우](xref:fundamentals/servers/kestrel#when-to-use-kestrel-with-a-reverse-proxy)를 참조하세요.
 
@@ -60,7 +72,19 @@ Kestrel 또는 [사용자 지정 서버 구현](#custom-servers)이 없으면 II
 
 ### <a name="iis-with-kestrel"></a>IIS 및 Kestrel
 
-[IIS](/iis/get-started/introduction-to-iis/introduction-to-iis-architecture) 또는 [IIS Express](/iis/extensions/introduction-to-iis-express/iis-express-overview)를 ASP.NET Core에 대한 역방향 프록시로 사용할 경우 ASP.NET Core 앱은 IIS 작업자 프로세스와 분리된 프로세스에서 실행됩니다. IIS 프로세스에서 [ASP.NET Core 모듈](xref:fundamentals/servers/aspnet-core-module)은 역방향 프록시 관계를 조정합니다. ASP.NET Core 모듈의 기본 기능은 ASP.NET Core 앱을 시작하고, 작동 중단 시 앱을 다시 시작하고, 앱에 HTTP 트래픽을 전달하는 것입니다. 자세한 내용은 [ASP.NET Core 모듈](xref:fundamentals/servers/aspnet-core-module)을 참조하세요. 
+::: moniker range=">= aspnetcore-2.2"
+
+[IIS](/iis/get-started/introduction-to-iis/introduction-to-iis-architecture) 또는 [IIS Express](/iis/extensions/introduction-to-iis-express/iis-express-overview)를 사용할 때 ASP.NET Core 앱은 IIS 작업자 프로세스(*in-process* 호스팅 모델)와 동일한 프로세스에서 실행되거나 IIS 작업자 프로세스(*out-of-process* 호스팅 모델)와는 별개로 처리됩니다.
+
+[ASP.NET Core 모듈](xref:fundamentals/servers/aspnet-core-module)은 in-process IIS HTTP Server 또는 out-of-process Kestrel 서버 간의 네이티브 IIS 요청을 처리하는 네이티브 IIS 모듈입니다. 자세한 내용은 <xref:fundamentals/servers/aspnet-core-module>을 참조하세요.
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.2"
+
+[IIS](/iis/get-started/introduction-to-iis/introduction-to-iis-architecture) 또는 [IIS Express](/iis/extensions/introduction-to-iis-express/iis-express-overview)를 ASP.NET Core에 대한 역방향 프록시로 사용할 경우 ASP.NET Core 앱은 IIS 작업자 프로세스와 분리된 프로세스에서 실행됩니다. IIS 프로세스에서 [ASP.NET Core 모듈](xref:fundamentals/servers/aspnet-core-module)은 역방향 프록시 관계를 조정합니다. ASP.NET Core 모듈의 기본 기능은 ASP.NET Core 앱을 시작하고, 작동 중단 시 앱을 다시 시작하고, 앱에 HTTP 트래픽을 전달하는 것입니다. 자세한 내용은 <xref:fundamentals/servers/aspnet-core-module>을 참조하세요.
+
+::: moniker-end
 
 ### <a name="nginx-with-kestrel"></a>Nginx 및 Kestrel
 
@@ -132,7 +156,7 @@ ASP.NET Core 1.x에서는 HTTP.sys의 이름이 [WebListener](xref:fundamentals/
   * 대상 프레임워크: .NET Core 2.2 이상
 * [IIS(Out-of-process)](xref:host-and-deploy/iis/index#http2-support)
   * Windows Server 2016/Windows 10 이상, IIS 10 이상
-  * 에지 연결은 HTTP/2를 사용하지만 Kestrel에 대한 역방향 프록시 연결은 HTTP/1.1을 사용합니다.
+  * 공용 에지 서버 연결은 HTTP/2를 사용하지만 Kestrel에 대한 역방향 프록시 연결은 HTTP/1.1을 사용합니다.
   * 대상 프레임워크: IIS Out-of-process 배포에는 적용할 수 없습니다.
 
 ::: moniker-end
@@ -144,7 +168,7 @@ ASP.NET Core 1.x에서는 HTTP.sys의 이름이 [WebListener](xref:fundamentals/
   * 대상 프레임워크: HTTP.sys 배포에는 적용할 수 없습니다.
 * [IIS(Out-of-process)](xref:host-and-deploy/iis/index#http2-support)
   * Windows Server 2016/Windows 10 이상, IIS 10 이상
-  * 에지 연결은 HTTP/2를 사용하지만 Kestrel에 대한 역방향 프록시 연결은 HTTP/1.1을 사용합니다.
+  * 공용 에지 서버 연결은 HTTP/2를 사용하지만 Kestrel에 대한 역방향 프록시 연결은 HTTP/1.1을 사용합니다.
   * 대상 프레임워크: IIS Out-of-process 배포에는 적용할 수 없습니다.
 
 ::: moniker-end
