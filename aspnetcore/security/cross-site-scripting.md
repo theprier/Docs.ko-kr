@@ -12,55 +12,55 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 10/10/2018
 ms.locfileid: "48910527"
 ---
-# <a name="prevent-cross-site-scripting-xss-in-aspnet-core"></a>사이트 간 스크립팅 (XSS) ASP.NET Core에서 방지
+# <a name="prevent-cross-site-scripting-xss-in-aspnet-core"></a>ASP.NET Core에서 크로스 사이트 스크립트 공격(XSS) 방지
 
 작성자: [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-사이트 간 스크립팅 (XSS)는 보안 취약점으로 인 한 공격자가 클라이언트 측 스크립트 (일반적으로 JavaScript) 웹 페이지에 배치할 수 있도록 하는 경우 다른 사용자에 게 공격자의 스크립트를 실행 하는 영향을 받는 페이지를 로드 하는 경우 DOM 조작을 통해 웹 페이지의 콘텐츠를 변경 또는 다른 페이지로 브라우저를 리디렉션할 공격자가 쿠키를 도용 하는 세션 토큰에 사용 하도록 설정. XSS 취약성으로 인 한 응용 프로그램은 사용자 입력 하 고 유효성 검사, 인코딩 또는 해 서 이스케이프 하지 않고 페이지를 출력 하는 경우에 일반적으로 발생 합니다.
+크로스 사이트 스크립팅(XSS)은 공격자가 웹페이지에 Javascript와 같은 클라이언트 사이드 스크립트를 웹페이지에 배치하도록 하는 보안 취약점을 일컫습니다. 다른 사용자가 공격당한 페이지를 로드할 경우 공격자의 스크립트가 실행되며, 쿠키 및 세션 토큰을 탈취하거나 DOM을 조작하여 페이지 내용을 변경하고, 혹은 다른 페이지로 이동시킬 수 있습니다. XSS 취약점은 보통 검증을 거치지 않은 사용자 입력이나 출력을 검증하거나, 암호화, 혹은 이스케이핑 하지 않을때 발생합니다.  
 
-## <a name="protecting-your-application-against-xss"></a>XSS에 대 한 응용 프로그램 보호
+## <a name="protecting-your-application-against-xss"></a>애플리케이션을 XSS로부터 보호하기
 
-삽입에 응용 프로그램을 속여에 기본 수준 XSS 작동는 `<script>` 렌더링 된 페이지 또는 삽입 하 여 태그를 `On*` 요소로 이벤트. 개발자가 응용 프로그램에 XSS를 소개 하지 않으려면 다음 방지 단계를 사용 해야 합니다.
+기본적인 단계의 XSS는 렌더링 된 페이지에 `<script>` 태그를 삽입하거나, On 계열의 이벤트를 DOM 요소에 삽입할 때 발생합니다. 개발자들은 이러한 XSS 공격으로부터 방어하기 위해 다음과 같은 조치를 취하여야 합니다.
 
-1. 나머지 아래 단계를 수행 하지 않으면 사용자의 HTML 입력에 신뢰할 수 없는 데이터를 배치 하지 마세요. 신뢰할 수 없는 데이터는 공격자, HTML 폼 입력, 쿼리 문자열, HTTP 헤더를 공격자는 응용 프로그램을 위반 수 없습니다. 해당 하는 경우에 데이터베이스를 위반 하는 일을 할 수 있습니다 하는 대로 데이터베이스에서 제공 하는 데이터도 사용할 수 있는 모든 데이터입니다.
+1. 신뢰할 수 없는 데이터를 나머지 단계를 거치지 않은 이상 HTML 입력에 삽입하지 마십시오. 신뢰할 수 없는 데이터란 공격자의 제어 하에 있을 수 있거나, 폼 입력, 쿼리 문자열, HTTP 헤더, 혹은 공격받았을 수도 있는 데이터베이스로부터 가져온 값 모두를 의미합니다.
 
-2. HTML 요소 내에서 신뢰할 수 없는 데이터를 배치 하기 전에 HTML로 인코딩된 것을 확인 합니다. 와 같은 문자는 HTML 인코딩을 &lt; 와 같은 안전한 형식으로 변경 하 고 &amp;l t;
+2. 신뢰할 수 없는 데이터를 HTML 요소에 삽입하기 전 HTML 인코딩 되었는지 확인하십시오. 예를 들어, `<` 와 같은 문자열을 `&lt;` 등과 같이 안전한 형태로 바꾸는 것과 같습니다.
 
-3. HTML 특성을 신뢰할 수 없는 데이터를 전환 하기 전에 HTML로 인코딩된 것을 확인 합니다. HTML 인코딩을의 상위 집합 및와 같은 추가 문자를 인코딩합니다 HTML 특성 인코딩입니다 "및 '.
+3. 신뢰할 수 없는 데이터를 HTML 어트리뷰트에 삽입하기 전 HTML 인코딩 되었는지 확인하십시오. HTML 어트리뷰트 인코딩은 HTML 인코딩의 상위집합으로, `"` 나 `'`와 같은 문자들을 추가적으로 인코딩하는 과정입니다.
 
-4. JavaScript를 신뢰할 수 없는 데이터를 전환 하기 전에 데이터를 런타임에 검색 내용이 HTML 요소에 배치 합니다. 이것이 불가능 하면 JavaScript로 인코딩된 데이터가 확인 합니다. JavaScript에 대 한 위험한 문자는 JavaScript 인코딩 및 예를 들어 해당 16 진수 바뀝니다 &lt; 로 인코딩할 수는 `\u003C`합니다.
+4. 신뢰할 수 없는 데이터를 Javascript에 삽입하기 전, 런타임에 가져오는 HTML 요소에 데이터를 배치하십시오. 만일 불가능한 경우, 데이터가 JavaScript 인코딩되었는지 확인하십시오. JavaScript 인코딩은  스크립트 동작을 변조할 수 있는 위험한 문자들을 hex 값으로 변환하는 과정으로, `<`를 `\u003C` 로 변환하는 것을 의미합니다.
 
-5. URL 쿼리 문자열이를 신뢰할 수 없는 데이터를 전환 하기 전에 URL로 인코딩된 것을 확인 합니다.
+5. 신뢰할 수 없는 데이터를 URL 쿼리 문자열에 삽입하기 전, URL 인코딩 되었는지 확인하십시오.
 
-## <a name="html-encoding-using-razor"></a>Razor를 사용 하 여 HTML 인코딩
+## <a name="html-encoding-using-razor"></a>Razor를 이용한 HTML 인코딩
 
-모두 자동으로 MVC에서 사용 되는 Razor 엔진 인코딩합니다 이렇게 것을 방지 하기 위해 열심히 작업 하지 않는 출력 변수에서 제공 합니다. 사용할 때마다 HTML 특성에 대 한 인코딩 규칙을 사용 합니다 *@* 지시문입니다. HTML로 인코딩 특성은 HTML 인코딩 즉, HTML 인코딩 또는 HTML 특성 인코딩입니다을 사용할 것인지 걱정 없는 합니다. 만 사용 하는 HTML 컨텍스트에서 JavaScript로 직접 신뢰할 수 없는 입력을 삽입 하려고 할 때 하지 확인 해야 합니다. 태그 도우미는 또한 tag 매개 변수에서 사용 하는 입력을 인코딩합니다.
+ASP.NET MVC에서 사용되는 Razor 엔진은 XSS를 방지처리를 거치지 않은 변수로부터 유래하는 모든 출력을 자동으로 인코딩합니다. @ 지시자를 사용할때마다 HTML 어트리뷰트 인코딩을 수행합니다. HTML 어트리뷰트 인코딩이 HTML 인코딩의 상위 집합이므로, 개발자는 어떤 것을 사용해야 할 지에 대해 고민할 필요가 없습니다. 신뢰할 수 없는 데이터를 JavaScript에 직접 삽입하지 말고, HTML 컨텍스트 내에서만 @ 지시자를 사용하십시오. 태그 헬퍼 또한 파라메터로 넘겨준 입력값을 인코드 해 줍니다.
 
-다음 Razor 보기를 수행 합니다.
+다음 Razor View를 살펴봅시다.
 
 ```cshtml
-@{
+   @{
        var untrustedInput = "<\"123\">";
    }
 
    @untrustedInput
    ```
 
-이 보기의 내용을 출력 합니다 *untrustedInput* 변수입니다. Namely XSS 공격에 사용 되는 일부 문자를 포함 하는이 변수 &lt;, "및 &gt;합니다. 원본 검사로 인코드된 렌더링 된 출력을 보여 줍니다.
+이 View는 `untrustedInput` 변수의 내용을 출력합니다. 이 변수는 `<`, `"`, `>` 와 같이 XSS 공격에 사용되는 문자들을 담고 있습니다. 이 소스의 렌더링 결과는 다음과 같습니다.
 
 ```html
 &lt;&quot;123&quot;&gt;
-   ```
+```
 
 >[!WARNING]
-> 제공 하는 ASP.NET Core MVC는 `HtmlString` 클래스는 출력 시 자동으로 인코딩된 되지 않습니다. 이 되지 사용할 함께 신뢰할 수 없는 입력으로이 XSS 취약점에 노출 됩니다.
+> ASP.NET Core MVC는 자동으로 인코딩 되지 않는 `HtmlString` 클래스를 제공합니다. XSS 취약점을 방지하기 위하여 절대로 신뢰할 수 없는 데이터와 함께 사용하지 마십시오. 
 
-## <a name="javascript-encoding-using-razor"></a>Razor를 사용 하 여 JavaScript 인코딩
+## <a name="javascript-encoding-using-razor"></a>Razor를 이용한 JavaScript 인코딩
 
-보기 처리 하는 JavaScript 값을 삽입 하려는 경우가 있을 수 있습니다. 구체적인 방법은 두 가지입니다. 값을 삽입 하는 가장 안전한 방법은 태그의 데이터 특성의 값을 배치 하 여 JavaScript에서 검색 됩니다. 예를 들어:
+간혹 View 처리 과정에서 JavaScript에 값을 삽입하고 싶을 수 있습니다. 그런 경우 두가지 방법이 있습니다. 제일 안전한 방법으로는 data 어트리뷰트에 값을 삽입하고 JavaScript에서 가져오도록 하면 됩니다.
 
 ```cshtml
-@{
+   @{
        var untrustedInput = "<\"123\">";
    }
 
@@ -84,8 +84,8 @@ ms.locfileid: "48910527"
      document.write(clientSideUntrustedInputHtml5);
    </script>
    ```
-
-다음 HTML이 생성
+   
+이 코드로부터 다음과 같은 HTML이 생성됩니다.
 
 ```html
 <div
@@ -107,14 +107,14 @@ ms.locfileid: "48910527"
    </script>
    ```
 
-실행 될 때 다음 렌더링 됩니다. 다음
+그리고 다음과 같은 렌더링 결과를 얻을 수 있습니다.
 
 ```none
 <"123">
    <"123">
    ```
 
-또한 JavaScript 인코더를 직접 호출할 수 있습니다.
+또한 JavaScript 인코더를 직접 호출할 수도 있습니다.
 
 ```cshtml
 @using System.Text.Encodings.Web;
@@ -129,7 +129,7 @@ ms.locfileid: "48910527"
    </script>
    ```
 
-이 다음과 같이 브라우저에서 렌더링 됩니다.
+그럼 다음과 같이 렌더링 됩니다.
 
 ```html
 <script>
@@ -138,13 +138,13 @@ ms.locfileid: "48910527"
    ```
 
 >[!WARNING]
-> DOM 요소를 만드는 JavaScript에서 신뢰할 수 없는 입력을 연결 하지 마십시오. 사용 해야 `createElement()` 속성 값을 적절 하 게 같은 할당 `node.TextContent=`를 사용할지 `element.SetAttribute()` / `element[attribute]=` 그렇지 않은 경우에 노출 됩니다 XSS DOM 기반 합니다.
+> 절대 DOM 요소를 생성하기 위해 신뢰할 수 없는 데이터를 JavaScript와 연결하지 마십시오. `createElement()`를 이용하여 요소를 생성한 후 `node.TextContent=` 나 `element.setAttribute()`를 이용하여 속성값을 대입해 주어야 합니다. 그렇지 않은 경우 DOM 기반 XSS 취약점이 발생합니다.
 
-## <a name="accessing-encoders-in-code"></a>코드에서 인코더에 액세스
+## <a name="accessing-encoders-in-code"></a>코드에서 인코더에 접근하기
 
-HTML, JavaScript 및 URL 인코더는 두 가지 방법으로 코드를 통해 삽입할 수 있습니다 [종속성 주입](xref:fundamentals/dependency-injection) 에 포함 된 기본 인코더를 사용할 수 있습니다는 `System.Text.Encodings.Web` 네임 스페이스입니다. 에 적용 되는 모든 기본 인코더를 사용 하는 경우에 문자 범위와 안전 하 게 처리 되도록 적용 되지 않습니다-기본 인코더 가능한 가장 안전한 인코딩 규칙을 사용 합니다.
+HTML, JavaScript 및 URL 인코더는 두 가지 방법으로 코드에서 이용할 수 있습니다. [종속성 주입](xref:fundamentals/dependency-injection)을 이용하거나, `System.Text.Encodings.Web` 네임스페이스에 포함된 기본 인코더를 사용할 수 있습니다. 만일 기본 인코더를 사용하는 경우 가장 안전한 인코딩 규칙을 사용하므로 개발자가 직접 정의한 안전 문자 범위는 적용되지 않습니다.
 
-생성자에서 수행 해야 하는 DI 통해 구성할 수 있는 인코더를 사용 하는 *HtmlEncoder*를 *JavaScriptEncoder* 하 고 *UrlEncoder* 적절 하 게 매개 변수입니다. 예를 들어,
+종속성 주입을 이용하여 설정 가능한 인코더를 사용하려는 경우 생성자에 `HtmlEncoder`, `JavaScriptEncoder`, 그리고 `UrlEncoder`를 파라메터로 적절하게 넘겨주어야 합니다. 예를 들어봅시다.
 
 ```csharp
 public class HomeController : Controller
@@ -164,43 +164,43 @@ public class HomeController : Controller
    }
    ```
 
-## <a name="encoding-url-parameters"></a>URL 매개 변수 인코딩
+## <a name="encoding-url-parameters"></a>URL 매개변수 인코딩
 
-신뢰할 수 없는 입력을 있는 그대로 사용 하는 값을 사용 하 여 URL 쿼리 문자열을 작성 하려는 경우는 `UrlEncoder` 값을 인코딩할 합니다. 예를 들어 개체에 적용된
+신뢰할 수 없는 입력을 이용하여 URL 쿼리 문자열을 만들고자 하는 경우, `UrlEncoder`를 사용하십시오. 예를 들어,
 
 ```csharp
 var example = "\"Quoted Value with spaces and &\"";
    var encodedValue = _urlEncoder.Encode(example);
    ```
-
-변수에 포함 됩니다는 encodedValue 인코딩 후 `%22Quoted%20Value%20with%20spaces%20and%20%26%22`합니다. 공백, 따옴표, 문장 부호 및 기타 안전 하지 않은 문자는 인코딩해야 백분율을 16 진수 값으로, 예를 들어 공백을 %20 됩니다.
+   
+인코딩 이후 `encodedValue` 변수의 값은 `%22Quoted%20Value%20with%20spaces%20and%20%26%22`가 됩니다. 공백, 따옴표, 마침표, 그리고 기타 안전하지 않은 문자들은 URL 인코딩 됩니다. 예를 들어, 공백 문자는 `%20` 으로 인코딩됩니다.
 
 >[!WARNING]
-> URL 경로의 일부로 신뢰할 수 없는 입력을 사용 하지 마세요. 항상 신뢰할 수 없는 입력 쿼리 문자열 값으로 전달 합니다.
+> 신뢰할 수 없는 데이터를 URL 경로에 사용하지 마십시오. 항상 쿼리 문자열의 값으로서 전달되어야 합니다.
 
 <a name="security-cross-site-scripting-customization"></a>
 
-## <a name="customizing-the-encoders"></a>인코더를 사용자 지정
+## <a name="customizing-the-encoders"></a>사용자 지정 인코더 제작하기
 
-기본적으로 인코더 기본 라틴어 유니코드 범위를 제한 하는 안전 하 게 목록을 사용 하 여 하 고 해당 문자 코드와 해당 범위 외부에서 모든 문자를 인코딩합니다. 이 동작은 또한를 사용 하 여 인코더 출력 문자열에 따라 Razor TagHelper HtmlHelper 렌더링을 영향을 줍니다.
+기본 인코더가 사용하는 화이트리스트는 기본 라틴 유니코드 페이지에 한정되어 있으며, 이 외의 모든 문자들을 해당하는 문자 코드로 인코딩합니다. 이러한 동작은 Razor TagHelper와 HtmlHelper가 사용하는 인코더가 렌더링 하는 문자열에 영향을 줍니다. 
 
-이 알 수 없거나 향후 브라우저 버그 (이전 브라우저 버그는 영어가 아닌 문자를 처리 하는 기반 구문 분석을 중단점이 있는) 로부터 보호 하는 것입니다. 웹 사이트가 중국어 등의 비 라틴 문자를 많이 사용 하는 경우 키릴 자모 또는 다른 사용자가이 동작은 않이 있습니다.
+이것은 알 수 없거나 이후의 브라우저 버그들(이전의 브라우저 버그가 비 영문권 문자들을 처리하는데 방해가 되었기에)들을 막기 위한 조치입니다. 만일 사이트가 한자, 키릴 문자와 같은 비 라틴계 문자를 대량으로 사용하는 경우 개발자에게 원치 않는 동작일 것입니다. 
 
-범위에서 시작 하는 동안 응용 프로그램에 적합 한 유니코드를 포함 하도록 인코더 안전 목록을 사용자 지정할 수 있습니다 `ConfigureServices()`합니다.
+`ConfigureServices()`에 적절한 인코더 화이트리스트를 직접 정의할 수 있습니다.
 
-예를 들어, Razor HtmlHelper를 사용할 수 있습니다 기본 구성을 사용 하 여 다음과 같이;
+예를 들어, 기본 구성을 이용하여 Razor HtmlHelper를 이용한다면 다음과 같습니다.
 
 ```html
 <p>This link text is in Chinese: @Html.ActionLink("汉语/漢語", "Index")</p>
    ```
 
-웹 페이지의 소스를 볼 때 표시 됩니다 인코딩된; 중국어 텍스트를 사용 하 여 다음과 같이 렌더링 된
+브라우저에서 소스를 확인하면 다음과 같이 렌더링 된 것을 확인할 수 잇습니다.
 
 ```html
 <p>This link text is in Chinese: <a href="/">&#x6C49;&#x8BED;/&#x6F22;&#x8A9E;</a></p>
    ```
-
-취급 문자 범위를 넓히려면 인코더에 의해 안전 하 게 삽입 하 여 다음 줄에는 `ConfigureServices()` 의 메서드 `startup.cs`;
+   
+화이트리스트의 범위를 넓히고 싶은 경우 `startup.cs` 내의 `ConfigureServices()` 에서 다음과 같이 코드를 작성하여 주면 됩니다.
 
 ```csharp
 services.AddSingleton<HtmlEncoder>(
@@ -208,21 +208,21 @@ services.AddSingleton<HtmlEncoder>(
                                                UnicodeRanges.CjkUnifiedIdeographs }));
    ```
 
-이 예제에서는 유니코드 범위 CjkUnifiedIdeographs 포함 하도록 안전 목록을 확대 합니다. 렌더링된 된 출력은 이제 됩니다.
+이 예제에서는 `CjkUnifiedIdeographs`의 유니코드 범위를 포함 하도록 화이트리스트를 확대했습니다. 이후 렌더링 된 결과는 다음과 같습니다.
 
 ```html
 <p>This link text is in Chinese: <a href="/">汉语/漢語</a></p>
    ```
 
-안전한 범위는 유니코드 코드 차트에서 하지 언어로 지정 됩니다. 합니다 [유니코드 표준](http://unicode.org/) 목록을 가진 [차트 코드](http://www.unicode.org/charts/index.html) 문자가 포함 된 차트를 찾는 데 사용할 수 있습니다. Html, JavaScript 및 Url을 각 인코더는 개별적으로 구성 되어야 합니다.
+화이트리스트 범위는 언어가 아닌 유니코드 차트로서 명시되어 있습니다. [유니코드 표준](http://unicode.org/)은 이러한 [코드 차트](http://www.unicode.org/charts/index.html) 목록을 가지고 있으며 필요한 문자가 포함 된 차트를 찾는 데 사용할 수 있습니다. 각각의 인코더(Html, JavaScript, Url) 는 반드시 개별적으로 구성되어야 합니다.
 
 > [!NOTE]
-> 수신 허용 목록 사용자 지정 DI를 통해 제공 되는 인코더를만 영향을 줍니다. 인코더를 통해 직접 액세스 하는 경우 `System.Text.Encodings.Web.*Encoder.Default` 다음 기본값인 기본 라틴 수신만 사용 됩니다.
+> 화이트리스팅 설정은 종속성 주입에 의해 생성된 인코더에서만 적용됩니다. `System.Text.Encodings.Web.*Encoder.Default` 를 통하여 직접 사용할 경우 기본 라틴계열 문자만 화이트리스팅 됩니다.
 
-## <a name="where-should-encoding-take-place"></a>인코딩 수행을 배치 해야 합니까?
+## <a name="where-should-encoding-take-place"></a>인코딩이 일어나야할 시점
 
-일반적인 방법은 지점 출력 인코딩을 수행 하 고 인코딩된 값은 데이터베이스에 저장 해서는 안 허용 합니다. 출력 시 인코딩 쿼리 문자열 값으로 HTML에서에서 예를 들어, 데이터의 사용을 변경할 수 있습니다. 또한 검색 하기 전에 값을 인코딩할 필요 없이 데이터를 쉽게 검색할 수 있습니다 하 고 변경 사항이 나 인코더에 대 한 버그 수정 프로그램을 활용할 수 있습니다.
+일반적으로 인코딩은 출력 시점에 이루어져야 하며 절대로 데이터베이스에 입력되어선 안됩니다. 출력 시점의 인코딩은 HTML에서 쿼리 문자열 값으로 변경하듯 데이터의 용도를 변경할 수 있습니다. 이는 검색 전 값을 인코딩 하지 않고도 쉽게 자료를 찾을 수 있도록 하며 인코더의 변경이나 버그 수정으로부터 이점을 가질 수 있도록 합니다.
 
-## <a name="validation-as-an-xss-prevention-technique"></a>XSS 방지 기술로 유효성 검사
+## <a name="validation-as-an-xss-prevention-technique"></a>XSS 방지 기술로서의 유효성 검사
 
-유효성 검사 제한 XSS 공격에 유용한 도구가 될 수 있습니다. 예를 들어 0-9 문자만 포함 된 숫자 문자열 XSS 공격을 트리거하지 않습니다. 유효성 검사 사용자 입력에서 HTML을 허용할 때 좀 더 복잡해 집니다. HTML 입력을 구문 분석 하는 것은 불가능 하지 않다면 어려울 합니다. 포함 된 HTML을 제거 하는 파서를 사용 하 여 결합 된 markdown에는 다양 한 입력을 수락 하기 위해 더 안전한 옵션입니다. 유효성 검사에만 의존해 서는 안 됩니다. 항상 어떤 유효성 검사 또는 삭제가 수행 된 관계 없이 출력 하기 전에 신뢰할 수 없는 입력을 인코딩하십시오.
+유효성 검사 제한 역시 XSS 공격 방지에 유용한 도구가 될 수 있습니다. 예를 들어 0에서 9 까지의 문자만 포함 된 숫자 문자열은 XSS 공격을 일으키지 않습니다. 이러한 검사 과정은 HTML을 사용자 입력으로서 받아들일 때 더욱 복잡해집니다. HTML 입력을 파싱하는것은 불가능 하지는 않으나 어렵습니다. Markdown과 같이 파서가 삽입된 HTML을 제거하도록 하는 기능은 다채로운 입력을 받을 때 더욱 안전한 선택일 것입니다. 절대로 유효성 검사에만 의존하지 마십시오. 어떠한 검증이나 처리가 이루어 졌다 하더라도, 항상 출력 전 신뢰할 수 없는 입력을 인코딩하시기 바랍니다.
