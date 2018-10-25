@@ -4,14 +4,14 @@ description: CentOS에서 Apache를 역방향 프록시 서버로 설정하여 K
 author: spboyer
 ms.author: spboyer
 ms.custom: mvc
-ms.date: 09/08/2018
+ms.date: 10/09/2018
 uid: host-and-deploy/linux-apache
-ms.openlocfilehash: 534e0415b2d278a518aea0ecb8042aeab4a0aa0e
-ms.sourcegitcommit: c12ebdab65853f27fbb418204646baf6ce69515e
+ms.openlocfilehash: 237646f839a4973074bb64176a024ebb3d32ee4e
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "46523209"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48913010"
 ---
 # <a name="host-aspnet-core-on-linux-with-apache"></a>Apache를 사용하여 Linux에서 ASP.NET Core 호스트
 
@@ -40,7 +40,7 @@ dotnet publish --configuration Release
 
 .NET Core 런타임을 서버에서 유지 관리하지 않으려는 경우 앱은 [자체 포함된 배포](/dotnet/core/deploying/#self-contained-deployments-scd)로 게시될 수도 있습니다.
 
-조직의 워크플로에 통합된 도구(예: SCP, SFTP)를 사용하여 ASP.NET Core 앱을 서버에 복사합니다. *var* 디렉터리(예: *var/aspnetcore/hellomvc*)에서 웹앱을 찾는 것이 일반적입니다.
+조직의 워크플로에 통합된 도구(예: SCP, SFTP)를 사용하여 ASP.NET Core 앱을 서버에 복사합니다. *var* 디렉터리(예: *var/www/helloapp*)에서 웹앱을 찾는 것이 일반적입니다.
 
 > [!NOTE]
 > 프로덕션 배포 시나리오에서 지속적인 통합 워크플로는 앱을 게시하고 자산을 서버로 복사하는 워크플로를 수행합니다.
@@ -147,7 +147,7 @@ Complete!
 
 Apache의 구성 파일은 `/etc/httpd/conf.d/` 디렉터리 내에 위치합니다. `/etc/httpd/conf.modules.d/`의 모듈 구성 파일 외에도 *.conf* 확장을 포함한 모든 파일은 알파벳순으로 처리됩니다. 여기에는 모듈을 로드하는 데 필요한 구성 파일도 포함됩니다.
 
-앱에 대해 *hellomvc.conf*라는 구성 파일을 만듭니다.
+앱에 대해 *helloapp.conf*라는 구성 파일을 만듭니다.
 
 ```
 <VirtualHost *:*>
@@ -160,8 +160,8 @@ Apache의 구성 파일은 `/etc/httpd/conf.d/` 디렉터리 내에 위치합니
     ProxyPassReverse / http://127.0.0.1:5000/
     ServerName www.example.com
     ServerAlias *.example.com
-    ErrorLog ${APACHE_LOG_DIR}hellomvc-error.log
-    CustomLog ${APACHE_LOG_DIR}hellomvc-access.log common
+    ErrorLog ${APACHE_LOG_DIR}helloapp-error.log
+    CustomLog ${APACHE_LOG_DIR}helloapp-access.log common
 </VirtualHost>
 ```
 
@@ -194,7 +194,7 @@ sudo systemctl enable httpd
 서비스 정의 파일을 만듭니다.
 
 ```bash
-sudo nano /etc/systemd/system/kestrel-hellomvc.service
+sudo nano /etc/systemd/system/kestrel-helloapp.service
 ```
 
 앱의 예제 서비스 파일:
@@ -204,8 +204,8 @@ sudo nano /etc/systemd/system/kestrel-hellomvc.service
 Description=Example .NET Web API App running on CentOS 7
 
 [Service]
-WorkingDirectory=/var/aspnetcore/hellomvc
-ExecStart=/usr/local/bin/dotnet /var/aspnetcore/hellomvc/hellomvc.dll
+WorkingDirectory=/var/www/helloapp
+ExecStart=/usr/local/bin/dotnet /var/www/helloapp/helloapp.dll
 Restart=always
 # Restart service after 10 seconds if the dotnet service crashes:
 RestartSec=10
@@ -236,21 +236,21 @@ systemd-escape "<value-to-escape>"
 파일을 저장하고 서비스를 사용하도록 설정합니다.
 
 ```bash
-sudo systemctl enable kestrel-hellomvc.service
+sudo systemctl enable kestrel-helloapp.service
 ```
 
 서비스를 시작하고 실행 중인지 확인합니다.
 
 ```bash
-sudo systemctl start kestrel-hellomvc.service
-sudo systemctl status kestrel-hellomvc.service
+sudo systemctl start kestrel-helloapp.service
+sudo systemctl status kestrel-helloapp.service
 
-● kestrel-hellomvc.service - Example .NET Web API App running on CentOS 7
-    Loaded: loaded (/etc/systemd/system/kestrel-hellomvc.service; enabled)
+● kestrel-helloapp.service - Example .NET Web API App running on CentOS 7
+    Loaded: loaded (/etc/systemd/system/kestrel-helloapp.service; enabled)
     Active: active (running) since Thu 2016-10-18 04:09:35 NZDT; 35s ago
 Main PID: 9021 (dotnet)
-    CGroup: /system.slice/kestrel-hellomvc.service
-            └─9021 /usr/local/bin/dotnet /var/aspnetcore/hellomvc/hellomvc.dll
+    CGroup: /system.slice/kestrel-helloapp.service
+            └─9021 /usr/local/bin/dotnet /var/www/helloapp/helloapp.dll
 ```
 
 역방향 프록시를 구성하고 *systemd*를 통해 Kestrel을 관리하면 웹앱이 완전히 구성되고 로컬 컴퓨터(`http://localhost`)의 브라우저에서 웹앱에 액세스할 수 있습니다. 응답 헤더를 검사하는 **Server** 헤더는 ASP.NET Core 앱이 Kestrel에서 제공됨을 나타냅니다.
@@ -266,16 +266,16 @@ Transfer-Encoding: chunked
 
 ### <a name="viewing-logs"></a>로그 보기
 
-Kestrel을 사용하는 웹앱은 *systemd*를 사용하여 관리되므로 이벤트 및 프로세스가 중앙형 저널에 기록됩니다. 그러나 이 저널에는 *systemd*에서 관리하는 모든 서비스 및 프로세스에 대한 항목이 포함됩니다. `kestrel-hellomvc.service` 관련 항목을 보려면 다음 명령을 사용합니다.
+Kestrel을 사용하는 웹앱은 *systemd*를 사용하여 관리되므로 이벤트 및 프로세스가 중앙형 저널에 기록됩니다. 그러나 이 저널에는 *systemd*에서 관리하는 모든 서비스 및 프로세스에 대한 항목이 포함됩니다. `kestrel-helloapp.service` 관련 항목을 보려면 다음 명령을 사용합니다.
 
 ```bash
-sudo journalctl -fu kestrel-hellomvc.service
+sudo journalctl -fu kestrel-helloapp.service
 ```
 
 시간 필터링의 경우 명령을 사용하여 시간 옵션을 지정합니다. 예를 들어 `--since today`를 사용하여 현재 날짜를 기준으로 필터링하거나 `--until 1 hour ago`를 사용하여 이전 시간의 항목을 확인합니다. 자세한 내용은 [journalctl에 대한 기본 페이지](https://www.unix.com/man-page/centos/1/journalctl/)를 참조하세요.
 
 ```bash
-sudo journalctl -fu kestrel-hellomvc.service --since "2016-10-18" --until "2016-10-18 04:00"
+sudo journalctl -fu kestrel-helloapp.service --since "2016-10-18" --until "2016-10-18 04:00"
 ```
 
 ## <a name="data-protection"></a>데이터 보호
@@ -343,7 +343,7 @@ SSL을 적용하려면 URL 재작성을 사용할 수 있도록 `mod_rewrite` �
 sudo yum install mod_rewrite
 ```
 
-포트 443에서 URL 재작성 및 보안 통신을 사용할 수 있도록 *hellomvc.conf* 파일을 수정합니다.
+포트 443에서 URL 재작성 및 보안 통신을 사용할 수 있도록 *helloapp.conf* 파일을 수정합니다.
 
 ```
 <VirtualHost *:*>
@@ -360,8 +360,8 @@ sudo yum install mod_rewrite
     ProxyPreserveHost On
     ProxyPass / http://127.0.0.1:5000/
     ProxyPassReverse / http://127.0.0.1:5000/
-    ErrorLog /var/log/httpd/hellomvc-error.log
-    CustomLog /var/log/httpd/hellomvc-access.log common
+    ErrorLog /var/log/httpd/helloapp-error.log
+    CustomLog /var/log/httpd/helloapp-access.log common
     SSLEngine on
     SSLProtocol all -SSLv2
     SSLCipherSuite ALL:!ADH:!EXPORT:!SSLv2:!RC4+RSA:+HIGH:+MEDIUM:!LOW:!RC4
@@ -427,7 +427,7 @@ sudo nano /etc/httpd/conf/httpd.conf
 sudo yum install mod_proxy_balancer
 ```
 
-아래 표시된 구성 파일에서 `hellomvc` 앱의 추가 인스턴스는 포트 5001에서 실행되도록 설정됩니다. *Proxy* 섹션은 *byrequests*의 부하를 분산하는 두 개의 멤버가 있는 분산 장치 구성을 사용하여 설정됩니다.
+아래 표시된 구성 파일에서 `helloapp`의 추가 인스턴스는 포트 5001에서 실행되도록 설정됩니다. *Proxy* 섹션은 *byrequests*의 부하를 분산하는 두 개의 멤버가 있는 분산 장치 구성을 사용하여 설정됩니다.
 
 ```
 <VirtualHost *:*>
@@ -455,8 +455,8 @@ sudo yum install mod_proxy_balancer
     <Location />
         SetHandler balancer
     </Location>
-    ErrorLog /var/log/httpd/hellomvc-error.log
-    CustomLog /var/log/httpd/hellomvc-access.log common
+    ErrorLog /var/log/httpd/helloapp-error.log
+    CustomLog /var/log/httpd/helloapp-access.log common
     SSLEngine on
     SSLProtocol all -SSLv2
     SSLCipherSuite ALL:!ADH:!EXPORT:!SSLv2:!RC4+RSA:+HIGH:+MEDIUM:!LOW:!RC4

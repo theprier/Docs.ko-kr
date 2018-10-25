@@ -2,17 +2,17 @@
 title: ASP.NET Core에서 WebSocket 지원
 author: rick-anderson
 description: ASP.NET Core에서 Websocket을 시작하는 방법을 알아봅니다.
-monikerRange: '>= aspnetcore-2.1'
+monikerRange: '>= aspnetcore-1.1'
 ms.author: tdykstra
 ms.custom: mvc
 ms.date: 06/28/2018
 uid: fundamentals/websockets
-ms.openlocfilehash: a9fe13ef7895ea3ab43257dbbaf4521f883c0804
-ms.sourcegitcommit: 18339e3cb5a891a3ca36d8146fa83cf91c32e707
+ms.openlocfilehash: e46c2decf92d21322f2079bf880df534e0224db5
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37433989"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48911654"
 ---
 # <a name="websockets-support-in-aspnet-core"></a>ASP.NET Core에서 WebSocket 지원
 
@@ -20,7 +20,7 @@ ms.locfileid: "37433989"
 
 본문에서는 ASP.NET Core에서 Websocket을 사용하는 방법을 알아봅니다. [WebSocket](https://wikipedia.org/wiki/WebSocket)([RFC 6455](https://tools.ietf.org/html/rfc6455))은 TCP 연결을 통해 지속적인 양방향 통신 채널을 사용할 수 있도록 해주는 프로토콜입니다. 채팅, 대시보드 및 게임 앱 등 신속한 실시간 통신을 활용하는 앱에서 사용됩니다.
 
-[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/websockets/sample) ([다운로드 방법](xref:tutorials/index#how-to-download-a-sample)). 자세한 내용은 [다음 단계](#next-steps) 섹션을 참조하세요.
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/websockets/samples) ([다운로드 방법](xref:tutorials/index#how-to-download-a-sample)). 자세한 내용은 [다음 단계](#next-steps) 섹션을 참조하세요.
 
 ## <a name="prerequisites"></a>전제 조건
 
@@ -60,14 +60,34 @@ WebSockets를 사용하여 소켓 연결로 직접 작업하세요. 예를 들�
 
 `Startup` 클래스의 `Configure` 메서드에 WebSockets 미들웨어를 추가합니다.
 
-[!code-csharp[](websockets/sample/Startup.cs?name=UseWebSockets)]
+::: moniker range=">= aspnetcore-2.0"
+
+[!code-csharp[](websockets/samples/2.x/WebSocketsSample/Startup.cs?name=UseWebSockets)]
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
+
+[!code-csharp[](websockets/samples/1.x/WebSocketsSample/Startup.cs?name=UseWebSockets)]
+
+::: moniker-end
 
 이때 다음과 같은 설정을 구성할 수 있습니다.
 
 * `KeepAliveInterval` - 프록시가 연결을 유지할 수 있도록 클라이언트로 "핑(ping)" 프레임을 전송하는 빈도입니다.
 * `ReceiveBufferSize` - 데이터 수신에 사용되는 버퍼의 크기입니다. 고급 사용자는 데이터 크기에 따라 성능 튜닝이 필요할 경우 이 값을 변경해야 할 수도 있습니다.
 
-[!code-csharp[](websockets/sample/Startup.cs?name=UseWebSocketsOptions)]
+::: moniker range=">= aspnetcore-2.0"
+
+[!code-csharp[](websockets/samples/2.x/WebSocketsSample/Startup.cs?name=UseWebSocketsOptions)]
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
+
+[!code-csharp[](websockets/samples/1.x/WebSocketsSample/Startup.cs?name=UseWebSocketsOptions)]
+
+::: moniker-end
 
 ### <a name="accept-websocket-requests"></a>WebSocket 요청 수락하기
 
@@ -75,7 +95,17 @@ WebSockets를 사용하여 소켓 연결로 직접 작업하세요. 예를 들�
 
 다음 예제는 `Configure` 메서드의 뒷부분에서 나옵니다.
 
-[!code-csharp[](websockets/sample/Startup.cs?name=AcceptWebSocket&highlight=7)]
+::: moniker range=">= aspnetcore-2.0"
+
+[!code-csharp[](websockets/samples/2.x/WebSocketsSample/Startup.cs?name=AcceptWebSocket&highlight=7)]
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
+
+[!code-csharp[](websockets/samples/1.x/WebSocketsSample/Startup.cs?name=AcceptWebSocket&highlight=7)]
+
+::: moniker-end
 
 WebSocket 요청은 모든 URL을 통해서 전달될 수 있지만, 이 예제 코드에서는 `/ws` 에 대한 요청만 수락합니다.
 
@@ -85,7 +115,17 @@ WebSocket 요청은 모든 URL을 통해서 전달될 수 있지만, 이 예제 
 
 앞에서 살펴본 WebSocket 요청을 수락하는 코드는 `WebSocket` 개체를 `Echo` 메서드로 전달합니다. 코드는 메시지를 수신하고 동일한 메시지를 즉시 보냅니다. 메시지는 클라이언트가 연결을 닫을 때까지 루프에서 보내고 받습니다.
 
-[!code-csharp[](websockets/sample/Startup.cs?name=Echo)]
+::: moniker range=">= aspnetcore-2.0"
+
+[!code-csharp[](websockets/samples/2.x/WebSocketsSample/Startup.cs?name=Echo)]
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
+
+[!code-csharp[](websockets/samples/1.x/WebSocketsSample/Startup.cs?name=Echo)]
+
+::: moniker-end
 
 루프가 시작되기 전에 WebSocket 연결을 수락하면 미들웨어 파이프라인이 종료됩니다. 그리고 소켓을 닫으면 파이프라인이 풀립니다. 즉, 요청은 WebSocket이 수락될 때 파이프라인에서 앞으로 이동하지 않습니다. 루프가 완료되고 소켓이 닫히면 요청이 파이프라인 백업을 진행합니다.
 
@@ -110,7 +150,7 @@ Windows 8 이상에서 WebSocket 프로토콜을 지원하려면:
 1. **인터넷 정보 서비스** > **World Wide Web 서비스** > **응용 프로그램 개발 기능** 노드를 엽니다.
 1. **WebSocket 프로토콜** 기능을 선택합니다. **확인**을 선택합니다.
 
-**node.js에서 socket.io를 사용할 때 WebSocket 비활성화**
+### <a name="disable-websocket-when-using-socketio-on-nodejs"></a>Node.js에서 socket.io를 사용할 때 WebSocket 비활성화
 
 [Node.js](https://nodejs.org/)의 [socket.io](https://socket.io/)에서 WebSocket 지원을 사용하는 경우 *web.config* 또는 *applicationHost.config*의 `webSocket` 요소를 사용하여 기본 IIS WebSocket 모듈을 비활성화합니다. 이 단계를 수행하지 않으면 IIS WebSocket 모듈이 Node.js 및 앱이 아닌 WebSocket 통신을 처리하려고 시도합니다.
 
@@ -122,7 +162,7 @@ Windows 8 이상에서 WebSocket 프로토콜을 지원하려면:
 
 ## <a name="next-steps"></a>다음 단계
 
-이 아티클과 함께 제공되는 [샘플 앱](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/websockets/sample)은 에코 앱입니다. WebSocket 연결을 생성하는 웹 페이지가 제공되며 서버는 수신한 메시지를 클라이언트로 재전송합니다. 명령 프롬프트에서 앱을 실행하고(IIS Express가 있는 Visual Studio에서 실행되도록 설정되지 않음) http://localhost:5000으로 이동합니다. 웹 페이지 왼쪽 상단에 연결 상태가 표시됩니다.
+이 아티클과 함께 제공되는 [샘플 앱](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/websockets/samples)은 에코 앱입니다. WebSocket 연결을 생성하는 웹 페이지가 제공되며 서버는 수신한 메시지를 클라이언트로 재전송합니다. 명령 프롬프트에서 앱을 실행하고(IIS Express가 있는 Visual Studio에서 실행되도록 설정되지 않음) http://localhost:5000으로 이동합니다. 웹 페이지 왼쪽 상단에 연결 상태가 표시됩니다.
 
 ![웹 페이지의 초기 상태](websockets/_static/start.png)
 

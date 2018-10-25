@@ -5,12 +5,12 @@ description: Entity Framework Core(EF Core)를 사용하여 데이터베이스�
 ms.author: riande
 ms.date: 05/30/2018
 uid: tutorials/razor-pages/model
-ms.openlocfilehash: de82738509bb009f030a02e28904e3155088fa6a
-ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
+ms.openlocfilehash: 5cd1e08ac52d352be23a280419d7456f685a03ad
+ms.sourcegitcommit: 317f9be24db600499e79d25872d743af74bd86c0
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46011368"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48045603"
 ---
 # <a name="add-a-model-to-a-razor-pages-app-in-aspnet-core"></a>ASP.NET Core에서 Razor 페이지 앱에 모델 추가
 
@@ -22,9 +22,7 @@ ms.locfileid: "46011368"
 
 솔루션 탐색기에서 **RazorPagesMovie** 프로젝트를 마우스 오른쪽 단추로 클릭하고 **추가** > **새 폴더**를 선택합니다. 폴더 이름을 *Models*로 지정합니다.
 
-*Models* 폴더를 마우스 오른쪽 단추로 클릭합니다. **추가** > **클래스**를 선택합니다. 클래스 이름을 **Movie**로 지정하고 다음 속성을 추가합니다.
-
-`Movie` 클래스의 콘텐츠를 다음 코드로 바꿉니다.
+*Models* 폴더를 마우스 오른쪽 단추로 클릭합니다. **추가** > **클래스**를 선택합니다. **Movie**라고 클래스의 이름을 지정하고 `Movie` 클래스의 콘텐츠를 다음 코드로 바꿉니다.
 
 [!code-csharp[Main](razor-pages-start/sample/RazorPagesMovie21/Models/Movie1.cs?name=snippet)]
 
@@ -58,10 +56,10 @@ ms.locfileid: "46011368"
 
 ### <a name="files-created"></a>생성된 파일
 
-* *Pages/Movies* 만들기, 삭제, 세부 정보, 편집, 인덱스입니다. 이러한 페이지는 다음 자습서에서 자세히 설명합니다.
+* *Pages/Movies*: 만들기, 삭제, 세부 정보, 편집, 인덱스입니다. 이러한 페이지는 다음 자습서에서 자세히 설명합니다.
 * *Data/RazorPagesMovieContext.cs*
 
-### <a name="files-updates"></a>파일 업데이트
+### <a name="file-updates"></a>파일 업데이트
 
 * *Startup.cs*: 이 파일의 변경 내용은 다음 섹션에서 자세히 설명합니다.
 * *appsettings.json*: 로컬 데이터베이스에 연결하는 데 사용된 연결 문자열이 추가됩니다.
@@ -122,8 +120,8 @@ dotnet ef database update
 
 오류가 표시될 경우:
 
-SqlException: 로그인에서 요청한 "RazorPagesMovieContext-GUID" 데이터베이스를 열 수 없습니다. 로그인에 실패했습니다.
-'User-name' 사용자에 대한 로그인에 실패했습니다.
+`SqlException: Cannot open database "RazorPagesMovieContext-GUID" requested by the login. The login failed.
+Login failed for user 'User-name'.`
 
 [마이그레이션 단계](#pmc)를 누락했습니다.
 

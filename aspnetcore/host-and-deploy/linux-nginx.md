@@ -4,14 +4,14 @@ author: rick-anderson
 description: Ubuntu 16.04에서 Nginx를 역방향 프록시로 설정하여 Kestrel에서 실행되는 ASP.NET Core 웹앱에 HTTP 트래픽을 전달하는 방법을 알아봅니다.
 ms.author: riande
 ms.custom: mvc
-ms.date: 09/08/2018
+ms.date: 10/09/2018
 uid: host-and-deploy/linux-nginx
-ms.openlocfilehash: bf1fb8c0db2afd4e0c6044f3d08c22d619931554
-ms.sourcegitcommit: c12ebdab65853f27fbb418204646baf6ce69515e
+ms.openlocfilehash: 8d3c158b44c9f30e7c0746398306aa1c0fd9e15b
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "46523235"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912118"
 ---
 # <a name="host-aspnet-core-on-linux-with-nginx"></a>Nginx를 사용하여 Linux에서 ASP.NET Core 호스트
 
@@ -52,7 +52,7 @@ dotnet publish --configuration Release
 
 .NET Core 런타임을 서버에서 유지 관리하지 않으려는 경우 앱은 [자체 포함된 배포](/dotnet/core/deploying/#self-contained-deployments-scd)로 게시될 수도 있습니다.
 
-조직의 워크플로에 통합된 도구(예: SCP, SFTP)를 사용하여 ASP.NET Core 앱을 서버에 복사합니다. *var* 디렉터리(예: *var/aspnetcore/hellomvc*)에서 웹앱을 찾는 것이 일반적입니다.
+조직의 워크플로에 통합된 도구(예: SCP, SFTP)를 사용하여 ASP.NET Core 앱을 서버에 복사합니다. *var* 디렉터리(예: *var/www/helloapp*)에서 웹앱을 찾는 것이 일반적입니다.
 
 > [!NOTE]
 > 프로덕션 배포 시나리오에서 지속적인 통합 워크플로는 앱을 게시하고 자산을 서버로 복사하는 워크플로를 수행합니다.
@@ -185,13 +185,7 @@ Nginx 구성이 설정되면 `sudo nginx -t`를 실행하여 구성 파일의 �
 앱을 서버에서 직접 실행하려면:
 
 1. 앱의 디렉터리로 이동합니다.
-1. 앱의 실행 파일인 `./<app_executable>`을 실행합니다.
-
-사용 권한 오류가 발생하는 경우 사용 권한을 변경합니다.
-
-```console
-chmod u+x <app_executable>
-```
+1. `dotnet <app_assembly.dll>` 앱을 실행합니다. 여기서 `app_assembly.dll`은 앱의 어셈블리 파일 이름입니다.
 
 앱이 서버에서 실행되지만 인터넷을 통해 응답하지 않는 경우 서버의 방화벽을 확인하고 포트 80이 열려 있는지 확인합니다. Ubuntu Azure VM을 사용하는 경우 인바운드 포트 80 트래픽을 사용하는 NSG(네트워크 보안 그룹) 규칙을 추가합니다. 인바운드 규칙을 사용할 때 아웃바운드 트래픽이 자동으로 부여되므로 아웃바운드 포트 80 규칙을 사용하도록 설정할 필요가 없습니다.
 
@@ -206,7 +200,7 @@ chmod u+x <app_executable>
 서비스 정의 파일을 만듭니다.
 
 ```bash
-sudo nano /etc/systemd/system/kestrel-hellomvc.service
+sudo nano /etc/systemd/system/kestrel-helloapp.service
 ```
 
 앱에 대한 예제 서비스 파일은 다음과 같습니다.
@@ -216,8 +210,8 @@ sudo nano /etc/systemd/system/kestrel-hellomvc.service
 Description=Example .NET Web API App running on Ubuntu
 
 [Service]
-WorkingDirectory=/var/aspnetcore/hellomvc
-ExecStart=/usr/bin/dotnet /var/aspnetcore/hellomvc/hellomvc.dll
+WorkingDirectory=/var/www/helloapp
+ExecStart=/usr/bin/dotnet /var/www/helloapp/helloapp.dll
 Restart=always
 # Restart service after 10 seconds if the dotnet service crashes:
 RestartSec=10
@@ -251,21 +245,21 @@ systemd-escape "<value-to-escape>"
 파일을 저장하고 서비스를 사용하도록 설정합니다.
 
 ```bash
-sudo systemctl enable kestrel-hellomvc.service
+sudo systemctl enable kestrel-helloapp.service
 ```
 
 서비스를 시작하고 실행 중인지 확인합니다.
 
 ```
-sudo systemctl start kestrel-hellomvc.service
-sudo systemctl status kestrel-hellomvc.service
+sudo systemctl start kestrel-helloapp.service
+sudo systemctl status kestrel-helloapp.service
 
-● kestrel-hellomvc.service - Example .NET Web API App running on Ubuntu
-    Loaded: loaded (/etc/systemd/system/kestrel-hellomvc.service; enabled)
+● kestrel-helloapp.service - Example .NET Web API App running on Ubuntu
+    Loaded: loaded (/etc/systemd/system/kestrel-helloapp.service; enabled)
     Active: active (running) since Thu 2016-10-18 04:09:35 NZDT; 35s ago
 Main PID: 9021 (dotnet)
-    CGroup: /system.slice/kestrel-hellomvc.service
-            └─9021 /usr/local/bin/dotnet /var/aspnetcore/hellomvc/hellomvc.dll
+    CGroup: /system.slice/kestrel-helloapp.service
+            └─9021 /usr/local/bin/dotnet /var/www/helloapp/helloapp.dll
 ```
 
 역방향 프록시를 구성하고 systemd를 통해 Kestrel을 관리하면 웹앱이 완전히 구성되고 로컬 컴퓨터(`http://localhost`)의 브라우저에서 웹앱에 액세스할 수 있습니다. 차단 중인 방화벽이 없다면 원격 컴퓨터에서 액세스할 수도 있습니다. 응답 헤더를 검사하는 `Server` 헤더는 Kestrel에서 지원하는 ASP.NET Core 앱을 보여줍니다.
@@ -281,16 +275,16 @@ Transfer-Encoding: chunked
 
 ### <a name="viewing-logs"></a>로그 보기
 
-Kestrel을 사용하는 웹앱은 `systemd`를 사용하여 관리되므로 모든 이벤트 및 프로세스가 중앙형 저널에 기록됩니다. 그러나 이 저널에는 `systemd`를 통해 관리하는 모든 서비스 및 프로세스에 대한 모든 항목이 포함됩니다. `kestrel-hellomvc.service` 관련 항목을 보려면 다음 명령을 사용합니다.
+Kestrel을 사용하는 웹앱은 `systemd`를 사용하여 관리되므로 모든 이벤트 및 프로세스가 중앙형 저널에 기록됩니다. 그러나 이 저널에는 `systemd`를 통해 관리하는 모든 서비스 및 프로세스에 대한 모든 항목이 포함됩니다. `kestrel-helloapp.service` 관련 항목을 보려면 다음 명령을 사용합니다.
 
 ```bash
-sudo journalctl -fu kestrel-hellomvc.service
+sudo journalctl -fu kestrel-helloapp.service
 ```
 
 추가 필터링을 위해 `--since today`, `--until 1 hour ago` 같은 시간 옵션이나 이러한 옵션의 조합을 사용하여 반환되는 항목 수를 줄일 수 있습니다.
 
 ```bash
-sudo journalctl -fu kestrel-hellomvc.service --since "2016-10-18" --until "2016-10-18 04:00"
+sudo journalctl -fu kestrel-helloapp.service --since "2016-10-18" --until "2016-10-18 04:00"
 ```
 
 ## <a name="data-protection"></a>데이터 보호

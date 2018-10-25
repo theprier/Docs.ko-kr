@@ -4,14 +4,14 @@ author: ardalis
 description: ASP.NET Core 라우팅 기능에서 들어오는 요청을 경로 처리기에 매핑하는 일을 담당하는 방법을 파악합니다.
 ms.author: riande
 ms.custom: mvc
-ms.date: 08/20/2018
+ms.date: 10/01/2018
 uid: fundamentals/routing
-ms.openlocfilehash: 94fa6a278466c8cc9926d7893d1ef71d83b865df
-ms.sourcegitcommit: 5a2456cbf429069dc48aaa2823cde14100e4c438
+ms.openlocfilehash: d9ba96c7b2abd35b1b13c84814bf3f776e8d8731
+ms.sourcegitcommit: 13940eb53c68664b11a2d685ee17c78faab1945d
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "41870853"
+ms.lasthandoff: 10/01/2018
+ms.locfileid: "47861059"
 ---
 # <a name="routing-in-aspnet-core"></a>ASP.NET Core에서 라우팅
 
@@ -37,7 +37,7 @@ ms.locfileid: "41870853"
 
 ### <a name="url-matching"></a>URL 일치
 
-URL 일치는 라우팅에서 들어오는 요청을 *처리기*로 디스패치하는 프로세스입니다. 이 프로세스는 일반적으로 URL 경로의 데이터를 기반으로 하지만 요청에 있는 모든 데이터를 고려하도록 확장될 수 있습니다. 요청을 별도의 처리기로 디스패치하는 기능은 앱의 크기와 복잡성을 확장하는 핵심입니다.
+URL 일치는 라우팅에서 들어오는 요청을 *처리기*로 디스패치하는 프로세스입니다. 이 프로세스는 URL 경로의 데이터를 기반으로 하지만 요청에 있는 모든 데이터를 고려하도록 확장될 수 있습니다. 요청을 별도의 처리기로 디스패치하는 기능은 앱의 크기와 복잡성을 확장하는 핵심입니다.
 
 들어오는 요청은 시퀀스의 각 경로에서 <xref:Microsoft.AspNetCore.Routing.IRouter.RouteAsync*> 메서드를 호출하는 `RouterMiddleware`를 입력합니다. <xref:Microsoft.AspNetCore.Routing.IRouter> 인스턴스는 [RouteContext.Handler](xref:Microsoft.AspNetCore.Routing.RouteContext.Handler*)를 null이 아닌 <xref:Microsoft.AspNetCore.Http.RequestDelegate>로 설정하여 요청을 *처리*할지 여부를 선택합니다. 경로가 요청에 대한 처리기를 설정하는 경우 경로 처리가 중지되고 처리기가 요청을 처리하도록 호출됩니다. 모든 경로가 시도되고 요청에 대한 처리기를 찾을 수 없는 경우 미들웨어는 *다음*을 호출하고 요청 파이프라인의 다음 미들웨어가 호출됩니다.
 
@@ -169,12 +169,12 @@ routes.MapRoute(
 
 `{ controller = Products, action = List }`의 경로 값으로 이 경로는 URL `/Products/List`를 생성합니다. 경로 값은 URL 경로를 구성하기 위해 해당 경로 매개 변수에 대해 대체됩니다. `id`는 선택적 매개 변수이므로 값이 없어도 문제가 되지 않습니다.
 
-`{ controller = Home, action = Index }`의 경로 값으로 이 경로는 URL `/`를 생성합니다. 제공된 경로 값은 기본값과 일치하므로 해당 값에 해당하는 세그먼트는 안전하게 생략될 수 있습니다. 생성된 두 URL은 이 경로 정의로 라운드트립하며 URL을 생성하는 데 사용된 동일한 경로 값을 생성합니다.
+`{ controller = Home, action = Index }`의 경로 값으로 이 경로는 URL `/`를 생성합니다. 제공된 경로 값은 기본값과 일치하므로 해당 값에 해당하는 세그먼트는 안전하게 생략될 수 있습니다. 생성된 두 URL은 이 경로 정의로 왕복하며 URL을 생성하는 데 사용된 동일한 경로 값을 생성합니다.
 
 > [!TIP]
 > ASP.NET Core MVC를 사용하는 앱은 <xref:Microsoft.AspNetCore.Mvc.Routing.UrlHelper>를 사용하여 라우팅으로 직접 호출하는 대신 URL을 생성해야 합니다.
 
-URL 생성 프로세스에 대한 자세한 내용은 [URL 생성 참조](#url-generation-reference)를 참조하세요.
+URL 생성에 대한 자세한 내용은 [url-generation-reference](#url-generation-reference)를 참조하세요.
 
 ## <a name="use-routing-middleware"></a>라우팅 미들웨어 사용
 
@@ -269,9 +269,31 @@ URL 생성 프로세스에 대한 자세한 내용은 [URL 생성 참조](#url-g
 
 경로 매개 변수에 대한 접두사로 `*` 문자를 사용하여 URI의 나머지 부분에 바인딩할 수 있습니다. 이를 *범용* 매개 변수라고 합니다. 예를 들어 `blog/{*slug}`는 `/blog`로 시작하는 모든 URI와 일치하며 다음 값이 뒤에 옵니다(`slug` 경로 값에 할당됨). 범용 매개 변수는 빈 문자열과 일치시킬 수도 있습니다.
 
+::: moniker range=">= aspnetcore-2.2"
+
+catch-all 매개 변수는 경로 구분 기호(`/`) 문자를 포함하여 URL을 생성하는 데 경로가 사용될 때 적절한 문자를 이스케이프합니다. 예를 들어 경로 값이 `{ path = "my/path" }`인 경로 `foo/{*path}`는 `foo/my%2Fpath`를 생성합니다. 이스케이프된 슬래시에 주의하세요. 경로 구분 기호 문자를 왕복하려면 `**` 경로 매개 변수 접두사를 사용합니다. `{ path = "my/path" }`가 있는 경로 `foo/{**path}`은 `foo/my/path`를 생성합니다.
+
+::: moniker-end
+
 경로 매개 변수는 등호(`=`)로 구분된 매개 변수 이름 뒤에 기본값을 지정하여 지정된 *기본값*을 가질 수 있습니다. 예를 들어 `{controller=Home}`은 `controller`에 대한 기본값으로 `Home`을 정의합니다. URL에 매개 변수에 대한 값이 없는 경우 기본값이 사용됩니다. 기본값 뿐만 아니라 경로 매개 변수를 생략할 수 있으며, `id?`와 같이 매개 변수 이름의 끝에 물음표(`?`)를 추가하여 지정됩니다. 선택 사항 값과 기본 경로 매개 변수 간의 차이점은 기본값이 있는 경로 매개 변수는 항상 값을 생성한다는 점입니다. 선택적 매개 변수는 값이 요청 URL에 의해 제공되는 경우에만 값을 갖습니다.
 
-경로 매개 변수에는 URL에서 바인딩된 경로 값과 일치해야 한다는 제약 조건이 있을 수 있습니다. 경로 매개 변수 이름 뒤에 콜론(`:`)과 제약 조건 이름을 추가하여 경로 매개 변수에서 *인라인 제약 조건*을 지정합니다. 제약 조건에 인수가 필요한 경우 제약 조건 이름 뒤에 괄호(`( )`)로 묶여서 제공됩니다. 여러 인라인 제약 조건은 다른 콜론(`:`) 및 제약 조건 이름을 추가하여 지정될 수 있습니다. 제약 조건 이름은 <xref:Microsoft.AspNetCore.Routing.IRouteConstraint>의 인스턴스를 만드는 <xref:Microsoft.AspNetCore.Routing.IInlineConstraintResolver> 서비스로 전달되어 URL 처리에서 사용합니다. 예를 들어 경로 템플릿 `blog/{article:minlength(10)}`는 인수 `10`으로 `minlength` 제약 조건을 지정합니다. 경로 제약 조건에 대한 자세한 내용 및 프레임워크에서 제공되는 제약 조건 목록은 [경로 제약 조건 참조](#route-constraint-reference) 섹션을 참조하세요.
+::: moniker range=">= aspnetcore-2.2"
+
+경로 매개 변수에는 URL에서 바인딩된 경로 값과 일치해야 한다는 제약 조건이 있을 수 있습니다. 경로 매개 변수 이름 뒤에 콜론(`:`)과 제약 조건 이름을 추가하여 경로 매개 변수에서 *인라인 제약 조건*을 지정합니다. 제약 조건에 인수가 필요한 경우 제약 조건 이름 뒤에서 괄호 `( )`로 묶입니다. 여러 인라인 제약 조건은 다른 콜론(`:`) 및 제약 조건 이름을 추가하여 지정될 수 있습니다. 제약 조건 이름 및 인수는 <xref:Microsoft.AspNetCore.Routing.IRouteConstraint>의 인스턴스를 만드는 <xref:Microsoft.AspNetCore.Routing.IInlineConstraintResolver> 서비스로 전달되어 URL 처리에서 사용합니다. 제약 조건 생성자에 서비스가 필요한 경우 해당 서비스는 종속성 주입의 앱 서비스에서 확인됩니다. 예를 들어 경로 템플릿 `blog/{article:minlength(10)}`는 인수 `10`으로 `minlength` 제약 조건을 지정합니다. 경로 제약 조건에 대한 자세한 내용 및 프레임워크에서 제공되는 제약 조건 목록은 [경로 제약 조건 참조](#route-constraint-reference) 섹션을 참조하세요.
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.2"
+
+경로 매개 변수에는 URL에서 바인딩된 경로 값과 일치해야 한다는 제약 조건이 있을 수 있습니다. 경로 매개 변수 이름 뒤에 콜론(`:`)과 제약 조건 이름을 추가하여 경로 매개 변수에서 *인라인 제약 조건*을 지정합니다. 제약 조건에 인수가 필요한 경우 제약 조건 이름 뒤에서 괄호 `( )`로 묶입니다. 여러 인라인 제약 조건은 다른 콜론(`:`) 및 제약 조건 이름을 추가하여 지정될 수 있습니다. 제약 조건 이름 및 인수는 <xref:Microsoft.AspNetCore.Routing.IRouteConstraint>의 인스턴스를 만드는 <xref:Microsoft.AspNetCore.Routing.IInlineConstraintResolver> 서비스로 전달되어 URL 처리에서 사용합니다. 예를 들어 경로 템플릿 `blog/{article:minlength(10)}`는 인수 `10`으로 `minlength` 제약 조건을 지정합니다. 경로 제약 조건에 대한 자세한 내용 및 프레임워크에서 제공되는 제약 조건 목록은 [경로 제약 조건 참조](#route-constraint-reference) 섹션을 참조하세요.
+
+::: moniker-end
+
+::: moniker range=">= aspnetcore-2.2"
+
+경로 매개 변수에는 링크 및 일치 작업과 URI에 대한 페이지를 생성할 때 매개 변수 값을 변환하는 매개 변수 변환기가 있을 수도 있습니다. 제한 조건과 마찬가지로, 매개 변수 변환기는 경로 매개 변수 이름 뒤에 콜론(`:`)과 변환기 이름을 추가하여 라우트 매개 변수에 인라인으로 추가될 수 있습니다. 예를 들어 경로 템플릿 `blog/{article:slugify}`는 `slugify` 변환기를 지정합니다.
+
+::: moniker-end
 
 다음 표는 일부 경로 템플릿 및 해당 동작을 보여 줍니다.
 
@@ -301,7 +323,7 @@ URL 생성 프로세스에 대한 자세한 내용은 [URL 생성 참조](#url-g
 
 ## <a name="route-constraint-reference"></a>경로 제약 조건 참조
 
-경로 제약 조건은 `Route`가 들어오는 URL의 구문과 일치시키고 URL 경로를 경로 값으로 토큰화할 때 실행됩니다. 일반적으로 경로 제약 조건은 경로 템플릿을 통해 연결된 경로 값을 검사하고 값 허용 여부에 대한 간단한 예/아니요 의사 결정을 내립니다. 일부 경로 제약 조건은 경로 값 외부의 데이터를 사용하여 요청을 라우팅할 수 있는지 여부를 고려합니다. 예를 들어 <xref:Microsoft.AspNetCore.Routing.Constraints.HttpMethodRouteConstraint>는 해당 HTTP 동사에 따라 요청을 허용하거나 거부할 수 있습니다.
+경로 제약 조건은 `Route`가 들어오는 URL의 구문과 일치시키고 URL 경로를 경로 값으로 토큰화할 때 실행됩니다. 일반적으로 경로 제약 조건은 경로 템플릿을 통해 연결된 경로 값을 검사하고 값 허용 여부에 대한 예/아니요 의사 결정을 내립니다. 일부 경로 제약 조건은 경로 값 외부의 데이터를 사용하여 요청을 라우팅할 수 있는지 여부를 고려합니다. 예를 들어 <xref:Microsoft.AspNetCore.Routing.Constraints.HttpMethodRouteConstraint>는 해당 HTTP 동사에 따라 요청을 허용하거나 거부할 수 있습니다.
 
 > [!WARNING]
 > 잘못된 입력으로 적절한 오류 메시지가 있는 *400 - 잘못된 요청* 대신 *404 - 찾을 수 없음* 응답이 발생하므로 **입력 유효성 검사**에 대해 제약 조건을 사용하지 마십시오. 경로 제약 조건은 특정 경로에 대한 입력의 유효성을 검사하는 데가 아닌 비슷한 경로 간을 **명확하게 구분하는 데** 사용됩니다.
@@ -361,9 +383,29 @@ ASP.NET Core 프레임워크는 정규식 생성자에 `RegexOptions.IgnoreCase 
 | `^[a-z]{2}$` |  hello    | 아니요    | 위의 `^` 및 `$` 참조 |
 | `^[a-z]{2}$` | 123abc456 | 아니요    | 위의 `^` 및 `$` 참조 |
 
-정규식 구문에 대한 자세한 내용은 [.NET Framework 정규식](https://docs.microsoft.com/dotnet/standard/base-types/regular-expression-language-quick-reference)을 참조하세요.
+정규식 구문에 대한 자세한 내용은 [.NET Framework 정규식](/dotnet/standard/base-types/regular-expression-language-quick-reference)을 참조하세요.
 
 가능한 값의 알려진 집합으로 매개 변수를 제한하려면 정규식을 사용합니다. 예를 들어 `{action:regex(^(list|get|create)$)}`는 `action` 경로 값을 `list`, `get` 또는 `create`으로만 일치시킵니다. 제약 조건 사전으로 전달되면 `^(list|get|create)$` 문자열은 동일합니다. 알려진 제약 조건 중 하나와 일치하지 않는 제약 조건 사전(템플릿 내 인라인이 아님)에서 전달되는 제약 조건도 정규식으로 처리됩니다.
+
+::: moniker range=">= aspnetcore-2.2"
+
+## <a name="parameter-transformer-reference"></a>매개 변수 변환기 참조
+
+`Route`에 대한 링크를 생성할 때 매개 변수 변환기가 실행됩니다. 매개 변수 변환기는 매개 변수의 경로 값을 사용하고 이를 새 문자열 값으로 변환합니다. 변환된 값은 생성된 링크에서 사용됩니다. 예를 들어, `Url.Action(new { article = "MyTestArticle" })`을 사용하는 경로 패턴 `blog\{article:slugify}`의 사용자 지정 `slugify` 매개 변수 변환기는 `blog\my-test-article`을 생성합니다. 매개 변수 변환기는 `Microsoft.AspNetCore.Routing.IOutboundParameterTransformer`를 구현하고 <xref:Microsoft.AspNetCore.Routing.RouteOptions.ConstraintMap>을 사용하여 구성됩니다.
+
+또한 매개 변수 변환기는 엔드포인트가 확인되는 URI를 변환하기 위해 프레임워크에서 사용합니다. 예를 들어 ASP.NET Core MVC는 매개 변수 변환기를 사용하여 `area` , `controller` , `action` 및 `page`와 일치하도록 사용되는 경로 값을 변환합니다.
+
+```csharp
+routes.MapRoute(
+    name: "default",
+    template: "{controller=Home:slugify}/{action=Index:slugify}/{id?}");
+```
+
+이전 경로를 사용하면 `SubscriptionManagementController.GetAll()` 작업이 URI `/subscription-management/get-all`과 일치됩니다. 매개 변수 변환기는 링크를 생성하는 데 사용되는 경로 값을 변경하지 않습니다. `Url.Action("GetAll", "SubscriptionManagement")`가 `/subscription-management/get-all`을 출력합니다.
+
+ASP.NET Core MVC도 `Microsoft.AspNetCore.Mvc.ApplicationModels.RouteTokenTransformerConvention` API 규칙과 함께 제공됩니다. 이 규칙은 앱의 모든 특성 경로 토큰에 지정된 매개 변수 변환기를 적용합니다.
+
+::: moniker-end
 
 ## <a name="url-generation-reference"></a>URL 생성 참조
 

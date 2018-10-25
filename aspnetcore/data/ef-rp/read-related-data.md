@@ -5,12 +5,12 @@ description: 이 자습서에서는 관련된 데이터 즉, Entity Framework에
 ms.author: riande
 ms.date: 11/05/2017
 uid: data/ef-rp/read-related-data
-ms.openlocfilehash: f57853fae7fb1cb7df130f38a6996c87a5c08e83
-ms.sourcegitcommit: c12ebdab65853f27fbb418204646baf6ce69515e
+ms.openlocfilehash: e23b8bb870b329bd705fbc9548df62524303893e
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "46523287"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912327"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---read-related-data---6-of-8"></a>ASP.NET Core에서 EF Core를 사용한 Razor 페이지 - 관련 데이터 읽기 - 6/8
 
@@ -51,7 +51,7 @@ ms.locfileid: "46523287"
 
   ![명시적 로드 예제](read-related-data/_static/explicit-loading.png)
 
-* [지연 로드](https://docs.microsoft.com/ef/core/querying/related-data#lazy-loading). [EF Core가 현재 지연 로드를 지원하지 않습니다](https://github.com/aspnet/EntityFrameworkCore/issues/3797). 엔터티를 처음 읽을 때 관련된 데이터가 검색되지 않습니다. 탐색 속성에 처음으로 액세스하려고 할 때 해당 탐색 속성에 필요한 데이터가 자동으로 검색됩니다. 탐색 속성에 처음으로 액세스할 때마다 쿼리가 DB에 전송됩니다.
+* [지연 로드](https://docs.microsoft.com/ef/core/querying/related-data#lazy-loading). [지연 로드가 버전 2.1의 EF Core에 추가되었습니다](/ef/core/querying/related-data#lazy-loading). 엔터티를 처음 읽을 때 관련된 데이터가 검색되지 않습니다. 탐색 속성에 처음으로 액세스하려고 할 때 해당 탐색 속성에 필요한 데이터가 자동으로 검색됩니다. 탐색 속성에 처음으로 액세스할 때마다 쿼리가 DB에 전송됩니다.
 
 * `Select` 연산자는 필요한 관련된 데이터만 로드합니다.
 

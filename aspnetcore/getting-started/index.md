@@ -6,28 +6,43 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 05/31/2018
 uid: getting-started
-ms.openlocfilehash: a6a5023594aec01370143e7d1f35fb45c109122a
-ms.sourcegitcommit: 13940eb53c68664b11a2d685ee17c78faab1945d
+ms.openlocfilehash: 4a5a0cc5a5dab2171ab8ef43818185a4ee91af0e
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/01/2018
-ms.locfileid: "47860942"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912568"
 ---
-# <a name="get-started-with-aspnet-core"></a>ASP.NET Core 시작
+# <a name="tutorial-get-started-with-aspnet-core"></a>자습서: ASP.NET Core 시작
 
-이 문서에서는 ASP.NET Core 앱을 만들고 실행하는 단계를 제공합니다.
+이 자습서에서는 .NET Core 명령줄 인터페이스를 사용하여 ASP.NET Core 웹앱을 만드는 방법을 보여 줍니다. 다음을 수행하는 방법을 알아봅니다.
 
-::: moniker range=">= aspnetcore-2.1"
+> [!div class="checklist"]
+> * 웹앱 프로젝트를 만듭니다.
+> * 로컬 HTTPS를 사용하도록 설정합니다.
+> * 앱을 실행합니다.
+> * Razor 페이지를 편집합니다.
 
-1. [!INCLUDE [](~/includes/2.1-SDK.md)]를 설치합니다.
+마지막에는 로컬 머신에서 작업 웹앱이 실행됩니다.
 
-2. ASP.NET Core 프로젝트를 만듭니다. 명령 셸을 열고 다음 명령을 입력합니다.
+![웹앱 홈페이지](_static/home-page.png)
+
+
+## <a name="prerequisites"></a>전제 조건
+
+* [!INCLUDE [](~/includes/2.1-SDK.md)]를 설치합니다.
+
+## <a name="create-a-web-app-project"></a>웹앱 프로젝트 만들기
+
+* 명령 셸을 열고 다음 명령을 입력합니다.
 
    ```console
    dotnet new webapp -o aspnetcoreapp
    ```
 
-3. HTTPS 개발 인증서 신뢰:
+## <a name="enable-local-https"></a>로컬 HTTPS 사용
+
+* HTTPS 개발 인증서 신뢰:
 
 # <a name="windowstabwindows"></a>[Windows](#tab/windows)
 
@@ -62,99 +77,36 @@ ms.locfileid: "47860942"
    
 ---
 
-4. 앱을 실행합니다.
+## <a name="run-the-app"></a>앱 실행
+
+* 다음 명령을 실행합니다.
 
    ```console
    cd aspnetcoreapp
    dotnet run
    ```
 
-5. [http://localhost:5001](http://localhost:5001)으로 이동합니다.  **동의**를 클릭하여 개인 정보 및 쿠키 정책에 동의합니다. 이 앱은 개인 정보를 보관하지 않습니다.
+* [https://localhost:5001](https://localhost:5001)으로 이동합니다. **동의**를 클릭하여 개인 정보 및 쿠키 정책에 동의합니다. 이 앱은 개인 정보를 보관하지 않습니다.
 
-6. *Pages/About.cshtml*을 열고 다음과 같은 강조 표시된 태그로 페이지를 수정합니다.
+## <a name="edit-a-razor-page"></a>Razor 페이지 편집
+
+* *Pages/About.cshtml*을 열고 다음과 같은 강조 표시된 태그로 페이지를 수정합니다.
 
    [!code-cshtml[](sample/getting-started/about.cshtml?highlight=9)]
 
-7. [http://localhost:5001/About](http://localhost:5001/About)으로 이동하여 변경 내용이 표시되는지 확인합니다.
+* [https://localhost:5001/About](https://localhost:5001/About)으로 이동하여 변경 내용이 표시되는지 확인합니다.
 
-[!INCLUDE [next steps](~/includes/getting-started/next-steps.md)]
+## <a name="next-steps"></a>다음 단계
 
-::: moniker-end
+이 자습서에서는 다음 방법을 학습했습니다.
 
-::: moniker range="= aspnetcore-2.0"
+> [!div class="checklist"]
+> * 웹앱 프로젝트를 만듭니다.
+> * 로컬 HTTPS를 사용하도록 설정합니다.
+> * 프로젝트를 실행합니다.
+> * 변경합니다.
 
-1. [!INCLUDE [](~/includes/net-core-sdk-download-link.md)]를 설치합니다.
+ASP.NET Core에 대한 자세한 내용은 다음을 참조하세요.
 
-2. 새 ASP.NET Core 프로젝트를 만듭니다.
-
-   명령 셸을 엽니다. 다음 명령을 입력합니다.
-
-   ```console
-   dotnet new razor -o aspnetcoreapp
-   ```
-
-3. 다음 명령을 사용하여 앱을 실행합니다.
-
-   ```console
-   cd aspnetcoreapp
-   dotnet run
-   ```
-
-4. [http://localhost:5000](http://localhost:5000)으로 이동합니다.
-
-5. *Pages/About.cshtml* 을 열고 페이지를 수정하여 “Hello, world! 서버 시간은 @DateTime.Now입니다.” 메시지를 표시합니다.
-
-   [!code-cshtml[](sample/getting-started/about.cshtml?highlight=9&range=1-9)]
-
-6. [http://localhost:5000/About](http://localhost:5000/About)으로 이동하여 변경 내용을 확인합니다.
-
-[!INCLUDE [next steps](~/includes/getting-started/next-steps.md)]
-
-::: moniker-end
-
-::: moniker range="<= aspnetcore-1.1"
-
-1. [.NET Core 모든 다운로드 페이지](https://www.microsoft.com/net/download/all)에서 SDK 1.0.4용 .NET Core **SDK 설치 관리자**를 설치합니다.
-
-2. 새 ASP.NET Core 프로젝트에 대한 폴더를 만듭니다.
-
-   명령 셸을 엽니다. 다음 명령을 입력합니다.
-
-   ```console
-   mkdir aspnetcoreapp
-   cd aspnetcoreapp
-   ```
-
-3. 컴퓨터에 최신 SDK 버전을 설치한 경우 *global.json* 파일을 만들어 1.0.4 SDK를 선택합니다.
-
-   ```json
-   {
-     "sdk": { "version": "1.0.4" }
-   }
-   ```
-
-4. 새 ASP.NET Core 프로젝트를 만듭니다.
-
-   ```console
-   dotnet new web
-   ```
-
-5. 패키지를 복원합니다.
-
-   ```console
-   dotnet restore
-   ```
-
-6. 앱을 실행합니다.
-
-   ```console
-   dotnet run
-   ```
-
-   [dotnet run](/dotnet/core/tools/dotnet-run) 명령은 필요한 경우 앱을 먼저 빌드합니다.
-
-7. `http://localhost:5000`으로 이동합니다.
-
-[!INCLUDE [next steps](~/includes/getting-started/next-steps.md)]
-
-::: moniker-end
+> [!div class="nextstepaction"]
+> <xref:index>

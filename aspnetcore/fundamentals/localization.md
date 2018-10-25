@@ -5,12 +5,12 @@ description: ASP.NET Core에서 다른 언어와 문화권으로의 콘텐츠 �
 ms.author: riande
 ms.date: 01/14/2017
 uid: fundamentals/localization
-ms.openlocfilehash: 87df1b8cf57509ddf80ce845d85a9b3f30673c35
-ms.sourcegitcommit: a25b572eaed21791230c85416f449f66a405ec19
+ms.openlocfilehash: 6e8c4723ab0105b8c756221d3e3c5eebba6cc4e2
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/01/2018
-ms.locfileid: "39396236"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912038"
 ---
 # <a name="globalization-and-localization-in-aspnet-core"></a>ASP.NET Core에서 세계화 및 지역화
 
@@ -341,7 +341,7 @@ services.Configure<RequestLocalizationOptions>(options =>
 
 ## <a name="additional-resources"></a>추가 자료
 
-* [Localization.StarterWeb 프로젝트](https://github.com/aspnet/entropy)는 문서에서 사용됩니다.
-* [Visual Studio의 리소스 파일](/cpp/windows/resource-files-visual-studio)
+* [Localization.StarterWeb 프로젝트](https://github.com/aspnet/Entropy/tree/master/samples/Localization.StarterWeb)는 문서에서 사용됩니다.
+* [.NET 응용 프로그램 전역화 및 지역화](/dotnet/standard/globalization-localization/index)
 * [.resx 파일의 리소스](/dotnet/framework/resources/working-with-resx-files-programmatically)
 * [Microsoft 다국어 앱 도구 키트](https://marketplace.visualstudio.com/items?itemName=MultilingualAppToolkit.MultilingualAppToolkit-18308)

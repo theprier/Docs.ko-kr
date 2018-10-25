@@ -5,12 +5,12 @@ description: 클라우드 기반 인터넷에 연결된 최신 응용 프로그�
 ms.author: riande
 ms.date: 9/28/2018
 uid: index
-ms.openlocfilehash: 85f2aa04e4b6692dd03a63f14bcebdec97ee270e
-ms.sourcegitcommit: 32f5ee0690604d451f61e9a5c28881c9fcf85738
+ms.openlocfilehash: 69ab702e9d9f8d746b7bc546d4f2bbb831ff59c7
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/29/2018
-ms.locfileid: "47454780"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48911705"
 ---
 # <a name="introduction-to-aspnet-core"></a>ASP.NET Core 소개
 
@@ -27,18 +27,7 @@ ASP.NET Core는 클라우드 기반 인터넷에 연결된 최신 응용 프로�
 
 수백만 명의 개발자가 [ASP.NET 4.x](https://docs.microsoft.com/aspnet/overview)를 사용하여 웹앱을 만들었습니다(계속 사용 중). ASP.NET Core는 간결한 모듈식 프레임워크를 만드는 아키텍처 변경 내용을 포함한 ASP.NET 4.x의 새로운 디자인입니다.
 
-ASP.NET Core는 다음과 같은 이점을 제공합니다.
-
-* 웹 UI 및 웹 API를 동일한 과정으로 빌드합니다.
-* [최신 클라이언트 쪽 프레임워크](xref:client-side/index) 및 워크플로 개발을 통합합니다.
-* 클라우드를 갖춘 환경 기반 [구성 시스템](xref:fundamentals/configuration/index)입니다.
-* [종속성 주입](xref:fundamentals/dependency-injection)이 기본 제공됩니다.
-* 간단한 [고성능](https://github.com/aspnet/benchmarks) 모듈식 HTTP 요청 파이프라인을 포함합니다.
-* [IIS](xref:host-and-deploy/iis/index), [Nginx](xref:host-and-deploy/linux-nginx), [Apache](xref:host-and-deploy/linux-apache), [Docker](xref:host-and-deploy/docker/index)에서 호스트하거나 고유한 프로세스에서 자체 호스트하는 기능이 있습니다.
-* [.NET Core](https://docs.microsoft.com/dotnet/articles/standard/choosing-core-framework-server)를 대상으로 하는 경우 앱 버전을 함께 관리할 수 있습니다.
-* 최신 웹 개발을 간소화하는 도구를 포함합니다.
-* Windows, macOS 및 Linux에서 빌드하고 실행할 수 있습니다.
-* 오픈 소스이며 [커뮤니티에 중점](https://live.asp.net/)을 둡니다.
+[!INCLUDE[](~/includes/benefits.md)]
 
 ## <a name="build-web-apis-and-web-ui-using-aspnet-core-mvc"></a>ASP.NET Core MVC를 사용하여 웹 API 및 웹 UI 빌드
 
@@ -56,9 +45,16 @@ ASP.NET Core MVC에서는 [Web API](xref:tutorials/index#build-web-apis) 및 [�
 
 ASP.NET Core는 [Angular](xref:spa/angular), [React](xref:spa/react), [부트스트랩](xref:client-side/bootstrap) 등 유명한 클라이언트 쪽 프레임워크 및 라이브러리와 원활하게 통합합니다. 자세한 내용은 [클라이언트 쪽 개발](xref:client-side/index)을 참조하세요.
 
+<a name="target-framework"></a>
+
 ## <a name="aspnet-core-targeting-net-framework"></a>ASP.NET Core 대상 .NET Framework
 
 ASP.NET Core는 .NET Core 또는 .NET Framework를 대상으로 지정할 수 있습니다. .NET Framework를 대상으로 지정한 ASP.NET Core 앱은 플랫폼 간 교차 사용이 불가능하며 &mdash;Windows에서만 실행됩니다. ASP.NET Core에서 .NET Framework를 대상으로 지정에 대한 지원은 제거되지 않을 예정입니다. 일반적으로 ASP.NET Core는 [.NET Standard](/dotnet/standard/net-standard) 라이브러리로 구성됩니다. .NET Standard 2.0으로 작성된 앱은 .NET Standard 2.0이 지원되는 모든 위치에서 실행됩니다.
+
+ASP.NET Core 2.x는 .NET Standard 2.0과 호환되는 .NET Framework 버전에서 지원됩니다.
+
+* .NET Framework 4.7.1 이상이 권장됩니다.
+* .NET Framework 4.6.1 이상
 
 .NET Core를 대상으로 지정하면 여러 이점이 있으며 이러한 장점은 릴리스마다 늘어나고 있습니다. .NET Framework에서 .NET Core의 몇 가지 장점은 다음과 같습니다.
 

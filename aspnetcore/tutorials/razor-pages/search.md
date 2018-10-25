@@ -6,12 +6,12 @@ monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 05/30/2018
 uid: tutorials/razor-pages/search
-ms.openlocfilehash: 9608f454c2c4ae0f4db1e71200b0ca98fe2cd2ad
-ms.sourcegitcommit: 32f5ee0690604d451f61e9a5c28881c9fcf85738
+ms.openlocfilehash: c88441b39d8c96ec817c58fc56ebd51a0887b077
+ms.sourcegitcommit: 317f9be24db600499e79d25872d743af74bd86c0
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/29/2018
-ms.locfileid: "47454715"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48045564"
 ---
 # <a name="add-search-to-aspnet-core-razor-pages"></a>ASP.NET Core Razor 페이지에 검색 추가
 
@@ -82,7 +82,7 @@ HTML `<form>` 태그는 [양식 태그 도우미](xref:mvc/views/working-with-fo
 ::: moniker-end
 
 
-`SelectList Genres`는 장르 목록을 포함합니다. 이를 통해 사용자는 목록에서 장르를 선택할 수 있습니다.
+`Genres` 속성에 장르 목록이 포함되어 있습니다. 이를 통해 사용자는 목록에서 장르를 선택할 수 있습니다.
 
 `MovieGenre` 속성은 사용자가 선택하는 특정 장르를 포함합니다(예: "서부 영화").
 

@@ -5,12 +5,12 @@ description: ASP.NET Core 앱의 여러 환경에서 앱 동작을 제어하는 
 ms.author: riande
 ms.date: 07/03/2018
 uid: fundamentals/environments
-ms.openlocfilehash: 720e5ef9fb63b83499ce1801a1c3f9df4786d748
-ms.sourcegitcommit: 25150f4398de83132965a89f12d3a030f6cce48d
+ms.openlocfilehash: de3c3fd5a2f0e49366d9d5b4e992d0247bcab0e5
+ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/25/2018
-ms.locfileid: "42927944"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48577525"
 ---
 # <a name="use-multiple-environments-in-aspnet-core"></a>ASP.NET Core에서 여러 환경 사용
 
@@ -28,7 +28,7 @@ ASP.NET Core는 앱 시작 시 환경 변수 `ASPNETCORE_ENVIRONMENT`를 읽고 
 
 위의 코드:
 
-* `ASPNETCORE_ENVIRONMENT`가 `Development`로 설정된 경우 [UseDeveloperExceptionPage](/dotnet/api/microsoft.aspnetcore.builder.developerexceptionpageextensions.usedeveloperexceptionpage) 및 [UseBrowserLink](/dotnet/api/microsoft.aspnetcore.builder.browserlinkextensions.usebrowserlink)를 호출합니다.
+* `ASPNETCORE_ENVIRONMENT`이 `Development`로 설정된 경우 [UseDeveloperExceptionPage](/dotnet/api/microsoft.aspnetcore.builder.developerexceptionpageextensions.usedeveloperexceptionpage)를 호출합니다.
 * `ASPNETCORE_ENVIRONMENT`의 값이 다음 중 하나로 설정된 경우 [UseExceptionHandler](/dotnet/api/microsoft.aspnetcore.builder.exceptionhandlerextensions.useexceptionhandler)를 호출합니다.
 
     * `Staging`
@@ -245,7 +245,6 @@ Windows에서 전역적으로 값을 설정하려면 다음 방법 중 하나를
 > [!IMPORTANT]
 > IIS에서 앱을 호스팅하고 `ASPNETCORE_ENVIRONMENT` 환경 변수를 추가 또는 변경할 때 다음 방법 중 하나를 사용하여 앱에서 선택한 새 값을 가져옵니다.
 >
-> * 앱의 앱 풀을 다시 시작합니다.
 > * 명령 프롬프트에서 `net stop was /y` 다음에 `net start w3svc`를 실행합니다.
 > * 서버를 다시 시작합니다.
 

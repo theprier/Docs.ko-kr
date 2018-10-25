@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 01/18/2018
 uid: fundamentals/static-files
-ms.openlocfilehash: 33fad930e617c74d9a8c07f850764a6b81fa8ab5
-ms.sourcegitcommit: 2c158fcfd325cad97ead608a816e525fe3dcf757
+ms.openlocfilehash: 52c7916b9fc55c875d56acd49c01f76dd2053817
+ms.sourcegitcommit: 13940eb53c68664b11a2d685ee17c78faab1945d
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2018
-ms.locfileid: "41751573"
+ms.lasthandoff: 10/01/2018
+ms.locfileid: "47861007"
 ---
 # <a name="static-files-in-aspnet-core"></a>ASP.NET Core의 고정 파일
 
@@ -216,7 +216,7 @@ URL은 파일 계층 구조 및 이전 코드를 사용하여 다음과 같이 �
 
 ## <a name="non-standard-content-types"></a>비표준 콘텐츠 형식
 
-정적 파일 미들웨어는 거의 400가지의 알려진 파일 콘텐츠 형식을 이해합니다. 사용자가 알 수 없는 파일 형식의 파일을 요청하는 경우 정적 파일 미들웨어는 HTTP 404(찾을 수 없음) 응답을 반환합니다. 디렉터리 검색을 사용하는 경우 파일에 대한 링크가 표시됩니다. URI는 HTTP 404 오류를 반환합니다.
+정적 파일 미들웨어는 거의 400가지의 알려진 파일 콘텐츠 형식을 이해합니다. 사용자가 알 수 없는 파일 형식의 파일을 요청하는 경우 정적 파일 미들웨어가 해당 요청을 파이프라인의 다음 미들웨어로 전달합니다. 요청을 처리한 미들웨어가 없으면 ‘404 찾을 수 없음’ 응답이 반환됩니다. 디렉터리 찾아보기가 사용 가능한 경우 파일에 대한 링크가 디렉터리 목록에 표시됩니다.
 
 다음 코드는 알 수 없는 형식 제공을 사용하도록 설정하고 알 수 없는 파일을 이미지로 렌더링합니다.
 

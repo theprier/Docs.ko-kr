@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 09/21/2018
 uid: host-and-deploy/iis/index
-ms.openlocfilehash: 12075f68dd828680f6bfbd46ea22ebd7bbe52dc7
-ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
+ms.openlocfilehash: 5092564ad885b0de090129a7a0f0bbbd472cb868
+ms.sourcegitcommit: ce6b6792c650708e92cdea051a5d166c0708c7c0
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49326019"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49652347"
 ---
 # <a name="host-aspnet-core-on-windows-with-iis"></a>IIS가 있는 Windows에서 ASP.NET Core 호스팅
 
@@ -85,13 +85,19 @@ public static IWebHost BuildWebHost(string[] args) =>
         ...
 ```
 
-ASP.NET Core 모듈은 동적 포트를 생성하여 백 엔드 프로세스에 할당합니다. `CreateDefaultBuilder`는 동적 포트를 선택하고 `http://localhost:{dynamicPort}/`에서 수신 대기하도록 Kestrel을 구성하는 <xref:Microsoft.AspNetCore.Hosting.WebHostBuilderIISExtensions.UseIISIntegration*> 메서드를 호출합니다. 이는 `UseUrls` 또는 [Kestrel의 수신 API](xref:fundamentals/servers/kestrel#endpoint-configuration)에 대한 호출과 같은 다른 URL 구성을 재정의합니다. 따라서 모듈을 사용하는 경우 `UseUrls`에 대한 호출 또는 Kestrel의 `Listen` API가 필요하지 않습니다. `UseUrls` 또는 `Listen`을 호출하는 경우 Kestrel은 IIS 없이 앱을 실행할 때 지정된 포트에서만 수신합니다.
+ASP.NET Core 모듈은 동적 포트를 생성하여 백 엔드 프로세스에 할당합니다. `CreateDefaultBuilder`는 <xref:Microsoft.AspNetCore.Hosting.WebHostBuilderIISExtensions.UseIISIntegration*> 메서드를 호출합니다. `UseIISIntegration`은 localhost IP 주소(`127.0.0.1`)의 동적 포트에서 수신 대기하도록 Kestrel을 구성합니다. 동적 포트가 1234인 경우 Kestrel은 `127.0.0.1:1234`에서 수신 대기합니다. 이 구성은 다음에서 제공된 다른 URL 구성을 바꿉니다.
+
+* `UseUrls`
+* [Kestrel의 수신 대기 API](xref:fundamentals/servers/kestrel#endpoint-configuration)
+* [구성](xref:fundamentals/configuration/index)(또는 [명령줄 --urls 옵션](xref:fundamentals/host/web-host#override-configuration))
+
+모듈을 사용하는 경우 `UseUrls` 호출 또는 Kestrel의 `Listen` API가 필요하지 않습니다. `UseUrls` 또는 `Listen`을 호출하는 경우 Kestrel은 IIS 없이 앱을 실행할 때만 지정된 포트에서 수신 대기합니다.
 
 In-process 및 out-of-process 호스팅 모델에 대한 자세한 내용은 <xref:fundamentals/servers/aspnet-core-module> 항목 및 <xref:host-and-deploy/aspnet-core-module> 항목을 참조하세요.
 
 ::: moniker-end
 
-::: moniker range="= aspnetcore-2.0 || aspnetcore-2.1"
+::: moniker range="= aspnetcore-2.1"
 
 일반적인 *Program.cs*는 <xref:Microsoft.AspNetCore.WebHost.CreateDefaultBuilder*>을 호출하여 호스트 설정을 시작합니다. `CreateDefaultBuilder`는 [Kestrel](xref:fundamentals/servers/kestrel)을 웹 서버로 구성하고 [ASP.NET Core 모듈](xref:fundamentals/servers/aspnet-core-module)의 기본 경로 및 포트를 구성하여 IIS 통합을 구현합니다.
 
@@ -101,7 +107,33 @@ public static IWebHost BuildWebHost(string[] args) =>
         ...
 ```
 
-ASP.NET Core 모듈은 동적 포트를 생성하여 백 엔드 프로세스에 할당합니다. `CreateDefaultBuilder`는 메서드는 동적 포트를 선택하고 `http://localhost:{dynamicPort}/`에서 수신 대기하도록 Kestrel을 구성하는 [UseIISIntegration](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderiisextensions.useiisintegration) 메서드를 호합니다. 이는 `UseUrls` 또는 [Kestrel의 수신 API](xref:fundamentals/servers/kestrel#endpoint-configuration)에 대한 호출과 같은 다른 URL 구성을 재정의합니다. 따라서 모듈을 사용하는 경우 `UseUrls`에 대한 호출 또는 Kestrel의 `Listen` API가 필요하지 않습니다. `UseUrls` 또는 `Listen`을 호출하는 경우 Kestrel은 IIS 없이 앱을 실행할 때 지정된 포트에서 수신 대기합니다.
+ASP.NET Core 모듈은 동적 포트를 생성하여 백 엔드 프로세스에 할당합니다. `CreateDefaultBuilder`는 [UseIISIntegration](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderiisextensions.useiisintegration) 메서드를 호출합니다. `UseIISIntegration`은 localhost IP 주소(`127.0.0.1`)의 동적 포트에서 수신 대기하도록 Kestrel을 구성합니다. 동적 포트가 1234인 경우 Kestrel은 `127.0.0.1:1234`에서 수신 대기합니다. 이 구성은 다음에서 제공된 다른 URL 구성을 바꿉니다.
+
+* `UseUrls`
+* [Kestrel의 수신 대기 API](xref:fundamentals/servers/kestrel#endpoint-configuration)
+* [구성](xref:fundamentals/configuration/index)(또는 [명령줄 --urls 옵션](xref:fundamentals/host/web-host#override-configuration))
+
+모듈을 사용하는 경우 `UseUrls` 호출 또는 Kestrel의 `Listen` API가 필요하지 않습니다. `UseUrls` 또는 `Listen`을 호출하는 경우 Kestrel은 IIS 없이 앱을 실행할 때만 지정된 포트에서 수신 대기합니다.
+
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.0"
+
+일반적인 *Program.cs*는 <xref:Microsoft.AspNetCore.WebHost.CreateDefaultBuilder*>을 호출하여 호스트 설정을 시작합니다. `CreateDefaultBuilder`는 [Kestrel](xref:fundamentals/servers/kestrel)을 웹 서버로 구성하고 [ASP.NET Core 모듈](xref:fundamentals/servers/aspnet-core-module)의 기본 경로 및 포트를 구성하여 IIS 통합을 구현합니다.
+
+```csharp
+public static IWebHost BuildWebHost(string[] args) =>
+    WebHost.CreateDefaultBuilder(args)
+        ...
+```
+
+ASP.NET Core 모듈은 동적 포트를 생성하여 백 엔드 프로세스에 할당합니다. `CreateDefaultBuilder`는 [UseIISIntegration](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderiisextensions.useiisintegration) 메서드를 호출합니다. `UseIISIntegration`은 localhost IP 주소(`localhost`)의 동적 포트에서 수신 대기하도록 Kestrel을 구성합니다. 동적 포트가 1234인 경우 Kestrel은 `localhost:1234`에서 수신 대기합니다. 이 구성은 다음에서 제공된 다른 URL 구성을 바꿉니다.
+
+* `UseUrls`
+* [Kestrel의 수신 대기 API](xref:fundamentals/servers/kestrel#endpoint-configuration)
+* [구성](xref:fundamentals/configuration/index)(또는 [명령줄 --urls 옵션](xref:fundamentals/host/web-host#override-configuration))
+
+모듈을 사용하는 경우 `UseUrls` 호출 또는 Kestrel의 `Listen` API가 필요하지 않습니다. `UseUrls` 또는 `Listen`을 호출하는 경우 Kestrel은 IIS 없이 앱을 실행할 때만 지정된 포트에서 수신 대기합니다.
 
 ::: moniker-end
 
@@ -118,7 +150,12 @@ var host = new WebHostBuilder()
 
 [UseKestrel](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderkestrelextensions.usekestrel) 및 [UseIISIntegration](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderiisextensions.useiisintegration)이 둘 다 필요합니다. `UseIISIntegration`을 호출하는 코드는 코드 이식성에 영향을 주지 않습니다. 앱이 IIS 배후에서 실행되지 않는 경우(예를 들어 앱이 Kestrel에서 바로 실행되는 경우)에는 `UseIISIntegration`이 작동하지 않습니다.
 
-ASP.NET Core 모듈은 동적 포트를 생성하여 백 엔드 프로세스에 할당합니다. `UseIISIntegration` 메서드는 동적 포트를 선택하고 `http://locahost:{dynamicPort}/`에서 수신 대기하도록 Kestrel을 구성합니다. 이는 `UseUrls`에 대한 호출과 같은 다른 URL 구성을 재정의합니다. 따라서 모듈을 사용하는 경우 `UseUrls`에 대한 호출이 필요하지 않습니다. `UseUrls`를 호출하는 경우 Kestrel은 IIS 없이 앱을 실행할 때 지정된 포트에서 수신 대기합니다.
+ASP.NET Core 모듈은 동적 포트를 생성하여 백 엔드 프로세스에 할당합니다. `UseIISIntegration`은 localhost IP 주소(`localhost`)의 동적 포트에서 수신 대기하도록 Kestrel을 구성합니다. 동적 포트가 1234인 경우 Kestrel은 `localhost:1234`에서 수신 대기합니다. 이 구성은 다음에서 제공된 다른 URL 구성을 바꿉니다.
+
+* `UseUrls`
+* [구성](xref:fundamentals/configuration/index)(또는 [명령줄 --urls 옵션](xref:fundamentals/host/web-host#override-configuration))
+
+모듈을 사용하는 경우 `UseUrls` 호출이 필요하지 않습니다. `UseUrls`를 호출하는 경우 Kestrel은 IIS 없이 앱을 실행할 때만 지정된 포트에서 수신 대기합니다.
 
 `UseUrls`를 ASP.NET Core 1.0 앱에서 호출하는 경우 모듈 구성 포트를 덮어 쓰지 않도록 `UseIISIntegration`을 호출하기 **전에** 호출합니다. 모듈 설정이 `UseUrls`를 재정의하기 때문에 이 호출 순서는 ASP.NET Core 1.1에서 필요하지 않습니다.
 

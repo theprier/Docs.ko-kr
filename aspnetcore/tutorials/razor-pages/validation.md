@@ -6,12 +6,12 @@ monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 08/07/2017
 uid: tutorials/razor-pages/validation
-ms.openlocfilehash: 6144bfb9e731ace51b4f23870fdb06519fd4a9ea
-ms.sourcegitcommit: 599ebae5c2d6fcb22dfa6ae7d1f4bdfcacb79af4
+ms.openlocfilehash: cd958b9c084de4b3e12784774544610873a519f9
+ms.sourcegitcommit: 317f9be24db600499e79d25872d743af74bd86c0
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47211028"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48045525"
 ---
 # <a name="add-validation-to-an-aspnet-core-razor-page"></a>ASP.NET Core Razor 페이지에 유효성 검사 추가
 
@@ -27,7 +27,7 @@ Razor 페이지에서 제공하는 유효성 검사 지원 및 Entity Framework�
 
 ### <a name="adding-validation-rules-to-the-movie-model"></a>동영상 모델에 유효성 검사 규칙 추가
 
-*Movie.cs* 파일을 엽니다. [DataAnnotations](https://docs.microsoft.com/aspnet/mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-6)는 클래스 또는 속성에 선언적으로 적용되는 유효성 검사 특성의 기본 제공 집합을 제공합니다. DataAnnotations는 또한 서식 지정을 돕는 `DataType`과 같은 서식 지정 특성을 포함하며 유효성 검사를 제공하지 않습니다.
+*Models/Movie.cs* 파일을 엽니다. [DataAnnotations](https://docs.microsoft.com/aspnet/mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-6)는 클래스 또는 속성에 선언적으로 적용되는 유효성 검사 특성의 기본 제공 집합을 제공합니다. DataAnnotations는 또한 서식 지정을 돕는 `DataType`과 같은 서식 지정 특성을 포함하며 유효성 검사를 제공하지 않습니다.
 
 `Required`, `StringLength`, `RegularExpression` 및 `Range` 유효성 검사 특성을 활용하도록 `Movie` 클래스를 업데이트합니다.
 
@@ -79,7 +79,7 @@ ASP.NET Core에 의해 자동으로 적용되는 유효성 검사 규칙을 사�
 
 선택 가능한 서버 쪽 유효성 검사 테스트:
 
-* 브라우저에서 JavaScript를 비활성화합니다. 브라우저에서 JavaScript를 비활성화할 수 없는 경우 다른 브라우저를 시도하세요.
+* 브라우저에서 JavaScript를 비활성화합니다. 브라우저의 개발자 도구를 사용하여 이를 수행할 수 있습니다. 브라우저에서 JavaScript를 비활성화할 수 없는 경우 다른 브라우저를 시도하세요.
 * 만들기 또는 편집 페이지의 `OnPostAsync` 메서드에서 중단점을 설정합니다.
 * 유효성 검사 오류가 있는 양식을 제출합니다.
 * 모델 상태가 유효하지 않은 것을 확인합니다.

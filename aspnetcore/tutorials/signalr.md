@@ -1,28 +1,29 @@
 ---
-title: '자습서: ASP.NET Core에서 SignalR 시작'
+title: ASP.NET Core SignalR로 시작
 author: tdykstra
-description: 이 자습서에서는 ASP.NET Core용 SignalR을 사용하는 채팅 앱을 만듭니다.
+description: 이 자습서에서는 ASP.NET Core SignalR을 사용하는 채팅 앱을 만듭니다.
 monikerRange: '>= aspnetcore-2.1'
 ms.author: tdykstra
 ms.custom: mvc
 ms.date: 08/31/2018
 uid: tutorials/signalr
-ms.openlocfilehash: 6f93d6dc664f68425ef0fa0d02f9011e4875bc33
-ms.sourcegitcommit: 9bdba90b2c97a4016188434657194b2d7027d6e3
+ms.openlocfilehash: 55fb6b1c13549129a00541c1228956a93854ad78
+ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47402135"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48578031"
 ---
-# <a name="tutorial-get-started-with-signalr-on-aspnet-core"></a>자습서: ASP.NET Core에서 SignalR 시작
+# <a name="tutorial-get-started-with-aspnet-core-signalr"></a>자습서: ASP.NET Core SignalR로 시작
 
 이 자습서에서는 SignalR을 사용하여 실시간 앱을 빌드하는 방법에 대한 기본 사항을 설명합니다. 여기에서는 다음과 같은 작업을 수행하는 방법에 대해 배우게 됩니다.
 
 > [!div class="checklist"]
-> * ASP.NET Core에서 SignalR을 사용하는 웹앱을 만듭니다.
-> * 서버에서 SignalR 허브를 만듭니다.
-> * JavaScript 클라이언트에서 SignalR 허브에 연결합니다.
-> * 허브를 사용하여 모든 클라이언트에서 연결된 모든 클라이언트에 메시지를 보냅니다.
+> * 웹앱 프로젝트를 만듭니다.
+> * SignalR 클라이언트 라이브러리를 추가합니다.
+> * SignalR 허브를 만듭니다.
+> * SignalR을 사용하도록 프로젝트를 구성합니다.
+> * 허브를 사용하여 모든 클라이언트에서 연결된 모든 클라이언트에 메시지를 보내는 코드를 추가합니다.
 
 작동하는 채팅 앱이 만들어집니다.
 
@@ -50,7 +51,7 @@ ms.locfileid: "47402135"
 
 ---
 
-## <a name="create-the-project"></a>프로젝트를 만듭니다.
+## <a name="create-a-web-project"></a>웹 프로젝트 만들기
 
 # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio/)
 
@@ -90,7 +91,7 @@ ms.locfileid: "47402135"
 
 ## <a name="add-the-signalr-client-library"></a>SignalR 클라이언트 라이브러리 추가
 
-SignalR 서버 라이브러리는 [Microsoft.AspNetCore.App 메타패키지](xref:fundamentals/metapackage-app)에 포함되어 있습니다. JavaScript 클라이언트 라이브러리는 프로젝트에 자동으로 포함되지 않습니다. 이 자습서에서는 [라이브러리 관리자(LibMan)](xref:client-side/libman/index)를 사용하여 *unpkg*에서 클라이언트 라이브러리를 가져옵니다. [unpkg](https://unpkg.com/#/)는 [npm, Node.js 패키지 관리자](https://www.npmjs.com/get-npm)에서 찾은 내용을 전달할 수 있는 [콘텐츠 배달 네트워크](https://wikipedia.org/wiki/Content_delivery_network)입니다.
+SignalR 서버 라이브러리는 `Microsoft.AspNetCore.App` metapackage에 포함됩니다. JavaScript 클라이언트 라이브러리는 프로젝트에 자동으로 포함되지 않습니다. 이 자습서에서는 라이브러리 관리자(LibMan)를 사용하여 *unpkg*에서 클라이언트 라이브러리를 가져옵니다. unpkg는 npm, Node.js 패키지 관리자에서 찾은 내용을 전달할 수 있는 CDN(콘텐츠 배달 네트워크)입니다.
 
 # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio/)
 
@@ -98,7 +99,7 @@ SignalR 서버 라이브러리는 [Microsoft.AspNetCore.App 메타패키지](xre
 
 * **Add Client-Side Library**(클라이언트 쪽 라이브러리 추가) 대화 상자에서 **공급자**에 대해 **unpkg**를 선택합니다. 
 
-* **라이브러리**에 대해 _@aspnet/signalr@1_을 입력하고 미리 보기가 아닌 최신 버전을 선택합니다.
+* **라이브러리**에 대해 `@aspnet/signalr@1`을 입력하고 미리 보기가 아닌 최신 버전을 선택합니다.
 
   ![Add Client-Side Library(클라이언트 쪽 라이브러리 추가) 대화 상자 - 라이브러리 선택](signalr/_static/libman1.png)
 
@@ -108,7 +109,7 @@ SignalR 서버 라이브러리는 [Microsoft.AspNetCore.App 메타패키지](xre
 
   ![Add Client-Side Library(클라이언트 쪽 라이브러리 추가) 대화 상자 - 파일 및 대상 선택](signalr/_static/libman2.png)
 
-  [LibMan](xref:client-side/libman/index)은 *wwwroot/lib/signalr* 폴더를 생성하고 선택한 파일을 여기에 복사합니다.
+  LibMan은 *wwwroot/lib/signalr* 폴더를 생성하고 선택한 파일을 여기에 복사합니다.
 
 # <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code/)
 
@@ -170,9 +171,9 @@ SignalR 서버 라이브러리는 [Microsoft.AspNetCore.App 메타패키지](xre
 
 ---
 
-## <a name="create-the-signalr-hub"></a>SignalR 허브 만들기
+## <a name="create-a-signalr-hub"></a>SignalR 허브 만들기
 
-[허브](xref:signalr/hubs)는 클라이언트-서버 통신을 처리하는 높은 수준의 파이프라인으로 제공되는 클래스입니다.
+*허브*는 클라이언트-서버 통신을 처리하는 높은 수준의 파이프라인으로 제공되는 클래스입니다.
 
 * SignalRChat 프로젝트 폴더에서 *Hubs* 폴더를 만듭니다.
 
@@ -180,11 +181,11 @@ SignalR 서버 라이브러리는 [Microsoft.AspNetCore.App 메타패키지](xre
 
   [!code-csharp[Startup](signalr/sample/Hubs/ChatHub.cs)]
 
-  `ChatHub` 클래스는 SignalR [Hub](/dotnet/api/microsoft.aspnetcore.signalr.hub) 클래스에서 상속합니다. `Hub` 클래스는 연결, 그룹 및 메시징을 관리합니다.
+  `ChatHub` 클래스는 SignalR `Hub` 클래스에서 상속합니다. `Hub` 클래스는 연결, 그룹 및 메시징을 관리합니다.
 
   연결된 모든 클라이언트에서 `SendMessage` 메서드를 호출할 수 있습니다. 모든 클라이언트에 수신된 메시지를 보냅니다. SignalR 코드는 최대 확장성을 제공하도록 비동기적입니다.
 
-## <a name="configure-the-project-to-use-signalr"></a>SignalR을 사용하도록 프로젝트 구성
+## <a name="configure-signalr"></a>SignalR 구성
 
 SignalR 서버는 SignalR에 SignalR 요청을 전달하도록 구성되어야 합니다.
 
@@ -192,9 +193,9 @@ SignalR 서버는 SignalR에 SignalR 요청을 전달하도록 구성되어야 �
 
   [!code-csharp[Startup](signalr/sample/Startup.cs?highlight=7,33,52-55)]
 
-  이러한 변경 사항은 [종속성 주입](xref:fundamentals/dependency-injection) 시스템 및 [미들웨어](xref:fundamentals/middleware/index) 파이프라인에 SignalR을 추가합니다.
+  이러한 변경 사항은 ASP.NET Core 종속성 주입 시스템 및 미들웨어 파이프라인에 SignalR을 추가합니다.
 
-## <a name="create-the-signalr-client-code"></a>SignalR 클라이언트 코드 만들기
+## <a name="add-signalr-client-code"></a>SignalR 클라이언트 코드 추가
 
 * *Pages\Index.cshtml*의 콘텐츠를 다음 코드로 바꿉니다.
 
@@ -246,10 +247,16 @@ SignalR 서버는 SignalR에 SignalR 요청을 전달하도록 구성되어야 �
 
 ## <a name="next-steps"></a>다음 단계
 
-클라이언트를 다른 도메인의 SignalR 앱에 연결하려는 경우 CORS(원본 간 리소스 공유)를 활성화해야 합니다. 자세한 내용은 [원본 간 리소스 공유](xref:signalr/security?view=aspnetcore-2.1#cross-origin-resource-sharing)를 참조하세요.
+이 자습서에서는 다음 방법을 학습했습니다.
 
-SignalR, 허브 및 JavaScript 클라이언트에 대해 자세히 알아보려면 다음 리소스를 참조하세요.
+> [!div class="checklist"]
+> * 웹앱 프로젝트를 만듭니다.
+> * SignalR 클라이언트 라이브러리를 추가합니다.
+> * SignalR 허브를 만듭니다.
+> * SignalR을 사용하도록 프로젝트를 구성합니다.
+> * 허브를 사용하여 모든 클라이언트에서 연결된 모든 클라이언트에 메시지를 보내는 코드를 추가합니다.
 
-* [ASP.NET Core용 SignalR 소개](xref:signalr/introduction)
-* [ASP.NET Core용 SignalR에서 허브 사용](xref:signalr/hubs)
-* [ASP.NET Core SignalR JavaScript 클라이언트](xref:signalr/javascript-client)
+SignalR에 대해 자세히 알아보려면 다음을 참조하세요.
+
+> [!div class="nextstepaction"]
+> [ASP.NET Core SignalR 소개](xref:signalr/introduction)

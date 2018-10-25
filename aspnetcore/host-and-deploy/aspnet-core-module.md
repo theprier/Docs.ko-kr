@@ -4,14 +4,14 @@ author: guardrex
 description: ASP.NET Core 앱을 호스팅하기 위해 ASP.NET Core 모듈을 구성하는 방법을 알아봅니다.
 ms.author: riande
 ms.custom: mvc
-ms.date: 02/15/2018
+ms.date: 09/21/2018
 uid: host-and-deploy/aspnet-core-module
-ms.openlocfilehash: bf7a60b67b1ea78bb346e6dd5eeef38b54bfdbe4
-ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
+ms.openlocfilehash: 0ae19b26bc86c9da7a61f3117aaae1844115593a
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46010951"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48913283"
 ---
 # <a name="aspnet-core-module-configuration-reference"></a>ASP.NET Core 모듈 구성 참조
 
@@ -19,11 +19,75 @@ ms.locfileid: "46010951"
 
 이 문서에서는 ASP.NET Core 앱을 호스트하기 위해 ASP.NET Core 모듈을 구성하는 방법에 대한 지침을 제공합니다. ASP.NET Core 모듈 및 설치 지침에 대한 개요는 [ASP.NET Core 모듈 개요](xref:fundamentals/servers/aspnet-core-module)를 참조하세요.
 
+::: moniker range=">= aspnetcore-2.2"
+
+## <a name="hosting-model"></a>호스팅 모델
+
+.NET Core 2.2 이상에서 실행되는 앱의 경우, 모듈에서는 역방향 프록시(Out-of-Process) 호스팅과 비교할 때 더 나은 성능을 제공하기 위해 In-Process 호스팅 모델을 지원합니다. 자세한 내용은 <xref:fundamentals/servers/aspnet-core-module#aspnet-core-module-description>을 참조하세요.
+
+In-Process 호스팅은 기존 앱에 대한 옵트인(opt in) 기능이지만 [dotnet new](/dotnet/core/tools/dotnet-new) 템플릿은 기본적으로 모든 IIS 및 IIS Express 시나리오에 대해 In-Process 호스팅 모델로 설정됩니다.
+
+In-Process 호스팅용 앱을 구성하려면 `<AspNetCoreModuleHostingModel>` 속성을 `inprocess` 값의 앱 프로젝트 파일에 추가합니다(Out-of-Process 호스팅은 `outofprocess`로 설정됨).
+
+```xml
+<PropertyGroup>
+  <AspNetCoreModuleHostingModel>inprocess</AspNetCoreModuleHostingModel>
+</PropertyGroup>
+```
+
+다음 특성은 In-Process로 호스팅할 때 적용됩니다.
+
+* [Kestrel 서버](xref:fundamentals/servers/kestrel)가 사용되지 않습니다. 사용자 지정 <xref:Microsoft.AspNetCore.Hosting.Server.IServer> 구현인 `IISHttpServer`가 앱의 서버 역할을 합니다.
+
+* [requestTimeout 특성](#attributes-of-the-aspnetcore-element)이 In-Process 호스팅에 적용되지 않습니다.
+
+* 앱 간의 앱 풀 공유는 지원되지 않습니다. 앱당 하나의 앱 풀을 사용합니다.
+
+* [웹 배포](/iis/publish/using-web-deploy/introduction-to-web-deploy)를 사용하거나 [app_offline.htm 파일을 배포에](xref:host-and-deploy/iis/index#locked-deployment-files) 수동으로 배치할 경우 열린 연결이 있으면 앱이 즉시 종료되지 않을 수 있습니다. 예를 들어, WebSocket 연결은 앱 종료를 지연시킬 수 있습니다.
+
+* 앱 및 설치된 런타임(x64 또는 x86)의 아키텍처(비트)는 앱 풀의 아키텍처와 일치해야 합니다.
+
+* `WebHostBuilder`([CreateDefaultBuilder](xref:fundamentals/host/web-host#set-up-a-host)를 사용하지 않고)를 사용하여 앱 호스트를 수동으로 설정하며 앱이 Kestrel 서버에서 직접 실행되는 경우(자체 호스트됨) `UseIISIntegration`를 호출하기 전에 `UseKestrel`를 호출합니다. 이 순서가 바뀌면 호스트가 시작되지 않습니다.
+
+### <a name="hosting-model-changes"></a>호스팅 모델 변경
+
+`hostingModel` 설정이 *web.config* 파일에서 변경되면([web.config로 구성](#configuration-with-webconfig) 섹션에 설명되어 있음) 모듈은 IIS에 대한 작업자 프로세스를 재순환합니다.
+
+IIS Express의 경우 모듈은 작업자 프로세스를 재순환하지 않고, 대신 현재 IIS Express 프로세스의 정상 종료를 트리거합니다. 앱에 대한 다음 요청은 새 IIS Express 프로세스를 생성합니다.
+
+### <a name="process-name"></a>프로세스 이름
+
+`Process.GetCurrentProcess().ProcessName`은 `w3wp`(In-Process) 또는 `dotnet`(Out-of-Process)을 보고합니다.
+
+::: moniker-end
+
 ## <a name="configuration-with-webconfig"></a>web.config를 사용한 구성
 
 ASP.NET Core 모듈은 사이트의 *web.config* 파일에 있는 `system.webServer` 노드의 `aspNetCore` 섹션으로 구성됩니다.
 
 다음 *web.config* 파일은 [프레임워크 종속 배포](/dotnet/articles/core/deploying/#framework-dependent-deployments-fdd)를 위해 게시되고 사이트 요청을 처리하도록 ASP.NET Core 모듈을 구성합니다.
+
+::: moniker range=">= aspnetcore-2.2"
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <system.webServer>
+    <handlers>
+      <add name="aspNetCore" path="*" verb="*" modules="AspNetCoreModuleV2" resourceType="Unspecified" />
+    </handlers>
+    <aspNetCore processPath="dotnet" 
+                arguments=".\MyApp.dll" 
+                stdoutLogEnabled="false" 
+                stdoutLogFile=".\logs\stdout" 
+                hostingModel="inprocess" />
+  </system.webServer>
+</configuration>
+```
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.2"
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -40,7 +104,30 @@ ASP.NET Core 모듈은 사이트의 *web.config* 파일에 있는 `system.webSer
 </configuration>
 ```
 
+::: moniker-end
+
 다음 *web.config*는 [자체 포함 배포](/dotnet/articles/core/deploying/#self-contained-deployments-scd)를 위해 게시됩니다.
+
+::: moniker range=">= aspnetcore-2.2"
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <system.webServer>
+    <handlers>
+      <add name="aspNetCore" path="*" verb="*" modules="AspNetCoreModuleV2" resourceType="Unspecified" />
+    </handlers>
+    <aspNetCore processPath=".\MyApp.exe" 
+                stdoutLogEnabled="false" 
+                stdoutLogFile=".\logs\stdout" 
+                hostingModel="inprocess" />
+  </system.webServer>
+</configuration>
+```
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.2"
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -56,41 +143,64 @@ ASP.NET Core 모듈은 사이트의 *web.config* 파일에 있는 `system.webSer
 </configuration>
 ```
 
+::: moniker-end
+
 앱이 [Azure App Service](https://azure.microsoft.com/services/app-service/)에 배포되면 `stdoutLogFile` 경로가 `\\?\%home%\LogFiles\stdout`로 설정됩니다. 이 경로는 서비스에서 자동으로 만들어진 위치인 *LogFiles* 폴더에 stdout 로그를 저장합니다.
 
 하위 앱에서 *web.config* 파일의 구성에 관한 중요 참고 사항은 [하위 응용 프로그램 구성](xref:host-and-deploy/iis/index#sub-application-configuration)을 참조하세요.
 
 ### <a name="attributes-of-the-aspnetcore-element"></a>aspNetCore 요소의 특성
 
-::: moniker range="<= aspnetcore-2.0"
+::: moniker range=">= aspnetcore-2.2"
 
 | 특성 | 설명 | 기본 |
 | --------- | ----------- | :-----: |
 | `arguments` | <p>선택적 문자열 특성입니다.</p><p>**processPath**에 지정된 실행 파일에 대한 인수입니다.</p>| |
-| `disableStartUpErrorPage` | 참 또는 거짓입니다.</p><p>true인 경우 **502.5 - 프로세스 실패** 페이지가 표시되지 않고 *web.config*에 구성된 502 상태 코드 페이지가 우선 적용됩니다.</p> | `false` |
-| `forwardWindowsAuthToken` | 참 또는 거짓입니다.</p><p>true인 경우 토큰은 %ASPNETCORE_PORT%에서 수신 대기하는 자식 프로세스에 요청별 헤더 'MS-ASPNETCORE-WINAUTHTOKEN'으로 전달됩니다. 이 프로세스는 요청별로 이 토큰에서 CloseHandle을 호출합니다.</p> | `true` |
+| `disableStartUpErrorPage` | <p>선택적 부울 특성입니다.</p><p>true인 경우 **502.5 - 프로세스 실패** 페이지가 표시되지 않고 *web.config*에 구성된 502 상태 코드 페이지가 우선 적용됩니다.</p> | `false` |
+| `forwardWindowsAuthToken` | <p>선택적 부울 특성입니다.</p><p>true인 경우 토큰은 %ASPNETCORE_PORT%에서 수신 대기하는 자식 프로세스에 요청별 헤더 'MS-ASPNETCORE-WINAUTHTOKEN'으로 전달됩니다. 이 프로세스는 요청별로 이 토큰에서 CloseHandle을 호출합니다.</p> | `true` |
+| `hostingModel` | <p>선택적 문자열 특성입니다.</p><p>호스팅 모델을 In-Process(`inprocess`) 또는 Out-of-Process(`outofprocess`)로 지정합니다.</p> | `outofprocess` |
+| `processesPerApplication` | <p>선택적 정수 특성입니다.</p><p>앱별로 스핀 업할 수 있는 **processPath** 설정에 지정된 프로세스의 인스턴스 수를 지정합니다.</p><p>&dagger;In-Process 호스팅의 경우 이 값은 `1`로 제한됩니다.</p> | 기본값: `1`<br>최소: `1`<br>최대: `100`&dagger; |
 | `processPath` | <p>필수 문자열 특성입니다.</p><p>HTTP 요청을 수신 대기하는 프로세스를 시작하는 실행 파일의 경로입니다. 상대 경로가 지원됩니다. 경로가 `.`로 시작되면 경로는 사이트 루트의 상대 경로로 간주됩니다.</p> | |
-| `rapidFailsPerMinute` | <p>선택적 정수 특성입니다.</p><p>**processPath**에 지정된 프로세스의 분당 크래시 허용 횟수를 지정합니다. 이 제한을 초과하면 모듈은 남은 시간 동안 프로세스 시작을 중지합니다.</p> | `10` |
-| `requestTimeout` | <p>선택적 시간 간격 특성입니다.</p><p>ASP.NET Core 모듈이 %ASPNETCORE_PORT%에서 수신 대기하는 프로세스의 응답을 기다리는 기간을 지정합니다.</p><p>ASP.NET Core 2.0 이하 릴리스와 함께 제공되는 ASP.NET Core 모듈 버전에서는 `requestTimeout`을 전체 시간(분)으로만 지정해야 합니다. 그렇지 않으면 기본적으로 2분으로 설정됩니다.</p> | `00:02:00` |
-| `shutdownTimeLimit` | <p>선택적 정수 특성입니다.</p><p>*app_offline.htm* 파일이 검색될 때 실행 파일이 정상적으로 종료될 때까지 모듈이 기다리는 기간(초)입니다.</p> | `10` |
-| `startupTimeLimit` | <p>선택적 정수 특성입니다.</p><p>실행 파일이 포트에서 수신 대기하는 프로세스를 시작할 때까지 모듈이 기다리는 기간(초)입니다. 이 시간 제한을 초과하면 모듈이 프로세스를 종료합니다. 모듈은 새 요청을 수신할 때 프로세스를 다시 시작하려고 하고, 마지막 롤링 기간(분)에 앱이 **rapidFailsPerMinute**번 시작에 실패한 경우가 아니면 이후 요청이 들어올 때 프로세스를 계속 다시 시작하려고 합니다.</p> | `120` |
+| `rapidFailsPerMinute` | <p>선택적 정수 특성입니다.</p><p>**processPath**에 지정된 프로세스의 분당 크래시 허용 횟수를 지정합니다. 이 제한을 초과하면 모듈은 남은 시간 동안 프로세스 시작을 중지합니다.</p><p>In-Process 호스팅에서는 지원되지 않습니다.</p> | 기본값: `10`<br>최소: `0`<br>최대: `100` |
+| `requestTimeout` | <p>선택적 시간 간격 특성입니다.</p><p>ASP.NET Core 모듈이 %ASPNETCORE_PORT%에서 수신 대기하는 프로세스의 응답을 기다리는 기간을 지정합니다.</p><p>ASP.NET Core 2.1 이상 릴리스와 함께 제공되는 ASP.NET Core 모듈 버전에서는 `requestTimeout`이 전체 시간, 분, 초로 지정됩니다.</p><p>In-Process 호스팅에는 적용되지 않습니다. In-Process 호스팅의 경우 모듈은 앱이 요청을 처리할 때까지 기다립니다.</p> | 기본값: `00:02:00`<br>최소: `00:00:00`<br>최대: `360:00:00` |
+| `shutdownTimeLimit` | <p>선택적 정수 특성입니다.</p><p>*app_offline.htm* 파일이 검색될 때 실행 파일이 정상적으로 종료될 때까지 모듈이 기다리는 기간(초)입니다.</p> | 기본값: `10`<br>최소: `0`<br>최대: `600` |
+| `startupTimeLimit` | <p>선택적 정수 특성입니다.</p><p>실행 파일이 포트에서 수신 대기하는 프로세스를 시작할 때까지 모듈이 기다리는 기간(초)입니다. 이 시간 제한을 초과하면 모듈이 프로세스를 종료합니다. 모듈은 새 요청을 수신할 때 프로세스를 다시 시작하려고 하고, 마지막 롤링 기간(분)에 앱이 **rapidFailsPerMinute**번 시작에 실패한 경우가 아니면 이후 요청이 들어올 때 프로세스를 계속 다시 시작하려고 합니다.</p><p>값 0은 무한 시간 제한으로 간주되지 **않습니다**.</p> | 기본값: `120`<br>최소: `0`<br>최대: `3600` |
 | `stdoutLogEnabled` | <p>선택적 부울 특성입니다.</p><p>true인 경우 **processPath**에 지정된 프로세스에 대한 **stdout** 및 **stderr**이 **stdoutLogFile**에 지정된 파일로 리디렉션됩니다.</p> | `false` |
 | `stdoutLogFile` | <p>선택적 문자열 특성입니다.</p><p>**processPath**에 지정된 프로세스에서 **stdout** 및 **stderr**이 기록되는 상대 또는 절대 파일 경로를 지정합니다. 상대 경로는 사이트 루트에 상대적인 경로입니다. `.`로 시작하는 모든 경로는 사이트 루트에 상대적인 경로이고 다른 모든 경로는 절대 경로로 처리됩니다. 모듈이 로그 파일을 만들려면 경로에 제공된 모든 폴더가 있어야 합니다. 타임스탬프, 프로세스 ID 및 파일 확장명(*.log*)은 밑줄 구분 기호를 사용하여 **stdoutLogFile** 경로의 마지막 세그먼트에 추가됩니다. `.\logs\stdout`이 값으로 제공되는 경우 예제 stdout 로그는 2018년 2월 5일 19시 41분 32초에 프로세스 ID 1934를 사용하여 저장될 경우 *logs* 폴더에 *stdout_20180205194132_1934.log*로 저장됩니다.</p> | `aspnetcore-stdout` |
 
 ::: moniker-end
 
-::: moniker range=">= aspnetcore-2.1"
+::: moniker range="= aspnetcore-2.1"
 
 | 특성 | 설명 | 기본 |
 | --------- | ----------- | :-----: |
 | `arguments` | <p>선택적 문자열 특성입니다.</p><p>**processPath**에 지정된 실행 파일에 대한 인수입니다.</p>| |
-| `disableStartUpErrorPage` | 참 또는 거짓입니다.</p><p>true인 경우 **502.5 - 프로세스 실패** 페이지가 표시되지 않고 *web.config*에 구성된 502 상태 코드 페이지가 우선 적용됩니다.</p> | `false` |
-| `forwardWindowsAuthToken` | 참 또는 거짓입니다.</p><p>true인 경우 토큰은 %ASPNETCORE_PORT%에서 수신 대기하는 자식 프로세스에 요청별 헤더 'MS-ASPNETCORE-WINAUTHTOKEN'으로 전달됩니다. 이 프로세스는 요청별로 이 토큰에서 CloseHandle을 호출합니다.</p> | `true` |
+| `disableStartUpErrorPage` | <p>선택적 부울 특성입니다.</p><p>true인 경우 **502.5 - 프로세스 실패** 페이지가 표시되지 않고 *web.config*에 구성된 502 상태 코드 페이지가 우선 적용됩니다.</p> | `false` |
+| `forwardWindowsAuthToken` | <p>선택적 부울 특성입니다.</p><p>true인 경우 토큰은 %ASPNETCORE_PORT%에서 수신 대기하는 자식 프로세스에 요청별 헤더 'MS-ASPNETCORE-WINAUTHTOKEN'으로 전달됩니다. 이 프로세스는 요청별로 이 토큰에서 CloseHandle을 호출합니다.</p> | `true` |
+| `processesPerApplication` | <p>선택적 정수 특성입니다.</p><p>앱별로 스핀 업할 수 있는 **processPath** 설정에 지정된 프로세스의 인스턴스 수를 지정합니다.</p> | 기본값: `1`<br>최소: `1`<br>최대: `100` |
 | `processPath` | <p>필수 문자열 특성입니다.</p><p>HTTP 요청을 수신 대기하는 프로세스를 시작하는 실행 파일의 경로입니다. 상대 경로가 지원됩니다. 경로가 `.`로 시작되면 경로는 사이트 루트의 상대 경로로 간주됩니다.</p> | |
-| `rapidFailsPerMinute` | <p>선택적 정수 특성입니다.</p><p>**processPath**에 지정된 프로세스의 분당 크래시 허용 횟수를 지정합니다. 이 제한을 초과하면 모듈은 남은 시간 동안 프로세스 시작을 중지합니다.</p> | `10` |
-| `requestTimeout` | <p>선택적 시간 간격 특성입니다.</p><p>ASP.NET Core 모듈이 %ASPNETCORE_PORT%에서 수신 대기하는 프로세스의 응답을 기다리는 기간을 지정합니다.</p><p>ASP.NET Core 2.1 이상 릴리스와 함께 제공되는 ASP.NET Core 모듈 버전에서는 `requestTimeout`이 전체 시간, 분, 초로 지정됩니다.</p> | `00:02:00` |
-| `shutdownTimeLimit` | <p>선택적 정수 특성입니다.</p><p>*app_offline.htm* 파일이 검색될 때 실행 파일이 정상적으로 종료될 때까지 모듈이 기다리는 기간(초)입니다.</p> | `10` |
-| `startupTimeLimit` | <p>선택적 정수 특성입니다.</p><p>실행 파일이 포트에서 수신 대기하는 프로세스를 시작할 때까지 모듈이 기다리는 기간(초)입니다. 이 시간 제한을 초과하면 모듈이 프로세스를 종료합니다. 모듈은 새 요청을 수신할 때 프로세스를 다시 시작하려고 하고, 마지막 롤링 기간(분)에 앱이 **rapidFailsPerMinute**번 시작에 실패한 경우가 아니면 이후 요청이 들어올 때 프로세스를 계속 다시 시작하려고 합니다.</p> | `120` |
+| `rapidFailsPerMinute` | <p>선택적 정수 특성입니다.</p><p>**processPath**에 지정된 프로세스의 분당 크래시 허용 횟수를 지정합니다. 이 제한을 초과하면 모듈은 남은 시간 동안 프로세스 시작을 중지합니다.</p> | 기본값: `10`<br>최소: `0`<br>최대: `100` |
+| `requestTimeout` | <p>선택적 시간 간격 특성입니다.</p><p>ASP.NET Core 모듈이 %ASPNETCORE_PORT%에서 수신 대기하는 프로세스의 응답을 기다리는 기간을 지정합니다.</p><p>ASP.NET Core 2.1 이상 릴리스와 함께 제공되는 ASP.NET Core 모듈 버전에서는 `requestTimeout`이 전체 시간, 분, 초로 지정됩니다.</p> | 기본값: `00:02:00`<br>최소: `00:00:00`<br>최대: `360:00:00` |
+| `shutdownTimeLimit` | <p>선택적 정수 특성입니다.</p><p>*app_offline.htm* 파일이 검색될 때 실행 파일이 정상적으로 종료될 때까지 모듈이 기다리는 기간(초)입니다.</p> | 기본값: `10`<br>최소: `0`<br>최대: `600` |
+| `startupTimeLimit` | <p>선택적 정수 특성입니다.</p><p>실행 파일이 포트에서 수신 대기하는 프로세스를 시작할 때까지 모듈이 기다리는 기간(초)입니다. 이 시간 제한을 초과하면 모듈이 프로세스를 종료합니다. 모듈은 새 요청을 수신할 때 프로세스를 다시 시작하려고 하고, 마지막 롤링 기간(분)에 앱이 **rapidFailsPerMinute**번 시작에 실패한 경우가 아니면 이후 요청이 들어올 때 프로세스를 계속 다시 시작하려고 합니다.</p><p>값 0은 무한 시간 제한으로 간주되지 **않습니다**.</p> | 기본값: `120`<br>최소: `0`<br>최대: `3600` |
+| `stdoutLogEnabled` | <p>선택적 부울 특성입니다.</p><p>true인 경우 **processPath**에 지정된 프로세스에 대한 **stdout** 및 **stderr**이 **stdoutLogFile**에 지정된 파일로 리디렉션됩니다.</p> | `false` |
+| `stdoutLogFile` | <p>선택적 문자열 특성입니다.</p><p>**processPath**에 지정된 프로세스에서 **stdout** 및 **stderr**이 기록되는 상대 또는 절대 파일 경로를 지정합니다. 상대 경로는 사이트 루트에 상대적인 경로입니다. `.`로 시작하는 모든 경로는 사이트 루트에 상대적인 경로이고 다른 모든 경로는 절대 경로로 처리됩니다. 모듈이 로그 파일을 만들려면 경로에 제공된 모든 폴더가 있어야 합니다. 타임스탬프, 프로세스 ID 및 파일 확장명(*.log*)은 밑줄 구분 기호를 사용하여 **stdoutLogFile** 경로의 마지막 세그먼트에 추가됩니다. `.\logs\stdout`이 값으로 제공되는 경우 예제 stdout 로그는 2018년 2월 5일 19시 41분 32초에 프로세스 ID 1934를 사용하여 저장될 경우 *logs* 폴더에 *stdout_20180205194132_1934.log*로 저장됩니다.</p> | `aspnetcore-stdout` |
+
+::: moniker-end
+
+::: moniker range="<= aspnetcore-2.0"
+
+| 특성 | 설명 | 기본 |
+| --------- | ----------- | :-----: |
+| `arguments` | <p>선택적 문자열 특성입니다.</p><p>**processPath**에 지정된 실행 파일에 대한 인수입니다.</p>| |
+| `disableStartUpErrorPage` | <p>선택적 부울 특성입니다.</p><p>true인 경우 **502.5 - 프로세스 실패** 페이지가 표시되지 않고 *web.config*에 구성된 502 상태 코드 페이지가 우선 적용됩니다.</p> | `false` |
+| `forwardWindowsAuthToken` | <p>선택적 부울 특성입니다.</p><p>true인 경우 토큰은 %ASPNETCORE_PORT%에서 수신 대기하는 자식 프로세스에 요청별 헤더 'MS-ASPNETCORE-WINAUTHTOKEN'으로 전달됩니다. 이 프로세스는 요청별로 이 토큰에서 CloseHandle을 호출합니다.</p> | `true` |
+| `processesPerApplication` | <p>선택적 정수 특성입니다.</p><p>앱별로 스핀 업할 수 있는 **processPath** 설정에 지정된 프로세스의 인스턴스 수를 지정합니다.</p> | 기본값: `1`<br>최소: `1`<br>최대: `100` |
+| `processPath` | <p>필수 문자열 특성입니다.</p><p>HTTP 요청을 수신 대기하는 프로세스를 시작하는 실행 파일의 경로입니다. 상대 경로가 지원됩니다. 경로가 `.`로 시작되면 경로는 사이트 루트의 상대 경로로 간주됩니다.</p> | |
+| `rapidFailsPerMinute` | <p>선택적 정수 특성입니다.</p><p>**processPath**에 지정된 프로세스의 분당 크래시 허용 횟수를 지정합니다. 이 제한을 초과하면 모듈은 남은 시간 동안 프로세스 시작을 중지합니다.</p> | 기본값: `10`<br>최소: `0`<br>최대: `100` |
+| `requestTimeout` | <p>선택적 시간 간격 특성입니다.</p><p>ASP.NET Core 모듈이 %ASPNETCORE_PORT%에서 수신 대기하는 프로세스의 응답을 기다리는 기간을 지정합니다.</p><p>ASP.NET Core 2.0 이하 릴리스와 함께 제공되는 ASP.NET Core 모듈 버전에서는 `requestTimeout`을 전체 시간(분)으로만 지정해야 합니다. 그렇지 않으면 기본적으로 2분으로 설정됩니다.</p> | 기본값: `00:02:00`<br>최소: `00:00:00`<br>최대: `360:00:00` |
+| `shutdownTimeLimit` | <p>선택적 정수 특성입니다.</p><p>*app_offline.htm* 파일이 검색될 때 실행 파일이 정상적으로 종료될 때까지 모듈이 기다리는 기간(초)입니다.</p> | 기본값: `10`<br>최소: `0`<br>최대: `600` |
+| `startupTimeLimit` | <p>선택적 정수 특성입니다.</p><p>실행 파일이 포트에서 수신 대기하는 프로세스를 시작할 때까지 모듈이 기다리는 기간(초)입니다. 이 시간 제한을 초과하면 모듈이 프로세스를 종료합니다. 모듈은 새 요청을 수신할 때 프로세스를 다시 시작하려고 하고, 마지막 롤링 기간(분)에 앱이 **rapidFailsPerMinute**번 시작에 실패한 경우가 아니면 이후 요청이 들어올 때 프로세스를 계속 다시 시작하려고 합니다.</p> | 기본값: `120`<br>최소: `0`<br>최대: `3600` |
 | `stdoutLogEnabled` | <p>선택적 부울 특성입니다.</p><p>true인 경우 **processPath**에 지정된 프로세스에 대한 **stdout** 및 **stderr**이 **stdoutLogFile**에 지정된 파일로 리디렉션됩니다.</p> | `false` |
 | `stdoutLogFile` | <p>선택적 문자열 특성입니다.</p><p>**processPath**에 지정된 프로세스에서 **stdout** 및 **stderr**이 기록되는 상대 또는 절대 파일 경로를 지정합니다. 상대 경로는 사이트 루트에 상대적인 경로입니다. `.`로 시작하는 모든 경로는 사이트 루트에 상대적인 경로이고 다른 모든 경로는 절대 경로로 처리됩니다. 모듈이 로그 파일을 만들려면 경로에 제공된 모든 폴더가 있어야 합니다. 타임스탬프, 프로세스 ID 및 파일 확장명(*.log*)은 밑줄 구분 기호를 사용하여 **stdoutLogFile** 경로의 마지막 세그먼트에 추가됩니다. `.\logs\stdout`이 값으로 제공되는 경우 예제 stdout 로그는 2018년 2월 5일 19시 41분 32초에 프로세스 ID 1934를 사용하여 저장될 경우 *logs* 폴더에 *stdout_20180205194132_1934.log*로 저장됩니다.</p> | `aspnetcore-stdout` |
 
@@ -101,6 +211,25 @@ ASP.NET Core 모듈은 사이트의 *web.config* 파일에 있는 `system.webSer
 `processPath` 특성에서 프로세스에 대한 환경 변수를 지정할 수 있습니다. `environmentVariables` 컬렉션 요소의 `environmentVariable` 자식 요소를 사용하여 환경 변수를 지정합니다. 이 섹션에 설정된 환경 변수가 시스템 환경 변수보다 우선 적용됩니다.
 
 다음 예제에서는 두 개의 환경 변수를 설정합니다. `ASPNETCORE_ENVIRONMENT`는 앱의 환경을 `Development`로 구성합니다. 앱 예외를 디버그할 때 [개발자 예외 페이지](xref:fundamentals/error-handling)를 강제로 로드하기 위해 개발자가 *web.config* 파일에서 이 값을 일시적으로 설정할 수 있습니다. `CONFIG_DIR`은 개발자가 앱 구성 파일을 로드할 경로를 생성하기 위해 시작 시 값을 읽는 코드를 작성한 사용자 정의 환경 변수의 예입니다.
+
+::: moniker range=">= aspnetcore-2.2"
+
+```xml
+<aspNetCore processPath="dotnet"
+      arguments=".\MyApp.dll"
+      stdoutLogEnabled="false"
+      stdoutLogFile="\\?\%home%\LogFiles\stdout"
+      hostingModel="inprocess">
+  <environmentVariables>
+    <environmentVariable name="ASPNETCORE_ENVIRONMENT" value="Development" />
+    <environmentVariable name="CONFIG_DIR" value="f:\application_config" />
+  </environmentVariables>
+</aspNetCore>
+```
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.2"
 
 ```xml
 <aspNetCore processPath="dotnet"
@@ -114,6 +243,8 @@ ASP.NET Core 모듈은 사이트의 *web.config* 파일에 있는 `system.webSer
 </aspNetCore>
 ```
 
+::: moniker-end
+
 > [!WARNING]
 > 인터넷과 같은 신뢰할 수 없는 네트워크에 액세스할 수 없는 스테이징 및 테스트 서버에서는 `ASPNETCORE_ENVIRONMENT` 환경 변수를 `Development`로 설정하면 됩니다.
 
@@ -123,7 +254,19 @@ ASP.NET Core 모듈은 사이트의 *web.config* 파일에 있는 `system.webSer
 
 *app_offline.htm* 파일이 있는 동안 ASP.NET Core 모듈은 *app_offline.htm* 파일의 콘텐츠를 다시 보내 요청에 응답합니다. *app_offline.htm* 파일이 제거되면 다음 요청이 앱을 시작합니다.
 
+::: moniker range=">= aspnetcore-2.2"
+
+Out-of-Process 호스팅 모델을 사용할 때 열린 연결이 있으면 앱이 즉시 종료되지 않을 수 있습니다. 예를 들어, WebSocket 연결은 앱 종료를 지연시킬 수 있습니다.
+
+::: moniker-end
+
 ## <a name="start-up-error-page"></a>시작 오류 페이지
+
+::: moniker range=">= aspnetcore-2.2"
+
+*호스팅에만 적용됩니다.*
+
+::: moniker-end
 
 ASP.NET Core 모듈이 백 엔드 프로세스를 시작하지 못하거나 백 엔드 프로세스가 시작되지만 구성된 포트에서 수신 대기하지 못하면 ‘502.5 프로세스 실패’ 상태 코드 페이지가 나타납니다. 이 페이지를 표시하지 않고 기본 IIS 502 상태 코드 페이지로 되돌리려면 `disableStartUpErrorPage` 특성을 사용합니다. 사용자 지정 오류 메시지 구성에 대한 자세한 내용은 [HTTP 오류`<httpErrors>`](/iis/configuration/system.webServer/httpErrors/)를 참조하세요.
 
@@ -141,6 +284,21 @@ stdout 로그는 앱 시작 문제를 해결하는 경우에만 사용하는 것
 
 다음 샘플 `aspNetCore` 요소는 Azure App Service에서 호스트되는 앱에 대한 stdout 로깅을 구성합니다. 로컬 로깅에는 로컬 경로 또는 네트워크 공유 경로가 허용됩니다. AppPool 사용자 ID에 제공된 경로에 쓸 수 있는 권한이 있는지 확인합니다.
 
+::: moniker range=">= aspnetcore-2.2"
+
+```xml
+<aspNetCore processPath="dotnet"
+    arguments=".\MyApp.dll"
+    stdoutLogEnabled="true"
+    stdoutLogFile="\\?\%home%\LogFiles\stdout"
+    hostingModel="inprocess">
+</aspNetCore>
+```
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.2"
+
 ```xml
 <aspNetCore processPath="dotnet"
     arguments=".\MyApp.dll"
@@ -149,9 +307,17 @@ stdout 로그는 앱 시작 문제를 해결하는 경우에만 사용하는 것
 </aspNetCore>
 ```
 
+::: moniker-end
+
 *web.config* 파일에 있는 `aspNetCore` 요소의 예제에 대해서는 [web.config를 사용한 구성](#configuration-with-webconfig)을 참조하세요.
 
 ## <a name="proxy-configuration-uses-http-protocol-and-a-pairing-token"></a>프록시 구성은 HTTP 프로토콜 및 페어링 토큰을 사용합니다.
+
+::: moniker range=">= aspnetcore-2.2"
+
+*호스팅에만 적용됩니다.*
+
+::: moniker-end
 
 ASP.NET Core 모듈과 Kestrel 사이에 만들어진 프록시는 HTTP 프로토콜을 사용합니다. HTTP 사용은 모듈과 Kestrel 간의 트래픽이 네트워크 인터페이스에서 분리된 루프백 주소에서 발생하는 성능 최적화입니다. 서버에서 분리된 위치에서 모듈과 Kestrel 간 트래픽 도청의 위험은 없습니다.
 

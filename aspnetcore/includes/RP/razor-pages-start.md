@@ -20,10 +20,10 @@
 
 *_Layout.cshtml* 파일은 공통적인 HTML 요소(스크립트 및 스타일시트)를 포함하고 응용 프로그램 레이아웃을 설정합니다. 예를 들어 **RazorPagesMovie**, **홈**, **정보** 또는 **연락처**를 클릭하면 동일한 요소가 표시됩니다. 공통적인 요소에는 창 위쪽의 탐색 메뉴 및 아래쪽의 헤더가 포함됩니다. 자세한 내용은 [레이아웃](xref:mvc/views/layout)을 참조하세요.
 
-*_ViewStart.cshtml*은 Razor 페이지 `Layout` 속성을 설정하여 *_Layout.cshtml* 파일을 사용합니다. 자세한 내용은 [레이아웃](xref:mvc/views/layout)을 참조하세요.
-
 *_ViewImports.cshtml* 파일에는 각 Razor 페이지로 가져온 Razor 지시문이 포함됩니다. 자세한 내용은 [공유된 지시문 가져오기](xref:mvc/views/layout#importing-shared-directives)를 참조하세요.
+
+*_ViewStart.cshtml*은 Razor 페이지 `Layout` 속성을 설정하여 *_Layout.cshtml* 파일을 사용합니다. 자세한 내용은 [레이아웃](xref:mvc/views/layout)을 참조하세요.
 
 *_ValidationScriptsPartial.cshtml* 파일은 [jQuery](https://jquery.com/) 유효성 검사 스크립트에 대한 참조를 제공합니다. 자습서의 뒷부분에서 `Create` 및 `Edit` 페이지를 추가하면 *_ValidationScriptsPartial.cshtml* 파일이 사용됩니다.
 
-`About`, `Contact` 및 `Index` 페이지는 앱을 시작하는 데 사용할 수 있는 기본 페이지입니다. `Error` 페이지는 오류 정보를 표시하는 데 사용됩니다.
+`About`, `Contact` 및 `Index` 페이지는 앱을 시작하는 데 사용할 수 있는 기본 페이지입니다. `Error` 페이지는 오류 정보를 표시하는 데 사용됩니다. `Privacy` 페이지에서는 사이트의 개인 정보 취급 방침에 대한 세부사항을 지정할 수 있습니다.

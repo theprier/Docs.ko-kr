@@ -5,12 +5,12 @@ description: 모델 바인딩을 통해 컨트롤러 작업이 ASP.NET Core의 �
 ms.author: riande
 ms.date: 04/10/2017
 uid: mvc/advanced/custom-model-binding
-ms.openlocfilehash: f5bd9a3eefb1fd9c1534e8767ad8e8af37514adb
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: b8745241b0699d270bb8f3a56ab614b0ca49e64b
+ms.sourcegitcommit: 317f9be24db600499e79d25872d743af74bd86c0
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36275395"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48045538"
 ---
 # <a name="custom-model-binding-in-aspnet-core"></a>ASP.NET Core의 사용자 지정 모델 바인딩
 
@@ -42,7 +42,7 @@ Base64로 인코딩된 문자열은 이진 데이터를 나타내는 데 사용�
 
 [샘플의 추가 정보](https://github.com/aspnet/Docs/blob/master/aspnetcore/mvc/advanced/custom-model-binding/sample/CustomModelBindingSample/README.md)에 제공된 지침에 따라 base64로 인코딩된 문자열을 파일로 변환합니다.
 
-ASP.NET Core MVC는 base64로 인코딩된 문자열을 가져온 후 `ByteArrayModelBinder`를 사용하여 바이트 배열로 변환할 수 있습니다. [IModelBinderProvider](/dotnet/api/microsoft.aspnetcore.mvc.modelbinding.imodelbinderprovider)를 구현하는 [ByteArrayModelBinderProvider](/dotnet/api/microsoft.aspnetcore.mvc.modelbinding.binders.bytearraymodelbinderprovider)는 `byte[]` 인수를 `ByteArrayModelBinder`에 매핑합니다.
+ASP.NET Core MVC는 base64로 인코드된 문자열을 가져온 후 `ByteArrayModelBinder`를 사용하여 바이트 배열로 변환할 수 있습니다. [IModelBinderProvider](/dotnet/api/microsoft.aspnetcore.mvc.modelbinding.imodelbinderprovider)를 구현하는 [ByteArrayModelBinderProvider](/dotnet/api/microsoft.aspnetcore.mvc.modelbinding.binders.bytearraymodelbinderprovider)는 `byte[]` 인수를 `ByteArrayModelBinder`에 매핑합니다.
 
 ```csharp
 public IModelBinder GetBinder(ModelBinderProviderContext context)
@@ -101,7 +101,7 @@ public IModelBinder GetBinder(ModelBinderProviderContext context)
 
 [!code-csharp[](custom-model-binding/sample/CustomModelBindingSample/Controllers/BoundAuthorsController.cs?name=demo1&highlight=2)]
 
-이 예에서는 인수 이름이 기본 `authorId`가 아니기 때문에 `ModelBinder` 특성을 사용하여 매개 변수에 지정됩니다. 컨트롤러와 작업 메서드는 작업 메서드에서 엔터티를 조회하는 것에 비해 간단합니다. Entity Framework Core를 사용하여 작성자를 가져오는 논리는 모델 바인더로 이동되었습니다. 작성자 모델에 바인딩하는 메서드가 여러 개 있는 경우 상당히 간소화될 수 있으며 [DRY 원칙](http://deviq.com/don-t-repeat-yourself/)을 준수하는 데 도움이 될 수 있습니다.
+이 예에서는 인수 이름이 기본 `authorId`가 아니기 때문에 `ModelBinder` 특성을 사용하여 매개 변수에 지정됩니다. 컨트롤러와 작업 메서드는 작업 메서드에서 엔터티를 조회하는 것에 비해 간단합니다. Entity Framework Core를 사용하여 작성자를 가져오는 논리는 모델 바인더로 이동되었습니다. `Author` 모델에 바인딩하는 메서드가 여러 개 있는 경우 상당히 간소화될 수 있으며 [DRY 원칙](http://deviq.com/don-t-repeat-yourself/)을 준수하는 데 도움이 될 수 있습니다.
 
 개별 모델 속성(viewmodel처럼) 또는 작업 메서드 매개 변수에 `ModelBinder` 특성을 적용하여 그 형식 또는 작업에만 해당하는 특정 모델 바인더 또는 모델을 지정할 수 있습니다.
 

@@ -6,12 +6,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 09/19/2018
 uid: fundamentals/logging/index
-ms.openlocfilehash: e3bf5909edb515a2dabba206abaa160bc431d622
-ms.sourcegitcommit: 8bf4dff3069e62972c1b0839a93fb444e502afe7
+ms.openlocfilehash: 7a87791abdc91c43796ce72764d0cb3938ed90ec
+ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "46483089"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48578460"
 ---
 # <a name="logging-in-aspnet-core"></a>ASP.NET Core에 로그인
 
@@ -25,7 +25,7 @@ IIS를 사용하여 호스트하는 경우의 stdout 로깅에 대한 내용은 
 
 ## <a name="how-to-create-logs"></a>로그를 만드는 방법
 
-로그를 만들려면 [종속성 주입](xref:fundamentals/dependency-injection) 컨테이너에서 [ILogger&lt;TCategoryName&gt;](/dotnet/api/microsoft.extensions.logging.ilogger-1) 개체를 구현합니다.
+로그를 만들려면 [종속성 주입](xref:fundamentals/dependency-injection) 컨테이너에서 [ILogger&lt;TCategoryName&gt;](/dotnet/api/microsoft.extensions.logging.ilogger-1)을 얻습니다.
 
 ::: moniker range=">= aspnetcore-2.0"
 
@@ -759,6 +759,7 @@ ASP.NET Core와 호환되는 타사 로깅 프레임워크는 다음과 같습�
 * [KissLog.net](https://kisslog.net/)([GitHub 리포지토리](https://github.com/catalingavan/KissLog-net))
 * [Loggr](http://loggr.net/)([GitHub 리포지토리](https://github.com/imobile3/Loggr.Extensions.Logging))
 * [NLog](http://nlog-project.org/)([GitHub 리포지토리](https://github.com/NLog/NLog.Extensions.Logging))
+* [Sentry](https://sentry.io/welcome/) ([GitHub repo](https://github.com/getsentry/sentry-dotnet))
 * [Serilog](https://serilog.net/)([GitHub 리포지토리](https://github.com/serilog/serilog-extensions-logging))
 
 일부 타사 프레임워크는 [구조적 로깅이라고 하는 의미 체계 로깅](https://softwareengineering.stackexchange.com/questions/312197/benefits-of-structured-logging-vs-basic-logging)을 수행할 수 있습니다.

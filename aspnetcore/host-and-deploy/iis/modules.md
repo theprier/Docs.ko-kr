@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 04/04/2018
 uid: host-and-deploy/iis/modules
-ms.openlocfilehash: 40af94f9cbb83f27f22d90b6b0f2854090687d34
-ms.sourcegitcommit: ecf2cd4e0613569025b28e12de3baa21d86d4258
+ms.openlocfilehash: 78cdf74648a29ed718d1373d7b3666b10749843d
+ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43312348"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48577563"
 ---
 # <a name="iis-modules-with-aspnet-core"></a>IIS 모듈 및 ASP.NET Core
 
@@ -39,7 +39,7 @@ ASP.NET Core 앱은 역방향 프록시 구성에서 IIS가 호스트합니다. 
 | **추적**<br>`FailedRequestsTracingModule` | 예 | [ASP.NET Core 로깅](xref:fundamentals/logging/index#tracesource-provider) |
 | **파일 캐싱**<br>`FileCacheModule` | 아니요 | [응답 캐싱 미들웨어](xref:performance/caching/middleware) |
 | **HTTP 캐싱**<br>`HttpCacheModule` | 아니요 | [응답 캐싱 미들웨어](xref:performance/caching/middleware) |
-| **HTTP 로깅**<br>`HttpLoggingModule` | 예 | [ASP.NET Core 로깅](xref:fundamentals/logging/index)<br>구현: [elmah.io](https://github.com/elmahio/Elmah.Io.Extensions.Logging), [Loggr](https://github.com/imobile3/Loggr.Extensions.Logging), [NLog](https://github.com/NLog/NLog.Extensions.Logging), [Serilog](https://github.com/serilog/serilog-extensions-logging)
+| **HTTP 로깅**<br>`HttpLoggingModule` | 예 | [ASP.NET Core 로깅](xref:fundamentals/logging/index)<br>구현: [elmah.io](https://github.com/elmahio/Elmah.Io.Extensions.Logging), [Loggr](https://github.com/imobile3/Loggr.Extensions.Logging), [NLog](https://github.com/NLog/NLog.Extensions.Logging), [Sentry](https://github.com/getsentry/sentry-dotnet), [Serilog](https://github.com/serilog/serilog-extensions-logging)
 | **HTTP 리디렉션**<br>`HttpRedirectionModule` | 예 | [URL 재작성 미들웨어](xref:fundamentals/url-rewriting) |
 | **IIS 클라이언트 인증서 매핑 인증**<br>`IISCertificateMappingAuthenticationModule` | 예 | |
 | **IP 및 도메인 제한**<br>`IpRestrictionModule` | 예 | |
