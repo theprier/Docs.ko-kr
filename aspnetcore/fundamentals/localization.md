@@ -5,12 +5,12 @@ description: ASP.NET Core에서 다른 언어와 문화권으로의 콘텐츠 �
 ms.author: riande
 ms.date: 01/14/2017
 uid: fundamentals/localization
-ms.openlocfilehash: 6e8c4723ab0105b8c756221d3e3c5eebba6cc4e2
-ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
+ms.openlocfilehash: 375d09d9bef59cf18b7805cbefe500aeb2e0cde7
+ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48912038"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49326006"
 ---
 # <a name="globalization-and-localization-in-aspnet-core"></a>ASP.NET Core에서 세계화 및 지역화
 
@@ -206,9 +206,9 @@ using Microsoft.Extensions.Localization;
 
 ### <a name="configure-localization"></a>지역화 구성
 
-지역화는 `ConfigureServices` 메서드에서 구성됩니다.
+지역화는 `Startup.ConfigureServices` 메서드에서 구성됩니다.
 
-[!code-csharp[](localization/sample/Localization/Program.cs?name=snippet1)]
+[!code-csharp[](localization/sample/Localization/Startup.cs?name=snippet1)]
 
 * `AddLocalization`은 서비스 컨테이너에 지역화 서비스를 추가합니다. 위의 코드는 또한 "리소스"에 대한 리소스 경로를 설정합니다.
 
@@ -218,9 +218,9 @@ using Microsoft.Extensions.Localization;
 
 ### <a name="localization-middleware"></a>지역화 미들웨어
 
-요청에서 현재 문화권은 지역화 [미들웨어](xref:fundamentals/middleware/index)에서 설정됩니다. 지역화 미들웨어는 `Configure` 메서드에서 활성화됩니다. 지역화 미들웨어는 요청 문화권을 확인할 수 있는 모든 미들웨어 전에 구성되어야 합니다(예: `app.UseMvcWithDefaultRoute()`).
+요청에서 현재 문화권은 지역화 [미들웨어](xref:fundamentals/middleware/index)에서 설정됩니다. 지역화 미들웨어는 `Startup.Configure` 메서드에서 활성화됩니다. 지역화 미들웨어는 요청 문화권을 확인할 수 있는 모든 미들웨어 전에 구성되어야 합니다(예: `app.UseMvcWithDefaultRoute()`).
 
-[!code-csharp[](localization/sample/Localization/Program.cs?name=snippet2)]
+[!code-csharp[](localization/sample/Localization/Startup.cs?name=snippet2)]
 
 `UseRequestLocalization`은 `RequestLocalizationOptions` 개체를 초기화합니다. 모든 요청의 `RequestLocalizationOptions`에서 `RequestCultureProvider`의 목록이 열거되고 요청 문화권을 성공적으로 결정할 수 있는 첫 번째 공급자가 사용됩니다. 기본 공급자는 `RequestLocalizationOptions` 클래스에서 제공됩니다.
 
