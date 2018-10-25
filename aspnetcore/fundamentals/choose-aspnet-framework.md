@@ -1,56 +1,63 @@
 ---
-title: ASP.NET 및 ASP.NET Core 중에서 선택
+title: ASP.NET 4.x와 ASP.NET Core 중에서 선택
 author: rick-anderson
-description: ASP.NET 및 ASP.NET Core 중에서 선택하는 방법을 알아보세요.
+description: ASP.NET Core 및 ASP.NET 4.x에 대해 설명하고 둘 중 선택하는 방법을 설명합니다.
 ms.author: riande
-ms.date: 05/11/2018
+ms.date: 09/11/2018
 uid: fundamentals/choose-between-aspnet-and-aspnetcore
-ms.openlocfilehash: 6d759c0bc5e5c7d32d6c14786db6ba9fe7a2f1e8
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: f046491e2ec68b6beaad581e2b04e6688a81f2d1
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36297232"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48911047"
 ---
-# <a name="choose-between-aspnet-and-aspnet-core"></a><span data-ttu-id="1cb29-103">ASP.NET 및 ASP.NET Core 중에서 선택</span><span class="sxs-lookup"><span data-stu-id="1cb29-103">Choose between ASP.NET and ASP.NET Core</span></span>
+# <a name="choose-between-aspnet-4x-and-aspnet-core"></a><span data-ttu-id="296c9-103">ASP.NET 4.x와 ASP.NET Core 중에서 선택</span><span class="sxs-lookup"><span data-stu-id="296c9-103">Choose between ASP.NET 4.x and ASP.NET Core</span></span>
 
-<span data-ttu-id="1cb29-104">만들려는 웹앱과 관계없이 ASP.NET에는 Windows Server를 대상으로 하는 엔터프라이즈 웹앱에서 Linux 컨테이너를 대상으로 하는 작은 마이크로 서비스 및 그 사이의 모든 항목에 대한 솔루션이 있습니다.</span><span class="sxs-lookup"><span data-stu-id="1cb29-104">No matter the web app you're creating, ASP.NET has a solution for you: from enterprise web apps targeting Windows Server, to small microservices targeting Linux containers, and everything in between.</span></span>
+<span data-ttu-id="296c9-104">ASP.NET Core는 ASP.NET 4.x를 새롭게 디자인한 것입니다.</span><span class="sxs-lookup"><span data-stu-id="296c9-104">ASP.NET Core is a redesign of ASP.NET 4.x.</span></span> <span data-ttu-id="296c9-105">이 문서에 차이점이 나와 있습니다.</span><span class="sxs-lookup"><span data-stu-id="296c9-105">This article lists the differences between them.</span></span>
 
-## <a name="aspnet-core"></a><span data-ttu-id="1cb29-105">ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="1cb29-105">ASP.NET Core</span></span>
+## <a name="aspnet-core"></a><span data-ttu-id="296c9-106">ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="296c9-106">ASP.NET Core</span></span>
 
-<span data-ttu-id="1cb29-106">ASP.NET Core는 Windows, macOS 또는 Linux에서 클라우드 기반 최신 웹앱을 빌드하기 위한 오픈 소스 플랫폼 간 프레임워크입니다.</span><span class="sxs-lookup"><span data-stu-id="1cb29-106">ASP.NET Core is an open-source, cross-platform framework for building modern, cloud-based web apps on Windows, macOS, or Linux.</span></span>
+<span data-ttu-id="296c9-107">ASP.NET Core는 Windows, macOS 또는 Linux에서 클라우드 기반 최신 웹앱을 빌드하기 위한 오픈 소스 플랫폼 간 프레임워크입니다.</span><span class="sxs-lookup"><span data-stu-id="296c9-107">ASP.NET Core is an open-source, cross-platform framework for building modern, cloud-based web apps on Windows, macOS, or Linux.</span></span>
 
-## <a name="aspnet"></a><span data-ttu-id="1cb29-107">ASP.NET</span><span class="sxs-lookup"><span data-stu-id="1cb29-107">ASP.NET</span></span>
+[!INCLUDE[](~/includes/benefits.md)]
 
-<span data-ttu-id="1cb29-108">ASP.NET은 Windows에서 엔터프라이즈급 서버 기반 웹앱을 만들 때 필요한 모든 서비스를 제공하는 완성도 있는 프레임워크입니다.</span><span class="sxs-lookup"><span data-stu-id="1cb29-108">ASP.NET is a mature framework that provides all the services needed to build enterprise-grade, server-based web apps on Windows.</span></span>
+## <a name="aspnet-4x"></a><span data-ttu-id="296c9-108">ASP.NET 4.x</span><span class="sxs-lookup"><span data-stu-id="296c9-108">ASP.NET 4.x</span></span>
 
-## <a name="framework-selection"></a><span data-ttu-id="1cb29-109">프레임워크 선택 영역</span><span class="sxs-lookup"><span data-stu-id="1cb29-109">Framework selection</span></span>
+<span data-ttu-id="296c9-109">ASP.NET 4.x는 Windows에서 엔터프라이즈급 서버 기반 웹앱을 빌드할 때 필요한 서비스를 제공하는 완성도 있는 프레임워크입니다.</span><span class="sxs-lookup"><span data-stu-id="296c9-109">ASP.NET 4.x is a mature framework that provides the services needed to build enterprise-grade, server-based web apps on Windows.</span></span>
 
-<span data-ttu-id="1cb29-110">사용자의 요구에 가장 적합한 프레임워크를 확인하려면 아래 표를 검토합니다.</span><span class="sxs-lookup"><span data-stu-id="1cb29-110">Review the table below to determine which framework is most appropriate for your needs.</span></span>
+## <a name="framework-selection"></a><span data-ttu-id="296c9-110">프레임워크 선택 영역</span><span class="sxs-lookup"><span data-stu-id="296c9-110">Framework selection</span></span>
 
-| <span data-ttu-id="1cb29-111">ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="1cb29-111">ASP.NET Core</span></span> | <span data-ttu-id="1cb29-112">ASP.NET</span><span class="sxs-lookup"><span data-stu-id="1cb29-112">ASP.NET</span></span> |
+<span data-ttu-id="296c9-111">다음 표는 ASP.NET Core를 ASP.NET 4.x와 비교합니다.</span><span class="sxs-lookup"><span data-stu-id="296c9-111">The following table compares ASP.NET Core to ASP.NET 4.x.</span></span>
+
+| <span data-ttu-id="296c9-112">ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="296c9-112">ASP.NET Core</span></span> | <span data-ttu-id="296c9-113">ASP.NET 4.x</span><span class="sxs-lookup"><span data-stu-id="296c9-113">ASP.NET 4.x</span></span> |
 |---|---|
-|<span data-ttu-id="1cb29-113">Windows, macOS 또는 Linux용 빌드</span><span class="sxs-lookup"><span data-stu-id="1cb29-113">Build for Windows, macOS, or Linux</span></span>|<span data-ttu-id="1cb29-114">Windows용 빌드</span><span class="sxs-lookup"><span data-stu-id="1cb29-114">Build for Windows</span></span>|
-|<span data-ttu-id="1cb29-115">[Razor 페이지](xref:razor-pages/index)는 ASP.NET Core 2.x에서 웹 UI를 만드는 좋은 방법입니다.</span><span class="sxs-lookup"><span data-stu-id="1cb29-115">[Razor Pages](xref:razor-pages/index) is the recommended approach to create a Web UI as of ASP.NET Core 2.x.</span></span> <span data-ttu-id="1cb29-116">[MVC](xref:mvc/overview), [Web API](xref:tutorials/first-web-api) 및 [SignalR](xref:signalr/introduction)도 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="1cb29-116">See also [MVC](xref:mvc/overview), [Web API](xref:tutorials/first-web-api), and [SignalR](xref:signalr/introduction).</span></span>|<span data-ttu-id="1cb29-117">[Web Forms](/aspnet/web-forms), [SignalR](/aspnet/signalr), [MVC](/aspnet/mvc), [Web API](/aspnet/web-api/), [WebHooks](/aspnet/webhooks/) 또는 [웹 페이지](/aspnet/web-pages)를 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="1cb29-117">Use [Web Forms](/aspnet/web-forms), [SignalR](/aspnet/signalr), [MVC](/aspnet/mvc), [Web API](/aspnet/web-api/), [WebHooks](/aspnet/webhooks/), or [Web Pages](/aspnet/web-pages)</span></span>|
-|<span data-ttu-id="1cb29-118">컴퓨터당 여러 버전</span><span class="sxs-lookup"><span data-stu-id="1cb29-118">Multiple versions per machine</span></span>|<span data-ttu-id="1cb29-119">컴퓨터당 하나의 버전</span><span class="sxs-lookup"><span data-stu-id="1cb29-119">One version per machine</span></span>|
-|<span data-ttu-id="1cb29-120">C# 또는 F#을 사용하여 Visual Studio, [Mac용 Visual Studio](https://www.visualstudio.com/vs/visual-studio-mac/) 또는 [Visual Studio Code](https://code.visualstudio.com/)에서 개발</span><span class="sxs-lookup"><span data-stu-id="1cb29-120">Develop with Visual Studio, [Visual Studio for Mac](https://www.visualstudio.com/vs/visual-studio-mac/), or [Visual Studio Code](https://code.visualstudio.com/) using C# or F#</span></span>|<span data-ttu-id="1cb29-121">C#, VB 또는 F#을 사용하여 Visual Studio에서 개발</span><span class="sxs-lookup"><span data-stu-id="1cb29-121">Develop with Visual Studio using C#, VB, or F#</span></span>|
-|<span data-ttu-id="1cb29-122">ASP.NET보다 고성능</span><span class="sxs-lookup"><span data-stu-id="1cb29-122">Higher performance than ASP.NET</span></span>|<span data-ttu-id="1cb29-123">성능 양호</span><span class="sxs-lookup"><span data-stu-id="1cb29-123">Good performance</span></span>|
-|[<span data-ttu-id="1cb29-124">.NET Framework 또는 .NET Core 런타임 선택</span><span class="sxs-lookup"><span data-stu-id="1cb29-124">Choose .NET Framework or .NET Core runtime</span></span>](/dotnet/articles/standard/choosing-core-framework-server)|<span data-ttu-id="1cb29-125">.NET Framework 런타임 사용</span><span class="sxs-lookup"><span data-stu-id="1cb29-125">Use .NET Framework runtime</span></span>|
+|<span data-ttu-id="296c9-114">Windows, macOS 또는 Linux용 빌드</span><span class="sxs-lookup"><span data-stu-id="296c9-114">Build for Windows, macOS, or Linux</span></span>|<span data-ttu-id="296c9-115">Windows용 빌드</span><span class="sxs-lookup"><span data-stu-id="296c9-115">Build for Windows</span></span>|
+|<span data-ttu-id="296c9-116">[Razor 페이지](xref:razor-pages/index)는 ASP.NET Core 2.x에서 웹 UI를 만드는 좋은 방법입니다.</span><span class="sxs-lookup"><span data-stu-id="296c9-116">[Razor Pages](xref:razor-pages/index) is the recommended approach to create a Web UI as of ASP.NET Core 2.x.</span></span> <span data-ttu-id="296c9-117">[MVC](xref:mvc/overview), [Web API](xref:tutorials/first-web-api) 및 [SignalR](xref:signalr/introduction)도 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="296c9-117">See also [MVC](xref:mvc/overview), [Web API](xref:tutorials/first-web-api), and [SignalR](xref:signalr/introduction).</span></span>|<span data-ttu-id="296c9-118">[Web Forms](/aspnet/web-forms), [SignalR](/aspnet/signalr), [MVC](/aspnet/mvc), [Web API](/aspnet/web-api/), [WebHooks](/aspnet/webhooks/) 또는 [웹 페이지](/aspnet/web-pages)를 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="296c9-118">Use [Web Forms](/aspnet/web-forms), [SignalR](/aspnet/signalr), [MVC](/aspnet/mvc), [Web API](/aspnet/web-api/), [WebHooks](/aspnet/webhooks/), or [Web Pages](/aspnet/web-pages)</span></span>|
+|<span data-ttu-id="296c9-119">컴퓨터당 여러 버전</span><span class="sxs-lookup"><span data-stu-id="296c9-119">Multiple versions per machine</span></span>|<span data-ttu-id="296c9-120">컴퓨터당 하나의 버전</span><span class="sxs-lookup"><span data-stu-id="296c9-120">One version per machine</span></span>|
+|<span data-ttu-id="296c9-121">C# 또는 F#을 사용하여 Visual Studio, [Mac용 Visual Studio](https://www.visualstudio.com/vs/visual-studio-mac/) 또는 [Visual Studio Code](https://code.visualstudio.com/)에서 개발</span><span class="sxs-lookup"><span data-stu-id="296c9-121">Develop with Visual Studio, [Visual Studio for Mac](https://www.visualstudio.com/vs/visual-studio-mac/), or [Visual Studio Code](https://code.visualstudio.com/) using C# or F#</span></span>|<span data-ttu-id="296c9-122">C#, VB 또는 F#을 사용하여 Visual Studio에서 개발</span><span class="sxs-lookup"><span data-stu-id="296c9-122">Develop with Visual Studio using C#, VB, or F#</span></span>|
+|<span data-ttu-id="296c9-123">ASP.NET 4.x보다 고성능</span><span class="sxs-lookup"><span data-stu-id="296c9-123">Higher performance than ASP.NET 4.x</span></span>|<span data-ttu-id="296c9-124">성능 양호</span><span class="sxs-lookup"><span data-stu-id="296c9-124">Good performance</span></span>|
+|[<span data-ttu-id="296c9-125">.NET Framework 또는 .NET Core 런타임 선택</span><span class="sxs-lookup"><span data-stu-id="296c9-125">Choose .NET Framework or .NET Core runtime</span></span>](/dotnet/articles/standard/choosing-core-framework-server)|<span data-ttu-id="296c9-126">.NET Framework 런타임 사용</span><span class="sxs-lookup"><span data-stu-id="296c9-126">Use .NET Framework runtime</span></span>|
 
-## <a name="aspnet-core-scenarios"></a><span data-ttu-id="1cb29-126">ASP.NET Core 시나리오</span><span class="sxs-lookup"><span data-stu-id="1cb29-126">ASP.NET Core scenarios</span></span>
+<span data-ttu-id="296c9-127">.NET Framework의 ASP.NET Core 2.x 지원에 대한 자세한 내용은 [ASP.NET Core 대상 .NET Framework](xref:index#target-framework)를 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="296c9-127">See [ASP.NET Core targeting .NET Framework](xref:index#target-framework) for information on ASP.NET Core 2.x support on .NET Framework.</span></span>
 
-* <span data-ttu-id="1cb29-127">[Razor 페이지](xref:razor-pages/index)는 ASP.NET Core 2.x에서 웹 UI를 만드는 좋은 방법입니다.</span><span class="sxs-lookup"><span data-stu-id="1cb29-127">[Razor Pages](xref:razor-pages/index) is the recommended approach to create a Web UI as of ASP.NET Core 2.x.</span></span>
-* [<span data-ttu-id="1cb29-128">웹 사이트</span><span class="sxs-lookup"><span data-stu-id="1cb29-128">Websites</span></span>](xref:tutorials/first-mvc-app/index)
-* [<span data-ttu-id="1cb29-129">API</span><span class="sxs-lookup"><span data-stu-id="1cb29-129">APIs</span></span>](xref:tutorials/first-web-api)
-* [<span data-ttu-id="1cb29-130">실시간</span><span class="sxs-lookup"><span data-stu-id="1cb29-130">Real-time</span></span>](xref:signalr/index)
+## <a name="aspnet-core-scenarios"></a><span data-ttu-id="296c9-128">ASP.NET Core 시나리오</span><span class="sxs-lookup"><span data-stu-id="296c9-128">ASP.NET Core scenarios</span></span>
 
-## <a name="aspnet-scenarios"></a><span data-ttu-id="1cb29-131">ASP.NET 시나리오</span><span class="sxs-lookup"><span data-stu-id="1cb29-131">ASP.NET scenarios</span></span>
+* <span data-ttu-id="296c9-129">[Razor 페이지](xref:razor-pages/index)는 ASP.NET Core 2.x에서 웹 UI를 만드는 좋은 방법입니다.</span><span class="sxs-lookup"><span data-stu-id="296c9-129">[Razor Pages](xref:razor-pages/index) is the recommended approach to create a Web UI as of ASP.NET Core 2.x.</span></span>
+* [<span data-ttu-id="296c9-130">웹 사이트</span><span class="sxs-lookup"><span data-stu-id="296c9-130">Websites</span></span>](xref:tutorials/first-mvc-app/index)
+* [<span data-ttu-id="296c9-131">API</span><span class="sxs-lookup"><span data-stu-id="296c9-131">APIs</span></span>](xref:tutorials/first-web-api)
+* [<span data-ttu-id="296c9-132">실시간</span><span class="sxs-lookup"><span data-stu-id="296c9-132">Real-time</span></span>](xref:signalr/index)
+* [<span data-ttu-id="296c9-133">Azure에 ASP.NET Core 앱 배포</span><span class="sxs-lookup"><span data-stu-id="296c9-133">Deploy an ASP.NET Core app to Azure</span></span>](/azure/app-service/app-service-web-get-started-dotnet)
 
-* [<span data-ttu-id="1cb29-132">웹 사이트</span><span class="sxs-lookup"><span data-stu-id="1cb29-132">Websites</span></span>](/aspnet/mvc)
-* [<span data-ttu-id="1cb29-133">API</span><span class="sxs-lookup"><span data-stu-id="1cb29-133">APIs</span></span>](/aspnet/web-api)
-* [<span data-ttu-id="1cb29-134">실시간</span><span class="sxs-lookup"><span data-stu-id="1cb29-134">Real-time</span></span>](/aspnet/signalr)
+## <a name="aspnet-4x-scenarios"></a><span data-ttu-id="296c9-134">ASP.NET 4.x 시나리오</span><span class="sxs-lookup"><span data-stu-id="296c9-134">ASP.NET 4.x scenarios</span></span>
 
-## <a name="resources"></a><span data-ttu-id="1cb29-135">자료</span><span class="sxs-lookup"><span data-stu-id="1cb29-135">Resources</span></span>
+* [<span data-ttu-id="296c9-135">웹 사이트</span><span class="sxs-lookup"><span data-stu-id="296c9-135">Websites</span></span>](/aspnet/mvc)
+* [<span data-ttu-id="296c9-136">API</span><span class="sxs-lookup"><span data-stu-id="296c9-136">APIs</span></span>](/aspnet/web-api)
+* [<span data-ttu-id="296c9-137">실시간</span><span class="sxs-lookup"><span data-stu-id="296c9-137">Real-time</span></span>](/aspnet/signalr)
+* [<span data-ttu-id="296c9-138">Azure에서 ASP.NET 4.x 웹앱 만들기</span><span class="sxs-lookup"><span data-stu-id="296c9-138">Create an ASP.NET 4.x web app in Azure</span></span>](/azure/app-service/app-service-web-get-started-dotnet-framework)
 
-* [<span data-ttu-id="1cb29-136">ASP.NET 소개</span><span class="sxs-lookup"><span data-stu-id="1cb29-136">Introduction to ASP.NET</span></span>](/aspnet/overview)
-* [<span data-ttu-id="1cb29-137">ASP.NET Core 소개</span><span class="sxs-lookup"><span data-stu-id="1cb29-137">Introduction to ASP.NET Core</span></span>](xref:index)
+## <a name="additional-resources"></a><span data-ttu-id="296c9-139">추가 자료</span><span class="sxs-lookup"><span data-stu-id="296c9-139">Additional resources</span></span>
+
+* [<span data-ttu-id="296c9-140">ASP.NET 소개</span><span class="sxs-lookup"><span data-stu-id="296c9-140">Introduction to ASP.NET</span></span>](/aspnet/overview)
+* [<span data-ttu-id="296c9-141">ASP.NET Core 소개</span><span class="sxs-lookup"><span data-stu-id="296c9-141">Introduction to ASP.NET Core</span></span>](xref:index)
+* <xref:host-and-deploy/azure-apps/index>
