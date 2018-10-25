@@ -58,9 +58,9 @@ connection.Closed += (error) => {
 
 [!code-csharp[Use Closed event handler to automate reconnection](dotnet-client/sample/signalrchatclient/MainWindow.xaml.cs?name=snippet_ClosedRestart)]
 
-## <a name="call-hub-methods-from-client"></a>클라이언트에서 허브 메서드를 호출 합니다.
+## <a name="call-hub-methods-from-client"></a>클라이언트에서 허브 메서드 호출하기
 
-`InvokeAsync` 허브 메서드를 호출합니다. 허브 메서드 이름 및 허브 메서드를 정의 하는 모든 인수를 전달 `InvokeAsync`합니다. SignalR은 비동기를 사용 하므로 `async` 및 `await` 호출 하는 경우.
+`InvokeAsync`는 허브 메서드를 호출합니다. 허브 메서드의 이름과 허브 메서드에 정의된 모든 인수를 `InvokeAsync`에 전달합니다. SignalR은 비동기로 동작하므로 호출 시 `async`와 `await`를 사용해야 합니다.
 
 [!code-csharp[InvokeAsync method](dotnet-client/sample/signalrchatclient/MainWindow.xaml.cs?name=snippet_InvokeAsync)]
 
