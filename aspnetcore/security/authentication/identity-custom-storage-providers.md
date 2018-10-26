@@ -3,14 +3,15 @@ title: ASP.NET Core Id에 대 한 사용자 지정 저장소 공급자
 author: ardalis
 description: ASP.NET Core Id에 대 한 사용자 지정 저장소 공급자를 구성 하는 방법에 알아봅니다.
 ms.author: riande
-ms.date: 09/17/2018
+ms.custom: mvc
+ms.date: 10/24/2018
 uid: security/authentication/identity-custom-storage-providers
-ms.openlocfilehash: e206cf584d92a17d61676d71abc6fb577ae63453
-ms.sourcegitcommit: f5d403004f3550e8c46585fdbb16c49e75f495f3
+ms.openlocfilehash: b10731261ca0c748548fcba94a229ba055d46eb5
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "49477620"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090838"
 ---
 # <a name="custom-storage-providers-for-aspnet-core-identity"></a>ASP.NET Core Id에 대 한 사용자 지정 저장소 공급자
 
@@ -24,7 +25,7 @@ ASP.NET Core Id는 확장 가능한 시스템 사용자 지정 저장소 공급�
 
 ASP.NET Core Id 시스템을 기본적으로 Entity Framework Core를 사용 하 여 SQL Server 데이터베이스에 사용자 정보를 저장 합니다. 대부분의 앱에 대 한이 방법은 잘 작동합니다. 그러나 다음 다른 지 속성 메커니즘 또는 데이터 스키마를 사용 하는 것이 좋습니다. 예를 들어:
 
-* 사용할 [Azure Table Storage](https://docs.microsoft.com/azure/storage/) 또는 다른 데이터 저장소입니다.
+* 사용할 [Azure Table Storage](/azure/storage/) 또는 다른 데이터 저장소입니다.
 * 데이터베이스 테이블 구조가 서로 합니다. 
 * 와 같은 다른 데이터 액세스 접근 방식을 사용 하려고 할 수 있습니다 [Dapper](https://github.com/StackExchange/Dapper)합니다. 
 
@@ -146,27 +147,27 @@ ASP.NET Core Id 관리자 및 저장소를 호출 하는 클래스로 구성 됩
 
 ### <a name="interfaces-to-implement-when-customizing-user-store"></a>사용자 저장소를 사용자 지정할 때 구현 하는 인터페이스
 
-- **IUserStore**  
+* **IUserStore**  
  합니다 [IUserStore&lt;TUser&gt; ](/dotnet/api/microsoft.aspnetcore.identity.iuserstore-1) 인터페이스는 유일한 인터페이스는 사용자 저장소에 구현 해야 합니다. 만들기, 업데이트, 삭제 및 사용자를 검색 하기 위한 메서드를 정의 합니다.
-- **IUserClaimStore**  
+* **IUserClaimStore**  
  합니다 [IUserClaimStore&lt;TUser&gt; ](/dotnet/api/microsoft.aspnetcore.identity.iuserclaimstore-1) 인터페이스는 사용자 클레임을 사용 하도록 구현 하는 메서드를 정의 합니다. 추가, 제거 및 사용자 클레임을 검색 하는 메서드를 포함 합니다.
-- **IUserLoginStore**  
+* **IUserLoginStore**  
  합니다 [IUserLoginStore&lt;TUser&gt; ](/dotnet/api/microsoft.aspnetcore.identity.iuserloginstore-1) 외부 인증 공급자를 사용 하도록 구현 하는 메서드를 정의 합니다. 추가, 제거 및 사용자 로그인 및 로그인 정보를 기반으로 사용자를 검색 하는 메서드를 검색 하는 메서드를 포함 합니다.
-- **IUserRoleStore**  
+* **IUserRoleStore**  
  합니다 [IUserRoleStore&lt;TUser&gt; ](/dotnet/api/microsoft.aspnetcore.identity.iuserrolestore-1) 인터페이스 역할에 사용자를 매핑하기 위해 구현할 메서드를 정의 합니다. 추가, 제거 및 사용자의 역할 및 역할에 사용자가 할당 되었는지 확인 하는 메서드를 검색 하는 메서드를 포함 합니다.
-- **IUserPasswordStore**  
+* **IUserPasswordStore**  
  합니다 [IUserPasswordStore&lt;TUser&gt; ](/dotnet/api/microsoft.aspnetcore.identity.iuserpasswordstore-1) 인터페이스 해시 된 암호를 유지 하기 위해 구현할 메서드를 정의 합니다. 가져와 사용자가 암호를 설정 하는지 여부를 나타내는 메서드와 해시 된 암호를 설정 하는 메서드를 포함 합니다.
-- **IUserSecurityStampStore**  
+* **IUserSecurityStampStore**  
  합니다 [IUserSecurityStampStore&lt;TUser&gt; ](/dotnet/api/microsoft.aspnetcore.identity.iusersecuritystampstore-1) 인터페이스는 사용자의 계정 정보 변경 되었는지 여부를 나타내는 보안 스탬프를 사용 하기 위해 구현할 메서드를 정의 합니다. 사용자 암호를 변경 또는 추가 하거나 로그인을 제거 하는 경우이 스탬프 업데이트 됩니다. 가져오기 및 설정의 보안 스탬프에 대 한 메서드를 포함 합니다.
-- **IUserTwoFactorStore**  
+* **IUserTwoFactorStore**  
  합니다 [IUserTwoFactorStore&lt;TUser&gt; ](/dotnet/api/microsoft.aspnetcore.identity.iusertwofactorstore-1) 인터페이스 2 단계 인증을 지원 하기 위해 구현할 메서드를 정의 합니다. 가져와 사용자에 대 한 2 단계 인증이 사용 되는지 여부를 설정 하는 메서드를 포함 합니다.
-- **IUserPhoneNumberStore**  
+* **IUserPhoneNumberStore**  
  합니다 [IUserPhoneNumberStore&lt;TUser&gt; ](/dotnet/api/microsoft.aspnetcore.identity.iuserphonenumberstore-1) 인터페이스 사용자 전화 번호를 저장 하는를 구현 하는 메서드를 정의 합니다. 가져오기 및 전화 번호 및 전화 번호가 확인 되었는지 여부를 설정에 대 한 메서드를 포함 합니다.
-- **IUserEmailStore**  
+* **IUserEmailStore**  
  합니다 [IUserEmailStore&lt;TUser&gt; ](/dotnet/api/microsoft.aspnetcore.identity.iuseremailstore-1) 인터페이스는 사용자 전자 메일 주소가 저장을 구현 하는 메서드를 정의 합니다. 가져오기 및 전자 메일 주소 및 전자 메일 확인 되었는지 여부를 설정에 대 한 메서드를 포함 합니다.
-- **IUserLockoutStore**  
+* **IUserLockoutStore**  
  합니다 [IUserLockoutStore&lt;TUser&gt; ](/dotnet/api/microsoft.aspnetcore.identity.iuserlockoutstore-1) 인터페이스 계정 잠금에 대 한 정보를 저장할 구현 하는 메서드를 정의 합니다. 실패 한 액세스 시도 및 잠금을 추적 하기 위한 메서드를 포함 합니다.
-- **IQueryableUserStore**  
+* **IQueryableUserStore**  
  합니다 [IQueryableUserStore&lt;TUser&gt; ](/dotnet/api/microsoft.aspnetcore.identity.iqueryableuserstore-1) 인터페이스를 쿼리 가능한 사용자 저장소를 제공 하기 위해 구현할 멤버를 정의 합니다.
 
 앱에서 필요한 인터페이스만 구현 합니다. 예를 들어:
@@ -199,9 +200,9 @@ public class UserStore : IUserStore<IdentityUser>,
 
 만들 수는 `RoleStore` 역할에서 모든 데이터 작업에 대 한 메서드를 제공 하는 클래스입니다. 이 클래스는 해당 하는 [RoleStore&lt;TRole&gt; ](/dotnet/api/microsoft.aspnetcore.identity.entityframeworkcore.rolestore-1) 클래스입니다. 에 `RoleStore` 구현 클래스를 `IRoleStore<TRole>` 및 필요에 따라는 `IQueryableRoleStore<TRole>` 인터페이스입니다.
 
-- **IRoleStore&lt;TRole&gt;**  
+* **IRoleStore&lt;TRole&gt;**  
  합니다 [IRoleStore&lt;TRole&gt; ](/dotnet/api/microsoft.aspnetcore.identity.irolestore-1) 인터페이스 역할 저장소 클래스에서 구현 하는 메서드를 정의 합니다. 만들기, 업데이트, 삭제 및 역할을 검색 하는 메서드를 포함 합니다.
-- **RoleStore&lt;TRole&gt;**  
+* **RoleStore&lt;TRole&gt;**  
  사용자 지정 하려면 `RoleStore`를 구현 하는 클래스를 만듭니다는 `IRoleStore<TRole>` 인터페이스입니다. 
 
 ## <a name="reconfigure-app-to-use-a-new-storage-provider"></a>새 저장소 공급자를 사용 하도록 앱을 다시 구성
@@ -237,5 +238,5 @@ public void ConfigureServices(IServiceCollection services)
 
 ## <a name="references"></a>참조
 
-- [ASP.NET 4.x Id에 대 한 사용자 지정 저장소 공급자](/aspnet/identity/overview/extensibility/overview-of-custom-storage-providers-for-aspnet-identity)
-- [ASP.NET Core Id](https://github.com/aspnet/identity) -이 리포지토리는 커뮤니티에서 저장소 공급자를 유지 관리에 대 한 링크를 포함 합니다.
+* [ASP.NET 4.x Id에 대 한 사용자 지정 저장소 공급자](/aspnet/identity/overview/extensibility/overview-of-custom-storage-providers-for-aspnet-identity)
+* [ASP.NET Core Id](https://github.com/aspnet/identity) &ndash; 이 리포지토리는 커뮤니티에서 저장소 공급자를 유지 관리에 대 한 링크를 포함 합니다.

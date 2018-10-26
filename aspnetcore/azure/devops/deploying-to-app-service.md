@@ -3,18 +3,19 @@ title: ASP.NET Core 및 Azure를 사용 하 여 DevOps | App Service에 앱 배�
 author: CamSoper
 description: Azure에서 호스팅되는 ASP.NET Core 앱에 대한 DevOps 파이프라인을 빌드하는 방법에 대한 종단 간 지침을 제공하는 가이드입니다.
 ms.author: casoper
-ms.date: 08/07/2018
+ms.custom: mvc
+ms.date: 10/24/2018
 uid: azure/devops/deploy-to-app-service
-ms.openlocfilehash: 710e65a048fdc062219e90b0db323e8e96fd8e9d
-ms.sourcegitcommit: 57eccdea7d89a62989272f71aad655465f1c600a
+ms.openlocfilehash: 33026ed510aae63a9e580aa5d708f94aad778fca
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44340136"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090939"
 ---
 # <a name="deploy-an-app-to-app-service"></a>App Service에 앱 배포
 
-[Azure App Service](https://docs.microsoft.com/azure/app-service/) 는 Azure의 웹 호스팅 플랫폼입니다. 수동으로 또는 자동화 된 프로세스를 통해 Azure App Service에 웹 앱 배포를 수행할 수 있습니다. 이 가이드의이 섹션에서는 명령줄을 사용 하 여 스크립트 하거나 수동으로 트리거할 수 있습니다 또는 Visual Studio를 사용 하 여 수동으로 트리거되는 배포 방법을 설명 합니다.
+[Azure App Service](/azure/app-service/) 는 Azure의 웹 호스팅 플랫폼입니다. 수동으로 또는 자동화 된 프로세스를 통해 Azure App Service에 웹 앱 배포를 수행할 수 있습니다. 이 가이드의이 섹션에서는 명령줄을 사용 하 여 스크립트 하거나 수동으로 트리거할 수 있습니다 또는 Visual Studio를 사용 하 여 수동으로 트리거되는 배포 방법을 설명 합니다.
 
 이 섹션에서는 다음 작업을 수행할 수 있습니다.
 
@@ -70,7 +71,7 @@ ms.locfileid: "44340136"
 
 ## <a name="create-the-azure-app-service-web-app"></a>Azure App Service 웹 앱 만들기
 
-앱을 배포 하려면 App Service 만들기 해야 [웹 앱](https://docs.microsoft.com/azure/app-service/app-service-web-overview)합니다. 웹 앱을 만든 후 Git를 사용 하 여 로컬 컴퓨터에서를 배포할 수 있습니다.
+앱을 배포 하려면 App Service 만들기 해야 [웹 앱](/azure/app-service/app-service-web-overview)합니다. 웹 앱을 만든 후 Git를 사용 하 여 로컬 컴퓨터에서를 배포할 수 있습니다.
 
 1. 에 로그인 합니다 [Azure Cloud Shell](https://shell.azure.com/bash)합니다. 참고: 처음으로 로그인 할 때 Cloud Shell 프롬프트를 구성 파일에 대 한 저장소 계정을 만듭니다. 기본값을 사용 하거나 고유 이름을 제공 합니다.
 
@@ -88,7 +89,7 @@ ms.locfileid: "44340136"
     az group create --location centralus --name AzureTutorial
     ```
 
-    합니다 `az` 명령을 호출 합니다 [Azure CLI](https://docs.microsoft.com/cli/azure/)합니다. CLI를 로컬로 실행할 수 있지만 시간 및 구성 저장 사용 하 여 Cloud Shell에서.
+    합니다 `az` 명령을 호출 합니다 [Azure CLI](/cli/azure/)합니다. CLI를 로컬로 실행할 수 있지만 시간 및 구성 저장 사용 하 여 Cloud Shell에서.
 
     c. S1 계층에서 App Service 계획을 만듭니다. App Service 계획은 동일한 가격 책정 계층을 공유 하는 웹 앱의 그룹입니다. S1 계층을 무료로 사용할 수 있는 없지만 스테이징 슬롯 기능 필요 합니다.
 
@@ -238,7 +239,7 @@ Visual Studio 빌드하고 Azure에 앱을 배포 합니다. 웹 앱 URL로 이�
 
 ## <a name="additional-reading"></a>추가 참조 항목
 
-* [Web Apps 개요](https://docs.microsoft.com/azure/app-service/app-service-web-overview)
-* [Azure App Service에서.NET Core 및 SQL Database 웹 앱 빌드](https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-dotnetcore-sqldb)
-* [Azure App Service에 대 한 배포 자격 증명을 구성 합니다.](https://docs.microsoft.com/azure/app-service/app-service-deployment-credentials)
-* [Azure App Service에서 스테이징 환경 설정](https://docs.microsoft.com/azure/app-service/web-sites-staged-publishing)
+* [Web Apps 개요](/azure/app-service/app-service-web-overview)
+* [Azure App Service에서.NET Core 및 SQL Database 웹 앱 빌드](/azure/app-service/app-service-web-tutorial-dotnetcore-sqldb)
+* [Azure App Service에 대 한 배포 자격 증명을 구성 합니다.](/azure/app-service/app-service-deployment-credentials)
+* [Azure App Service에서 스테이징 환경 설정](/azure/app-service/web-sites-staged-publishing)

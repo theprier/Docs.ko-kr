@@ -8,17 +8,17 @@ ms.date: 06/10/2014
 ms.assetid: 0fab5e35-8c1f-43d4-8635-b8aba8766a71
 msc.legacyurl: /signalr/overview/getting-started/introduction-to-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: d103573fb31bb3b08d054cbf65ff906bd5d151d3
-ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
+ms.openlocfilehash: 0b7e223b6b793d1860797157be6021ffb7f1bc12
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48912802"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090295"
 ---
 <a name="introduction-to-signalr"></a>SignalR 소개
 ====================
 
-이 자습서는 업데이트 된 버전을 사용할 수 [여기](/aspnet/core/tutorials/signalr) Visual Studio의 최신 버전을 사용 합니다. 새 자습서에 사용 하 여 [ASP.NET Core](/aspnet/core/),이 자습서를 통해 향상 된 기능이 많이 제공 합니다.
+참조 [ASP.NET Core SignalR 소개](/aspnet/core/signalr/introduction) 최신 버전의 Visual Studio를 사용 하는이 자습서의 업데이트 된 버전에 대 한 합니다. 새 자습서에 사용 하 여 [ASP.NET Core](/aspnet/core/),이 자습서를 통해 향상 된 기능이 많이 제공 합니다.
 
 [Patrick Fletcher](https://github.com/pfletcher)
 

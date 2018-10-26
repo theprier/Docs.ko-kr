@@ -5,12 +5,12 @@ description: 낮은 대역폭 요구 사항에 대응하고 ASP.NET Core 응용 
 ms.author: riande
 ms.date: 09/20/2017
 uid: performance/caching/response
-ms.openlocfilehash: 4bf61502738d70760679ec98c8f2f303eca9d504
-ms.sourcegitcommit: f5d403004f3550e8c46585fdbb16c49e75f495f3
+ms.openlocfilehash: bbf5b649bac9d31aa6d0ecdc3828648677b05716
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "49477491"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090695"
 ---
 # <a name="response-caching-in-aspnet-core"></a>ASP.NET core에서 응답 캐싱
 
@@ -68,7 +68,7 @@ HTTP 캐싱의 목적을 고려했을 때 항상 클라이언트의 `Cache-Contr
 
 응용 프로그램이 클라우드나 서버 팜에서 호스팅될 때 메모리에 데이터를 저장하려면 분산 캐시를 사용합니다. 이 캐시는 요청을 처리하는 서버들 간에 서로 공유됩니다. 클라이언트에 대한 캐시 데이터를 사용할 수 있는 경우 클라이언트는 그룹의 어떤 서버에서나 처리할 수 있는 요청을 제출할 수 있습니다. ASP.NET Core는 SQL Server 및 Redis 분산 캐시를 제공합니다.
 
-자세한 내용은 [분산 캐시 사용하기](xref:performance/caching/distributed)를 참고하시기 바랍니다.
+자세한 내용은 <xref:performance/caching/distributed>을 참조하세요.
 
 ### <a name="cache-tag-helper"></a>캐시 태그 도우미
 
@@ -230,9 +230,9 @@ Cache-Control: public,max-age=60
 
 * [캐시에 응답 저장하기](https://tools.ietf.org/html/rfc7234#section-3)
 * [Cache-Control](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9)
-* [메모리 내 캐시](xref:performance/caching/memory)
-* [분산 캐시 사용하기](xref:performance/caching/distributed)
-* [변경 토큰을 이용해서 변경 감지하기](xref:fundamentals/change-tokens)
-* [응답 캐싱 미들웨어](xref:performance/caching/middleware)
-* [캐시 태그 도우미](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper)
-* [분산 캐시 태그 도우미](xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper)
+* <xref:performance/caching/memory>
+* <xref:performance/caching/distributed>
+* <xref:fundamentals/change-tokens>
+* <xref:performance/caching/middleware>
+* <xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper>
+* <xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper>

@@ -5,7 +5,7 @@ Identity 스 캐 폴더를 실행 합니다.
 * **솔루션 탐색기**에서 프로젝트를 마우스 오른쪽 단추로 클릭 > **추가** > **스 캐 폴드 된 새 항목**합니다.
 * 왼쪽된 창에서 합니다 **스 캐 폴드 추가** 대화 상자에서 **Identity** > **추가**합니다.
 * 에 **ADD Id** 대화 상자에서 원하는 옵션을 선택 합니다.
-  * 기존 레이아웃 페이지를 선택 하거나 잘못 된 태그를 사용 하 여 레이아웃 파일을 덮어쓰게 됩니다. 기존 _Layout.cshtml 파일을 선택 하면 **되지** 덮어씁니다.
+  * 기존 레이아웃 페이지를 선택 하거나 잘못 된 태그를 사용 하 여 레이아웃 파일을 덮어쓰게 됩니다. 기존  *\_Layout.cshtml* 파일을 선택 하면 것 **하지** 덮어씁니다.
 
  예를 들어 `~/Pages/Shared/_Layout.cshtml` Razor 페이지에 대 한 `~/Views/Shared/_Layout.cshtml` MVC 프로젝트
 * 기존 데이터 컨텍스트를 사용 하려면 재정의를 하나 이상의 파일을 선택 합니다. 데이터 컨텍스트를 추가 하려면 파일을 하나 이상 선택 해야 합니다.
@@ -49,4 +49,7 @@ Powershell 명령 구분 기호로 세미콜론을 사용합니다. Powershell�
 ```cli
 dotnet aspnet-codegenerator identity -dc MyWeb.Data.ApplicationDbContext --files "Account.Register;Account.Login;Account.Logout"
 ```
+
+Identity 스 캐 폴더를 지정 하지 않고 실행 하는 경우는 `--files` 플래그 또는 `--useDefaultUI` 플래그를 모두 사용할 수 있는 Identity UI 페이지가 프로젝트에 생성 됩니다.
+
 -------------

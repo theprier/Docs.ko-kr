@@ -5,14 +5,14 @@ description: Azure 키 자격 증명 모음 구성 공급자를 사용 하 여 �
 monikerRange: '>= aspnetcore-1.1'
 ms.author: riande
 ms.custom: mvc
-ms.date: 10/17/2018
+ms.date: 10/24/2018
 uid: security/key-vault-configuration
-ms.openlocfilehash: 474824cccdc63bb3dc3978ed68cf4c89cec12ad5
-ms.sourcegitcommit: f43f430a166a7ec137fcad12ded0372747227498
+ms.openlocfilehash: 06445eb2ecec4cf101b23a4bfe131b2c56a18f62
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49391144"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090308"
 ---
 # <a name="azure-key-vault-configuration-provider-in-aspnet-core"></a>ASP.NET Core에서 azure Key Vault 구성 공급자
 
@@ -151,7 +151,7 @@ Azure Key Vault 키를 구분 기호로 콜론을 사용할 수 없습니다. �
 
 사용 합니다 [암호 관리자 도구](xref:security/app-secrets) 유지 하기 위해는 `ClientSecret` 프로젝트 트리 외부에 원본입니다. 암호 관리자 사용 하 여 특정 프로젝트를 사용 하 여 앱 암호를 연결을 여러 프로젝트 간에 공유 합니다.
 
-인증서를 지 원하는 환경에서.NET Framework 앱을 개발 하는 경우 X.509 인증서를 사용 하 여 Azure Key Vault에 인증할 수 있습니다. X.509 인증서의 개인 키 OS에 의해 관리 됩니다. 자세한 내용은 [클라이언트 암호 대신 인증서를 사용 하 여 인증](https://docs.microsoft.com/azure/key-vault/key-vault-use-from-web-application#authenticate-with-a-certificate-instead-of-a-client-secret)합니다. 사용 된 `AddAzureKeyVault` 받아들이는 오버 로드는 `X509Certificate2` (`_env` 다음 예제에서:
+인증서를 지 원하는 환경에서.NET Framework 앱을 개발 하는 경우 X.509 인증서를 사용 하 여 Azure Key Vault에 인증할 수 있습니다. X.509 인증서의 개인 키 OS에 의해 관리 됩니다. 자세한 내용은 [클라이언트 암호 대신 인증서를 사용 하 여 인증](/azure/key-vault/key-vault-use-from-web-application#authenticate-with-a-certificate-instead-of-a-client-secret)합니다. 사용 된 `AddAzureKeyVault` 받아들이는 오버 로드는 `X509Certificate2` (`_env` 다음 예제에서:
 
 ```csharp
 var builtConfig = config.Build();

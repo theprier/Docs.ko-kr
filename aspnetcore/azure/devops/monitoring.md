@@ -3,14 +3,15 @@ title: ASP.NET Core 및 Azure를 사용 하 여 DevOps | 모니터링 및 디버
 author: CamSoper
 description: Azure에서 호스팅되는 ASP.NET Core 앱에 대한 DevOps 파이프라인을 빌드하는 방법에 대한 종단 간 지침을 제공하는 가이드입니다.
 ms.author: casoper
-ms.date: 08/07/2018
+ms.custom: mvc
+ms.date: 10/24/2018
 uid: azure/devops/monitor
-ms.openlocfilehash: c2fc88493aee04d7ea2781d17e808581e89d2082
-ms.sourcegitcommit: 29dfe436f54a27fbb4f6494bc639d16c75001fab
+ms.openlocfilehash: c4013de574fdf34114f2ae6c6a2150d72f807578
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/09/2018
-ms.locfileid: "42909387"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090197"
 ---
 # <a name="monitor-and-debug"></a>모니터링 및 디버그
 
@@ -52,11 +53,11 @@ App Service 웹 앱은 쉽게 실시간으로 모니터링 됩니다. Azure port
 
 ## <a name="advanced-monitoring"></a>고급 모니터링
 
-[Azure Monitor](https://docs.microsoft.com/azure/monitoring-and-diagnostics/) 모든 메트릭을 모니터링 하 고 Azure 서비스에서 경고 설정에 대 한 중앙 집중식된 서비스입니다. Azure Monitor에서 관리자 수 세부적으로 성과 추적 하며 추세를 파악 합니다. 각 Azure 서비스는 자체 [메트릭 집합이](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-supported-metrics#microsoftwebsites-excluding-functions) Azure Monitor로 합니다.
+[Azure Monitor](/azure/monitoring-and-diagnostics/) 모든 메트릭을 모니터링 하 고 Azure 서비스에서 경고 설정에 대 한 중앙 집중식된 서비스입니다. Azure Monitor에서 관리자 수 세부적으로 성과 추적 하며 추세를 파악 합니다. 각 Azure 서비스는 자체 [메트릭 집합이](/azure/monitoring-and-diagnostics/monitoring-supported-metrics#microsoftwebsites-excluding-functions) Azure Monitor로 합니다.
 
 ## <a name="profile-with-application-insights"></a>Application Insights 사용 하 여 프로필
 
-[Application Insights](https://docs.microsoft.com/azure/application-insights/app-insights-overview) 웹 앱 및 사용자가 사용 하는 방법의 안정성 및 성능 분석에 대 한 Azure 서비스입니다. Application Insights의 데이터를 훨씬 광범위 하 고 Azure Monitor의 보다 수준이 깊은 합니다. 개발자와 관리자가 앱을 개선 하는 것에 대 한 키 정보를 사용 하 여 데이터를 제공할 수 있습니다. Application Insights는 코드 변경 없이 Azure App Service 리소스에 추가할 수 있습니다.
+[Application Insights](/azure/application-insights/app-insights-overview) 웹 앱 및 사용자가 사용 하는 방법의 안정성 및 성능 분석에 대 한 Azure 서비스입니다. Application Insights의 데이터를 훨씬 광범위 하 고 Azure Monitor의 보다 수준이 깊은 합니다. 개발자와 관리자가 앱을 개선 하는 것에 대 한 키 정보를 사용 하 여 데이터를 제공할 수 있습니다. Application Insights는 코드 변경 없이 Azure App Service 리소스에 추가할 수 있습니다.
 
 1. 엽니다는 [Azure portal](https://portal.azure.com)로 이동한 다음 합니다 *mywebapp\<unique_number\>*  App Service.
 1. **개요** 탭을 클릭 합니다 **Application Insights** 바둑판식으로 배열 합니다.
@@ -77,7 +78,7 @@ App Service 웹 앱은 쉽게 실시간으로 모니터링 됩니다. Azure port
 
 ![Application Insights 개요 탭](./media/monitoring/app-insights-overview.png)
 
-Application Insights 추가 구성 없이 유용한 서버 쪽 정보를 제공 합니다. Application Insights에서 가장 많은 가치를 얻을 [Application Insights SDK를 사용 하 여 앱을 계측](https://docs.microsoft.com/azure/application-insights/app-insights-asp-net-core)합니다. 제대로 구성 되었으면 서비스 웹 서버 및 클라이언트 쪽 성능을 포함 하 여 브라우저에서 종단 간 모니터링을 제공 합니다. 자세한 내용은 참조는 [Application Insights 설명서](https://docs.microsoft.com/azure/application-insights/app-insights-overview)합니다.
+Application Insights 추가 구성 없이 유용한 서버 쪽 정보를 제공 합니다. Application Insights에서 가장 많은 가치를 얻을 [Application Insights SDK를 사용 하 여 앱을 계측](/azure/application-insights/app-insights-asp-net-core)합니다. 제대로 구성 되었으면 서비스 웹 서버 및 클라이언트 쪽 성능을 포함 하 여 브라우저에서 종단 간 모니터링을 제공 합니다. 자세한 내용은 참조는 [Application Insights 설명서](/azure/application-insights/app-insights-overview)합니다.
 
 ## <a name="logging"></a>로깅
 
@@ -93,7 +94,7 @@ Application Insights 추가 구성 없이 유용한 서버 쪽 정보를 제공 
 1. 입력 된 **보존 기간** 일에서입니다. 예를 들어 30입니다.
 1. **저장**을 클릭합니다.
 
-ASP.NET Core 및 웹 서버 (App Service) 로그는 웹 앱에 대 한 생성 됩니다. 표시 되는 FTP/FTPS 정보를 사용 하 여 서 다운로드할 수 있습니다. 암호는이 가이드의 앞부분에서 만든 배포 자격 증명으로 동일 합니다. 로그 수 [PowerShell 또는 Azure CLI를 사용 하 여 로컬 컴퓨터에 직접 스트리밍할](https://docs.microsoft.com/azure/app-service/web-sites-enable-diagnostic-log#download)합니다. 로그 수도 있습니다 [Application Insights에서 볼](https://docs.microsoft.com/azure/app-service/web-sites-enable-diagnostic-log#how-to-view-logs-in-application-insights)합니다.
+ASP.NET Core 및 웹 서버 (App Service) 로그는 웹 앱에 대 한 생성 됩니다. 표시 되는 FTP/FTPS 정보를 사용 하 여 서 다운로드할 수 있습니다. 암호는이 가이드의 앞부분에서 만든 배포 자격 증명으로 동일 합니다. 로그 수 [PowerShell 또는 Azure CLI를 사용 하 여 로컬 컴퓨터에 직접 스트리밍할](/azure/app-service/web-sites-enable-diagnostic-log#download)합니다. 로그 수도 있습니다 [Application Insights에서 볼](/azure/app-service/web-sites-enable-diagnostic-log#how-to-view-logs-in-application-insights)합니다.
 
 ## <a name="log-streaming"></a>로그 스트리밍
 
@@ -104,21 +105,21 @@ ASP.NET Core 및 웹 서버 (App Service) 로그는 웹 앱에 대 한 생성 �
 
     ![로그 스트림 연결](./media/monitoring/log-stream.png)
 
-로그 수도 있습니다 [Azure CLI 또는 Azure PowerShell을 통해 스트리밍할](https://docs.microsoft.com/azure/app-service/web-sites-enable-diagnostic-log#streamlogs)Cloud Shell을 통해 등입니다.
+로그 수도 있습니다 [Azure CLI 또는 Azure PowerShell을 통해 스트리밍할](/azure/app-service/web-sites-enable-diagnostic-log#streamlogs)Cloud Shell을 통해 등입니다.
 
 ## <a name="alerts"></a>경고
 
-Azure Monitor 해줍니다 [실시간으로 경고](https://docs.microsoft.com/azure/monitoring-and-diagnostics/insights-alerts-portal) 메트릭, 관리 이벤트 및 기타 조건을 기준으로 합니다.
+Azure Monitor 해줍니다 [실시간으로 경고](/azure/monitoring-and-diagnostics/insights-alerts-portal) 메트릭, 관리 이벤트 및 기타 조건을 기준으로 합니다.
 
 > *참고: 경고 (클래식) 서비스에서 사용할 수만 현재 웹 앱 메트릭에 대해 경고 합니다.*
 
-합니다 [경고 (클래식) 서비스](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitor-quick-resource-metric-alert-portal) 또는 Azure Monitor에서 찾을 수 있습니다 합니다 **모니터링** App Service 설정의 섹션입니다.
+합니다 [경고 (클래식) 서비스](/azure/monitoring-and-diagnostics/monitor-quick-resource-metric-alert-portal) 또는 Azure Monitor에서 찾을 수 있습니다 합니다 **모니터링** App Service 설정의 섹션입니다.
 
 ![경고 (클래식) 링크](./media/monitoring/alerts.png)
 
 ## <a name="live-debugging"></a>라이브 디버깅
 
-Azure App Service 일 수 있습니다 [Visual Studio를 사용 하 여 원격으로 디버그할](https://docs.microsoft.com/azure/app-service/web-sites-dotnet-troubleshoot-visual-studio#remotedebug) 경우 로그 충분 한 정보를 제공 하지 않습니다. 그러나 원격 디버깅 디버그 기호를 사용 하 여 컴파일해야 하는 앱이 필요 합니다. 디버깅 하지 않아야 할 프로덕션 환경에서 제외 하 고 최후의 수단으로.
+Azure App Service 일 수 있습니다 [Visual Studio를 사용 하 여 원격으로 디버그할](/azure/app-service/web-sites-dotnet-troubleshoot-visual-studio#remotedebug) 경우 로그 충분 한 정보를 제공 하지 않습니다. 그러나 원격 디버깅 디버그 기호를 사용 하 여 컴파일해야 하는 앱이 필요 합니다. 디버깅 하지 않아야 할 프로덕션 환경에서 제외 하 고 최후의 수단으로.
 
 ## <a name="conclusion"></a>결론
 
@@ -134,9 +135,9 @@ Azure App Service 일 수 있습니다 [Visual Studio를 사용 하 여 원격�
 
 ## <a name="additional-reading"></a>추가 참조 항목
 
-* [Azure App Service에서 ASP.NET Core 문제 해결](https://docs.microsoft.com/aspnet/core/host-and-deploy/azure-apps/troubleshoot)
-* [ASP.NET Core를 사용하는 Azure App Service 및 IIS에 대한 일반적인 오류 참조](https://docs.microsoft.com/aspnet/core/host-and-deploy/azure-iis-errors-reference)
-* [Application Insights를 사용 하 여 Azure 웹 앱 성능 모니터링](https://docs.microsoft.com/azure/application-insights/app-insights-azure-web-apps)
-* [Azure App Service에서 웹앱에 대한 진단 로깅 사용](https://docs.microsoft.com/azure/app-service/web-sites-enable-diagnostic-log)
-* [Visual Studio를 사용하여 Azure App Service의 웹앱 문제 해결](https://docs.microsoft.com/azure/app-service/web-sites-dotnet-troubleshoot-visual-studio)
-* [Azure 서비스에 대 한 Azure Monitor에서 클래식 메트릭 경고를 만들려면 Azure portal](https://docs.microsoft.com/azure/monitoring-and-diagnostics/insights-alerts-portal)
+* <xref:host-and-deploy/azure-apps/troubleshoot>
+* <xref:host-and-deploy/azure-iis-errors-reference>
+* [Application Insights를 사용 하 여 Azure 웹 앱 성능 모니터링](/azure/application-insights/app-insights-azure-web-apps)
+* [Azure App Service에서 웹앱에 대한 진단 로깅 사용](/azure/app-service/web-sites-enable-diagnostic-log)
+* [Visual Studio를 사용하여 Azure App Service의 웹앱 문제 해결](/azure/app-service/web-sites-dotnet-troubleshoot-visual-studio)
+* [Azure 서비스에 대 한 Azure Monitor에서 클래식 메트릭 경고를 만들려면 Azure portal](/azure/monitoring-and-diagnostics/insights-alerts-portal)

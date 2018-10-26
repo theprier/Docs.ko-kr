@@ -3,14 +3,15 @@ title: ASP.NET Core에서 키 관리 확장성
 author: rick-anderson
 description: ASP.NET Core 데이터 보호 키 관리 확장성에 알아봅니다.
 ms.author: riande
-ms.date: 11/22/2017
+ms.custom: mvc
+ms.date: 10/24/2018
 uid: security/data-protection/extensibility/key-management
-ms.openlocfilehash: b52212ff3462748a5c64f21e1b7854673e5fcadc
-ms.sourcegitcommit: f5d403004f3550e8c46585fdbb16c49e75f495f3
+ms.openlocfilehash: 1cf3fc30f72fb872ff9d7f33fc5ffb12a11a982f
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "49477464"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090617"
 ---
 # <a name="key-management-extensibility-in-aspnet-core"></a>ASP.NET Core에서 키 관리 확장성
 
@@ -60,7 +61,7 @@ ms.locfileid: "49477464"
 
 ## <a name="xmlkeymanager"></a>XmlKeyManager
 
-합니다 `XmlKeyManager` 형식은 기본 구체적인 구현 `IKeyManager`합니다. 미사용 키 암호화 키 위탁 기능 등 몇 가지 유용한 기능을 제공 합니다. 이 시스템의 키 XML 요소로 표시 됩니다 (특히 [XElement](https://docs.microsoft.com/dotnet/csharp/programming-guide/concepts/linq/xelement-class-overview)).
+합니다 `XmlKeyManager` 형식은 기본 구체적인 구현 `IKeyManager`합니다. 미사용 키 암호화 키 위탁 기능 등 몇 가지 유용한 기능을 제공 합니다. 이 시스템의 키 XML 요소로 표시 됩니다 (특히 [XElement](/dotnet/csharp/programming-guide/concepts/linq/xelement-class-overview)).
 
 `XmlKeyManager` 해당 작업을 수행 하는 과정에서 다른 여러 구성 요소에 따라 달라 집니다.
 

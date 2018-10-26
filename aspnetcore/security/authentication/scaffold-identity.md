@@ -4,14 +4,15 @@ author: rick-anderson
 description: ASP.NET Core 프로젝트에서 Identity를 스 캐 폴드 하는 방법을 알아봅니다.
 monikerRange: '>= aspnetcore-2.1'
 ms.author: riande
-ms.date: 08/16/2018
+ms.custom: mvc
+ms.date: 10/24/2018
 uid: security/authentication/scaffold-identity
-ms.openlocfilehash: 37ad9897fbc5eb1822ed2413334b4fce9050296b
-ms.sourcegitcommit: c12ebdab65853f27fbb418204646baf6ce69515e
+ms.openlocfilehash: 94ccfc8aa2ad37d89de42f276cb2f808a08cd55e
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "46523040"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090643"
 ---
 # <a name="scaffold-identity-in-aspnet-core-projects"></a>ASP.NET Core 프로젝트에서 스 캐 폴드 Id
 
@@ -72,7 +73,7 @@ id가 구성 되어 *Areas/Identity/IdentityHostingStartup.cs*합니다. 자세�
 
 ### <a name="enable-authentication"></a>인증을 사용 하도록 설정
 
-에 `Configure` 메서드를 `Startup` 클래스를 호출 [UseAuthentication](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.builder.authappbuilderextensions.useauthentication?view=aspnetcore-2.0#Microsoft_AspNetCore_Builder_AuthAppBuilderExtensions_UseAuthentication_Microsoft_AspNetCore_Builder_IApplicationBuilder_) 후 `UseStaticFiles`:
+에 `Configure` 메서드를 `Startup` 클래스를 호출 [UseAuthentication](/dotnet/api/microsoft.aspnetcore.builder.authappbuilderextensions.useauthentication?view=aspnetcore-2.0#Microsoft_AspNetCore_Builder_AuthAppBuilderExtensions_UseAuthentication_Microsoft_AspNetCore_Builder_IApplicationBuilder_) 후 `UseStaticFiles`:
 
 [!code-csharp[](scaffold-identity/sample/StartupRPnoAuth.cs?name=snippet1&highlight=29)]
 
@@ -130,7 +131,7 @@ id가 구성 되어 *Areas/Identity/IdentityHostingStartup.cs*합니다. 자세�
 
 [!INCLUDE[](~/includes/scaffold-identity/migrations.md)]
 
-호출 [UseAuthentication](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.builder.authappbuilderextensions.useauthentication?view=aspnetcore-2.0#Microsoft_AspNetCore_Builder_AuthAppBuilderExtensions_UseAuthentication_Microsoft_AspNetCore_Builder_IApplicationBuilder_) 후 `UseStaticFiles`:
+호출 [UseAuthentication](/dotnet/api/microsoft.aspnetcore.builder.authappbuilderextensions.useauthentication?view=aspnetcore-2.0#Microsoft_AspNetCore_Builder_AuthAppBuilderExtensions_UseAuthentication_Microsoft_AspNetCore_Builder_IApplicationBuilder_) 후 `UseStaticFiles`:
 
 [!code-csharp[](scaffold-identity/sample/StartupMvcNoAuth.cs?name=snippet1&highlight=23)]
 

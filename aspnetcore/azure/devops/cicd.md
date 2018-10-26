@@ -3,14 +3,14 @@ title: ASP.NET Core 및 Azure를 사용 하 여 DevOps | 지속적인 통합 및
 author: CamSoper
 description: Azure에서 호스팅되는 ASP.NET Core 앱에 대한 DevOps 파이프라인을 빌드하는 방법에 대한 종단 간 지침을 제공하는 가이드입니다.
 ms.author: scaddie
-ms.date: 08/17/2018
+ms.date: 10/24/2018
 uid: azure/devops/cicd
-ms.openlocfilehash: 0bfe1545da4c0778055d7c81c1588d3267d2e711
-ms.sourcegitcommit: 57eccdea7d89a62989272f71aad655465f1c600a
+ms.openlocfilehash: 18a59a1ff6fd6bbf51ff664764725b8972dfa1bf
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44340110"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090539"
 ---
 # <a name="continuous-integration-and-deployment"></a>지속적인 통합 및 배포
 
@@ -230,7 +230,7 @@ ms.locfileid: "44340110"
     > [!NOTE]
     > 단위 테스트 작업을 확인 하려면 수정할 *SimpleFeedReader.Tests\Services\NewsServiceTests.cs* 의도적으로 테스트 중 하나를 중단 합니다. 예를 들어 변경 `Assert.True(result.Count > 0);` 하 `Assert.False(result.Count > 0);` 에 `Returns_News_Stories_Given_Valid_Uri` 메서드. 커밋하고 GitHub에 변경 내용을 푸시하십시오. 빌드가 트리거되고 실패 합니다. 빌드 파이프라인 상태를 변경 **못했습니다**합니다. 변경, 커밋 및 푸시를 다시 되돌립니다. 빌드 성공합니다.
 
-1. **게시** &mdash; 실행 합니다 `dotnet publish --configuration release --output <local_path_on_build_agent>` 명령을 생성 하는 *.zip* 배포할 아티팩트를 사용 하 여 파일. 합니다 `--output` 옵션의 게시 위치를 지정 합니다 *.zip* 파일입니다. 전달 하 여 위치 지정 되어 있는지를 [미리 정의 된 변수](https://docs.microsoft.com/vsts/pipelines/build/variables) 라는 `$(build.artifactstagingdirectory)`합니다. 변수를 확장 하 여 로컬 경로 같은 *c:\agent\_work\1\a*, 빌드 에이전트에서.
+1. **게시** &mdash; 실행 합니다 `dotnet publish --configuration release --output <local_path_on_build_agent>` 명령을 생성 하는 *.zip* 배포할 아티팩트를 사용 하 여 파일. 합니다 `--output` 옵션의 게시 위치를 지정 합니다 *.zip* 파일입니다. 전달 하 여 위치 지정 되어 있는지를 [미리 정의 된 변수](/azure/devops/pipelines/build/variables) 라는 `$(build.artifactstagingdirectory)`합니다. 변수를 확장 하 여 로컬 경로 같은 *c:\agent\_work\1\a*, 빌드 에이전트에서.
 1. **아티팩트 게시** &mdash; Publishes 합니다 *.zip* 에서 생성 된 파일을 **게시** 작업. 작업을 허용 합니다 *.zip* 파일 위치는 미리 정의 된 변수는 매개 변수로 `$(build.artifactstagingdirectory)`합니다. 합니다 *.zip* 파일이 라는 폴더로 게시 되 *drop*합니다.
 
 빌드 정의 클릭 **요약** 정의 사용 하 여 빌드 기록을 보려면 링크:

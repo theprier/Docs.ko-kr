@@ -7,12 +7,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 01/26/2017
 uid: performance/caching/middleware
-ms.openlocfilehash: d991bc48ed07ee71b0decaa0bee4df811fdc74c4
-ms.sourcegitcommit: f5d403004f3550e8c46585fdbb16c49e75f495f3
+ms.openlocfilehash: b5eef012356236d600d026e5161a2df5a7954e3b
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "49477529"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090487"
 ---
 # <a name="response-caching-middleware-in-aspnet-core"></a>ASP.NET Core의 응답 캐싱 미들웨어
 
@@ -120,10 +120,10 @@ if (responseCachingFeature != null)
 
 캐싱 동작을 보다 세세히 제어하려면 ASP.NET Core의 다른 캐싱 기능을 살펴보십시오. 다음 항목을 참고하시기 바랍니다.
 
-* [메모리 내 캐시](xref:performance/caching/memory)
-* [분산 캐시 사용하기](xref:performance/caching/distributed)
-* [ASP.NET Core MVC의 캐시 태그 도우미](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper)
-* [분산 캐시 태그 도우미](xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper)
+* <xref:performance/caching/memory>
+* <xref:performance/caching/distributed>
+* <xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper>
+* <xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper>
 
 ## <a name="troubleshooting"></a>문제 해결
 
@@ -155,11 +155,11 @@ if (responseCachingFeature != null)
 
 ## <a name="additional-resources"></a>추가 자료
 
-* [응용 프로그램 시작](xref:fundamentals/startup)
-* [미들웨어](xref:fundamentals/middleware/index)
-* [메모리 내 캐시](xref:performance/caching/memory)
-* [분산 캐시 사용하기](xref:performance/caching/distributed)
-* [변경 토큰을 이용해서 변경 감지하기](xref:fundamentals/change-tokens)
-* [응답 캐싱](xref:performance/caching/response)
-* [캐시 태그 도우미](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper)
-* [분산 캐시 태그 도우미](xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper)
+* <xref:fundamentals/startup>
+* <xref:fundamentals/middleware/index>
+* <xref:performance/caching/memory>
+* <xref:performance/caching/distributed>
+* <xref:fundamentals/change-tokens>
+* <xref:performance/caching/response>
+* <xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper>
+* <xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper>
