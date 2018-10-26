@@ -1,4 +1,4 @@
----
+﻿---
 title: ASP.NET Core SignalR JavaScript 클라이언트
 author: tdykstra
 description: ASP.NET Core SignalR JavaScript 클라이언트의 개요입니다.
@@ -31,7 +31,7 @@ SignalR JavaScript 클라이언트 라이브러리는 [npm](https://www.npmjs.co
   npm install @aspnet/signalr
   ```
 
-npm에서 패키지 콘텐츠를 설치 합니다 *node_modules\\@aspnet\signalr\dist\browser* 폴더입니다. 라는 새 폴더를 만듭니다 *signalr* 아래의 합니다 *wwwroot\\lib* 폴더입니다. 복사 합니다 *signalr.js* 파일을 합니다 *wwwroot\lib\signalr* 폴더입니다.
+그러면 npm이 *node_modules\\@aspnet\signalr\dist\browser* 폴더에 패키지 콘텐츠를 설치합니다. *wwwroot\\lib* 폴더 하위에 *signalr*이라는 새 폴더를 만든 다음 *signalr.js* 파일을 *wwwroot\lib\signalr* 폴더로 복사합니다.
 
 ## <a name="use-the-signalr-javascript-client"></a>SignalR JavaScript 클라이언트 사용하기
 
@@ -77,25 +77,25 @@ JavaScript 클라이언트는 [HubConnection](/javascript/api/%40aspnet/signalr/
 
 [!code-csharp[Call client-side](javascript-client/sample/hubs/chathub.cs?range=8-11)]
 
-SignalR 클라이언트 호출할 메서드를 메서드 이름을 일치 시켜를 결정 하 고에 정의 된 인수 `SendAsync` 고 `connection.on`입니다.
+SignalR은 `SendAsync`와 `connection.on`에 정의된 메서드 이름과 인수가 일치하는지 검사하여 호출할 클라이언트 메서드를 결정합니다.
 
 > [!NOTE]
-> 호출 하는 것이 좋습니다 합니다 [시작](/javascript/api/%40aspnet/signalr/hubconnection#start) 메서드는 `HubConnection` 후 `on`합니다. 이렇게 하면 모든 메시지를 수신 하기 전에 처리기 등록 됩니다.
+> 권장되는 방식은 `on` 메서드를 호출한 후 `HubConnection`의 [start](/javascript/api/%40aspnet/signalr/hubconnection#start) 메서드를 호출하는 것입니다. 이렇게 하면 메시지가 수신되기 전에 처리기가 먼저 등록됩니다.
 
 ## <a name="error-handling-and-logging"></a>오류 처리 및 로깅
 
-체인을 `catch` 의 끝에 메서드를 `start` 클라이언트 쪽 오류를 처리 하는 방법입니다. 사용 하 여 `console.error` 브라우저의 콘솔에 출력 오류입니다.
+클라이언트 쪽 오류를 처리하려면 `catch` 메서드를 `start` 메서드 끝에 연결합니다. 브라우저의 콘솔에 오류를 출력하려면 `console.error`를 사용합니다.
 
 [!code-javascript[Error handling](javascript-client/sample/wwwroot/js/chat.js?range=28)]
 
-연결이 설정 되 면 로그로 거와 이벤트의 형식을 전달 하 여 클라이언트 쪽 로그 추적을 설정 합니다. 지정 된 로그 수준을 사용 하 여 이상 메시지가 기록 됩니다. 사용 가능한 로그 수준은 아래와 같습니다.
+연결이 만들어지면 로거와 기록할 이벤트 유형을 전달하여 클라이언트 쪽 로그 추적을 설정합니다. 지정한 로그 수준 이상의 메시지가 기록됩니다. 사용 가능한 로그 수준은 다음과 같습니다.
 
-* `signalR.LogLevel.Error` &ndash; 오류 메시지입니다. 로그 `Error` 메시지만 해당 합니다.
-* `signalR.LogLevel.Warning` &ndash; 잠재적 오류에 대 한 경고 메시지입니다. 로그 `Warning`, 및 `Error` 메시지입니다.
-* `signalR.LogLevel.Information` &ndash; 오류 없이 상태 메시지입니다. 로그 `Information`하십시오 `Warning`, 및 `Error` 메시지입니다.
-* `signalR.LogLevel.Trace` &ndash; 메시지를 추적 합니다. 허브와 클라이언트 간에 전송 되는 데이터를 포함 하 여 모든 기록 합니다.
+* `signalR.LogLevel.Error` &ndash; 오류 메시지. `Error` 메시지만 기록합니다.
+* `signalR.LogLevel.Warning` &ndash; 잠재적 오류에 대한 경고 메시지. `Warning` 및 `Error` 메시지를 기록합니다.
+* `signalR.LogLevel.Information` &ndash; 오류가 아닌 상태 메시지. `Information`, `Warning` 및 `Error` 메시지를 기록합니다.
+* `signalR.LogLevel.Trace` &ndash; 추적 메시지. 허브와 클라이언트 간에 전송되는 데이터를 포함한 모든 것을 기록합니다.
 
-사용 된 [configureLogging](/javascript/api/%40aspnet/signalr/hubconnectionbuilder#configurelogging) 메서드를 [HubConnectionBuilder](/javascript/api/%40aspnet/signalr/hubconnectionbuilder) 로그 수준을 구성 하려면. 메시지는 브라우저 콘솔에 기록 됩니다.
+로그 수준을 구성하려면 [HubConnectionBuilder](/javascript/api/%40aspnet/signalr/hubconnectionbuilder)의 [configureLogging](/javascript/api/%40aspnet/signalr/hubconnectionbuilder#configurelogging) 메서드를 사용합니다. 메시지는 브라우저 콘솔에 기록됩니다.
 
 [!code-javascript[Logging levels](javascript-client/sample/wwwroot/js/chat.js?range=9-12)]
 
@@ -104,5 +104,5 @@ SignalR 클라이언트 호출할 메서드를 메서드 이름을 일치 시켜
 * [JavaScript API 참조](/javascript/api/?view=signalr-js-latest)
 * [허브](xref:signalr/hubs)
 * [.NET 클라이언트](xref:signalr/dotnet-client)
-* [Azure에 게시](xref:signalr/publish-to-azure-web-app)
-* [ASP.NET Core에서 원본 간 요청 (CORS)를 사용 하도록 설정](xref:security/cors)
+* [Azure에 게시하기](xref:signalr/publish-to-azure-web-app)
+* [ASP.NET Core에서 원본 간 요청(CORS)을 사용하도록 설정하기](xref:security/cors)
