@@ -3,14 +3,15 @@ title: ASP.NET Core 프로젝트 문제 해결
 author: Rick-Anderson
 description: ASP.NET Core 프로젝트를 사용하여 경고 및 오류를 이해하고 문제를 해결합니다.
 ms.author: riande
-ms.date: 04/05/2018
+ms.custom: mvc
+ms.date: 10/24/2018
 uid: test/troubleshoot
-ms.openlocfilehash: c72dd93f6ba705d7f03ade556c7a037dadeb6295
-ms.sourcegitcommit: 661d30492d5ef7bbca4f7e709f40d8f3309d2dac
+ms.openlocfilehash: 150f2192bb4b6dd0d330fd678d9c5fa0bf31673e
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37938396"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090113"
 ---
 # <a name="troubleshoot-aspnet-core-projects"></a>ASP.NET Core 프로젝트 문제 해결
 
@@ -18,9 +19,9 @@ ms.locfileid: "37938396"
 
 다음 링크를 문제 해결 지침을 제공합니다.
 
-* [Azure App Service에서 ASP.NET Core 문제 해결](xref:host-and-deploy/azure-apps/troubleshoot)
-* [IIS에서 ASP.NET Core 문제 해결](xref:host-and-deploy/iis/troubleshoot)
-* [ASP.NET Core를 사용하는 Azure App Service 및 IIS에 대한 일반적인 오류 참조](xref:host-and-deploy/azure-iis-errors-reference)
+* <xref:host-and-deploy/azure-apps/troubleshoot>
+* <xref:host-and-deploy/iis/troubleshoot>
+* <xref:host-and-deploy/azure-iis-errors-reference>
 * [ASP.NET Core 응용 프로그램에서 문제를 진단 하는 NDC 회의 (런던, 2018):](https://www.youtube.com/watch?v=RYI0DHoIVaA)
 * [ASP.NET Core 성능 문제를 해결 하는 ASP.NET 블로그:](https://blogs.msdn.microsoft.com/webdev/2018/05/23/asp-net-core-performance-improvements/)
 

@@ -3,14 +3,15 @@ title: ASP.NET Core 데이터 보호
 author: rick-anderson
 description: 데이터 보호의 개념 및 ASP.NET Core 데이터 보호 Api의 디자인 원칙을 알아봅니다.
 ms.author: riande
-ms.date: 10/14/2016
+ms.custom: mvc
+ms.date: 10/24/2018
 uid: security/data-protection/introduction
-ms.openlocfilehash: a49eee89e8c11b26c76ba167215c141482159933
-ms.sourcegitcommit: c684eb6c0999d11d19e15e65939e5c7f99ba47df
+ms.openlocfilehash: 37f170a3e8a46ef2215b0999358d46dd402636df
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46292299"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50089550"
 ---
 # <a name="aspnet-core-data-protection"></a>ASP.NET Core 데이터 보호
 
@@ -44,7 +45,7 @@ ASP.NET Core 데이터 보호 스택이을 장기 대체 제공 하도록 설계
 
 단순 하 고 염두에서 이러한 원칙을 사용 하 여 개발할 [사용 하기 쉬운](xref:security/data-protection/using-data-protection) 데이터 보호 스택이 있습니다.
 
-ASP.NET Core 데이터 보호 Api는 하지 주로 기밀 페이로드 무기한 유지 됩니다. 와 같은 다른 기술이 [Windows CNG DPAPI](https://msdn.microsoft.com/library/windows/desktop/hh706794%28v=vs.85%29.aspx) 하 고 [Azure Rights Management](https://docs.microsoft.com/rights-management/) 무기한 저장 하는 시나리오에 보다 적합 한 마찬가지로 강력한 키 관리 기능을 갖습니다. 즉, ASP.NET Core 데이터 보호 Api를 사용 하 여 기밀 데이터의 장기 보호에 대 한 개발자를 금지 하는 항목이 없는 합니다.
+ASP.NET Core 데이터 보호 Api는 하지 주로 기밀 페이로드 무기한 유지 됩니다. 와 같은 다른 기술이 [Windows CNG DPAPI](https://msdn.microsoft.com/library/windows/desktop/hh706794%28v=vs.85%29.aspx) 하 고 [Azure Rights Management](/rights-management/) 무기한 저장 하는 시나리오에 보다 적합 한 마찬가지로 강력한 키 관리 기능을 갖습니다. 즉, ASP.NET Core 데이터 보호 Api를 사용 하 여 기밀 데이터의 장기 보호에 대 한 개발자를 금지 하는 항목이 없는 합니다.
 
 ## <a name="audience"></a>대상 사용자
 

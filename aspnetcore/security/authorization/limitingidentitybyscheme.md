@@ -1,24 +1,24 @@
 ---
-title: ASP.NET Core에서 특정 스키마를 가진 권한 부여
+title: ASP.NET Core에서 특정 구성표로 권한 부여
 author: rick-anderson
-description: 이 문서에서는 여러 가지 인증 방법을 사용할 때 id는 특정 체계를 제한 하는 방법을 설명 합니다.
+description: 이 문서에는 여러 인증 방법을 사용 하는 경우 id는 특정 체계를 제한 하는 방법을 설명 합니다.
 ms.author: riande
-ms.date: 10/12/2017
+ms.date: 10/22/2018
 uid: security/authorization/limitingidentitybyscheme
-ms.openlocfilehash: 231c664006ee7ff91f471aa8d16c1fd18dcbabb1
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: fbe9f32e01a214f41b5a6e9f43e8fdee5fc612df
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36278202"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50089398"
 ---
-# <a name="authorize-with-a-specific-scheme-in-aspnet-core"></a>ASP.NET Core에서 특정 스키마를 가진 권한 부여
+# <a name="authorize-with-a-specific-scheme-in-aspnet-core"></a>ASP.NET Core에서 특정 구성표로 권한 부여
 
-단일 페이지 응용 프로그램 (SPAs)와 같은 일부 시나리오에서는 일반적으로 여러 인증 방법을 사용 하는 합니다. 예를 들어 응용 프로그램 JavaScript 요청에 대 한 로그인 쿠키 기반 인증 및 JWT 전달자 인증 사용할 수 있습니다. 경우에 따라 응용 프로그램 인증 처리기를 여러 개 있을 수 있습니다. 예를 들어 기본적인 id를 포함 한 두 명의 쿠키 처리기와 multi-factor authentication (MFA)가 트리거되면 생성 됩니다. 사용자 추가 보안을 필요로 하는 작업을 요청 했으므로 MFA 트리거될 수 있습니다.
+이 단일 페이지 응용 프로그램 (Spa) 등의 일부 시나리오에서 여러 인증 방법을 일반적입니다. 예를 들어, 앱 JavaScript 요청에 대 한 JWT 전달자 인증 및 쿠키 기반 인증 로그인을 사용할 수 있습니다. 경우에 따라 앱에 인증 처리기를 여러 개 있을 수 있습니다. 예를 들어 있는 기본 id를 포함 하는 두 명의 쿠키 처리기와 multi-factor authentication (MFA)가 트리거되면 생성 됩니다. MFA는 사용자 추가 보안이 필요한 작업을 요청 하기 때문에 트리거될 수 있습니다.
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
-인증 서비스를 인증 하는 동안 구성할 때 인증 체계 라고 합니다. 예를 들어:
+인증 체계를 인증 하는 동안 인증 서비스를 구성할 때 지정 됩니다. 예를 들어:
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
@@ -36,14 +36,14 @@ public void ConfigureServices(IServiceCollection services)
         });
 ```
 
-위의 코드에서는 두 가지 인증 처리기 추가 되었습니다: 쿠키와 전달자에 대 한 합니다.
+위의 코드에서 두 명의 인증 처리기 추가 되었습니다: 쿠키 및 전달자에 대 한 하나입니다.
 
 >[!NOTE]
->기본 스키마를 지정 하면는 `HttpContext.User` 속성이 해당 id로 설정 되 고 있습니다. 해당 동작이 필요 없는 경우 매개 변수가 없는 형식으로 호출 하 여 비활성화 `AddAuthentication`합니다.
+>기본 스키마를 지정 하면를 `HttpContext.User` 해당 id로 설정 되는 속성입니다. 해당 동작은 필요 하지 않지만, 하는 경우 매개 변수가 없는 형태로 호출 하 여 해제 `AddAuthentication`합니다.
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
-인증 체계는 인증 middlewares 인증 하는 동안 구성 된 경우 이름이 지정 됩니다. 예를 들어:
+인증 체계에는 인증 미들웨어가 인증 하는 동안 구성 된 경우 이름이 지정 됩니다. 예를 들어:
 
 ```csharp
 public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
@@ -68,16 +68,16 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerF
     });
 ```
 
-위의 코드에서는 두 가지 인증 middlewares 추가 되었습니다: 쿠키와 전달자에 대 한 합니다.
+위의 코드에서 인증 미들웨어 두 개 추가 되었습니다: 쿠키 및 전달자에 대 한 하나입니다.
 
 >[!NOTE]
->기본 스키마를 지정 하면는 `HttpContext.User` 속성이 해당 id로 설정 되 고 있습니다. 해당 동작이 필요 없는 경우 설정 하 여 비활성화 된 `AuthenticationOptions.AutomaticAuthenticate` 속성을 `false`합니다.
+>기본 스키마를 지정 하면를 `HttpContext.User` 해당 id로 설정 되는 속성입니다. 해당 동작은 필요 하지 않지만, 하는 경우 사용 하지 않도록 설정 하 여 합니다 `AuthenticationOptions.AutomaticAuthenticate` 속성을 `false`입니다.
 
 ---
 
-## <a name="selecting-the-scheme-with-the-authorize-attribute"></a>권한 부여 특성을 가진 구성표 선택
+## <a name="selecting-the-scheme-with-the-authorize-attribute"></a>Authorize 특성을 사용 하 여 스키마를 선택합니다.
 
-권한 부여, 지점에서 응용 프로그램에 사용할 처리기를 나타냅니다. 응용 프로그램에 인증 체계의 쉼표로 구분 된 목록을 전달 하 여 승인 된 처리기를 선택 `[Authorize]`합니다. `[Authorize]` 특성 인증 체계 또는 기본 구성 되어 있는지 여부에 관계 없이 사용 하는 구성표를 지정 합니다. 예를 들어:
+권한 부여 시점에서 앱에 사용할 처리기를 나타냅니다. 처리기는 앱의 인증 체계를 쉼표로 구분 된 목록을 전달 하 여 권한이 부여 됩니다 선택 `[Authorize]`합니다. `[Authorize]` 특성이 인증 체계 또는 기본값 구성 되어 있는지 여부에 관계 없이 사용할 체계를 지정 합니다. 예를 들어:
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
@@ -107,7 +107,7 @@ public class MixedController : Controller
 
 ---
 
-앞의 예에서 쿠키와 전달자 처리기 실행 하 고는 기회를 만들고 현재 사용자에 대 한 id를 추가 합니다. 단일 구성표를 지정 하 여 해당 처리기를 실행 합니다.
+앞의 예제에서 쿠키와 전달자 처리기 실행 되며를 만들고 현재 사용자에 대 한 id를 추가할 수 있는 기회를 갖습니다. 만 단일 구성표를 지정 하 여 해당 처리기를 실행 합니다.
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
@@ -127,11 +127,11 @@ public class MixedController : Controller
 
 ---
 
-위의 코드에서 "Bearer" 체계로 처리기만 실행 됩니다. 모든 쿠키 기반 id는 무시 됩니다.
+위의 코드에서 "Bearer" 체계를 사용 하 여 처리기만 실행 됩니다. 쿠키 기반 id는 무시 됩니다.
 
-## <a name="selecting-the-scheme-with-policies"></a>정책 사용 하 여 구성표 선택
+## <a name="selecting-the-scheme-with-policies"></a>정책 사용 하 여 스키마를 선택합니다.
 
-원하는 체계를 지정 하려는 경우 [정책](xref:security/authorization/policies)를 설정할 수 있습니다는 `AuthenticationSchemes` 정책에 추가할 때 컬렉션:
+원하는 스키마를 지정 하려는 경우 [정책](xref:security/authorization/policies)를 설정할 수 있습니다는 `AuthenticationSchemes` 컬렉션 정책을 추가 하는 경우:
 
 ```csharp
 services.AddAuthorization(options =>
@@ -145,9 +145,62 @@ services.AddAuthorization(options =>
 });
 ```
 
-위의 예제에서는 "Over18" 정책 "Bearer" 처리기에 의해 생성 된 id에 대해만 실행 됩니다. 설정 하 여 정책을 사용 하 여는 `[Authorize]` 특성의 `Policy` 속성:
+앞의 예제에서 "Over18" 정책 "Bearer" 처리기에 의해 생성 된 id에 대해 에서만 실행 됩니다. 정책을 설정 하 여 사용 합니다 `[Authorize]` 특성의 `Policy` 속성:
 
 ```csharp
 [Authorize(Policy = "Over18")]
 public class RegistrationController : Controller
 ```
+
+::: moniker range=">= aspnetcore-2.0"
+
+## <a name="use-multiple-authentication-schemes"></a>여러 인증 체계를 사용 합니다.
+
+일부 앱은 여러 유형의 인증을 지원 해야 합니다. 예를 들어 앱 사용자 데이터베이스 뿐만 아니라 Azure Active Directory에서 사용자를 인증할 수 있습니다. 또 다른 예로 Active Directory Federation Services와 Azure Active Directory B2C에서 사용자를 인증 하는 앱입니다. 이 경우 앱에서 여러 발급자 JWT 전달자 토큰을 수락 해야 합니다.
+
+적용 하려는 모든 인증 체계를 추가 합니다. 다음 코드 예를 들어 `Startup.ConfigureServices` 다른 발급자를 사용 하 여 두 JWT 전달자 인증 체계를 추가 합니다.
+
+```csharp
+public void ConfigureServices(IServiceCollection services)
+{
+    // Code omitted for brevity
+
+    services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+        .AddJwtBearer(options =>
+        {
+            options.Audience = "https://localhost:5000/";
+            options.Authority = "https://localhost:5000/identity/";
+        })
+        .AddJwtBearer("AzureAD", options =>
+        {
+            options.Audience = "https://localhost:5000/";
+            options.Authority = "https://login.microsoftonline.com/eb971100-6f99-4bdc-8611-1bc8edd7f436/";
+        });
+}
+```
+
+> [!NOTE]
+> 기본 인증 체계를 사용 하 여 JWT 전달자 인증을 하나만 등록 `JwtBearerDefaults.AuthenticationScheme`합니다. 추가 인증 고유 인증 체계를 사용 하 여 등록 해야 합니다.
+
+다음 단계는 모두 인증 체계를 적용 하는 기본 권한 부여 정책을 업데이트 하는 것입니다. 예를 들어:
+
+```csharp
+public void ConfigureServices(IServiceCollection services)
+{
+    // Code omitted for brevity
+
+    services.AddAuthorization(options =>
+    {
+        var defaultAuthorizationPolicyBuilder = new AuthorizationPolicyBuilder(
+            JwtBearerDefaults.AuthenticationScheme,
+            "AzureAD");
+        defaultAuthorizationPolicyBuilder = 
+            defaultAuthorizationPolicyBuilder.RequireAuthenticatedUser();
+        options.DefaultPolicy = defaultAuthorizationPolicyBuilder.Build();
+    });
+}
+```
+
+간단한을 사용할 수는 기본 권한 부여 정책 재정의 `[Authorize]` 컨트롤러의 특성입니다. 컨트롤러는 다음 첫 번째 또는 두 번째 발급자가 발급 한 JWT를 사용 하 여 요청을 수락 합니다.
+
+::: moniker-end
