@@ -7,12 +7,12 @@ ms.author: mimengis
 ms.custom: mvc
 ms.date: 10/18/2018
 uid: signalr/java-client
-ms.openlocfilehash: 77ea338f08b1986e69ba8ef1578c4cfe01a310de
-ms.sourcegitcommit: ce6b6792c650708e92cdea051a5d166c0708c7c0
+ms.openlocfilehash: 3d2cfe5f58cc41741512c68cebbbc90e8f714cba
+ms.sourcegitcommit: 54655f1e1abf0b64d19506334d94cfdb0caf55f6
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "49652308"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "50148787"
 ---
 # <a name="aspnet-core-signalr-java-client"></a>ASP.NET Core SignalR Java 클라이언트
 
@@ -22,7 +22,7 @@ Java 클라이언트 Android 앱을 포함 하 여 Java 코드에서 ASP.NET Cor
 
 이 문서에에서 나와 있는 샘플 Java 콘솔 앱 SignalR Java 클라이언트를 사용 합니다.
 
-[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/signalr/java-client/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/signalr/java-client/sample) ([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
 
 ## <a name="install-the-signalr-java-client-package"></a>SignalR Java 클라이언트 패키지를 설치 합니다.
 
@@ -39,19 +39,19 @@ Maven을 사용 하 여 내에 다음 줄을 추가 합니다 `<dependencies>` �
 
 [!code-xml[pom.xml dependency element](java-client/sample/pom.xml?name=snippet_dependencyElement)]
 
-## <a name="connect-to-a-hub"></a>허브에 연결
+## <a name="connect-to-a-hub"></a>허브에 연결하기
 
-설정 하는 `HubConnection`, `HubConnectionBuilder` 사용 해야 합니다. 허브 URL 및 로그 수준에 대 한 연결을 구축 하는 동안 구성할 수 있습니다. 중 하나를 호출 하 여 필요한 모든 옵션을 구성 합니다 `HubConnectionBuilder` 하기 전에 메서드 `build`합니다. 사용 하 여 연결을 시작할 `start`합니다.
+설정 하는 `HubConnection`, `HubConnectionBuilder` 사용 해야 합니다. 허브 URL 및 로그 수준에 대 한 연결을 구축 하는 동안 구성할 수 있습니다. 중 하나를 호출 하 여 필요한 모든 옵션을 구성 합니다 `HubConnectionBuilder` 하기 전에 메서드 `build`합니다. `start`를 사용하여 연결을 시작합니다.
 
 [!code-java[Build hub connection](java-client/sample/src/main/java/Chat.java?range=16-17)]
 
-## <a name="call-hub-methods-from-client"></a>클라이언트에서 허브 메서드를 호출 합니다.
+## <a name="call-hub-methods-from-client"></a>클라이언트에서 허브 메서드 호출하기
 
-에 대 한 호출 `send` 허브 메서드를 호출 합니다. 허브 메서드 이름 및 허브 메서드를 정의 하는 모든 인수를 전달 `send`합니다.
+에 대 한 호출 `send` 허브 메서드를 호출 합니다. 허브 메서드의 이름과 허브 메서드에 정의된 모든 인수를 `send`에 전달합니다.
 
 [!code-java[send method](java-client/sample/src/main/java/Chat.java?range=28)]
 
-## <a name="call-client-methods-from-hub"></a>허브에서 클라이언트 메서드를 호출
+## <a name="call-client-methods-from-hub"></a>허브에서 클라이언트 메서드 호출하기
 
 사용 하 여 `hubConnection.on` 허브를 호출할 수 있는 클라이언트에서 메서드를 정의 합니다. 빌드 후 있지만 연결을 시작 하기 전에 메서드를 정의 합니다.
 
@@ -85,7 +85,7 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 
 ## <a name="additional-resources"></a>추가 자료
 
-* [Java API 참조](/java/api/com.microsoft.aspnet.signalr?view=aspnet-signalr-java)
+* [Java API 참조](/java/api/com.microsoft.signalr?view=aspnet-signalr-java)
 * <xref:signalr/hubs>
 * <xref:signalr/javascript-client>
 * <xref:signalr/publish-to-azure-web-app>

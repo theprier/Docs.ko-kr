@@ -7,12 +7,12 @@ ms.author: riande
 ms.date: 10/29/2018
 ms.technology: aspnet
 msc.type: content
-ms.openlocfilehash: d5a3916c3df9778d14be80342bafbc3456a69a03
-ms.sourcegitcommit: f2d14a7518d6ee51aca9333818ac1276e7b5ecef
+ms.openlocfilehash: 4dcc62573fad13ec8b37b2c59e884eec7ca80b92
+ms.sourcegitcommit: 54655f1e1abf0b64d19506334d94cfdb0caf55f6
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 10/26/2018
-ms.locfileid: "50134537"
+ms.locfileid: "50148839"
 ---
 # <a name="configuration-builders-for-aspnet"></a>ASP.NET에 대 한 구성 작성기
 
@@ -29,7 +29,7 @@ ms.locfileid: "50134537"
 
 ## <a name="keyvalue-configuration-builders"></a>키/값 구성 작성기
 
-구성 작성기에 의해 처리 될 수 있는 일반적인 시나리오는 키/값 패턴을 따르는 구성 섹션에 대 한 기본 키/값 대체 메커니즘을 제공 하는 것입니다. .NET Framework에 대 한 개념이 ConfigurationBuilders 특정 구성 섹션 또는 패턴으로 제한 됩니다. 그러나 구성 작성기에 많은 `Microsoft.Configuration.ConfigurationBuilders` ([github](https://github.com/aspnet/MicrosoftConfigurationBuilders)), [NuGet](https://www.nuget.org/packages?q=Microsoft.Configuration.ConfigurationBuilders) 키/쌍 패턴 내에서 작동 합니다.
+구성 작성기에 의해 처리 될 수 있는 일반적인 시나리오는 키/값 패턴을 따르는 구성 섹션에 대 한 기본 키/값 대체 메커니즘을 제공 하는 것입니다. .NET Framework에 대 한 개념이 ConfigurationBuilders 특정 구성 섹션 또는 패턴으로 제한 됩니다. 그러나 구성 작성기에 많은 `Microsoft.Configuration.ConfigurationBuilders` ([github](https://github.com/aspnet/MicrosoftConfigurationBuilders)합니다 [NuGet](https://www.nuget.org/packages?q=Microsoft.Configuration.ConfigurationBuilders)) 키/쌍 패턴 내에서 작동 합니다.
 
 ## <a name="keyvalue-configuration-builders-settings"></a>키/값 구성 작성기 설정
 
