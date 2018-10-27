@@ -5,12 +5,12 @@ description: 기존 ASP.NET MVC 또는 Web API 앱을 ASP.NET Core.web으로 마
 ms.author: scaddie
 ms.date: 08/27/2017
 uid: migration/proper-to-2x/index
-ms.openlocfilehash: 85f8ca30d4885476dea2da13c241483fc074c4b7
-ms.sourcegitcommit: a742b55e4b8276a48b8b4394784554fecd883c84
+ms.openlocfilehash: 1a3e3f0b514c262cfe13ea8391ab97b95aa4384e
+ms.sourcegitcommit: 54655f1e1abf0b64d19506334d94cfdb0caf55f6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45538468"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "50148800"
 ---
 # <a name="migrate-from-aspnet-to-aspnet-core"></a>ASP.NET에서 ASP.NET Core로 마이그레이션
 
@@ -32,7 +32,7 @@ ASP.NET Core 프로젝트를 사용하면 개발자가 유연하게 .NET Core, .
 
 ```xml
 <ItemGroup>
-  <PackageReference Include="Microsoft.AspNetCore.All" Version="2.1.4" />
+  <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.9" />
 </ItemGroup>
 ```
 
