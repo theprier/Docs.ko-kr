@@ -3,14 +3,15 @@ title: ASP.NET Core에서 필터링
 author: ardalis
 description: 필터 작동 방법 및 ASP.NET Core MVC에서 사용하는 방법을 자세히 알아봅니다.
 ms.author: riande
-ms.date: 08/15/2018
+ms.custom: mvc
+ms.date: 10/15/2018
 uid: mvc/controllers/filters
-ms.openlocfilehash: e20d934a17337d404249220d703ac4bb7164dfa6
-ms.sourcegitcommit: 9bdba90b2c97a4016188434657194b2d7027d6e3
+ms.openlocfilehash: 6803e8e3a285716792427e9fb059c204f5a88ecb
+ms.sourcegitcommit: f43f430a166a7ec137fcad12ded0372747227498
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47402161"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49391312"
 ---
 # <a name="filters-in-aspnet-core"></a>ASP.NET Core에서 필터링
 
@@ -204,13 +205,15 @@ ASP.NET Core MVC에서 *필터*를 사용하면 요청 처리 파이프라인의
 
 ### <a name="servicefilterattribute"></a>ServiceFilterAttribute
 
-`ServiceFilter`는 DI에서 필터의 인스턴스를 검색합니다. 필터를 `ConfigureServices`의 컨테이너에 추가하고, `ServiceFilter` 특성에서 참조합니다.
+서비스 필터 구현 형식은 DI에 등록됩니다. `ServiceFilterAttribute`는 DI에서 필터의 인스턴스를 검색합니다. `ServiceFilterAttribute`를 `Startup.ConfigureServices`의 컨테이너에 추가하고, `[ServiceFilter]` 특성에서 참조합니다.
 
 [!code-csharp[](./filters/sample/src/FiltersSample/Startup.cs?name=snippet_ConfigureServices&highlight=11)]
 
 [!code-csharp[](../../mvc/controllers/filters/sample/src/FiltersSample/Controllers/HomeController.cs?name=snippet_ServiceFilter&highlight=1)]
 
-필터 형식을 등록하지 않고 `ServiceFilter`를 사용하여 예외를 발생시킵니다.
+`ServiceFilterAttribute`를 사용 중인 경우 `IsReusable`을 설정하면 필터 인스턴스가 원래 생성된 요청 범위 외부에서 재사용될 가능성이 *있음*을 암시하는 것입니다. 프레임워크는 단일 필터 인스턴스가 생성되거나, 나중에 DI 컨테이너에서 필터가 다시 요청되지 않도록 보장하지 않습니다. 싱글톤이 아닌 수명이 지정된 서비스에 의존하는 필터를 사용할 때는 `IsReusable`을 사용하지 마세요.
+
+필터 형식을 등록하지 않고 `ServiceFilterAttribute`를 사용하여 예외를 발생시킵니다.
 
 ```
 System.InvalidOperationException: No service for type
@@ -226,7 +229,9 @@ System.InvalidOperationException: No service for type
 이 차이 때문에:
 
 * `TypeFilterAttribute`을 사용하여 참조되는 형식은 먼저 컨테이너를 사용하여 등록할 필요가 없습니다.  컨테이너에서 충족하는 종속성을 갖고 있습니다. 
-* `TypeFilterAttribute`는 형식에 대한 생성자 인수를 필요에 따라 허용할 수 있습니다. 
+* `TypeFilterAttribute`는 형식에 대한 생성자 인수를 필요에 따라 허용할 수 있습니다.
+
+`TypeFilterAttribute`를 사용 중인 경우 `IsReusable`을 설정하면 필터 인스턴스가 원래 생성된 요청 범위 외부에서 재사용될 가능성이 *있음*을 암시하는 것입니다. 프레임워크는 단일 필터 인스턴스가 생성되도록 보장하지 않습니다. 싱글톤이 아닌 수명이 지정된 서비스에 의존하는 필터를 사용할 때는 `IsReusable`을 사용하지 마세요.
 
 다음 예제에서는 `TypeFilterAttribute`를 사용하여 인수를 형식에 전달하는 방법을 보여줍니다.
 

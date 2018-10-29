@@ -5,12 +5,12 @@ description: 이 자습서에서는 더 많은 엔터티 및 관계를 추가하
 ms.author: riande
 ms.date: 6/31/2017
 uid: data/ef-rp/complex-data-model
-ms.openlocfilehash: 88d727b0545f1dacb56ea889e45b02f947867b19
-ms.sourcegitcommit: 6425baa92cec4537368705f8d27f3d0e958e43cd
+ms.openlocfilehash: b81918cbd74200f0672f3002f916523fb4a9a914
+ms.sourcegitcommit: f5d403004f3550e8c46585fdbb16c49e75f495f3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/24/2018
-ms.locfileid: "39220601"
+ms.lasthandoff: 10/20/2018
+ms.locfileid: "49477659"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---data-model---5-of-8"></a>ASP.NET Core에서 EF Core를 사용한 Razor 페이지 - 데이터 모델 - 5/8
 
@@ -432,7 +432,7 @@ public Student Student { get; set; }
 
 `Student` 및 `Course` 엔터티 사이에 다대다 관계가 있습니다. `Enrollment` 엔터티는 데이터베이스에서 *페이로드를 사용하여* 다대다 조인 테이블로 작동합니다. "페이로드 사용"은 `Enrollment` 테이블이 조인된 테이블에 대한 FK 외에도 추가 데이터를 포함하는 것을 의미합니다(이 경우 PK 및 `Grade`).
 
-다음 그림은 이러한 관계 모양을 엔터티 다이어그램으로 보여 줍니다. (이 다이어그램은 EF 6.x에 대한 EF Power Tools를 사용하여 생성되었습니다. 다이어그램 만들기는 자습서의 일부가 아닙니다.)
+다음 그림은 이러한 관계 모양을 엔터티 다이어그램으로 보여 줍니다. (이 다이어그램은 EF 6.x에 대한 [EF Power Tools](https://marketplace.visualstudio.com/items?itemName=ErikEJ.EntityFramework6PowerToolsCommunityEdition)를 사용하여 생성되었습니다. 다이어그램 만들기는 자습서의 일부가 아닙니다.)
 
 ![학생-강좌 다대다 관계](complex-data-model/_static/student-course.png)
 
@@ -574,9 +574,15 @@ The ALTER TABLE statement conflicted with the FOREIGN KEY constraint "FK_dbo.Cou
 database "ContosoUniversity", table "dbo.Department", column 'DepartmentID'.
 ```
 
-마이그레이션이 기존 데이터로 실행될 때 기존 데이터로 충족되지 않는 FK 제약 조건이 있을 수 있습니다. 이 자습서의 경우 새 DB가 만들어지므로 FK 제약 조건 위반이 없습니다. 현재 DB에서 FK 위반을 수정하는 방법에 대한 지침은 [레거시 데이터로 외래 키 제약 조건 수정](#fk)을 참조하세요.
+## <a name="apply-the-migration"></a>마이그레이션 적용
 
-### <a name="drop-and-update-the-database"></a>데이터베이스 삭제 및 업데이트
+기존 데이터베이스가 있으므로 향후 변경 내용을 적용하는 방법을 고려해야 합니다. 이 자습서에서는 두 가지 방법을 보여 줍니다.
+* [데이터베이스를 삭제하고 다시 만들기](#drop)
+* [기존 데이터베이스에 마이그레이션 적용](#applyexisting). 이 방법은 더 복잡하고 시간이 오래 걸리지만 실제 프로덕션 환경에 권장되는 방법입니다. **참고**: 이는 자습서의 선택적 섹션입니다. 삭제하고 다시 만들기 단계를 수행하고 이 섹션을 건너뛸 수 있습니다. 이 섹션의 단계를 수행하지 않으려면 삭제하고 다시 만들기 단계를 수행하지 마세요. 
+
+<a name="drop"></a>
+
+### <a name="drop-and-re-create-the-database"></a>데이터베이스를 삭제하고 다시 만들기
 
 업데이트된 `DbInitializer`의 코드는 새 엔터티에 대한 시드 데이터를 추가합니다. EF Core가 새로운 DB를 만들도록 강제하려면 DB를 삭제하고 업데이트합니다.
 
@@ -620,11 +626,11 @@ SSOX에서 DB를 엽니다.
 
 ![SSOX의 CourseAssignment 데이터](complex-data-model/_static/ssox-ci-data.png)
 
-<a name="fk"></a>
+<a name="applyexisting"></a>
 
-## <a name="fixing-foreign-key-constraints-with-legacy-data"></a>레거시 데이터가 있는 외래 키 제약 조건 수정
+### <a name="apply-the-migration-to-the-existing-database"></a>기존 데이터베이스에 마이그레이션 적용
 
-이 섹션은 선택 사항입니다.
+이 섹션은 선택 사항입니다. 이러한 단계는 이전의 [데이터베이스를 삭제하고 다시 만들기](#drop) 섹션을 건너뛴 경우에만 적용됩니다.
 
 마이그레이션이 기존 데이터로 실행될 때 기존 데이터로 충족되지 않는 FK 제약 조건이 있을 수 있습니다. 프로덕션 데이터와 함께 기존 데이터를 마이그레이션하도록 단계를 수행해야 합니다. 이 섹션에서는 FK 제약 조건 위반을 수정하는 예제를 제공합니다. 백업 없이 이러한 코드 변경을 만들지 마십시오. 이전 섹션을 완료하고 데이터베이스를 업데이트한 경우 이러한 코드 변경을 만들지 마십시오.
 
@@ -639,7 +645,7 @@ SSOX에서 DB를 엽니다.
 * 새 열(`DepartmentID`)에 기본값을 제공하도록 코드를 변경합니다.
 * 기본 부서로 작동하도록 "Temp"라는 가짜 부서를 만듭니다.
 
-### <a name="fix-the-foreign-key-constraints"></a>외래 키 제약 조건 수정
+#### <a name="fix-the-foreign-key-constraints"></a>외래 키 제약 조건 수정
 
 `ComplexDataModel` 클래스 `Up` 메서드를 업데이트합니다.
 

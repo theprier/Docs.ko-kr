@@ -6,12 +6,12 @@ ms.author: scaddie
 ms.custom: mvc
 ms.date: 08/15/2018
 uid: web-api/index
-ms.openlocfilehash: d410f28ff7fda3bf33f73c06b3e626dfd4ee7dd8
-ms.sourcegitcommit: 5a2456cbf429069dc48aaa2823cde14100e4c438
+ms.openlocfilehash: 763b95fb8ed3806bc67b7ad199153ea1027efa57
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "41822142"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090422"
 ---
 # <a name="build-web-apis-with-aspnet-core"></a>ASP.NET Core에서 Web API 빌드
 
@@ -47,7 +47,7 @@ ASP.NET Core 2.1에서는 Web API 컨트롤러 클래스를 나타내는 [[ApiCo
 
 [!code-csharp[](../web-api/define-controller/samples/WebApiSample.Api/Controllers/ProductsController.cs?name=snippet_ControllerSignature&highlight=2)]
 
-<xref:Microsoft.Extensions.DependencyInjection.MvcCoreMvcBuilderExtensions.SetCompatibilityVersion*>을 통해 설정된 호환성 버전 2.1 이상은 이 특성을 사용해야 합니다. 예를 들어 *Startup.ConfigureServices*에서 강조 표시된 코드는 2.1 호환성 플래그를 설정합니다.
+<xref:Microsoft.Extensions.DependencyInjection.MvcCoreMvcBuilderExtensions.SetCompatibilityVersion*>을 통해 설정된 호환성 버전 2.1 이상은 이 특성을 사용해야 합니다. 예를 들어 *Startup.ConfigureServices*에서 강조 표시된 코드는 2.2 호환성 플래그를 설정합니다.
 
 [!code-csharp[](../web-api/define-controller/samples/WebApiSample.Api/Startup.cs?name=snippet_SetCompatibilityVersion&highlight=2)]
 
@@ -61,15 +61,46 @@ ASP.NET Core 2.1에서는 Web API 컨트롤러 클래스를 나타내는 [[ApiCo
 
 다음 섹션에서는 특성으로 추가된 편리한 기능을 설명합니다.
 
+### <a name="problem-details-responses-for-error-status-codes"></a>오류 상태 코드에 대한 문제 세부 정보 응답
+
+ASP.NET Core 2.1 이상에서는 [RFC 7807 사양](https://tools.ietf.org/html/rfc7807)을 기반으로 하는 형식인 [ProblemDetails](xref:Microsoft.AspNetCore.Mvc.ProblemDetails)가 포함되어 있습니다. `ProblemDetails` 유형은 HTTP 응답에서 읽기 쉬운 오류 세부 정보를 머신에 전달하기 위한 표준화된 형식을 제공합니다.
+
+ASP.NET Core 2.2 이상에서는 MVC가 오류 상태 코드 결과(상태 코드 400 이상)를 `ProblemDetails`의 결과로 변환합니다. 다음 코드를 살펴보세요.
+
+[!code-csharp[](../web-api/define-controller/samples/WebApiSample.Api/Controllers/PetsController.cs?name=snippet_ProblemDetails_StatusCode&highlight=4)]
+
+`NotFound` 결과에 대한 HTTP 응답에는 다음과 유사한 `ProblemDetails` 본문이 있는 404 상태 코드가 있습니다.
+
+```js
+{
+    type: "https://tools.ietf.org/html/rfc7231#section-6.5.4",
+    title: "Not Found",
+    status: 404,
+    traceId: "0HLHLV31KRN83:00000001"
+}
+```
+
+문제 세부 정보 기능을 사용하려면 2.2 이상의 호환성 플래그가 필요합니다. [SuppressMapClientErrors](/dotnet/api/microsoft.aspnetcore.Mvc.ApiBehaviorOptions) <!--  Until these resolve, link to the parent class <xref:Microsoft.AspNetCore.Mvc.ApiBehaviorOptions.SuppressMapClientErrors> -->속성이 `true`로 설정된 경우 기본 동작이 사용되지 않습니다. `Startup.ConfigureServices`에서 강조 표시된 다음 코드는 문제 세부 정보를 사용하지 않도록 설정합니다.
+
+[!code-csharp[](../web-api/define-controller/samples/WebApiSample.Api/Startup.cs?name=snippet_SetCompatibilityVersion&highlight=8)]
+
+[ClientErrorMapping](/dotnet/api/microsoft.aspnetcore.Mvc.ApiBehaviorOptions) <!--  Until these resolve, link to the parent class <xref:Microsoft.AspNetCore.Mvc.ApiBehaviorOptions.ClientErrorMapping> --> 속성을 사용하여 `ProblemDetails` 응답의 내용을 구성합니다. 예를 들어 다음 코드는 404 응답에 대해 `type` 속성을 업데이트합니다.
+
+[!code-csharp[](../web-api/define-controller/samples/WebApiSample.Api/Startup.cs?name=snippet_SetCompatibilityVersion&highlight=10)]
+
 ### <a name="automatic-http-400-responses"></a>자동 HTTP 400 응답
 
 유효성 검사 오류 시 HTTP 400 응답이 자동으로 트리거됩니다. 다음 코드는 실제 작업 시 불필요하게 됩니다.
 
 [!code-csharp[](../web-api/define-controller/samples/WebApiSample.Api.Pre21/Controllers/PetsController.cs?name=snippet_ModelStateIsValidCheck)]
 
+<xref:Microsoft.AspNetCore.Mvc.ApiBehaviorOptions.InvalidModelStateResponseFactory>를 사용하여 결과 응답의 출력을 사용자 지정합니다.
+
 <xref:Microsoft.AspNetCore.Mvc.ApiBehaviorOptions.SuppressModelStateInvalidFilter> 속성이 `true`로 설정된 경우 기본 동작이 사용되지 않습니다. `services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);` 뒤에 *Startup.ConfigureServices*에서 다음 코드를 추가합니다.
 
 [!code-csharp[](../web-api/define-controller/samples/WebApiSample.Api/Startup.cs?name=snippet_ConfigureApiBehaviorOptions&highlight=5)]
+
+호환성 플래그가 2.2 이상이면 400 응답에 대해 반환되는 기본 응답 형식은 <xref:Microsoft.AspNetCore.Mvc.ValidationProblemDetails>입니다. [SuppressUseValidationProblemDetailsForInvalidModelStateResponses](/dotnet/api/microsoft.aspnetcore.Mvc.ApiBehaviorOptions) <!--  <xref:Microsoft.AspNetCore.Mvc.ApiBehaviorOptions.SuppressUseValidationProblemDetailsForInvalidModelStateResponses> --> 속성을 사용하여 ASP.NET Core 2.1 오류 형식을 사용합니다.
 
 ### <a name="binding-source-parameter-inference"></a>바인딩 소스 매개 변수 유추
 

@@ -33,7 +33,8 @@
 
    * 영화 목록
    * 장르 목록을 포함한 `SelectList` 이를 통해 사용자는 목록에서 장르를 선택할 수 있습니다.
-   * 선택한 장르가 포함된 `movieGenre`
+   * 선택한 장르가 포함된 `MovieGenre`
+   * 사용자가 검색 텍스트 상자에 입력한 텍스트가 포함된 `SearchString`.
 
 `MoviesController.cs`에서 `Index` 메서드를 다음 코드로 바꿉니다.
 
@@ -45,9 +46,11 @@
 
 특정 장르를 프로젝트하여 장르의 `SelectList`를 생성합니다(선택 목록에 중복 장르가 없도록 함).
 
+사용자가 항목을 검색하면 검색 상자에 검색 값이 유지됩니다. 검색 값을 유지하려면 검색 값에 `SearchString` 속성을 채우세요. 검색 값은 `Index` 컨트롤러 작업의 `searchString` 매개 변수입니다.
+
 ```csharp
 movieGenreVM.genres = new SelectList(await genreQuery.Distinct().ToListAsync())
-   ```
+```
 
 ## <a name="adding-search-by-genre-to-the-index-view"></a>인덱스 보기에 장르별 검색 추가
 
@@ -57,8 +60,8 @@ movieGenreVM.genres = new SelectList(await genreQuery.Distinct().ToListAsync())
 
 다음 HTML 도우미에서 사용되는 람다 식을 살펴봅니다.
 
-`@Html.DisplayNameFor(model => model.movies[0].Title)`
+`@Html.DisplayNameFor(model => model.Movies[0].Title)`
  
-이전 코드에서 `DisplayNameFor` HTML 도우미는 람다 식에서 참조되는 `Title` 속성을 검사하여 표시 이름을 확인합니다. 람다 식을 평가하지 않고 검사하기 때문에 `model`, `model.movies` 또는 `model.movies[0]`가 `null`이거나 비어 있을 경우 액세스 위반을 수신하지 않습니다. 람다 식이 계산될 경우(예: `@Html.DisplayFor(modelItem => item.Title)`) 모델의 속성 값이 계산됩니다.
+이전 코드에서 `DisplayNameFor` HTML 도우미는 람다 식에서 참조되는 `Title` 속성을 검사하여 표시 이름을 확인합니다. 람다 식을 평가하지 않고 검사하기 때문에 `model`, `model.Movies` 또는 `model.Movies[0]`가 `null`이거나 비어 있을 경우 액세스 위반을 수신하지 않습니다. 람다 식이 계산될 경우(예: `@Html.DisplayFor(modelItem => item.Title)`) 모델의 속성 값이 계산됩니다.
 
 장르별, 영화 제목별 및 둘 다로 검색하여 앱을 테스트합니다.

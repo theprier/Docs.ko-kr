@@ -4,14 +4,14 @@ author: guardrex
 description: 앱 시작 및 수명 관리를 담당하는 ASP.NET Core에서의 웹 호스트에 대해 알아봅니다.
 ms.author: riande
 ms.custom: mvc
-ms.date: 09/01/2018
+ms.date: 10/18/2018
 uid: fundamentals/host/web-host
-ms.openlocfilehash: 7440ab26534840b190a346614f645860fc2b7d78
-ms.sourcegitcommit: 7211ae2dd702f67d36365831c490d6178c9a46c8
+ms.openlocfilehash: e19f12f69dfdd5653aea9c6be2b05f24009b875e
+ms.sourcegitcommit: f5d403004f3550e8c46585fdbb16c49e75f495f3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44089901"
+ms.lasthandoff: 10/20/2018
+ms.locfileid: "49477451"
 ---
 # <a name="aspnet-core-web-host"></a>ASP.NET Core 웹 호스트
 
@@ -46,10 +46,10 @@ public class Program
 * 다음에서 [호스트 구성](#host-configuration-values)을 로드합니다.
   * 접두사가 `ASPNETCORE_`인 환경 변수(예: `ASPNETCORE_ENVIRONMENT`)입니다.
   * 명령줄 인수.
-* 다음에서 앱 구성을 로드합니다.
+* 다음 순서대로 앱 구성을 로드합니다.
   * *appsettings.json*.
   * *appsettings.{Environment}.json*.
-  * 앱이 항목 어셈블리를 사용하여 `Development` 환경에서 실행되는 경우 [사용자 암호](xref:security/app-secrets)입니다.
+  * 앱이 항목 어셈블리를 사용하여 `Development` 환경에서 실행되는 경우 [Secret Manager](xref:security/app-secrets)입니다.
   * 환경 변수.
   * 명령줄 인수.
 * 콘솔 및 디버그 출력에 대한 [로깅](xref:fundamentals/logging/index)을 구성합니다. 로깅은 *appsettings.json* 또는 *appsettings.{Environment}.json* 파일의 로깅 구성 섹션에 지정된 [로그 필터링](xref:fundamentals/logging/index#log-filtering) 규칙을 포함합니다.
@@ -184,7 +184,7 @@ host.Run();
 **형식**: *string*  
 **기본값**: 앱의 진입점을 포함하는 어셈블리의 이름입니다.  
 **설정 방법**: `UseSetting`  
-**환경 변수**: `ASPNETCORE_APPLICATIONKEY`
+**환경 변수**: `ASPNETCORE_APPLICATIONNAME`
 
 ::: moniker range=">= aspnetcore-2.1"
 
@@ -365,15 +365,13 @@ WebHost.CreateDefaultBuilder(args)
 
 ### <a name="hosting-startup-exclude-assemblies"></a>호스팅 시작 어셈블리 제외
 
-설명
+시작 시 제외할 호스팅 시작 어셈블리의 세미콜론으로 구분된 문자열입니다.
 
 **키**: hostingStartupExcludeAssemblies  
 **형식**: *string*  
 **기본값**: 빈 문자열  
 **설정 방법**: `UseSetting`  
 **환경 변수**: `ASPNETCORE_HOSTINGSTARTUPEXCLUDEASSEMBLIES`
-
-시작 시 제외할 호스팅 시작 어셈블리의 세미콜론으로 구분된 문자열입니다.
 
 ```csharp
 WebHost.CreateDefaultBuilder(args)
@@ -659,7 +657,7 @@ dotnet run --urls "http://*:8080"
 host.Run();
 ```
 
-**Start**
+**시작**
 
 해당 `Start` 메서드를 호출하여 비차단 방식으로 호스트를 실행합니다.
 
@@ -832,7 +830,7 @@ using (var host = WebHost.StartWith("http://localhost:8080", app =>
 host.Run();
 ```
 
-**Start**
+**시작**
 
 해당 `Start` 메서드를 호출하여 비차단 방식으로 호스트를 실행합니다.
 

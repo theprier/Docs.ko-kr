@@ -5,12 +5,12 @@ description: ASP.NET Core 응용 프로그램에서 URL 재작성 미들웨어�
 ms.author: riande
 ms.date: 08/17/2017
 uid: fundamentals/url-rewriting
-ms.openlocfilehash: d3484e222c4412a427d086c1b71a12b81095ba72
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: d9f33f34f75fe7bf534146c5a426335e74635018
+ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36276349"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49326071"
 ---
 # <a name="url-rewriting-middleware-in-aspnet-core"></a>ASP.NET Core에서 URL 재작성 미들웨어
 
@@ -47,7 +47,7 @@ URL을 변경하기 위한 규칙은 Regex, Apache mod_rewrite 모듈 규칙, II
 
 *URL 재작성*은 요청받은 리소스를 다른 리소스 주소에서 제공하는 서버 측 작업입니다. URL 재작성 방식은 서버를 한 번 더 왕복할 필요가 없습니다. 재작성된 URL은 클라이언트로 반환되지 않고 브라우저의 주소 표시줄에 나타나지도 않습니다. `/resource`가 `/different-resource`로 *재작성* 된다고 가정할 때, 클라이언트는 `/resource`를 요청하지만 서버는 *내부적으로* `/different-resource`에서 리소스를 가져옵니다. 클라이언트는 재작성된 URL에서 리소스를 조회할 수는 있지만, 해당 요청을 만들고 응답을 받을 때 실제로는 리소스가 재작성된 URL에 존재한다는 정보는 알 수 없습니다.
 
-![WebAPI 서비스 끝점은 서버 측에서 버전 1(v1)에서 버전 2(v2)로 변경됩니다. 클라이언트는 버전 1의 경로 /v1/api로 서비스를 요청합니다. 요청 URL은 버전 2의 경로 /v2/api에서 서비스에 접근하도록 재작성됩니다. 서비스는 200 (정상) 상태 코드를 클라이언트에 응답합니다.](url-rewriting/_static/url_rewrite.png)
+![WebAPI 서비스 엔드포인트는 서버 측에서 버전 1(v1)에서 버전 2(v2)로 변경됩니다. 클라이언트는 버전 1의 경로 /v1/api로 서비스를 요청합니다. 요청 URL은 버전 2의 경로 /v2/api에서 서비스에 접근하도록 재작성됩니다. 서비스는 200 (정상) 상태 코드를 클라이언트에 응답합니다.](url-rewriting/_static/url_rewrite.png)
 
 ## <a name="url-rewriting-sample-app"></a>URL 재작성 예제 응용 프로그램
 
@@ -63,13 +63,15 @@ Windows Server에서 IIS의 [URL 재작성 모듈](https://www.iis.net/downloads
 
 ## <a name="extension-and-options"></a>확장 및 옵션
 
-URL 재작성 및 리디렉션 규칙은 각 규칙에 대한 확장 메서드를 이용해서 `RewriteOptions` 클래스의 인스턴스를 생성하는 방식으로 설정합니다. 처리하고자 하는 순서대로 여러 규칙을 연결하면 됩니다. 그리고 `RewriteOptions`는 URL 재작성 미들웨어가 `app.UseRewriter(options);`으로 요청 파이프라인에 추가될 때 URL 재작성 미들웨어에 전달됩니다.
+URL 재작성 및 리디렉션 규칙은 각 규칙에 대한 확장 메서드를 이용해서 [RewriteOptions](/dotnet/api/microsoft.aspnetcore.rewrite.rewriteoptions) 클래스의 인스턴스를 생성하는 방식으로 설정합니다. 처리하고자 하는 순서대로 여러 규칙을 연결하면 됩니다. 그리고 `RewriteOptions`는 URL 재작성 미들웨어가 `app.UseRewriter(options);`으로 요청 파이프라인에 추가될 때 URL 재작성 미들웨어에 전달됩니다.
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+::: moniker range=">= aspnetcore-2.0"
 
 [!code-csharp[](url-rewriting/sample/Startup.cs?name=snippet1)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
 
 ```csharp
 public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -88,17 +90,31 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 }
 ```
 
----
+::: moniker-end
+
+::: moniker range=">= aspnetcore-2.1"
+
+### <a name="redirect-non-www-to-www"></a>www 이외 요청을 www로 리디렉션
+
+이러한 옵션은 앱이 `www` 이외 요청을 `www`로 리디렉션하도록 허용합니다.
+
+* [AddRedirectToWwwPermanent(RewriteOptions)](/dotnet/api/microsoft.aspnetcore.rewrite.rewriteoptionsextensions.addredirecttowwwpermanent) &ndash; `www` 이외 요청을 `www` 하위 도메인으로 영구적으로 리디렉션합니다. [Status308PermanentRedirect](/dotnet/api/microsoft.aspnetcore.http.statuscodes.status308permanentredirect) 상태 코드를 사용하여 리디렉션합니다.
+* [AddRedirectToWww(RewriteOptions)](/dotnet/api/microsoft.aspnetcore.rewrite.rewriteoptionsextensions.addredirecttowww) &ndash; 들어오는 요청이 `www` 요청이 아닐 경우 `www` 하위 도메인으로 요청을 리디렉션합니다. [Status307TemporaryRedirect](/dotnet/api/microsoft.aspnetcore.http.statuscodes.status307temporaryredirect) 상태 코드를 사용하여 리디렉션합니다.
+* [AddRedirectToWww(RewriteOptions, Int32)](/dotnet/api/microsoft.aspnetcore.rewrite.rewriteoptionsextensions.addredirecttowww) &ndash; 들어오는 요청이 `www` 요청이 아닐 경우 `www` 하위 도메인으로 요청을 리디렉션합니다. 응답 상태 코드를 제공할 수 있습니다. `AddRedirectToWww`에 할당하는 경우 [StatusCodes](/dotnet/api/microsoft.aspnetcore.http.statuscodes) 클래스의 필드를 사용하세요.
+
+::: moniker-end
 
 ### <a name="url-redirect"></a>URL 리디렉션
 
-요청을 리디렉션하려면 `AddRedirect`를 사용합니다. 첫 번째 매개 변수에는 들어오는 URL의 경로와 일치하는 부분을 찾기 위한 정규식을 지정합니다. 두 번째 매개 변수는 대체 문자열입니다. 필요한 경우 세 번째 매개 변수로 상태 코드를 지정할 수 있습니다. 상태 코드를 지정하지 않으면 기본값으로 리소스가 임시로 이동하거나 대체되었음을 의미하는 302 (임시 이동) 상태 코드가 지정됩니다.
+요청을 리디렉션하려면 `AddRedirect`를 사용합니다. 첫 번째 매개 변수에는 들어오는 URL의 경로와 일치하는 부분을 찾기 위한 정규식을 지정합니다. 두 번째 매개 변수는 대체 문자열입니다. 필요한 경우 세 번째 매개 변수로 상태 코드를 지정할 수 있습니다. 상태 코드를 지정하지 않는 경우 기본값을 리소스가 일시적으로 이동 또는 대체되었음을 나타내는 302(있음)로 지정합니다.
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+::: moniker range=">= aspnetcore-2.0"
 
 [!code-csharp[](url-rewriting/sample/Startup.cs?name=snippet1&highlight=9)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
 
 ```csharp
 public void Configure(IApplicationBuilder app)
@@ -110,9 +126,9 @@ public void Configure(IApplicationBuilder app)
 }
 ```
 
----
+::: moniker-end
 
-개발자 도구가 활성화된 브라우저에서 예제 응용 프로그램에 `/redirect-rule/1234/5678` 경로를 요청합니다. 그러면 정규식이 `redirect-rule/(.*)`의 요청 경로와 일치하므로 `/redirected/1234/5678`로 경로가 치환됩니다. 이 리디렉션 URL은 302 (임시 이동) 상태 코드와 함께 클라이언트로 재전송됩니다. 브라우저는 리디렉션 URL에 대한 새로운 요청을 만들고 이 주소는 브라우저의 주소 표시줄에 출력됩니다. 리디렉션 URL과 일치하는 예제 응용 프로그램의 규칙은 존재하지 않기 때문에 두 번째 요청은 응용 프로그램에서 200 (정상) 응답을 수신하고 응답 본문은 리디렉션 URL을 보여줍니다. URL이 *리디렉션* 될 때 서버에 대한 왕복이 수행됩니다.
+개발자 도구가 활성화된 브라우저에서 `/redirect-rule/1234/5678` 경로로 샘플 앱에 대한 요청을 만듭니다. 그러면 정규식이 `redirect-rule/(.*)`의 요청 경로와 일치하므로 `/redirected/1234/5678`로 경로가 치환됩니다. 이 리디렉션 URL은 302 (임시 이동) 상태 코드와 함께 클라이언트로 재전송됩니다. 브라우저는 리디렉션 URL에 대한 새로운 요청을 만들고 이 주소는 브라우저의 주소 표시줄에 출력됩니다. 리디렉션 URL과 일치하는 예제 응용 프로그램의 규칙은 존재하지 않기 때문에 두 번째 요청은 응용 프로그램에서 200 (정상) 응답을 수신하고 응답 본문은 리디렉션 URL을 보여줍니다. URL이 *리디렉션* 될 때 서버에 대한 왕복이 수행됩니다.
 
 > [!WARNING]
 > 리디렉션 규칙을 설정할 때 주의하시기 바랍니다. 리디렉션 규칙은 리디렉션 된 후를 비롯해서 응용 프로그램에 대한 각각의 요청을 대상으로 평가됩니다. 따라서 실수로 무한히 리디렉션 되는 루프를 만들기 쉽습니다.
@@ -166,13 +182,15 @@ public void Configure(IApplicationBuilder app)
 
 ### <a name="url-rewrite"></a>URL 재작성
 
-URL을 재작성하는 규칙을 만들려면 `AddRewrite`를 사용합니다. 첫 번째 매개 변수에는 들어오는 URL의 경로와 일치하는 부분을 찾기 위한 정규식을 지정합니다. 두 번째 매개 변수는 대체 문자열입니다. 세 번째 매개 변수인 `skipRemainingRules: {true|false}`는 현재 규칙이 적용된 경우 이후의 추가적인 재작성 규칙을 무시할지 여부를 미들웨어에게 지시합니다.
+URL을 재작성하는 규칙을 만들려면 `AddRewrite`를 사용합니다. 첫 번째 매개 변수에는 들어오는 URL의 경로와 일치하는 부분을 찾기 위한 정규식을 지정합니다. 두 번째 매개 변수는 대체 문자열입니다. 세 번째 매개 변수, `skipRemainingRules: {true|false}`는 현재 규칙이 적용되는 경우에 추가 재작성 규칙을 건너뛸 것인지 여부를 미들웨어에 나타냅니다.
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+::: moniker range=">= aspnetcore-2.0"
 
 [!code-csharp[](url-rewriting/sample/Startup.cs?name=snippet1&highlight=10-11)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
 
 ```csharp
 public void Configure(IApplicationBuilder app)
@@ -185,16 +203,15 @@ public void Configure(IApplicationBuilder app)
 }
 ```
 
----
+::: moniker-end
 
-원본 요청: `/rewrite-rule/1234/5678`
+원래 요청: `/rewrite-rule/1234/5678`
 
 ![요청 및 응답을 추적하는 개발자 도구가 있는 브라우저 창](url-rewriting/_static/add_rewrite.png)
 
 이 정규식에서 가장 먼저 주목해야 할 부분은 식의 가장 첫 문자인 캐럿(`^`)입니다. 이는 URL 경로의 시작 부분에서부터 일치가 시작된다는 것을 의미합니다. 
 
 `redirect-rule/(.*)`리디렉션 규칙에 대한 이전 예제에서는 정규식 시작 부분에 캐럿이 없기 때문에, 경로의 `redirect-rule/` 앞부분에 어떤 문자가 나타나더라도 정상적으로 일치합니다.
-
 
 | Path                               | 일치 |
 | ---------------------------------- | :---: |
@@ -221,17 +238,19 @@ public void Configure(IApplicationBuilder app)
 
 ### <a name="apache-modrewrite"></a>Apache mod_rewrite
 
-`AddApacheModRewrite`를 사용하면 Apache mod_rewrite 규칙을 적용할 수 있습니다. 규칙 파일이 응용 프로그램과 함께 배포되고 있는지 확인하시기 바랍니다. mod_rewrite 규칙에 대한 보다 자세한 내용과 예제는 [Apache mod_rewrite](https://httpd.apache.org/docs/2.4/rewrite/)를 참고하시기 바랍니다.
+`AddApacheModRewrite`를 사용하면 Apache mod_rewrite 규칙을 적용할 수 있습니다. 규칙 파일이 응용 프로그램과 함께 배포되고 있는지 확인하시기 바랍니다. mod_rewrite 규칙에 대한 자세한 내용 및 예제는 [Apache mod_rewrite](https://httpd.apache.org/docs/2.4/rewrite/)를 참조하세요.
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+::: moniker range=">= aspnetcore-2.0"
 
-예제 코드에서 `StreamReader`는 *ApacheModRewrite.txt* 규칙 파일에서 규칙을 읽기 위해 사용됩니다.
+`StreamReader`는 *ApacheModRewrite.txt* 규칙 파일에서 규칙을 읽는 데 사용됩니다.
 
 [!code-csharp[](url-rewriting/sample/Startup.cs?name=snippet1&highlight=3-4,12)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+::: moniker-end
 
-첫 번째 매개 변수에는 [종속성 주입](dependency-injection.md)을 통해서 제공되는 `IFileProvider`가 사용됩니다. `IHostingEnvironment`는 `ContentRootFileProvider`를 제공하기 위해서 삽입됩니다. 두 번째 매개 변수는 규칙 파일, 즉 예제 응용 프로그램의 경우 *ApacheModRewrite.txt*에 대한 경로입니다.
+::: moniker range="< aspnetcore-2.0"
+
+첫 번째 매개 변수는 [종속성 주입](dependency-injection.md)을 통해 제공되는 `IFileProvider`를 사용합니다. `IHostingEnvironment`는 `ContentRootFileProvider`를 제공하기 위해서 삽입됩니다. 두 번째 매개 변수는 규칙 파일, 즉 예제 응용 프로그램의 경우 *ApacheModRewrite.txt*에 대한 경로입니다.
 
 ```csharp
 public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -243,7 +262,7 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 }
 ```
 
----
+::: moniker-end
 
 예제 응용 프로그램은 `/apache-mod-rules-redirect/(.\*)`에서 `/redirected?id=$1`로 요청을 리디렉션합니다. 그리고 응답 상태 코드는 302 (임시 이동)입니다.
 
@@ -252,8 +271,6 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 원본 요청: `/apache-mod-rules-redirect/1234`
 
 ![요청 및 응답을 추적하는 개발자 도구가 있는 브라우저 창](url-rewriting/_static/add_apache_mod_redirect.png)
-
-##### <a name="supported-server-variables"></a>지원되는 서버 변수
 
 미들웨어는 다음과 같은 Apache mod_rewrite 서버 변수를 지원합니다:
 
@@ -289,17 +306,19 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 
 ### <a name="iis-url-rewrite-module-rules"></a>IIS URL 재작성 모듈 규칙
 
-`AddIISUrlRewrite`를 사용하면 IIS URL 재작성 모듈에 적용되는 규칙을 사용할 수 있습니다. 규칙 파일이 응용 프로그램과 함께 배포되고 있는지 확인하시기 바랍니다. 응용 프로그램을 Windows Server의 IIS에서 실행하고 있다면 미들웨어가 *web.config* 파일을 사용하도록 지정하지 마십시오. IIS를 사용할 경우, IIS 재작성 모듈과 충돌을 피할 수 있도록 규칙을 *web.config* 외부에 저장해야 합니다. IIS URL 재작성 모듈 규칙에 대한 보다 자세한 내용 및 예제는 [URL 재작성 모듈 2.0 사용](/iis/extensions/url-rewrite-module/using-url-rewrite-module-20)과 [URL 재작성 모듈 구성 참조](/iis/extensions/url-rewrite-module/url-rewrite-module-configuration-reference)를 참고하시기 바랍니다.
+`AddIISUrlRewrite`를 사용하면 IIS URL 재작성 모듈에 적용되는 규칙을 사용할 수 있습니다. 규칙 파일이 응용 프로그램과 함께 배포되고 있는지 확인하시기 바랍니다. 응용 프로그램을 Windows Server의 IIS에서 실행하고 있다면 미들웨어가 *web.config* 파일을 사용하도록 지정하지 마십시오. IIS를 사용할 경우, IIS 재작성 모듈과 충돌을 피할 수 있도록 규칙을 *web.config* 외부에 저장해야 합니다. IIS URL 재작성 모듈 규칙에 대한 자세한 내용 및 예제는 [Url 재작성 모듈 2.0 사용](/iis/extensions/url-rewrite-module/using-url-rewrite-module-20) 및 [URL 재작성 모듈 구성 참조](/iis/extensions/url-rewrite-module/url-rewrite-module-configuration-reference)를 참조하세요.
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+::: moniker range=">= aspnetcore-2.0"
 
-예제 코드에서 `StreamReader`는 *IISUrlRewrite.xml* 규칙 파일에서 규칙을 읽기 위해 사용됩니다.
+`StreamReader`는 *IISUrlRewrite.xml* 규칙 파일에서 규칙을 읽는 데 사용됩니다.
 
 [!code-csharp[](url-rewriting/sample/Startup.cs?name=snippet1&highlight=5-6,13)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+::: moniker-end
 
-첫 번째 매개 변수는 `IFileProvider`를 전달받는 반면, 두 번째 매개 변수는 XML 규칙 파일, 즉 예제 응용 프로그램의 경우 *IISUrlRewrite.xml*에 대한 경로입니다.
+::: moniker range="< aspnetcore-2.0"
+
+첫 번째 매개 변수는 `IFileProvider`를 사용하는 반면 두 번째 매개 변수는 XML 규칙 파일에 대한 경로입니다. 이는 샘플 앱에서 *IISUrlRewrite.xml*입니다.
 
 ```csharp
 public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -311,7 +330,7 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 }
 ```
 
----
+::: moniker-end
 
 예제 응용 프로그램은 `/iis-rules-rewrite/(.*)`에서 `/rewritten?id=$1`로 요청을 재작성합니다. 그리고 응답은 200 (정상) 상태 코드로 클라이언트에 전송됩니다.
 
@@ -325,18 +344,20 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 
 #### <a name="unsupported-features"></a>지원되지 않는 기능
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
+::: moniker range=">= aspnetcore-2.0"
 
-ASP.NET Core 2.x와 함께 출시된 미들웨어는 다음과 같은 IIS URL 재작성 모듈 기능을 지원하지 않습니다:
+ASP.NET Core 2.x로 출시된 미들웨어는 다음과 같은 IIS URL 재작성 모듈 기능을 지원하지 않습니다.
 
 * 아웃바운드 규칙
 * 사용자 지정 서버 변수
 * 와일드카드
 * LogRewrittenUrl
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
+::: moniker-end
 
-ASP.NET Core 2.x와 함께 출시된 미들웨어는 다음과 같은 IIS URL 재작성 모듈 기능을 지원하지 않습니다:
+::: moniker range="< aspnetcore-2.0"
+
+ASP.NET Core 1.x로 출시된 미들웨어는 다음과 같은 IIS URL 재작성 모듈 기능을 지원하지 않습니다.
 
 * 전역 규칙
 * 아웃바운드 규칙
@@ -347,7 +368,7 @@ ASP.NET Core 2.x와 함께 출시된 미들웨어는 다음과 같은 IIS URL �
 * Action:CustomResponse
 * LogRewrittenUrl
 
----
+::: moniker-end
 
 #### <a name="supported-server-variables"></a>지원되는 서버 변수
 
@@ -384,13 +405,15 @@ ASP.NET Core 2.x와 함께 출시된 미들웨어는 다음과 같은 IIS URL �
 | ------------------------------------ | --------------------------------------------------------------- |
 | `RuleResult.ContinueRules`(기본값) | 계속 규칙 적용                                         |
 | `RuleResult.EndResponse`             | 규칙 적용을 중지하고 응답 전송                       |
-| `RuleResult.SkipRemainingRules`      | 규칙 적용을 중지하고 다음 미들웨어에 컨텍스트 전달 |
+| `RuleResult.SkipRemainingRules`      | 규칙 적용을 중지하고 다음 미들웨어에 컨텍스트 보내기 |
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+::: moniker range=">= aspnetcore-2.0"
 
 [!code-csharp[](url-rewriting/sample/Startup.cs?name=snippet1&highlight=14)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
 
 ```csharp
 public void Configure(IApplicationBuilder app)
@@ -402,9 +425,9 @@ public void Configure(IApplicationBuilder app)
 }
 ```
 
----
+::: moniker-end
 
-예제 응용 프로그램은 *.xml*로 끝나는 경로 요청을 리디렉션하는 메서드를 보여줍니다. 가령 `/file.xml`을 요청할 경우 `/xmlfiles/file.xml`로 리디렉션됩니다. 상태 코드는 301 (영구 이동)으로 설정하고 있습니다. 리디렉션의 경우 명시적으로 응답의 상태 코드를 설정해야 하며, 그렇지 않으면 200 (정상) 상태 코드가 반환되고 클라이언트에서 리디렉션이 발생하지 않습니다.
+샘플 앱은 *.xml*로 끝나는 경로에 대한 요청을 리디렉션하는 메서드를 보여 줍니다. 가령 `/file.xml`을 요청할 경우 `/xmlfiles/file.xml`로 리디렉션됩니다. 상태 코드는 301 (영구 이동)으로 설정하고 있습니다. 리디렉션의 경우 명시적으로 응답의 상태 코드를 설정해야 하며, 그렇지 않으면 200 (정상) 상태 코드가 반환되고 클라이언트에서 리디렉션이 발생하지 않습니다.
 
 [!code-csharp[](url-rewriting/sample/RewriteRules.cs?name=snippet1)]
 
@@ -414,13 +437,15 @@ public void Configure(IApplicationBuilder app)
 
 ### <a name="irule-based-rule"></a>IRule 기반 규칙
 
-`Add(IRule)`을 사용하면 `IRule`을 구현하는 클래스로 직접 규칙 로직을 구현할 수 있습니다. `IRule`을 사용하면 메서드 기반 규칙 방식을 사용하는 것보다 더 많은 유연성을 얻을 수 있습니다. 파생된 클래스는 `ApplyRule` 메서드에서 사용할 매개 변수를 전달할 수 있는 생성자를 포함할 수 있습니다.
+`Add(IRule)`을 사용하면 `IRule`을 구현하는 클래스로 직접 규칙 로직을 구현할 수 있습니다. `IRule`을 사용하면 메서드 기반 규칙 방식을 사용하는 것보다 더 많은 유연성을 얻을 수 있습니다. 파생된 클래스는 `ApplyRule` 메서드에 대한 매개 변수를 전달할 수 있는 생성자를 포함할 수 있습니다.
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+::: moniker range=">= aspnetcore-2.0"
 
 [!code-csharp[](url-rewriting/sample/Startup.cs?name=snippet1&highlight=15-16)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
 
 ```csharp
 public void Configure(IApplicationBuilder app)
@@ -433,9 +458,9 @@ public void Configure(IApplicationBuilder app)
 }
 ```
 
----
+::: moniker-end
 
-예제 응용 프로그램은 `extension` 및 `newPath` 매개 변수 값들이 다양한 조건을 만족하는지 검사합니다. `extension`매개 변수는 값을 포함하고 있어야 하고, 그 값은 *.png*, *.jpg*, 또는 *.gif* 중 하나이어야 합니다. 만약 `newPath`가 유효하지 않으면 `ArgumentException`이 던져집니다. *image.png*를 요청하면 `/png-images/image.png`로 요청이 리디렉션 됩니다. 그리고 *image.jpg*를 요청하면 `/jpg-images/image.jpg`로 요청이 리디렉션 됩니다. 상태 코드는 301 (영구 이동)으로 설정하고 규칙 처리를 중지하고 응답을 전송하도록 `context.Result`를 설정합니다.
+여러 조건을 충족하도록 `extension` 및 `newPath`에 대한 샘플 앱의 매개 변수 값이 선택됩니다. `extension`매개 변수는 값을 포함하고 있어야 하고, 그 값은 *.png*, *.jpg*, 또는 *.gif* 중 하나이어야 합니다. 만약 `newPath`가 유효하지 않으면 `ArgumentException`이 던져집니다. *image.png*를 요청하면 `/png-images/image.png`로 요청이 리디렉션 됩니다. 그리고 *image.jpg*를 요청하면 `/jpg-images/image.jpg`로 요청이 리디렉션 됩니다. 상태 코드는 301 (영구 이동)으로 설정하고 규칙 처리를 중지하고 응답을 전송하도록 `context.Result`를 설정합니다.
 
 [!code-csharp[](url-rewriting/sample/RewriteRules.cs?name=snippet2)]
 

@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: H1Hack27Feb2017
 ms.date: 2/14/2018
 uid: mvc/views/tag-helpers/intro
-ms.openlocfilehash: c2af9099fe439e1cdbf9ba86ffae3b2b0f67391e
-ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
+ms.openlocfilehash: 4b9bceb3ce0153af2d9a30c402febe09707145b7
+ms.sourcegitcommit: f5d403004f3550e8c46585fdbb16c49e75f495f3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41751415"
+ms.lasthandoff: 10/20/2018
+ms.locfileid: "49477308"
 ---
 # <a name="tag-helpers-in-aspnet-core"></a>ASP.NET Core의 태그 도우미
 
@@ -127,6 +127,10 @@ FQN을 사용하여 보기에 태그 도우미를 추가하려면 먼저 FQN(`Au
 ![이미지](intro/_static/thp.png)
 
 `@addTagHelper`에 적용되는 동일한 계층 규칙이 `@tagHelperPrefix`에도 적용됩니다.
+
+## <a name="self-closing-tag-helpers"></a>자체 닫는 태그 도우미
+
+여러 태그 도우미를 자체 닫는 태그로 사용할 수 없습니다. 일부 태그 도우미는 자체 닫는 태그로 설계되었습니다. 자체 닫는 태그로 설계되지 않은 태그 도우미를 사용하면 렌더링된 출력이 표시되지 않습니다. 태그 도우미를 자체적으로 닫으면 렌더링된 출력에 자체 닫는 태그가 생성됩니다. 자세한 내용은 [태그 도우미 작성](xref:mvc/views/tag-helpers/authoring)에서 [이 메모](xref:mvc/views/tag-helpers/authoring#self-closing)를 참조하세요.
 
 ## <a name="intellisense-support-for-tag-helpers"></a>태그 도우미에 대한 IntelliSense 지원
 

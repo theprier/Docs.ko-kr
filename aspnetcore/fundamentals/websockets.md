@@ -7,12 +7,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 06/28/2018
 uid: fundamentals/websockets
-ms.openlocfilehash: e46c2decf92d21322f2079bf880df534e0224db5
-ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
+ms.openlocfilehash: b1e2180ed8dc93e2474ecca371d386830b7f3a9f
+ms.sourcegitcommit: 6e6002de467cd135a69e5518d4ba9422d693132a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48911654"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49348457"
 ---
 # <a name="websockets-support-in-aspnet-core"></a>ASP.NET Core에서 WebSocket 지원
 
@@ -35,7 +35,7 @@ ms.locfileid: "48911654"
 
   * Windows 8 / Windows Server 2012 이상
   * IIS 8 / IIS 8 Express
-  * WebSockets는 IIS에서 활성화되어야 합니다([IIS/IIS Express 지원](#iisiis-express-support) 섹션 참조).
+  * WebSockets를 활성화해야 합니다([IIS/IIS Express 지원](#iisiis-express-support) 섹션 참조).
   
 * 앱이 [HTTP.sys](xref:fundamentals/servers/httpsys)에서 실행되는 경우:
 
@@ -133,7 +133,15 @@ WebSocket 요청은 모든 URL을 통해서 전달될 수 있지만, 이 예제 
 
 IIS/IIS Express 8 이상이 있는 Windows Server 2012 이상 및 Windows 8 이상에서는 WebSocket 프로토콜을 지원합니다.
 
+> [!NOTE]
+> IIS Express를 사용할 때 Websocket이 항상 활성화됩니다.
+
+### <a name="enabling-websockets-on-iis"></a>IIS에서 Websocket 사용
+
 Windows Server 2012 이상에서 WebSocket 프로토콜을 지원하려면:
+
+> [!NOTE]
+> IIS Express를 사용할 때 이러한 단계가 필요하지 않습니다.
 
 1. **관리** 메뉴 또는 **서버 관리자**의 링크를 통해 **역할 및 기능 추가** 마법사를 사용합니다.
 1. **역할 기반 또는 기능 기반 설치**를 선택합니다. **새로 만들기**를 선택합니다.
@@ -145,6 +153,9 @@ Windows Server 2012 이상에서 WebSocket 프로토콜을 지원하려면:
 1. 설치가 완료되면 **닫기**를 선택하여 마법사를 종료합니다.
 
 Windows 8 이상에서 WebSocket 프로토콜을 지원하려면:
+
+> [!NOTE]
+> IIS Express를 사용할 때 이러한 단계가 필요하지 않습니다.
 
 1. **제어판** > **프로그램** > **프로그램 및 기능** > **Windows 기능 Windows 기능 사용/사용 안 함**(화면 왼쪽)으로 차례로 이동합니다.
 1. **인터넷 정보 서비스** > **World Wide Web 서비스** > **응용 프로그램 개발 기능** 노드를 엽니다.

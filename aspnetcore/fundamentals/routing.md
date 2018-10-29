@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/01/2018
 uid: fundamentals/routing
-ms.openlocfilehash: d9ba96c7b2abd35b1b13c84814bf3f776e8d8731
-ms.sourcegitcommit: 13940eb53c68664b11a2d685ee17c78faab1945d
+ms.openlocfilehash: 500cefbc7caee2054b4afda7c1277685862f5ad4
+ms.sourcegitcommit: 6e6002de467cd135a69e5518d4ba9422d693132a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/01/2018
-ms.locfileid: "47861059"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49348561"
 ---
 # <a name="routing-in-aspnet-core"></a>ASP.NET Core에서 라우팅
 
@@ -391,7 +391,15 @@ ASP.NET Core 프레임워크는 정규식 생성자에 `RegexOptions.IgnoreCase 
 
 ## <a name="parameter-transformer-reference"></a>매개 변수 변환기 참조
 
-`Route`에 대한 링크를 생성할 때 매개 변수 변환기가 실행됩니다. 매개 변수 변환기는 매개 변수의 경로 값을 사용하고 이를 새 문자열 값으로 변환합니다. 변환된 값은 생성된 링크에서 사용됩니다. 예를 들어, `Url.Action(new { article = "MyTestArticle" })`을 사용하는 경로 패턴 `blog\{article:slugify}`의 사용자 지정 `slugify` 매개 변수 변환기는 `blog\my-test-article`을 생성합니다. 매개 변수 변환기는 `Microsoft.AspNetCore.Routing.IOutboundParameterTransformer`를 구현하고 <xref:Microsoft.AspNetCore.Routing.RouteOptions.ConstraintMap>을 사용하여 구성됩니다.
+매개 변수 변환기:
+
+* `Route`에 대한 링크를 생성할 때 실행합니다.
+* `Microsoft.AspNetCore.Routing.IOutboundParameterTransformer`를 구현해야 합니다.
+* <xref:Microsoft.AspNetCore.Routing.RouteOptions.ConstraintMap>을 사용하여 구성됩니다.
+* 매개 변수의 경로 값을 가져와서 새 문자열 값으로 변환합니다.
+* 변환된 값은 생성된 링크에서 사용됩니다.
+
+예를 들어, `Url.Action(new { article = "MyTestArticle" })`을 사용하는 경로 패턴 `blog\{article:slugify}`의 사용자 지정 `slugify` 매개 변수 변환기는 `blog\my-test-article`을 생성합니다.
 
 또한 매개 변수 변환기는 엔드포인트가 확인되는 URI를 변환하기 위해 프레임워크에서 사용합니다. 예를 들어 ASP.NET Core MVC는 매개 변수 변환기를 사용하여 `area` , `controller` , `action` 및 `page`와 일치하도록 사용되는 경로 값을 변환합니다.
 
@@ -403,7 +411,10 @@ routes.MapRoute(
 
 이전 경로를 사용하면 `SubscriptionManagementController.GetAll()` 작업이 URI `/subscription-management/get-all`과 일치됩니다. 매개 변수 변환기는 링크를 생성하는 데 사용되는 경로 값을 변경하지 않습니다. `Url.Action("GetAll", "SubscriptionManagement")`가 `/subscription-management/get-all`을 출력합니다.
 
-ASP.NET Core MVC도 `Microsoft.AspNetCore.Mvc.ApplicationModels.RouteTokenTransformerConvention` API 규칙과 함께 제공됩니다. 이 규칙은 앱의 모든 특성 경로 토큰에 지정된 매개 변수 변환기를 적용합니다.
+ASP.NET Core는 생성된 경로가 있는 매개 변수 변환기를 사용하기 위한 API 규칙을 제공합니다.
+
+* ASP.NET Core MVC에는 `Microsoft.AspNetCore.Mvc.ApplicationModels.RouteTokenTransformerConvention` API 규칙이 있습니다. 이 규칙은 앱의 모든 특성 경로에 지정된 매개 변수 변환기를 적용합니다. 매개 변수 변환기는 특성 경로 토큰이 교체될 때 변환합니다. 자세한 내용은 [매개 변수 변환기를 사용하여 토큰 교체 사용자 지정](/aspnet/core/mvc/controllers/routing#use-a-parameter-transformer-to-customize-token-replacement)을 참조하세요.
+* Razor 페이지에는 `Microsoft.AspNetCore.Mvc.ApplicationModels.PageRouteTransformerConvention` API 규칙이 있습니다. 이 규칙은 자동으로 검색된 모든 Razor 페이지에 지정된 매개 변수 변환기를 적용합니다. 매개 변수 변환기는 Razor 페이지 경로의 폴더와 파일 이름 부분을 변환합니다. 자세한 내용은 [매개 변수 변환기를 사용하여 페이지 경로 사용자 지정](/aspnet/core/razor-pages/razor-pages-conventions#use-a-parameter-transformer-to-customize-page-routes)을 참조하세요.
 
 ::: moniker-end
 

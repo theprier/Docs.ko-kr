@@ -5,12 +5,12 @@ description: Entity Framework Core를 사용하여 Razor 페이지 앱을 만드
 ms.author: riande
 ms.date: 6/31/2017
 uid: data/ef-rp/intro
-ms.openlocfilehash: 89002f7b4a5af17a9404b14822086c7a9a6ec265
-ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
+ms.openlocfilehash: f714934a2ef804813290ae0c04432470a2ba5816
+ms.sourcegitcommit: f5d403004f3550e8c46585fdbb16c49e75f495f3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46011461"
+ms.lasthandoff: 10/20/2018
+ms.locfileid: "49477568"
 ---
 # <a name="razor-pages-with-entity-framework-core-in-aspnet-core---tutorial-1-of-8"></a>ASP.NET Core에서 Entity Framework Core를 사용한 Razor 페이지 - 자습서 1/8
 
@@ -187,7 +187,7 @@ dotnet aspnet-codegenerator razorpage -m Student -dc ContosoUniversity.Models.Sc
 * *Pages/Students* 만들기, 삭제, 세부 정보, 편집, 인덱스입니다.
 * *Data/SchoolContext.cs*
 
-### <a name="files-updates"></a>파일 업데이트
+### <a name="file-updates"></a>파일 업데이트
 
 * *Startup.cs*: 이 파일의 변경 내용은 다음 섹션에서 자세히 설명합니다.
 * *appsettings.json*: 로컬 데이터베이스에 연결하는 데 사용된 연결 문자열이 추가됩니다.

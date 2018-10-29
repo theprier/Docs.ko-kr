@@ -5,12 +5,12 @@ description: 이 자습서에서는 관련된 데이터 즉, Entity Framework에
 ms.author: riande
 ms.date: 11/05/2017
 uid: data/ef-rp/read-related-data
-ms.openlocfilehash: e23b8bb870b329bd705fbc9548df62524303893e
-ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
+ms.openlocfilehash: e8b59c19eac2c2adc1f13cf1e44f750576686c87
+ms.sourcegitcommit: 6e6002de467cd135a69e5518d4ba9422d693132a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48912327"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49348496"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---read-related-data---6-of-8"></a>ASP.NET Core에서 EF Core를 사용한 Razor 페이지 - 관련 데이터 읽기 - 6/8
 
@@ -55,7 +55,7 @@ ms.locfileid: "48912327"
 
 * `Select` 연산자는 필요한 관련된 데이터만 로드합니다.
 
-## <a name="create-a-courses-page-that-displays-department-name"></a>부서 이름을 표시하는 과정 페이지 만들기
+## <a name="create-a-course-page-that-displays-department-name"></a>부서 이름을 표시하는 과정 페이지 만들기
 
 과정 엔터티는 `Department` 엔터티가 포함된 탐색 속성을 포함합니다. `Department` 엔터티는 과정이 할당된 부서를 포함합니다.
 

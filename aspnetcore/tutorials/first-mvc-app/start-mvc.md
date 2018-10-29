@@ -5,12 +5,12 @@ description: ASP.NET Core MVC 및 Visual Studio를 시작하는 방법을 배웁
 ms.author: riande
 ms.date: 10/07/2017
 uid: tutorials/first-mvc-app/start-mvc
-ms.openlocfilehash: 41f986a06ec46dc025c4e8218745b4a513e8ee2a
-ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
+ms.openlocfilehash: fe555e4cfcaec5d4bb8ccee00b06d1bbcaae9dcd
+ms.sourcegitcommit: f43f430a166a7ec137fcad12ded0372747227498
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46011708"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49391208"
 ---
 # <a name="get-started-with-aspnet-core-mvc-and-visual-studio"></a>ASP.NET Core MVC 및 Visual Studio 시작
 
@@ -48,7 +48,7 @@ Visual Studio에서 **파일 > 새로 만들기 > 프로젝트**를 선택합니
 **새 ASP.NET Core 웹 응용 프로그램(.NET Core) - MvcMovie** 대화 상자를 완료합니다.
 
 * 버전 선택기 드롭다운 상자에서 **ASP.NET Core 2.1**을 선택합니다.
-* **웹 응용 프로그램(모델-보기-컨트롤러)** 을 선택합니다.
+* **웹 응용 프로그램(모델-뷰-컨트롤러)** 을 선택합니다.
 * **확인**을 탭합니다.
 
 ![새 프로젝트 대화 상자, 왼쪽 창의 .Net core, ASP.NET Core 웹 ](start-mvc/_static/new_project22-21.png)

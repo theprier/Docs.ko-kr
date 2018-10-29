@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 08/23/2018
 uid: mvc/controllers/testing
-ms.openlocfilehash: f036181f43d12ece89243fa3b0b0070ea84f8bc7
-ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
+ms.openlocfilehash: 582a5ba461ee2df73b99e4f499e8152f7c6cb7cf
+ms.sourcegitcommit: f5d403004f3550e8c46585fdbb16c49e75f495f3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46010990"
+ms.lasthandoff: 10/20/2018
+ms.locfileid: "49477165"
 ---
 # <a name="test-controller-logic-in-aspnet-core"></a>ASP.NET Core에서 컨트롤러 논리 테스트
 
@@ -67,7 +67,7 @@ ms.locfileid: "46010990"
 
 두 번째 테스트는 `ModelState`가 유효한 시기를 확인합니다.
 
-* 새 `BrainstormSession`이 ([리포지토리](xref:fundamentals/repository-pattern)를 통해) 추가됨.
+* 새 `BrainstormSession`이 (리포지토리를 통해) 추가됨.
 * 메서드가 예상 속성과 함께 `RedirectToActionResult`를 반환함.
 
 호출되지 않은 모의 호출은 일반적으로 무시되지만, 설정 호출의 끝부분에서 `Verifiable`을 호출하면 테스트에서 모의 확인이 가능합니다. 이것은 `mockRepo.Verify` 호출을 통해 수행되며, 예상된 메서드가 호출되지 않으면 테스트가 실패합니다.
@@ -185,5 +185,4 @@ ASP.NET Core 2.1 이상에서 [ActionResult&lt;T&gt;](xref:web-api/action-return
 * <xref:test/index>
 * <xref:test/integration-tests>
 * [Visual Studio를 사용하여 단위 테스트를 만들고 실행](/visualstudio/test/unit-test-your-code)
-* <xref:fundamentals/repository-pattern>
 * [명시적 종속성 원칙](https://deviq.com/explicit-dependencies-principle/)

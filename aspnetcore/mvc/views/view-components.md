@@ -5,12 +5,12 @@ description: ASP.NET Core에서 보기 구성 요소가 사용되는 방법 및 
 ms.author: riande
 ms.date: 02/14/2017
 uid: mvc/views/view-components
-ms.openlocfilehash: cf2cfcdb07271503b844e31940e90b7376db0a6f
-ms.sourcegitcommit: 599ebae5c2d6fcb22dfa6ae7d1f4bdfcacb79af4
+ms.openlocfilehash: 49c8be655f151e219c8fa0854dbcf510d7bbd158
+ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47211067"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49325590"
 ---
 # <a name="view-components-in-aspnet-core"></a>ASP.NET Core의 보기 구성 요소
 
@@ -75,20 +75,20 @@ ms.locfileid: "47211067"
 
 런타임은 다음 경로에서 뷰를 검색합니다.
 
-* /Pages/Components/\<view_component_name>/\<view_name>
-* /Views/\<controller_name>/Components/\<view_component_name>/\<view_name>
-* /Views/Shared/Components/\<view_component_name>/\<view_name>
+* /Pages/Components/{View Component Name}/{View Name}
+* /Views/{Controller Name}/Components/{View Component Name}/{View Name}
+* /Views/Shared/Components/{View Component Name}/{View Name}
 
 뷰 구성 요소에 대한 기본 뷰 이름은 *Default*이며 이것은 일반적으로 뷰 파일의 이름이 *Default.cshtml*로 지정됨을 의미합니다. 뷰 구성 요소 결과를 만들거나 `View` 메서드를 호출할 때 다른 뷰 이름을 지정할 수 있습니다.
 
-뷰 파일 이름을 *Default.cshtml*로 지정하고 *Views/Shared/Components/\<view_component_name>/\<view_name>* 경로를 사용하는 것이 좋습니다. 이 샘플에 사용된 `PriorityList` 뷰 구성 요소는 뷰 구성 요소 보기에 *Views/Shared/Components/PriorityList/Default.cshtml*을 사용합니다.
+뷰 파일 이름을 *Default.cshtml*로 지정하고 *Views/Shared/Components/{View Component Name}/{View Name}* 경로를 사용하는 것이 좋습니다. 이 샘플에 사용된 `PriorityList` 뷰 구성 요소는 뷰 구성 요소 보기에 *Views/Shared/Components/PriorityList/Default.cshtml*을 사용합니다.
 
 ## <a name="invoking-a-view-component"></a>뷰 구성 요소 호출
 
 뷰 구성 요소를 사용하려면 뷰 내에서 다음을 호출합니다.
 
 ```cshtml
-@Component.InvokeAsync("Name of view component", <anonymous type containing parameters>)
+@Component.InvokeAsync("Name of view component", {Anonymous Type Containing Parameters})
 ```
 
 매개 변수가 `InvokeAsync` 메서드에 전달됩니다. 문서에서 개발된 `PriorityList` 뷰 구성 요소가 *Views/Todo/Index.cshtml* 뷰 파일에서 호출됩니다. 다음에서 `InvokeAsync` 메서드는 두 매개 변수를 사용하여 호출됩니다.

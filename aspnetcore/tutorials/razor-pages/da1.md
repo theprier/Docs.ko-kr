@@ -6,12 +6,12 @@ monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 05/30/2018
 uid: tutorials/razor-pages/da1
-ms.openlocfilehash: 7633c0a40764cc18a656f0497e3280e4067cb59f
-ms.sourcegitcommit: 317f9be24db600499e79d25872d743af74bd86c0
+ms.openlocfilehash: f47a68840a6307b69bc92a7b157037d91dce5422
+ms.sourcegitcommit: f5d403004f3550e8c46585fdbb16c49e75f495f3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48045577"
+ms.lasthandoff: 10/20/2018
+ms.locfileid: "49477217"
 ---
 # <a name="update-the-generated-pages-in-an-aspnet-core-app"></a>ASP.NET Core 앱에서 생성된 페이지 업데이트
 
@@ -51,4 +51,4 @@ ms.locfileid: "48045577"
 
 > [!div class="step-by-step"]
 > [이전: SQL Server LocalDB 작업](xref:tutorials/razor-pages/sql)
-> [검색 추가](xref:tutorials/razor-pages/search)
+> [다음: 검색 추가](xref:tutorials/razor-pages/search)

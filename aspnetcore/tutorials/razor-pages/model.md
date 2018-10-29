@@ -5,12 +5,12 @@ description: Entity Framework Core(EF Core)를 사용하여 데이터베이스�
 ms.author: riande
 ms.date: 05/30/2018
 uid: tutorials/razor-pages/model
-ms.openlocfilehash: 5cd1e08ac52d352be23a280419d7456f685a03ad
-ms.sourcegitcommit: 317f9be24db600499e79d25872d743af74bd86c0
+ms.openlocfilehash: 41a88e06afbe6e7accd03ff7b39aa69e15e0c0b4
+ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48045603"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49325815"
 ---
 # <a name="add-a-model-to-a-razor-pages-app-in-aspnet-core"></a>ASP.NET Core에서 Razor 페이지 앱에 모델 추가
 
@@ -47,19 +47,18 @@ ms.locfileid: "48045603"
 
 * **모델 클래스** 드롭다운에서 **동영상(RazorPagesMovie.Models)** 을 선택합니다.
 * **데이터 컨텍스트 클래스** 행에서 **+** 기호를 선택하고 생성된 이름인 **RazorPagesMovie.Models.RazorPagesMovieContext**를 수용합니다.
-* **데이터 컨텍스트 클래스** 드롭다운에서 **RazorPagesMovie.Models.RazorPagesMovieContext**를 선택합니다.
 * **추가**를 선택합니다.
 
 ![이전 지침의 이미지입니다.](model/_static/arp.png)
 
-스캐폴드 프로세스는 다음 파일을 생성하고 변경했습니다.
+스캐폴드 프로세스는 다음 파일을 생성하고 업데이트합니다.
 
 ### <a name="files-created"></a>생성된 파일
 
 * *Pages/Movies*: 만들기, 삭제, 세부 정보, 편집, 인덱스입니다. 이러한 페이지는 다음 자습서에서 자세히 설명합니다.
 * *Data/RazorPagesMovieContext.cs*
 
-### <a name="file-updates"></a>파일 업데이트
+### <a name="file-updated"></a>파일 업데이트됨
 
 * *Startup.cs*: 이 파일의 변경 내용은 다음 섹션에서 자세히 설명합니다.
 * *appsettings.json*: 로컬 데이터베이스에 연결하는 데 사용된 연결 문자열이 추가됩니다.
@@ -110,9 +109,10 @@ dotnet ef database update
 
 다음과 같은 경고 메시지를 무시합니다. 해당 문제를 나중에 자습서에서 해결합니다.
 
-`Microsoft.EntityFrameworkCore.Model.Validation[30000]`
-
-      *No type was specified for the decimal column 'Price' on entity type 'Movie'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'.*
+```console
+Microsoft.EntityFrameworkCore.Model.Validation[30000]
+      No type was specified for the decimal column 'Price' on entity type 'Movie'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'.
+```
 
 `Add-Migration` 명령은 초기 데이터베이스 스키마를 만드는 코드를 생성합니다. 스키마는 `RazorPagesMovieContext`에 지정된 모델을 기반으로 합니다(*Data/RazorPagesMovieContext.cs* 파일). `Initial` 인수는 마이그레이션 이름을 지정하는 데 사용됩니다. 모든 이름을 사용할 수 있지만 일반적으로 마이그레이션을 설명하는 이름을 선택합니다. 자세한 내용은 [마이그레이션 소개](xref:data/ef-mvc/migrations#introduction-to-migrations)를 참조하세요.
 
@@ -120,8 +120,10 @@ dotnet ef database update
 
 오류가 표시될 경우:
 
-`SqlException: Cannot open database "RazorPagesMovieContext-GUID" requested by the login. The login failed.
-Login failed for user 'User-name'.`
+```console
+SqlException: Cannot open database "RazorPagesMovieContext-GUID" requested by the login. The login failed.
+Login failed for user 'User-name'.
+```
 
 [마이그레이션 단계](#pmc)를 누락했습니다.
 
@@ -186,9 +188,10 @@ dotnet ef database update
 
 다음과 같은 메시지를 무시합니다.
 
-    `Microsoft.EntityFrameworkCore.Model.Validation[30000]`
-
-      *No type was specified for the decimal column 'Price' on entity type 'Movie'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'*
+```console
+Microsoft.EntityFrameworkCore.Model.Validation[30000]
+      No type was specified for the decimal column 'Price' on entity type 'Movie'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'
+```
 
 다음 자습서에서 해당 문제를 해결합니다.
 

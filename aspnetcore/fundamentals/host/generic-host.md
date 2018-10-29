@@ -7,12 +7,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 05/16/2018
 uid: fundamentals/host/generic-host
-ms.openlocfilehash: e19a8a78b4c02fbae3d3acd23ee357c6003c35cf
-ms.sourcegitcommit: 08bf41d4b3e696ab512b044970e8304816f8cc56
+ms.openlocfilehash: 0924e2764958911dc1711d5427f6dd58e8873739
+ms.sourcegitcommit: f5d403004f3550e8c46585fdbb16c49e75f495f3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44039967"
+ms.lasthandoff: 10/20/2018
+ms.locfileid: "49477607"
 ---
 # <a name="net-generic-host"></a>.NET 일반 호스트
 
@@ -44,6 +44,19 @@ Visual Studio Code에서 콘솔을 설정하려면:
 [IHostBuilder](/dotnet/api/microsoft.extensions.hosting.ihostbuilder)는 라이브러리 및 앱이 호스트를 초기화, 빌드 및 실행 하는 데 사용하는 주 구성 요소입니다.
 
 [!code-csharp[](generic-host/samples-snapshot/2.x/GenericHostSample/Program.cs?name=snippet_HostBuilder)]
+
+## <a name="default-services"></a>기본 서비스
+
+호스트 초기화 중에 다음 서비스가 등록됩니다.
+
+* [환경](xref:fundamentals/environments)(<xref:Microsoft.Extensions.Hosting.IHostingEnvironment>)
+* <xref:Microsoft.Extensions.Hosting.HostBuilderContext>
+* [구성](xref:fundamentals/configuration/index)(<xref:Microsoft.Extensions.Configuration.IConfiguration>)
+* <xref:Microsoft.Extensions.Hosting.IApplicationLifetime> (<xref:Microsoft.Extensions.Hosting.Internal.ApplicationLifetime>)
+* <xref:Microsoft.Extensions.Hosting.IHostLifetime> (<xref:Microsoft.Extensions.Hosting.Internal.ConsoleLifetime>)
+* <xref:Microsoft.Extensions.Hosting.IHost>
+* [옵션](xref:fundamentals/configuration/options)(<xref:Microsoft.Extensions.DependencyInjection.OptionsServiceCollectionExtensions.AddOptions*>)
+* [로깅](xref:fundamentals/logging/index)(<xref:Microsoft.Extensions.DependencyInjection.LoggingServiceCollectionExtensions.AddLogging*>)
 
 ## <a name="host-configuration"></a>호스트 구성
 
@@ -85,7 +98,7 @@ Visual Studio Code에서 콘솔을 설정하려면:
 **형식**: *string*  
 **기본값**: 앱의 진입점을 포함하는 어셈블리의 이름입니다.  
 **설정 방법**: `HostBuilderContext.HostingEnvironment.ApplicationName`  
-**환경 변수**: `<PREFIX_>APPLICATIONKEY`(`<PREFIX_>`는 [선택적이고 사용자 정의됨](#configuration-builder))
+**환경 변수**: `<PREFIX_>APPLICATIONNAME`(`<PREFIX_>`는 [선택적이고 사용자 정의됨](#configuration-builder))
 
 ```csharp
 var host = new HostBuilder()

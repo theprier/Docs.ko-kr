@@ -5,12 +5,12 @@ description: 이 자습서에서는 ASP.NET Core 및 Entity Framework Core를 �
 ms.author: riande
 ms.date: 6/31/2017
 uid: data/ef-rp/sort-filter-page
-ms.openlocfilehash: 668d6e54a64022dda948170f72538f6d4cd9a49f
-ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
+ms.openlocfilehash: 06669d69fa9fec87d262c2b5bfd8b11649259849
+ms.sourcegitcommit: 6e6002de467cd135a69e5518d4ba9422d693132a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46011640"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49348444"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---sort-filter-paging---3-of-8"></a>ASP.NET Core에서 EF Core를 사용한 Razor 페이지 - 정렬, 필터, 페이징 - 3/8
 
@@ -97,9 +97,9 @@ ms.locfileid: "46011640"
 
 코드를 더 잘 이해하려면 다음을 수행합니다.
 
-* *Student/Index.cshtml.cs*에서 `switch (sortOrder)`에 중단점을 설정합니다.
+* *Students/Index.cshtml.cs*에서 `switch (sortOrder)`에 중단점을 설정합니다.
 * `NameSort` 및 `DateSort`에 대한 조사식을 추가합니다.
-* *Student/Index.cshtml*에서 `@Html.DisplayNameFor(model => model.Student[0].LastName)`에 중단점을 설정합니다.
+* *Students/Index.cshtml*에서 `@Html.DisplayNameFor(model => model.Student[0].LastName)`에 중단점을 설정합니다.
 
 디버거를 단계별로 실행합니다.
 
@@ -235,9 +235,9 @@ http://localhost:5000/Students?SearchString=an
 
 코드를 더 잘 이해하려면 다음을 수행합니다.
 
-* *Student/Index.cshtml.cs*에서 `switch (sortOrder)`에 중단점을 설정합니다.
+* *Students/Index.cshtml.cs*에서 `switch (sortOrder)`에 중단점을 설정합니다.
 * `NameSort`, `DateSort`, `CurrentSort` 및 `Model.Student.PageIndex`에 대한 조사식을 추가합니다.
-* *Student/Index.cshtml*에서 `@Html.DisplayNameFor(model => model.Student[0].LastName)`에 중단점을 설정합니다.
+* *Students/Index.cshtml*에서 `@Html.DisplayNameFor(model => model.Student[0].LastName)`에 중단점을 설정합니다.
 
 디버거를 단계별로 실행합니다.
 

@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 07/02/2018
 uid: fundamentals/dependency-injection
-ms.openlocfilehash: 33fae5d87029c8b3afdc321e0247555c1e479d07
-ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
+ms.openlocfilehash: 193bfc7651b6da6db69e8c15bd6beb82906bde0a
+ms.sourcegitcommit: f5d403004f3550e8c46585fdbb16c49e75f495f3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48912620"
+ms.lasthandoff: 10/20/2018
+ms.locfileid: "49477672"
 ---
 # <a name="dependency-injection-in-aspnet-core"></a>ASP.NET Core에서 종속성 주입
 
@@ -287,9 +287,9 @@ Entity Framework 컨텍스트는 범위가 지정된 수명을 사용하여 서�
 
 `OperationService`는 등록되어 각각 다른 `Operation` 형식에 종속됩니다. 종속성 주입을 통해 `OperationService`를 요청하는 경우에는 종속 서비스의 수명에 따라 각 서비스의 새 인스턴스나 기존 인스턴스를 받습니다.
 
-* 요청할 때 임시 서비스가 생성되는 경우 `IOperationTransient` 서비스의 `OperationsId`는 `OperationService`의 `OperationsId`와 다릅니다. `OperationService`는 `IOperationTransient` 클래스의 새 인스턴스를 받습니다. 새 인스턴스는 다른 `OperationsId`를 생성합니다.
-* 요청에 따라 범위가 지정된 서비스가 생성되는 경우 `IOperationScoped` 서비스는 요청 내의 `OperationService`와 `OperationsId`가 같습니다. 전체 요청에서 두 서비스는 다른 `OperationsId` 값을 공유합니다.
-* singleton 및 singleton 인스턴스 서비스가 한 번 생성되어 모든 요청과 모든 서비스에서 사용되는 경우 `OperationsId`는 모든 서비스 요청에서 상수입니다.
+* 요청할 때 임시 서비스가 생성되는 경우 `IOperationTransient` 서비스의 `OperationId`는 `OperationService`의 `OperationId`와 다릅니다. `OperationService`는 `IOperationTransient` 클래스의 새 인스턴스를 받습니다. 새 인스턴스는 다른 `OperationId`를 생성합니다.
+* 요청에 따라 범위가 지정된 서비스가 생성되는 경우 `IOperationScoped` 서비스는 요청 내의 `OperationService`와 `OperationId`가 같습니다. 전체 요청에서 두 서비스는 다른 `OperationId` 값을 공유합니다.
+* singleton 및 singleton 인스턴스 서비스가 한 번 생성되어 모든 요청과 모든 서비스에서 사용되는 경우 `OperationId`는 모든 서비스 요청에서 상수입니다.
 
 ::: moniker range=">= aspnetcore-2.1"
 
@@ -538,7 +538,7 @@ Singleton 서비스는 스레드로부터 안전해야 합니다. Singleton 서�
 
 ## <a name="recommendations"></a>권장 사항
 
-종속성 주입을 사용할 때는 다음 권장 사항을 염두에 둬야 합니다.
+* `async/await` 및 `Task` 기반 서비스 해결은 지원되지 않습니다. C#은 비동기 생성자를 지원하지 않으므로, 서비스를 동기식으로 해결한 후 비동기 메서드를 사용하는 것이 좋습니다.
 
 * 데이터 및 구성을 서비스 컨테이너에 직접 저장하지 마세요. 예를 들어 사용자의 쇼핑 카트는 일반적으로 서비스 컨테이너에 추가하지 말아야 합니다. 구성은 [옵션 패턴](xref:fundamentals/configuration/options)을 사용해야 합니다. 마찬가지로 다른 일부 개체에 대한 액세스를 허용하기 위해서만 존재하는 “데이터 보유자” 개체를 사용하지 마십시오. DI를 통해 실제 항목을 요청하는 것이 좋습니다.
 
@@ -557,7 +557,6 @@ DI는 정적/전역 개체 액세스 패턴의 ‘대안’입니다. 고정 개
 * <xref:mvc/views/dependency-injection>
 * <xref:mvc/controllers/dependency-injection>
 * <xref:security/authorization/dependencyinjection>
-* <xref:fundamentals/repository-pattern>
 * <xref:fundamentals/startup>
 * <xref:test/index>
 * <xref:fundamentals/middleware/extensibility>
