@@ -3,49 +3,43 @@ title: ASP.NET Core MVC의 캐시 태그 도우미
 author: pkellner
 description: 캐시 태그 도우미를 사용하는 방법을 알아봅니다.
 ms.author: riande
-ms.date: 02/14/2017
+ms.custom: mvc
+ms.date: 10/10/2018
 uid: mvc/views/tag-helpers/builtin-th/cache-tag-helper
-ms.openlocfilehash: 11754d2858d8f02c7eb9baac8feda9b50ddb3d79
-ms.sourcegitcommit: 4d5f8680d68b39c411b46c73f7014f8aa0f12026
+ms.openlocfilehash: 7d64c500168166b0a7a29d5b92473726d5a9f49a
+ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47028157"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49325343"
 ---
-# <a name="cache-tag-helper-in-aspnet-core-mvc"></a><span data-ttu-id="18690-103">ASP.NET Core MVC의 캐시 태그 도우미</span><span class="sxs-lookup"><span data-stu-id="18690-103">Cache Tag Helper in ASP.NET Core MVC</span></span>
+# <a name="cache-tag-helper-in-aspnet-core-mvc"></a><span data-ttu-id="85280-103">ASP.NET Core MVC의 캐시 태그 도우미</span><span class="sxs-lookup"><span data-stu-id="85280-103">Cache Tag Helper in ASP.NET Core MVC</span></span>
 
-<span data-ttu-id="18690-104">작성자: [Peter Kellner](http://peterkellner.net)</span><span class="sxs-lookup"><span data-stu-id="18690-104">By [Peter Kellner](http://peterkellner.net)</span></span> 
+<span data-ttu-id="85280-104">작성자: [Peter Kellner](http://peterkellner.net) 및 [Luke Latham](https://github.com/guardrex)</span><span class="sxs-lookup"><span data-stu-id="85280-104">By [Peter Kellner](http://peterkellner.net) and [Luke Latham](https://github.com/guardrex)</span></span> 
 
-<span data-ttu-id="18690-105">캐시 태그 도우미는 콘텐츠를 내부 ASP.NET Core 캐시 공급자에 캐시하여 ASP.NET Core 앱 성능을 획기적으로 개선하는 기능을 제공합니다.</span><span class="sxs-lookup"><span data-stu-id="18690-105">The Cache Tag Helper provides the ability to dramatically improve the performance of your ASP.NET Core app by caching its content to the internal ASP.NET Core cache provider.</span></span>
+<span data-ttu-id="85280-105">캐시 태그 도우미는 콘텐츠를 내부 ASP.NET Core 캐시 공급자에 캐시하여 ASP.NET Core 앱 성능을 개선하는 기능을 제공합니다.</span><span class="sxs-lookup"><span data-stu-id="85280-105">The Cache Tag Helper provides the ability to improve the performance of your ASP.NET Core app by caching its content to the internal ASP.NET Core cache provider.</span></span>
 
-<span data-ttu-id="18690-106">Razor 보기 엔진은 기본 `expires-after`를 20분으로 설정합니다.</span><span class="sxs-lookup"><span data-stu-id="18690-106">The Razor View Engine sets the default `expires-after` to twenty minutes.</span></span>
+<span data-ttu-id="85280-106">태그 도우미에 대한 개요는 <xref:mvc/views/tag-helpers/intro>를 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="85280-106">For an overview of Tag Helpers, see <xref:mvc/views/tag-helpers/intro>.</span></span>
 
-<span data-ttu-id="18690-107">다음 Razor 태그는 날짜/시간을 캐시합니다.</span><span class="sxs-lookup"><span data-stu-id="18690-107">The following Razor markup caches the date/time:</span></span>
+<span data-ttu-id="85280-107">다음 Razor 태그는 현재 날짜를 캐시합니다.</span><span class="sxs-lookup"><span data-stu-id="85280-107">The following Razor markup caches the current date:</span></span>
 
 ```cshtml
 <cache>@DateTime.Now</cache>
 ```
 
-<span data-ttu-id="18690-108">`CacheTagHelper`를 포함하는 페이지에 대한 첫 번째 요청은 현재 날짜/시간을 표시합니다.</span><span class="sxs-lookup"><span data-stu-id="18690-108">The first request to the page that contains `CacheTagHelper` will display the current date/time.</span></span> <span data-ttu-id="18690-109">추가 요청은 캐시가 만료될 때까지(기본값 20분) 또는 메모리 압력에 의해 제거될 때까지 캐시된 값을 표시합니다.</span><span class="sxs-lookup"><span data-stu-id="18690-109">Additional requests will show the cached value until the cache expires (default 20 minutes) or is evicted by memory pressure.</span></span>
+<span data-ttu-id="85280-108">태그 도우미를 포함하는 페이지에 대한 첫 번째 요청은 현재 날짜를 표시합니다.</span><span class="sxs-lookup"><span data-stu-id="85280-108">The first request to the page that contains the Tag Helper displays the current date.</span></span> <span data-ttu-id="85280-109">추가 요청은 캐시가 만료될 때까지(기본값 20분) 또는 캐시에서 캐시된 날짜가 제거될 때까지 캐시된 값을 표시합니다.</span><span class="sxs-lookup"><span data-stu-id="85280-109">Additional requests show the cached value until the cache expires (default 20 minutes) or until the cached date is evicted from the cache.</span></span>
 
-<span data-ttu-id="18690-110">다음 특성을 사용하여 캐시 기간을 설정할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="18690-110">You can set the cache duration with the following attributes:</span></span>
+## <a name="cache-tag-helper-attributes"></a><span data-ttu-id="85280-110">캐시 태그 도우미 특성</span><span class="sxs-lookup"><span data-stu-id="85280-110">Cache Tag Helper Attributes</span></span>
 
-## <a name="cache-tag-helper-attributes"></a><span data-ttu-id="18690-111">캐시 태그 도우미 특성</span><span class="sxs-lookup"><span data-stu-id="18690-111">Cache Tag Helper Attributes</span></span>
+### <a name="enabled"></a><span data-ttu-id="85280-111">사용</span><span class="sxs-lookup"><span data-stu-id="85280-111">enabled</span></span>
 
-- - -
+| <span data-ttu-id="85280-112">특성 유형</span><span class="sxs-lookup"><span data-stu-id="85280-112">Attribute Type</span></span>  | <span data-ttu-id="85280-113">예제</span><span class="sxs-lookup"><span data-stu-id="85280-113">Examples</span></span>        | <span data-ttu-id="85280-114">기본</span><span class="sxs-lookup"><span data-stu-id="85280-114">Default</span></span> |
+| --------------- | --------------- | ------- |
+| <span data-ttu-id="85280-115">부울</span><span class="sxs-lookup"><span data-stu-id="85280-115">Boolean</span></span>         | <span data-ttu-id="85280-116">`true`, `false`</span><span class="sxs-lookup"><span data-stu-id="85280-116">`true`, `false`</span></span> | `true`  |
 
-### <a name="enabled"></a><span data-ttu-id="18690-112">사용</span><span class="sxs-lookup"><span data-stu-id="18690-112">enabled</span></span>    
+<span data-ttu-id="85280-117">`enabled`는 캐시 태그 도우미로 묶인 콘텐츠가 캐시되었는지 확인합니다.</span><span class="sxs-lookup"><span data-stu-id="85280-117">`enabled` determines if the content enclosed by the Cache Tag Helper is cached.</span></span> <span data-ttu-id="85280-118">기본값은 `true`입니다.</span><span class="sxs-lookup"><span data-stu-id="85280-118">The default is `true`.</span></span> <span data-ttu-id="85280-119">`false`로 설정하면 렌더링된 출력이 캐시되지 **않습니다**.</span><span class="sxs-lookup"><span data-stu-id="85280-119">If set to `false`, the rendered output is **not** cached.</span></span>
 
-
-| <span data-ttu-id="18690-113">특성 유형</span><span class="sxs-lookup"><span data-stu-id="18690-113">Attribute Type</span></span>    | <span data-ttu-id="18690-114">유효한 값</span><span class="sxs-lookup"><span data-stu-id="18690-114">Valid Values</span></span>      |
-|----------------   |----------------   |
-| <span data-ttu-id="18690-115">boolean</span><span class="sxs-lookup"><span data-stu-id="18690-115">boolean</span></span>           | <span data-ttu-id="18690-116">"true"(기본값)</span><span class="sxs-lookup"><span data-stu-id="18690-116">"true" (default)</span></span>  |
-|                   | <span data-ttu-id="18690-117">"false"</span><span class="sxs-lookup"><span data-stu-id="18690-117">"false"</span></span>   |
-
-
-<span data-ttu-id="18690-118">캐시 태그 도우미로 묶인 콘텐츠가 캐시되었는지 확인합니다.</span><span class="sxs-lookup"><span data-stu-id="18690-118">Determines whether the content enclosed by the Cache Tag Helper is cached.</span></span> <span data-ttu-id="18690-119">기본값은 `true`입니다.</span><span class="sxs-lookup"><span data-stu-id="18690-119">The default is `true`.</span></span>  <span data-ttu-id="18690-120">`false`로 설정되면 이 캐시 태그 도우미는 렌더링된 출력에 캐싱 효과를 적용하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="18690-120">If set to `false` this Cache Tag Helper will have no caching effect on the rendered output.</span></span>
-
-<span data-ttu-id="18690-121">예제:</span><span class="sxs-lookup"><span data-stu-id="18690-121">Example:</span></span>
+<span data-ttu-id="85280-120">예제:</span><span class="sxs-lookup"><span data-stu-id="85280-120">Example:</span></span>
 
 ```cshtml
 <cache enabled="true">
@@ -53,17 +47,15 @@ ms.locfileid: "47028157"
 </cache>
 ```
 
-- - -
+### <a name="expires-on"></a><span data-ttu-id="85280-121">expires-on</span><span class="sxs-lookup"><span data-stu-id="85280-121">expires-on</span></span>
 
-### <a name="expires-on"></a><span data-ttu-id="18690-122">expires-on</span><span class="sxs-lookup"><span data-stu-id="18690-122">expires-on</span></span> 
+| <span data-ttu-id="85280-122">특성 유형</span><span class="sxs-lookup"><span data-stu-id="85280-122">Attribute Type</span></span>   | <span data-ttu-id="85280-123">예</span><span class="sxs-lookup"><span data-stu-id="85280-123">Example</span></span>                            |
+| ---------------- | ---------------------------------- |
+| `DateTimeOffset` | `@new DateTime(2025,1,29,17,02,0)` |
 
-| <span data-ttu-id="18690-123">특성 유형</span><span class="sxs-lookup"><span data-stu-id="18690-123">Attribute Type</span></span> |           <span data-ttu-id="18690-124">예제 값</span><span class="sxs-lookup"><span data-stu-id="18690-124">Example Value</span></span>            |
-|----------------|------------------------------------|
-| <span data-ttu-id="18690-125">DateTimeOffset</span><span class="sxs-lookup"><span data-stu-id="18690-125">DateTimeOffset</span></span> | <span data-ttu-id="18690-126">"@new DateTime(2025,1,29,17,02,0)"</span><span class="sxs-lookup"><span data-stu-id="18690-126">"@new DateTime(2025,1,29,17,02,0)"</span></span> |
+<span data-ttu-id="85280-124">`expires-on`은 캐시된 항목의 절대 만료 날짜를 설정합니다.</span><span class="sxs-lookup"><span data-stu-id="85280-124">`expires-on` sets an absolute expiration date for the cached item.</span></span>
 
-<span data-ttu-id="18690-127">절대 만료 날짜를 설정합니다.</span><span class="sxs-lookup"><span data-stu-id="18690-127">Sets an absolute expiration date.</span></span> <span data-ttu-id="18690-128">다음 예제는 2025년 1월 29일 오후 5시 2분이 될 때까지 캐시 태그 도우미의 콘텐츠를 캐시합니다.</span><span class="sxs-lookup"><span data-stu-id="18690-128">The following example will cache the contents of the Cache Tag Helper until 5:02 PM on January 29, 2025.</span></span>
-
-<span data-ttu-id="18690-129">예제:</span><span class="sxs-lookup"><span data-stu-id="18690-129">Example:</span></span>
+<span data-ttu-id="85280-125">다음 예제는 2025년 1월 29일 오후 5시 2분이 될 때까지 캐시 태그 도우미의 콘텐츠를 캐시합니다.</span><span class="sxs-lookup"><span data-stu-id="85280-125">The following example caches the contents of the Cache Tag Helper until 5:02 PM on January 29, 2025:</span></span>
 
 ```cshtml
 <cache expires-on="@new DateTime(2025,1,29,17,02,0)">
@@ -71,17 +63,15 @@ ms.locfileid: "47028157"
 </cache>
 ```
 
-- - -
+### <a name="expires-after"></a><span data-ttu-id="85280-126">expires-after</span><span class="sxs-lookup"><span data-stu-id="85280-126">expires-after</span></span>
 
-### <a name="expires-after"></a><span data-ttu-id="18690-130">expires-after</span><span class="sxs-lookup"><span data-stu-id="18690-130">expires-after</span></span>
+| <span data-ttu-id="85280-127">특성 유형</span><span class="sxs-lookup"><span data-stu-id="85280-127">Attribute Type</span></span> | <span data-ttu-id="85280-128">예</span><span class="sxs-lookup"><span data-stu-id="85280-128">Example</span></span>                      | <span data-ttu-id="85280-129">기본</span><span class="sxs-lookup"><span data-stu-id="85280-129">Default</span></span>    |
+| -------------- | ---------------------------- | ---------- |
+| `TimeSpan`     | `@TimeSpan.FromSeconds(120)` | <span data-ttu-id="85280-130">20분</span><span class="sxs-lookup"><span data-stu-id="85280-130">20 minutes</span></span> |
 
-| <span data-ttu-id="18690-131">특성 유형</span><span class="sxs-lookup"><span data-stu-id="18690-131">Attribute Type</span></span> |        <span data-ttu-id="18690-132">예제 값</span><span class="sxs-lookup"><span data-stu-id="18690-132">Example Value</span></span>         |
-|----------------|------------------------------|
-|    <span data-ttu-id="18690-133">TimeSpan</span><span class="sxs-lookup"><span data-stu-id="18690-133">TimeSpan</span></span>    | <span data-ttu-id="18690-134">"@TimeSpan.FromSeconds(120)"</span><span class="sxs-lookup"><span data-stu-id="18690-134">"@TimeSpan.FromSeconds(120)"</span></span> |
+<span data-ttu-id="85280-131">`expires-after`는 콘텐츠를 캐시할 첫 번째 요청 시간부터 시간 길이를 설정합니다.</span><span class="sxs-lookup"><span data-stu-id="85280-131">`expires-after` sets the length of time from the first request time to cache the contents.</span></span>
 
-<span data-ttu-id="18690-135">콘텐츠를 캐시할 첫 번째 요청 시간부터 시간 길이를 설정합니다.</span><span class="sxs-lookup"><span data-stu-id="18690-135">Sets the length of time from the first request time to cache the contents.</span></span> 
-
-<span data-ttu-id="18690-136">예제:</span><span class="sxs-lookup"><span data-stu-id="18690-136">Example:</span></span>
+<span data-ttu-id="85280-132">예제:</span><span class="sxs-lookup"><span data-stu-id="85280-132">Example:</span></span>
 
 ```cshtml
 <cache expires-after="@TimeSpan.FromSeconds(120)">
@@ -89,17 +79,17 @@ ms.locfileid: "47028157"
 </cache>
 ```
 
-- - -
+<span data-ttu-id="85280-133">Razor 보기 엔진은 기본 `expires-after` 값을 20분으로 설정합니다.</span><span class="sxs-lookup"><span data-stu-id="85280-133">The Razor View Engine sets the default `expires-after` value to twenty minutes.</span></span>
 
-### <a name="expires-sliding"></a><span data-ttu-id="18690-137">expires-sliding</span><span class="sxs-lookup"><span data-stu-id="18690-137">expires-sliding</span></span>
+### <a name="expires-sliding"></a><span data-ttu-id="85280-134">expires-sliding</span><span class="sxs-lookup"><span data-stu-id="85280-134">expires-sliding</span></span>
 
-| <span data-ttu-id="18690-138">특성 유형</span><span class="sxs-lookup"><span data-stu-id="18690-138">Attribute Type</span></span> |        <span data-ttu-id="18690-139">예제 값</span><span class="sxs-lookup"><span data-stu-id="18690-139">Example Value</span></span>        |
-|----------------|-----------------------------|
-|    <span data-ttu-id="18690-140">TimeSpan</span><span class="sxs-lookup"><span data-stu-id="18690-140">TimeSpan</span></span>    | <span data-ttu-id="18690-141">"@TimeSpan.FromSeconds(60)"</span><span class="sxs-lookup"><span data-stu-id="18690-141">"@TimeSpan.FromSeconds(60)"</span></span> |
+| <span data-ttu-id="85280-135">특성 유형</span><span class="sxs-lookup"><span data-stu-id="85280-135">Attribute Type</span></span> | <span data-ttu-id="85280-136">예</span><span class="sxs-lookup"><span data-stu-id="85280-136">Example</span></span>                     |
+| -------------- | --------------------------- |
+| `TimeSpan`     | `@TimeSpan.FromSeconds(60)` |
 
-<span data-ttu-id="18690-142">캐시 항목이 액세스되지 않는 경우 캐시 항목을 제거해야 하는 시간을 설정합니다.</span><span class="sxs-lookup"><span data-stu-id="18690-142">Sets the time that a cache entry should be evicted if it has not been accessed.</span></span>
+<span data-ttu-id="85280-137">캐시 항목 값이 액세스되지 않는 경우 캐시 항목을 제거해야 하는 시간을 설정합니다.</span><span class="sxs-lookup"><span data-stu-id="85280-137">Sets the time that a cache entry should be evicted if its value hasn't been accessed.</span></span>
 
-<span data-ttu-id="18690-143">예제:</span><span class="sxs-lookup"><span data-stu-id="18690-143">Example:</span></span>
+<span data-ttu-id="85280-138">예제:</span><span class="sxs-lookup"><span data-stu-id="85280-138">Example:</span></span>
 
 ```cshtml
 <cache expires-sliding="@TimeSpan.FromSeconds(60)">
@@ -107,18 +97,15 @@ ms.locfileid: "47028157"
 </cache>
 ```
 
-- - -
+### <a name="vary-by-header"></a><span data-ttu-id="85280-139">vary-by-header</span><span class="sxs-lookup"><span data-stu-id="85280-139">vary-by-header</span></span>
 
-### <a name="vary-by-header"></a><span data-ttu-id="18690-144">vary-by-header</span><span class="sxs-lookup"><span data-stu-id="18690-144">vary-by-header</span></span>
+| <span data-ttu-id="85280-140">특성 유형</span><span class="sxs-lookup"><span data-stu-id="85280-140">Attribute Type</span></span> | <span data-ttu-id="85280-141">예제</span><span class="sxs-lookup"><span data-stu-id="85280-141">Examples</span></span>                                    |
+| -------------- | ------------------------------------------- |
+| <span data-ttu-id="85280-142">문자열</span><span class="sxs-lookup"><span data-stu-id="85280-142">String</span></span>         | <span data-ttu-id="85280-143">`User-Agent`, `User-Agent,content-encoding`</span><span class="sxs-lookup"><span data-stu-id="85280-143">`User-Agent`, `User-Agent,content-encoding`</span></span> |
 
-| <span data-ttu-id="18690-145">특성 유형</span><span class="sxs-lookup"><span data-stu-id="18690-145">Attribute Type</span></span>    | <span data-ttu-id="18690-146">예제 값</span><span class="sxs-lookup"><span data-stu-id="18690-146">Example Values</span></span>                |
-|----------------   |----------------               |
-| <span data-ttu-id="18690-147">문자열</span><span class="sxs-lookup"><span data-stu-id="18690-147">String</span></span>            | <span data-ttu-id="18690-148">"User-Agent"</span><span class="sxs-lookup"><span data-stu-id="18690-148">"User-Agent"</span></span>                  |
-|                   | <span data-ttu-id="18690-149">"User-Agent,content-encoding"</span><span class="sxs-lookup"><span data-stu-id="18690-149">"User-Agent,content-encoding"</span></span> |
+<span data-ttu-id="85280-144">`vary-by-header`는 값이 변경되면 캐시 새로 고침을 트리거하는 쉼표로 구분된 헤더 값 목록을 허용합니다.</span><span class="sxs-lookup"><span data-stu-id="85280-144">`vary-by-header` accepts a comma-delimited list of header values that trigger a cache refresh when they change.</span></span>
 
-<span data-ttu-id="18690-150">값이 변경되면 캐시 새로 고침을 트리거하는 단일 헤더 값 또는 쉼표로 구분된 헤더 값 목록을 허용합니다.</span><span class="sxs-lookup"><span data-stu-id="18690-150">Accepts a single header value or a comma-separated list of header values that trigger a cache refresh when they change.</span></span> <span data-ttu-id="18690-151">다음 예제에서는 헤더 값 `User-Agent`를 모니터링합니다.</span><span class="sxs-lookup"><span data-stu-id="18690-151">The following example monitors the header value `User-Agent`.</span></span> <span data-ttu-id="18690-152">이 예제는 웹 서버에 제공된 모든 `User-Agent`에 대한 콘텐츠를 캐시합니다.</span><span class="sxs-lookup"><span data-stu-id="18690-152">The example will cache the content for every different `User-Agent` presented to the web server.</span></span>
-
-<span data-ttu-id="18690-153">예제:</span><span class="sxs-lookup"><span data-stu-id="18690-153">Example:</span></span>
+<span data-ttu-id="85280-145">다음 예제에서는 헤더 값 `User-Agent`를 모니터링합니다.</span><span class="sxs-lookup"><span data-stu-id="85280-145">The following example monitors the header value `User-Agent`.</span></span> <span data-ttu-id="85280-146">이 예제는 웹 서버에 제공된 모든 `User-Agent`에 대한 콘텐츠를 캐시합니다.</span><span class="sxs-lookup"><span data-stu-id="85280-146">The example caches the content for every different `User-Agent` presented to the web server:</span></span>
 
 ```cshtml
 <cache vary-by-header="User-Agent">
@@ -126,18 +113,15 @@ ms.locfileid: "47028157"
 </cache>
 ```
 
-- - -
+### <a name="vary-by-query"></a><span data-ttu-id="85280-147">vary-by-query</span><span class="sxs-lookup"><span data-stu-id="85280-147">vary-by-query</span></span>
 
-### <a name="vary-by-query"></a><span data-ttu-id="18690-154">vary-by-query</span><span class="sxs-lookup"><span data-stu-id="18690-154">vary-by-query</span></span>
+| <span data-ttu-id="85280-148">특성 유형</span><span class="sxs-lookup"><span data-stu-id="85280-148">Attribute Type</span></span> | <span data-ttu-id="85280-149">예제</span><span class="sxs-lookup"><span data-stu-id="85280-149">Examples</span></span>             |
+| -------------- | -------------------- |
+| <span data-ttu-id="85280-150">문자열</span><span class="sxs-lookup"><span data-stu-id="85280-150">String</span></span>         | <span data-ttu-id="85280-151">`Make`, `Make,Model`</span><span class="sxs-lookup"><span data-stu-id="85280-151">`Make`, `Make,Model`</span></span> |
 
-| <span data-ttu-id="18690-155">특성 유형</span><span class="sxs-lookup"><span data-stu-id="18690-155">Attribute Type</span></span>    | <span data-ttu-id="18690-156">예제 값</span><span class="sxs-lookup"><span data-stu-id="18690-156">Example Values</span></span>                |
-|----------------   |----------------               |
-| <span data-ttu-id="18690-157">문자열</span><span class="sxs-lookup"><span data-stu-id="18690-157">String</span></span>            | <span data-ttu-id="18690-158">"Make"</span><span class="sxs-lookup"><span data-stu-id="18690-158">"Make"</span></span>                |
-|                   | <span data-ttu-id="18690-159">"Make,Model"</span><span class="sxs-lookup"><span data-stu-id="18690-159">"Make,Model"</span></span> |
+<span data-ttu-id="85280-152">`vary-by-query`는 헤더 값이 변경되면 캐시 새로 고침을 트리거하는 쉼표로 구분된 헤더 값 목록을 허용합니다.</span><span class="sxs-lookup"><span data-stu-id="85280-152">`vary-by-query` accepts a comma-delimited list of header values that trigger a cache refresh when the header value changes.</span></span>
 
-<span data-ttu-id="18690-160">헤더 값이 변경되면 캐시 새로 고침을 트리거하는 단일 헤더 값 또는 쉼표로 구분된 헤더 값 목록을 허용합니다.</span><span class="sxs-lookup"><span data-stu-id="18690-160">Accepts a single header value or a comma-separated list of header values that trigger a cache refresh when the header value changes.</span></span> <span data-ttu-id="18690-161">다음 예제에서는 `Make` 및 `Model` 값을 살펴봅니다.</span><span class="sxs-lookup"><span data-stu-id="18690-161">The following example looks at the values of `Make` and `Model`.</span></span>
-
-<span data-ttu-id="18690-162">예제:</span><span class="sxs-lookup"><span data-stu-id="18690-162">Example:</span></span>
+<span data-ttu-id="85280-153">다음 예제에서는 `Make` 및 `Model` 값을 모니터링합니다.</span><span class="sxs-lookup"><span data-stu-id="85280-153">The following example monitors the values of `Make` and `Model`.</span></span> <span data-ttu-id="85280-154">이 예제는 웹 서버에 제공된 모든 `Make` 및 `Model`에 대한 콘텐츠를 캐시합니다.</span><span class="sxs-lookup"><span data-stu-id="85280-154">The example caches the content for every different `Make` and `Model` presented to the web server:</span></span>
 
 ```cshtml
 <cache vary-by-query="Make,Model">
@@ -145,18 +129,17 @@ ms.locfileid: "47028157"
 </cache>
 ```
 
-- - -
+### <a name="vary-by-route"></a><span data-ttu-id="85280-155">vary-by-route</span><span class="sxs-lookup"><span data-stu-id="85280-155">vary-by-route</span></span>
 
-### <a name="vary-by-route"></a><span data-ttu-id="18690-163">vary-by-route</span><span class="sxs-lookup"><span data-stu-id="18690-163">vary-by-route</span></span>
+| <span data-ttu-id="85280-156">특성 유형</span><span class="sxs-lookup"><span data-stu-id="85280-156">Attribute Type</span></span> | <span data-ttu-id="85280-157">예제</span><span class="sxs-lookup"><span data-stu-id="85280-157">Examples</span></span>             |
+| -------------- | -------------------- |
+| <span data-ttu-id="85280-158">문자열</span><span class="sxs-lookup"><span data-stu-id="85280-158">String</span></span>         | <span data-ttu-id="85280-159">`Make`, `Make,Model`</span><span class="sxs-lookup"><span data-stu-id="85280-159">`Make`, `Make,Model`</span></span> |
 
-| <span data-ttu-id="18690-164">특성 유형</span><span class="sxs-lookup"><span data-stu-id="18690-164">Attribute Type</span></span>    | <span data-ttu-id="18690-165">예제 값</span><span class="sxs-lookup"><span data-stu-id="18690-165">Example Values</span></span>                |
-|----------------   |----------------               |
-| <span data-ttu-id="18690-166">문자열</span><span class="sxs-lookup"><span data-stu-id="18690-166">String</span></span>            | <span data-ttu-id="18690-167">"Make"</span><span class="sxs-lookup"><span data-stu-id="18690-167">"Make"</span></span>                |
-|                   | <span data-ttu-id="18690-168">"Make,Model"</span><span class="sxs-lookup"><span data-stu-id="18690-168">"Make,Model"</span></span> |
+<span data-ttu-id="85280-160">`vary-by-route`는 경로 데이터 매개 변수 값이 변경되면 캐시 새로 고침을 트리거하는 쉼표로 구분된 헤더 값 목록을 허용합니다.</span><span class="sxs-lookup"><span data-stu-id="85280-160">`vary-by-route` accepts a comma-delimited list of header values that trigger a cache refresh when the route data parameter value changes.</span></span>
 
-<span data-ttu-id="18690-169">경로 데이터 매개 변수 값이 변경되면 캐시 새로 고침을 트리거하는 단일 헤더 값 또는 쉼표로 구분된 헤더 값 목록을 허용합니다.</span><span class="sxs-lookup"><span data-stu-id="18690-169">Accepts a single header value or a comma-separated list of header values that trigger a cache refresh when the route data parameter value(s) change.</span></span> <span data-ttu-id="18690-170">예제:</span><span class="sxs-lookup"><span data-stu-id="18690-170">Example:</span></span>
+<span data-ttu-id="85280-161">예제:</span><span class="sxs-lookup"><span data-stu-id="85280-161">Example:</span></span>
 
-<span data-ttu-id="18690-171">*Startup.cs*</span><span class="sxs-lookup"><span data-stu-id="18690-171">*Startup.cs*</span></span> 
+<span data-ttu-id="85280-162">*Startup.cs*:</span><span class="sxs-lookup"><span data-stu-id="85280-162">*Startup.cs*:</span></span>
 
 ```csharp
 routes.MapRoute(
@@ -164,7 +147,7 @@ routes.MapRoute(
     template: "{controller=Home}/{action=Index}/{Make?}/{Model?}");
 ```
 
-<span data-ttu-id="18690-172">*Index.cshtml*</span><span class="sxs-lookup"><span data-stu-id="18690-172">*Index.cshtml*</span></span>
+<span data-ttu-id="85280-163">*Index.cshtml*:</span><span class="sxs-lookup"><span data-stu-id="85280-163">*Index.cshtml*:</span></span>
 
 ```cshtml
 <cache vary-by-route="Make,Model">
@@ -172,18 +155,15 @@ routes.MapRoute(
 </cache>
 ```
 
-- - -
+### <a name="vary-by-cookie"></a><span data-ttu-id="85280-164">vary-by-cookie</span><span class="sxs-lookup"><span data-stu-id="85280-164">vary-by-cookie</span></span>
 
-### <a name="vary-by-cookie"></a><span data-ttu-id="18690-173">vary-by-cookie</span><span class="sxs-lookup"><span data-stu-id="18690-173">vary-by-cookie</span></span>
+| <span data-ttu-id="85280-165">특성 유형</span><span class="sxs-lookup"><span data-stu-id="85280-165">Attribute Type</span></span> | <span data-ttu-id="85280-166">예제</span><span class="sxs-lookup"><span data-stu-id="85280-166">Examples</span></span>                                                                         |
+| -------------- | -------------------------------------------------------------------------------- |
+| <span data-ttu-id="85280-167">문자열</span><span class="sxs-lookup"><span data-stu-id="85280-167">String</span></span>         | <span data-ttu-id="85280-168">`.AspNetCore.Identity.Application`, `.AspNetCore.Identity.Application,HairColor`</span><span class="sxs-lookup"><span data-stu-id="85280-168">`.AspNetCore.Identity.Application`, `.AspNetCore.Identity.Application,HairColor`</span></span> |
 
-| <span data-ttu-id="18690-174">특성 유형</span><span class="sxs-lookup"><span data-stu-id="18690-174">Attribute Type</span></span>    | <span data-ttu-id="18690-175">예제 값</span><span class="sxs-lookup"><span data-stu-id="18690-175">Example Values</span></span>                |
-|----------------   |----------------               |
-| <span data-ttu-id="18690-176">문자열</span><span class="sxs-lookup"><span data-stu-id="18690-176">String</span></span>            | <span data-ttu-id="18690-177">".AspNetCore.Identity.Application"</span><span class="sxs-lookup"><span data-stu-id="18690-177">".AspNetCore.Identity.Application"</span></span>                |
-|                   | <span data-ttu-id="18690-178">".AspNetCore.Identity.Application,HairColor"</span><span class="sxs-lookup"><span data-stu-id="18690-178">".AspNetCore.Identity.Application,HairColor"</span></span> |
+<span data-ttu-id="85280-169">`vary-by-cookie`는 헤더 값이 변경되면 캐시 새로 고침을 트리거하는 쉼표로 구분된 헤더 값 목록을 허용합니다.</span><span class="sxs-lookup"><span data-stu-id="85280-169">`vary-by-cookie` accepts a comma-delimited list of header values that trigger a cache refresh when the header values change.</span></span>
 
-<span data-ttu-id="18690-179">헤더 값이 변경되면 캐시 새로 고침을 트리거하는 단일 헤더 값 또는 쉼표로 구분된 헤더 값 목록을 허용합니다.</span><span class="sxs-lookup"><span data-stu-id="18690-179">Accepts a single header value or a comma-separated list of header values that trigger a cache refresh when the header values(s) change.</span></span> <span data-ttu-id="18690-180">다음 예제에서는 ASP.NET Core ID와 연결된 쿠키를 살펴봅니다.</span><span class="sxs-lookup"><span data-stu-id="18690-180">The following example looks at the cookie associated with ASP.NET Core Identity.</span></span> <span data-ttu-id="18690-181">사용자가 인증되면 캐시 새로 고침을 트리거하는 요청 쿠키를 설정해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="18690-181">When a user is authenticated the request cookie to be set which triggers a cache refresh.</span></span>
-
-<span data-ttu-id="18690-182">예제:</span><span class="sxs-lookup"><span data-stu-id="18690-182">Example:</span></span>
+<span data-ttu-id="85280-170">다음 예제에서는 ASP.NET Core ID와 연결된 쿠키를 모니터링합니다.</span><span class="sxs-lookup"><span data-stu-id="85280-170">The following example monitors the cookie associated with ASP.NET Core Identity.</span></span> <span data-ttu-id="85280-171">사용자가 인증되면 ID 쿠키가 변경될 때 캐시 새로 고침이 트리거됩니다.</span><span class="sxs-lookup"><span data-stu-id="85280-171">When a user is authenticated, a change in the Identity cookie triggers a cache refresh:</span></span>
 
 ```cshtml
 <cache vary-by-cookie=".AspNetCore.Identity.Application">
@@ -191,20 +171,15 @@ routes.MapRoute(
 </cache>
 ```
 
-- - -
+### <a name="vary-by-user"></a><span data-ttu-id="85280-172">vary-by-user</span><span class="sxs-lookup"><span data-stu-id="85280-172">vary-by-user</span></span>
 
-### <a name="vary-by-user"></a><span data-ttu-id="18690-183">vary-by-user</span><span class="sxs-lookup"><span data-stu-id="18690-183">vary-by-user</span></span>
+| <span data-ttu-id="85280-173">특성 유형</span><span class="sxs-lookup"><span data-stu-id="85280-173">Attribute Type</span></span>  | <span data-ttu-id="85280-174">예제</span><span class="sxs-lookup"><span data-stu-id="85280-174">Examples</span></span>        | <span data-ttu-id="85280-175">기본</span><span class="sxs-lookup"><span data-stu-id="85280-175">Default</span></span> |
+| --------------- | --------------- | ------- |
+| <span data-ttu-id="85280-176">부울</span><span class="sxs-lookup"><span data-stu-id="85280-176">Boolean</span></span>         | <span data-ttu-id="85280-177">`true`, `false`</span><span class="sxs-lookup"><span data-stu-id="85280-177">`true`, `false`</span></span> | `true`  |
 
-| <span data-ttu-id="18690-184">특성 유형</span><span class="sxs-lookup"><span data-stu-id="18690-184">Attribute Type</span></span>    | <span data-ttu-id="18690-185">예제 값</span><span class="sxs-lookup"><span data-stu-id="18690-185">Example Values</span></span>                |
-|----------------   |----------------               |
-| <span data-ttu-id="18690-186">부울</span><span class="sxs-lookup"><span data-stu-id="18690-186">Boolean</span></span>             | <span data-ttu-id="18690-187">"true"</span><span class="sxs-lookup"><span data-stu-id="18690-187">"true"</span></span>                  |
-|                     | <span data-ttu-id="18690-188">"false"(기본값)</span><span class="sxs-lookup"><span data-stu-id="18690-188">"false" (default)</span></span> |
+<span data-ttu-id="85280-178">`vary-by-user`는 로그인한 사용자(또는 컨텍스트 보안 주체)가 변경되면 캐시를 다시 설정해야 하는지 여부를 지정합니다.</span><span class="sxs-lookup"><span data-stu-id="85280-178">`vary-by-user` specifies whether or not the cache resets when the signed-in user (or Context Principal) changes.</span></span> <span data-ttu-id="85280-179">현재 사용자를 요청 컨텍스트 보안 주체라고도 하며 `@User.Identity.Name`을 참조하여 Razor 보기에서 볼 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="85280-179">The current user is also known as the Request Context Principal and can be viewed in a Razor view by referencing `@User.Identity.Name`.</span></span>
 
-<span data-ttu-id="18690-189">로그인한 사용자(또는 컨텍스트 보안 주체)가 변경되면 캐시를 다시 설정해야 하는지 여부를 지정합니다.</span><span class="sxs-lookup"><span data-stu-id="18690-189">Specifies whether or not the cache should reset when the logged-in user (or Context Principal) changes.</span></span> <span data-ttu-id="18690-190">현재 사용자를 요청 컨텍스트 보안 주체라고도 하며 `@User.Identity.Name`을 참조하여 Razor 보기에서 볼 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="18690-190">The current user is also known as the Request Context Principal and can be viewed in a Razor view by referencing `@User.Identity.Name`.</span></span>
-
-<span data-ttu-id="18690-191">다음 예제는 현재 로그인한 사용자를 살펴봅니다.</span><span class="sxs-lookup"><span data-stu-id="18690-191">The following example looks at the current logged in user.</span></span>  
-
-<span data-ttu-id="18690-192">예제:</span><span class="sxs-lookup"><span data-stu-id="18690-192">Example:</span></span>
+<span data-ttu-id="85280-180">다음 예에서는 현재 로그인한 사용자를 모니터링하여 캐시 새로 고침을 트리거합니다.</span><span class="sxs-lookup"><span data-stu-id="85280-180">The following example monitors the current logged in user to trigger a cache refresh:</span></span>
 
 ```cshtml
 <cache vary-by-user="true">
@@ -212,26 +187,22 @@ routes.MapRoute(
 </cache>
 ```
 
-<span data-ttu-id="18690-193">이 특성을 사용하면 로그인 및 로그아웃 주기 동안 콘텐츠가 캐시에 유지됩니다.</span><span class="sxs-lookup"><span data-stu-id="18690-193">Using this attribute maintains the contents in cache through a log-in and log-out cycle.</span></span>  <span data-ttu-id="18690-194">`vary-by-user="true"`를 사용하면 로그인 및 로그아웃 작업에서 인증된 사용자에 대한 캐시를 무효화합니다.</span><span class="sxs-lookup"><span data-stu-id="18690-194">When using `vary-by-user="true"`, a log-in and log-out action invalidates the cache for the authenticated user.</span></span>  <span data-ttu-id="18690-195">로그인 시 새로운 고유 쿠키 값이 생성되므로 캐시가 무효화됩니다.</span><span class="sxs-lookup"><span data-stu-id="18690-195">The cache is invalidated because a new unique cookie value is generated on login.</span></span> <span data-ttu-id="18690-196">쿠키가 없거나 만료된 경우 캐시는 익명 상태로 유지됩니다.</span><span class="sxs-lookup"><span data-stu-id="18690-196">Cache is maintained for the anonymous state when no cookie is present or has expired.</span></span> <span data-ttu-id="18690-197">즉, 로그인한 사용자가 없으면 캐시가 유지됩니다.</span><span class="sxs-lookup"><span data-stu-id="18690-197">This means if no user is logged in, the cache will be maintained.</span></span>
+<span data-ttu-id="85280-181">이 특성을 사용하면 로그인 및 로그아웃 주기 동안 콘텐츠가 캐시에 유지됩니다.</span><span class="sxs-lookup"><span data-stu-id="85280-181">Using this attribute maintains the contents in cache through a sign-in and sign-out cycle.</span></span> <span data-ttu-id="85280-182">값이 `true`로 설정되면 인증 주기로 인해 인증된 사용자의 캐시가 무효화됩니다.</span><span class="sxs-lookup"><span data-stu-id="85280-182">When the value is set to `true`, an authentication cycle invalidates the cache for the authenticated user.</span></span> <span data-ttu-id="85280-183">사용자가 인증되면 새로운 고유 쿠키 값이 생성되므로 캐시가 무효화됩니다.</span><span class="sxs-lookup"><span data-stu-id="85280-183">The cache is invalidated because a new unique cookie value is generated when a user is authenticated.</span></span> <span data-ttu-id="85280-184">쿠키가 없거나 만료된 경우 캐시는 익명 상태로 유지됩니다.</span><span class="sxs-lookup"><span data-stu-id="85280-184">Cache is maintained for the anonymous state when no cookie is present or the cookie has expired.</span></span> <span data-ttu-id="85280-185">사용자가 인증되지 **않으면** 캐시가 유지됩니다.</span><span class="sxs-lookup"><span data-stu-id="85280-185">If the user is **not** authenticated, the cache is maintained.</span></span>
 
-- - -
+### <a name="vary-by"></a><span data-ttu-id="85280-186">vary-by</span><span class="sxs-lookup"><span data-stu-id="85280-186">vary-by</span></span>
 
-### <a name="vary-by"></a><span data-ttu-id="18690-198">vary-by</span><span class="sxs-lookup"><span data-stu-id="18690-198">vary-by</span></span>
+| <span data-ttu-id="85280-187">특성 유형</span><span class="sxs-lookup"><span data-stu-id="85280-187">Attribute Type</span></span> | <span data-ttu-id="85280-188">예</span><span class="sxs-lookup"><span data-stu-id="85280-188">Example</span></span>  |
+| -------------- | -------- |
+| <span data-ttu-id="85280-189">문자열</span><span class="sxs-lookup"><span data-stu-id="85280-189">String</span></span>         | `@Model` |
 
-| <span data-ttu-id="18690-199">특성 유형</span><span class="sxs-lookup"><span data-stu-id="18690-199">Attribute Type</span></span> | <span data-ttu-id="18690-200">예제 값</span><span class="sxs-lookup"><span data-stu-id="18690-200">Example Values</span></span> |
-|----------------|----------------|
-|     <span data-ttu-id="18690-201">문자열</span><span class="sxs-lookup"><span data-stu-id="18690-201">String</span></span>     |    <span data-ttu-id="18690-202">"@Model"</span><span class="sxs-lookup"><span data-stu-id="18690-202">"@Model"</span></span>    |
+<span data-ttu-id="85280-190">`vary-by`는 캐시되는 데이터의 사용자 지정을 허용합니다.</span><span class="sxs-lookup"><span data-stu-id="85280-190">`vary-by` allows for customization of what data is cached.</span></span> <span data-ttu-id="85280-191">특성의 문자열 값에서 참조하는 개체가 변경되면 캐시 태그 도우미의 콘텐츠가 업데이트됩니다.</span><span class="sxs-lookup"><span data-stu-id="85280-191">When the object referenced by the attribute's string value changes, the content of the Cache Tag Helper is updated.</span></span> <span data-ttu-id="85280-192">종종 모델 값의 문자열 연결이 이 특성에 할당됩니다.</span><span class="sxs-lookup"><span data-stu-id="85280-192">Often, a string-concatenation of model values are assigned to this attribute.</span></span> <span data-ttu-id="85280-193">실제로 연결된 값을 업데이트하면 캐시가 무효화되는 경우가 있습니다.</span><span class="sxs-lookup"><span data-stu-id="85280-193">Effectively, this results in a scenario where an update to any of the concatenated values invalidates the cache.</span></span>
 
-<span data-ttu-id="18690-203">캐시되는 데이터의 사용자 지정을 허용합니다.</span><span class="sxs-lookup"><span data-stu-id="18690-203">Allows for customization of what data gets cached.</span></span> <span data-ttu-id="18690-204">특성의 문자열 값에서 참조하는 개체가 변경되면 캐시 태그 도우미의 콘텐츠가 업데이트됩니다.</span><span class="sxs-lookup"><span data-stu-id="18690-204">When the object referenced by the attribute's string value changes, the content of the Cache Tag Helper is updated.</span></span> <span data-ttu-id="18690-205">종종 모델 값의 문자열 연결이 이 특성에 할당됩니다.</span><span class="sxs-lookup"><span data-stu-id="18690-205">Often a string-concatenation of model values are assigned to this attribute.</span></span>  <span data-ttu-id="18690-206">연결된 값을 업데이트하면 캐시가 무효화된다는 의미입니다.</span><span class="sxs-lookup"><span data-stu-id="18690-206">Effectively, that means an update to any of the concatenated values invalidates the cache.</span></span>
+<span data-ttu-id="85280-194">다음 예제에서는 보기를 렌더링하는 컨트롤러 메서드가 두 경로 매개 변수 `myParam1` 및 `myParam2`의 정수 값을 합산하고, 합계를 단일 모델 속성으로 반환합니다.</span><span class="sxs-lookup"><span data-stu-id="85280-194">The following example assumes the controller method rendering the view sums the integer value of the two route parameters, `myParam1` and `myParam2`, and returns the sum as the single model property.</span></span> <span data-ttu-id="85280-195">이 합계가 변경되면 캐시 태그 도우미의 콘텐츠가 다시 렌더링 및 캐시됩니다.</span><span class="sxs-lookup"><span data-stu-id="85280-195">When this sum changes, the content of the Cache Tag Helper is rendered and cached again.</span></span>  
 
-<span data-ttu-id="18690-207">다음 예제에서는 보기를 렌더링하는 컨트롤러 메서드가 두 경로 매개 변수 `myParam1` 및 `myParam2`의 정수 값을 합산하고, 그 값을 단일 모델 속성으로 반환합니다.</span><span class="sxs-lookup"><span data-stu-id="18690-207">The following example assumes the controller method rendering the view sums the integer value of the two route parameters, `myParam1` and `myParam2`, and returns that as the single model property.</span></span> <span data-ttu-id="18690-208">이 합계가 변경되면 캐시 태그 도우미의 콘텐츠가 다시 렌더링 및 캐시됩니다.</span><span class="sxs-lookup"><span data-stu-id="18690-208">When this sum changes, the content of the Cache Tag Helper is rendered and cached again.</span></span>  
-
-<span data-ttu-id="18690-209">예제:</span><span class="sxs-lookup"><span data-stu-id="18690-209">Example:</span></span>
-
-<span data-ttu-id="18690-210">작업:</span><span class="sxs-lookup"><span data-stu-id="18690-210">Action:</span></span>
+<span data-ttu-id="85280-196">작업:</span><span class="sxs-lookup"><span data-stu-id="85280-196">Action:</span></span>
 
 ```csharp
-public IActionResult Index(string myParam1,string myParam2,string myParam3)
+public IActionResult Index(string myParam1, string myParam2, string myParam3)
 {
     int num1;
     int num2;
@@ -241,28 +212,23 @@ public IActionResult Index(string myParam1,string myParam2,string myParam3)
 }
 ```
 
-<span data-ttu-id="18690-211">*Index.cshtml*</span><span class="sxs-lookup"><span data-stu-id="18690-211">*Index.cshtml*</span></span>
+<span data-ttu-id="85280-197">*Index.cshtml*:</span><span class="sxs-lookup"><span data-stu-id="85280-197">*Index.cshtml*:</span></span>
 
 ```cshtml
-<cache vary-by="@Model"">
+<cache vary-by="@Model">
     Current Time Inside Cache Tag Helper: @DateTime.Now
 </cache>
 ```
 
-- - -
+### <a name="priority"></a><span data-ttu-id="85280-198">priority</span><span class="sxs-lookup"><span data-stu-id="85280-198">priority</span></span>
 
-### <a name="priority"></a><span data-ttu-id="18690-212">priority</span><span class="sxs-lookup"><span data-stu-id="18690-212">priority</span></span>
+| <span data-ttu-id="85280-199">특성 유형</span><span class="sxs-lookup"><span data-stu-id="85280-199">Attribute Type</span></span>      | <span data-ttu-id="85280-200">예제</span><span class="sxs-lookup"><span data-stu-id="85280-200">Examples</span></span>                               | <span data-ttu-id="85280-201">기본</span><span class="sxs-lookup"><span data-stu-id="85280-201">Default</span></span>  |
+| ------------------- | -------------------------------------- | -------- |
+| `CacheItemPriority` | <span data-ttu-id="85280-202">`High`, `Low`, `NeverRemove`, `Normal`</span><span class="sxs-lookup"><span data-stu-id="85280-202">`High`, `Low`, `NeverRemove`, `Normal`</span></span> | `Normal` |
 
-| <span data-ttu-id="18690-213">특성 유형</span><span class="sxs-lookup"><span data-stu-id="18690-213">Attribute Type</span></span>    | <span data-ttu-id="18690-214">예제 값</span><span class="sxs-lookup"><span data-stu-id="18690-214">Example Values</span></span>                |
-|----------------   |----------------               |
-| <span data-ttu-id="18690-215">CacheItemPriority</span><span class="sxs-lookup"><span data-stu-id="18690-215">CacheItemPriority</span></span>  | <span data-ttu-id="18690-216">"High"</span><span class="sxs-lookup"><span data-stu-id="18690-216">"High"</span></span>                   |
-|                    | <span data-ttu-id="18690-217">"Low"</span><span class="sxs-lookup"><span data-stu-id="18690-217">"Low"</span></span> |
-|                    | <span data-ttu-id="18690-218">"NeverRemove"</span><span class="sxs-lookup"><span data-stu-id="18690-218">"NeverRemove"</span></span> |
-|                    | <span data-ttu-id="18690-219">"Normal"</span><span class="sxs-lookup"><span data-stu-id="18690-219">"Normal"</span></span> |
+<span data-ttu-id="85280-203">`priority`는 기본 제공 캐시 공급자에게 캐시 제거 지침을 제공합니다.</span><span class="sxs-lookup"><span data-stu-id="85280-203">`priority` provides cache eviction guidance to the built-in cache provider.</span></span> <span data-ttu-id="85280-204">웹 서버는 메모리가 부족할 경우 가장 먼저 `Low` 캐시 항목을 제거합니다.</span><span class="sxs-lookup"><span data-stu-id="85280-204">The web server evicts `Low` cache entries first when it's under memory pressure.</span></span>
 
-<span data-ttu-id="18690-220">기본 제공 캐시 공급자에게 캐시 제거 지침을 제공합니다.</span><span class="sxs-lookup"><span data-stu-id="18690-220">Provides cache eviction guidance to the built-in cache provider.</span></span> <span data-ttu-id="18690-221">웹 서버는 메모리가 부족할 경우 가장 먼저 `Low` 캐시 항목을 제거합니다.</span><span class="sxs-lookup"><span data-stu-id="18690-221">The web server will evict `Low` cache entries first when it's under memory pressure.</span></span>
-
-<span data-ttu-id="18690-222">예제:</span><span class="sxs-lookup"><span data-stu-id="18690-222">Example:</span></span>
+<span data-ttu-id="85280-205">예제:</span><span class="sxs-lookup"><span data-stu-id="85280-205">Example:</span></span>
 
 ```cshtml
 <cache priority="High">
@@ -270,11 +236,11 @@ public IActionResult Index(string myParam1,string myParam2,string myParam3)
 </cache>
 ```
 
-<span data-ttu-id="18690-223">`priority` 특성은 특정 수준의 캐시 보존을 보장하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="18690-223">The `priority` attribute doesn't guarantee a specific level of cache retention.</span></span> <span data-ttu-id="18690-224">`CacheItemPriority`는 권장 사항일 뿐입니다.</span><span class="sxs-lookup"><span data-stu-id="18690-224">`CacheItemPriority` is only a suggestion.</span></span> <span data-ttu-id="18690-225">이 특성을 `NeverRemove`로 설정해도 캐시가 항상 보존된다는 보장은 없습니다.</span><span class="sxs-lookup"><span data-stu-id="18690-225">Setting this attribute to `NeverRemove` doesn't guarantee that the cache will always be retained.</span></span> <span data-ttu-id="18690-226">자세한 내용은 [추가 리소스](#additional-resources)를 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="18690-226">See [Additional Resources](#additional-resources) for more information.</span></span>
+<span data-ttu-id="85280-206">`priority` 특성은 특정 수준의 캐시 보존을 보장하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="85280-206">The `priority` attribute doesn't guarantee a specific level of cache retention.</span></span> <span data-ttu-id="85280-207">`CacheItemPriority`는 권장 사항일 뿐입니다.</span><span class="sxs-lookup"><span data-stu-id="85280-207">`CacheItemPriority` is only a suggestion.</span></span> <span data-ttu-id="85280-208">이 특성을 `NeverRemove`로 설정해도 캐시된 항목이 항상 보존된다는 보장은 없습니다.</span><span class="sxs-lookup"><span data-stu-id="85280-208">Setting this attribute to `NeverRemove` doesn't guarantee that cached items are always retained.</span></span> <span data-ttu-id="85280-209">자세한 내용은 [추가 리소스](#additional-resources) 섹션의 항목을 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="85280-209">See the topics in the [Additional Resources](#additional-resources) section for more information.</span></span>
 
-<span data-ttu-id="18690-227">캐시 태그 도우미는 [메모리 캐시 서비스](xref:performance/caching/memory)에 따라 달라집니다.</span><span class="sxs-lookup"><span data-stu-id="18690-227">The Cache Tag Helper is dependent on the [memory cache service](xref:performance/caching/memory).</span></span> <span data-ttu-id="18690-228">서비스가 추가되지 않은 경우 캐시 태그 도우미가 서비스를 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="18690-228">The Cache Tag Helper adds the service if it has not been added.</span></span>
+<span data-ttu-id="85280-210">캐시 태그 도우미는 [메모리 캐시 서비스](xref:performance/caching/memory)에 따라 달라집니다.</span><span class="sxs-lookup"><span data-stu-id="85280-210">The Cache Tag Helper is dependent on the [memory cache service](xref:performance/caching/memory).</span></span> <span data-ttu-id="85280-211">서비스가 추가되지 않은 경우 캐시 태그 도우미가 서비스를 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="85280-211">The Cache Tag Helper adds the service if it hasn't been added.</span></span>
 
-## <a name="additional-resources"></a><span data-ttu-id="18690-229">추가 자료</span><span class="sxs-lookup"><span data-stu-id="18690-229">Additional resources</span></span>
+## <a name="additional-resources"></a><span data-ttu-id="85280-212">추가 자료</span><span class="sxs-lookup"><span data-stu-id="85280-212">Additional resources</span></span>
 
-* [<span data-ttu-id="18690-230">메모리 내 캐시</span><span class="sxs-lookup"><span data-stu-id="18690-230">Cache in-memory</span></span>](xref:performance/caching/memory)
-* [<span data-ttu-id="18690-231">ID 소개</span><span class="sxs-lookup"><span data-stu-id="18690-231">Introduction to Identity</span></span>](xref:security/authentication/identity)
+* <xref:performance/caching/memory>
+* <xref:security/authentication/identity>

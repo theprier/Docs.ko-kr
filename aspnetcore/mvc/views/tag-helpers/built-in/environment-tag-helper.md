@@ -3,63 +3,68 @@ title: ASP.NET Core의 Environment 태그 도우미
 author: pkellner
 description: 모든 속성을 포함하여 정의된 ASP.NET Core Environment 태그 도우미
 ms.author: riande
-ms.date: 07/14/2017
+ms.custom: mvc
+ms.date: 10/10/2018
 uid: mvc/views/tag-helpers/builtin-th/environment-tag-helper
-ms.openlocfilehash: 4a283a3a03aa6cac228ec6effd02e3f1095be260
-ms.sourcegitcommit: 927e510d68f269d8335b5a7c8592621219a90965
+ms.openlocfilehash: 379f58ed37329f047d53adf1dcfdfd2ad6a6ca4e
+ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39342226"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49325239"
 ---
-# <a name="environment-tag-helper-in-aspnet-core"></a><span data-ttu-id="789a2-103">ASP.NET Core의 Environment 태그 도우미</span><span class="sxs-lookup"><span data-stu-id="789a2-103">Environment Tag Helper in ASP.NET Core</span></span>
+# <a name="environment-tag-helper-in-aspnet-core"></a><span data-ttu-id="15896-103">ASP.NET Core의 Environment 태그 도우미</span><span class="sxs-lookup"><span data-stu-id="15896-103">Environment Tag Helper in ASP.NET Core</span></span>
 
-<span data-ttu-id="789a2-104">작성자: [Peter Kellner](http://peterkellner.net) 및 [Hisham Bin Ateya](https://twitter.com/hishambinateya)</span><span class="sxs-lookup"><span data-stu-id="789a2-104">By [Peter Kellner](http://peterkellner.net) and [Hisham Bin Ateya](https://twitter.com/hishambinateya)</span></span>
+<span data-ttu-id="15896-104">작성자: [Peter Kellner](http://peterkellner.net), [Hisham Bin Ateya](https://twitter.com/hishambinateya) 및 [Luke Latham](https://github.com/guardrex)</span><span class="sxs-lookup"><span data-stu-id="15896-104">By [Peter Kellner](http://peterkellner.net), [Hisham Bin Ateya](https://twitter.com/hishambinateya), and [Luke Latham](https://github.com/guardrex)</span></span>
 
-<span data-ttu-id="789a2-105">Environment 태그 도우미는 현재 호스팅 환경에 기반하여 포함된 콘텐츠를 조건부로 렌더링합니다.</span><span class="sxs-lookup"><span data-stu-id="789a2-105">The Environment Tag Helper conditionally renders its enclosed content based on the current hosting environment.</span></span> <span data-ttu-id="789a2-106">유일한 특성인 `names`는 쉼표로 구분된 환경 이름의 목록으로 현재 환경과 일치하는 항목이 존재할 경우 포함된 콘텐츠가 렌더링되도록 트리거합니다.
-</span><span class="sxs-lookup"><span data-stu-id="789a2-106">Its single attribute `names` is a comma separated list of environment names, that if any match to the current environment, will trigger the enclosed content to be rendered.</span></span>
+<span data-ttu-id="15896-105">Environment 태그 도우미는 현재 [호스팅 환경](xref:fundamentals/environments)에 기반하여 포함된 콘텐츠를 조건부로 렌더링합니다.</span><span class="sxs-lookup"><span data-stu-id="15896-105">The Environment Tag Helper conditionally renders its enclosed content based on the current [hosting environment](xref:fundamentals/environments).</span></span> <span data-ttu-id="15896-106">환경 태그 도우미의 단일 특성 `names`는 쉼표로 구분된 환경 이름 목록입니다.</span><span class="sxs-lookup"><span data-stu-id="15896-106">The Environment Tag Helper's single attribute, `names`, is a comma-separated list of environment names.</span></span> <span data-ttu-id="15896-107">제공된 환경 이름 중에 현재 환경과 일치하는 이름이 하나라도 있으면 포함된 콘텐츠가 렌더링됩니다.</span><span class="sxs-lookup"><span data-stu-id="15896-107">If any of the provided environment names match the current environment, the enclosed content is rendered.</span></span>
 
-## <a name="environment-tag-helper-attributes"></a><span data-ttu-id="789a2-107">Environment 태그 도우미의 특성</span><span class="sxs-lookup"><span data-stu-id="789a2-107">Environment Tag Helper Attributes</span></span>
+<span data-ttu-id="15896-108">태그 도우미에 대한 개요는 <xref:mvc/views/tag-helpers/intro>를 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="15896-108">For an overview of Tag Helpers, see <xref:mvc/views/tag-helpers/intro>.</span></span>
 
-### <a name="names"></a><span data-ttu-id="789a2-108">names</span><span class="sxs-lookup"><span data-stu-id="789a2-108">names</span></span>
+## <a name="environment-tag-helper-attributes"></a><span data-ttu-id="15896-109">Environment 태그 도우미의 특성</span><span class="sxs-lookup"><span data-stu-id="15896-109">Environment Tag Helper Attributes</span></span>
 
-<span data-ttu-id="789a2-109">포함된 콘텐츠를 렌더링하도록 트리거하는 단일 호스팅 환경 이름 또는 쉼표로 구분된 호스팅 환경 이름의 목록을 지정할 수 있습니다.
-</span><span class="sxs-lookup"><span data-stu-id="789a2-109">Accepts a single hosting environment name or a comma-separated list of hosting environment names that trigger the rendering of the enclosed content.</span></span>
+### <a name="names"></a><span data-ttu-id="15896-110">names</span><span class="sxs-lookup"><span data-stu-id="15896-110">names</span></span>
 
-<span data-ttu-id="789a2-110">이러한 값은 ASP.NET Core의 정적 속성인 `HostingEnvironment.EnvironmentName`에서 반환된 현재 값과 비교됩니다.</span><span class="sxs-lookup"><span data-stu-id="789a2-110">These value(s) are compared to the current value returned from the ASP.NET Core static property `HostingEnvironment.EnvironmentName`.</span></span>  <span data-ttu-id="789a2-111">이 값은 **Staging**, **Development** 또는 **Production** 중 하나입니다.</span><span class="sxs-lookup"><span data-stu-id="789a2-111">This value is one of the following: **Staging**; **Development** or **Production**.</span></span> <span data-ttu-id="789a2-112">이 비교에서 대/소문자는 무시됩니다.</span><span class="sxs-lookup"><span data-stu-id="789a2-112">The comparison ignores case.</span></span>
+<span data-ttu-id="15896-111">`names`는 포함된 콘텐츠를 렌더링하도록 트리거하는 단일 호스팅 환경 이름 또는 쉼표로 구분된 호스팅 환경 이름의 목록을 지정할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="15896-111">`names` accepts a single hosting environment name or a comma-separated list of hosting environment names that trigger the rendering of the enclosed content.</span></span>
 
-<span data-ttu-id="789a2-113">유효한 `environment` 태그 도우미의 예는 다음과 같습니다.</span><span class="sxs-lookup"><span data-stu-id="789a2-113">An example of a valid `environment` tag helper is:</span></span>
+<span data-ttu-id="15896-112">환경 값은 [IHostingEnvironment.EnvironmentName](xref:Microsoft.AspNetCore.Hosting.IHostingEnvironment.EnvironmentName*)에서 반환한 현재 값과 비교됩니다.</span><span class="sxs-lookup"><span data-stu-id="15896-112">Environment values are compared to the current value returned by [IHostingEnvironment.EnvironmentName](xref:Microsoft.AspNetCore.Hosting.IHostingEnvironment.EnvironmentName*).</span></span> <span data-ttu-id="15896-113">이 비교에서 대/소문자는 무시됩니다.</span><span class="sxs-lookup"><span data-stu-id="15896-113">The comparison ignores case.</span></span>
+
+<span data-ttu-id="15896-114">다음 예에서는 환경 태그 도우미를 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="15896-114">The following example uses an Environment Tag Helper.</span></span> <span data-ttu-id="15896-115">호스팅 환경이 스테이징 또는 프로덕션일 경우 콘텐츠가 렌더링됩니다.</span><span class="sxs-lookup"><span data-stu-id="15896-115">The content is rendered if the hosting environment is Staging or Production:</span></span>
 
 ```cshtml
 <environment names="Staging,Production">
-  <strong>HostingEnvironment.EnvironmentName is Staging or Production</strong>
+    <strong>HostingEnvironment.EnvironmentName is Staging or Production</strong>
 </environment>
 ```
 
-## <a name="include-and-exclude-attributes"></a><span data-ttu-id="789a2-114">include 및 exclude 특성</span><span class="sxs-lookup"><span data-stu-id="789a2-114">include and exclude attributes</span></span>
+::: moniker range=">= aspnetcore-2.0"
 
-<span data-ttu-id="789a2-115">ASP.NET Core 2.x에는 `include` & `exclude` 특성이 추가되었습니다.</span><span class="sxs-lookup"><span data-stu-id="789a2-115">ASP.NET Core 2.x adds the `include` & `exclude` attributes.</span></span> <span data-ttu-id="789a2-116">이러한 특성은 포함되거나 제외된 호스팅 환경 이름을 기반으로 포함된 콘텐츠의 렌더링 작업을 제어합니다.</span><span class="sxs-lookup"><span data-stu-id="789a2-116">These attributes control rendering the enclosed content based on the included or excluded hosting environment names.</span></span>
+## <a name="include-and-exclude-attributes"></a><span data-ttu-id="15896-116">include 및 exclude 특성</span><span class="sxs-lookup"><span data-stu-id="15896-116">include and exclude attributes</span></span>
 
-### <a name="include-aspnet-core-20-and-later"></a><span data-ttu-id="789a2-117">include (ASP.NET Core 2.0 이상)</span><span class="sxs-lookup"><span data-stu-id="789a2-117">include ASP.NET Core 2.0 and later</span></span>
+<span data-ttu-id="15896-117">`include` & `exclude` 특성은 포함되거나 제외된 호스팅 환경 이름을 기반으로 포함된 콘텐츠의 렌더링 작업을 제어합니다.</span><span class="sxs-lookup"><span data-stu-id="15896-117">`include` & `exclude` attributes control rendering the enclosed content based on the included or excluded hosting environment names.</span></span>
 
-<span data-ttu-id="789a2-118">`include` 속성은 ASP.NET Core 1.0의 `names` 특성과 비슷하게 동작합니다.</span><span class="sxs-lookup"><span data-stu-id="789a2-118">The `include` property has a similar behavior of the `names` attribute in ASP.NET Core 1.0.</span></span>
+### <a name="include"></a><span data-ttu-id="15896-118">include</span><span class="sxs-lookup"><span data-stu-id="15896-118">include</span></span>
+
+<span data-ttu-id="15896-119">`include` 속성은 `names` 특성과 유사한 동작을 수행합니다.</span><span class="sxs-lookup"><span data-stu-id="15896-119">The `include` property exhibits similar behavior to the `names` attribute.</span></span> <span data-ttu-id="15896-120">`include` 특성 값에 나열된 환경은 앱의 호스팅 환경([IHostingEnvironment.EnvironmentName](xref:Microsoft.AspNetCore.Hosting.IHostingEnvironment.EnvironmentName*))과 일치해야 `<environment>` 태그의 콘텐츠를 렌더링할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="15896-120">An environment listed in the `include` attribute value must match the app's hosting environment ([IHostingEnvironment.EnvironmentName](xref:Microsoft.AspNetCore.Hosting.IHostingEnvironment.EnvironmentName*)) to render the content of the `<environment>` tag.</span></span>
 
 ```cshtml
 <environment include="Staging,Production">
-  <strong>HostingEnvironment.EnvironmentName is Staging or Production</strong>
+    <strong>HostingEnvironment.EnvironmentName is Staging or Production</strong>
 </environment>
 ```
 
-### <a name="exclude-aspnet-core-20-and-later"></a><span data-ttu-id="789a2-119">exclude (ASP.NET Core 2.0 이상)</span><span class="sxs-lookup"><span data-stu-id="789a2-119">exclude ASP.NET Core 2.0 and later</span></span>
+### <a name="exclude"></a><span data-ttu-id="15896-121">Exclude</span><span class="sxs-lookup"><span data-stu-id="15896-121">exclude</span></span>
 
-<span data-ttu-id="789a2-120">반면 `exclude` 속성을 사용하면 지정한 호스팅 환경 이름을 제외한 모든 호스팅 환경 이름에 대해 `EnvironmentTagHelper`가 포함된 콘텐츠를 렌더링할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="789a2-120">In contrast, the `exclude` property lets the `EnvironmentTagHelper` render the enclosed content for all hosting environment names except the one(s) that you specified.</span></span>
+<span data-ttu-id="15896-122">`include` 특성과 달리, `<environment>` 태그의 콘텐츠는 호스팅 환경이 `exclude` 특성 값에 나열된 환경과 일치하지 않을 경우 렌더링됩니다.</span><span class="sxs-lookup"><span data-stu-id="15896-122">In contrast to the `include` attribute, the content of the `<environment>` tag is rendered when the hosting environment doesn't match an environment listed in the `exclude` attribute value.</span></span>
 
 ```cshtml
 <environment exclude="Development">
-  <strong>HostingEnvironment.EnvironmentName is Staging or Production</strong>
+    <strong>HostingEnvironment.EnvironmentName is not Development</strong>
 </environment>
 ```
 
-## <a name="additional-resources"></a><span data-ttu-id="789a2-121">추가 자료</span><span class="sxs-lookup"><span data-stu-id="789a2-121">Additional resources</span></span>
+::: moniker-end
+
+## <a name="additional-resources"></a><span data-ttu-id="15896-123">추가 자료</span><span class="sxs-lookup"><span data-stu-id="15896-123">Additional resources</span></span>
 
 * <xref:fundamentals/environments>
