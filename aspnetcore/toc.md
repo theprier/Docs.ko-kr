@@ -221,7 +221,7 @@
 ### [.NET 클라이언트](xref:signalr/dotnet-client)
 ### [.NET API 참조](/dotnet/api/microsoft.aspnetcore.signalr.client)
 ### [Java 클라이언트](xref:signalr/java-client)
-### [Java API 참조](/java/api/com.microsoft.aspnet.signalr?view=aspnet-signalr-java)
+### [Java API 참조](/java/api/com.microsoft.signalr?view=aspnet-signalr-java)
 ### [JavaScript 클라이언트](xref:signalr/javascript-client)
 ### [JavaScript API 참조](/javascript/api/?view=signalr-js-latest)
 ### [WebPack 및 TypeScript](xref:tutorials/signalr-typescript-webpack)

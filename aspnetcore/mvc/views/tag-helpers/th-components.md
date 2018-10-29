@@ -6,12 +6,12 @@ monikerRange: '>= aspnetcore-2.0'
 ms.author: scaddie
 ms.date: 09/18/2018
 uid: mvc/views/tag-helpers/th-components
-ms.openlocfilehash: c6986ebd179be588b0dc829065a3a8dc36ede3f5
-ms.sourcegitcommit: c684eb6c0999d11d19e15e65939e5c7f99ba47df
+ms.openlocfilehash: 3d21e12650d844f05bdfdf5b3451ab6219e3c3b7
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46293443"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50206876"
 ---
 # <a name="tag-helper-components-in-aspnet-core"></a>ASP.NET Core의 태그 도우미 구성 요소
 
@@ -21,7 +21,7 @@ ms.locfileid: "46293443"
 
 ASP.NET Core에는 두 개의 기본 제공 태그 도우미 구성 요소, 즉 `head` 및 `body`가 포함되어 있습니다. 이 구성 요소는 <xref:Microsoft.AspNetCore.Mvc.Razor.TagHelpers> 네임스페이스에 있으며 MVC 및 Razor Pages에서 모두 사용할 수 있습니다. 태그 도우미 구성 요소는 *_ViewImports.cshtml*에서 앱을 등록할 필요가 없습니다.
 
-[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/views/tag-helpers/th-components/samples)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/views/tag-helpers/th-components/samples)([다운로드 방법](xref:index#how-to-download-a-sample))
 
 ## <a name="use-cases"></a>사용 사례
 

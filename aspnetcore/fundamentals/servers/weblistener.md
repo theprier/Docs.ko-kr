@@ -4,14 +4,15 @@ author: rick-anderson
 description: IIS 없이 인터넷에 직접 연결하는 데 사용할 수 있는 Windows의 ASP.NET Core용 웹 서버인 WebListener에 대해 알아봅니다.
 monikerRange: < aspnetcore-2.0
 ms.author: riande
-ms.date: 08/15/2018
+ms.custom: mvc
+ms.date: 10/24/2018
 uid: fundamentals/servers/weblistener
-ms.openlocfilehash: 5602c1ddbe76879587de12bcd82722c103dee03f
-ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
+ms.openlocfilehash: 5d72672cc48243f8ee17df615e3379143ed868f6
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41751693"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50206444"
 ---
 # <a name="weblistener-web-server-implementation-in-aspnet-core"></a>ASP.NET Core에서 WebListener 웹 서버 구현
 
@@ -38,7 +39,7 @@ WebListener는 다음과 같은 기능을 지원합니다.
 
 - Windows 7 및 Windows Server 2008 R2 이상
 
-[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/servers/weblistener/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/servers/weblistener/sample)([다운로드 방법](xref:index#how-to-download-a-sample))
 
 ## <a name="when-to-use-weblistener"></a>WebListener를 사용하는 경우
 
@@ -160,7 +161,7 @@ netsh http add sslcert ipport=0.0.0.0:443 certhash=MyCertHash_Here appid="{00000
 
 다음 리소스는 여러 시나리오에 대한 자세한 지침을 제공합니다. `HttpListener`를 참조하는 문서는 모두 Http.Sys를 기반으로 하므로 `WebListener`에 동일하게 적용됩니다.
 
-* [방법: SSL 인증서로 포트 구성](https://docs.microsoft.com/dotnet/framework/wcf/feature-details/how-to-configure-a-port-with-an-ssl-certificate)
+* [방법: SSL 인증서로 포트 구성](/dotnet/framework/wcf/feature-details/how-to-configure-a-port-with-an-ssl-certificate)
 * [HTTPS 통신 - HttpListener 기반 호스팅 및 클라이언트 인증](http://sunshaking.blogspot.com/2012/11/https-communication-httplistener-based.html) 이는 타사 블로그이며 비교적 오래됐지만 여전히 유용한 정보가 있습니다.
 * [방법: SSL 단순 서버로 HttpListener 또는 Http 서버 안전하지 않은 코드(C++)를 사용하는 연습](https://blogs.msdn.microsoft.com/jpsanders/2009/09/29/how-to-walkthrough-using-httplistener-or-http-server-unmanaged-code-c-as-an-ssl-simple-server/) 유용한 정보가 있는 오래된 블로그입니다.
 * [SSL로 .NET Core WebListener를 어떻게 설정하나요?](https://blogs.msdn.microsoft.com/timomta/2016/11/04/how-do-i-set-up-a-net-core-weblistener-with-ssl/)

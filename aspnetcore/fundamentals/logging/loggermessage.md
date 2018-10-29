@@ -5,12 +5,12 @@ description: LoggerMessage를 사용하여 고성능 로깅 시나리오에 적�
 ms.author: riande
 ms.date: 11/03/2017
 uid: fundamentals/logging/loggermessage
-ms.openlocfilehash: e952591bac29868d87d765820e88c74b50a1fe88
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: a0080a20fed2d8fc295e55822c11d5731c6910ca
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36272437"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50207513"
 ---
 # <a name="high-performance-logging-with-loggermessage-in-aspnet-core"></a>ASP.NET Core에서 LoggerMessage를 사용한 고성능 로깅
 
@@ -23,7 +23,7 @@ ms.locfileid: "36272437"
 * 로거 확장 메서드는 `object`에 대한 `int`와 같은 "boxing"(변환) 값 형식이 필요합니다. `LoggerMessage` 패턴은 정적 `Action` 필드 및 강력한 형식의 매개 변수가 있는 확장 메서드를 사용하여 boxing을 방지합니다.
 * 로거 확장 메서드는 로그 메시지가 기록될 때마다 메시지 템플릿(명명된 형식 문자열)을 구문 분석해야 합니다. `LoggerMessage`는 메시지가 정의될 때 템플릿 구문 분석이 한번만 필요합니다.
 
-[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/logging/loggermessage/sample/)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/logging/loggermessage/sample/)([다운로드 방법](xref:index#how-to-download-a-sample))
 
 샘플 앱은 기본 견적 추적 시스템으로 `LoggerMessage` 기능을 보여 줍니다. 앱은 메모리 내 데이터베이스를 사용하여 견적을 추가하고 삭제합니다. 이러한 작업이 발생하는 대로 로그 메시지는 `LoggerMessage` 패턴을 사용하여 생성됩니다.
 

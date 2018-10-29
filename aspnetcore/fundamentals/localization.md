@@ -5,12 +5,12 @@ description: ASP.NET Core에서 다른 언어와 문화권으로의 콘텐츠 �
 ms.author: riande
 ms.date: 01/14/2017
 uid: fundamentals/localization
-ms.openlocfilehash: 375d09d9bef59cf18b7805cbefe500aeb2e0cde7
-ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
+ms.openlocfilehash: 5014d697603d802929b417e6439d4cc6983184d2
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49326006"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50207591"
 ---
 # <a name="globalization-and-localization-in-aspnet-core"></a>ASP.NET Core에서 세계화 및 지역화
 
@@ -30,7 +30,7 @@ ASP.NET Core를 사용하여 다국어 웹 사이트를 만들면 더 광범위�
 
 3. 각 요청에 대한 언어/문화권을 선택하는 전략 구현
 
-[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/localization/sample/Localization)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/localization/sample/Localization)([다운로드 방법](xref:index#how-to-download-a-sample))
 
 ## <a name="make-the-apps-content-localizable"></a>앱의 콘텐츠를 지역화 가능하도록 만들기
 

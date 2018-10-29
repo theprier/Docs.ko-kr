@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/25/2018
 uid: fundamentals/index
-ms.openlocfilehash: 56344315acc59003248ffaf1e61455b94a93a545
-ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
+ms.openlocfilehash: ab140051648c1640b3c4f382bfd8201c5c0c2039
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50090721"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50207474"
 ---
 # <a name="aspnet-core-fundamentals"></a>ASP.NET Core 기본 사항
 
@@ -159,36 +159,6 @@ ASP.NET Core는 응용 프로그램 요청을 경로 처리기로 라우팅하�
 
 자세한 내용은 <xref:fundamentals/routing>을 참조하세요.
 
-## <a name="file-providers"></a>파일 공급자
-
-ASP.NET Core는 파일 공급자를 사용하여 파일 시스템 액세스를 추상화하고 플랫폼에서 파일을 사용하기 위한 공통 인터페이스를 제공합니다.
-
-자세한 내용은 <xref:fundamentals/file-providers>을 참조하세요.
-
-## <a name="static-files"></a>정적 파일
-
-정적 파일 미들웨어는 HTML, CSS, 이미지, JavaScript 파일 등의 정적 파일을 제공합니다.
-
-자세한 내용은 <xref:fundamentals/static-files>을 참조하세요.
-
-## <a name="session-and-app-state"></a>세션 및 앱 상태
-
-ASP.NET Core는 사용자가 웹앱을 탐색하는 동안 세션 및 앱 상태를 유지할 수 있는 여러 가지 방법을 제공합니다.
-
-자세한 내용은 <xref:fundamentals/app-state>을 참조하세요.
-
-## <a name="globalization-and-localization"></a>전역화 및 지역화
-
-ASP.NET Core를 사용해서 다국어 웹 사이트를 만들면 더 광범위한 사용자가 사이트를 사용할 수 있습니다. ASP.NET Core는 콘텐츠를 다른 언어와 문화권에 맞게 지역화하기 위한 서비스 및 미들웨어를 제공합니다.
-
-자세한 내용은 <xref:fundamentals/localization>을 참조하세요.
-
-## <a name="request-features"></a>요청 기능
-
-웹 서버 구현은 HTTP 요청과 관련하여 설명되고 응답은 인터페이스에서 정의됩니다. 이 인터페이스들은 서버 구현 및 미들웨어에서 앱의 호스팅 파이프라인을 만들고 수정하기 위해 사용됩니다.
-
-자세한 내용은 <xref:fundamentals/request-features>을 참조하세요.
-
 ## <a name="background-tasks"></a>백그라운드 작업
 
 백그라운드 작업은 *호스티드 서비스*로 구현됩니다. 호스티드 서비스는 <xref:Microsoft.Extensions.Hosting.IHostedService> 인터페이스를 구현하는 백그라운드 작업 논리가 있는 클래스입니다.
@@ -200,43 +170,3 @@ ASP.NET Core를 사용해서 다국어 웹 사이트를 만들면 더 광범위�
 `HttpContext`는 Razor Pages 및 MVC를 사용하여 요청을 처리할 때 자동으로 제공됩니다. `HttpContext`를 즉시 사용할 수 없는 경우에는 <xref:Microsoft.AspNetCore.Http.IHttpContextAccessor> 인터페이스 및 기본 구현 <xref:Microsoft.AspNetCore.Http.HttpContextAccessor>를 통해 `HttpContext`에 액세스할 수 있습니다.
 
 자세한 내용은 <xref:fundamentals/httpcontext>을 참조하세요.
-
-## <a name="websockets"></a>WebSocket
-
-[WebSocket](https://wikipedia.org/wiki/WebSocket)은 TCP 연결을 통한 영구 양방향 통신 채널을 사용하도록 설정하는 프로토콜이며 WebSocket은 채팅, 주식 시세, 게임 등 웹 앱에서 실시간 기능이 필요한 모든 곳에 사용됩니다. ASP.NET Core는 웹 소켓 시나리오를 지원합니다.
-
-자세한 내용은 <xref:fundamentals/websockets>을 참조하세요.
-
-::: moniker range=">= aspnetcore-2.1"
-
-## <a name="microsoftaspnetcoreapp-metapackage"></a>Microsoft.AspNetCore.App 메타패키지
-
-[Microsoft.AspNetCore.App](https://www.nuget.org/packages/Microsoft.AspNetCore.App/) 메타패키지는 패키지 관리를 간소화합니다.
-
-자세한 내용은 <xref:fundamentals/metapackage-app>을 참조하세요.
-
-::: moniker-end
-
-::: moniker range="= aspnetcore-2.0"
-
-## <a name="microsoftaspnetcoreall-metapackage"></a>Microsoft.AspNetCore.All 메타패키지
-
-ASP.NET Core에 대한 [Microsoft.AspNetCore.All](https://www.nuget.org/packages/Microsoft.AspNetCore.All) 메타패키지는 다음을 포함합니다.
-
-* ASP.NET Core 팀에서 지원되는 모든 패키지
-* Entity Framework Core에서 지원되는 모든 패키지
-* ASP.NET Core 및 Entity Framework Core에서 사용되는 내부 및 타사 종속성
-
-자세한 내용은 <xref:fundamentals/metapackage>을 참조하세요.
-
-::: moniker-end
-
-## <a name="net-core-vs-net-framework-runtime"></a>.NET Core 및 .NET Framework 런타임
-
-ASP.NET Core 앱은 .NET Core 또는 .NET Framework 런타임을 대상으로 할 수 있습니다.
-
-자세한 내용은 [.NET Core와 .NET Framework  중에 선택하기](/dotnet/articles/standard/choosing-core-framework-server)을 참고하시기 바랍니다.
-
-## <a name="choose-between-aspnet-core-and-aspnet"></a>ASP.NET Core와 ASP.NET 중에서 선택하기
-
-ASP.NET Core와 ASP.NET 중에서 선택하는 방법에 대한 자세한 내용은 <xref:fundamentals/choose-between-aspnet-and-aspnetcore>를 참조하세요.

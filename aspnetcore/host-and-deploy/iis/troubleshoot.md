@@ -4,14 +4,14 @@ author: guardrex
 description: ASP.NET Core 앱의 IIS(인터넷 정보 서비스) 배포에 대한 문제 진단 방법을 알아봅니다.
 ms.author: riande
 ms.custom: mvc
-ms.date: 02/07/2018
+ms.date: 10/24/2018
 uid: host-and-deploy/iis/troubleshoot
-ms.openlocfilehash: f22914c9b0d6d1902dd37c9b21b80a18894c97e7
-ms.sourcegitcommit: d1c4580f56656b503cf528ec9f5ba570d790b57d
+ms.openlocfilehash: 6a53c1ba5badd741afc3321ce21b047965c611db
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "41751618"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090604"
 ---
 # <a name="troubleshoot-aspnet-core-on-iis"></a>IIS에서 ASP.NET Core 문제 해결
 
@@ -23,10 +23,10 @@ Visual Studio에서 ASP.NET Core 프로젝트는 기본적으로 디버그 중�
 
 추가 문제 해결 항목:
 
-[Azure App Service에서 ASP.NET Core 문제 해결](xref:host-and-deploy/azure-apps/troubleshoot)  
+<xref:host-and-deploy/azure-apps/troubleshoot>  
 App Service는 [ASP.NET Core 모듈](xref:fundamentals/servers/aspnet-core-module)과 IIS를 사용하여 앱을 호스트하지만 App Service 관련 지침은 전용 항목을 참조하세요.
 
-[오류 처리](xref:fundamentals/error-handling)  
+<xref:fundamentals/error-handling>  
 로컬 시스템에서 개발하는 동안 ASP.NET Core 앱에서 오류를 처리하는 방법을 알아봅니다.
 
 [Visual Studio를 사용하여 디버깅하는 자세한 내용](/visualstudio/debugger/getting-started-with-the-debugger)  
@@ -80,7 +80,7 @@ ASP.NET Core 모듈은 기본 *startupTimeLimit*이 120초로 구성됩니다. �
 
 1. 명령 프롬프트에서 배포 폴더로 이동하고 *dotnet.exe*로 앱의 어셈블리를 실행하여 앱을 실행합니다. `dotnet .\<assembly_name>.dll` 명령에서 \<assembly_name>을 앱 어셈블리의 이름으로 대체합니다.
 1. 오류를 표시하는 앱의 콘솔 출력이 콘솔 창에 기록됩니다.
-1. 앱에 대한 요청을 실행할 때 오류가 발생하는 경우에는 Kestrel이 수신 대기하는 호스트 및 포트에 대한 요청을 실행합니다. 기본 호스트 및 게시를 사용하여 `http://localhost:5000/`에 대한 요청을 실행합니다. 앱이 Kestrel 끝점 주소에서 정상적으로 응답하는 경우, 문제는 역방향 프록시 구성과 관련이 있으며 앱 내에서 관련되었을 가능성은 작습니다.
+1. 앱에 대한 요청을 실행할 때 오류가 발생하는 경우에는 Kestrel이 수신 대기하는 호스트 및 포트에 대한 요청을 실행합니다. 기본 호스트 및 게시를 사용하여 `http://localhost:5000/`에 대한 요청을 실행합니다. 앱이 Kestrel 엔드포인트 주소에서 정상적으로 응답하는 경우, 문제는 역방향 프록시 구성과 관련이 있으며 앱 내에서 관련되었을 가능성은 작습니다.
 
 **자체 포함 배포**
 
@@ -88,7 +88,7 @@ ASP.NET Core 모듈은 기본 *startupTimeLimit*이 120초로 구성됩니다. �
 
 1. 명령 프롬프트에서 배포 폴더로 이동하고 앱의 실행 파일을 실행합니다. `<assembly_name>.exe` 명령에서 \<assembly_name>을 앱 어셈블리의 이름으로 대체합니다.
 1. 오류를 표시하는 앱의 콘솔 출력이 콘솔 창에 기록됩니다.
-1. 앱에 대한 요청을 실행할 때 오류가 발생하는 경우에는 Kestrel이 수신 대기하는 호스트 및 포트에 대한 요청을 실행합니다. 기본 호스트 및 게시를 사용하여 `http://localhost:5000/`에 대한 요청을 실행합니다. 앱이 Kestrel 끝점 주소에서 정상적으로 응답하는 경우, 문제는 역방향 프록시 구성과 관련이 있으며 앱 내에서 관련되었을 가능성은 작습니다.
+1. 앱에 대한 요청을 실행할 때 오류가 발생하는 경우에는 Kestrel이 수신 대기하는 호스트 및 포트에 대한 요청을 실행합니다. 기본 호스트 및 게시를 사용하여 `http://localhost:5000/`에 대한 요청을 실행합니다. 앱이 Kestrel 엔드포인트 주소에서 정상적으로 응답하는 경우, 문제는 역방향 프록시 구성과 관련이 있으며 앱 내에서 관련되었을 가능성은 작습니다.
 
 ### <a name="aspnet-core-module-stdout-log"></a>ASP.NET Core 모듈 stdout 로그
 
@@ -133,7 +133,7 @@ stdout 로그를 사용하고 보려면:
 
 ## <a name="common-startup-errors"></a>일반 시작 오류 
 
-[ASP.NET Core 일반 오류 참조](xref:host-and-deploy/azure-iis-errors-reference)를 참조하세요. 앱 시작을 차단하는 대부분의 일반적인 문제는 참조 항목에서 다룹니다.
+<xref:host-and-deploy/azure-iis-errors-reference>을 참조하세요. 앱 시작을 차단하는 대부분의 일반적인 문제는 참조 항목에서 다룹니다.
 
 ## <a name="slow-or-hanging-app"></a>앱이 느리거나 중단됨
 
@@ -167,7 +167,7 @@ Visual Studio 설명서에서 [Visual Studio 2017의 원격 IIS 컴퓨터에서 
 
 ## <a name="additional-resources"></a>추가 자료
 
-* [ASP.NET Core의 오류 처리 소개](xref:fundamentals/error-handling)
-* [ASP.NET Core를 사용하는 Azure App Service 및 IIS에 대한 일반적인 오류 참조](xref:host-and-deploy/azure-iis-errors-reference)
-* [ASP.NET Core 모듈 구성 참조](xref:host-and-deploy/aspnet-core-module)
-* [Azure App Service에서 ASP.NET Core 문제 해결](xref:host-and-deploy/azure-apps/troubleshoot)
+* <xref:fundamentals/error-handling>
+* <xref:host-and-deploy/azure-iis-errors-reference>
+* <xref:host-and-deploy/aspnet-core-module>
+* <xref:host-and-deploy/azure-apps/troubleshoot>

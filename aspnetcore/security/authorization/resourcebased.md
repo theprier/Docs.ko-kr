@@ -6,12 +6,12 @@ ms.author: scaddie
 ms.custom: mvc
 ms.date: 11/07/2017
 uid: security/authorization/resourcebased
-ms.openlocfilehash: 6a110a69c58d5e20a15198378510486daec3d452
-ms.sourcegitcommit: 927e510d68f269d8335b5a7c8592621219a90965
+ms.openlocfilehash: 2cb3844a38f7482c27fb471343109d51a516ea20
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39342291"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50206698"
 ---
 # <a name="resource-based-authorization-in-aspnet-core"></a>ASP.NET Core에서 리소스 기반 권한 부여
 
@@ -19,7 +19,7 @@ ms.locfileid: "39342291"
 
 특성 평가 데이터 바인딩 전에 및 페이지 처리기 또는 문서를 로드 하는 작업을 실행 하기 전에 발생 합니다. 이러한 이유로 사용 하 여 선언적 권한 부여는 `[Authorize]` 특성 충분 하지 않습니다. 사용자 지정 권한 부여 메서드를 호출할 수는 대신&mdash;명령적 권한 부여 라고 하는 스타일입니다.
 
-사용 된 [샘플 앱](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/resourcebased/samples) ([다운로드 하는 방법을](xref:tutorials/index#how-to-download-a-sample))이 여기에 설명 된 기능을 탐색 하기.
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/resourcebased/samples) ([다운로드 방법](xref:index#how-to-download-a-sample)).
 
 [권한 부여로 보호 되는 사용자 데이터를 사용 하 여 ASP.NET Core 앱 만들기](xref:security/authorization/secure-data) 리소스 기반 권한 부여를 사용 하는 샘플 앱을 포함 합니다.
 

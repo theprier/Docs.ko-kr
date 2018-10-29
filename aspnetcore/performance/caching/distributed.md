@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/19/2018
 uid: performance/caching/distributed
-ms.openlocfilehash: 46a93125e8b25a66b5a1ead3b72c55db146b5a10
-ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
+ms.openlocfilehash: 37806cc5c8da115f6a95fdad5ccc716d6375cb6e
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50090565"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50206251"
 ---
 # <a name="distributed-caching-in-aspnet-core"></a>ASP.NET Core의 캐싱 분산
 
@@ -29,7 +29,7 @@ ms.locfileid: "50090565"
 
 분산된 캐시 구성은 특정 구현 합니다. 이 문서에서는 SQL Server를 구성 하 고 Redis cache를 배포 하는 방법을 설명 합니다. 제 3 자 구현도 같은 사용할 수 있습니다 [NCache](http://www.alachisoft.com/ncache/aspnet-core-idistributedcache-ncache.html) ([github NCache](https://github.com/Alachisoft/NCache)). 어떤 구현의 선택 하는 것에 관계 없이 앱을 사용 하 여 캐시 상호 작용을 <xref:Microsoft.Extensions.Caching.Distributed.IDistributedCache> 인터페이스입니다.
 
-[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/performance/caching/distributed/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/performance/caching/distributed/samples/) ([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
 
 ## <a name="prerequisites"></a>전제 조건
 

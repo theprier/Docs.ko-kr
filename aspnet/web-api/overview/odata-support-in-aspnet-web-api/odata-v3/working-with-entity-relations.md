@@ -8,12 +8,12 @@ ms.date: 02/26/2014
 ms.assetid: 1e4c2eb4-b6cf-42ff-8a65-4d71ddca0394
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v3/working-with-entity-relations
 msc.type: authoredcontent
-ms.openlocfilehash: fc1c6b938c4e4be379edf1a495ca47f5f5f2eb4f
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: f78b5cf36789032f90d3d073698f7a439507277f
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41836374"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50206863"
 ---
 <a name="supporting-entity-relations-in-odata-v3-with-web-api-2"></a>웹 API 2 OData v3의 엔터티 관계 지원
 ====================
@@ -65,7 +65,7 @@ WebApiConfig.cs에서 EDM 모델에 "공급 업체" 엔터티를 추가 합니�
 
 [!code-csharp[Main](working-with-entity-relations/samples/sample6.cs)]
 
-합니다 *키* 매개 변수는 제품의 키입니다. 이 경우 메서드가 반환 관련된 된 엔터티 & amp;#8212는 `Supplier` 인스턴스. 메서드 이름과 매개 변수 이름 둘 다 중요 합니다. 일반적으로 탐색 속성의 이름이 "X", "GetX" 라는 메서드를 추가 해야 합니다. 메서드는 라는 매개 변수가 없어야 합니다. "*키*" 부모의 키의 데이터 형식과 일치 하는 합니다.
+합니다 *키* 매개 변수는 제품의 키입니다. 관련된 엔터티를 반환 하는 메서드를&#8212;이 경우에 `Supplier` 인스턴스. 메서드 이름과 매개 변수 이름 둘 다 중요 합니다. 일반적으로 탐색 속성의 이름이 "X", "GetX" 라는 메서드를 추가 해야 합니다. 메서드는 라는 매개 변수가 없어야 합니다. "*키*" 부모의 키의 데이터 형식과 일치 하는 합니다.
 
 포함 하는 일을 해야 이기도 합니다 **[FromOdataUri]** 특성을 *키* 매개 변수. 이 특성은 요청 URI에서에서 키를 구문 분석할 때 OData 구문 규칙을 사용 하는 웹 API에 알립니다.
 

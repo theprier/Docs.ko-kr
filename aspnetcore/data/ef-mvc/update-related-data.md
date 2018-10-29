@@ -3,14 +3,15 @@ title: ASP.NET Core MVC 및 EF Core - 관련 데이터 업데이트 - 7/10
 author: rick-anderson
 description: 이 자습서에서는 외래 키 필드 및 탐색 속성을 업데이트하여 관련된 데이터를 업데이트합니다.
 ms.author: tdykstra
-ms.date: 03/15/2017
+ms.custom: mvc
+ms.date: 10/24/2018
 uid: data/ef-mvc/update-related-data
-ms.openlocfilehash: ef8cb3916e5d1542e4d36cad694351462b94ed32
-ms.sourcegitcommit: b8a2f14bf8dd346d7592977642b610bbcb0b0757
+ms.openlocfilehash: 37985c945f2e4b15cfcefb0c126c3209e0bdeac4
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38126728"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090735"
 ---
 # <a name="aspnet-core-mvc-with-ef-core---update-related-data---7-of-10"></a>ASP.NET Core MVC 및 EF Core - 관련 데이터 업데이트 - 7/10
 
@@ -290,7 +291,7 @@ public ICollection<CourseAssignment> CourseAssignments
 
 ## <a name="handling-transactions"></a>트랜잭션 처리
 
-[CRUD 자습서](crud.md)에 설명된 대로 Entity Framework는 트랜잭션을 암시적으로 구현합니다. 더 많은 컨트롤이 필요한 시나리오의 경우, 예를 들어 트랜잭션의 Entity Framework 밖에서 수행한 작업을 포함하려는 경우 [트랜잭션](https://docs.microsoft.com/ef/core/saving/transactions)을 참조하세요.
+[CRUD 자습서](crud.md)에 설명된 대로 Entity Framework는 트랜잭션을 암시적으로 구현합니다. 더 많은 컨트롤이 필요한 시나리오의 경우, 예를 들어 트랜잭션의 Entity Framework 밖에서 수행한 작업을 포함하려는 경우 [트랜잭션](/ef/core/saving/transactions)을 참조하세요.
 
 ## <a name="summary"></a>요약
 

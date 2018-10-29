@@ -7,18 +7,18 @@ ms.author: anurse
 ms.custom: mvc
 ms.date: 06/29/2018
 uid: signalr/authn-and-authz
-ms.openlocfilehash: fa5e8d4aea6100c54fd8b98411ef877d1dd8621c
-ms.sourcegitcommit: 4d5f8680d68b39c411b46c73f7014f8aa0f12026
+ms.openlocfilehash: 31d5f753e043157caf43fa8df54e310ea0efd17b
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47028207"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50207942"
 ---
 # <a name="authentication-and-authorization-in-aspnet-core-signalr"></a>인증 및 ASP.NET Core SignalR의 권한 부여
 
 [Andrew Stanton-nurse](https://twitter.com/anurse)
 
-[샘플 코드 보기 또는 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/signalr/authn-and-authz/sample/) [(다운로드 하는 방법)](xref:tutorials/index#how-to-download-a-sample)
+[샘플 코드 보기 또는 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/signalr/authn-and-authz/sample/) [(다운로드 방법)](xref:index#how-to-download-a-sample)
 
 ## <a name="authenticate-users-connecting-to-a-signalr-hub"></a>SignalR 허브에 연결 된 사용자를 인증 합니다.
 

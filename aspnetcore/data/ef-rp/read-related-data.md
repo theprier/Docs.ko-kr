@@ -3,14 +3,15 @@ title: ASP.NET Core에서 EF Core를 사용한 Razor 페이지 - 관련 데이�
 author: rick-anderson
 description: 이 자습서에서는 관련된 데이터 즉, Entity Framework에서 탐색 속성으로 로드하는 데이터를 읽고 표시합니다.
 ms.author: riande
-ms.date: 11/05/2017
+ms.custom: mvc
+ms.date: 10/24/2018
 uid: data/ef-rp/read-related-data
-ms.openlocfilehash: e8b59c19eac2c2adc1f13cf1e44f750576686c87
-ms.sourcegitcommit: 6e6002de467cd135a69e5518d4ba9422d693132a
+ms.openlocfilehash: cf8733e1e806c4be0c4b217fc45c7a338a03a3ce
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49348496"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50207558"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---read-related-data---6-of-8"></a>ASP.NET Core에서 EF Core를 사용한 Razor 페이지 - 관련 데이터 읽기 - 6/8
 
@@ -20,7 +21,7 @@ ms.locfileid: "49348496"
 
 이 자습서에서는 관련된 데이터를 읽고 표시합니다. 관련된 데이터는 EF Core에서 탐색 속성에 로드하는 데이터입니다.
 
-해결할 수 없는 문제가 발생할 경우 [완성된 앱을 다운로드하거나 봅니다](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples). [지침을 다운로드하세요](xref:tutorials/index#how-to-download-a-sample).
+해결할 수 없는 문제가 발생할 경우 [완성된 앱을 다운로드하거나 봅니다](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples). [지침을 다운로드하세요](xref:index#how-to-download-a-sample).
 
 다음 그림은 이 자습서에 대해 완료된 페이지를 보여 줍니다.
 
@@ -32,7 +33,7 @@ ms.locfileid: "49348496"
 
 여러 가지 방법으로 EF Core가 관련 데이터를 엔터티의 탐색 속성에 로드할 수 있습니다.
 
-* [즉시 로드](https://docs.microsoft.com/ef/core/querying/related-data#eager-loading). 즉시 로드는 한 형식의 엔터티에 대한 쿼리가 관련 엔터티도 로드하는 경우입니다. 엔터티를 읽을 때 관련된 데이터가 검색됩니다. 이는 일반적으로 필요한 데이터를 모두 검색하는 단일 조인 쿼리를 발생시킵니다. EF 코어는 일부 형식의 즉시 로드에 대해 여러 쿼리를 실행합니다. 여러 쿼리를 실행하는 것이 단일 쿼리가 있는 EF6의 일부 쿼리보다 효율적일 수 있습니다. 즉시 로드는 `Include` 및 `ThenInclude` 메서드로 지정됩니다.
+* [즉시 로드](/ef/core/querying/related-data#eager-loading). 즉시 로드는 한 형식의 엔터티에 대한 쿼리가 관련 엔터티도 로드하는 경우입니다. 엔터티를 읽을 때 관련된 데이터가 검색됩니다. 이는 일반적으로 필요한 데이터를 모두 검색하는 단일 조인 쿼리를 발생시킵니다. EF 코어는 일부 형식의 즉시 로드에 대해 여러 쿼리를 실행합니다. 여러 쿼리를 실행하는 것이 단일 쿼리가 있는 EF6의 일부 쿼리보다 효율적일 수 있습니다. 즉시 로드는 `Include` 및 `ThenInclude` 메서드로 지정됩니다.
 
   ![즉시 로드 예제](read-related-data/_static/eager-loading.png)
  
@@ -47,11 +48,11 @@ ms.locfileid: "49348496"
 
   참고: EF Core는 이전에 컨텍스트 인스턴스에 로드된 다른 엔터티로 탐색 속성을 자동으로 수정합니다. 탐색 속성에 대한 데이터가 명시적으로 포함되지 *않더라도* 관련 엔터티의 일부 또는 전부가 이전에 로드된 경우에도 속성이 채워질 수 있습니다.
 
-* [명시적 로드](https://docs.microsoft.com/ef/core/querying/related-data#explicit-loading). 엔터티를 처음 읽을 때 관련된 데이터가 검색되지 않습니다. 필요할 때 관련된 데이터를 검색하기 위한 코드를 작성해야 합니다. 별도 쿼리가 있는 명시적 로드의 경우 여러 쿼리가 DB로 전송됩니다. 명시적 로드에서 코드는 로드될 탐색 속성을 지정합니다. `Load` 메서드를 사용하여 명시적 로드를 수행합니다. 예:
+* [명시적 로드](/ef/core/querying/related-data#explicit-loading). 엔터티를 처음 읽을 때 관련된 데이터가 검색되지 않습니다. 필요할 때 관련된 데이터를 검색하기 위한 코드를 작성해야 합니다. 별도 쿼리가 있는 명시적 로드의 경우 여러 쿼리가 DB로 전송됩니다. 명시적 로드에서 코드는 로드될 탐색 속성을 지정합니다. `Load` 메서드를 사용하여 명시적 로드를 수행합니다. 예:
 
   ![명시적 로드 예제](read-related-data/_static/explicit-loading.png)
 
-* [지연 로드](https://docs.microsoft.com/ef/core/querying/related-data#lazy-loading). [지연 로드가 버전 2.1의 EF Core에 추가되었습니다](/ef/core/querying/related-data#lazy-loading). 엔터티를 처음 읽을 때 관련된 데이터가 검색되지 않습니다. 탐색 속성에 처음으로 액세스하려고 할 때 해당 탐색 속성에 필요한 데이터가 자동으로 검색됩니다. 탐색 속성에 처음으로 액세스할 때마다 쿼리가 DB에 전송됩니다.
+* [지연 로드](/ef/core/querying/related-data#lazy-loading). [지연 로드가 버전 2.1의 EF Core에 추가되었습니다](/ef/core/querying/related-data#lazy-loading). 엔터티를 처음 읽을 때 관련된 데이터가 검색되지 않습니다. 탐색 속성에 처음으로 액세스하려고 할 때 해당 탐색 속성에 필요한 데이터가 자동으로 검색됩니다. 탐색 속성에 처음으로 액세스할 때마다 쿼리가 DB에 전송됩니다.
 
 * `Select` 연산자는 필요한 관련된 데이터만 로드합니다.
 

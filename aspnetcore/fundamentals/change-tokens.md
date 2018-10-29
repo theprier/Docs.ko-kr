@@ -5,12 +5,12 @@ description: 변경 토큰을 사용하여 변경 내용을 추적하는 방법�
 ms.author: riande
 ms.date: 11/10/2017
 uid: fundamentals/change-tokens
-ms.openlocfilehash: 1cf3693764919a8fd064584ab7b7ad237e8465b3
-ms.sourcegitcommit: f43f430a166a7ec137fcad12ded0372747227498
+ms.openlocfilehash: 7ad580a7e999a4eae006ce5dd07cca0cbdbe9ab6
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49391397"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50206421"
 ---
 # <a name="detect-changes-with-change-tokens-in-aspnet-core"></a>ASP.NET Core에서 변경 토큰을 사용하여 변경 내용 검색
 
@@ -18,7 +18,7 @@ ms.locfileid: "49391397"
 
 *변경 토큰*은 변경 내용을 추적하는 데 사용되는 범용의 하위 수준 구성 요소입니다.
 
-[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/change-tokens/sample/)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/change-tokens/sample/)([다운로드 방법](xref:index#how-to-download-a-sample))
 
 ## <a name="ichangetoken-interface"></a>IChangeToken 인터페이스
 
@@ -195,9 +195,9 @@ var compositeChangeToken =
 
 ## <a name="additional-resources"></a>추가 자료
 
-* [메모리 내 캐시](xref:performance/caching/memory)
-* [분산 캐시 사용](xref:performance/caching/distributed)
-* [응답 캐싱](xref:performance/caching/response)
-* [응답 캐싱 미들웨어](xref:performance/caching/middleware)
-* [캐시 태그 도우미](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper)
-* [분산 캐시 태그 도우미](xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper)
+* <xref:performance/caching/memory>
+* <xref:performance/caching/distributed>
+* <xref:performance/caching/response>
+* <xref:performance/caching/middleware>
+* <xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper>
+* <xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper>

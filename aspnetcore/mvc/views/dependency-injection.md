@@ -5,12 +5,12 @@ description: ASP.NET Core가 MVC 보기에 종속성 주입을 지원하는 방�
 ms.author: riande
 ms.date: 10/14/2016
 uid: mvc/views/dependency-injection
-ms.openlocfilehash: 753a335ec4f9f6a62fd20851af43da078b6f6a37
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 9b437d27a8d391db4533596674d144628a0c10b1
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36277334"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50207064"
 ---
 # <a name="dependency-injection-into-views-in-aspnet-core"></a>ASP.NET Core의 보기에 종속성 주입
 
@@ -18,7 +18,7 @@ ms.locfileid: "36277334"
 
 ASP.NET Core는 보기에 [종속성 주입](xref:fundamentals/dependency-injection)을 지원합니다. 보기 요소를 채우는 데만 필요한 지역화 또는 데이터 같은 보기 관련 서비스에 유용합니다. 컨트롤러와 보기 사이에 [문제를 분리](http://deviq.com/separation-of-concerns/)해야 합니다. 보기에서 표시하는 대부분의 데이터는 컨트롤러에서 전달되어야 합니다.
 
-[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/views/dependency-injection/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/views/dependency-injection/sample)([다운로드 방법](xref:index#how-to-download-a-sample))
 
 ## <a name="a-simple-example"></a>간단한 예제
 

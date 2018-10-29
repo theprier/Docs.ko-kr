@@ -5,12 +5,12 @@ description: ASP.NET Core의 웹 API에서 사용자 지정 포맷터를 만들�
 ms.author: tdykstra
 ms.date: 02/08/2017
 uid: web-api/advanced/custom-formatters
-ms.openlocfilehash: a21fcea68d957d0344309c9bbd3286b71c092f60
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: a038cd9c05950333fce9e72f67d6721198fae4d3
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36273860"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50206317"
 ---
 # <a name="custom-formatters-in-aspnet-core-web-api"></a>ASP.NET Core Web API에서 포맷터 사용자 지정
 
@@ -18,7 +18,7 @@ ms.locfileid: "36273860"
 
 ASP.NET Core MVC는 JSON, XML 또는 일반 텍스트 형식을 사용하여 웹 API에서 데이터 교환에 대한 기본 제공 지원을 제공합니다. 이 문서에서는 사용자 지정 포맷터를 만들어 추가 형식에 대한 지원을 추가하는 방법을 보여줍니다.
 
-[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/web-api/advanced/custom-formatters/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/web-api/advanced/custom-formatters/sample)([다운로드 방법](xref:index#how-to-download-a-sample))
 
 ## <a name="when-to-use-custom-formatters"></a>사용자 지정 포맷터를 사용하는 경우
 

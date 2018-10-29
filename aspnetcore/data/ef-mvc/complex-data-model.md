@@ -3,14 +3,15 @@ title: ASP.NET Core MVC 및 EF Core - 데이터 모델 - 5/10
 author: rick-anderson
 description: 이 자습서에서는 더 많은 엔터티 및 관계를 추가하고, 서식 지정, 유효성 검사 및 매핑 규칙을 지정하여 데이터 모델을 사용자 지정합니다.
 ms.author: tdykstra
-ms.date: 03/15/2017
+ms.custom: mvc
+ms.date: 10/24/2018
 uid: data/ef-mvc/complex-data-model
-ms.openlocfilehash: 3714cf7ce705a52653394319fef1728a6ddcc3ee
-ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
+ms.openlocfilehash: 87212edbfe34af6de938cf95314501e56e64a8be
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46011772"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50091043"
 ---
 # <a name="aspnet-core-mvc-with-ef-core---data-model---5-of-10"></a>ASP.NET Core MVC 및 EF Core - 데이터 모델 - 5/10
 
@@ -232,7 +233,7 @@ public int InstructorID { get; set; }
 
 강좌 엔터티에는 관련된 부서 엔터티를 가리키는 외래 키 속성 `DepartmentID`가 있으며, 여기에는 `Department` 탐색 속성이 있습니다.
 
-Entity Framework는 관련된 엔터티에 대한 탐색 속성이 있는 경우 사용자가 외래 키 속성을 데이터 모델에 추가하지 않아도 됩니다.  EF에서 자동으로 필요할 때마다 데이터베이스에 외래 키를 생성하고, 이에 대한 [그림자 속성](https://docs.microsoft.com/ef/core/modeling/shadow-properties)을 만듭니다. 하지만 데이터 모델에 외래 키가 있으면 더 간단하고 더 효율적으로 업데이트를 수행할 수 있습니다. 예를 들어, 편집할 강좌 엔터티를 페치하는 경우 이를 로드하지 않으면 부서 엔터티가 null이므로, 강좌 엔터티를 업데이트할 때 먼저 부서 엔터티를 페치해야 합니다. 외래 키 속성 `DepartmentID`가 데이터 모델에 포함된 경우 업데이트하기 전에 부서 엔터티를 페치할 필요가 없습니다.
+Entity Framework는 관련된 엔터티에 대한 탐색 속성이 있는 경우 사용자가 외래 키 속성을 데이터 모델에 추가하지 않아도 됩니다.  EF에서 자동으로 필요할 때마다 데이터베이스에 외래 키를 생성하고, 이에 대한 [그림자 속성](/ef/core/modeling/shadow-properties)을 만듭니다. 하지만 데이터 모델에 외래 키가 있으면 더 간단하고 더 효율적으로 업데이트를 수행할 수 있습니다. 예를 들어, 편집할 강좌 엔터티를 페치하는 경우 이를 로드하지 않으면 부서 엔터티가 null이므로, 강좌 엔터티를 업데이트할 때 먼저 부서 엔터티를 페치해야 합니다. 외래 키 속성 `DepartmentID`가 데이터 모델에 포함된 경우 업데이트하기 전에 부서 엔터티를 페치할 필요가 없습니다.
 
 ### <a name="the-databasegenerated-attribute"></a>DatabaseGenerated 특성
 
@@ -246,7 +247,7 @@ public int CourseID { get; set; }
 
 기본적으로 Entity Framework은 기본 키 값이 데이터베이스에서 생성된다고 가정합니다. 이는 대부분의 시나리오에서 사용자가 원하는 것입니다. 그러나 강좌 엔터티의 경우 한 부서에 대해 1000개 시리즈, 다른 부서에 대한 2000개 시리즈 등과 같은 사용자 지정 강좌 수를 사용하게 됩니다.
 
-또한 행이 생성되거나 업데이트된 날짜를 기록하는 데 데이터베이스 열이 사용되는 경우에 `DatabaseGenerated` 특성을 사용하여 기본 값을 생성할 수 있습니다.  자세한 내용은 [생성된 속성](https://docs.microsoft.com/ef/core/modeling/generated-properties)을 참조하세요.
+또한 행이 생성되거나 업데이트된 날짜를 기록하는 데 데이터베이스 열이 사용되는 경우에 `DatabaseGenerated` 특성을 사용하여 기본 값을 생성할 수 있습니다.  자세한 내용은 [생성된 속성](/ef/core/modeling/generated-properties)을 참조하세요.
 
 ### <a name="foreign-key-and-navigation-properties"></a>외래 키 및 탐색 속성
 
@@ -373,7 +374,7 @@ public Student Student { get; set; }
 
 외래 키가 null을 허용하지 않고 고유하게 테이블의 각 행을 식별하기 때문에 별도 기본 키가 필요하지 않습니다. *InstructorID* 및 *CourseID* 속성은 복합 기본 키로 작동해야 합니다. EF에서 복합 기본 키를 식별하는 유일한 방법은 *흐름 API*를 사용하는 것입니다(특성을 사용해서는 수행할 수 없음). 다음 섹션에 복합 기본 키를 구성하는 방법이 나와 있습니다.
 
-복합 키는 한 강좌에 여러 행 및 한 강사에 여러 행을 가질 수 있는 반면, 동일한 강사 및 강좌에는 여러 행을 가질 수 없음을 확인합니다. `Enrollment` 조인 엔터티는 고유한 기본 키를 정의하므로 이러한 종류의 중복이 가능합니다. 그러한 중복을 방지하려면 외래 키 필드에서 고유한 인덱스를 추가하거나 `CourseAssignment`와 유사한 기본 복합 키로 `Enrollment`를 구성할 수 있습니다. 자세한 내용은 [인덱스](https://docs.microsoft.com/ef/core/modeling/indexes)를 참조하세요.
+복합 키는 한 강좌에 여러 행 및 한 강사에 여러 행을 가질 수 있는 반면, 동일한 강사 및 강좌에는 여러 행을 가질 수 없음을 확인합니다. `Enrollment` 조인 엔터티는 고유한 기본 키를 정의하므로 이러한 종류의 중복이 가능합니다. 그러한 중복을 방지하려면 외래 키 필드에서 고유한 인덱스를 추가하거나 `CourseAssignment`와 유사한 기본 복합 키로 `Enrollment`를 구성할 수 있습니다. 자세한 내용은 [인덱스](/ef/core/modeling/indexes)를 참조하세요.
 
 ## <a name="update-the-database-context"></a>데이터베이스 컨텍스트 업데이트
 
@@ -385,7 +386,7 @@ public Student Student { get; set; }
 
 ## <a name="fluent-api-alternative-to-attributes"></a>특성에 대한 흐름 API 대안
 
-`DbContext` 클래스에서 `OnModelCreating` 메서드의 코드는 *흐름 API*를 사용하여 EF 동작을 구성합니다. API는 종종 [EF Core 설명서](https://docs.microsoft.com/ef/core/modeling/#methods-of-configuration)의 이 예제와 같이 일련의 메서드 호출을 단일 명령문으로 연결하여 사용되기 때문에 “흐름”이라고 부릅니다.
+`DbContext` 클래스에서 `OnModelCreating` 메서드의 코드는 *흐름 API*를 사용하여 EF 동작을 구성합니다. API는 종종 [EF Core 설명서](/ef/core/modeling/#methods-of-configuration)의 이 예제와 같이 일련의 메서드 호출을 단일 명령문으로 연결하여 사용되기 때문에 “흐름”이라고 부릅니다.
 
 ```csharp
 protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -400,7 +401,7 @@ protected override void OnModelCreating(ModelBuilder modelBuilder)
 
 일부 개발자는 흐름 API를 단독으로 사용하는 것을 선호하므로 자신의 엔터티 클래스를 “정리”할 수 있습니다. 원하는 경우 특성과 흐름 API를 섞을 수 있으며, 흐름 API를 사용해야만 수행할 수 있는 몇 가지 사용자 지정이 있습니다. 하지만 일반적으로 이러한 두 가지 방법 중 하나를 선택하여 가능한 한 일관되게 사용하는 것이 좋습니다. 둘 다 사용하는 경우 충돌이 있을 때마다 흐름 API가 특성을 재정의합니다.
 
-특성 대 흐름 API의 비교에 관한 자세한 내용은 [구성 메서드](https://docs.microsoft.com/ef/core/modeling/#methods-of-configuration)를 참조하세요.
+특성 대 흐름 API의 비교에 관한 자세한 내용은 [구성 메서드](/ef/core/modeling/#methods-of-configuration)를 참조하세요.
 
 ## <a name="entity-diagram-showing-relationships"></a>관계를 보여 주는 엔터티 다이어그램
 

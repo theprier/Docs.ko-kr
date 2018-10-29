@@ -4,14 +4,15 @@ author: rick-anderson
 description: Visual Studio Code를 사용하여 ASP.NET Core Razor 페이지 웹앱을 빌드하는 방법에 대한 기본 사항을 배웁니다.
 monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
-ms.date: 08/27/2017
+ms.custom: mvc
+ms.date: 10/24/2018
 uid: tutorials/razor-pages-vsc/razor-pages-start
-ms.openlocfilehash: b7f6ca377a892fce912dc0ee9d4b7378f40fbf24
-ms.sourcegitcommit: c12ebdab65853f27fbb418204646baf6ce69515e
+ms.openlocfilehash: 9ea66134c524a6a1a670d55bae4e66cf38a45274
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "46522929"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50089854"
 ---
 # <a name="get-started-with-aspnet-core-razor-pages-in-visual-studio-code"></a>Visual Studio Code에서 ASP.NET Core Razor 페이지 시작
 
@@ -47,7 +48,7 @@ dotnet run
 
 ::: moniker-end
 
-이전 명령은 [.NET Core CLI](https://docs.microsoft.com/dotnet/core/tools/dotnet)를 사용하여 Razor 페이지 프로젝트를 만들고 실행합니다. 브라우저를 열고 http://localhost:5000으로 이동하여 응용 프로그램을 봅니다.
+이전 명령은 [.NET Core CLI](/dotnet/core/tools/dotnet)를 사용하여 Razor 페이지 프로젝트를 만들고 실행합니다. 브라우저를 열고 http://localhost:5000으로 이동하여 응용 프로그램을 봅니다.
 
 ![홈 또는 인덱스 페이지](../razor-pages/razor-pages-start/_static/home.png)
 

@@ -1,24 +1,24 @@
 ---
 title: ASP.NET Core에서 응답 압축
 author: guardrex
-description: 응답 압축 및 ASP.NET Core 앱에서 응답 압축 미들웨어를 사용 하는 방법에 알아봅니다.
+description: ASP.NET Core 앱에서 응답 압축 미들웨어를 사용하는 방법 및 응답 압축에 대해 알아봅니다.
 monikerRange: '>= aspnetcore-1.1'
 ms.author: riande
 ms.custom: mvc
 ms.date: 09/21/2018
 uid: performance/response-compression
-ms.openlocfilehash: d5e0b6ed21c14f2e76396cde846c69a76ad40794
-ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
+ms.openlocfilehash: 8c3d74b6a346d51507d3c278b03ddc842feea13e
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48578148"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50207981"
 ---
 # <a name="response-compression-in-aspnet-core"></a>ASP.NET Core에서 응답 압축
 
 [Luke Latham](https://github.com/guardrex)으로
 
-[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/performance/response-compression/samples)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/performance/response-compression/samples) ([다운로드 방법](xref:index#how-to-download-a-sample))
 
 네트워크 대역폭은 제한 된 리소스입니다. 일반적으로 응답의 크기를 줄이면 앱의 응답성 데이터는 종종 크게 증가 합니다. 페이로드 크기를 줄이는 한 가지 방법은 응용 프로그램의 응답을 압축 하는 경우
 

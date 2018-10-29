@@ -3,14 +3,15 @@ title: ASP.NET Core에서 EF Core를 사용한 Razor 페이지 - 데이터 모�
 author: rick-anderson
 description: 이 자습서에서는 더 많은 엔터티 및 관계를 추가하고, 서식 지정, 유효성 검사 및 매핑 규칙을 지정하여 데이터 모델을 사용자 지정합니다.
 ms.author: riande
-ms.date: 6/31/2017
+ms.custom: mvc
+ms.date: 10/24/2018
 uid: data/ef-rp/complex-data-model
-ms.openlocfilehash: b81918cbd74200f0672f3002f916523fb4a9a914
-ms.sourcegitcommit: f5d403004f3550e8c46585fdbb16c49e75f495f3
+ms.openlocfilehash: 9a0d5a8e722487ccf7e08aadb39f838a0963451d
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "49477659"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090977"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---data-model---5-of-8"></a>ASP.NET Core에서 EF Core를 사용한 Razor 페이지 - 데이터 모델 - 5/8
 
@@ -121,6 +122,7 @@ DB가 만들어질 때 모델의 속성 이름은 열 이름에 사용됩니다(
 ```SQL
 SqlException: Invalid column name 'FirstName'.
 ```
+
 DB를 업데이트하려면:
 
 * 프로젝트를 빌드합니다.
@@ -157,7 +159,7 @@ SSOX에서 학생 테이블을 엽니다.
 
 ![마이그레이션 후 SSOX의 학생 테이블](complex-data-model/_static/ssox-after-migration.png)
 
-마이그레이션이 적용되기 전에 이름 열은 [nvarchar(MAX)](https://docs.microsoft.com/sql/t-sql/data-types/nchar-and-nvarchar-transact-sql) 형식이었습니다. 이름 열은 이제 `nvarchar(50)`입니다. 열 이름은 `FirstMidName`에서 `FirstName`으로 변경되었습니다.
+마이그레이션이 적용되기 전에 이름 열은 [nvarchar(MAX)](/sql/t-sql/data-types/nchar-and-nvarchar-transact-sql) 형식이었습니다. 이름 열은 이제 `nvarchar(50)`입니다. 열 이름은 `FirstMidName`에서 `FirstName`으로 변경되었습니다.
 
 > [!Note]
 > 다음 섹션의 일부 단계에서 앱 빌드는 컴파일러 오류를 생성합니다. 지침은 앱을 빌드하는 시기를 지정합니다.
@@ -295,7 +297,7 @@ public Instructor Instructor { get; set; }
 
 모델에 관련된 엔터티에 대한 탐색 속성이 있는 경우 EF Core는 데이터 모델에 대한 FK 속성이 필요하지 않습니다.
 
-EF Core는 필요한 어디든지 데이터베이스에 FK를 자동으로 만듭니다. EF Core는 자동으로 만들어진 FK에 대한 [섀도 속성](https://docs.microsoft.com/ef/core/modeling/shadow-properties)을 만듭니다. 데이터 모델에 FK가 있으면 더 간단하고 더 효율적으로 업데이트를 수행할 수 있습니다. 예를 들어 FK 키 속성 `DepartmentID`가 포함되지 *않은* 모델을 가정합니다. 과정 엔터티가 편집을 위해 페치되는 경우:
+EF Core는 필요한 어디든지 데이터베이스에 FK를 자동으로 만듭니다. EF Core는 자동으로 만들어진 FK에 대한 [섀도 속성](/ef/core/modeling/shadow-properties)을 만듭니다. 데이터 모델에 FK가 있으면 더 간단하고 더 효율적으로 업데이트를 수행할 수 있습니다. 예를 들어 FK 키 속성 `DepartmentID`가 포함되지 *않은* 모델을 가정합니다. 과정 엔터티가 편집을 위해 페치되는 경우:
 
 * `Department` 엔터티는 명시적으로 로드되지 않은 경우 Null입니다.
 * 과정 엔터티를 업데이트하려면 `Department` 엔터티를 먼저 페치해야 합니다.
@@ -314,7 +316,7 @@ public int CourseID { get; set; }
 
 기본적으로 EF Core는 PK 값이 DB에서 생성되었다고 가정합니다. DB에서 생성된 PK 값은 일반적으로 가장 좋은 방법입니다. `Course` 엔터티의 경우 사용자는 PK를 지정합니다. 예를 들어 수학 부서에 대한 1000 시리즈, 영어 부서에 대한 2000 시리즈와 같은 강좌 번호입니다.
 
-`DatabaseGenerated` 특성은 기본 값을 생성하는 데 사용될 수도 있습니다. 예를 들어 DB는 행이 만들어지거나 업데이트된 날짜를 기록하기 위해 날짜 필드를 자동으로 생성할 수 있습니다. 자세한 내용은 [생성된 속성](https://docs.microsoft.com/ef/core/modeling/generated-properties)을 참조하세요.
+`DatabaseGenerated` 특성은 기본 값을 생성하는 데 사용될 수도 있습니다. 예를 들어 DB는 행이 만들어지거나 업데이트된 날짜를 기록하기 위해 날짜 필드를 자동으로 생성할 수 있습니다. 자세한 내용은 [생성된 속성](/ef/core/modeling/generated-properties)을 참조하세요.
 
 ### <a name="foreign-key-and-navigation-properties"></a>외래 키 및 탐색 속성
 
@@ -478,7 +480,7 @@ FK는 Null을 허용하지 않습니다. `CourseAssignment`에서 두 개의 FK(
 `Enrollment` 조인 엔터티는 고유한 PK를 정의하므로 이러한 종류의 중복이 가능합니다. 이러한 중복 항목을 방지하려면:
 
 * FK 필드에 고유 인덱스를 추가하거나
-* `CourseAssignment`와 유사한 기본 복합 키로 `Enrollment`를 구성합니다. 자세한 내용은 [인덱스](https://docs.microsoft.com/ef/core/modeling/indexes)를 참조하세요.
+* `CourseAssignment`와 유사한 기본 복합 키로 `Enrollment`를 구성합니다. 자세한 내용은 [인덱스](/ef/core/modeling/indexes)를 참조하세요.
 
 ## <a name="update-the-db-context"></a>DB 컨텍스트 업데이트
 
@@ -490,7 +492,7 @@ FK는 Null을 허용하지 않습니다. `CourseAssignment`에서 두 개의 FK(
 
 ## <a name="fluent-api-alternative-to-attributes"></a>특성에 대한 흐름 API 대안
 
-위의 코드에서 `OnModelCreating` 메서드는 *흐름 API*를 사용하여 EF Core 동작을 구성합니다. API는 종종 일련의 메서드 호출을 단일 명령문으로 함께 연결하여 사용되기 때문에 “흐름”이라고 부릅니다. [다음 코드](https://docs.microsoft.com/ef/core/modeling/#methods-of-configuration)는 흐름 API의 예제입니다.
+위의 코드에서 `OnModelCreating` 메서드는 *흐름 API*를 사용하여 EF Core 동작을 구성합니다. API는 종종 일련의 메서드 호출을 단일 명령문으로 함께 연결하여 사용되기 때문에 “흐름”이라고 부릅니다. [다음 코드](/ef/core/modeling/#methods-of-configuration)는 흐름 API의 예제입니다.
 
 ```csharp
 protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -516,7 +518,7 @@ protected override void OnModelCreating(ModelBuilder modelBuilder)
 * EF Core 구성에만(예: `HasKey`)
 * 유효성 검사 및 EF Core 구성(예: `[StringLength(50)]`)
 
-특성과 흐름 API의 비교에 대한 자세한 내용은 [구성 메서드](https://docs.microsoft.com/ef/core/modeling/#methods-of-configuration)를 참조하세요.
+특성과 흐름 API의 비교에 대한 자세한 내용은 [구성 메서드](/ef/core/modeling/#methods-of-configuration)를 참조하세요.
 
 ## <a name="entity-diagram-showing-relationships"></a>관계를 보여 주는 엔터티 다이어그램
 
@@ -577,6 +579,7 @@ database "ContosoUniversity", table "dbo.Department", column 'DepartmentID'.
 ## <a name="apply-the-migration"></a>마이그레이션 적용
 
 기존 데이터베이스가 있으므로 향후 변경 내용을 적용하는 방법을 고려해야 합니다. 이 자습서에서는 두 가지 방법을 보여 줍니다.
+
 * [데이터베이스를 삭제하고 다시 만들기](#drop)
 * [기존 데이터베이스에 마이그레이션 적용](#applyexisting). 이 방법은 더 복잡하고 시간이 오래 걸리지만 실제 프로덕션 환경에 권장되는 방법입니다. **참고**: 이는 자습서의 선택적 섹션입니다. 삭제하고 다시 만들기 단계를 수행하고 이 섹션을 건너뛸 수 있습니다. 이 섹션의 단계를 수행하지 않으려면 삭제하고 다시 만들기 단계를 수행하지 마세요. 
 

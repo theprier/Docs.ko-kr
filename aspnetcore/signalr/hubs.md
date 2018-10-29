@@ -7,18 +7,18 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 09/12/2018
 uid: signalr/hubs
-ms.openlocfilehash: 17e3ee23967bc1097a3121b3e3e5b58cebe3887d
-ms.sourcegitcommit: a742b55e4b8276a48b8b4394784554fecd883c84
+ms.openlocfilehash: be42314afad4ff43d2fcf1abbc96c5b78c773977
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45538364"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50206018"
 ---
 # <a name="use-hubs-in-signalr-for-aspnet-core"></a>ASP.NET Core SignalR에서 허브 사용하기
 
 작성자: [Rachel Appel](https://twitter.com/rachelappel) 및 [Kevin Griffin](https://twitter.com/1kevgriff)
 
-[샘플 코드 보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/signalr/hubs/sample/ ) [(다운로드 방법)](xref:tutorials/index#how-to-download-a-sample)
+[샘플 코드 보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/signalr/hubs/sample/ ) [(다운로드 방법)](xref:index#how-to-download-a-sample)
 
 ## <a name="what-is-a-signalr-hub"></a>SignalR 허브 기능
 
@@ -127,4 +127,4 @@ SignalR 허브 API는 연결을 관리하고 추적하기 위한 `OnConnectedAsy
 
 * [ASP.NET Core SignalR 소개](xref:signalr/introduction)
 * [JavaScript 클라이언트](xref:signalr/javascript-client)
-* [Azure에 게시하기](xref:signalr/publish-to-azure-web-app)
+* [Azure에 게시](xref:signalr/publish-to-azure-web-app)

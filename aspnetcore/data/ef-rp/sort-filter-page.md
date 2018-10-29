@@ -3,14 +3,15 @@ title: ASP.NET Core에서 EF Core를 사용한 Razor 페이지 - 정렬, 필터,
 author: rick-anderson
 description: 이 자습서에서는 ASP.NET Core 및 Entity Framework Core를 사용하여 페이지에 정렬, 필터링 및 페이징 기능을 추가합니다.
 ms.author: riande
-ms.date: 6/31/2017
+ms.custom: mvc
+ms.date: 10/24/2018
 uid: data/ef-rp/sort-filter-page
-ms.openlocfilehash: 06669d69fa9fec87d262c2b5bfd8b11649259849
-ms.sourcegitcommit: 6e6002de467cd135a69e5518d4ba9422d693132a
+ms.openlocfilehash: 19fe24e0f901c50e8425db7665b5b2257b608146
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49348444"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090886"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---sort-filter-paging---3-of-8"></a>ASP.NET Core에서 EF Core를 사용한 Razor 페이지 - 정렬, 필터, 페이징 - 3/8
 
@@ -51,7 +52,7 @@ ms.locfileid: "49348444"
 
 [!code-csharp[](intro/samples/cu21/Pages/Students/Index.cshtml.cs?name=snippet_SortOnly&highlight=3-4)]
 
-다음 코드는 C# 조건적 [?: 연산자](https://docs.microsoft.com/dotnet/csharp/language-reference/operators/conditional-operator)를 포함합니다.
+다음 코드는 C# 조건적 [?: 연산자](/dotnet/csharp/language-reference/operators/conditional-operator)를 포함합니다.
 
 [!code-csharp[](intro/samples/cu21/Pages/Students/Index.cshtml.cs?name=snippet_Ternary)]
 

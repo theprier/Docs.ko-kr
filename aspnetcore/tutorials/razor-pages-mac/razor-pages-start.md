@@ -4,14 +4,15 @@ author: rick-anderson
 description: Mac용 Visual Studio를 사용하여 ASP.NET Core에서 Razor 페이지를 시작하는 방법을 알아봅니다.
 monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
-ms.date: 07/27/2017
+ms.custom: mvc
+ms.date: 10/24/2018
 uid: tutorials/razor-pages-mac/razor-pages-start
-ms.openlocfilehash: 0e1c2a9ab436968e2c24aa5f306ec69674fb025b
-ms.sourcegitcommit: c12ebdab65853f27fbb418204646baf6ce69515e
+ms.openlocfilehash: 8a4cc6c52684558ce9176f98205e439096e88cbf
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "46523274"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50089653"
 ---
 # <a name="get-started-with-razor-pages-in-aspnet-core-on-macos-with-visual-studio-for-mac"></a>Mac용 Visual Studio를 사용하여 macOS에서 ASP.NET Core의 Razor 페이지 시작
 
@@ -47,7 +48,7 @@ dotnet run
 
 ::: moniker-end
 
-이전 명령은 [.NET Core CLI](https://docs.microsoft.com/dotnet/core/tools/dotnet)를 사용하여 Razor 페이지 프로젝트를 만들고 실행합니다. 브라우저를 열고 http://localhost:5000으로 이동하여 응용 프로그램을 봅니다.
+이전 명령은 [.NET Core CLI](/dotnet/core/tools/dotnet)를 사용하여 Razor 페이지 프로젝트를 만들고 실행합니다. 브라우저를 열고 http://localhost:5000으로 이동하여 응용 프로그램을 봅니다.
 
 ![홈 또는 인덱스 페이지](../razor-pages/razor-pages-start/_static/home.png)
 

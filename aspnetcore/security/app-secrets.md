@@ -6,18 +6,18 @@ ms.author: scaddie
 ms.custom: mvc
 ms.date: 09/24/2018
 uid: security/app-secrets
-ms.openlocfilehash: 1ecd9b87b9e4aa2c511349fe407c0cea9dc9f921
-ms.sourcegitcommit: 4d5f8680d68b39c411b46c73f7014f8aa0f12026
+ms.openlocfilehash: 385d0ecc6ea19d5f84a9fe3c2754f5256a2a5576
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47028273"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50207435"
 ---
 # <a name="safe-storage-of-app-secrets-in-development-in-aspnet-core"></a>ASP.NET Core에서 개발 앱 암호의 안전한 저장소
 
 작성자: [Rick Anderson](https://twitter.com/RickAndMSFT), [김 Roth](https://github.com/danroth27), 및 [Scott Addie](https://github.com/scottaddie)
 
-[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/app-secrets/samples)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/app-secrets/samples) ([다운로드 방법](xref:index#how-to-download-a-sample))
 
 이 문서에 저장 하 고 ASP.NET Core 앱을 개발 하는 동안 중요 한 데이터를 검색 하는 기술을 설명 합니다. 소스 코드에서 암호 또는 기타 중요 한 데이터를 저장 하지 마십시오. 프로덕션 비밀을 사용할 수 없습니다 개발 또는 테스트에 대 한 합니다. [Azure Key Vault 구성 제공자](xref:security/key-vault-configuration)로 Azure 테스트 및 프로덕션 암호를 저장하고 보호할 수 있습니다.
 
@@ -306,7 +306,7 @@ dotnet user-secrets set "DbPassword" "pass123"
 dotnet user-secrets list
 ```
 
-다음과 같은 출력이 표시 됩니다.
+다음 출력이 표시됩니다.
 
 ```console
 Movies:ConnectionString = Server=(localdb)\mssqllocaldb;Database=Movie-1;Trusted_Connection=True;MultipleActiveResultSets=true

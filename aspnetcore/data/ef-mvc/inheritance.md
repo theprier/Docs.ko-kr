@@ -3,14 +3,15 @@ title: ASP.NET Core MVC 및 EF Core - 상속 - 9/10
 author: rick-anderson
 description: 이 자습서에서는 ASP.NET Core 응용 프로그램에서 Entity Framework Core를 사용하여 데이터 모델에서 상속을 구현하는 방법을 보여 줍니다.
 ms.author: tdykstra
-ms.date: 03/15/2017
+ms.custom: mvc
+ms.date: 10/24/2018
 uid: data/ef-mvc/inheritance
-ms.openlocfilehash: a71954297f44f936893a7f1e9d3b0685f81378b9
-ms.sourcegitcommit: b8a2f14bf8dd346d7592977642b610bbcb0b0757
+ms.openlocfilehash: 60417040dd296311e1aecff8f224aadf8da82779
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38126706"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090760"
 ---
 # <a name="aspnet-core-mvc-with-ef-core---inheritance---9-of-10"></a>ASP.NET Core MVC 및 EF Core - 상속 - 9/10
 
@@ -142,7 +143,7 @@ Person 테이블을 마우스 오른쪽 단추로 클릭한 후 **테이블 데�
 
 ## <a name="summary"></a>요약
 
-`Person`, `Student` 및 `Instructor` 클래스에 대해 계층당 하나의 테이블 상속을 구현했습니다. Entity Framework Core의 상속에 대한 자세한 내용은 [상속](https://docs.microsoft.com/ef/core/modeling/inheritance)을 참조하세요. 다음 자습서에서는 다양한 고급 Entity Framework 시나리오를 처리하는 방법을 살펴봅니다.
+`Person`, `Student` 및 `Instructor` 클래스에 대해 계층당 하나의 테이블 상속을 구현했습니다. Entity Framework Core의 상속에 대한 자세한 내용은 [상속](/ef/core/modeling/inheritance)을 참조하세요. 다음 자습서에서는 다양한 고급 Entity Framework 시나리오를 처리하는 방법을 살펴봅니다.
 
 ::: moniker-end
 

@@ -8,12 +8,12 @@ ms.date: 03/26/2015
 ms.assetid: d4911cb3-1afb-4805-b860-10818c4b1280
 msc.legacyurl: /mvc/overview/security/create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset
 msc.type: authoredcontent
-ms.openlocfilehash: 02a0153f20e9390a5ab8d4ecb4f73556b339d9a9
-ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
+ms.openlocfilehash: 5092476c6cf59bea6fab6fa6f169ff11ec4c9c4a
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48576465"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50207487"
 ---
 <a name="create-a-secure-aspnet-mvc-5-web-app-with-log-in-email-confirmation-and-password-reset-c"></a>전자 메일 확인 및 암호 재설정 기능이 (C#), 로그를 사용 하 여 보안 ASP.NET MVC 5 웹 앱 만들기
 ====================
@@ -56,6 +56,8 @@ ms.locfileid: "48576465"
 
 <a id="SG"></a>
 ## <a name="hook-up-sendgrid"></a>SendGrid 연결
+
+이 섹션의에서 지침에서는 현재있지 않습니다. 참조 [구성 SendGrid 전자 메일 공급자](/aspnet/core/security/authentication/accconfirm#configure-email-provider) 에 대 한 지침을 업데이트 합니다.
 
 이 자습서에만 전자 메일 알림을 통해 추가 하는 방법을 보여 주지만 [SendGrid](http://sendgrid.com/), SMTP 및 다른 메커니즘을 사용 하 여 메일을 보낼 수 있습니다 (참조 [추가 리소스](#addRes)).
 

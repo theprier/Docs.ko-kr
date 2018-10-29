@@ -3,14 +3,15 @@ title: ASP.NET Core MVC 및 EF Core - 동시성 - 8/10
 author: rick-anderson
 description: 이 자습서에는 여러 사용자가 동시에 같은 엔터티를 업데이트하는 경우 충돌을 처리하는 방법을 보여 줍니다.
 ms.author: tdykstra
-ms.date: 03/15/2017
+ms.custom: mvc
+ms.date: 10/24/2018
 uid: data/ef-mvc/concurrency
-ms.openlocfilehash: 9bf65621213c9657232dfff1701c9937d5105a9c
-ms.sourcegitcommit: b8a2f14bf8dd346d7592977642b610bbcb0b0757
+ms.openlocfilehash: 0ae566a76a2ef656843452ed537b8fdfbddaed22
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38186639"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090903"
 ---
 # <a name="aspnet-core-mvc-with-ef-core---concurrency---8-of-10"></a>ASP.NET Core MVC 및 EF Core - 동시성 - 8/10
 
@@ -219,7 +220,6 @@ HttpPost `Delete` 메서드의 코드(`DeleteConfirmed`라는)를 다음 코드�
 
 방금 바꾼 스캐폴드된 코드에서 이 메서드는 레코드 ID만 허용했습니다.
 
-
 ```csharp
 public async Task<IActionResult> DeleteConfirmed(int id)
 ```
@@ -278,7 +278,7 @@ public async Task<IActionResult> Delete(Department department)
 
 ## <a name="summary"></a>요약
 
-동시성 충돌 처리에 대한 소개를 완료합니다. EF Core에서 동시성을 처리하는 방법에 대한 자세한 내용은 [동시성 충돌](https://docs.microsoft.com/ef/core/saving/concurrency)을 참조하세요. 다음 자습서에서는 강사 및 학생 엔터티에 대한 계층당 테이블 상속을 구현하는 방법을 보여 줍니다.
+동시성 충돌 처리에 대한 소개를 완료합니다. EF Core에서 동시성을 처리하는 방법에 대한 자세한 내용은 [동시성 충돌](/ef/core/saving/concurrency)을 참조하세요. 다음 자습서에서는 강사 및 학생 엔터티에 대한 계층당 테이블 상속을 구현하는 방법을 보여 줍니다.
 
 ::: moniker-end
 

@@ -8,12 +8,12 @@ ms.date: 02/10/2010
 ms.assetid: 1365eebb-bdf7-4a05-8d18-7f200531be55
 msc.legacyurl: /whitepapers/ms03-32-issue
 msc.type: content
-ms.openlocfilehash: ce2d705a93577b0c6d28f86069873c6ecd891db6
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 9041f8d15a449a517594f8051c3d9f0ceb18a8a3
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41836726"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50207019"
 ---
 <a name="fix-for-server-application-unavailable-error-after-applying-security-update-for-ie"></a>IE 용 보안 업데이트를 적용 한 후 '서버 응용 프로그램이 사용할 수 없음' 오류에 대 한 수정
 ====================
@@ -38,7 +38,7 @@ Microsoft은 Internet Explorer 보안 패치 m s 03-32 보안 업데이트 및 W
 4. ASP.NET을 다시 등록 합니다. 이 만들고 계정의 새로운 임의의 암호를 적용 하는 것에 대 한 기본 ASP.NET 액세스 제어 설정
 5. IIS 서비스를 다시 시작
 
-하드 코드 된 임시 암호를 포함 하는 배치 파일 "<strong>1pass@word</strong>" runas 명령을 일괄 처리 파일을 실행 하는 경우에 입력 하 라는 메시지가 될 수 있습니다. 실행 명령이 완료 되 면 강력한 임의 값을 사용 하 여 ASPNET 계정 암호를 다시 생성 됩니다. 배치 파일을 하드 코드 된 암호를 사용자 환경에서 암호 복잡성 요구 사항에 맞지 않는 경우 실패할 수 있는 참고 합니다. 하는 경우에 사용자 환경에 적합 한 다른 값을 변경할 수 있습니다.
+하드 코드 된 임시 암호를 포함 하는 배치 파일 "<strong>1pass\@word</strong>" runas 명령을 일괄 처리 파일을 실행 하는 경우에 입력 하 라는 메시지가 될 수 있습니다. 실행 명령이 완료 되 면 강력한 임의 값을 사용 하 여 ASPNET 계정 암호를 다시 생성 됩니다. 배치 파일을 하드 코드 된 암호를 사용자 환경에서 암호 복잡성 요구 사항에 맞지 않는 경우 실패할 수 있는 참고 합니다. 하는 경우에 사용자 환경에 적합 한 다른 값을 변경할 수 있습니다.
 
 *> [!IMPORTANT]* 사용자 지정 액세스 제어 설정이 나 ASPNET 계정에 대 한 데이터베이스 계정 권한을 추가한 경우이 배치 파일에서 완료 된 후 다시 만들어야 할 수 있습니다. 즉, 계정을 다시 만들 때 새 보안 식별자 (SID)를 가져와야 합니다.
 
@@ -51,7 +51,7 @@ Microsoft은 Internet Explorer 보안 패치 m s 03-32 보안 업데이트 및 W
 3. C:\에 압축을 풉니다
 4. 시작 메뉴에서 실행... 선택 하 고 입력 `cmd.exe`
 5. 열려 있는 명령 창에서 입력 `c:\fixup.cmd`합니다.
-6. 메시지가 표시 되 면 입력 <strong>1pass@word</strong> 암호로 합니다.
+6. 메시지가 표시 되 면 입력 <strong>1pass\@word</strong> 암호로 합니다.
 7. 이전에 사용자 지정 액세스 제어 설정 또는 ASPNET 계정에 대 한 계정 권한이 데이터베이스에 있는 경우 이제 이러한 설정을 다시 적용 해야 합니다.
 
 이 인해 불편을 드려 많은 정말 죄송 합니다. 추가 정보를 사용할 수 있는 게시 됩니다.

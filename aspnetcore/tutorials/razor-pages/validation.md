@@ -4,14 +4,15 @@ author: rick-anderson
 description: ASP.NET Core의 Razor 페이지에 유효성 검사를 추가하는 방법을 알아봅니다.
 monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
-ms.date: 08/07/2017
+ms.custom: mvc
+ms.date: 10/24/2018
 uid: tutorials/razor-pages/validation
-ms.openlocfilehash: cd958b9c084de4b3e12784774544610873a519f9
-ms.sourcegitcommit: 317f9be24db600499e79d25872d743af74bd86c0
+ms.openlocfilehash: 2518b9911f13da79c76c84e530cf53fc2df474e5
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48045525"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090448"
 ---
 # <a name="add-validation-to-an-aspnet-core-razor-page"></a>ASP.NET Core Razor 페이지에 유효성 검사 추가
 
@@ -27,7 +28,7 @@ Razor 페이지에서 제공하는 유효성 검사 지원 및 Entity Framework�
 
 ### <a name="adding-validation-rules-to-the-movie-model"></a>동영상 모델에 유효성 검사 규칙 추가
 
-*Models/Movie.cs* 파일을 엽니다. [DataAnnotations](https://docs.microsoft.com/aspnet/mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-6)는 클래스 또는 속성에 선언적으로 적용되는 유효성 검사 특성의 기본 제공 집합을 제공합니다. DataAnnotations는 또한 서식 지정을 돕는 `DataType`과 같은 서식 지정 특성을 포함하며 유효성 검사를 제공하지 않습니다.
+*Models/Movie.cs* 파일을 엽니다. [DataAnnotations](/aspnet/mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-6)는 클래스 또는 속성에 선언적으로 적용되는 유효성 검사 특성의 기본 제공 집합을 제공합니다. DataAnnotations는 또한 서식 지정을 돕는 `DataType`과 같은 서식 지정 특성을 포함하며 유효성 검사를 제공하지 않습니다.
 
 `Required`, `StringLength`, `RegularExpression` 및 `Range` 유효성 검사 특성을 활용하도록 `Movie` 클래스를 업데이트합니다.
 
@@ -45,7 +46,7 @@ Razor 페이지에서 제공하는 유효성 검사 지원 및 Entity Framework�
 
 유효성 검사 특성은 모델 속성에 적용되는 동작을 지정합니다.
 
-* `Required` 및 `MinimumLength` 특성은 속성에 값이 있어야 함을 나타냅니다. 그러나 사용자는 nullable 형식에 대한 유효성 검사 제약 조건을 만족하기 위해 공백을 입력할 수 있습니다. nullable 형식이 아닌 [값 형식](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/value-types)(`decimal`, `int`, `float`,`DateTime`)은 기본적으로 필요하며 `Required` 특성은 필요하지 않습니다.
+* `Required` 및 `MinimumLength` 특성은 속성에 값이 있어야 함을 나타냅니다. 그러나 사용자는 nullable 형식에 대한 유효성 검사 제약 조건을 만족하기 위해 공백을 입력할 수 있습니다. nullable 형식이 아닌 [값 형식](/dotnet/csharp/language-reference/keywords/value-types)(`decimal`, `int`, `float`,`DateTime`)은 기본적으로 필요하며 `Required` 특성은 필요하지 않습니다.
 * `RegularExpression` 특성은 사용자가 입력할 수 있는 문자를 제한합니다. 위의 코드에서 `Genre`는 하나 이상의 대문자로 시작하고 0개 이상의 문자, 작은따옴표 또는 큰따옴표, 공백 문자 또는 대시를 사용해야 합니다. `Rating`은 하나 이상의 대문자로 시작하고 0개 이상의 문자, 숫자, 작은따옴표 또는 큰따옴표, 공백 문자 또는 대시를 사용해야 합니다.
 * `Range` 특성은 지정된 범위로 값을 제한합니다.
 * `StringLength` 특성은 문자열의 최대 길이 및 필요에 따라 최소 길이를 설정합니다. 
@@ -95,7 +96,7 @@ ASP.NET Core에 의해 자동으로 적용되는 유효성 검사 규칙을 사�
 
 [!code-cshtml[](razor-pages-start/sample/RazorPagesMovie/Pages/Movies/Create.cshtml?range=14-20)]
 
-[입력 태그 도우미](xref:mvc/views/working-with-forms)는 [DataAnnotations](https://docs.microsoft.com/aspnet/mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-6) 특성을 사용하고 클라이언트 쪽의 jQuery 유효성 검사에 필요한 HTML 특성을 생성합니다. [유효성 검사 태그 도우미](xref:mvc/views/working-with-forms#the-validation-tag-helpers)는 유효성 검사 오류를 표시합니다. 자세한 내용은 [유효성 검사](xref:mvc/models/validation)를 참조하세요.
+[입력 태그 도우미](xref:mvc/views/working-with-forms)는 [DataAnnotations](/aspnet/mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-6) 특성을 사용하고 클라이언트 쪽의 jQuery 유효성 검사에 필요한 HTML 특성을 생성합니다. [유효성 검사 태그 도우미](xref:mvc/views/working-with-forms#the-validation-tag-helpers)는 유효성 검사 오류를 표시합니다. 자세한 내용은 [유효성 검사](xref:mvc/models/validation)를 참조하세요.
 
 만들기 및 편집 페이지에 유효성 검사 규칙이 없습니다. 유효성 검사 규칙 및 오류 문자열은 `Movie` 클래스에서만 지정됩니다. 이러한 유효성 검사 규칙은 `Movie` 모델을 편집하는 Razor 페이지에 자동으로 적용됩니다.
 
@@ -166,10 +167,10 @@ Razor 페이지에 대한 이 소개를 완료해 주셔서 감사합니다. 소
 
 ## <a name="additional-resources"></a>추가 자료
 
-* [양식 사용](xref:mvc/views/working-with-forms)
-* [전역화 및 지역화](xref:fundamentals/localization)
-* [태그 도우미 소개](xref:mvc/views/tag-helpers/intro)
-* [태그 도우미 작성](xref:mvc/views/tag-helpers/authoring)
+* <xref:mvc/views/working-with-forms>
+* <xref:fundamentals/localization>
+* <xref:mvc/views/tag-helpers/intro>
+* <xref:mvc/views/tag-helpers/authoring>
 
 > [!div class="step-by-step"]
 > [이전: 새 필드 추가](xref:tutorials/razor-pages/new-field)

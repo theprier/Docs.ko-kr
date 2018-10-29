@@ -7,12 +7,12 @@ author: BillWagner
 ms.author: wiwagn
 ms.date: 02/01/2017
 ms.assetid: c9f1d52c-b4bd-4b5d-b7f9-8f9ceaf778c4
-ms.openlocfilehash: b3eb643daf230336ce5def96007b6096f86390e6
-ms.sourcegitcommit: 54655f1e1abf0b64d19506334d94cfdb0caf55f6
+ms.openlocfilehash: 7b34187747d3081998b8b60a72adae78cafe2c3e
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50148943"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50207968"
 ---
 # <a name="migrating-aspnet-mvc-applications-to-windows-containers"></a>ASP.NET MVC 응용 프로그램을 Windows 컨테이너로 마이그레이션
 
@@ -71,7 +71,7 @@ Docker 이미지로 로드해야 하는 자산을 모두 한 곳에 수집합니
 Dockerfile에서 Docker 이미지를 정의합니다. Dockerfile에는 기본 이미지, 추가 구성 요소, 실행할 앱 및 기타 구성 이미지에 대한 지침이 포함되어 있습니다.  Dockerfile은 이미지를 만드는 `docker build` 명령에 대한 입력입니다.
 
 [Docker 허브](https://hub.docker.com/r/microsoft/aspnet/)에 있는 `microsoft/aspnet` 이미지를 기반으로 해서 이미지를 빌드합니다.
-기본 이미지인 `microsoft/aspnet`은 Windows Server 이미지입니다. Windows Server Core, IIS 및 ASP.NET 4.6.2 포함합니다. 컨테이너에서 이 이미지를 실행하면 IIS 및 설치된 웹 사이트가 자동으로 시작됩니다.
+기본 이미지인 `microsoft/aspnet`은 Windows Server 이미지입니다. Windows Server Core, IIS 및 ASP.NET 4.7.2 포함합니다. 컨테이너에서 이 이미지를 실행하면 IIS 및 설치된 웹 사이트가 자동으로 시작됩니다.
 
 이미지를 만드는 Dockerfile은 다음과 같이 표시됩니다.
 
@@ -122,18 +122,7 @@ docker run -d --name randomanswers mvcrandomanswers
 
 ## <a name="verify-in-the-browser"></a>브라우저에서 확인
 
-> [!NOTE]
-> 찾을 수 없으면 현재 Windows 컨테이너 버전 `http://localhost`합니다.
-> 이 문제는 WinNAT에서 알려진 동작이며 앞으로 해결될 예정입니다. 문제가 해결될 때까지 컨테이너의 IP 주소를 사용해야 합니다.
-
-컨테이너가 시작되면 브라우저에서 실행 중인 컨테이너에 연결할 수 있도록 해당 IP 주소를 찾습니다.
-
-```console
-docker inspect -f "{{ .NetworkSettings.Networks.nat.IPAddress }}" randomanswers
-172.31.194.61
-```
-
-IPv4 주소를 사용 하 여 실행 중인 컨테이너를 연결할 `http://172.31.194.61` 표시 된 예에서입니다. 해당 URL을 브라우저에 입력하면 실행 중인 사이트가 표시됩니다.
+사용 하 여 실행 중인 컨테이너에 연결 하는 컨테이너 시작 되 면 `http://localhost` 표시 된 예에서입니다. 해당 URL을 브라우저에 입력하면 실행 중인 사이트가 표시됩니다.
 
 > [!NOTE]
 > 일부 VPN 또는 프록시 소프트웨어가 사이트로 이동하지 못하도록 차단할 수도 있습니다.
@@ -145,10 +134,9 @@ GitHub의 샘플 디렉터리에는 이러한 명령을 자동으로 실행하�
 ./run.ps1
 ```
 
-위 명령은 이미지를 빌드하고 컴퓨터에 있는 이미지 목록을 표시하며 컨테이너를 시작하고 해당 컨테이너의 IP 주소를 표시합니다.
+위의 명령 이미지를 빌드 컴퓨터에 이미지의 목록을 표시 하며 컨테이너를 시작 합니다.
 
-컨테이너를 중지하려면 `docker
-stop` 명령을 실행합니다.
+컨테이너를 중지하려면 `docker stop` 명령을 실행합니다.
 
 ```console
 docker stop randomanswers

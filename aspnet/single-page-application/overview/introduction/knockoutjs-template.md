@@ -8,12 +8,12 @@ ms.date: 01/30/2013
 ms.assetid: f9c07af0-4b20-4b08-af8f-47fc3df169a2
 msc.legacyurl: /single-page-application/overview/introduction/knockoutjs-template
 msc.type: authoredcontent
-ms.openlocfilehash: 328046363666944f121dedc1883bbe83f5b079d2
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 60bc8bf95cace722244ffc87ff4c00126a0ed2a0
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41835997"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50207448"
 ---
 <a name="single-page-application-knockoutjs-template"></a>단일 페이지 응용 프로그램: KnockoutJS 템플릿
 ====================
@@ -163,7 +163,7 @@ MVC 컨트롤러도 솔루션의 컨트롤러 폴더에 있습니다. `HomeContr
 
 [!code-cshtml[Main](knockoutjs-template/samples/sample4.cshtml)]
 
-사용자가 로그인 하면 기본 UI를 표시 됩니다. 그렇지 않으면 로그인 패널에 표시 됩니다. 서버 쪽에서이 조건부 렌더링을 수행 하는 참고 합니다. 클라이언트 쪽에서 중요 한 콘텐츠를 숨기 제거해 서는 안 & #8212anything HTTP 응답에 보내는 원시 HTTP 메시지를 감시 하는 사람에 게 표시 됩니다.
+사용자가 로그인 하면 기본 UI를 표시 됩니다. 그렇지 않으면 로그인 패널에 표시 됩니다. 서버 쪽에서이 조건부 렌더링을 수행 하는 참고 합니다. 클라이언트 쪽에서 중요 한 콘텐츠를 숨기 시도 하지&#8212;HTTP 응답에 보내는 모든 항목은 원시 HTTP 메시지를 감시 하는 사람에 게 표시 합니다.
 
 ## <a name="client-side-javascript-and-knockoutjs"></a>클라이언트 쪽 JavaScript 및 Knockout.js
 

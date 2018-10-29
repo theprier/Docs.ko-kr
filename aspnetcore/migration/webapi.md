@@ -6,12 +6,12 @@ ms.author: scaddie
 ms.custom: mvc
 ms.date: 10/01/2018
 uid: migration/webapi
-ms.openlocfilehash: 3c4ded874de2700e1290022a535c08f30dce9490
-ms.sourcegitcommit: 13940eb53c68664b11a2d685ee17c78faab1945d
+ms.openlocfilehash: f5d886a7c3182b5cd372762ade67c2e748051049
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/01/2018
-ms.locfileid: "47861020"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50207279"
 ---
 # <a name="migrate-from-aspnet-web-api-to-aspnet-core"></a>ASP.NET Core에 ASP.NET Web API에서 마이그레이션
 
@@ -19,7 +19,7 @@ ms.locfileid: "47861020"
 
 ASP.NET 4.x Web API에는 광범위 한 브라우저 및 모바일 장치 등의 클라이언트에 도달 하는 HTTP 서비스입니다. Asp.net 4.x의 ASP.NET MVC를 통합 하 고 웹 API 앱을 ASP.NET Core MVC로 알려진 더 간단한 프로그래밍 모델에 모델링 합니다. 이 문서에서는 ASP.NET 4.x Web API에서 ASP.NET Core MVC로 마이그레이션하는 데 필요한 단계를 보여 줍니다.
 
-[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/migration/webapi/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/migration/webapi/sample) ([다운로드 방법](xref:index#how-to-download-a-sample))
 
 ## <a name="prerequisites"></a>전제 조건
 

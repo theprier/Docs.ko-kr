@@ -7,12 +7,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 05/30/2018
 uid: test/integration-tests
-ms.openlocfilehash: 15186383497f8dd9a9766f8fe7cf32f70a121c8e
-ms.sourcegitcommit: f5d403004f3550e8c46585fdbb16c49e75f495f3
+ms.openlocfilehash: a136a362cd8973b3684f9a70bd4792d75238eab0
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "49477594"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50207877"
 ---
 # <a name="integration-tests-in-aspnet-core"></a>ASP.NET Core에서 통합 테스트
 
@@ -22,7 +22,7 @@ ms.locfileid: "49477594"
 
 이 항목에서는 단위 테스트의 기본 지식이 있다고 가정 합니다. 테스트 개념을 잘 알 수 없는 경우 참조를 [Unit Testing.NET Core 및.NET Standard](/dotnet/core/testing/) 항목 및 해당 연결 된 콘텐츠입니다.
 
-[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/test/integration-tests/samples)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/test/integration-tests/samples) ([다운로드 방법](xref:index#how-to-download-a-sample))
 
 샘플 앱은 Razor 페이지 앱 및 Razor 페이지의 기본 지식이 있다고 가정 합니다. Razor 페이지를 사용 하 여 알 수 없는 경우 다음 항목을 참조 합니다.
 

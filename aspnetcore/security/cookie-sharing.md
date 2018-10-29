@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 01/19/2017
 uid: security/cookie-sharing
-ms.openlocfilehash: afb0405ea87a6239c3017ba0a59a22527a817feb
-ms.sourcegitcommit: ecf2cd4e0613569025b28e12de3baa21d86d4258
+ms.openlocfilehash: 7f357df4d450da40f4d6e1a5ab20516ff748e748
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43312284"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50206902"
 ---
 # <a name="share-cookies-among-apps-with-aspnet-and-aspnet-core"></a>ASP.NET 및 ASP.NET Core를 사용 하 여 앱 간 쿠키 공유
 
@@ -19,7 +19,7 @@ ms.locfileid: "43312284"
 
 웹 사이트는 자주 함께 작동 하는 개별 웹 앱의 구성 됩니다. 환경을 제공 하기 위해에서 single sign-on (SSO), 사이트 내에서 web apps 인증 쿠키를 공유 해야 합니다. 이런 시나리오에 대응하기 위해서, 데이터 보호 스택은 Katana 쿠키 인증 및 ASP.NET Core 쿠키 인증 티켓의 공유를 지원합니다.
 
-[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/cookie-sharing/sample/)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/cookie-sharing/sample/) ([다운로드 방법](xref:index#how-to-download-a-sample))
 
 이 샘플에서는 쿠키 인증을 사용 하는 세 가지 앱 간에 공유 되는 쿠키를 보여 줍니다.
 
@@ -57,7 +57,7 @@ ASP.NET Core Id를 사용 하 여 하는 경우:
 options.Cookie.Domain = ".contoso.com";
 ```
 
-참조를 *CookieAuthWithIdentity.Core* 프로젝트에 [샘플 코드](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/cookie-sharing/sample/) ([다운로드 방법](xref:tutorials/index#how-to-download-a-sample)).
+참조를 *CookieAuthWithIdentity.Core* 프로젝트에 [샘플 코드](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/cookie-sharing/sample/) ([다운로드 방법](xref:index#how-to-download-a-sample)).
 
 ::: moniker-end
 
@@ -105,7 +105,7 @@ app.AddIdentity<ApplicationUser, IdentityRole>(options =>
 options.Cookie.Domain = ".contoso.com";
 ```
 
-참조를 *CookieAuth.Core* 프로젝트에 [샘플 코드](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/cookie-sharing/sample/) ([다운로드 방법](xref:tutorials/index#how-to-download-a-sample)).
+참조를 *CookieAuth.Core* 프로젝트에 [샘플 코드](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/cookie-sharing/sample/) ([다운로드 방법](xref:index#how-to-download-a-sample)).
 
 ::: moniker-end
 
@@ -168,7 +168,7 @@ ASP.NET 4.x 앱 및 ASP.NET Core 앱 간에 인증 쿠키를 공유 하려면 �
 
 [!code-csharp[](cookie-sharing/sample/CookieAuthWithIdentity.NETFramework/CookieAuthWithIdentity.NETFramework/App_Start/Startup.Auth.cs?name=snippet1)]
 
-참조를 *CookieAuthWithIdentity.NETFramework* 프로젝트에 [샘플 코드](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/cookie-sharing/sample/) ([다운로드 방법](xref:tutorials/index#how-to-download-a-sample)).
+참조를 *CookieAuthWithIdentity.NETFramework* 프로젝트에 [샘플 코드](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/cookie-sharing/sample/) ([다운로드 방법](xref:index#how-to-download-a-sample)).
 
 인증 형식에 정의 된 형식과 일치 해야 사용자 id를 생성 하는 경우 `AuthenticationType` 집합과 `UseCookieAuthentication`합니다.
 

@@ -5,12 +5,12 @@ description: ASP.NET Core Id 없이 쿠키 인증을 사용 하 여 설명
 ms.author: riande
 ms.date: 10/11/2017
 uid: security/authentication/cookie
-ms.openlocfilehash: 8045a1bf27853ff5f03166e7cf10d89e2ad38fd1
-ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
+ms.openlocfilehash: 8add7559557d505397c3be8d8a48aa2e9d9e45e8
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46011838"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50207422"
 ---
 # <a name="use-cookie-authentication-without-aspnet-core-identity"></a>ASP.NET Core Id 없이 쿠키 인증 사용
 
@@ -18,7 +18,7 @@ ms.locfileid: "46011838"
 
 이전 인증 항목에서는 지금까지 살펴보았듯이 [ASP.NET Core Id](xref:security/authentication/identity) 만들기 및 로그인을 유지 관리를 완전 하 고 모든 기능을 갖춘 인증 공급자입니다. 그러나 다음 쿠키 기반 인증에 사용 하 여 사용자 고유의 사용자 지정 인증 논리를 사용 하는 것이 좋습니다. ASP.NET Core Id 없이 독립 실행형 인증 공급자로 쿠키 기반 인증을 사용할 수 있습니다.
 
-[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authentication/cookie/samples)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authentication/cookie/samples) ([다운로드 방법](xref:index#how-to-download-a-sample))
 
 샘플 앱에서 데모를 위해 Maria Rodriguez 가상 사용자의 사용자 계정을 응용 프로그램에 하드 코딩 됩니다. 전자 메일 사용자 이름을 사용 하 여 "maria.rodriguez@contoso.com" 및 사용자를 로그인 할 암호입니다. 사용자가 인증을 `AuthenticateUser` 의 메서드를 *Pages/Account/Login.cshtml.cs* 파일입니다. 실제 예제에서는 데이터베이스에 대해 사용자를 인증 됩니다.
 

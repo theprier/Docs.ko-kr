@@ -3,14 +3,15 @@ title: ASP.NET Core에서 파일 업로드
 author: ardalis
 description: 모델 바인딩 및 스트리밍을 사용하여 ASP.NET Core MVC에서 파일을 업로드하는 방법입니다.
 ms.author: riande
-ms.date: 07/05/2017
+ms.custom: mvc
+ms.date: 10/24/2018
 uid: mvc/models/file-uploads
-ms.openlocfilehash: 771e22ca01c67f2b6bbee780324d9d08759b3279
-ms.sourcegitcommit: b8a2f14bf8dd346d7592977642b610bbcb0b0757
+ms.openlocfilehash: 913fc9aa473950b7117fb9da5c8913e658c43a9d
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38201734"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090269"
 ---
 # <a name="file-uploads-in-aspnet-core"></a>ASP.NET Core에서 파일 업로드
 
@@ -70,7 +71,7 @@ public interface IFormFile
 
 [!code-csharp[](file-uploads/sample/FileUploadSample/Controllers/UploadFilesController.cs?name=snippet1)]
 
-`IFormFile` 기술을 사용하여 업로드된 파일은 처리되기 전에 웹 서버의 메모리나 디스크에 버퍼링됩니다. 작업 메서드 내부에서 `IFormFile` 내용을 스트림으로 액세스할 수 있습니다. 로컬 파일 시스템 외에도 파일을 [Azure Blob Storage](https://azure.microsoft.com/documentation/articles/vs-storage-aspnet5-getting-started-blobs/) 또는 [Entity Framework](https://docs.microsoft.com/ef/core/index)에 스트리밍할 수 있습니다.
+`IFormFile` 기술을 사용하여 업로드된 파일은 처리되기 전에 웹 서버의 메모리나 디스크에 버퍼링됩니다. 작업 메서드 내부에서 `IFormFile` 내용을 스트림으로 액세스할 수 있습니다. 로컬 파일 시스템 외에도 파일을 [Azure Blob Storage](/azure/visual-studio/vs-storage-aspnet5-getting-started-blobs) 또는 [Entity Framework](/ef/core/index)에 스트리밍할 수 있습니다.
 
 Entity Framework를 사용하여 데이터베이스에 이진 파일 데이터를 저장하려면 엔터티에서 `byte[]` 형식의 속성을 정의합니다.
 
@@ -117,7 +118,7 @@ public async Task<IActionResult> Register(RegisterViewModel model)
             user.AvatarImage = memoryStream.ToArray();
         }
     // additional logic omitted
-    
+
     // Don't rely on or trust the model.AvatarImage.FileName property 
     // without validation.
 }

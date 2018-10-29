@@ -9,11 +9,11 @@ ms.assetid: aa67d304-583b-4bf8-a231-195656cfb587
 msc.legacyurl: /web-pages/overview/getting-started/introducing-razor-syntax-c
 msc.type: authoredcontent
 ms.openlocfilehash: 347e5ddbc02866887d3f422ecc291e5e3dfacaaf
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41838009"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50207916"
 ---
 <a name="introduction-to-aspnet-web-programming-using-the-razor-syntax-c"></a>Razor 구문 (C#)를 사용 하 여 ASP.NET 웹 프로그래밍 소개
 ====================
@@ -342,13 +342,13 @@ Razor C#의 중첩 된 블록에 제약이 따릅니다. 자세한 내용은 참
 
 :::row:::
     :::column:::
-        <strong>메서드</strong>
+        <strong>Method</strong>
     :::column-end:::
     :::column:::
-        <strong>설명</strong>
+        <strong>Description</strong>
     :::column-end:::
     :::column:::
-        <strong>예제</strong>
+        <strong>Example</strong>
     :::column-end:::
 :::row-end:::
 * * *
@@ -357,7 +357,7 @@ Razor C#의 중첩 된 블록에 제약이 따릅니다. 자세한 내용은 참
         `AsInt(), IsInt()`
     :::column-end:::
     :::column:::
-        정수 (예: "593") 정수를 나타내는 문자열을 변환 합니다.
+        Converts a string that represents a whole number (like "593") to an integer.
     :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample28.cs)]
@@ -369,7 +369,7 @@ Razor C#의 중첩 된 블록에 제약이 따릅니다. 자세한 내용은 참
         `AsBool(), IsBool()`
     :::column-end:::
     :::column:::
-        와 같은 문자열 변환 &quot;true&quot; 또는 &quot;false&quot; 부울 형식입니다.
+        Converts a string like &quot;true&quot; or &quot;false&quot; to a Boolean type.
     :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample29.cs)]
@@ -381,7 +381,7 @@ Razor C#의 중첩 된 블록에 제약이 따릅니다. 자세한 내용은 참
         `AsFloat(), IsFloat()`
     :::column-end:::
     :::column:::
-        와 같은 10 진수 값이 있는 문자열로 변환 &quot;1.3&quot; 또는 &quot;7.439&quot; 부동 소수점 수입니다.
+        Converts a string that has a decimal value like &quot;1.3&quot; or &quot;7.439&quot; to a floating-point number.
     :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample30.cs)]
@@ -393,7 +393,8 @@ Razor C#의 중첩 된 블록에 제약이 따릅니다. 자세한 내용은 참
         `AsDecimal(), IsDecimal()`
     :::column-end:::
     :::column:::
-        와 같은 10 진수 값이 있는 문자열로 변환 &quot;1.3&quot; 하거나 &quot;7.439&quot; 소수입니다. (ASP.NET, 10 진수는 부동 소수점 숫자를 보다 정확 합니다.) :::column-end:::
+        Converts a string that has a decimal value like &quot;1.3&quot; or &quot;7.439&quot; to a decimal number. (In ASP.NET, a decimal number is more precise than a floating-point number.)
+    :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample31.cs)]
     :::column-end:::
@@ -404,7 +405,7 @@ Razor C#의 중첩 된 블록에 제약이 따릅니다. 자세한 내용은 참
         `AsDateTime(), IsDateTime()`
     :::column-end:::
     :::column:::
-        Asp.net은 날짜 및 시간 값을 나타내는 문자열을 변환 `DateTime` 형식입니다.
+        Converts a string that represents a date and time value to the ASP.NET `DateTime` type.
     :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample32.cs)]
@@ -416,7 +417,7 @@ Razor C#의 중첩 된 블록에 제약이 따릅니다. 자세한 내용은 참
         `ToString()`
     :::column-end:::
     :::column:::
-        다른 데이터 형식 문자열로 변환합니다.
+        Converts any other data type to a string.
     :::column-end:::
     :::column:::
         [!code-javascript[Main](introducing-razor-syntax-c/samples/sample33.js)]
@@ -433,10 +434,10 @@ Razor C#의 중첩 된 블록에 제약이 따릅니다. 자세한 내용은 참
         <strong>Operator</strong>
     :::column-end:::
     :::column:::
-        <strong>설명</strong>
+        <strong>Description</strong>
     :::column-end:::
     :::column:::
-        <strong>예제</strong>
+        <strong>Examples</strong>
     :::column-end:::
 :::row-end:::
 * * *
@@ -445,7 +446,7 @@ Razor C#의 중첩 된 블록에 제약이 따릅니다. 자세한 내용은 참
         `+` `-` `*` `/`
     :::column-end:::
     :::column:::
-        숫자 식에 사용 되는 수학 연산자.
+        Math operators used in numerical expressions.
     :::column-end:::
     :::column:::
         [!code-css[Main](introducing-razor-syntax-c/samples/sample34.css)]
@@ -457,7 +458,7 @@ Razor C#의 중첩 된 블록에 제약이 따릅니다. 자세한 내용은 참
         `=`
     :::column-end:::
     :::column:::
-        할당. 왼쪽에 있는 개체 문의 오른쪽에 값을 할당합니다.
+        Assignment. Assigns the value on the right side of a statement to the object on the left side.
     :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample35.cs)]
@@ -469,7 +470,8 @@ Razor C#의 중첩 된 블록에 제약이 따릅니다. 자세한 내용은 참
         `==`
     :::column-end:::
     :::column:::
-        같음 반환 `true` 값이 같으면 합니다. (의 차이 확인 합니다 `=` 연산자 및 `==` 연산자입니다.) :::column-end:::
+        Equality. Returns `true` if the values are equal. (Notice the distinction between the `=` operator and the `==` operator.)
+    :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample36.cs)]
     :::column-end:::
@@ -480,7 +482,7 @@ Razor C#의 중첩 된 블록에 제약이 따릅니다. 자세한 내용은 참
         `!=`
     :::column-end:::
     :::column:::
-        같지 않음 반환 `true` 값 같지 않은 경우.
+        Inequality. Returns `true` if the values are not equal.
     :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample37.cs)]
@@ -492,7 +494,7 @@ Razor C#의 중첩 된 블록에 제약이 따릅니다. 자세한 내용은 참
         `< > <= >=`
     :::column-end:::
     :::column:::
-        작은-큰 보다-보다 작음-보다-또는-같음 및 크거나 같음.
+        Less-than, greater-than, less-than-or-equal, and greater-than-or-equal.
     :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample38.cs)]
@@ -504,7 +506,7 @@ Razor C#의 중첩 된 블록에 제약이 따릅니다. 자세한 내용은 참
         `+`
     :::column-end:::
     :::column:::
-        연결 문자열을 조인 하는 데 사용 됩니다. ASP.NET이이 연산자는 식의 데이터 형식을 기반으로 하는 더하기 연산자 간의 차이점을 알고 있습니다.
+        Concatenation, which is used to join strings. ASP.NET knows the difference between this operator and the addition operator based on the data type of the expression.
     :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample39.cs)]
@@ -516,7 +518,7 @@ Razor C#의 중첩 된 블록에 제약이 따릅니다. 자세한 내용은 참
         `+=` `-=`
     :::column-end:::
     :::column:::
-        증가 및 감소 연산자의 추가 하 고 변수에서 각각 1을 뺍니다.
+        The increment and decrement operators, which add and subtract 1 (respectively) from a variable.
     :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample40.cs)]
@@ -528,7 +530,7 @@ Razor C#의 중첩 된 블록에 제약이 따릅니다. 자세한 내용은 참
         `.`
     :::column-end:::
     :::column:::
-        점입니다. 개체 및 해당 속성 및 메서드를 구분 하는 데 사용 합니다.
+        Dot. Used to distinguish objects and their properties and methods.
     :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample41.cs)]
@@ -540,7 +542,7 @@ Razor C#의 중첩 된 블록에 제약이 따릅니다. 자세한 내용은 참
         `()`
     :::column-end:::
     :::column:::
-        괄호입니다. 그룹 식 및 매개 변수를 전달할 메서드를 사용 하는 합니다.
+        Parentheses. Used to group expressions and to pass parameters to methods.
     :::column-end:::
     :::column:::
         [!code-javascript[Main](introducing-razor-syntax-c/samples/sample42.js)]
@@ -552,7 +554,7 @@ Razor C#의 중첩 된 블록에 제약이 따릅니다. 자세한 내용은 참
         `[]`
     :::column-end:::
     :::column:::
-        대괄호입니다. 배열 또는 컬렉션의 값에 액세스 하기 위해 사용 합니다.
+        Brackets. Used for accessing values in arrays or collections.
     :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample43.cs)]
@@ -564,7 +566,7 @@ Razor C#의 중첩 된 블록에 제약이 따릅니다. 자세한 내용은 참
         `!`
     :::column-end:::
     :::column:::
-        되지 않습니다. 반대로 `true` 값을 `false` 그 반대로 가능 합니다. 일반적으로 테스트 하는 약식 방법으로 사용 `false` (즉,에 대 한 없습니다 `true`).
+        Not. Reverses a `true` value to `false` and vice versa. Typically used as a shorthand way to test for `false` (that is, for not `true`).
     :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample44.cs)]
@@ -576,7 +578,7 @@ Razor C#의 중첩 된 블록에 제약이 따릅니다. 자세한 내용은 참
         `&&` <code>&#124;&#124;</code>
     :::column-end:::
     :::column:::
-        논리적 AND 또는 및 연결 하는 데 사용 되는 조건 그룹화 합니다.
+        Logical AND and OR, which are used to link conditions together.
     :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample45.cs)]
