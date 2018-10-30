@@ -3,6 +3,8 @@
 ## [ASP.NET Core와 ASP.NET 비교](xref:fundamentals/choose-between-aspnet-and-aspnetcore)
 ## [.NET Core와 .NET Framework 비교](/dotnet/articles/standard/choosing-core-framework-server)
 
+# [시작](xref:getting-started)
+
 # 자습서
 ## 웹앱
 ### Razor 페이지
