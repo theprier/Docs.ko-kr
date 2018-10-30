@@ -6,12 +6,12 @@ monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 05/12/2018
 uid: razor-pages/index
-ms.openlocfilehash: 7bd597acedade65f2be53f4f50a436981e576b1f
-ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
+ms.openlocfilehash: 7fc048e427fd49e2142160615a12989fd4f40303
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49326123"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50207617"
 ---
 # <a name="introduction-to-razor-pages-in-aspnet-core"></a>ASP.NET Core의 Razor 페이지 소개
 
@@ -236,7 +236,7 @@ Razor 페이지는 기본적으로 GET이 아닌 동사에만 속성을 바인�
 
 ::: moniker range=">= aspnetcore-2.1"
 
-## <a name="mark-page-properties-required"></a>필요한 페이지 속성 표시
+## <a name="mark-page-properties-as-required"></a>페이지 속성을 필수로 표시
 
 `PageModel`의 속성은 [필수](/dotnet/api/system.componentmodel.dataannotations.requiredattribute) 특성으로 데코레이팅될 수 있습니다.
 

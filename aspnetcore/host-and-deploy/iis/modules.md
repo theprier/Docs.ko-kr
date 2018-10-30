@@ -4,58 +4,58 @@ author: guardrex
 description: ASP.NET Core 앱용 활성 및 비활성 IIS 모듈과 IIS 모듈을 관리하는 방법을 살펴봅니다.
 ms.author: riande
 ms.custom: mvc
-ms.date: 04/04/2018
+ms.date: 10/12/2018
 uid: host-and-deploy/iis/modules
-ms.openlocfilehash: 78cdf74648a29ed718d1373d7b3666b10749843d
-ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
+ms.openlocfilehash: b417d479d0c3f8b3e739d4c72b52247de0e88e56
+ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48577563"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49325954"
 ---
 # <a name="iis-modules-with-aspnet-core"></a>IIS 모듈 및 ASP.NET Core
 
 [Luke Latham](https://github.com/guardrex)으로
 
-ASP.NET Core 앱은 역방향 프록시 구성에서 IIS가 호스트합니다. 일부 네이티브 IIS 모듈과 모든 IIS 관리 모듈은 ASP.NET Core 앱에 대한 요청을 처리할 수 없습니다. 대부분의 경우 ASP.NET Core는 IIS 네이티브 및 관리 모듈의 기능을 대체하는 방법을 제공합니다.
+일부 네이티브 IIS 모듈과 모든 IIS 관리 모듈은 ASP.NET Core 앱에 대한 요청을 처리할 수 없습니다. 대부분의 경우 ASP.NET Core는 IIS 네이티브 및 관리 모듈에서 처리되는 시나리오의 대안을 제공합니다.
 
 ## <a name="native-modules"></a>네이티브 모듈
 
 이 표는 ASP.NET Core 앱에 대한 역방향 프록시 요청에서 작동하는 네이티브 IIS 모듈을 나타냅니다.
 
 | Module | ASP.NET Core 앱 기능 | ASP.NET Core 옵션 |
-| ------ | :-------------------------------: | ------------------- |
-| **익명 인증**<br>`AnonymousAuthenticationModule` | 예 | |
-| **기본 인증**<br>`BasicAuthenticationModule` | 예 | |
-| **클라이언트 인증 매핑 인증**<br>`CertificateMappingAuthenticationModule` | 예 | |
-| **CGI**<br>`CgiModule` | 아니요 | |
-| **구성 유효성 검사**<br>`ConfigurationValidationModule` | 예 | |
-| **HTTP 오류**<br>`CustomErrorModule` | 아니요 | [상태 코드 페이지 미들웨어](xref:fundamentals/error-handling#configure-status-code-pages) |
-| **사용자 지정 로깅**<br>`CustomLoggingModule` | 예 | |
-| **기본 문서**<br>`DefaultDocumentModule` | 아니요 | [기본 파일 미들웨어](xref:fundamentals/static-files#serve-a-default-document) |
-| **다이제스트 인증**<br>`DigestAuthenticationModule` | 예 | |
-| **디렉터리 검색**<br>`DirectoryListingModule` | 아니요 | [디렉터리 검색 미들웨어](xref:fundamentals/static-files#enable-directory-browsing) |
-| **동적 압축**<br>`DynamicCompressionModule` | 예 | [응답 압축 미들웨어](xref:performance/response-compression) |
-| **추적**<br>`FailedRequestsTracingModule` | 예 | [ASP.NET Core 로깅](xref:fundamentals/logging/index#tracesource-provider) |
-| **파일 캐싱**<br>`FileCacheModule` | 아니요 | [응답 캐싱 미들웨어](xref:performance/caching/middleware) |
-| **HTTP 캐싱**<br>`HttpCacheModule` | 아니요 | [응답 캐싱 미들웨어](xref:performance/caching/middleware) |
-| **HTTP 로깅**<br>`HttpLoggingModule` | 예 | [ASP.NET Core 로깅](xref:fundamentals/logging/index)<br>구현: [elmah.io](https://github.com/elmahio/Elmah.Io.Extensions.Logging), [Loggr](https://github.com/imobile3/Loggr.Extensions.Logging), [NLog](https://github.com/NLog/NLog.Extensions.Logging), [Sentry](https://github.com/getsentry/sentry-dotnet), [Serilog](https://github.com/serilog/serilog-extensions-logging)
-| **HTTP 리디렉션**<br>`HttpRedirectionModule` | 예 | [URL 재작성 미들웨어](xref:fundamentals/url-rewriting) |
+| --- | :---: | --- |
+| **익명 인증**<br>`AnonymousAuthenticationModule`                                  | 예 | |
+| **기본 인증**<br>`BasicAuthenticationModule`                                          | 예 | |
+| **클라이언트 인증 매핑 인증**<br>`CertificateMappingAuthenticationModule`      | 예 | |
+| **CGI**<br>`CgiModule`                                                                           | 아니요  | |
+| **구성 유효성 검사**<br>`ConfigurationValidationModule`                                  | 예 | |
+| **HTTP 오류**<br>`CustomErrorModule`                                                           | 아니요  | [상태 코드 페이지 미들웨어](xref:fundamentals/error-handling#configure-status-code-pages) |
+| **사용자 지정 로깅**<br>`CustomLoggingModule`                                                      | 예 | |
+| **기본 문서**<br>`DefaultDocumentModule`                                                  | 아니요  | [기본 파일 미들웨어](xref:fundamentals/static-files#serve-a-default-document) |
+| **다이제스트 인증**<br>`DigestAuthenticationModule`                                        | 예 | |
+| **디렉터리 검색**<br>`DirectoryListingModule`                                               | 아니요  | [디렉터리 검색 미들웨어](xref:fundamentals/static-files#enable-directory-browsing) |
+| **동적 압축**<br>`DynamicCompressionModule`                                            | 예 | [응답 압축 미들웨어](xref:performance/response-compression) |
+| **추적**<br>`FailedRequestsTracingModule`                                                     | 예 | [ASP.NET Core 로깅](xref:fundamentals/logging/index#tracesource-provider) |
+| **파일 캐싱**<br>`FileCacheModule`                                                            | 아니요  | [응답 캐싱 미들웨어](xref:performance/caching/middleware) |
+| **HTTP 캐싱**<br>`HttpCacheModule`                                                            | 아니요  | [응답 캐싱 미들웨어](xref:performance/caching/middleware) |
+| **HTTP 로깅**<br>`HttpLoggingModule`                                                          | 예 | [ASP.NET Core 로깅](xref:fundamentals/logging/index) |
+| **HTTP 리디렉션**<br>`HttpRedirectionModule`                                                  | 예 | [URL 재작성 미들웨어](xref:fundamentals/url-rewriting) |
 | **IIS 클라이언트 인증서 매핑 인증**<br>`IISCertificateMappingAuthenticationModule` | 예 | |
-| **IP 및 도메인 제한**<br>`IpRestrictionModule` | 예 | |
-| **ISAPI 필터**<br>`IsapiFilterModule` | 예 | [미들웨어](xref:fundamentals/middleware/index) |
-| **ISAPI**<br>`IsapiModule` | 예 | [미들웨어](xref:fundamentals/middleware/index) |
-| **프로토콜 지원**<br>`ProtocolSupportModule` | 예 | |
-| **요청 필터링**<br>`RequestFilteringModule` | 예 | [URL 재작성 미들웨어`IRule`](xref:fundamentals/url-rewriting#irule-based-rule) |
-| **요청 모니터**<br>`RequestMonitorModule` | 예 | |
-| **URL 재작성**<br>`RewriteModule` | 예&#8224; | [URL 재작성 미들웨어](xref:fundamentals/url-rewriting) |
-| **서버 쪽 포함**<br>`ServerSideIncludeModule` | 아니요 | |
-| **정적 압축**<br>`StaticCompressionModule` | 아니요 | [응답 압축 미들웨어](xref:performance/response-compression) |
-| **정적 콘텐츠**<br>`StaticFileModule` | 아니요 | [정적 파일 미들웨어](xref:fundamentals/static-files) |
-| **토큰 캐싱**<br>`TokenCacheModule` | 예 | |
-| **URI 캐싱**<br>`UriCacheModule` | 예 | |
-| **URL 권한 부여**<br>`UrlAuthorizationModule` | 예 | [ASP.NET Core ID](xref:security/authentication/identity) |
-| **Windows 인증**<br>`WindowsAuthenticationModule` | 예 | |
+| **IP 및 도메인 제한**<br>`IpRestrictionModule`                                          | 예 | |
+| **ISAPI 필터**<br>`IsapiFilterModule`                                                         | 예 | [미들웨어](xref:fundamentals/middleware/index) |
+| **ISAPI**<br>`IsapiModule`                                                                       | 예 | [미들웨어](xref:fundamentals/middleware/index) |
+| **프로토콜 지원**<br>`ProtocolSupportModule`                                                  | 예 | |
+| **요청 필터링**<br>`RequestFilteringModule`                                                | 예 | [URL 재작성 미들웨어`IRule`](xref:fundamentals/url-rewriting#irule-based-rule) |
+| **요청 모니터**<br>`RequestMonitorModule`                                                    | 예 | |
+| **URL 재작성**&#8224;<br>`RewriteModule`                                                      | 예 | [URL 재작성 미들웨어](xref:fundamentals/url-rewriting) |
+| **서버 쪽 포함**<br>`ServerSideIncludeModule`                                            | 아니요  | |
+| **정적 압축**<br>`StaticCompressionModule`                                              | 아니요  | [응답 압축 미들웨어](xref:performance/response-compression) |
+| **정적 콘텐츠**<br>`StaticFileModule`                                                         | 아니요  | [정적 파일 미들웨어](xref:fundamentals/static-files) |
+| **토큰 캐싱**<br>`TokenCacheModule`                                                          | 예 | |
+| **URI 캐싱**<br>`UriCacheModule`                                                              | 예 | |
+| **URL 권한 부여**<br>`UrlAuthorizationModule`                                                | 예 | [ASP.NET Core ID](xref:security/authentication/identity) |
+| **Windows 인증**<br>`WindowsAuthenticationModule`                                      | 예 | |
 
 &#8224;URL 재작성 모듈의 `isFile` 및 `isDirectory` 일치 유형이 [디렉터리 구조](xref:host-and-deploy/directory-structure)의 변경으로 인해 ASP.NET Core 앱에서 작동하지 않습니다.
 
@@ -89,12 +89,12 @@ IIS 모듈이 앱에 대해 사용되지 않아야 하는 서버 수준에서 �
 
 ### <a name="module-deactivation"></a>모듈 비활성화
 
-많은 모듈에서는 앱에서 모듈을 제거하지 않고도 사용하지 않도록 설정할 수 있는 구성 설정을 제공합니다. 이는 모듈을 비활성화하는 가장 간단하고 가장 빠른 방법입니다. 예를 들어 HTTP 리디렉션 모듈은 *web.config*의 **\<httpRedirect>** 요소로 사용하지 않도록 설정할 수 있습니다.
+많은 모듈에서는 앱에서 모듈을 제거하지 않고도 사용하지 않도록 설정할 수 있는 구성 설정을 제공합니다. 이는 모듈을 비활성화하는 가장 간단하고 가장 빠른 방법입니다. 예를 들어 HTTP 리디렉션 모듈은 *web.config*의 `<httpRedirect>` 요소로 사용하지 않도록 설정할 수 있습니다.
 
 ```xml
 <configuration>
   <system.webServer>
-     <httpRedirect enabled="false" />
+    <httpRedirect enabled="false" />
   </system.webServer>
 </configuration>
 ```
@@ -103,23 +103,23 @@ IIS 모듈이 앱에 대해 사용되지 않아야 하는 서버 수준에서 �
 
 ### <a name="module-removal"></a>모듈 제거
 
-*web.config*에서 설정과 함께 모듈을 제거하도록 선택할 경우 먼저 *web.config*의 **\<modules>** 섹션을 잠금 해제합니다.
+*web.config*에서 설정과 함께 모듈을 제거하도록 선택한 경우 먼저 모듈을 잠금 해제하고 *web.config*의 `<modules>` 섹션을 작금 해제합니다.
 
 1. 서버 수준에서 모듈의 잠금을 해제합니다. IIS 관리자 **연결** 사이드바에서 IIS 서버를 선택합니다. **IIS** 영역에서 **모듈**을 엽니다. 목록에서 모듈을 선택합니다. 오른쪽의 **작업** 사이드바에서 **잠금 해제**를 선택합니다. 나중에 *web.config*에서 제거하려고 계획한 만큼 모듈을 잠금 해제합니다.
 
-2. *web.config*에 **\<modules>** 섹션을 포함하지 않고 앱을 배포합니다. IIS 관리자에서 먼저 섹션을 잠금 해제하지 않고 **\<modules>** 섹션이 포함된 *web.config*를 사용하여 앱을 배포하면 Configuration Manager에서 섹션을 잠금 해제하려고 할 때 예외가 throw됩니다. 따라서 **\<modules>** 섹션 없이 앱을 배포합니다.
+2. *web.config*의 `<modules>` 섹션 없이 앱을 배포합니다. IIS 관리자에서 먼저 섹션을 잠금 해제하지 않고 `<modules>` 섹션이 포함된 *web.config*를 사용하여 앱을 배포하면 Configuration Manager에서 섹션을 잠금 해제하려고 할 때 예외가 throw됩니다. 따라서 `<modules>` 섹션 없이 앱을 배포합니다.
 
-3. *web.config*의 **\<modules>** 섹션을 잠금 해제합니다. **연결** 사이드바의 **사이트**에서 웹 사이트를 선택합니다. **관리** 영역에서 **구성 편집기**를 엽니다. 탐색 컨트롤을 사용하여 `system.webServer/modules` 섹션을 선택합니다. 오른쪽의 **작업** 사이드바에서 섹션을 **잠금 해제**하도록 선택합니다.
+3. *web.config*의 `<modules>` 섹션을 잠금 해제합니다. **연결** 사이드바의 **사이트**에서 웹 사이트를 선택합니다. **관리** 영역에서 **구성 편집기**를 엽니다. 탐색 컨트롤을 사용하여 `system.webServer/modules` 섹션을 선택합니다. 오른쪽의 **작업** 사이드바에서 섹션을 **잠금 해제**하도록 선택합니다.
 
-4. 이때 **\<remove>** 요소가 포함된 *web.config* 파일에 **\<modules>** 섹션을 추가하여 앱에서 모듈을 제거할 수 있습니다. 여러 **\<remove>** 요소를 추가하여 여러 모듈을 제거할 수 있습니다. 서버에서 *web.config*가 변경되면 로컬에서 프로젝트의 *web.config* 파일에 동일한 변경 내용이 즉시 적용됩니다. 이 방법으로 모듈을 제거해도 서버의 다른 앱과 함께 모듈을 사용하는 데 영향을 주지 않습니다.
+4. 이때 `<modules>` 섹션을 `<remove>` 요소가 포함된 *web.config* 파일에 추가하여 앱에서 모듈을 제거할 수 있습니다. 여러 `<remove>` 요소를 추가하여 여러 모듈을 제거할 수 있습니다. 서버에서 *web.config*가 변경되면 로컬에서 프로젝트의 *web.config* 파일에 동일한 변경 내용이 즉시 적용됩니다. 이 방법으로 모듈을 제거해도 서버의 다른 앱과 함께 모듈을 사용하는 데 영향을 주지 않습니다.
 
    ```xml
-   <configuration> 
-    <system.webServer> 
-      <modules> 
-        <remove name="MODULE_NAME" /> 
-      </modules> 
-    </system.webServer> 
+   <configuration>
+    <system.webServer>
+      <modules>
+        <remove name="MODULE_NAME" />
+      </modules>
+    </system.webServer>
    </configuration>
    ```
 
@@ -139,15 +139,13 @@ Appcmd.exe delete module MODULE_NAME /app.name:APPLICATION_NAME
 
 ASP.NET Core 앱을 실행하는 데 필요한 유일한 모듈은 익명 인증 모듈 및 ASP.NET Core 모듈입니다.
 
-![최소 모듈 구성이 표시된 모듈로 열린 IIS 관리자](modules/_static/modules.png)
-
 URI 캐싱 모듈(`UriCacheModule`)을 통해 IIS가 URL 수준에서 웹 사이트 구성을 캐시할 수 있습니다. 이 모듈이 없으면 동일한 URL이 반복적으로 요청되더라도 IIS는 요청될 때마다 구성을 읽고 구문 분석해야 합니다. 요청될 때마다 구성을 구문 분석하면 성능이 크게 저하됩니다. ‘URI 캐싱 모듈은 호스트된 ASP.NET Core 앱을 실행하는 데 꼭 필요하지는 않지만, 모든 ASP.NET Core 배포에 대해 URI 캐싱 모듈을 사용하도록 설정하는 것이 좋습니다.’
 
 HTTP 캐싱 모듈(`HttpCacheModule`)은 IIS 출력 캐시 및 HTTP.sys 캐시에 있는 항목을 캐시하기 위한 논리를 구현합니다. 이 모듈이 없으면 콘텐츠가 커널 모드에서 더 이상 캐시되지 않으며 캐시 프로필이 무시됩니다. 일반적으로 HTTP 캐싱 모듈을 제거하면 성능 및 리소스 사용에 부정적인 영향을 줍니다. ‘HTTP 캐싱 모듈은 호스트된 ASP.NET Core 앱을 실행하는 데 꼭 필요하지는 않지만, 모든 ASP.NET Core 배포에 대해 HTTP 캐싱 모듈을 사용하도록 설정하는 것이 좋습니다.’
 
 ## <a name="additional-resources"></a>추가 자료
 
-* [IIS를 사용하여 Windows에서 호스트](xref:host-and-deploy/iis/index)
+* <xref:host-and-deploy/iis/index>
 * [IIS 아키텍처 소개: IIS의 모듈](/iis/get-started/introduction-to-iis/introduction-to-iis-architecture#modules-in-iis)
 * [IIS 모듈 개요](/iis/get-started/introduction-to-iis/iis-modules-overview)
 * [IIS 7.0 역할 및 모듈 사용자 지정](https://technet.microsoft.com/library/cc627313.aspx)

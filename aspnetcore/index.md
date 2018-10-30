@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/24/2018
 uid: index
-ms.openlocfilehash: fcd95b88b970073f4d7eddf89729683d18be449d
-ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
+ms.openlocfilehash: 37448b1b3d0da4e3cb34b1cd51f663b7e53ddced
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50090656"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50207396"
 ---
 # <a name="introduction-to-aspnet-core"></a>ASP.NET Core 소개
 
@@ -66,6 +66,14 @@ ASP.NET Core 2.x는 .NET Standard 2.0과 호환되는 .NET Framework 버전에�
 * 소스 열기
 
 .NET Framework에서 .NET Core 사이의 API 차이를 줄이기 위해 최선을 다하고 있습니다. [Windows 호환 팩](/dotnet/core/porting/windows-compat-pack)을 통해 수천 개의 Windows 전용 API를 .NET Core에서 사용할 수 있습니다. 이러한 API는 .NET Core 1.x에서 사용할 수 없습니다.
+
+## <a name="how-to-download-a-sample"></a>샘플 다운로드 방법
+
+대부분의 문서 및 자습서에는 샘플 코드에 대한 링크가 포함됩니다.
+
+1. [ASP.NET 리포지토리 zip 파일을 다운로드합니다](https://codeload.github.com/aspnet/Docs/zip/master).
+1. *Docs-master.zip* 파일의 압축을 풉니다.
+1. 샘플 링크의 URL을 사용하여 샘플 디렉터리로 이동할 수 있습니다.
 
 ## <a name="next-steps"></a>다음 단계
 
