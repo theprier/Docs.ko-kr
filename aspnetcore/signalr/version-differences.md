@@ -6,12 +6,12 @@ monikerRange: '>= aspnetcore-2.1'
 ms.author: tdykstra
 ms.date: 09/10/2018
 uid: signalr/version-differences
-ms.openlocfilehash: 4ac7952f26500285fc1c8f9453feb3ea8b33851a
-ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
+ms.openlocfilehash: 3cec37719b743b3c805ada77249f526278e44599
+ms.sourcegitcommit: 2ef32676c16f76282f7c23154d13affce8c8bf35
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50089831"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50234607"
 ---
 # <a name="differences-between-aspnet-signalr-and-aspnet-core-signalr"></a>ASP.NET SignalR 및 ASP.NET Core SignalR의 차이점
 
@@ -56,9 +56,9 @@ app.UseSignalR(routes =>
 });
 ```
 
-### <a name="sticky-sessions-now-required"></a>이제 필요한 고정 세션
+### <a name="sticky-sessions"></a>고정 세션
 
-ASP.NET SignalR에서 스케일 아웃 작동 하는 방법으로 인해 클라이언트가 다시 연결을 팜의 모든 서버에 메시지를 보낼 수 있습니다. 다시 연결을 지원 하지 않는 뿐만 아니라 확장 모델을 변경으로 인해이 더 이상 지원 되지. 클라이언트가 서버에 연결 되 면 연결 기간에 대 한 동일한 서버 상호 작용 해야 하 합니다.
+ASP.NET SignalR에 대 한 확장 모델에는 클라이언트가 다시 연결 하 고 팜의 모든 서버에 메시지를 보낼 수 있습니다. ASP.NET Core SignalR의 연결 기간에 대 한 클라이언트는 동일한 서버를 사용 하 여 작용 해야 합니다. Redis를 사용 하 여 확장에는 고정 세션은 필요한 의미 합니다. 확장 사용에 대 한 [Azure SignalR Service](/azure/azure-signalr/), 서비스가 클라이언트에 대 한 연결을 처리 하기 때문에 고정 세션이 필요 하지 않습니다. 
 
 ### <a name="single-hub-per-connection"></a>단일 허브 연결당
 

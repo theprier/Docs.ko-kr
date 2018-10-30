@@ -7,12 +7,12 @@ ms.author: anurse
 ms.custom: mvc
 ms.date: 06/29/2018
 uid: signalr/authn-and-authz
-ms.openlocfilehash: 31d5f753e043157caf43fa8df54e310ea0efd17b
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: 7cfe90115b0710fba196693efd309f7c914f0ad4
+ms.sourcegitcommit: 2ef32676c16f76282f7c23154d13affce8c8bf35
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50207942"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50234542"
 ---
 # <a name="authentication-and-authorization-in-aspnet-core-signalr"></a>인증 및 ASP.NET Core SignalR의 권한 부여
 
@@ -28,11 +28,13 @@ SignalR을 사용 하 여 사용할 수 있습니다 [ASP.NET Core 인증](xref:
 
 브라우저 기반 앱에서 쿠키 인증에는 SignalR 연결에 자동으로 이동 하 여 기존 사용자 자격 증명을 수 있습니다. 브라우저 클라이언트를 사용 하는 경우 추가 구성이 필요 하지 않습니다. 사용자가 앱에 로그인 하는 경우 SignalR 연결이이 인증은 자동으로 상속 합니다.
 
-쿠키 인증 앱만 브라우저 클라이언트에서 사용자를 인증 해야 할 경우가 아니면 권장 되지 않습니다. 사용 하는 경우는 [.NET 클라이언트](xref:signalr/dotnet-client)의 `Cookies` 속성에서 구성할 수 있습니다는 `.WithUrl` 쿠키를 제공 하기 위해 호출 합니다. 그러나.NET 클라이언트에서 쿠키 인증을 사용 하 여 응용 프로그램에서 쿠키에 대 한 인증 데이터를 교환 하기 위한 API를 제공 해야 합니다.
+쿠키는 액세스 토큰 전송 방법 브라우저별 있지만 비 브라우저 클라이언트를 보낼 수 있습니다. 사용 하는 경우는 [.NET 클라이언트](xref:signalr/dotnet-client)의 `Cookies` 속성에서 구성할 수 있습니다는 `.WithUrl` 쿠키를 제공 하기 위해 호출 합니다. 그러나.NET 클라이언트에서 쿠키 인증을 사용 하 여 응용 프로그램에서 쿠키에 대 한 인증 데이터를 교환 하기 위한 API를 제공 해야 합니다.
 
 ### <a name="bearer-token-authentication"></a>전달자 토큰 인증
 
-전달자 토큰 인증은 권장 되는 방법은 브라우저 클라이언트 이외의 클라이언트를 사용 하는 경우입니다. 이 방법에서는 클라이언트 서버 유효성을 검사 하 고 사용 하 여 사용자를 식별 하는 액세스 토큰을 제공 합니다. 전달자 토큰 인증의 세부 정보는이 문서에서 다루지 않습니다. 서버에서 전달자 토큰 인증을 사용 하도록 구성 합니다 [JWT 전달자 미들웨어](/dotnet/api/microsoft.extensions.dependencyinjection.jwtbearerextensions.addjwtbearer)합니다.
+클라이언트가 쿠키를 사용 하는 대신 액세스 토큰을 제공할 수 있습니다. 서버 토큰의 유효성을 검사 하 고 사용자를 식별 하는 데 사용 합니다. 이 유효성 검사는 연결이 설정 된 경우에 수행 됩니다. 연결 기간 동안 서버 토큰 해지 확인을 자동으로 재검사 하지 않습니다.
+
+서버에서 전달자 토큰 인증을 사용 하도록 구성 합니다 [JWT 전달자 미들웨어](/dotnet/api/microsoft.extensions.dependencyinjection.jwtbearerextensions.addjwtbearer)합니다.
 
 JavaScript 클라이언트에서 토큰을 제공할 수 있습니다 사용 하 여 [accessTokenFactory](xref:signalr/configuration#configure-bearer-authentication) 옵션입니다.
 
@@ -55,6 +57,10 @@ var connection = new HubConnectionBuilder()
 표준 웹 Api에서 HTTP 헤더에서 전달자 토큰이 전송 됩니다. 그러나 SignalR은 일부 전송을 사용 하는 경우 브라우저에서 이러한 헤더를 설정할 수 없습니다. Websocket 및 Server-Sent 이벤트를 사용 하는 경우 토큰은 쿼리 문자열 매개 변수로 전송 됩니다. 이 서버에서 지원 하기 위해 추가 구성이 필요 합니다.
 
 [!code-csharp[Configure Server to accept access token from Query String](authn-and-authz/sample/Startup.cs?name=snippet)]
+
+### <a name="cookies-vs-bearer-tokens"></a>전달자 토큰 및 쿠키 
+
+쿠키는 브라우저에 특정 이기 때문에 다른 종류의 클라이언트에서 전송 하기 복잡해 전달자 토큰을 전송 하도록 비교 합니다. 따라서 쿠키 인증 앱만 브라우저 클라이언트에서 사용자를 인증 해야 할 경우가 아니면 권장 되지 않습니다. 전달자 토큰 인증은 권장 되는 방법은 브라우저 클라이언트 이외의 클라이언트를 사용 하는 경우입니다.
 
 ### <a name="windows-authentication"></a>Windows 인증
 
