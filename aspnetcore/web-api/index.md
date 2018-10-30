@@ -6,12 +6,12 @@ ms.author: scaddie
 ms.custom: mvc
 ms.date: 08/15/2018
 uid: web-api/index
-ms.openlocfilehash: e4615e5d416ba2433d55309b25ee3643c6c636ac
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: 950f4e8afa13bf297ea8658ef1c1bea0c9b62936
+ms.sourcegitcommit: 2ef32676c16f76282f7c23154d13affce8c8bf35
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50207006"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50234594"
 ---
 # <a name="build-web-apis-with-aspnet-core"></a>ASP.NET Core에서 Web API 빌드
 
@@ -71,7 +71,7 @@ ASP.NET Core 2.2 이상에서는 MVC가 오류 상태 코드 결과(상태 코�
 
 `NotFound` 결과에 대한 HTTP 응답에는 다음과 유사한 `ProblemDetails` 본문이 있는 404 상태 코드가 있습니다.
 
-```js
+```json
 {
     type: "https://tools.ietf.org/html/rfc7231#section-6.5.4",
     title: "Not Found",

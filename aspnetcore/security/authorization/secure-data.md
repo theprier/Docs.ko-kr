@@ -5,30 +5,30 @@ description: 권한 부여로 보호 되는 사용자 데이터를 사용 하 �
 ms.author: riande
 ms.date: 7/24/2018
 uid: security/authorization/secure-data
-ms.openlocfilehash: 7d9521686c67ab9120238886d50af081ce4c6907
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: 786e83eb28722e83eea46def962593f58ad524e2
+ms.sourcegitcommit: c43a6f1fe72d7c2db4b5815fd532f2b45d964e07
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50207864"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50244842"
 ---
+# <a name="create-an-aspnet-core-app-with-user-data-protected-by-authorization"></a>권한 부여로 보호 되는 사용자 데이터를 사용 하 여 ASP.NET Core 앱 만들기
+
+작성자: [Rick Anderson](https://twitter.com/RickAndMSFT) 및 [Joe Audette](https://twitter.com/joeaudette)
+
 ::: moniker range="<= aspnetcore-1.1"
 
-참조 [이 PDF](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/secure-data/asp.net_repo_pdf_1-16-18.pdf) ASP.NET Core MVC 버전에 대 한 합니다. 이 자습서에서는 ASP.NET Core 1.1 버전은 [이](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/secure-data) 폴더입니다. ASP.NET Core 샘플에는 1.1 합니다 [샘플](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/secure-data/samples/final2)합니다.
+참조 [이 PDF](https://webpifeed.blob.core.windows.net/webpifeed/Partners/asp.net_repo_pdf_1-16-18.pdf) ASP.NET Core MVC 버전에 대 한 합니다. 이 자습서에서는 ASP.NET Core 1.1 버전은 [이](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/secure-data) 폴더입니다. ASP.NET Core 샘플에는 1.1 합니다 [샘플](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/secure-data/samples/final2)합니다.
 
 ::: moniker-end
 
 ::: moniker range="= aspnetcore-2.0"
 
-참조 [이 pdf](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/secure-data/asp.net_repo_pdf_July16_18.pdf)
+참조 [이 pdf](https://webpifeed.blob.core.windows.net/webpifeed/Partners/asp.net_repo_pdf_July16_18.pdf)
 
 ::: moniker-end
 
 ::: moniker range=">= aspnetcore-2.1"
-
-# <a name="create-an-aspnet-core-app-with-user-data-protected-by-authorization"></a>권한 부여로 보호 되는 사용자 데이터를 사용 하 여 ASP.NET Core 앱 만들기
-
-작성자: [Rick Anderson](https://twitter.com/RickAndMSFT) 및 [Joe Audette](https://twitter.com/joeaudette)
 
 이 자습서에는 권한 부여로 보호 되는 사용자 데이터를 사용 하 여 ASP.NET Core 웹 앱을 만드는 방법을 보여 줍니다. 인증 된 (등록 된) 사용자는 연락처 목록에 표시를 만들었습니다. 세 가지 보안 그룹이 있습니다.
 
