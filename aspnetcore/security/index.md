@@ -6,12 +6,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 10/24/2018
 uid: security/index
-ms.openlocfilehash: f3b1f74f2e3a991b72cae94019f42548e3858f20
-ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
+ms.openlocfilehash: 4277266e20ab1921a2ba24d4500358ba90330370
+ms.sourcegitcommit: 4a6bbe84db24c2f3dd2de065de418fde952c8d40
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50091030"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50252947"
 ---
 # <a name="overview-of-aspnet-core-security"></a>ASP.NET Core 보안 개요
 
@@ -40,7 +40,7 @@ ASP.NET Core 및 EF는 앱을 보호하고 보안 위반을 방지하는 기능�
 
 ## <a name="aspnet-core-security-documentation"></a>ASP.NET Core 보안 설명서
 
-* [인증](xref:security/authentication/index)
+* 인증
   * [ID 소개](xref:security/authentication/identity)
   * [Facebook, Google 및 기타 외부 공급자를 통해 인증 사용](xref:security/authentication/social/index)
   * [WS-Federation을 사용하여 인증하도록 설정](xref:security/authentication/ws-federation)
@@ -54,7 +54,7 @@ ASP.NET Core 및 EF는 앱을 보호하고 보안 위반을 방지하는 기능�
     * [Azure AD를 사용하여 ASP.NET Core 웹앱에서 Web API 호출](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-webapp-webapi-openidconnect-aspnetcore/)
     * [Azure AD B2C를 사용하여 ASP.NET Core 웹앱](https://azure.microsoft.com/resources/samples/active-directory-b2c-dotnetcore-webapp/)
   * [IdentityServer4를 사용하여 ASP.NET Core 앱 보호](https://identityserver4.readthedocs.io)
-* [권한 부여](xref:security/authorization/index)
+* 권한 부여
   * [소개](xref:security/authorization/introduction)
   * [권한 부여로 보호된 사용자 데이터를 사용하여 앱 만들기](xref:security/authorization/secure-data)
   * [단순 권한 부여](xref:security/authorization/simple)
@@ -65,10 +65,10 @@ ASP.NET Core 및 EF는 앱을 보호하고 보안 위반을 방지하는 기능�
   * [리소스 기반 권한 부여](xref:security/authorization/resourcebased)
   * [보기 기반 권한 부여](xref:security/authorization/views)
   * [구성표로 ID 제한](xref:security/authorization/limitingidentitybyscheme)
-* [데이터 보호](xref:security/data-protection/index)
+* 데이터 보호
   * [데이터 보호 소개](xref:security/data-protection/introduction)
   * [데이터 보호 API 시작](xref:security/data-protection/using-data-protection)
-  * [소비자 API](xref:security/data-protection/consumer-apis/index)
+  * 소비자 API
     * [소비자 API 개요](xref:security/data-protection/consumer-apis/overview)
     * [용도 문자열](xref:security/data-protection/consumer-apis/purpose-strings)
     * [용도 계층 구조 및 다중 테넌트](xref:security/data-protection/consumer-apis/purpose-strings-multitenancy)

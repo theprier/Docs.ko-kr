@@ -7,12 +7,12 @@ ms.author: anurse
 ms.custom: mvc
 ms.date: 06/29/2018
 uid: signalr/authn-and-authz
-ms.openlocfilehash: 7cfe90115b0710fba196693efd309f7c914f0ad4
-ms.sourcegitcommit: 2ef32676c16f76282f7c23154d13affce8c8bf35
+ms.openlocfilehash: aa1721ba1802e1bfba04d57378085a136c100deb
+ms.sourcegitcommit: 4a6bbe84db24c2f3dd2de065de418fde952c8d40
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 10/30/2018
-ms.locfileid: "50234542"
+ms.locfileid: "50252908"
 ---
 # <a name="authentication-and-authorization-in-aspnet-core-signalr"></a>인증 및 ASP.NET Core SignalR의 권한 부여
 
@@ -22,7 +22,7 @@ ms.locfileid: "50234542"
 
 ## <a name="authenticate-users-connecting-to-a-signalr-hub"></a>SignalR 허브에 연결 된 사용자를 인증 합니다.
 
-SignalR을 사용 하 여 사용할 수 있습니다 [ASP.NET Core 인증](xref:security/authentication/index) 각 연결을 사용 하 여 사용자를 연결 합니다. 허브와 인증 데이터에서 액세스할 수 있습니다 합니다 [ `HubConnectionContext.User` ](/dotnet/api/microsoft.aspnetcore.signalr.hubconnectioncontext.user) 속성입니다. 인증을 사용 하면 사용자와 관련 된 모든 연결에서 메서드를 호출할 허브 (참조 [SignalR의 사용자 및 그룹 관리](xref:signalr/groups) 자세한). 여러 연결을 단일 사용자로 연결할 수 있습니다.
+SignalR을 사용 하 여 사용할 수 있습니다 [ASP.NET Core 인증](xref:security/authentication/identity) 각 연결을 사용 하 여 사용자를 연결 합니다. 허브와 인증 데이터에서 액세스할 수 있습니다 합니다 [ `HubConnectionContext.User` ](/dotnet/api/microsoft.aspnetcore.signalr.hubconnectioncontext.user) 속성입니다. 인증을 사용 하면 사용자와 관련 된 모든 연결에서 메서드를 호출할 허브 (참조 [SignalR의 사용자 및 그룹 관리](xref:signalr/groups) 자세한). 여러 연결을 단일 사용자로 연결할 수 있습니다.
 
 ### <a name="cookie-authentication"></a>쿠키 인증
 

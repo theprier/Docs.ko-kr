@@ -5,12 +5,12 @@ description: ASP.NET Core 앱을 사용 하 여 Id를 사용 합니다. 암호 �
 ms.author: riande
 ms.date: 08/08/2018
 uid: security/authentication/identity
-ms.openlocfilehash: 0cea81b46a8f659671c0ae1768884194ad8c1162
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: 4e162edc8fb63457c8690692685f344dccdfc659
+ms.sourcegitcommit: 4a6bbe84db24c2f3dd2de065de418fde952c8d40
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50207799"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50252931"
 ---
 # <a name="introduction-to-identity-on-aspnet-core"></a>ASP.NET Core Identity 소개
 
@@ -166,7 +166,7 @@ PowerShell 명령 구분 기호로 세미콜론을 사용합니다. PowerShell�
 
    [!code-csharp[](identity/sample/src/ASPNETv2.1-IdentityDemo/Login.cshtml.cs?name=snippet&highlight=10-11)]
 
-   기본 `Controller` 클래스는 컨트롤러의 메서드에서 접근할 수 있는 `User` 속성을 제공합니다. 예를 들어, 열거할 수 있습니다 `User.Claims` 을 권한 부여 결정을 내립니다. 자세한 내용은 [권한 부여](xref:security/authorization/index)합니다.
+   기본 `Controller` 클래스는 컨트롤러의 메서드에서 접근할 수 있는 `User` 속성을 제공합니다. 예를 들어, 열거할 수 있습니다 `User.Claims` 을 권한 부여 결정을 내립니다. 자세한 내용은 <xref:security/authorization/introduction>을 참조하세요.
 
 ::: moniker-end
 

@@ -5,12 +5,12 @@ description: 전자 메일 확인 및 암호 재설정을 사용 하 여 ASP.NET
 ms.author: riande
 ms.date: 7/11/2018
 uid: security/authentication/accconfirm
-ms.openlocfilehash: 1fae5af24359afc991a30cd2b8e2f6927845962b
-ms.sourcegitcommit: c43a6f1fe72d7c2db4b5815fd532f2b45d964e07
+ms.openlocfilehash: 4c2e62335bc7dd004829dbc2a8c1f62ea91f334f
+ms.sourcegitcommit: 4a6bbe84db24c2f3dd2de065de418fde952c8d40
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 10/30/2018
-ms.locfileid: "50244803"
+ms.locfileid: "50253041"
 ---
 # <a name="account-confirmation-and-password-recovery-in-aspnet-core"></a>계정 확인 및 ASP.NET Core에서 암호 복구
 
@@ -27,7 +27,7 @@ ms.locfileid: "50244803"
 이 자습서에서는 전자 메일 확인 및 암호 재설정을 사용 하 여 ASP.NET Core 앱을 빌드하는 방법을 보여 줍니다. 이 자습서는 **되지** 시작 항목입니다. 에 대해 잘 알고 있어야 합니다.
 
 * [ASP.NET Core](xref:tutorials/razor-pages/razor-pages-start)
-* [인증](xref:security/authentication/index)
+* [인증](xref:security/authentication/identity)
 * [Entity Framework Core](xref:data/ef-mvc/intro)
 
 <!-- see C:/Dropbox/wrk/Code/SendGridConsole/Program.cs -->

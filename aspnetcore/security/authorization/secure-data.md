@@ -5,12 +5,12 @@ description: 권한 부여로 보호 되는 사용자 데이터를 사용 하 �
 ms.author: riande
 ms.date: 7/24/2018
 uid: security/authorization/secure-data
-ms.openlocfilehash: 786e83eb28722e83eea46def962593f58ad524e2
-ms.sourcegitcommit: c43a6f1fe72d7c2db4b5815fd532f2b45d964e07
+ms.openlocfilehash: 185628d4e06c9b5ae7f2685c10ea9e46dd5abe92
+ms.sourcegitcommit: 4a6bbe84db24c2f3dd2de065de418fde952c8d40
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 10/30/2018
-ms.locfileid: "50244842"
+ms.locfileid: "50253223"
 ---
 # <a name="create-an-aspnet-core-app-with-user-data-protected-by-authorization"></a>권한 부여로 보호 되는 사용자 데이터를 사용 하 여 ASP.NET Core 앱 만들기
 
@@ -71,16 +71,16 @@ ms.locfileid: "50244842"
 이 자습서 고급 옵션입니다. 에 대해 잘 알고 있어야 합니다.
 
 * [ASP.NET Core](xref:tutorials/first-mvc-app/start-mvc)
-* [인증](xref:security/authentication/index)
+* [인증](xref:security/authentication/identity)
 * [계정 확인 및 비밀번호 복구](xref:security/authentication/accconfirm)
-* [권한 부여](xref:security/authorization/index)
+* [권한 부여](xref:security/authorization/introduction)
 * [Entity Framework Core](xref:data/ef-mvc/intro)
 
 ::: moniker-end
 
 ::: moniker range="= aspnetcore-2.1"
 
-ASP.NET Core 2.1에서 `User.IsInRole` 사용 하는 경우 실패 `AddDefaultIdentity`합니다. 이 자습서에서는 `AddDefaultIdentity` ASP.NET Core 2.2 미리 보기 1 이상이 필요 합니다. 참조 [이 GitHub 문제](https://github.com/aspnet/Identity/issues/1813#issuecomment-394543909) 해결에 대 한 합니다.
+ASP.NET Core 2.1에서 `User.IsInRole` 사용 하는 경우 실패 `AddDefaultIdentity`합니다. 이 자습서에서는 `AddDefaultIdentity` ASP.NET Core 2.2 이상 필요 합니다. 참조 [이 GitHub 문제](https://github.com/aspnet/Identity/issues/1813#issuecomment-394543909) 해결에 대 한 합니다.
 
 ::: moniker-end
 
@@ -352,7 +352,7 @@ dotnet ef database update
 
 * [Azure App Service에서.NET Core 및 SQL Database 웹 앱 빌드](/azure/app-service/app-service-web-tutorial-dotnetcore-sqldb)
 * [ASP.NET Core 권한 부여 랩](https://github.com/blowdart/AspNetAuthorizationWorkshop)합니다. 이 랩에서이 자습서에 도입 된 보안 기능에 자세한 내용으로 이어집니다.
-* [ASP.NET Core에서 권한 부여: 단순, 역할, 클레임 기반 및 사용자 지정](xref:security/authorization/index)
+* <xref:security/authorization/introduction>
 * [사용자 지정 정책 기반 권한 부여](xref:security/authorization/policies)
 
 ::: moniker-end
