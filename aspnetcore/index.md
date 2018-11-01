@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/24/2018
 uid: index
-ms.openlocfilehash: 37448b1b3d0da4e3cb34b1cd51f663b7e53ddced
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: e9bca9fe22dbb64086eba3445c50941c5440974c
+ms.sourcegitcommit: 4a6bbe84db24c2f3dd2de065de418fde952c8d40
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50207396"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50253068"
 ---
 # <a name="introduction-to-aspnet-core"></a>ASP.NET Core 소개
 
@@ -32,9 +32,9 @@ ASP.NET Core는 클라우드 기반 인터넷에 연결된 최신 응용 프로�
 
 ## <a name="build-web-apis-and-web-ui-using-aspnet-core-mvc"></a>ASP.NET Core MVC를 사용하여 웹 API 및 웹 UI 빌드
 
-ASP.NET Core MVC에서는 [Web API](xref:tutorials/index#build-web-apis) 및 [웹앱](xref:tutorials/index#build-web-apps)을 빌드하는 기능을 제공합니다.
+ASP.NET Core MVC에서는 [Web API](xref:tutorials/first-web-api) 및 [웹앱](xref:tutorials/razor-pages/index)을 빌드하는 기능을 제공합니다.
 
-* [MVC(모델-뷰-컨트롤러) 패턴](xref:mvc/overview)을 통해 웹 API 및 웹앱을 [테스트 가능](xref:test/index)하게 합니다.
+* [MVC(모델-뷰-컨트롤러) 패턴](xref:mvc/overview)을 통해 웹 API 및 웹앱을 테스트 가능하게 합니다.
 * [Razor 페이지](xref:razor-pages/index) (2.0의 새로운 기능)는 웹 UI를 쉽게 빌드하고 생산성을 높일 수 있는 페이지 기반 프로그래밍 모델입니다.
 * [Razor 태그](xref:mvc/views/razor)는 [Razor 페이지](xref:razor-pages/index) 및 [MVC 뷰](xref:mvc/views/overview)에 생산적인 구문을 제공합니다.
 * [태그 도우미](xref:mvc/views/tag-helpers/intro)를 사용하면 서버 쪽 코드를 Razor 파일에서 HTML 요소를 만들고 렌더링하는 데 사용할 수 있습니다.
@@ -80,7 +80,6 @@ ASP.NET Core 2.x는 .NET Standard 2.0과 호환되는 .NET Framework 버전에�
 자세한 내용은 다음 리소스를 참조하세요.
 
 * [Razor 페이지 시작](xref:tutorials/razor-pages/razor-pages-start)
-* [ASP.NET Core 자습서](xref:tutorials/index)
 * <xref:tutorials/publish-to-azure-webapp-using-vs>
 * [ASP.NET Core 기본 사항](xref:fundamentals/index)
 * [매주 ASP.NET 커뮤니티 스탠드업](https://live.asp.net/)은 팀의 진행률 및 계획을 다루고 새 블로그 및 타사 소프트웨어를 설명합니다.

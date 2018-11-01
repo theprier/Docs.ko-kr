@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 09/21/2018
 uid: host-and-deploy/iis/index
-ms.openlocfilehash: 6b2cf853575b02de76d44bf79849fe11bb458fbd
-ms.sourcegitcommit: c43a6f1fe72d7c2db4b5815fd532f2b45d964e07
+ms.openlocfilehash: b204eeb35f8765bbafc85b3bb283809727356d3e
+ms.sourcegitcommit: 4a6bbe84db24c2f3dd2de065de418fde952c8d40
 ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 10/30/2018
-ms.locfileid: "50244946"
+ms.locfileid: "50253210"
 ---
 # <a name="host-aspnet-core-on-windows-with-iis"></a>IIS가 있는 Windows에서 ASP.NET Core 호스팅
 
@@ -176,7 +176,7 @@ services.Configure<IISOptions>(options =>
 });
 ```
 
-| 옵션                         | 기본값 | 설정 |
+| 옵션                         | 기본 | 설정 |
 | ------------------------------ | :-----: | ------- |
 | `AutomaticAuthentication`      | `true`  | `true`이면 IIS 통합 미들웨어가 [Windows 인증](xref:security/authentication/windowsauth)에 의해 인증된 `HttpContext.User`를 설정합니다. `false`이면 미들웨어가 `HttpContext.User`에게 ID만 제공하고, `AuthenticationScheme`에서 명시적으로 요청될 때 챌린지에 응답합니다. IIS에서 Windows 인증은 `AutomaticAuthentication`이 작동하기 위해 사용하도록 설정되어야 합니다. 자세한 내용은 [Windows 인증](xref:security/authentication/windowsauth) 항목을 참조하세요. |
 | `AuthenticationDisplayName`    | `null`  | 로그인 페이지에서 사용자에게 나타나는 표시 이름을 설정합니다. |
@@ -401,7 +401,7 @@ IIS에 ASP.NET Core 배포에 대한 자세한 내용은 [IIS 관리자를 위�
 
 ## <a name="data-protection"></a>데이터 보호
 
-[ASP.NET Core 데이터 보호 스택](xref:security/data-protection/index)은 인증에 사용되는 미들웨어를 포함하여 여러 ASP.NET Core [미들웨어](xref:fundamentals/middleware/index)에서 사용됩니다. 사용자 코드에서 데이터 보호 API가 호출되지 않더라도 배포 스크립트 또는 사용자 코드를 통해 영구적 암호화 [키 저장소](xref:security/data-protection/implementation/key-management)를 만들도록 데이터 보호를 구성해야 합니다. 데이터 보호를 구성하지 않으면 키는 메모리에 보관되고 앱이 다시 시작되면 삭제됩니다.
+[ASP.NET Core 데이터 보호 스택](xref:security/data-protection/introduction)은 인증에 사용되는 미들웨어를 포함하여 여러 ASP.NET Core [미들웨어](xref:fundamentals/middleware/index)에서 사용됩니다. 사용자 코드에서 데이터 보호 API가 호출되지 않더라도 배포 스크립트 또는 사용자 코드를 통해 영구적 암호화 [키 저장소](xref:security/data-protection/implementation/key-management)를 만들도록 데이터 보호를 구성해야 합니다. 데이터 보호를 구성하지 않으면 키는 메모리에 보관되고 앱이 다시 시작되면 삭제됩니다.
 
 키 링이 메모리에 저장된 경우 앱을 다시 시작하면 다음과 같이 됩니다.
 
@@ -434,7 +434,7 @@ IIS에서 키 링을 저장하도록 데이터 보호를 구성하려면 다음 
 
 * **데이터 보호에 대한 컴퓨터 수준 정책 설정**
 
-  데이터 보호 시스템은 데이터 보호 API를 사용하는 모든 앱에 대한 기본 [컴퓨터 수준 정책](xref:security/data-protection/configuration/machine-wide-policy) 설정을 제한적으로 지원합니다. 자세한 내용은 [데이터 보호 문서](xref:security/data-protection/index)를 참조하세요.
+  데이터 보호 시스템은 데이터 보호 API를 사용하는 모든 앱에 대한 기본 [컴퓨터 수준 정책](xref:security/data-protection/configuration/machine-wide-policy) 설정을 제한적으로 지원합니다. 자세한 내용은 <xref:security/data-protection/introduction>을 참조하세요.
 
 ## <a name="sub-application-configuration"></a>하위 응용 프로그램 구성
 
@@ -556,7 +556,7 @@ ASP.NET Core 앱의 IIS 배포에 대한 문제 진단 방법을 알아봅니다
 IIS에서 ASP.NET Core 앱을 호스팅할 때 일반적인 오류를 구분합니다.  
 [Azure App Service 및 IIS에 대한 일반적인 오류 참조](xref:host-and-deploy/azure-iis-errors-reference)
 
-## <a name="additional-resources"></a>추가 리소스
+## <a name="additional-resources"></a>추가 자료
 
 * [ASP.NET Core 소개](xref:index)
 * [공식 Microsoft IIS 사이트](https://www.iis.net/)
