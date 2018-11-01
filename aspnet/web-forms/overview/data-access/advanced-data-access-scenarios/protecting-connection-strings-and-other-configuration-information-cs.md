@@ -152,7 +152,7 @@ S를 통해 프로그래밍 방식으로 보호 구성 정보를 보여 주기 �
 
 ## <a name="step-3-encrypting-configuration-sections-usingaspnetregiisexe"></a>3 단계: 암호화를 사용 하 여 구성 섹션`aspnet_regiis.exe`
 
-.NET Framework는 다양 한 명령줄 도구에는 `$WINDOWS$\Microsoft.NET\Framework\version\` 폴더입니다. 에 [SQL 캐시 종속성 사용 하 여](../caching-data/using-sql-cache-dependencies-cs.md) 자습서에서는 예를 들어 살펴보았습니다를 사용 하 여는 `aspnet_regsql.exe` SQL 캐시 종속성에 필요한 인프라를 추가 하려면 명령줄 도구입니다. 이 폴더에 있는 다른 유용한 명령줄 도구를 [ASP.NET IIS Registration tool (`aspnet_regiis.exe`)](https://msdn.microsoft.com/library/k6h9cz8h(VS.80).aspx)합니다. 이름에서 알 수 있듯이 Microsoft의 전문적인 수준의 웹 서버, IIS와 ASP.NET 2.0 응용 프로그램을 등록 ASP.NET IIS 등록 도구를 주로 사용 됩니다. IIS 관련 기능 외에도 ASP.NET IIS 등록 도구를 사용할 수도 있습니다에 지정 된 구성 섹션을 암호 해독 또는 암호화 `Web.config`합니다.
+.NET Framework는 다양 한 명령줄 도구에는 `$WINDOWS$\Microsoft.NET\Framework\version\` 폴더입니다. 에 [SQL 캐시 종속성 사용 하 여](../caching-data/using-sql-cache-dependencies-cs.md) 자습서에서는 예를 들어 살펴보았습니다를 사용 하 여는 `aspnet_regsql.exe` SQL 캐시 종속성에 필요한 인프라를 추가 하려면 명령줄 도구입니다. 이 폴더에 있는 다른 유용한 명령줄 도구를 [ASP.NET IIS 등록 도구 (`aspnet_regiis.exe`)](https://msdn.microsoft.com/library/k6h9cz8h(VS.80).aspx)합니다. 이름에서 알 수 있듯이 Microsoft의 전문적인 수준의 웹 서버, IIS와 ASP.NET 2.0 응용 프로그램을 등록 ASP.NET IIS 등록 도구를 주로 사용 됩니다. IIS 관련 기능 외에도 ASP.NET IIS 등록 도구를 사용할 수도 있습니다에 지정 된 구성 섹션을 암호 해독 또는 암호화 `Web.config`합니다.
 
 다음 문을 사용 하 여 구성 섹션을 암호화 하는 데 일반 구문을 보여 줍니다는 `aspnet_regiis.exe` 명령줄 도구:
 
