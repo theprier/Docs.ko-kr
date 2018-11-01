@@ -56,6 +56,13 @@ Markdown 파일 이름 및 이미지 파일 이름에는 소문자를 사용하�
 
 ## <a name="images-and-screenshots"></a>이미지 및 스크린샷
 
+다음을 제외하고 문서와 함께 이미지를 포함하지 마세요.
+
+* 기본 온보딩(초급) 자습서에서
+* 명확성을 위해 이미지가 필요한 경우
+
+이러한 제한 사항은 리포지토리의 크기를 줄입니다.
+
 선택적 단계로, 문서에서 사용되는 이미지 및 스크린샷이 압축되었는지 확인하세요. 그러면 파일 크기 및 페이지 로드 성능이 개선됩니다. 주요 도구로는 TinyPNG([TinyPNG 웹 사이트](https://tinypng.com/) 또는 [TinyPNG API](https://tinypng.com/developers) 사용) 또는 [Image Optimizer](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.ImageOptimizer) Visual Studio 확장이 있습니다. 
 
 ## <a name="code-snippets"></a>코드 조각

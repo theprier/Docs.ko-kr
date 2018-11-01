@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 06/14/2018
 uid: fundamentals/app-state
-ms.openlocfilehash: 7794b3c10e26720d3e7ef8965f99b204a3c58d5c
-ms.sourcegitcommit: 5a2456cbf429069dc48aaa2823cde14100e4c438
+ms.openlocfilehash: da20538a0dc6e13caedaf6a1130e66981dcb7af2
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "41870936"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50207292"
 ---
 # <a name="session-and-app-state-in-aspnet-core"></a>ASP.NET Core에서 세션 및 앱 상태
 
@@ -19,7 +19,7 @@ ms.locfileid: "41870936"
 
 HTTP는 상태 비저장 프로토콜입니다. HTTP 요청은 추가 단계를 수행하지 않고 사용자 값 또는 앱 상태를 유지하지 않는 독립적인 메시지입니다. 이 문서에서는 요청 간 사용자 데이터와 앱 상태를 유지하는 몇 가지 방법에 대해 설명합니다.
 
-[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/app-state/samples)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/app-state/samples)([다운로드 방법](xref:index#how-to-download-a-sample))
 
 ## <a name="state-management"></a>상태 관리
 
@@ -70,7 +70,7 @@ ASP.NET Core는 각 요청과 함께 앱으로 전송되는 세션 ID를 포함�
 
 메모리 내 캐시 공급자는 앱이 있는 서버의 메모리에 세션 데이터를 저장합니다. 서버 팜 시나리오:
 
-* *고정 세션*을 사용하여 각 세션을 개별 서버의 특정 앱 인스턴스에 연결합니다. [Azure App Service](https://azure.microsoft.com/services/app-service/)는 [ARR(응용 프로그램 요청 라우팅)](/iis/extensions/planning-for-arr/using-the-application-request-routing-module)을 사용하여 기본적으로 고정 세션을 적용합니다. 그러나 고정 세션은 확장성에 영향을 주고 웹앱 업데이트를 복잡하게 만들 수 있습니다. 더 나은 방법은 고정 세션이 필요 없는 Redis 또는 SQL Server 분산 캐시를 사용하는 것입니다. 자세한 내용은 [분산 캐시 사용](xref:performance/caching/distributed)을 참조하세요.
+* *고정 세션*을 사용하여 각 세션을 개별 서버의 특정 앱 인스턴스에 연결합니다. [Azure App Service](https://azure.microsoft.com/services/app-service/)는 [ARR(응용 프로그램 요청 라우팅)](/iis/extensions/planning-for-arr/using-the-application-request-routing-module)을 사용하여 기본적으로 고정 세션을 적용합니다. 그러나 고정 세션은 확장성에 영향을 주고 웹앱 업데이트를 복잡하게 만들 수 있습니다. 더 나은 방법은 고정 세션이 필요 없는 Redis 또는 SQL Server 분산 캐시를 사용하는 것입니다. 자세한 내용은 <xref:performance/caching/distributed>을 참조하세요.
 * 세션 쿠키는 [IDataProtector](/dotnet/api/microsoft.aspnetcore.dataprotection.idataprotector)를 통해 암호화됩니다. 데이터 보호는 각 컴퓨터에서 세션 쿠키를 읽을 수 있도록 올바르게 구성되어야 합니다. 자세한 내용은 [ASP.NET Core에서 데이터 보호](xref:security/data-protection/index) 및 [키 저장소 공급자](xref:security/data-protection/implementation/key-storage-providers)를 참조하세요.
 
 ### <a name="configure-session-state"></a>세션 상태 구성
@@ -87,7 +87,7 @@ ASP.NET Core는 각 요청과 함께 앱으로 전송되는 세션 ID를 포함�
 
 ::: moniker-end
 
-* [IDistributedCache](/dotnet/api/microsoft.extensions.caching.distributed.idistributedcache) 메모리 캐시 중 하나 `IDistributedCache` 구현은 세션에 대한 백업 저장소로 사용됩니다. 자세한 내용은 [분산 캐시 사용](xref:performance/caching/distributed)을 참조하세요.
+* [IDistributedCache](/dotnet/api/microsoft.extensions.caching.distributed.idistributedcache) 메모리 캐시 중 하나 `IDistributedCache` 구현은 세션에 대한 백업 저장소로 사용됩니다. 자세한 내용은 <xref:performance/caching/distributed>을 참조하세요.
 * `ConfigureServices`의 [AddSession](/dotnet/api/microsoft.extensions.dependencyinjection.sessionservicecollectionextensions.addsession)에 대한 호출.
 * `Configure`의 [UseSession](/dotnet/api/microsoft.aspnetcore.builder.sessionmiddlewareextensions#methods_)에 대한 호출.
 
@@ -128,8 +128,8 @@ ASP.NET Core에서 기본 세션 공급자는 [ISession.LoadAsync](/dotnet/api/m
 | 옵션 | 설명 |
 | ------ | ----------- |
 | [쿠키](/dotnet/api/microsoft.aspnetcore.builder.sessionoptions.cookie) | 쿠키를 만드는 데 사용되는 설정을 결정합니다. [Name](/dotnet/api/microsoft.aspnetcore.http.cookiebuilder.name)의 기본값은 [SessionDefaults.CookieName](/dotnet/api/microsoft.aspnetcore.session.sessiondefaults.cookiename)(`.AspNetCore.Session`)입니다. [Path](/dotnet/api/microsoft.aspnetcore.http.cookiebuilder.path)의 기본값은 [SessionDefaults.CookiePath](/dotnet/api/microsoft.aspnetcore.session.sessiondefaults.cookiepath)(`/`)입니다. [SameSite](/dotnet/api/microsoft.aspnetcore.http.cookiebuilder.samesite)의 기본값은 [SameSiteMode.Lax](/dotnet/api/microsoft.aspnetcore.http.samesitemode)(`1`)입니다. [HttpOnly](/dotnet/api/microsoft.aspnetcore.http.cookiebuilder.httponly)의 기본값은 `true`입니다. [IsEssential](/dotnet/api/microsoft.aspnetcore.http.cookiebuilder.isessential)의 기본값은 `false`입니다. |
-| [IdleTimeout](/dotnet/api/microsoft.aspnetcore.builder.sessionoptions.idletimeout) | `IdleTimeout`은 콘텐츠가 삭제되기 전까지 세션이 유휴 상태일 수 있는 시간을 나타냅니다. 각 세션 액세스는 시간 제한을 다시 설정합니다. 이는 쿠키가 아닌 세션의 콘텐츠에만 적용됩니다. 기본값은 20분입니다. |
-| [IOTimeout](/dotnet/api/microsoft.aspnetcore.builder.sessionoptions.iotimeout) | 저장소에서 세션을 로드하거나 저장소로 다시 커밋할 수 있는 최대 시간입니다. 이는 비동기 작업에만 적용될 수 있습니다. 이 시간 제한은 [InfiniteTimeSpan](/dotnet/api/system.threading.timeout.infinitetimespan)을 사용하여 비활성화할 수 있습니다. 기본값은 1분입니다. |
+| [IdleTimeout](/dotnet/api/microsoft.aspnetcore.builder.sessionoptions.idletimeout) | `IdleTimeout`은 콘텐츠가 삭제되기 전까지 세션이 유휴 상태일 수 있는 시간을 나타냅니다. 각 세션 액세스는 시간 제한을 다시 설정합니다. 이 설정은 쿠키가 아닌 세션의 콘텐츠에만 적용됩니다. 기본값은 20분입니다. |
+| [IOTimeout](/dotnet/api/microsoft.aspnetcore.builder.sessionoptions.iotimeout) | 저장소에서 세션을 로드하거나 저장소로 다시 커밋할 수 있는 최대 시간입니다. 이 설정은 비동기 작업에만 적용될 수 있습니다. 이 시간 제한은 [InfiniteTimeSpan](/dotnet/api/system.threading.timeout.infinitetimespan)을 사용하여 비활성화할 수 있습니다. 기본값은 1분입니다. |
 
 세션은 쿠키를 사용하여 단일 브라우저에서 요청을 추적하고 식별합니다. 기본적으로 이 쿠키는 `.AspNetCore.Session`이라고 하며 `/`의 경로를 사용합니다. 쿠키 기본값은 도메인을 지정하지 않으므로([HttpOnly](/dotnet/api/microsoft.aspnetcore.http.cookiebuilder.httponly) 기본값이 `true`임으로) 페이지의 클라이언트 쪽 스크립트에 사용할 수 없습니다.
 
@@ -434,7 +434,7 @@ app.Run(async (context) =>
 
 * "'Microsoft.AspNetCore.Session.DistributedSessionStore'를 활성화하려고 시도하는 동안 'Microsoft.Extensions.Caching.Distributed.IDistributedCache' 형식에 대한 서비스를 확인할 수 없습니다."
 
-  이는 일반적으로는 하나 이상의 `IDistributedCache` 구현을 구성하는 데 실패하여 발생됩니다. 자세한 내용은 [분산 캐시 사용](xref:performance/caching/distributed) 및 [메모리 내 캐시](xref:performance/caching/memory)를 참조하세요.
+  이는 일반적으로는 하나 이상의 `IDistributedCache` 구현을 구성하는 데 실패하여 발생됩니다. 자세한 내용은 <xref:performance/caching/distributed> 및 <xref:performance/caching/memory>를 참조하세요.
 
 * 세션 미들웨어가 세션 유지에 실패할 경우(예: 백업 저장소를 사용할 수 없는 경우) 미들웨어는 예외를 기록하고 요청은 정상적으로 계속됩니다. 이로 인해 예기치 않은 동작이 발생합니다.
 

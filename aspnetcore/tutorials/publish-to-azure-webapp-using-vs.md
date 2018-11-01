@@ -3,14 +3,15 @@ title: Visual Studio를 사용하여 Azure에 ASP.NET Core 앱 게시
 author: rick-anderson
 description: Visual Studio를 사용하여 Azure App Service에 ASP.NET Core 앱을 게시하는 방법을 알아봅니다.
 ms.author: riande
-ms.date: 12/16/2017
+ms.custom: mvc
+ms.date: 10/24/2018
 uid: tutorials/publish-to-azure-webapp-using-vs
-ms.openlocfilehash: 7211da268c1c52e7b859e6f98ce433fd19b218ff
-ms.sourcegitcommit: 516d0645c35ea784a3ae807be087ae70446a46ee
+ms.openlocfilehash: a5a02112d87563a47d5e2dab355359fa39da9a89
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/27/2018
-ms.locfileid: "39320728"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090357"
 ---
 # <a name="publish-an-aspnet-core-app-to-azure-with-visual-studio"></a>Visual Studio를 사용하여 Azure에 ASP.NET Core 앱 게시
 
@@ -20,7 +21,7 @@ ms.locfileid: "39320728"
 
 macOS에서 작업하고 있는 경우 [Mac용 Visual Studio에서 Azure에 게시](https://blog.xamarin.com/publish-azure-visual-studio-mac/)를 참조하세요.
 
-App Service 배포 문제를 해결하려면 [Azure App Service에서 ASP.NET Core 문제 해결](xref:host-and-deploy/azure-apps/troubleshoot)을 참조하세요.
+App Service 배포 문제를 해결하려면 <xref:host-and-deploy/azure-apps/troubleshoot>을 참조하세요.
 
 ## <a name="set-up"></a>설치
 
@@ -179,11 +180,11 @@ Visual Studio는 Azure에서 웹앱 및 SQL Server를 만듭니다. 이 단계�
 
 ### <a name="next-steps"></a>다음 단계
 
-* [Visual Studio 및 Git을 사용하여 Azure에 연속 배포](xref:host-and-deploy/azure-apps/azure-continuous-deployment)
+* <xref:host-and-deploy/azure-apps/azure-continuous-deployment>
 
 ## <a name="additonal-resources"></a>추가 리소스
 
-* [Azure App Service](https://docs.microsoft.com/azure/app-service/app-service-web-overview)
-* [Azure 리소스 그룹](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview#resource-groups)
-* [Azure SQL Database](https://docs.microsoft.com/azure/sql-database/)
-* [Azure App Service에서 ASP.NET Core 문제 해결](xref:host-and-deploy/azure-apps/troubleshoot)
+* [Azure App Service](/azure/app-service/app-service-web-overview)
+* [Azure 리소스 그룹](/azure/azure-resource-manager/resource-group-overview#resource-groups)
+* [Azure SQL Database](/azure/sql-database/)
+* <xref:host-and-deploy/azure-apps/troubleshoot>

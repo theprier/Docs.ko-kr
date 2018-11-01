@@ -3,14 +3,15 @@ title: ASP.NET Core MVC의 모델 유효성 검사
 author: tdykstra
 description: ASP.NET Core MVC의 모델 유효성 검사에 대해 알아봅니다.
 ms.author: riande
-ms.date: 07/31/2018
+ms.custom: mvc
+ms.date: 10/24/2018
 uid: mvc/models/validation
-ms.openlocfilehash: fe036f261b80f6134078835080409720d149374d
-ms.sourcegitcommit: ecf2cd4e0613569025b28e12de3baa21d86d4258
+ms.openlocfilehash: 73d41b4718071d00a6f80b33de182da2ad90f331
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43312156"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090952"
 ---
 # <a name="model-validation-in-aspnet-core-mvc"></a>ASP.NET Core MVC의 모델 유효성 검사
 
@@ -27,6 +28,13 @@ ms.locfileid: "43312156"
 ## <a name="validation-attributes"></a>유효성 검사 특성
 
 유효성 검사 특성은 모델 유효성 검사를 구성하는 방법이므로 데이터베이스 테이블의 필드에 대한 유효성 검사와 개념적으로 유사합니다. 데이터 형식이나 필수 필드를 할당하는 등 제약 조건이 포함됩니다. 다른 종류의 유효성 검사에는 신용 카드, 전화 번호 또는 이메일 주소와 같은 비즈니스 규칙을 적용하기 위해 데이터에 대한 패턴을 적용하는 것이 포함됩니다. 유효성 검사 특성을 통해 훨씬 간단하고 사용하기 쉽게 이러한 요구 사항을 적용할 수 있습니다.
+
+유효성 검사 특성은 속성 수준에서 지정됩니다. 
+
+```csharp 
+[Required] 
+public string MyProperty { get; set; } 
+``` 
 
 영화 및 TV 프로그램에 대 한 정보를 저장하는 앱에서 주석이 추가된 `Movie` 모델은 다음과 같습니다. 대부분의 속성은 필수이며 여러 문자열 속성에는 길이 요구 사항이 적용됩니다. 또한 사용자 지정 유효성 검사 특성과 함께 `Price` 속성 대신에 0~$999.99 사이라는 숫자 범위 제한이 있습니다.
 
@@ -62,7 +70,7 @@ nullable 형식이 아닌 [값 형식](/dotnet/csharp/language-reference/keyword
 
 유효성 검사 및 유효성 검사 특성과 관련되지 않는 MVC 모델 바인딩은 null이 아닌 형식에 누락 값 또는 공백을 포함하는 형식 필드 전송을 거부합니다. 대상 속성에 `BindRequired` 특성이 없는 경우에 모델 바인딩은 null이 아닌 형식에 대한 누락 데이터를 무시합니다. 여기서 들어오는 형식 데이터에서 형식 필드는 비어 있습니다.
 
-[BindRequired 특성](/dotnet/api/microsoft.aspnetcore.mvc.modelbinding.bindrequiredattribute)([특성을 포함한 모델 바인딩 동작 사용자 지정](xref:mvc/models/model-binding#customize-model-binding-behavior-with-attributes) 참조)은 형식 데이터를 완료하는 데 유용합니다. 속성에 적용하는 경우 모델 바인딩 시스템에는 해당 속성에 대한 값이 필요합니다. 형식에 적용하는 경우 모델 바인딩 시스템에는 해당 형식의 모든 속성에 대한 값이 필요합니다.
+[BindRequired 특성](/dotnet/api/microsoft.aspnetcore.mvc.modelbinding.bindrequiredattribute)(<xref:mvc/models/model-binding#customize-model-binding-behavior-with-attributes>도 참조)은 양식 데이터가 완료되었는지 확인하는 데 유용합니다. 속성에 적용하는 경우 모델 바인딩 시스템에는 해당 속성에 대한 값이 필요합니다. 형식에 적용하는 경우 모델 바인딩 시스템에는 해당 형식의 모든 속성에 대한 값이 필요합니다.
 
 [Nullable\<T > 형식](/dotnet/csharp/programming-guide/nullable-types/)(예: `decimal?` 또는 `System.Nullable<decimal>`)을 사용하고 `Required`으로 표시하는 경우 속성이 표준 null 형식인 것처럼 서버 쪽 유효성 검사가 수행됩니다(예: `string`).
 
@@ -256,4 +264,4 @@ $.get({
 public string MiddleName { get; set; }
 ```
 
-모든 특성 인수와 같은 `AdditionalFields`은 상수 식이어야 합니다. 따라서 [보간된 문자열](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/interpolated-strings)을 사용하거나 [`string.Join()`](https://msdn.microsoft.com/library/system.string.join(v=vs.110).aspx)를 호출하여 `AdditionalFields`을 초기화하지 않아야 합니다. `[Remote]` 특성에 추가한 모든 추가 필드의 경우 해당하는 컨트롤러 작업 메서드에 다른 인수를 추가해야 합니다.
+모든 특성 인수와 같은 `AdditionalFields`은 상수 식이어야 합니다. 따라서 [보간된 문자열](/dotnet/csharp/language-reference/keywords/interpolated-strings)을 사용하거나 [`string.Join()`](https://msdn.microsoft.com/library/system.string.join(v=vs.110).aspx)를 호출하여 `AdditionalFields`을 초기화하지 않아야 합니다. `[Remote]` 특성에 추가한 모든 추가 필드의 경우 해당하는 컨트롤러 작업 메서드에 다른 인수를 추가해야 합니다.

@@ -5,12 +5,12 @@ description: 모델 바인딩을 통해 컨트롤러 작업이 ASP.NET Core의 �
 ms.author: riande
 ms.date: 04/10/2017
 uid: mvc/advanced/custom-model-binding
-ms.openlocfilehash: b8745241b0699d270bb8f3a56ab614b0ca49e64b
-ms.sourcegitcommit: 317f9be24db600499e79d25872d743af74bd86c0
+ms.openlocfilehash: dc901aea3c20e7f2e955f39d923216de70ef015b
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48045538"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090409"
 ---
 # <a name="custom-model-binding-in-aspnet-core"></a>ASP.NET Core의 사용자 지정 모델 바인딩
 
@@ -22,7 +22,7 @@ ms.locfileid: "48045538"
 
 ## <a name="default-model-binder-limitations"></a>기본 모델 바인더 제한 사항
 
-기본 모델 바인더는 대부분의 공용 .NET Core 데이터 형식을 지원하며 개발자 요구 사항을 대부분 충족합니다. 요청의 텍스트 기반 입력을 모델 형식에 직접 바인딩할 것으로 예상됩니다. 바인딩하려면 입력을 변환해야 할 수도 있습니다. 예를 들어 모델 데이터를 조회하는 데 사용할 수 있는 키를 갖고 있는 경우 그 키를 기반으로 사용자 지정 모델 바인더를 사용하여 데이터를 가져올 수 있습니다.
+기본 모델 바인더는 대부분의 공용 .NET Core 데이터 형식을 지원하며 대부분의 개발자 요구 사항을 충족해야 합니다. 요청의 텍스트 기반 입력을 모델 형식에 직접 바인딩할 것으로 예상됩니다. 바인딩하려면 입력을 변환해야 할 수도 있습니다. 예를 들어 모델 데이터를 조회하는 데 사용할 수 있는 키를 갖고 있는 경우 그 키를 기반으로 사용자 지정 모델 바인더를 사용하여 데이터를 가져올 수 있습니다.
 
 ## <a name="model-binding-review"></a>모델 바인딩 검토
 

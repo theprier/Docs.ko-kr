@@ -3,14 +3,15 @@ title: Entity Framework Core를 사용한 ASP.NET Core MVC - 자습서 1/10
 author: rick-anderson
 description: ''
 ms.author: tdykstra
-ms.date: 03/15/2017
+ms.custom: mvc
+ms.date: 10/24/2018
 uid: data/ef-mvc/intro
-ms.openlocfilehash: 46cc5144a289637a0fb1c1c2ac22aba2d881af52
-ms.sourcegitcommit: a669c4e3f42e387e214a354ac4143555602e6f66
+ms.openlocfilehash: 6f867875ed670065ef76728342d3854281f08ae4
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43336109"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50091069"
 ---
 # <a name="aspnet-core-mvc-with-entity-framework-core---tutorial-1-of-10"></a>Entity Framework Core를 사용한 ASP.NET Core MVC - 자습서 1/10
 
@@ -28,7 +29,7 @@ Contoso University 샘플 웹 응용 프로그램은 EF(Entity Framework) Core 2
 
 [완성된 응용 프로그램을 다운로드하거나 확인합니다.](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-mvc/intro/samples/cu-final)
 
-EF Core 2.0은 최신 버전의 EF이지만 EF 6.x의 모든 기능을 가지고 있지 않습니다. EF 6.x 및 EF Core 중에 선택하는 방법에 대한 내용은 [EF Core와  EF6.x 비교](https://docs.microsoft.com/ef/efcore-and-ef6/)를 참조합니다. EF 6.x를 선택하는 경우 [이 자습서 시리즈의 이전 버전](https://docs.microsoft.com/aspnet/mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application)을 참조하세요.
+EF Core 2.0은 최신 버전의 EF이지만 EF 6.x의 모든 기능을 가지고 있지 않습니다. EF 6.x 및 EF Core 중에 선택하는 방법에 대한 내용은 [EF Core와  EF6.x 비교](/ef/efcore-and-ef6/)를 참조합니다. EF 6.x를 선택하는 경우 [이 자습서 시리즈의 이전 버전](/aspnet/mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application)을 참조하세요.
 
 > [!NOTE]
 > 이 자습서의 ASP.NET Core 1.1 버전의 경우 [PDF 형식에서 이 자습서의 VS 2017 업데이트 2 버전](https://github.com/aspnet/Docs/blob/master/aspnetcore/data/ef-mvc/intro/_static/efmvc1.1.pdf)을 참조하세요.
@@ -106,11 +107,11 @@ CTRL+F5 키를 눌러 프로젝트를 실행하거나 메뉴 모음에서 **디�
 
 ## <a name="entity-framework-core-nuget-packages"></a>Entity Framework Core NuGet 패키지
 
-프로젝트에 EF Core 지원을 추가하려면 대상으로 지정하려는 데이터베이스 공급자를 설치합니다. 이 자습서에서는 SQL Server를 사용하며 공급자 패키지는 [Microsoft.EntityFrameworkCore.SqlServer](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.SqlServer/)입니다. 이 패키지는 [Microsoft.AspNetCore.All](xref:fundamentals/metapackage) 메타패키지에 포함되므로 설치할 필요가 없습니다.
+프로젝트에 EF Core 지원을 추가하려면 대상으로 지정하려는 데이터베이스 공급자를 설치합니다. 이 자습서에서는 SQL Server를 사용하며 공급자 패키지는 [Microsoft.EntityFrameworkCore.SqlServer](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.SqlServer/)입니다. 이 패키지는 [Microsoft.AspNetCore.App 메타패키지](xref:fundamentals/metapackage-app)에 포함되어 있으므로 앱에 `Microsoft.AspNetCore.App` 패키지에 대한 패키지 참조가 있는 경우 패키지를 참조할 필요가 없습니다.
 
 이 패키지 및 해당 종속성(`Microsoft.EntityFrameworkCore` 및 `Microsoft.EntityFrameworkCore.Relational`)은 EF에 대한 런타임 지원을 제공합니다. [마이그레이션](migrations.md) 자습서에서 나중에 도구 패키지를 추가합니다.
 
-Entity Framework Core에 사용할 수 있는 다른 데이터베이스 공급자에 대한 정보는 [데이터베이스 공급자](https://docs.microsoft.com/ef/core/providers/)를 참조하세요.
+Entity Framework Core에 사용할 수 있는 다른 데이터베이스 공급자에 대한 정보는 [데이터베이스 공급자](/ef/core/providers/)를 참조하세요.
 
 ## <a name="create-the-data-model"></a>데이터 모델 만들기
 
@@ -357,7 +358,7 @@ Entity Framework를 사용하는 비동기 코드를 작성할 때 고려해야 
 
 * 비동기 코드의 성능 이점을 활용하려는 경우 사용 중인(예: 페이징) 라이브러리 패키지 또한 쿼리를 데이터베이스에 전송하도록 하는 Entity Framework 메서드를 호출하는 경우 비동기를 사용하는지 확인합니다.
 
-.NET에서의 비동기 프로그래밍에 대한 자세한 내용은 [비동기 개요](https://docs.microsoft.com/dotnet/articles/standard/async)를 참조하세요.
+.NET에서의 비동기 프로그래밍에 대한 자세한 내용은 [비동기 개요](/dotnet/articles/standard/async)를 참조하세요.
 
 ## <a name="summary"></a>요약
 

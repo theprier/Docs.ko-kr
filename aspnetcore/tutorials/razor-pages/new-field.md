@@ -4,20 +4,21 @@ author: rick-anderson
 description: Entity Framework Core를 사용하여 Razor 페이지에 새 필드를 추가하는 방법을 보여 줍니다.
 monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
-ms.date: 05/30/2018
+ms.custom: mvc
+ms.date: 10/24/2018
 uid: tutorials/razor-pages/new-field
-ms.openlocfilehash: d6d59ff336095e2f1b8b2e9a0338b7791605ad7a
-ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
+ms.openlocfilehash: f8be269887903797803257d8a21e002519102047
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46010899"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50089515"
 ---
 # <a name="add-a-new-field-to-a-razor-page-in-aspnet-core"></a>ASP.NET Core의 Razor 페이지에 새 필드 추가
 
 작성자: [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-이 섹션에서는 [Entity Framework](https://docs.microsoft.com/ef/core/get-started/aspnetcore/new-db) Code First 마이그레이션을 사용하여 모델에 새 필드를 추가하고 해당 변경 내용을 데이터베이스로 마이그레이션합니다.
+이 섹션에서는 [Entity Framework](/ef/core/get-started/aspnetcore/new-db) Code First 마이그레이션을 사용하여 모델에 새 필드를 추가하고 해당 변경 내용을 데이터베이스로 마이그레이션합니다.
 
 EF Code First를 사용하여 자동으로 데이터베이스를 만들 경우 Code First는
 
@@ -96,7 +97,9 @@ SqlException: Invalid column name 'Rating'.
 
 솔루션을 빌드합니다.
 
-<a name="pmc"></a> **도구** 메뉴에서 **NuGet 패키지 관리자 > 패키지 관리자 콘솔**을 선택합니다.
+<a name="pmc"></a>
+
+**도구** 메뉴에서 **NuGet 패키지 관리자 > 패키지 관리자 콘솔**을 선택합니다.
 PMC에서 다음 명령을 입력합니다.
 
 ```powershell
@@ -111,7 +114,9 @@ Update-Database
 
 "Rating" 이름은 임의로 지정되며 마이그레이션 파일의 이름을 지정하는 데 사용됩니다. 마이그레이션 파일에 의미 있는 이름을 사용하는 것이 좋습니다.
 
-<a name="ssox"></a> DB의 모든 레코드를 삭제하는 경우 이니셜라이저에서 DB를 시드하고 `Rating` 필드를 포함합니다. 브라우저 또는 [SSOX](xref:tutorials/razor-pages/sql#ssox)(Sql Server 개체 탐색기)에서 삭제 링크를 사용하여 이를 수행할 수 있습니다. SSOX에서 데이터베이스를 삭제하려면:
+<a name="ssox"></a>
+
+DB의 모든 레코드를 삭제하는 경우 이니셜라이저에서 DB를 시드하고 `Rating` 필드를 포함합니다. 브라우저 또는 [SSOX](xref:tutorials/razor-pages/sql#ssox)(Sql Server 개체 탐색기)에서 삭제 링크를 사용하여 이를 수행할 수 있습니다. SSOX에서 데이터베이스를 삭제하려면:
 
 * SSOX에서 데이터베이스를 선택합니다.
 * 데이터베이스를 마우스 오른쪽 단추로 클릭하고 *삭제*를 선택합니다.

@@ -5,12 +5,12 @@ description: 기본적인 ASP.NET Core MVC 앱에서 Details 컨트롤러 메서
 ms.author: riande
 ms.date: 03/07/2017
 uid: tutorials/first-mvc-app/details
-ms.openlocfilehash: ce5b2af148ddba9bc718345c0b8074da8724308d
-ms.sourcegitcommit: 32f5ee0690604d451f61e9a5c28881c9fcf85738
+ms.openlocfilehash: c5d21bc70aae4c1a1d10bb333871eeef25a1879c
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/29/2018
-ms.locfileid: "47454806"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50208007"
 ---
 # <a name="examine-the-details-and-delete-methods-of-an-aspnet-core-app"></a>ASP.NET Core 앱의 Details 및 Delete 메서드 검사
 
@@ -73,7 +73,7 @@ public async Task<IActionResult> Delete(int id, bool notUsed)
 
 ### <a name="publish-to-azure"></a>Azure에 게시
 
-Azure에 배포하는 방법에 대한 자세한 내용은 [자습서: Azure에서 SQL Database를 사용하여 ASP.NET 앱 빌드](/azure/app-service/app-service-web-tutorial-dotnet-sqldatabase)를 참조하세요. ASP.NET Core 앱이 아니라 ASP.NET 앱에 대한 지침이지만 단계는 동일합니다.
+Azure에 배포하는 방법에 대한 자세한 내용은 [자습서: Azure App Service에서 .NET Core 및 SQL Database 웹앱 빌드](/azure/app-service/app-service-web-tutorial-dotnetcore-sqldb)를 참조하세요.
 
 > [!div class="step-by-step"]
 > [이전](validation.md)

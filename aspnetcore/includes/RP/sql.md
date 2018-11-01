@@ -2,9 +2,11 @@
 
 작성자: [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-`MovieContext` 개체는 데이터베이스에 연결하고 데이터베이스 레코드에 `Movie` 개체를 매핑하는 작업을 처리합니다. 데이터베이스 컨텍스트는 *Startup.cs* 파일의 `ConfigureServices` 메서드에서 [종속성 주입](xref:fundamentals/dependency-injection) 컨테이너에 등록됩니다.
+`MovieContext` 개체는 데이터베이스에 연결하고 데이터베이스 레코드에 `Movie` 개체를 매핑하는 작업을 처리합니다. 데이터베이스 컨텍스트는 *Startup.cs* 파일의 `ConfigureServices` 메서드에 있는 [DI(종속성 주입)](xref:fundamentals/dependency-injection) 컨테이너에 등록됩니다.
 
 [!code-csharp[](code/Startup.cs?name=snippet2&highlight=6-8)]
+
+DI와 함께 `DbContext`를 사용하는 방법에 대한 자세한 내용은 [DI가 있는 DbContext 사용](/ef/core/miscellaneous/configuring-dbcontext#using-dbcontext-with-dependency-injection)을 참조하세요.
 
 ## <a name="sqlite"></a>SQLite
 

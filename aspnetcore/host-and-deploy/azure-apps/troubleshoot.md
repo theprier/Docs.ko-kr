@@ -1,17 +1,17 @@
 ---
-title: Azure App Service에서 ASP.NET Core 문제 해결
+title: Azure App Service에서 ASP.NET Core 시작 오류 문제 해결
 author: guardrex
 description: ASP.NET Core Azure App Service 배포에 대한 문제 진단 방법을 알아봅니다.
 ms.author: riande
 ms.custom: mvc
-ms.date: 01/31/2018
+ms.date: 10/24/2018
 uid: host-and-deploy/azure-apps/troubleshoot
-ms.openlocfilehash: a995c743b4e43be8bea5329affb3f2c736b1d016
-ms.sourcegitcommit: 5a2456cbf429069dc48aaa2823cde14100e4c438
+ms.openlocfilehash: 05bb024f5b0d2b554cc861c250a92fd7ae23437f
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "41902556"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090747"
 ---
 # <a name="troubleshoot-aspnet-core-on-azure-app-service"></a>Azure App Service에서 ASP.NET Core 문제 해결
 
@@ -108,7 +108,7 @@ ASP.NET Core 모듈 stdout 로그는 종종 응용 프로그램 이벤트 로그
 
 ## <a name="common-startup-errors"></a>일반 시작 오류 
 
-[ASP.NET Core 일반 오류 참조](xref:host-and-deploy/azure-iis-errors-reference)를 참조하세요. 앱 시작을 차단하는 대부분의 일반적인 문제는 참조 항목에서 다룹니다.
+<xref:host-and-deploy/azure-iis-errors-reference>을 참조하세요. 앱 시작을 차단하는 대부분의 일반적인 문제는 참조 항목에서 다룹니다.
 
 ## <a name="slow-or-hanging-app"></a>앱이 느리거나 중단됨
 
@@ -175,8 +175,8 @@ stdout 로깅을 사용할 수 없는 경우 다음 단계를 따릅니다.
 
 ## <a name="additional-resources"></a>추가 자료
 
-* [ASP.NET Core의 오류 처리 소개](xref:fundamentals/error-handling)
-* [ASP.NET Core를 사용하는 Azure App Service 및 IIS에 대한 일반적인 오류 참조](xref:host-and-deploy/azure-iis-errors-reference)
+* <xref:fundamentals/error-handling>
+* <xref:host-and-deploy/azure-iis-errors-reference>
 * [Visual Studio를 사용하여 Azure App Service의 웹앱 문제 해결](/azure/app-service/web-sites-dotnet-troubleshoot-visual-studio)
 * [Azure 웹앱에서 “502 잘못된 게이트웨이” 및 “503 서비스를 사용할 수 없음”의 HTTP 오류 문제 해결](/azure/app-service/app-service-web-troubleshoot-http-502-http-503)
 * [Azure App Service에서 느린 웹앱 성능 문제 해결](/azure/app-service/app-service-web-troubleshoot-performance-degradation)

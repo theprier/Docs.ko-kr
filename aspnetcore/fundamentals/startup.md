@@ -1,25 +1,27 @@
 ---
-title: ASP.NET Core에서 응용 프로그램 시작
+title: ASP.NET Core에서 앱 시작
 author: ardalis
 description: ASP.NET Core의 시작 클래스에서 서비스 및 앱의 요청 파이프라인을 구성하는 방법을 설명합니다.
 ms.author: tdykstra
 ms.custom: mvc
 ms.date: 4/13/2018
 uid: fundamentals/startup
-ms.openlocfilehash: 392dc83666bc6b9012adc6c32169ae7bdc7ed8d7
-ms.sourcegitcommit: f43f430a166a7ec137fcad12ded0372747227498
+ms.openlocfilehash: 2212344cb3c651714e8c520b096ab0c4eaf5a180
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49391117"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50206458"
 ---
-# <a name="application-startup-in-aspnet-core"></a>ASP.NET Core에서 응용 프로그램 시작
+# <a name="app-startup-in-aspnet-core"></a>ASP.NET Core에서 앱 시작
 
 작성자: [Steve Smith](https://ardalis.com), [Tom Dykstra](https://github.com/tdykstra) 및 [Luke Latham](https://github.com/guardrex)
 
-`Startup` 클래스는 서비스 및 앱의 요청 파이프라인을 구성합니다.
+`Startup` 클래스는 서비스와 응용 프로그램의 요청 파이프라인을 구성합니다.
 
-## <a name="the-startup-class"></a>시작 클래스
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/startup/sample/) ([다운로드 방법](xref:index#how-to-download-a-sample)).
+
+## <a name="the-startup-class"></a>Startup 클래스
 
 ASP.NET Core 앱은 규칙에 따라 `Startup`으로 이름이 지정된 `Startup` 클래스를 사용합니다. `Startup` 클래스:
 
@@ -44,7 +46,7 @@ ASP.NET Core 앱은 규칙에 따라 `Startup`으로 이름이 지정된 `Startu
 
 [!code-csharp[](startup/snapshot_sample/Startup2.cs)]
 
-`IHostingEnvironment` 삽입의 대안은 규칙 기반 접근 방식을 사용하는 것입니다. 앱은 다양한 환경(예: `StartupDevelopment`)에 대한 별도의 `Startup` 클래스를 정의할 수 있으며 적절한 `Startup` 클래스는 런타임에 선택됩니다. 해당 이름 접미사가 현재 환경과 일치하는 클래스에 우선 순위가 부여됩니다. 앱이 개발 환경에서 실행되고 `Startup` 클래스 및 `StartupDevelopment` 클래스 모두를 포함하는 경우 `StartupDevelopment` 클래스가 사용됩니다. 자세한 내용은 [여러 환경 사용](xref:fundamentals/environments#environment-based-startup-class-and-methods)를 참조하세요.
+`IHostingEnvironment` 삽입의 대안은 규칙 기반 접근 방식을 사용하는 것입니다. 앱에서 다양한 환경(예: `StartupDevelopment`)에 대해 별도의 `Startup` 클래스를 정의할 때 런타임에 적절한 `Startup` 클래스가 선택됩니다. 해당 이름 접미사가 현재 환경과 일치하는 클래스에 우선 순위가 부여됩니다. 앱이 개발 환경에서 실행되고 `Startup` 클래스 및 `StartupDevelopment` 클래스 모두를 포함하는 경우 `StartupDevelopment` 클래스가 사용됩니다. 자세한 내용은 [여러 환경 사용](xref:fundamentals/environments#environment-based-startup-class-and-methods)를 참조하세요.
 
 `WebHostBuilder`에 대한 자세한 내용은 [호스팅](xref:fundamentals/host/index) 항목을 참조하세요. 시작하는 동안 오류를 처리하는 방법은 [시작 예외 처리](xref:fundamentals/error-handling#startup-exception-handling)를 참조하세요.
 
@@ -96,7 +98,7 @@ ASP.NET Core 앱은 규칙에 따라 `Startup`으로 이름이 지정된 `Startu
 
 각 `IStartupFilter`는 요청 파이프라인에서 하나 이상의 미들웨어를 구현합니다. 필터는 서비스 컨테이너에 추가된 순서 대로 호출됩니다. 필터는 다음 필터에 컨트롤을 전달하기 전이나 후에 미들웨어를 추가할 수 있으므로 앱 파이프라인의 시작 또는 끝에 추가합니다.
 
-[샘플 앱](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/startup/sample/)([다운로드하는 방법](xref:tutorials/index#how-to-download-a-sample))은 `IStartupFilter`를 사용하여 미들웨어를 등록하는 방법을 보여 줍니다. 샘플 앱은 쿼리 문자열 매개 변수에서 옵션 값을 설정하는 미들웨어를 포함합니다.
+샘플 앱은 `IStartupFilter`를 사용하여 미들웨어를 등록하는 방법을 보여줍니다. 샘플 앱은 쿼리 문자열 매개 변수에서 옵션 값을 설정하는 미들웨어를 포함합니다.
 
 [!code-csharp[](startup/sample/RequestSetOptionsMiddleware.cs?name=snippet1)]
 

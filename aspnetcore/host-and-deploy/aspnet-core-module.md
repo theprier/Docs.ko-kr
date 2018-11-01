@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 09/21/2018
 uid: host-and-deploy/aspnet-core-module
-ms.openlocfilehash: 0ae19b26bc86c9da7a61f3117aaae1844115593a
-ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
+ms.openlocfilehash: 0d167f779f9dcae6b0d946dce5e341793daf43bf
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48913283"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50091017"
 ---
 # <a name="aspnet-core-module-configuration-reference"></a>ASP.NET Core 모듈 구성 참조
 
@@ -48,6 +48,8 @@ In-Process 호스팅용 앱을 구성하려면 `<AspNetCoreModuleHostingModel>` 
 * 앱 및 설치된 런타임(x64 또는 x86)의 아키텍처(비트)는 앱 풀의 아키텍처와 일치해야 합니다.
 
 * `WebHostBuilder`([CreateDefaultBuilder](xref:fundamentals/host/web-host#set-up-a-host)를 사용하지 않고)를 사용하여 앱 호스트를 수동으로 설정하며 앱이 Kestrel 서버에서 직접 실행되는 경우(자체 호스트됨) `UseIISIntegration`를 호출하기 전에 `UseKestrel`를 호출합니다. 이 순서가 바뀌면 호스트가 시작되지 않습니다.
+
+* 클라이언트의 연결 끊김이 검색되었습니다. 클라이언트의 연결이 끊어지면 [HttpContext.RequestAborted](xref:Microsoft.AspNetCore.Http.HttpContext.RequestAborted*) 취소 토큰이 취소됩니다.
 
 ### <a name="hosting-model-changes"></a>호스팅 모델 변경
 
@@ -155,7 +157,7 @@ ASP.NET Core 모듈은 사이트의 *web.config* 파일에 있는 `system.webSer
 
 | 특성 | 설명 | 기본 |
 | --------- | ----------- | :-----: |
-| `arguments` | <p>선택적 문자열 특성입니다.</p><p>**processPath**에 지정된 실행 파일에 대한 인수입니다.</p>| |
+| `arguments` | <p>선택적 문자열 특성입니다.</p><p>**processPath**에 지정된 실행 파일에 대한 인수입니다.</p> | |
 | `disableStartUpErrorPage` | <p>선택적 부울 특성입니다.</p><p>true인 경우 **502.5 - 프로세스 실패** 페이지가 표시되지 않고 *web.config*에 구성된 502 상태 코드 페이지가 우선 적용됩니다.</p> | `false` |
 | `forwardWindowsAuthToken` | <p>선택적 부울 특성입니다.</p><p>true인 경우 토큰은 %ASPNETCORE_PORT%에서 수신 대기하는 자식 프로세스에 요청별 헤더 'MS-ASPNETCORE-WINAUTHTOKEN'으로 전달됩니다. 이 프로세스는 요청별로 이 토큰에서 CloseHandle을 호출합니다.</p> | `true` |
 | `hostingModel` | <p>선택적 문자열 특성입니다.</p><p>호스팅 모델을 In-Process(`inprocess`) 또는 Out-of-Process(`outofprocess`)로 지정합니다.</p> | `outofprocess` |
@@ -306,6 +308,50 @@ stdout 로그는 앱 시작 문제를 해결하는 경우에만 사용하는 것
     stdoutLogFile="\\?\%home%\LogFiles\stdout">
 </aspNetCore>
 ```
+
+::: moniker-end
+
+::: moniker range=">= aspnetcore-2.2"
+
+## <a name="enhanced-diagnostic-logs"></a>개선된 진단 로그
+
+ASP.NET Core 모듈 제공은 개선된 진단 로그를 제공하도록 구성할 수 있습니다. *web.config*의 `<aspNetCore>` 요소에 `<handlerSettings>` 요소를 추가합니다. `debugLevel`을 `TRACE`으로 설정하면 진단 정보의 충실도가 높아집니다.
+
+```xml
+<aspNetCore processPath="dotnet"
+    arguments=".\MyApp.dll"
+    stdoutLogEnabled="false"
+    stdoutLogFile="\\?\%home%\LogFiles\stdout"
+    hostingModel="inprocess">
+  <handlerSettings>
+    <handlerSetting name="debugFile" value="aspnetcore-debug.log" />
+    <handlerSetting name="debugLevel" value="FILE,TRACE" />
+  </handlerSettings>
+</aspNetCore>
+```
+
+디버그 수준 (`debugLevel`) 값은 수준과 위치를 모두 포함할 수 있습니다.
+
+수준(최소한에서 가장 자세한 정보까지 순서대로 ):
+
+* 오류
+* 경고
+* 정보
+* TRACE
+
+위치(여러 위치가 허용됨):
+
+* CONSOLE
+* EVENTLOG
+* 파일
+
+처리기 설정은 환경 변수를 통해서도 제공할 수 있습니다.
+
+* `ASPNETCORE_MODULE_DEBUG_FILE` &ndash; 디버그 로그 파일의 경로입니다. (기본값: *aspnetcore-debug.log*)
+* `ASPNETCORE_MODULE_DEBUG` &ndash; 디버그 수준 설정.
+
+> [!WARNING]
+> 배포에서 문제를 해결하는 데 필요한 시간보다 오래 디버그 로깅을 사용하도록 설정하지 **마세요**. 로그의 크기는 제한되지 않습니다. 디버그 로그를 사용하도록 설정한 대로 두면 사용 가능한 디스크 공간이 소진되어 서버 또는 앱 서비스가 크래시될 수 있습니다.
 
 ::: moniker-end
 

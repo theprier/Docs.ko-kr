@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/10/2018
 uid: mvc/views/tag-helpers/builtin-th/cache-tag-helper
-ms.openlocfilehash: 7d64c500168166b0a7a29d5b92473726d5a9f49a
-ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
+ms.openlocfilehash: 2590682755721a4bb14902b9fe7138a3bff56d31
+ms.sourcegitcommit: 54655f1e1abf0b64d19506334d94cfdb0caf55f6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49325343"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "50148813"
 ---
 # <a name="cache-tag-helper-in-aspnet-core-mvc"></a>ASP.NET Core MVC의 캐시 태그 도우미
 
@@ -119,7 +119,7 @@ Razor 보기 엔진은 기본 `expires-after` 값을 20분으로 설정합니다
 | -------------- | -------------------- |
 | 문자열         | `Make`, `Make,Model` |
 
-`vary-by-query`는 헤더 값이 변경되면 캐시 새로 고침을 트리거하는 쉼표로 구분된 헤더 값 목록을 허용합니다.
+`vary-by-query`는 나열된 키 값이 변경될 때 캐시 새로 고침을 트리거하는 쿼리 문자열(<xref:Microsoft.AspNetCore.Http.HttpRequest.Query*>)에 쉼표로 구분된 <xref:Microsoft.AspNetCore.Http.IQueryCollection.Keys*> 목록을 허용합니다.
 
 다음 예제에서는 `Make` 및 `Model` 값을 모니터링합니다. 이 예제는 웹 서버에 제공된 모든 `Make` 및 `Model`에 대한 콘텐츠를 캐시합니다.
 

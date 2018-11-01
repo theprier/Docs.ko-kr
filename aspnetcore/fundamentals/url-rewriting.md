@@ -5,18 +5,18 @@ description: ASP.NET Core 응용 프로그램에서 URL 재작성 미들웨어�
 ms.author: riande
 ms.date: 08/17/2017
 uid: fundamentals/url-rewriting
-ms.openlocfilehash: d9f33f34f75fe7bf534146c5a426335e74635018
-ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
+ms.openlocfilehash: 5a1891c838436467fb49ff6288587fab08201179
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49326071"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50207188"
 ---
 # <a name="url-rewriting-middleware-in-aspnet-core"></a>ASP.NET Core에서 URL 재작성 미들웨어
 
 작성자: [Luke Latham](https://github.com/guardrex) 및 [Mikael Mengistu](https://github.com/mikaelm12)
 
-[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/url-rewriting/sample/)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/url-rewriting/sample/)([다운로드 방법](xref:index#how-to-download-a-sample))
 
 URL 재작성은 하나 이상의 미리 정의된 규칙을 기반으로 하는 요청 URL을 수정하는 작업입니다. URL 재작성은 위치 및 주소가 밀접하게 연결되지 않도록 리소스 위치와 해당 주소 간의 추상화를 만듭니다. URL 재작성이 중요한 몇 가지 시나리오가 있습니다.
 
@@ -399,9 +399,9 @@ ASP.NET Core 1.x로 출시된 미들웨어는 다음과 같은 IIS URL 재작성
 
 ### <a name="method-based-rule"></a>메서드 기반 규칙
 
-메서드를 이용해서 직접 규칙 로직을 구현하고 싶다면 `Add(Action<RewriteContext> applyRule)`를 사용하면 됩니다. `RewriteContext`는 메서드에서 사용할 수 있는 `HttpContext`를 노출합니다. `context.Result`는 추가적인 파이프라인 처리가 수행되는 방법을 결정합니다.
+메서드를 이용해서 직접 규칙 로직을 구현하고 싶다면 `Add(Action<RewriteContext> applyRule)`를 사용하면 됩니다. `RewriteContext`는 메서드에서 사용할 수 있는 `HttpContext`를 노출합니다. `RewriteContext.Result`는 추가적인 파이프라인 처리가 수행되는 방법을 결정합니다.
 
-| context.Result                       | 작업                                                          |
+| `RewriteContext.Result`              | 작업                                                          |
 | ------------------------------------ | --------------------------------------------------------------- |
 | `RuleResult.ContinueRules`(기본값) | 계속 규칙 적용                                         |
 | `RuleResult.EndResponse`             | 규칙 적용을 중지하고 응답 전송                       |
@@ -437,7 +437,7 @@ public void Configure(IApplicationBuilder app)
 
 ### <a name="irule-based-rule"></a>IRule 기반 규칙
 
-`Add(IRule)`을 사용하면 `IRule`을 구현하는 클래스로 직접 규칙 로직을 구현할 수 있습니다. `IRule`을 사용하면 메서드 기반 규칙 방식을 사용하는 것보다 더 많은 유연성을 얻을 수 있습니다. 파생된 클래스는 `ApplyRule` 메서드에 대한 매개 변수를 전달할 수 있는 생성자를 포함할 수 있습니다.
+`Add(IRule)`를 사용하여 `IRule` 인터페이스를 구현하는 클래스에서 사용자 고유의 규칙 논리를 캡슐화합니다. `IRule`을 사용하면 메서드 기반 규칙 방식을 사용하는 것보다 더 많은 유연성을 얻을 수 있습니다. 구현 클래스에는 `ApplyRule` 메서드에 대한 매개 변수를 전달할 수 있는 생성자가 포함될 수 있습니다.
 
 ::: moniker range=">= aspnetcore-2.0"
 
@@ -460,7 +460,7 @@ public void Configure(IApplicationBuilder app)
 
 ::: moniker-end
 
-여러 조건을 충족하도록 `extension` 및 `newPath`에 대한 샘플 앱의 매개 변수 값이 선택됩니다. `extension`매개 변수는 값을 포함하고 있어야 하고, 그 값은 *.png*, *.jpg*, 또는 *.gif* 중 하나이어야 합니다. 만약 `newPath`가 유효하지 않으면 `ArgumentException`이 던져집니다. *image.png*를 요청하면 `/png-images/image.png`로 요청이 리디렉션 됩니다. 그리고 *image.jpg*를 요청하면 `/jpg-images/image.jpg`로 요청이 리디렉션 됩니다. 상태 코드는 301 (영구 이동)으로 설정하고 규칙 처리를 중지하고 응답을 전송하도록 `context.Result`를 설정합니다.
+예제 응용 프로그램은 `extension` 및 `newPath` 매개 변수 값들이 다양한 조건을 만족하는지 검사합니다. `extension`매개 변수는 값을 포함하고 있어야 하고, 그 값은 *.png*, *.jpg*, 또는 *.gif* 중 하나이어야 합니다. 만약 `newPath`가 유효하지 않으면 `ArgumentException`이 던져집니다. *image.png*를 요청하면 `/png-images/image.png`로 요청이 리디렉션 됩니다. 그리고 *image.jpg*를 요청하면 `/jpg-images/image.jpg`로 요청이 리디렉션 됩니다. 상태 코드는 301 (영구 이동)으로 설정하고 규칙 처리를 중지하고 응답을 전송하도록 `context.Result`를 설정합니다.
 
 [!code-csharp[](url-rewriting/sample/RewriteRules.cs?name=snippet2)]
 

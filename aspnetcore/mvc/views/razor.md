@@ -3,14 +3,14 @@ title: ASP.NET Core에 대한 Razor 구문 참조
 author: rick-anderson
 description: 웹 페이지에 서버 기반 코드를 포함하는 Razor 태그 구문에 대해 알아봅니다.
 ms.author: riande
-ms.date: 10/18/2017
+ms.date: 10/26/2018
 uid: mvc/views/razor
-ms.openlocfilehash: d0f4d59cb605cc3cc7cdfa84bfc65399699e475a
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 10f0db168b36fed82def8227b3c3edcf5b57f6d7
+ms.sourcegitcommit: 54655f1e1abf0b64d19506334d94cfdb0caf55f6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36272690"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "50148891"
 ---
 # <a name="razor-syntax-reference-for-aspnet-core"></a>ASP.NET Core에 대한 Razor 구문 참조
 
@@ -404,7 +404,7 @@ Razor 지시문은 `@` 기호 뒤에 예약된 키워드를 사용하여 암시�
 
 Razor가 보기에 대한 코드를 생성하는 원리를 이해하면 지시문의 작동 원리를 쉽게 이해할 수 있습니다.
 
-[!code-html[](razor/sample/Views/Home/Contact8.cshtml)]
+[!code-cshtml[](razor/sample/Views/Home/Contact8.cshtml)]
 
 이 코드는 다음과 비슷한 클래스를 생성합니다.
 
@@ -422,7 +422,7 @@ public class _Views_Something_cshtml : RazorPage<dynamic>
 }
 ```
 
-이 문서의 뒷부분에 나오는 [보기에 대해 생성된 Razor C# 클래스 보기](#viewing-the-razor-c-class-generated-for-a-view) 섹션에서는 생성된 클래스를 보는 방법을 설명합니다.
+이 문서의 뒷부분에 나오는 [보기용으로 생성된 Razor C# 클래스 검사](#inspect-the-razor-c-class-generated-for-a-view) 섹션에서는 생성된 이 클래스를 보는 방법에 대해 설명합니다.
 
 <a name="using"></a>
 ### <a name="using"></a>@using
@@ -497,7 +497,6 @@ Razor는 보기에 전달된 모델에 액세스할 수 있는 `Model` 속성을
 ```
 
 ### <a name="inject"></a>@inject
-
 
 `@inject` 지시문을 사용하면 Razor 페이지에서 [서비스 컨테이너](xref:fundamentals/dependency-injection)의 서비스를 보기에 주입할 수 있습니다. 자세한 내용은 [보기에 종속성 주입](xref:mvc/views/dependency-injection)을 참조하세요.
 
@@ -574,32 +573,76 @@ C# Razor 키워드는 `@(@C# Razor Keyword)`으로 이중 이스케이프되어�
 
 * 클래스
 
-## <a name="viewing-the-razor-c-class-generated-for-a-view"></a>보기에 대해 생성된 Razor C# 클래스 보기
+## <a name="inspect-the-razor-c-class-generated-for-a-view"></a>보기용으로 생성된 Razor C# 클래스 검사
+
+::: moniker range=">= aspnetcore-2.1"
+
+.NET Core SDK 2.1 이상에서는 [Razor SDK](xref:razor-pages/sdk)가 Razor 파일의 컴파일을 처리합니다. 프로젝트를 빌드할 때 Razor SDK는 프로젝트 루트에 *obj/<build_configuration>/<target_framework_moniker>/Razor* 디렉터리를 생성합니다. *Razor* 디렉터리 내의 디렉터리 구조는 프로젝트의 디렉터리 구조를 반영합니다.
+
+.NET Core 2.1을 대상으로 하는 ASP.NET Core 2.1 Razor Pages 프로젝트에서 다음 디렉터리 구조를 고려합니다.
+
+* **Areas/**
+  * **Admin/**
+    * **Pages/**
+      * *Index.cshtml*
+      * *Index.cshtml.cs*
+* **Pages/**
+  * **Shared/**
+    * *_Layout.cshtml*
+  * *_ViewImports.cshtml*
+  * *_ViewStart.cshtml*
+  * *Index.cshtml*
+  * *Index.cshtml.cs*
+
+*Debug* 구성에 프로젝트를 빌드하면 다음 *obj* 디렉터리가 생성됩니다.
+
+* **obj/**
+  * **Debug/**
+    * **netcoreapp2.1/**
+      * **Razor/**
+        * **Areas/**
+          * **Admin/**
+            * **Pages/**
+              * *Index.g.cshtml.cs*
+        * **Pages/**
+          * **Shared/**
+            * *_Layout.g.cshtml.cs*
+          * *_ViewImports.g.cshtml.cs*
+          * *_ViewStart.g.cshtml.cs*
+          * *Index.g.cshtml.cs*
+
+*pages/Index.cshtml*에 대해 생성된 클래스를 보려면 *obj/Debug/netcoreapp2.1/Razor/Pages/Index.g.cshtml.cs*를 엽니다.
+
+::: moniker-end
+
+::: moniker range="<= aspnetcore-2.0"
 
 ASP.NET Core MVC 프로젝트에 다음 클래스를 추가합니다.
 
 [!code-csharp[](razor/sample/Utilities/CustomTemplateEngine.cs)]
 
-MVC에서 추가한 `RazorTemplateEngine`을 `CustomTemplateEngine` 클래스로 재정의합니다.
+`Startup.ConfigureServices`에서 MVC가 추가한 `RazorTemplateEngine`을 `CustomTemplateEngine` 클래스로 재정의합니다.
 
 [!code-csharp[](razor/sample/Startup.cs?highlight=4&range=10-14)]
 
-`CustomTemplateEngine`의 `return csharpDocument` 문에서 중단점을 설정합니다. 중단점에서 프로그램 실행이 중지되면 `generatedCode`의 값을 확인합니다.
+`CustomTemplateEngine`의 `return csharpDocument;` 문에서 중단점을 설정합니다. 중단점에서 프로그램 실행이 중지되면 `generatedCode`의 값을 확인합니다.
 
 ![generatedCode의 텍스트 시각화 도우미 보기](razor/_static/tvr.png)
+
+::: moniker-end
 
 ## <a name="view-lookups-and-case-sensitivity"></a>보기 조회 및 대/소문자 구분
 
 Razor 보기 엔진은 보기에 대한 대/소문자 구분 조회를 수행합니다. 그러나 실제 조회는 기본 파일 시스템에 의해 결정됩니다.
 
-* 파일 기반 원본: 
+* 파일 기반 원본:
   * 파일 시스템이 대/소문자를 구문하지 않은 운영 체제(예: Windows)에서는 실제 파일 공급자 조회에서 대/소문자를 구분하지 않습니다. 예를 들어 `return View("Test")`는 */Views/Home/Test.cshtml*, */Views/home/test.cshtml* 및 기타 대/소문자 구분 변형과 일치하는 항목을 반환합니다.
   * 대/소문자를 구분하는 파일 시스템(예: Linux, OSX 및 `EmbeddedFileProvider`를 사용하는 파일 시스템)에서는 조회 시 대/소문자를 구분합니다. 예를 들어 `return View("Test")`는 */Views/Home/Test.cshtml*과 정확히 일치하는 항목을 찾습니다.
 * 미리 컴파일된 보기: ASP.NET 2.0 이상을 사용하는 경우 모든 운영 체제에서 미리 컴파일된 보기 조회 시 대/소문자를 구분하지 않습니다. 이 동작은 Windows의 물리적 파일 공급자 동작과 동일합니다. 미리 컴파일된 두 보기의 대소문자만 다른 경우 조회 결과가 불명확합니다.
 
 개발자는 파일 및 디렉터리 이름의 대/소문자를 다음의 대/소문자와 매칭하는 것이 좋습니다.
 
-    * 영역, 컨트롤러 및 작업 이름. 
+    * 영역, 컨트롤러 및 작업 이름.
     * Razor 페이지.
-    
+
 대/소문자를 일치시키면 배포 시 기본 파일 시스템에 관계 없이 해당 보기를 잘 찾습니다.

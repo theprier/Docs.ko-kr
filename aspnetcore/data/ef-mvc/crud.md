@@ -3,14 +3,15 @@ title: ASP.NET Core MVC 및 EF Core - CRUD - 2/10
 author: rick-anderson
 description: ''
 ms.author: tdykstra
-ms.date: 03/15/2017
+ms.custom: mvc
+ms.date: 10/24/2018
 uid: data/ef-mvc/crud
-ms.openlocfilehash: de9b0bd1e0346d4c12f256e6226353f1ab47ed11
-ms.sourcegitcommit: f5d403004f3550e8c46585fdbb16c49e75f495f3
+ms.openlocfilehash: 34927415beadaa3f5c9035a9101e3c99f7cbc395
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "49477581"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090825"
 ---
 # <a name="aspnet-core-mvc-with-ef-core---crud---2-of-10"></a>ASP.NET Core MVC 및 EF Core - CRUD - 2/10
 
@@ -91,7 +92,7 @@ http://localhost:1230/Instructor/Index?id=1&CourseID=2021
 <a href="/Students/Edit?studentID=6">Edit</a>
 ```
 
-태그 도우미에 대한 자세한 내용은 [ASP.NET Core의 태그 도우미](xref:mvc/views/tag-helpers/intro)를 참조하세요.
+태그 도우미에 대한 자세한 내용은 <xref:mvc/views/tag-helpers/intro>를 참조하세요.
 
 ### <a name="add-enrollments-to-the-details-view"></a>세부 정보 보기에 등록 추가
 
@@ -121,7 +122,7 @@ http://localhost:1230/Instructor/Index?id=1&CourseID=2021
 
 ID는 행이 삽입될 때 SQL 서버가 자동으로 설정하는 기본 키 값이므로 `Bind` 특성에서 `ID`를 제거했습니다. 사용자의 입력은 ID 값을 설정하지 않습니다.
 
-`Bind` 특성 이외에 try-catch 블록은 스캐폴드 코드에 대해 만든 유일한 변경 내용입니다. `DbUpdateException`에서 파생되는 예외가 변경 내용이 저장되는 동안 발견되는 경우 일반 오류 메시지가 표시됩니다. `DbUpdateException` 예외는 경우에 따라 프로그래밍 오류가 아니라 응용 프로그램에 대한 외부적인 문제로 발생하므로 사용자는 다시 시도하는 것이 좋습니다. 이 샘플에서 구현되지 않지만 프로덕션 품질 응용 프로그램은 예외를 기록합니다. 자세한 내용은 [모니터링 및 원격 분석(Azure로 실제 클라우드 앱 빌드)](https://docs.microsoft.com/aspnet/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/monitoring-and-telemetry)에서 **정보에 대한 로그** 섹션을 참조하세요.
+`Bind` 특성 이외에 try-catch 블록은 스캐폴드 코드에 대해 만든 유일한 변경 내용입니다. `DbUpdateException`에서 파생되는 예외가 변경 내용이 저장되는 동안 발견되는 경우 일반 오류 메시지가 표시됩니다. `DbUpdateException` 예외는 경우에 따라 프로그래밍 오류가 아니라 응용 프로그램에 대한 외부적인 문제로 발생하므로 사용자는 다시 시도하는 것이 좋습니다. 이 샘플에서 구현되지 않지만 프로덕션 품질 응용 프로그램은 예외를 기록합니다. 자세한 내용은 [모니터링 및 원격 분석(Azure로 실제 클라우드 앱 빌드)](/aspnet/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/monitoring-and-telemetry)에서 **정보에 대한 로그** 섹션을 참조하세요.
 
 `ValidateAntiForgeryToken` 특성은 CSRF(사이트 간 요청 위조) 공격을 방지하도록 돕습니다. 토큰은 [FormTagHelper](xref:mvc/views/working-with-forms#the-form-tag-helper)에 의한 보기로 자동으로 주입되며 사용자에 의해 양식이 제출될 때 포함됩니다. 토큰은 `ValidateAntiForgeryToken` 특성으로 유효성이 검사됩니다. CSRF에 대한 자세한 내용은 [위조 방지 요청](../../security/anti-request-forgery.md)을 참조하세요.
 
@@ -277,7 +278,7 @@ HttpPost `Delete` 작업 메서드(`DeleteConfirmed`라는)를 실제 삭제 작
 
 ## <a name="handling-transactions"></a>트랜잭션 처리
 
-기본적으로 Entity Framework는 트랜잭션을 암시적으로 구현합니다. 여러 행 또는 테이블을 변경한 다음, `SaveChanges`를 호출하는 시나리오에서 Entity Framework는 모든 변경 내용이 성공했는지 또는 모두 실패했는지를 자동으로 확인합니다. 일부 변경 내용이 먼저 완료된 다음, 오류가 발생하는 경우 해당 변경 내용이 자동으로 롤백됩니다. 더 많은 컨트롤이 필요한 시나리오의 경우, 예를 들어 트랜잭션의 Entity Framework 밖에서 수행한 작업을 포함하려는 경우 [트랜잭션](https://docs.microsoft.com/ef/core/saving/transactions)을 참조하세요.
+기본적으로 Entity Framework는 트랜잭션을 암시적으로 구현합니다. 여러 행 또는 테이블을 변경한 다음, `SaveChanges`를 호출하는 시나리오에서 Entity Framework는 모든 변경 내용이 성공했는지 또는 모두 실패했는지를 자동으로 확인합니다. 일부 변경 내용이 먼저 완료된 다음, 오류가 발생하는 경우 해당 변경 내용이 자동으로 롤백됩니다. 더 많은 컨트롤이 필요한 시나리오의 경우, 예를 들어 트랜잭션의 Entity Framework 밖에서 수행한 작업을 포함하려는 경우 [트랜잭션](/ef/core/saving/transactions)을 참조하세요.
 
 ## <a name="no-tracking-queries"></a>비 추적 쿼리
 
@@ -291,7 +292,7 @@ HttpPost `Delete` 작업 메서드(`DeleteConfirmed`라는)를 실제 삭제 작
 
 * 업데이트하기 위해 엔터티를 연결하려고 하지만 이전에 다른 목적을 위해 동일한 엔터티를 검색했습니다. 엔터티는 데이터베이스 컨텍스트에서 이미 추적 중이므로 변경하려는 엔터티를 연결할 수 없습니다. 이 상황을 처리하는 한 가지 방법은 이전 쿼리에서 `AsNoTracking`을 호출하는 것입니다.
 
-자세한 내용은 [추적과 비추적 비교](https://docs.microsoft.com/ef/core/querying/tracking)를 참조하세요.
+자세한 내용은 [추적과 비추적 비교](/ef/core/querying/tracking)를 참조하세요.
 
 ## <a name="summary"></a>요약
 

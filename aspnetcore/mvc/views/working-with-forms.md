@@ -3,15 +3,15 @@ title: ASP.NET Core 형식의 태그 도우미
 author: rick-anderson
 description: 형식과 함께 사용되는 기본 제공 태그 도우미를 설명합니다.
 ms.author: riande
-ms.custom: H1Hack27Feb2017
-ms.date: 02/14/2017
+ms.custom: mvc
+ms.date: 10/24/2018
 uid: mvc/views/working-with-forms
-ms.openlocfilehash: e613dc1e85b84cc5e2b8ad2bf3958040257d1966
-ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
-ms.translationtype: HT
+ms.openlocfilehash: efc71cc8d072769cde07e129b6d9bb933fc2f7af
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48911281"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090218"
 ---
 # <a name="tag-helpers-in-forms-in-aspnet-core"></a>ASP.NET Core 형식의 태그 도우미
 
@@ -29,7 +29,7 @@ ms.locfileid: "48911281"
 
 * MVC 컨트롤러 동작 또는 명명된 경로에 대한 HTML [\<FORM>](https://www.w3.org/TR/html401/interact/forms.html) `action` 특성 값을 생성합니다.
 
-* 사이트 간 요청 위조를 방지하기 위해 숨겨진 [요청 확인 토큰](https://docs.microsoft.com/aspnet/mvc/overview/security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages)을 만듭니다(HTTP Post 작업 메서드에서 `[ValidateAntiForgeryToken]` 특성과 함께 사용할 경우).
+* 사이트 간 요청 위조를 방지하기 위해 숨겨진 [요청 확인 토큰](/aspnet/mvc/overview/security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages)을 만듭니다(HTTP Post 작업 메서드에서 `[ValidateAntiForgeryToken]` 특성과 함께 사용할 경우).
 
 * `asp-route-<Parameter Name>` 특성을 제공합니다. 여기서 `<Parameter Name>`을 경로 값에 추가합니다. `Html.BeginForm` 및 `Html.BeginRouteForm`에 대한 `routeValues` 매개 변수는 유사한 기능을 제공합니다.
 
@@ -48,7 +48,7 @@ ms.locfileid: "48911281"
 </form>
 ```
 
-MVC 런타임은 형식 태그 도우미 특성 `asp-controller` 및 `asp-action`에서 `action` 특성 값을 만듭니다. 형식 태그 도우미도 사이트 간 요청 위조를 방지하기 위해 숨겨진 [요청 확인 토큰](https://docs.microsoft.com/aspnet/mvc/overview/security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages)을 만듭니다(HTTP Post 작업 메서드에서 `[ValidateAntiForgeryToken]` 특성과 함께 사용할 경우). 사이트 간 요청 위조로부터 순수한 HTML 형식을 보호하기는 어렵습니다. 형식 태그 도우미는 이러한 서비스를 제공합니다.
+MVC 런타임은 형식 태그 도우미 특성 `asp-controller` 및 `asp-action`에서 `action` 특성 값을 만듭니다. 형식 태그 도우미도 사이트 간 요청 위조를 방지하기 위해 숨겨진 [요청 확인 토큰](/aspnet/mvc/overview/security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages)을 만듭니다(HTTP Post 작업 메서드에서 `[ValidateAntiForgeryToken]` 특성과 함께 사용할 경우). 사이트 간 요청 위조로부터 순수한 HTML 형식을 보호하기는 어렵습니다. 형식 태그 도우미는 이러한 서비스를 제공합니다.
 
 ### <a name="using-a-named-route"></a>명명된 경로 사용
 
@@ -106,12 +106,12 @@ Type expected
 
 |.NET 형식|입력 형식|
 |---|---|
-|Bool|type=”checkbox”|
-|문자열|type=”text”|
-|DateTime|type=”datetime”|
-|Byte|type=”number”|
-|Int|type=”number”|
-|Single, Double|type=”number”|
+|Bool|type="checkbox"|
+|문자열|type="text"|
+|DateTime|type="datetime"|
+|Byte|type="number"|
+|Int|type="number"|
+|Single, Double|type="number"|
 
 
 다음 표에서는 입력 태그 도우미가 특정 입력 형식에 매핑되는 몇 가지 일반적인 [데이터 주석](/dotnet/api/microsoft.aspnetcore.mvc.dataannotations.iattributeadapter) 특성을 보여줍니다(유효성 검사 특성의 일부만 나열됨).
@@ -119,13 +119,13 @@ Type expected
 
 |특성|입력 형식|
 |---|---|
-|[EmailAddress]|type=”email”|
-|[Url]|type=”url”|
-|[HiddenInput]|type=”hidden”|
-|[Phone]|type=”tel”|
-|[DataType(DataType.Password)]| type=”password”|
-|[DataType(DataType.Date)]| type=”date”|
-|[DataType(DataType.Time)]| type=”time”|
+|[EmailAddress]|type="email"|
+|[Url]|type="url"|
+|[HiddenInput]|type="hidden"|
+|[Phone]|type="tel"|
+|[DataType(DataType.Password)]| type="password"|
+|[DataType(DataType.Date)]| type="date"|
+|[DataType(DataType.Time)]| type="time"|
 
 
 예제:
@@ -244,7 +244,6 @@ public IActionResult Edit(int id, int colorIndex)
 *Views/Shared/EditorTemplates/ToDoItem.cshtml* 템플릿:
 
 [!code-HTML[](working-with-forms/sample/final/Views/Shared/EditorTemplates/ToDoItem.cshtml)]
-
 
 >[!NOTE]
 >`for`(`foreach` *아님*)를 항상 사용하여 목록을 반복합니다. LINQ 식에서 인덱서를 평가하는 작업은 비용이 많이 들기 때문에 최소화해야 합니다.
@@ -574,10 +573,10 @@ HTML [\<option>](https://www.w3.org/wiki/HTML/Elements/option) 요소를 추가�
 
 ## <a name="additional-resources"></a>추가 자료
 
-* [태그 도우미](xref:mvc/views/tag-helpers/intro)
+* <xref:mvc/views/tag-helpers/intro>
 * [HTML 형식 요소](https://www.w3.org/TR/html401/interact/forms.html)
 * [요청 확인 토큰](/aspnet/mvc/overview/security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages)
-* [모델 바인딩](xref:mvc/models/model-binding)
-* [모델 유효성 검사](xref:mvc/models/validation)
+* <xref:mvc/models/model-binding>
+* <xref:mvc/models/validation>
 * [IAttributeAdapter 인터페이스](/dotnet/api/Microsoft.AspNetCore.Mvc.DataAnnotations.IAttributeAdapter)
 * [이 문서의 코드 조각](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/views/working-with-forms/sample/final)

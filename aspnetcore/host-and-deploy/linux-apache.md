@@ -4,14 +4,14 @@ description: CentOS에서 Apache를 역방향 프록시 서버로 설정하여 K
 author: spboyer
 ms.author: spboyer
 ms.custom: mvc
-ms.date: 10/09/2018
+ms.date: 10/23/2018
 uid: host-and-deploy/linux-apache
-ms.openlocfilehash: 237646f839a4973074bb64176a024ebb3d32ee4e
-ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
+ms.openlocfilehash: 25545be5e4d9cb922b3aac4f6666503c1143d555
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48913010"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090322"
 ---
 # <a name="host-aspnet-core-on-linux-with-apache"></a>Apache를 사용하여 Linux에서 ASP.NET Core 호스트
 
@@ -57,13 +57,6 @@ dotnet publish --configuration Release
 
 ::: moniker range=">= aspnetcore-2.0"
 
-> [!NOTE]
-> &mdash;역방향 프록시 서버의 유무에 상관없이&mdash; ASP.NET Core 2.0 이상 앱에 대해 지원되는 유효한 호스팅 구성입니다. 자세한 내용은 [Kestrel를 역방향 프록시와 함께 사용할 경우](xref:fundamentals/servers/kestrel#when-to-use-kestrel-with-a-reverse-proxy)를 참조하세요.
-
-::: moniker-end
-
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
-
 [UseAuthentication](/dotnet/api/microsoft.aspnetcore.builder.authappbuilderextensions.useauthentication) 또는 유사한 인증 체계 미들웨어를 호출하기 전에 `Startup.Configure`에서 [UseForwardedHeaders](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersextensions.useforwardedheaders) 메서드를 호출합니다. `X-Forwarded-For` 및 `X-Forwarded-Proto` 헤더를 전달하도록 미들웨어를 구성합니다.
 
 ```csharp
@@ -75,7 +68,9 @@ app.UseForwardedHeaders(new ForwardedHeadersOptions
 app.UseAuthentication();
 ```
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
 
 [UseIdentity](/dotnet/api/microsoft.aspnetcore.builder.builderextensions.useidentity)와 [UseFacebookAuthentication](/dotnet/api/microsoft.aspnetcore.builder.facebookappbuilderextensions.usefacebookauthentication) 또는 유사한 인증 체계 미들웨어를 호출하기 전에 `Startup.Configure`에서 [UseForwardedHeaders](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersextensions.useforwardedheaders) 메서드를 호출합니다. `X-Forwarded-For` 및 `X-Forwarded-Proto` 헤더를 전달하도록 미들웨어를 구성합니다.
 
@@ -93,7 +88,7 @@ app.UseFacebookAuthentication(new FacebookOptions()
 });
 ```
 
----
+::: moniker-end
 
 미들웨어에 [ForwardedHeadersOptions](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions)가 지정되지 않은 경우 전달할 기본 헤더는 `None`입니다.
 
@@ -399,13 +394,17 @@ sudo yum install mod_headers
 
 또한 ‘UI 교정 공격’이라고도 하는[클릭재킹(Clickjacking)](https://blog.qualys.com/securitylabs/2015/10/20/clickjacking-a-common-implementation-mistake-that-can-put-your-websites-in-danger)은 웹 사이트 방문자를 속여서 현재 방문 중인 것과 다른 페이지에서 링크 또는 단추를 클릭하게 하는 악의적인 공격입니다. `X-FRAME-OPTIONS`를 사용하여 사이트를 보호합니다.
 
-*httpd.conf* 파일을 편집합니다.
+클릭재킹 공격을 완화하려면:
 
-```bash
-sudo nano /etc/httpd/conf/httpd.conf
-```
+1. *httpd.conf* 파일을 편집합니다.
 
-`Header append X-FRAME-OPTIONS "SAMEORIGIN"` 줄을 추가합니다. 파일을 저장합니다. Apache를 다시 시작합니다.
+   ```bash
+   sudo nano /etc/httpd/conf/httpd.conf
+   ```
+
+   `Header append X-FRAME-OPTIONS "SAMEORIGIN"` 줄을 추가합니다.
+1. 파일을 저장합니다.
+1. Apache를 다시 시작합니다.
 
 #### <a name="mime-type-sniffing"></a>MIME 형식 검색
 
@@ -485,4 +484,5 @@ sudo nano /etc/httpd/conf.d/ratelimit.conf
 
 ## <a name="additional-resources"></a>추가 자료
 
+* [Linux에서 .NET Core의 필수 구성 요소](/dotnet/core/linux-prerequisites)
 * [프록시 서버 및 부하 분산 장치를 사용하도록 ASP.NET Core 구성](xref:host-and-deploy/proxy-load-balancer)
