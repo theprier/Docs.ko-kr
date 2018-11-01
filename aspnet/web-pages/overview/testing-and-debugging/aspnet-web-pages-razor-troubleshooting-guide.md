@@ -57,7 +57,7 @@ WebMatrix에서 작업 하는 동안 로컬로이 문제를 표시 하는 경우
 
 웹 서버가 원격 서버에 있으면이 오류를 표시 하는 경우 서버 관리자에 게 문의 합니다. 서버에.NET Framework 4 또는 이상이 설치 되어 있도록 합니다. 또한 응용 프로그램이.net Framework의 해당 버전을 사용 하도록 구성 된 응용 프로그램 풀에서 실행 되 고 있는지 확인 합니다.
 
-서버에 대 한 제어를 사용 하는 경우 올바른 버전의.NET Framework 실행 중인지 확인 합니다. 사용할 수 있습니다 실행 하 여 설치를 복구 합니다 `aspnet_regiis -iru` 명령입니다. (예를 들어.NET Framework를 설치한 후 IIS를 설치한 경우 IIS 구성 되지 않습니다 올바르게 ASP.NET 페이지를 실행 합니다.) 자세한 내용은 [ASP.NET IIS Registration Tool (Aspnet\_regiis.exe)](https://msdn.microsoft.com/library/k6h9cz8h(v=vs.100).aspx)합니다.
+서버에 대 한 제어를 사용 하는 경우 올바른 버전의.NET Framework 실행 중인지 확인 합니다. 사용할 수 있습니다 실행 하 여 설치를 복구 합니다 `aspnet_regiis -iru` 명령입니다. (예를 들어.NET Framework를 설치한 후 IIS를 설치한 경우 IIS 구성 되지 않습니다 올바르게 ASP.NET 페이지를 실행 합니다.) 자세한 내용은 [ASP.NET IIS 등록 도구 (Aspnet\_regiis.exe)](https://msdn.microsoft.com/library/k6h9cz8h(v=vs.100).aspx)합니다.
 
 ### <a name="http-error-40314---forbidden"></a>HTTP 오류 403.14-사용 권한 없음
 
