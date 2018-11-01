@@ -6,12 +6,12 @@ monikerRange: '>= aspnetcore-2.1'
 ms.author: tdykstra
 ms.date: 09/10/2018
 uid: signalr/version-differences
-ms.openlocfilehash: 4ac7952f26500285fc1c8f9453feb3ea8b33851a
-ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
+ms.openlocfilehash: 3cec37719b743b3c805ada77249f526278e44599
+ms.sourcegitcommit: 2ef32676c16f76282f7c23154d13affce8c8bf35
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50089831"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50234607"
 ---
 # <a name="differences-between-aspnet-signalr-and-aspnet-core-signalr"></a>ASP.NET SignalR과 ASP.NET Core SignalR의 차이점
 
@@ -56,9 +56,9 @@ app.UseSignalR(routes =>
 });
 ```
 
-### <a name="sticky-sessions-now-required"></a>이제 고정 세션이 필수입니다.
+### <a name="sticky-sessions"></a>고정 세션
 
-ASP.NET SignalR에서는 스케일 아웃이 동작하는 방식으로 인해서 클라이언트가 다시 연결하거나 팜의 모든 서버로 메시지를 전송할 수 있었습니다. 이제 재연결을 지원하지 않을 뿐만 아니라 스케일 아웃 모델이 변경되었기 때문에 이는 더 이상 지원되지 않습니다. 클라이언트가 일단 서버에 연결되면 연결되어 있는 동안 동일한 서버와 상호 작용해야 합니다.
+ASP.NET SignalR의 스케일 아웃 모델에서는 클라이언트가 다시 연결하거나 팜의 모든 서버로 메시지를 전송할 수 있습니다. ASP.NET Core SignalR에서 클라이언트는 연결되어 있는 동안 동일한 서버와 상호 작용해야 합니다. Redis를 사용한 스케일 아웃의 경우 고정 세션이 필수적입니다. [Azure SignalR Service](/azure/azure-signalr/)를 사용한 스케일 아웃의 경우 서비스가 클라이언트에 대한 연결을 처리하기 때문에 고정 세션이 필요하지 않습니다.
 
 ### <a name="single-hub-per-connection"></a>연결당 단일 허브
 
