@@ -15,7 +15,7 @@ ms.locfileid: "50234607"
 ---
 # <a name="differences-between-aspnet-signalr-and-aspnet-core-signalr"></a>ASP.NET SignalR과 ASP.NET Core SignalR의 차이점
 
-ASP.NET Core SignalR은 ASP.NET SignalR 용 클라이언트 또는 서버와 호환되지 않습니다. 이 문서에서는 ASP.NET Core SignalR에서 제거되거나 변경된 기능을 자세히 설명합니다.
+ASP.NET Core SignalR은 ASP.NET SignalR용 클라이언트 또는 서버와 호환되지 않습니다. 이 문서에서는 ASP.NET Core SignalR에서 제거되거나 변경된 기능을 자세히 설명합니다.
 
 ## <a name="how-to-identify-the-signalr-version"></a>SignalR 버전 식별 방법
 
@@ -24,18 +24,18 @@ ASP.NET Core SignalR은 ASP.NET SignalR 용 클라이언트 또는 서버와 호
 | Server NuGet 패키지 | [Microsoft.AspNet.SignalR](https://www.nuget.org/packages/Microsoft.AspNet.SignalR/) | [Microsoft.AspNetCore.App](https://www.nuget.org/packages/Microsoft.AspNetCore.App/) (.NET Core)<br>[Microsoft.AspNetCore.SignalR](https://www.nuget.org/packages/Microsoft.AspNetCore.SignalR/) (.NET Framework) |
 | 클라이언트 NuGet 패키지 | [Microsoft.AspNet.SignalR.Client](https://www.nuget.org/packages/Microsoft.AspNet.SignalR.Client/)<br>[Microsoft.AspNet.SignalR.JS](https://www.nuget.org/packages/Microsoft.AspNet.SignalR.JS/) | [Microsoft.AspNetCore.SignalR.Client](https://www.nuget.org/packages/Microsoft.AspNetCore.SignalR.Client/) |
 | 클라이언트 npm 패키지 | [signalr](https://www.npmjs.com/package/signalr) | [@aspnet/signalr](https://www.npmjs.com/package/@aspnet/signalr) |
-| 서버 앱 형태 | ASP.NET (System.Web) 또는 OWIN 자체 호스트 | ASP.NET Core |
+| 서버 앱 유형 | ASP.NET (System.Web) 또는 OWIN 자체 호스트 | ASP.NET Core |
 | 지원되는 서버 플랫폼 | .NET framework 4.5 이상 | .NET Framework 4.6.1 이상<br>.NET core 2.1 이상 |
 
 ## <a name="feature-differences"></a>기능상의 차이점
 
-### <a name="automatic-reconnects"></a>자동 재연결
+### <a name="automatic-reconnects"></a>자동 다시 연결
 
 ASP.NET Core SignalR은 자동 재연결을 지원하지 않습니다. 클라이언트의 연결이 끊어진 경우 재연결하려면 사용자가 명시적으로 새로운 연결을 시작해야 합니다. ASP.NET SignalR은 연결이 끊어지면 SignalR이 서버에 재연결하려고 시도합니다.
 
 ### <a name="protocol-support"></a>프로토콜 지원
 
-ASP.NET Core SignalR은 JSON 뿐만 아니라 [MessagePack](xref:signalr/messagepackhubprotocol) 기반의 새로운 이진 프로토콜을 지원합니다. 또한 사용자 지정 프로토콜을 만들 수도 있습니다.
+ASP.NET Core SignalR은 JSON뿐만 아니라 [MessagePack](xref:signalr/messagepackhubprotocol) 기반의 새로운 이진 프로토콜을 지원합니다. 또한 사용자 지정 프로토콜을 만들 수도 있습니다.
 
 ## <a name="differences-on-the-server"></a>서버의 차이점
 
@@ -56,7 +56,7 @@ app.UseSignalR(routes =>
 });
 ```
 
-### <a name="sticky-sessions"></a>고정 세션
+### <a name="sticky-sessions-now-required"></a>이제 고정 세션 필요
 
 ASP.NET SignalR의 스케일 아웃 모델에서는 클라이언트가 다시 연결하거나 팜의 모든 서버로 메시지를 전송할 수 있습니다. ASP.NET Core SignalR에서 클라이언트는 연결되어 있는 동안 동일한 서버와 상호 작용해야 합니다. Redis를 사용한 스케일 아웃의 경우 고정 세션이 필수적입니다. [Azure SignalR Service](/azure/azure-signalr/)를 사용한 스케일 아웃의 경우 서비스가 클라이언트에 대한 연결을 처리하기 때문에 고정 세션이 필요하지 않습니다.
 
@@ -70,7 +70,7 @@ ASP.NET Core SignalR에서는 연결 모델이 단순화되었습니다. 단일 
 
 ### <a name="state"></a>상태
 
-진행 메시지 관련 기능뿐만 아니라 클라이언트와 허브 간에 임의의 상태를 전달할 수 있는 기능이 (HubState라고도 부르는) 제거되었습니다. 현재 허브 프록시에 해당하는 기능은 존재하지 않습니다.
+진행 메시지 관련 기능뿐만 아니라 클라이언트와 허브 간에 임의의 상태를 전달할 수 있는 기능(HubState라고도 함)이 제거되었습니다. 현재 허브 프록시에 해당하는 기능은 존재하지 않습니다.
 
 ## <a name="differences-on-the-client"></a>클라이언트의 차이점
 
@@ -123,7 +123,7 @@ connection.start().catch(err => console.error(err.toString()));
 
 ### <a name="net-and-other-clients"></a>.NET 및 기타 클라이언트
 
-`Microsoft.AspNetCore.SignalR.Client` NuGet 패키지에는 ASP.NET Core SignalR 용 .NET 클라이언트 라이브러리가 포함되어 있습니다.
+`Microsoft.AspNetCore.SignalR.Client` NuGet 패키지에는 ASP.NET Core SignalR용 .NET 클라이언트 라이브러리가 포함되어 있습니다.
 
 [HubConnectionBuilder](/dotnet/api/microsoft.aspnetcore.signalr.client.hubconnectionbuilder)를 사용해서 허브에 대한 연결의 인스턴스를 생성하고 빌드합니다.
 
