@@ -7,12 +7,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 06/04/2018
 uid: signalr/groups
-ms.openlocfilehash: d3e580dfc42a36762358899892831c8b68f544b0
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: 02db46f090c487a03171de244ff7ad0d5e9de0fa
+ms.sourcegitcommit: fc2486ddbeb15ab4969168d99b3fe0fbe91e8661
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50207162"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "50758169"
 ---
 # <a name="manage-users-and-groups-in-signalr"></a>SignalR에서 사용자 및 그룹 관리
 
@@ -54,6 +54,8 @@ public Task SendPrivateMessage(string user, string message)
 [!code-csharp[Hub methods](groups/sample/hubs/chathub.cs?range=15-27)]
 
 연결이 다시 연결되더라도 그룹의 멤버 자격은 유지되지 않습니다. 연결이 다시 설정될 때 그룹에 다시 추가해야 합니다. 응용 프로그램이 다수의 서버로 확장되는 경우 필요한 정보를 사용할 수 없기 때문에, 그룹의 구성원 수를 계산하는 것은 불가능합니다.
+
+사용 하 여 그룹을 사용 하는 동안 리소스에 대 한 액세스를 보호 하려면 [인증 및 권한 부여](xref:signalr/authn-and-authz) ASP.NET Core의 기능입니다. 해당 그룹에 전송 된 메시지는 해당 그룹에 대 한 유효한 자격 증명이 그룹에만 사용자를 추가 하는 경우 권한이 있는 사용자만으로 그러나 그룹을 보안 기능이 없습니다. 인증 클레임에 그룹 만료 및 해지 등 하지 않는 기능이 있습니다. 그룹에 액세스 하려면 사용자의 권한을 해지 되 면 수동으로 탐지 하 고 그룹에서 제거 해야 합니다.
 
 > [!NOTE]
 > 그룹 이름은 대소문자를 구분합니다.

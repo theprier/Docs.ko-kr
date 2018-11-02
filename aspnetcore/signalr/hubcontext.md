@@ -5,14 +5,14 @@ description: ASP.NET Core SignalR HubContext 서비스를 사용해서 허브의
 monikerRange: '>= aspnetcore-2.1'
 ms.author: tdykstra
 ms.custom: mvc
-ms.date: 06/13/2018
+ms.date: 11/01/2018
 uid: signalr/hubcontext
-ms.openlocfilehash: 8be888e1f7b16d65ebbaa24b618e84fca029d80b
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: af125791a75a2dd68c236dd8c5b51eecff244ce4
+ms.sourcegitcommit: fc2486ddbeb15ab4969168d99b3fe0fbe91e8661
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50207955"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "50758156"
 ---
 # <a name="send-messages-from-outside-a-hub"></a>허브 외부에서 메시지 전송하기
 
@@ -54,6 +54,27 @@ app.Use(next => async (context) =>
 
 > [!NOTE]
 > 허브 메서드가 `Hub` 클래스의 외부에서 호출되는 경우에는 해당 호출에 대한 호출자가 존재하지 않습니다. 따라서 `ConnectionId`, `Caller` 및 `Others` 속성에는 접근할 수 없습니다.
+
+### <a name="inject-a-strongly-typed-hubcontext"></a>강력한 형식의 HubContext 삽입
+
+허브에서 상속 되도록 강력한 HubContext 삽입할 `Hub<T>`합니다. 사용 하 여 삽입 된 `IHubContext<THub, T>` 인터페이스 대신 `IHubContext<THub>`합니다.
+
+```csharp
+public class ChatController : Controller
+{
+    public IHubContext<ChatHub, IChatClient> _strongChatHubContext { get; }
+
+    public SampleDataController(IHubContext<ChatHub, IChatClient> chatHubContext)
+    {
+        _strongChatHubContext = chatHubContext;
+    }
+
+    public async Task SendMessage(string message)
+    {
+        await _strongChatHubContext.Clients.All.ReceiveMessage(message);
+    }
+}
+```
 
 ## <a name="related-resources"></a>관련 자료
 
