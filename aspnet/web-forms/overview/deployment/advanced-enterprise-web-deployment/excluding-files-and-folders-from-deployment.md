@@ -92,7 +92,7 @@ ms.locfileid: "41838595"
 1. <span data-ttu-id="12927-157">Visual Studio 2010에서 솔루션을 엽니다.</span><span class="sxs-lookup"><span data-stu-id="12927-157">Open your solution in Visual Studio 2010.</span></span>
 2. <span data-ttu-id="12927-158">에 **솔루션 탐색기** 창에서 웹 응용 프로그램 프로젝트 노드를 마우스 오른쪽 단추로 클릭 (예를 들어 **ContactManager.Mvc**), 가리킵니다 **추가**, 클릭하고**새 항목**합니다.</span><span class="sxs-lookup"><span data-stu-id="12927-158">In the **Solution Explorer** window, right-click your web application project node (for example, **ContactManager.Mvc**), point to **Add**, and then click **New Item**.</span></span>
 3. <span data-ttu-id="12927-159">에 **새 항목 추가** 대화 상자를 선택 합니다 **XML 파일** 템플릿.</span><span class="sxs-lookup"><span data-stu-id="12927-159">In the **Add New Item** dialog box, select the **XML File** template.</span></span>
-4. <span data-ttu-id="12927-160">에 **이름** 상자에 입력 *[프로젝트 이름] * * *.wpp.targets** (예를 들어 **ContactManager.Mvc.wpp.targets**)를 클릭 하 고 **추가**.</span><span class="sxs-lookup"><span data-stu-id="12927-160">In the **Name** box, type *[project name]***.wpp.targets** (for example, **ContactManager.Mvc.wpp.targets**), and then click **Add**.</span></span>
+4. <span data-ttu-id="12927-160">에 **이름** 상자에 입력 *[프로젝트 이름] \* \* *.wpp.targets** (예를 들어 **ContactManager.Mvc.wpp.targets**)를 클릭 하 고 **추가**.</span><span class="sxs-lookup"><span data-stu-id="12927-160">In the **Name** box, type *[project name]\*\*\*.wpp.targets*\* (for example, **ContactManager.Mvc.wpp.targets**), and then click **Add**.</span></span>
 
     ![](excluding-files-and-folders-from-deployment/_static/image3.png)
 

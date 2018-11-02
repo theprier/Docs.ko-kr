@@ -91,7 +91,7 @@ ms.locfileid: "41828590"
 
     ![](customizing-database-deployments-for-multiple-environments/_static/image1.png)
 3. <span data-ttu-id="393ba-200">에 **새 배포 구성 파일** 대화 상자에서 파일에 의미 있는 이름을 (예를 들어 **TestEnvironment.sqldeployment**)를 클릭 하 고 **저장**합니다.</span><span class="sxs-lookup"><span data-stu-id="393ba-200">In the **New Deployment Configuration File** dialog box, give the file a meaningful name (for example, **TestEnvironment.sqldeployment**), and then click **Save**.</span></span>
-4. <span data-ttu-id="393ba-201">에 *[Filename] * * *.sqldeployment** 페이지에서 대상 환경의 요구 사항에 맞게 배포 속성을 설정 하 고 파일을 저장 합니다.</span><span class="sxs-lookup"><span data-stu-id="393ba-201">On the *[Filename]***.sqldeployment** page, set the deployment properties to match the requirements of your destination environment, and then save the file.</span></span>
+4. <span data-ttu-id="393ba-201">에 *[Filename] \* \* *.sqldeployment** 페이지에서 대상 환경의 요구 사항에 맞게 배포 속성을 설정 하 고 파일을 저장 합니다.</span><span class="sxs-lookup"><span data-stu-id="393ba-201">On the *[Filename]\*\*\*.sqldeployment*\* page, set the deployment properties to match the requirements of your destination environment, and then save the file.</span></span>
 
     ![](customizing-database-deployments-for-multiple-environments/_static/image2.png)
 5. <span data-ttu-id="393ba-202">데이터베이스 프로젝트의 Properties 폴더로 새 파일 추가 있는지 확인 합니다.</span><span class="sxs-lookup"><span data-stu-id="393ba-202">Notice that the new file is added to the Properties folder in your database project.</span></span>
