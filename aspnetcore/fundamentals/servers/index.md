@@ -6,12 +6,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 09/21/2018
 uid: fundamentals/servers/index
-ms.openlocfilehash: 161ab3fdf48e58d8c9af991dc5531e46d9c5adff
-ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
+ms.openlocfilehash: 6b6ebbe9d31d571ea470fba0989d622dcf6e68af
+ms.sourcegitcommit: fc2486ddbeb15ab4969168d99b3fe0fbe91e8661
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49325863"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "50758208"
 ---
 # <a name="web-server-implementations-in-aspnet-core"></a>ASP.NET Core의 웹 서버 구현
 
@@ -19,7 +19,7 @@ ms.locfileid: "49325863"
 
 ASP.NET Core 앱은 In-process HTTP 서버 구현을 사용하여 실행됩니다. 서버 구현은 HTTP 요청을 수신하고 <xref:Microsoft.AspNetCore.Http.HttpContext>에 구성된 [요청 기능](xref:fundamentals/request-features)의 집합으로 앱에 표시합니다.
 
-ASP.NET Core는 다음 세 가지 서버 구현을 제공합니다.
+ASP.NET Core는 다음과 같은 서버 구현과 함께 제공됩니다.
 
 ::: moniker range=">= aspnetcore-2.2"
 
