@@ -1,16 +1,17 @@
 ---
 title: ASP.NET Core에서 Windows 인증을 구성 합니다.
-author: ardalis
-description: 이 문서에서는 ASP.NET core에서 IIS Express, IIS, HTTP.sys 및 WebListener를 사용 하 여 Windows 인증을 구성 하는 방법을 설명 합니다.
+author: scottaddie
+description: ASP.NET core에서 IIS Express, IIS, HTTP.sys 및 WebListener를 사용 하 여 Windows 인증을 구성 하는 방법에 알아봅니다.
 ms.author: riande
-ms.date: 08/18/2018
+ms.custom: mvc
+ms.date: 11/01/2018
 uid: security/authentication/windowsauth
-ms.openlocfilehash: a8066d248c0d4db1d1f61b2a14bdb4656a2f4265
-ms.sourcegitcommit: ecf2cd4e0613569025b28e12de3baa21d86d4258
+ms.openlocfilehash: 87fcab75555c1dae0b2815c30d79fd4615df9660
+ms.sourcegitcommit: 85f2939af7a167b9694e1d2093277ffc9a741b23
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43312414"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50968295"
 ---
 # <a name="configure-windows-authentication-in-aspnet-core"></a>ASP.NET Core에서 Windows 인증을 구성 합니다.
 
@@ -98,6 +99,9 @@ Kestrel은 Windows 인증을 지원 하지 않지만 사용할 수 있습니다 
 
 > [!NOTE]
 > HTTP.sys는 Kerberos 인증 프로토콜을 사용하여 커널 모드 인증에 위임합니다. 사용자 모드 인증은 Kerberos 및 HTTP.sys로 지원되지 않습니다. 머신 계정은 Active Directory에서 가져온 Kerberos 토큰/티켓의 암호를 해독하는 데 사용되고 사용자를 인증하는 서버에 클라이언트에 의해 전달되어야 합니다. 앱의 사용자가 아닌 호스트에 대해 SPN(서비스 사용자 이름)을 등록합니다.
+
+> [!NOTE]
+> HTTP.sys는 Nano Server 버전 1709 이상에서 지원 되지 않습니다. Nano Server를 사용 하 여 Windows 인증 및 HTTP.sys를 사용 하려면 사용 된 [Server Core (microsoft/windowsservercore) 컨테이너](https://hub.docker.com/r/microsoft/windowsservercore/)합니다. Server Core에 대 한 자세한 내용은 참조 하세요. [Windows Server의 Server Core 설치 옵션 이란?](/windows-server/administration/server-core/what-is-server-core)합니다.
 
 ::: moniker-end
 
