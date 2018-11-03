@@ -179,8 +179,8 @@
 ### [Mac용 Visual Studio를 사용하는 Web API](xref:tutorials/first-web-api-mac)
 ### [네이티브 모바일 앱용 Web API](xref:mobile/native-mobile-backend)
 ## Swagger/OpenAPI
-### [개요](xref:tutorials/get-started-with-swashbuckle)
-### [Swagger 도움말 페이지](xref:tutorials/web-api-help-pages-using-swagger)
+### [개요](xref:tutorials/web-api-help-pages-using-swagger)
+### [Swashbuckle 시작](xref:tutorials/get-started-with-swashbuckle)
 ### [NSwag 시작](xref:tutorials/get-started-with-nswag)
 ## [작업 반환 형식](xref:web-api/action-return-types)
 ## [응답 데이터 서식 지정](xref:web-api/advanced/formatting)
