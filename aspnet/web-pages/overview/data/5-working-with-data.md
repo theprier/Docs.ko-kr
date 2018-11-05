@@ -1,19 +1,19 @@
 ---
 uid: web-pages/overview/data/5-working-with-data
 title: Asp.net에서 데이터베이스를 사용 하 여 작업 소개 페이지 (Razor) 사이트 | Microsoft Docs
-author: tfitzmac
+author: Rick-Anderson
 description: 데이터베이스에서 데이터에 액세스 하 여 ASP.NET 웹 페이지를 사용 하 여 표시 하는 방법을 설명이 합니다.
 ms.author: riande
 ms.date: 02/18/2014
 ms.assetid: 673d502f-2c16-4a6f-bb63-dbfd9a77ef47
 msc.legacyurl: /web-pages/overview/data/5-working-with-data
 msc.type: authoredcontent
-ms.openlocfilehash: b6db23c6f9bba418dff7e6b50bbc1c54f13ccb70
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: a688761c87376aa93463c13eaa07858d3acb9dc2
+ms.sourcegitcommit: 2d3e5422d530203efdaf2014d1d7df31f88d08d0
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41827801"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51021692"
 ---
 <a name="introduction-to-working-with-a-database-in-aspnet-web-pages-razor-sites"></a>Asp.net에서 데이터베이스를 사용 하 여 작업 소개 페이지 (Razor) 사이트
 ====================

@@ -1,19 +1,19 @@
 ---
 uid: signalr/overview/performance/signalr-connection-density-testing-with-crank
 title: SignalR 연결 밀도 크랭크를 사용 하 여 테스트 | Microsoft Docs
-author: tfitzmac
+author: Rick-Anderson
 description: SignalR 연결 밀도 크랭크를 사용 하 여 테스트
 ms.author: riande
 ms.date: 02/22/2015
 ms.assetid: 148d9ca7-1af1-44b6-a9fb-91e261b9b463
 msc.legacyurl: /signalr/overview/performance/signalr-connection-density-testing-with-crank
 msc.type: authoredcontent
-ms.openlocfilehash: feda4906995c6a5b25de4bc54ef96b2d6803eb59
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 556accb1bcc18e9e4d1f813a87fc6f4b67bda088
+ms.sourcegitcommit: 2d3e5422d530203efdaf2014d1d7df31f88d08d0
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41829132"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51021484"
 ---
 <a name="signalr-connection-density-testing-with-crank"></a>SignalR 연결 밀도 크랭크를 사용 하 여 테스트
 ====================
@@ -61,7 +61,7 @@ ms.locfileid: "41829132"
 - **SampleInterval**: 성능 카운터 샘플 간격 (밀리초) 시간입니다. 기본값은 1000입니다.
 - **SignalRInstance**: 서버에서 성능 카운터에 대 한 인스턴스 이름입니다. 기본은 클라이언트 연결 상태를 사용 하는 것입니다.
 
-### <a name="example"></a>예
+### <a name="example"></a>예제
 
 다음 명령을 호출 하는 사이트를 테스트 합니다 `pfsignalr` "ControllerHub" 라는 허브를 사용 하 여 포트 8080에서 응용 프로그램을 호스트 하는 Azure에서 100 개의 연결을 사용 합니다.
 

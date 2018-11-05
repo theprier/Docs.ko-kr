@@ -1,19 +1,19 @@
 ---
 uid: web-pages/overview/getting-started/introducing-aspnet-web-pages-2/layouts
 title: ASP.NET 웹 페이지 소개-일관적인 레이아웃 만들기 | Microsoft Docs
-author: tfitzmac
+author: Rick-Anderson
 description: 이 자습서에서는 ASP.NET 웹 페이지를 사용 하는 사이트에서 페이지에 일관 된 모양을 만들려면 레이아웃을 사용 하는 방법을 보여 줍니다. 완료 했다고 가정 하는 중...
 ms.author: riande
 ms.date: 05/28/2015
 ms.assetid: c85ec591-f8d7-4882-b763-de6ab9f3df7a
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/layouts
 msc.type: authoredcontent
-ms.openlocfilehash: 8f3d9e8a6f6a0179224e18faf11db3dc1510a095
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: a6a007678d58547e9987ebda46bd08ae8aea66f7
+ms.sourcegitcommit: 2d3e5422d530203efdaf2014d1d7df31f88d08d0
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41838738"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51021181"
 ---
 <a name="introducing-aspnet-web-pages---creating-a-consistent-layout"></a>ASP.NET 웹 페이지 소개-일관적인 레이아웃 만들기
 ====================

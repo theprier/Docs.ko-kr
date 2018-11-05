@@ -1,19 +1,19 @@
 ---
 uid: web-pages/overview/mobile/rendering-aspnet-web-pages-sites-for-mobile-devices
 title: 모바일 장치에 대 한 페이지 (Razor) 사이트 ASP.NET 웹 렌더링 | Microsoft Docs
-author: tfitzmac
+author: Rick-Anderson
 description: '이 문서에는 모바일 장치에 적절 하 게 렌더링 하는 ASP.NET Web Pages (Razor) 사이트에서 페이지를 만드는 방법을 설명 합니다. 학습할 내용: 있습니다 방법...'
 ms.author: riande
 ms.date: 02/17/2014
 ms.assetid: f15ab392-c05e-4269-83bf-7c6d2b8c8ec8
 msc.legacyurl: /web-pages/overview/mobile/rendering-aspnet-web-pages-sites-for-mobile-devices
 msc.type: authoredcontent
-ms.openlocfilehash: 7159283efcd4a82d5dff68f2d9e315f804e7cdcb
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: dd06a54d396bd85eeef7c004ee115828d541a2c1
+ms.sourcegitcommit: 2d3e5422d530203efdaf2014d1d7df31f88d08d0
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41836744"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51020939"
 ---
 <a name="rendering-aspnet-web-pages-razor-sites-for-mobile-devices"></a>모바일 장치에 대 한 ASP.NET 웹 페이지 (Razor) 사이트 렌더링
 ====================

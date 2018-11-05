@@ -1,19 +1,19 @@
 ---
 uid: web-pages/overview/getting-started/introducing-aspnet-web-pages-2/entering-data
 title: ASP.NET 웹 페이지 소개-Forms를 사용 하 여 데이터베이스 데이터를 입력 합니다. | Microsoft Docs
-author: tfitzmac
+author: Rick-Anderson
 description: 이 자습서 입력 폼을 만들고 다음 얻을 수 있는 폼에서 데이터베이스 테이블에 ASP.NET 웹 페이지 (...를 사용할 때 데이터를 입력 하는 방법을 보여 줍니다.
 ms.author: riande
 ms.date: 05/28/2015
 ms.assetid: d37c93fc-25fd-4e94-8671-0d437beef206
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/entering-data
 msc.type: authoredcontent
-ms.openlocfilehash: 453ed888bc219175c5a3a25f857dfa79ab22b608
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: e40d2962ccac56eaaf4812819aa42168e69295bc
+ms.sourcegitcommit: 2d3e5422d530203efdaf2014d1d7df31f88d08d0
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41836732"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51021731"
 ---
 <a name="introducing-aspnet-web-pages---entering-database-data-by-using-forms"></a>ASP.NET 웹 페이지 소개-Forms를 사용 하 여 데이터베이스 데이터를 입력 합니다.
 ====================

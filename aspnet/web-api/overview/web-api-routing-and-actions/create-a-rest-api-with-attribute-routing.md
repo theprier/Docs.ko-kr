@@ -8,12 +8,12 @@ ms.date: 06/26/2013
 ms.assetid: 23fc77da-2725-4434-99a0-ff872d96336b
 msc.legacyurl: /web-api/overview/web-api-routing-and-actions/create-a-rest-api-with-attribute-routing
 msc.type: authoredcontent
-ms.openlocfilehash: 3b66f02c9be6441ff7d6c38d6180cc8556c6b8b9
-ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
+ms.openlocfilehash: 18a44c280e6df1603837938d24d7d639d8c87cc2
+ms.sourcegitcommit: 2d3e5422d530203efdaf2014d1d7df31f88d08d0
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48912893"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51021419"
 ---
 <a name="create-a-rest-api-with-attribute-routing-in-aspnet-web-api-2"></a>ASP.NET Web API 2에서에서 특성 라우팅을 사용 하 여 REST API 만들기
 ====================
@@ -52,11 +52,11 @@ Web API 2에는 새 형식을 지 원하는 라우팅의 호출 *특성 라우�
 
 Visual Studio를 실행 하 여 시작 합니다. **파일** 메뉴에서 **새로 만들기** 선택한 후 **프로젝트**합니다.
 
-확장 된 **설치 됨** > **Visual C#** 범주입니다. 아래 **Visual C#** 를 선택 **웹**합니다. 프로젝트 템플릿 목록에서 선택 **ASP.NET MVC 4 웹 응용 프로그램**합니다. 프로젝트 이름을 &quot;BooksAPI&quot;합니다.
+확장 된 **설치 됨** > **Visual C#** 범주입니다. 아래 **Visual C#** 를 선택 **웹**합니다. 프로젝트 템플릿 목록에서 선택 **ASP.NET 웹 응용 프로그램 (.NET Framework)** 합니다. 프로젝트 이름을 &quot;BooksAPI&quot;합니다.
 
 ![](create-a-rest-api-with-attribute-routing/_static/image1.png)
 
-에 **새 ASP.NET 프로젝트** 대화 상자에서 선택 합니다 **빈** 템플릿. "폴더를 추가 및 코어에 대 한 참조"를 선택 합니다 **Web API** 확인란을 선택 합니다. 클릭 **프로젝트를 만들**합니다.
+에 **새 ASP.NET 웹 응용 프로그램** 대화 상자에서 선택 합니다 **빈** 템플릿. "폴더를 추가 및 코어에 대 한 참조"를 선택 합니다 **Web API** 확인란을 선택 합니다. **확인**을 클릭합니다.
 
 ![](create-a-rest-api-with-attribute-routing/_static/image2.png)
 
@@ -86,7 +86,7 @@ Ctrl+Shift+B를 눌러 프로젝트를 빌드합니다. Entity Framework 리플�
 
 ![](create-a-rest-api-with-attribute-routing/_static/image4.png)
 
-에 **스 캐 폴드 추가** 대화 상자에서 "Web API 2 Entity Framework를 사용 하 여 읽기/쓰기 동작이 포함 된 컨트롤러입니다."
+에 **스 캐 폴드 추가** 대화 상자에서 **Entity Framework를 사용 하 여 작업을 사용 하 여 Web API 2 컨트롤러**합니다.
 
 [![](create-a-rest-api-with-attribute-routing/_static/image6.png)](create-a-rest-api-with-attribute-routing/_static/image5.png)
 

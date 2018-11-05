@@ -1,19 +1,19 @@
 ---
 uid: web-pages/overview/security/enabling-login-from-external-sites-in-an-aspnet-web-pages-site
 title: 페이지 (Razor) 사이트를 외부 ASP.NET 웹 사이트를 사용 하 여 로그인 합니다. | Microsoft Docs
-author: tfitzmac
+author: Rick-Anderson
 description: 이 문서에서는 Facebook, Google, Twitter, Yahoo 및 다른 사이트를 사용 하 여 ASP.NET Web Pages (Razor) 사이트에 로그인 하는 방법에 설명-즉, 지 원하는 방법...
 ms.author: riande
 ms.date: 02/21/2014
 ms.assetid: ef852096-a5bf-47b3-9945-125cde065093
 msc.legacyurl: /web-pages/overview/security/enabling-login-from-external-sites-in-an-aspnet-web-pages-site
 msc.type: authoredcontent
-ms.openlocfilehash: a74b13e9d1ddb5bc02f4ea5184108de5e014ead0
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 188a9203ba7b04f5a88d0f802f1a05bf35d58d8c
+ms.sourcegitcommit: 2d3e5422d530203efdaf2014d1d7df31f88d08d0
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41827532"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51021133"
 ---
 <a name="logging-in-using-external-sites-in-an-aspnet-web-pages-razor-site"></a>외부 사이트를 사용 하 여 ASP.NET 웹 페이지 (Razor) 사이트에 로그인
 ====================

@@ -1,19 +1,19 @@
 ---
 uid: web-pages/overview/getting-started/introducing-razor-syntax-vb
 title: Razor 구문 (Visual Basic)를 사용 하 여 ASP.NET 웹 프로그래밍 소개 | Microsoft Docs
-author: tfitzmac
+author: Rick-Anderson
 description: 이 부록 개요를 제공 ASP.NET 웹 페이지를 사용 하 여 프로그래밍의 Visual basic에서는 Razor 구문을 사용 합니다.
 ms.author: riande
 ms.date: 02/07/2014
 ms.assetid: 5da59646-e973-41cd-88a9-c6b2c0594027
 msc.legacyurl: /web-pages/overview/getting-started/introducing-razor-syntax-vb
 msc.type: authoredcontent
-ms.openlocfilehash: cbec035533c37723afcd5bf4aa0c6e1c83dbae23
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 17a3a4925766b74446955a8e3a6fddbf9d29a721
+ms.sourcegitcommit: 2d3e5422d530203efdaf2014d1d7df31f88d08d0
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41834766"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51021705"
 ---
 <a name="introduction-to-aspnet-web-programming-using-the-razor-syntax-visual-basic"></a>Razor 구문 (Visual Basic)를 사용 하 여 ASP.NET 웹 프로그래밍 소개
 ====================
@@ -275,13 +275,13 @@ Razor 구문 주석은 코드 블록 내에서 사용 하거나 작은따옴표�
 
 :::row:::
     :::column:::
-        <strong>메서드</strong>
+        <strong>Method</strong>
     :::column-end:::
     :::column:::
-        <strong>설명</strong>
+        <strong>Description</strong>
     :::column-end:::
     :::column:::
-        <strong>예제</strong>
+        <strong>Example</strong>
     :::column-end:::
 :::row-end:::
 * * *
@@ -290,7 +290,7 @@ Razor 구문 주석은 코드 블록 내에서 사용 하거나 작은따옴표�
         `AsInt(), IsInt()`
     :::column-end:::
     :::column:::
-        정수를 나타내는 문자열을 변환 합니다 (같은 &quot;593&quot;)는 정수입니다.
+        Converts a string that represents a whole number (like &quot;593&quot;) to an integer.
     :::column-end:::
     :::column:::
         [!code-vb[Main](introducing-razor-syntax-vb/samples/sample23.vb)]
@@ -302,7 +302,7 @@ Razor 구문 주석은 코드 블록 내에서 사용 하거나 작은따옴표�
         `AsBool(), IsBool()`
     :::column-end:::
     :::column:::
-        와 같은 문자열 변환 &quot;true&quot; 또는 &quot;false&quot; 부울 형식입니다.
+        Converts a string like &quot;true&quot; or &quot;false&quot; to a Boolean type.
     :::column-end:::
     :::column:::
         [!code-vb[Main](introducing-razor-syntax-vb/samples/sample24.vb)]
@@ -314,7 +314,7 @@ Razor 구문 주석은 코드 블록 내에서 사용 하거나 작은따옴표�
         `AsFloat(), IsFloat()`
     :::column-end:::
     :::column:::
-        와 같은 10 진수 값이 있는 문자열로 변환 &quot;1.3&quot; 또는 &quot;7.439&quot; 부동 소수점 수입니다.
+        Converts a string that has a decimal value like &quot;1.3&quot; or &quot;7.439&quot; to a floating-point number.
     :::column-end:::
     :::column:::
         [!code-vb[Main](introducing-razor-syntax-vb/samples/sample25.vb)]
@@ -326,7 +326,8 @@ Razor 구문 주석은 코드 블록 내에서 사용 하거나 작은따옴표�
         `AsDecimal(), IsDecimal()`
     :::column-end:::
     :::column:::
-        와 같은 10 진수 값이 있는 문자열로 변환 &quot;1.3&quot; 하거나 &quot;7.439&quot; 소수입니다. (ASP.NET, 10 진수는 부동 소수점 숫자를 보다 정확 합니다.) :::column-end:::
+        Converts a string that has a decimal value like &quot;1.3&quot; or &quot;7.439&quot; to a decimal number. (In ASP.NET, a decimal number is more precise than a floating-point number.)
+    :::column-end:::
     :::column:::
         [!code-vb[Main](introducing-razor-syntax-vb/samples/sample26.vb)]
     :::column-end:::
@@ -337,7 +338,7 @@ Razor 구문 주석은 코드 블록 내에서 사용 하거나 작은따옴표�
         `AsDateTime(), IsDateTime()`
     :::column-end:::
     :::column:::
-        Asp.net은 날짜 및 시간 값을 나타내는 문자열을 변환 `DateTime` 형식입니다.
+        Converts a string that represents a date and time value to the ASP.NET `DateTime` type.
     :::column-end:::
     :::column:::
         [!code-vb[Main](introducing-razor-syntax-vb/samples/sample27.vb)]
@@ -349,7 +350,7 @@ Razor 구문 주석은 코드 블록 내에서 사용 하거나 작은따옴표�
         `ToString()`
     :::column-end:::
     :::column:::
-        다른 데이터 형식 문자열로 변환합니다.
+        Converts any other data type to a string.
     :::column-end:::
     :::column:::
         [!code-vb[Main](introducing-razor-syntax-vb/samples/sample28.vb)]
@@ -367,10 +368,10 @@ Razor 구문 주석은 코드 블록 내에서 사용 하거나 작은따옴표�
         <strong>Operator</strong>
     :::column-end:::
     :::column:::
-        <strong>설명</strong>
+        <strong>Description</strong>
     :::column-end:::
     :::column:::
-        <strong>예제</strong>
+        <strong>Examples</strong>
     :::column-end:::
 :::row-end:::
 * * *
@@ -379,7 +380,7 @@ Razor 구문 주석은 코드 블록 내에서 사용 하거나 작은따옴표�
         `+ - * /`
     :::column-end:::
     :::column:::
-        숫자 식에 사용 되는 수학 연산자.
+        Math operators used in numerical expressions.
     :::column-end:::
     :::column:::
         [!code-vb[Main](introducing-razor-syntax-vb/samples/sample29.vb)]
@@ -391,7 +392,7 @@ Razor 구문 주석은 코드 블록 내에서 사용 하거나 작은따옴표�
         `=`
     :::column-end:::
     :::column:::
-        할당 및 같음입니다. 컨텍스트에 따라 왼쪽에 있는 개체 문의 오른쪽에 있는 값을 할당 하거나 하거나 같음에 대 한 값을 확인 합니다.
+        Assignment and equality. Depending on context, either assigns the value on the right side of a statement to the object on the left side, or checks the values for equality.
     :::column-end:::
     :::column:::
         [!code-vb[Main](introducing-razor-syntax-vb/samples/sample30.vb)]
@@ -403,7 +404,7 @@ Razor 구문 주석은 코드 블록 내에서 사용 하거나 작은따옴표�
         `<>`
     :::column-end:::
     :::column:::
-        같지 않음 반환 `True` 값 같지 않은 경우.
+        Inequality. Returns `True` if the values are not equal.
     :::column-end:::
     :::column:::
         [!code-vb[Main](introducing-razor-syntax-vb/samples/sample31.vb)]
@@ -415,7 +416,7 @@ Razor 구문 주석은 코드 블록 내에서 사용 하거나 작은따옴표�
         `< > <= >=`
     :::column-end:::
     :::column:::
-        보다 작음, 보다 큼, 작거나 보다 같음, 및 보다 크거나 같음.
+        Less than, greater than, less than or equal, and greater than or equal.
     :::column-end:::
     :::column:::
         [!code-vb[Main](introducing-razor-syntax-vb/samples/sample32.vb)]
@@ -427,7 +428,7 @@ Razor 구문 주석은 코드 블록 내에서 사용 하거나 작은따옴표�
         `&`
     :::column-end:::
     :::column:::
-        연결 문자열을 조인 하는 데 사용 됩니다.
+        Concatenation, which is used to join strings.
     :::column-end:::
     :::column:::
         [!code-vbhtml[Main](introducing-razor-syntax-vb/samples/sample33.vbhtml)]
@@ -439,7 +440,7 @@ Razor 구문 주석은 코드 블록 내에서 사용 하거나 작은따옴표�
         `+= -=`
     :::column-end:::
     :::column:::
-        증가 및 감소 연산자의 추가 하 고 변수에서 각각 1을 뺍니다.
+        The increment and decrement operators, which add and subtract 1 (respectively) from a variable.
     :::column-end:::
     :::column:::
         [!code-vb[Main](introducing-razor-syntax-vb/samples/sample34.vb)]
@@ -451,7 +452,7 @@ Razor 구문 주석은 코드 블록 내에서 사용 하거나 작은따옴표�
         `.`
     :::column-end:::
     :::column:::
-        점입니다. 개체 및 해당 속성 및 메서드를 구분 하는 데 사용 합니다.
+        Dot. Used to distinguish objects and their properties and methods.
     :::column-end:::
     :::column:::
         [!code-vb[Main](introducing-razor-syntax-vb/samples/sample35.vb)]
@@ -463,7 +464,7 @@ Razor 구문 주석은 코드 블록 내에서 사용 하거나 작은따옴표�
         `()`
     :::column-end:::
     :::column:::
-        괄호입니다. 그룹 식에 사용 하 여 배열 및 컬렉션의 멤버에 액세스 하는 방법에 매개 변수를 전달 합니다.
+        Parentheses. Used to group expressions, to pass parameters to methods, and to access members of arrays and collections.
     :::column-end:::
     :::column:::
         [!code-vbhtml[Main](introducing-razor-syntax-vb/samples/sample36.vbhtml)]
@@ -475,7 +476,7 @@ Razor 구문 주석은 코드 블록 내에서 사용 하거나 작은따옴표�
         `Not`
     :::column-end:::
     :::column:::
-        되지 않습니다. False로 또는 그 반대로 true 값을 반대로 바꿉니다. 일반적으로 테스트 하는 약식 방법으로 사용 `False` (즉,에 대 한 없습니다 `True`).
+        Not. Reverses a true value to false and vice versa. Typically used as a shorthand way to test for `False` (that is, for not `True`).
     :::column-end:::
     :::column:::
         [!code-vb[Main](introducing-razor-syntax-vb/samples/sample37.vb)]
@@ -487,7 +488,7 @@ Razor 구문 주석은 코드 블록 내에서 사용 하거나 작은따옴표�
         `AndAlso OrElse`
     :::column-end:::
     :::column:::
-        논리적 AND 또는 및 연결 하는 데 사용 되는 조건 그룹화 합니다.
+        Logical AND and OR, which are used to link conditions together.
     :::column-end:::
     :::column:::
         [!code-vb[Main](introducing-razor-syntax-vb/samples/sample38.vb)]

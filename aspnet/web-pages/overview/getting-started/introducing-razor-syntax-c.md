@@ -1,19 +1,19 @@
 ---
 uid: web-pages/overview/getting-started/introducing-razor-syntax-c
 title: Razor 구문 (C#)를 사용 하 여 ASP.NET 웹 프로그래밍 소개 | Microsoft Docs
-author: tfitzmac
+author: Rick-Anderson
 description: 이 장의 개요를 제공 프로그래밍의 ASP.NET 웹 페이지를 사용 하 여 Razor 구문을 사용 합니다. ASP.NET은 동적 웹 pa를 실행 하기 위한 Microsoft의 기술 하는 중...
 ms.author: riande
 ms.date: 02/07/2014
 ms.assetid: aa67d304-583b-4bf8-a231-195656cfb587
 msc.legacyurl: /web-pages/overview/getting-started/introducing-razor-syntax-c
 msc.type: authoredcontent
-ms.openlocfilehash: b242bf52bbd63d726e6ce6ab7be01a1b81c5bf1b
-ms.sourcegitcommit: fc2486ddbeb15ab4969168d99b3fe0fbe91e8661
+ms.openlocfilehash: b5eb98dfdf3fc013920f45080d4a20e1fa507725
+ms.sourcegitcommit: 2d3e5422d530203efdaf2014d1d7df31f88d08d0
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "50758260"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51021783"
 ---
 <a name="introduction-to-aspnet-web-programming-using-the-razor-syntax-c"></a>Razor 구문 (C#)를 사용 하 여 ASP.NET 웹 프로그래밍 소개
 ====================

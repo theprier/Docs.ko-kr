@@ -1,19 +1,19 @@
 ---
 uid: web-pages/overview/ui-layouts-and-themes/validating-user-input-in-aspnet-web-pages-sites
 title: 페이지 (Razor) 사이트를 Asp.net에서 사용자 입력 유효성 검사 | Microsoft Docs
-author: tfitzmac
+author: Rick-Anderson
 description: 이 문서에서는 사용자 로부터 얻은 정보를 확인 하는 방법을 설명 &mdash; , 있는지는 사용자가 입력 유효한 html에서 정보에서에서 forms AS...
 ms.author: riande
 ms.date: 02/20/2014
 ms.assetid: 4eb060cc-cf14-41ae-bab1-14a2c15332d0
 msc.legacyurl: /web-pages/overview/ui-layouts-and-themes/validating-user-input-in-aspnet-web-pages-sites
 msc.type: authoredcontent
-ms.openlocfilehash: 761d6965883f46e1253f1fb0105cb0d4539fcf9d
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 8f049adce33e452896b5e2a444635ff30d18e480
+ms.sourcegitcommit: 2d3e5422d530203efdaf2014d1d7df31f88d08d0
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41829643"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51021523"
 ---
 <a name="validating-user-input-in-aspnet-web-pages-razor-sites"></a>ASP.NET 웹 페이지 (Razor) 사이트에서 사용자 입력 유효성 검사
 ====================

@@ -1,19 +1,19 @@
 ---
 uid: web-pages/overview/data/working-with-files
 title: ASP.NET 웹 페이지 (Razor) 사이트에서 파일 작업 | Microsoft Docs
-author: tfitzmac
+author: Rick-Anderson
 description: 이 읽기, 쓰기, 추가, 삭제 및 파일을 업로드 하는 방법을 설명 합니다.
 ms.author: riande
 ms.date: 02/20/2014
 ms.assetid: eee916e4-ba4c-439a-a24e-68df7d45a569
 msc.legacyurl: /web-pages/overview/data/working-with-files
 msc.type: authoredcontent
-ms.openlocfilehash: 20fdbfda7d3e4b214a8e201c4a815a29c5bb7061
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 8b9176cb88f6e460fe5494167d4a5880456530aa
+ms.sourcegitcommit: 2d3e5422d530203efdaf2014d1d7df31f88d08d0
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41826666"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51021562"
 ---
 <a name="working-with-files-in-an-aspnet-web-pages-razor-site"></a>ASP.NET 웹 페이지 (Razor) 사이트에서 파일 사용
 ====================

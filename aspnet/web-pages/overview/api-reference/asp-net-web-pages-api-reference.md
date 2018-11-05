@@ -1,19 +1,19 @@
 ---
 uid: web-pages/overview/api-reference/asp-net-web-pages-api-reference
 title: ASP.NET 웹 페이지 (Razor) API 빠른 참조 | Microsoft Docs
-author: tfitzmac
+author: Rick-Anderson
 description: 이 페이지에는 가장 일반적으로 사용 되는 개체, 속성 및 Razor 구문이 있는 ASP.NET 웹 페이지를 프로그래밍 하는 방법의 간단한 예를 사용 하 여 목록을 포함 합니다.
 ms.author: riande
 ms.date: 02/10/2014
 ms.assetid: 4001cb9b-3bfd-4ace-8a89-1561d8421e2c
 msc.legacyurl: /web-pages/overview/api-reference/asp-net-web-pages-api-reference
 msc.type: authoredcontent
-ms.openlocfilehash: a10446eb621feb26c485384700ad9980cccf5d8b
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 656987f8a725f81dbca7a72594d7d03bc542fabe
+ms.sourcegitcommit: 2d3e5422d530203efdaf2014d1d7df31f88d08d0
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41826667"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51021626"
 ---
 <a name="aspnet-web-pages-razor-api-quick-reference"></a>ASP.NET 웹 페이지 (Razor) API 빠른 참조
 ====================

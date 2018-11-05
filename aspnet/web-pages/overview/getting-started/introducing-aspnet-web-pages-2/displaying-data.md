@@ -1,19 +1,19 @@
 ---
 uid: web-pages/overview/getting-started/introducing-aspnet-web-pages-2/displaying-data
 title: ASP.NET 웹 페이지 소개-데이터를 표시 합니다. | Microsoft Docs
-author: tfitzmac
+author: Rick-Anderson
 description: 이 자습서에서는 WebMatrix에서 데이터베이스를 만드는 방법 및 ASP.NET Web Pages (Razor)를 사용 하는 경우 페이지에서 데이터베이스 데이터를 표시 하는 방법입니다. Y 가정 하는 중...
 ms.author: riande
 ms.date: 05/28/2015
 ms.assetid: b3a006a0-3ea2-4d45-b833-e20e3a3c0a1a
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/displaying-data
 msc.type: authoredcontent
-ms.openlocfilehash: 864b9f7826763e307368706116458678abf50d3b
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 9158a1f53268daec6e6fbdf003dd73e1d62cc667
+ms.sourcegitcommit: 2d3e5422d530203efdaf2014d1d7df31f88d08d0
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41829180"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51021588"
 ---
 <a name="introducing-aspnet-web-pages---displaying-data"></a>ASP.NET 웹 페이지 소개-데이터를 표시 합니다.
 ====================

@@ -1,19 +1,19 @@
 ---
 uid: identity/overview/extensibility/overview-of-custom-storage-providers-for-aspnet-identity
 title: ASP.NET Id에 대 한 사용자 지정 저장소 공급자 개요 | Microsoft Docs
-author: tfitzmac
+author: Rick-Anderson
 description: ASP.NET Id는 사용자 고유의 저장소 공급자를 만들고 응용은 작업이 다시 실행 하지 않고 응용 프로그램에 연결할 수 있는 확장 가능한 시스템...
 ms.author: riande
 ms.date: 10/13/2014
 ms.assetid: 681a9204-462e-4260-9a0b-19f0644d6ad7
 msc.legacyurl: /identity/overview/extensibility/overview-of-custom-storage-providers-for-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: c92084265ff821bcec25244195a3511b71714836
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: e7461098f93bf64d6ff0d0e4ecdb64338f96be8b
+ms.sourcegitcommit: 2d3e5422d530203efdaf2014d1d7df31f88d08d0
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41837029"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51021770"
 ---
 <a name="overview-of-custom-storage-providers-for-aspnet-identity"></a>ASP.NET Id에 대 한 사용자 지정 저장소 공급자 개요
 ====================
@@ -86,7 +86,7 @@ ASP.NET Identity 2.0에 대 한 데이터 저장소의 MySQL 문서로 참조 �
 
 데이터 액세스 계층을 데이터 원본에 ASP.NET Id에서 데이터를 저장 하는 논리를 제공 합니다. 사용자 지정된 저장소 공급자에 대 한 데이터 액세스 계층 사용자 및 역할 정보를 저장 하는 다음 클래스를 포함할 수 있습니다.
 
-| 클래스 | 설명 | 예 |
+| 클래스 | 설명 | 예제 |
 | --- | --- | --- |
 | 컨텍스트 | 지 속성 메커니즘에 연결 하 여 쿼리를 실행 하는 정보를 캡슐화 합니다. 이 클래스는 핵심 데이터 액세스 계층입니다. 다른 데이터 클래스를 해당 작업을 수행 하려면이 클래스의 인스턴스를 필요 합니다. 또한이 클래스의 인스턴스를 사용 하 여 저장소 클래스를 초기화 합니다. | [MySQLDatabase](https://aspnet.codeplex.com/SourceControl/latest#Samples/Identity/AspNet.Identity.MySQL/MySQLDatabase.cs) |
 | 사용자 저장소 | 저장 하 고 사용자 정보 (예: 사용자 이름 및 암호 해시)을 검색 합니다. | [UserTable (MySQL)](https://aspnet.codeplex.com/SourceControl/latest#Samples/Identity/AspNet.Identity.MySQL/UserTable.cs) |

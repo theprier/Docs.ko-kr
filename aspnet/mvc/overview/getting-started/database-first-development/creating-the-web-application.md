@@ -1,19 +1,19 @@
 ---
 uid: mvc/overview/getting-started/database-first-development/creating-the-web-application
 title: 'ASP.NET MVC를 사용 하 여 먼저 EF Database: 웹 응용 프로그램 및 데이터 모델 만들기 | Microsoft Docs'
-author: tfitzmac
+author: Rick-Anderson
 description: MVC, Entity Framework 및 ASP.NET 스 캐 폴딩을 사용 하 여, 기존 데이터베이스에 대 한 인터페이스를 제공 하는 웹 응용 프로그램을 만들 수 있습니다. 이 자습서 seri...
 ms.author: riande
 ms.date: 10/01/2014
 ms.assetid: bc8f2bd5-ff57-4dcd-8418-a5bd517d8953
 msc.legacyurl: /mvc/overview/getting-started/database-first-development/creating-the-web-application
 msc.type: authoredcontent
-ms.openlocfilehash: 343131d45ed0b2442f1b0b557c5b63f3877e5d0e
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 6679b61326bd016481d96a4b5d58ec006f86b633
+ms.sourcegitcommit: 2d3e5422d530203efdaf2014d1d7df31f88d08d0
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41827149"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51020799"
 ---
 <a name="ef-database-first-with-aspnet-mvc-creating-the-web-application-and-data-models"></a>ASP.NET MVC를 사용 하 여 먼저 EF Database: 웹 응용 프로그램 및 데이터 모델 만들기
 ====================

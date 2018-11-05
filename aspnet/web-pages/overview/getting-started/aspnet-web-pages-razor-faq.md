@@ -1,19 +1,19 @@
 ---
 uid: web-pages/overview/getting-started/aspnet-web-pages-razor-faq
 title: ASP.NET 웹 페이지 (Razor) FAQ | Microsoft Docs
-author: tfitzmac
+author: Rick-Anderson
 description: 이 문서에서는 ASP.NET Web Pages (Razor) 및 WebMatrix에 대 한 몇 가지 질문과 대답을 나열합니다. 소프트웨어 버전을 사용 하는 자습서 ASP.NET 웹 페이지에서 (R...
 ms.author: riande
 ms.date: 02/07/2014
 ms.assetid: b137bd04-25e1-47cb-9d96-ef2e179ecf1f
 msc.legacyurl: /web-pages/overview/getting-started/aspnet-web-pages-razor-faq
 msc.type: authoredcontent
-ms.openlocfilehash: 03e89adc2415808ea49107616f529fa895d6e52a
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 27bfbe782455a5f8cf5096953c91712988b8dcab
+ms.sourcegitcommit: 2d3e5422d530203efdaf2014d1d7df31f88d08d0
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41828501"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51021055"
 ---
 <a name="aspnet-web-pages-razor-faq"></a>ASP.NET 웹 페이지 (Razor) FAQ
 ====================

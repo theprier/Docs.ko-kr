@@ -1,19 +1,19 @@
 ---
 uid: web-pages/overview/getting-started/introducing-aspnet-web-pages-2/intro-to-web-pages-programming
 title: ASP.NET 웹 페이지 소개-프로그래밍의 기초 | Microsoft Docs
-author: tfitzmac
+author: Rick-Anderson
 description: "이 자습서 Razor 구문이 있는 ASP.NET 웹 페이지에서 프로그램에는 방법에 대 한 개요를 제공합니다. 학습할 내용: 기본 'Razor' 구문을 pr에 사용 하는 중..."
 ms.author: riande
 ms.date: 06/17/2015
 ms.assetid: 7526ed45-a97d-4e8a-8301-01324ef0eff9
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/intro-to-web-pages-programming
 msc.type: authoredcontent
-ms.openlocfilehash: 120246fab3e71afeef2e2b7c4388f7c294e6b703
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: ec1c055d1b3f6ca5c6374a18840c2595bb368e0e
+ms.sourcegitcommit: 2d3e5422d530203efdaf2014d1d7df31f88d08d0
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41823841"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51021536"
 ---
 <a name="introducing-aspnet-web-pages---programming-basics"></a>ASP.NET 웹 페이지 프로그래밍 기본 사항 소개
 ====================
