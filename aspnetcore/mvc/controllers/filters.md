@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/15/2018
 uid: mvc/controllers/filters
-ms.openlocfilehash: 6803e8e3a285716792427e9fb059c204f5a88ecb
-ms.sourcegitcommit: f43f430a166a7ec137fcad12ded0372747227498
+ms.openlocfilehash: e5305852fad058961661373f9310d6dcaf30aa16
+ms.sourcegitcommit: 4a6bbe84db24c2f3dd2de065de418fde952c8d40
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49391312"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50253197"
 ---
 # <a name="filters-in-aspnet-core"></a>ASP.NET Core에서 필터링
 
@@ -261,7 +261,7 @@ System.InvalidOperationException: No service for type
 
 무엇도 예외를 처리하지 않으므로 권한 부여 필터 내에서 예외를 throw해서는 안됩니다(예외 필터는 처리하지 않음). 예외가 발생할 경우 과제 실행을 고려합니다.
 
-[권한 부여](../../security/authorization/index.md)에 대해 자세히 알아봅니다.
+[권한 부여](xref:security/authorization/introduction)에 대해 자세히 알아봅니다.
 
 ## <a name="resource-filters"></a>리소스 필터
 

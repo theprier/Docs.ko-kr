@@ -1,4 +1,5 @@
 <a name="cli"></a>
+
 ## <a name="add-scaffold-tooling-and-perform-initial-migration"></a>스캐폴드 도구 추가 및 초기 마이그레이션 수행
 
 `</Project>` 태그를 닫기 직전에 *RazorPagesMovie.csproj* 파일에 다음 줄을 추가합니다.
@@ -7,7 +8,8 @@
 <ItemGroup>
   <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.1.0-preview1-final"/>
 </ItemGroup>
-```  
+```
+  
 명령줄에서 다음 .NET Core CLI 명령을 실행합니다.
 
 ```console

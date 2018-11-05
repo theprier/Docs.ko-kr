@@ -5,12 +5,12 @@ description: ASP.NET Core에서 보기 구성 요소가 사용되는 방법 및 
 ms.author: riande
 ms.date: 02/14/2017
 uid: mvc/views/view-components
-ms.openlocfilehash: 52bfb9e3983eb49aabdef238d53c6fdd2950c075
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: 91399acafb36f1f8759ed1783e70e59b631e3bf0
+ms.sourcegitcommit: 4a6bbe84db24c2f3dd2de065de418fde952c8d40
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50207604"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50253134"
 ---
 # <a name="view-components-in-aspnet-core"></a>ASP.NET Core의 보기 구성 요소
 
@@ -88,7 +88,7 @@ ms.locfileid: "50207604"
 뷰 구성 요소를 사용하려면 뷰 내에서 다음을 호출합니다.
 
 ```cshtml
-@Component.InvokeAsync("Name of view component", {Anonymous Type Containing Parameters})
+@await Component.InvokeAsync("Name of view component", {Anonymous Type Containing Parameters})
 ```
 
 매개 변수가 `InvokeAsync` 메서드에 전달됩니다. 문서에서 개발된 `PriorityList` 뷰 구성 요소가 *Views/Todo/Index.cshtml* 뷰 파일에서 호출됩니다. 다음에서 `InvokeAsync` 메서드는 두 매개 변수를 사용하여 호출됩니다.
