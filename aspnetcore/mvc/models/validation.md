@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/24/2018
 uid: mvc/models/validation
-ms.openlocfilehash: 73d41b4718071d00a6f80b33de182da2ad90f331
-ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
+ms.openlocfilehash: 1063fdccb97e55e6b0eb6689187134ff41c10a02
+ms.sourcegitcommit: 4a6bbe84db24c2f3dd2de065de418fde952c8d40
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50090952"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50253158"
 ---
 # <a name="model-validation-in-aspnet-core-mvc"></a>ASP.NET Core MVC의 모델 유효성 검사
 
@@ -22,6 +22,8 @@ ms.locfileid: "50090952"
 앱은 데이터베이스에 데이터를 저장하기 전에 데이터를 확인해야 합니다. 데이터는 잠재적 보안 위협을 확인하고, 형식 및 크기별로 적절하게 서식이 지정되었는지 확인하고, 규칙을 준수해야 합니다. 유효성 검사는 중복되고 구현되기 번거로울 수 있지만 필요합니다. MVC에서 유효성 검사는 클라이언트와 서버 모두에서 발생합니다.
 
 다행히 .NET는 유효성 검사를 유효성 검사 특성으로 추상화했습니다. 이러한 특성에는 유효성 검사 코드가 포함되어 작성해야 하는 코드의 양을 감소시킵니다.
+
+ASP.NET Core 2.2 이상에서는 지정된 모델 그래프에 유효성 검사가 필요하지 않다고 판단되는 경우 ASP.NET Core 런타임이 유효성 검사를 건너뜁니다. 유효성 검사를 건너뛰는 것은 연결된 유효성 검사기를 가질 수 없거나 연결된 유효성 검사기가 없을 때 상당한 성능 향상을 제공할 수 있습니다. 건너뛴 유효성 검사에는 기본 형식(`byte[]`, `string[]`, `Dictionary<string, string>` 등)의 컬렉션 값은 개체 또는 유효성 검사기가 없는 복합 개체 그래프가 포함됩니다.
 
 [GitHub에서 샘플 보기 또는 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/models/validation/sample)
 

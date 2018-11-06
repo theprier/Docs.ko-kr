@@ -1,4 +1,4 @@
-다음 표에서는 ASP.NET Core 코드 생성기의 매개 변수를 자세히 설명합니다.
+다음 표에서는 ASP.NET Core 코드 생성기 매개 변수를 자세히 설명합니다.
 
 | 매개 변수               | 설명|
 | ----------------- | ------------ |
@@ -13,10 +13,12 @@
 ```console
 dotnet aspnet-codegenerator razorpage -h
 ```
+
 <a name="test"></a>
+
 ### <a name="test-the-app"></a>앱 테스트
 
-* 앱을 실행하고 브라우저에서 `/Movies`를 URL에 추가합니다(`http://localhost:port/movies`).
+* 앱을 실행하고 브라우저에서 `/Movies`를 URL에 추가합니다(`http://localhost:port/Movies`).
 * **만들기** 링크를 테스트합니다.
 
   ![페이지 만들기](../../tutorials/razor-pages/model/_static/conan.png)
@@ -27,7 +29,4 @@ dotnet aspnet-codegenerator razorpage -h
 
 다음과 비슷한 오류가 표시되면 마이그레이션을 실행했는지와 데이터베이스를 업데이트했는지 확인합니다.
 
-```
-An unhandled exception occurred while processing the request.
-'no such table: Movie'.
-```
+`An unhandled exception occurred while processing the request. 'no such table: Movie'.`

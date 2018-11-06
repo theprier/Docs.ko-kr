@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/24/2018
 uid: mvc/views/working-with-forms
-ms.openlocfilehash: efc71cc8d072769cde07e129b6d9bb933fc2f7af
-ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
-ms.translationtype: MT
+ms.openlocfilehash: 7319fbbfe3e78e61526f9042b2b6004a351c2186
+ms.sourcegitcommit: 2ef32676c16f76282f7c23154d13affce8c8bf35
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50090218"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50234620"
 ---
 # <a name="tag-helpers-in-forms-in-aspnet-core"></a>ASP.NET Core 형식의 태그 도우미
 
@@ -245,8 +245,7 @@ public IActionResult Edit(int id, int colorIndex)
 
 [!code-HTML[](working-with-forms/sample/final/Views/Shared/EditorTemplates/ToDoItem.cshtml)]
 
->[!NOTE]
->`for`(`foreach` *아님*)를 항상 사용하여 목록을 반복합니다. LINQ 식에서 인덱서를 평가하는 작업은 비용이 많이 들기 때문에 최소화해야 합니다.
+값이 `asp-for` 또는 `Html.DisplayFor` 해당 컨텍스트에서 사용될 때 가능한 경우 `foreach`를 사용해야 합니다. 일반적으로, `for`는 열거자를 할당할 필요가 없으므로 `foreach`보다 좋습니다(시나리오에서 허용하는 경우). 그러나 LINQ 식에서 인덱서를 평가하는 작업은 비용이 많이 들기 때문에 최소화해야 합니다.
 
 &nbsp;
 

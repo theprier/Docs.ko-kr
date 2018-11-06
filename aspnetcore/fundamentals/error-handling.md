@@ -1,17 +1,17 @@
 ---
 title: ASP.NET Core에서 오류 처리
-author: ardalis
+author: tdykstra
 description: ASP.NET Core 앱에서 오류를 처리하는 방법을 알아봅니다.
 ms.author: tdykstra
 ms.custom: mvc
-ms.date: 07/05/2018
+ms.date: 11/01/2018
 uid: fundamentals/error-handling
-ms.openlocfilehash: d1e94fdc89fbebc264dc001bbf35666af16f4799
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: 89117d78486493747d649c3bb0d9cce9f97ef419
+ms.sourcegitcommit: 85f2939af7a167b9694e1d2093277ffc9a741b23
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50208033"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50968321"
 ---
 # <a name="handle-errors-in-aspnet-core"></a>ASP.NET Core에서 오류 처리
 
@@ -119,17 +119,28 @@ app.UseStatusCodePages();
 
 [!code-csharp[](error-handling/samples/2.x/ErrorHandlingSample/Startup.cs?name=snippet_StatusCodePages)]
 
-또 다른 메서드는 콘텐츠 형식 및 형식 문자열을 사용합니다.
+`UseStatusCodePages`의 오버로드는 콘텐츠 형식 및 형식 문자열을 사용합니다.
 
 ```csharp
 app.UseStatusCodePages("text/plain", "Status code page, status code: {0}");
 ```
+### <a name="redirect-re-execute-extension-methods"></a>확장 메서드 다시 실행 리디렉션
 
-또한 리디렉션 및 다시 실행 확장 메서드도 있습니다. 리디렉션 메서드는 *302 있음* 상태 코드를 클라이언트에 보내서 클라이언트를 제공된 위치 URL 템플릿으로 리디렉션합니다. 템플릿에는 상태 코드에 대한 `{0}` 자리 표시자가 포함될 수 있습니다. `~`로 시작되는 URL 앞에는 기본 경로가 추가됩니다. `~`로 시작하지 않는 URL은 그대로 사용됩니다.
+<xref:Microsoft.AspNetCore.Builder.StatusCodePagesExtensions.UseStatusCodePagesWithRedirects*>:
+
+* ‘302 - 있음’ 상태 코드를 클라이언트에 보냅니다. 
+* 클라이언트를 URL 템플릿에 제공된 위치로 리디렉션합니다. 
+
+템플릿에는 상태 코드에 대한 `{0}` 자리 표시자가 포함될 수 있습니다. 템플릿은 슬래시(`/`)로 시작해야 합니다.
 
 [!code-csharp[](error-handling/samples/2.x/ErrorHandlingSample/Startup.cs?name=snippet_StatusCodePagesWithRedirect)]
 
-다시 실행 메서드는 원래 상태 코드를 클라이언트에 반환하고 대체 경로를 사용하여 요청 파이프 라인을 다시 실행하여 응답 본문이 생성되도록 지정합니다. 이 경로에는 상태 코드에 대한 `{0}` 자리 표시자가 포함될 수 있습니다.
+<xref:Microsoft.AspNetCore.Builder.StatusCodePagesExtensions.UseStatusCodePagesWithReExecute*>:
+
+* 원래 상태 코드를 클라이언트로 반환합니다.
+* 대체 경로를 사용하여 요청 파이프라인을 다시 실행하여 응답 본문이 생성되도록 지정합니다. 
+
+템플릿에는 상태 코드에 대한 `{0}` 자리 표시자가 포함될 수 있습니다. 템플릿은 슬래시(`/`)로 시작해야 합니다.
 
 ```csharp
 app.UseStatusCodePagesWithReExecute("/error/{0}");
@@ -146,7 +157,7 @@ if (statusCodePagesFeature != null)
 }
 ```
 
-앱 내에서 엔드포인트를 가리키는 `UseStatusCodePages*`를 사용하는 경우 엔드포인트에 대해 MVC 보기 또는 Razor Page를 만듭니다. 예를 들어 Razor Pages 앱의 [dotnet new](/dotnet/core/tools/dotnet-new) 템플릿은 다음 페이지와 페이지 모델 클래스를 생성합니다.
+앱 내에서 엔드포인트를 가리키는 `UseStatusCodePages*` 오버로드를 사용하려면 엔드포인트에 대해 MVC 뷰 또는 Razor 페이지를 만듭니다. 예를 들어 Razor Pages 앱의 [dotnet new](/dotnet/core/tools/dotnet-new) 템플릿은 다음 페이지와 페이지 모델 클래스를 생성합니다.
 
 *Error.cshtml*:
 

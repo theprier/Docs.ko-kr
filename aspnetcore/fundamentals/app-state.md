@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 06/14/2018
 uid: fundamentals/app-state
-ms.openlocfilehash: da20538a0dc6e13caedaf6a1130e66981dcb7af2
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: 5ca909681ca9da3fae0391991902da97581852be
+ms.sourcegitcommit: 4a6bbe84db24c2f3dd2de065de418fde952c8d40
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50207292"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50253184"
 ---
 # <a name="session-and-app-state-in-aspnet-core"></a>ASP.NET Core에서 세션 및 앱 상태
 
@@ -71,7 +71,7 @@ ASP.NET Core는 각 요청과 함께 앱으로 전송되는 세션 ID를 포함�
 메모리 내 캐시 공급자는 앱이 있는 서버의 메모리에 세션 데이터를 저장합니다. 서버 팜 시나리오:
 
 * *고정 세션*을 사용하여 각 세션을 개별 서버의 특정 앱 인스턴스에 연결합니다. [Azure App Service](https://azure.microsoft.com/services/app-service/)는 [ARR(응용 프로그램 요청 라우팅)](/iis/extensions/planning-for-arr/using-the-application-request-routing-module)을 사용하여 기본적으로 고정 세션을 적용합니다. 그러나 고정 세션은 확장성에 영향을 주고 웹앱 업데이트를 복잡하게 만들 수 있습니다. 더 나은 방법은 고정 세션이 필요 없는 Redis 또는 SQL Server 분산 캐시를 사용하는 것입니다. 자세한 내용은 <xref:performance/caching/distributed>을 참조하세요.
-* 세션 쿠키는 [IDataProtector](/dotnet/api/microsoft.aspnetcore.dataprotection.idataprotector)를 통해 암호화됩니다. 데이터 보호는 각 컴퓨터에서 세션 쿠키를 읽을 수 있도록 올바르게 구성되어야 합니다. 자세한 내용은 [ASP.NET Core에서 데이터 보호](xref:security/data-protection/index) 및 [키 저장소 공급자](xref:security/data-protection/implementation/key-storage-providers)를 참조하세요.
+* 세션 쿠키는 [IDataProtector](/dotnet/api/microsoft.aspnetcore.dataprotection.idataprotector)를 통해 암호화됩니다. 데이터 보호는 각 컴퓨터에서 세션 쿠키를 읽을 수 있도록 올바르게 구성되어야 합니다. 자세한 내용은 <xref:security/data-protection/introduction> 및 [키 저장소 공급자](xref:security/data-protection/implementation/key-storage-providers)를 참조하세요.
 
 ### <a name="configure-session-state"></a>세션 상태 구성
 
@@ -274,7 +274,7 @@ TempData 공급자를 선택하는 데는 다음과 같은 몇 가지 고려 사
 
 1. 앱이 이미 세션 상태를 사용합니까? 그런 경우 세션 상태 TempData 공급자 사용에는 앱에 대한 추가 비용이 없습니다(데이터 크기 제외).
 2. 앱은 상대적으로 적은 양의 데이터에 TempData만 제한적으로 사용합니까(최대 500바이트)? 그런 경우 쿠키 TempData 공급자는 TempData를 전달하는 각 요청에 적은 비용을 추가합니다. 그렇지 않은 경우 세션 상태 TempData 공급자는 TempData가 사용될 때까지 각 요청에서 많은 양의 데이터를 왕복 작업하지 않도록 하는 데 도움이 될 수 있습니다.
-3. 앱이 여러 서버의 서버 팜에서 실행됩니까? 그런 경우 데이터 보호 외부에서 쿠키 TempData 공급자를 사용하는 데 필요한 추가 구성은 없습니다([데이터 보호](xref:security/data-protection/index) 및 [키 저장소 공급자](xref:security/data-protection/implementation/key-storage-providers) 참조).
+3. 앱이 여러 서버의 서버 팜에서 실행됩니까? 그런 경우 데이터 보호 외부에서 쿠키 TempData 공급자를사용하는 데 필요한 추가 구성은 없습니다(<xref:security/data-protection/introduction> 및 [키 저장소 공급자](xref:security/data-protection/implementation/key-storage-providers) 참조).
 
 > [!NOTE]
 > 대부분의 웹 클라이언트(예: 웹 브라우저)는 각 쿠키의 최대 크기, 쿠키의 총 수 또는 둘 다에 제한을 적용합니다. 쿠키 TempData 공급자를 사용하는 경우 앱이 이러한 제한을 초과하지 않는지 확인합니다. 데이터의 총 크기를 고려합니다. 암호화 및 청크 분할로 인한 쿠키 크기 증가를 고려합니다.

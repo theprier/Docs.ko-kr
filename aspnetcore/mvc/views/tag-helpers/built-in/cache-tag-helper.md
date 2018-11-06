@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/10/2018
 uid: mvc/views/tag-helpers/builtin-th/cache-tag-helper
-ms.openlocfilehash: 2590682755721a4bb14902b9fe7138a3bff56d31
-ms.sourcegitcommit: 54655f1e1abf0b64d19506334d94cfdb0caf55f6
+ms.openlocfilehash: fb69584f6e9d4756e175bbd6f3deb1f413b80fc5
+ms.sourcegitcommit: c43a6f1fe72d7c2db4b5815fd532f2b45d964e07
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50148813"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50244816"
 ---
 # <a name="cache-tag-helper-in-aspnet-core-mvc"></a>ASP.NET Core MVC의 캐시 태그 도우미
 
@@ -135,7 +135,7 @@ Razor 보기 엔진은 기본 `expires-after` 값을 20분으로 설정합니다
 | -------------- | -------------------- |
 | 문자열         | `Make`, `Make,Model` |
 
-`vary-by-route`는 경로 데이터 매개 변수 값이 변경되면 캐시 새로 고침을 트리거하는 쉼표로 구분된 헤더 값 목록을 허용합니다.
+`vary-by-route`는 경로 데이터 매개 변수 값이 변경되면 캐시 새로 고침을 트리거하는 쉼표로 구분된 경로 매개 변수 이름 목록을 허용합니다.
 
 예제:
 
@@ -161,7 +161,7 @@ routes.MapRoute(
 | -------------- | -------------------------------------------------------------------------------- |
 | 문자열         | `.AspNetCore.Identity.Application`, `.AspNetCore.Identity.Application,HairColor` |
 
-`vary-by-cookie`는 헤더 값이 변경되면 캐시 새로 고침을 트리거하는 쉼표로 구분된 헤더 값 목록을 허용합니다.
+`vary-by-cookie`는 쿠키 값이 변경되면 캐시 새로 고침을 트리거하는 쉼표로 구분된 쿠키 이름 목록을 허용합니다.
 
 다음 예제에서는 ASP.NET Core ID와 연결된 쿠키를 모니터링합니다. 사용자가 인증되면 ID 쿠키가 변경될 때 캐시 새로 고침이 트리거됩니다.
 

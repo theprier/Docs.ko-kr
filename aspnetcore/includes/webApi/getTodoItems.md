@@ -15,7 +15,7 @@
 * 메서드 없이 API 컨트롤러 클래스를 정의합니다.
 * `TodoItems`가 비어 있는 경우 새 Todo 항목을 만듭니다. `TodoItems`가 비어 있는 경우 생성자가 새 항목을 만들기 때문에 모든 Todo 항목을 삭제할 수는 없습니다.
 
-다음 섹션에서는 API를 구현하기 위해 메서드가 추가됩니다. 클래스에는 편리한 기능을 사용하기 위해 `[ApiController]` 특성이 주석으로 지정됩니다. 이 특성으로 인해 활성화되는 기능에 대한 자세한 내용은 [ApiControllerAttribute로 클래스에 주석 달기](xref:web-api/index#annotate-class-with-apicontrollerattribute)를 참조하세요.
+다음 섹션에서는 API를 구현하기 위해 메서드가 추가됩니다. 클래스에는 편리한 기능을 사용하기 위해 `[ApiController]` 특성이 주석으로 지정됩니다. 이 특성으로 인해 활성화되는 기능에 대한 자세한 내용은 [ApiControllerAttribute로 주석 달기](xref:web-api/index#annotation-with-apicontrollerattribute)를 참조하세요.
 
 ::: moniker-end
 

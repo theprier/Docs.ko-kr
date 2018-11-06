@@ -28,7 +28,7 @@
 
 ::: moniker range=">= aspnetcore-2.1"
 
-[!code-html[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Views/Shared/_Layout21.cshtml?highlight=7,31)]
+[!code-html[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Views/Shared/_Layout21.cshtml?highlight=6,29)]
 
 ::: moniker-end
 
@@ -115,6 +115,6 @@ URL에서 데이터를 가져오고 [MVC 모델 바인더](xref:mvc/models/model
 
 ![시작 레이블 및 네 번 표시되는 구 Hello Rick을 보여 주는 정보 보기](~/tutorials/first-mvc-app/adding-view/_static/rick2.png)
 
-위의 샘플에서 `ViewData` 사전을 사용하여 컨트롤러에서 보기로 데이터를 전달했습니다. 자습서의 뒷부분에서 보기 모델을 사용하여 컨트롤러에서 보기로 데이터를 전달합니다. 데이터를 전달하는 보기 모델 방법은 일반적으로 `ViewData` 사전 접근 방법보다 훨씬 많이 사용됩니다. 자세한 내용은 [MVC에서 ViewModel vs ViewData vs ViewBag vs TempData vs Session](http://www.mytecbits.com/microsoft/dot-net/viewmodel-viewdata-viewbag-tempdata-mvc)을 참조하세요.
+위의 샘플에서 `ViewData` 사전을 사용하여 컨트롤러에서 보기로 데이터를 전달했습니다. 자습서의 뒷부분에서 보기 모델을 사용하여 컨트롤러에서 보기로 데이터를 전달합니다. 데이터를 전달하는 보기 모델 방법은 일반적으로 `ViewData` 사전 접근 방법보다 훨씬 많이 사용됩니다. 자세한 내용은 [When to use ViewBag, ViewData, or TempData](http://www.rachelappel.com/when-to-use-viewbag-viewdata-or-tempdata-in-asp-net-mvc-3-applications/)(ViewBag, ViewData 또는 TempData를 사용하는 경우)를 참조하세요.
 
 이는 모델에 대한 일종의 "M"이었지만 데이터베이스 종류는 아니었습니다. 지금까지 학습한 것을 살펴보고 동영상의 데이터베이스를 만들어 보겠습니다.

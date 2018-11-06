@@ -7,12 +7,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/24/2018
 uid: tutorials/razor-pages-vsc/razor-pages-start
-ms.openlocfilehash: 9ea66134c524a6a1a670d55bae4e66cf38a45274
-ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
+ms.openlocfilehash: f18d0a8b3ce24c9844b02f8a0b6360f7e1b1bdb7
+ms.sourcegitcommit: c43a6f1fe72d7c2db4b5815fd532f2b45d964e07
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50089854"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50244855"
 ---
 # <a name="get-started-with-aspnet-core-razor-pages-in-visual-studio-code"></a>Visual Studio Code에서 ASP.NET Core Razor 페이지 시작
 
@@ -65,7 +65,7 @@ VS Code(Visual Studio Code)에서 **파일 > 폴더 열기**를 선택하고 *Ra
 
 ### <a name="launch-the-app"></a>앱 시작
 
-Ctrl+F5를 눌러 디버깅 없이 앱을 시작합니다. 또는 **디버그** 메뉴에서 **디버깅하지 않고 시작**을 선택합니다.
+**디버그** 메뉴에서 **디버깅하지 않고 시작**을 선택합니다. 또는 메뉴 옵션 옆에 표시된 바로 가기 키를 누를 수 있습니다. 이 바로 가기 키는 운영 체제에 따라 다릅니다.
 
 다음 자습서에서는 프로젝트에 모델을 추가합니다. 
 

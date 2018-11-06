@@ -6,18 +6,29 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/01/2018
 uid: fundamentals/routing
-ms.openlocfilehash: 06059d720bd4444b1ec12e42d466ee54d1658203
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: a014782ba503bc8bd0fdefb4cb4f382aa8fde4cd
+ms.sourcegitcommit: c43a6f1fe72d7c2db4b5815fd532f2b45d964e07
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50207758"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50244972"
 ---
 # <a name="routing-in-aspnet-core"></a>ASP.NET Core에서 라우팅
 
 작성자: [Ryan Nowak](https://github.com/rynowak), [Steve Smith](https://ardalis.com/) 및 [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 라우팅 기능은 들어오는 요청을 경로 처리기에 매핑하는 일을 담당합니다. 경로는 앱에서 정의되고 앱 시작 시 구성됩니다. 경로는 요청에 포함된 URL에서 필요에 따라 값을 추출할 수 있으며 이러한 값은 요청 처리를 위해 사용될 수 있습니다. 앱에서 경로 정보를 사용하여 라우팅 기능은 경로 처리기에 매핑되는 URL을 생성할 수 있습니다. 따라서 라우팅은 URL에 따라 경로 처리기를 찾거나 경로 처리기 정보에 따라 지정된 경로 처리기에 해당하는 URL을 찾을 수 있습니다.
+
+대부분의 앱은 URL이 읽을 수 있고 의미 있도록 기본적이고 설명적인 라우팅 체계를 선택해야 합니다. 기본 기존 경로 `{controller=Home}/{action=Index}/{id?}`:
+
+* 기본적이고 설명적인 라우팅 체계를 지원합니다.
+* 브라우저에서 사용할 웹앱의 경우 좋은 시작점입니다.
+
+특별한 경우(예: 블로그, 전자 상거래)에 [특성 라우팅](xref:mvc/controllers/routing#attribute-routing) 또는 전용 기존 경로를 사용하여 앱의 트래픽이 많은 영역에 간결한 경로를 추가하는 것이 일반적입니다.
+
+웹 API는 특성 라우팅을 사용하여 작업이 HTTP 동사로 표현되는 리소스 집합으로 앱의 기능을 모델링해야 합니다. 즉 동일한 논리 리소스의 많은 작업(예: GET, POST)이 동일한 URL을 사용합니다. 특성 라우팅은 API의 URL 공간을 신중하게 설계하는 데 필요한 제어 수준을 제공합니다.
+
+MVC의 URL 생성 지원에서는 URL을 하드 코딩하지 않고 앱을 개발하여 앱을 서로 연결할 수 있습니다. 이렇게 하면 기본 라우팅 구성으로 시작하고 앱의 모양이 결정된 후 경로를 수정할 수 있습니다.
 
 > [!IMPORTANT]
 > 이 문서에서는 낮은 수준의 ASP.NET Core 라우팅을 설명합니다. ASP.NET Core MVC 라우팅에 대한 내용은 <xref:mvc/controllers/routing>을 참조하세요.

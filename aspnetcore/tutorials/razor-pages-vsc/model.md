@@ -6,12 +6,12 @@ monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 08/27/2017
 uid: tutorials/razor-pages-vsc/model
-ms.openlocfilehash: b891b921baf1fe6d167c7bfb8b4c5278ce9fe9f5
-ms.sourcegitcommit: 847cc1de5526ff42a7303491e6336c2dbdb45de4
+ms.openlocfilehash: c4aef369bb3965b70d1b461cf63e6f5a26a00628
+ms.sourcegitcommit: c43a6f1fe72d7c2db4b5815fd532f2b45d964e07
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43055866"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50244725"
 ---
 # <a name="add-a-model-to-an-aspnet-core-razor-pages-app-with-visual-studio-code"></a>Visual Studio Code를 사용하여 ASP.NET Core Razor 페이지 앱에 모델 추가
 
@@ -35,7 +35,13 @@ ms.locfileid: "43055866"
 dotnet add package Microsoft.EntityFrameworkCore.SQLite
 ```
 
-[!code-csharp[](../../tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie/Startup.cs?name=snippet_ConfigureServices2&highlight=3-4)]
+<a name="reg"></a>
+
+### <a name="register-the-database-context"></a>데이터베이스 컨텍스트 등록
+
+*Startup.cs* 파일에서 [종속성 주입](xref:fundamentals/dependency-injection) 컨테이너에 데이터베이스 컨텍스트를 등록합니다.
+
+[!code-csharp[](../../tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie/Startup.cs?name=snippet_ConfigureServices2&highlight=10-11)]
 
 *Startup.cs* 맨 위에 다음 `using` 문을 추가합니다.
 
@@ -46,45 +52,24 @@ using Microsoft.EntityFrameworkCore;
 
 프로젝트를 빌드하여 오류가 없는지 확인합니다.
 
-### <a name="entity-framework-core-nuget-packages-for-migrations"></a>마이그레이션을 위한 Entity Framework Core NuGet 패키지
-
-CLI(명령줄 인터페이스)용 EF 도구는 [Microsoft.EntityFrameworkCore.Tools.DotNet](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Tools.DotNet)에서 제공됩니다. 이 패키지를 설치하려면 *.csproj* 파일의 `DotNetCliToolReference` 컬렉션에 패키지를 추가합니다. **참고:** *.csproj* 파일을 편집하여 이 패키지를 설치해야 합니다. `install-package` 명령이나 패키지 관리자 GUI를 사용할 수 없습니다.
-
-*RazorPagesMovie.csproj* 파일을 편집합니다.
-
-* **파일** > **파일 열기**를 선택한 다음, *RazorPagesMovie.csproj* 파일을 선택합니다.
-* `Microsoft.EntityFrameworkCore.Tools.DotNet`에 대한 도구 참조를 두 번째 **\<ItemGroup>** 에 추가합니다.
-
-[!code-xml[](../../tutorials/razor-pages/razor-pages-start/snapshot_cli_sample/RazorPagesMovie/RazorPagesMovie.cli.csproj)]
-
 [!INCLUDE [model 3](../../includes/RP/model3.md)]
 
 <a name="scaffold"></a>
+
 ### <a name="scaffold-the-movie-model"></a>Movie 모델 스캐폴드
 
 * 프로젝트 디렉터리(*Program.cs*, *Startup.cs* 및 *.csproj* 파일이 포함된 디렉터리)에서 명령 창을 엽니다.
-* 다음 명령을 실행합니다.
-
-**참고: Windows에서는 다음 명령을 실행합니다. MacOS 및 Linux의 경우 다음 명령 참조**
+* **Windows**: 다음 명령을 실행합니다.
 
   ```console
   dotnet aspnet-codegenerator razorpage -m Movie -dc MovieContext -udl -outDir Pages\Movies --referenceScriptLibraries
   ```
 
-* MacOS 및 Linux에서는 다음 명령을 실행합니다.
+* **macOS 및 Linux**: 다음 명령을 실행합니다.
 
   ```console
   dotnet aspnet-codegenerator razorpage -m Movie -dc MovieContext -udl -outDir Pages/Movies --referenceScriptLibraries
   ```
-
-오류가 표시될 경우:
-  ```
-  The process cannot access the file 
- 'RazorPagesMovie/bin/Debug/netcoreapp2.0/RazorPagesMovie.dll' 
-  because it is being used by another process.
-  ```
-
-Visual Studio를 종료하고 명령을 다시 실행합니다.
 
 [!INCLUDE [model 4](../../includes/RP/model4.md)]
 

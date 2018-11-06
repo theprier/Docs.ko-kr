@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/24/2018
 uid: mvc/views/tag-helpers/authoring
-ms.openlocfilehash: 01e6af13c3a16de368528b1650543d36ef910571
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: 78e5281d109977e8f41fe1f207254d3016f9c569
+ms.sourcegitcommit: c43a6f1fe72d7c2db4b5815fd532f2b45d964e07
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50207838"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50244868"
 ---
 # <a name="author-tag-helpers-in-aspnet-core"></a>ASP.NET Core의 작성자 태그 도우미
 
@@ -80,7 +80,7 @@ the following snippet uses TagHelpers3 and should use TagHelpers (not the 3)
     [!code-html[](../../../mvc/views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/_ViewImports.cshtml?highlight=3&range=1-3)]
 -->
 
-FQN을 사용하여 뷰에 태그 도우미를 추가하려면 먼저 FQN(`AuthoringTagHelpers.TagHelpers.EmailTagHelper`)을 추가한 후 어셈블리 이름(*AuthoringTagHelpers*)을 추가합니다. 대부분의 개발자는 와일드 카드 구문을 사용하는 방법을 선호합니다. [태그 도우미 소개](intro.md)에서는 태그 도우미 추가, 제거, 계층 구조 및 와일드 카드 구문에 대해 자세히 설명합니다.
+FQN을 사용하여 뷰에 태그 도우미를 추가하려면 먼저 FQN(`AuthoringTagHelpers.TagHelpers.EmailTagHelper`)을 추가한 후 **어셈블리 이름**(*AuthoringTagHelpers*, 반드시 `namespace`는 아님)을 추가합니다. 대부분의 개발자는 와일드 카드 구문을 사용하는 방법을 선호합니다. [태그 도우미 소개](intro.md)에서는 태그 도우미 추가, 제거, 계층 구조 및 와일드 카드 구문에 대해 자세히 설명합니다.
 
 1. *Views/Home/Contact.cshtml* 파일에서 태그를 다음 변경 내용으로 업데이트합니다.
 

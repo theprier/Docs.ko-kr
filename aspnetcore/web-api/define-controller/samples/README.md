@@ -2,7 +2,8 @@
 
 이 샘플 앱은 다음 프로젝트로 구성되어 있습니다.
 
-- **WebApiSample.Api**:.NET Core 2.1을 대상으로 하는 ASP.NET Core 2.1 프로젝트입니다.
+- **WebApiSample.Api.22*: .NET Core 2.2를 대상으로 하는 ASP.NET Core 2.2 프로젝트입니다.
+- **WebApiSample.Api.21**:.NET Core 2.1을 대상으로 하는 ASP.NET Core 2.1 프로젝트입니다.
 - **WebApiSample.Api.Pre21**:.NET Core 2.0을 대상으로 하는 ASP.NET Core 2.0 프로젝트입니다.
 - **WebApiSample.DataAccess**: 2개의 Web API 프로젝트에 대한 데이터 액세스 계층의 역할을 담당하는 .NET Standard 2.0 클래스 라이브러리입니다.
 

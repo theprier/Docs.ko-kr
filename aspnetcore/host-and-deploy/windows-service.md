@@ -2,16 +2,17 @@
 title: Windows 서비스에서 ASP.NET Core 호스트
 author: guardrex
 description: Windows 서비스에서 ASP.NET Core 앱을 호스트하는 방법을 알아봅니다.
+monikerRange: '>= aspnetcore-2.1'
 ms.author: tdykstra
 ms.custom: mvc
-ms.date: 09/25/2018
+ms.date: 10/30/2018
 uid: host-and-deploy/windows-service
-ms.openlocfilehash: f9b1c3fbfafa839c116688e0ac63804afcd5dbe0
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: 11913019bfe5d06c259b806fce9cc580a8280ad5
+ms.sourcegitcommit: fc2486ddbeb15ab4969168d99b3fe0fbe91e8661
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50206675"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "50758195"
 ---
 # <a name="host-aspnet-core-in-a-windows-service"></a>Windows 서비스에서 ASP.NET Core 호스트
 
@@ -29,38 +30,12 @@ IIS를 [Windows 서비스](/dotnet/framework/windows-services/introduction-to-wi
 
    * Windows [RID(런타임 식별자)](/dotnet/core/rid-catalog)가 있는지 확인하거나, 대상 프레임워크가 포함된 `<PropertyGroup>`에 추가합니다.
 
-      ::: moniker range=">= aspnetcore-2.1"
-
       ```xml
       <PropertyGroup>
-        <TargetFramework>netcoreapp2.1</TargetFramework>
+        <TargetFramework>netcoreapp2.2</TargetFramework>
         <RuntimeIdentifier>win7-x64</RuntimeIdentifier>
       </PropertyGroup>
       ```
-
-      ::: moniker-end
-
-      ::: moniker range="= aspnetcore-2.0"
-
-      ```xml
-      <PropertyGroup>
-        <TargetFramework>netcoreapp2.0</TargetFramework>
-        <RuntimeIdentifier>win7-x64</RuntimeIdentifier>
-      </PropertyGroup>
-      ```
-
-      ::: moniker-end
-
-      ::: moniker range="< aspnetcore-2.0"
-
-      ```xml
-      <PropertyGroup>
-        <TargetFramework>netcoreapp1.1</TargetFramework>
-        <RuntimeIdentifier>win7-x64</RuntimeIdentifier>
-      </PropertyGroup>
-      ```
-
-      ::: moniker-end
 
       여러 개의 RID를 게시하려면
 
@@ -77,56 +52,88 @@ IIS를 [Windows 서비스](/dotnet/framework/windows-services/introduction-to-wi
 
    * [UseContentRoot](xref:fundamentals/host/web-host#content-root)를 호출하여 `Directory.GetCurrentDirectory()` 대신 앱의 게시 위치에 대한 경로를 사용합니다.
 
-     ::: moniker range=">= aspnetcore-2.0"
-
      [!code-csharp[](windows-service/samples/2.x/AspNetCoreService/Program.cs?name=ServiceOnly&highlight=8-9,16)]
 
-     ::: moniker-end
+1. [dotnet publish](/dotnet/articles/core/tools/dotnet-publish), [Visual Studio 게시 프로필](xref:host-and-deploy/visual-studio-publish-profiles) 또는 Visual Studio Code를 사용하여 앱을 게시합니다. Visual Studio를 사용하는 경우 **FolderProfile**을 선택하고 **대상 위치**를 구성한 후 **게시** 단추를 선택합니다.
 
-     ::: moniker range="< aspnetcore-2.0"
-
-     [!code-csharp[](windows-service/samples_snapshot/1.x/AspNetCoreService/Program.cs?name=ServiceOnly&highlight=3-4,8,13)]
-
-     ::: moniker-end
-
-1. 앱을 게시합니다. [dotnet publish](/dotnet/articles/core/tools/dotnet-publish) 또는 [Visual Studio 게시 프로필](xref:host-and-deploy/visual-studio-publish-profiles)을 사용합니다. Visual Studio를 사용할 때 **FolderProfile**을 선택합니다.
-
-   CLI(명령줄 인터페이스) 도구를 사용하여 샘플 앱을 게시하려면 프로젝트 폴더의 명령 프롬프트에서 [dotnet publish](/dotnet/core/tools/dotnet-publish) 명령을 실행합니다. 프로젝트 파일의 `<RuntimeIdenfifier>`(또는 `<RuntimeIdentifiers>`) 속성에 RID를 지정해야 합니다. 다음 예제에서는 `win7-x64` 런타임에 대한 릴리스 구성에 앱이 게시됩니다.
+   CLI(명령줄 인터페이스) 도구를 사용하여 샘플 앱을 게시하려면 프로젝트 폴더의 명령 프롬프트에서 [dotnet publish](/dotnet/core/tools/dotnet-publish) 명령을 실행합니다. 프로젝트 파일의 `<RuntimeIdenfifier>`(또는 `<RuntimeIdentifiers>`) 속성에 RID를 지정해야 합니다. 다음 예제에서는 앱이 `win7-x64` 런타임에 대한 릴리스 구성에서 *c:\\svc*에 생성된 폴더에 게시됩니다.
 
    ```console
-   dotnet publish --configuration Release --runtime win7-x64
+   dotnet publish --configuration Release --runtime win7-x64 --output c:\svc
    ```
 
-1. [sc.exe](https://technet.microsoft.com/library/bb490995) 명령줄 도구를 사용하여 서비스를 만듭니다. `binPath` 값은 실행 파일 이름을 포함하는 앱의 실행 파일 경로입니다. **경로의 시작 부분에서 등호와 인용 문자 사이에 공간이 필요합니다.**
+1. `net user` 명령을 사용하여 서비스에 대한 사용자 계정을 만듭니다.
 
    ```console
-   sc create <SERVICE_NAME> binPath= "<PATH_TO_SERVICE_EXECUTABLE>"
+   net user {USER ACCOUNT} {PASSWORD} /add
    ```
 
-   프로젝트 폴더에서 게시된 서비스의 경우 *publish* 폴더에 대한 경로를 사용하여 서비스를 만듭니다. 다음 예제에서는
+   샘플 앱의 경우, 이름이 `ServiceUser`인 사용자 계정과 암호를 만듭니다. 다음 명령에서 `{PASSWORD}`를 [강력한 암호](/windows/security/threat-protection/security-policy-settings/password-must-meet-complexity-requirements)로 바꿉니다.
 
-   * 프로젝트가 *c:\\my_services\\AspNetCoreService* 폴더에 있습니다.
-   * 프로젝트는 `Release` 구성에 게시됩니다.
-   * TFM(대상 프레임워크 모니커)은 `netcoreapp2.1`입니다.
-   * RID(런타임 ID)는 `win7-x64`입니다.
-   * 앱 실행 파일의 이름은 *AspNetCoreService.exe*입니다.
+   ```console
+   net user ServiceUser {PASSWORD} /add
+   ```
+
+   그룹에 사용자를 추가해야 하는 경우 `net localgroup` 명령을 사용합니다. 여기서 `{GROUP}`은 그룹의 이름입니다.
+
+   ```console
+   net localgroup {GROUP} {USER ACCOUNT} /add
+   ```
+
+   자세한 내용은 [서비스 사용자 계정](/windows/desktop/services/service-user-accounts)을 참조하세요.
+
+1. [icacls](/windows-server/administration/windows-commands/icacls) 명령을 사용하여 앱의 폴더에 쓰기/읽기/실행 액세스 권한을 부여합니다.
+
+   ```console
+   icacls "{PATH}" /grant {USER ACCOUNT}:(OI)(CI){PERMISSION FLAGS} /t
+   ```
+
+   * `{PATH}` &ndash; 앱의 폴더에 대한 경로입니다.
+   * `{USER ACCOUNT}` &ndash; 사용자 계정(SID)입니다.
+   * `(OI)` &ndash; 개체 상속 플래그는 권한을 하위 파일에 전파합니다.
+   * `(CI)` &ndash; 컨테이너 상속 플래그는 권한을 하위 폴더에 전파합니다.
+   * `{PERMISSION FLAGS}` &ndash; 앱의 액세스 권한을 설정합니다.
+     * 쓰기(`W`)
+     * 읽기(`R`)
+     * 실행(`X`)
+     * 전체(`F`)
+     * 수정(`M`)
+   * `/t` &ndash; 기존 하위 폴더 및 파일에 재귀적으로 적용합니다.
+
+   *c:\\svc* 폴더에 게시된 샘플 앱과 쓰기/읽기/실행 권한이 있는 `ServiceUser` 계정의 경우 다음 명령을 사용합니다.
+
+   ```console
+   icacls "c:\svc" /grant ServiceUser:(OI)(CI)WRX /t
+   ```
+
+   자세한 내용은 [icacls](/windows-server/administration/windows-commands/icacls)를 참조하세요.
+
+1. [sc.exe](https://technet.microsoft.com/library/bb490995) 명령줄 도구를 사용하여 서비스를 만듭니다. `binPath` 값은 실행 파일 이름을 포함하는 앱의 실행 파일 경로입니다. **각 매개 변수의 등호 및 인용 문자 값 사이에 공백이 필요합니다.**
+
+   ```console
+   sc create {SERVICE NAME} binPath= "{PATH}" obj= "{DOMAIN}\{USER ACCOUNT}" password= "{PASSWORD}"
+   ```
+
+   * `{SERVICE NAME}` &ndash; [서비스 제어 관리자](/windows/desktop/services/service-control-manager)의 서비스에 할당하는 이름입니다.
+   * `{PATH}` &ndash; 서비스 실행 파일의 경로입니다.
+   * `{DOMAIN}` (또는 머신이 도메인에 가입되어 있지 않은 경우 로컬 머신 이름) 및 `{USER ACCOUNT}` &ndash; 서비스가 실행되는 도메인(또는 로컬 머신 이름) 및 사용자 계정입니다. `obj` 매개 변수를 생략하지 **마세요**. `obj`의 기본값은 [LocalSystem 계정](/windows/desktop/services/localsystem-account) 계정입니다. `LocalSystem` 계정으로 서비스를 실행하면 상당한 보안 위험이 발생합니다. 항상 서버에서 제한된 권한을 가진 사용자 계정으로 서비스를 실행하세요.
+   * `{PASSWORD}` &ndash; 사용자 계정 암호입니다.
+
+   다음 예제에서는
+
    * 서비스의 이름은 **MyService**입니다.
-
-   예제:
+   * 게시된 서비스는 *c:\\svc* 폴더에 있습니다. 앱 실행 파일의 이름은 *AspNetCoreService.exe*입니다. `binPath` 값은 곧은 따옴표(")로 묶입니다.
+   * 서비스는 `ServiceUser` 계정으로 실행됩니다. `{DOMAIN}`을 사용자 계정의 도메인 또는 로컬 머신 이름으로 바꿉니다. `obj` 값을 곧은 따옴표(")로 묶습니다. 예: 호스팅 시스템이 이름이 `MairaPC`인 로컬 머신인 경우 `obj`를 `"MairaPC\ServiceUser"`로 설정합니다.
+   * `{PASSWORD}`를 사용자 계정의 암호로 바꿉니다. `password` 값은 곧은 따옴표(")로 묶입니다.
 
    ```console
-   sc create MyService binPath= "c:\my_services\AspNetCoreService\bin\Release\netcoreapp2.1\win7-x64\publish\AspNetCoreService.exe"
+   sc create MyService binPath= "c:\svc\aspnetcoreservice.exe" obj= "{DOMAIN}\ServiceUser" password= "{PASSWORD}"
    ```
 
    > [!IMPORTANT]
-   > `binPath=` 인수와 해당 값 사이에 공간이 있어야 합니다.
+   > 매개 변수의 등호와 매개 변수의 값 사이에 공백이 있는지 확인합니다.
 
-   다른 폴더의 서비스를 게시하고 시작하려면:
-
-      * `dotnet publish` 명령에 대해 [--output &lt;OUTPUT_DIRECTORY&gt;](/dotnet/core/tools/dotnet-publish#options) 옵션을 사용합니다. Visual Studio를 사용하는 경우 **게시** 단추를 선택하기 전에 **FolderProfile** 게시 속성 페이지에 **대상 위치**를 구성하세요.
-      * 출력 폴더 경로를 사용하는 `sc.exe` 명령으로 서비스를 만듭니다. `binPath`에 제공된 경로에 서비스의 실행 파일 이름을 포함합니다.
-
-1. `sc start <SERVICE_NAME>` 명령을 사용하여 서비스를 시작합니다.
+1. `sc start {SERVICE NAME}` 명령을 사용하여 서비스를 시작합니다.
 
    샘플 앱 서비스를 시작하려면 다음 명령을 사용합니다.
 
@@ -136,7 +143,7 @@ IIS를 [Windows 서비스](/dotnet/framework/windows-services/introduction-to-wi
 
    명령은 서비스를 시작하는 데 몇 초 정도 걸립니다.
 
-1. 서비스 상태를 확인하려면 `sc query <SERVICE_NAME>` 명령을 사용합니다. 상태는 다음 값 중 하나로 보고됩니다.
+1. 서비스 상태를 확인하려면 `sc query {SERVICE NAME}` 명령을 사용합니다. 상태는 다음 값 중 하나로 보고됩니다.
 
    * `START_PENDING`
    * `RUNNING`
@@ -153,7 +160,7 @@ IIS를 [Windows 서비스](/dotnet/framework/windows-services/introduction-to-wi
 
    샘플 앱 서비스의 경우 `http://localhost:5000`에서 앱을 찾아봅니다.
 
-1. `sc stop <SERVICE_NAME>` 명령을 사용하여 서비스를 중지합니다.
+1. `sc stop {SERVICE NAME}` 명령을 사용하여 서비스를 중지합니다.
 
    다음 명령은 샘플 앱 서비스를 중지합니다.
 
@@ -161,7 +168,7 @@ IIS를 [Windows 서비스](/dotnet/framework/windows-services/introduction-to-wi
    sc stop MyService
    ```
 
-1. 서비스를 중지하는 짧은 지연 후에 `sc delete <SERVICE_NAME>` 명령을 사용하여 서비스를 제거합니다.
+1. 서비스를 중지하는 짧은 지연 후에 `sc delete {SERVICE NAME}` 명령을 사용하여 서비스를 제거합니다.
 
    샘플 앱 서비스의 상태를 확인합니다.
 
@@ -179,22 +186,12 @@ IIS를 [Windows 서비스](/dotnet/framework/windows-services/introduction-to-wi
 
 서비스 외부에서 실행하면 테스트하고 디버그하기가 더 쉬우므로 특정 조건에서만 `RunAsService`를 호출하는 코드를 추가하는 것이 좋습니다. 예를 들어 `--console` 명령줄 인수를 사용하거나 디버거가 연결된 경우 앱을 콘솔 앱으로 실행할 수 있습니다.
 
-::: moniker range=">= aspnetcore-2.0"
-
 [!code-csharp[](windows-service/samples/2.x/AspNetCoreService/Program.cs?name=ServiceOrConsole)]
 
 ASP.NET Core 구성에 명령줄 인수에 대한 이름 값 쌍이 필요하기 때문에 인수가 [CreateDefaultBuilder](/dotnet/api/microsoft.aspnetcore.webhost.createdefaultbuilder)에 전달되기 전에 `--console` 스위치를 제거합니다.
 
 > [!NOTE]
 > [통합 테스트](xref:test/integration-tests)가 제대로 작동하려면 `CreateWebHostBuilder`의 서명이 `CreateWebHostBuilder(string[])`이어야 하므로 `isService`는 `Main`에서 `CreateWebHostBuilder`로 전달되지 않습니다.
-
-::: moniker-end
-
-::: moniker range="< aspnetcore-2.0"
-
-[!code-csharp[](windows-service/samples_snapshot/1.x/AspNetCoreService/Program.cs?name=ServiceOrConsole)]
-
-::: moniker-end
 
 ## <a name="handle-stopping-and-starting-events"></a>이벤트 중지 및 시작 처리
 
@@ -210,20 +207,10 @@ ASP.NET Core 구성에 명령줄 인수에 대한 이름 값 쌍이 필요하기
 
 3. `Program.Main`에서 [RunAsService](/dotnet/api/microsoft.aspnetcore.hosting.windowsservices.webhostwindowsserviceextensions.runasservice) 대신 새 확장 메서드(`RunAsCustomService`)를 호출합니다.
 
-   ::: moniker range=">= aspnetcore-2.0"
-
    [!code-csharp[](windows-service/samples/2.x/AspNetCoreService/Program.cs?name=HandleStopStart&highlight=17)]
 
    > [!NOTE]
    > [통합 테스트](xref:test/integration-tests)가 제대로 작동하려면 `CreateWebHostBuilder`의 서명이 `CreateWebHostBuilder(string[])`이어야 하므로 `isService`는 `Main`에서 `CreateWebHostBuilder`로 전달되지 않습니다.
-
-   ::: moniker-end
-
-   ::: moniker range="< aspnetcore-2.0"
-
-   [!code-csharp[](windows-service/samples_snapshot/1.x/AspNetCoreService/Program.cs?name=HandleStopStart&highlight=27)]
-
-   ::: moniker-end
 
 사용자 지정 `WebHostService` 코드에 종속성 주입의 서비스(예: 로거)가 필요한 경우 [IWebHost.Services](/dotnet/api/microsoft.aspnetcore.hosting.iwebhost.services) 속성에서 서비스를 가져옵니다.
 
@@ -235,7 +222,12 @@ ASP.NET Core 구성에 명령줄 인수에 대한 이름 값 쌍이 필요하기
 
 ## <a name="configure-https"></a>HTTPS 구성
 
-[Kestrel 서버 HTTPS 엔드포인트 구성](xref:fundamentals/servers/kestrel#endpoint-configuration)을 지정합니다.
+보안 엔드포인트로 서비스를 구성하려면 다음을 수행합니다.
+
+1. 플랫폼의 인증서 획득 및 배포 메커니즘을 사용하여 호스팅 시스템에 대한 X.509 인증서를 만듭니다.
+1. [Kestrel 서버 HTTPS 엔드포인트 구성](xref:fundamentals/servers/kestrel#endpoint-configuration)을 지정하여 인증서를 사용합니다.
+
+서비스 엔드포인트를 보호하기 위해 ASP.NET Core HTTPS 개발 인증서 사용은 지원되지 않습니다.
 
 ## <a name="current-directory-and-content-root"></a>현재 디렉터리 및 콘텐츠 루트
 
