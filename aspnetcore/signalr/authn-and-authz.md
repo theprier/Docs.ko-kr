@@ -7,22 +7,22 @@ ms.author: anurse
 ms.custom: mvc
 ms.date: 06/29/2018
 uid: signalr/authn-and-authz
-ms.openlocfilehash: 7cfe90115b0710fba196693efd309f7c914f0ad4
-ms.sourcegitcommit: 2ef32676c16f76282f7c23154d13affce8c8bf35
+ms.openlocfilehash: aa1721ba1802e1bfba04d57378085a136c100deb
+ms.sourcegitcommit: 4a6bbe84db24c2f3dd2de065de418fde952c8d40
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 10/30/2018
-ms.locfileid: "50234542"
+ms.locfileid: "50252908"
 ---
 # <a name="authentication-and-authorization-in-aspnet-core-signalr"></a>ASP.NET Core SignalR의 인증 및 권한 부여
 
 작성자: [Andrew Stanton-Nurse](https://twitter.com/anurse)
 
-[예제 코드 보기 또는 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/signalr/authn-and-authz/sample/) [(다운로드 방법)](xref:index#how-to-download-a-sample)
+[샘플 코드 보기 또는 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/signalr/authn-and-authz/sample/) [(다운로드 방법)](xref:index#how-to-download-a-sample)
 
 ## <a name="authenticate-users-connecting-to-a-signalr-hub"></a>SignalR 허브에 연결하는 사용자 인증하기
 
-SignalR을 [ASP.NET Core 인증](xref:security/authentication/identity)과 함께 사용하여 각 연결에 사용자를 연결할 수 있습니다. 허브에서는 [`HubConnectionContext.User`](/dotnet/api/microsoft.aspnetcore.signalr.hubconnectioncontext.user) 속성을 통해서 인증 데이터에 접근할 수 있습니다. 인증을 사용하면 허브가 특정 사용자와 관련된 모든 연결에서 메서드를 호출할 수 있습니다 (더 자세한 정보는 [SignalR의 사용자 및 그룹 관리](xref:signalr/groups)를 참고하시기 바랍니다). 단일 사용자에게 다수의 연결을 연결할 수 있습니다.
+SignalR을 [ASP.NET Core 인증](xref:security/authentication/identity)과 함께 사용하여 각 연결에 사용자를 연결할 수 있습니다. 허브에서는 [`HubConnectionContext.User`](/dotnet/api/microsoft.aspnetcore.signalr.hubconnectioncontext.user) 속성을 통해서 인증 데이터에 접근할 수 있습니다. 인증을 사용하면 허브가 특정 사용자와 관련된 모든 연결에서 메서드를 호출할 수 있습니다(자세한 정보는 [SignalR의 사용자 및 그룹 관리](xref:signalr/groups)를 참고하시기 바랍니다). 단일 사용자에게 다수의 연결을 연결할 수 있습니다.
 
 ### <a name="cookie-authentication"></a>쿠키 인증
 
@@ -64,9 +64,9 @@ var connection = new HubConnectionBuilder()
 
 ### <a name="windows-authentication"></a>Windows 인증
 
-앱에 [Windows 인증](xref:security/authentication/windowsauth)이 구성되어 있을 경우 SignalR은 해당 신원을 이용해서 허브를 보호할 수 있습니다. 그러나 개별 사용자에게 메시지를 전송하려면 사용자 지정 사용자 ID 공급자를 추가해야 합니다. 그 이유는 Windows 인증 시스템이 SignalR이 사용자 이름을 결정하는데 사용하는 "이름 식별자" 클레임을 제공하지 않기 때문입니다.
+앱에 [Windows 인증](xref:security/authentication/windowsauth)이 구성되어 있을 경우 SignalR은 해당 신원을 이용해서 허브를 보호할 수 있습니다. 그러나 개별 사용자에게 메시지를 전송하려면 사용자 지정 사용자 ID 공급자를 추가해야 합니다. 그 이유는 Windows 인증 시스템이 SignalR이 사용자 이름을 결정하는 데 사용하는 "이름 식별자" 클레임을 제공하지 않기 때문입니다.
 
-`IUserIdProvider`를 구현하는 새 클래스를 추가하고 사용자로부터 식별자로 사용할 클레임 중 하나를 가져옵니다. 예를 들어, "Name" 클레임을 (`[Domain]\[Username]` 형태의 Windows 사용자 이름) 사용하려면 다음과 같은 클래스를 생성합니다.
+`IUserIdProvider`를 구현하는 새 클래스를 추가하고 사용자로부터 식별자로 사용할 클레임 중 하나를 가져옵니다. 예를 들어, "Name" 클레임(`[Domain]\[Username]` 형태의 Windows 사용자 이름)을 사용하려면 다음과 같은 클래스를 생성합니다.
 
 ```csharp
 public class NameUserIdProvider : IUserIdProvider
@@ -78,7 +78,7 @@ public class NameUserIdProvider : IUserIdProvider
 }
 ```
 
-`ClaimTypes.Name` 대신 `User`의 다른 모든 값을 (Windows SID 식별자 등과 같은) 사용할 수 있습니다.
+`ClaimTypes.Name` 대신 `User`의 다른 모든 값(예: Windows SID 식별자 등)을 사용할 수 있습니다.
 
 > [!NOTE]
 > 선택한 값은 시스템의 모든 사용자 간에 고유해야 합니다. 그렇지 않으면 특정 사용자를 대상으로 한 메시지가 다른 사용자에게 전달될 수 있습니다.
@@ -110,7 +110,7 @@ Windows 인증은 Microsoft Internet Explorer 또는 Microsoft Edge를 사용하
 
 ## <a name="authorize-users-to-access-hubs-and-hub-methods"></a>허브 및 허브 메서드 접근에 대한 사용자 권한 부여
 
-기본적으로 허브의 모든 메서드는 인증되지 않은 사용자도 호출할 수 있습니다. 인증을 요구하려면 허브에 [Authorize](/dotnet/api/microsoft.aspnetcore.authorization.authorizeattribute) 특성을 적용합니다.
+기본적으로, 인증되지 않은 사용자도 허브의 모든 메서드를 호출할 수 있습니다. 인증을 요구하려면 허브에 [Authorize](/dotnet/api/microsoft.aspnetcore.authorization.authorizeattribute) 특성을 적용합니다.
 
 [!code-csharp[Restrict a hub to only authorized users](authn-and-authz/sample/Hubs/ChatHub.cs?range=8-10,32)]
 
