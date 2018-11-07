@@ -1,5 +1,5 @@
 ---
-title: ASP.NET Core SignalR에서 MessagePack 허브 프로토콜 사용하기
+title: ASP.NET Core SignalR에서 MessagePack 허브 프로토콜 사용
 author: tdykstra
 description: ASP.NET Core SignalR에 MessagePack 허브 프로토콜을 추가합니다.
 monikerRange: '>= aspnetcore-2.1'
@@ -14,17 +14,17 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 10/15/2018
 ms.locfileid: "49325583"
 ---
-# <a name="use-messagepack-hub-protocol-in-signalr-for-aspnet-core"></a>ASP.NET Core SignalR에서 MessagePack 허브 프로토콜 사용하기
+# <a name="use-messagepack-hub-protocol-in-signalr-for-aspnet-core"></a>ASP.NET Core SignalR에서 MessagePack 허브 프로토콜 사용
 
 작성자: [Brennan Conroy](https://github.com/BrennanConroy)
 
-이 문서는 독자가 [시작하기](xref:tutorials/signalr)에서 설명하고 있는 내용에 친숙하다고 가정합니다.
+이 문서는 독자가 [시작하기](xref:tutorials/signalr)에서 설명하는 내용을 잘 알고 있다고 가정합니다.
 
 ## <a name="what-is-messagepack"></a>MessagePack이란?
 
 [MessagePack](https://msgpack.org/index.html)은 빠르고 간결한 이진 직렬화 포맷입니다. [JSON](https://www.json.org/)에 비해 크기가 작은 메시지를 생성하기 때문에 성능 및 대역폭이 중요한 경우에 유용합니다. 이진 형식이므로 바이트가 MessagePack 파서를 거치지 않는 한 네트워크 추적 및 로그를 살펴보더라도 메시지를 읽을 수 없습니다. SignalR은 MessagePack 형식을 기본으로 지원하며 클라이언트 및 서버에서 사용하기 위한 API를 제공합니다.
 
-## <a name="configure-messagepack-on-the-server"></a>서버에서 MessagePack 구성하기
+## <a name="configure-messagepack-on-the-server"></a>서버에서 MessagePack 구성
 
 서버에서 MessagePack 허브 프로토콜을 사용하려면 앱에 `Microsoft.AspNetCore.SignalR.Protocols.MessagePack` 패키지를 설치해야 합니다. Startup.cs 파일에서 `AddSignalR` 호출에 `AddMessagePackProtocol`을 추가하여 서버에서 MessagePack 지원을 활성화시킵니다.
 
@@ -36,7 +36,7 @@ services.AddSignalR()
     .AddMessagePackProtocol();
 ```
 
-MessagePack이 데이터를 서식화하는 방법을 사용자 지정하려면 `AddMessagePackProtocol`에 구성 옵션을 위한 대리자를 전달합니다. 이 대리자에서 `FormatterResolvers` 속성을 이용하여 MessagePack 직렬화 옵션을 구성할 수 있습니다. 리졸버가 동작하는 방식에 대한 보다 자세한 내용은[MessagePack CSharp](https://github.com/neuecc/MessagePack-CSharp)의 MessagePack 라이브러리를 방문해보시기 바랍니다. 직렬화하고자 하는 개체에 특성을 적용하여 해당 개체를 처리하는 방식을 정의할 수 있습니다.
+MessagePack이 데이터를 서식화하는 방법을 사용자 지정하려면 `AddMessagePackProtocol`에 구성 옵션을 위한 대리자를 전달합니다. 이 대리자에서 `FormatterResolvers` 속성을 이용하여 MessagePack 직렬화 옵션을 구성할 수 있습니다. 리졸버가 동작하는 방식에 대한 자세한 내용은 [MessagePack CSharp](https://github.com/neuecc/MessagePack-CSharp)의 MessagePack 라이브러리를 방문해보시기 바랍니다. 직렬화하고자 하는 개체에 특성을 적용하여 해당 개체를 처리하는 방식을 정의할 수 있습니다.
 
 ```csharp
 services.AddSignalR()
@@ -49,7 +49,7 @@ services.AddSignalR()
     });
 ```
 
-## <a name="configure-messagepack-on-the-client"></a>클라이언트에서 MessagePack 구성하기
+## <a name="configure-messagepack-on-the-client"></a>클라이언트에서 MessagePack 구성
 
 > [!NOTE]
 > JSON은 지원되는 클라이언트에 대해 기본적으로 활성화됩니다. 클라이언트는 단일 프로토콜만 지원할 수 있습니다. MessagePack 지원을 추가하면 기존에 구성된 모든 프로토콜이 대체됩니다.
@@ -66,7 +66,7 @@ var hubConnection = new HubConnectionBuilder()
 ```
 
 > [!NOTE]
-> 서버와 마찬가지로 이 `AddMessagePackProtocol` 호출은 옵션을 구성하기 위한 대리자를 전달 받습니다.
+> 서버와 마찬가지로 이 `AddMessagePackProtocol` 호출은 옵션을 구성하기 위한 대리자를 전달받습니다.
 
 ### <a name="javascript-client"></a>JavaScript 클라이언트
 
@@ -101,6 +101,6 @@ const connection = new signalR.HubConnectionBuilder()
 
 ## <a name="related-resources"></a>관련 자료
 
-* [시작하기](xref:tutorials/signalr)
+* [시작](xref:tutorials/signalr)
 * [.NET 클라이언트](xref:signalr/dotnet-client)
 * [JavaScript 클라이언트](xref:signalr/javascript-client)
