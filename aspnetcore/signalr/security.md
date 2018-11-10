@@ -5,14 +5,14 @@ description: ASP.NET Core SignalR에서 인증 및 권한 부여를 사용하는
 monikerRange: '>= aspnetcore-2.1'
 ms.author: anurse
 ms.custom: mvc
-ms.date: 10/17/2018
+ms.date: 11/06/2018
 uid: signalr/security
-ms.openlocfilehash: 1adf762cd6de4f0cf62e31c0ec6e595a32ed56f8
-ms.sourcegitcommit: f5d403004f3550e8c46585fdbb16c49e75f495f3
+ms.openlocfilehash: f646d319cf3030fd4d769e882514da14b230bbdd
+ms.sourcegitcommit: c3fa5aded0bf76a7414047d50b8a2311d27ee1ef
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "49477542"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51276147"
 ---
 # <a name="security-considerations-in-aspnet-core-signalr"></a>ASP.NET Core SignalR의 보안 고려 사항
 
@@ -35,7 +35,7 @@ CORS를 구성하는 방법에 대한 자세한 내용은 [교차 원본 요청(
 * HTTP 메서드 `GET`과 `POST`를 허용해야 합니다.
 * 인증이 사용되지 않는 경우에도 자격 증명이 활성화되어야 합니다.
 
-예를 들어 다음 CORS 정책은 `http://example.com`에서 호스팅되는 SignalR 브라우저 클라이언트가 `http://signalr.example.com`에서 호스팅되는 SignalR 앱에 접근할 수 있도록 허용합니다.
+예를 들어 다음 CORS 정책은 `https://example.com`에서 호스팅되는 SignalR 브라우저 클라이언트가 `https://signalr.example.com`에서 호스팅되는 SignalR 앱에 접근할 수 있도록 허용합니다.
 
 [!code-csharp[Main](security/sample/Startup.cs?name=snippet1)]
 
@@ -43,6 +43,14 @@ CORS를 구성하는 방법에 대한 자세한 내용은 [교차 원본 요청(
 > SignalR은 Azure App Service가 기본 제공하는 CORS 기능과 호환되지 않습니다.
 
 ## <a name="websocket-origin-restriction"></a>WebSocket 원본 제한
+
+::: moniker range=">= aspnetcore-2.2"
+
+CORS가 제공하는 보호는 WebSocket에는 적용되지 않습니다. Websocket에서 원본 제한에 대 한 읽을 [Websocket 원본 제한은](xref:fundamentals/websockets#websocket-origin-restriction)합니다.
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.2"
 
 CORS가 제공하는 보호는 WebSocket에는 적용되지 않습니다. 브라우저는 다음을 수행하지 **않습니다.**
 
@@ -58,9 +66,18 @@ ASP.NET Core 2.1 이상에서는 `Configure`에서 **`UseSignalR` 및 인증 미
 > [!NOTE]
 > `Origin` 헤더는 클라이언트에 의해서 제어되며 `Referer` 헤더처럼 가짜일 수 있습니다. 이런 헤더들을 인증 메커니즘으로 사용하면 **안 됩니다.**
 
+::: moniker-end
+
 ## <a name="access-token-logging"></a>액세스 토큰 로깅
 
-WebSocket 또는 서버-전송 이벤트를 사용할 경우 브라우저 클라이언트는 쿼리 문자열을 통해서 액세스 토큰을 전송합니다. 쿼리 문자열을 통해서 액세스 토큰을 수신하는 방식은 일반적으로 표준 `Authorization` 헤더를 사용하는 방식만큼 안전합니다. 그러나 많은 웹 서버가 쿼리 문자열을 포함한 각 요청의 URL을 기록합니다. 따라서 URL 로깅이 액세스 토큰까지 기록할 수도 있습니다. 가장 좋은 방법은 액세스 토큰을 기록하지 않도록 웹 서버의 로깅 설정을 구성하는 것입니다.
+WebSocket 또는 서버-전송 이벤트를 사용할 경우 브라우저 클라이언트는 쿼리 문자열을 통해서 액세스 토큰을 전송합니다. 쿼리 문자열을 통해서 액세스 토큰을 수신하는 방식은 일반적으로 표준 `Authorization` 헤더를 사용하는 방식만큼 안전합니다. 항상 HTTPS를 사용 하 여 클라이언트와 서버 간의 안전한 종단 간 연결을 보장 해야 합니다. 여러 웹 서버 로그 쿼리 문자열을 포함 하 여 각 요청에 대 한 URL입니다. 따라서 URL 로깅이 액세스 토큰까지 기록할 수도 있습니다. ASP.NET Core는 쿼리 문자열을 포함 하는 기본적으로 각 요청에 대 한 URL을 기록 합니다. 예를 들어:
+
+```
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:5000/myhub?access_token=1234
+```
+
+서버 로그를 사용 하 여이 데이터를 로깅에 대 한 질문이 있으면 완전히 구성 하 여이 로깅을 비활성화할 수 있습니다는 `Microsoft.AspNetCore.Hosting` 로거가 합니다 `Warning` 수준 이상 (이러한 메시지에 기록 됩니다 `Info` 수준). 설명서를 참조 [로그 필터링](xref:fundamentals/logging/index#log-filtering) 자세한 내용은 합니다. 특정 요청 정보를 기록 하려는 경우 [미들웨어를 작성](xref:fundamentals/middleware/index#write-middleware) 필요 하 고 필터링 된 데이터를 기록 하는 `access_token` 쿼리 문자열 값 (있는 경우).
 
 ## <a name="exceptions"></a>예외
 

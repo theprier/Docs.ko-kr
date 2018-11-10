@@ -29,7 +29,7 @@ ms.locfileid: "50206954"
 > * SignalR 서버 구성
 > * 클라이언트 및 서버 간 통신 활성화
 
-[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/tutorials/signalr-typescript-webpack/sample)([다운로드 방법](xref:index#how-to-download-a-sample))
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/tutorials/signalr-typescript-webpack/sample) ([다운로드 방법](xref:index#how-to-download-a-sample))
 
 ## <a name="prerequisites"></a>전제 조건
 
@@ -39,7 +39,7 @@ ms.locfileid: "50206954"
 
 * [.NET Core SDK 2.1 이상](https://www.microsoft.com/net/download/all)
 * [npm](https://www.npmjs.com/) 포함 [Node.js](https://nodejs.org/)
-* [Visual Studio 2017](https://www.visualstudio.com/downloads/) 버전 15.7.3 이상(**ASP.NET 및 웹 개발** 워크로드 포함)
+* [Visual Studio 2017](https://www.visualstudio.com/downloads/) 버전 15.7.3 이상 (**ASP.NET 및 웹 개발** 워크로드 필요)
 
 # <a name="net-core-clitabnetcore-cli"></a>[.NET Core CLI](#tab/netcore-cli)
 

@@ -58,7 +58,7 @@ JavaScript 클라이언트는 `connection.stream`을 사용하여 허브의 스�
 * 허브 메서드의 이름. 다음 예제에서 허브 메서드 이름은 `Counter`입니다.
 * 허브 메서드에 정의된 인수. 다음 예에서 인수는 수신할 스트림 항목의 갯수에 대한 카운트 및 스트림 항목 사이의 지연 시간입니다.
 
-`connection.stream`은 `subscribe` 메서드가 포함된 `IStreamResult`를 반환합니다. `IStreamSubscriber`를 `subscribe`에 전달하고 스트림 호출에서 알림을 받을 `next`, `error` 및 `complete` 콜백을 설정합니다.
+`connection.stream`은 `subscribe` 메서드가 포함된 `IStreamResult`를 반환합니다. `IStreamSubscriber`를 `subscribe`에 전달하고 `stream` 호출에서 알림을 받을 `next`, `error`및 `complete` 콜백을 설정합니다.
 
 [!code-javascript[Streaming javascript](streaming/sample/wwwroot/js/stream.js?range=19-36)]
 

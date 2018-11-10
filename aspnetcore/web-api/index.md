@@ -4,14 +4,14 @@ author: scottaddie
 description: ASP.NET Core에서 Web API를 빌드하는 데 사용할 수 있는 기능과 각 기능을 사용하기에 적합한 시기에 대해 알아봅니다.
 ms.author: scaddie
 ms.custom: mvc
-ms.date: 10/30/2018
+ms.date: 11/06/2018
 uid: web-api/index
-ms.openlocfilehash: b3e26bee5e4dc8937e810bc5db300a486437f568
-ms.sourcegitcommit: c43a6f1fe72d7c2db4b5815fd532f2b45d964e07
+ms.openlocfilehash: 010c437afc494fa4426f6922421afac46bbf6b39
+ms.sourcegitcommit: fc7eb4243188950ae1f1b52669edc007e9d0798d
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50244764"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51225436"
 ---
 # <a name="build-web-apis-with-aspnet-core"></a>ASP.NET Core에서 Web API 빌드
 
@@ -77,13 +77,13 @@ ASP.NET Core 2.2 이상에서는 `[ApiController]` 특성을 어셈블리에 적
 
 ### <a name="automatic-http-400-responses"></a>자동 HTTP 400 응답
 
-유효성 검사 오류 시 HTTP 400 응답이 자동으로 트리거됩니다. 다음 코드는 실제 작업 시 불필요하게 됩니다.
+모델 유효성 검사 오류 시 HTTP 400 응답이 자동으로 트리거됩니다. 따라서 다음 코드는 실제 작업 시 불필요하게 됩니다.
 
 [!code-csharp[](define-controller/samples/WebApiSample.Api.Pre21/Controllers/PetsController.cs?name=snippet_ModelStateIsValidCheck)]
 
 <xref:Microsoft.AspNetCore.Mvc.ApiBehaviorOptions.InvalidModelStateResponseFactory>를 사용하여 결과 응답의 출력을 사용자 지정합니다.
 
-<xref:Microsoft.AspNetCore.Mvc.ApiBehaviorOptions.SuppressModelStateInvalidFilter> 속성이 `true`로 설정된 경우 기본 동작이 사용되지 않습니다. `services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_<version_number>);` 뒤에 다음 코드를 `Startup.ConfigureServices`에 추가합니다.
+모델 유효성 검사 오류에서 작업을 복구할 수 있을 때 기본 동작을 비활성화하는 것이 유용합니다. <xref:Microsoft.AspNetCore.Mvc.ApiBehaviorOptions.SuppressModelStateInvalidFilter> 속성이 `true`로 설정된 경우 기본 동작이 사용되지 않습니다. `services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_<version_number>);` 뒤에 다음 코드를 `Startup.ConfigureServices`에 추가합니다.
 
 ::: moniker-end
 
@@ -235,7 +235,7 @@ ASP.NET Core 2.2 이상에서 MVC는 오류 결과(상태 코드 400 이상의 �
 
 ::: moniker-end
 
-## <a name="additional-resources"></a>추가 리소스
+## <a name="additional-resources"></a>추가 자료
 
 * <xref:web-api/action-return-types>
 * <xref:web-api/advanced/custom-formatters>

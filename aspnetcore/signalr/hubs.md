@@ -7,12 +7,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 09/12/2018
 uid: signalr/hubs
-ms.openlocfilehash: be42314afad4ff43d2fcf1abbc96c5b78c773977
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: 27aedc5b2f2060d961070fbd1ff5304eaa3956d1
+ms.sourcegitcommit: fc7eb4243188950ae1f1b52669edc007e9d0798d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50206018"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51225358"
 ---
 # <a name="use-hubs-in-signalr-for-aspnet-core"></a>ASP.NET Core SignalR에서 허브 사용하기
 
@@ -41,6 +41,11 @@ ASP.NET Core 앱에 SignalR 기능을 추가할 때, `Startup.Configure` 메서�
 [!code-csharp[Create and use hubs](hubs/sample/hubs/chathub.cs?range=8-37)]
 
 일반적인 C# 메서드와 마찬가지로 복합 형식 및 배열 등을 사용해서 반환 형식과 매개 변수를 지정할 수 있습니다. SignalR은 매개 변수 및 반환 값에 사용되는 복합 개체 및 배열의 직렬화와 역직렬화를 처리합니다.
+
+> [!NOTE]
+> 일시적인 hubs 같습니다.
+> * 허브 클래스의 속성에서 상태를 저장 하지 마십시오. 허브 메서드 호출 마다 새 허브 인스턴스에서 실행 됩니다.  
+> * 사용 하 여 `await` 활성 상태로 유지 하는 허브에 의존 하는 비동기 메서드를 호출할 때. 예를 들어,와 같은 메서드 `Clients.All.SendAsync(...)` 없이 호출 되는 경우 실패할 수 있습니다 `await` 허브 메서드를 완료 하기 전에 `SendAsync` 완료 합니다.
 
 ## <a name="the-context-object"></a>Context 개체
 

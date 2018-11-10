@@ -8,12 +8,12 @@ ms.date: 06/06/2012
 ms.assetid: a585c9a2-7c8e-478b-9706-90f3739c50d1
 msc.legacyurl: /web-forms/overview/performance-and-caching/using-asynchronous-methods-in-aspnet-45
 msc.type: authoredcontent
-ms.openlocfilehash: 61bb977af9dca6fc080151ffd6ea3d966f1b1592
-ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
+ms.openlocfilehash: 9a3c9fab4932c3bc85733a912cf1d1eaaecc1ab7
+ms.sourcegitcommit: fc7eb4243188950ae1f1b52669edc007e9d0798d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49325421"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51225488"
 ---
 <a name="using-asynchronous-methods-in-aspnet-45"></a>ASP.NET 4.5에서에서 비동기 메서드 사용
 ====================
@@ -198,9 +198,10 @@ ASP.NET 비동기 페이지를 포함 해야 합니다 [페이지](https://msdn.
   
   Note 위의 이미지에 응용 프로그램 풀에서.NET 4.5를 사용 하는 경우에.NET framework v4.0을으로 나열 됩니다. 이러한 차이 이해 하려면 다음을 참조 합니다.
 
-        - [.NET Versioning and Multi-Targeting - .NET 4.5 is an in-place upgrade to .NET 4.0](http://www.hanselman.com/blog/NETVersioningAndMultiTargetingNET45IsAnInplaceUpgradeToNET40.aspx)
-        - [How to set an IIS Application or AppPool to use ASP.NET 3.5 rather than 2.0](http://www.hanselman.com/blog/HowToSetAnIISApplicationOrAppPoolToUseASPNET35RatherThan20.aspx)
-        - [.NET Framework Versions and Dependencies](https://msdn.microsoft.com/library/bb822049(VS.110).aspx)
+- [.NET 버전 관리 및 멀티 타기 팅-.NET 4.5는.NET 4.0의 전체 업그레이드](http://www.hanselman.com/blog/NETVersioningAndMultiTargetingNET45IsAnInplaceUpgradeToNET40.aspx)
+- [IIS 응용 프로그램 또는 AppPool 2.0 대신 ASP.NET 3.5 사용 하도록 설정 하는 방법](http://www.hanselman.com/blog/HowToSetAnIISApplicationOrAppPoolToUseASPNET35RatherThan20.aspx)
+- [.NET Framework 버전 및 종속성](https://msdn.microsoft.com/library/bb822049(VS.110).aspx)
+
 - 응용 프로그램 웹 서비스를 사용 하는 경우 HTTP를 통해 백 엔드를 사용 하 여 통신 하는 System.NET 늘려야 할 수도 합니다 [connectionManagement/maxconnection](https://msdn.microsoft.com/library/fb6y0fyc(VS.110).aspx) 요소입니다. ASP.NET 응용 프로그램에 대 한이 12 번 Cpu 수로 자동 구성 기능으로 제한 됩니다. 즉, 쿼드 프로세서에서 사용할 수 있습니다 최대 12 \* 4 = 48 IP 끝점에 대 한 동시 연결 합니다. 이 연결 되어 있으므로 [autoConfig](https://msdn.microsoft.com/library/7w2sway1(VS.110).aspx), 증가 하는 가장 쉬운 방법은 `maxconnection` 설정 하는 ASP.NET 응용 프로그램은 [System.Net.ServicePointManager.DefaultConnectionLimit](https://msdn.microsoft.com/library/system.net.servicepointmanager.defaultconnectionlimit(VS.110).aspx) 에 프로그래밍 방식으로 `Application_Start` 의 메서드를 *global.asax* 파일입니다. 예제 다운로드 샘플을 참조 하세요.
 - .NET 4.5에서는 5000 기본값인 [MaxConcurrentRequestsPerCPU](https://blogs.msdn.com/tmarq/archive/2007/07/21/asp-net-thread-usage-on-iis-7-0-and-6-0.aspx) 문제가 없어야 합니다.
 

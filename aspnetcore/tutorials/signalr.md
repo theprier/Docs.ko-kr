@@ -7,12 +7,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 08/31/2018
 uid: tutorials/signalr
-ms.openlocfilehash: fcfe2fa6cc88b9eee1389e171fa5eb7711b4f14f
-ms.sourcegitcommit: fc2486ddbeb15ab4969168d99b3fe0fbe91e8661
+ms.openlocfilehash: 7d9f3a3f8aa7a5e47169da66e6fa2d6a28de3853
+ms.sourcegitcommit: 2d3e5422d530203efdaf2014d1d7df31f88d08d0
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "50758130"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51021250"
 ---
 # <a name="tutorial-get-started-with-aspnet-core-signalr"></a>자습서: ASP.NET Core SignalR로 시작
 
@@ -29,7 +29,7 @@ ms.locfileid: "50758130"
 
 ![SignalR 샘플 앱](signalr/_static/signalr-get-started-finished.png)
 
-[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/tutorials/signalr/sample) ([다운로드 방법](xref:index#how-to-download-a-sample)).
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/tutorials/signalr/sample) ([다운로드 방법](xref:index#how-to-download-a-sample))
 
 ## <a name="prerequisites"></a>전제 조건
 
@@ -47,7 +47,7 @@ ms.locfileid: "50758130"
 # <a name="visual-studio-for-mactabvisual-studio-mac"></a>[Visual Studio for Mac](#tab/visual-studio-mac)
 
 * [Mac용 Visual Studio 버전 7.5.4 이상](https://www.visualstudio.com/downloads/)
-* [.NET Core SDK 2.1 이상](https://www.microsoft.com/net/download/all)(Visual Studio 설치에 포함됨)
+* [.NET Core SDK 2.1 이상](https://www.microsoft.com/net/download/all) (Visual Studio 설치에 포함됨)
 
 ---
 
@@ -69,12 +69,13 @@ ms.locfileid: "50758130"
 
 # <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code/)
 
-* 새 프로젝트에 사용할 수 있는 폴더를 엽니다.
+* 새 프로젝트 폴더를 만들 폴더에 대한 [통합 터미널](https://code.visualstudio.com/docs/editor/integrated-terminal)을 엽니다.
 
-* [통합 터미널](https://code.visualstudio.com/docs/editor/integrated-terminal)에서 다음 명령을 실행합니다.
+* 다음 명령을 실행합니다.
 
    ```console
    dotnet new webapp -o SignalRChat
+   code -r SignalRChat
    ```
 
 # <a name="visual-studio-for-mactabvisual-studio-mac"></a>[Visual Studio for Mac](#tab/visual-studio-mac)
@@ -113,13 +114,11 @@ SignalR 서버 라이브러리는 `Microsoft.AspNetCore.App` metapackage에 포�
 
 # <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code/)
 
-* **통합 터미널**에서 다음 명령을 실행하여 LibMan을 설치합니다.
+* 통합 터미널에서 다음 명령을 실행하여 LibMan을 설치합니다.
 
   ```console
   dotnet tool install -g Microsoft.Web.LibraryManager.Cli
   ```
-
-* 프로젝트 폴더로 이동합니다(*SignalRChat.csproj* 파일을 포함하는 폴더).
 
 * 다음 명령을 실행하고 LibMan을 사용하여 SignalR 클라이언트 라이브러리를 가져옵니다. 출력이 표시되기 전에 잠시 기다려야 할 수도 있습니다.
 
@@ -225,8 +224,12 @@ SignalR 서버는 SignalR에 SignalR 요청을 전달하도록 구성되어야 �
 
 # <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code)
 
-* **CTRL+F5** 키를 눌러 디버깅 없이 앱을 실행합니다.
+* 통합 터미널에서 다음 명령을 실행합니다.
 
+  ```console
+  dotnet run -p SignalRChat
+  ```
+  
 # <a name="visual-studio-for-mactabvisual-studio-mac"></a>[Visual Studio for Mac](#tab/visual-studio-mac)
 
 * 메뉴에서 **실행 > 디버깅하지 않고 시작**을 선택합니다.

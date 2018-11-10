@@ -759,7 +759,7 @@ JQuery DataTables 플러그인의 다음 릴리스에서이 CDN에서 호스트 
 
 ### <a name="respond-releases-on-the-cdn"></a>CDN에서 릴리스 응답
 
-다음 릴리스에서 [ https://github.com/scottjehl/Respond ] (https://github.com/scottjehl/Respond " https://github.com/scottjehl/Respond ") 응답 CDN에서 호스팅됩니다.
+다음 릴리스에서 [https://github.com/scottjehl/Respond](https://github.com/scottjehl/Respond "https://github.com/scottjehl/Respond") 응답 CDN에서 호스팅됩니다.
 
 #### <a name="respond-version-142"></a>응답 버전 1.4.2
 
