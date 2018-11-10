@@ -14,19 +14,19 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 10/30/2018
 ms.locfileid: "50244855"
 ---
-# <a name="get-started-with-aspnet-core-razor-pages-in-visual-studio-code"></a><span data-ttu-id="a2917-103">Visual Studio Code에서 ASP.NET Core Razor 페이지 시작</span><span class="sxs-lookup"><span data-stu-id="a2917-103">Get started with ASP.NET Core Razor Pages in Visual Studio Code</span></span>
+# <a name="get-started-with-aspnet-core-razor-pages-in-visual-studio-code"></a><span data-ttu-id="cb881-103">Visual Studio Code에서 ASP.NET Core Razor 페이지 시작</span><span class="sxs-lookup"><span data-stu-id="cb881-103">Get started with ASP.NET Core Razor Pages in Visual Studio Code</span></span>
 
-<span data-ttu-id="a2917-104">작성자: [Rick Anderson](https://twitter.com/RickAndMSFT)</span><span class="sxs-lookup"><span data-stu-id="a2917-104">By [Rick Anderson](https://twitter.com/RickAndMSFT)</span></span>
+<span data-ttu-id="cb881-104">작성자: [Rick Anderson](https://twitter.com/RickAndMSFT)</span><span class="sxs-lookup"><span data-stu-id="cb881-104">By [Rick Anderson](https://twitter.com/RickAndMSFT)</span></span>
 
-<span data-ttu-id="a2917-105">이 자습서에서는 ASP.NET Core Razor 페이지 웹앱을 빌드하는 작업의 기본 사항을 설명합니다.</span><span class="sxs-lookup"><span data-stu-id="a2917-105">This tutorial teaches the basics of building an ASP.NET Core Razor Pages web app.</span></span> <span data-ttu-id="a2917-106">이 자습서를 시작하기 전에 [Razor 페이지 소개](xref:razor-pages/index)를 완료하는 것이 좋습니다.</span><span class="sxs-lookup"><span data-stu-id="a2917-106">We recommend you complete [Introduction to Razor Pages](xref:razor-pages/index) before starting this tutorial.</span></span> <span data-ttu-id="a2917-107">Razor 페이지는 ASP.NET Core에서 웹 응용 프로그램 UI를 빌드하는 좋은 방법입니다.</span><span class="sxs-lookup"><span data-stu-id="a2917-107">Razor Pages is the recommended way to build UI for web applications in ASP.NET Core.</span></span>
+<span data-ttu-id="cb881-105">이 자습서에서는 ASP.NET Core Razor 페이지 웹앱을 빌드하는 작업의 기본 사항을 설명합니다.</span><span class="sxs-lookup"><span data-stu-id="cb881-105">This tutorial teaches the basics of building an ASP.NET Core Razor Pages web app.</span></span> <span data-ttu-id="cb881-106">이 자습서를 시작하기 전에 [Razor 페이지 소개](xref:razor-pages/index)를 완료하는 것이 좋습니다.</span><span class="sxs-lookup"><span data-stu-id="cb881-106">We recommend you complete [Introduction to Razor Pages](xref:razor-pages/index) before starting this tutorial.</span></span> <span data-ttu-id="cb881-107">Razor 페이지는 ASP.NET Core에서 웹 응용 프로그램 UI를 빌드하는 좋은 방법입니다.</span><span class="sxs-lookup"><span data-stu-id="cb881-107">Razor Pages is the recommended way to build UI for web applications in ASP.NET Core.</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="a2917-108">전제 조건</span><span class="sxs-lookup"><span data-stu-id="a2917-108">Prerequisites</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="cb881-108">전제 조건</span><span class="sxs-lookup"><span data-stu-id="cb881-108">Prerequisites</span></span>
 
 [!INCLUDE [](~/includes/net-core-prereqs-vscode.md)]
 
-## <a name="create-a-razor-web-app"></a><span data-ttu-id="a2917-109">Razor 웹앱 만들기</span><span class="sxs-lookup"><span data-stu-id="a2917-109">Create a Razor web app</span></span>
+## <a name="create-a-razor-web-app"></a><span data-ttu-id="cb881-109">Razor 웹앱 만들기</span><span class="sxs-lookup"><span data-stu-id="cb881-109">Create a Razor web app</span></span>
 
-<span data-ttu-id="a2917-110">터미널에서 다음 명령을 실행합니다.</span><span class="sxs-lookup"><span data-stu-id="a2917-110">From a terminal, run the following commands:</span></span>
+<span data-ttu-id="cb881-110">터미널에서 다음 명령을 실행합니다.</span><span class="sxs-lookup"><span data-stu-id="cb881-110">From a terminal, run the following commands:</span></span>
 
 ::: moniker range=">= aspnetcore-2.1"
 
@@ -48,26 +48,26 @@ dotnet run
 
 ::: moniker-end
 
-<span data-ttu-id="a2917-111">이전 명령은 [.NET Core CLI](/dotnet/core/tools/dotnet)를 사용하여 Razor 페이지 프로젝트를 만들고 실행합니다.</span><span class="sxs-lookup"><span data-stu-id="a2917-111">The preceding commands use the [.NET Core CLI](/dotnet/core/tools/dotnet) to create and run a Razor Pages project.</span></span> <span data-ttu-id="a2917-112">브라우저를 열고 http://localhost:5000으로 이동하여 응용 프로그램을 봅니다.</span><span class="sxs-lookup"><span data-stu-id="a2917-112">Open a browser to http://localhost:5000 to view the application.</span></span>
+<span data-ttu-id="cb881-111">이전 명령은 [.NET Core CLI](/dotnet/core/tools/dotnet)를 사용하여 Razor 페이지 프로젝트를 만들고 실행합니다.</span><span class="sxs-lookup"><span data-stu-id="cb881-111">The preceding commands use the [.NET Core CLI](/dotnet/core/tools/dotnet) to create and run a Razor Pages project.</span></span> <span data-ttu-id="cb881-112">브라우저를 열고 http://localhost:5000으로 이동하여 응용 프로그램을 봅니다.</span><span class="sxs-lookup"><span data-stu-id="cb881-112">Open a browser to http://localhost:5000 to view the application.</span></span>
 
 ![홈 또는 인덱스 페이지](../razor-pages/razor-pages-start/_static/home.png)
 
 [!INCLUDE [razor-pages-start](../../includes/RP/razor-pages-start.md)]
 
-## <a name="open-the-project"></a><span data-ttu-id="a2917-114">프로젝트 열기</span><span class="sxs-lookup"><span data-stu-id="a2917-114">Open the project</span></span>
+## <a name="open-the-project"></a><span data-ttu-id="cb881-114">프로젝트 열기</span><span class="sxs-lookup"><span data-stu-id="cb881-114">Open the project</span></span>
 
-<span data-ttu-id="a2917-115">Ctrl+C를 눌러 응용 프로그램을 종료합니다.</span><span class="sxs-lookup"><span data-stu-id="a2917-115">Press Ctrl+C to shut down the application.</span></span>
+<span data-ttu-id="cb881-115">Ctrl+C를 눌러 응용 프로그램을 종료합니다.</span><span class="sxs-lookup"><span data-stu-id="cb881-115">Press Ctrl+C to shut down the application.</span></span>
 
-<span data-ttu-id="a2917-116">VS Code(Visual Studio Code)에서 **파일 > 폴더 열기**를 선택하고 *RazorPagesMovie* 폴더를 선택합니다.</span><span class="sxs-lookup"><span data-stu-id="a2917-116">From Visual Studio Code (VS Code), select **File > Open Folder**, and then select the *RazorPagesMovie* folder.</span></span>
+<span data-ttu-id="cb881-116">VS Code(Visual Studio Code)에서 **파일 > 폴더 열기**를 선택하고 *RazorPagesMovie* 폴더를 선택합니다.</span><span class="sxs-lookup"><span data-stu-id="cb881-116">From Visual Studio Code (VS Code), select **File > Open Folder**, and then select the *RazorPagesMovie* folder.</span></span>
 
-- <span data-ttu-id="a2917-117">다음 **경고** 메시지에 대해 **예**를 선택합니다. “빌드 및 디버그에 필요한 자산이 ‘RazorPagesMovie’에서 누락되었습니다.</span><span class="sxs-lookup"><span data-stu-id="a2917-117">Select **Yes** to the **Warn** message "Required assets to build and debug are missing from 'RazorPagesMovie'.</span></span> <span data-ttu-id="a2917-118">추가할까요?”</span><span class="sxs-lookup"><span data-stu-id="a2917-118">Add them?"</span></span>
-- <span data-ttu-id="a2917-119">다음 **정보** 메시지에 대해 **복원**을 선택합니다. “확인되지 않은 종속성이 있습니다.”</span><span class="sxs-lookup"><span data-stu-id="a2917-119">Select **Restore** to the **Info** message "There are unresolved dependencies".</span></span>
+- <span data-ttu-id="cb881-117">다음 **경고** 메시지에 대해 **예**를 선택합니다. “빌드 및 디버그에 필요한 자산이 ‘RazorPagesMovie’에서 누락되었습니다.</span><span class="sxs-lookup"><span data-stu-id="cb881-117">Select **Yes** to the **Warn** message "Required assets to build and debug are missing from 'RazorPagesMovie'.</span></span> <span data-ttu-id="cb881-118">추가할까요?”</span><span class="sxs-lookup"><span data-stu-id="cb881-118">Add them?"</span></span>
+- <span data-ttu-id="cb881-119">다음 **정보** 메시지에 대해 **복원**을 선택합니다. “확인되지 않은 종속성이 있습니다.”</span><span class="sxs-lookup"><span data-stu-id="cb881-119">Select **Restore** to the **Info** message "There are unresolved dependencies".</span></span>
 
-### <a name="launch-the-app"></a><span data-ttu-id="a2917-120">앱 시작</span><span class="sxs-lookup"><span data-stu-id="a2917-120">Launch the app</span></span>
+### <a name="launch-the-app"></a><span data-ttu-id="cb881-120">앱 시작</span><span class="sxs-lookup"><span data-stu-id="cb881-120">Launch the app</span></span>
 
-<span data-ttu-id="a2917-121">**디버그** 메뉴에서 **디버깅하지 않고 시작**을 선택합니다.</span><span class="sxs-lookup"><span data-stu-id="a2917-121">From the **Debug** menu, select **Start Without Debugging**.</span></span> <span data-ttu-id="a2917-122">또는 메뉴 옵션 옆에 표시된 바로 가기 키를 누를 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="a2917-122">Alternatively, you can press the keyboard shortcut displayed next to the menu option.</span></span> <span data-ttu-id="a2917-123">이 바로 가기 키는 운영 체제에 따라 다릅니다.</span><span class="sxs-lookup"><span data-stu-id="a2917-123">This shortcut varies depending on your operating system.</span></span>
+<span data-ttu-id="cb881-121">**디버그** 메뉴에서 **디버깅하지 않고 시작**을 선택합니다.</span><span class="sxs-lookup"><span data-stu-id="cb881-121">From the **Debug** menu, select **Start Without Debugging**.</span></span> <span data-ttu-id="cb881-122">또는 메뉴 옵션 옆에 표시된 바로 가기 키를 누를 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="cb881-122">Alternatively, you can press the keyboard shortcut displayed next to the menu option.</span></span> <span data-ttu-id="cb881-123">이 바로 가기 키는 운영 체제에 따라 다릅니다.</span><span class="sxs-lookup"><span data-stu-id="cb881-123">This shortcut varies depending on your operating system.</span></span>
 
-<span data-ttu-id="a2917-124">다음 자습서에서는 프로젝트에 모델을 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="a2917-124">In the next tutorial, we add a model to the project.</span></span> 
+<span data-ttu-id="cb881-124">다음 자습서에서는 프로젝트에 모델을 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="cb881-124">In the next tutorial, we add a model to the project.</span></span> 
 
 > [!div class="step-by-step"]
-> [<span data-ttu-id="a2917-125">다음: 모델 추가</span><span class="sxs-lookup"><span data-stu-id="a2917-125">Next: Adding a model</span></span>](xref:tutorials/razor-pages-vsc/model)  
+> [<span data-ttu-id="cb881-125">다음: 모델 추가</span><span class="sxs-lookup"><span data-stu-id="cb881-125">Next: Adding a model</span></span>](xref:tutorials/razor-pages-vsc/model)  
