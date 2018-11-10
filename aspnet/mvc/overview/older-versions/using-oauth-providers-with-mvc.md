@@ -1,19 +1,19 @@
 ---
 uid: mvc/overview/older-versions/using-oauth-providers-with-mvc
 title: MVC 4와 함께 OAuth 공급자 사용 | Microsoft Docs
-author: tfitzmac
+author: Rick-Anderson
 description: 이 자습서에서는 Facebo 같은 외부 공급자가 자격 증명으로 로그인 할 수 있는 ASP.NET MVC 4 웹 응용 프로그램을 빌드하는 방법을 보여 줍니다...
 ms.author: riande
 ms.date: 06/19/2013
 ms.assetid: 7a87f16f-0e19-4f15-a88a-094ae866c4a2
 msc.legacyurl: /mvc/overview/older-versions/using-oauth-providers-with-mvc
 msc.type: authoredcontent
-ms.openlocfilehash: 9b0db2775db5c74762bdc55328ad44ef7ebe75ce
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: d0203b62c911056fc56ed103c1c42f67816cbbf0
+ms.sourcegitcommit: 2d3e5422d530203efdaf2014d1d7df31f88d08d0
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41834830"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51021757"
 ---
 <a name="using-oauth-providers-with-mvc-4"></a>MVC 4와 함께 OAuth 공급자 사용
 ====================
@@ -83,7 +83,7 @@ AuthConfig 파일은 외부 인증 공급자에 대 한 클라이언트를 등�
 - [Microsoft](http://manage.dev.live.com/)
 - [Twitter](https://dev.twitter.com/)
 
-Facebook을 사용 하 여 사이트를 등록할 때 제공할 수 있습니다 &quot;localhost&quot; 사이트 도메인 및 `&quot;http://localhost/&quot;` 아래 이미지에 표시 된 것과 같이 URL에 대 한 합니다. Localhost를 사용 하 여 대부분의 공급자를 사용 하 여 작동 하지만 현재 Microsoft 공급자와 함께 작동 하지 않습니다. Microsoft 공급자에 대 한 유효한 웹 사이트 URL을 포함 해야 합니다.
+Facebook을 사용 하 여 사이트를 등록할 때 제공할 수 있습니다 &quot;localhost&quot; 사이트 도메인 및 `&quot; http://localhost/&quot;` 아래 이미지에 표시 된 것과 같이 URL에 대 한 합니다. Localhost를 사용 하 여 대부분의 공급자를 사용 하 여 작동 하지만 현재 Microsoft 공급자와 함께 작동 하지 않습니다. Microsoft 공급자에 대 한 유효한 웹 사이트 URL을 포함 해야 합니다.
 
 ![사이트를 등록 합니다.](using-oauth-providers-with-mvc/_static/image4.png)
 

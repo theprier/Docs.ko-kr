@@ -4,14 +4,14 @@ author: rick-anderson
 description: 에 대해 알아봅니다 어떻게 CORS 허용 하거나 거부 하는 ASP.NET Core 앱에서 크로스-원본 요청에 대 한 표준으로 합니다.
 ms.author: riande
 ms.custom: mvc
-ms.date: 09/05/2018
+ms.date: 11/05/2018
 uid: security/cors
-ms.openlocfilehash: cfbf24edb1dae76f676d51738b0d57266688d53e
-ms.sourcegitcommit: 317f9be24db600499e79d25872d743af74bd86c0
+ms.openlocfilehash: 8e5056b448d47d75272e9394b03ce8a58b05a0f4
+ms.sourcegitcommit: 09affee3d234cb27ea6fe33bc113b79e68900d22
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48045590"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "51191323"
 ---
 # <a name="enable-cross-origin-requests-cors-in-aspnet-core"></a>ASP.NET Core에서 원본 간 요청 (CORS)를 사용 하도록 설정
 
@@ -137,17 +137,37 @@ A *원본 간 정책은* 사용 하 여 CORS 미들웨어를 추가 하는 경�
 
 ### <a name="set-the-allowed-origins"></a>허용되는 원본 설정하기
 
-하나 이상의 특정 원본에 허용 하려면 호출 <xref:Microsoft.AspNetCore.Cors.Infrastructure.CorsPolicyBuilder.WithOrigins*>:
+ASP.NET Core MVC에서 CORS 미들웨어에 허용 되는 원본을 지정 하는 방법에 있습니다.
+
+* <xref:Microsoft.AspNetCore.Cors.Infrastructure.CorsPolicyBuilder.WithOrigins*>: 하나 이상의 Url을 지정할 수 있습니다. URL은 구성표, 호스트 이름 및 경로 정보 없이 포트를 포함할 수 있습니다. 예를 들어, `https://example.com`을 입력합니다. 후행 슬래시가 없는 URL을 지정 해야 합니다 (`/`).
 
 [!code-csharp[](cors/sample/CorsExample4/Startup.cs?range=20-24&highlight=4)]
 
-모든 원본을 허용할지, 호출 <xref:Microsoft.AspNetCore.Cors.Infrastructure.CorsPolicyBuilder.AllowAnyOrigin*>:
+* <xref:Microsoft.AspNetCore.Cors.Infrastructure.CorsPolicyBuilder.AllowAnyOrigin*>: 모든 체계를 사용 하 여 모든 원본에서 CORS 요청을 허용 합니다. (`http` 또는 `https`).
 
 [!code-csharp[](cors/sample/CorsExample4/Startup.cs?range=28-32&highlight=4)]
 
 모든 원본의 요청을 허용하기 전에 신중히 고민하시기 바랍니다. 즉 모든 원본에서 요청할 수 있도록 *웹 사이트* 앱에 크로스-원본 요청을 수행할 수 있습니다.
 
+::: moniker range=">= aspnetcore-2.2"
+
+> [!NOTE]
+> 지정 `AllowAnyOrigin` 고 `AllowCredentials` 는 안전 하지 않은 구성 및 교차 사이트 요청 위조 될 수 있습니다. CORS 서비스 앱은 두 개의 구성 된 경우 잘못 된 CORS 응답을 반환 합니다.
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.2"
+
+> [!NOTE]
+> 지정 `AllowAnyOrigin` 고 `AllowCredentials` 는 안전 하지 않은 구성 및 교차 사이트 요청 위조 될 수 있습니다. 클라이언트에서 서버 리소스에 액세스 권한을 부여 해야 할 경우에 정확한 원본 목록이 올바르면을 지정 하는 것이 좋습니다.
+
+::: moniker-end
+
 이 설정은 영향을 줍니다 [요청 및 액세스 제어-허용-원본 헤더 실행 전](#preflight-requests) (이 항목의 뒷부분에 설명).
+
+* <xref:Microsoft.AspNetCore.Cors.Infrastructure.CorsPolicyBuilder.SetIsOriginAllowedToAllowWildcardSubdomains*> -지정된 된 도메인의 모든 하위 도메인의 CORS 요청을 허용합니다. 체계는 와일드 카드 일 수 없습니다.
+
+[!code-csharp[](cors/sample/CorsExample4/Startup.cs?range=98-104&highlight=4)]
 
 ### <a name="set-the-allowed-http-methods"></a>허용되는 HTTP 메서드 설정하기
 

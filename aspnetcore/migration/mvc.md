@@ -5,12 +5,12 @@ description: ASP.NET MVC 프로젝트를 ASP.NET Core MVC로 시작 하는 방�
 ms.author: riande
 ms.date: 03/07/2017
 uid: migration/mvc
-ms.openlocfilehash: e2ecc5b1a5e2ede4c815807d4e1b1499ae1a4242
-ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
+ms.openlocfilehash: 7c9d927bbd06f96f130d53e946a2963b5804960b
+ms.sourcegitcommit: edb9d2d78c9a4d68b397e74ae2aff088b325a143
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50090474"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "51505741"
 ---
 # <a name="migrate-from-aspnet-mvc-to-aspnet-core-mvc"></a>ASP.NET MVC에서 ASP.NET Core MVC로 마이그레이션
 
@@ -159,7 +159,7 @@ ASP.NET MVC의 이전 버전에서는 정적 콘텐츠 웹 프로젝트의 루�
 
 * `@Scripts.Render("~/bundles/modernizr")`를 제거합니다.
 
-* 주석으로 처리 합니다 `@Html.Partial("_LoginPartial")` 줄 (줄을 둘러쌉니다 `@*...*@`). 이후 자습서에서에 반환 됩니다.
+* 주석으로 처리 합니다 `@Html.Partial("_LoginPartial")` 줄 (줄을 둘러쌉니다 `@*...*@`). 자세한 내용은 참조 하세요. [인증 및 ASP.NET core Id 마이그레이션](xref:migration/identity)
 
 * 바꿉니다 `@Scripts.Render("~/bundles/jquery")` 사용 하 여는 `<script>` 요소 (아래 참조).
 

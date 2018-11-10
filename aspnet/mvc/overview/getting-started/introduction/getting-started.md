@@ -7,12 +7,12 @@ ms.date: 10/04/2018
 ms.assetid: f3d8adbe-55e7-4fd4-84a8-7155bc45c676
 msc.legacyurl: /mvc/overview/getting-started/introduction/getting-started
 msc.type: authoredcontent
-ms.openlocfilehash: 2cc9364b815cae0207fc59784303c6a0906f1b94
-ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
+ms.openlocfilehash: 462583a42f20126ef8f8b5927268c20ec1ceab89
+ms.sourcegitcommit: edb9d2d78c9a4d68b397e74ae2aff088b325a143
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48578447"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "51505806"
 ---
 <a name="getting-started-with-aspnet-mvc-5"></a>ASP.NET MVC 5 시작
 ====================
@@ -55,7 +55,7 @@ Visual Studio IDE 또는 통합된 개발 환경입니다. Microsoft Word를 사
 
 ![](getting-started/_static/image5.png)
 
-이 기본 템플릿을 사용 하면 즉시 `Home`하십시오 `Contact`, 및 `About` 페이지입니다. 위의 이미지에 표시 되지 않으면 합니다 **홈**, **에 대 한**, 및 **연락처** 링크. 브라우저 창의 크기에 따라 다음이 링크를 보려면 탐색 아이콘을 클릭 해야 합니다.
+이 기본 템플릿을 사용 하면 즉시 `Home`하십시오 `Contact`, 및 `About` 페이지입니다. 아래 이미지에 표시 되지 않으면 합니다 **홈**, **에 대 한**, 및 **연락처** 링크. 브라우저 창의 크기에 따라 다음이 링크를 보려면 탐색 아이콘을 클릭 해야 합니다.
 
 ![](getting-started/_static/image6.png)
 

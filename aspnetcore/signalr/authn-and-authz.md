@@ -45,7 +45,7 @@ JavaScript 클라이언트에서는 [accessTokenFactory](xref:signalr/configurat
 ```csharp
 var connection = new HubConnectionBuilder()
     .WithUrl("https://example.com/myhub", options =>
-    {
+    { 
         options.AccessTokenProvider = () => Task.FromResult(_myAccessToken);
     })
     .Build();
@@ -58,7 +58,7 @@ var connection = new HubConnectionBuilder()
 
 [!code-csharp[Configure Server to accept access token from Query String](authn-and-authz/sample/Startup.cs?name=snippet)]
 
-### <a name="cookies-vs-bearer-tokens"></a>쿠키 대 전달자 토큰
+### <a name="cookies-vs-bearer-tokens"></a>쿠키 대 전달자 토큰 
 
 쿠키는 브라우저에 한정되기 때문에 다른 유형의 클라이언트에서 쿠키를 전송하는 작업은 전달자 토큰 전송에 비해 복잡성이 증가합니다. 따라서 앱이 브라우저 클라이언트에서만 사용자 인증이 필요한 것이 아니라면 쿠키 인증은 권장되지 않습니다. 브라우저 클라이언트 이외의 클라이언트도 사용할 경우 전달자 토큰 인증이 권장되는 방식입니다.
 
@@ -114,7 +114,7 @@ Windows 인증은 Microsoft Internet Explorer 또는 Microsoft Edge를 사용하
 
 [!code-csharp[Restrict a hub to only authorized users](authn-and-authz/sample/Hubs/ChatHub.cs?range=8-10,32)]
 
-[Authorize] 특성의 생성자 인수 및 속성을 이용해서 특정 [권한 부여 정책](xref:security/authorization/policies)을 만족하는 사용자만 접근할 수 있도록 제한할 수 있습니다. 예를 들어 `MyAuthorizationPolicy`라는 사용자 지정 권한 부여 정책이 존재할 경우, 다음과 같은 코드를 사용해서 해당 정책을 만족하는 사용자만 허브에 접근할 수 있도록 만들 수 있습니다.
+`[Authorize]` 특성의 생성자 인수 및 속성을 이용해서 특정 [권한 부여 정책](xref:security/authorization/policies)을 만족하는 사용자만 접근할 수 있도록 제한할 수 있습니다. 예를 들어 `MyAuthorizationPolicy`라는 사용자 지정 권한 부여 정책이 존재할 경우, 다음과 같은 코드를 사용해서 해당 정책을 만족하는 사용자만 허브에 접근할 수 있도록 만들 수 있습니다.
 
 ```csharp
 [Authorize("MyAuthorizationPolicy")]
@@ -123,7 +123,7 @@ public class ChatHub: Hub
 }
 ```
 
-각각의 허브 메서드에도 [Authorize] 특성을 적용할 수 있습니다. 현재 사용자가 메서드에 적용된 정책을 만족하지 않으면 호출자에게 오류가 반환됩니다.
+각각의 허브 메서드에도 `[Authorize]` 특성을 적용할 수 있습니다. 현재 사용자가 메서드에 적용된 정책을 만족하지 않으면 호출자에게 오류가 반환됩니다.
 
 ```csharp
 [Authorize]

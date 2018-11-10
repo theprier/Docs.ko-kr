@@ -6,12 +6,12 @@ monikerRange: '>= aspnetcore-2.1'
 ms.author: tdykstra
 ms.date: 09/10/2018
 uid: signalr/version-differences
-ms.openlocfilehash: 3cec37719b743b3c805ada77249f526278e44599
-ms.sourcegitcommit: 2ef32676c16f76282f7c23154d13affce8c8bf35
+ms.openlocfilehash: 8f07647959b6ef815eed599703bdb1bfb446572f
+ms.sourcegitcommit: edb9d2d78c9a4d68b397e74ae2aff088b325a143
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50234607"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "51505754"
 ---
 # <a name="differences-between-aspnet-signalr-and-aspnet-core-signalr"></a>ASP.NET SignalR과 ASP.NET Core SignalR의 차이점
 
@@ -36,6 +36,10 @@ ASP.NET Core SignalR은 자동 재연결을 지원하지 않습니다. 클라이
 ### <a name="protocol-support"></a>프로토콜 지원
 
 ASP.NET Core SignalR은 JSON뿐만 아니라 [MessagePack](xref:signalr/messagepackhubprotocol) 기반의 새로운 이진 프로토콜을 지원합니다. 또한 사용자 지정 프로토콜을 만들 수도 있습니다.
+
+### <a name="transports"></a>전송
+
+영원히 프레임 전송 ASP.NET Core SignalR에서 지원 되지 않습니다.
 
 ## <a name="differences-on-the-server"></a>서버의 차이점
 
@@ -72,6 +76,14 @@ ASP.NET Core SignalR에서는 연결 모델이 단순화되었습니다. 단일 
 
 진행 메시지 관련 기능뿐만 아니라 클라이언트와 허브 간에 임의의 상태를 전달할 수 있는 기능(HubState라고도 함)이 제거되었습니다. 현재 허브 프록시에 해당하는 기능은 존재하지 않습니다.
 
+### <a name="globalhost"></a>GlobalHost
+
+ASP.NET Core는 DI (종속성 주입) 프레임 워크에 기본 제공 합니다. 서비스에 액세스 하려면 DI를 사용할 수는 [HubContext](xref:signalr/hubcontext)합니다. 합니다 `GlobalHost` 가져오려는 ASP.NET SignalR에서 사용 되는 개체는 `HubContext` ASP.NET Core SignalR에 존재 하지 않습니다.
+
+### <a name="hubpipeline"></a>HubPipeline
+
+ASP.NET Core SignalR에 대 한 지원이 없는 `HubPipeline` 모듈입니다.
+
 ## <a name="differences-on-the-client"></a>클라이언트의 차이점
 
 ### <a name="typescript"></a>TypeScript
@@ -90,6 +102,10 @@ npm install @aspnet/signalr
 ### <a name="jquery"></a>jQuery
 
 jQuery에 대한 종속성은 제거되었지만 프로젝트에서 여전히 jQuery를 사용할 수는 있습니다.
+
+### <a name="internet-explorer-support"></a>Internet Explorer 지원
+
+ASP.NET Core SignalR (Microsoft Internet Explorer 8 자 이상에서 지원 되는 ASP.NET SignalR) Microsoft Internet Explorer 11 이상이 필요 합니다.
 
 ### <a name="javascript-client-method-syntax"></a>JavaScript 클라이언트 메서드 구문
 

@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 08/23/2018
 uid: mvc/controllers/testing
-ms.openlocfilehash: 18674f85a0cf8c6dfffa94a2160f7182752674f7
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: 7e27f30e35c2c6e9062c8321b8b8544a38a69605
+ms.sourcegitcommit: 85f2939af7a167b9694e1d2093277ffc9a741b23
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50207994"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "50758143"
 ---
 # <a name="test-controller-logic-in-aspnet-core"></a>ASP.NET Core에서 컨트롤러 논리 테스트
 
@@ -182,7 +182,6 @@ ASP.NET Core 2.1 이상에서 [ActionResult&lt;T&gt;](xref:web-api/action-return
 
 ## <a name="additional-resources"></a>추가 자료
 
-* <xref:test/index>
 * <xref:test/integration-tests>
 * [Visual Studio를 사용하여 단위 테스트를 만들고 실행](/visualstudio/test/unit-test-your-code)
 * [명시적 종속성 원칙](https://deviq.com/explicit-dependencies-principle/)

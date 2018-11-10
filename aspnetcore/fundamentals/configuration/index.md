@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/09/2018
 uid: fundamentals/configuration/index
-ms.openlocfilehash: 2af66c0f35109dc1de954bf501f33ad61ddef4db
-ms.sourcegitcommit: 85f2939af7a167b9694e1d2093277ffc9a741b23
+ms.openlocfilehash: 6dd478770d4eae4d497da576c17fbe7d2c133b89
+ms.sourcegitcommit: 2d3e5422d530203efdaf2014d1d7df31f88d08d0
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "50968373"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51021744"
 ---
 # <a name="configuration-in-aspnet-core"></a>ASP.NET Core의 구성
 
@@ -1151,6 +1151,7 @@ public class Program
             .ConfigureAppConfiguration((hostingContext, config) =>
             {
                 config.SetBasePath(Directory.GetCurrentDirectory());
+                var path = Path.Combine(Directory.GetCurrentDirectory(), "path/to/files");
                 config.AddKeyPerFile(directoryPath: path, optional: true);
             })
             .UseStartup<Startup>();
@@ -1509,13 +1510,13 @@ viewModel.TvShow = tvShow;
 
 다음 표에 표시된 구성 키 및 값을 사용하세요.
 
-| Key     | 값  |
-| :-----: | :----: |
-| array:0 | value0 |
-| array:1 | value1 |
-| array:2 | value2 |
-| array:4 | value4 |
-| array:5 | value5 |
+| Key             | 값  |
+| :-------------: | :----: |
+| array:entries:0 | value0 |
+| array:entries:1 | value1 |
+| array:entries:2 | value2 |
+| array:entries:4 | value4 |
+| array:entries:5 | value5 |
 
 메모리 구성 공급자를 사용하는 샘플 앱에서는 다음과 같은 키 및 값이 로드됩니다.
 
@@ -1574,17 +1575,17 @@ _config.GetSection("array").Bind(arrayExample);
 
 바인딩된 개체 즉, `ArrayExample`의 인스턴스는 구성에서 배열 데이터를 받습니다.
 
-| `ArrayExamples.Entries` 인덱스 | `ArrayExamples.Entries` 값 |
-| :---------------------------: | :---------------------------: |
-| 0                             | value0                        |
-| 1                             | value1                        |
-| 2                             | value2                        |
-| 3                             | value4                        |
-| 4                             | value5                        |
+| `ArrayExample.Entries` 인덱스 | `ArrayExample.Entries` 값 |
+| :--------------------------: | :--------------------------: |
+| 0                            | value0                       |
+| 1                            | value1                       |
+| 2                            | value2                       |
+| 3                            | value4                       |
+| 4                            | value5                       |
 
 바인딩된 개체의 인덱스 &num;3은 `array:4` 구성 키에 대한 구성 데이터와 `value4`의 값을 포함합니다. 배열이 포함된 구성 데이터를 바인딩할 때 구성 키의 배열 인덱스는 개체를 만들 때 구성 데이터를 반복하는 데에만 사용됩니다. 구성 데이터에 null 값을 유지할 수 없으며, 구성 키의 배열에서 하나 이상의 인덱스를 건너뛰더라도 바인딩된 개체에 null 값 항목이 생성되지 않습니다.
 
-인덱스 &num;3에 대한 누락된 구성 항목은 `ArrayExamples` 인스턴스에 바인딩하기 전에 구성에서 올바른 키-값 쌍을 생성하는 모든 구성 공급자에서 제공할 수 있습니다. 샘플에 누락된 키-값 쌍이 있는 추가 JSON 구성 공급자가 포함된 경우 `ArrayExamples.Entries`는 전체 구성 배열과 일치합니다.
+인덱스 &num;3에 대한 누락된 구성 항목은 `ArrayExample` 인스턴스에 바인딩하기 전에 구성에서 올바른 키-값 쌍을 생성하는 모든 구성 공급자에서 제공할 수 있습니다. 샘플에 누락된 키-값 쌍이 있는 추가 JSON 구성 공급자가 포함된 경우 `ArrayExample.Entries`는 전체 구성 배열과 일치합니다.
 
 *missing_value.json*:
 
@@ -1620,16 +1621,16 @@ config.AddJsonFile("missing_value.json", optional: false, reloadOnChange: false)
 | :-------------: | :----: |
 | array:entries:3 | value3 |
 
-JSON 구성 공급자에 인덱스 &num;3에 대한 항목이 포함된 후 `ArrayExamples` 클래스 인스턴스를 바인딩하는 경우 `ArrayExamples.Entries` 배열에 이 값이 포함됩니다.
+JSON 구성 공급자에 인덱스 &num;3에 대한 항목이 포함된 후 `ArrayExample` 클래스 인스턴스를 바인딩하는 경우 `ArrayExample.Entries` 배열에 이 값이 포함됩니다.
 
-| `ArrayExamples.Entries` 인덱스 | `ArrayExamples.Entries` 값 |
-| :---------------------------: | :---------------------------: |
-| 0                             | value0                        |
-| 1                             | value1                        |
-| 2                             | value2                        |
-| 3                             | value3                        |
-| 4                             | value4                        |
-| 5                             | value5                        |
+| `ArrayExample.Entries` 인덱스 | `ArrayExample.Entries` 값 |
+| :--------------------------: | :--------------------------: |
+| 0                            | value0                       |
+| 1                            | value1                       |
+| 2                            | value2                       |
+| 3                            | value3                       |
+| 4                            | value4                       |
+| 5                            | value5                       |
 
 **JSON 배열 처리**
 

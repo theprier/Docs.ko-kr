@@ -1,19 +1,19 @@
 ---
 uid: web-pages/overview/testing-and-debugging/aspnet-web-pages-razor-troubleshooting-guide
 title: ASP.NET 웹 페이지 (Razor) 문제 해결 가이드 | Microsoft Docs
-author: tfitzmac
+author: Rick-Anderson
 description: 이 문서에서는 ASP.NET Web Pages (Razor) 및 몇 가지 제안 된 솔루션을 작업할 때 발생할 수 있는 문제를 설명 합니다. 소프트웨어 버전 ASP.NET 웹 페이지...
 ms.author: riande
 ms.date: 02/10/2014
 ms.assetid: 2a2c1833-0bfe-4e2e-9cc0-341b52c7b121
 msc.legacyurl: /web-pages/overview/testing-and-debugging/aspnet-web-pages-razor-troubleshooting-guide
 msc.type: authoredcontent
-ms.openlocfilehash: c27139a720decd34a4ab89e6f93e71c97d123b45
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: ec8cdda5c5b298736a650f82cd6b52d73b6dfe3d
+ms.sourcegitcommit: 2d3e5422d530203efdaf2014d1d7df31f88d08d0
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41838734"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51021198"
 ---
 <a name="aspnet-web-pages-razor-troubleshooting-guide"></a>ASP.NET 웹 페이지 (Razor) 문제 해결 가이드
 ====================
@@ -138,7 +138,7 @@ ASP.NET Web Pages (Razor)에 기본 제공 보안 (멤버 자격) 시스템에 �
 
     또는
 
-    *연결 된 파티 시간 또는 연결 된 호스트에서 응답 하지 못했기 때문에 실패 했습니다. 연결이 기간 후 올바르게 응답 하지 않아서 연결 시도가 실패 했습니다.*
+    *연결 된 파티 시간 또는 연결 된 호스트에서 응답 하지 못했기 때문에 실패 했습니다. 연결이 기간 후 올바르게 응답 하지 않아서 연결 시도가 실패 했습니다*
 
     이 오류는 일반적으로 응용 프로그램에서 SMTP 서버에 연결할 수 없습니다 의미 합니다. 서버 이름을 확인 하 고 포트 번호입니다.
 - <em>사서함을 사용할 수 없습니다. 서버 응답: 5.1.0 &lt; someuser@invaliddomain &gt; 거부 하는 보낸 사람: 잘못 된 보낸 사람 도메인</em>

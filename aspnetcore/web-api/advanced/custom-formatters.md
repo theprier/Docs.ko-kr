@@ -5,12 +5,12 @@ description: ASP.NET Core의 웹 API에서 사용자 지정 포맷터를 만들�
 ms.author: tdykstra
 ms.date: 02/08/2017
 uid: web-api/advanced/custom-formatters
-ms.openlocfilehash: a038cd9c05950333fce9e72f67d6721198fae4d3
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: ee6f166ced41c41506f2a17a7d362399c165b718
+ms.sourcegitcommit: 2d3e5422d530203efdaf2014d1d7df31f88d08d0
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50206317"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51020652"
 ---
 # <a name="custom-formatters-in-aspnet-core-web-api"></a>ASP.NET Core Web API에서 포맷터 사용자 지정
 
@@ -51,6 +51,8 @@ ASP.NET Core MVC는 JSON, XML 또는 일반 텍스트 형식을 사용하여 웹
 
 [!code-csharp[](custom-formatters/sample/Formatters/VcardOutputFormatter.cs?name=classdef)]
 
+입력 포맷터 예제는 [샘플 앱](https://github.com/aspnet/Docs/tree/master/aspnetcore/web-api/advanced/custom-formatters/sample)을 참조하세요.
+
 이진 형식의 경우 [InputFormatter](/dotnet/api/microsoft.aspnetcore.mvc.formatters.inputformatter) 또는 [OutputFormatter](/dotnet/api/microsoft.aspnetcore.mvc.formatters.outputformatter) 기본 클래스에서 파생시킵니다.
 
 ### <a name="specify-valid-media-types-and-encodings"></a>유효한 미디어 형식 및 인코딩 지정
@@ -58,6 +60,8 @@ ASP.NET Core MVC는 JSON, XML 또는 일반 텍스트 형식을 사용하여 웹
 생성자에서 `SupportedMediaTypes` 및 `SupportedEncodings` 컬렉션에 추가하여 유효한 미디어 형식 및 인코딩을 지정합니다.
 
 [!code-csharp[](custom-formatters/sample/Formatters/VcardOutputFormatter.cs?name=ctor&highlight=3,5-6)]
+
+입력 포맷터 예제는 [샘플 앱](https://github.com/aspnet/Docs/tree/master/aspnetcore/web-api/advanced/custom-formatters/sample)을 참조하세요.
 
 > [!NOTE]
 > 포맷터 클래스에서 생성자 종속성 주입을 수행할 수 없습니다. 예를 들어 생성자에 로거 매개 변수를 추가하여 로거를 가져올 수 없습니다. 서비스에 액세스하려면 메서드에 전달된 컨텍스트 개체를 사용해야 합니다. [아래](#read-write) 코드 예제에서는 수행 방법을 보여줍니다.
@@ -67,6 +71,8 @@ ASP.NET Core MVC는 JSON, XML 또는 일반 텍스트 형식을 사용하여 웹
 `CanReadType` 또는 `CanWriteType` 메서드를 재정의하여 deserialize하거나 직렬화할 수 있는 형식을 지정합니다. 예를 들어 `Contact` 형식에서 vCard 텍스트를 만들거나 그 반대로 수행할 수만 있습니다.
 
 [!code-csharp[](custom-formatters/sample/Formatters/VcardOutputFormatter.cs?name=canwritetype)]
+
+입력 포맷터 예제는 [샘플 앱](https://github.com/aspnet/Docs/tree/master/aspnetcore/web-api/advanced/custom-formatters/sample)을 참조하세요.
 
 #### <a name="the-canwriteresult-method"></a>CanWriteResult 메서드
 
@@ -84,6 +90,8 @@ ASP.NET Core MVC는 JSON, XML 또는 일반 텍스트 형식을 사용하여 웹
 `ReadRequestBodyAsync` 또는 `WriteResponseBodyAsync`에서 deserialize하거나 직렬화하는 작업의 실제 작업을 수행합니다. 다음 예제에서 강조 표시된 줄은 종속성 주입 컨테이너에서 서비스를 가져오는 방법을 보여줍니다(생성자 매개 변수에서 가져올 수 없음).
 
 [!code-csharp[](custom-formatters/sample/Formatters/VcardOutputFormatter.cs?name=writeresponse&highlight=3-4)]
+
+입력 포맷터 예제는 [샘플 앱](https://github.com/aspnet/Docs/tree/master/aspnetcore/web-api/advanced/custom-formatters/sample)을 참조하세요.
 
 ## <a name="how-to-configure-mvc-to-use-a-custom-formatter"></a>사용자 지정 포맷터를 사용하도록 MVC를 구성하는 방법
 
