@@ -1,7 +1,7 @@
 ---
-title: TypeScript 및 WebPack을 이용하여 ASP.NET Core SignalR 사용하기
+title: TypeScript 및 WebPack과 함께 ASP.NET Core SignalR 사용
 author: ssougnez
-description: 본 자습서에서는 클라이언트가 TypeScript로 작성된 ASP.NET Core SignalR 웹 앱을 번들링 및 빌드하도록 WebPack을 구성해봅니다.
+description: 이 자습서에서는 클라이언트가 TypeScript로 작성된 ASP.NET Core SignalR 웹앱을 번들링 및 빌드하도록 WebPack을 구성합니다.
 monikerRange: '>= aspnetcore-2.1'
 ms.author: scaddie
 ms.custom: mvc
@@ -14,20 +14,20 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 10/29/2018
 ms.locfileid: "50206954"
 ---
-# <a name="use-aspnet-core-signalr-with-typescript-and-webpack"></a>TypeScript 및 WebPack을 이용하여 ASP.NET Core SignalR 사용하기
+# <a name="use-aspnet-core-signalr-with-typescript-and-webpack"></a>TypeScript 및 WebPack과 함께 ASP.NET Core SignalR 사용
 
 작성자: [Sébastien Sougnez](https://twitter.com/ssougnez) 및 [Scott Addie](https://twitter.com/Scott_Addie)
 
-[WebPack](https://webpack.js.org/)을 사용하면 개발자가 웹 앱의 클라이언트 쪽 리소스를 번들링 및 빌드할 수 있습니다. 본 자습서에서는 클라이언트가 [TypeScript](https://www.typescriptlang.org/)로 작성된 ASP.NET Core SignalR 웹 앱에서 WebPack을 사용하는 방법을 보여줍니다.
+[WebPack](https://webpack.js.org/)을 사용하면 개발자가 웹 앱의 클라이언트 쪽 리소스를 번들링 및 빌드할 수 있습니다. 본 자습서에서는 클라이언트가 [TypeScript](https://www.typescriptlang.org/)로 작성된 ASP.NET Core SignalR 웹앱에서 WebPack을 사용하는 방법을 보여줍니다.
 
 이 자습서에서는 다음과 같은 작업을 수행하는 방법을 살펴봅니다.
 
 > [!div class="checklist"]
-> * 최초 ASP.NET Core SignalR 앱 스캐폴딩 하기
-> * SignalR TypeScript 클라이언트 구성하기
-> * WebPack을 사용하여 빌드 파이프라인 구성하기
-> * SignalR 서버 구성하기
-> * 클라이언트 및 서버 간 통신 활성화시키기
+> * ASP.NET Core SignalR 앱 스캐폴드
+> * SignalR TypeScript 클라이언트 구성
+> * WebPack을 사용하여 빌드 파이프라인 구성
+> * SignalR 서버 구성
+> * 클라이언트 및 서버 간 통신 활성화
 
 [예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/tutorials/signalr-typescript-webpack/sample) ([다운로드 방법](xref:index#how-to-download-a-sample))
 
@@ -48,22 +48,22 @@ ms.locfileid: "50206954"
 
 ---
 
-## <a name="create-the-aspnet-core-web-app"></a>ASP.NET Core 웹 앱 만들기
+## <a name="create-the-aspnet-core-web-app"></a>ASP.NET Core 웹앱 만들기
 
 # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
 
-*PATH* 환경 변수에서 npm을 찾도록 Visual Studio를 구성합니다. 기본적으로 Visual Studio는 설치 디렉터리에 존재하는 버전의 npm을 사용합니다. Visual Studio에서 다음 지침을 따릅니다.
+*PATH* 환경 변수에서 npm을 찾도록 Visual Studio를 구성합니다. 기본적으로 Visual Studio는 설치 디렉터리에 있는 npm의 버전을 사용합니다. Visual Studio에서 다음 지침을 따릅니다.
 
-1. **도구** > **옵션** > **프로젝트 및 솔루션** > **Web Package Management** > **외부 웹 도구**로 이동합니다.
-1. 목록에서 *$(PATH)* 항목을 선택합니다. 그리고 위쪽 화살표를 클릭해서 이 항목을 목록의 두 번째 위치로 이동합니다. 참고로 첫 번째 항목은 프로젝트의 로컬 패키지를 가리킵니다.
+1. **도구** > **옵션** > **프로젝트 및 솔루션** > **웹 패키지 관리** > **외부 웹 도구**로 이동합니다..
+1. 목록에서 *$(PATH)* 항목을 선택합니다. 위쪽 화살표를 클릭하여 이 항목을 목록의 두 번째 위치로 이동합니다. 참고로 첫 번째 항목은 프로젝트의 로컬 패키지를 가리킵니다.
 
     ![Visual Studio 구성](signalr-typescript-webpack/_static/signalr-configure-path-visual-studio.png)
 
 Visual Studio의 구성이 완료되었습니다. 이제 프로젝트를 만들어야 합니다.
 
-1. **파일** > **새로 만들기** > **프로젝트** 메뉴를 선택한 다음 **ASP.NET Core 웹 응용 프로그램** 템플릿을 선택합니다.
-1. 프로젝트의 이름을 *SignalRWebPack*으로 지정하고 **확인** 버튼을 클릭합니다.
-1. 대상 프레임워크 드롭다운에서 *.NET Core*를 선택하고 프레임워크 선택 드롭다운에서 *ASP.NET Core 2.1*을 선택합니다. **비어 있음** 템플릿을 선택하고 **확인** 버튼을 클릭합니다.
+1. **파일** > **새로 만들기** > **프로젝트** 메뉴 옵션을 사용하고 **ASP.NET Core 웹 응용 프로그램** 템플릿을 선택합니다.
+1. 프로젝트의 이름을 *SignalRWebPack*으로 지정하고 **확인** 단추를 클릭합니다.
+1. 대상 프레임워크 드롭다운에서 *.NET Core*를 선택하고 프레임워크 선택기 드롭다운에서 *ASP.NET Core 2.1*을 선택합니다. **빈** 템플릿에서 **확인** 단추를 클릭합니다.
 
 # <a name="net-core-clitabnetcore-cli"></a>[.NET Core CLI](#tab/netcore-cli)
 
@@ -73,13 +73,13 @@ Visual Studio의 구성이 완료되었습니다. 이제 프로젝트를 만들�
 dotnet new web -o SignalRWebPack
 ```
 
-그러면 .NET Core를 대상으로 하는 비어 있는 ASP.NET Core 웹 앱이 *SignalRWebPack* 디렉터리에 생성됩니다.
+.NET Core를 대상으로 하는 빈 ASP.NET Core 웹앱이 *SignalRWebPack* 디렉터리에 생성됩니다.
 
 ---
 
-## <a name="configure-webpack-and-typescript"></a>WebPack 및 TypeScript 구성하기
+## <a name="configure-webpack-and-typescript"></a>WebPack 및 TypeScript 구성
 
-다음 단계에서는 TypeScript의 JavaScript로의 변환 및 클라이언트 쪽 리소스의 번들링을 구성합니다.
+다음 단계에서는 TypeScript에서 JavaScript로 변환 및 클라이언트 쪽 리소스의 번들링을 구성합니다.
 
 1. 프로젝트 루트에서 다음 명령을 실행하여 *package.json* 파일을 생성합니다.
 
@@ -99,14 +99,14 @@ dotnet new web -o SignalRWebPack
     npm install -D -E clean-webpack-plugin@0.1.19 css-loader@0.28.11 html-webpack-plugin@3.2.0 mini-css-extract-plugin@0.4.0 ts-loader@4.4.1 typescript@2.9.2 webpack@4.12.0 webpack-cli@3.0.6
     ```
 
-    몇 가지 주의할만한 명령의 세부 정보로는:
+    참고할 몇몇 명령 세부 정보:
 
-    * 버전 번호는 각 패키지 이름의 `@` 기호 뒤에 지정합니다. npm은 해당 특정 버전의 패키지를 설치합니다.
-    * `-E` 옵션은 *package.json*에 [유의적 버전](https://semver.org/) 범위 연산자를 기록하는 npm의 기본 동작을 비활성화시킵니다. 예를 들어 `"webpack": "^4.12.0"` 대신 `"webpack": "4.12.0"`을 사용합니다. 이 옵션은 의도하지 않은 최신 패키지 버전으로의 업그레이드를 방지합니다.
+    * 버전 번호는 각 패키지 이름에 대해 `@` 부호 뒤에 옵니다. npm은 해당 특정 패키지 버전을 설치합니다.
+    * `-E` 옵션은 [유의적 버전](https://semver.org/) 범위 연산자를 *package.json*에 쓰는 npm의 기본 동작을 비활성화합니다. 예를 들어 `"webpack": "^4.12.0"` 대신 `"webpack": "4.12.0"`을 사용합니다. 이 옵션은 최신 패키지 버전으로 의도하지 않은 업그레이드를 방지합니다.
 
-    자세한 내용은 공식 [npm-install](https://docs.npmjs.com/cli/install) 문서를 참고하시기 바랍니다.
+    자세한 내용은 [npm-install](https://docs.npmjs.com/cli/install) 문서를 참조하세요.
 
-1. *package.json* 파일의 `scripts` 속성을 다음 코드 조각으로 대체합니다.
+1. *package.json* 파일의 `scripts` 속성을 다음 코드 조각으로 바꿉니다.
 
     ```json
     "scripts": {
@@ -116,22 +116,22 @@ dotnet new web -o SignalRWebPack
     },
     ```
 
-    이 스크립트에 대해서 간단히 설명하면:
+    스크립트에 대한 간략한 설명:
 
-    * `build`: 개발 모드에서 클라이언트 쪽 리소스를 번들링하고 파일 변경을 감시합니다. 파일 감시자는 프로젝트 파일이 변경될 때마다 번들이 다시 생성되도록 만듭니다. `mode` 옵션은 트리 셰이킹이나 축소 같은 프로덕션 최적화를 비활성화시킵니다. 개발 중에는 `build`만 사용합니다.
+    * `build`: 개발 모드에서 클라이언트 쪽 리소스를 번들링하고 파일 변경을 감시합니다. 파일 감시자는 프로젝트 파일이 변경될 때마다 번들이 다시 생성되도록 합니다. `mode` 옵션은 프로덕션 최적화(예: 트리 셰이킹 및 축소)를 비활성화합니다. 개발 시에는 `build`만 사용합니다.
     * `release`: 프로덕션 모드에서 클라이언트 쪽 리소스를 번들링합니다.
-    * `publish`: 프로덕션 모드에서 `release` 스크립트를 실행하여 클라이언트 쪽 리소스를 번들링합니다. 그리고 .NET Core CLI의 [publish](/dotnet/core/tools/dotnet-publish) 명령을 호출하여 앱을 게시합니다.
+    * `publish`: 프로덕션 모드에서 `release` 스크립트를 실행하여 클라이언트 쪽 리소스를 번들링합니다. 이는 .NET Core CLI의 [publish](/dotnet/core/tools/dotnet-publish) 명령을 호출하여 앱을 게시합니다.
 
 1. 프로젝트 루트에 다음 내용을 포함한 *webpack.config.js*라는 파일을 생성합니다.
 
     [!code-javascript[webpack.config.js](signalr-typescript-webpack/sample/webpack.config.js)]
 
-    이 파일은 WebPack 컴파일을 구성합니다. 몇 가지 주의할만한 구성 세부 정보로는:
+    앞의 파일은 WebPack 컴파일을 구성합니다. 참고할 일부 구성 세부 정보:
 
-    * `output` 속성은 *dist*의 기본값을 재정의합니다. 번들은 대신 *wwwroot* 디렉터리에서 만들어집니다.
-    * `resolve.extensions` 배열은 SignalR 클라이언트 JavaScript를 가져오기 위해 *.js*를 포함하고 있습니다.
+    * `output` 속성은 *dist*의 기본값을 재정의합니다. 번들은 *wwwroot* 디렉터리에 대신 내보내집니다.
+    * `resolve.extensions` 배열은 SignalR 클라이언트 JavaScript를 가져오기 위한 *.js*를 포함합니다.
 
-1. 프로젝트 루트에 새 *src* 디렉터리를 생성합니다. 이 디렉터리의 용도는 프로젝트의 클라이언트 쪽 자산을 저장하는 것입니다.
+1. 프로젝트 루트에 새 *src* 디렉터리를 생성합니다. 그 목적은 프로젝트의 클라이언트 쪽 자산을 저장하는 것입니다.
 
 1. 다음 내용을 포함한 *src/index.html*을 생성합니다.
 
@@ -139,7 +139,7 @@ dotnet new web -o SignalRWebPack
 
     이 HTML은 홈페이지의 전형적인 마크업을 정의하고 있습니다.
 
-1. 새 *src/css* 디렉터리를 생성합니다. 이 디렉터리의 용도는 프로젝트의 *.css* 파일을 저장하는 것입니다.
+1. 새 *src/css* 디렉터리를 생성합니다. 그 목적은 프로젝트의 *.css* 파일을 저장하는 것입니다.
 
 1. 다음 내용을 포함한 *src/css/main.css*를 생성합니다.
 
@@ -160,17 +160,17 @@ dotnet new web -o SignalRWebPack
     이 TypeScript는 DOM 요소 참조를 조회하여 두 가지 이벤트 핸들러를 연결합니다.
 
     * `keyup`: 이 이벤트는 사용자가 `tbMessage`로 식별되는 텍스트 상자에 내용을 입력할 때 발생합니다. `send` 함수는 사용자가 **Enter** 키를 누를 때 호출됩니다.
-    * `click`: 이 이벤트는 사용자가 **Send** 버튼을 클릭할 때 발생합니다. `send` 함수가 호출됩니다.
+    * `click`: 이 이벤트는 사용자가 **보내기** 단추를 클릭할 때 발생합니다. `send` 함수가 호출됩니다.
 
-## <a name="configure-the-aspnet-core-app"></a>ASP.NET Core 앱 구성하기
+## <a name="configure-the-aspnet-core-app"></a>ASP.NET Core 앱 구성
 
-1. `Startup.Configure` 메서드에서 제공되는 코드는 *Hello World!*를 출력합니다. `app.Run` 메서드를 [UseDefaultFiles](/dotnet/api/microsoft.aspnetcore.builder.defaultfilesextensions.usedefaultfiles#Microsoft_AspNetCore_Builder_DefaultFilesExtensions_UseDefaultFiles_Microsoft_AspNetCore_Builder_IApplicationBuilder_) 및 [UseStaticFiles](/dotnet/api/microsoft.aspnetcore.builder.staticfileextensions.usestaticfiles#Microsoft_AspNetCore_Builder_StaticFileExtensions_UseStaticFiles_Microsoft_AspNetCore_Builder_IApplicationBuilder_) 호출로 대체합니다.
+1. `Startup.Configure` 메서드에 제공된 코드는 *Hello World!*를 표시합니다. `app.Run` 메서드를 [UseDefaultFiles](/dotnet/api/microsoft.aspnetcore.builder.defaultfilesextensions.usedefaultfiles#Microsoft_AspNetCore_Builder_DefaultFilesExtensions_UseDefaultFiles_Microsoft_AspNetCore_Builder_IApplicationBuilder_) 및 [UseStaticFiles](/dotnet/api/microsoft.aspnetcore.builder.staticfileextensions.usestaticfiles#Microsoft_AspNetCore_Builder_StaticFileExtensions_UseStaticFiles_Microsoft_AspNetCore_Builder_IApplicationBuilder_)에 대한 호출로 바꿉니다.
 
     [!code-csharp[Startup](signalr-typescript-webpack/sample/Startup.cs?name=snippet_UseStaticDefaultFiles)]
 
-    이 코드는 사용자가 전체 URL을 입력하는지 아니면 웹 앱의 루트 URL만 입력하는지 관계 없이 서버가 *index.html* 파일을 찾아서 제공할 수 있게 만들어줍니다.
+    이 코드는 사용자가 전체 URL을 입력하는지 아니면 웹앱의 루트 URL만 입력하는지 관계없이 서버가 *index.html* 파일을 찾아서 제공할 수 있도록 합니다.
 
-1. `Startup.ConfigureServices` 메서드에서 [AddSignalR](/dotnet/api/microsoft.extensions.dependencyinjection.signalrdependencyinjectionextensions.addsignalr#Microsoft_Extensions_DependencyInjection_SignalRDependencyInjectionExtensions_AddSignalR_Microsoft_Extensions_DependencyInjection_IServiceCollection_)을 호출합니다. 이 코드는 SignalR 서비스를 프로젝트에 추가합니다.
+1. `Startup.ConfigureServices` 메서드에서 [AddSignalR](/dotnet/api/microsoft.extensions.dependencyinjection.signalrdependencyinjectionextensions.addsignalr#Microsoft_Extensions_DependencyInjection_SignalRDependencyInjectionExtensions_AddSignalR_Microsoft_Extensions_DependencyInjection_IServiceCollection_)을 호출합니다. 이는 SignalR 서비스를 프로젝트에 추가합니다.
 
     [!code-csharp[Startup](signalr-typescript-webpack/sample/Startup.cs?name=snippet_AddSignalR)]
 
@@ -178,19 +178,19 @@ dotnet new web -o SignalRWebPack
 
     [!code-csharp[Startup](signalr-typescript-webpack/sample/Startup.cs?name=snippet_UseSignalR)]
 
-1. 프로젝트 루트에 *Hubs*라는 새 디렉터리를 생성합니다. 이 디렉터리의 용도는 다음 단계에서 생성할 SignalR 허브를 저장하는 것입니다.
+1. 프로젝트 루트에 *Hubs*라는 새 디렉터리를 생성합니다. 그 목적은 다음 단계에서 생성되는 SignalR 허브를 저장하는 것입니다.
 
 1. 다음 내용을 포함한 *Hubs/ChatHub.cs* 허브를 생성합니다.
 
     [!code-csharp[ChatHub](signalr-typescript-webpack/sample/snippets/ChatHub.cs?name=snippet_ChatHubStubClass)]
 
-1. `ChatHub` 참조를 해결하기 위해 *Startup.cs* 파일의 맨 위에 다음 코드를 추가합니다.
+1. `ChatHub` 참조를 확인하기 위해 *Startup.cs* 파일의 맨 위에 다음 코드를 추가합니다.
 
     [!code-csharp[Startup](signalr-typescript-webpack/sample/Startup.cs?name=snippet_HubsNamespace)]
 
-## <a name="enable-client-and-server-communication"></a>클라이언트와 서버의 통신 활성화시키기
+## <a name="enable-client-and-server-communication"></a>클라이언트 및 서버 통신 활성화
 
-현재 앱은 메시지를 전송하기 위한 간단한 양식을 출력할 뿐입니다. 메시지 전송을 시도해봐도 아무 일도 일어나지 않습니다. 서버는 특정 경로를 수신 대기하고 있지만 전송된 메시지를 이용해서 아무런 작업도 하지 않습니다.
+앱은 현재 메시지를 보낼 간단한 양식을 표시합니다. 그러한 시도에서는 아무 작업도 수행되지 않습니다. 서버는 특정 경로를 수신 대기하지만 보낸 메시지를 사용하여 아무 작업도 하지 않습니다.
 
 1. 프로젝트 루트에서 다음 명령을 실행합니다.
 
@@ -204,27 +204,27 @@ dotnet new web -o SignalRWebPack
 
     [!code-typescript[index.ts](signalr-typescript-webpack/sample/snippets/index2.ts?name=snippet_IndexTsPhase2File&highlight=2,9-23)]
 
-    이 코드는 서버로부터 메시지를 수신하는 것을 지원합니다. `HubConnectionBuilder` 클래스는 서버 연결을 구성하기 위한 새 빌더를 생성합니다. `withUrl` 함수는 허브 URL을 구성합니다.
+    이 코드는 서버에서 오는 메시지의 수신을 지원합니다. `HubConnectionBuilder` 클래스는 서버 연결을 구성하기 위한 새 빌더를 생성합니다. `withUrl` 함수는 허브 URL을 구성합니다.
 
-    SignalR은 클라이언트와 서버 간의 메시지 교환을 가능하게 만들어줍니다. 각각의 메시지는 특정한 이름을 갖습니다. 예를 들어 메시지 영역에 새 메시지를 출력하는 로직을 실행하는 `messageReceived`라는 이름의 메시지가 존재할 수 있습니다. 특정 메시지의 수신 대기는 `on` 함수를 통해서 수행할 수 있습니다. 얼마든지 많은 메시지 이름을 수신 대기할 수 있습니다. 또한 수신 메시지의 작성자 이름 및 내용 같은 매개 변수를 메시지에 전달할 수도 있습니다. 클라이언트가 메시지를 수신하면 작성자 이름 및 메시지 내용이 `innerHTML` 특성에 지정된 새로운 `div` 요소가 생성됩니다. 이 요소는 메시지를 출력하는 주 `div` 요소에 추가됩니다.
+    SignalR은 클라이언트 및 서버 간 메시지 교환을 활성화합니다. 각 메시지는 특정 이름을 가집니다. 예를 들어 메시지 영역에 새 메시지를 표시하는 로직을 실행하는 `messageReceived`라는 이름을 가진 메시지가 있을 수 있습니다. 특정 메시지 수신 대기는 `on` 함수를 통해 수행할 수 있습니다. 임의 개수의 메시지 이름을 수신 대기할 수 있습니다. 또한 수신 메시지의 작성자 이름 및 내용 등을 메시지에 파라미터로 전달할 수도 있습니다. 클라이언트가 메시지를 수신한 후 `innerHTML` 특성의 작성자 이름 및 메시지 내용을 사용하여 새 `div` 요소가 생성됩니다. 이 요소가 주 `div` 요소에 추가되어 메시지를 표시합니다.
 
-1. 이제 클라이언트가 메시지를 수신할 수 있으므로, 메시지를 전송할 수 있도록 구성합니다. 강조 표시된 코드를 *src/index.ts* 파일에 추가합니다.
+1. 이제 클라이언트가 메시지를 수신할 수 있으므로, 메시지를 보내도록 구성합니다. 강조 표시된 코드를 *src/index.ts* 파일에 추가합니다.
 
     [!code-typescript[index.ts](signalr-typescript-webpack/sample/src/index.ts?highlight=34-35)]
 
-    WebSockets 연결을 통해 메시지를 보내려면 `send` 메서드를 호출해야 합니다. 이 메서드의 첫 번째 매개 변수는 메시지의 이름입니다. 메시지의 데이터는 다른 매개 변수들을 통해서 지정합니다. 이 예제에서는 `newMessage`로 식별되는 메시지가 서버로 전송됩니다. 메시지는 사용자 이름 및 텍스트 상자에 입력된 사용자 입력으로 구성됩니다. 전송이 완료되면 텍스트 상자의 값이 지워집니다.
+    WebSockets 연결을 통해 메시지를 보내려면 `send` 메서드를 호출해야 합니다. 이 메서드의 첫 번째 매개 변수는 메시지의 이름입니다. 메시지의 데이터는 다른 매개 변수를 통해 지정합니다. 이 예제에서는 `newMessage`로 식별되는 메시지가 서버로 전송됩니다. 메시지는 사용자 이름 및 텍스트 상자에 입력된 사용자 입력으로 구성됩니다. 전송이 완료되면 텍스트 상자의 값이 지워집니다.
 
 1. 강조 표시된 메서드를 `ChatHub` 클래스에 추가합니다.
 
     [!code-csharp[ChatHub](signalr-typescript-webpack/sample/Hubs/ChatHub.cs?highlight=8-11)]
 
-    이 코드는 서버가 메시지를 수신하면 수신된 메시지를 모든 연결된 사용자에게 브로드캐스트 합니다. 모든 메시지를 수신하기 위한 범용적인 `on` 메서드는 필요하지 않습니다. 메시지 이름 뒤에 명명된 메서드로 충분합니다.
+    앞의 코드는 서버가 메시지를 수신한 후 수신된 메시지를 모든 연결된 사용자에게 브로드캐스트합니다. 모든 메시지를 수신하기 위해 일반 `on` 메서드를 포함할 필요는 없습니다. 메시지 이름 뒤에 명명한 메서드로 충분합니다.
 
-    이 예제에서 TypeScript 클라이언트는 `newMessage`로 식별되는 메시지를 전송합니다. C#의 `NewMessage` 메서드는 클라이언트에 의해 전송된 데이터를 필요로 합니다. [Clients.All](/dotnet/api/microsoft.aspnetcore.signalr.ihubclients-1.all)의 [SendAsync](/dotnet/api/microsoft.aspnetcore.signalr.clientproxyextensions.sendasync) 메서드가 호출됩니다. 수신된 메시지가 허브에 연결된 모든 클라이언트로 전송됩니다.
+    이 예에서 TypeScript 클라이언트는 `newMessage`로 식별된 메시지를 보냅니다. C# `NewMessage` 메서드에는 클라이언트가 보낸 데이터가 필요합니다. [Clients.All](/dotnet/api/microsoft.aspnetcore.signalr.ihubclients-1.all)에 대한 [SendAsync](/dotnet/api/microsoft.aspnetcore.signalr.clientproxyextensions.sendasync) 메서드를 호출합니다. 수신된 메시지를 허브에 연결된 모든 클라이언트에 보냅니다.
 
 ## <a name="test-the-app"></a>앱 테스트
 
-다음 단계를 수행하여 앱이 동작하는지 확인합니다.
+다음 단계를 사용하여 앱이 작동하는지 확인합니다.
 
 # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
 
@@ -234,7 +234,7 @@ dotnet new web -o SignalRWebPack
 
 1. **디버그** > **디버그하지 않고 시작**을 선택하여 디버거를 연결하지 않고 브라우저에서 앱을 시작합니다. `http://localhost:<port_number>`에서 *wwwroot/index.html* 파일이 제공됩니다.
 
-1. 다른 브라우저의 인스턴스를 (아무 브라우저나) 엽니다. 주소 표시줄에 URL을 붙여넣습니다.
+1. 다른 브라우저 인스턴스(임의 브라우저)를 엽니다. URL을 주소 표시줄에 붙여넣습니다.
 
 1. 둘 중 한 브라우저를 선택하고 **Message** 텍스트 상자에 아무 내용이나 입력한 다음 **Send** 버튼을 클릭합니다. 그 즉시 고유한 사용자 이름과 메시지가 두 페이지 모두에 출력됩니다.
 
@@ -250,17 +250,17 @@ dotnet new web -o SignalRWebPack
     dotnet run
     ```
 
-    그러면 웹 서버가 앱을 시작하고 로컬 호스트에서 사용할 수 있게 해줍니다.
+    웹 서버가 앱을 시작하고 로컬 호스트에서 사용할 수 있도록 만듭니다.
 
 1. 브라우저에서 `http://localhost:<port_number>`를 엽니다. 그러면 *wwwroot/index.html* 파일이 제공됩니다. 주소 표시줄에서 URL을 복사합니다.
 
-1. 다른 브라우저의 인스턴스를 (아무 브라우저나) 엽니다. 주소 표시줄에 URL을 붙여넣습니다.
+1. 다른 브라우저 인스턴스(임의 브라우저)를 엽니다. URL을 주소 표시줄에 붙여넣습니다.
 
-1. 둘 중 한 브라우저를 선택하고 **Message** 텍스트 상자에 아무 내용이나 입력한 다음 **Send** 버튼을 클릭합니다. 그 즉시 고유한 사용자 이름과 메시지가 두 페이지 모두에 출력됩니다.
+1. 브라우저를 선택하고 **메시지** 텍스트 상자에 내용을 입력하고 **보내기** 단추를 클릭합니다. 고유한 사용자 이름과 메시지는 두 페이지 모두에 즉시 표시됩니다.
 
 ---
 
-![두 브라우저 창 모두에 츌력된 메시지](signalr-typescript-webpack/_static/browsers-message-broadcast.png)
+![두 브라우저 창 모두에 표시된 메시지](signalr-typescript-webpack/_static/browsers-message-broadcast.png)
 
 ## <a name="additional-resources"></a>추가 자료
 
