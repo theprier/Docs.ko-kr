@@ -7,12 +7,12 @@ ms.author: anurse
 ms.custom: mvc
 ms.date: 10/17/2018
 uid: signalr/security
-ms.openlocfilehash: 1adf762cd6de4f0cf62e31c0ec6e595a32ed56f8
-ms.sourcegitcommit: f5d403004f3550e8c46585fdbb16c49e75f495f3
+ms.openlocfilehash: be1dd24c40327d9a0d8f91bf75300128d3d52725
+ms.sourcegitcommit: fc7eb4243188950ae1f1b52669edc007e9d0798d
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "49477542"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51225371"
 ---
 # <a name="security-considerations-in-aspnet-core-signalr"></a>ASP.NET Core SignalR의 보안 고려 사항
 
@@ -24,12 +24,12 @@ ms.locfileid: "49477542"
 
 [교차 원본 자원 공유(CORS)](https://www.w3.org/TR/cors/)를 사용해서 브라우저에서 교차 원본 SignalR 연결을 허용할 수 있습니다. JavaScript 코드가 SignalR 앱과 다른 도메인에서 호스팅 될 경우 JavaScript가 SignalR 앱에 연결할 수 있도록 반드시 [CORS 미들웨어](xref:security/cors)를 활성화시켜야 합니다. 신뢰하거나 제어할 수 있는 도메인의 교차 원본 요청만 허용해야 합니다. 예를 들어:
 
-* 사이트에서 호스팅됩니다. `http://www.example.com`
-* SignalR 앱에서 호스팅됩니다. `http://signalr.example.com`
+* 사이트가 `http://www.example.com`에 호스팅된 경우
+* SignalR 앱이 `http://signalr.example.com`에 호스팅된 경우
 
 SignalR 앱에서 `www.example.com` 원본만 허용하도록 CORS를 구성해야 합니다.
 
-CORS를 구성 하는 방법에 대 한 자세한 내용은 참조 하세요. [크로스-원본 요청 (CORS)](xref:security/cors)합니다. SignalR **필요** 다음 CORS 정책:
+CORS를 구성하는 방법에 대한 자세한 내용은 [교차 원본 요청(CORS)](xref:security/cors)을 참고하시기 바랍니다. SignalR은 다음과 같은 CORS 정책을 **필요로 합니다**.
 
 * 예상되는 특정 원본을 허용합니다. 모든 원본을 허용할 수는 있지만 안전하지 않거나 권장되지 **않습니다.**
 * HTTP 메서드 `GET`과 `POST`를 허용해야 합니다.
@@ -43,6 +43,14 @@ CORS를 구성 하는 방법에 대 한 자세한 내용은 참조 하세요. [�
 > SignalR은 Azure App Service가 기본 제공하는 CORS 기능과 호환되지 않습니다.
 
 ## <a name="websocket-origin-restriction"></a>WebSocket 원본 제한
+
+::: moniker range=">= aspnetcore-2.2"
+
+CORS가 제공하는 보호는 WebSocket에는 적용되지 않습니다. Websocket에서 원본 제한에 대 한 읽을 [Websocket 원본 제한은](xref:fundamentals/websockets#websocket-origin-restriction)합니다.
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.2"
 
 CORS가 제공하는 보호는 WebSocket에는 적용되지 않습니다. 브라우저는 다음을 수행하지 **않습니다.**
 
@@ -58,6 +66,8 @@ ASP.NET Core 2.1 이상에서는 `Configure`에서 **`UseSignalR` 및 인증 미
 > [!NOTE]
 > `Origin` 헤더는 클라이언트에 의해서 제어되며 `Referer` 헤더처럼 가짜일 수 있습니다. 이런 헤더들을 인증 메커니즘으로 사용하면 **안 됩니다.**
 
+::: moniker-end
+
 ## <a name="access-token-logging"></a>액세스 토큰 로깅
 
 WebSocket 또는 서버-전송 이벤트를 사용할 경우 브라우저 클라이언트는 쿼리 문자열을 통해서 액세스 토큰을 전송합니다. 쿼리 문자열을 통해서 액세스 토큰을 수신하는 방식은 일반적으로 표준 `Authorization` 헤더를 사용하는 방식만큼 안전합니다. 그러나 많은 웹 서버가 쿼리 문자열을 포함한 각 요청의 URL을 기록합니다. 따라서 URL 로깅이 액세스 토큰까지 기록할 수도 있습니다. 가장 좋은 방법은 액세스 토큰을 기록하지 않도록 웹 서버의 로깅 설정을 구성하는 것입니다.
@@ -68,7 +78,7 @@ WebSocket 또는 서버-전송 이벤트를 사용할 경우 브라우저 클라
 
 ## <a name="buffer-management"></a>버퍼 관리
 
-SignalR은 연결당 버퍼를 사용 하 여 들어오고 나가는 메시지를 관리 합니다. 기본적으로 SignalR 32KB로 이러한 버퍼를 제한합니다. 클라이언트 또는 서버 보낼 수 있는 가장 큰 메시지는 32KB입니다. 메시지에 대 한 연결에서 사용 하는 최대 메모리는 32KB입니다. 32KB 보다 작은 항상 메시지 경우 제한을 줄일 수 있습니다는.
+SignalR은 연결별 버퍼를 사용해서 들어오고 나가는 메시지를 관리합니다. 기본적으로 SignalR은 이 버퍼를 32KB로 제한합니다. 클라이언트나 서버가 전송할 수 있는 최대 메시지는 32KB입니다. 메시지에 대한 연결이 사용하는 최대 메모리는 32KB입니다. 메시지가 항상 32KB보다 작은 경우 이 제한을 줄일 수 있습니다. 그러면 다음과 같이 됩니다.
 
 * 클라이언트가 더 큰 메시지를 전송하는 것을 방지합니다.
 * 서버가 메시지를 받기 위해 큰 버퍼를 할당할 필요가 없습니다.

@@ -38,13 +38,13 @@ ms.locfileid: "50206954"
 # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
 
 * [.NET Core SDK 2.1 이상](https://www.microsoft.com/net/download/all)
-* [npm](https://www.npmjs.com/) 포함 [Node.js](https://nodejs.org/)
+* [Node.js](https://www.npmjs.com/) ([npm](https://nodejs.org/) 포함)
 * [Visual Studio 2017](https://www.visualstudio.com/downloads/) 버전 15.7.3 이상 (**ASP.NET 및 웹 개발** 워크로드 필요)
 
 # <a name="net-core-clitabnetcore-cli"></a>[.NET Core CLI](#tab/netcore-cli)
 
 * [.NET Core SDK 2.1 이상](https://www.microsoft.com/net/download/all)
-* [npm](https://www.npmjs.com/) 포함 [Node.js](https://nodejs.org/)
+* [Node.js](https://www.npmjs.com/) ([npm](https://nodejs.org/) 포함)
 
 ---
 

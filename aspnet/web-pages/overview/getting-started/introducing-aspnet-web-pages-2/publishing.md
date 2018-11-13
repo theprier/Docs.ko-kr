@@ -50,7 +50,7 @@ ms.locfileid: "51021458"
 <a id="defaultpage"></a>
 ## <a name="setting-up-the-default-page"></a>기본 페이지 설정
 
-사용자가 웹 사이트에 대 한 기본 주소를 탐색 하는 경우 사이트에 대 한 기본 페이지는 사용자에 게 표시 됩니다. 예를 들어 사이트에 대 한 기본 페이지로 www.contoso.com에 Default.htm으로 설정 하면 다음 이동할 <strong>(www.contoso.com)[www.contoso.com]</strong> 로 이동 하는 것과 같습니다 <strong>www.contoso.com/Default.htm</strong>합니다.
+사용자가 웹 사이트에 대 한 기본 주소를 탐색 하는 경우 사이트에 대 한 기본 페이지는 사용자에 게 표시 됩니다. 예를 들어 사이트에 대 한 기본 페이지로 (www.contoso.com)[www.contoso.com] 에 Default.htm으로 설정 하면 다음 이동할 <strong>www.contoso.com</strong> 로 이동 하는 것과 같습니다 <strong>www.contoso.com/Default.htm</strong>합니다.
 
 사이트에서 사용 하는 현재 **Default.cshtml** 기본 페이지와 합니다. 이 페이지는 사용자의 기본 페이지에 적합 하지만이 자습서에서는 추가 하지 않은 내용이 해당 페이지에 있으므로 빈 페이지가 표시 됩니다. Default.cshtml 열고 내용을 다음 코드로 바꿉니다.
 
