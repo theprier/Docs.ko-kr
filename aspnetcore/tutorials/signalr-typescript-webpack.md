@@ -1,4 +1,4 @@
-﻿---
+---
 title: TypeScript 및 WebPack과 함께 ASP.NET Core SignalR 사용
 author: ssougnez
 description: 이 자습서에서는 클라이언트가 TypeScript로 작성된 ASP.NET Core SignalR 웹앱을 번들링 및 빌드하도록 WebPack을 구성합니다.
@@ -38,13 +38,13 @@ ms.locfileid: "50206954"
 # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
 
 * [.NET Core SDK 2.1 이상](https://www.microsoft.com/net/download/all)
-* [Node.js](https://nodejs.org/) ([npm](https://www.npmjs.com/) 포함)
+* [npm](https://www.npmjs.com/) 포함 [Node.js](https://nodejs.org/)
 * [Visual Studio 2017](https://www.visualstudio.com/downloads/) 버전 15.7.3 이상 (**ASP.NET 및 웹 개발** 워크로드 필요)
 
 # <a name="net-core-clitabnetcore-cli"></a>[.NET Core CLI](#tab/netcore-cli)
 
 * [.NET Core SDK 2.1 이상](https://www.microsoft.com/net/download/all)
-* [Node.js](https://nodejs.org/) ([npm](https://www.npmjs.com/) 포함)
+* [npm](https://www.npmjs.com/) 포함 [Node.js](https://nodejs.org/)
 
 ---
 
@@ -54,7 +54,7 @@ ms.locfileid: "50206954"
 
 *PATH* 환경 변수에서 npm을 찾도록 Visual Studio를 구성합니다. 기본적으로 Visual Studio는 설치 디렉터리에 있는 npm의 버전을 사용합니다. Visual Studio에서 다음 지침을 따릅니다.
 
-1. **도구** > **옵션** > **프로젝트 및 솔루션** > **웹 패키지 관리** > **외부 웹 도구**로 이동합니다..
+1. **도구** > **옵션** > **프로젝트 및 솔루션** > **웹 패키지 관리** > **외부 웹 도구**로 이동합니다.
 1. 목록에서 *$(PATH)* 항목을 선택합니다. 위쪽 화살표를 클릭하여 이 항목을 목록의 두 번째 위치로 이동합니다. 참고로 첫 번째 항목은 프로젝트의 로컬 패키지를 가리킵니다.
 
     ![Visual Studio 구성](signalr-typescript-webpack/_static/signalr-configure-path-visual-studio.png)
@@ -164,7 +164,7 @@ dotnet new web -o SignalRWebPack
 
 ## <a name="configure-the-aspnet-core-app"></a>ASP.NET Core 앱 구성
 
-1. `Startup.Configure` 메서드에 제공된 코드는 *Hello World!*를 표시합니다. `app.Run` 메서드를 [UseDefaultFiles](/dotnet/api/microsoft.aspnetcore.builder.defaultfilesextensions.usedefaultfiles#Microsoft_AspNetCore_Builder_DefaultFilesExtensions_UseDefaultFiles_Microsoft_AspNetCore_Builder_IApplicationBuilder_) 및 [UseStaticFiles](/dotnet/api/microsoft.aspnetcore.builder.staticfileextensions.usestaticfiles#Microsoft_AspNetCore_Builder_StaticFileExtensions_UseStaticFiles_Microsoft_AspNetCore_Builder_IApplicationBuilder_)에 대한 호출로 바꿉니다.
+1. `Startup.Configure` 메서드에 제공된 코드는 *Hello World!* 를 표시합니다. `app.Run` 메서드를 [UseDefaultFiles](/dotnet/api/microsoft.aspnetcore.builder.defaultfilesextensions.usedefaultfiles#Microsoft_AspNetCore_Builder_DefaultFilesExtensions_UseDefaultFiles_Microsoft_AspNetCore_Builder_IApplicationBuilder_) 및 [UseStaticFiles](/dotnet/api/microsoft.aspnetcore.builder.staticfileextensions.usestaticfiles#Microsoft_AspNetCore_Builder_StaticFileExtensions_UseStaticFiles_Microsoft_AspNetCore_Builder_IApplicationBuilder_)에 대한 호출로 바꿉니다.
 
     [!code-csharp[Startup](signalr-typescript-webpack/sample/Startup.cs?name=snippet_UseStaticDefaultFiles)]
 
@@ -236,7 +236,7 @@ dotnet new web -o SignalRWebPack
 
 1. 다른 브라우저 인스턴스(임의 브라우저)를 엽니다. URL을 주소 표시줄에 붙여넣습니다.
 
-1. 둘 중 한 브라우저를 선택하고 **Message** 텍스트 상자에 아무 내용이나 입력한 다음 **Send** 버튼을 클릭합니다. 그 즉시 고유한 사용자 이름과 메시지가 두 페이지 모두에 출력됩니다.
+1. 브라우저를 선택하고 **메시지** 텍스트 상자에 내용을 입력하고 **보내기** 단추를 클릭합니다. 고유한 사용자 이름과 메시지는 두 페이지 모두에 즉시 표시됩니다.
 
 # <a name="net-core-clitabnetcore-cli"></a>[.NET Core CLI](#tab/netcore-cli)
 

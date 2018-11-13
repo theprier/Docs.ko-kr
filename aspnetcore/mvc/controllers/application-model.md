@@ -5,12 +5,12 @@ description: MVC 요소가 ASP.NET Core에서 작동하는 방법을 수정하�
 ms.author: riande
 ms.date: 10/14/2016
 uid: mvc/controllers/application-model
-ms.openlocfilehash: 7a03f5eaa561557f3abe9c8dd8f4e46a57413a55
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: f3e0aafa3e6a352c632e4abbf3943be61f11ea81
+ms.sourcegitcommit: fc7eb4243188950ae1f1b52669edc007e9d0798d
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36277594"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51225501"
 ---
 # <a name="work-with-the-application-model-in-aspnet-core"></a>ASP.NET Core에서 응용 프로그램 모델 작업
 
@@ -169,7 +169,7 @@ ASP.NET Core MVC는 ASP.NET Web API 2에서 다른 규칙 집합을 사용합니
 
 Web API 호환성 Shim을 사용하려면 프로젝트에 패키지를 추가한 다음, `Startup`에서 `AddWebApiConventions`를 호출하여 MVC에 규칙을 추가해야 합니다.
 
-```c#
+```csharp
 services.AddMvc().AddWebApiConventions();
 ```
 

@@ -7,12 +7,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/24/2018
 uid: tutorials/razor-pages/validation
-ms.openlocfilehash: 2518b9911f13da79c76c84e530cf53fc2df474e5
-ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
+ms.openlocfilehash: d4cc0ab9de314c0c5a1a9016efd1e566ff1c47d2
+ms.sourcegitcommit: edb9d2d78c9a4d68b397e74ae2aff088b325a143
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50090448"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "51505780"
 ---
 # <a name="add-validation-to-an-aspnet-core-razor-page"></a>ASP.NET Core Razor 페이지에 유효성 검사 추가
 
@@ -61,8 +61,7 @@ ASP.NET Core에 의해 자동으로 적용되는 유효성 검사 규칙을 사�
 
 ![여러 jQuery 클라이언트 쪽 유효성 검사 오류가 있는 동영상 보기 양식](validation/_static/val.png)
 
-> [!NOTE]
-> `Price` 필드에는 소수점 또는 쉼표를 입력할 수 없습니다. 소수점으로 쉼표(“,”)를 사용하는 영어가 아닌 로캘 및 미국 영어가 아닌 날짜 형식에 대해 [jQuery 유효성 검사](https://jqueryvalidation.org/)를 지원하려면 앱을 전역화하는 단계를 수행해야 합니다. 자세한 내용은 [추가 리소스](#additional-resources)를 참조하세요. 이제 10 같은 정수를 입력하면 됩니다.
+[!INCLUDE[](~/includes/currency.md)]
 
 양식에서 잘못된 값을 포함하는 각 필드에 유효성 검사 오류 메시지를 자동으로 렌더링하는 방법을 확인합니다. 오류는 클라이언트 쪽(JavaScript 및 jQuery 사용) 및 서버 쪽(사용자가 JavaScript를 사용하지 않도록 설정한 경우) 모두 적용됩니다.
 
@@ -161,7 +160,7 @@ public DateTime ReleaseDate { get; set; }
 
 ### <a name="publish-to-azure"></a>Azure에 게시
 
-Azure에 배포하는 방법에 대한 자세한 내용은 [자습서: Azure에서 SQL Database를 사용하여 ASP.NET 앱 빌드](/azure/app-service/app-service-web-tutorial-dotnet-sqldatabase)를 참조하세요. ASP.NET Core 앱이 아니라 ASP.NET 앱에 대한 지침이지만 단계는 동일합니다.
+Azure에 배포하는 방법에 대한 자세한 내용은 [자습서: Azure에서 SQL Database를 사용하여 ASP.NET 앱 빌드](/azure/app-service/app-service-web-tutorial-dotnet-sqldatabase)를 참조하세요. ASP.NET Core 앱이 아닌 ASP.NET 앱에 대한 지침이지만 단계는 동일합니다.
 
 Razor 페이지에 대한 이 소개를 완료해 주셔서 감사합니다. 소중한 의견에 감사합니다. [Razor Pages 및 EF Core 시작](xref:data/ef-rp/intro)은 이 자습서의 유용한 후속편입니다.
 

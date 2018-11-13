@@ -1,18 +1,18 @@
 ---
 title: ASP.NET Core에서 WebListener 웹 서버 구현
-author: rick-anderson
+author: guardrex
 description: IIS 없이 인터넷에 직접 연결하는 데 사용할 수 있는 Windows의 ASP.NET Core용 웹 서버인 WebListener에 대해 알아봅니다.
 monikerRange: < aspnetcore-2.0
 ms.author: riande
 ms.custom: mvc
 ms.date: 10/24/2018
 uid: fundamentals/servers/weblistener
-ms.openlocfilehash: 5d72672cc48243f8ee17df615e3379143ed868f6
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: eaf76a44bc7750aef94319042e61aa294c6cba35
+ms.sourcegitcommit: 09affee3d234cb27ea6fe33bc113b79e68900d22
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50206444"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "51191271"
 ---
 # <a name="weblistener-web-server-implementation-in-aspnet-core"></a>ASP.NET Core에서 WebListener 웹 서버 구현
 
@@ -39,7 +39,7 @@ WebListener는 다음과 같은 기능을 지원합니다.
 
 - Windows 7 및 Windows Server 2008 R2 이상
 
-[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/servers/weblistener/sample)([다운로드 방법](xref:index#how-to-download-a-sample))
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/servers/weblistener/sample) ([다운로드 방법](xref:index#how-to-download-a-sample))
 
 ## <a name="when-to-use-weblistener"></a>WebListener를 사용하는 경우
 

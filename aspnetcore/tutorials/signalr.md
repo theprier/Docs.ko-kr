@@ -82,7 +82,7 @@ ms.locfileid: "51021250"
 
 * 메뉴에서 **파일 > 새 솔루션**을 선택합니다.
 
-*  **.NET Core > 앱 > ASP.NET Core 웹앱**(**ASP.NET Core 웹앱(MVC) 선택 안 함**)을 선택합니다.
+* **.NET Core > 앱 > ASP.NET Core 웹앱**(**ASP.NET Core 웹앱(MVC) 선택 안 함**)을 선택합니다.
 
 * **새로 만들기**를 선택합니다.
 
@@ -106,7 +106,7 @@ SignalR 서버 라이브러리는 `Microsoft.AspNetCore.App` 메타패키지에 
 
 * **특정 파일 선택**을 선택하고 *dist/browser* 폴더를 확장한 다음 *signalr.js* 및 *signalr.min.js*를 선택합니다.
 
-* **대상 위치**를 *wwwroot/lib/signalr/*로 설정하고 **설치**를 선택합니다.
+* **대상 위치**를 *wwwroot/lib/signalr/* 로 설정하고 **설치**를 선택합니다.
 
   ![클라이언트 쪽 라이브러리 추가 대화 상자 - 파일 및 대상 선택](signalr/_static/libman2.png)
 

@@ -5,12 +5,12 @@ description: ASP.NET Core에서 다른 언어와 문화권으로의 콘텐츠 �
 ms.author: riande
 ms.date: 01/14/2017
 uid: fundamentals/localization
-ms.openlocfilehash: 5014d697603d802929b417e6439d4cc6983184d2
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: af11906f86fe4ea91ed520584daedc094ab2dc0b
+ms.sourcegitcommit: edb9d2d78c9a4d68b397e74ae2aff088b325a143
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50207591"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "51505832"
 ---
 # <a name="globalization-and-localization-in-aspnet-core"></a>ASP.NET Core에서 세계화 및 지역화
 
@@ -30,7 +30,7 @@ ASP.NET Core를 사용하여 다국어 웹 사이트를 만들면 더 광범위�
 
 3. 각 요청에 대한 언어/문화권을 선택하는 전략 구현
 
-[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/localization/sample/Localization)([다운로드 방법](xref:index#how-to-download-a-sample))
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/localization/sample/Localization) ([다운로드 방법](xref:index#how-to-download-a-sample))
 
 ## <a name="make-the-apps-content-localizable"></a>앱의 콘텐츠를 지역화 가능하도록 만들기
 
@@ -338,6 +338,8 @@ services.Configure<RequestLocalizationOptions>(options =>
 * 특정 문화권: 지정된 언어 및 지역이 있는 문화권입니다. (예: "en-US", "en-GB", "es-CL")
 * 부모 문화권: 특정 문화권을 포함하는 중립 문화권입니다. (예: "en"은 "en-US" 및 "en-GB"의 부모 문화권)
 * 로캘: 로캘은 문화권과 동일합니다.
+
+[!INCLUDE[](~/includes/currency.md)]
 
 ## <a name="additional-resources"></a>추가 자료
 
