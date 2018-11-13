@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: H1Hack27Feb2017
 ms.date: 08/09/2018
 uid: client-side/bower
-ms.openlocfilehash: 8606c21596a5d9d6ada9c60b55b2f54da21c601b
-ms.sourcegitcommit: 5a2456cbf429069dc48aaa2823cde14100e4c438
+ms.openlocfilehash: 06edf7ee791aac0984ff71c2f243f61093f0d503
+ms.sourcegitcommit: 408921a932448f66cb46fd53c307a864f5323fe5
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "41902721"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51570024"
 ---
 # <a name="manage-client-side-packages-with-bower-in-aspnet-core"></a>ASP.NET Core에서 Bower 사용 하 여 클라이언트 쪽 패키지 관리
 
@@ -40,7 +40,7 @@ ms.locfileid: "41902721"
 
   ![bower 패키지 관리](bower/_static/manage-bower-packages.png)
 
-* 있는지 확인 합니다 "의 변경 내용을 저장할 *bower.json*" 확인란이 선택 되어 있습니다. 드롭다운 목록에서 버전을 선택 하 고 클릭 합니다 **설치** 단추입니다. 합니다 **출력** 창 설치 세부 정보를 표시 합니다.
+* 있는지 확인 합니다 "의 변경 내용을 저장할 *bower.json*" 확인란을 선택 합니다. 드롭다운 목록에서 버전을 선택 하 고 클릭 합니다 **설치** 단추입니다. 합니다 **출력** 창 설치 세부 정보를 표시 합니다.
 
 ### <a name="manual-installation-in-bowerjson"></a>Bower.json에 수동 설치
 

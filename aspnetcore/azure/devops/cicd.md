@@ -5,12 +5,12 @@ description: Azure에서 호스팅되는 ASP.NET Core 앱에 대한 DevOps 파�
 ms.author: scaddie
 ms.date: 10/24/2018
 uid: azure/devops/cicd
-ms.openlocfilehash: 18a59a1ff6fd6bbf51ff664764725b8972dfa1bf
-ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
+ms.openlocfilehash: edaf2c2e1428e5e82104786d94584a4ef08f9ee3
+ms.sourcegitcommit: 408921a932448f66cb46fd53c307a864f5323fe5
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50090539"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51570089"
 ---
 # <a name="continuous-integration-and-deployment"></a>지속적인 통합 및 배포
 
@@ -271,7 +271,7 @@ Azure 구독, 서비스 유형, 웹 앱 이름, 리소스 그룹 및 배포 슬�
 
 ![릴리스 파이프라인 슬롯 스왑 작업](media/cicd/release-definition-task2.png)
 
-구독, 리소스 그룹, 서비스 유형, 웹 앱 이름 및 배포 슬롯 세부 정보 제공 됩니다. 합니다 **프로덕션과 교환** 확인란이 선택 되어 있습니다. 비트를 배포 하는 결과적으로 *준비* 슬롯은 프로덕션 환경으로 교체 합니다.
+구독, 리소스 그룹, 서비스 유형, 웹 앱 이름 및 배포 슬롯 세부 정보 제공 됩니다. 합니다 **프로덕션과 교환** 확인란을 선택 합니다. 비트를 배포 하는 결과적으로 *준비* 슬롯은 프로덕션 환경으로 교체 합니다.
 
 ## <a name="additional-reading"></a>추가 참조 항목
 

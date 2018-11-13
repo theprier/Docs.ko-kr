@@ -5,12 +5,12 @@ description: ASP.NET Core Id 없이 쿠키 인증을 사용 하 여 설명
 ms.author: riande
 ms.date: 10/11/2017
 uid: security/authentication/cookie
-ms.openlocfilehash: 8add7559557d505397c3be8d8a48aa2e9d9e45e8
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: f55b36cf3fc3b60e9d592348625f58ebaba90da7
+ms.sourcegitcommit: 408921a932448f66cb46fd53c307a864f5323fe5
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50207422"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51570115"
 ---
 # <a name="use-cookie-authentication-without-aspnet-core-identity"></a>ASP.NET Core Id 없이 쿠키 인증 사용
 
@@ -28,7 +28,7 @@ ASP.NET Core Id를 사용 하려면 참조는 [Id 소개](xref:security/authenti
 
 ## <a name="configuration"></a>구성
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+::: moniker range=">= aspnetcore-2.0"
 
 앱을 사용 하지 않는 경우는 [Microsoft.AspNetCore.App 메타 패키지](xref:fundamentals/metapackage-app), 프로젝트 파일의 패키지 참조를 만듭니다 합니다 [Microsoft.AspNetCore.Authentication.Cookies](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.Cookies/) 패키지 (버전 2.1.0 또는 나중에).
 
@@ -81,7 +81,9 @@ services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     });
 ```
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
 
 ASP.NET Core 1.x에서는 쿠키 [미들웨어](xref:fundamentals/middleware/index) 암호화 된 쿠키에 사용자 보안 주체를 serialize 하는 합니다. 후속 요청에서 쿠키의 유효성을 검사 하 고 주 서버 이며 다시 할당할는 `HttpContext.User` 속성입니다.
 
@@ -127,7 +129,7 @@ app.UseCookieAuthentication(new CookieAuthenticationOptions
 });
 ```
 
----
+::: moniker-end
 
 ## <a name="cookie-policy-middleware"></a>쿠키 정책 미들웨어
 
@@ -170,13 +172,15 @@ var cookiePolicyOptions = new CookiePolicyOptions
 
 사용자 정보를 보관 하는 쿠키를 만들려면 생성 해야 합니다는 [ClaimsPrincipal](/dotnet/api/system.security.claims.claimsprincipal)합니다. 사용자 정보를 직렬화 되며 쿠키에 저장 됩니다. 
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+::: moniker range=">= aspnetcore-2.0"
 
 만들기는 [ClaimsIdentity](/dotnet/api/system.security.claims.claimsidentity) 필요한를 사용 하 여 [클레임](/dotnet/api/system.security.claims.claim)s 및 호출 [SignInAsync](/dotnet/api/microsoft.aspnetcore.authentication.authenticationhttpcontextextensions.signinasync?view=aspnetcore-2.0) 사용자를 로그인 하려면:
 
 [!code-csharp[](cookie/samples/2.x/CookieSample/Pages/Account/Login.cshtml.cs?name=snippet1)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
 
 호출 [SignInAsync](/dotnet/api/microsoft.aspnetcore.authentication.authenticationhandler-1.signinasync?view=aspnetcore-1.1) 사용자를 로그인 합니다.
 
@@ -186,7 +190,7 @@ await HttpContext.Authentication.SignInAsync(
     new ClaimsPrincipal(claimsIdentity));
 ```
 
----
+::: moniker-end
 
 `SignInAsync` 암호화 된 쿠키를 만들고 현재 응답에 추가 합니다. 지정 하지 않으면는 `AuthenticationScheme`, 기본 구성표가 사용 됩니다.
 
@@ -194,13 +198,15 @@ await HttpContext.Authentication.SignInAsync(
 
 ## <a name="sign-out"></a>로그아웃
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+::: moniker range=">= aspnetcore-2.0"
 
 현재 사용자 로그 아웃을 해당 쿠키를 삭제 하려면 호출 [SignOutAsync](/dotnet/api/microsoft.aspnetcore.authentication.authenticationhttpcontextextensions.signoutasync?view=aspnetcore-2.0):
 
 [!code-csharp[](cookie/samples/2.x/CookieSample/Pages/Account/Login.cshtml.cs?name=snippet2)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
 
 현재 사용자 로그 아웃을 해당 쿠키를 삭제 하려면 호출 [SignOutAsync](/dotnet/api/microsoft.aspnetcore.authentication.authenticationhandler-1.signoutasync?view=aspnetcore-1.1):
 
@@ -209,7 +215,7 @@ await HttpContext.Authentication.SignOutAsync(
     CookieAuthenticationDefaults.AuthenticationScheme);
 ```
 
----
+::: moniker-end
 
 사용 하지 않는 경우 `CookieAuthenticationDefaults.AuthenticationScheme` (또는 "쿠키") 체계로 (예: "ContosoCookie"), 인증 공급자를 구성 하는 경우를 사용 하는 체계를 제공 합니다. 그렇지 않은 경우 기본 스키마가 사용 됩니다.
 
@@ -239,7 +245,7 @@ await HttpContext.SignInAsync(
     new ClaimsPrincipal(claimsIdentity));
 ```
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
+::: moniker range=">= aspnetcore-2.0"
 
 에 대 한 재정의 구현 하는 `ValidatePrincipal` 이벤트에서 파생 된 클래스에서 다음 서명으로 메서드가 작성 [CookieAuthenticationEvents](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationevents):
 
@@ -298,7 +304,9 @@ services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
 services.AddScoped<CustomCookieAuthenticationEvents>();
 ```
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
 
 에 대 한 재정의 구현 하는 `ValidateAsync` 이벤트 메서드는 다음 서명 사용 하 여 작성 합니다.
 
@@ -348,7 +356,7 @@ app.UseCookieAuthentication(new CookieAuthenticationOptions
 });
 ```
 
----
+::: moniker-end
 
 사용자의 이름이 업데이트 되는 상황을 가정해 보겠습니다 &mdash; 결정 하는 어떤 방식으로 보안에 영향을 주지 않습니다. 비파괴적인 사용자 보안 주체를 업데이트 하려는 경우 호출 `context.ReplacePrincipal` 설정 합니다 `context.ShouldRenew` 속성을 `true`입니다.
 
@@ -357,11 +365,11 @@ app.UseCookieAuthentication(new CookieAuthenticationOptions
 
 ## <a name="persistent-cookies"></a>영구 쿠키
 
-브라우저 세션 간에 유지 하기 위해 쿠키를 확인할 수 있습니다. 로그인 또는 유사한 메커니즘에서 "암호 저장" 확인란을 사용 하 여 명시적 사용자 동의 사용 하 여이 지 속성에만 설정 해야 합니다. 
+브라우저 세션 간에 유지 하기 위해 쿠키를 확인할 수 있습니다. 이 지 속성에는 "암호 저장" 확인란 로그인 또는 유사한 메커니즘을 사용 하 여 명시적 사용자 동의 사용 하 여만 설정 해야 합니다. 
 
 다음 코드 조각은 id 및 브라우저 클로저를 통해 생존 하는 해당 쿠키를 만듭니다. 이전에 구성 된 모든 상대 (sliding) 만료 설정이 적용 됩니다. 쿠키는 브라우저를 닫는 동안 만료 되 면 다시 시작 되 면 브라우저 쿠키를 지웁니다.
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
+::: moniker range=">= aspnetcore-2.0"
 
 ```csharp
 await HttpContext.SignInAsync(
@@ -375,7 +383,9 @@ await HttpContext.SignInAsync(
 
 합니다 [AuthenticationProperties](/dotnet/api/microsoft.aspnetcore.authentication.authenticationproperties?view=aspnetcore-2.0) 클래스에 있는 `Microsoft.AspNetCore.Authentication` 네임 스페이스입니다.
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
 
 ```csharp
 await HttpContext.Authentication.SignInAsync(
@@ -389,7 +399,7 @@ await HttpContext.Authentication.SignInAsync(
 
 합니다 [AuthenticationProperties](/dotnet/api/microsoft.aspnetcore.http.authentication.authenticationproperties?view=aspnetcore-1.1) 클래스에 있는 `Microsoft.AspNetCore.Http.Authentication` 네임 스페이스입니다.
 
----
+::: moniker-end
 
 ## <a name="absolute-cookie-expiration"></a>절대 쿠키 만료 기한
 
@@ -397,7 +407,7 @@ await HttpContext.Authentication.SignInAsync(
 
 다음 코드 조각은 id 및 20 분 동안 지속 되는 해당 쿠키를 만듭니다. 이 이전에 구성 된 모든 상대 (sliding) 만료 설정을 무시 합니다.
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
+::: moniker range=">= aspnetcore-2.0"
 
 ```csharp
 await HttpContext.SignInAsync(
@@ -410,7 +420,9 @@ await HttpContext.SignInAsync(
     });
 ```
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
 
 ```csharp
 await HttpContext.Authentication.SignInAsync(
@@ -423,7 +435,7 @@ await HttpContext.Authentication.SignInAsync(
     });
 ```
 
----
+::: moniker-end
 
 ## <a name="additional-resources"></a>추가 자료
 

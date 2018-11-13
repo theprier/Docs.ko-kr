@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/18/2018
 uid: security/enforcing-ssl
-ms.openlocfilehash: afa40db4c84820db91878bb98dae082b3dd9a2e2
-ms.sourcegitcommit: c43a6f1fe72d7c2db4b5815fd532f2b45d964e07
+ms.openlocfilehash: d287d30203fbf367203afe65e05478806fafab34
+ms.sourcegitcommit: 408921a932448f66cb46fd53c307a864f5323fe5
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50244885"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51570050"
 ---
 # <a name="enforce-https-in-aspnet-core"></a>ASP.NET Core에서 HTTPS 적용
 
@@ -208,7 +208,7 @@ ASP.NET Core 2.1 이상을 사용 하 여 HSTS를 구현 합니다 `UseHsts` 확
 
 # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio) 
 
-선택 취소 합니다 **HTTPS에 대 한 구성** 확인란을 선택 합니다.
+선택 취소 합니다 **HTTPS에 대 한 구성** 확인란 합니다.
 
 ![새 ASP.NET Core 웹 응용 프로그램 대화 상자 표시 HTTPS 확인란의 선택을 취소에 대 한 구성입니다.](enforcing-ssl/_static/out.png)
 
