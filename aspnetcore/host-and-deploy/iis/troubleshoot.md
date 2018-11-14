@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/24/2018
 uid: host-and-deploy/iis/troubleshoot
-ms.openlocfilehash: 6a53c1ba5badd741afc3321ce21b047965c611db
-ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
+ms.openlocfilehash: 2b23bf8230f7a1c207ef7870da098ffb0c597fd5
+ms.sourcegitcommit: fc7eb4243188950ae1f1b52669edc007e9d0798d
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50090604"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51225449"
 ---
 # <a name="troubleshoot-aspnet-core-on-iis"></a>IIS에서 ASP.NET Core 문제 해결
 
@@ -19,7 +19,17 @@ ms.locfileid: "50090604"
 
 이 문서에서는 [IIS(인터넷 정보 서비스)](/iis)를 통해 호스트할 경우 ASP.NET Core 앱 시작 문제를 진단하는 방법에 대한 지침을 제공합니다. 이 문서의 정보는 Windows Server 및 Windows 데스크톱의 IIS에서 호스트하는 경우에 적용됩니다.
 
+::: moniker range=">= aspnetcore-2.2"
+
+Visual Studio에서 ASP.NET Core 프로젝트는 기본적으로 디버그 중에 [IIS Express](/iis/extensions/introduction-to-iis-express/iis-express-overview) 호스팅으로 설정됩니다. 로컬에서 디버그할 때 발생하는 *502.5 - 프로세스 실패* 또는 *500.30 - 시작 실패*는 이 항목의 권장 사항을 사용하여 해결할 수 있습니다.
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.2"
+
 Visual Studio에서 ASP.NET Core 프로젝트는 기본적으로 디버그 중에 [IIS Express](/iis/extensions/introduction-to-iis-express/iis-express-overview) 호스팅으로 설정됩니다. 로컬에서 디버그할 때 발생하는 *502.5 프로세스 실패*는 이 항목의 권장 사항을 사용하여 해결할 수 있습니다.
+
+::: moniker-end
 
 추가 문제 해결 항목:
 
@@ -40,11 +50,40 @@ Visual Studio Code에 기본 제공되는 디버깅 지원에 대해 알아봅�
 **502.5 프로세스 실패**  
 작업자 프로세스가 실패합니다. 앱이 시작되지 않습니다.
 
-ASP.NET Core 모듈이 작업자 프로세스를 시작하려고 하지만 시작할 수 없습니다. 프로세스 시작 실패의 원인은 일반적으로 [응용 프로그램 이벤트 로그](#application-event-log) 및 [ASP.NET Core 모듈 stdout 로그](#aspnet-core-module-stdout-log)의 항목에서 확인할 수 있습니다.
+ASP.NET Core 모듈이 백엔드 dotnet 프로세스를 시작하려고 하지만 시작할 수 없습니다. 프로세스 시작 실패의 원인은 일반적으로 [응용 프로그램 이벤트 로그](#application-event-log) 및 [ASP.NET Core 모듈 stdout 로그](#aspnet-core-module-stdout-log)의 항목에서 확인할 수 있습니다. 
+
+일반적인 실패 조건은 존재하지 않는 ASP.NET Core 공유 프레임워크의 버전을 대상으로 하여 앱이 잘못 구성되었다는 것입니다. 대상 머신에 설치된 ASP.NET Core 공유 프레임워크의 버전을 확인합니다.
 
 호스팅 또는 앱의 잘못된 구성으로 인해 작업자 프로세스가 실패하면 ‘502.5 프로세스 실패’ 오류 페이지가 반환됩니다.
 
 ![502.5 프로세스 실패 페이지를 보여주는 브라우저 창](troubleshoot/_static/process-failure-page.png)
+
+::: moniker range=">= aspnetcore-2.2"
+
+**500.30 In-Process 시작 실패**
+
+작업자 프로세스가 실패합니다. 앱이 시작되지 않습니다.
+
+ASP.NET Core 모듈이 .NET Core CLR in-process를 시작하려고 하지만 시작할 수 없습니다. 프로세스 시작 실패의 원인은 일반적으로 [응용 프로그램 이벤트 로그](#application-event-log) 및 [ASP.NET Core 모듈 stdout 로그](#aspnet-core-module-stdout-log)의 항목에서 확인할 수 있습니다. 
+
+일반적인 실패 조건은 존재하지 않는 ASP.NET Core 공유 프레임워크의 버전을 대상으로 하여 앱이 잘못 구성되었다는 것입니다. 대상 머신에 설치된 ASP.NET Core 공유 프레임워크의 버전을 확인합니다.
+
+**500.0 In-Process 처리기 로드 실패**
+
+작업자 프로세스가 실패합니다. 앱이 시작되지 않습니다.
+
+ASP.NET Core 모듈이 .NET Core CLR을 찾지 못하고 in-process 요청 처리기(*aspnetcorev2_inprocess.dll*)를 찾지 못했습니다. 다음을 확인합니다.
+
+* 앱은 [Microsoft.AspNetCore.Server.IIS](https://www.nuget.org/packages/Microsoft.AspNetCore.Server.IIS) NuGet 패키지 또는 [Microsoft.AspNetCore.App 메타패키지](xref:fundamentals/metapackage-app) 중 하나를 대상으로 합니다.
+* 앱이 대상으로 하는 ASP.NET Core 공유 프레임워크의 버전이 대상 머신에 설치됩니다.
+
+**500.0 Out-Of-Process 처리기 로드 실패**
+
+작업자 프로세스가 실패합니다. 앱이 시작되지 않습니다.
+
+ASP.NET Core 모듈이 out-of-process 호스팅 요청 처리기를 찾지 못했습니다. *aspnetcorev2_outofprocess.dll*이 *aspnetcorev2.dll* 옆의 하위 폴더에 있는지 확인하세요. 
+
+::: moniker-end
 
 **500 내부 서버 오류**  
 앱이 시작되지만 오류로 인해 서버에서 요청을 처리할 수 없습니다.
