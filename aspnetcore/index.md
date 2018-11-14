@@ -4,14 +4,14 @@ author: rick-anderson
 description: 클라우드 기반 인터넷에 연결된 최신 응용 프로그램을 빌드하기 위한 플랫폼 간 고성능 오픈 소스 프레임워크인 ASP.NET Core에 대한 소개를 가져옵니다.
 ms.author: riande
 ms.custom: mvc
-ms.date: 10/24/2018
+ms.date: 11/10/2018
 uid: index
-ms.openlocfilehash: 60f7d64baa0441b90befb2d785999a707e1025c5
-ms.sourcegitcommit: fc7eb4243188950ae1f1b52669edc007e9d0798d
+ms.openlocfilehash: 1699acc0086dfd50c573afc239bc8f37eb9e7af9
+ms.sourcegitcommit: 408921a932448f66cb46fd53c307a864f5323fe5
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51225397"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51569990"
 ---
 # <a name="introduction-to-aspnet-core"></a>ASP.NET Core 소개
 
@@ -76,6 +76,22 @@ ASP.NET Core 3.0 이상은 .NET Core에서만 실행됩니다. 이 변경 사항
 1. [ASP.NET 리포지토리 zip 파일을 다운로드합니다](https://codeload.github.com/aspnet/Docs/zip/master).
 1. *Docs-master.zip* 파일의 압축을 풉니다.
 1. 샘플 링크의 URL을 사용하여 샘플 디렉터리로 이동할 수 있습니다.
+
+여러 시나리오를 보여주기 위해 샘플 앱은 `#define` 및 `#if-#else/#elif-#endif` C# 문을 사용하여 샘플 코드의 다양한 섹션을 선택적으로 컴파일하고 실행합니다. 이 방법을 사용하는 해당 샘플의 경우 C# 파일 상단에 있는 `#define` 문을 실행할 시나리오와 연결된 기호로 설정합니다. 시나리오를 실행하려면 샘플에서 여러 파일의 맨 위에 기호를 설정해야 할 수 있습니다.
+
+예를 들어, 다음 `#define` 기호 목록은 네 가지 시나리오를 사용할 수 있음을 나타냅니다(기호당 하나의 시나리오). 현재 샘플 구성에서는 `TemplateCode` 시나리오를 실행합니다.
+
+```csharp
+#define TemplateCode // or LogFromMain or ExpandDefault or FilterInCode
+```
+
+`ExpandDefault` 시나리오를 실행하도록 샘플을 변경하려면 `ExpandDefault` 기호를 정의하고 나머지 기호는 주석으로 처리하세요.
+
+```csharp
+#define ExpandDefault // TemplateCode or LogFromMain or FilterInCode
+```
+
+[C# 전 처리기 지시문](/dotnet/csharp/language-reference/preprocessor-directives/)을 사용하여 코드 섹션을 선택적으로 컴파일하는 방법에 대한 자세한 내용은 [#define(C# 참조)](/dotnet/csharp/language-reference/preprocessor-directives/preprocessor-define) 및 [#if(C# 참조)](/dotnet/csharp/language-reference/preprocessor-directives/preprocessor-if)를 참조하세요.
 
 ## <a name="next-steps"></a>다음 단계
 

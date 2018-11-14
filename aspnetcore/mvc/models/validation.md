@@ -4,14 +4,14 @@ author: tdykstra
 description: ASP.NET Core MVC의 모델 유효성 검사에 대해 알아봅니다.
 ms.author: riande
 ms.custom: mvc
-ms.date: 10/24/2018
+ms.date: 11/06/2018
 uid: mvc/models/validation
-ms.openlocfilehash: 1063fdccb97e55e6b0eb6689187134ff41c10a02
-ms.sourcegitcommit: 4a6bbe84db24c2f3dd2de065de418fde952c8d40
+ms.openlocfilehash: f1757f807e50019e5071abc42ec3129935ab77aa
+ms.sourcegitcommit: fc7eb4243188950ae1f1b52669edc007e9d0798d
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50253158"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51225462"
 ---
 # <a name="model-validation-in-aspnet-core-mvc"></a>ASP.NET Core MVC의 모델 유효성 검사
 
@@ -33,10 +33,10 @@ ASP.NET Core 2.2 이상에서는 지정된 모델 그래프에 유효성 검사�
 
 유효성 검사 특성은 속성 수준에서 지정됩니다. 
 
-```csharp 
-[Required] 
+```csharp
+[Required]
 public string MyProperty { get; set; } 
-``` 
+```
 
 영화 및 TV 프로그램에 대 한 정보를 저장하는 앱에서 주석이 추가된 `Movie` 모델은 다음과 같습니다. 대부분의 속성은 필수이며 여러 문자열 속성에는 길이 요구 사항이 적용됩니다. 또한 사용자 지정 유효성 검사 특성과 함께 `Price` 속성 대신에 0~$999.99 사이라는 숫자 범위 제한이 있습니다.
 
@@ -82,13 +82,19 @@ nullable 형식이 아닌 [값 형식](/dotnet/csharp/language-reference/keyword
 
 모델 상태는 제출된 HTML 형식 값으로 유효성 검사 오류를 나타냅니다.
 
-MVC는오류의 최대 수(기본적으로 200개)에 도달할 때까지 필드를 계속 유효성 검사합니다. *Startup.cs* 파일의 `ConfigureServices` 메서드에 다음 코드를 삽입하여 이 번호를 구성할 수 있습니다.
+MVC는 최대 오류 수(기본적으로 200개)에 도달할 때까지 필드의 유효성 검사를 계속합니다. `Startup.ConfigureServices`에 다음 코드로 이 번호를 구성할 수 있습니다.
 
 [!code-csharp[](validation/sample/Startup.cs?range=27)]
 
-## <a name="handling-model-state-errors"></a>모델 상태 오류 처리
+## <a name="handle-model-state-errors"></a>모델 상태 오류 처리
 
-모델 유효성 검사는 각 컨트롤러 작업을 호출하기 전에 발생하며, `ModelState.IsValid`를 검사하고 적절하게 반응하는 것은 작업 메서드의 책임입니다. 대부분의 경우 적합한 반응은 이상적으로 모델 유효성 검사에 실패한 이유를 자세히 보여주는 오류 응답을 반환하는 것입니다.
+모델 유효성 검사는 컨트롤러 작업을 실행하기 전에 발생합니다. `ModelState.IsValid`를 검사하고 적절하게 반응하는 것은 작업의 책임입니다. 대부분의 경우 적합한 반응은 이상적으로 모델 유효성 검사에 실패한 이유를 자세히 보여주는 오류 응답을 반환하는 것입니다.
+
+::: moniker range=">= aspnetcore-2.1"
+
+`ModelState.IsValid`가 `[ApiController]` 특성을 사용하는 웹 API 컨트롤러에서 `false`로 평가되면, 문제 세부 정보가 포함된 자동 HTTP 400 응답이 반환됩니다. 자세한 정보는 [자동 HTTP 400 응답](xref:web-api/index#automatic-http-400-responses)을 참조하세요.
+
+::: moniker-end
 
 필터가 이러한 정책을 구현하기에 적절한 경우에 일부 앱은 모델 유효성 검사 오류를 처리하는 표준 규칙을 따르도록 선택합니다. 유효한 모델 및 잘못된 모델 상태일 때 작업 동작 방식을 테스트해야 합니다.
 

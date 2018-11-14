@@ -197,6 +197,7 @@
 ### [HubContext](xref:signalr/hubcontext)
 ### [사용자 및 그룹](xref:signalr/groups)
 ### [Azure에 게시](xref:signalr/publish-to-azure-web-app)
+### [API 디자인 고려 사항](xref:signalr/api-design)
 ## 클라이언트
 ### [.NET 클라이언트](xref:signalr/dotnet-client)
 ### [.NET API 참조](/dotnet/api/microsoft.aspnetcore.signalr.client)
