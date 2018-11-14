@@ -1,21 +1,24 @@
 ---
 title: ASP.NET Core에서 Kestrel 웹 서버 구현
-author: rick-anderson
+author: guardrex
 description: ASP.NET Core의 플랫폼 간 웹 서버인 Kestrel에 대해 알아봅니다.
+monikerRange: '>= aspnetcore-2.1'
 ms.author: tdykstra
 ms.custom: mvc
-ms.date: 09/13/2018
+ms.date: 11/05/2018
 uid: fundamentals/servers/kestrel
-ms.openlocfilehash: 7e47bc3df90a72f15a6fdde080aae6fbf7494384
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: a26726a824db31e07b881dbfa8dc2ef37d4d3492
+ms.sourcegitcommit: edb9d2d78c9a4d68b397e74ae2aff088b325a143
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50207461"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "51505767"
 ---
 # <a name="kestrel-web-server-implementation-in-aspnet-core"></a>ASP.NET Core에서 Kestrel 웹 서버 구현
 
 작성자: [Tom Dykstra](https://github.com/tdykstra), [Chris Ross](https://github.com/Tratcher) 및 [Stephen Halter](https://twitter.com/halter73)
+
+이 항목의 1.1 버전인 경우 [ASP.NET Core(버전 1.1, PDF)에서 Kestrel 웹 서버 구현](https://webpifeed.blob.core.windows.net/webpifeed/Partners/Kestrel_1.1.pdf)을 다운로드하세요.
 
 Kestrel은 [ASP.NET Core의 플랫폼 간 웹 서버](xref:fundamentals/servers/index)입니다. Kestrel은 기본적으로 ASP.NET Core 프로젝트 템플릿에 포함된 웹 서버입니다.
 
@@ -42,7 +45,7 @@ Kestrel은 다음과 같은 기능을 지원합니다.
 
 Kestrel은 .NET Core에서 지원하는 모든 플랫폼 및 버전에서 지원됩니다.
 
-[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/servers/kestrel/samples)([다운로드 방법](xref:index#how-to-download-a-sample))
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/servers/kestrel/samples) ([다운로드 방법](xref:index#how-to-download-a-sample))
 
 ::: moniker range=">= aspnetcore-2.2"
 
@@ -51,23 +54,22 @@ Kestrel은 .NET Core에서 지원하는 모든 플랫폼 및 버전에서 지원
 다음 기본 요구 사항이 충족되는 경우 ASP.NET Core 앱에 대해 [HTTP/2](https://httpwg.org/specs/rfc7540.html)를 사용할 수 있습니다.
 
 * 운영 체제&dagger;
-  * Windows Server 2012 R2/Windows 8.1 이상
+  * Windows Server 2016/Windows 10 이상&Dagger;
   * Linux 및 OpenSSL 1.0.2 이상(예: Ubuntu 16.04 이상)
 * 대상 프레임워크: .NET Core 2.2 이상
 * [ALPN(Application-Layer Protocol Negotiation)](https://tools.ietf.org/html/rfc7301#section-3) 연결
 * TLS 1.2 이상 연결
 
 이후 릴리스에서는 macOS에서 &dagger;HTTP/2가 지원됩니다.
+&Dagger;Kestrel은 Windows Server 2012 R2와 Windows 8.1에서의 HTTP/2 지원을 제한했습니다. 이러한 운영 체제에서 사용할 수 있는 지원 가능 TLS 암호 그룹 목록이 제한되므로 지원이 제한됩니다. TLS 연결을 보호하는 데 ECDSA(타원 곡선 디지털 서명 알고리즘)를 사용하여 생성된 인증서가 필요할 수 있습니다.
 
-HTTP/2 연결이 설정된 경우 [HttpRequest.Protocol](xref:Microsoft.AspNetCore.Http.HttpRequest.Protocol*)에서 `HTTP/2`를 보고합니다.
+HTTP/2 연결이 설정된 경우 [HttpRequest.Protocol](xref:Microsoft.AspNetCore.Http.HttpRequest.Protocol*)에서 `HTTP/2`을 보고합니다.
 
-HTTP/2는 기본적으로 사용할 수 없습니다. 구성에 대한 자세한 내용은 [Kestrel 옵션](#kestrel-options) 및 [엔드포인트 구성](#endpoint-configuration) 섹션을 참조하세요.
+HTTP/2는 기본적으로 사용할 수 없습니다. 구성에 대한 자세한 내용은 [Kestrel 옵션](#kestrel-options) 및 [ListenOptions.Protocols](#listenoptionsprotocols) 섹션을 참조하세요.
 
 ::: moniker-end
 
 ## <a name="when-to-use-kestrel-with-a-reverse-proxy"></a>Kestrel을 역방향 프록시와 함께 사용하는 경우
-
-::: moniker range=">= aspnetcore-2.0"
 
 Kestrel을 단독으로 사용하거나 IIS, Nginx 또는 Apache 같은 *역방향 프록시 서버*와 함께 사용할 수 있습니다. 역방향 프록시 서버는 인터넷에서 HTTP 요청을 수신하고 몇몇 사전 처리 후에 Kestrel에 전달합니다.
 
@@ -76,22 +78,6 @@ Kestrel을 단독으로 사용하거나 IIS, Nginx 또는 Apache 같은 *역방�
 ![Kestrel은 IIS, Nginx 또는 Apache 같은 역방향 프록시 서버를 통해 간접적으로 인터넷과 통신합니다.](kestrel/_static/kestrel-to-internet.png)
 
 &mdash;역방향 프록시 서버의 유무에 상관없이&mdash; ASP.NET Core 2.0 이상 앱에 대해 지원되는 유효한 호스팅 구성입니다.
-
-::: moniker-end
-
-::: moniker range="< aspnetcore-2.0"
-
-앱이 내부 네트워크에서만 요청을 수락하는 경우 Kestrel을 앱 서버로 직접 사용할 수 있습니다.
-
-![Kestrel은 내부 네트워크와 직접 통신합니다.](kestrel/_static/kestrel-to-internal.png)
-
-앱을 인터넷에 노출할 경우 IIS, Nginx 또는 Apache를 *역방향 프록시 서버*로 사용합니다. 역방향 프록시 서버는 인터넷에서 HTTP 요청을 수신하고 몇몇 사전 처리 후에 Kestrel에 전달합니다.
-
-![Kestrel은 IIS, Nginx 또는 Apache 같은 역방향 프록시 서버를 통해 간접적으로 인터넷과 통신합니다.](kestrel/_static/kestrel-to-internet.png)
-
-역방향 프록시는 보안 이유로 인터넷에서 트래픽에 노출되는 공용 에지 서버 배포에 필요합니다. Kestrel의 1.x 버전은 적절한 시간 제한, 크기 제한 및 동시 연결 제한 등의 공격에 대한 완벽한 방어 능력은 없습니다.
-
-::: moniker-end
 
 역방향 프록시 시나리오는 동일한 IP 및 단일 서버에서 실행되는 포트를 공유하는 여러 앱이 있는 경우에 존재합니다. Kestrel은 여러 프로세스 간에 동일한 IP 및 포트 공유를 지원하지 않으므로 이 시나리오를 지원하지 않습니다. Kestrel이 포트에서 수신 대기하도록 구성된 경우 Kestrel은 요청의 호스트 헤더에 관계 없이 해당 포트에 대한 모든 트래픽을 처리합니다. 포트를 공유할 수 있는 역방향 프록시는 고유 IP 및 포트에서 Kestrel에 요청을 전달할 수 있습니다.
 
@@ -107,15 +93,11 @@ Kestrel을 단독으로 사용하거나 IIS, Nginx 또는 Apache 같은 *역방�
 
 ## <a name="how-to-use-kestrel-in-aspnet-core-apps"></a>ASP.NET Core 앱에서 Kestrel을 사용하는 방법
 
-::: moniker range=">= aspnetcore-2.0"
-
 [Microsoft.AspNetCore.Server.Kestrel](https://www.nuget.org/packages/Microsoft.AspNetCore.Server.Kestrel/) 패키지는 [Microsoft.AspNetCore.App 메타패키지](xref:fundamentals/metapackage-app)(ASP.NET Core 2.1 이상)에 포함되어 있습니다.
 
 ASP.NET Core 프로젝트 템플릿은 기본적으로 Kestrel을 사용합니다. *Program.cs*에서 템플릿 코드는 [UseKestrel](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderkestrelextensions.usekestrel) 숨은 기능을 호출하는 [CreateDefaultBuilder](/dotnet/api/microsoft.aspnetcore.webhost.createdefaultbuilder)를 호출합니다.
 
 [!code-csharp[](kestrel/samples/2.x/KestrelSample/Program.cs?name=snippet_DefaultBuilder&highlight=7)]
-
-::: moniker-end
 
 ::: moniker range=">= aspnetcore-2.2"
 
@@ -133,51 +115,32 @@ public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
 
 ::: moniker-end
 
-::: moniker range="= aspnetcore-2.0 || aspnetcore-2.1"
+::: moniker range="< aspnetcore-2.2"
 
 `CreateDefaultBuilder`을 호출한 후 추가 구성을 제공하려면 [UseKestrel](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderkestrelextensions.usekestrel)을 호출합니다.
 
 ```csharp
-public static IWebHost BuildWebHost(string[] args) =>
+public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
     WebHost.CreateDefaultBuilder(args)
         .UseStartup<Startup>()
         .UseKestrel(options =>
         {
             // Set properties and call methods on options
-        })
-        .Build();
+        });
 ```
-
-::: moniker-end
-
-::: moniker range="< aspnetcore-2.0"
-
-[Microsoft.AspNetCore.Server.Kestrel](https://www.nuget.org/packages/Microsoft.AspNetCore.Server.Kestrel/) NuGet 패키지를 설치합니다.
-
-다음 섹션과 같이 필요한 [Kestrel 옵션](/dotnet/api/microsoft.aspnetcore.server.kestrel.kestrelserveroptions?view=aspnetcore-1.1)을 지정하여 `Main` 메서드에서 [WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder?view=aspnetcore-1.1)의 [UseKestrel](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderkestrelextensions.usekestrel?view=aspnetcore-1.1) 확장 메서드를 호출합니다.
-
-[!code-csharp[](kestrel/samples/1.x/KestrelSample/Program.cs?name=snippet_Main&highlight=13-19)]
 
 ::: moniker-end
 
 ## <a name="kestrel-options"></a>Kestrel 옵션
 
-::: moniker range=">= aspnetcore-2.0"
+Kestrel 웹 서버에는 인터넷 연결 배포에 특히 유용한 제약 조건 구성 옵션이 있습니다.
 
-Kestrel 웹 서버에는 인터넷 연결 배포에 특히 유용한 제약 조건 구성 옵션이 있습니다. 사용자 지정될 수 있는 몇 가지 중요 한 제한입니다.
-
-* 최대 클라이언트 연결
-* 최대 요청 본문 크기
-* 최소 요청 본문 데이터 속도
-
-[KestrelServerOptions](/dotnet/api/microsoft.aspnetcore.server.kestrel.core.kestrelserveroptions) 클래스의 [한도](/dotnet/api/microsoft.aspnetcore.server.kestrel.core.kestrelserveroptions.limits) 속성에서 이러한 제약 조건 및 기타 제약 조건을 설정합니다. `Limits` 속성은 [KestrelServerLimits](/dotnet/api/microsoft.aspnetcore.server.kestrel.core.kestrelserverlimits) 클래스의 인스턴스를 보유합니다.
+[KestrelServerOptions](/dotnet/api/microsoft.aspnetcore.server.kestrel.core.kestrelserveroptions) 클래스의 [한도](/dotnet/api/microsoft.aspnetcore.server.kestrel.core.kestrelserveroptions.limits) 속성에서 제약 조건을 설정합니다. `Limits` 속성은 [KestrelServerLimits](/dotnet/api/microsoft.aspnetcore.server.kestrel.core.kestrelserverlimits) 클래스의 인스턴스를 보유합니다.
 
 ### <a name="maximum-client-connections"></a>최대 클라이언트 연결
 
 [MaxConcurrentConnections](/dotnet/api/microsoft.aspnetcore.server.kestrel.core.kestrelserverlimits.maxconcurrentconnections)  
 [MaxConcurrentUpgradedConnections](/dotnet/api/microsoft.aspnetcore.server.kestrel.core.kestrelserverlimits.maxconcurrentupgradedconnections)
-
-::: moniker-end
 
 다음 코드를 사용하여 전체 앱에 대한 동시 개방 TCP 연결의 최대 수를 설정할 수 있습니다.
 
@@ -187,7 +150,7 @@ Kestrel 웹 서버에는 인터넷 연결 배포에 특히 유용한 제약 조�
 
 ::: moniker-end
 
-::: moniker range="= aspnetcore-2.0 || aspnetcore-2.1"
+::: moniker range="< aspnetcore-2.2"
 
 ```csharp
 public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
@@ -209,7 +172,7 @@ HTTP 또는 HTTPS에서 다른 프로토콜(예: WebSocket 요청에서)로 업�
 
 ::: moniker-end
 
-::: moniker range="= aspnetcore-2.0 || aspnetcore-2.1"
+::: moniker range="< aspnetcore-2.2"
 
 ```csharp
 public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
@@ -222,8 +185,6 @@ public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
 ```
 
 ::: moniker-end
-
-::: moniker range=">= aspnetcore-2.0"
 
 연결의 최대 수는 기본적으로 무제한(null)입니다.
 
@@ -240,8 +201,6 @@ ASP.NET Core MVC 앱에서 한도를 재정의할 때는 작업 메서드에서 
 public IActionResult MyActionMethod()
 ```
 
-::: moniker-end
-
 다음 예제는 모든 요청에서 앱에 대한 제약 조건을 구성하는 방법을 보여 줍니다.
 
 ::: moniker range=">= aspnetcore-2.2"
@@ -250,7 +209,7 @@ public IActionResult MyActionMethod()
 
 ::: moniker-end
 
-::: moniker range="= aspnetcore-2.0 || aspnetcore-2.1"
+::: moniker range="< aspnetcore-2.2"
 
 ```csharp
 public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
@@ -268,8 +227,6 @@ public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
 
 ::: moniker-end
 
-::: moniker range=">= aspnetcore-2.0"
-
 앱에서 요청을 읽기 시작한 후 요청에 대한 제한을 구성하려고 하면 예외가 throw됩니다. `MaxRequestBodySize` 속성이 제한을 구성하기에 너무 늦은, 읽기 전용 상태인지를 알려주는 `IsReadOnly` 속성이 있습니다.
 
 ### <a name="minimum-request-body-data-rate"></a>최소 요청 본문 데이터 속도
@@ -285,15 +242,13 @@ Kestrel은 데이터가 지정된 속도(바이트/초)로 도착하는지 1초�
 
 *Program.cs*에서 최소 데이터 속도를 구성하는 방법을 보여 주는 예제는 다음과 같습니다.
 
-::: moniker-end
-
 ::: moniker range=">= aspnetcore-2.2"
 
 [!code-csharp[](kestrel/samples/2.x/KestrelSample/Program.cs?name=snippet_Limits&highlight=6-9)]
 
 ::: moniker-end
 
-::: moniker range="= aspnetcore-2.0 || aspnetcore-2.1"
+::: moniker range="< aspnetcore-2.2"
 
 ```csharp
 public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
@@ -308,9 +263,15 @@ public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
         });
 ```
 
-미들웨어에서 요청별 속도를 구성할 수 있습니다.
+::: moniker-end
 
-[!code-csharp[](kestrel/samples/2.x/KestrelSample/Startup.cs?name=snippet_Limits&highlight=5-8)]
+미들웨어에서 요청당 최소 속도 제한을 재정의할 수 있습니다.
+
+[!code-csharp[](kestrel/samples/2.x/KestrelSample/Startup.cs?name=snippet_Limits&highlight=6-21)]
+
+::: moniker range=">= aspnetcore-2.2"
+
+요청 멀티플렉싱에 대한 프로토콜의 지원으로 인해 요청별 속도 제한을 수정하는 것이 HTTP/2에 대해 지원되지 않으므로, 이전 샘플에서 참조된 속도 기능은 HTTP/2 요청에 대해 `HttpContext.Features`에 존재하지 않습니다. `KestrelServerOptions.Limits`를 통해 구성된 서버 전체 속도 제한은 여전히 HTTP/1.x 및 HTTP/2 연결 모두에 적용됩니다.
 
 ::: moniker-end
 
@@ -364,9 +325,55 @@ public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
 
 기본값은 2^14(16,384)입니다.
 
-::: moniker-end
+### <a name="maximum-request-header-size"></a>최대 요청 헤더 크기
 
-::: moniker range=">= aspnetcore-2.0"
+`Http2.MaxRequestHeaderFieldSize`는 요청 헤더 값의 8진수로 허용되는 최대 크기를 나타냅니다. 이 한도는 이름과 값이 모두 압축된 표현과 압축되지 않은 표현으로 함께 적용됩니다. 값은 0보다 커야 합니다(0).
+
+```csharp
+public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
+    WebHost.CreateDefaultBuilder(args)
+        .UseStartup<Startup>()
+        .ConfigureKestrel((context, options) =>
+        {
+            options.Limits.Http2.MaxRequestHeaderFieldSize = 8192;
+        });
+```
+
+기본값은 8,192입니다.
+
+### <a name="initial-connection-window-size"></a>초기 연결 창 크기
+
+`Http2.InitialConnectionWindowSize`는 연결당 모든 요청(스트림)을 통해 한 번에 집계하는 서버 버퍼의 최대 요청 본문 데이터를 바이트 단위로 나타냅니다. 요청은 `Http2.InitialStreamWindowSize`에 의해서도 제한됩니다. 값은 65,535보다 크거나 같아야 하며 2^31(2,147,483,648)보다 작아야 합니다.
+
+```csharp
+public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
+    WebHost.CreateDefaultBuilder(args)
+        .UseStartup<Startup>()
+        .ConfigureKestrel((context, options) =>
+        {
+            options.Limits.Http2.InitialConnectionWindowSize = 131072;
+        });
+```
+
+기본값은 128KB(131,072)입니다.
+
+### <a name="initial-stream-window-size"></a>초기 스트림 창 크기
+
+`Http2.InitialStreamWindowSize`는 요청(스트림)당 한 번에 서버 버퍼의 최대 요청 본문 데이터를 바이트 단위로 나타냅니다. 요청은 `Http2.InitialStreamWindowSize`에 의해서도 제한됩니다. 값은 65,535보다 크거나 같아야 하며 2^31(2,147,483,648)보다 작아야 합니다.
+
+```csharp
+public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
+    WebHost.CreateDefaultBuilder(args)
+        .UseStartup<Startup>()
+        .ConfigureKestrel((context, options) =>
+        {
+            options.Limits.Http2.InitialStreamWindowSize = 98304;
+        });
+```
+
+기본값은 96KB(98,304)입니다.
+
+::: moniker-end
 
 다른 Kestrel 옵션 및 제한에 대한 내용은 다음을 참조하세요.
 
@@ -374,42 +381,7 @@ public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
 * [KestrelServerLimits](/dotnet/api/microsoft.aspnetcore.server.kestrel.core.kestrelserverlimits)
 * [ListenOptions](/dotnet/api/microsoft.aspnetcore.server.kestrel.core.listenoptions)
 
-::: moniker-end
-
-::: moniker range="< aspnetcore-2.0"
-
-Kestrel 옵션 및 제한에 대한 내용은 다음을 참조하세요.
-
-* [KestrelServerOptions class](/dotnet/api/microsoft.aspnetcore.server.kestrel.kestrelserveroptions?view=aspnetcore-1.1)
-* [KestrelServerLimits](/dotnet/api/microsoft.aspnetcore.server.kestrel.kestrelserverlimits?view=aspnetcore-1.1)
-
-::: moniker-end
-
 ## <a name="endpoint-configuration"></a>엔드포인트 구성
-
-::: moniker range="= aspnetcore-2.0"
-
-기본적으로 ASP.NET Core는 `http://localhost:5000`으로 바인딩합니다. Kestrel에 대한 URL 접두사 및 포트를 구성하려면 [KestrelServerOptions](/dotnet/api/microsoft.aspnetcore.server.kestrel.core.kestrelserveroptions)에 대한 [ListenUnixSocket](/dotnet/api/microsoft.aspnetcore.server.kestrel.core.kestrelserveroptions.listenunixsocket) 메서드 또는 [수신 대기](/dotnet/api/microsoft.aspnetcore.server.kestrel.core.kestrelserveroptions.listen)를 호출합니다. `UseUrls`, `--urls` 명령줄 인수 `urls` 호스트 구성 키 및 `ASPNETCORE_URLS` 환경 변수도 작동하지만 이 섹션의 뒷부분에 명시된 제한 사항이 있습니다.
-
-`urls` 호스트 구성 키는 앱 구성이 아닌 호스트 구성에서 와야 합니다. `urls` 키와 값을 *appsettings.json*에 추가하는 것은 구성 파일에서 구성을 읽을 때면 호스트가 완전히 초기화되기 때문에 호스트 구성에 영향을 주지 않습니다. 그러나 호스트를 구성하려면 호스트 작성기에서 [UseConfiguration](/dotnet/api/microsoft.aspnetcore.hosting.hostingabstractionswebhostbuilderextensions.useconfiguration)을 통해 *appsettings.json*에서 `urls` 키를 사용할 수 있습니다.
-
-```csharp
-var config = new ConfigurationBuilder()
-    .SetBasePath(Directory.GetCurrentDirectory())
-    .AddJsonFile("appSettings.json", optional: true, reloadOnChange: true)
-    .Build();
-
-var host = new WebHostBuilder()
-    .UseKestrel()
-    .UseConfiguration(config)
-    .UseContentRoot(Directory.GetCurrentDirectory())
-    .UseStartup<Startup>()
-    .Build();
-```
-
-::: moniker-end
-
-::: moniker range=">= aspnetcore-2.1"
 
 기본적으로 ASP.NET Core는 다음으로 바인딩합니다.
 
@@ -614,8 +586,6 @@ SNI 지원에는 다음 항목이 필요합니다.
 * 대상 프레임워크 `netcoreapp2.1`에서 실행합니다. `netcoreapp2.0` 및 `net461`에서 콜백이 호출되지만 `name` 은 항상 `null`입니다. 클라이언트가 TLS 핸드셰이크에서 호스트 이름 매개 변수를 제공하지 않는 경우 `name`은 또한 `null`입니다.
 * 모든 웹 사이트는 동일한 Kestrel 인스턴스에서 실행합니다. Kestrel은 역방향 프록시 없이 여러 인스턴스에서 IP 주소와 포트를 공유하도록 지원하지 않습니다.
 
-::: moniker-end
-
 ::: moniker range=">= aspnetcore-2.2"
 
 ```csharp
@@ -659,10 +629,10 @@ public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
 
 ::: moniker-end
 
-::: moniker range="= aspnetcore-2.0 || aspnetcore-2.1"
+::: moniker range="< aspnetcore-2.2"
 
 ```csharp
-public static IWebHost BuildWebHost(string[] args) =>
+public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
     WebHost.CreateDefaultBuilder(args)
         .UseStartup<Startup>()
         .UseKestrel((context, options) =>
@@ -713,7 +683,26 @@ public static IWebHost BuildWebHost(string[] args) =>
 
 ::: moniker-end
 
-::: moniker range="= aspnetcore-2.0 || aspnetcore-2.1"
+::: moniker range="< aspnetcore-2.2"
+
+```csharp
+public static void Main(string[] args)
+{
+    CreateWebHostBuilder(args).Build().Run();
+}
+
+public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
+    WebHost.CreateDefaultBuilder(args)
+        .UseStartup<Startup>()
+        .UseKestrel(options =>
+        {
+            options.Listen(IPAddress.Loopback, 5000);
+            options.Listen(IPAddress.Loopback, 5001, listenOptions =>
+            {
+                listenOptions.UseHttps("testCert.pfx", "testPassword");
+            });
+        });
+```
 
 ```csharp
 public static void Main(string[] args)
@@ -736,8 +725,6 @@ public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
 
 ::: moniker-end
 
-::: moniker range=">= aspnetcore-2.0"
-
 예제에서는 [ListenOptions](/dotnet/api/microsoft.aspnetcore.server.kestrel.core.listenoptions)를 사용하여 엔드포인트에 대한 SSL을 구성합니다. 동일한 API를 사용하여 특정 엔드포인트에 대한 다른 Kestrel 설정을 구성합니다.
 
 [!INCLUDE [How to make an X.509 cert](~/includes/make-x509-cert.md)]
@@ -746,15 +733,13 @@ public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
 
 이 예제에 나와 있는 것처럼 Nginx를 사용하여 향상된 성능을 위해 [ListenUnixSocket](/dotnet/api/microsoft.aspnetcore.server.kestrel.core.kestrelserveroptions.listenunixsocket)을 통해 Unix 소켓을 수신 대기합니다.
 
-::: moniker-end
-
 ::: moniker range=">= aspnetcore-2.2"
 
 [!code-csharp[](kestrel/samples/2.x/KestrelSample/Program.cs?name=snippet_UnixSocket)]
 
 ::: moniker-end
 
-::: moniker range="= aspnetcore-2.0 || aspnetcore-2.1"
+::: moniker range="< aspnetcore-2.2"
 
 ```csharp
 public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
@@ -771,8 +756,6 @@ public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
 ```
 
 ::: moniker-end
-
-::: moniker range=">= aspnetcore-2.0"
 
 ### <a name="port-0"></a>포트 0
 
@@ -803,25 +786,6 @@ Listening on the following addresses: http://127.0.0.1:48508
 ### <a name="iis-endpoint-configuration"></a>IIS 엔드포인트 구성
 
 IIS를 사용하는 경우 IIS 재정의 바인딩에 대한 URL 바인딩은 `Listen` 또는 `UseUrls`에 의해 설정됩니다. 자세한 내용은 [ASP.NET Core 모듈](xref:fundamentals/servers/aspnet-core-module) 항목을 참조하세요.
-
-::: moniker-end
-
-::: moniker range="< aspnetcore-2.0"
-
-기본적으로 ASP.NET Core는 `http://localhost:5000`으로 바인딩합니다. Kestrel 사용에 대한 URL 접두사 및 포트를 구성합니다.
-
-* [UseUrls](/dotnet/api/microsoft.aspnetcore.hosting.hostingabstractionswebhostbuilderextensions.useurls?view=aspnetcore-1.1) 확장 메서드
-* `--urls` 명령줄 인수
-* `urls` 호스트 구성 키
-* `ASPNETCORE_URLS` 환경 변수를 포함한 ASP.NET Core 구성 시스템
-
-이러한 메서드에 대한 자세한 내용은 [호스팅](xref:fundamentals/host/index)을 참조하세요.
-
-### <a name="iis-endpoint-configuration"></a>IIS 엔드포인트 구성
-
-IIS를 사용하는 경우 IIS 재정의 바인딩에 대한 URL 바인딩은 `UseUrls`에 의해 설정됩니다. 자세한 내용은 [ASP.NET Core 모듈](xref:fundamentals/servers/aspnet-core-module) 항목을 참조하세요.
-
-::: moniker-end
 
 ::: moniker range=">= aspnetcore-2.2"
 
@@ -862,7 +826,7 @@ public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
                 listenOptions.Protocols = HttpProtocols.Http1AndHttp2;
                 listenOptions.UseHttps("testCert.pfx", "testPassword");
             });
-        }
+        });
 ```
 
 선택적으로, `IConnectionAdapter` 구현을 만들어 각 연결 단위로 특정 암호에 대한 TLS 핸드셰이크를 필터링합니다.
@@ -879,7 +843,7 @@ public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
                 listenOptions.UseHttps("testCert.pfx", "testPassword");
                 listenOptions.ConnectionAdapters.Add(new TlsFilterAdapter());
             });
-        }
+        });
 ```
 
 ```csharp
@@ -923,7 +887,7 @@ private class TlsFilterAdapter : IConnectionAdapter
 }
 ```
 
-구성에서 프로토콜 설정**
+구성에서 프로토콜 설정
 
 [WebHost.CreateDefaultBuilder](/dotnet/api/microsoft.aspnetcore.webhost.createdefaultbuilder)는 Kestrel 구성을 로드하려면 기본적으로 `serverOptions.Configure(context.Configuration.GetSection("Kestrel"))`을 호출합니다.
 
@@ -958,8 +922,6 @@ private class TlsFilterAdapter : IConnectionAdapter
 
 ::: moniker-end
 
-::: moniker range=">= aspnetcore-2.1"
-
 ## <a name="transport-configuration"></a>전송 구성
 
 ASP.NET Core 2.1 릴리스에서 Kestrel의 기본 전송은 더 이상 Libuv에 기반하지 않으며 대신 관리 소켓에 기반합니다. [WebHostBuilderLibuvExtensions.UseLibuv](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderlibuvextensions.uselibuv)를 호출하고 다음 패키지 중 하나를 사용하는 2.1로 업그레이드된 ASP.NET Core 2.0 앱의 주요 변경 내용입니다.
@@ -993,13 +955,9 @@ ASP.NET Core 2.1 이상의 경우 [Microsoft.AspNetCore.App 메타패키지](xre
     }
     ```
 
-::: moniker-end
-
 ### <a name="url-prefixes"></a>URL 접두사
 
 `UseUrls`, `--urls` 명령줄 인수, `urls` 호스트 구성 키 또는 `ASPNETCORE_URLS` 환경 변수를 사용하는 경우 URL 접두사는 다음 형식 중 하나일 수 있습니다.
-
-::: moniker range=">= aspnetcore-2.0"
 
 HTTP URL 접두사만 유효합니다. Kestrel은 `UseUrls`을 사용하여 URL 바인딩을 구성하는 경우 SSL을 지원하지 않습니다.
 
@@ -1041,251 +999,15 @@ HTTP URL 접두사만 유효합니다. Kestrel은 `UseUrls`을 사용하여 URL 
 
   `localhost`가 지정되면 Kestrel은 IPv4 및 IPv6 루프백 인터페이스 모두에 바인딩하려고 합니다. 요청된 포트가 루프백 인터페이스 중 하나의 다른 서비스에서 사용 중인 경우 Kestrel은 시작에 실패합니다. 루프백 인터페이스 중 하나를 다른 이유(일반적으로 IPv6이 지원되지 않으므로)로 사용할 수 없는 경우 Kestrel은 경고를 기록합니다.
 
-::: moniker-end
-
-::: moniker range="< aspnetcore-2.0"
-
-* 포트 번호가 있는 IPv4 주소
-
-  ```
-  http://65.55.39.10:80/
-  https://65.55.39.10:443/
-  ```
-
-  `0.0.0.0`은 모든 IPv4 주소에 바인딩하는 특별한 경우입니다.
-
-* 포트 번호가 있는 IPv6 주소
-
-  ```
-  http://[0:0:0:0:0:ffff:4137:270a]:80/
-  https://[0:0:0:0:0:ffff:4137:270a]:443/
-  ```
-
-  `[::]`는 IPv4 `0.0.0.0`에 해당하는 IPv6입니다.
-
-* 포트 번호가 있는 호스트 이름
-
-  ```
-  http://contoso.com:80/
-  http://*:80/
-  https://contoso.com:443/
-  https://*:443/
-  ```
-
-  호스트 이름, `*` 및 `+`는 특별하지 않습니다. 인식된 IP 주소 또는 `localhost`가 아닌 모든 항목은 모든 IPv4 및 IPv6 IP에 바인딩합니다. 서로 다른 호스트 이름을 같은 포트에서 서로 다른 ASP.NET Core 앱에 바인딩하려면 IIS, Nginx 또는 Apache와 같은 역방향 프록시 서버 또는 [WebListener](xref:fundamentals/servers/weblistener)를 사용합니다.
-
-* 포트 번호가 있는 호스트 `localhost` 이름 또는 포트 번호가 있는 루프백 IP
-
-  ```
-  http://localhost:5000/
-  http://127.0.0.1:5000/
-  http://[::1]:5000/
-  ```
-
-  `localhost`가 지정되면 Kestrel은 IPv4 및 IPv6 루프백 인터페이스 모두에 바인딩하려고 합니다. 요청된 포트가 루프백 인터페이스 중 하나의 다른 서비스에서 사용 중인 경우 Kestrel은 시작에 실패합니다. 루프백 인터페이스 중 하나를 다른 이유(일반적으로 IPv6이 지원되지 않으므로)로 사용할 수 없는 경우 Kestrel은 경고를 기록합니다.
-
-* Unix 소켓
-
-  ```
-  http://unix:/run/dan-live.sock
-  ```
-
-**포트 0**
-
-포트 번호 `0`가 지정되는 경우 Kestrel은 동적으로 사용 가능한 포트에 바인딩합니다. 포트 `0`에 바인딩은 `localhost`를 제외하고 모든 호스트 이름 또는 IP에 대해 허용됩니다.
-
-앱이 실행되는 경우 콘솔 창 출력은 앱이 연결될 수 있는 동적 포트를 나타냅니다.
-
-```console
-Now listening on: http://127.0.0.1:48508
-```
-
-**SSL에 대한 URL 접두사**
-
-`UseHttps` 확장 메서드를 호출하는 경우 `https:`에 URL 접두사를 포함해야 합니다.
-
-```csharp
-var host = new WebHostBuilder()
-    .UseKestrel(options =>
-    {
-        options.UseHttps("testCert.pfx", "testPassword");
-    })
-   .UseUrls("http://localhost:5000", "https://localhost:5001")
-   .UseContentRoot(Directory.GetCurrentDirectory())
-   .UseStartup<Startup>()
-   .Build();
-```
-
-> [!NOTE]
-> HTTPS 및 HTTP는 동일한 포트에서 호스팅될 수 없습니다.
-
-[!INCLUDE [How to make an X.509 cert](~/includes/make-x509-cert.md)]
-
-::: moniker-end
-
 ## <a name="host-filtering"></a>호스트 필터링
 
 Kestrel은 `http://example.com:5000`과 같은 접두사에 따라 구성을 지원하지만 일반적으로 호스트 이름을 무시합니다. 호스트 `localhost`은 루프백 주소에 바인딩하는 데 사용된 특별한 경우입니다. 명시적 IP 주소를 제외한 모든 호스트는 모든 공용 IP 주소에 바인딩합니다. 이 정보 중 어느 것도 요청 `Host` 헤더의 유효성을 검사하는 데 사용됩니다.
-
-::: moniker range="< aspnetcore-2.0"
-
-해결 방법은 호스트 헤더 필터링을 사용한 역방향 프록시 뒤의 호스트입니다. ASP.NET Core 1.x에서 Kestrel에 대한 유일한 지원 시나리오입니다.
-
-::: moniker-end
-
-::: moniker range="= aspnetcore-2.0"
-
-해결 방법으로 미들웨어를 사용하여 `Host` 헤더로 요청을 필터링합니다.
-
-```csharp
-using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Primitives;
-using Microsoft.Net.Http.Headers;
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-
-// A normal middleware would provide an options type, config binding, extension methods, etc..
-// This intentionally does all of the work inside of the middleware so it can be
-// easily copy-pasted into docs and other projects.
-public class HostFilteringMiddleware
-{
-    private readonly RequestDelegate _next;
-    private readonly IList<string> _hosts;
-    private readonly ILogger<HostFilteringMiddleware> _logger;
-
-    public HostFilteringMiddleware(RequestDelegate next, IConfiguration config, ILogger<HostFilteringMiddleware> logger)
-    {
-        if (config == null)
-        {
-            throw new ArgumentNullException(nameof(config));
-        }
-
-        _next = next ?? throw new ArgumentNullException(nameof(next));
-        _logger = logger ?? throw new ArgumentNullException(nameof(logger));
-
-        // A semicolon separated list of host names without the port numbers.
-        // IPv6 addresses must use the bounding brackets and be in their normalized form.
-        _hosts = config["AllowedHosts"]?.Split(new[] { ';' }, StringSplitOptions.RemoveEmptyEntries);
-        if (_hosts == null || _hosts.Count == 0)
-        {
-            throw new InvalidOperationException("No configuration entry found for AllowedHosts.");
-        }
-    }
-
-    public Task Invoke(HttpContext context)
-    {
-        if (!ValidateHost(context))
-        {
-            context.Response.StatusCode = 400;
-            _logger.LogDebug("Request rejected due to incorrect Host header.");
-            return Task.CompletedTask;
-        }
-
-        return _next(context);
-    }
-
-    // This does not duplicate format validations that are expected to be performed by the host.
-    private bool ValidateHost(HttpContext context)
-    {
-        StringSegment host = context.Request.Headers[HeaderNames.Host].ToString().Trim();
-
-        if (StringSegment.IsNullOrEmpty(host))
-        {
-            // Http/1.0 does not require the Host header.
-            // Http/1.1 requires the header but the value may be empty.
-            return true;
-        }
-
-        // Drop the port
-
-        var colonIndex = host.LastIndexOf(':');
-
-        // IPv6 special case
-        if (host.StartsWith("[", StringComparison.Ordinal))
-        {
-            var endBracketIndex = host.IndexOf(']');
-            if (endBracketIndex < 0)
-            {
-                // Invalid format
-                return false;
-            }
-            if (colonIndex < endBracketIndex)
-            {
-                // No port, just the IPv6 Host
-                colonIndex = -1;
-            }
-        }
-
-        if (colonIndex > 0)
-        {
-            host = host.Subsegment(0, colonIndex);
-        }
-
-        foreach (var allowedHost in _hosts)
-        {
-            if (StringSegment.Equals(allowedHost, host, StringComparison.OrdinalIgnoreCase))
-            {
-                return true;
-            }
-
-            // Sub-domain wildcards: *.example.com
-            if (allowedHost.StartsWith("*.", StringComparison.Ordinal) && host.Length >= allowedHost.Length)
-            {
-                // .example.com
-                var allowedRoot = new StringSegment(allowedHost, 1, allowedHost.Length - 1);
-
-                var hostRoot = host.Subsegment(host.Length - allowedRoot.Length, allowedRoot.Length);
-                if (hostRoot.Equals(allowedRoot, StringComparison.OrdinalIgnoreCase))
-                {
-                    return true;
-                }
-            }
-        }
-
-        return false;
-    }
-}
-```
-
-`Startup.Configure`에 위의 `HostFilteringMiddleware`을 등록합니다. [미들웨어 등록 순서](xref:fundamentals/middleware/index#order)가 중요합니다. 등록은 진단 미들웨어 등록 후 즉시 이뤄져야 합니다(예: `app.UseExceptionHandler`).
-
-```csharp
-public void Configure(IApplicationBuilder app, IHostingEnvironment env)
-{
-    if (env.IsDevelopment())
-    {
-        app.UseDeveloperExceptionPage();
-        app.UseBrowserLink();
-    }
-    else
-    {
-        app.UseExceptionHandler("/Home/Error");
-    }
-
-    app.UseMiddleware<HostFilteringMiddleware>();
-
-    app.UseMvcWithDefaultRoute();
-}
-```
-
-미들웨어는 *appsettings.json*/*appsettings.\<EnvironmentName>.json*에서 `AllowedHosts` 키를 예상합니다. 값은 포트 번호 없이 세미콜론으로 구분된 호스트 이름 목록입니다.
-
-::: moniker-end
-
-::: moniker range=">= aspnetcore-2.1"
 
 해결 방법으로 호스트 필터링 미들웨어를 사용합니다. 호스트 필터링 미들웨어는 [Microsoft.AspNetCore.HostFiltering](https://www.nuget.org/packages/Microsoft.AspNetCore.HostFiltering) 패키지에서 제공되고 [Microsoft.AspNetCore.App metapackage](xref:fundamentals/metapackage-app)(ASP.NET Core 2.1 이상)에 포함됩니다. 미들웨어는 [CreateDefaultBuilder](/dotnet/api/microsoft.aspnetcore.webhost.createdefaultbuilder)에 의해 추가되고 [AddHostFiltering](/dotnet/api/microsoft.aspnetcore.builder.hostfilteringservicesextensions.addhostfiltering)을 호출합니다.
 
 [!code-csharp[](kestrel/samples-snapshot/2.x/KestrelSample/Program.cs?name=snippet_Program&highlight=9)]
 
 호스트 필터링 미들웨어는 기본적으로 비활성화됩니다. 미들웨어를 활성화하려면 *appsettings.json*/*appsettings.\<EnvironmentName>.json*에서 `AllowedHosts` 키를 정의합니다. 값은 포트 번호 없이 세미콜론으로 구분된 호스트 이름 목록입니다.
-
-::: moniker-end
-
-::: moniker range=">= aspnetcore-2.0"
 
 *appsettings.json*:
 
@@ -1299,8 +1021,6 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 > [전달된 헤더 미들웨어](xref:host-and-deploy/proxy-load-balancer)에는 [ForwardedHeadersOptions.AllowedHosts](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.allowedhosts) 옵션이 포함됩니다. 전달된 헤더 미들웨어 및 호스트 필터링 미들웨어는 다양한 시나리오에 대해 유사한 기능을 제공합니다. 전달된 헤더 미들웨어를 사용하여 `AllowedHosts`를 설정하는 작업은 역방향 프록시 서버 또는 부하 분산 장치를 사용하여 요청을 전달하는 동안 호스트 헤더가 유지되지 않는 경우에 적합합니다. 호스트 필터링 미들웨어를 사용하여 `AllowedHosts`를 설정하는 작업은 Kestrel을 공용 에지 서버로 사용하는 경우 또는 호스트 헤더를 직접 전달하는 경우에 적합합니다.
 >
 > 전달된 헤더 미들웨어에 대한 자세한 내용은 [프록시 서버 및 부하 분산 장치를 사용하도록 ASP.NET Core 구성](xref:host-and-deploy/proxy-load-balancer)을 참조하세요.
-
-::: moniker-end
 
 ## <a name="additional-resources"></a>추가 자료
 
