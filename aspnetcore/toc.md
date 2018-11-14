@@ -185,6 +185,8 @@
 ## [작업 반환 형식](xref:web-api/action-return-types)
 ## [응답 데이터 서식 지정](xref:web-api/advanced/formatting)
 ## [사용자 지정 서식 지정기](xref:web-api/advanced/custom-formatters)
+## [분석기](xref:web-api/advanced/analyzers)
+## [규칙](xref:web-api/advanced/conventions)
 
 # 실시간 앱
 ## [개요](xref:signalr/introduction)
