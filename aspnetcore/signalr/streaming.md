@@ -9,7 +9,7 @@ ms.date: 06/07/2018
 uid: signalr/streaming
 ms.openlocfilehash: 70f12999b7f4230147b9ea43f6f7730b0816c43a
 ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 10/29/2018
 ms.locfileid: "50206390"

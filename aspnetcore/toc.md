@@ -332,7 +332,7 @@
 #### [Twitter 인증](xref:security/authentication/twitter-logins)
 #### [Google 인증](xref:security/authentication/google-logins)
 #### [Microsoft 인증](xref:security/authentication/microsoft-logins)
-#### [기타 인증 공급자](xref:security/authentication/otherlogins)
+#### [외부 인증 공급자](xref:security/authentication/otherlogins)
 #### [추가 클레임](xref:security/authentication/social/additional-claims)
 ### [WS-Federation 인증](xref:security/authentication/ws-federation)
 ### [계정 확인 및 암호 복구](xref:security/authentication/accconfirm)
