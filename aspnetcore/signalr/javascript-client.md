@@ -5,14 +5,14 @@ description: ASP.NET Core SignalR JavaScript 클라이언트의 개요입니다.
 monikerRange: '>= aspnetcore-2.1'
 ms.author: tdykstra
 ms.custom: mvc
-ms.date: 08/14/2018
+ms.date: 11/14/2018
 uid: signalr/javascript-client
-ms.openlocfilehash: 02844c35d1933d36576c25ff335a572fb65eff5c
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: 7de7abd7176e160154a458a3b90f662ba8f47f8c
+ms.sourcegitcommit: 09bcda59a58019fdf47b2db5259fe87acf19dd38
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50208020"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51708389"
 ---
 # <a name="aspnet-core-signalr-javascript-client"></a>ASP.NET Core SignalR JavaScript 클라이언트
 
@@ -82,7 +82,7 @@ SignalR은 `SendAsync`와 `connection.on`에 정의된 메서드 이름과 인�
 > [!NOTE]
 > 권장되는 방식은 `on` 메서드를 호출한 뒤에 `HubConnection`의 [start](/javascript/api/%40aspnet/signalr/hubconnection#start) 메서드를 호출하는 것입니다. 이렇게 하면 모든 메시지를 수신하기 전에 처리기가 먼저 등록됩니다.
 
-## <a name="error-handling-and-logging"></a>-오류 처리 및 로깅
+## <a name="error-handling-and-logging"></a>오류 처리 및 로깅
 
 클라이언트 쪽 오류를 처리하려면 `start` 메서드의 끝에 `catch` 메서드를 연결합니다. 브라우저의 콘솔에 오류를 출력하려면 `console.error`를 사용합니다.
 
@@ -98,6 +98,17 @@ SignalR은 `SendAsync`와 `connection.on`에 정의된 메서드 이름과 인�
 로그 수준을 구성하려면 [HubConnectionBuilder](/javascript/api/%40aspnet/signalr/hubconnectionbuilder#configurelogging)의 [configureLogging](/javascript/api/%40aspnet/signalr/hubconnectionbuilder) 메서드를 사용합니다. 메시지는 브라우저 콘솔에 기록됩니다.
 
 [!code-javascript[Logging levels](javascript-client/sample/wwwroot/js/chat.js?range=9-12)]
+
+## <a name="reconnect-clients"></a>클라이언트를 다시 연결
+
+SignalR에 대 한 JavaScript 클라이언트가 자동으로 다시 연결 하지 않습니다. 클라이언트에 수동으로 다시 연결 하는 코드를 작성 해야 합니다. 다음 코드는 일반적인 다시 연결 방법을 보여 줍니다.
+
+1. 함수 (이 경우에 `start` 함수) 연결을 시작 하기 위해 만들어집니다.
+1. 호출 된 `start` 함수에서 연결의 `onclose` 이벤트 처리기입니다.
+
+[!code-javascript[Reconnect the JavaScript client](javascript-client/sample/wwwroot/js/chat.js?range=30-42)]
+
+실제 구현을는 지 수 백오프를 사용 하거나 포기 하기 전에 지정 된 횟수를 다시 시도 하세요. 
 
 ## <a name="additional-resources"></a>추가 자료
 

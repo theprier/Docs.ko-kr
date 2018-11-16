@@ -1,50 +1,50 @@
 ---
-title: 다른 인증 공급자의 설문 조사
+title: 외부 OAuth 인증 공급자
 author: rick-anderson
+description: ASP.NET Core 앱을 사용 하는 외부 OAuth 인증 공급자를 검색 합니다.
 ms.author: riande
-ms.date: 11/03/2016
+ms.custom: mvc
+ms.date: 11/11/2018
 uid: security/authentication/otherlogins
-ms.openlocfilehash: 9c2ce02f4613fddbe0e767724019d80ac056bf7b
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: b69c366ec1bf12ccf434991fc8a79eaf8c09da3d
+ms.sourcegitcommit: 09bcda59a58019fdf47b2db5259fe87acf19dd38
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36274055"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51708467"
 ---
-# <a name="short-survey-of-other-authentication-providers"></a>다른 인증 공급자의 설문 조사
+# <a name="external-oauth-authentication-providers"></a>외부 OAuth 인증 공급자
 
-<a name="security-authentication-other-logins"></a>
+하 여 [Rick Anderson](https://twitter.com/RickAndMSFT)하십시오 [Pranav Rastogi](https://github.com/rustd), 및 [Valeriy Novytskyy](https://github.com/01binary)
 
-여 [Rick Anderson](https://twitter.com/RickAndMSFT), [Pranav Rastogi](https://github.com/rustd), 및 [Valeriy Novytskyy](https://github.com/01binary)
+다음은 ASP.NET Core 앱을 사용 하는 일반적인 외부 OAuth 인증 공급자가 포함 됩니다. 유지 관리와 같은 타사 NuGet 패키지 [aspnet contrib](https://www.nuget.org/packages?q=owners%3Aaspnet-contrib+title%3AOAuth), ASP.NET Core 팀에서 구현 된 인증 공급자를 보완 하기 위해 사용할 수 있습니다.
 
-다음은 몇 가지 다른 일반 OAuth 공급자에 대 한 지침을 설정 합니다. 제 3 자 NuGet 패키지에서 유지 관리 하는 것과 같은 [aspnet contrib](https://www.nuget.org/packages?q=owners%3Aaspnet-contrib+title%3AOAuth) ASP.NET Core 팀에서 구현 된 인증 공급자를 보완 하기 위해 사용할 수 있습니다.
+* [LinkedIn](https://www.linkedin.com/developer/apps) ([지침](https://developer.linkedin.com/docs/oauth2))
 
-* 설정 **LinkedIn** 로그인: [ https://www.linkedin.com/developer/apps ](https://www.linkedin.com/developer/apps)합니다. 참조 [공식 단계](https://developer.linkedin.com/docs/oauth2)합니다.
+* [Instagram](https://www.instagram.com/developer/register/) ([지침](https://www.instagram.com/developer/authentication/))
 
-* 설정 **Instagram** 로그인: [ https://www.instagram.com/developer/register/ ](https://www.instagram.com/developer/register/)합니다. 참조 [공식 단계](https://www.instagram.com/developer/authentication/)합니다.
+* [Reddit](https://www.reddit.com/login?dest=https%3A%2F%2Fwww.reddit.com%2Fprefs%2Fapps) ([지침](https://github.com/reddit/reddit/wiki/OAuth2-Quick-Start-Example))
 
-* 설정 **Reddit** 로그인: [ https://www.reddit.com/login?dest=https%3A%2F%2Fwww.reddit.com%2Fprefs%2Fapps ](https://www.reddit.com/login?dest=https%3A%2F%2Fwww.reddit.com%2Fprefs%2Fapps)합니다. 참조 [공식 단계](https://github.com/reddit/reddit/wiki/OAuth2-Quick-Start-Example)합니다.
+* [Github](https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2Fsettings%2Fapplications%2Fnew) ([지침](https://developer.github.com/v3/oauth/))
 
-* 설정 **Github** 로그인: [ https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2Fsettings%2Fapplications%2Fnew ](https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2Fsettings%2Fapplications%2Fnew)합니다. 참조 [공식 단계](https://developer.github.com/v3/oauth/)합니다.
+* [Yahoo](https://login.yahoo.com/config/login?src=devnet&.done=http%3A%2F%2Fdeveloper.yahoo.com%2Fapps%2Fcreate%2F) ([지침](https://developer.yahoo.com/bbauth/user.html))
 
-* 설정 **Yahoo** 로그인: [ https://login.yahoo.com/config/login?src=devnet&.done=http%3A%2F%2Fdeveloper.yahoo.com%2Fapps%2Fcreate%2F ](https://login.yahoo.com/config/login?src=devnet&.done=http%3A%2F%2Fdeveloper.yahoo.com%2Fapps%2Fcreate%2F)합니다. 참조 [공식 단계](https://developer.yahoo.com/bbauth/user.html)합니다.
+* [Tumblr](https://www.tumblr.com/oauth/apps) ([지침](https://www.tumblr.com/docs/api/v2#auth))
 
-* 설정 **Tumblr** 로그인: [ https://www.tumblr.com/oauth/apps ](https://www.tumblr.com/oauth/apps)합니다. 참조 [공식 단계](https://www.tumblr.com/docs/api/v2#auth)합니다.
+* [Pinterest](https://www.pinterest.com/login/?next=http%3A%2F%2Fdevsite%2Fapps%2F) ([지침](https://developers.pinterest.com/docs/api/overview/?))
 
-* 설정 **Pinterest** 로그인: [ https://www.pinterest.com/login/?next=http%3A%2F%2Fdevsite%2Fapps%2F ](https://www.pinterest.com/login/?next=http%3A%2F%2Fdevsite%2Fapps%2F)합니다. 참조 [공식 단계](https://developers.pinterest.com/docs/api/overview/?)합니다.
+* [Pocket](https://getpocket.com/developer/apps/new) ([지침](https://getpocket.com/developer/docs/authentication))
 
-* 설정 **Pocket** 로그인: [ https://getpocket.com/developer/apps/new ](https://getpocket.com/developer/apps/new)합니다. 참조 [공식 단계](https://getpocket.com/developer/docs/authentication)합니다.
+* [Flickr](https://www.flickr.com/services/apps/create) ([지침](https://www.flickr.com/services/api/auth.oauth.html))
 
-* 설정 **Flickr** 로그인: [ https://www.flickr.com/services/apps/create ](https://www.flickr.com/services/apps/create)합니다. 참조 [공식 단계](https://www.flickr.com/services/api/auth.oauth.html)합니다.
+* [Dribble](https://dribbble.com/signup) ([지침](http://developer.dribbble.com/v1/oauth/))
 
-* 설정 **Dribble** 로그인: [ https://dribbble.com/signup ](https://dribbble.com/signup)합니다. 참조 [공식 단계](http://developer.dribbble.com/v1/oauth/)합니다.
+* [Vimeo](https://vimeo.com/join) ([지침](https://developer.vimeo.com/api/authentication))
 
-* 설정 **Vimeo** 로그인: [ https://vimeo.com/join ](https://vimeo.com/join)합니다. 참조 [공식 단계](https://developer.vimeo.com/api/authentication)합니다.
+* [SoundCloud](https://soundcloud.com/you/apps/new) ([지침](https://developers.soundcloud.com/blog/we-love-oauth-2))
 
-* 설정 **SoundCloud** 로그인: [ https://soundcloud.com/you/apps/new ](https://soundcloud.com/you/apps/new)합니다. 참조 [공식 단계](https://developers.soundcloud.com/blog/we-love-oauth-2)합니다.
+* [VK](https://vk.com/apps?act=manage) ([지침](https://vk.com/pages?oid=-17680044&p=Authorizing_Sites))
 
-* 설정 **VK** 로그인: [ https://vk.com/apps?act=manage ](https://vk.com/apps?act=manage)합니다. 참조 [공식 단계](https://vk.com/pages?oid=-17680044&p=Authorizing_Sites)합니다.
+[!INCLUDE[Multiple authentication providers](includes/chain-auth-providers.md)]
 
-## <a name="multiple-authentication-providers"></a>여러 인증 공급자
-
-[!INCLUDE[](~/includes/chain-auth-providers.md)]
+[!INCLUDE[Forward request information when behind a proxy or load balancer section](includes/forwarded-headers-middleware.md)]

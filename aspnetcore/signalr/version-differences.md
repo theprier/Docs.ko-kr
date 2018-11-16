@@ -4,14 +4,14 @@ author: tdykstra
 description: SignalR과 ASP.NET Core SignalR의 차이점
 monikerRange: '>= aspnetcore-2.1'
 ms.author: tdykstra
-ms.date: 09/10/2018
+ms.date: 11/14/2018
 uid: signalr/version-differences
-ms.openlocfilehash: 8f07647959b6ef815eed599703bdb1bfb446572f
-ms.sourcegitcommit: edb9d2d78c9a4d68b397e74ae2aff088b325a143
+ms.openlocfilehash: c9302f1c9e7cd4e62eaeaef871feb54ef26aa3ca
+ms.sourcegitcommit: 09bcda59a58019fdf47b2db5259fe87acf19dd38
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "51505754"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51708415"
 ---
 # <a name="differences-between-aspnet-signalr-and-aspnet-core-signalr"></a>ASP.NET SignalR과 ASP.NET Core SignalR의 차이점
 
@@ -75,6 +75,10 @@ ASP.NET Core SignalR에서는 연결 모델이 단순화되었습니다. 단일 
 ### <a name="state"></a>상태
 
 진행 메시지 관련 기능뿐만 아니라 클라이언트와 허브 간에 임의의 상태를 전달할 수 있는 기능(HubState라고도 함)이 제거되었습니다. 현재 허브 프록시에 해당하는 기능은 존재하지 않습니다.
+
+### <a name="persistentconnection-removal"></a>PersistentConnection 제거
+
+ASP.NET Core SignalR에는 [PersistentConnection](https://docs.microsoft.com/previous-versions/aspnet/jj919047(v%3dvs.118)) 클래스가 제거 되었습니다. 
 
 ### <a name="globalhost"></a>GlobalHost
 

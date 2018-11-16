@@ -3,14 +3,15 @@ title: ASP.NET Core에서 Facebook 외부 로그인 설정
 author: rick-anderson
 description: 이 자습서에서는 기존 ASP.NET Core 앱에 Facebook 계정 사용자 인증의 통합을 보여 줍니다.
 ms.author: riande
-ms.date: 08/01/2017
+ms.custom: mvc
+ms.date: 11/11/2018
 uid: security/authentication/facebook-logins
-ms.openlocfilehash: 3ba6fe7785afa268e54e6032f1963c1867f6bb27
-ms.sourcegitcommit: 74c09caec8992635825b45b7f065f871d33c077a
+ms.openlocfilehash: e8ae16538b5d6844af7d983071fad629ebbe6217
+ms.sourcegitcommit: 09bcda59a58019fdf47b2db5259fe87acf19dd38
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "42634811"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51708506"
 ---
 # <a name="facebook-external-login-setup-in-aspnet-core"></a>ASP.NET Core에서 Facebook 외부 로그인 설정
 
@@ -28,19 +29,19 @@ ms.locfileid: "42634811"
 
 * 양식을 작성 하 고 탭의 **앱 ID 만들기** 단추입니다.
 
-   ![새 앱 ID 양식 만들기](index/_static/FBNewAppId.png)
+  ![새 앱 ID 양식 만들기](index/_static/FBNewAppId.png)
 
 * 에 **제품을 선택** 페이지에서 클릭 **설정** 에 **Facebook 로그인** 카드.
 
-   ![제품 설치 페이지](index/_static/FBProductSetup.png)
+  ![제품 설치 페이지](index/_static/FBProductSetup.png)
 
 * 합니다 **퀵 스타트** 마법사가 시작 됩니다 **플랫폼을 선택** 의 첫 번째 페이지입니다. 마법사를 클릭 하 여 지금은 무시 합니다 **설정을** 왼쪽 메뉴에서 링크:
 
-   ![Skip 빠른 시작](index/_static/FBSkipQuickStart.png)
+  ![Skip 빠른 시작](index/_static/FBSkipQuickStart.png)
 
 * 표시 되는 **클라이언트 OAuth 설정** 페이지:
 
-![클라이언트 OAuth 설정 페이지](index/_static/FBOAuthSetup.png)
+  ![클라이언트 OAuth 설정 페이지](index/_static/FBOAuthSetup.png)
 
 * 개발 URI를 입력으로 */signin-facebook* 에 추가 합니다 **유효한 OAuth 리디렉션 Uri** 필드 (예를 들어: `https://localhost:44320/signin-facebook`). 이 자습서의 뒷부분에서 구성 된 Facebook 인증에는 요청을 자동으로 처리할 */signin-facebook* OAuth 흐름을 구현 하는 경로입니다.
 
@@ -49,10 +50,9 @@ ms.locfileid: "42634811"
 
 * 클릭 **변경 내용을 저장**합니다.
 
-* 클릭 **설정 > 기본** 왼쪽된 탐색 창에서 링크 합니다. 
+* 클릭 **설정을** > **기본** 왼쪽된 탐색 창에서 링크 합니다.
 
-    이 페이지에서는 기록해 하 `App ID` 고 `App Secret`입니다. 다음 섹션에서 ASP.NET Core 응용 프로그램에 둘 다를 추가 합니다.
-
+  이 페이지에서는 기록해 하 `App ID` 고 `App Secret`입니다. 다음 섹션에서 ASP.NET Core 응용 프로그램에 둘 다를 추가 합니다.
 
 * 다시 방문 해야 하는 사이트를 배포 하는 경우는 **Facebook 로그인** 페이지를 설정 하 고 새 공용 URI를 등록 합니다.
 
@@ -69,7 +69,7 @@ dotnet user-secrets set Authentication:Facebook:AppSecret <app-secret>
 
 ## <a name="configure-facebook-authentication"></a>Facebook 인증 구성
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+::: moniker range=">= aspnetcore-2.0"
 
 Facebook 서비스에 추가 합니다 `ConfigureServices` 의 메서드를 *Startup.cs* 파일:
 
@@ -87,9 +87,11 @@ services.AddAuthentication().AddFacebook(facebookOptions =>
 
 [!INCLUDE [default settings configuration](includes/default-settings.md)]
 
-[!INCLUDE[](~/includes/chain-auth-providers.md)]
+[!INCLUDE[](includes/chain-auth-providers.md)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
 
 설치 합니다 [Microsoft.AspNetCore.Authentication.Facebook](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.Facebook) 패키지 있습니다.
 
@@ -108,7 +110,7 @@ app.UseFacebookAuthentication(new FacebookOptions()
 });
 ```
 
----
+::: moniker-end
 
 참조 된 [FacebookOptions](/dotnet/api/microsoft.aspnetcore.builder.facebookoptions) Facebook 인증에서 지 원하는 구성 옵션에 대 한 자세한 내용은 API 참조. 구성 옵션을 사용할 수 있습니다.
 
@@ -134,6 +136,8 @@ Facebook 자격 증명을 입력 한 후 전자 메일을 설정할 수 있는 �
 이제 Facebook 자격 증명을 사용 하 여 로그인 됩니다.
 
 ![웹 응용 프로그램: 사용자 인증](index/_static/Done.png)
+
+[!INCLUDE[Forward request information when behind a proxy or load balancer section](includes/forwarded-headers-middleware.md)]
 
 ## <a name="troubleshooting"></a>문제 해결
 

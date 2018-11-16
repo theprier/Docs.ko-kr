@@ -6,18 +6,18 @@ ms.author: scaddie
 ms.custom: mvc
 ms.date: 11/06/2018
 uid: web-api/index
-ms.openlocfilehash: 010c437afc494fa4426f6922421afac46bbf6b39
-ms.sourcegitcommit: fc7eb4243188950ae1f1b52669edc007e9d0798d
+ms.openlocfilehash: 7541c4c308deaecda0bda9a9c77d9372b65a5100
+ms.sourcegitcommit: f202864efca81a72ea7120c0692940c40d9d0630
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51225436"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51635305"
 ---
 # <a name="build-web-apis-with-aspnet-core"></a>ASP.NET Core에서 Web API 빌드
 
 작성자: [Scott Addie](https://github.com/scottaddie)
 
-[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/web-api/define-controller/samples)([다운로드 방법](xref:index#how-to-download-a-sample))
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/web-api/define-controller/samples) ([다운로드 방법](xref:index#how-to-download-a-sample))
 
 이 문서에서는 ASP.NET Core에서 Web API를 빌드하는 방법과 각 기능을 사용하기에 가장 적합한 시기에 대해 설명합니다.
 
@@ -41,7 +41,7 @@ Web API를 제공할 목적으로 컨트롤의 <xref:Microsoft.AspNetCore.Mvc.Co
 
 ::: moniker range=">= aspnetcore-2.1"
 
-## <a name="annotation-with-apicontrollerattribute"></a>ApiControllerAttribute를 사용하여 주석
+## <a name="annotation-with-apicontroller-attribute"></a>ApiController 특성 주석
 
 ASP.NET Core 2.1에서는 Web API 컨트롤러 클래스를 나타내는 [[ApiController]](xref:Microsoft.AspNetCore.Mvc.ApiControllerAttribute) 특성을 소개합니다. 예:
 

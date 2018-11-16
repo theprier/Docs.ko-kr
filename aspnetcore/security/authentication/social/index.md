@@ -3,14 +3,15 @@ title: ASP.NET Core에서 Facebook, Google 및 외부 공급자 인증
 author: rick-anderson
 description: 이 자습서에는 외부 인증 공급자에 OAuth 2.0을 사용하여 ASP.NET Core 2.x 앱을 빌드하는 방법을 보여줍니다.
 ms.author: riande
-ms.date: 11/01/2016
+ms.custom: mvc
+ms.date: 11/11/2018
 uid: security/authentication/social/index
-ms.openlocfilehash: 48a01ab241f9a6ad6ad3fb2ee9e210f459075c33
-ms.sourcegitcommit: a669c4e3f42e387e214a354ac4143555602e6f66
+ms.openlocfilehash: 19074d5014a09446ceec1b89449e78760fc8e7cf
+ms.sourcegitcommit: 09bcda59a58019fdf47b2db5259fe87acf19dd38
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43336122"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51708376"
 ---
 # <a name="facebook-google-and-external-provider-authentication-in-aspnet-core"></a>ASP.NET Core에서 Facebook, Google 및 외부 공급자 인증
 
@@ -28,9 +29,9 @@ ms.locfileid: "43336122"
 
 ## <a name="create-a-new-aspnet-core-project"></a>새 ASP.NET Core 프로젝트 만들기
 
-* Visual Studio 2017의 시작 페이지에서 또는 **파일 > 새로 만들기 > 프로젝트**를 통해 새 프로젝트를 만듭니다.
+* Visual Studio 2017의 시작 페이지에서 또는 **파일** > **새로 만들기** > **프로젝트**를 통해 새 프로젝트를 만듭니다.
 
-* **Visual C# >.NET Core** 범주에서 사용할 수 있는 **ASP.NET Core 웹 응용 프로그램** 템플릿을 선택합니다.
+* **Visual C#** > **.NET Core** 범주에서 사용할 수 있는 **ASP.NET Core 웹 애플리케이션** 템플릿을 선택합니다.
 
 ![새 프로젝트 대화 상자](index/_static/new-project.png)
 
@@ -51,9 +52,11 @@ ms.locfileid: "43336122"
 
 OAuth 2.0은 HTTPS 프로토콜을 통한 인증을 위해 SSL을 사용해야 합니다.
 
-참고: 위에 표시된 대로 프로젝트 마법사의 **인증 변경 대화**에서 **개별 사용자 계정** 옵션을 선택한 경우 ASP.NET Core 2.x에 대한 **웹 응용 프로그램** 또는 **Web API** 프로젝트 템플릿를 사용하여 만든 프로젝트는 자동으로 SSL을 사용하고 https URL으로 시작하도록 구성됩니다.
+ASP.NET Core 2.1 이상에서 **웹 애플리케이션** 또는 **Web API** 프로젝트 템플릿을 사용하여 만든 프로젝트는 SSL을 사용하도록 자동으로 구성됩니다. 프로젝트 마법사의 **인증 변경 대화 상자**에서 **개별 사용자 계정** 옵션을 선택한 경우 앱이 안전한 기본 엔드포인트에서 시작됩니다.
 
-* [ASP.NET Core 앱에서 SSL 적용](xref:security/enforcing-ssl) 항목의 단계를 수행하여 사이트에서 SSL을 가져옵니다.
+자세한 내용은 <xref:security/enforcing-ssl>을 참조하세요.
+
+[!INCLUDE[Forward request information when behind a proxy or load balancer section](includes/forwarded-headers-middleware.md)]
 
 ## <a name="use-secretmanager-to-store-tokens-assigned-by-login-providers"></a>SecretManager를 사용하여 로그인 공급자에 의해 할당된 토큰 저장
 
@@ -74,7 +77,7 @@ OAuth 2.0은 HTTPS 프로토콜을 통한 인증을 위해 SSL을 사용해야 �
 * [Microsoft](xref:security/authentication/microsoft-logins) 지침
 * [다른 공급자](xref:security/authentication/otherlogins) 지침
 
-[!INCLUDE[](~/includes/chain-auth-providers.md)]
+[!INCLUDE[](includes/chain-auth-providers.md)]
 
 ## <a name="optionally-set-password"></a>필요에 따라 암호 설정
 
