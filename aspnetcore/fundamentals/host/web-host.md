@@ -2,29 +2,32 @@
 title: ASP.NET Core 웹 호스트
 author: guardrex
 description: 앱 시작 및 수명 관리를 담당하는 ASP.NET Core에서의 웹 호스트에 대해 알아봅니다.
-monikerRange: '>= aspnetcore-2.1'
 ms.author: riande
 ms.custom: mvc
-ms.date: 11/05/2018
+ms.date: 11/12/2018
 uid: fundamentals/host/web-host
-ms.openlocfilehash: a3601b71c65321af56644eb87c4527d6290e4378
-ms.sourcegitcommit: edb9d2d78c9a4d68b397e74ae2aff088b325a143
+ms.openlocfilehash: 5af09ad715768d51ce8ef2c8425cc51ebada6859
+ms.sourcegitcommit: 1d6ab43eed9cb3df6211c22b97bb3a9351ec4419
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "51505819"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51597825"
 ---
-# <a name="aspnet-core-web-host"></a><span data-ttu-id="5367a-103">ASP.NET Core 웹 호스트</span><span class="sxs-lookup"><span data-stu-id="5367a-103">ASP.NET Core Web Host</span></span>
+# <a name="aspnet-core-web-host"></a><span data-ttu-id="e34e2-103">ASP.NET Core 웹 호스트</span><span class="sxs-lookup"><span data-stu-id="e34e2-103">ASP.NET Core Web Host</span></span>
 
-<span data-ttu-id="5367a-104">[Luke Latham](https://github.com/guardrex)으로</span><span class="sxs-lookup"><span data-stu-id="5367a-104">By [Luke Latham](https://github.com/guardrex)</span></span>
+<span data-ttu-id="e34e2-104">[Luke Latham](https://github.com/guardrex)으로</span><span class="sxs-lookup"><span data-stu-id="e34e2-104">By [Luke Latham](https://github.com/guardrex)</span></span>
 
-<span data-ttu-id="5367a-105">이 항목의 1.1 버전인 경우 [ASP.NET Core 웹 호스트(버전 1.1, PDF)](https://webpifeed.blob.core.windows.net/webpifeed/Partners/Web-Host_1.1.pdf)를 다운로드하세요.</span><span class="sxs-lookup"><span data-stu-id="5367a-105">For the 1.1 version of this topic, download [ASP.NET Core Web Host (version 1.1, PDF)](https://webpifeed.blob.core.windows.net/webpifeed/Partners/Web-Host_1.1.pdf).</span></span>
+::: moniker range="<= aspnetcore-1.1"
 
-<span data-ttu-id="5367a-106">ASP.NET Core 앱은 *호스트*를 구성 및 실행합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-106">ASP.NET Core apps configure and launch a *host*.</span></span> <span data-ttu-id="5367a-107">호스트는 앱 시작 및 수명 관리를 담당합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-107">The host is responsible for app startup and lifetime management.</span></span> <span data-ttu-id="5367a-108">최소한으로 호스트는 서버 및 요청 처리 파이프라인을 구성합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-108">At a minimum, the host configures a server and a request processing pipeline.</span></span> <span data-ttu-id="5367a-109">이 항목에서는 웹 호스팅에 유용한 ASP.NET Core 웹 호스트([IWebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.iwebhostbuilder))를 다룹니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-109">This topic covers the ASP.NET Core Web Host ([IWebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.iwebhostbuilder)), which is useful for hosting web apps.</span></span> <span data-ttu-id="5367a-110">.NET 일반 호스트([IHostBuilder](/dotnet/api/microsoft.extensions.hosting.ihostbuilder))에 대한 자세한 내용은 <xref:fundamentals/host/generic-host>을 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="5367a-110">For coverage of the .NET Generic Host ([IHostBuilder](/dotnet/api/microsoft.extensions.hosting.ihostbuilder)), see <xref:fundamentals/host/generic-host>.</span></span>
+<span data-ttu-id="e34e2-105">이 항목의 1.1 버전인 경우 [ASP.NET Core 웹 호스트(버전 1.1, PDF)](https://webpifeed.blob.core.windows.net/webpifeed/Partners/Web-Host_1.1.pdf)를 다운로드하세요.</span><span class="sxs-lookup"><span data-stu-id="e34e2-105">For the 1.1 version of this topic, download [ASP.NET Core Web Host (version 1.1, PDF)](https://webpifeed.blob.core.windows.net/webpifeed/Partners/Web-Host_1.1.pdf).</span></span>
 
-## <a name="set-up-a-host"></a><span data-ttu-id="5367a-111">호스트 설정</span><span class="sxs-lookup"><span data-stu-id="5367a-111">Set up a host</span></span>
+::: moniker-end
 
-<span data-ttu-id="5367a-112">[IWebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.iwebhostbuilder)의 인스턴스를 사용하여 호스트를 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-112">Create a host using an instance of [IWebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.iwebhostbuilder).</span></span> <span data-ttu-id="5367a-113">이는 일반적으로 앱의 진입점에서 수행되는 `Main` 메서드입니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-113">This is typically performed in the app's entry point, the `Main` method.</span></span> <span data-ttu-id="5367a-114">프로젝트 템플릿에서 `Main`은 *Program.cs*에 있습니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-114">In the project templates, `Main` is located in *Program.cs*.</span></span> <span data-ttu-id="5367a-115">일반적인 *Program.cs*는 [CreateDefaultBuilder](/dotnet/api/microsoft.aspnetcore.webhost.createdefaultbuilder)를 호출하여 호스트 설정을 시작합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-115">A typical *Program.cs* calls [CreateDefaultBuilder](/dotnet/api/microsoft.aspnetcore.webhost.createdefaultbuilder) to start setting up a host:</span></span>
+<span data-ttu-id="e34e2-106">ASP.NET Core 앱은 *호스트*를 구성 및 실행합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-106">ASP.NET Core apps configure and launch a *host*.</span></span> <span data-ttu-id="e34e2-107">호스트는 앱 시작 및 수명 관리를 담당합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-107">The host is responsible for app startup and lifetime management.</span></span> <span data-ttu-id="e34e2-108">최소한으로 호스트는 서버 및 요청 처리 파이프라인을 구성합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-108">At a minimum, the host configures a server and a request processing pipeline.</span></span> <span data-ttu-id="e34e2-109">이 항목에서는 웹 호스팅에 유용한 ASP.NET Core 웹 호스트([IWebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.iwebhostbuilder))를 다룹니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-109">This topic covers the ASP.NET Core Web Host ([IWebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.iwebhostbuilder)), which is useful for hosting web apps.</span></span> <span data-ttu-id="e34e2-110">.NET 일반 호스트([IHostBuilder](/dotnet/api/microsoft.extensions.hosting.ihostbuilder))에 대한 자세한 내용은 <xref:fundamentals/host/generic-host>을 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="e34e2-110">For coverage of the .NET Generic Host ([IHostBuilder](/dotnet/api/microsoft.extensions.hosting.ihostbuilder)), see <xref:fundamentals/host/generic-host>.</span></span>
+
+## <a name="set-up-a-host"></a><span data-ttu-id="e34e2-111">호스트 설정</span><span class="sxs-lookup"><span data-stu-id="e34e2-111">Set up a host</span></span>
+
+<span data-ttu-id="e34e2-112">[IWebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.iwebhostbuilder)의 인스턴스를 사용하여 호스트를 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-112">Create a host using an instance of [IWebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.iwebhostbuilder).</span></span> <span data-ttu-id="e34e2-113">이는 일반적으로 앱의 진입점에서 수행되는 `Main` 메서드입니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-113">This is typically performed in the app's entry point, the `Main` method.</span></span> <span data-ttu-id="e34e2-114">프로젝트 템플릿에서 `Main`은 *Program.cs*에 있습니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-114">In the project templates, `Main` is located in *Program.cs*.</span></span> <span data-ttu-id="e34e2-115">일반적인 *Program.cs*는 [CreateDefaultBuilder](/dotnet/api/microsoft.aspnetcore.webhost.createdefaultbuilder)를 호출하여 호스트 설정을 시작합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-115">A typical *Program.cs* calls [CreateDefaultBuilder](/dotnet/api/microsoft.aspnetcore.webhost.createdefaultbuilder) to start setting up a host:</span></span>
 
 ```csharp
 public class Program
@@ -40,26 +43,26 @@ public class Program
 }
 ```
 
-<span data-ttu-id="5367a-116">`CreateDefaultBuilder`는 다음 작업을 수행합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-116">`CreateDefaultBuilder` performs the following tasks:</span></span>
+<span data-ttu-id="e34e2-116">`CreateDefaultBuilder`는 다음 작업을 수행합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-116">`CreateDefaultBuilder` performs the following tasks:</span></span>
 
-* <span data-ttu-id="5367a-117">[Kestrel](xref:fundamentals/servers/kestrel)을 웹 서버로 구성하고 앱의 호스팅 구성 공급자를 사용하여 서버를 구성합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-117">Configures [Kestrel](xref:fundamentals/servers/kestrel) as the web server and configures the server using the app's hosting configuration providers.</span></span> <span data-ttu-id="5367a-118">Kestrel 기본 옵션은 <xref:fundamentals/servers/kestrel#kestrel-options>을 참조합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-118">For the Kestrel default options, see <xref:fundamentals/servers/kestrel#kestrel-options>.</span></span>
-* <span data-ttu-id="5367a-119">콘텐츠 루트를 [Directory.GetCurrentDirectory](/dotnet/api/system.io.directory.getcurrentdirectory)에서 반환된 경로로 설정합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-119">Sets the content root to the path returned by [Directory.GetCurrentDirectory](/dotnet/api/system.io.directory.getcurrentdirectory).</span></span>
-* <span data-ttu-id="5367a-120">다음에서 [호스트 구성](#host-configuration-values)을 로드합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-120">Loads [host configuration](#host-configuration-values) from:</span></span>
-  * <span data-ttu-id="5367a-121">접두사가 `ASPNETCORE_`인 환경 변수(예: `ASPNETCORE_ENVIRONMENT`)입니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-121">Environment variables prefixed with `ASPNETCORE_` (for example, `ASPNETCORE_ENVIRONMENT`).</span></span>
-  * <span data-ttu-id="5367a-122">명령줄 인수.</span><span class="sxs-lookup"><span data-stu-id="5367a-122">Command-line arguments.</span></span>
-* <span data-ttu-id="5367a-123">다음 순서대로 앱 구성을 로드합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-123">Loads app configuration in the following order from:</span></span>
-  * <span data-ttu-id="5367a-124">*appsettings.json*.</span><span class="sxs-lookup"><span data-stu-id="5367a-124">*appsettings.json*.</span></span>
-  * <span data-ttu-id="5367a-125">*appsettings.{Environment}.json*.</span><span class="sxs-lookup"><span data-stu-id="5367a-125">*appsettings.{Environment}.json*.</span></span>
-  * <span data-ttu-id="5367a-126">앱이 항목 어셈블리를 사용하여 `Development` 환경에서 실행되는 경우 [Secret Manager](xref:security/app-secrets)입니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-126">[Secret Manager](xref:security/app-secrets) when the app runs in the `Development` environment using the entry assembly.</span></span>
-  * <span data-ttu-id="5367a-127">환경 변수.</span><span class="sxs-lookup"><span data-stu-id="5367a-127">Environment variables.</span></span>
-  * <span data-ttu-id="5367a-128">명령줄 인수.</span><span class="sxs-lookup"><span data-stu-id="5367a-128">Command-line arguments.</span></span>
-* <span data-ttu-id="5367a-129">콘솔 및 디버그 출력에 대한 [로깅](xref:fundamentals/logging/index)을 구성합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-129">Configures [logging](xref:fundamentals/logging/index) for console and debug output.</span></span> <span data-ttu-id="5367a-130">로깅은 *appsettings.json* 또는 *appsettings.{Environment}.json* 파일의 로깅 구성 섹션에 지정된 [로그 필터링](xref:fundamentals/logging/index#log-filtering) 규칙을 포함합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-130">Logging includes [log filtering](xref:fundamentals/logging/index#log-filtering) rules specified in a Logging configuration section of an *appsettings.json* or *appsettings.{Environment}.json* file.</span></span>
-* <span data-ttu-id="5367a-131">IIS 뒤에서 실행하는 경우 [IIS 통합](xref:host-and-deploy/iis/index)을 활성화합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-131">When running behind IIS, enables [IIS integration](xref:host-and-deploy/iis/index).</span></span> <span data-ttu-id="5367a-132">[ASP.NET Core 모듈](xref:fundamentals/servers/aspnet-core-module)을 사용하는 경우 서버가 수신 대기할 기본 경로 및 포트를 구성합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-132">Configures the base path and port the server listens on when using the [ASP.NET Core Module](xref:fundamentals/servers/aspnet-core-module).</span></span> <span data-ttu-id="5367a-133">모듈은 IIS와 Kestrel 간에 역방향 프록시를 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-133">The module creates a reverse proxy between IIS and Kestrel.</span></span> <span data-ttu-id="5367a-134">또한 [시작 오류를 캡처](#capture-startup-errors)하도록 앱을 구성합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-134">Also configures the app to [capture startup errors](#capture-startup-errors).</span></span> <span data-ttu-id="5367a-135">IIS 기본 옵션은 <xref:host-and-deploy/iis/index#iis-options>를 참조합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-135">For the IIS default options, see <xref:host-and-deploy/iis/index#iis-options>.</span></span>
-* <span data-ttu-id="5367a-136">앱의 환경이 개발인 경우 [ServiceProviderOptions.ValidateScopes](/dotnet/api/microsoft.extensions.dependencyinjection.serviceprovideroptions.validatescopes)을 `true`으로 설정합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-136">Sets [ServiceProviderOptions.ValidateScopes](/dotnet/api/microsoft.extensions.dependencyinjection.serviceprovideroptions.validatescopes) to `true` if the app's environment is Development.</span></span> <span data-ttu-id="5367a-137">자세한 내용은 [범위 유효성 검사](#scope-validation)를 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="5367a-137">For more information, see [Scope validation](#scope-validation).</span></span>
+* <span data-ttu-id="e34e2-117">[Kestrel](xref:fundamentals/servers/kestrel)을 웹 서버로 구성하고 앱의 호스팅 구성 공급자를 사용하여 서버를 구성합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-117">Configures [Kestrel](xref:fundamentals/servers/kestrel) as the web server and configures the server using the app's hosting configuration providers.</span></span> <span data-ttu-id="e34e2-118">Kestrel 기본 옵션은 <xref:fundamentals/servers/kestrel#kestrel-options>을 참조합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-118">For the Kestrel default options, see <xref:fundamentals/servers/kestrel#kestrel-options>.</span></span>
+* <span data-ttu-id="e34e2-119">콘텐츠 루트를 [Directory.GetCurrentDirectory](/dotnet/api/system.io.directory.getcurrentdirectory)에서 반환된 경로로 설정합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-119">Sets the content root to the path returned by [Directory.GetCurrentDirectory](/dotnet/api/system.io.directory.getcurrentdirectory).</span></span>
+* <span data-ttu-id="e34e2-120">다음에서 [호스트 구성](#host-configuration-values)을 로드합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-120">Loads [host configuration](#host-configuration-values) from:</span></span>
+  * <span data-ttu-id="e34e2-121">접두사가 `ASPNETCORE_`인 환경 변수(예: `ASPNETCORE_ENVIRONMENT`)입니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-121">Environment variables prefixed with `ASPNETCORE_` (for example, `ASPNETCORE_ENVIRONMENT`).</span></span>
+  * <span data-ttu-id="e34e2-122">명령줄 인수.</span><span class="sxs-lookup"><span data-stu-id="e34e2-122">Command-line arguments.</span></span>
+* <span data-ttu-id="e34e2-123">다음 순서대로 앱 구성을 로드합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-123">Loads app configuration in the following order from:</span></span>
+  * <span data-ttu-id="e34e2-124">*appsettings.json*.</span><span class="sxs-lookup"><span data-stu-id="e34e2-124">*appsettings.json*.</span></span>
+  * <span data-ttu-id="e34e2-125">*appsettings.{Environment}.json*.</span><span class="sxs-lookup"><span data-stu-id="e34e2-125">*appsettings.{Environment}.json*.</span></span>
+  * <span data-ttu-id="e34e2-126">앱이 항목 어셈블리를 사용하여 `Development` 환경에서 실행되는 경우 [Secret Manager](xref:security/app-secrets)입니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-126">[Secret Manager](xref:security/app-secrets) when the app runs in the `Development` environment using the entry assembly.</span></span>
+  * <span data-ttu-id="e34e2-127">환경 변수.</span><span class="sxs-lookup"><span data-stu-id="e34e2-127">Environment variables.</span></span>
+  * <span data-ttu-id="e34e2-128">명령줄 인수.</span><span class="sxs-lookup"><span data-stu-id="e34e2-128">Command-line arguments.</span></span>
+* <span data-ttu-id="e34e2-129">콘솔 및 디버그 출력에 대한 [로깅](xref:fundamentals/logging/index)을 구성합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-129">Configures [logging](xref:fundamentals/logging/index) for console and debug output.</span></span> <span data-ttu-id="e34e2-130">로깅은 *appsettings.json* 또는 *appsettings.{Environment}.json* 파일의 로깅 구성 섹션에 지정된 [로그 필터링](xref:fundamentals/logging/index#log-filtering) 규칙을 포함합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-130">Logging includes [log filtering](xref:fundamentals/logging/index#log-filtering) rules specified in a Logging configuration section of an *appsettings.json* or *appsettings.{Environment}.json* file.</span></span>
+* <span data-ttu-id="e34e2-131">IIS 뒤에서 실행하는 경우 [IIS 통합](xref:host-and-deploy/iis/index)을 활성화합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-131">When running behind IIS, enables [IIS integration](xref:host-and-deploy/iis/index).</span></span> <span data-ttu-id="e34e2-132">[ASP.NET Core 모듈](xref:fundamentals/servers/aspnet-core-module)을 사용하는 경우 서버가 수신 대기할 기본 경로 및 포트를 구성합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-132">Configures the base path and port the server listens on when using the [ASP.NET Core Module](xref:fundamentals/servers/aspnet-core-module).</span></span> <span data-ttu-id="e34e2-133">모듈은 IIS와 Kestrel 간에 역방향 프록시를 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-133">The module creates a reverse proxy between IIS and Kestrel.</span></span> <span data-ttu-id="e34e2-134">또한 [시작 오류를 캡처](#capture-startup-errors)하도록 앱을 구성합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-134">Also configures the app to [capture startup errors](#capture-startup-errors).</span></span> <span data-ttu-id="e34e2-135">IIS 기본 옵션은 <xref:host-and-deploy/iis/index#iis-options>를 참조합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-135">For the IIS default options, see <xref:host-and-deploy/iis/index#iis-options>.</span></span>
+* <span data-ttu-id="e34e2-136">앱의 환경이 개발인 경우 [ServiceProviderOptions.ValidateScopes](/dotnet/api/microsoft.extensions.dependencyinjection.serviceprovideroptions.validatescopes)을 `true`으로 설정합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-136">Sets [ServiceProviderOptions.ValidateScopes](/dotnet/api/microsoft.extensions.dependencyinjection.serviceprovideroptions.validatescopes) to `true` if the app's environment is Development.</span></span> <span data-ttu-id="e34e2-137">자세한 내용은 [범위 유효성 검사](#scope-validation)를 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="e34e2-137">For more information, see [Scope validation](#scope-validation).</span></span>
 
-<span data-ttu-id="5367a-138">`CreateDefaultBuilder`에 의해 정의된 구성은 [ConfigureAppConfiguration](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderextensions.configureappconfiguration), [ConfigureLogging](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderextensions.configurelogging), 기타 메서드 및 [IWebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.iwebhostbuilder)의 확장 메서드로 재정의되고 확대될 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-138">The configuration defined by `CreateDefaultBuilder` can be overridden and augmented by [ConfigureAppConfiguration](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderextensions.configureappconfiguration), [ConfigureLogging](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderextensions.configurelogging), and other methods and extension methods of [IWebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.iwebhostbuilder).</span></span> <span data-ttu-id="5367a-139">몇 가지 예제는 다음과 같습니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-139">A few examples follow:</span></span>
+<span data-ttu-id="e34e2-138">`CreateDefaultBuilder`에 의해 정의된 구성은 [ConfigureAppConfiguration](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderextensions.configureappconfiguration), [ConfigureLogging](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderextensions.configurelogging), 기타 메서드 및 [IWebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.iwebhostbuilder)의 확장 메서드로 재정의되고 확대될 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-138">The configuration defined by `CreateDefaultBuilder` can be overridden and augmented by [ConfigureAppConfiguration](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderextensions.configureappconfiguration), [ConfigureLogging](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderextensions.configurelogging), and other methods and extension methods of [IWebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.iwebhostbuilder).</span></span> <span data-ttu-id="e34e2-139">몇 가지 예제는 다음과 같습니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-139">A few examples follow:</span></span>
 
-* <span data-ttu-id="5367a-140">[ConfigureAppConfiguration](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderextensions.configureappconfiguration)은 앱에 대한 추가 `IConfiguration`을 지정하는 데 사용됩니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-140">[ConfigureAppConfiguration](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderextensions.configureappconfiguration) is used to specify additional `IConfiguration` for the app.</span></span> <span data-ttu-id="5367a-141">다음 `ConfigureAppConfiguration` 호출은 *appsettings.xml* 파일에 앱 구성을 포함하는 대리자를 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-141">The following `ConfigureAppConfiguration` call adds a delegate to include app configuration in the *appsettings.xml* file.</span></span> <span data-ttu-id="5367a-142">`ConfigureAppConfiguration`이 여러 번 호출될 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-142">`ConfigureAppConfiguration` may be called multiple times.</span></span> <span data-ttu-id="5367a-143">이 구성은 호스트(예: 서버 URL 또는 환경)에 적용되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-143">Note that this configuration doesn't apply to the host (for example, server URLs or environment).</span></span> <span data-ttu-id="5367a-144">[호스트 구성 값](#host-configuration-values) 섹션을 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="5367a-144">See the [Host configuration values](#host-configuration-values) section.</span></span>
+* <span data-ttu-id="e34e2-140">[ConfigureAppConfiguration](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderextensions.configureappconfiguration)은 앱에 대한 추가 `IConfiguration`을 지정하는 데 사용됩니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-140">[ConfigureAppConfiguration](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderextensions.configureappconfiguration) is used to specify additional `IConfiguration` for the app.</span></span> <span data-ttu-id="e34e2-141">다음 `ConfigureAppConfiguration` 호출은 *appsettings.xml* 파일에 앱 구성을 포함하는 대리자를 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-141">The following `ConfigureAppConfiguration` call adds a delegate to include app configuration in the *appsettings.xml* file.</span></span> <span data-ttu-id="e34e2-142">`ConfigureAppConfiguration`이 여러 번 호출될 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-142">`ConfigureAppConfiguration` may be called multiple times.</span></span> <span data-ttu-id="e34e2-143">이 구성은 호스트(예: 서버 URL 또는 환경)에 적용되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-143">Note that this configuration doesn't apply to the host (for example, server URLs or environment).</span></span> <span data-ttu-id="e34e2-144">[호스트 구성 값](#host-configuration-values) 섹션을 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="e34e2-144">See the [Host configuration values](#host-configuration-values) section.</span></span>
 
     ```csharp
     WebHost.CreateDefaultBuilder(args)
@@ -70,7 +73,7 @@ public class Program
         ...
     ```
 
-* <span data-ttu-id="5367a-145">다음 `ConfigureLogging` 호출은 최소 로깅 수준([SetMinimumLevel](/dotnet/api/microsoft.extensions.logging.loggingbuilderextensions.setminimumlevel))을 [LogLevel.Warning](/dotnet/api/microsoft.extensions.logging.loglevel)으로 구성하는 대리자를 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-145">The following `ConfigureLogging` call adds a delegate to configure the minimum logging level ([SetMinimumLevel](/dotnet/api/microsoft.extensions.logging.loggingbuilderextensions.setminimumlevel)) to [LogLevel.Warning](/dotnet/api/microsoft.extensions.logging.loglevel).</span></span> <span data-ttu-id="5367a-146">이 설정은 `CreateDefaultBuilder`에 의해 구성된 *appsettings.Development.json*(`LogLevel.Debug`) 및 *appsettings.Production.json*(`LogLevel.Error`)의 설정을 재정의합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-146">This setting overrides the settings in *appsettings.Development.json* (`LogLevel.Debug`) and *appsettings.Production.json* (`LogLevel.Error`) configured by `CreateDefaultBuilder`.</span></span> <span data-ttu-id="5367a-147">`ConfigureLogging`이 여러 번 호출될 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-147">`ConfigureLogging` may be called multiple times.</span></span>
+* <span data-ttu-id="e34e2-145">다음 `ConfigureLogging` 호출은 최소 로깅 수준([SetMinimumLevel](/dotnet/api/microsoft.extensions.logging.loggingbuilderextensions.setminimumlevel))을 [LogLevel.Warning](/dotnet/api/microsoft.extensions.logging.loglevel)으로 구성하는 대리자를 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-145">The following `ConfigureLogging` call adds a delegate to configure the minimum logging level ([SetMinimumLevel](/dotnet/api/microsoft.extensions.logging.loggingbuilderextensions.setminimumlevel)) to [LogLevel.Warning](/dotnet/api/microsoft.extensions.logging.loglevel).</span></span> <span data-ttu-id="e34e2-146">이 설정은 `CreateDefaultBuilder`에 의해 구성된 *appsettings.Development.json*(`LogLevel.Debug`) 및 *appsettings.Production.json*(`LogLevel.Error`)의 설정을 재정의합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-146">This setting overrides the settings in *appsettings.Development.json* (`LogLevel.Debug`) and *appsettings.Production.json* (`LogLevel.Error`) configured by `CreateDefaultBuilder`.</span></span> <span data-ttu-id="e34e2-147">`ConfigureLogging`이 여러 번 호출될 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-147">`ConfigureLogging` may be called multiple times.</span></span>
 
     ```csharp
     WebHost.CreateDefaultBuilder(args)
@@ -83,7 +86,7 @@ public class Program
 
 ::: moniker range=">= aspnetcore-2.2"
 
-* <span data-ttu-id="5367a-148">`ConfigureKestrel`에 대한 다음 호출은 Kestrel이 `CreateDefaultBuilder`에 의해 구성될 때 설정된 30,000,000바이트의 기본 [Limits.MaxRequestBodySize](/dotnet/api/microsoft.aspnetcore.server.kestrel.core.kestrelserverlimits.maxrequestbodysize)를 재정의합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-148">The following call to `ConfigureKestrel` overrides the default [Limits.MaxRequestBodySize](/dotnet/api/microsoft.aspnetcore.server.kestrel.core.kestrelserverlimits.maxrequestbodysize) of 30,000,000 bytes established when Kestrel was configured by `CreateDefaultBuilder`:</span></span>
+* <span data-ttu-id="e34e2-148">`ConfigureKestrel`에 대한 다음 호출은 Kestrel이 `CreateDefaultBuilder`에 의해 구성될 때 설정된 30,000,000바이트의 기본 [Limits.MaxRequestBodySize](/dotnet/api/microsoft.aspnetcore.server.kestrel.core.kestrelserverlimits.maxrequestbodysize)를 재정의합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-148">The following call to `ConfigureKestrel` overrides the default [Limits.MaxRequestBodySize](/dotnet/api/microsoft.aspnetcore.server.kestrel.core.kestrelserverlimits.maxrequestbodysize) of 30,000,000 bytes established when Kestrel was configured by `CreateDefaultBuilder`:</span></span>
 
     ```csharp
     WebHost.CreateDefaultBuilder(args)
@@ -97,7 +100,7 @@ public class Program
 
 ::: moniker range="< aspnetcore-2.2"
 
-* <span data-ttu-id="5367a-149">[UseKestrel](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderkestrelextensions.usekestrel)에 대한 다음 호출은 Kestrel이 `CreateDefaultBuilder`에 의해 구성될 때 설정된 30,000,000바이트의 기본 [Limits.MaxRequestBodySize](/dotnet/api/microsoft.aspnetcore.server.kestrel.core.kestrelserverlimits.maxrequestbodysize)를 재정의합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-149">The following call to [UseKestrel](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderkestrelextensions.usekestrel) overrides the default [Limits.MaxRequestBodySize](/dotnet/api/microsoft.aspnetcore.server.kestrel.core.kestrelserverlimits.maxrequestbodysize) of 30,000,000 bytes established when Kestrel was configured by `CreateDefaultBuilder`:</span></span>
+* <span data-ttu-id="e34e2-149">[UseKestrel](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderkestrelextensions.usekestrel)에 대한 다음 호출은 Kestrel이 `CreateDefaultBuilder`에 의해 구성될 때 설정된 30,000,000바이트의 기본 [Limits.MaxRequestBodySize](/dotnet/api/microsoft.aspnetcore.server.kestrel.core.kestrelserverlimits.maxrequestbodysize)를 재정의합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-149">The following call to [UseKestrel](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderkestrelextensions.usekestrel) overrides the default [Limits.MaxRequestBodySize](/dotnet/api/microsoft.aspnetcore.server.kestrel.core.kestrelserverlimits.maxrequestbodysize) of 30,000,000 bytes established when Kestrel was configured by `CreateDefaultBuilder`:</span></span>
 
     ```csharp
     WebHost.CreateDefaultBuilder(args)
@@ -109,136 +112,136 @@ public class Program
 
 ::: moniker-end
 
-<span data-ttu-id="5367a-150">*콘텐츠 루트*는 호스트가 MVC 뷰 파일과 같은 콘텐츠 파일을 검색하는 위치를 결정합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-150">The *content root* determines where the host searches for content files, such as MVC view files.</span></span> <span data-ttu-id="5367a-151">앱이 프로젝트의 루트 폴더에서 시작되면 프로젝트의 루트 폴더가 콘텐츠 루트로 사용됩니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-151">When the app is started from the project's root folder, the project's root folder is used as the content root.</span></span> <span data-ttu-id="5367a-152">이것이 [Visual Studio](https://www.visualstudio.com/) 및 [dotnet 새 템플릿](/dotnet/core/tools/dotnet-new)에서 사용되는 기본값입니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-152">This is the default used in [Visual Studio](https://www.visualstudio.com/) and the [dotnet new templates](/dotnet/core/tools/dotnet-new).</span></span>
+<span data-ttu-id="e34e2-150">*콘텐츠 루트*는 호스트가 MVC 뷰 파일과 같은 콘텐츠 파일을 검색하는 위치를 결정합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-150">The *content root* determines where the host searches for content files, such as MVC view files.</span></span> <span data-ttu-id="e34e2-151">앱이 프로젝트의 루트 폴더에서 시작되면 프로젝트의 루트 폴더가 콘텐츠 루트로 사용됩니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-151">When the app is started from the project's root folder, the project's root folder is used as the content root.</span></span> <span data-ttu-id="e34e2-152">이것이 [Visual Studio](https://www.visualstudio.com/) 및 [dotnet 새 템플릿](/dotnet/core/tools/dotnet-new)에서 사용되는 기본값입니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-152">This is the default used in [Visual Studio](https://www.visualstudio.com/) and the [dotnet new templates](/dotnet/core/tools/dotnet-new).</span></span>
 
-<span data-ttu-id="5367a-153">앱 구성에 대한 자세한 내용은 <xref:fundamentals/configuration/index>를 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="5367a-153">For more information on app configuration, see <xref:fundamentals/configuration/index>.</span></span>
+<span data-ttu-id="e34e2-153">앱 구성에 대한 자세한 내용은 <xref:fundamentals/configuration/index>를 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="e34e2-153">For more information on app configuration, see <xref:fundamentals/configuration/index>.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="5367a-154">ASP.NET Core 2.x에서는 정적 `CreateDefaultBuilder` 메서드 사용에 대한 대안으로 [WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder)에서 호스트를 만들 수 있도록 지원합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-154">As an alternative to using the static `CreateDefaultBuilder` method, creating a host from [WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder) is a supported approach with ASP.NET Core 2.x.</span></span> <span data-ttu-id="5367a-155">자세한 내용은 ASP.NET Core 1.x 탭을 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="5367a-155">For more information, see the ASP.NET Core 1.x tab.</span></span>
+> <span data-ttu-id="e34e2-154">ASP.NET Core 2.x에서는 정적 `CreateDefaultBuilder` 메서드 사용에 대한 대안으로 [WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder)에서 호스트를 만들 수 있도록 지원합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-154">As an alternative to using the static `CreateDefaultBuilder` method, creating a host from [WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder) is a supported approach with ASP.NET Core 2.x.</span></span> <span data-ttu-id="e34e2-155">자세한 내용은 ASP.NET Core 1.x 탭을 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="e34e2-155">For more information, see the ASP.NET Core 1.x tab.</span></span>
 
-<span data-ttu-id="5367a-156">호스트를 설정할 때 [Configure](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderextensions.configure?view=aspnetcore-1.1) 및 [ConfigureServices](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder.configureservices?view=aspnetcore-1.1) 메서드가 제공됩니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-156">When setting up a host, [Configure](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderextensions.configure?view=aspnetcore-1.1) and [ConfigureServices](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder.configureservices?view=aspnetcore-1.1) methods can be provided.</span></span> <span data-ttu-id="5367a-157">`Startup` 클래스가 지정된 경우 `Configure` 메서드를 정의해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-157">If a `Startup` class is specified, it must define a `Configure` method.</span></span> <span data-ttu-id="5367a-158">자세한 내용은 <xref:fundamentals/startup>을 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="5367a-158">For more information, see <xref:fundamentals/startup>.</span></span> <span data-ttu-id="5367a-159">`ConfigureServices`에 대한 여러 호출은 서로 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-159">Multiple calls to `ConfigureServices` append to one another.</span></span> <span data-ttu-id="5367a-160">`WebHostBuilder`에서 `Configure` 또는 `UseStartup`에 대한 여러 호출은 이전 설정을 대체합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-160">Multiple calls to `Configure` or `UseStartup` on the `WebHostBuilder` replace previous settings.</span></span>
+<span data-ttu-id="e34e2-156">호스트를 설정할 때 [Configure](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderextensions.configure?view=aspnetcore-1.1) 및 [ConfigureServices](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder.configureservices?view=aspnetcore-1.1) 메서드가 제공됩니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-156">When setting up a host, [Configure](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderextensions.configure?view=aspnetcore-1.1) and [ConfigureServices](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder.configureservices?view=aspnetcore-1.1) methods can be provided.</span></span> <span data-ttu-id="e34e2-157">`Startup` 클래스가 지정된 경우 `Configure` 메서드를 정의해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-157">If a `Startup` class is specified, it must define a `Configure` method.</span></span> <span data-ttu-id="e34e2-158">자세한 내용은 <xref:fundamentals/startup>을 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="e34e2-158">For more information, see <xref:fundamentals/startup>.</span></span> <span data-ttu-id="e34e2-159">`ConfigureServices`에 대한 여러 호출은 서로 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-159">Multiple calls to `ConfigureServices` append to one another.</span></span> <span data-ttu-id="e34e2-160">`WebHostBuilder`에서 `Configure` 또는 `UseStartup`에 대한 여러 호출은 이전 설정을 대체합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-160">Multiple calls to `Configure` or `UseStartup` on the `WebHostBuilder` replace previous settings.</span></span>
 
-## <a name="host-configuration-values"></a><span data-ttu-id="5367a-161">호스트 구성 값</span><span class="sxs-lookup"><span data-stu-id="5367a-161">Host configuration values</span></span>
+## <a name="host-configuration-values"></a><span data-ttu-id="e34e2-161">호스트 구성 값</span><span class="sxs-lookup"><span data-stu-id="e34e2-161">Host configuration values</span></span>
 
-<span data-ttu-id="5367a-162">[WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder)는 호스트 구성 값을 설정하기 위해 다음 방법을 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-162">[WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder) relies on the following approaches to set the host configuration values:</span></span>
+<span data-ttu-id="e34e2-162">[WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder)는 호스트 구성 값을 설정하기 위해 다음 방법을 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-162">[WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder) relies on the following approaches to set the host configuration values:</span></span>
 
-* <span data-ttu-id="5367a-163">`ASPNETCORE_{configurationKey}` 형식의 환경 변수를 포함하는 호스트 빌더 구성.</span><span class="sxs-lookup"><span data-stu-id="5367a-163">Host builder configuration, which includes environment variables with the format `ASPNETCORE_{configurationKey}`.</span></span> <span data-ttu-id="5367a-164">예를 들어, `ASPNETCORE_ENVIRONMENT`을 입력합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-164">For example, `ASPNETCORE_ENVIRONMENT`.</span></span>
-* <span data-ttu-id="5367a-165">[UseContentRoot](/dotnet/api/microsoft.aspnetcore.hosting.hostingabstractionswebhostbuilderextensions.usecontentroot) 및 [UseConfiguration](/dotnet/api/microsoft.aspnetcore.hosting.hostingabstractionswebhostbuilderextensions.useconfiguration) 같은 확장입니다([구성 재정의](#override-configuration) 섹션 참조).</span><span class="sxs-lookup"><span data-stu-id="5367a-165">Extensions such as [UseContentRoot](/dotnet/api/microsoft.aspnetcore.hosting.hostingabstractionswebhostbuilderextensions.usecontentroot) and [UseConfiguration](/dotnet/api/microsoft.aspnetcore.hosting.hostingabstractionswebhostbuilderextensions.useconfiguration) (see the [Override configuration](#override-configuration) section).</span></span>
-* <span data-ttu-id="5367a-166">[UseSetting](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder.usesetting) 및 연결된 키.</span><span class="sxs-lookup"><span data-stu-id="5367a-166">[UseSetting](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder.usesetting) and the associated key.</span></span> <span data-ttu-id="5367a-167">`UseSetting`을 사용하여 값을 설정할 때 값은 형식에 관계 없이 문자열로 설정됩니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-167">When setting a value with `UseSetting`, the value is set as a string regardless of the type.</span></span>
+* <span data-ttu-id="e34e2-163">`ASPNETCORE_{configurationKey}` 형식의 환경 변수를 포함하는 호스트 빌더 구성.</span><span class="sxs-lookup"><span data-stu-id="e34e2-163">Host builder configuration, which includes environment variables with the format `ASPNETCORE_{configurationKey}`.</span></span> <span data-ttu-id="e34e2-164">예를 들어, `ASPNETCORE_ENVIRONMENT`을 입력합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-164">For example, `ASPNETCORE_ENVIRONMENT`.</span></span>
+* <span data-ttu-id="e34e2-165">[UseContentRoot](/dotnet/api/microsoft.aspnetcore.hosting.hostingabstractionswebhostbuilderextensions.usecontentroot) 및 [UseConfiguration](/dotnet/api/microsoft.aspnetcore.hosting.hostingabstractionswebhostbuilderextensions.useconfiguration) 같은 확장입니다([구성 재정의](#override-configuration) 섹션 참조).</span><span class="sxs-lookup"><span data-stu-id="e34e2-165">Extensions such as [UseContentRoot](/dotnet/api/microsoft.aspnetcore.hosting.hostingabstractionswebhostbuilderextensions.usecontentroot) and [UseConfiguration](/dotnet/api/microsoft.aspnetcore.hosting.hostingabstractionswebhostbuilderextensions.useconfiguration) (see the [Override configuration](#override-configuration) section).</span></span>
+* <span data-ttu-id="e34e2-166">[UseSetting](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder.usesetting) 및 연결된 키.</span><span class="sxs-lookup"><span data-stu-id="e34e2-166">[UseSetting](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder.usesetting) and the associated key.</span></span> <span data-ttu-id="e34e2-167">`UseSetting`을 사용하여 값을 설정할 때 값은 형식에 관계 없이 문자열로 설정됩니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-167">When setting a value with `UseSetting`, the value is set as a string regardless of the type.</span></span>
 
-<span data-ttu-id="5367a-168">호스트는 마지막에 값을 설정한 옵션을 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-168">The host uses whichever option sets a value last.</span></span> <span data-ttu-id="5367a-169">자세한 내용은 다음 섹션의 [구성 재정의](#override-configuration)를 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="5367a-169">For more information, see [Override configuration](#override-configuration) in the next section.</span></span>
+<span data-ttu-id="e34e2-168">호스트는 마지막에 값을 설정한 옵션을 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-168">The host uses whichever option sets a value last.</span></span> <span data-ttu-id="e34e2-169">자세한 내용은 다음 섹션의 [구성 재정의](#override-configuration)를 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="e34e2-169">For more information, see [Override configuration](#override-configuration) in the next section.</span></span>
 
-### <a name="application-key-name"></a><span data-ttu-id="5367a-170">응용 프로그램 키(이름)</span><span class="sxs-lookup"><span data-stu-id="5367a-170">Application Key (Name)</span></span>
+### <a name="application-key-name"></a><span data-ttu-id="e34e2-170">응용 프로그램 키(이름)</span><span class="sxs-lookup"><span data-stu-id="e34e2-170">Application Key (Name)</span></span>
 
-<span data-ttu-id="5367a-171">[UseStartup](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderextensions.usestartup) 또는 [구성](/dotnet/api/microsoft.aspnetcore.hosting.istartup.configure)이 호스트 생성 중에 호출되는 경우 [IHostingEnvironment.ApplicationName](/dotnet/api/microsoft.extensions.hosting.ihostingenvironment.applicationname) 속성이 자동으로 설정됩니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-171">The [IHostingEnvironment.ApplicationName](/dotnet/api/microsoft.extensions.hosting.ihostingenvironment.applicationname) property is automatically set when [UseStartup](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderextensions.usestartup) or [Configure](/dotnet/api/microsoft.aspnetcore.hosting.istartup.configure) is called during host construction.</span></span> <span data-ttu-id="5367a-172">해당 값은 앱의 진입점을 포함하는 어셈블리의 이름으로 설정됩니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-172">The value is set to the name of the assembly containing the app's entry point.</span></span> <span data-ttu-id="5367a-173">값을 명시적으로 설정하려면 [WebHostDefaults.ApplicationKey](/dotnet/api/microsoft.aspnetcore.hosting.webhostdefaults.applicationkey)를 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-173">To set the value explicitly, use the [WebHostDefaults.ApplicationKey](/dotnet/api/microsoft.aspnetcore.hosting.webhostdefaults.applicationkey):</span></span>
+<span data-ttu-id="e34e2-171">[UseStartup](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderextensions.usestartup) 또는 [구성](/dotnet/api/microsoft.aspnetcore.hosting.istartup.configure)이 호스트 생성 중에 호출되는 경우 [IHostingEnvironment.ApplicationName](/dotnet/api/microsoft.extensions.hosting.ihostingenvironment.applicationname) 속성이 자동으로 설정됩니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-171">The [IHostingEnvironment.ApplicationName](/dotnet/api/microsoft.extensions.hosting.ihostingenvironment.applicationname) property is automatically set when [UseStartup](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderextensions.usestartup) or [Configure](/dotnet/api/microsoft.aspnetcore.hosting.istartup.configure) is called during host construction.</span></span> <span data-ttu-id="e34e2-172">해당 값은 앱의 진입점을 포함하는 어셈블리의 이름으로 설정됩니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-172">The value is set to the name of the assembly containing the app's entry point.</span></span> <span data-ttu-id="e34e2-173">값을 명시적으로 설정하려면 [WebHostDefaults.ApplicationKey](/dotnet/api/microsoft.aspnetcore.hosting.webhostdefaults.applicationkey)를 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-173">To set the value explicitly, use the [WebHostDefaults.ApplicationKey](/dotnet/api/microsoft.aspnetcore.hosting.webhostdefaults.applicationkey):</span></span>
 
-<span data-ttu-id="5367a-174">**키**: applicationName</span><span class="sxs-lookup"><span data-stu-id="5367a-174">**Key**: applicationName</span></span>  
-<span data-ttu-id="5367a-175">**형식**: *string*</span><span class="sxs-lookup"><span data-stu-id="5367a-175">**Type**: *string*</span></span>  
-<span data-ttu-id="5367a-176">**기본값**: 앱의 진입점을 포함하는 어셈블리의 이름입니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-176">**Default**: The name of the assembly containing the app's entry point.</span></span>  
-<span data-ttu-id="5367a-177">**설정 방법**: `UseSetting`</span><span class="sxs-lookup"><span data-stu-id="5367a-177">**Set using**: `UseSetting`</span></span>  
-<span data-ttu-id="5367a-178">**환경 변수**: `ASPNETCORE_APPLICATIONNAME`</span><span class="sxs-lookup"><span data-stu-id="5367a-178">**Environment variable**: `ASPNETCORE_APPLICATIONNAME`</span></span>
+<span data-ttu-id="e34e2-174">**키**: applicationName</span><span class="sxs-lookup"><span data-stu-id="e34e2-174">**Key**: applicationName</span></span>  
+<span data-ttu-id="e34e2-175">**형식**: *string*</span><span class="sxs-lookup"><span data-stu-id="e34e2-175">**Type**: *string*</span></span>  
+<span data-ttu-id="e34e2-176">**기본값**: 앱의 진입점을 포함하는 어셈블리의 이름입니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-176">**Default**: The name of the assembly containing the app's entry point.</span></span>  
+<span data-ttu-id="e34e2-177">**설정 방법**: `UseSetting`</span><span class="sxs-lookup"><span data-stu-id="e34e2-177">**Set using**: `UseSetting`</span></span>  
+<span data-ttu-id="e34e2-178">**환경 변수**: `ASPNETCORE_APPLICATIONNAME`</span><span class="sxs-lookup"><span data-stu-id="e34e2-178">**Environment variable**: `ASPNETCORE_APPLICATIONNAME`</span></span>
 
 ```csharp
 WebHost.CreateDefaultBuilder(args)
     .UseSetting(WebHostDefaults.ApplicationKey, "CustomApplicationName")
 ```
 
-### <a name="capture-startup-errors"></a><span data-ttu-id="5367a-179">시작 오류 캡처</span><span class="sxs-lookup"><span data-stu-id="5367a-179">Capture Startup Errors</span></span>
+### <a name="capture-startup-errors"></a><span data-ttu-id="e34e2-179">시작 오류 캡처</span><span class="sxs-lookup"><span data-stu-id="e34e2-179">Capture Startup Errors</span></span>
 
-<span data-ttu-id="5367a-180">이 설정은 시작 오류의 캡처를 제어합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-180">This setting controls the capture of startup errors.</span></span>
+<span data-ttu-id="e34e2-180">이 설정은 시작 오류의 캡처를 제어합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-180">This setting controls the capture of startup errors.</span></span>
 
-<span data-ttu-id="5367a-181">**키**: captureStartupErrors</span><span class="sxs-lookup"><span data-stu-id="5367a-181">**Key**: captureStartupErrors</span></span>  
-<span data-ttu-id="5367a-182">**형식**: *bool*(`true` 또는 `1`)</span><span class="sxs-lookup"><span data-stu-id="5367a-182">**Type**: *bool* (`true` or `1`)</span></span>  
-<span data-ttu-id="5367a-183">**기본값**: 기본값이 `true`인 IIS 뒤에 있는 Kestrel로 앱이 실행하지 않는 한 기본값은 `false`로 지정됩니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-183">**Default**: Defaults to `false` unless the app runs with Kestrel behind IIS, where the default is `true`.</span></span>  
-<span data-ttu-id="5367a-184">**설정 방법**: `CaptureStartupErrors`</span><span class="sxs-lookup"><span data-stu-id="5367a-184">**Set using**: `CaptureStartupErrors`</span></span>  
-<span data-ttu-id="5367a-185">**환경 변수**: `ASPNETCORE_CAPTURESTARTUPERRORS`</span><span class="sxs-lookup"><span data-stu-id="5367a-185">**Environment variable**: `ASPNETCORE_CAPTURESTARTUPERRORS`</span></span>
+<span data-ttu-id="e34e2-181">**키**: captureStartupErrors</span><span class="sxs-lookup"><span data-stu-id="e34e2-181">**Key**: captureStartupErrors</span></span>  
+<span data-ttu-id="e34e2-182">**형식**: *bool*(`true` 또는 `1`)</span><span class="sxs-lookup"><span data-stu-id="e34e2-182">**Type**: *bool* (`true` or `1`)</span></span>  
+<span data-ttu-id="e34e2-183">**기본값**: 기본값이 `true`인 IIS 뒤에 있는 Kestrel로 앱이 실행하지 않는 한 기본값은 `false`로 지정됩니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-183">**Default**: Defaults to `false` unless the app runs with Kestrel behind IIS, where the default is `true`.</span></span>  
+<span data-ttu-id="e34e2-184">**설정 방법**: `CaptureStartupErrors`</span><span class="sxs-lookup"><span data-stu-id="e34e2-184">**Set using**: `CaptureStartupErrors`</span></span>  
+<span data-ttu-id="e34e2-185">**환경 변수**: `ASPNETCORE_CAPTURESTARTUPERRORS`</span><span class="sxs-lookup"><span data-stu-id="e34e2-185">**Environment variable**: `ASPNETCORE_CAPTURESTARTUPERRORS`</span></span>
 
-<span data-ttu-id="5367a-186">`false`인 경우 시작 시 오류가 발생하면 호스트가 종료됩니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-186">When `false`, errors during startup result in the host exiting.</span></span> <span data-ttu-id="5367a-187">`true`이면 호스트가 시작 시 예외를 캡처하고 서버 시작을 시도합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-187">When `true`, the host captures exceptions during startup and attempts to start the server.</span></span>
+<span data-ttu-id="e34e2-186">`false`인 경우 시작 시 오류가 발생하면 호스트가 종료됩니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-186">When `false`, errors during startup result in the host exiting.</span></span> <span data-ttu-id="e34e2-187">`true`이면 호스트가 시작 시 예외를 캡처하고 서버 시작을 시도합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-187">When `true`, the host captures exceptions during startup and attempts to start the server.</span></span>
 
 ```csharp
 WebHost.CreateDefaultBuilder(args)
     .CaptureStartupErrors(true)
 ```
 
-### <a name="content-root"></a><span data-ttu-id="5367a-188">콘텐츠 루트</span><span class="sxs-lookup"><span data-stu-id="5367a-188">Content Root</span></span>
+### <a name="content-root"></a><span data-ttu-id="e34e2-188">콘텐츠 루트</span><span class="sxs-lookup"><span data-stu-id="e34e2-188">Content Root</span></span>
 
-<span data-ttu-id="5367a-189">이 설정은 ASP.NET Core가 MVC 뷰와 같은 콘텐츠 파일을 검색하기 시작하는 지점을 결정합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-189">This setting determines where ASP.NET Core begins searching for content files, such as MVC views.</span></span> 
+<span data-ttu-id="e34e2-189">이 설정은 ASP.NET Core가 MVC 뷰와 같은 콘텐츠 파일을 검색하기 시작하는 지점을 결정합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-189">This setting determines where ASP.NET Core begins searching for content files, such as MVC views.</span></span> 
 
-<span data-ttu-id="5367a-190">**키**: contentRoot</span><span class="sxs-lookup"><span data-stu-id="5367a-190">**Key**: contentRoot</span></span>  
-<span data-ttu-id="5367a-191">**형식**: *string*</span><span class="sxs-lookup"><span data-stu-id="5367a-191">**Type**: *string*</span></span>  
-<span data-ttu-id="5367a-192">**기본값**: 앱 어셈블리가 있는 폴더가 기본값으로 지정됩니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-192">**Default**: Defaults to the folder where the app assembly resides.</span></span>  
-<span data-ttu-id="5367a-193">**설정 방법**: `UseContentRoot`</span><span class="sxs-lookup"><span data-stu-id="5367a-193">**Set using**: `UseContentRoot`</span></span>  
-<span data-ttu-id="5367a-194">**환경 변수**: `ASPNETCORE_CONTENTROOT`</span><span class="sxs-lookup"><span data-stu-id="5367a-194">**Environment variable**: `ASPNETCORE_CONTENTROOT`</span></span>
+<span data-ttu-id="e34e2-190">**키**: contentRoot</span><span class="sxs-lookup"><span data-stu-id="e34e2-190">**Key**: contentRoot</span></span>  
+<span data-ttu-id="e34e2-191">**형식**: *string*</span><span class="sxs-lookup"><span data-stu-id="e34e2-191">**Type**: *string*</span></span>  
+<span data-ttu-id="e34e2-192">**기본값**: 앱 어셈블리가 있는 폴더가 기본값으로 지정됩니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-192">**Default**: Defaults to the folder where the app assembly resides.</span></span>  
+<span data-ttu-id="e34e2-193">**설정 방법**: `UseContentRoot`</span><span class="sxs-lookup"><span data-stu-id="e34e2-193">**Set using**: `UseContentRoot`</span></span>  
+<span data-ttu-id="e34e2-194">**환경 변수**: `ASPNETCORE_CONTENTROOT`</span><span class="sxs-lookup"><span data-stu-id="e34e2-194">**Environment variable**: `ASPNETCORE_CONTENTROOT`</span></span>
 
-<span data-ttu-id="5367a-195">콘텐츠 루트는 또한 [웹 루트 설정](#web-root)에 대한 기본 경로로 사용됩니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-195">The content root is also used as the base path for the [Web Root setting](#web-root).</span></span> <span data-ttu-id="5367a-196">경로가 존재하지 않는 경우 호스트가 시작되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-196">If the path doesn't exist, the host fails to start.</span></span>
+<span data-ttu-id="e34e2-195">콘텐츠 루트는 또한 [웹 루트 설정](#web-root)에 대한 기본 경로로 사용됩니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-195">The content root is also used as the base path for the [Web Root setting](#web-root).</span></span> <span data-ttu-id="e34e2-196">경로가 존재하지 않는 경우 호스트가 시작되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-196">If the path doesn't exist, the host fails to start.</span></span>
 
 ```csharp
 WebHost.CreateDefaultBuilder(args)
     .UseContentRoot("c:\\<content-root>")
 ```
 
-### <a name="detailed-errors"></a><span data-ttu-id="5367a-197">자세한 오류</span><span class="sxs-lookup"><span data-stu-id="5367a-197">Detailed Errors</span></span>
+### <a name="detailed-errors"></a><span data-ttu-id="e34e2-197">자세한 오류</span><span class="sxs-lookup"><span data-stu-id="e34e2-197">Detailed Errors</span></span>
 
-<span data-ttu-id="5367a-198">자세한 오류를 캡처해야 하는지를 결정합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-198">Determines if detailed errors should be captured.</span></span>
+<span data-ttu-id="e34e2-198">자세한 오류를 캡처해야 하는지를 결정합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-198">Determines if detailed errors should be captured.</span></span>
 
-<span data-ttu-id="5367a-199">**키**: detailedErrors</span><span class="sxs-lookup"><span data-stu-id="5367a-199">**Key**: detailedErrors</span></span>  
-<span data-ttu-id="5367a-200">**형식**: *bool*(`true` 또는 `1`)</span><span class="sxs-lookup"><span data-stu-id="5367a-200">**Type**: *bool* (`true` or `1`)</span></span>  
-<span data-ttu-id="5367a-201">**기본값**: false</span><span class="sxs-lookup"><span data-stu-id="5367a-201">**Default**: false</span></span>  
-<span data-ttu-id="5367a-202">**설정 방법**: `UseSetting`</span><span class="sxs-lookup"><span data-stu-id="5367a-202">**Set using**: `UseSetting`</span></span>  
-<span data-ttu-id="5367a-203">**환경 변수**: `ASPNETCORE_DETAILEDERRORS`</span><span class="sxs-lookup"><span data-stu-id="5367a-203">**Environment variable**: `ASPNETCORE_DETAILEDERRORS`</span></span>
+<span data-ttu-id="e34e2-199">**키**: detailedErrors</span><span class="sxs-lookup"><span data-stu-id="e34e2-199">**Key**: detailedErrors</span></span>  
+<span data-ttu-id="e34e2-200">**형식**: *bool*(`true` 또는 `1`)</span><span class="sxs-lookup"><span data-stu-id="e34e2-200">**Type**: *bool* (`true` or `1`)</span></span>  
+<span data-ttu-id="e34e2-201">**기본값**: false</span><span class="sxs-lookup"><span data-stu-id="e34e2-201">**Default**: false</span></span>  
+<span data-ttu-id="e34e2-202">**설정 방법**: `UseSetting`</span><span class="sxs-lookup"><span data-stu-id="e34e2-202">**Set using**: `UseSetting`</span></span>  
+<span data-ttu-id="e34e2-203">**환경 변수**: `ASPNETCORE_DETAILEDERRORS`</span><span class="sxs-lookup"><span data-stu-id="e34e2-203">**Environment variable**: `ASPNETCORE_DETAILEDERRORS`</span></span>
 
-<span data-ttu-id="5367a-204">사용하는 경우(또는 <a href="#environment">환경</a>이 `Development`로 설정된 경우) 앱은 자세한 예외를 캡처합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-204">When enabled (or when the <a href="#environment">Environment</a> is set to `Development`), the app captures detailed exceptions.</span></span>
+<span data-ttu-id="e34e2-204">사용하는 경우(또는 <a href="#environment">환경</a>이 `Development`로 설정된 경우) 앱은 자세한 예외를 캡처합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-204">When enabled (or when the <a href="#environment">Environment</a> is set to `Development`), the app captures detailed exceptions.</span></span>
 
 ```csharp
 WebHost.CreateDefaultBuilder(args)
     .UseSetting(WebHostDefaults.DetailedErrorsKey, "true")
 ```
 
-### <a name="environment"></a><span data-ttu-id="5367a-205">환경</span><span class="sxs-lookup"><span data-stu-id="5367a-205">Environment</span></span>
+### <a name="environment"></a><span data-ttu-id="e34e2-205">환경</span><span class="sxs-lookup"><span data-stu-id="e34e2-205">Environment</span></span>
 
-<span data-ttu-id="5367a-206">앱의 환경을 설정합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-206">Sets the app's environment.</span></span>
+<span data-ttu-id="e34e2-206">앱의 환경을 설정합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-206">Sets the app's environment.</span></span>
 
-<span data-ttu-id="5367a-207">**키**: environment</span><span class="sxs-lookup"><span data-stu-id="5367a-207">**Key**: environment</span></span>  
-<span data-ttu-id="5367a-208">**형식**: *string*</span><span class="sxs-lookup"><span data-stu-id="5367a-208">**Type**: *string*</span></span>  
-<span data-ttu-id="5367a-209">**기본값**: Production</span><span class="sxs-lookup"><span data-stu-id="5367a-209">**Default**: Production</span></span>  
-<span data-ttu-id="5367a-210">**설정 방법**: `UseEnvironment`</span><span class="sxs-lookup"><span data-stu-id="5367a-210">**Set using**: `UseEnvironment`</span></span>  
-<span data-ttu-id="5367a-211">**환경 변수**: `ASPNETCORE_ENVIRONMENT`</span><span class="sxs-lookup"><span data-stu-id="5367a-211">**Environment variable**: `ASPNETCORE_ENVIRONMENT`</span></span>
+<span data-ttu-id="e34e2-207">**키**: environment</span><span class="sxs-lookup"><span data-stu-id="e34e2-207">**Key**: environment</span></span>  
+<span data-ttu-id="e34e2-208">**형식**: *string*</span><span class="sxs-lookup"><span data-stu-id="e34e2-208">**Type**: *string*</span></span>  
+<span data-ttu-id="e34e2-209">**기본값**: Production</span><span class="sxs-lookup"><span data-stu-id="e34e2-209">**Default**: Production</span></span>  
+<span data-ttu-id="e34e2-210">**설정 방법**: `UseEnvironment`</span><span class="sxs-lookup"><span data-stu-id="e34e2-210">**Set using**: `UseEnvironment`</span></span>  
+<span data-ttu-id="e34e2-211">**환경 변수**: `ASPNETCORE_ENVIRONMENT`</span><span class="sxs-lookup"><span data-stu-id="e34e2-211">**Environment variable**: `ASPNETCORE_ENVIRONMENT`</span></span>
 
-<span data-ttu-id="5367a-212">환경은 어떠한 값으로도 설정할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-212">The environment can be set to any value.</span></span> <span data-ttu-id="5367a-213">프레임워크에서 정의된 값은 `Development`, `Staging` 및 `Production`을 포함합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-213">Framework-defined values include `Development`, `Staging`, and `Production`.</span></span> <span data-ttu-id="5367a-214">값은 대/소문자를 구분하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-214">Values aren't case sensitive.</span></span> <span data-ttu-id="5367a-215">기본적으로 *환경*은 `ASPNETCORE_ENVIRONMENT` 환경 변수에서 읽습니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-215">By default, the *Environment* is read from the `ASPNETCORE_ENVIRONMENT` environment variable.</span></span> <span data-ttu-id="5367a-216">[Visual Studio](https://www.visualstudio.com/)를 사용하는 경우 환경 변수는 *launchSettings.json* 파일에서 설정할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-216">When using [Visual Studio](https://www.visualstudio.com/), environment variables may be set in the *launchSettings.json* file.</span></span> <span data-ttu-id="5367a-217">자세한 내용은 <xref:fundamentals/environments>을 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="5367a-217">For more information, see <xref:fundamentals/environments>.</span></span>
+<span data-ttu-id="e34e2-212">환경은 어떠한 값으로도 설정할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-212">The environment can be set to any value.</span></span> <span data-ttu-id="e34e2-213">프레임워크에서 정의된 값은 `Development`, `Staging` 및 `Production`을 포함합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-213">Framework-defined values include `Development`, `Staging`, and `Production`.</span></span> <span data-ttu-id="e34e2-214">값은 대/소문자를 구분하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-214">Values aren't case sensitive.</span></span> <span data-ttu-id="e34e2-215">기본적으로 *환경*은 `ASPNETCORE_ENVIRONMENT` 환경 변수에서 읽습니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-215">By default, the *Environment* is read from the `ASPNETCORE_ENVIRONMENT` environment variable.</span></span> <span data-ttu-id="e34e2-216">[Visual Studio](https://www.visualstudio.com/)를 사용하는 경우 환경 변수는 *launchSettings.json* 파일에서 설정할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-216">When using [Visual Studio](https://www.visualstudio.com/), environment variables may be set in the *launchSettings.json* file.</span></span> <span data-ttu-id="e34e2-217">자세한 내용은 <xref:fundamentals/environments>을 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="e34e2-217">For more information, see <xref:fundamentals/environments>.</span></span>
 
 ```csharp
 WebHost.CreateDefaultBuilder(args)
     .UseEnvironment(EnvironmentName.Development)
 ```
 
-### <a name="hosting-startup-assemblies"></a><span data-ttu-id="5367a-218">호스팅 시작 어셈블리</span><span class="sxs-lookup"><span data-stu-id="5367a-218">Hosting Startup Assemblies</span></span>
+### <a name="hosting-startup-assemblies"></a><span data-ttu-id="e34e2-218">호스팅 시작 어셈블리</span><span class="sxs-lookup"><span data-stu-id="e34e2-218">Hosting Startup Assemblies</span></span>
 
-<span data-ttu-id="5367a-219">앱의 호스팅 시작 어셈블리를 설정합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-219">Sets the app's hosting startup assemblies.</span></span>
+<span data-ttu-id="e34e2-219">앱의 호스팅 시작 어셈블리를 설정합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-219">Sets the app's hosting startup assemblies.</span></span>
 
-<span data-ttu-id="5367a-220">**키**: hostingStartupAssemblies</span><span class="sxs-lookup"><span data-stu-id="5367a-220">**Key**: hostingStartupAssemblies</span></span>  
-<span data-ttu-id="5367a-221">**형식**: *string*</span><span class="sxs-lookup"><span data-stu-id="5367a-221">**Type**: *string*</span></span>  
-<span data-ttu-id="5367a-222">**기본값**: 빈 문자열</span><span class="sxs-lookup"><span data-stu-id="5367a-222">**Default**: Empty string</span></span>  
-<span data-ttu-id="5367a-223">**설정 방법**: `UseSetting`</span><span class="sxs-lookup"><span data-stu-id="5367a-223">**Set using**: `UseSetting`</span></span>  
-<span data-ttu-id="5367a-224">**환경 변수**: `ASPNETCORE_HOSTINGSTARTUPASSEMBLIES`</span><span class="sxs-lookup"><span data-stu-id="5367a-224">**Environment variable**: `ASPNETCORE_HOSTINGSTARTUPASSEMBLIES`</span></span>
+<span data-ttu-id="e34e2-220">**키**: hostingStartupAssemblies</span><span class="sxs-lookup"><span data-stu-id="e34e2-220">**Key**: hostingStartupAssemblies</span></span>  
+<span data-ttu-id="e34e2-221">**형식**: *string*</span><span class="sxs-lookup"><span data-stu-id="e34e2-221">**Type**: *string*</span></span>  
+<span data-ttu-id="e34e2-222">**기본값**: 빈 문자열</span><span class="sxs-lookup"><span data-stu-id="e34e2-222">**Default**: Empty string</span></span>  
+<span data-ttu-id="e34e2-223">**설정 방법**: `UseSetting`</span><span class="sxs-lookup"><span data-stu-id="e34e2-223">**Set using**: `UseSetting`</span></span>  
+<span data-ttu-id="e34e2-224">**환경 변수**: `ASPNETCORE_HOSTINGSTARTUPASSEMBLIES`</span><span class="sxs-lookup"><span data-stu-id="e34e2-224">**Environment variable**: `ASPNETCORE_HOSTINGSTARTUPASSEMBLIES`</span></span>
 
-<span data-ttu-id="5367a-225">시작 시 로드할 호스팅 시작 어셈블리의 세미콜론으로 구분된 문자열입니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-225">A semicolon-delimited string of hosting startup assemblies to load on startup.</span></span>
+<span data-ttu-id="e34e2-225">시작 시 로드할 호스팅 시작 어셈블리의 세미콜론으로 구분된 문자열입니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-225">A semicolon-delimited string of hosting startup assemblies to load on startup.</span></span>
 
-<span data-ttu-id="5367a-226">구성 값의 기본값이 빈 문자열이지만, 호스팅 시작 어셈블리는 항상 앱의 어셈블리를 포함합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-226">Although the configuration value defaults to an empty string, the hosting startup assemblies always include the app's assembly.</span></span> <span data-ttu-id="5367a-227">호스팅 시작 어셈블리가 제공되는 경우, 시작 시 앱이 일반적인 서비스를 빌드할 때 로드를 위해 앱의 어셈블리에 추가됩니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-227">When hosting startup assemblies are provided, they're added to the app's assembly for loading when the app builds its common services during startup.</span></span>
+<span data-ttu-id="e34e2-226">구성 값의 기본값이 빈 문자열이지만, 호스팅 시작 어셈블리는 항상 앱의 어셈블리를 포함합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-226">Although the configuration value defaults to an empty string, the hosting startup assemblies always include the app's assembly.</span></span> <span data-ttu-id="e34e2-227">호스팅 시작 어셈블리가 제공되는 경우, 시작 시 앱이 일반적인 서비스를 빌드할 때 로드를 위해 앱의 어셈블리에 추가됩니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-227">When hosting startup assemblies are provided, they're added to the app's assembly for loading when the app builds its common services during startup.</span></span>
 
 ```csharp
 WebHost.CreateDefaultBuilder(args)
     .UseSetting(WebHostDefaults.HostingStartupAssembliesKey, "assembly1;assembly2")
 ```
 
-### <a name="https-port"></a><span data-ttu-id="5367a-228">HTTPS 포트</span><span class="sxs-lookup"><span data-stu-id="5367a-228">HTTPS Port</span></span>
+### <a name="https-port"></a><span data-ttu-id="e34e2-228">HTTPS 포트</span><span class="sxs-lookup"><span data-stu-id="e34e2-228">HTTPS Port</span></span>
 
-<span data-ttu-id="5367a-229">HTTPS 리디렉션 포트를 설정합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-229">Set the HTTPS redirect port.</span></span> <span data-ttu-id="5367a-230">[HTTPS 적용](xref:security/enforcing-ssl)에 사용됩니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-230">Used in [enforcing HTTPS](xref:security/enforcing-ssl).</span></span>
+<span data-ttu-id="e34e2-229">HTTPS 리디렉션 포트를 설정합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-229">Set the HTTPS redirect port.</span></span> <span data-ttu-id="e34e2-230">[HTTPS 적용](xref:security/enforcing-ssl)에 사용됩니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-230">Used in [enforcing HTTPS](xref:security/enforcing-ssl).</span></span>
 
-<span data-ttu-id="5367a-231">**키**: https_port **형식**: ‘문자열’
-**기본값**: 기본값이 설정되어 있지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-231">**Key**: https_port **Type**: *string*
+<span data-ttu-id="e34e2-231">**키**: https_port **형식**: ‘문자열’
+**기본값**: 기본값이 설정되어 있지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-231">**Key**: https_port **Type**: *string*
 **Default**: A default value isn't set.</span></span>
-<span data-ttu-id="5367a-232">**using 설정**: `UseSetting`
-**환경 변수**: `ASPNETCORE_HTTPS_PORT`</span><span class="sxs-lookup"><span data-stu-id="5367a-232">**Set using**: `UseSetting`
+<span data-ttu-id="e34e2-232">**using 설정**: `UseSetting`
+**환경 변수**: `ASPNETCORE_HTTPS_PORT`</span><span class="sxs-lookup"><span data-stu-id="e34e2-232">**Set using**: `UseSetting`
 **Environment variable**: `ASPNETCORE_HTTPS_PORT`</span></span>
 
 ```csharp
@@ -246,105 +249,105 @@ WebHost.CreateDefaultBuilder(args)
     .UseSetting("https_port", "8080")
 ```
 
-### <a name="hosting-startup-exclude-assemblies"></a><span data-ttu-id="5367a-233">호스팅 시작 어셈블리 제외</span><span class="sxs-lookup"><span data-stu-id="5367a-233">Hosting Startup Exclude Assemblies</span></span>
+### <a name="hosting-startup-exclude-assemblies"></a><span data-ttu-id="e34e2-233">호스팅 시작 어셈블리 제외</span><span class="sxs-lookup"><span data-stu-id="e34e2-233">Hosting Startup Exclude Assemblies</span></span>
 
-<span data-ttu-id="5367a-234">시작 시 제외할 호스팅 시작 어셈블리의 세미콜론으로 구분된 문자열입니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-234">A semicolon-delimited string of hosting startup assemblies to exclude on startup.</span></span>
+<span data-ttu-id="e34e2-234">시작 시 제외할 호스팅 시작 어셈블리의 세미콜론으로 구분된 문자열입니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-234">A semicolon-delimited string of hosting startup assemblies to exclude on startup.</span></span>
 
-<span data-ttu-id="5367a-235">**키**: hostingStartupExcludeAssemblies</span><span class="sxs-lookup"><span data-stu-id="5367a-235">**Key**: hostingStartupExcludeAssemblies</span></span>  
-<span data-ttu-id="5367a-236">**형식**: *string*</span><span class="sxs-lookup"><span data-stu-id="5367a-236">**Type**: *string*</span></span>  
-<span data-ttu-id="5367a-237">**기본값**: 빈 문자열</span><span class="sxs-lookup"><span data-stu-id="5367a-237">**Default**: Empty string</span></span>  
-<span data-ttu-id="5367a-238">**설정 방법**: `UseSetting`</span><span class="sxs-lookup"><span data-stu-id="5367a-238">**Set using**: `UseSetting`</span></span>  
-<span data-ttu-id="5367a-239">**환경 변수**: `ASPNETCORE_HOSTINGSTARTUPEXCLUDEASSEMBLIES`</span><span class="sxs-lookup"><span data-stu-id="5367a-239">**Environment variable**: `ASPNETCORE_HOSTINGSTARTUPEXCLUDEASSEMBLIES`</span></span>
+<span data-ttu-id="e34e2-235">**키**: hostingStartupExcludeAssemblies</span><span class="sxs-lookup"><span data-stu-id="e34e2-235">**Key**: hostingStartupExcludeAssemblies</span></span>  
+<span data-ttu-id="e34e2-236">**형식**: *string*</span><span class="sxs-lookup"><span data-stu-id="e34e2-236">**Type**: *string*</span></span>  
+<span data-ttu-id="e34e2-237">**기본값**: 빈 문자열</span><span class="sxs-lookup"><span data-stu-id="e34e2-237">**Default**: Empty string</span></span>  
+<span data-ttu-id="e34e2-238">**설정 방법**: `UseSetting`</span><span class="sxs-lookup"><span data-stu-id="e34e2-238">**Set using**: `UseSetting`</span></span>  
+<span data-ttu-id="e34e2-239">**환경 변수**: `ASPNETCORE_HOSTINGSTARTUPEXCLUDEASSEMBLIES`</span><span class="sxs-lookup"><span data-stu-id="e34e2-239">**Environment variable**: `ASPNETCORE_HOSTINGSTARTUPEXCLUDEASSEMBLIES`</span></span>
 
 ```csharp
 WebHost.CreateDefaultBuilder(args)
     .UseSetting(WebHostDefaults.HostingStartupExcludeAssembliesKey, "assembly1;assembly2")
 ```
 
-### <a name="prefer-hosting-urls"></a><span data-ttu-id="5367a-240">호스팅 URL 선호</span><span class="sxs-lookup"><span data-stu-id="5367a-240">Prefer Hosting URLs</span></span>
+### <a name="prefer-hosting-urls"></a><span data-ttu-id="e34e2-240">호스팅 URL 선호</span><span class="sxs-lookup"><span data-stu-id="e34e2-240">Prefer Hosting URLs</span></span>
 
-<span data-ttu-id="5367a-241">호스트가 `IServer` 구현으로 구성된 URL 대신에 `WebHostBuilder`로 구성된 URL에서 수신 대기할지 여부를 나타냅니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-241">Indicates whether the host should listen on the URLs configured with the `WebHostBuilder` instead of those configured with the `IServer` implementation.</span></span>
+<span data-ttu-id="e34e2-241">호스트가 `IServer` 구현으로 구성된 URL 대신에 `WebHostBuilder`로 구성된 URL에서 수신 대기할지 여부를 나타냅니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-241">Indicates whether the host should listen on the URLs configured with the `WebHostBuilder` instead of those configured with the `IServer` implementation.</span></span>
 
-<span data-ttu-id="5367a-242">**키**: preferHostingUrls</span><span class="sxs-lookup"><span data-stu-id="5367a-242">**Key**: preferHostingUrls</span></span>  
-<span data-ttu-id="5367a-243">**형식**: *bool*(`true` 또는 `1`)</span><span class="sxs-lookup"><span data-stu-id="5367a-243">**Type**: *bool* (`true` or `1`)</span></span>  
-<span data-ttu-id="5367a-244">**기본값**: true</span><span class="sxs-lookup"><span data-stu-id="5367a-244">**Default**: true</span></span>  
-<span data-ttu-id="5367a-245">**설정 방법**: `PreferHostingUrls`</span><span class="sxs-lookup"><span data-stu-id="5367a-245">**Set using**: `PreferHostingUrls`</span></span>  
-<span data-ttu-id="5367a-246">**환경 변수**: `ASPNETCORE_PREFERHOSTINGURLS`</span><span class="sxs-lookup"><span data-stu-id="5367a-246">**Environment variable**: `ASPNETCORE_PREFERHOSTINGURLS`</span></span>
+<span data-ttu-id="e34e2-242">**키**: preferHostingUrls</span><span class="sxs-lookup"><span data-stu-id="e34e2-242">**Key**: preferHostingUrls</span></span>  
+<span data-ttu-id="e34e2-243">**형식**: *bool*(`true` 또는 `1`)</span><span class="sxs-lookup"><span data-stu-id="e34e2-243">**Type**: *bool* (`true` or `1`)</span></span>  
+<span data-ttu-id="e34e2-244">**기본값**: true</span><span class="sxs-lookup"><span data-stu-id="e34e2-244">**Default**: true</span></span>  
+<span data-ttu-id="e34e2-245">**설정 방법**: `PreferHostingUrls`</span><span class="sxs-lookup"><span data-stu-id="e34e2-245">**Set using**: `PreferHostingUrls`</span></span>  
+<span data-ttu-id="e34e2-246">**환경 변수**: `ASPNETCORE_PREFERHOSTINGURLS`</span><span class="sxs-lookup"><span data-stu-id="e34e2-246">**Environment variable**: `ASPNETCORE_PREFERHOSTINGURLS`</span></span>
 
 ```csharp
 WebHost.CreateDefaultBuilder(args)
     .PreferHostingUrls(false)
 ```
 
-### <a name="prevent-hosting-startup"></a><span data-ttu-id="5367a-247">호스팅 시작 방지</span><span class="sxs-lookup"><span data-stu-id="5367a-247">Prevent Hosting Startup</span></span>
+### <a name="prevent-hosting-startup"></a><span data-ttu-id="e34e2-247">호스팅 시작 방지</span><span class="sxs-lookup"><span data-stu-id="e34e2-247">Prevent Hosting Startup</span></span>
 
-<span data-ttu-id="5367a-248">앱의 어셈블리에 의해 구성된 호스팅 시작 어셈블리를 포함한 호스팅 시작 어셈블리의 자동 로딩을 방지합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-248">Prevents the automatic loading of hosting startup assemblies, including hosting startup assemblies configured by the app's assembly.</span></span> <span data-ttu-id="5367a-249">자세한 내용은 <xref:fundamentals/configuration/platform-specific-configuration>을 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="5367a-249">For more information, see <xref:fundamentals/configuration/platform-specific-configuration>.</span></span>
+<span data-ttu-id="e34e2-248">앱의 어셈블리에 의해 구성된 호스팅 시작 어셈블리를 포함한 호스팅 시작 어셈블리의 자동 로딩을 방지합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-248">Prevents the automatic loading of hosting startup assemblies, including hosting startup assemblies configured by the app's assembly.</span></span> <span data-ttu-id="e34e2-249">자세한 내용은 <xref:fundamentals/configuration/platform-specific-configuration>을 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="e34e2-249">For more information, see <xref:fundamentals/configuration/platform-specific-configuration>.</span></span>
 
-<span data-ttu-id="5367a-250">**키**: preventHostingStartup</span><span class="sxs-lookup"><span data-stu-id="5367a-250">**Key**: preventHostingStartup</span></span>  
-<span data-ttu-id="5367a-251">**형식**: *bool*(`true` 또는 `1`)</span><span class="sxs-lookup"><span data-stu-id="5367a-251">**Type**: *bool* (`true` or `1`)</span></span>  
-<span data-ttu-id="5367a-252">**기본값**: false</span><span class="sxs-lookup"><span data-stu-id="5367a-252">**Default**: false</span></span>  
-<span data-ttu-id="5367a-253">**설정 방법**: `UseSetting`</span><span class="sxs-lookup"><span data-stu-id="5367a-253">**Set using**: `UseSetting`</span></span>  
-<span data-ttu-id="5367a-254">**환경 변수**: `ASPNETCORE_PREVENTHOSTINGSTARTUP`</span><span class="sxs-lookup"><span data-stu-id="5367a-254">**Environment variable**: `ASPNETCORE_PREVENTHOSTINGSTARTUP`</span></span>
+<span data-ttu-id="e34e2-250">**키**: preventHostingStartup</span><span class="sxs-lookup"><span data-stu-id="e34e2-250">**Key**: preventHostingStartup</span></span>  
+<span data-ttu-id="e34e2-251">**형식**: *bool*(`true` 또는 `1`)</span><span class="sxs-lookup"><span data-stu-id="e34e2-251">**Type**: *bool* (`true` or `1`)</span></span>  
+<span data-ttu-id="e34e2-252">**기본값**: false</span><span class="sxs-lookup"><span data-stu-id="e34e2-252">**Default**: false</span></span>  
+<span data-ttu-id="e34e2-253">**설정 방법**: `UseSetting`</span><span class="sxs-lookup"><span data-stu-id="e34e2-253">**Set using**: `UseSetting`</span></span>  
+<span data-ttu-id="e34e2-254">**환경 변수**: `ASPNETCORE_PREVENTHOSTINGSTARTUP`</span><span class="sxs-lookup"><span data-stu-id="e34e2-254">**Environment variable**: `ASPNETCORE_PREVENTHOSTINGSTARTUP`</span></span>
 
 ```csharp
 WebHost.CreateDefaultBuilder(args)
     .UseSetting(WebHostDefaults.PreventHostingStartupKey, "true")
 ```
 
-### <a name="server-urls"></a><span data-ttu-id="5367a-255">서버 URL</span><span class="sxs-lookup"><span data-stu-id="5367a-255">Server URLs</span></span>
+### <a name="server-urls"></a><span data-ttu-id="e34e2-255">서버 URL</span><span class="sxs-lookup"><span data-stu-id="e34e2-255">Server URLs</span></span>
 
-<span data-ttu-id="5367a-256">서버에서 요청을 수신해야 하는 포트와 프로토콜이 있는 IP 주소 또는 호스트 주소를 나타냅니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-256">Indicates the IP addresses or host addresses with ports and protocols that the server should listen on for requests.</span></span>
+<span data-ttu-id="e34e2-256">서버에서 요청을 수신해야 하는 포트와 프로토콜이 있는 IP 주소 또는 호스트 주소를 나타냅니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-256">Indicates the IP addresses or host addresses with ports and protocols that the server should listen on for requests.</span></span>
 
-<span data-ttu-id="5367a-257">**키**: urls</span><span class="sxs-lookup"><span data-stu-id="5367a-257">**Key**: urls</span></span>  
-<span data-ttu-id="5367a-258">**형식**: *string*</span><span class="sxs-lookup"><span data-stu-id="5367a-258">**Type**: *string*</span></span>  
-<span data-ttu-id="5367a-259">**기본**: http://localhost:5000</span><span class="sxs-lookup"><span data-stu-id="5367a-259">**Default**: http://localhost:5000</span></span>  
-<span data-ttu-id="5367a-260">**설정 방법**: `UseUrls`</span><span class="sxs-lookup"><span data-stu-id="5367a-260">**Set using**: `UseUrls`</span></span>  
-<span data-ttu-id="5367a-261">**환경 변수**: `ASPNETCORE_URLS`</span><span class="sxs-lookup"><span data-stu-id="5367a-261">**Environment variable**: `ASPNETCORE_URLS`</span></span>
+<span data-ttu-id="e34e2-257">**키**: urls</span><span class="sxs-lookup"><span data-stu-id="e34e2-257">**Key**: urls</span></span>  
+<span data-ttu-id="e34e2-258">**형식**: *string*</span><span class="sxs-lookup"><span data-stu-id="e34e2-258">**Type**: *string*</span></span>  
+<span data-ttu-id="e34e2-259">**기본**: http://localhost:5000</span><span class="sxs-lookup"><span data-stu-id="e34e2-259">**Default**: http://localhost:5000</span></span>  
+<span data-ttu-id="e34e2-260">**설정 방법**: `UseUrls`</span><span class="sxs-lookup"><span data-stu-id="e34e2-260">**Set using**: `UseUrls`</span></span>  
+<span data-ttu-id="e34e2-261">**환경 변수**: `ASPNETCORE_URLS`</span><span class="sxs-lookup"><span data-stu-id="e34e2-261">**Environment variable**: `ASPNETCORE_URLS`</span></span>
 
-<span data-ttu-id="5367a-262">서버가 응답해야 하는 세미콜론으로 구분된(;) URL 접두사의 목록으로 설정합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-262">Set to a semicolon-separated (;) list of URL prefixes to which the server should respond.</span></span> <span data-ttu-id="5367a-263">예를 들어, `http://localhost:123`을 입력합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-263">For example, `http://localhost:123`.</span></span> <span data-ttu-id="5367a-264">“\*”를 사용하여 서버가 지정된 포트 및 프로토콜을 사용하는 IP 주소 또는 호스트 이름에서 요청을 수신해야 함을 나타냅니다(예: `http://*:5000`).</span><span class="sxs-lookup"><span data-stu-id="5367a-264">Use "\*" to indicate that the server should listen for requests on any IP address or hostname using the specified port and protocol (for example, `http://*:5000`).</span></span> <span data-ttu-id="5367a-265">프로토콜(`http://` 또는 `https://`)은 각 URL에 포함되어 있어야 합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-265">The protocol (`http://` or `https://`) must be included with each URL.</span></span> <span data-ttu-id="5367a-266">지원되는 형식은 서버마다 다릅니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-266">Supported formats vary among servers.</span></span>
+<span data-ttu-id="e34e2-262">서버가 응답해야 하는 세미콜론으로 구분된(;) URL 접두사의 목록으로 설정합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-262">Set to a semicolon-separated (;) list of URL prefixes to which the server should respond.</span></span> <span data-ttu-id="e34e2-263">예를 들어, `http://localhost:123`을 입력합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-263">For example, `http://localhost:123`.</span></span> <span data-ttu-id="e34e2-264">“\*”를 사용하여 서버가 지정된 포트 및 프로토콜을 사용하는 IP 주소 또는 호스트 이름에서 요청을 수신해야 함을 나타냅니다(예: `http://*:5000`).</span><span class="sxs-lookup"><span data-stu-id="e34e2-264">Use "\*" to indicate that the server should listen for requests on any IP address or hostname using the specified port and protocol (for example, `http://*:5000`).</span></span> <span data-ttu-id="e34e2-265">프로토콜(`http://` 또는 `https://`)은 각 URL에 포함되어 있어야 합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-265">The protocol (`http://` or `https://`) must be included with each URL.</span></span> <span data-ttu-id="e34e2-266">지원되는 형식은 서버마다 다릅니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-266">Supported formats vary among servers.</span></span>
 
 ```csharp
 WebHost.CreateDefaultBuilder(args)
     .UseUrls("http://*:5000;http://localhost:5001;https://hostname:5002")
 ```
 
-<span data-ttu-id="5367a-267">Kestrel에는 자체 엔드포인트 구성 API가 있습니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-267">Kestrel has its own endpoint configuration API.</span></span> <span data-ttu-id="5367a-268">자세한 내용은 <xref:fundamentals/servers/kestrel#endpoint-configuration>을 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="5367a-268">For more information, see <xref:fundamentals/servers/kestrel#endpoint-configuration>.</span></span>
+<span data-ttu-id="e34e2-267">Kestrel에는 자체 엔드포인트 구성 API가 있습니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-267">Kestrel has its own endpoint configuration API.</span></span> <span data-ttu-id="e34e2-268">자세한 내용은 <xref:fundamentals/servers/kestrel#endpoint-configuration>을 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="e34e2-268">For more information, see <xref:fundamentals/servers/kestrel#endpoint-configuration>.</span></span>
 
-### <a name="shutdown-timeout"></a><span data-ttu-id="5367a-269">시스템 종료 제한 시간</span><span class="sxs-lookup"><span data-stu-id="5367a-269">Shutdown Timeout</span></span>
+### <a name="shutdown-timeout"></a><span data-ttu-id="e34e2-269">시스템 종료 제한 시간</span><span class="sxs-lookup"><span data-stu-id="e34e2-269">Shutdown Timeout</span></span>
 
-<span data-ttu-id="5367a-270">웹 호스트가 종료될 때까지 기다리는 시간을 지정합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-270">Specifies the amount of time to wait for the web host to shut down.</span></span>
+<span data-ttu-id="e34e2-270">웹 호스트가 종료될 때까지 기다리는 시간을 지정합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-270">Specifies the amount of time to wait for the web host to shut down.</span></span>
 
-<span data-ttu-id="5367a-271">**키**: shutdownTimeoutSeconds</span><span class="sxs-lookup"><span data-stu-id="5367a-271">**Key**: shutdownTimeoutSeconds</span></span>  
-<span data-ttu-id="5367a-272">**형식**: *int*</span><span class="sxs-lookup"><span data-stu-id="5367a-272">**Type**: *int*</span></span>  
-<span data-ttu-id="5367a-273">**기본값**: 5</span><span class="sxs-lookup"><span data-stu-id="5367a-273">**Default**: 5</span></span>  
-<span data-ttu-id="5367a-274">**설정 방법**: `UseShutdownTimeout`</span><span class="sxs-lookup"><span data-stu-id="5367a-274">**Set using**: `UseShutdownTimeout`</span></span>  
-<span data-ttu-id="5367a-275">**환경 변수**: `ASPNETCORE_SHUTDOWNTIMEOUTSECONDS`</span><span class="sxs-lookup"><span data-stu-id="5367a-275">**Environment variable**: `ASPNETCORE_SHUTDOWNTIMEOUTSECONDS`</span></span>
+<span data-ttu-id="e34e2-271">**키**: shutdownTimeoutSeconds</span><span class="sxs-lookup"><span data-stu-id="e34e2-271">**Key**: shutdownTimeoutSeconds</span></span>  
+<span data-ttu-id="e34e2-272">**형식**: *int*</span><span class="sxs-lookup"><span data-stu-id="e34e2-272">**Type**: *int*</span></span>  
+<span data-ttu-id="e34e2-273">**기본값**: 5</span><span class="sxs-lookup"><span data-stu-id="e34e2-273">**Default**: 5</span></span>  
+<span data-ttu-id="e34e2-274">**설정 방법**: `UseShutdownTimeout`</span><span class="sxs-lookup"><span data-stu-id="e34e2-274">**Set using**: `UseShutdownTimeout`</span></span>  
+<span data-ttu-id="e34e2-275">**환경 변수**: `ASPNETCORE_SHUTDOWNTIMEOUTSECONDS`</span><span class="sxs-lookup"><span data-stu-id="e34e2-275">**Environment variable**: `ASPNETCORE_SHUTDOWNTIMEOUTSECONDS`</span></span>
 
-<span data-ttu-id="5367a-276">키가 `UseSetting`을 통해 *int*를 허용하더라도(예: `.UseSetting(WebHostDefaults.ShutdownTimeoutKey, "10")`) [UseShutdownTimeout](/dotnet/api/microsoft.aspnetcore.hosting.hostingabstractionswebhostbuilderextensions.useshutdowntimeout) 확장 메서드는 [TimeSpan](/dotnet/api/system.timespan)을 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-276">Although the key accepts an *int* with `UseSetting` (for example, `.UseSetting(WebHostDefaults.ShutdownTimeoutKey, "10")`), the [UseShutdownTimeout](/dotnet/api/microsoft.aspnetcore.hosting.hostingabstractionswebhostbuilderextensions.useshutdowntimeout) extension method takes a [TimeSpan](/dotnet/api/system.timespan).</span></span>
+<span data-ttu-id="e34e2-276">키가 `UseSetting`을 통해 *int*를 허용하더라도(예: `.UseSetting(WebHostDefaults.ShutdownTimeoutKey, "10")`) [UseShutdownTimeout](/dotnet/api/microsoft.aspnetcore.hosting.hostingabstractionswebhostbuilderextensions.useshutdowntimeout) 확장 메서드는 [TimeSpan](/dotnet/api/system.timespan)을 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-276">Although the key accepts an *int* with `UseSetting` (for example, `.UseSetting(WebHostDefaults.ShutdownTimeoutKey, "10")`), the [UseShutdownTimeout](/dotnet/api/microsoft.aspnetcore.hosting.hostingabstractionswebhostbuilderextensions.useshutdowntimeout) extension method takes a [TimeSpan](/dotnet/api/system.timespan).</span></span>
 
-<span data-ttu-id="5367a-277">시간 제한 기간 동안 호스팅:</span><span class="sxs-lookup"><span data-stu-id="5367a-277">During the timeout period, hosting:</span></span>
+<span data-ttu-id="e34e2-277">시간 제한 기간 동안 호스팅:</span><span class="sxs-lookup"><span data-stu-id="e34e2-277">During the timeout period, hosting:</span></span>
 
-* <span data-ttu-id="5367a-278">[IApplicationLifetime.ApplicationStopping](/dotnet/api/microsoft.aspnetcore.hosting.iapplicationlifetime.applicationstopping)을 트리거합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-278">Triggers [IApplicationLifetime.ApplicationStopping](/dotnet/api/microsoft.aspnetcore.hosting.iapplicationlifetime.applicationstopping).</span></span>
-* <span data-ttu-id="5367a-279">중지하지 못한 서비스에 대한 모든 오류를 기록하면서 호스팅된 서비스 중지를 시도합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-279">Attempts to stop hosted services, logging any errors for services that fail to stop.</span></span>
+* <span data-ttu-id="e34e2-278">[IApplicationLifetime.ApplicationStopping](/dotnet/api/microsoft.aspnetcore.hosting.iapplicationlifetime.applicationstopping)을 트리거합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-278">Triggers [IApplicationLifetime.ApplicationStopping](/dotnet/api/microsoft.aspnetcore.hosting.iapplicationlifetime.applicationstopping).</span></span>
+* <span data-ttu-id="e34e2-279">중지하지 못한 서비스에 대한 모든 오류를 기록하면서 호스팅된 서비스 중지를 시도합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-279">Attempts to stop hosted services, logging any errors for services that fail to stop.</span></span>
 
-<span data-ttu-id="5367a-280">모든 호스팅된 서비스가 중지하기 전에 시간 제한 기간이 만료되면 앱이 종료될 때 모든 활성화된 나머지 서비스가 중지됩니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-280">If the timeout period expires before all of the hosted services stop, any remaining active services are stopped when the app shuts down.</span></span> <span data-ttu-id="5367a-281">처리를 완료하지 않은 경우에도 서비스가 중지됩니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-281">The services stop even if they haven't finished processing.</span></span> <span data-ttu-id="5367a-282">서비스를 중지하는 데 시간이 더 필요한 경우 시간 제한을 늘립니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-282">If services require additional time to stop, increase the timeout.</span></span>
+<span data-ttu-id="e34e2-280">모든 호스팅된 서비스가 중지하기 전에 시간 제한 기간이 만료되면 앱이 종료될 때 모든 활성화된 나머지 서비스가 중지됩니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-280">If the timeout period expires before all of the hosted services stop, any remaining active services are stopped when the app shuts down.</span></span> <span data-ttu-id="e34e2-281">처리를 완료하지 않은 경우에도 서비스가 중지됩니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-281">The services stop even if they haven't finished processing.</span></span> <span data-ttu-id="e34e2-282">서비스를 중지하는 데 시간이 더 필요한 경우 시간 제한을 늘립니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-282">If services require additional time to stop, increase the timeout.</span></span>
 
 ```csharp
 WebHost.CreateDefaultBuilder(args)
     .UseShutdownTimeout(TimeSpan.FromSeconds(10))
 ```
 
-### <a name="startup-assembly"></a><span data-ttu-id="5367a-283">시작 어셈블리</span><span class="sxs-lookup"><span data-stu-id="5367a-283">Startup Assembly</span></span>
+### <a name="startup-assembly"></a><span data-ttu-id="e34e2-283">시작 어셈블리</span><span class="sxs-lookup"><span data-stu-id="e34e2-283">Startup Assembly</span></span>
 
-<span data-ttu-id="5367a-284">`Startup` 클래스를 검색할 어셈블리를 결정합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-284">Determines the assembly to search for the `Startup` class.</span></span>
+<span data-ttu-id="e34e2-284">`Startup` 클래스를 검색할 어셈블리를 결정합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-284">Determines the assembly to search for the `Startup` class.</span></span>
 
-<span data-ttu-id="5367a-285">**키**: startupAssembly</span><span class="sxs-lookup"><span data-stu-id="5367a-285">**Key**: startupAssembly</span></span>  
-<span data-ttu-id="5367a-286">**형식**: *string*</span><span class="sxs-lookup"><span data-stu-id="5367a-286">**Type**: *string*</span></span>  
-<span data-ttu-id="5367a-287">**기본값**: 앱의 어셈블리</span><span class="sxs-lookup"><span data-stu-id="5367a-287">**Default**: The app's assembly</span></span>  
-<span data-ttu-id="5367a-288">**설정 방법**: `UseStartup`</span><span class="sxs-lookup"><span data-stu-id="5367a-288">**Set using**: `UseStartup`</span></span>  
-<span data-ttu-id="5367a-289">**환경 변수**: `ASPNETCORE_STARTUPASSEMBLY`</span><span class="sxs-lookup"><span data-stu-id="5367a-289">**Environment variable**: `ASPNETCORE_STARTUPASSEMBLY`</span></span>
+<span data-ttu-id="e34e2-285">**키**: startupAssembly</span><span class="sxs-lookup"><span data-stu-id="e34e2-285">**Key**: startupAssembly</span></span>  
+<span data-ttu-id="e34e2-286">**형식**: *string*</span><span class="sxs-lookup"><span data-stu-id="e34e2-286">**Type**: *string*</span></span>  
+<span data-ttu-id="e34e2-287">**기본값**: 앱의 어셈블리</span><span class="sxs-lookup"><span data-stu-id="e34e2-287">**Default**: The app's assembly</span></span>  
+<span data-ttu-id="e34e2-288">**설정 방법**: `UseStartup`</span><span class="sxs-lookup"><span data-stu-id="e34e2-288">**Set using**: `UseStartup`</span></span>  
+<span data-ttu-id="e34e2-289">**환경 변수**: `ASPNETCORE_STARTUPASSEMBLY`</span><span class="sxs-lookup"><span data-stu-id="e34e2-289">**Environment variable**: `ASPNETCORE_STARTUPASSEMBLY`</span></span>
 
-<span data-ttu-id="5367a-290">이름(`string`) 또는 형식(`TStartup`)별 어셈블리를 참조할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-290">The assembly by name (`string`) or type (`TStartup`) can be referenced.</span></span> <span data-ttu-id="5367a-291">`UseStartup` 메서드가 여러 개 호출된 경우 마지막 메서드가 우선 적용됩니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-291">If multiple `UseStartup` methods are called, the last one takes precedence.</span></span>
+<span data-ttu-id="e34e2-290">이름(`string`) 또는 형식(`TStartup`)별 어셈블리를 참조할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-290">The assembly by name (`string`) or type (`TStartup`) can be referenced.</span></span> <span data-ttu-id="e34e2-291">`UseStartup` 메서드가 여러 개 호출된 경우 마지막 메서드가 우선 적용됩니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-291">If multiple `UseStartup` methods are called, the last one takes precedence.</span></span>
 
 ```csharp
 WebHost.CreateDefaultBuilder(args)
@@ -356,26 +359,26 @@ WebHost.CreateDefaultBuilder(args)
     .UseStartup<TStartup>()
 ```
 
-### <a name="web-root"></a><span data-ttu-id="5367a-292">웹 루트</span><span class="sxs-lookup"><span data-stu-id="5367a-292">Web Root</span></span>
+### <a name="web-root"></a><span data-ttu-id="e34e2-292">웹 루트</span><span class="sxs-lookup"><span data-stu-id="e34e2-292">Web Root</span></span>
 
-<span data-ttu-id="5367a-293">앱의 정적 자산에 대한 상대 경로를 설정합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-293">Sets the relative path to the app's static assets.</span></span>
+<span data-ttu-id="e34e2-293">앱의 정적 자산에 대한 상대 경로를 설정합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-293">Sets the relative path to the app's static assets.</span></span>
 
-<span data-ttu-id="5367a-294">**키**: webroot</span><span class="sxs-lookup"><span data-stu-id="5367a-294">**Key**: webroot</span></span>  
-<span data-ttu-id="5367a-295">**형식**: *string*</span><span class="sxs-lookup"><span data-stu-id="5367a-295">**Type**: *string*</span></span>  
-<span data-ttu-id="5367a-296">**기본값**: 기본값이 지정되지 않은 경우 기본값은 “(Content Root)/wwwroot”입니다(경로가 존재하는 경우).</span><span class="sxs-lookup"><span data-stu-id="5367a-296">**Default**: If not specified, the default is "(Content Root)/wwwroot", if the path exists.</span></span> <span data-ttu-id="5367a-297">경로가 존재하지 않다면 no-op 파일 공급자가 사용됩니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-297">If the path doesn't exist, then a no-op file provider is used.</span></span>  
-<span data-ttu-id="5367a-298">**설정 방법**: `UseWebRoot`</span><span class="sxs-lookup"><span data-stu-id="5367a-298">**Set using**: `UseWebRoot`</span></span>  
-<span data-ttu-id="5367a-299">**환경 변수**: `ASPNETCORE_WEBROOT`</span><span class="sxs-lookup"><span data-stu-id="5367a-299">**Environment variable**: `ASPNETCORE_WEBROOT`</span></span>
+<span data-ttu-id="e34e2-294">**키**: webroot</span><span class="sxs-lookup"><span data-stu-id="e34e2-294">**Key**: webroot</span></span>  
+<span data-ttu-id="e34e2-295">**형식**: *string*</span><span class="sxs-lookup"><span data-stu-id="e34e2-295">**Type**: *string*</span></span>  
+<span data-ttu-id="e34e2-296">**기본값**: 기본값이 지정되지 않은 경우 기본값은 “(Content Root)/wwwroot”입니다(경로가 존재하는 경우).</span><span class="sxs-lookup"><span data-stu-id="e34e2-296">**Default**: If not specified, the default is "(Content Root)/wwwroot", if the path exists.</span></span> <span data-ttu-id="e34e2-297">경로가 존재하지 않다면 no-op 파일 공급자가 사용됩니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-297">If the path doesn't exist, then a no-op file provider is used.</span></span>  
+<span data-ttu-id="e34e2-298">**설정 방법**: `UseWebRoot`</span><span class="sxs-lookup"><span data-stu-id="e34e2-298">**Set using**: `UseWebRoot`</span></span>  
+<span data-ttu-id="e34e2-299">**환경 변수**: `ASPNETCORE_WEBROOT`</span><span class="sxs-lookup"><span data-stu-id="e34e2-299">**Environment variable**: `ASPNETCORE_WEBROOT`</span></span>
 
 ```csharp
 WebHost.CreateDefaultBuilder(args)
     .UseWebRoot("public")
 ```
 
-## <a name="override-configuration"></a><span data-ttu-id="5367a-300">구성 재정의</span><span class="sxs-lookup"><span data-stu-id="5367a-300">Override configuration</span></span>
+## <a name="override-configuration"></a><span data-ttu-id="e34e2-300">구성 재정의</span><span class="sxs-lookup"><span data-stu-id="e34e2-300">Override configuration</span></span>
 
-<span data-ttu-id="5367a-301">[구성](xref:fundamentals/configuration/index)을 사용하여 웹 호스트를 구성합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-301">Use [Configuration](xref:fundamentals/configuration/index) to configure the web host.</span></span> <span data-ttu-id="5367a-302">다음 예제에서는 호스트 구성이 필요에 따라 *hostsettings.json* 파일에 지정됩니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-302">In the following example, host configuration is optionally specified in a *hostsettings.json* file.</span></span> <span data-ttu-id="5367a-303">*hostsettings.json* 파일에서 로드된 모든 구성은 명령줄 인수에 의해 재정의될 수도 있습니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-303">Any configuration loaded from the *hostsettings.json* file may be overridden by command-line arguments.</span></span> <span data-ttu-id="5367a-304">빌드된 구성(`config`에 있음)은 [UseConfiguration](/dotnet/api/microsoft.aspnetcore.hosting.hostingabstractionswebhostbuilderextensions.useconfiguration)을 통해 호스트를 구성하는 데 사용됩니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-304">The built configuration (in `config`) is used to configure the host with [UseConfiguration](/dotnet/api/microsoft.aspnetcore.hosting.hostingabstractionswebhostbuilderextensions.useconfiguration).</span></span> <span data-ttu-id="5367a-305">`IWebHostBuilder` 구성이 앱의 구성에 추가되지만 반대의 경우에는 true가 아닙니다. &mdash;`ConfigureAppConfiguration`은 `IWebHostBuilder` 구성에 영향을 주지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-305">`IWebHostBuilder` configuration is added to the app's configuration, but the converse isn't true&mdash;`ConfigureAppConfiguration` doesn't affect the `IWebHostBuilder` configuration.</span></span>
+<span data-ttu-id="e34e2-301">[구성](xref:fundamentals/configuration/index)을 사용하여 웹 호스트를 구성합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-301">Use [Configuration](xref:fundamentals/configuration/index) to configure the web host.</span></span> <span data-ttu-id="e34e2-302">다음 예제에서는 호스트 구성이 필요에 따라 *hostsettings.json* 파일에 지정됩니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-302">In the following example, host configuration is optionally specified in a *hostsettings.json* file.</span></span> <span data-ttu-id="e34e2-303">*hostsettings.json* 파일에서 로드된 모든 구성은 명령줄 인수에 의해 재정의될 수도 있습니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-303">Any configuration loaded from the *hostsettings.json* file may be overridden by command-line arguments.</span></span> <span data-ttu-id="e34e2-304">빌드된 구성(`config`에 있음)은 [UseConfiguration](/dotnet/api/microsoft.aspnetcore.hosting.hostingabstractionswebhostbuilderextensions.useconfiguration)을 통해 호스트를 구성하는 데 사용됩니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-304">The built configuration (in `config`) is used to configure the host with [UseConfiguration](/dotnet/api/microsoft.aspnetcore.hosting.hostingabstractionswebhostbuilderextensions.useconfiguration).</span></span> <span data-ttu-id="e34e2-305">`IWebHostBuilder` 구성이 앱의 구성에 추가되지만 반대의 경우에는 true가 아닙니다. &mdash;`ConfigureAppConfiguration`은 `IWebHostBuilder` 구성에 영향을 주지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-305">`IWebHostBuilder` configuration is added to the app's configuration, but the converse isn't true&mdash;`ConfigureAppConfiguration` doesn't affect the `IWebHostBuilder` configuration.</span></span>
 
-<span data-ttu-id="5367a-306">먼저 *hostsettings.json* 구성으로 `UseUrls`에 의해 제공되는 구성을 재정의하고, 두 번째로 명령줄 인수 구성을 재정의합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-306">Overriding the configuration provided by `UseUrls` with *hostsettings.json* config first, command-line argument config second:</span></span>
+<span data-ttu-id="e34e2-306">먼저 *hostsettings.json* 구성으로 `UseUrls`에 의해 제공되는 구성을 재정의하고, 두 번째로 명령줄 인수 구성을 재정의합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-306">Overriding the configuration provided by `UseUrls` with *hostsettings.json* config first, command-line argument config second:</span></span>
 
 ```csharp
 public class Program
@@ -405,7 +408,7 @@ public class Program
 }
 ```
 
-<span data-ttu-id="5367a-307">*hostsettings.json*:</span><span class="sxs-lookup"><span data-stu-id="5367a-307">*hostsettings.json*:</span></span>
+<span data-ttu-id="e34e2-307">*hostsettings.json*:</span><span class="sxs-lookup"><span data-stu-id="e34e2-307">*hostsettings.json*:</span></span>
 
 ```json
 {
@@ -414,29 +417,29 @@ public class Program
 ```
 
 > [!NOTE]
-> <span data-ttu-id="5367a-308">[UseConfiguration](/dotnet/api/microsoft.aspnetcore.hosting.hostingabstractionswebhostbuilderextensions.useconfiguration) 확장 메서드는 현재 `GetSection`에서 반환되는 구성 섹션을 구문 분석할 수 없습니다(예: `.UseConfiguration(Configuration.GetSection("section"))`).</span><span class="sxs-lookup"><span data-stu-id="5367a-308">The [UseConfiguration](/dotnet/api/microsoft.aspnetcore.hosting.hostingabstractionswebhostbuilderextensions.useconfiguration) extension method isn't currently capable of parsing a configuration section returned by `GetSection` (for example, `.UseConfiguration(Configuration.GetSection("section"))`.</span></span> <span data-ttu-id="5367a-309">`GetSection` 메서드는 요청된 섹션에 대한 구성 키를 필터링하지만 키에 있는 섹션 이름을 그대로 둡니다(예: `section:urls`, `section:environment`).</span><span class="sxs-lookup"><span data-stu-id="5367a-309">The `GetSection` method filters the configuration keys to the section requested but leaves the section name on the keys (for example, `section:urls`, `section:environment`).</span></span> <span data-ttu-id="5367a-310">`UseConfiguration` 메서드에서는 키가 `WebHostBuilder` 키와 일치해야 합니다(예: `urls`, `environment`).</span><span class="sxs-lookup"><span data-stu-id="5367a-310">The `UseConfiguration` method expects the keys to match the `WebHostBuilder` keys (for example, `urls`, `environment`).</span></span> <span data-ttu-id="5367a-311">키에서 섹션 이름의 존재는 섹션 값으로 호스트를 구성할 수 없도록 합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-311">The presence of the section name on the keys prevents the section's values from configuring the host.</span></span> <span data-ttu-id="5367a-312">이 문제는 향후 릴리스에서 해결될 예정입니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-312">This issue will be addressed in an upcoming release.</span></span> <span data-ttu-id="5367a-313">자세한 내용 및 해결 방법은 [전체 키를 사용하여 WebHostBuilder.UseConfiguration에 구성 섹션을 전달](https://github.com/aspnet/Hosting/issues/839)을 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="5367a-313">For more information and workarounds, see [Passing configuration section into WebHostBuilder.UseConfiguration uses full keys](https://github.com/aspnet/Hosting/issues/839).</span></span>
+> <span data-ttu-id="e34e2-308">[UseConfiguration](/dotnet/api/microsoft.aspnetcore.hosting.hostingabstractionswebhostbuilderextensions.useconfiguration) 확장 메서드는 현재 `GetSection`에서 반환되는 구성 섹션을 구문 분석할 수 없습니다(예: `.UseConfiguration(Configuration.GetSection("section"))`).</span><span class="sxs-lookup"><span data-stu-id="e34e2-308">The [UseConfiguration](/dotnet/api/microsoft.aspnetcore.hosting.hostingabstractionswebhostbuilderextensions.useconfiguration) extension method isn't currently capable of parsing a configuration section returned by `GetSection` (for example, `.UseConfiguration(Configuration.GetSection("section"))`.</span></span> <span data-ttu-id="e34e2-309">`GetSection` 메서드는 요청된 섹션에 대한 구성 키를 필터링하지만 키에 있는 섹션 이름을 그대로 둡니다(예: `section:urls`, `section:environment`).</span><span class="sxs-lookup"><span data-stu-id="e34e2-309">The `GetSection` method filters the configuration keys to the section requested but leaves the section name on the keys (for example, `section:urls`, `section:environment`).</span></span> <span data-ttu-id="e34e2-310">`UseConfiguration` 메서드에서는 키가 `WebHostBuilder` 키와 일치해야 합니다(예: `urls`, `environment`).</span><span class="sxs-lookup"><span data-stu-id="e34e2-310">The `UseConfiguration` method expects the keys to match the `WebHostBuilder` keys (for example, `urls`, `environment`).</span></span> <span data-ttu-id="e34e2-311">키에서 섹션 이름의 존재는 섹션 값으로 호스트를 구성할 수 없도록 합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-311">The presence of the section name on the keys prevents the section's values from configuring the host.</span></span> <span data-ttu-id="e34e2-312">이 문제는 향후 릴리스에서 해결될 예정입니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-312">This issue will be addressed in an upcoming release.</span></span> <span data-ttu-id="e34e2-313">자세한 내용 및 해결 방법은 [전체 키를 사용하여 WebHostBuilder.UseConfiguration에 구성 섹션을 전달](https://github.com/aspnet/Hosting/issues/839)을 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="e34e2-313">For more information and workarounds, see [Passing configuration section into WebHostBuilder.UseConfiguration uses full keys](https://github.com/aspnet/Hosting/issues/839).</span></span>
 >
-> <span data-ttu-id="5367a-314">`UseConfiguration`은 제공된 `IConfiguration`의 키만 호스트 빌더 구성으로 복사합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-314">`UseConfiguration` only copies keys from the provided `IConfiguration` to the host builder configuration.</span></span> <span data-ttu-id="5367a-315">따라서 JSON, INI 및 XML 설정 파일에 대해 `reloadOnChange: true`를 설정해도 영향을 미치지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-315">Therefore, setting `reloadOnChange: true` for JSON, INI, and XML settings files has no effect.</span></span>
+> <span data-ttu-id="e34e2-314">`UseConfiguration`은 제공된 `IConfiguration`의 키만 호스트 빌더 구성으로 복사합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-314">`UseConfiguration` only copies keys from the provided `IConfiguration` to the host builder configuration.</span></span> <span data-ttu-id="e34e2-315">따라서 JSON, INI 및 XML 설정 파일에 대해 `reloadOnChange: true`를 설정해도 영향을 미치지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-315">Therefore, setting `reloadOnChange: true` for JSON, INI, and XML settings files has no effect.</span></span>
 
-<span data-ttu-id="5367a-316">특정 URL에서 실행하는 호스트를 지정하려면 [dotnet run](/dotnet/core/tools/dotnet-run) 실행 시 원하는 값을 명령 프롬프트에서 전달할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-316">To specify the host run on a particular URL, the desired value can be passed in from a command prompt when executing [dotnet run](/dotnet/core/tools/dotnet-run).</span></span> <span data-ttu-id="5367a-317">명령줄 인수는 *hostsettings.json* 파일의 `urls` 값을 재정의하고, 서버는 포트 8080에서 수신합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-317">The command-line argument overrides the `urls` value from the *hostsettings.json* file, and the server listens on port 8080:</span></span>
+<span data-ttu-id="e34e2-316">특정 URL에서 실행하는 호스트를 지정하려면 [dotnet run](/dotnet/core/tools/dotnet-run) 실행 시 원하는 값을 명령 프롬프트에서 전달할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-316">To specify the host run on a particular URL, the desired value can be passed in from a command prompt when executing [dotnet run](/dotnet/core/tools/dotnet-run).</span></span> <span data-ttu-id="e34e2-317">명령줄 인수는 *hostsettings.json* 파일의 `urls` 값을 재정의하고, 서버는 포트 8080에서 수신합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-317">The command-line argument overrides the `urls` value from the *hostsettings.json* file, and the server listens on port 8080:</span></span>
 
 ```console
 dotnet run --urls "http://*:8080"
 ```
 
-## <a name="manage-the-host"></a><span data-ttu-id="5367a-318">호스트 관리</span><span class="sxs-lookup"><span data-stu-id="5367a-318">Manage the host</span></span>
+## <a name="manage-the-host"></a><span data-ttu-id="e34e2-318">호스트 관리</span><span class="sxs-lookup"><span data-stu-id="e34e2-318">Manage the host</span></span>
 
-<span data-ttu-id="5367a-319">**실행**</span><span class="sxs-lookup"><span data-stu-id="5367a-319">**Run**</span></span>
+<span data-ttu-id="e34e2-319">**실행**</span><span class="sxs-lookup"><span data-stu-id="e34e2-319">**Run**</span></span>
 
-<span data-ttu-id="5367a-320">`Run` 메서드는 웹앱을 시작하고 호스트가 종료될 때까지 호출 스레드를 차단합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-320">The `Run` method starts the web app and blocks the calling thread until the host is shut down:</span></span>
+<span data-ttu-id="e34e2-320">`Run` 메서드는 웹앱을 시작하고 호스트가 종료될 때까지 호출 스레드를 차단합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-320">The `Run` method starts the web app and blocks the calling thread until the host is shut down:</span></span>
 
 ```csharp
 host.Run();
 ```
 
-<span data-ttu-id="5367a-321">**시작**</span><span class="sxs-lookup"><span data-stu-id="5367a-321">**Start**</span></span>
+<span data-ttu-id="e34e2-321">**시작**</span><span class="sxs-lookup"><span data-stu-id="e34e2-321">**Start**</span></span>
 
-<span data-ttu-id="5367a-322">해당 `Start` 메서드를 호출하여 비차단 방식으로 호스트를 실행합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-322">Run the host in a non-blocking manner by calling its `Start` method:</span></span>
+<span data-ttu-id="e34e2-322">해당 `Start` 메서드를 호출하여 비차단 방식으로 호스트를 실행합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-322">Run the host in a non-blocking manner by calling its `Start` method:</span></span>
 
 ```csharp
 using (host)
@@ -446,7 +449,7 @@ using (host)
 }
 ```
 
-<span data-ttu-id="5367a-323">URL 목록이 `Start` 메서드에 전달되면 지정된 URL에서 수신합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-323">If a list of URLs is passed to the `Start` method, it listens on the URLs specified:</span></span>
+<span data-ttu-id="e34e2-323">URL 목록이 `Start` 메서드에 전달되면 지정된 URL에서 수신합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-323">If a list of URLs is passed to the `Start` method, it listens on the URLs specified:</span></span>
 
 ```csharp
 var urls = new List<string>()
@@ -466,11 +469,11 @@ using (host)
 }
 ```
 
-<span data-ttu-id="5367a-324">앱은 정적 편의 메서드를 사용하여 `CreateDefaultBuilder`의 미리 구성된 기본 값을 사용하는 새 호스트를 초기화하고 시작합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-324">The app can initialize and start a new host using the pre-configured defaults of `CreateDefaultBuilder` using a static convenience method.</span></span> <span data-ttu-id="5367a-325">이러한 메서드는 콘솔 출력 없이 서버를 시작하고 [WaitForShutdown](/dotnet/api/microsoft.aspnetcore.hosting.webhostextensions.waitforshutdown)으로 중단(Ctrl-C/SIGINT 또는 SIGTERM)될 때까지 대기합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-325">These methods start the server without console output and with [WaitForShutdown](/dotnet/api/microsoft.aspnetcore.hosting.webhostextensions.waitforshutdown) wait for a break (Ctrl-C/SIGINT or SIGTERM):</span></span>
+<span data-ttu-id="e34e2-324">앱은 정적 편의 메서드를 사용하여 `CreateDefaultBuilder`의 미리 구성된 기본 값을 사용하는 새 호스트를 초기화하고 시작합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-324">The app can initialize and start a new host using the pre-configured defaults of `CreateDefaultBuilder` using a static convenience method.</span></span> <span data-ttu-id="e34e2-325">이러한 메서드는 콘솔 출력 없이 서버를 시작하고 [WaitForShutdown](/dotnet/api/microsoft.aspnetcore.hosting.webhostextensions.waitforshutdown)으로 중단(Ctrl-C/SIGINT 또는 SIGTERM)될 때까지 대기합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-325">These methods start the server without console output and with [WaitForShutdown](/dotnet/api/microsoft.aspnetcore.hosting.webhostextensions.waitforshutdown) wait for a break (Ctrl-C/SIGINT or SIGTERM):</span></span>
 
-<span data-ttu-id="5367a-326">**Start(RequestDelegate app)**</span><span class="sxs-lookup"><span data-stu-id="5367a-326">**Start(RequestDelegate app)**</span></span>
+<span data-ttu-id="e34e2-326">**Start(RequestDelegate app)**</span><span class="sxs-lookup"><span data-stu-id="e34e2-326">**Start(RequestDelegate app)**</span></span>
 
-<span data-ttu-id="5367a-327">`RequestDelegate`로 시작합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-327">Start with a `RequestDelegate`:</span></span>
+<span data-ttu-id="e34e2-327">`RequestDelegate`로 시작합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-327">Start with a `RequestDelegate`:</span></span>
 
 ```csharp
 using (var host = WebHost.Start(app => app.Response.WriteAsync("Hello, World!")))
@@ -480,11 +483,11 @@ using (var host = WebHost.Start(app => app.Response.WriteAsync("Hello, World!"))
 }
 ```
 
-<span data-ttu-id="5367a-328">`http://localhost:5000`에 대한 브라우저에서 요청을 수행하여 “Hello World!” 응답을 수신합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-328">Make a request in the browser to `http://localhost:5000` to receive the response "Hello World!"</span></span> <span data-ttu-id="5367a-329">`WaitForShutdown`은 중단(Ctrl-C/SIGINT 또는 SIGTERM)이 발생할 때까지 차단합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-329">`WaitForShutdown` blocks until a break (Ctrl-C/SIGINT or SIGTERM) is issued.</span></span> <span data-ttu-id="5367a-330">앱은 `Console.WriteLine` 메시지를 표시하고 keypress가 종료될 때까지 대기합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-330">The app displays the `Console.WriteLine` message and waits for a keypress to exit.</span></span>
+<span data-ttu-id="e34e2-328">`http://localhost:5000`에 대한 브라우저에서 요청을 수행하여 “Hello World!” 응답을 수신합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-328">Make a request in the browser to `http://localhost:5000` to receive the response "Hello World!"</span></span> <span data-ttu-id="e34e2-329">`WaitForShutdown`은 중단(Ctrl-C/SIGINT 또는 SIGTERM)이 발생할 때까지 차단합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-329">`WaitForShutdown` blocks until a break (Ctrl-C/SIGINT or SIGTERM) is issued.</span></span> <span data-ttu-id="e34e2-330">앱은 `Console.WriteLine` 메시지를 표시하고 keypress가 종료될 때까지 대기합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-330">The app displays the `Console.WriteLine` message and waits for a keypress to exit.</span></span>
 
-<span data-ttu-id="5367a-331">**Start(string url, RequestDelegate app)**</span><span class="sxs-lookup"><span data-stu-id="5367a-331">**Start(string url, RequestDelegate app)**</span></span>
+<span data-ttu-id="e34e2-331">**Start(string url, RequestDelegate app)**</span><span class="sxs-lookup"><span data-stu-id="e34e2-331">**Start(string url, RequestDelegate app)**</span></span>
 
-<span data-ttu-id="5367a-332">URL 및 `RequestDelegate`로 시작합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-332">Start with a URL and `RequestDelegate`:</span></span>
+<span data-ttu-id="e34e2-332">URL 및 `RequestDelegate`로 시작합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-332">Start with a URL and `RequestDelegate`:</span></span>
 
 ```csharp
 using (var host = WebHost.Start("http://localhost:8080", app => app.Response.WriteAsync("Hello, World!")))
@@ -494,11 +497,11 @@ using (var host = WebHost.Start("http://localhost:8080", app => app.Response.Wri
 }
 ```
 
-<span data-ttu-id="5367a-333">앱이 `http://localhost:8080`에서 응답한다는 점을 제외하고 **Start(RequestDelegate app)** 와 동일한 결과가 생성됩니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-333">Produces the same result as **Start(RequestDelegate app)**, except the app responds on `http://localhost:8080`.</span></span>
+<span data-ttu-id="e34e2-333">앱이 `http://localhost:8080`에서 응답한다는 점을 제외하고 **Start(RequestDelegate app)** 와 동일한 결과가 생성됩니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-333">Produces the same result as **Start(RequestDelegate app)**, except the app responds on `http://localhost:8080`.</span></span>
 
-<span data-ttu-id="5367a-334">**Start(Action&lt;IRouteBuilder&gt; routeBuilder)**</span><span class="sxs-lookup"><span data-stu-id="5367a-334">**Start(Action&lt;IRouteBuilder&gt; routeBuilder)**</span></span>
+<span data-ttu-id="e34e2-334">**Start(Action&lt;IRouteBuilder&gt; routeBuilder)**</span><span class="sxs-lookup"><span data-stu-id="e34e2-334">**Start(Action&lt;IRouteBuilder&gt; routeBuilder)**</span></span>
 
-<span data-ttu-id="5367a-335">`IRouteBuilder`의 인스턴스([Microsoft.AspNetCore.Routing](https://www.nuget.org/packages/Microsoft.AspNetCore.Routing/))를 사용하여 라우팅 미들웨어를 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-335">Use an instance of `IRouteBuilder` ([Microsoft.AspNetCore.Routing](https://www.nuget.org/packages/Microsoft.AspNetCore.Routing/)) to use routing middleware:</span></span>
+<span data-ttu-id="e34e2-335">`IRouteBuilder`의 인스턴스([Microsoft.AspNetCore.Routing](https://www.nuget.org/packages/Microsoft.AspNetCore.Routing/))를 사용하여 라우팅 미들웨어를 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-335">Use an instance of `IRouteBuilder` ([Microsoft.AspNetCore.Routing](https://www.nuget.org/packages/Microsoft.AspNetCore.Routing/)) to use routing middleware:</span></span>
 
 ```csharp
 using (var host = WebHost.Start(router => router
@@ -517,22 +520,22 @@ using (var host = WebHost.Start(router => router
 }
 ```
 
-<span data-ttu-id="5367a-336">예제에서는 다음 브라우저 요청을 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-336">Use the following browser requests with the example:</span></span>
+<span data-ttu-id="e34e2-336">예제에서는 다음 브라우저 요청을 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-336">Use the following browser requests with the example:</span></span>
 
-| <span data-ttu-id="5367a-337">요청</span><span class="sxs-lookup"><span data-stu-id="5367a-337">Request</span></span>                                    | <span data-ttu-id="5367a-338">응답</span><span class="sxs-lookup"><span data-stu-id="5367a-338">Response</span></span>                                 |
+| <span data-ttu-id="e34e2-337">요청</span><span class="sxs-lookup"><span data-stu-id="e34e2-337">Request</span></span>                                    | <span data-ttu-id="e34e2-338">응답</span><span class="sxs-lookup"><span data-stu-id="e34e2-338">Response</span></span>                                 |
 | ------------------------------------------ | ---------------------------------------- |
-| `http://localhost:5000/hello/Martin`       | <span data-ttu-id="5367a-339">Hello, Martin!</span><span class="sxs-lookup"><span data-stu-id="5367a-339">Hello, Martin!</span></span>                           |
-| `http://localhost:5000/buenosdias/Catrina` | <span data-ttu-id="5367a-340">Buenos dias, Catrina!</span><span class="sxs-lookup"><span data-stu-id="5367a-340">Buenos dias, Catrina!</span></span>                    |
-| `http://localhost:5000/throw/ooops!`       | <span data-ttu-id="5367a-341">“ooops!” 문자열을 사용하여 예외를 throw합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-341">Throws an exception with string "ooops!"</span></span> |
-| `http://localhost:5000/throw`              | <span data-ttu-id="5367a-342">“Uh oh!” 문자열을 사용하여 예외를 throw합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-342">Throws an exception with string "Uh oh!"</span></span> |
-| `http://localhost:5000/Sante/Kevin`        | <span data-ttu-id="5367a-343">Sante, Kevin!</span><span class="sxs-lookup"><span data-stu-id="5367a-343">Sante, Kevin!</span></span>                            |
-| `http://localhost:5000`                    | <span data-ttu-id="5367a-344">Hello World!</span><span class="sxs-lookup"><span data-stu-id="5367a-344">Hello World!</span></span>                             |
+| `http://localhost:5000/hello/Martin`       | <span data-ttu-id="e34e2-339">Hello, Martin!</span><span class="sxs-lookup"><span data-stu-id="e34e2-339">Hello, Martin!</span></span>                           |
+| `http://localhost:5000/buenosdias/Catrina` | <span data-ttu-id="e34e2-340">Buenos dias, Catrina!</span><span class="sxs-lookup"><span data-stu-id="e34e2-340">Buenos dias, Catrina!</span></span>                    |
+| `http://localhost:5000/throw/ooops!`       | <span data-ttu-id="e34e2-341">“ooops!” 문자열을 사용하여 예외를 throw합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-341">Throws an exception with string "ooops!"</span></span> |
+| `http://localhost:5000/throw`              | <span data-ttu-id="e34e2-342">“Uh oh!” 문자열을 사용하여 예외를 throw합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-342">Throws an exception with string "Uh oh!"</span></span> |
+| `http://localhost:5000/Sante/Kevin`        | <span data-ttu-id="e34e2-343">Sante, Kevin!</span><span class="sxs-lookup"><span data-stu-id="e34e2-343">Sante, Kevin!</span></span>                            |
+| `http://localhost:5000`                    | <span data-ttu-id="e34e2-344">Hello World!</span><span class="sxs-lookup"><span data-stu-id="e34e2-344">Hello World!</span></span>                             |
 
-<span data-ttu-id="5367a-345">`WaitForShutdown`은 중단(Ctrl-C/SIGINT 또는 SIGTERM)이 발생할 때까지 차단합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-345">`WaitForShutdown` blocks until a break (Ctrl-C/SIGINT or SIGTERM) is issued.</span></span> <span data-ttu-id="5367a-346">앱은 `Console.WriteLine` 메시지를 표시하고 keypress가 종료될 때까지 대기합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-346">The app displays the `Console.WriteLine` message and waits for a keypress to exit.</span></span>
+<span data-ttu-id="e34e2-345">`WaitForShutdown`은 중단(Ctrl-C/SIGINT 또는 SIGTERM)이 발생할 때까지 차단합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-345">`WaitForShutdown` blocks until a break (Ctrl-C/SIGINT or SIGTERM) is issued.</span></span> <span data-ttu-id="e34e2-346">앱은 `Console.WriteLine` 메시지를 표시하고 keypress가 종료될 때까지 대기합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-346">The app displays the `Console.WriteLine` message and waits for a keypress to exit.</span></span>
 
-<span data-ttu-id="5367a-347">**Start(string url, Action&lt;IRouteBuilder&gt; routeBuilder)**</span><span class="sxs-lookup"><span data-stu-id="5367a-347">**Start(string url, Action&lt;IRouteBuilder&gt; routeBuilder)**</span></span>
+<span data-ttu-id="e34e2-347">**Start(string url, Action&lt;IRouteBuilder&gt; routeBuilder)**</span><span class="sxs-lookup"><span data-stu-id="e34e2-347">**Start(string url, Action&lt;IRouteBuilder&gt; routeBuilder)**</span></span>
 
-<span data-ttu-id="5367a-348">URL 및 `IRouteBuilder`의 인스턴스를 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-348">Use a URL and an instance of `IRouteBuilder`:</span></span>
+<span data-ttu-id="e34e2-348">URL 및 `IRouteBuilder`의 인스턴스를 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-348">Use a URL and an instance of `IRouteBuilder`:</span></span>
 
 ```csharp
 using (var host = WebHost.Start("http://localhost:8080", router => router
@@ -551,11 +554,11 @@ using (var host = WebHost.Start("http://localhost:8080", router => router
 }
 ```
 
-<span data-ttu-id="5367a-349">앱이 `http://localhost:8080`에서 응답한다는 점을 제외하고 **Start(Action&lt;IRouteBuilder&gt; routeBuilder)** 와 동일한 결과가 생성됩니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-349">Produces the same result as **Start(Action&lt;IRouteBuilder&gt; routeBuilder)**, except the app responds at `http://localhost:8080`.</span></span>
+<span data-ttu-id="e34e2-349">앱이 `http://localhost:8080`에서 응답한다는 점을 제외하고 **Start(Action&lt;IRouteBuilder&gt; routeBuilder)** 와 동일한 결과가 생성됩니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-349">Produces the same result as **Start(Action&lt;IRouteBuilder&gt; routeBuilder)**, except the app responds at `http://localhost:8080`.</span></span>
 
-<span data-ttu-id="5367a-350">**StartWith(Action&lt;IApplicationBuilder&gt; app)**</span><span class="sxs-lookup"><span data-stu-id="5367a-350">**StartWith(Action&lt;IApplicationBuilder&gt; app)**</span></span>
+<span data-ttu-id="e34e2-350">**StartWith(Action&lt;IApplicationBuilder&gt; app)**</span><span class="sxs-lookup"><span data-stu-id="e34e2-350">**StartWith(Action&lt;IApplicationBuilder&gt; app)**</span></span>
 
-<span data-ttu-id="5367a-351">대리자를 제공하여 `IApplicationBuilder`를 구성합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-351">Provide a delegate to configure an `IApplicationBuilder`:</span></span>
+<span data-ttu-id="e34e2-351">대리자를 제공하여 `IApplicationBuilder`를 구성합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-351">Provide a delegate to configure an `IApplicationBuilder`:</span></span>
 
 ```csharp
 using (var host = WebHost.StartWith(app => 
@@ -572,11 +575,11 @@ using (var host = WebHost.StartWith(app =>
 }
 ```
 
-<span data-ttu-id="5367a-352">`http://localhost:5000`에 대한 브라우저에서 요청을 수행하여 “Hello World!” 응답을 수신합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-352">Make a request in the browser to `http://localhost:5000` to receive the response "Hello World!"</span></span> <span data-ttu-id="5367a-353">`WaitForShutdown`은 중단(Ctrl-C/SIGINT 또는 SIGTERM)이 발생할 때까지 차단합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-353">`WaitForShutdown` blocks until a break (Ctrl-C/SIGINT or SIGTERM) is issued.</span></span> <span data-ttu-id="5367a-354">앱은 `Console.WriteLine` 메시지를 표시하고 keypress가 종료될 때까지 대기합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-354">The app displays the `Console.WriteLine` message and waits for a keypress to exit.</span></span>
+<span data-ttu-id="e34e2-352">`http://localhost:5000`에 대한 브라우저에서 요청을 수행하여 “Hello World!” 응답을 수신합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-352">Make a request in the browser to `http://localhost:5000` to receive the response "Hello World!"</span></span> <span data-ttu-id="e34e2-353">`WaitForShutdown`은 중단(Ctrl-C/SIGINT 또는 SIGTERM)이 발생할 때까지 차단합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-353">`WaitForShutdown` blocks until a break (Ctrl-C/SIGINT or SIGTERM) is issued.</span></span> <span data-ttu-id="e34e2-354">앱은 `Console.WriteLine` 메시지를 표시하고 keypress가 종료될 때까지 대기합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-354">The app displays the `Console.WriteLine` message and waits for a keypress to exit.</span></span>
 
-<span data-ttu-id="5367a-355">**StartWith(string url, Action&lt;IApplicationBuilder&gt; app)**</span><span class="sxs-lookup"><span data-stu-id="5367a-355">**StartWith(string url, Action&lt;IApplicationBuilder&gt; app)**</span></span>
+<span data-ttu-id="e34e2-355">**StartWith(string url, Action&lt;IApplicationBuilder&gt; app)**</span><span class="sxs-lookup"><span data-stu-id="e34e2-355">**StartWith(string url, Action&lt;IApplicationBuilder&gt; app)**</span></span>
 
-<span data-ttu-id="5367a-356">URL 및 대리자를 제공하여 `IApplicationBuilder`를 구성합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-356">Provide a URL and a delegate to configure an `IApplicationBuilder`:</span></span>
+<span data-ttu-id="e34e2-356">URL 및 대리자를 제공하여 `IApplicationBuilder`를 구성합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-356">Provide a URL and a delegate to configure an `IApplicationBuilder`:</span></span>
 
 ```csharp
 using (var host = WebHost.StartWith("http://localhost:8080", app => 
@@ -593,11 +596,11 @@ using (var host = WebHost.StartWith("http://localhost:8080", app =>
 }
 ```
 
-<span data-ttu-id="5367a-357">앱이 `http://localhost:8080`에서 응답한다는 점을 제외하고 **StartWith(Action&lt;IApplicationBuilder&gt; app)** 와 동일한 결과가 생성됩니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-357">Produces the same result as **StartWith(Action&lt;IApplicationBuilder&gt; app)**, except the app responds on `http://localhost:8080`.</span></span>
+<span data-ttu-id="e34e2-357">앱이 `http://localhost:8080`에서 응답한다는 점을 제외하고 **StartWith(Action&lt;IApplicationBuilder&gt; app)** 와 동일한 결과가 생성됩니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-357">Produces the same result as **StartWith(Action&lt;IApplicationBuilder&gt; app)**, except the app responds on `http://localhost:8080`.</span></span>
 
-## <a name="ihostingenvironment-interface"></a><span data-ttu-id="5367a-358">IHostingEnvironment 인터페이스</span><span class="sxs-lookup"><span data-stu-id="5367a-358">IHostingEnvironment interface</span></span>
+## <a name="ihostingenvironment-interface"></a><span data-ttu-id="e34e2-358">IHostingEnvironment 인터페이스</span><span class="sxs-lookup"><span data-stu-id="e34e2-358">IHostingEnvironment interface</span></span>
 
-<span data-ttu-id="5367a-359">[IHostingEnvironment 인터페이스](/dotnet/api/microsoft.aspnetcore.hosting.ihostingenvironment)는 앱의 웹 호스팅 환경에 대한 정보를 제공합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-359">The [IHostingEnvironment interface](/dotnet/api/microsoft.aspnetcore.hosting.ihostingenvironment) provides information about the app's web hosting environment.</span></span> <span data-ttu-id="5367a-360">해당 속성 및 확장 메서드를 사용하기 위해 [생성자 주입](xref:fundamentals/dependency-injection)을 사용하여 `IHostingEnvironment`를 가져옵니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-360">Use [constructor injection](xref:fundamentals/dependency-injection) to obtain the `IHostingEnvironment` in order to use its properties and extension methods:</span></span>
+<span data-ttu-id="e34e2-359">[IHostingEnvironment 인터페이스](/dotnet/api/microsoft.aspnetcore.hosting.ihostingenvironment)는 앱의 웹 호스팅 환경에 대한 정보를 제공합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-359">The [IHostingEnvironment interface](/dotnet/api/microsoft.aspnetcore.hosting.ihostingenvironment) provides information about the app's web hosting environment.</span></span> <span data-ttu-id="e34e2-360">해당 속성 및 확장 메서드를 사용하기 위해 [생성자 주입](xref:fundamentals/dependency-injection)을 사용하여 `IHostingEnvironment`를 가져옵니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-360">Use [constructor injection](xref:fundamentals/dependency-injection) to obtain the `IHostingEnvironment` in order to use its properties and extension methods:</span></span>
 
 ```csharp
 public class CustomFileReader
@@ -617,7 +620,7 @@ public class CustomFileReader
 }
 ```
 
-<span data-ttu-id="5367a-361">[규칙 기반 접근 방식](xref:fundamentals/environments#environment-based-startup-class-and-methods)은 시작할 때 환경에 따라 앱을 구성하는 데 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-361">A [convention-based approach](xref:fundamentals/environments#environment-based-startup-class-and-methods) can be used to configure the app at startup based on the environment.</span></span> <span data-ttu-id="5367a-362">또는 `ConfigureServices`에서 사용할 수 있도록 `IHostingEnvironment`를 `Startup` 생성자에 주입합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-362">Alternatively, inject the `IHostingEnvironment` into the `Startup` constructor for use in `ConfigureServices`:</span></span>
+<span data-ttu-id="e34e2-361">[규칙 기반 접근 방식](xref:fundamentals/environments#environment-based-startup-class-and-methods)은 시작할 때 환경에 따라 앱을 구성하는 데 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-361">A [convention-based approach](xref:fundamentals/environments#environment-based-startup-class-and-methods) can be used to configure the app at startup based on the environment.</span></span> <span data-ttu-id="e34e2-362">또는 `ConfigureServices`에서 사용할 수 있도록 `IHostingEnvironment`를 `Startup` 생성자에 주입합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-362">Alternatively, inject the `IHostingEnvironment` into the `Startup` constructor for use in `ConfigureServices`:</span></span>
 
 ```csharp
 public class Startup
@@ -646,9 +649,9 @@ public class Startup
 ```
 
 > [!NOTE]
-> <span data-ttu-id="5367a-363">`IsDevelopment` 확장 메서드 외에 `IHostingEnvironment`는 `IsStaging`, `IsProduction` 및 `IsEnvironment(string environmentName)` 메서드를 제공합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-363">In addition to the `IsDevelopment` extension method, `IHostingEnvironment` offers `IsStaging`, `IsProduction`, and `IsEnvironment(string environmentName)` methods.</span></span> <span data-ttu-id="5367a-364">자세한 내용은 <xref:fundamentals/environments>을 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="5367a-364">For more information, see <xref:fundamentals/environments>.</span></span>
+> <span data-ttu-id="e34e2-363">`IsDevelopment` 확장 메서드 외에 `IHostingEnvironment`는 `IsStaging`, `IsProduction` 및 `IsEnvironment(string environmentName)` 메서드를 제공합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-363">In addition to the `IsDevelopment` extension method, `IHostingEnvironment` offers `IsStaging`, `IsProduction`, and `IsEnvironment(string environmentName)` methods.</span></span> <span data-ttu-id="e34e2-364">자세한 내용은 <xref:fundamentals/environments>을 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="e34e2-364">For more information, see <xref:fundamentals/environments>.</span></span>
 
-<span data-ttu-id="5367a-365">또한 `IHostingEnvironment` 서비스를 파이프라인 처리를 설정하기 위한 `Configure` 메서드에 직접 주입할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-365">The `IHostingEnvironment` service can also be injected directly into the `Configure` method for setting up the processing pipeline:</span></span>
+<span data-ttu-id="e34e2-365">또한 `IHostingEnvironment` 서비스를 파이프라인 처리를 설정하기 위한 `Configure` 메서드에 직접 주입할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-365">The `IHostingEnvironment` service can also be injected directly into the `Configure` method for setting up the processing pipeline:</span></span>
 
 ```csharp
 public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -668,7 +671,7 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 }
 ```
 
-<span data-ttu-id="5367a-366">사용자 지정 [미들웨어](xref:fundamentals/middleware/index#write-middleware)를 만들 때 `IHostingEnvironment`를 `Invoke` 메서드에 주입할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-366">`IHostingEnvironment` can be injected into the `Invoke` method when creating custom [middleware](xref:fundamentals/middleware/index#write-middleware):</span></span>
+<span data-ttu-id="e34e2-366">사용자 지정 [미들웨어](xref:fundamentals/middleware/index#write-middleware)를 만들 때 `IHostingEnvironment`를 `Invoke` 메서드에 주입할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-366">`IHostingEnvironment` can be injected into the `Invoke` method when creating custom [middleware](xref:fundamentals/middleware/index#write-middleware):</span></span>
 
 ```csharp
 public async Task Invoke(HttpContext context, IHostingEnvironment env)
@@ -686,15 +689,15 @@ public async Task Invoke(HttpContext context, IHostingEnvironment env)
 }
 ```
 
-## <a name="iapplicationlifetime-interface"></a><span data-ttu-id="5367a-367">IApplicationLifetime 인터페이스</span><span class="sxs-lookup"><span data-stu-id="5367a-367">IApplicationLifetime interface</span></span>
+## <a name="iapplicationlifetime-interface"></a><span data-ttu-id="e34e2-367">IApplicationLifetime 인터페이스</span><span class="sxs-lookup"><span data-stu-id="e34e2-367">IApplicationLifetime interface</span></span>
 
-<span data-ttu-id="5367a-368">[IApplicationLifetime](/dotnet/api/microsoft.aspnetcore.hosting.iapplicationlifetime)은 사후 시작 및 종료 작업을 고려합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-368">[IApplicationLifetime](/dotnet/api/microsoft.aspnetcore.hosting.iapplicationlifetime) allows for post-startup and shutdown activities.</span></span> <span data-ttu-id="5367a-369">인터페이스에서 세 가지 속성은 취소 토큰으로, 시작 및 종료 이벤트를 정의하는 `Action` 메서드를 등록하는 데 사용됩니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-369">Three properties on the interface are cancellation tokens used to register `Action` methods that define startup and shutdown events.</span></span>
+<span data-ttu-id="e34e2-368">[IApplicationLifetime](/dotnet/api/microsoft.aspnetcore.hosting.iapplicationlifetime)은 사후 시작 및 종료 작업을 고려합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-368">[IApplicationLifetime](/dotnet/api/microsoft.aspnetcore.hosting.iapplicationlifetime) allows for post-startup and shutdown activities.</span></span> <span data-ttu-id="e34e2-369">인터페이스에서 세 가지 속성은 취소 토큰으로, 시작 및 종료 이벤트를 정의하는 `Action` 메서드를 등록하는 데 사용됩니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-369">Three properties on the interface are cancellation tokens used to register `Action` methods that define startup and shutdown events.</span></span>
 
-| <span data-ttu-id="5367a-370">취소 토큰</span><span class="sxs-lookup"><span data-stu-id="5367a-370">Cancellation Token</span></span>    | <span data-ttu-id="5367a-371">트리거되는 경우:</span><span class="sxs-lookup"><span data-stu-id="5367a-371">Triggered when&#8230;</span></span> |
+| <span data-ttu-id="e34e2-370">취소 토큰</span><span class="sxs-lookup"><span data-stu-id="e34e2-370">Cancellation Token</span></span>    | <span data-ttu-id="e34e2-371">트리거되는 경우:</span><span class="sxs-lookup"><span data-stu-id="e34e2-371">Triggered when&#8230;</span></span> |
 | --------------------- | --------------------- |
-| [<span data-ttu-id="5367a-372">ApplicationStarted</span><span class="sxs-lookup"><span data-stu-id="5367a-372">ApplicationStarted</span></span>](/dotnet/api/microsoft.extensions.hosting.iapplicationlifetime.applicationstarted) | <span data-ttu-id="5367a-373">호스트가 완벽하게 시작되었습니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-373">The host has fully started.</span></span> |
-| [<span data-ttu-id="5367a-374">ApplicationStopped</span><span class="sxs-lookup"><span data-stu-id="5367a-374">ApplicationStopped</span></span>](/dotnet/api/microsoft.extensions.hosting.iapplicationlifetime.applicationstopped) | <span data-ttu-id="5367a-375">호스트가 정상적으로 종료되었습니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-375">The host is completing a graceful shutdown.</span></span> <span data-ttu-id="5367a-376">모든 요청이 처리되어야 합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-376">All requests should be processed.</span></span> <span data-ttu-id="5367a-377">종료는 이 이벤트가 완료될 때까지 차단합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-377">Shutdown blocks until this event completes.</span></span> |
-| [<span data-ttu-id="5367a-378">ApplicationStopping</span><span class="sxs-lookup"><span data-stu-id="5367a-378">ApplicationStopping</span></span>](/dotnet/api/microsoft.extensions.hosting.iapplicationlifetime.applicationstopping) | <span data-ttu-id="5367a-379">호스트가 정상적으로 종료되고 있습니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-379">The host is performing a graceful shutdown.</span></span> <span data-ttu-id="5367a-380">요청은 계속 처리할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-380">Requests may still be processing.</span></span> <span data-ttu-id="5367a-381">종료는 이 이벤트가 완료될 때까지 차단합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-381">Shutdown blocks until this event completes.</span></span> |
+| [<span data-ttu-id="e34e2-372">ApplicationStarted</span><span class="sxs-lookup"><span data-stu-id="e34e2-372">ApplicationStarted</span></span>](/dotnet/api/microsoft.extensions.hosting.iapplicationlifetime.applicationstarted) | <span data-ttu-id="e34e2-373">호스트가 완벽하게 시작되었습니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-373">The host has fully started.</span></span> |
+| [<span data-ttu-id="e34e2-374">ApplicationStopped</span><span class="sxs-lookup"><span data-stu-id="e34e2-374">ApplicationStopped</span></span>](/dotnet/api/microsoft.extensions.hosting.iapplicationlifetime.applicationstopped) | <span data-ttu-id="e34e2-375">호스트가 정상적으로 종료되었습니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-375">The host is completing a graceful shutdown.</span></span> <span data-ttu-id="e34e2-376">모든 요청이 처리되어야 합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-376">All requests should be processed.</span></span> <span data-ttu-id="e34e2-377">종료는 이 이벤트가 완료될 때까지 차단합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-377">Shutdown blocks until this event completes.</span></span> |
+| [<span data-ttu-id="e34e2-378">ApplicationStopping</span><span class="sxs-lookup"><span data-stu-id="e34e2-378">ApplicationStopping</span></span>](/dotnet/api/microsoft.extensions.hosting.iapplicationlifetime.applicationstopping) | <span data-ttu-id="e34e2-379">호스트가 정상적으로 종료되고 있습니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-379">The host is performing a graceful shutdown.</span></span> <span data-ttu-id="e34e2-380">요청은 계속 처리할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-380">Requests may still be processing.</span></span> <span data-ttu-id="e34e2-381">종료는 이 이벤트가 완료될 때까지 차단합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-381">Shutdown blocks until this event completes.</span></span> |
 
 ```csharp
 public class Startup
@@ -730,7 +733,7 @@ public class Startup
 }
 ```
 
-<span data-ttu-id="5367a-382">[StopApplication](/dotnet/api/microsoft.aspnetcore.hosting.iapplicationlifetime.stopapplication)은 앱의 종료를 요청합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-382">[StopApplication](/dotnet/api/microsoft.aspnetcore.hosting.iapplicationlifetime.stopapplication) requests termination of the app.</span></span> <span data-ttu-id="5367a-383">다음 클래스에서는 `StopApplication`을 사용하여 해당 클래스의 `Shutdown` 메서드를 호출하는 경우 앱을 정상 종료합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-383">The following class uses `StopApplication` to gracefully shut down an app when the class's `Shutdown` method is called:</span></span>
+<span data-ttu-id="e34e2-382">[StopApplication](/dotnet/api/microsoft.aspnetcore.hosting.iapplicationlifetime.stopapplication)은 앱의 종료를 요청합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-382">[StopApplication](/dotnet/api/microsoft.aspnetcore.hosting.iapplicationlifetime.stopapplication) requests termination of the app.</span></span> <span data-ttu-id="e34e2-383">다음 클래스에서는 `StopApplication`을 사용하여 해당 클래스의 `Shutdown` 메서드를 호출하는 경우 앱을 정상 종료합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-383">The following class uses `StopApplication` to gracefully shut down an app when the class's `Shutdown` method is called:</span></span>
 
 ```csharp
 public class MyClass
@@ -749,20 +752,20 @@ public class MyClass
 }
 ```
 
-## <a name="scope-validation"></a><span data-ttu-id="5367a-384">범위 유효성 검사</span><span class="sxs-lookup"><span data-stu-id="5367a-384">Scope validation</span></span>
+## <a name="scope-validation"></a><span data-ttu-id="e34e2-384">범위 유효성 검사</span><span class="sxs-lookup"><span data-stu-id="e34e2-384">Scope validation</span></span>
 
-<span data-ttu-id="5367a-385">[CreateDefaultBuilder](/dotnet/api/microsoft.aspnetcore.webhost.createdefaultbuilder)는 앱의 환경이 개발인 경우 [ServiceProviderOptions.ValidateScopes](/dotnet/api/microsoft.extensions.dependencyinjection.serviceprovideroptions.validatescopes)를 `true`로 설정합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-385">[CreateDefaultBuilder](/dotnet/api/microsoft.aspnetcore.webhost.createdefaultbuilder) sets [ServiceProviderOptions.ValidateScopes](/dotnet/api/microsoft.extensions.dependencyinjection.serviceprovideroptions.validatescopes) to `true` if the app's environment is Development.</span></span>
+<span data-ttu-id="e34e2-385">[CreateDefaultBuilder](/dotnet/api/microsoft.aspnetcore.webhost.createdefaultbuilder)는 앱의 환경이 개발인 경우 [ServiceProviderOptions.ValidateScopes](/dotnet/api/microsoft.extensions.dependencyinjection.serviceprovideroptions.validatescopes)를 `true`로 설정합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-385">[CreateDefaultBuilder](/dotnet/api/microsoft.aspnetcore.webhost.createdefaultbuilder) sets [ServiceProviderOptions.ValidateScopes](/dotnet/api/microsoft.extensions.dependencyinjection.serviceprovideroptions.validatescopes) to `true` if the app's environment is Development.</span></span>
 
-<span data-ttu-id="5367a-386">`ValidateScopes`이 `true`로 설정된 경우 기본 서비스 공급자는 다음을 확인하기 위해 검사를 수행합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-386">When `ValidateScopes` is set to `true`, the default service provider performs checks to verify that:</span></span>
+<span data-ttu-id="e34e2-386">`ValidateScopes`이 `true`로 설정된 경우 기본 서비스 공급자는 다음을 확인하기 위해 검사를 수행합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-386">When `ValidateScopes` is set to `true`, the default service provider performs checks to verify that:</span></span>
 
-* <span data-ttu-id="5367a-387">범위가 지정된 서비스는 직접 또는 간접적으로 루트 서비스 공급자에서 해결되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-387">Scoped services aren't directly or indirectly resolved from the root service provider.</span></span>
-* <span data-ttu-id="5367a-388">범위가 지정된 서비스는 직접 또는 간접적으로 싱글톤에 삽입되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-388">Scoped services aren't directly or indirectly injected into singletons.</span></span>
+* <span data-ttu-id="e34e2-387">범위가 지정된 서비스는 직접 또는 간접적으로 루트 서비스 공급자에서 해결되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-387">Scoped services aren't directly or indirectly resolved from the root service provider.</span></span>
+* <span data-ttu-id="e34e2-388">범위가 지정된 서비스는 직접 또는 간접적으로 싱글톤에 삽입되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-388">Scoped services aren't directly or indirectly injected into singletons.</span></span>
 
-<span data-ttu-id="5367a-389">루트 서비스 공급자는 [BuildServiceProvider](/dotnet/api/microsoft.extensions.dependencyinjection.servicecollectioncontainerbuilderextensions.buildserviceprovider)를 호출할 때 만들어집니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-389">The root service provider is created when [BuildServiceProvider](/dotnet/api/microsoft.extensions.dependencyinjection.servicecollectioncontainerbuilderextensions.buildserviceprovider) is called.</span></span> <span data-ttu-id="5367a-390">루트 서비스 공급자의 수명은 공급자가 앱과 함께 시작되고 앱이 종료될 때 삭제되는 앱/서버의 수명에 해당합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-390">The root service provider's lifetime corresponds to the app/server's lifetime when the provider starts with the app and is disposed when the app shuts down.</span></span>
+<span data-ttu-id="e34e2-389">루트 서비스 공급자는 [BuildServiceProvider](/dotnet/api/microsoft.extensions.dependencyinjection.servicecollectioncontainerbuilderextensions.buildserviceprovider)를 호출할 때 만들어집니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-389">The root service provider is created when [BuildServiceProvider](/dotnet/api/microsoft.extensions.dependencyinjection.servicecollectioncontainerbuilderextensions.buildserviceprovider) is called.</span></span> <span data-ttu-id="e34e2-390">루트 서비스 공급자의 수명은 공급자가 앱과 함께 시작되고 앱이 종료될 때 삭제되는 앱/서버의 수명에 해당합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-390">The root service provider's lifetime corresponds to the app/server's lifetime when the provider starts with the app and is disposed when the app shuts down.</span></span>
 
-<span data-ttu-id="5367a-391">범위가 지정된 서비스는 서비스를 만든 컨테이너에 의해 삭제됩니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-391">Scoped services are disposed by the container that created them.</span></span> <span data-ttu-id="5367a-392">범위가 지정된 서비스가 루트 컨테이너에서 만들어지는 경우 서비스의 수명은 효과적으로 싱글톤으로 승격됩니다. 해당 서비스는 앱/서버가 종료될 때 루트 컨테이너에 의해서만 삭제되기 때문입니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-392">If a scoped service is created in the root container, the service's lifetime is effectively promoted to singleton because it's only disposed by the root container when app/server is shut down.</span></span> <span data-ttu-id="5367a-393">서비스 범위의 유효성 검사는 `BuildServiceProvider`이 호출될 경우 이러한 상황을 catch합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-393">Validating service scopes catches these situations when `BuildServiceProvider` is called.</span></span>
+<span data-ttu-id="e34e2-391">범위가 지정된 서비스는 서비스를 만든 컨테이너에 의해 삭제됩니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-391">Scoped services are disposed by the container that created them.</span></span> <span data-ttu-id="e34e2-392">범위가 지정된 서비스가 루트 컨테이너에서 만들어지는 경우 서비스의 수명은 효과적으로 싱글톤으로 승격됩니다. 해당 서비스는 앱/서버가 종료될 때 루트 컨테이너에 의해서만 삭제되기 때문입니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-392">If a scoped service is created in the root container, the service's lifetime is effectively promoted to singleton because it's only disposed by the root container when app/server is shut down.</span></span> <span data-ttu-id="e34e2-393">서비스 범위의 유효성 검사는 `BuildServiceProvider`이 호출될 경우 이러한 상황을 catch합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-393">Validating service scopes catches these situations when `BuildServiceProvider` is called.</span></span>
 
-<span data-ttu-id="5367a-394">프로덕션 환경을 포함하여 범위의 유효성을 검사하려면 호스트 작성기에서 [ServiceProviderOptions](/dotnet/api/microsoft.extensions.dependencyinjection.serviceprovideroptions)을 [UseDefaultServiceProvider](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderextensions.usedefaultserviceprovider)로 구성합니다.</span><span class="sxs-lookup"><span data-stu-id="5367a-394">To always validate scopes, including in the Production environment, configure the [ServiceProviderOptions](/dotnet/api/microsoft.extensions.dependencyinjection.serviceprovideroptions) with [UseDefaultServiceProvider](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderextensions.usedefaultserviceprovider) on the host builder:</span></span>
+<span data-ttu-id="e34e2-394">프로덕션 환경을 포함하여 범위의 유효성을 검사하려면 호스트 작성기에서 [ServiceProviderOptions](/dotnet/api/microsoft.extensions.dependencyinjection.serviceprovideroptions)을 [UseDefaultServiceProvider](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderextensions.usedefaultserviceprovider)로 구성합니다.</span><span class="sxs-lookup"><span data-stu-id="e34e2-394">To always validate scopes, including in the Production environment, configure the [ServiceProviderOptions](/dotnet/api/microsoft.extensions.dependencyinjection.serviceprovideroptions) with [UseDefaultServiceProvider](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderextensions.usedefaultserviceprovider) on the host builder:</span></span>
 
 ```csharp
 WebHost.CreateDefaultBuilder(args)
@@ -771,7 +774,7 @@ WebHost.CreateDefaultBuilder(args)
     })
 ```
 
-## <a name="additional-resources"></a><span data-ttu-id="5367a-395">추가 자료</span><span class="sxs-lookup"><span data-stu-id="5367a-395">Additional resources</span></span>
+## <a name="additional-resources"></a><span data-ttu-id="e34e2-395">추가 자료</span><span class="sxs-lookup"><span data-stu-id="e34e2-395">Additional resources</span></span>
 
 * <xref:host-and-deploy/iis/index>
 * <xref:host-and-deploy/linux-nginx>
