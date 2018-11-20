@@ -7,12 +7,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/30/2018
 uid: fundamentals/host/generic-host
-ms.openlocfilehash: 9943c9dd2d6dd67a79186ee880b181a5915d06be
-ms.sourcegitcommit: edb9d2d78c9a4d68b397e74ae2aff088b325a143
+ms.openlocfilehash: cac5ccdea7838d26b7468f9bf1ab8d317b444b46
+ms.sourcegitcommit: 09bcda59a58019fdf47b2db5259fe87acf19dd38
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "51505715"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51708519"
 ---
 # <a name="net-generic-host"></a>.NET 일반 호스트
 
@@ -75,7 +75,7 @@ Visual Studio Code에서 콘솔을 설정하려면:
 **형식**: *string*  
 **기본값**: 앱의 진입점을 포함하는 어셈블리의 이름입니다.  
 **설정 방법**: `HostBuilderContext.HostingEnvironment.ApplicationName`  
-**환경 변수**: `<PREFIX_>APPLICATIONNAME`(`<PREFIX_>`는 [선택적이고 사용자 정의됨](#configuration-builder))
+**환경 변수**: `<PREFIX_>APPLICATIONNAME`(`<PREFIX_>`는 [선택적이고 사용자 정의됨](#configurehostconfiguration))
 
 ### <a name="content-root"></a>콘텐츠 루트
 
@@ -85,7 +85,7 @@ Visual Studio Code에서 콘솔을 설정하려면:
 **형식**: *string*  
 **기본값**: 앱 어셈블리가 있는 폴더가 기본값으로 지정됩니다.  
 **설정 방법**: `UseContentRoot`  
-**환경 변수**: `<PREFIX_>CONTENTROOT`(`<PREFIX_>`는 [선택적이고 사용자 정의됨](#configuration-builder))
+**환경 변수**: `<PREFIX_>CONTENTROOT`(`<PREFIX_>`는 [선택적이고 사용자 정의됨](#configurehostconfiguration))
 
 경로가 존재하지 않는 경우 호스트가 시작되지 않습니다.
 
@@ -99,7 +99,7 @@ Visual Studio Code에서 콘솔을 설정하려면:
 **형식**: *string*  
 **기본값**: Production  
 **설정 방법**: `UseEnvironment`  
-**환경 변수**: `<PREFIX_>ENVIRONMENT`(`<PREFIX_>`는 [선택적이고 사용자 정의됨](#configuration-builder))
+**환경 변수**: `<PREFIX_>ENVIRONMENT`(`<PREFIX_>`는 [선택적이고 사용자 정의됨](#configurehostconfiguration))
 
 환경은 어떠한 값으로도 설정할 수 있습니다. 프레임워크에서 정의된 값은 `Development`, `Staging` 및 `Production`을 포함합니다. 값은 대/소문자를 구분하지 않습니다.
 
