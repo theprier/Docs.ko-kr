@@ -1,18 +1,18 @@
 ---
-title: ASP.NET Core SignalR 시작
+title: ASP.NET Core SignalR로 시작
 author: tdykstra
 description: 이 자습서에서는 ASP.NET Core SignalR을 사용하는 채팅 앱을 만듭니다.
 monikerRange: '>= aspnetcore-2.1'
 ms.author: tdykstra
 ms.custom: mvc
-ms.date: 08/31/2018
+ms.date: 11/13/2018
 uid: tutorials/signalr
-ms.openlocfilehash: 7d9f3a3f8aa7a5e47169da66e6fa2d6a28de3853
-ms.sourcegitcommit: 2d3e5422d530203efdaf2014d1d7df31f88d08d0
+ms.openlocfilehash: 8916b3659250c1bcbbc2dc9b3d466586f98bcc7e
+ms.sourcegitcommit: d3392f688cfebc1f25616da7489664d69c6ee330
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "51021250"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "51818384"
 ---
 # <a name="tutorial-get-started-with-aspnet-core-signalr"></a>자습서: ASP.NET Core SignalR 시작
 
@@ -104,7 +104,7 @@ SignalR 서버 라이브러리는 `Microsoft.AspNetCore.App` 메타패키지에 
 
   ![클라이언트 쪽 라이브러리 추가 대화 상자 - 라이브러리 선택](signalr/_static/libman1.png)
 
-* **특정 파일 선택**을 선택하고 *dist/browser* 폴더를 확장한 다음 *signalr.js* 및 *signalr.min.js*를 선택합니다.
+* **Choose specific files**(특정 파일 선택)를 선택하고 *dist/browser* 폴더를 확장한 후 *signalr.js* 및 *signalr.min.js*를 선택합니다.
 
 * **대상 위치**를 *wwwroot/lib/signalr/* 로 설정하고 **설치**를 선택합니다.
 
@@ -174,7 +174,7 @@ SignalR 서버 라이브러리는 `Microsoft.AspNetCore.App` 메타패키지에 
 
 *허브*는 클라이언트-서버 통신을 처리하는 높은 수준의 파이프라인으로 제공되는 클래스입니다.
 
-* SignalRChat 프로젝트 폴더에 *Hubs* 폴더를 만듭니다.
+* SignalRChat 프로젝트 폴더에서 *Hubs* 폴더를 만듭니다.
 
 * *Hubs* 폴더에 다음 코드를 사용하여 *ChatHub.cs* 파일을 만듭니다.
 
@@ -182,7 +182,7 @@ SignalR 서버 라이브러리는 `Microsoft.AspNetCore.App` 메타패키지에 
 
   `ChatHub` 클래스는 SignalR `Hub` 클래스에서 상속합니다. `Hub` 클래스는 연결, 그룹 및 메시징을 관리합니다.
 
-  연결된 모든 클라이언트에서 `SendMessage` 메서드를 호출할 수 있습니다. 이 메서드는 수신된 메시지를 모든 클라이언트에 전송합니다. SignalR 코드는 최대한의 확장성을 제공할 수 있도록 비동기적입니다.
+  연결된 모든 클라이언트에서 `SendMessage` 메서드를 호출할 수 있습니다. 모든 클라이언트에 수신된 메시지를 보냅니다. SignalR 코드는 최대한의 확장성을 제공할 수 있도록 비동기적입니다.
 
 ## <a name="configure-signalr"></a>SignalR 구성
 
@@ -238,7 +238,7 @@ SignalR 서버는 SignalR에 SignalR 요청을 전달하도록 구성되어야 �
 
 * 주소 표시줄에서 URL을 복사하고, 다른 브라우저 인스턴스 또는 탭을 열고, 주소 표시줄에 URL을 붙여넣습니다.
 
-* 브라우저 중 하나를 선택하고, 이름 및 메시지를 입력하고, **보내기** 단추를 선택합니다.
+* 브라우저 중 하나를 선택하고, 이름 및 메시지를 입력하고, **보내기 메시지** 단추를 선택합니다.
 
   이름과 메시지는 두 페이지 모두에 즉시 표시됩니다.
 

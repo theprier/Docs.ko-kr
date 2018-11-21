@@ -34,7 +34,7 @@
 ## [앱 시작](xref:fundamentals/startup)
 ## [종속성 주입(서비스)](xref:fundamentals/dependency-injection)
 ## [라우팅](xref:fundamentals/routing)
-## [여러 환경](xref:fundamentals/environments)
+## [환경(개발, 스테이지, 프로덕션)](xref:fundamentals/environments)
 ## [구성](xref:fundamentals/configuration/index)
 ## [옵션](xref:fundamentals/configuration/options)
 ## [로깅](xref:fundamentals/logging/index)
@@ -432,6 +432,7 @@
 ## [응답 압축](xref:performance/response-compression)
 
 # 마이그레이션
+## [2.1-2.2](xref:migration/21-to-22)
 ## [2.0-2.1](xref:migration/20_21)
 ## 1.x-2.0
 ### [개요](xref:migration/1x-to-2x/index)
