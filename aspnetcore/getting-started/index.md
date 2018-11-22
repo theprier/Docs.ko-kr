@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 05/31/2018
 uid: getting-started
-ms.openlocfilehash: 4a5a0cc5a5dab2171ab8ef43818185a4ee91af0e
-ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
+ms.openlocfilehash: 4c899ff3c087f1b569521c6e2e8458fca01d6061
+ms.sourcegitcommit: bdfba5e7575b2a786ef27c0edf688c7dbd09ee95
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48912568"
+ms.lasthandoff: 11/22/2018
+ms.locfileid: "52288644"
 ---
 # <a name="tutorial-get-started-with-aspnet-core"></a>자습서: ASP.NET Core 시작
 
@@ -98,7 +98,7 @@ ms.locfileid: "48912568"
 
 ## <a name="next-steps"></a>다음 단계
 
-이 자습서에서는 다음 방법을 학습했습니다.
+본 자습서에서는 다음 작업에 관한 방법을 학습했습니다.
 
 > [!div class="checklist"]
 > * 웹앱 프로젝트를 만듭니다.
@@ -110,3 +110,8 @@ ASP.NET Core에 대한 자세한 내용은 다음을 참조하세요.
 
 > [!div class="nextstepaction"]
 > <xref:index>
+
+
+
+> [!NOTE]
+> ASP.NET Core 목차에 대해 제안된 새 구조의 유용성을 테스트합니다.  몇 분 동안 현재 또는 제안된 목차에서 다른 7개의 항목을 찾는 연습을 수행하는 경우 [여기를 클릭하여 연구에 참여하세요](https://dpk4xbh5.optimalworkshop.com/treejack/aa11wn82).

@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 11/16/2018
 uid: index
-ms.openlocfilehash: ccf00316218c0787136193a7acaf55b8687c6ede
-ms.sourcegitcommit: 04b55a5ce9d649ff2df926157ec28ae47afe79e2
+ms.openlocfilehash: 13bb8fafe8d5d34185b3016630d5dd3df4212119
+ms.sourcegitcommit: bdfba5e7575b2a786ef27c0edf688c7dbd09ee95
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52156947"
+ms.lasthandoff: 11/22/2018
+ms.locfileid: "52288657"
 ---
 # <a name="introduction-to-aspnet-core"></a>ASP.NET Core 소개
 
@@ -130,3 +130,6 @@ WebHost.CreateDefaultBuilder(args)
 * <xref:tutorials/publish-to-azure-webapp-using-vs>
 * [ASP.NET Core 기본 사항](xref:fundamentals/index)
 * [매주 ASP.NET 커뮤니티 스탠드업](https://live.asp.net/)은 팀의 진행률 및 계획을 다루고 새 블로그 및 타사 소프트웨어를 설명합니다.
+
+> [!NOTE]
+> ASP.NET Core 목차에 대해 제안된 새 구조의 유용성을 테스트합니다.  몇 분 동안 현재 또는 제안된 목차에서 다른 7개의 항목을 찾는 연습을 수행하는 경우 [여기를 클릭하여 연구에 참여하세요](https://dpk4xbh5.optimalworkshop.com/treejack/rps16hd5).

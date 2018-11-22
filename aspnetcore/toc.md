@@ -85,7 +85,7 @@
 ##### [페이지 업데이트](xref:tutorials/razor-pages-mac/da1)
 ##### [검색 추가](xref:tutorials/razor-pages-mac/search)
 ### [필터](xref:razor-pages/filter)
-### [클래스 라이브러리](xref:razor-pages/ui-class)
+### [Razor 클래스 라이브러리](xref:razor-pages/ui-class)
 ### [경로 및 앱 규칙](xref:razor-pages/razor-pages-conventions)
 ### [파일 업로드](xref:razor-pages/upload-files)
 ### [Razor SDK](xref:razor-pages/sdk)
