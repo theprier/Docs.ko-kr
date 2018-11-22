@@ -5,14 +5,14 @@ description: ASP.NET Core SignalR에서 허브를 사용하는 방법을 알아�
 monikerRange: '>= aspnetcore-2.1'
 ms.author: tdykstra
 ms.custom: mvc
-ms.date: 11/07/2018
+ms.date: 11/20/2018
 uid: signalr/hubs
-ms.openlocfilehash: 0413d354307208726f4252f431ac59526effed08
-ms.sourcegitcommit: 408921a932448f66cb46fd53c307a864f5323fe5
+ms.openlocfilehash: 91f92e9d6b776457cd319965d548ee401ddc5e0e
+ms.sourcegitcommit: 4225e2c49a0081e6ac15acff673587201f54b4aa
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51569921"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "52282144"
 ---
 # <a name="use-hubs-in-signalr-for-aspnet-core"></a>ASP.NET Core SignalR에서 허브 사용하기
 
@@ -85,7 +85,6 @@ public class ChatHub : Hub
 | `Caller` | 해당 허브 메서드를 호출한 클라이언트에서 메서드를 호출합니다. |
 | `Others` | 메서드를 호출한 클라이언트를 제외한 모든 연결된 클라이언트에서 메서드를 호출합니다. |
 
-
 `Hub.Clients`는 다음 메서드도 포함하고 있습니다.
 
 | 메서드 | 설명 |
@@ -126,7 +125,17 @@ public class ChatHub : Hub
 
 `Hub<IChatClient>`를 사용하면 클라이언트 메서드를 컴파일 시점에 검사할 수 있습니다. 이렇게 하면 `Hub<T>` 인터페이스에 정의된 메서드만 접근할 수 있기 때문에 마법 문자열 사용으로 인한 문제를 방지할 수 있습니다.
 
-강력한 형식의 `Hub<T>`를 사용하면 `SendAsync`를 사용할 수 없습니다.
+강력한 형식의 `Hub<T>`를 사용하면 `SendAsync`를 사용할 수 없습니다. 계속으로 인터페이스에 정의 된 메서드를 비동기으로 정의할 수 있습니다. 이러한 각 메서드를 반환 해야 실제로 `Task`합니다. 인터페이스 이므로 사용 하지 마십시오는 `async` 키워드입니다. 예를 들어:
+
+```csharp
+public interface IClient
+{
+    Task ClientMethod();
+}
+```
+
+> [!NOTE]
+> `Async` 메서드 이름에서 접미사 제거 되지 않습니다. 사용 하 여 클라이언트 메서드를 정의 하지 않으면 `.on('MyMethodAsync')`를 사용 하면 안 됩니다 `MyMethodAsync` 이름으로 합니다.
 
 ## <a name="change-the-name-of-a-hub-method"></a>허브 메서드의 이름을 변경 합니다.
 
@@ -150,7 +159,7 @@ SignalR 허브 API는 연결을 관리하고 추적하기 위한 `OnConnectedAsy
 
 [!code-javascript[Error](hubs/sample/wwwroot/js/chat.js?range=23)]
 
-기본적으로 허브에서 예외를 throw 하는 경우 SignalR 반환 일반 오류 메시지를 클라이언트에 합니다. 예를 들어:
+허브에서 예외를 throw 하는 경우 연결을 종료 되지 않습니다. SignalR을 기본적으로 클라이언트에 일반 오류 메시지를 반환합니다. 예를 들어:
 
 ```
 Microsoft.AspNetCore.SignalR.HubException: An unexpected error occurred invoking 'MethodName' on the server.

@@ -4,14 +4,14 @@ author: scottaddie
 description: 묶음 및 축소 기술을 적용 하 여 ASP.NET Core 웹 응용 프로그램에서 정적 리소스를 최적화 하는 방법에 알아봅니다.
 ms.author: scaddie
 ms.custom: mvc
-ms.date: 10/04/2018
+ms.date: 11/20/2018
 uid: client-side/bundling-and-minification
-ms.openlocfilehash: 152f3c810b587d734c1b1076a09ea38d13872e2d
-ms.sourcegitcommit: 7890dfb5a8f8c07d813f166d3ab0c263f893d0c6
+ms.openlocfilehash: 5d5f0aadb7740c9b2b959d12a585cd8c91758ce8
+ms.sourcegitcommit: 4225e2c49a0081e6ac15acff673587201f54b4aa
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48795407"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "52282145"
 ---
 # <a name="bundle-and-minify-static-assets-in-aspnet-core"></a>번들 및 ASP.NET Core에서 정적 자산을 축소
 
@@ -67,9 +67,21 @@ MVC 및 Razor 페이지 프로젝트 템플릿을 묶음 및 축소 JSON 구성 
 
 ## <a name="configure-bundling-and-minification"></a>묶음 및 축소 구성
 
-MVC 및 Razor 페이지 프로젝트 템플릿을 제공 된 *bundleconfig.json* 각 번들에 대 한 옵션을 정의 하는 구성 파일입니다. 기본적으로 단일 번들 구성 사용자 지정 JavaScript에 대 한 정의 (*wwwroot/js/site.js*) 및 스타일 시트 (*wwwroot/css/site.css*) 파일:
+::: moniker range="<= aspnetcore-2.0"
+
+MVC 및 Razor 페이지 프로젝트 템플릿을 제공 하는 ASP.NET Core 2.0 또는 이전에 *bundleconfig.json* 각 번들에 대 한 옵션을 정의 하는 구성 파일:
+
+::: moniker-end
+
+::: moniker range=">= aspnetcore-2.1"
+
+ASP.NET Core 2.1 이상 버전에서는 명명 된 새 JSON 파일을 추가 *bundleconfig.json*, MVC 또는 Razor 페이지 프로젝트 루트에 있습니다. 시작 지점으로 해당 파일에 다음 JSON을 포함:
+
+::: moniker-end
 
 [!code-json[](../client-side/bundling-and-minification/samples/BuildBundlerMinifierApp/bundleconfig.json)]
+
+합니다 *bundleconfig.json* 파일은 각 번들에 대 한 옵션을 정의 합니다. 앞의 예제는 단일 번들 구성 사용자 지정 JavaScript에 대 한 정의 됩니다 (*wwwroot/js/site.js*) 및 스타일 시트 (*wwwroot/css/site.css*) 파일입니다.
 
 구성 옵션은 다음과 같습니다.
 
@@ -156,7 +168,7 @@ Copyright (C) Microsoft Corporation. All rights reserved.
 dotnet clean
 ```
 
-다음과 같은 출력이 표시 됩니다.
+다음 출력이 표시됩니다.
 
 ```console
 Microsoft (R) Build Engine version 15.4.8.50001 for .NET Core
@@ -216,27 +228,31 @@ dotnet bundle
 
 다음 `environment` 태그 실행 하는 경우 처리 되지 않은 CSS 파일을 렌더링 합니다 `Development` 환경:
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+::: moniker range=">= aspnetcore-2.0"
 
 [!code-cshtml[](../client-side/bundling-and-minification/samples/BuildBundlerMinifierApp/Pages/_Layout.cshtml?highlight=3&range=21-24)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+::: moniker-end
+
+::: moniker range="<= aspnetcore-1.1"
 
 [!code-cshtml[](../client-side/bundling-and-minification/samples/BuildBundlerMinifierApp/Pages/_Layout.cshtml?highlight=3&range=9-12)]
 
----
+::: moniker-end
 
 다음 `environment` 이외의 환경에서 실행 하는 경우 태그 렌더링 묶이고 CSS 파일 `Development`합니다. 예를 들어에서 실행 중인 `Production` 또는 `Staging` 이러한 스타일 시트의 렌더링을 트리거합니다.
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+::: moniker range=">= aspnetcore-2.0"
 
 [!code-cshtml[](../client-side/bundling-and-minification/samples/BuildBundlerMinifierApp/Pages/_Layout.cshtml?highlight=5&range=25-30)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+::: moniker-end
+
+::: moniker range="<= aspnetcore-1.1"
 
 [!code-cshtml[](../client-side/bundling-and-minification/samples/BuildBundlerMinifierApp/Pages/_Layout.cshtml?highlight=3&range=13-18)]
 
----
+::: moniker-end
 
 ## <a name="consume-bundleconfigjson-from-gulp"></a>Gulp에서 bundleconfig.json 사용
 
