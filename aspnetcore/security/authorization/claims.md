@@ -1,7 +1,7 @@
 ---
-title: ASP.NET Core에서 클레임 기반 권한 부여
+title: ASP.NET Core의 클레임 기반 권한 부여
 author: rick-anderson
-description: ASP.NET Core 응용 프로그램에서 권한 부여에 대 한 클레임 검사를 추가 하는 방법에 알아봅니다.
+description: ASP.NET Core 응용 프로그램에서 권한 부여에 대한 클레임 검사를 추가하는 방법을 알아봅니다.
 ms.author: riande
 ms.date: 10/14/2016
 uid: security/authorization/claims
@@ -12,7 +12,7 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 06/20/2018
 ms.locfileid: "36275229"
 ---
-# <a name="claims-based-authorization-in-aspnet-core"></a>ASP.NET Core에서 클레임 기반 권한 부여
+# <a name="claims-based-authorization-in-aspnet-core"></a>ASP.NET Core의 클레임 기반 권한 부여
 
 <a name="security-authorization-claims-based"></a>
 
@@ -44,7 +44,7 @@ public void ConfigureServices(IServiceCollection services)
 
 이 경우, `EmployeeOnly` 정책은 현재 신원에 `EmployeeNumber` 클레임이 존재하는지 여부를 확인합니다.
 
-그런 다음, `AuthorizeAttribute` 특성의 `Policy` 속성에 정책 이름을 지정해서 이 정책을 적용할 수 있습니다
+그런 다음, `AuthorizeAttribute` 특성의 `Policy` 속성에 정책 이름을 지정해서 이 정책을 적용할 수 있습니다.
 
 ```csharp
 [Authorize(Policy = "EmployeeOnly")]
@@ -98,9 +98,9 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-### <a name="add-a-generic-claim-check"></a>일반 클레임 검사를 추가 합니다.
+### <a name="add-a-generic-claim-check"></a>포괄적 클레임 검사 추가하기
 
-사용 하거나 경우에 단일 값이 아닌 클레임 값 변환, [RequireAssertion](/dotnet/api/microsoft.aspnetcore.authorization.authorizationpolicybuilder.requireassertion)합니다. 자세한 내용은 참조 [func는 정책을 처리 하는 데 사용 하 여](xref:security/authorization/policies#using-a-func-to-fulfill-a-policy)합니다.
+클레임 값이 단일 값이 아니거나 변환이 필요하다면 [RequireAssertion](/dotnet/api/microsoft.aspnetcore.authorization.authorizationpolicybuilder.requireassertion)을 사용합니다. 자세한 내용은 [func를 이용해서 정책 구성하기](xref:security/authorization/policies#using-a-func-to-fulfill-a-policy)를 참고하시기 바랍니다.
 
 ## <a name="multiple-policy-evaluation"></a>다중 정책 평가
 
