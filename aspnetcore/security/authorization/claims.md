@@ -98,7 +98,7 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-### <a name="add-a-generic-claim-check"></a>포괄적 클레임 검사 추가하기
+### <a name="add-a-generic-claim-check"></a>일반 클레임 검사 추가하기
 
 클레임 값이 단일 값이 아니거나 변환이 필요하다면 [RequireAssertion](/dotnet/api/microsoft.aspnetcore.authorization.authorizationpolicybuilder.requireassertion)을 사용합니다. 자세한 내용은 [func를 이용해서 정책 구성하기](xref:security/authorization/policies#using-a-func-to-fulfill-a-policy)를 참고하시기 바랍니다.
 
