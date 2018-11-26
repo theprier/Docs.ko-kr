@@ -283,7 +283,7 @@
 ## Azure App Service에서 호스트
 ### [개요](xref:host-and-deploy/azure-apps/index)
 ### [Visual Studio를 사용하여 게시](xref:tutorials/publish-to-azure-webapp-using-vs)
-### [CLI 도구를 사용하여 게시](/azure/app-service/app-service-web-get-started-dotnet)
+### [CLI 도구를 사용하여 게시](/azure/app-service/app-service-web-tutorial-dotnetcore-sqldb)
 ### [Visual Studio 및 Git를 사용하여 게시](xref:host-and-deploy/azure-apps/azure-continuous-deployment)
 ### [Azure Pipelines를 사용하여 지속적인 배포](/azure/devops/pipelines/get-started-yaml)
 ### [시작 오류 문제 해결](xref:host-and-deploy/azure-apps/troubleshoot)
@@ -313,7 +313,6 @@
 ## [Visual Studio 게시 프로필](xref:host-and-deploy/visual-studio-publish-profiles)
 ## [디렉터리 구조](xref:host-and-deploy/directory-structure)
 ## [Azure App Service 및 IIS에 대한 오류 참조](xref:host-and-deploy/azure-iis-errors-reference)
-
 
 # 보안 및 ID
 ## [개요](xref:security/index)
