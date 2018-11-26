@@ -3,14 +3,14 @@ title: ASP.NET Core에서 Entity Framework Core를 사용한 Razor 페이지 - �
 author: rick-anderson
 description: Entity Framework Core를 사용하여 Razor 페이지 앱을 만드는 방법을 보여 줍니다.
 ms.author: riande
-ms.date: 6/31/2017
+ms.date: 11/22/2018
 uid: data/ef-rp/intro
-ms.openlocfilehash: a234d5fefd671d4503f6c63b79074d47c893f69c
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: afba4395fe9dbe22516b6c4ebdc4c582381981fd
+ms.sourcegitcommit: 710fc5fcac258cc8415976dc66bdb355b3e061d5
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50207708"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52299471"
 ---
 # <a name="razor-pages-with-entity-framework-core-in-aspnet-core---tutorial-1-of-8"></a>ASP.NET Core에서 Entity Framework Core를 사용한 Razor 페이지 - 자습서 1/8
 
@@ -113,7 +113,7 @@ Contoso University 앱에 대한 엔터티 클래스를 만듭니다. 다음과 
 
 `ID` 속성은 이 클래스에 해당하는 DB(데이터베이스) 테이블의 기본 키 열이 됩니다. 기본적으로 EF 코어는 `ID` 또는 `classnameID`로 명명된 속성을 기본 키로 해석합니다. `classnameID`에서 `classname`은 클래스의 이름입니다. 기본 키가 자동으로 인식되는 경우 대안은 앞의 예제에서 `StudentID`입니다.
 
-`Enrollments` 속성은 [탐색 속성](/ef/core/modeling/relationship)입니다. 탐색 속성은 이 엔터티와 관련된 다른 엔터티에 연결됩니다. 이 경우 `Student entity`의 `Enrollments` 속성은 해당 `Student`에 관련된 모든 `Enrollment` 엔터티를 포함합니다. 예를 들어 DB의 학생 행에 두 개의 관련 등록 행이 있는 경우 `Enrollments` 탐색 속성은 그 두 `Enrollment` 엔터티를 포함합니다. 관련된 `Enrollment` 행은 `StudentID` 열에서 해당 학생의 기본 키 값을 포함하는 열입니다. 예를 들어 ID=1인 학생에 `Enrollment` 테이블의 두 개 행이 있다고 가정합니다. `Enrollment` 테이블에 `StudentID` = 1인 두 개의 행이 있습니다. `StudentID`는 `Student` 테이블에서 학생을 지정하는 `Enrollment` 테이블의 외래 키입니다.
+`Enrollments` 속성은 [탐색 속성](/ef/core/modeling/relationships)입니다. 탐색 속성은 이 엔터티와 관련된 다른 엔터티에 연결됩니다. 이 경우 `Student entity`의 `Enrollments` 속성은 해당 `Student`에 관련된 모든 `Enrollment` 엔터티를 포함합니다. 예를 들어 DB의 학생 행에 두 개의 관련 등록 행이 있는 경우 `Enrollments` 탐색 속성은 그 두 `Enrollment` 엔터티를 포함합니다. 관련된 `Enrollment` 행은 `StudentID` 열에서 해당 학생의 기본 키 값을 포함하는 열입니다. 예를 들어 ID=1인 학생에 `Enrollment` 테이블의 두 개 행이 있다고 가정합니다. `Enrollment` 테이블에 `StudentID` = 1인 두 개의 행이 있습니다. `StudentID`는 `Student` 테이블에서 학생을 지정하는 `Enrollment` 테이블의 외래 키입니다.
 
 탐색 속성이 여러 엔터티를 포함하는 경우 탐색 속성은 `ICollection<T>`와 같은 목록 유형이어야 합니다. `ICollection<T>`는 지정할 수 있으며, `List<T>` 또는 `HashSet<T>`와 같은 형식일 수 있습니다. `ICollection<T>`가 사용되는 경우 EF Core는 기본적으로 `HashSet<T>` 컬렉션을 만듭니다. 여러 엔터티를 포함하는 탐색 속성은 다대다 및 일대다 관계에서 제공됩니다.
 
