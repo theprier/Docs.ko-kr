@@ -68,7 +68,7 @@ Visual Studio는 ASP.NET Core 프로젝트에서 [LibMan](xref:client-side/libma
   |프로젝트 루트 (*wwwroot*가 존재하지 않을 경우) |*lib/jquery/* |
   |프로젝트의 *Pages* 폴더 |*Pages/jquery/* |
 
-* *libman.json*의 구성에 따라 파일을 다운로드 하려면 **설치** 버튼을 클릭합니다.
+* *libman.json*의 구성에 따라 파일을 다운로드하려면 **설치** 버튼을 클릭합니다.
 * **출력** 창의 **라이브러리 관리자** 피드에서 설치 세부 정보를 검토할 수 있습니다. 예를 들어 다음과 같습니다.
 
   ```console
@@ -86,7 +86,7 @@ Visual Studio는 ASP.NET Core 프로젝트에서 [LibMan](xref:client-side/libma
 
 Visual Studio의 모든 LibMan 작업은 프로젝트 루트의 LibMan 매니페스트(*libman.json*)의 내용을 기반으로 합니다. 직접 *libman.json*을 편집하여 프로젝트의 라이브러리 파일을 구성할 수 있습니다. *libman.json*이 저장되면 Visual Studio는 모든 라이브러리 파일을 복원합니다.
 
-편집하기 위해 *libman.json*을 열기 위해서는 다음과 같은 방법들이 존재합니다.
+편집을 위해 *libman.json*을 열려면 다음과 같은 방법을 사용할 수 있습니다.
 
 * **솔루션 탐색기**에서 *libman.json* 파일을 더블 클릭합니다.
 * **솔루션 탐색기**에서 마우스 오른쪽 버튼으로 프로젝트를 클릭하고 **클라이언트 쪽 라이브러리 관리**를 선택합니다. **&#8224;**
@@ -98,9 +98,9 @@ Visual Studio는 색 지정, 서식 지정, IntelliSense 및 스키마 유효성
 
 다음 매니페스트 파일을 사용하는 경우 LibMan은 `libraries` 속성에 정의된 각 구성에 따라 파일을 검색합니다. `libraries` 내에 정의된 개체 리터럴에 대한 설명은 다음과 같습니다.
 
-* CDNJS 공급자에서 [jQuery](https://jquery.com/) 버전 3.3.1의 하위 집합이 검색됩니다. 하위 집합은 `files` 속성에 정의됩니다 (*jquery.min.js*, *jquery.js* 및 *jquery.min.map*). 이 파일들은 프로젝트의 *wwwroot/lib/jquery* 폴더에 배치됩니다.
+* CDNJS 공급자에서 [jQuery](https://jquery.com/) 버전 3.3.1의 하위 집합이 검색됩니다. 하위 집합은 `files` 속성에 정의됩니다 (*jquery.min.js*, *jquery.js* 및 *jquery.min.map*). 이러한 파일은 프로젝트의 *wwwroot/lib/jquery* 폴더에 배치됩니다.
 * [부트스트랩](https://getbootstrap.com/) 버전 4.1.3 전체가 검색되어 *wwwroot/lib/bootstrap* 폴더에 배치됩니다. 개체 리터럴의 `provider` 속성은 `defaultProvider` 속성 값을 재정의합니다. LibMan은 unpkg 공급자에서 부트스트랩 파일을 검색합니다.
-* [Lodash](https://lodash.com/)의 하위 집합은 조직 내 관리 기관의 승인을 받았습니다. *lodash.js* 및 *lodash.min.js* 파일은 로컬 파일 시스템의 *c:\\temp\\lodash\\*에서 검색됩니다. 이 파일들은 프로젝트의 *wwwroot/lib/lodash* 폴더에 복사됩니다.
+* [Lodash](https://lodash.com/)의 하위 집합은 조직 내 관리 기관의 승인을 받았습니다. *lodash.js* 및 *lodash.min.js* 파일은 로컬 파일 시스템의 *c:\\temp\\lodash\\*에서 검색됩니다. 이러한 파일은 프로젝트의 *wwwroot/lib/lodash* 폴더에 복사됩니다.
 
 [!code-json[](samples/LibManSample/libman.json)]
 
@@ -109,7 +109,7 @@ Visual Studio는 색 지정, 서식 지정, IntelliSense 및 스키마 유효성
 
 ## <a name="restore-library-files"></a>라이브러리 파일 복원하기
 
-Visual Studio에서 라이브러리 파일을 복원하려면 프로젝트 루트에 유효한 *libman.json* 파일이 존재해야 합니다. 복원된 파일은 각 라이브러리에 대해 지정된 프로젝트의 위치의 배치됩니다.
+Visual Studio에서 라이브러리 파일을 복원하려면 프로젝트 루트에 유효한 *libman.json* 파일이 존재해야 합니다. 복원된 파일은 각 라이브러리에 대해 지정된 프로젝트의 위치에 배치됩니다.
 
 ASP.NET Core 프로젝트에서 두 가지 방법으로 라이브러리 파일을 복원할 수 있습니다.
 
@@ -127,7 +127,7 @@ LibMan은 빌드 프로세스의 일부로 정의된 라이브러리 파일을 �
 
   [!code-xml[](samples/LibManSample/LibManSample.csproj?name=snippet_RestoreOnBuildPackage)]
 
-* 프로젝트를 빌드해서 LibMan 파일 복원이 발생하는지 확인합니다. `Microsoft.Web.LibraryManager.Build` 패키지는 프로젝트의 빌드 작업 중 LibMan을 실행하는 MSBuild 대상을 주입합니다.
+* 프로젝트를 빌드해서 LibMan 파일 복원이 발생하는지 확인합니다. Microsoft.Web.LibraryManager.Build` 패키지는 프로젝트의 빌드 작업 중 LibMan을 실행하는 MSBuild 대상을 주입합니다.
 * LibMan 활동 로그에 대한 **출력** 창의 **빌드** 피드를 검토합니다.
 
   ```console
@@ -159,7 +159,7 @@ LibMan은 빌드 프로세스의 일부로 정의된 라이브러리 파일을 �
 
 복원 작업이 실행되는 동안:
 
-* Visual Studio 상태 표시줄의 작업 상태 센터 (TSC) 아이콘이 애니메이션 되고 *복원 작업이 시작됨*으로 표시됩니다. 이 아이콘을 클릭하면 알려진 백그라운드 작업을 나열하는 도구 설명이 열립니다.
+* Visual Studio 상태 표시줄의 작업 상태 센터(TSC) 아이콘이 애니메이션되고 *복원 작업이 시작됨*으로 표시됩니다. 이 아이콘을 클릭하면 알려진 백그라운드 작업을 나열하는 도구 설명이 열립니다.
 * 메시지는 상태 표시줄 및 **출력** 창의 **라이브러리 관리자** 피드로 전송됩니다. 예를 들어 다음과 같습니다.
 
   ```console
@@ -184,7 +184,7 @@ Visual Studio에서 이전에 복원한 라이브러리 파일을 삭제하는 *
 
 정리 작업이 실행되는 동안:
 
-* Visual Studio 상태 표시줄의 TSC 아이콘이 애니메이션 되고 *라이브러리 정리 작업이 시작됨*으로 표시됩니다. 이 아이콘을 클릭하면 알려진 백그라운드 작업을 나열하는 도구 설명이 열립니다.
+* Visual Studio 상태 표시줄의 TSC 아이콘이 애니메이션되고 *라이브러리 정리 작업이 시작됨*으로 표시됩니다. 이 아이콘을 클릭하면 알려진 백그라운드 작업을 나열하는 도구 설명이 열립니다.
 * 메시지는 상태 표시줄 및 **출력** 창의 **라이브러리 관리자** 피드로 전송됩니다. 예를 들어 다음과 같습니다.
 
 ```console
@@ -200,7 +200,7 @@ Clean libraries operation completed
 라이브러리 파일을 제거하려면:
 
 * *libman.json*을 엽니다.
-* 캐럿을 해당 `libraries` 개체 리터럴에 위치합니다.
+* 캐럿을 해당 `libraries` 개체 리터럴에 배치합니다.
 * 왼쪽 여백에 표시되는 전구 아이콘을 클릭하고 **\<library_name>@\<library_version> 제거**를 선택합니다.
 
   ![라이브러리 제거 컨텍스트 메뉴 옵션](_static/uninstall-menu-option.png)
@@ -209,10 +209,10 @@ Clean libraries operation completed
 
 ## <a name="update-library-version"></a>라이브러리 버전 업데이트
 
-업데이트 된 라이브러리 버전을 확인하려면:
+업데이트된 라이브러리 버전을 확인하려면:
 
 * *libman.json*을 엽니다.
-* 캐럿을 해당 `libraries` 개체 리터럴에 위치합니다.
+* 캐럿을 해당 `libraries` 개체 리터럴에 배치합니다.
 * 왼쪽 여백에 표시되는 전구 아이콘을 클릭합니다. **업데이트 확인** 위에 마우스를 올려 놓습니다.
 
 LibMan이 설치되어 있는 버전보다 새로운 라이브러리 버전을 확인합니다. 다음과 같은 결과가 발생할 수 있습니다.
@@ -224,10 +224,10 @@ LibMan이 설치되어 있는 버전보다 새로운 라이브러리 버전을 �
 
 * 설치되어 있는 버전보다 새로운 시험판 버전을 사용할 수 있는 경우 시험판 버전이 표시됩니다.
 
-이전 라이브러리 버전으로 다운그레이드 하려면 *libman.json* 파일을 직접 편집합니다. 파일이 저장되면 LibMan [복원 작업](#restore-library-files)이 다음을 수행합니다.
+이전 라이브러리 버전으로 다운그레이드하려면 *libman.json* 파일을 직접 편집합니다. 파일이 저장되면 LibMan [복원 작업](#restore-library-files)에서 다음을 수행합니다.
 
 * 이전 버전에서 중복 파일을 제거합니다.
-* 새 버전에서 새로운 파일과 업데이트 된 파일을 추가합니다.
+* 새 버전에서 새로운 파일과 업데이트된 파일을 추가합니다.
 
 ## <a name="additional-resources"></a>추가 자료
 
