@@ -52,7 +52,7 @@ public class AccountController : Controller
 
 이제 인증된 사용자만 `Logout` 함수에 접근할 수 있습니다.
 
-또는 `AllowAnonymous` 특성을 사용하여 인증되지 않은 사용자가 개별 액션에 접근할 수 있게 허용할 수도 있습니다. 예를 들어:
+또는 `AllowAnonymous` 특성을 사용하여 인증되지 않은 사용자가 개별 액션에 접근할 수 있게 허용할 수도 있습니다. 예:
 
 ```csharp
 [Authorize]
@@ -69,7 +69,7 @@ public class AccountController : Controller
 }
 ```
 
-이렇게 특성을 적용하면, 인증됐는지 또는 인증되지 않았는지 익명 상태와 관계없이 모든 사용자가 접근할 수 있는 `Login` 액션을 제외한 `AccountController`에는 인증된 사용자만 접근할 수 있습니다.
+이렇게 특성을 적용하면 인증 여부 및 익명 상태와 관계없이 모든 사용자가 접근할 수 있는 `Login` 액션을 제외하고, `AccountController`에는 인증된 사용자만 접근할 수 있습니다.
 
 > [!WARNING]
 > `[AllowAnonymous]`는 모든 권한 부여 문을 건너뜁니다. `[AllowAnonymous]` 및 `[Authorize]` 특성을 결합하면 `[Authorize]` 특성은 무시됩니다. 예를 들어 컨트롤러 수준에 `[AllowAnonymous]`를 적용하면 해당 컨트롤러의 (또는 그 내부의 모든 액션의) `[Authorize]` 특성은 무시됩니다.
