@@ -86,15 +86,15 @@ ms.locfileid: "52288644"
    dotnet run
    ```
 
-* [https://localhost:5001](https://localhost:5001)으로 이동합니다. **동의**를 클릭하여 개인 정보 및 쿠키 정책에 동의합니다. 이 앱은 개인 정보를 보관하지 않습니다.
+* [https://localhost:5001](https://localhost:5001)로 이동합니다. **동의**를 클릭하여 개인 정보 및 쿠키 정책에 동의합니다. 이 앱은 개인 정보를 보관하지 않습니다.
 
 ## <a name="edit-a-razor-page"></a>Razor 페이지 편집
 
-* *Pages/About.cshtml*을 열고 다음과 같은 강조 표시된 태그로 페이지를 수정합니다.
+* *Pages/About.cshtml*을 열고 다음에서 강조 표시된 영역처럼 페이지를 수정합니다.
 
    [!code-cshtml[](sample/getting-started/about.cshtml?highlight=9)]
 
-* [https://localhost:5001/About](https://localhost:5001/About)으로 이동하여 변경 내용이 표시되는지 확인합니다.
+* [https://localhost:5001/About](https://localhost:5001/About)으로 이동하여 수정한 내용이 표시되는지 확인합니다.
 
 ## <a name="next-steps"></a>다음 단계
 
@@ -104,7 +104,7 @@ ms.locfileid: "52288644"
 > * 웹앱 프로젝트를 만듭니다.
 > * 로컬 HTTPS를 사용하도록 설정합니다.
 > * 프로젝트를 실행합니다.
-> * 변경합니다.
+> * 페이지를 수정합니다.
 
 ASP.NET Core에 대한 자세한 내용은 다음을 참조하세요.
 
