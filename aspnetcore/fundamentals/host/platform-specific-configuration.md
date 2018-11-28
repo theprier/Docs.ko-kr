@@ -5,22 +5,22 @@ description: IHostingStartup 구현을 사용하여 외부 어셈블리에서 AS
 monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.custom: mvc
-ms.date: 08/13/2018
+ms.date: 11/22/2018
 uid: fundamentals/configuration/platform-specific-configuration
-ms.openlocfilehash: a06c2da04c1631f5811a535c891ca5190b0d8864
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: ef3b48dc72f294a783d789c4c9a796e3498a91d9
+ms.sourcegitcommit: 710fc5fcac258cc8415976dc66bdb355b3e061d5
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50207565"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52299458"
 ---
 # <a name="enhance-an-app-from-an-external-assembly-in-aspnet-core-with-ihostingstartup"></a>IHostingStartup을 사용하여 ASP.NET Core의 외부 어셈블리에서 앱 강화
 
-[Luke Latham](https://github.com/guardrex)으로
+작성자: [Luke Latham](https://github.com/guardrex), [Pavel Krymets](https://github.com/pakrym)
 
 [IHostingStartup](/dotnet/api/microsoft.aspnetcore.hosting.ihostingstartup)(호스팅 시작) 구현에서는 외부 어셈블리에서 시작할 때 앱에 향상된 기능을 추가할 수 있습니다. 예를 들어 외부 라이브러리는 호스팅 시작 구현을 사용하여 앱에 추가 구성 공급자 또는 서비스를 제공할 수 있습니다. `IHostingStartup` *는 ASP.NET Core 2.0 이상에서 사용할 수 있습니다.*
 
-[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/host/platform-specific-configuration/samples/)([다운로드 방법](xref:index#how-to-download-a-sample))
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/host/platform-specific-configuration/samples/) ([다운로드 방법](xref:index#how-to-download-a-sample))
 
 ## <a name="hostingstartup-attribute"></a>HostingStartup 특성
 
@@ -113,14 +113,21 @@ ms.locfileid: "50207565"
 
 *이 방법은 .NET Framework가 아닌 .NET Core 앱에서만 사용할 수 있습니다.*
 
-활성화에 대한 컴파일 시간 참조가 필요하지 않은 동적 호스팅 시작 기능 향상은 진입점 없이 콘솔 앱에서 제공될 수 있습니다. 앱에는 `HostingStartup` 특성이 포함되어 있습니다. 동적 호스팅 시작을 만들려면:
+활성화에 대한 컴파일 시간 참조가 필요하지 않은 동적 호스팅 시작 기능 향상은 `HostingStartup` 특성이 포함되는 진입점 없는 콘솔 앱에서 제공될 수 있습니다. 콘솔 앱을 게시하면 런타임 저장소에서 사용할 수 있는 호스팅 시작 어셈블리가 생성됩니다.
 
-1. 구현 라이브러리는 `IHostingStartup` 구현을 포함하는 클래스에서 생성됩니다. 구현 라이브러리는 기본 패키지로 처리됩니다.
-1. 진입점이 없는 콘솔 앱은 구현 라이브러리 패키지를 참조합니다. 콘솔 앱은 다음과 같은 이유로 사용됩니다.
-   * 종속성 파일은 실행 가능한 앱 자산이므로 라이브러리는 종속성 파일을 제공할 수 없습니다.
-   * 라이브러리를 [런타임 패키지 저장소](/dotnet/core/deploying/runtime-store)에 직접 추가할 수 없습니다. 이 저장소에는 공유 런타임을 대상으로 하는 실행 가능한 프로젝트가 필요합니다.
-1. 콘솔 앱은 호스팅 시작의 종속성을 얻기 위해 게시됩니다. 콘솔 앱을 게시하면 사용되지 않는 종속성이 종속성 파일에서 트리밍됩니다.
-1. 앱 및 해당 종속성 파일이 런타임 패키지 저장소에 저장됩니다. 호스팅 시작 어셈블리 및 해당 종속성 파일을 검색하기 위해 한 쌍의 환경 변수에서 참조됩니다.
+다음과 같은 이유로 이 프로세스에서는 진입점 없는 콘솔 앱이 사용됩니다.
+
+* 호스팅 시작 어셈블리에서 호스팅 시작을 사용하려면 종속성 파일이 필요합니다. 종속성 파일은 라이브러리가 아닌 앱을 게시하여 생성된 실행 가능한 앱 자산입니다.
+* 라이브러리를 [런타임 패키지 저장소](/dotnet/core/deploying/runtime-store)에 직접 추가할 수 없습니다. 이 저장소에는 공유 런타임을 대상으로 하는 실행 가능한 프로젝트가 필요합니다.
+
+동적 호스팅 시작 만들기:
+
+* 호스팅 시작 어셈블리는 다음과 같은 진입점 없는 콘솔 앱에서 만들어집니다.
+  * `IHostingStartup` 구현이 포함되는 클래스를 포함합니다.
+  * `IHostingStartup` 구현 클래스를 식별하는 [HostingStartup](/dotnet/api/microsoft.aspnetcore.hosting.hostingstartupattribute) 특성을 포함합니다.
+* 콘솔 앱은 호스팅 시작의 종속성을 얻기 위해 게시됩니다. 콘솔 앱을 게시하면 사용되지 않는 종속성이 종속성 파일에서 트리밍됩니다.
+* 종속성 파일은 호스팅 시작 어셈블리의 런타임 위치를 설정하도록 수정됩니다.
+* 호스팅 시작 어셈블리 및 해당 종속성 파일은 런타임 패키지 저장소에 저장됩니다. 호스팅 시작 어셈블리 및 해당 종속성 파일을 검색하기 위해 한 쌍의 환경 변수에 나열됩니다.
 
 콘솔 앱은 [Microsoft.AspNetCore.Hosting.Abstractions](https://www.nuget.org/packages/Microsoft.AspNetCore.Hosting.Abstractions/) 패키지를 참조합니다.
 
@@ -167,187 +174,98 @@ HostingStartupLibrary;HostingStartupPackage;StartupDiagnostics
 
 호스팅 시작 구현은 [런타임 저장소](/dotnet/core/deploying/runtime-store)에 배치됩니다. 향상된 앱에서는 어셈블리에 대한 컴파일 시간 참조가 필요하지 않습니다.
 
-호스팅 시작이 빌드된 후 호스팅 시작의 프로젝트 파일은 [dotnet store](/dotnet/core/tools/dotnet-store) 명령의 매니페스트 파일로 사용됩니다.
+호스팅 시작이 빌드된 후에는 매니페스트 프로젝트 파일과 [dotnet store](/dotnet/core/tools/dotnet-store) 명령을 사용하여 런타임 저장소가 생성됩니다.
 
 ```console
-dotnet store --manifest <PROJECT_FILE> --runtime <RUNTIME_IDENTIFIER>
+dotnet store --manifest {MANIFEST FILE} --runtime {RUNTIME IDENTIFIER} --output {OUTPUT LOCATION} --skip-optimization
 ```
 
-이 명령은 사용자 프로필의 런타임 저장소에 공유 프레임워크에 속하지 않는 호스팅 시작 어셈블리 및 기타 종속성을 배치합니다.
+샘플 앱(*RuntimeStore* 프로젝트)에서 다음 명령이 사용됩니다.
 
-# <a name="windowstabwindows"></a>[Windows](#tab/windows)
-
-```
-%USERPROFILE%\.dotnet\store\x64\<TARGET_FRAMEWORK_MONIKER>\<ENHANCEMENT_ASSEMBLY_NAME>\<ENHANCEMENT_VERSION>\lib\<TARGET_FRAMEWORK_MONIKER>\
+``` console
+dotnet store --manifest store.manifest.csproj --runtime win7-x64 --output ./deployment/store --skip-optimization
 ```
 
-# <a name="macostabmacos"></a>[macOS](#tab/macos)
-
-```
-/Users/<USER>/.dotnet/store/x64/<TARGET_FRAMEWORK_MONIKER>/<ENHANCEMENT_ASSEMBLY_NAME>/<ENHANCEMENT_VERSION>/lib/<TARGET_FRAMEWORK_MONIKER>/
-```
-
-# <a name="linuxtablinux"></a>[Linux](#tab/linux)
-
-```
-/Users/<USER>/.dotnet/store/x64/<TARGET_FRAMEWORK_MONIKER>/<ENHANCEMENT_ASSEMBLY_NAME>/<ENHANCEMENT_VERSION>/lib/<TARGET_FRAMEWORK_MONIKER>/
-```
-
----
-
-글로벌 사용을 위한 어셈블리 및 종속성을 배치하려면 다음 경로를 사용하여 `-o|--output` 옵션을 `dotnet store` 명령에 추가합니다.
-
-# <a name="windowstabwindows"></a>[Windows](#tab/windows)
-
-```
-%PROGRAMFILES%\dotnet\store\x64\<TARGET_FRAMEWORK_MONIKER>\<ENHANCEMENT_ASSEMBLY_NAME>\<ENHANCEMENT_VERSION>\lib\<TARGET_FRAMEWORK_MONIKER>\
-```
-
-# <a name="macostabmacos"></a>[macOS](#tab/macos)
-
-```
-/usr/local/share/dotnet/store/x64/<TARGET_FRAMEWORK_MONIKER>/<ENHANCEMENT_ASSEMBLY_NAME>/<ENHANCEMENT_VERSION>/lib/<TARGET_FRAMEWORK_MONIKER>/
-```
-
-# <a name="linuxtablinux"></a>[Linux](#tab/linux)
-
-```
-/usr/local/share/dotnet/store/x64/<TARGET_FRAMEWORK_MONIKER>/<ENHANCEMENT_ASSEMBLY_NAME>/<ENHANCEMENT_VERSION>/lib/<TARGET_FRAMEWORK_MONIKER>/
-```
-
----
+런타임에서 런타임 저장소를 검색하기 위해 런타임 저장소의 위치가 `DOTNET_SHARED_STORE` 환경 변수에 추가됩니다.
 
 **호스팅 시작의 종속성 파일 수정 및 배치**
 
-런타임 위치는 *\*.deps.json* 파일에 지정됩니다. 향상된 기능을 활성화하려면 `runtime` 요소가 해당 기능 런타임 어셈블리의 위치를 지정해야 합니다. `runtime` 위치의 접두사를 `lib/<TARGET_FRAMEWORK_MONIKER>/`로 지정합니다.
+향상된 기능에 대한 패키지 참조 없이 향상된 기능을 활성화하려면 `additionalDeps`를 사용하여 런타임에 추가 종속성을 지정합니다. `additionalDeps`를 사용하면 다음을 수행할 수 있습니다.
 
-[!code-json[](platform-specific-configuration/samples-snapshot/2.x/StartupEnhancement2.deps.json?range=2-13&highlight=8)]
+* 시작 시 앱의 고유한 *\*.deps.json* 파일과 병합하기 위해 추가 *\*.deps.json* 파일 집합을 제공하여 앱의 라이브러리 그래프를 확장합니다.
+* 호스팅 시작 어셈블리를 검색 가능하고 로드 가능하게 만듭니다.
 
-샘플 코드(*StartupDiagnostics* 프로젝트)에서 *\*.deps.json*파일의 수정은 [PowerShell](/powershell/scripting/powershell-scripting) 스크립트에 의해 수행됩니다. PowerShell 스크립트는 프로젝트 파일의 빌드 대상에서 자동으로 트리거합니다.
+추가 종속성 파일을 생성하기 위해 권장되는 방법은 다음과 같습니다.
 
-이제 구현의 *\*.deps.json* 파일은 액세스할 수 있는 위치에 있어야 합니다.
+ 1. 이전 섹션에서 참조한 런타임 저장소 매니페스트 파일에서 `dotnet publish`를 실행합니다.
+ 1. 결과 *\*deps.json* 파일의 `runtime` 섹션 및 라이브러리에서 매니페스트 참조를 제거합니다.
 
-사용자별 사용의 경우 파일을 사용자 프로필 `.dotnet` 설정의 *additonalDeps* 폴더에 배치합니다.
+예제 프로젝트에서 `store.manifest/1.0.0` 속성은 `targets` 및 `libraries` 섹션에서 제거됩니다.
 
-# <a name="windowstabwindows"></a>[Windows](#tab/windows)
-
-```
-%USERPROFILE%\.dotnet\x64\additionalDeps\<ENHANCEMENT_ASSEMBLY_NAME>\shared\Microsoft.NETCore.App\<SHARED_FRAMEWORK_VERSION>\
-```
-
-# <a name="macostabmacos"></a>[macOS](#tab/macos)
-
-```
-/Users/<USER>/.dotnet/x64/additionalDeps/<ENHANCEMENT_ASSEMBLY_NAME>/shared/Microsoft.NETCore.App/<SHARED_FRAMEWORK_VERSION>/
-```
-
-# <a name="linuxtablinux"></a>[Linux](#tab/linux)
-
-```
-/Users/<USER>/.dotnet/x64/additionalDeps/<ENHANCEMENT_ASSEMBLY_NAME>/shared/Microsoft.NETCore.App/<SHARED_FRAMEWORK_VERSION>/
-```
-
----
-
-글로벌 사용의 경우 파일을 .NET Core 설치의 *additonalDeps* 폴더에 배치합니다.
-
-# <a name="windowstabwindows"></a>[Windows](#tab/windows)
-
-```
-%PROGRAMFILES%\dotnet\additionalDeps\<ENHANCEMENT_ASSEMBLY_NAME>\shared\Microsoft.NETCore.App\<SHARED_FRAMEWORK_VERSION>\
-```
-
-# <a name="macostabmacos"></a>[macOS](#tab/macos)
-
-```
-/usr/local/share/dotnet/additionalDeps/<ENHANCEMENT_ASSEMBLY_NAME>/shared/Microsoft.NETCore.App/<SHARED_FRAMEWORK_VERSION>/
-```
-
-# <a name="linuxtablinux"></a>[Linux](#tab/linux)
-
-```
-/usr/local/share/dotnet/additionalDeps/<ENHANCEMENT_ASSEMBLY_NAME>/shared/Microsoft.NETCore.App/<SHARED_FRAMEWORK_VERSION>/
-```
-
----
-
-공유 프레임워크 버전은 대상 앱이 사용하는 공유 런타임 버전을 반영합니다. 공유 런타임은 *\*.runtimeconfig.json* 파일에 표시됩니다. 샘플 앱(*HostingStartupApp*)에서 공유 런타임은 *HostingStartupApp.runtimeconfig.json* 파일에 지정됩니다.
-
-**호스팅 시작의 종속성 파일 목록**
-
-구현의 *\*.deps.json* 파일 위치가 `DOTNET_ADDITIONAL_DEPS` 환경 변수에 나열됩니다.
-
-파일이 사용자 프로필의 *.dotnet* 폴더에 있는 경우 환경 변수의 값을 다음과 같이 설정합니다.
-
-# <a name="windowstabwindows"></a>[Windows](#tab/windows)
-
-```
-%USERPROFILE%\.dotnet\x64\additionalDeps\
+```json
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v2.1",
+    "signature": "4ea77c7b75ad1895ae1ea65e6ba2399010514f99"
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v2.1": {
+      "store.manifest/1.0.0": {
+        "dependencies": {
+          "StartupDiagnostics": "1.0.0"
+        },
+        "runtime": {
+          "store.manifest.dll": {}
+        }
+      },
+      "StartupDiagnostics/1.0.0": {
+        "runtime": {
+          "lib/netcoreapp2.1/StartupDiagnostics.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "store.manifest/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "StartupDiagnostics/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-oiQr60vBQW7+nBTmgKLSldj06WNLRTdhOZpAdEbCuapoZ+M2DJH2uQbRLvFT8EGAAv4TAKzNtcztpx5YOgBXQQ==",
+      "path": "startupdiagnostics/1.0.0",
+      "hashPath": "startupdiagnostics.1.0.0.nupkg.sha512"
+    }
+  }
+}
 ```
 
-# <a name="macostabmacos"></a>[macOS](#tab/macos)
+*\*.deps.json* 파일을 다음 위치에 배치합니다.
 
 ```
-/Users/<USER>/.dotnet/x64/additionalDeps/
+{ADDITIONAL DEPENDENCIES PATH}/shared/{SHARED FRAMEWORK NAME}/{SHARED FRAMEWORK VERSION}/{ENHANCEMENT ASSEMBLY NAME}.deps.json
 ```
 
-# <a name="linuxtablinux"></a>[Linux](#tab/linux)
+* `{ADDITIONAL DEPENDENCIES PATH}` &ndash; `DOTNET_ADDITIONAL_DEPS` 환경 변수에 추가되는 위치입니다.
+* `{SHARED FRAMEWORK NAME}` &ndash; 이 추가 종속성 파일에 대한 공유 프레임워크가 필요합니다.
+* `{SHARED FRAMEWORK VERSION}` &ndash; 최소 공유 프레임워크 버전입니다.
+* `{ENHANCEMENT ASSEMBLY NAME}` &ndash; 향상된 기능의 어셈블리 이름입니다.
+
+샘플 앱(*RuntimeStore* 프로젝트)에서 추가 종속성 파일은 다음 위치에 배치됩니다.
 
 ```
-/Users/<USER>/.dotnet/x64/additionalDeps/
+additionalDeps/shared/Microsoft.AspNetCore.App/2.1.0/StartupDiagnostics.deps.json
 ```
 
----
+런타임에서 런타임 저장소 위치를 검색하기 위해 추가 종속성 파일 위치가 `DOTNET_ADDITIONAL_DEPS` 환경 변수에 추가됩니다.
 
-전역 사용에서 파일을 .NET Core 설치에 배치하는 경우 파일에 전체 경로를 제공합니다.
-
-# <a name="windowstabwindows"></a>[Windows](#tab/windows)
-
-```
-%PROGRAMFILES%\dotnet\additionalDeps\<ENHANCEMENT_ASSEMBLY_NAME>\shared\Microsoft.NETCore.App\<SHARED_FRAMEWORK_VERSION>\<ENHANCEMENT_ASSEMBLY_NAME>.deps.json
-```
-
-# <a name="macostabmacos"></a>[macOS](#tab/macos)
-
-```
-/usr/local/share/dotnet/additionalDeps/<ENHANCEMENT_ASSEMBLY_NAME>/shared/Microsoft.NETCore.App/<SHARED_FRAMEWORK_VERSION>/<ENHANCEMENT_ASSEMBLY_NAME>.deps.json
-```
-
-# <a name="linuxtablinux"></a>[Linux](#tab/linux)
-
-```
-/usr/local/share/dotnet/additionalDeps/<ENHANCEMENT_ASSEMBLY_NAME>/shared/Microsoft.NETCore.App/<SHARED_FRAMEWORK_VERSION>/<ENHANCEMENT_ASSEMBLY_NAME>.deps.json
-```
-
----
-
-샘플 앱(*HostingStartupApp*)이 종속성 파일(*HostingStartupApp.runtimeconfig.json*)을 찾는 경우 종속성 파일은 사용자의 프로필에 배치됩니다.
-
-# <a name="windowstabwindows"></a>[Windows](#tab/windows)
-
-`DOTNET_ADDITIONAL_DEPS` 환경 변수를 다음 값으로 설정합니다.
-
-```
-%UserProfile%\.dotnet\x64\additionalDeps\StartupDiagnostics\
-```
-
-# <a name="macostabmacos"></a>[macOS](#tab/macos)
-
-`DOTNET_ADDITIONAL_DEPS` 환경 변수를 다음 값으로 설정합니다.
-
-```
-/Users/<USER>/.dotnet/x64/additionalDeps/StartupDiagnostics/
-```
-
-# <a name="linuxtablinux"></a>[Linux](#tab/linux)
-
-`DOTNET_ADDITIONAL_DEPS` 환경 변수를 다음 값으로 설정합니다.
-
-```
-/Users/<USER>/.dotnet/x64/additionalDeps/StartupDiagnostics/
-```
-
----
+샘플 앱( *RuntimeStore* 프로젝트)에서 런타임 저장소 빌드 및 추가 종속성 파일 생성은 [PowerShell](/powershell/scripting/powershell-scripting) 스크립트를 사용하여 수행됩니다.
 
 다양한 운영 체제에 대한 환경 변수를 설정하는 방법의 예제는 [여러 환경 사용](xref:fundamentals/environments)을 참조하세요.
 
@@ -355,9 +273,9 @@ dotnet store --manifest <PROJECT_FILE> --runtime <RUNTIME_IDENTIFIER>
 
 다중 머신 환경에서 호스팅 시작의 배포를 용이하게 하기 위해 샘플 앱은 다음을 포함하는 게시된 출력에 *배포* 폴더를 만듭니다.
 
-* 호스팅 시작 어셈블리.
+* 호스팅 시작 런타임 저장소.
 * 호스팅 시작 종속성 파일.
-* 호스팅 시작 활성화를 지원하기 위해 `ASPNETCORE_HOSTINGSTARTUPASSEMBLIES` 및 `DOTNET_ADDITIONAL_DEPS`를 만들거나 수정하는 PowerShell 스크립트입니다. 배포 시스템의 관리 PowerShell 명령 프롬프트에서 스크립트를 실행합니다.
+* 호스팅 시작 활성화를 지원하기 위해 `ASPNETCORE_HOSTINGSTARTUPASSEMBLIES`, `DOTNET_SHARED_STORE` 및 `DOTNET_ADDITIONAL_DEPS` 를 만들거나 수정하는 PowerShell 스크립트입니다. 배포 시스템의 관리 PowerShell 명령 프롬프트에서 스크립트를 실행합니다.
 
 ### <a name="nuget-package"></a>NuGet 패키지
 
