@@ -16,7 +16,7 @@ ms.locfileid: "39356677"
 
 <a name="security-authorization-role-based"></a>
 
-신원(Identity)이 생성될 때 해당 신원은 하나 이상의 역할에 속할 수 있습니다. 예를 들어 Tracy는 Administrator 및 User 역할에 모두 속하지만 Scott은 User 역할에만 속할 수 있습니다. 이런 역할들이 생성되고 관리되는 방식은 권한 부여 프로세스에 사용되는 백업 저장소에 따라서 달라집니다. 개발자는 [ClaimsPrincipal](/dotnet/api/system.security.claims.claimsprincipal) 클래스의 [IsInRole](/dotnet/api/system.security.principal.genericprincipal.isinrole) 메서드를 이용해서 역할에 접근할 수 있습니다.
+신원(Identity)이 생성될 때 해당 신원은 하나 이상의 역할에 속할 수 있습니다. 예를 들어 Tracy는 Administrator 및 User 역할에 모두 속하지만 Scott은 User 역할에만 속할 수 있습니다. 이런 역할이 생성되고 관리되는 방식은 권한 부여 프로세스에 사용되는 백업 저장소에 따라서 달라집니다. 개발자는 [ClaimsPrincipal](/dotnet/api/system.security.claims.claimsprincipal) 클래스의 [IsInRole](/dotnet/api/system.security.principal.genericprincipal.isinrole) 메서드를 이용하여 역할에 접근할 수 있습니다.
 
 ::: moniker range=">= aspnetcore-2.0"
 
@@ -49,7 +49,7 @@ public class SalaryController : Controller
 
 이 컨트롤러는 `HRManager` 역할이나 `Finance` 역할에 속한 사용자만 접근할 수 있습니다.
 
-만약 여러 특성을 지정하면 접근하는 사용자는 지정된 모든 역할에 속해 있어야만 하는데, 다음 예제에서 사용자는 `PowerUser` 및 `ControlPanelUser` 역할 모두에 속해 있어야만 합니다.
+여러 특성을 지정한 경우 접근하는 사용자는 지정된 모든 역할에 속해 있어야 하는데, 다음 예제에서 사용자는 `PowerUser` 및 `ControlPanelUser` 역할 모두에 속해 있어야 합니다.
 
 ```csharp
 [Authorize(Roles = "PowerUser")]
@@ -78,7 +78,7 @@ public class ControlPanelController : Controller
 
 위의 코드 조각의 경우, `Administrator` 역할이나 `PowerUser` 역할에 속한 사용자는 컨트롤러와 `SetTime` 액션에 접근할 수 있지만, `ShutDown` 액션은 `Administrator` 역할에 속한 사용자만 접근이 가능합니다.
 
-또는 컨트롤러 전체는 잠그지만, 개별 액션에 대한 익명의 인증되지 않은 접근은 허용할 수도 있습니다.
+또한, 컨트롤러를 잠글 수도 있고 개별 작업에 대한 익명의 인증되지 않은 액세스를 허용할 수 있습니다.
 
 ```csharp
 [Authorize]
