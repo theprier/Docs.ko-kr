@@ -22,7 +22,7 @@ Visual Studio는 ASP.NET Core 프로젝트에서 [LibMan](xref:client-side/libma
 * 빌드 시 LibMan 복원 작업을 구성 및 실행하기 위한 지원.
 * LibMan 복원 및 정리 작업을 실행하기 위한 메뉴 항목.
 * 라이브러리를 검색하고 프로젝트에 파일을 추가하기 위한 검색 대화 상자.
-* LibMan 매니페스트 파일인 *libman.json*에 대한 편집 지원.
+* 편집에 대 한 지원과 *libman.json*&mdash;LibMan 매니페스트 파일.
 
 [예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/client-side/libman/samples/) [(다운로드 방법)](xref:index#how-to-download-a-sample)
 
@@ -64,9 +64,9 @@ Visual Studio는 ASP.NET Core 프로젝트에서 [LibMan](xref:client-side/libma
   
   |시작 위치                           |제안되는 폴더      |
   |------------------------------------------|----------------------|
-  |프로젝트 루트 (*wwwroot*가 존재할 경우) |*jquery/wwwroot/lib/* |
-  |프로젝트 루트 (*wwwroot*가 존재하지 않을 경우) |*lib/jquery/* |
-  |프로젝트의 *Pages* 폴더 |*Pages/jquery/* |
+  |프로젝트 루트 (*wwwroot*가 존재할 경우)        |*jquery/wwwroot/lib/* |
+  |프로젝트 루트 (*wwwroot*가 존재하지 않을 경우) |*lib/jquery/*         |
+  |프로젝트의 *Pages* 폴더                 |*Pages/jquery/*       |
 
 * *libman.json*의 구성에 따라 파일을 다운로드하려면 **설치** 버튼을 클릭합니다.
 * **출력** 창의 **라이브러리 관리자** 피드에서 설치 세부 정보를 검토할 수 있습니다. 예를 들어 다음과 같습니다.
@@ -92,13 +92,13 @@ Visual Studio의 모든 LibMan 작업은 프로젝트 루트의 LibMan 매니페
 * **솔루션 탐색기**에서 마우스 오른쪽 버튼으로 프로젝트를 클릭하고 **클라이언트 쪽 라이브러리 관리**를 선택합니다. **&#8224;**
 * Visual studio의 **프로젝트** 메뉴에서 **클라이언트 쪽 라이브러리 관리**를 선택합니다. **&#8224;**
 
-**&#8224;** 프로젝트 루트에 아직 *libman.json* 파일이 존재하지 않으면 기본 항목 템플릿 내용을 담은 파일이 만들어집니다.
+**&#8224;** 경우는 *libman.json* 파일은 프로젝트 루트에 존재 하지 않는 경우 기본 항목 템플릿 콘텐츠를 사용 하 여 만들어집니다.
 
 Visual Studio는 색 지정, 서식 지정, IntelliSense 및 스키마 유효성 검사 같은 다양한 JSON 편집 지원을 제공합니다. LibMan 매니페스트의 JSON 스키마는 [http://json.schemastore.org/libman](http://json.schemastore.org/libman)에서 살펴볼 수 있습니다.
 
 다음 매니페스트 파일을 사용하는 경우 LibMan은 `libraries` 속성에 정의된 각 구성에 따라 파일을 검색합니다. `libraries` 내에 정의된 개체 리터럴에 대한 설명은 다음과 같습니다.
 
-* CDNJS 공급자에서 [jQuery](https://jquery.com/) 버전 3.3.1의 하위 집합이 검색됩니다. 하위 집합은 `files` 속성에 정의됩니다 (*jquery.min.js*, *jquery.js* 및 *jquery.min.map*). 이러한 파일은 프로젝트의 *wwwroot/lib/jquery* 폴더에 배치됩니다.
+* 하위 집합 [jQuery](https://jquery.com/) 버전 3.3.1 CDNJS 공급자에서 검색 됩니다. 하위 집합에 정의 되어는 `files` 속성&mdash;*jquery.min.js*에 *jquery.js*, 및 *jquery.min.map*합니다. 프로젝트의 파일이 배치 되도록 *wwwroot/lib/jquery* 폴더입니다.
 * [부트스트랩](https://getbootstrap.com/) 버전 4.1.3 전체가 검색되어 *wwwroot/lib/bootstrap* 폴더에 배치됩니다. 개체 리터럴의 `provider` 속성은 `defaultProvider` 속성 값을 재정의합니다. LibMan은 unpkg 공급자에서 부트스트랩 파일을 검색합니다.
 * [Lodash](https://lodash.com/)의 하위 집합은 조직 내 관리 기관의 승인을 받았습니다. *lodash.js* 및 *lodash.min.js* 파일은 로컬 파일 시스템의 *c:\\temp\\lodash\\*에서 검색됩니다. 이러한 파일은 프로젝트의 *wwwroot/lib/lodash* 폴더에 복사됩니다.
 
@@ -127,7 +127,7 @@ LibMan은 빌드 프로세스의 일부로 정의된 라이브러리 파일을 �
 
   [!code-xml[](samples/LibManSample/LibManSample.csproj?name=snippet_RestoreOnBuildPackage)]
 
-* 프로젝트를 빌드해서 LibMan 파일 복원이 발생하는지 확인합니다. Microsoft.Web.LibraryManager.Build` 패키지는 프로젝트의 빌드 작업 중 LibMan을 실행하는 MSBuild 대상을 주입합니다.
+* LibMan 파일 복원이 수행 되는 확인 하려면 프로젝트를 빌드하십시오. `Microsoft.Web.LibraryManager.Build` 패키지 LibMan 프로젝트의 빌드 작업 중 실행 되는 MSBuild 대상을 삽입 합니다.
 * LibMan 활동 로그에 대한 **출력** 창의 **빌드** 피드를 검토합니다.
 
   ```console
@@ -160,7 +160,7 @@ LibMan은 빌드 프로세스의 일부로 정의된 라이브러리 파일을 �
 복원 작업이 실행되는 동안:
 
 * Visual Studio 상태 표시줄의 작업 상태 센터(TSC) 아이콘이 애니메이션되고 *복원 작업이 시작됨*으로 표시됩니다. 이 아이콘을 클릭하면 알려진 백그라운드 작업을 나열하는 도구 설명이 열립니다.
-* 메시지는 상태 표시줄 및 **출력** 창의 **라이브러리 관리자** 피드로 전송됩니다. 예를 들어 다음과 같습니다.
+* 상태 표시줄에 메시지를 전송할 하며 **라이브러리 관리자** 의 피드 합니다 **출력** 창입니다. 예를 들어 다음과 같습니다.
 
   ```console
   Restore operation started...
@@ -177,15 +177,15 @@ LibMan은 빌드 프로세스의 일부로 정의된 라이브러리 파일을 �
 
 Visual Studio에서 이전에 복원한 라이브러리 파일을 삭제하는 *정리* 작업을 수행하려면:
 
-* **솔루션 탐색기**에서 마우스 오른쪽 버튼으로 *libman.json* 파일을 클릭합니다.
+* *솔루션 탐색기*에서 **libman.json** 파일을 마우스 오른쪽 버튼으로 클릭합니다.
 * **청소** 옵션을 선택합니다.
 
 정리 작업은 의도하지 않은 비-라이브러리 파일의 제거를 방지하기 위해서 전체 디렉터리를 삭제하지 않습니다. 이전 복원에 포함된 파일들만 제거합니다.
 
 정리 작업이 실행되는 동안:
 
-* Visual Studio 상태 표시줄의 TSC 아이콘이 애니메이션되고 *라이브러리 정리 작업이 시작됨*으로 표시됩니다. 이 아이콘을 클릭하면 알려진 백그라운드 작업을 나열하는 도구 설명이 열립니다.
-* 메시지는 상태 표시줄 및 **출력** 창의 **라이브러리 관리자** 피드로 전송됩니다. 예를 들어 다음과 같습니다.
+* TSC Visual Studio 상태 표시줄에 애니메이션이 적용 될 아이콘과 읽을지를 *클라이언트 라이브러리 작업을 시작할*합니다. 이 아이콘을 클릭하면 알려진 백그라운드 작업을 나열하는 도구 설명이 열립니다.
+* 상태 표시줄 메시지와 **라이브러리 관리자** 의 피드를 **출력** 창입니다. 예를 들어 다음과 같습니다.
 
 ```console
 Clean libraries operation started...
@@ -201,7 +201,7 @@ Clean libraries operation completed
 
 * *libman.json*을 엽니다.
 * 캐럿을 해당 `libraries` 개체 리터럴에 배치합니다.
-* 왼쪽 여백에 표시되는 전구 아이콘을 클릭하고 **\<library_name>@\<library_version> 제거**를 선택합니다.
+* 왼쪽된 여백에 표시 되는 전구 아이콘을 클릭 하 고 선택 **제거 \<library_name > @\<library_version >**:
 
   ![라이브러리 제거 컨텍스트 메뉴 옵션](_static/uninstall-menu-option.png)
 
