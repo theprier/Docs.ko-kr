@@ -4,14 +4,14 @@ author: rick-anderson
 description: 에 대해 알아봅니다 어떻게 CORS 허용 하거나 거부 하는 ASP.NET Core 앱에서 크로스-원본 요청에 대 한 표준으로 합니다.
 ms.author: riande
 ms.custom: mvc
-ms.date: 11/05/2018
+ms.date: 11/27/2018
 uid: security/cors
-ms.openlocfilehash: 8e5056b448d47d75272e9394b03ce8a58b05a0f4
-ms.sourcegitcommit: 09affee3d234cb27ea6fe33bc113b79e68900d22
+ms.openlocfilehash: f0e01cfa618184d8a3b19c06212dc3914183a2e4
+ms.sourcegitcommit: e7fafb153b9de7595c2558a0133f8d1c33a3bddb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "51191323"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52458545"
 ---
 # <a name="enable-cross-origin-requests-cors-in-aspnet-core"></a>ASP.NET Core에서 원본 간 요청 (CORS)를 사용 하도록 설정
 
@@ -124,7 +124,7 @@ A *원본 간 정책은* 사용 하 여 CORS 미들웨어를 추가 하는 경�
 
 ## <a name="cors-policy-options"></a>CORS 정책 옵션
 
-이번 섹션에서는 CORS 정책에서 설정할 수 있는 다양한 옵션들을 살펴봅니다.
+이번 섹션에서는 CORS 정책에서 설정할 수 있는 다양한 옵션들을 살펴봅니다. 합니다 <xref:Microsoft.AspNetCore.Cors.Infrastructure.CorsOptions.AddPolicy*> 메서드는 `Startup.ConfigureServices`합니다.
 
 * [허용되는 원본 설정하기](#set-the-allowed-origins)
 * [허용되는 HTTP 메서드 설정하기](#set-the-allowed-http-methods)
@@ -139,55 +139,59 @@ A *원본 간 정책은* 사용 하 여 CORS 미들웨어를 추가 하는 경�
 
 ASP.NET Core MVC에서 CORS 미들웨어에 허용 되는 원본을 지정 하는 방법에 있습니다.
 
-* <xref:Microsoft.AspNetCore.Cors.Infrastructure.CorsPolicyBuilder.WithOrigins*>: 하나 이상의 Url을 지정할 수 있습니다. URL은 구성표, 호스트 이름 및 경로 정보 없이 포트를 포함할 수 있습니다. 예를 들어, `https://example.com`을 입력합니다. 후행 슬래시가 없는 URL을 지정 해야 합니다 (`/`).
+* <xref:Microsoft.AspNetCore.Cors.Infrastructure.CorsPolicyBuilder.WithOrigins*> &ndash; 하나 이상의 Url을 지정할 수 있습니다. URL은 구성표, 호스트 이름 및 경로 정보 없이 포트를 포함할 수 있습니다. 예를 들어, `https://example.com`을 입력합니다. 후행 슬래시가 없는 URL을 지정 해야 합니다 (`/`).
 
-[!code-csharp[](cors/sample/CorsExample4/Startup.cs?range=20-24&highlight=4)]
+  [!code-csharp[](cors/sample/CorsExample4/Startup.cs?range=20-25&highlight=4-5)]
 
-* <xref:Microsoft.AspNetCore.Cors.Infrastructure.CorsPolicyBuilder.AllowAnyOrigin*>: 모든 체계를 사용 하 여 모든 원본에서 CORS 요청을 허용 합니다. (`http` 또는 `https`).
+* <xref:Microsoft.AspNetCore.Cors.Infrastructure.CorsPolicyBuilder.AllowAnyOrigin*> &ndash; 임의의 체계를 사용 하 여 모든 원본에서 CORS 요청할 수 있습니다 (`http` 또는 `https`).
 
-[!code-csharp[](cors/sample/CorsExample4/Startup.cs?range=28-32&highlight=4)]
+  [!code-csharp[](cors/sample/CorsExample4/Startup.cs?range=29-33&highlight=4)]
 
-모든 원본의 요청을 허용하기 전에 신중히 고민하시기 바랍니다. 즉 모든 원본에서 요청할 수 있도록 *웹 사이트* 앱에 크로스-원본 요청을 수행할 수 있습니다.
+  모든 원본의 요청을 허용하기 전에 신중히 고민하시기 바랍니다. 즉 모든 원본에서 요청할 수 있도록 *웹 사이트* 앱에 크로스-원본 요청을 수행할 수 있습니다.
 
-::: moniker range=">= aspnetcore-2.2"
+  ::: moniker range=">= aspnetcore-2.2"
 
-> [!NOTE]
-> 지정 `AllowAnyOrigin` 고 `AllowCredentials` 는 안전 하지 않은 구성 및 교차 사이트 요청 위조 될 수 있습니다. CORS 서비스 앱은 두 개의 구성 된 경우 잘못 된 CORS 응답을 반환 합니다.
+  > [!NOTE]
+  > 지정 `AllowAnyOrigin` 고 `AllowCredentials` 는 안전 하지 않은 구성 및 교차 사이트 요청 위조 될 수 있습니다. CORS 서비스 앱 모두 메서드를 사용 하 여 구성 된 경우 잘못 된 CORS 응답을 반환 합니다.
+
+  ::: moniker-end
+
+  ::: moniker range="< aspnetcore-2.2"
+
+  > [!NOTE]
+  > 지정 `AllowAnyOrigin` 고 `AllowCredentials` 는 안전 하지 않은 구성 및 교차 사이트 요청 위조 될 수 있습니다. 클라이언트 자체 서버 리소스에 액세스 권한을 부여 해야 하는 경우에 정확한 원본 목록이 올바르면을 지정 하는 것이 좋습니다.
+
+  ::: moniker-end
+
+  이 설정은 실행 전 요청 및 `Access-Control-Allow-Origin` 헤더입니다. 자세한 내용은 참조는 [요청을 실행 전](#preflight-requests) 섹션입니다.
+
+::: moniker range=">= aspnetcore-2.0"
+
+* <xref:Microsoft.AspNetCore.Cors.Infrastructure.CorsPolicyBuilder.SetIsOriginAllowedToAllowWildcardSubdomains*> &ndash; 집합의 <xref:Microsoft.AspNetCore.Cors.Infrastructure.CorsPolicy.IsOriginAllowed*> 원본 허용 되는 경우 평가할 때 구성 된 와일드 카드 도메인에 맞게 원본을 허용 하는 함수를 정책의 속성입니다.
+
+  [!code-csharp[](cors/sample/CorsExample4/Startup.cs?range=100-104&highlight=4)]
 
 ::: moniker-end
-
-::: moniker range="< aspnetcore-2.2"
-
-> [!NOTE]
-> 지정 `AllowAnyOrigin` 고 `AllowCredentials` 는 안전 하지 않은 구성 및 교차 사이트 요청 위조 될 수 있습니다. 클라이언트에서 서버 리소스에 액세스 권한을 부여 해야 할 경우에 정확한 원본 목록이 올바르면을 지정 하는 것이 좋습니다.
-
-::: moniker-end
-
-이 설정은 영향을 줍니다 [요청 및 액세스 제어-허용-원본 헤더 실행 전](#preflight-requests) (이 항목의 뒷부분에 설명).
-
-* <xref:Microsoft.AspNetCore.Cors.Infrastructure.CorsPolicyBuilder.SetIsOriginAllowedToAllowWildcardSubdomains*> -지정된 된 도메인의 모든 하위 도메인의 CORS 요청을 허용합니다. 체계는 와일드 카드 일 수 없습니다.
-
-[!code-csharp[](cors/sample/CorsExample4/Startup.cs?range=98-104&highlight=4)]
 
 ### <a name="set-the-allowed-http-methods"></a>허용되는 HTTP 메서드 설정하기
 
 모든 HTTP 메서드를 허용 하려면 호출 <xref:Microsoft.AspNetCore.Cors.Infrastructure.CorsPolicyBuilder.AllowAnyMethod*>:
 
-[!code-csharp[](cors/sample/CorsExample4/Startup.cs?range=45-50&highlight=5)]
+[!code-csharp[](cors/sample/CorsExample4/Startup.cs?range=46-51&highlight=5)]
 
-이 설정은 영향을 줍니다 [요청 및 액세스-컨트롤-허용-Methods 헤더 실행 전](#preflight-requests) (이 항목의 뒷부분에 설명).
+이 설정은 실행 전 요청 및 `Access-Control-Allow-Methods` 헤더입니다. 자세한 내용은 참조는 [요청을 실행 전](#preflight-requests) 섹션입니다.
 
 ### <a name="set-the-allowed-request-headers"></a>허용되는 요청 헤더 설정하기
 
 특정 헤더를 CORS 요청을 보낼 수 있도록 호출 *요청 헤더를 작성*, 호출 <xref:Microsoft.AspNetCore.Cors.Infrastructure.CorsPolicyBuilder.WithHeaders*> 허용 되는 헤더를 지정 합니다.
 
-[!code-csharp[](cors/sample/CorsExample4/Startup.cs?range=54-59&highlight=5)]
+[!code-csharp[](cors/sample/CorsExample4/Startup.cs?range=55-60&highlight=5)]
 
 요청 헤더에 모든 author 수 있도록 호출 <xref:Microsoft.AspNetCore.Cors.Infrastructure.CorsPolicyBuilder.AllowAnyHeader*>:
 
-[!code-csharp[](cors/sample/CorsExample4/Startup.cs?range=63-68&highlight=5)]
+[!code-csharp[](cors/sample/CorsExample4/Startup.cs?range=64-69&highlight=5)]
 
-이 설정은 영향을 줍니다 [요청 및 액세스 제어-요청 헤더 헤더 실행 전](#preflight-requests) (이 항목의 뒷부분에 설명).
+이 설정은 실행 전 요청 및 `Access-Control-Request-Headers` 헤더입니다. 자세한 내용은 참조는 [요청을 실행 전](#preflight-requests) 섹션입니다.
 
 ::: moniker range=">= aspnetcore-2.2"
 
@@ -247,7 +251,7 @@ Access-Control-Request-Headers: Cache-Control, Content-Language
 
 이러한 헤더를 호출 하는 CORS 사양 *간단한 응답 헤더*합니다. 다른 헤더를 사용할 수 있도록 앱을 호출 <xref:Microsoft.AspNetCore.Cors.Infrastructure.CorsPolicyBuilder.WithExposedHeaders*>:
 
-[!code-csharp[](cors/sample/CorsExample4/Startup.cs?range=72-77&highlight=5)]
+[!code-csharp[](cors/sample/CorsExample4/Startup.cs?range=73-78&highlight=5)]
 
 ### <a name="credentials-in-cross-origin-requests"></a>교차 원본 요청의 자격 증명
 
@@ -274,7 +278,7 @@ $.ajax({
 
 또한 서버에서도 자격 증명을 허용해야만 합니다. 크로스-원본 자격 증명을 허용 하려면 호출 <xref:Microsoft.AspNetCore.Cors.Infrastructure.CorsPolicyBuilder.AllowCredentials*>:
 
-[!code-csharp[](cors/sample/CorsExample4/Startup.cs?range=81-86&highlight=5)]
+[!code-csharp[](cors/sample/CorsExample4/Startup.cs?range=82-87&highlight=5)]
 
 HTTP 응답에 포함 됩니다는 `Access-Control-Allow-Credentials` 서버 크로스-원본 요청에 대 한 자격 증명을 허용 하는지 브라우저에 지시 하는 헤더입니다.
 
@@ -320,11 +324,11 @@ CORS 실행 전 요청에 포함 될 수 있습니다는 `Access-Control-Request
 
 특정 헤더를 허용 하려면 호출 <xref:Microsoft.AspNetCore.Cors.Infrastructure.CorsPolicyBuilder.WithHeaders*>:
 
-[!code-csharp[](cors/sample/CorsExample4/Startup.cs?range=54-59&highlight=5)]
+[!code-csharp[](cors/sample/CorsExample4/Startup.cs?range=55-60&highlight=5)]
 
 요청 헤더에 모든 author 수 있도록 호출 <xref:Microsoft.AspNetCore.Cors.Infrastructure.CorsPolicyBuilder.AllowAnyHeader*>:
 
-[!code-csharp[](cors/sample/CorsExample4/Startup.cs?range=63-68&highlight=5)]
+[!code-csharp[](cors/sample/CorsExample4/Startup.cs?range=64-69&highlight=5)]
 
 브라우저 설정 하는 방법에 전적으로 일관 되지 `Access-Control-Request-Headers`합니다. 이외의 헤더 값으로 설정 하면 `"*"` (사용할지 <xref:Microsoft.AspNetCore.Cors.Infrastructure.CorsPolicy.AllowAnyHeader*>)를 하나 이상 포함 해야 `Accept`, `Content-Type`, 및 `Origin`, 지원 하려는 모든 사용자 지정 헤더 및.
 
@@ -349,7 +353,7 @@ Date: Wed, 20 May 2015 06:33:22 GMT
 
 `Access-Control-Max-Age` 헤더 실행 전 요청에 응답을 캐시할 수 기간을 지정 합니다. 이 헤더를 설정 하려면 호출 <xref:Microsoft.AspNetCore.Cors.Infrastructure.CorsPolicyBuilder.SetPreflightMaxAge*>:
 
-[!code-csharp[](cors/sample/CorsExample4/Startup.cs?range=90-95&highlight=5)]
+[!code-csharp[](cors/sample/CorsExample4/Startup.cs?range=91-96&highlight=5)]
 
 ## <a name="how-cors-works"></a>CORS의 동작 방식
 

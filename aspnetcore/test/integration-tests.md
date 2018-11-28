@@ -5,14 +5,14 @@ description: 통합 테스트를 사용하여 앱의 구성 요소가 데이터�
 monikerRange: '>= aspnetcore-2.1'
 ms.author: riande
 ms.custom: mvc
-ms.date: 05/30/2018
+ms.date: 11/26/2018
 uid: test/integration-tests
-ms.openlocfilehash: a136a362cd8973b3684f9a70bd4792d75238eab0
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: 9729925c89c212bb6e6fac1a484b6288697afe57
+ms.sourcegitcommit: e9b99854b0a8021dafabee0db5e1338067f250a9
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50207877"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52450751"
 ---
 # <a name="integration-tests-in-aspnet-core"></a>ASP.NET Core에서 통합 테스트
 
@@ -100,8 +100,8 @@ ASP.NET Core에서 통합 테스트 하려면 다음 항목이 필요 합니다.
 테스트 프로젝트는 다음 작업을 수행 해야합니다.
 
 * 다음 패키지를 참조 합니다.
-  - [Microsoft.AspNetCore.App](https://www.nuget.org/packages/Microsoft.AspNetCore.App/)
-  - [Microsoft.AspNetCore.Mvc.Testing](https://www.nuget.org/packages/Microsoft.AspNetCore.Mvc.Testing/)
+  * [Microsoft.AspNetCore.App](https://www.nuget.org/packages/Microsoft.AspNetCore.App/)
+  * [Microsoft.AspNetCore.Mvc.Testing](https://www.nuget.org/packages/Microsoft.AspNetCore.Mvc.Testing/)
 * Web SDK 프로젝트 파일에 지정 (`<Project Sdk="Microsoft.NET.Sdk.Web">`). 웹 SDK를 참조할 때 필요 합니다 [Microsoft.AspNetCore.App 메타 패키지](xref:fundamentals/metapackage-app)합니다.
 
 이러한 필수 구성이 요소에서 볼 수 있습니다 합니다 [샘플 앱](https://github.com/aspnet/Docs/tree/master/aspnetcore/test/integration-tests/samples/)합니다. 검사는 *tests/RazorPagesProject.Tests/RazorPagesProject.Tests.csproj* 파일입니다. 샘플 앱에서는 합니다 [xUnit](https://xunit.github.io/) 테스트 프레임 워크와 [AngleSharp](https://anglesharp.github.io/) 파서 라이브러리, 샘플 앱 참조 하므로:
@@ -316,6 +316,10 @@ _client = _factory.CreateClient(clientOptions);
   "shadowCopy": false
 }
 ```
+
+## <a name="disposal-of-objects"></a>개체 삭제
+
+테스트 후 합니다 `IClassFixture` 구현을 실행 됩니다 [TestServer](/dotnet/api/microsoft.aspnetcore.testhost.testserver) 및 [HttpClient](/dotnet/api/system.net.http.httpclient) xUnit 삭제 될 때 삭제 됩니다 합니다 [WebApplicationFactory](/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1) . 개발자가 인스턴스화된 개체 삭제에 필요한 경우에 삭제 된 `IClassFixture` 구현 합니다. 자세한 내용은 [Dispose 메서드 구현](/dotnet/standard/garbage-collection/implementing-dispose)합니다.
 
 ## <a name="integration-tests-sample"></a>통합 테스트 샘플
 

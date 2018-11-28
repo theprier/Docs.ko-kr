@@ -4,14 +4,14 @@ author: Rick-Anderson
 description: ASP.NET Core 프로젝트를 사용하여 경고 및 오류를 이해하고 문제를 해결합니다.
 ms.author: riande
 ms.custom: mvc
-ms.date: 10/24/2018
+ms.date: 11/26/2018
 uid: test/troubleshoot
-ms.openlocfilehash: 150f2192bb4b6dd0d330fd678d9c5fa0bf31673e
-ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
+ms.openlocfilehash: 7a3361970bde2b8761c76884fc1905957d075c5c
+ms.sourcegitcommit: e9b99854b0a8021dafabee0db5e1338067f250a9
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50090113"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52450777"
 ---
 # <a name="troubleshoot-aspnet-core-projects"></a>ASP.NET Core 프로젝트 문제 해결
 
@@ -67,3 +67,97 @@ ms.locfileid: "50090113"
 
 * 설치 또는.NET Core SDK 설치 되었는지 확인 합니다.
 * 확인 된 `PATH` 환경 변수는 SDK가 설치 하는 위치를 가리킵니다. 설치 관리자가 일반적으로 설정 된 `PATH`합니다.
+
+## <a name="obtain-data-from-an-app"></a>앱에서 데이터 가져오기
+
+앱 요청에 응답할 수 인 경우에 미들웨어를 사용 하 여 앱에서 다음 데이터를 가져올 수 있습니다.
+
+* 요청 &ndash; 메서드를 체계, 호스트, pathbase, 경로, 쿼리 문자열, 헤더
+* 연결 &ndash; 원격 IP 주소, 포트를 원격, 로컬 IP 주소, 로컬 포트, 클라이언트 인증서
+* Identity &ndash; 이름, 표시 이름
+* 구성 설정
+* 환경 변수
+
+다음 배치 [미들웨어](xref:fundamentals/middleware/index#create-a-middleware-pipeline-with-iapplicationbuilder) 맨 앞에 코드를 `Startup.Configure` 메서드 요청 처리 파이프라인. 미들웨어는 코드를 개발 환경에만 실행 되도록 실행 되기 전에 환경을 확인 합니다.
+
+환경을 얻으려면 다음 방법 중 하나를 사용 합니다.
+
+* 삽입 합니다 `IHostingEnvironment` 에 `Startup.Configure` 메서드 및 지역 변수를 사용 하 여 환경 확인 합니다. 다음 샘플 코드에는이 방법을 보여 줍니다.
+
+* 환경 속성에 할당 된 `Startup` 클래스입니다. 확인 속성을 사용 하 여 환경 (예를 들어 `if (Environment.IsDevelopment())`).
+
+```csharp
+public void Configure(IApplicationBuilder app, IHostingEnvironment env, 
+    IConfiguration config)
+{
+    if (env.IsDevelopment())
+    {
+        app.Run(async (context) =>
+        {
+            var sb = new StringBuilder();
+            var nl = System.Environment.NewLine;
+            var rule = string.Concat(nl, new string('-', 40), nl);
+            var authSchemeProvider = app.ApplicationServices
+                .GetRequiredService<IAuthenticationSchemeProvider>();
+
+            sb.Append($"Request{rule}");
+            sb.Append($"{DateTimeOffset.Now}{nl}");
+            sb.Append($"{context.Request.Method} {context.Request.Path}{nl}");
+            sb.Append($"Scheme: {context.Request.Scheme}{nl}");
+            sb.Append($"Host: {context.Request.Headers["Host"]}{nl}");
+            sb.Append($"PathBase: {context.Request.PathBase.Value}{nl}");
+            sb.Append($"Path: {context.Request.Path.Value}{nl}");
+            sb.Append($"Query: {context.Request.QueryString.Value}{nl}{nl}");
+
+            sb.Append($"Connection{rule}");
+            sb.Append($"RemoteIp: {context.Connection.RemoteIpAddress}{nl}");
+            sb.Append($"RemotePort: {context.Connection.RemotePort}{nl}");
+            sb.Append($"LocalIp: {context.Connection.LocalIpAddress}{nl}");
+            sb.Append($"LocalPort: {context.Connection.LocalPort}{nl}");
+            sb.Append($"ClientCert: {context.Connection.ClientCertificate}{nl}{nl}");
+
+            sb.Append($"Identity{rule}");
+            sb.Append($"User: {context.User.Identity.Name}{nl}");
+            var scheme = await authSchemeProvider
+                .GetSchemeAsync(IISDefaults.AuthenticationScheme);
+            sb.Append($"DisplayName: {scheme?.DisplayName}{nl}{nl}");
+
+            sb.Append($"Headers{rule}");
+            foreach (var header in context.Request.Headers)
+            {
+                sb.Append($"{header.Key}: {header.Value}{nl}");
+            }
+            sb.Append(nl);
+
+            sb.Append($"Websockets{rule}");
+            if (context.Features.Get<IHttpUpgradeFeature>() != null)
+            {
+                sb.Append($"Status: Enabled{nl}{nl}");
+            }
+            else
+            {
+                sb.Append($"Status: Disabled{nl}{nl}");
+            }
+
+            sb.Append($"Configuration{rule}");
+            foreach (var pair in config.AsEnumerable())
+            {
+                sb.Append($"{pair.Path}: {pair.Value}{nl}");
+            }
+            sb.Append(nl);
+
+            sb.Append($"Environment Variables{rule}");
+            var vars = System.Environment.GetEnvironmentVariables();
+            foreach (var key in vars.Keys.Cast<string>().OrderBy(key => key, 
+                StringComparer.OrdinalIgnoreCase))
+            {
+                var value = vars[key];
+                sb.Append($"{key}: {value}{nl}");
+            }
+
+            context.Response.ContentType = "text/plain";
+            await context.Response.WriteAsync(sb.ToString());
+        });
+    }
+}
+```

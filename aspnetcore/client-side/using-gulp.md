@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: H1Hack27Feb2017
 ms.date: 10/04/2018
 uid: client-side/using-gulp
-ms.openlocfilehash: 4f383be0498b5b861bd43cc0f0685b1e62c7571b
-ms.sourcegitcommit: 7890dfb5a8f8c07d813f166d3ab0c263f893d0c6
+ms.openlocfilehash: e280eabecbd427f3e1418b3d7a60e0ea3df46a5a
+ms.sourcegitcommit: e9b99854b0a8021dafabee0db5e1338067f250a9
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48795527"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52450608"
 ---
 # <a name="use-gulp-in-aspnet-core"></a>Gulp를 사용 하 여 ASP.NET Core에서
 
@@ -28,7 +28,7 @@ A *작업 실행 기* 이러한 일상적인 개발 작업 등을 자동화 하�
 
 ## <a name="gulp"></a>Gulp
 
-Gulp는 JavaScript 기반 스트리밍 빌드 도구 키트 클라이언트 쪽 코드에 대 한 합니다. 일반적으로 빌드 환경에서 특정 이벤트가 트리거될 때 일련의 프로세스를 통해 클라이언트 쪽 파일을 스트림 하는 것이 됩니다. 예를 들어, Gulp 수 자동화할 [묶음 및 축소](bundling-and-minification.md) 개발 환경의 새 빌드 전에 정리 또는 합니다.
+Gulp는 JavaScript 기반 스트리밍 빌드 도구 키트 클라이언트 쪽 코드에 대 한 합니다. 일반적으로 빌드 환경에서 특정 이벤트가 트리거될 때 일련의 프로세스를 통해 클라이언트 쪽 파일을 스트림 하는 것이 됩니다. 예를 들어, Gulp 수 자동화 [묶음 및 축소](bundling-and-minification.md) 또는 새 빌드 전에 개발 환경을 정리 합니다.
 
 Gulp 작업의 집합에 정의 되어 *gulpfile.js*합니다. 다음과 같은 JavaScript Gulp 모듈을 포함 하 고 파일 경로 곧 출시 예정인 작업 내에서 참조할 수를 지정 합니다.
 
@@ -58,7 +58,7 @@ paths.concatCssDest = paths.webroot + "css/site.min.css";
 
 | 모듈 이름 | 설명 |
 | ----------- | ----------- |
-| gulp        | Gulp 스트리밍 빌드 시스템입니다. 자세한 내용은 [gulp](https://www.npmjs.com/package/gulp)합니다. |
+| Gulp        | Gulp 스트리밍 빌드 시스템입니다. 자세한 내용은 [gulp](https://www.npmjs.com/package/gulp)합니다. |
 | rimraf      | 노드 삭제 모듈입니다. 자세한 내용은 [rimraf](https://www.npmjs.com/package/rimraf)합니다. |
 | gulp concat | 운영 체제의 줄 바꿈 문자를 기준으로 파일을 연결 하는 모듈입니다. 자세한 내용은 [gulp concat](https://www.npmjs.com/package/gulp-concat)합니다. |
 | gulp cssmin | CSS 파일을 축소 하는 모듈입니다. 자세한 내용은 [gulp cssmin](https://www.npmjs.com/package/gulp-cssmin)합니다. |
