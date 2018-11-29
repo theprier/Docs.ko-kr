@@ -6,12 +6,12 @@ monikerRange: '>= aspnetcore-1.1'
 ms.author: riande
 ms.date: 11/29/2018
 uid: performance/performance-best-practices
-ms.openlocfilehash: ced86dbc2d6f40b503493eda122d8977d6df7035
-ms.sourcegitcommit: e9b99854b0a8021dafabee0db5e1338067f250a9
+ms.openlocfilehash: 9f3ed97bf4d4eb371ff5ae3874234b44745cc4ca
+ms.sourcegitcommit: 0fc89b80bb1952852ecbcf3c5c156459b02a6ceb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52452987"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "52618118"
 ---
 # <a name="aspnet-core-performance-best-practices"></a>ASP.NET Core 성능 모범 사례
 
@@ -24,7 +24,7 @@ ms.locfileid: "52452987"
 
 ## <a name="cache-aggressively"></a>적극적으로 캐시
 
-캐시는이 문서의 여러 부분에서 설명 합니다. 자세한 내용은 [ASP.NET Core에서 응답을 캐싱하지](xref:performance/caching/index)합니다.
+캐시는이 문서의 여러 부분에서 설명 합니다. 자세한 내용은 <xref:performance/caching/response>을 참조하세요.
 
 ## <a name="avoid-blocking-calls"></a>호출 차단 방지
 
@@ -71,7 +71,7 @@ ASP.NET Core 앱의 일반적인 성능 문제는 비동기 될 수 있는 호�
 
 * **수행할** 비동기적으로 모든 데이터 액세스 Api를 호출 합니다.
 * **그렇지 않은** 필요한 것 보다 더 많은 데이터를 검색 합니다. 현재 HTTP 요청에 필요한 데이터만 반환 하는 쿼리를 작성 합니다.
-* **수행할** 자주 캐싱 약간 오래 된 데이터에 대 한 허용 되는 경우 데이터베이스 또는 원격 서비스에서 검색 된 데이터에 액세스 하는 것이 좋습니다. 시나리오에 따라 사용할 수 있습니다는 [MemoryCache](xref:performance/caching/memory) 또는 [DistributedCache](xref:performance/caching/distributed)합니다. 자세한 내용은 [ASP.NET Core에서 응답을 캐싱하지](xref:performance/caching/index)합니다.
+* **수행할** 자주 캐싱 약간 오래 된 데이터에 대 한 허용 되는 경우 데이터베이스 또는 원격 서비스에서 검색 된 데이터에 액세스 하는 것이 좋습니다. 시나리오에 따라 사용할 수 있습니다는 [MemoryCache](xref:performance/caching/memory) 또는 [DistributedCache](xref:performance/caching/distributed)합니다. 자세한 내용은 <xref:performance/caching/response>을 참조하세요.
 * 최소화 네트워크 왕복이 합니다. 목표 검색 단일 호출에서 필요한 모든 데이터 대신 여러 번 호출 하는 것입니다.
 * **수행할** 사용 하 여 [비 추적 쿼리](/ef/core/querying/tracking#no-tracking-queries) Entity Framework Core에 대 한 읽기 전용 데이터에 액세스 하는 경우에 합니다. EF Core는 보다 효율적으로 비 추적 쿼리 결과 반환할 수 있습니다.
 * **수행할** 필터 및 집계 LINQ 쿼리 (사용 하 여 `.Where`를 `.Select`, 또는 `.Sum` 문과) 데이터베이스는 필터링이 수행 되도록 합니다.
