@@ -19,7 +19,7 @@ ms.locfileid: "50206837"
 
 ## <a name="signalr"></a>SignalR
 
-SignalR은 ASP.NET Core 2.1에서 다시 작성되었습니다. ASP.NET Core SignalR에는 여러 향상된 기능이 포함됩니다.
+SignalR은 ASP.NET Core 2.1에서 다시 작성되었습니다. ASP.NET Core SignalR에는 여러 가지 향상된 기능이 포함됩니다.
 
 * 간소화된 스케일 아웃 모델
 * JQuery에 종속되지 않는 새 JavaScript 클라이언트
@@ -35,7 +35,7 @@ SignalR은 ASP.NET Core 2.1에서 다시 작성되었습니다. ASP.NET Core Sig
 ASP.NET Core 2.1을 통해 Razor 기반 UI를 빌드하고 라이브러리에 포함하고 여러 프로젝트 간에 공유합니다. 새로운 Razor SDK를 사용하면 NuGet 패키지에 포함될 수 있는 클래스 라이브러리 프로젝트에 Razor 파일을 빌드할 수 있습니다. 라이브러리의 보기 및 페이지는 자동으로 검색되고 앱에서 재정의할 수 있습니다. Razor 컴파일을 빌드에 통합하여 다음을 수행합니다.
 
 * 앱 시작 시간이 훨씬 더 빠릅니다.
-* 런타임 시 Razor 보기 및 페이지에 대한 빠른 업데이트는 반복적인 개발 워크플로의 일부분으로사용할 수 있습니다.
+* 런타임 시 Razor 뷰 및 페이지에 대한 빠른 업데이트는 반복적인 개발 워크플로의 일부분으로 사용할 수 있습니다.
 
 자세한 내용은 [Razor 클래스 라이브러리 프로젝트를 사용하여 재사용 가능한 UI 만들기](xref:razor-pages/ui-class)를 참조하세요.
 
@@ -70,7 +70,7 @@ HTTPS는 [HSTS(HTTP 엄격한 전송 보안 프로토콜)](xref:security/enforci
 
 프로덕션 내에 HTTPS가 명시적으로 구성되어야 합니다. 2.1에서는 Kestrel에 HTTPS를 구성하는 기본 구성 스키마가 추가되었습니다. 다음을 사용하도록 앱을 구성할 수 있습니다.
 
-* URL을 포함하는 여러 엔드포인트 자세한 내용은 [Kestrel 웹 서버 구현: 엔드포인트 구성](xref:fundamentals/servers/kestrel#endpoint-configuration)을 참조하세요.
+* URL을 포함하는 여러 엔드포인트. 자세한 내용은 [Kestrel 웹 서버 구현: 엔드포인트 구성](xref:fundamentals/servers/kestrel#endpoint-configuration)을 참조하세요.
 * 디스크의 파일 또는 인증서 저장소에서 HTTPS에 사용할 인증서입니다.
 
 ## <a name="gdpr"></a>GDPR
@@ -82,7 +82,7 @@ ASP.NET Core에서는 [EU GDPR(일반 데이터 보호 규정)](https://www.eugd
 테스트 생성 및 실행을 간소화하는 새 패키지가 도입되었습니다. [Microsoft.AspNetCore.Mvc.Testing](https://www.nuget.org/packages/Microsoft.AspNetCore.Mvc.Testing/) 패키지는 다음과 같은 작업을 처리합니다.
 
 * 종속성 파일(*\*.deps*)을 테스트된 앱에서 테스트 프로젝트의 *bin* 폴더로 복사합니다.
-* 테스트를 실행하면 고정 파일 및 페이지/보기를 찾을 수 있도록 루트 콘텐츠를 테스트된 앱의 프로젝트 루트로 설정합니다.
+* 테스트를 실행하면 고정 파일 및 페이지/뷰를 찾을 수 있도록 루트 콘텐츠를 테스트된 앱의 프로젝트 루트로 설정합니다.
 * [TestServer](/dotnet/api/microsoft.aspnetcore.testhost.testserver)를 사용하여 테스트된 앱의 부트스트랩을 간소화하기 위해 [WebApplicationFactory](/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1) 클래스를 제공합니다.
 
 다음 테스트는 [xUnit](https://xunit.github.io/)를 사용하여 성공 상태 코드 및 올바른 콘텐츠 형식 헤더의 인덱스 페이지가 로드되는지 확인합니다.
