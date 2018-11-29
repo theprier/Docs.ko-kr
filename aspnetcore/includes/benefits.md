@@ -1,7 +1,7 @@
 ASP.NET Core는 다음과 같은 이점을 제공합니다.
 
 * 웹 UI 및 웹 API를 동일한 과정으로 빌드합니다.
-* [테스트 가능성](xref:test/index)을 고려해서 설계되었습니다.
+* 테스트 가능성을 고려하여 설계되었습니다.
 * [Razor 페이지](xref:razor-pages/index)는 더 쉽고 더 생산적으로 코딩 페이지에 초점을 맞춘 시나리오를 만듭니다.
 * Windows, macOS 및 Linux에서 개발하고 실행할 수 있습니다.
 * 오픈 소스이며 [커뮤니티에 중점](https://live.asp.net/)을 둡니다.

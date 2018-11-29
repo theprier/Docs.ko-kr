@@ -3,135 +3,127 @@ title: ASP.NET Core에서 URL 재작성 미들웨어
 author: guardrex
 description: ASP.NET Core 응용 프로그램에서 URL 재작성 미들웨어로 URL 재작성 및 리디렉션 하는 방법에 대해 알아봅니다.
 ms.author: riande
-ms.date: 08/17/2017
+ms.custom: mvc
+ms.date: 11/19/2018
 uid: fundamentals/url-rewriting
-ms.openlocfilehash: 5a1891c838436467fb49ff6288587fab08201179
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: 98787891a97e49081d72107484f030d216d82f45
+ms.sourcegitcommit: ad28d1bc6657a743d5c2fa8902f82740689733bb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50207188"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52256569"
 ---
 # <a name="url-rewriting-middleware-in-aspnet-core"></a>ASP.NET Core에서 URL 재작성 미들웨어
 
 작성자: [Luke Latham](https://github.com/guardrex) 및 [Mikael Mengistu](https://github.com/mikaelm12)
 
-[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/url-rewriting/sample/)([다운로드 방법](xref:index#how-to-download-a-sample))
+::: moniker range="<= aspnetcore-1.1"
 
-URL 재작성은 하나 이상의 미리 정의된 규칙을 기반으로 하는 요청 URL을 수정하는 작업입니다. URL 재작성은 위치 및 주소가 밀접하게 연결되지 않도록 리소스 위치와 해당 주소 간의 추상화를 만듭니다. URL 재작성이 중요한 몇 가지 시나리오가 있습니다.
+이 항목의 1.1 버전을 얻으려면 [ASP.NET Core에서 URL 재작성 미들웨어(버전 1.1, PDF)](https://webpifeed.blob.core.windows.net/webpifeed/Partners/URL_Rewriting_1.1.pdf)를 다운로드하세요.
 
-* 서버 리소스에 대한 안정적인 로케이터를 유지하는 동시에 임시 또는 영구적으로 해당 리소스를 이동하거나 교체하기
-* 다른 응용 프로그램 간에 또는 한 응용 프로그램의 여러 영역 간에 요청 처리 분리하기
-* 들어오는 요청의 URL 세그먼트를 제거, 추가, 또는 재구성하기
-* 검색 엔진 최적화(SEO, Search Engine Optimization)를 위해 공개 URL 최적화하기
-* 링크로 이동했을 때 제공되는 콘텐츠를 사용자가 예측할 수 있도록 친숙한 공개 URL 사용하기
-* 안전하지 않은 요청을 보안 엔드포인트로 리디렉션하기
-* 이미지 핫링크 방지하기
+::: moniker-end
 
-URL을 변경하기 위한 규칙은 Regex, Apache mod_rewrite 모듈 규칙, IIS 재작성 모듈 규칙 및 사용자 지정 규칙 로직 사용 등의 다양한 방법으로 정의할 수 있습니다. 본문에서는 ASP.NET Core 응용 프로그램에서 URL 재작성 미들웨어를 사용하는 방법에 관한 지침과 URL 재작성에 관해서 살펴봅니다.
+본문에서는 ASP.NET Core 응용 프로그램에서 URL 재작성 미들웨어를 사용하는 방법에 관한 지침과 URL 재작성에 관해서 살펴봅니다.
+
+URL 재작성은 하나 이상의 미리 정의된 규칙을 기반으로 하는 요청 URL을 수정하는 작업입니다. URL 재작성은 위치와 주소가 밀접하게 연결되지 않도록 리소스 위치와 해당 주소 간의 추상화를 만듭니다. URL 재작성이 중요한 몇 가지 시나리오는 다음과 같습니다.
+
+* 서버 리소스를 일시적 또는 영구적으로 이동하거나 대체하고, 해당 리소스에 대한 안정적인 로케이터를 유지 관리합니다.
+* 여러 앱 또는 한 앱의 여러 영역 간에 요청 처리를 분리합니다.
+* 들어오는 요청의 URL 세그먼트를 제거, 추가, 또는 다시 구성합니다.
+* SEO(검색 엔진 최적화)에 맞게 공용 URL을 최적화합니다.
+* 친숙한 공용 URL을 사용하여 방문자가 리소스를 요청함으로써 반환되는 콘텐츠를 예측할 수 있도록 합니다.
+* 안전하지 않은 요청을 보안 엔드포인트로 리디렉션합니다.
+* 외부 사이트에서 자산을 자체의 콘텐츠에 연결하여 다른 사이트에서 호스팅된 정적 자산을 사용하는 핫 링크를 방지합니다.
 
 > [!NOTE]
-> URL 재작성은 응용 프로그램의 성능을 저하시킬 수 있습니다. 가능한 한 규칙의 수와 복잡성을 제한해야 합니다.
+> URL 재작성은 응용 프로그램의 성능을 저하시킬 수 있습니다. 가능한 경우 규칙의 수와 복잡성을 제한합니다.
+
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/url-rewriting/samples/) ([다운로드 방법](xref:index#how-to-download-a-sample))
 
 ## <a name="url-redirect-and-url-rewrite"></a>URL 리디렉션 및 URL 재작성
 
-*URL 리디렉션*과 *URL 재작성* 간의 단어 차이는 언뜻 보기에는 대단한 것 같지 않지만, 클라이언트에게 리소스를 제공할 때 많은 영향을 미칩니다. ASP.NET Core의 URL 재작성 미들웨어는 두 가지 모두에 대한 요구를 만족합니다.
+*URL 리디렉션*과 *URL 재작성* 간의 표현 차이는 미묘하지만 클라이언트에 리소스를 제공하는 데 더 중요한 의미가 있습니다. ASP.NET Core의 URL 재작성 미들웨어는 두 가지 모두에 대한 요구를 만족합니다.
 
-*URL 리디렉션*은 클라이언트 측 작업으로, 클라이언트는 다른 주소를 통해서 리소스에 접근하도록 지시받게 됩니다. 이 방식은 서버를 한 번 더 왕복해야만 합니다. 클라이언트로 반환된 리디렉션 URL은 클라이언트가 리소스에 대한 새로운 요청을 만들 때 브라우저의 주소 표시줄에 나타나게 됩니다. 
+*URL 리디렉션*은 클라이언트 쪽 작업과 관련되어 있습니다. 여기서 클라이언트는 원래 요청한 클라이언트와는 다른 주소로 리소스에 액세스하도록 지시받습니다. 이 경우 서버를 왕복해야 합니다. 클라이언트로 반환된 리디렉션 URL은 클라이언트가 리소스에 대한 새로운 요청을 만들 때 브라우저의 주소 표시줄에 나타나게 됩니다.
 
-`/resource`가 `/different-resource`로 리디렉션 된다고 가정하면, 먼저 클라이언트가 `/resource`를 요청합니다. 그러면 서버는 리디렉션이 임시 또는 영구적임을 나타내는 상태 코드와 함께 해당 리소스를 `/different-resource`에서 가져가야 한다고 클라이언트에게 응답합니다. 마지막으로 클라이언트는 리디렉션 URL로 리소스에 대한 새로운 요청을 실행합니다.
+`/resource`가 `/different-resource`로 *리디렉션*되는 경우 서버는 임시 또는 영구 리디렉션을 나타내는 상태 코드와 함께 클라이언트가 `/different-resource`에서 리소스를 가져와야 한다고 응답합니다.
 
 ![WebAPI 서비스 엔드포인트는 서버 측에서 버전 1(v1)에서 버전 2(v2)로 임시 변경됩니다. 클라이언트는 버전 1의 경로 /v1/api로 서비스를 요청합니다. 서버는 다시 버전 2의 /v2/api라는 서비스의 임시 경로로 302 (임시 이동) 응답을 보냅니다. 클라이언트는 리디렉션 URL로 서비스에 대한 두 번째 요청을 만듭니다. 서버는 200 (정상) 상태 코드를 응답합니다.](url-rewriting/_static/url_redirect.png)
 
-요청을 다른 URL로 리디렉션 할 때 서버는 리디렉션이 영구적인지 또는 임시적인지 여부를 지정할 수 있습니다. 301 (영구 이동) 상태 코드는 클라이언트에게 리소스에 새로운 영구적인 URL이 존재하며 앞으로 이 리소스에 대한 모든 요청은 새로운 URL을 사용해야 한다고 지시하고자 하는 경우에 사용됩니다. *이렇게 301 상태 코드가 수신되면 클라이언트는 응답을 캐시할 수 있습니다.* 반면 302 (임시 이동) 상태 코드는 리디렉션이 임시적이거나 일반적으로 변경될 수 있는 경우에 사용되므로, 클라이언트는 리디렉션 URL을 저장했다가 나중에 다시 사용하거나 해서는 안 됩니다. 보다 자세한 정보는 [RFC 2616: 상태 코드 정의](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html)를 참고하시기 바랍니다.
+요청을 다른 URL로 리디렉션하는 경우 응답과 함께 상태 코드를 지정하여 영구 리디렉션 또는 임시 리디렉션인지의 여부를 나타낼 수 있습니다.
 
-*URL 재작성*은 요청받은 리소스를 다른 리소스 주소에서 제공하는 서버 측 작업입니다. URL 재작성 방식은 서버를 한 번 더 왕복할 필요가 없습니다. 재작성된 URL은 클라이언트로 반환되지 않고 브라우저의 주소 표시줄에 나타나지도 않습니다. `/resource`가 `/different-resource`로 *재작성* 된다고 가정할 때, 클라이언트는 `/resource`를 요청하지만 서버는 *내부적으로* `/different-resource`에서 리소스를 가져옵니다. 클라이언트는 재작성된 URL에서 리소스를 조회할 수는 있지만, 해당 요청을 만들고 응답을 받을 때 실제로는 리소스가 재작성된 URL에 존재한다는 정보는 알 수 없습니다.
+* *301 - 영구적으로 이동됨* 상태 코드는 리소스에 새 영구 URL이 있고, 리소스에 대한 이후의 모든 요청에서 새 URL을 사용해야 한다고 클라이언트에 지시하려는 경우에 사용됩니다. *301 상태 코드를 받으면 클라이언트에서 응답을 캐시하고 다시 사용할 수 있습니다.*
+
+* *302 - 있음* 상태 코드는 리디렉션이 일시적이거나 일반적으로 변경될 수 있는 경우에 사용됩니다. 302 상태 코드는 클라이언트에서 URL을 저장하지 않고 나중에 사용하지 못하도록 지시합니다.
+
+상태 코드에 대한 자세한 내용은 [RFC 2616: 상태 코드 정의](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html)를 참조하세요.
+
+*URL 재작성*은 요청한 클라이언트와 다른 리소스 주소에서 리소스를 제공하는 서버 쪽 작업입니다. URL을 다시 작성하는 경우 서버를 왕복할 필요가 없습니다. 다시 작성된 URL은 클라이언트에 반환되지 않고 브라우저의 주소 표시줄에도 표시되지 않습니다.
+
+`/resource`가 `/different-resource`에 *다시 작성*되면 서버에서 *내부적으로* `/different-resource`에 있는 리소스를 가져와서 반환합니다.
+
+클라이언트는 다시 작성된 URL에서 리소스를 검색할 수 있지만, 요청을 만들고 응답을 받을 때 리소스가 다시 작성된 URL에 있음을 클라이언트에 알리지 않습니다.
 
 ![WebAPI 서비스 엔드포인트는 서버 측에서 버전 1(v1)에서 버전 2(v2)로 변경됩니다. 클라이언트는 버전 1의 경로 /v1/api로 서비스를 요청합니다. 요청 URL은 버전 2의 경로 /v2/api에서 서비스에 접근하도록 재작성됩니다. 서비스는 200 (정상) 상태 코드를 클라이언트에 응답합니다.](url-rewriting/_static/url_rewrite.png)
 
 ## <a name="url-rewriting-sample-app"></a>URL 재작성 예제 응용 프로그램
 
-[URL 재작성 예제 응용 프로그램](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/url-rewriting/sample/)은 URL 재작성 미들웨어의 기능을 보여줍니다. 예제 응용 프로그램은 재작성 및 리디렉션 규칙을 적용하고 재작성 또는 리디렉션된 URL을 보여줍니다.
+[샘플 앱](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/url-rewriting/samples/)을 사용하면 URL 재작성 미들웨어의 기능을 살펴볼 수 있습니다. 이 앱은 리디렉션 및 재작성 규칙을 적용하고, 여러 시나리오에 대해 리디렉션되거나 다시 작성된 URL을 표시합니다.
 
 ## <a name="when-to-use-url-rewriting-middleware"></a>URL 재작성 미들웨어를 사용해야 하는 경우
 
-Windows Server에서 IIS의 [URL 재작성 모듈](https://www.iis.net/downloads/microsoft/url-rewrite)을 사용할 수 없거나, Apache Server에서 [Apache mod_rewrite 모듈](https://httpd.apache.org/docs/2.4/rewrite/)을 사용할 수 없거나, [Nginx에서 URL 재작성](https://www.nginx.com/blog/creating-nginx-rewrite-rules/)을 사용할 수 없거나, 또는 응용 프로그램이 [HTTP.sys 서버](xref:fundamentals/servers/httpsys)(기존의 [WebListener](xref:fundamentals/servers/weblistener))에서 호스팅 되는 경우에 URL 재작성 미들웨어를 사용해야 합니다.  IIS, Apache 또는 Nginx에서 서버 기반의 URL 재작성 기술을 사용하는 가장 큰 이유는 미들웨어가 이런 모듈들의 모든 기능을 지원하지 않고 대부분 미들웨어의 성능이 모듈의 성능을 따라가지 못하기 때문입니다. 그러나 IIS 재작성 모듈의 `IsFile` 및 `IsDirectory` 제약 조건 같이 ASP.NET Core 프로젝트에서 동작하지 않는 일부 서버 모듈 기능도 존재합니다. 바로 이런 시나리오에서 대신 미들웨어를 사용합니다.
+다음 방법을 사용할 수 없는 경우 URL 재작성 미들웨어를 사용합니다.
+
+* Windows Server의 IIS를 사용하는 [URL 재작성 모듈](https://www.iis.net/downloads/microsoft/url-rewrite)
+* Apache Server의 [Apache mod_rewrite 모듈](https://httpd.apache.org/docs/2.4/rewrite/)
+* [Nginx의 URL 재작성](https://www.nginx.com/blog/creating-nginx-rewrite-rules/)
+
+또한 앱이 [HTTP.sys 서버](xref:fundamentals/servers/httpsys)(이전의 [WebListener](xref:fundamentals/servers/weblistener))에서 호스팅되는 경우 미들웨어를 사용합니다.
+
+IIS, Apache 및 Nginx에서 서버 기반 URL 재작성 기술을 사용하는 주요 이유는 다음과 같습니다.
+
+* 미들웨어에서 이러한 모듈의 전체 기능을 지원하지 않습니다.
+
+  서버 모듈의 일부 기능이 IIS 재작성 모듈의 `IsFile` 및 `IsDirectory` 제약 조건과 같은 ASP.NET Core 프로젝트에서 작동하지 않습니다. 바로 이런 시나리오에서 대신 미들웨어를 사용합니다.
+* 미들웨어의 성능이 아마도 모듈의 성능과 일치하지 않습니다.
+
+  벤치마킹은 성능을 가장 많이 저하시키는 방법 또는 저하된 성능을 무시할 수 있는 경우를 확인할 수 있는 유일한 방법입니다.
 
 ## <a name="package"></a>패키지
 
-프로젝트에 URL 재작성 미들웨어를 추가하려면 [`Microsoft.AspNetCore.Rewrite`](https://www.nuget.org/packages/Microsoft.AspNetCore.Rewrite/) 패키지를 참조해야 합니다. 미들웨어의 기능은 ASP.NET Core 1.1 이상을 대상으로 하는 응용 프로그램에서 사용할 수 있습니다.
+프로젝트에 미들웨어를 포함시키려면 [Microsoft.AspNetCore.Rewrite](https://www.nuget.org/packages/Microsoft.AspNetCore.Rewrite) 패키지가 포함된 프로젝트 파일의 [Microsoft.AspNetCore.App 메타패키지](xref:fundamentals/metapackage-app)에 패키지 참조를 추가합니다.
+
+`Microsoft.AspNetCore.App` 메타패키지를 사용하지 않는 경우 `Microsoft.AspNetCore.Rewrite` 패키지에 프로젝트 참조를 추가합니다.
 
 ## <a name="extension-and-options"></a>확장 및 옵션
 
-URL 재작성 및 리디렉션 규칙은 각 규칙에 대한 확장 메서드를 이용해서 [RewriteOptions](/dotnet/api/microsoft.aspnetcore.rewrite.rewriteoptions) 클래스의 인스턴스를 생성하는 방식으로 설정합니다. 처리하고자 하는 순서대로 여러 규칙을 연결하면 됩니다. 그리고 `RewriteOptions`는 URL 재작성 미들웨어가 `app.UseRewriter(options);`으로 요청 파이프라인에 추가될 때 URL 재작성 미들웨어에 전달됩니다.
+각각의 재작성 규칙에 대한 확장 메서드를 사용하여 [RewriteOptions](xref:Microsoft.AspNetCore.Rewrite.RewriteOptions) 클래스의 인스턴스를 만들어 URL 재작성 및 리디렉션 규칙을 설정합니다. 처리하고자 하는 순서대로 여러 규칙을 연결하면 됩니다. `RewriteOptions`는 <xref:Microsoft.AspNetCore.Builder.RewriteBuilderExtensions.UseRewriter*>를 사용하여 요청 파이프라인에 추가될 때 URL 재작성 미들웨어에 전달됩니다.
 
-::: moniker range=">= aspnetcore-2.0"
-
-[!code-csharp[](url-rewriting/sample/Startup.cs?name=snippet1)]
-
-::: moniker-end
-
-::: moniker range="< aspnetcore-2.0"
-
-```csharp
-public void Configure(IApplicationBuilder app, IHostingEnvironment env)
-{
-    var options = new RewriteOptions()
-        .AddRedirect("redirect-rule/(.*)", "redirected/$1")
-        .AddRewrite(@"^rewrite-rule/(\d+)/(\d+)", "rewritten?var1=$1&var2=$2", 
-            skipRemainingRules: true)
-        .AddApacheModRewrite(env.ContentRootFileProvider, "ApacheModRewrite.txt")
-        .AddIISUrlRewrite(env.ContentRootFileProvider, "IISUrlRewrite.xml")
-        .Add(RedirectXMLRequests)
-        .Add(new RedirectImageRequests(".png", "/png-images"))
-        .Add(new RedirectImageRequests(".jpg", "/jpg-images"));
-
-    app.UseRewriter(options);
-}
-```
-
-::: moniker-end
-
-::: moniker range=">= aspnetcore-2.1"
+[!code-csharp[](url-rewriting/samples/2.x/SampleApp/Startup.cs?name=snippet1)]
 
 ### <a name="redirect-non-www-to-www"></a>www 이외 요청을 www로 리디렉션
 
 이러한 옵션은 앱이 `www` 이외 요청을 `www`로 리디렉션하도록 허용합니다.
 
-* [AddRedirectToWwwPermanent(RewriteOptions)](/dotnet/api/microsoft.aspnetcore.rewrite.rewriteoptionsextensions.addredirecttowwwpermanent) &ndash; `www` 이외 요청을 `www` 하위 도메인으로 영구적으로 리디렉션합니다. [Status308PermanentRedirect](/dotnet/api/microsoft.aspnetcore.http.statuscodes.status308permanentredirect) 상태 코드를 사용하여 리디렉션합니다.
-* [AddRedirectToWww(RewriteOptions)](/dotnet/api/microsoft.aspnetcore.rewrite.rewriteoptionsextensions.addredirecttowww) &ndash; 들어오는 요청이 `www` 요청이 아닐 경우 `www` 하위 도메인으로 요청을 리디렉션합니다. [Status307TemporaryRedirect](/dotnet/api/microsoft.aspnetcore.http.statuscodes.status307temporaryredirect) 상태 코드를 사용하여 리디렉션합니다.
-* [AddRedirectToWww(RewriteOptions, Int32)](/dotnet/api/microsoft.aspnetcore.rewrite.rewriteoptionsextensions.addredirecttowww) &ndash; 들어오는 요청이 `www` 요청이 아닐 경우 `www` 하위 도메인으로 요청을 리디렉션합니다. 응답 상태 코드를 제공할 수 있습니다. `AddRedirectToWww`에 할당하는 경우 [StatusCodes](/dotnet/api/microsoft.aspnetcore.http.statuscodes) 클래스의 필드를 사용하세요.
+* <xref:Microsoft.AspNetCore.Rewrite.RewriteOptionsExtensions.AddRedirectToWwwPermanent*> &ndash; 요청이 `www`가 아닌 경우 `www` 하위 도메인으로 영구적으로 리디렉션합니다. [Status308PermanentRedirect](xref:Microsoft.AspNetCore.Http.StatusCodes.Status308PermanentRedirect) 상태 코드를 사용하여 리디렉션합니다.
 
-::: moniker-end
+* <xref:Microsoft.AspNetCore.Rewrite.RewriteOptionsExtensions.AddRedirectToWww*> &ndash; 들어오는 요청이 `www`가 아닌 경우 요청을 `www` 하위 도메인으로 리디렉션합니다. [Status307TemporaryRedirect](xref:Microsoft.AspNetCore.Http.StatusCodes.Status307TemporaryRedirect) 상태 코드를 사용하여 리디렉션합니다. 오버로드를 사용하면 응답에 대한 상태 코드를 제공할 수 있습니다. 상태 코드 할당을 위해 <xref:Microsoft.AspNetCore.Http.StatusCodes> 클래스의 필드를 사용합니다.
 
 ### <a name="url-redirect"></a>URL 리디렉션
 
-요청을 리디렉션하려면 `AddRedirect`를 사용합니다. 첫 번째 매개 변수에는 들어오는 URL의 경로와 일치하는 부분을 찾기 위한 정규식을 지정합니다. 두 번째 매개 변수는 대체 문자열입니다. 필요한 경우 세 번째 매개 변수로 상태 코드를 지정할 수 있습니다. 상태 코드를 지정하지 않는 경우 기본값을 리소스가 일시적으로 이동 또는 대체되었음을 나타내는 302(있음)로 지정합니다.
+요청을 리디렉션하려면 <xref:Microsoft.AspNetCore.Rewrite.RewriteOptionsExtensions.AddRedirect*>를 사용합니다. 첫 번째 매개 변수에는 들어오는 URL의 경로와 일치하는 부분을 찾기 위한 정규식을 지정합니다. 두 번째 매개 변수는 대체 문자열입니다. 필요한 경우 세 번째 매개 변수로 상태 코드를 지정할 수 있습니다. 상태 코드를 지정하지 않으면 상태 코드가 기본적으로 *302 - 있음*으로 설정되며, 이는 리소스가 일시적으로 이동하거나 대체되었음을 나타냅니다.
 
-::: moniker range=">= aspnetcore-2.0"
+[!code-csharp[](url-rewriting/samples/2.x/SampleApp/Startup.cs?name=snippet1&highlight=9)]
 
-[!code-csharp[](url-rewriting/sample/Startup.cs?name=snippet1&highlight=9)]
+개발자 도구가 활성화된 브라우저에서 예제 응용 프로그램에 `/redirect-rule/1234/5678` 경로를 요청합니다. 그러면 정규식이 `redirect-rule/(.*)`의 요청 경로와 일치하므로 `/redirected/1234/5678`로 경로가 치환됩니다. 리디렉션 URL은 *302 - 있음* 상태 코드와 함께 클라이언트로 다시 전송됩니다. 브라우저는 리디렉션 URL에 대한 새로운 요청을 만들고 이 주소는 브라우저의 주소 표시줄에 출력됩니다. 샘플 앱의 규칙이 리디렉션 URL에서 일치하지 않으므로 다음과 같이 수행됩니다.
 
-::: moniker-end
+* 두 번째 요청에서 앱의 *200 - 정상* 응답을 받습니다.
+* 응답 본문에 리디렉션 URL이 표시됩니다.
 
-::: moniker range="< aspnetcore-2.0"
-
-```csharp
-public void Configure(IApplicationBuilder app)
-{
-    var options = new RewriteOptions()
-        .AddRedirect("redirect-rule/(.*)", "redirected/$1");
-
-    app.UseRewriter(options);
-}
-```
-
-::: moniker-end
-
-개발자 도구가 활성화된 브라우저에서 `/redirect-rule/1234/5678` 경로로 샘플 앱에 대한 요청을 만듭니다. 그러면 정규식이 `redirect-rule/(.*)`의 요청 경로와 일치하므로 `/redirected/1234/5678`로 경로가 치환됩니다. 이 리디렉션 URL은 302 (임시 이동) 상태 코드와 함께 클라이언트로 재전송됩니다. 브라우저는 리디렉션 URL에 대한 새로운 요청을 만들고 이 주소는 브라우저의 주소 표시줄에 출력됩니다. 리디렉션 URL과 일치하는 예제 응용 프로그램의 규칙은 존재하지 않기 때문에 두 번째 요청은 응용 프로그램에서 200 (정상) 응답을 수신하고 응답 본문은 리디렉션 URL을 보여줍니다. URL이 *리디렉션* 될 때 서버에 대한 왕복이 수행됩니다.
+URL이 *리디렉션*되면 서버로의 왕복이 수행됩니다.
 
 > [!WARNING]
-> 리디렉션 규칙을 설정할 때 주의하시기 바랍니다. 리디렉션 규칙은 리디렉션 된 후를 비롯해서 응용 프로그램에 대한 각각의 요청을 대상으로 평가됩니다. 따라서 실수로 무한히 리디렉션 되는 루프를 만들기 쉽습니다.
+> 리디렉션 규칙을 설정할 때에는 주의하세요. 리디렉션 규칙은 리디렉션 이후를 포함하여 앱에 대한 모든 요청에서 평가됩니다. 따라서 *무한 리디렉션 루프*를 실수로 만들기 쉽습니다.
 
 원본 요청: `/redirect-rule/1234/5678`
 
@@ -143,7 +135,12 @@ public void Configure(IApplicationBuilder app)
 
 ### <a name="url-redirect-to-a-secure-endpoint"></a>보안 엔드포인트에 대한 URL 리디렉션
 
-`AddRedirectToHttps`를 사용하면 HTTP 요청을 HTTPS(`https://`)를 사용하는 동일한 호스트 및 경로로 리디렉션할 수 있습니다. 상태 코드를 지정하지 않으면 미들웨어가 기본값인 302(임시 이동)를 설정합니다. 그리고 포트를 지정하지 않으면 미들웨어가 기본값인 `null`을 설정하는데, 이는 프로토콜이 `https://`로 변경되고 클라이언트가 포트 443을 통해서 리소스에 접근함을 뜻합니다. 예제에서는 상태 코드를 301(영구 이동)로 설정하고 포트를 5001로 변경하는 방법을 보여줍니다.
+<xref:Microsoft.AspNetCore.Rewrite.RewriteOptionsExtensions.AddRedirectToHttps*>를 사용하여 HTTPS 프로토콜을 통해 HTTP 요청을 동일한 호스트 및 경로로 리디렉션할 수 있습니다. 상태 코드가 제공되지 않는 경우 미들웨어는 기본적으로 *302 - 있음*으로 설정됩니다. 포트가 제공되지 않는 경우 다음과 같이 수행됩니다.
+
+* 미들웨어가 기본적으로 `null`로 설정됩니다.
+* 체계가 `https`(HTTPS 프로토콜)로 변경되고 클라이언트에서 443 포트의 리소스에 액세스합니다.
+
+다음 예제에서는 상태 코드를 *301 - 영구적으로 이동됨*으로 설정하고 포트를 5001로 변경하는 방법을 보여 줍니다.
 
 ```csharp
 public void Configure(IApplicationBuilder app)
@@ -155,7 +152,7 @@ public void Configure(IApplicationBuilder app)
 }
 ```
 
-`AddRedirectToHttpsPermanent`를 사용하면 안전하지 않은 요청을 HTTPS 프로토콜을 사용하는 (포트 443에서 `https://`를 사용하는) 동일한 호스트 및 경로로 리디렉션할 수 있습니다. 미들웨어는 상태 코드를 301(영구 이동)로 설정합니다.
+<xref:Microsoft.AspNetCore.Rewrite.RewriteOptionsExtensions.AddRedirectToHttpsPermanent*>를 사용하여 443 포트의 HTTPS 프로토콜을 통해 안전하지 않은 요청을 동일한 호스트 및 경로로 리디렉션합니다. 미들웨어에서 상태 코드를 *301 - 영구적으로 이동됨*으로 설정합니다.
 
 ```csharp
 public void Configure(IApplicationBuilder app)
@@ -168,7 +165,7 @@ public void Configure(IApplicationBuilder app)
 ```
 
 > [!NOTE]
-> 추가 리디렉션 규칙에 대한 요구 사항 없이 HTTPS로 리디렉션하는 경우에 HTTPS 리디렉션 미들웨어를 사용하는 것이 좋습니다. 자세한 내용은 [HTTPS 적용](xref:security/enforcing-ssl#require-https) 항목을 참조하세요.
+> 추가 리디렉션 규칙을 요구하지 않고 보안 엔드포인트로 리디렉션하는 경우 HTTPS 리디렉션 미들웨어를 사용하는 것이 좋습니다. 자세한 내용은 [HTTPS 적용](xref:security/enforcing-ssl#require-https) 항목을 참조하세요.
 
 예제 응용 프로그램을 통해서 `AddRedirectToHttps` 또는 `AddRedirectToHttpsPermanent`의 사용 방법을 확인해 볼 수 있습니다. 먼저 `RewriteOptions`에 이 확장 메서드를 추가합니다. 모든 URL에서 앱에 대한 안전하지 않은 요청을 만듭니다. 자체 서명된 인증서를 신뢰할 수 없다는 브라우저 보안 경고는 무시하면 됩니다. 또는 인증서를 신뢰할 예외를 만듭니다.
 
@@ -182,36 +179,17 @@ public void Configure(IApplicationBuilder app)
 
 ### <a name="url-rewrite"></a>URL 재작성
 
-URL을 재작성하는 규칙을 만들려면 `AddRewrite`를 사용합니다. 첫 번째 매개 변수에는 들어오는 URL의 경로와 일치하는 부분을 찾기 위한 정규식을 지정합니다. 두 번째 매개 변수는 대체 문자열입니다. 세 번째 매개 변수, `skipRemainingRules: {true|false}`는 현재 규칙이 적용되는 경우에 추가 재작성 규칙을 건너뛸 것인지 여부를 미들웨어에 나타냅니다.
+URL을 재작성하는 규칙을 만들려면 <xref:Microsoft.AspNetCore.Rewrite.RewriteOptionsExtensions.AddRewrite*>를 사용합니다. 첫 번째 매개 변수에는 들어오는 URL의 경로에서 일치하는 정규식이 포함됩니다. 두 번째 매개 변수는 대체 문자열입니다. 세 번째 매개 변수, `skipRemainingRules: {true|false}`는 현재 규칙이 적용되는 경우에 추가 재작성 규칙을 건너뛸 것인지 여부를 미들웨어에 나타냅니다.
 
-::: moniker range=">= aspnetcore-2.0"
-
-[!code-csharp[](url-rewriting/sample/Startup.cs?name=snippet1&highlight=10-11)]
-
-::: moniker-end
-
-::: moniker range="< aspnetcore-2.0"
-
-```csharp
-public void Configure(IApplicationBuilder app)
-{
-    var options = new RewriteOptions()
-        .AddRewrite(@"^rewrite-rule/(\d+)/(\d+)", "rewritten?var1=$1&var2=$2", 
-            skipRemainingRules: true);
-
-    app.UseRewriter(options);
-}
-```
-
-::: moniker-end
+[!code-csharp[](url-rewriting/samples/2.x/SampleApp/Startup.cs?name=snippet1&highlight=10-11)]
 
 원래 요청: `/rewrite-rule/1234/5678`
 
 ![요청 및 응답을 추적하는 개발자 도구가 있는 브라우저 창](url-rewriting/_static/add_rewrite.png)
 
-이 정규식에서 가장 먼저 주목해야 할 부분은 식의 가장 첫 문자인 캐럿(`^`)입니다. 이는 URL 경로의 시작 부분에서부터 일치가 시작된다는 것을 의미합니다. 
+식의 시작 부분에 있는 캐럿(`^`)은 URL 경로의 시작 부분에서 일치가 시작된다는 것을 의미합니다.
 
-`redirect-rule/(.*)`리디렉션 규칙에 대한 이전 예제에서는 정규식 시작 부분에 캐럿이 없기 때문에, 경로의 `redirect-rule/` 앞부분에 어떤 문자가 나타나더라도 정상적으로 일치합니다.
+`redirect-rule/(.*)` 리디렉션 규칙이 있는 이전 예제에는 정규식의 시작 부분에 캐럿(`^`)이 없습니다. 따라서 일치하는 모든 문자가 경로의 `redirect-rule/` 앞에 나올 수 있습니다.
 
 | Path                               | 일치 |
 | ---------------------------------- | :---: |
@@ -219,7 +197,7 @@ public void Configure(IApplicationBuilder app)
 | `/my-cool-redirect-rule/1234/5678` | 예   |
 | `/anotherredirect-rule/1234/5678`  | 예   |
 
-반면 `^rewrite-rule/(\d+)/(\d+)` 재작성 규칙의 경우에는 오로지 `rewrite-rule/`로 시작하는 경로만 일치합니다. 위의 리디렉션 규칙과 다음 재작성 규칙 간의 일치 여부의 차이를 비교해보시기 바랍니다.
+반면 `^rewrite-rule/(\d+)/(\d+)` 재작성 규칙의 경우에는 오로지 `rewrite-rule/`로 시작하는 경로만 일치합니다. 다음 표에는 일치에서의 차이가 나와 있습니다.
 
 | Path                              | 일치 |
 | --------------------------------- | :---: |
@@ -227,46 +205,27 @@ public void Configure(IApplicationBuilder app)
 | `/my-cool-rewrite-rule/1234/5678` | 아니요    |
 | `/anotherrewrite-rule/1234/5678`  | 아니요    |
 
-표현식의 `^rewrite-rule/` 부분 뒤에는 계속해서 두 개의 캡처 그룹, `(\d+)/(\d+)`이 위치해 있습니다. 여기서 `\d`는 *숫자 하나와 일치*함을 뜻합니다. 그리고 더하기 기호(`+`)는 *앞의 문자와 한 번 이상 일치*함을 나타냅니다. 따라서 URL은 반드시 숫자 뒤에 슬래시와 다른 숫자가 연이어 나타나는 부분을 포함해야 합니다. 이 캡쳐 그룹들은 `$1` 및 `$2`를 통해서 재작성 URL에 삽입됩니다.  이 재작성 규칙의 대체 문자열은 캡처된 그룹을 쿼리 문자열에 배치합니다. 즉, 요청 경로 `/rewrite-rule/1234/5678`은 `/rewritten?var1=1234&var2=5678`에서 리소스를 가져오도록 재작성됩니다. 원본 요청에 쿼리 문자열이 존재할 경우 URL이 재작성될 때 보존됩니다.
+표현식의 `^rewrite-rule/` 부분 뒤에는 계속해서 두 개의 캡처 그룹, `(\d+)/(\d+)`이 위치해 있습니다. 여기서 `\d`는 *숫자 하나와 일치*함을 뜻합니다. 그리고 더하기 기호(`+`)는 *앞의 문자와 한 번 이상 일치*함을 나타냅니다. 따라서 URL은 반드시 숫자 뒤에 슬래시와 다른 숫자가 연이어 나타나는 부분을 포함해야 합니다. 이 캡쳐 그룹들은 `$1` 및 `$2`를 통해서 재작성 URL에 삽입됩니다.  재작성 규칙의 대체 문자열은 캡처된 그룹을 쿼리 문자열에 배치합니다. 즉, 요청 경로 `/rewrite-rule/1234/5678`은 `/rewritten?var1=1234&var2=5678`에서 리소스를 가져오도록 재작성됩니다. 원본 요청에 쿼리 문자열이 있으면 URL을 다시 작성할 때 유지됩니다.
 
-이때 리소스를 가져오기 위해서 서버를 왕복하지 않습니다. 리소스가 존재할 경우 가져온 다음 200 (정상) 상태 코드와 함께 클라이언트에 반환됩니다. 클라이언트는 리디렉션 되지 않기 때문에 브라우저 주소 표시줄의 URL은 변경되지 않습니다. 클라이언트와 관련된 URL 재작성 작업은 전혀 발생하지 않습니다.
+리소스를 가져오기 위해 서버를 왕복하지 않습니다. 리소스가 있으면 이를 가져와서 *200 - 정상* 상태 코드와 함께 클라이언트에 반환합니다. 클라이언트는 리디렉션 되지 않으므로 브라우저 주소 표시줄의 URL은 변경되지 않습니다. 클라이언트는 서버에서 URL 재작성 작업이 발생했음을 검색할 수 없습니다.
 
 > [!NOTE]
-> 일치 규칙은 비용이 많이 드는 작업이며 응용 프로그램의 응답 속도를 늦추므로 가능하면 항상 `skipRemainingRules: true`를 사용하는 것이 좋습니다. 최대한 빠른 응용 프로그램 응답을 위해서는:
-> * 가장 자주 일치하는 규칙부터 가장 적게 일치하는 규칙 순으로 재작성 규칙을 정렬합니다.
+> 일치 규칙은 컴퓨팅 측면에서 비용이 많이 들고 앱의 응답 속도가 저하되므로 가능한 경우 `skipRemainingRules: true`를 사용합니다. 최대한 빠른 응용 프로그램 응답을 위해서는:
+>
+> * 재작성 규칙을 가장 자주 일치하는 규칙에서 가장 드물게 일치하는 규칙으로의 순서로 정렬합니다.
 > * 일치가 발생하고 추가적인 규칙 처리가 필요하지 않다면 나머지 규칙의 처리를 생략합니다.
 
 ### <a name="apache-modrewrite"></a>Apache mod_rewrite
 
-`AddApacheModRewrite`를 사용하면 Apache mod_rewrite 규칙을 적용할 수 있습니다. 규칙 파일이 응용 프로그램과 함께 배포되고 있는지 확인하시기 바랍니다. mod_rewrite 규칙에 대한 자세한 내용 및 예제는 [Apache mod_rewrite](https://httpd.apache.org/docs/2.4/rewrite/)를 참조하세요.
+<xref:Microsoft.AspNetCore.Rewrite.ApacheModRewriteOptionsExtensions.AddApacheModRewrite*>를 사용하면 Apache mod_rewrite 규칙을 적용할 수 있습니다. 규칙 파일이 응용 프로그램과 함께 배포되고 있는지 확인하시기 바랍니다. mod_rewrite 규칙에 대한 보다 자세한 내용과 예제는 [Apache mod_rewrite](https://httpd.apache.org/docs/2.4/rewrite/)를 참고하시기 바랍니다.
 
-::: moniker range=">= aspnetcore-2.0"
+<xref:System.IO.StreamReader>는 *ApacheModRewrite.txt* 규칙 파일에서 규칙을 읽는 데 사용됩니다.
 
-`StreamReader`는 *ApacheModRewrite.txt* 규칙 파일에서 규칙을 읽는 데 사용됩니다.
+[!code-csharp[](url-rewriting/samples/2.x/SampleApp/Startup.cs?name=snippet1&highlight=3-4,12)]
 
-[!code-csharp[](url-rewriting/sample/Startup.cs?name=snippet1&highlight=3-4,12)]
+예제 응용 프로그램은 `/apache-mod-rules-redirect/(.\*)`에서 `/redirected?id=$1`로 요청을 리디렉션합니다. 응답 상태 코드는 *302 - 있음*입니다.
 
-::: moniker-end
-
-::: moniker range="< aspnetcore-2.0"
-
-첫 번째 매개 변수는 [종속성 주입](dependency-injection.md)을 통해 제공되는 `IFileProvider`를 사용합니다. `IHostingEnvironment`는 `ContentRootFileProvider`를 제공하기 위해서 삽입됩니다. 두 번째 매개 변수는 규칙 파일, 즉 예제 응용 프로그램의 경우 *ApacheModRewrite.txt*에 대한 경로입니다.
-
-```csharp
-public void Configure(IApplicationBuilder app, IHostingEnvironment env)
-{
-    var options = new RewriteOptions()
-        .AddApacheModRewrite(env.ContentRootFileProvider, "ApacheModRewrite.txt");
-
-    app.UseRewriter(options);
-}
-```
-
-::: moniker-end
-
-예제 응용 프로그램은 `/apache-mod-rules-redirect/(.\*)`에서 `/redirected?id=$1`로 요청을 리디렉션합니다. 그리고 응답 상태 코드는 302 (임시 이동)입니다.
-
-[!code[](url-rewriting/sample/ApacheModRewrite.txt)]
+[!code[](url-rewriting/samples/2.x/SampleApp/ApacheModRewrite.txt)]
 
 원본 요청: `/apache-mod-rules-redirect/1234`
 
@@ -306,35 +265,15 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 
 ### <a name="iis-url-rewrite-module-rules"></a>IIS URL 재작성 모듈 규칙
 
-`AddIISUrlRewrite`를 사용하면 IIS URL 재작성 모듈에 적용되는 규칙을 사용할 수 있습니다. 규칙 파일이 응용 프로그램과 함께 배포되고 있는지 확인하시기 바랍니다. 응용 프로그램을 Windows Server의 IIS에서 실행하고 있다면 미들웨어가 *web.config* 파일을 사용하도록 지정하지 마십시오. IIS를 사용할 경우, IIS 재작성 모듈과 충돌을 피할 수 있도록 규칙을 *web.config* 외부에 저장해야 합니다. IIS URL 재작성 모듈 규칙에 대한 자세한 내용 및 예제는 [Url 재작성 모듈 2.0 사용](/iis/extensions/url-rewrite-module/using-url-rewrite-module-20) 및 [URL 재작성 모듈 구성 참조](/iis/extensions/url-rewrite-module/url-rewrite-module-configuration-reference)를 참조하세요.
+IIS URL 재작성 모듈에 적용되는 것과 동일한 규칙 세트를 사용하려면 <xref:Microsoft.AspNetCore.Rewrite.IISUrlRewriteOptionsExtensions.AddIISUrlRewrite*>를 사용합니다. 규칙 파일이 응용 프로그램과 함께 배포되고 있는지 확인하시기 바랍니다. Windows Server IIS에서 실행하는 경우 미들웨어에서 앱의 *web.config* 파일을 사용하도록 지시하지 않습니다. IIS를 사용하는 경우 IIS 재작성 모듈과 충돌하지 않도록 이러한 규칙을 앱의 *web.config* 파일 외부에 저장해야 합니다. IIS URL 재작성 모듈 규칙에 대한 보다 자세한 내용 및 예제는 [URL 재작성 모듈 2.0 사용](/iis/extensions/url-rewrite-module/using-url-rewrite-module-20)과 [URL 재작성 모듈 구성 참조](/iis/extensions/url-rewrite-module/url-rewrite-module-configuration-reference)를 참고하시기 바랍니다.
 
-::: moniker range=">= aspnetcore-2.0"
+<xref:System.IO.StreamReader>는 *IISUrlRewrite.xml* 규칙 파일에서 규칙을 읽는 데 사용됩니다.
 
-`StreamReader`는 *IISUrlRewrite.xml* 규칙 파일에서 규칙을 읽는 데 사용됩니다.
+[!code-csharp[](url-rewriting/samples/2.x/SampleApp/Startup.cs?name=snippet1&highlight=5-6,13)]
 
-[!code-csharp[](url-rewriting/sample/Startup.cs?name=snippet1&highlight=5-6,13)]
+예제 응용 프로그램은 `/iis-rules-rewrite/(.*)`에서 `/rewritten?id=$1`로 요청을 재작성합니다. 응답이 *200 - 정상* 상태 코드와 함께 클라이언트에 전송됩니다.
 
-::: moniker-end
-
-::: moniker range="< aspnetcore-2.0"
-
-첫 번째 매개 변수는 `IFileProvider`를 사용하는 반면 두 번째 매개 변수는 XML 규칙 파일에 대한 경로입니다. 이는 샘플 앱에서 *IISUrlRewrite.xml*입니다.
-
-```csharp
-public void Configure(IApplicationBuilder app, IHostingEnvironment env)
-{
-    var options = new RewriteOptions()
-        .AddIISUrlRewrite(env.ContentRootFileProvider, "IISUrlRewrite.xml");
-
-    app.UseRewriter(options);
-}
-```
-
-::: moniker-end
-
-예제 응용 프로그램은 `/iis-rules-rewrite/(.*)`에서 `/rewritten?id=$1`로 요청을 재작성합니다. 그리고 응답은 200 (정상) 상태 코드로 클라이언트에 전송됩니다.
-
-[!code-xml[](url-rewriting/sample/IISUrlRewrite.xml)]
+[!code-xml[](url-rewriting/samples/2.x/SampleApp/IISUrlRewrite.xml)]
 
 원본 요청: `/iis-rules-rewrite/1234`
 
@@ -344,31 +283,12 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 
 #### <a name="unsupported-features"></a>지원되지 않는 기능
 
-::: moniker range=">= aspnetcore-2.0"
-
 ASP.NET Core 2.x로 출시된 미들웨어는 다음과 같은 IIS URL 재작성 모듈 기능을 지원하지 않습니다.
 
 * 아웃바운드 규칙
 * 사용자 지정 서버 변수
 * 와일드카드
 * LogRewrittenUrl
-
-::: moniker-end
-
-::: moniker range="< aspnetcore-2.0"
-
-ASP.NET Core 1.x로 출시된 미들웨어는 다음과 같은 IIS URL 재작성 모듈 기능을 지원하지 않습니다.
-
-* 전역 규칙
-* 아웃바운드 규칙
-* 재작성 맵
-* CustomResponse 작업
-* 사용자 지정 서버 변수
-* 와일드카드
-* Action:CustomResponse
-* LogRewrittenUrl
-
-::: moniker-end
 
 #### <a name="supported-server-variables"></a>지원되는 서버 변수
 
@@ -392,77 +312,47 @@ ASP.NET Core 1.x로 출시된 미들웨어는 다음과 같은 IIS URL 재작성
 * REQUEST_URI
 
 > [!NOTE]
-> `PhysicalFileProvider`를 이용해서 `IFileProvider`를 가져올 수도 있습니다. 이 방식이 재작성 규칙 파일의 위치에 대해 더 많은 유연성을 제공할 수 있습니다. 재작성 규칙 파일이 서버의 지정한 경로에 배포되는지 확인하시기 바랍니다.
+> <xref:Microsoft.Extensions.FileProviders.PhysicalFileProvider>를 이용해서 <xref:Microsoft.Extensions.FileProviders.IFileProvider>를 가져올 수도 있습니다. 이 방식이 재작성 규칙 파일의 위치에 대해 더 많은 유연성을 제공할 수 있습니다. 재작성 규칙 파일이 서버의 지정한 경로에 배포되는지 확인하시기 바랍니다.
+>
 > ```csharp
 > PhysicalFileProvider fileProvider = new PhysicalFileProvider(Directory.GetCurrentDirectory());
 > ```
 
 ### <a name="method-based-rule"></a>메서드 기반 규칙
 
-메서드를 이용해서 직접 규칙 로직을 구현하고 싶다면 `Add(Action<RewriteContext> applyRule)`를 사용하면 됩니다. `RewriteContext`는 메서드에서 사용할 수 있는 `HttpContext`를 노출합니다. `RewriteContext.Result`는 추가적인 파이프라인 처리가 수행되는 방법을 결정합니다.
+메서드를 이용해서 직접 규칙 로직을 구현하고 싶다면 <xref:Microsoft.AspNetCore.Rewrite.RewriteOptionsExtensions.Add*>를 사용하면 됩니다. `Add`는 메서드에서 사용할 <xref:Microsoft.AspNetCore.Http.HttpContext>를 사용할 수 있게 하는 <xref:Microsoft.AspNetCore.Rewrite.RewriteContext>를 공개합니다. [RewriteContext.Result](xref:Microsoft.AspNetCore.Rewrite.RewriteContext.Result*)는 추가 파이프라인 처리가 수행되는 방법을 결정합니다. 값을 다음 표에 설명된 <xref:Microsoft.AspNetCore.Rewrite.RuleResult> 필드 중 하나로 설정합니다.
 
-| `RewriteContext.Result`              | 작업                                                          |
-| ------------------------------------ | --------------------------------------------------------------- |
-| `RuleResult.ContinueRules`(기본값) | 계속 규칙 적용                                         |
-| `RuleResult.EndResponse`             | 규칙 적용을 중지하고 응답 전송                       |
-| `RuleResult.SkipRemainingRules`      | 규칙 적용을 중지하고 다음 미들웨어에 컨텍스트 보내기 |
+| `RewriteContext.Result`              | 작업                                                           |
+| ------------------------------------ | ---------------------------------------------------------------- |
+| `RuleResult.ContinueRules`(기본값) | 규칙 적용을 계속합니다.                                         |
+| `RuleResult.EndResponse`             | 규칙 적용을 중지하고 응답을 보냅니다.                       |
+| `RuleResult.SkipRemainingRules`      | 규칙 적용을 중지하고 컨텍스트를 다음 미들웨어로 보냅니다. |
 
-::: moniker range=">= aspnetcore-2.0"
+[!code-csharp[](url-rewriting/samples/2.x/SampleApp/Startup.cs?name=snippet1&highlight=14)]
 
-[!code-csharp[](url-rewriting/sample/Startup.cs?name=snippet1&highlight=14)]
+예제 응용 프로그램은 *.xml*로 끝나는 경로 요청을 리디렉션하는 메서드를 보여줍니다. `/file.xml`에 대한 요청이 수행되면 해당 요청이 `/xmlfiles/file.xml`로 리디렉션됩니다. 상태 코드는 *301 - 영구적으로 이동됨*으로 설정됩니다. 브라우저에서 */xmlfiles/file.xml*에 대한 새 요청이 수행되면 정적 파일 미들웨어에서 *wwwroot/xmlfiles* 폴더의 파일을 클라이언트에 제공합니다. 리디렉션의 경우 응답의 상태 코드를 명시적으로 설정합니다. 그렇지 않으면 *200 - 정상* 상태 코드가 반환되고 클라이언트에서 리디렉션이 수행되지 않습니다.
 
-::: moniker-end
+*RewriteRules.cs*:
 
-::: moniker range="< aspnetcore-2.0"
+[!code-csharp[](url-rewriting/samples/2.x/SampleApp/RewriteRules.cs?name=snippet_RedirectXmlFileRequests&highlight=14-18)]
 
-```csharp
-public void Configure(IApplicationBuilder app)
-{
-    var options = new RewriteOptions()
-        .Add(RedirectXMLRequests);
+또한 이 방법은 요청을 다시 작성할 수도 있습니다. 샘플 앱에서는 *wwwroot* 폴더의 *file.txt* 텍스트 파일을 제공할 텍스트 파일 요청의 경로를 다시 작성하는 방법을 보여 줍니다. 정적 파일 미들웨어는 업데이트된 요청 경로에 따라 파일을 제공합니다.
 
-    app.UseRewriter(options);
-}
-```
+[!code-csharp[](url-rewriting/samples/2.x/SampleApp/Startup.cs?name=snippet1&highlight=15,22)]
 
-::: moniker-end
+*RewriteRules.cs*:
 
-샘플 앱은 *.xml*로 끝나는 경로에 대한 요청을 리디렉션하는 메서드를 보여 줍니다. 가령 `/file.xml`을 요청할 경우 `/xmlfiles/file.xml`로 리디렉션됩니다. 상태 코드는 301 (영구 이동)으로 설정하고 있습니다. 리디렉션의 경우 명시적으로 응답의 상태 코드를 설정해야 하며, 그렇지 않으면 200 (정상) 상태 코드가 반환되고 클라이언트에서 리디렉션이 발생하지 않습니다.
-
-[!code-csharp[](url-rewriting/sample/RewriteRules.cs?name=snippet1)]
-
-원본 요청: `/file.xml`
-
-![file.xml에 대한 요청 및 응답을 추적하는 개발자 도구가 있는 브라우저 창](url-rewriting/_static/add_redirect_xml_requests.png)
+[!code-csharp[](url-rewriting/samples/2.x/SampleApp/RewriteRules.cs?name=snippet_RewriteTextFileRequests&highlight=7-8)]
 
 ### <a name="irule-based-rule"></a>IRule 기반 규칙
 
-`Add(IRule)`를 사용하여 `IRule` 인터페이스를 구현하는 클래스에서 사용자 고유의 규칙 논리를 캡슐화합니다. `IRule`을 사용하면 메서드 기반 규칙 방식을 사용하는 것보다 더 많은 유연성을 얻을 수 있습니다. 구현 클래스에는 `ApplyRule` 메서드에 대한 매개 변수를 전달할 수 있는 생성자가 포함될 수 있습니다.
+<xref:Microsoft.AspNetCore.Rewrite.RewriteOptionsExtensions.Add*>를 사용하여 <xref:Microsoft.AspNetCore.Rewrite.IRule> 인터페이스를 구현하는 클래스에서 규칙 논리를 사용합니다. `IRule`은 메서드 기반 규칙 방식을 사용하는 것보다 더 높은 유연성을 제공합니다. 구현 클래스에는 <xref:Microsoft.AspNetCore.Rewrite.IRule.ApplyRule*> 메서드에 대한 매개 변수를 전달할 수 있는 생성자가 포함될 수 있습니다.
 
-::: moniker range=">= aspnetcore-2.0"
+[!code-csharp[](url-rewriting/samples/2.x/SampleApp/Startup.cs?name=snippet1&highlight=16-17)]
 
-[!code-csharp[](url-rewriting/sample/Startup.cs?name=snippet1&highlight=15-16)]
+예제 응용 프로그램은 `extension` 및 `newPath` 매개 변수 값들이 다양한 조건을 만족하는지 검사합니다. `extension`매개 변수는 값을 포함하고 있어야 하고, 그 값은 *.png*, *.jpg*, 또는 *.gif* 중 하나이어야 합니다. 만약 `newPath`가 유효하지 않으면 <xref:System.ArgumentException>이 던져집니다. *image.png*에 대한 요청이 수행되면 해당 요청이 `/png-images/image.png`으로 리디렉션됩니다. *image.jpg*에 대한 요청이 수행되면 해당 요청이 `/jpg-images/image.jpg`로 리디렉션됩니다. 상태 코드는 *301 - 영구적으로 이동됨*으로 설정되고, `context.Result`는 규칙 처리를 중지하고 응답을 보내도록 설정됩니다.
 
-::: moniker-end
-
-::: moniker range="< aspnetcore-2.0"
-
-```csharp
-public void Configure(IApplicationBuilder app)
-{
-    var options = new RewriteOptions()
-        .Add(new RedirectImageRequests(".png", "/png-images"))
-        .Add(new RedirectImageRequests(".jpg", "/jpg-images"));
-
-    app.UseRewriter(options);
-}
-```
-
-::: moniker-end
-
-예제 응용 프로그램은 `extension` 및 `newPath` 매개 변수 값들이 다양한 조건을 만족하는지 검사합니다. `extension`매개 변수는 값을 포함하고 있어야 하고, 그 값은 *.png*, *.jpg*, 또는 *.gif* 중 하나이어야 합니다. 만약 `newPath`가 유효하지 않으면 `ArgumentException`이 던져집니다. *image.png*를 요청하면 `/png-images/image.png`로 요청이 리디렉션 됩니다. 그리고 *image.jpg*를 요청하면 `/jpg-images/image.jpg`로 요청이 리디렉션 됩니다. 상태 코드는 301 (영구 이동)으로 설정하고 규칙 처리를 중지하고 응답을 전송하도록 `context.Result`를 설정합니다.
-
-[!code-csharp[](url-rewriting/sample/RewriteRules.cs?name=snippet2)]
+[!code-csharp[](url-rewriting/samples/2.x/SampleApp/RewriteRules.cs?name=snippet_RedirectImageRequests)]
 
 원본 요청: `/image.png`
 
@@ -475,7 +365,7 @@ public void Configure(IApplicationBuilder app)
 ## <a name="regex-examples"></a>정규식 예제
 
 | Goal | 정규식 문자열 및<br>일치 예제 | 대체 문자열 및<br>출력 예제 |
-| ---- | :-----------------------------: | :------------------------------------: |
+| ---- | ------------------------------- | -------------------------------------- |
 | 경로를 쿼리 문자열로 재작성 | `^path/(.*)/(.*)`<br>`/path/abc/123` | `path?var1=$1&var2=$2`<br>`/path?var1=abc&var2=123` |
 | 후행 슬래시 제거 | `(.*)/$`<br>`/path/` | `$1`<br>`/path` |
 | 후행 슬래시 적용 | `(.*[^/])$`<br>`/path` | `$1/`<br>`/path/` |
