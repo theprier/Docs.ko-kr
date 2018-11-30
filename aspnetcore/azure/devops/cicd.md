@@ -123,7 +123,7 @@ ms.locfileid: "51570089"
 
     ![저장 빌드 정의-모달 대화 상자](media/cicd/vsts-save-modal.png)
 
-    기본 폴더를 사용 하 여 *\\*를 클릭 합니다 **저장** 단추입니다.
+    기본 폴더를 사용 하 여 *\\* 를 클릭 합니다 **저장** 단추입니다.
 
 ### <a name="create-the-release-pipeline"></a>릴리스 파이프라인을 만듭니다
 
