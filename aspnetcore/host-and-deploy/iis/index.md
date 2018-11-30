@@ -4,20 +4,23 @@ author: guardrex
 description: Windows Server IIS(인터넷 정보 서비스)에서 ASP.NET Core 앱을 호스팅하는 방법을 알아봅니다.
 ms.author: riande
 ms.custom: mvc
-ms.date: 11/10/2018
+ms.date: 11/26/2018
 uid: host-and-deploy/iis/index
-ms.openlocfilehash: 1b34195dc51ca8dab5e8eda10f05ff6678fbc78c
-ms.sourcegitcommit: 408921a932448f66cb46fd53c307a864f5323fe5
+ms.openlocfilehash: 77fa6e1ef6a7fc707c2665826d3c1f4c2691979c
+ms.sourcegitcommit: e9b99854b0a8021dafabee0db5e1338067f250a9
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51570167"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52450803"
 ---
 # <a name="host-aspnet-core-on-windows-with-iis"></a>IIS가 있는 Windows에서 ASP.NET Core 호스팅
 
 [Luke Latham](https://github.com/guardrex)으로
 
 [.NET Core 호스팅 번들 설치](#install-the-net-core-hosting-bundle)
+
+> [!NOTE]
+> ASP.NET Core 목차에 대해 제안된 새 구조의 유용성을 테스트합니다.  몇 분 동안 현재 또는 제안된 목차에서 다른 7개의 항목을 찾는 연습을 수행하는 경우 [여기를 클릭하여 연구에 참여하세요](https://dpk4xbh5.optimalworkshop.com/treejack/rps16hd5).
 
 ## <a name="supported-operating-systems"></a>지원되는 운영 체제
 
@@ -62,7 +65,7 @@ public static IWebHost BuildWebHost(string[] args) =>
 
 **In-process 호스팅 모델**
 
-`CreateDefaultBuilder`는 `UseIIS` 메서드를 호출하여 [CoreCLR](/dotnet/standard/glossary#coreclr)을 부팅하고 IIS 작업자 프로세스(*w3wp.exe* 또는 *iisexpress.exe*) 내에서 앱을 호스트합니다. 성능 테스트의 결과 .NET Core 앱 in-process를 호스팅하는 것이 앱 out-of-process 및 [Kestrel](xref:fundamentals/servers/kestrel)에 대한 요청을 프록시하는 것보다 훨씬 높은 요청 처리량을 제공함을 나타냅니다.
+`CreateDefaultBuilder`는 `UseIIS` 메서드를 호출하여 [CoreCLR](/dotnet/standard/glossary#coreclr)을 부팅하고 IIS 작업자 프로세스(*w3wp.exe* 또는 *iisexpress.exe*) 내에서 앱을 호스트합니다. 성능 테스트의 결과 .NET Core 앱 In-process를 호스팅하는 것이 앱 out-of-process 및 [Kestrel](xref:fundamentals/servers/kestrel)에 대한 요청을 프록시하는 것보다 훨씬 높은 요청 처리량을 제공함을 나타냅니다.
 
 **Out-of-process 호스팅 모델**
 
@@ -416,31 +419,19 @@ IIS에서 키 링을 저장하도록 데이터 보호를 구성하려면 다음 
 
   데이터 보호 시스템은 데이터 보호 API를 사용하는 모든 앱에 대한 기본 [컴퓨터 수준 정책](xref:security/data-protection/configuration/machine-wide-policy) 설정을 제한적으로 지원합니다. 자세한 내용은 <xref:security/data-protection/introduction>을 참조하세요.
 
-## <a name="sub-application-configuration"></a>하위 응용 프로그램 구성
+## <a name="virtual-directories"></a>가상 디렉터리
 
-루트 앱 아래에 추가된 하위 앱에는 ASP.NET Core 모듈이 처리기로 포함되지 않아야 합니다. 하위 앱의 *web.config* 파일에 모듈이 처리기로 추가되면, 하위 앱을 찾으려고 할 때 잘못된 구성 파일을 참조하는 *500.19 내부 서버 오류*가 표시됩니다.
+[IIS 가상 디렉터리](/iis/get-started/planning-your-iis-architecture/understanding-sites-applications-and-virtual-directories-on-iis#virtual-directories)는 ASP.NET Core 앱에서 지원되지 않습니다. 앱은 [하위 애플리케이션](#sub-applications)으로 호스팅될 수 있습니다.
 
-다음 예제에서는 ASP.NET Core 하위 앱에 대해 게시된 *web.config* 파일을 보여 줍니다.
+## <a name="sub-applications"></a>하위 애플리케이션
 
-::: moniker range=">= aspnetcore-2.2"
-
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<configuration>
-  <location path="." inheritInChildApplications="false">
-    <system.webServer>
-      <aspNetCore processPath="dotnet" 
-        arguments=".\MyApp.dll" 
-        stdoutLogEnabled="false" 
-        stdoutLogFile=".\logs\stdout" />
-    </system.webServer>
-  </location>
-</configuration>
-```
-
-::: moniker-end
+ASP.NET Core 앱은 [IIS 하위 애플리케이션(하위 앱)](/iis/get-started/planning-your-iis-architecture/understanding-sites-applications-and-virtual-directories-on-iis#applications)으로 호스팅될 수 있습니다. 하위 앱의 경로는 루트 앱 URL의 일부가 됩니다.
 
 ::: moniker range="< aspnetcore-2.2"
+
+하위 앱에는 ASP.NET Core 모듈이 처리기로 포함되지 않아야 합니다. 하위 앱의 *web.config* 파일에 모듈이 처리기로 추가되면, 하위 앱을 찾으려고 할 때 잘못된 구성 파일을 참조하는 *500.19 내부 서버 오류*가 표시됩니다.
+
+다음 예제에서는 ASP.NET Core 하위 앱에 대해 게시된 *web.config* 파일을 보여 줍니다.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -473,7 +464,23 @@ ASP.NET Core 앱 아래에 비ASP .NET Core 하위 앱을 호스팅하는 경우
 
 ::: moniker-end
 
-ASP.NET Core 모듈을 구성하는 방법에 대한 자세한 내용은 [ASP.NET Core 모듈 소개](xref:fundamentals/servers/aspnet-core-module) 항목 및 [ASP.NET Core 모듈 구성 참조](xref:host-and-deploy/aspnet-core-module)를 참조하세요.
+하위 앱 내의 정적 자산 링크는 물결표-슬래시(`~/`) 표기법을 사용해야 합니다. 물결표-슬래시 표기법은 [태그 도우미](xref:mvc/views/tag-helpers/intro)를 트리거하여 하위 앱의 PathBase를 렌더링된 상대 링크 앞에 추가합니다. `/subapp_path`에서 하위 앱의 경우, `src="~/image.png"`와 연결된 이미지가 `src="/subapp_path/image.png"`으로 렌더링됩니다. 루트 앱의 정적 파일 미들웨어는 정적 파일 요청을 처리하지 않습니다. 요청은 하위 앱의 정적 파일 미들웨어에서 처리됩니다.
+
+정적 자산의 `src` 특성이 절대 경로(예: `src="/image.png"`)로 설정된 경우 링크는 하위 앱의 PathBase 없이 렌더링됩니다. 루트 앱의 정적 파일 미들웨어는 루트 앱의 [webroot](xref:fundamentals/index#web-root-webroot)에서 자산을 제공하려고 시도하며 그 결과 루트 앱에서 정적 자산을 사용할 수 있지 않으면 ‘404 - 찾을 수 없음’이 발생합니다.
+
+ASP.NET Core 앱을 다른 ASP.NET Core 앱에서 하위 앱으로 호스팅하려면 다음을 수행합니다.
+
+1. 하위 앱에 대한 앱 풀을 설정합니다. **.NET CLR 버전**을 **관리 코드 없음**으로 설정합니다.
+
+1. 루트 사이트 아래의 폴더에 하위 앱을 사용하여 IIS 관리자에 루트 사이트를 추가합니다.
+
+1. IIS 관리자에서 하위 앱 폴더를 마우스 오른쪽 단추로 클릭하고 **Convert to Application**(애플리케이션으로 변환)을 선택합니다.
+
+1. **Add Application**(애플리케이션 추가) 대화 상자에서 **애플리케이션 풀**에 대한 **선택** 단추를 사용하여 하위 앱에 대해 만든 앱 풀을 할당합니다. **확인**을 선택합니다.
+
+하위 앱에 대한 별도의 앱 풀 할당은 In-process 호스팅 모델을 사용할 때 필요합니다.
+
+In-process 호스팅 모델 및 ASP.NET Core 모듈 구성에 대한 자세한 내용은 <xref:fundamentals/servers/aspnet-core-module> 및 <xref:host-and-deploy/aspnet-core-module>을 참조하세요.
 
 ## <a name="configuration-of-iis-with-webconfig"></a>web.config를 사용하여 IIS 구성
 
@@ -610,6 +617,7 @@ IIS에서 ASP.NET Core 앱을 호스팅할 때 일반적인 오류를 구분합�
 
 ## <a name="additional-resources"></a>추가 자료
 
+* <xref:test/troubleshoot>
 * [ASP.NET Core 소개](xref:index)
 * [공식 Microsoft IIS 사이트](https://www.iis.net/)
 * [Windows Server 기술 콘텐츠 라이브러리](/windows-server/windows-server)
