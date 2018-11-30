@@ -54,13 +54,13 @@ paths.concatJsDest = paths.webroot + "js/site.min.js";
 paths.concatCssDest = paths.webroot + "css/site.min.css";
 ```
 
-이 코드는 필요한 Node 모듈들을 지정합니다. `require` 함수는 종속적인 작업이 해당 모듈의 기능을 활용할 수 있도록 각 모듈을 가져옵니다. 가져온 모듈들은 각각 변수에 할당됩니다. 모듈은 이름이나 경로로 찾을 수 있습니다. 이 예제에서는 `gulp`, `rimraf`, `gulp-concat`, `gulp-cssmin`, 및 `gulp-uglify`라는 모듈들을 이름으로 검색합니다. 또한 CSS 및 JavaScript 파일들의 위치를 작업 내에서 재사용하고 참조할 수 있도록 일련의 경로들을 생성합니다. 다음 표는 *gulpfile.js*에 포함된 모듈들에 대한 설명입니다.
+이 코드는 필요한 Node 모듈을 지정합니다. `require` 함수는 종속적인 작업이 해당 모듈의 기능을 활용할 수 있도록 각 모듈을 가져옵니다. 가져온 모듈은 각각 변수에 할당됩니다. 모듈은 이름이나 경로로 찾을 수 있습니다. 이 예제에서는 `gulp`, `rimraf`, `gulp-concat`, `gulp-cssmin`, 및 `gulp-uglify`라는 모듈을 이름으로 검색합니다. 또한 CSS 및 JavaScript 파일의 위치를 작업 내에서 재사용하고 참조할 수 있도록 일련의 경로을 생성합니다. 다음 표는 *gulpfile.js*에 포함된 모듈에 대한 설명입니다.
 
 | 모듈 이름 | 설명 |
 | ----------- | ----------- |
-| gulp        | Gulp 스트리밍 빌드 시스템입니다. 자세한 내용은 [gulp](https://www.npmjs.com/package/gulp)를 참고하시기 바랍니다. |
-| rimraf      | Node 삭제 모듈입니다. 자세한 내용은 [rimraf](https://www.npmjs.com/package/rimraf)를 참고하시기 바랍니다. |
-| gulp concat | 운영 체제의 줄 바꿈 문자를 기반으로 파일들을 연결하는 모듈입니다. 자세한 내용은 [gulp concat](https://www.npmjs.com/package/gulp-concat)를 참고하시기 바랍니다. |
+| gulp | Gulp 스트리밍 빌드 시스템입니다. 자세한 내용은 [gulp](https://www.npmjs.com/package/gulp)를 참고하시기 바랍니다. |
+| rimraf | Node 삭제 모듈입니다. 자세한 내용은 [rimraf](https://www.npmjs.com/package/rimraf)를 참고하시기 바랍니다. |
+| gulp concat | 운영 체제의 줄 바꿈 문자를 기반으로 파일을 연결하는 모듈입니다. 자세한 내용은 [gulp concat](https://www.npmjs.com/package/gulp-concat)를 참고하시기 바랍니다. |
 | gulp cssmin | CSS 파일을 축소하는 모듈입니다. 자세한 내용은 [gulp cssmin](https://www.npmjs.com/package/gulp-cssmin)을 참고하시기 바랍니다. |
 | gulp uglify | *.js* 파일을 축소하는 모듈입니다. 자세한 내용은 [gulp uglify](https://www.npmjs.com/package/gulp-uglify)를 참고하시기 바랍니다. |
 
@@ -95,20 +95,20 @@ gulp.task("default", gulp.series(["min"]));
 
 다음 표는 위의 코드에서 지정하는 작업을 설명합니다.
 
-| 작업 이름  | 설명 |
-| --------- | ---  |
-| clean:js  | rimraf Node 삭제 모듈을 사용하여 축소된 버전의 site.js 파일을 제거하는 작업입니다. |
+| 작업 이름 | 설명 |
+| --------- | --- |
+| clean:js | rimraf Node 삭제 모듈을 사용하여 축소된 버전의 site.js 파일을 제거하는 작업입니다. |
 | clean:css | rimraf Node 삭제 모듈을 사용하여 축소된 버전의 site.css 파일을 제거하는 작업입니다. |
-| clean     | `clean:js` 작업을 호출하고 뒤이어 `clean:css` 작업을 호출하는 작업입니다. |
-| min:js    | js 폴더 내의 모든 .js 파일을 축소 및 연결하는 작업입니다. .min.js 파일들은 제외됩니다. |
-| min:css   | css 폴더 내의 모든 .css 파일을 축소 및 연결하는 작업입니다. .min.css 파일들은 제외됩니다. |
-| min       | `min:js` 작업을 호출하고 뒤이어 `min:css` 작업을 호출하는 작업입니다. |
+| clean | `clean:js` 작업을 호출하고 뒤이어 `clean:css` 작업을 호출하는 작업입니다. |
+| min:js | js 폴더 내의 모든 .js 파일을 축소 및 연결하는 작업입니다. .min.js 파일들은 제외됩니다. |
+| min:css | css 폴더 내의 모든 .css 파일을 축소 및 연결하는 작업입니다. .min.css 파일은 제외됩니다. |
+| min | `min:js` 작업을 호출하고 뒤이어 `min:css` 작업을 호출하는 작업입니다. |
 
 ## <a name="running-default-tasks"></a>기본 작업 실행하기
 
 아직 새로운 웹 앱을 만들지 않았다면 Visual Studio에서 새로운 ASP.NET Core 웹 응용 프로그램 프로젝트를 만듭니다.
 
-1.  *package.json* 파일을 열고 (파일이 없으면 추가합니다) 다음 내용을 추가합니다.
+1. *package.json* 파일을 열고(파일이 없으면 추가) 다음 내용을 추가합니다.
 
     ```json
     {
@@ -200,7 +200,7 @@ gulp.task("default", gulp.series(["min"]));
 </Target>
 ```
 
-이제 Visual Studio에서 프로젝트를 실행하거나 명령 프롬프트에서 [dotnet run](/dotnet/core/tools/dotnet-run) 명령으로 (먼저 `npm install`을 실행해야 합니다) 프로젝트를 실행하면 clean 작업이 실행됩니다.
+이제 Visual Studio에서 프로젝트를 실행하거나 명령 프롬프트에서 [dotnet run](/dotnet/core/tools/dotnet-run) 명령으로(먼저 `npm install`을 실행해야 함) 프로젝트를 실행하면 clean 작업이 실행됩니다.
 
 ## <a name="defining-and-running-a-new-task"></a>새로운 작업 정의하고 실행하기
 
@@ -225,11 +225,11 @@ gulp.task("default", gulp.series(["min"]));
 
     ![first 작업을 실행하는 작업 러너 탐색기](using-gulp/_static/06-TaskRunner-First.png)
 
-    출력 텍스트가 표시됩니다. 일반적인 시나리오를 기반으로 한 예제들을 살펴보려면 [Gulp 레시피](#gulp-recipes)를 참고하시기 바랍니다.
+    출력 텍스트가 표시됩니다. 일반적인 시나리오를 기반으로 한 예제를 살펴보려면 [Gulp 레시피](#gulp-recipes)를 참고하시기 바랍니다.
 
 ## <a name="defining-and-running-tasks-in-a-series"></a>연속 작업 정의하고 실행하기
 
-여러 작업을 실행할 때 작업들은 기본적으로 동시에 실행됩니다. 그러나 특정 순서에 따라 작업을 실행해야 하는 경우, 각 작업이 완료되는 시점과 다른 작업의 완료에 따라 영향을 받는 작업을 지정해야 합니다.
+여러 작업을 실행할 때 작업은 기본적으로 동시에 실행됩니다. 그러나 특정 순서에 따라 작업을 실행해야 하는 경우, 각 작업이 완료되는 시점과 다른 작업의 완료에 따라 영향을 받는 작업을 지정해야 합니다.
 
 1.  순차적으로 실행되는 일련의 작업을 정의하려면 앞에서 *gulpfile.js*에 추가했던 `first` 작업을 다음으로 대체합니다.
 
@@ -249,7 +249,7 @@ gulp.task("default", gulp.series(["min"]));
     gulp.task('default', gulp.series('series'));
     ```
  
-    이제 `series:first`, `series:second`, 및 `series`라는 세 가지 작업이 존재합니다. `series` 작업은 `series` 작업이 실행되기 전에 실행되어 완료되어야 하는 작업들의 배열을 지정하는 두 번째 매개 변수를 포함하고 있습니다. 이 코드에 지정된 것처럼 `series:second` 작업을 실행하려면 `series:first` 작업만 완료되면 됩니다.
+    이제 `series:first`, `series:second`, 및 `series`라는 세 가지 작업이 존재합니다. `series` 작업은 `series` 작업이 실행되기 전에 실행되어 완료되어야 하는 작업의 배열을 지정하는 두 번째 매개 변수를 포함하고 있습니다. 이 코드에 지정된 것처럼 `series:second` 작업을 실행하려면 `series:first` 작업만 완료되면 됩니다.
 
 2.  *gulpfile.js*를 저장합니다.
 
@@ -261,7 +261,7 @@ gulp.task("default", gulp.series(["min"]));
 
 ## <a name="intellisense"></a>IntelliSense
 
-IntelliSense는 코드 완성, 매개 변수 설명 및 그 밖의 기능들을 제공하여 생산성을 높이고 오류를 줄여줍니다. Gulp 작업은 JavaScript로 작성되며, 따라서 개발하는 동안 IntelliSense가 지원을 제공할 수 있습니다. JavaScript를 사용해서 작업하는 동안 IntelliSense가 현재 문맥을 기반으로 사용할 수 있는 개체, 함수, 속성 및 매개 변수를 나열해줍니다. IntelliSense가 제공하는 팝업 목록에서 코딩 옵션을 선택하여 코드를 완성할 수 있습니다.
+IntelliSense는 코드 완성, 매개 변수 설명 및 그 밖의 기능을 제공하여 생산성을 높이고 오류를 줄여줍니다. Gulp 작업은 JavaScript로 작성되며, 따라서 개발하는 동안 IntelliSense가 지원을 제공할 수 있습니다. JavaScript를 사용해서 작업하는 동안 IntelliSense가 현재 문맥을 기반으로 사용할 수 있는 개체, 함수, 속성 및 매개 변수를 나열해줍니다. IntelliSense가 제공하는 팝업 목록에서 코딩 옵션을 선택하여 코드를 완성할 수 있습니다.
 
 ![gulp IntelliSense](using-gulp/_static/08-IntelliSense.png)
 
@@ -269,18 +269,28 @@ IntelliSense에 대한 자세한 내용은 [JavaScript IntelliSense](/visualstud
 
 ## <a name="development-staging-and-production-environments"></a>개발, 스테이징 및 프로덕션 환경
 
-Gulp를 스테이징 및 프로덕션에 대한 클라이언트 쪽 파일 최적화에 사용하면 처리된 파일이 로컬 스테이징 및 프로덕션 위치에 저장됩니다. *_Layout.cshtml* 파일은 **environment** 태그 도우미를 활용하여 두 가지 버전의 CSS 파일을 제공합니다. CSS 파일의 한 버전은 개발용이며 다른 버전은 스테이징 및 프로덕션 환경 모두를 위해 최적화되어 있습니다. Visual Studio 2017에서 **ASPNETCORE_ENVIRONMENT** 환경 변수를 `Production`으로 변경하면, Visual Studio가 웹 앱을 빌드하고 최소화된 CSS 파일을 참조합니다. 다음 태그는 `Development` CSS 파일과 축소된 `Staging, Production` CSS 파일에 대한 참조 태그들을 포함하고 있는 **environment** 태그 도우미를 보여줍니다.
+Gulp를 스테이징 및 프로덕션에 대한 클라이언트 쪽 파일 최적화에 사용하면 처리된 파일이 로컬 스테이징 및 프로덕션 위치에 저장됩니다. *_Layout.cshtml* 파일은 **environment** 태그 도우미를 활용하여 두 가지 버전의 CSS 파일을 제공합니다. CSS 파일의 한 버전은 개발용이며 다른 버전은 스테이징 및 프로덕션 환경 모두를 위해 최적화되어 있습니다. Visual Studio 2017에서 **ASPNETCORE_ENVIRONMENT** 환경 변수를 `Production`으로 변경하면, Visual Studio가 웹 앱을 빌드하고 최소화된 CSS 파일을 참조합니다. 다음 태그는 `Development` CSS 파일과 축소된 `Staging, Production` CSS 파일에 대한 참조 태그를 포함하고 있는 **environment** 태그 도우미를 보여줍니다.
 
 ```html
-<environment include="Development">
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
+<environment names="Development">
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
 </environment>
-<environment exclude="Development">
-    <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
-          asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
-          asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
-    <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+<environment names="Staging,Production">
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
+            asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+            asp-fallback-test="window.jQuery"
+            crossorigin="anonymous"
+            integrity="sha384-K+ctZQ+LL8q6tP7I94W+qzQsfRV2a+AfHIi9k8z8l9ggpc8X+Ytst4yBo/hH+8Fk">
+    </script>
+    <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"
+            asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
+            asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
+            crossorigin="anonymous"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
+    </script>
+    <script src="~/js/site.min.js" asp-append-version="true"></script>
 </environment>
 ```
 
@@ -318,20 +328,20 @@ ASP.NET Core의 환경에 관한 자세한 내용은 [여러 환경 사용하기
 
 ## <a name="task-and-module-details"></a>작업 및 모듈 세부 정보
 
-Gulp 작업은 함수 이름으로 등록됩니다. 다른 작업을 현재 작업보다 먼저 실행해야 할 경우 종속성을 지정할 수 있습니다. 추가적인 함수들을 사용하면 Gulp 작업을 실행하고 모니터링 할 수 있을뿐만 아니라 수정되는 파일의 원본(*src*)과 대상(*dest*)을 설정할 수도 있습니다. 다음은 기본적인 Gulp API 함수들입니다.
+Gulp 작업은 함수 이름으로 등록됩니다. 다른 작업을 현재 작업보다 먼저 실행해야 할 경우 종속성을 지정할 수 있습니다. 추가적인 함수를 사용하면 Gulp 작업을 실행하고 모니터링 할 수 있을 뿐만 아니라 수정되는 파일의 원본(*src*)과 대상(*dest*)을 설정할 수도 있습니다. 다음은 기본적인 Gulp API 함수입니다.
 
 | Gulp 함수 | 구문 | 설명 |
-| ---      | --- | --- |
-| task     | `gulp.task(name[, deps], fn) { }`      | `task` 함수는 작업을 만듭니다. `name` 매개 변수는 작업의 이름을 정의합니다. `deps` 매개 변수에는 이 작업을 실행하기 전에 완료해야 할 작업들의 배열을 담습니다. `fn` 매개 변수는 이 작업의 실제 작업을 수행하는 콜백 함수를 나타냅니다. |
-| watch    | `gulp.watch(glob[, opts], tasks) { }` | `watch` 함수는 파일을 모니터링 하고 파일이 변경되면 작업을 실행합니다. `glob` 매개 변수는 모니터링 할 파일을 결정하는 `string` 또는 `array`입니다. `opts` 매개 변수는 추가적인 파일 모니터링 옵션을 제공합니다. |
-| src      | `gulp.src(globs[, options]) { }`       | `src` 함수는 glob 값과 일치하는 파일(들)을 제공합니다. `glob` 매개 변수는 읽을 파일을 결정하는 `string` 또는 `array`입니다. `options` 매개 변수는 추가적인 파일 옵션을 제공합니다. |
-| dest     | `gulp.dest(path[, options]) { }`       | `dest` 함수는 파일을 쓸 수 있는 위치를 정의합니다. `path` 매개 변수는 대상 폴더를 결정하는 문자열 또는 함수입니다. `options` 매개 변수는 출력 폴더 옵션을 지정하는 개체입니다. |
+| --- | --- | --- |
+| task | `gulp.task(name[, deps], fn) { }` | `task` 함수는 작업을 만듭니다. `name` 매개 변수는 작업의 이름을 정의합니다. `deps` 매개 변수에는 이 작업을 실행하기 전에 완료해야 할 작업의 배열을 담습니다. `fn` 매개 변수는 이 작업의 실제 작업을 수행하는 콜백 함수를 나타냅니다. |
+| watch | `gulp.watch(glob[, opts], tasks) { }` | `watch` 함수는 파일을 모니터링하고 파일이 변경되면 작업을 실행합니다. `glob` 매개 변수는 모니터링 할 파일을 결정하는 `string` 또는 `array`입니다. `opts` 매개 변수는 추가적인 파일 모니터링 옵션을 제공합니다. |
+| src | `gulp.src(globs[, options]) { }` | `src` 함수는 glob 값과 일치하는 파일을 제공합니다. `glob` 매개 변수는 읽을 파일을 결정하는 `string` 또는 `array`입니다. `options` 매개 변수는 추가적인 파일 옵션을 제공합니다. |
+| dest | `gulp.dest(path[, options]) { }` | `dest` 함수는 파일을 쓸 수 있는 위치를 정의합니다. `path` 매개 변수는 대상 폴더를 결정하는 문자열 또는 함수입니다. `options` 매개 변수는 출력 폴더 옵션을 지정하는 개체입니다. |
 
 추가적인 Gulp API 참조 정보는 [Gulp Docs API](https://github.com/gulpjs/gulp/blob/master/docs/API.md)를 참고하시기 바랍니다.
 
 ## <a name="gulp-recipes"></a>Gulp 레시피
 
-Gulp 커뮤니티는 Gulp [레시피](https://github.com/gulpjs/gulp/blob/master/docs/recipes/README.md)를 제공합니다. 이 레시피들은 일반적인 시나리오를 다루는 Gulp 작업들로 구성되어 있습니다.
+Gulp 커뮤니티는 Gulp [레시피](https://github.com/gulpjs/gulp/blob/master/docs/recipes/README.md)를 제공합니다. 이러한 레시피는 일반적인 시나리오를 다루는 Gulp 작업으로 구성되어 있습니다.
 
 ## <a name="additional-resources"></a>추가 자료
 
