@@ -70,7 +70,7 @@ HTTPS는 [HSTS(HTTP 엄격한 전송 보안 프로토콜)](xref:security/enforci
 
 프로덕션 내에 HTTPS가 명시적으로 구성되어야 합니다. 2.1에서는 Kestrel에 HTTPS를 구성하는 기본 구성 스키마가 추가되었습니다. 다음을 사용하도록 앱을 구성할 수 있습니다.
 
-* URL을 포함하는 여러 엔드포인트. 자세한 내용은 [Kestrel 웹 서버 구현: 엔드포인트 구성](xref:fundamentals/servers/kestrel#endpoint-configuration)을 참조하세요.
+* URL을 포함하는 여러 엔드포인트 자세한 내용은 [Kestrel 웹 서버 구현: 엔드포인트 구성](xref:fundamentals/servers/kestrel#endpoint-configuration)을 참조하세요.
 * 디스크의 파일 또는 인증서 저장소에서 HTTPS에 사용할 인증서입니다.
 
 ## <a name="gdpr"></a>GDPR
