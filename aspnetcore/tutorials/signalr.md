@@ -7,12 +7,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 11/13/2018
 uid: tutorials/signalr
-ms.openlocfilehash: 8916b3659250c1bcbbc2dc9b3d466586f98bcc7e
-ms.sourcegitcommit: d3392f688cfebc1f25616da7489664d69c6ee330
+ms.openlocfilehash: 190717dc6e6f9f2766ba92aa7472f4cdea9b6827
+ms.sourcegitcommit: e7fafb153b9de7595c2558a0133f8d1c33a3bddb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "51818384"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52458532"
 ---
 # <a name="tutorial-get-started-with-aspnet-core-signalr"></a>자습서: ASP.NET Core SignalR 시작
 
@@ -30,6 +30,9 @@ ms.locfileid: "51818384"
 ![SignalR 샘플 앱](signalr/_static/signalr-get-started-finished.png)
 
 [예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/tutorials/signalr/sample) ([다운로드 방법](xref:index#how-to-download-a-sample))
+
+> [!NOTE]
+> ASP.NET Core 목차에 대해 제안된 새 구조의 유용성을 테스트합니다.  몇 분 동안 현재 또는 제안된 목차에서 다른 7개의 항목을 찾는 연습을 수행하는 경우 [여기를 클릭하여 연구에 참여하세요](https://dpk4xbh5.optimalworkshop.com/treejack/rps16hd5).
 
 ## <a name="prerequisites"></a>전제 조건
 
@@ -227,7 +230,7 @@ SignalR 서버는 SignalR에 SignalR 요청을 전달하도록 구성되어야 �
 * 통합 터미널에서 다음 명령을 실행합니다.
 
   ```console
-  dotnet run -p SignalRChat
+  dotnet run -p SignalRChat.csproj
   ```
   
 # <a name="visual-studio-for-mactabvisual-studio-mac"></a>[Visual Studio for Mac](#tab/visual-studio-mac)

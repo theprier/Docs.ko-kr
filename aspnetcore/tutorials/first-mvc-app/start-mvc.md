@@ -5,12 +5,12 @@ description: ASP.NET Core MVC 및 Visual Studio를 시작하는 방법을 배웁
 ms.author: riande
 ms.date: 10/07/2017
 uid: tutorials/first-mvc-app/start-mvc
-ms.openlocfilehash: fe555e4cfcaec5d4bb8ccee00b06d1bbcaae9dcd
-ms.sourcegitcommit: f43f430a166a7ec137fcad12ded0372747227498
+ms.openlocfilehash: 9d50607899058c887597a3d73198552d3ef5b020
+ms.sourcegitcommit: c4572be5ebb301013a5698caf9b5572b76cb2e34
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49391208"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "52710090"
 ---
 # <a name="get-started-with-aspnet-core-mvc-and-visual-studio"></a>ASP.NET Core MVC 및 Visual Studio 시작
 
@@ -23,6 +23,9 @@ ms.locfileid: "49391208"
 * macOS: [Mac용 Visual Studio를 사용하여 ASP.NET Core MVC 앱 만들기](xref:tutorials/first-mvc-app-mac/start-mvc)
 * Windows: [Visual Studio를 사용하여 ASP.NET Core MVC 앱 만들기](xref:tutorials/first-mvc-app/start-mvc)
 * macOS, Linux 및 Windows: [Visual Studio Code를 사용하여 ASP.NET Core MVC 앱 만들기](xref:tutorials/first-mvc-app-xplat/start-mvc)
+
+> [!NOTE]
+> ASP.NET Core 목차에 대해 제안된 새 구조의 유용성을 테스트합니다.  몇 분 동안 현재 또는 제안된 목차에서 다른 7개의 항목을 찾는 연습을 수행하는 경우 [여기를 클릭하여 연구에 참여하세요](https://dpk4xbh5.optimalworkshop.com/treejack/rps16hd5).
 
 ## <a name="install-visual-studio-and-net-core"></a>Visual Studio 및 .NET Core 설치
 
@@ -81,26 +84,7 @@ Visual Studio에서는 방금 만든 MVC 프로젝트에 대한 기본 템플릿
 
 ::: moniker range="<= aspnetcore-2.0"
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
-
 [!INCLUDE [](~/includes/net-core-prereqs.md)]
-
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
-
-Visual Studio Community 2017을 설치합니다. 커뮤니티 다운로드를 선택합니다. Visual Studio 2017을 설치한 경우 이 단계를 건너뜁니다.
-
-* [Visual Studio 2017 Home page installer](https://www.visualstudio.com/)(Visual Studio 2017 홈페이지 설치 관리자)
-
-설치 관리자를 실행하고 다음 워크로드를 선택합니다.
-
-* **ASP.NET 및 웹 개발**(**웹 및 클라우드** 아래)
-* **.NET Core 플랫폼 간 개발**(**기타 도구 집합** 아래)
-
-![**ASP.NET 및 웹 개발**(**웹 및 클라우드** 아래)](start-mvc/_static/web_workload.png)
-
-![**.NET Core 플랫폼 간 개발**(**기타 도구 집합** 아래)](start-mvc/_static/x_plat_wl.png)
-
----
 
 ## <a name="create-a-web-app"></a>웹앱 만들기
 
@@ -117,8 +101,6 @@ Visual Studio에서 **파일 > 새로 만들기 > 프로젝트**를 선택합니
 
 ![새 프로젝트 대화 상자, 왼쪽 창의 .Net core, ASP.NET Core 웹 ](start-mvc/_static/new_project2.png)
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
-
 **새 ASP.NET Core 웹 응용 프로그램(.NET Core) - MvcMovie** 대화 상자를 완료합니다.
 
 * 버전 선택기 드롭다운 상자에서 **ASP.NET Core 2.-** 를 선택합니다.
@@ -126,19 +108,6 @@ Visual Studio에서 **파일 > 새로 만들기 > 프로젝트**를 선택합니
 * **확인**을 탭합니다.
 
 ![새 프로젝트 대화 상자, 왼쪽 창의 .Net core, ASP.NET Core 웹 ](start-mvc/_static/new_project22.png)
-
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
-
-**새 ASP.NET Core 웹 응용 프로그램(.NET Core) - MvcMovie** 대화 상자를 완료합니다.
-
-* 버전 선택기 드롭다운 상자에서 **ASP.NET Core 1.1**을 탭합니다.
-* **웹 응용 프로그램**을 탭합니다.
-* 기본 **인증 없음**을 유지합니다.
-* **확인**을 탭합니다.
-
-![새 ASP.NET Core 웹앱](start-mvc/_static/p3.png)
-
----
 
 Visual Studio에서는 방금 만든 MVC 프로젝트에 대한 기본 템플릿을 사용했습니다. 프로젝트 이름을 입력하고 몇 가지 옵션을 선택하면 바로 앱이 작동합니다. 다음은 기본 시작 프로젝트이며 여기서 시작하는 것이 좋습니다.
 

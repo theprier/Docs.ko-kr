@@ -5,12 +5,12 @@ description: 간단한 ASP.NET Core MVC 앱에서 SQL Server LocalDB를 사용�
 ms.author: riande
 ms.date: 03/07/2017
 uid: tutorials/first-mvc-app/working-with-sql
-ms.openlocfilehash: fadd7be793b1ff6e863b549271acd5b6b2cc9305
-ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
+ms.openlocfilehash: 49615c25d51cfa671157c2e56b8e0753719c678a
+ms.sourcegitcommit: c4572be5ebb301013a5698caf9b5572b76cb2e34
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46011851"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "52710103"
 ---
 # <a name="work-with-sql-server-localdb-in-aspnet-core"></a>ASP.NET Core에서 SQL Server LocalDB 사용
 
@@ -86,19 +86,9 @@ if (context.Movie.Any())
 
 ::: moniker range="<= aspnetcore-2.0"
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
-
 *Program.cs* 파일에서 `Main` 메서드에 시드 이니셜라이저를 추가합니다.
 
 [!code-csharp[](start-mvc/sample/MvcMovie/Program.cs?highlight=6,14-32)]
-
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
-
-*Startup.cs* 파일에서 `Configure` 메서드의 끝에 시드 이니셜라이저를 추가합니다.
-
-[!code-csharp[](start-mvc/sample/MvcMovie/Startup.cs?highlight=9&name=snippet_seed)]
-
----
 
 ::: moniker-end
 
