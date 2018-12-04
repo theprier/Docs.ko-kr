@@ -24,11 +24,11 @@ ms.locfileid: "52450608"
 * LESS 또는 SASS 파일을 CSS로 컴파일합니다.
 * CoffeeScript 또는 TypeScript 파일을 JavaScript로 컴파일합니다.
 
-A *작업 실행 기* 이러한 일상적인 개발 작업 등을 자동화 하는 도구입니다. Visual Studio는 두 가지 인기 있는 JavaScript 기반 작업 실행 기에 대 한 기본 제공 지원을 제공 합니다. [Gulp](https://gulpjs.com/) 하 고 [Grunt](using-grunt.md)합니다.
+*작업 러너*는 이러한 일상적인 개발 작업 등을 자동화하는 도구입니다. Visual Studio는 두 가지 인기 있는 JavaScript 기반의 작업 러너인 [Gulp](https://gulpjs.com/)와 [Grunt](using-grunt.md)에 대한 기본 지원을 제공합니다.
 
 ## <a name="gulp"></a>Gulp
 
-Gulp는 JavaScript 기반 스트리밍 빌드 도구 키트 클라이언트 쪽 코드에 대 한 합니다. 일반적으로 빌드 환경에서 특정 이벤트가 트리거될 때 일련의 프로세스를 통해 클라이언트 쪽 파일을 스트림 하는 것이 됩니다. 예를 들어, Gulp 수 자동화 [묶음 및 축소](bundling-and-minification.md) 또는 새 빌드 전에 개발 환경을 정리 합니다.
+Gulp는 클라이언트 쪽 코드에 대한 JavaScript 기반의 스트리밍 빌드 도구 키트입니다. 일반적으로 빌드 환경에서 특정 이벤트가 트리거될 때 클라이언트 쪽 파일을 일련의 프로세스를 통해서 스트리밍하는 데 사용됩니다. 예를 들어 [번들링 및 축소](bundling-and-minification.md) 작업이나 새로운 빌드 전에 개발 환경을 정리하는 작업을 자동화하기 위해 Gulp를 사용할 수 있습니다.
 
 Gulp 작업 집합은 *gulpfile.js*에 정의됩니다. 다음 JavaScript는 Gulp 모듈을 포함하고 이후 작업에서 참조할 파일 경로를 지정합니다.
 
@@ -58,11 +58,11 @@ paths.concatCssDest = paths.webroot + "css/site.min.css";
 
 | 모듈 이름 | 설명 |
 | ----------- | ----------- |
-| Gulp        | Gulp 스트리밍 빌드 시스템입니다. 자세한 내용은 [gulp](https://www.npmjs.com/package/gulp)합니다. |
-| rimraf      | 노드 삭제 모듈입니다. 자세한 내용은 [rimraf](https://www.npmjs.com/package/rimraf)합니다. |
-| gulp concat | 운영 체제의 줄 바꿈 문자를 기준으로 파일을 연결 하는 모듈입니다. 자세한 내용은 [gulp concat](https://www.npmjs.com/package/gulp-concat)합니다. |
-| gulp cssmin | CSS 파일을 축소 하는 모듈입니다. 자세한 내용은 [gulp cssmin](https://www.npmjs.com/package/gulp-cssmin)합니다. |
-| gulp uglify | 축소 하는 모듈 *.js* 파일입니다. 자세한 내용은 [gulp uglify](https://www.npmjs.com/package/gulp-uglify)합니다. |
+| Gulp        | Gulp 스트리밍 빌드 시스템입니다. 자세한 내용은 [gulp](https://www.npmjs.com/package/gulp)를 참고하시기 바랍니다. |
+| rimraf      | Node 삭제 모듈입니다. 자세한 내용은 [rimraf](https://www.npmjs.com/package/rimraf)를 참고하시기 바랍니다. |
+| gulp concat | 운영 체제의 줄 바꿈 문자를 기반으로 파일을 연결하는 모듈입니다. 자세한 내용은 [gulp concat](https://www.npmjs.com/package/gulp-concat)를 참고하시기 바랍니다. |
+| gulp cssmin | CSS 파일을 축소하는 모듈입니다. 자세한 내용은 [gulp cssmin](https://www.npmjs.com/package/gulp-cssmin)을 참고하시기 바랍니다. |
+| gulp uglify | *.js* 파일을 축소하는 모듈입니다. 자세한 내용은 [gulp uglify](https://www.npmjs.com/package/gulp-uglify)를 참고하시기 바랍니다. |
 
 필요한 모듈을 가져왔으면 이제 작업을 지정할 수 있습니다. 다음과 같은 코드로 표시되는 등록된 여섯 가지 작업이 존재합니다.
 
@@ -97,12 +97,12 @@ gulp.task("default", gulp.series(["min"]));
 
 |작업 이름|설명|
 |--- |--- |
-|정리: js|Site.js 파일의 축소 된 버전을 제거 하려면 rimraf 노드 삭제 모듈을 사용 하는 작업입니다.|
-|정리: css|Site.css 파일의 축소 된 버전을 제거 하려면 rimraf 노드 삭제 모듈을 사용 하는 작업입니다.|
-|정리|호출 하는 태스크를 `clean:js` 태스크인 뒤에 `clean:css` 작업 합니다.|
-|min:js|축소 및 js 폴더 내의 모든.js 파일을 연결 하는 작업입니다. . min.js 파일은 제외 됩니다.|
-|min:css|축소 및 css 폴더 내의 모든.css 파일을 연결 하는 작업입니다. . min.css 파일은 제외 됩니다.|
-|분|호출 하는 태스크를 `min:js` 태스크인 뒤에 `min:css` 작업 합니다.|
+|clean:js|rimraf Node 삭제 모듈을 사용하여 축소된 버전의 site.js 파일을 제거하는 작업입니다.|
+|clean:css|rimraf Node 삭제 모듈을 사용하여 축소된 버전의 site.css 파일을 제거하는 작업입니다.|
+|clean|`clean:js` 작업을 호출하고 뒤이어 `clean:css` 작업을 호출하는 작업입니다.|
+|min:js|js 폴더 내의 모든 .js 파일을 축소 및 연결하는 작업입니다. .min.js 파일들은 제외됩니다.|
+|min:css|css 폴더 내의 모든 .css 파일을 축소 및 연결하는 작업입니다. .min.css 파일은 제외됩니다.|
+|min|`min:js` 작업을 호출하고 뒤이어 `min:css` 작업을 호출하는 작업입니다.|
 
 ## <a name="running-default-tasks"></a>기본 작업 실행하기
 
@@ -253,7 +253,7 @@ gulp.task("default", gulp.series(["min"]));
 
 2.  *gulpfile.js*를 저장합니다.
 
-3.  **솔루션 탐색기**를 마우스 오른쪽 단추로 클릭 *gulpfile.js* 선택한 **Task Runner 탐색기** 아직 열려 있지 않은 경우.
+3.  **솔루션 탐색기**에서 마우스 오른쪽 버튼으로 *gulpfile.js*를 클릭하고 **작업 러너 탐색기**를 선택합니다.
 
 4.  **작업 러너 탐색기**에서 마우스 오른쪽 버튼으로 **series**를 클릭하고 **실행**을 선택합니다.
 
@@ -265,7 +265,7 @@ IntelliSense는 코드 완성, 매개 변수 설명 및 그 밖의 기능을 제
 
 ![gulp IntelliSense](using-gulp/_static/08-IntelliSense.png)
 
-IntelliSense에 대 한 자세한 내용은 참조 하세요. [JavaScript IntelliSense](/visualstudio/ide/javascript-intellisense)합니다.
+IntelliSense에 대한 자세한 내용은 [JavaScript IntelliSense](/visualstudio/ide/javascript-intellisense)를 참고하시기 바랍니다.
 
 ## <a name="development-staging-and-production-environments"></a>개발, 스테이징 및 프로덕션 환경
 
