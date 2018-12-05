@@ -1,4 +1,4 @@
-다음 중 **하나**를 수행합니다.
+다음 중 **한 가지**를 설치합니다.
 
 * CLI 도구: Windows, Linux 또는 macOS: [!INCLUDE [](~/includes/net-core-sdk-download-link.md)]
 * IDE/편집기 도구
