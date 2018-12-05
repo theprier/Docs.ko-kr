@@ -1,0 +1,2 @@
+* <span data-ttu-id="bea54-101">[Visual Studio 2017 버전 15.9](https://visualstudio.microsoft.com/downloads/) 사용 하 여 합니다 **ASP.NET 및 웹 개발** 워크 로드</span><span class="sxs-lookup"><span data-stu-id="bea54-101">[Visual Studio 2017 version 15.9 or later](https://visualstudio.microsoft.com/downloads/) with the **ASP.NET and web development** workload</span></span>
+* [<span data-ttu-id="bea54-102">.NET core SDK 2.2 이상</span><span class="sxs-lookup"><span data-stu-id="bea54-102">.NET Core SDK 2.2 or later</span></span>](https://www.microsoft.com/net/download/all)

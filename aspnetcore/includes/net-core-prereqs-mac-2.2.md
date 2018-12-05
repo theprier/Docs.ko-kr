@@ -1,0 +1,2 @@
+* [<span data-ttu-id="11619-101">버전 7.7 이상이 Mac 용 visual Studio</span><span class="sxs-lookup"><span data-stu-id="11619-101">Visual Studio for Mac version 7.7 or later</span></span>](https://www.visualstudio.com/downloads/)
+* [<span data-ttu-id="11619-102">.NET core SDK 2.2 이상</span><span class="sxs-lookup"><span data-stu-id="11619-102">.NET Core SDK 2.2 or later</span></span>](https://www.microsoft.com/net/download/all)
