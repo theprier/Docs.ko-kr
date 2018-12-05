@@ -1,0 +1,3 @@
+* [Visual Studio Code](https://code.visualstudio.com/download)
+* [.NET core SDK 2.2 이상](https://www.microsoft.com/net/download/all)
+* [C#Visual Studio Code 버전 1.17.1 이상](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp)

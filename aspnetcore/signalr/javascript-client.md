@@ -7,12 +7,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 11/14/2018
 uid: signalr/javascript-client
-ms.openlocfilehash: 7de7abd7176e160154a458a3b90f662ba8f47f8c
-ms.sourcegitcommit: 09bcda59a58019fdf47b2db5259fe87acf19dd38
+ms.openlocfilehash: 247ccd40412cdb41f38edccbe96d4832751f12cf
+ms.sourcegitcommit: 9bb58d7c8dad4bbd03419bcc183d027667fefa20
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51708389"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52861994"
 ---
 # <a name="aspnet-core-signalr-javascript-client"></a>ASP.NET Core SignalR JavaScript 클라이언트
 
@@ -113,7 +113,9 @@ SignalR에 대 한 JavaScript 클라이언트가 자동으로 다시 연결 하�
 ## <a name="additional-resources"></a>추가 자료
 
 * [JavaScript API 참조](/javascript/api/?view=signalr-js-latest)
+* [JavaScript 자습서](xref:tutorials/signalr)
+* [WebPack 및 TypeScript 자습서](xref:tutorials/signalr-typescript-webpack)
 * [허브](xref:signalr/hubs)
 * [.NET 클라이언트](xref:signalr/dotnet-client)
 * [Azure에 게시하기](xref:signalr/publish-to-azure-web-app)
-* [ASP.NET Core에서 원본 간 요청(CORS)을 사용하도록 설정하기](xref:security/cors)
+* [원본 간 요청 (CORS)](xref:security/cors)
