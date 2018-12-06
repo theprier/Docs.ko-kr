@@ -8,23 +8,23 @@ ms.date: 06/10/2014
 ms.assetid: 6ecd08c1-e364-4cd7-ad4c-806521911585
 msc.legacyurl: /signalr/overview/performance/scaleout-with-redis
 msc.type: authoredcontent
-ms.openlocfilehash: ebb61e4296f78bcd74622b729a10d45b60ebb724
-ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
+ms.openlocfilehash: f92946ae99bf8cb3840adb5d98004acb87e24925
+ms.sourcegitcommit: 9bb58d7c8dad4bbd03419bcc183d027667fefa20
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48912789"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52861292"
 ---
 <a name="signalr-scaleout-with-redis"></a>Redis로 SignalR 규모 확장
 ====================
-하 여 [Mike Wasson](https://github.com/MikeWasson), [Patrick Fletcher](https://github.com/pfletcher)
+[Mike Wasson](https://github.com/MikeWasson)
 
 > ## <a name="software-versions-used-in-this-topic"></a>이 항목에서 사용 하는 소프트웨어 버전
 >
 >
 > - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
 > - .NET 4.5
-> - SignalR 버전 2
+> - SignalR 버전 2.4
 >
 >
 >
@@ -65,7 +65,8 @@ Redis는 메모리 내 키-값 저장소입니다. 또한 게시/구독 모델�
 2. 응용 프로그램에 이러한 NuGet 패키지를 추가 합니다.
 
     - [Microsoft.AspNet.SignalR](http://nuget.org/packages/Microsoft.AspNet.SignalR)
-    - [Microsoft.AspNet.SignalR.Redis](http://nuget.org/packages/Microsoft.AspNet.SignalR.Redis)
+    - [Microsoft.AspNet.SignalR.StackExchangeRedis](https://www.nuget.org/packages/Microsoft.AspNet.SignalR.StackExchangeRedis)
+    
 3. SignalR 응용 프로그램을 만듭니다.
 4. Startup.cs 백플레인에서 구성 하려면 다음 코드를 추가 합니다.
 
@@ -112,7 +113,7 @@ Redis 이진이 빌드는 `src` 디렉터리입니다.
 - [SignalR 2.0 시작](../getting-started/tutorial-getting-started-with-signalr.md)
 - [SignalR 2.0 및 MVC 5 시작](../getting-started/tutorial-getting-started-with-signalr-and-mvc.md)
 
-다음으로 Redis로 규모 확장을 지원 하기 위해 채팅 응용 프로그램을 수정 합니다. 먼저 프로젝트에 SignalR.Redis NuGet 패키지를 추가 합니다. Visual Studio에서에서 합니다 **도구** 메뉴에서 **NuGet 패키지 관리자**을 선택한 후 **패키지 관리자 콘솔**합니다. 패키지 관리자 콘솔 창에서 다음 명령을 입력 합니다.
+다음으로 Redis로 규모 확장을 지원 하기 위해 채팅 응용 프로그램을 수정 합니다. 첫째, 추가 된 `Microsoft.AspNet.SignalR.StackExchangeRedis` NuGet 패키지를 프로젝트입니다. Visual Studio에서에서 합니다 **도구** 메뉴에서 **NuGet 패키지 관리자**을 선택한 후 **패키지 관리자 콘솔**합니다. 패키지 관리자 콘솔 창에서 다음 명령을 입력 합니다.
 
 [!code-powershell[Main](scaleout-with-redis/samples/sample5.ps1)]
 
@@ -125,7 +126,7 @@ Redis 이진이 빌드는 `src` 디렉터리입니다.
 - "password"는 redis.conf 파일에 정의 된 암호가입니다.
 - "AppName"는 문자열입니다. SignalR이이 이름을 가진 Redis pub/sub 채널을 만듭니다.
 
-예를 들어:
+예를 들어 다음과 같습니다.
 
 [!code-csharp[Main](scaleout-with-redis/samples/sample7.cs)]
 

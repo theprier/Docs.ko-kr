@@ -6,12 +6,12 @@ monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 05/12/2018
 uid: razor-pages/index
-ms.openlocfilehash: 7fc048e427fd49e2142160615a12989fd4f40303
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: cc881ff42d57ab1654f492a70006a995939e4844
+ms.sourcegitcommit: 8a65f6c2cbe290fb2418eed58f60fb74c95392c8
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50207617"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52892122"
 ---
 # <a name="introduction-to-razor-pages-in-aspnet-core"></a>ASP.NET Core의 Razor 페이지 소개
 
@@ -25,15 +25,15 @@ Razor 페이지는 페이지 코딩 중심의 시나리오를 보다 쉽고 생�
 
 ## <a name="prerequisites"></a>전제 조건
 
-[!INCLUDE [](~/includes/net-core-prereqs.md)]
+[!INCLUDE[](~/includes/net-core-prereqs-all-2.2.md)]
 
 <a name="rpvs17"></a>
 
-## <a name="creating-a-razor-pages-project"></a>Razor 페이지 프로젝트 만들기
+## <a name="create-a-razor-pages-project"></a>Razor 페이지 프로젝트 만들기
 
 # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
 
-Visual Studio를 사용하여 Razor 페이지 프로젝트를 만드는 방법에 대한 자세한 내용은 [Razor 페이지 시작하기](xref:tutorials/razor-pages/razor-pages-start)를 참고하시기 바랍니다.
+Razor 페이지 프로젝트를 만드는 방법에 대한 자세한 내용은 [Razor 페이지 시작하기](xref:tutorials/razor-pages/razor-pages-start)를 참고하시기 바랍니다.
 
 # <a name="visual-studio-for-mactabvisual-studio-mac"></a>[Visual Studio for Mac](#tab/visual-studio-mac)
 
@@ -52,20 +52,6 @@ Visual Studio를 사용하여 Razor 페이지 프로젝트를 만드는 방법�
 Mac용 Visual Studio에서 생성된 *.csproj* 파일을 엽니다.
 
 # <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code)
-
-::: moniker range=">= aspnetcore-2.1"
-
-명령줄에서 `dotnet new webapp`을 실행합니다.
-
-::: moniker-end
-
-::: moniker range="= aspnetcore-2.0"
-
-명령줄에서 `dotnet new razor`를 실행합니다.
-
-::: moniker-end
-
-# <a name="net-core-clitabnetcore-cli"></a>[.NET Core CLI](#tab/netcore-cli)
 
 ::: moniker range=">= aspnetcore-2.1"
 
@@ -173,10 +159,7 @@ db 컨텍스트는 다음과 같습니다.
 
 Razor 페이지는 기본적으로 비 GET 동사에 대해서만 속성을 바인딩합니다. 속성을 바인딩하면 작성해야 하는 코드의 양을 줄일 수 있습니다. 바인딩은 양식 필드 렌더링 할 때와 (`<input asp-for="Customer.Name" />`) 입력을 받아들일 때 동일한 속성을 사용하여 코드를 줄입니다.
 
-> [!NOTE]
-> 보안상의 이유로 GET 요청 데이터를 페이지 모델 속성에 바인딩 하려면 반드시 명시적으로 지정해야 합니다. 사용자의 입력을 속성에 매핑하기 전에 확인하십시오. 이 동작을 명시적으로 지정하면 쿼리 문자열이나 경로 값을 필요로 하는 시나리오를 다뤄야 할 때 유용합니다.
->
-> GET 요청 시 속성을 바인딩하려면 `[BindProperty]` 특성의 `SupportsGet` 속성을 `true`로 설정합니다. `[BindProperty(SupportsGet = true)]`
+[!INCLUDE[](~/includes/bind-get.md)]
 
 홈페이지(*Index.cshtml*)는 다음과 같습니다.
 

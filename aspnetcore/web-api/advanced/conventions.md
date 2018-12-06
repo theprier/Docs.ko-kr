@@ -7,12 +7,12 @@ ms.author: pranavkm
 ms.custom: mvc
 ms.date: 11/13/2018
 uid: web-api/advanced/conventions
-ms.openlocfilehash: 023b8d09511aa42966e2a7d1c85e407bb6e79b0f
-ms.sourcegitcommit: f202864efca81a72ea7120c0692940c40d9d0630
+ms.openlocfilehash: ede9a46c160cf6a49aa93da710af0bf0b8f59acc
+ms.sourcegitcommit: c4572be5ebb301013a5698caf9b5572b76cb2e34
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51635392"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "52710077"
 ---
 # <a name="use-web-api-conventions"></a>웹 API 규칙 사용
 
@@ -26,13 +26,13 @@ ASP.NET Core 2.2에는 일반적인 [API 설명서](xref:tutorials/web-api-help-
 
 ## <a name="apply-web-api-conventions"></a>웹 API 규칙 적용
 
-규칙을 적용하는 세 가지가 방법이 있습니다. 규칙이 구성되지 않으면 각 작업은 정확히 하나의 규칙과 연결될 수 있습니다. 보다 구체적인 규칙(아래에 자세히 설명됨)은 덜 구체적인 규칙보다 우선합니다. 동일한 우선순위의 둘 이상의 규칙이 작업에 적용되는 경우 선택은 명확하지 않습니다. 다음 옵션은 가장 구체적인 것에서 가장 덜 구체적인 것까지 작업에 규칙을 적용할 수 있습니다.
+규칙을 적용하는 세 가지가 방법이 있습니다. 규칙이 구성되지 않습니다. 각 작업이 정확히 하나의 규칙과 연결될 수 있습니다. 보다 구체적인 규칙(아래에 자세히 설명됨)은 덜 구체적인 규칙보다 우선합니다. 동일한 우선순위의 둘 이상의 규칙이 작업에 적용되는 경우 선택은 명확하지 않습니다. 다음 옵션은 가장 구체적인 것에서 가장 덜 구체적인 것까지 작업에 규칙을 적용할 수 있습니다.
 
 1. `Microsoft.AspNetCore.Mvc.ApiConventionMethodAttribute` &mdash; 개별 작업에 적용되며 규칙 형식 및 적용되는 규칙 방법을 지정합니다. 다음 샘플에서는 `Update` 작업에 규칙 메서드 `Microsoft.AspNetCore.Mvc.DefaultApiConventions.Put`이 적용됩니다.
 
     [!code-csharp[](conventions/sample/Controllers/ContactsConventionController.cs?name=apiconventionmethod&highlight=2-3)]
 
-1. &mdash; 컨트롤러에 `Microsoft.AspNetCore.Mvc.ApiConventionTypeAttribute`를 적용하면 컨트롤러에서 모든 작업에 규칙 유형을 적용합니다. 규칙 메서드는 적용하는 작업(작성 규칙의 일부로써의 세부 사항)를 결정하는 힌트로 데코레이트됩니다. 예:
+1. &mdash; 컨트롤러에 `Microsoft.AspNetCore.Mvc.ApiConventionTypeAttribute`를 적용하면 컨트롤러에서 모든 작업에 규칙 유형을 적용합니다. 규칙 메서드는 적용하는 작업(작성 규칙의 일부로써의 세부 사항)를 결정하는 힌트로 데코레이팅됩니다. 예:
 
     [!code-csharp[](conventions/sample/Controllers/ContactsConventionController.cs?name=apiconventiontypeattribute)]
 

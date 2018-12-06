@@ -4,14 +4,14 @@ author: shirhatti
 description: Windows Server에서 IIS를 통해 실행될 경우 ASP.NET Core 앱 디버그에 대한 지원을 확인해 보세요.
 ms.author: riande
 ms.custom: mvc
-ms.date: 05/14/2018
+ms.date: 11/26/2018
 uid: host-and-deploy/iis/development-time-iis-support
-ms.openlocfilehash: eb8b4369d6d5434adbac187f59b18d7a2b80055c
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 65dbe690a33d82a4edddf315803dc4c656db27a0
+ms.sourcegitcommit: e8d80ff566bfe505b43389d7bc4551edb1c0c872
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36277656"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52549103"
 ---
 # <a name="development-time-iis-support-in-visual-studio-for-aspnet-core"></a>ASP.NET Core용 Visual Studio의 개발 시간 IIS 지원
 
@@ -95,7 +95,7 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 
 1. **프로필**의 경우 **새로 만들기** 단추를 선택합니다. 팝업 창에서 프로필 이름을 “IIS”로 지정합니다. **확인**을 선택하여 프로필을 만듭니다.
 1. **시작** 설정의 경우 목록에서 **IIS**를 선택합니다.
-1. **브라우저 시작** 확인란을 선택하고 끝점 URL을 제공합니다. HTTPS 프로토콜을 사용합니다. 이 예제에서는 `https://localhost/WebApplication1`를 사용합니다.
+1. **브라우저 시작** 확인란을 선택하고 엔드포인트 URL을 제공합니다. HTTPS 프로토콜을 사용합니다. 이 예제에서는 `https://localhost/WebApplication1`를 사용합니다.
 1. **환경 변수** 섹션에서 **추가** 단추를 선택합니다. `ASPNETCORE_ENVIRONMENT` 키 및 `Development` 값을 사용하여 환경 변수를 제공합니다.
 1. **웹 서버 설정** 영역에서 **앱 URL**을 설정합니다. 이 예제에서는 `https://localhost/WebApplication1`를 사용합니다.
 1. 프로필을 저장합니다.
@@ -129,13 +129,19 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 
 ## <a name="run-the-project"></a>프로젝트 실행
 
-VS UI에서 [실행] 단추를 **IIS** 프로필로 설정하고 단추를 선택하여 앱을 시작합니다.
+Visual Studio에서 다음을 수행합니다.
 
-![“IIS” 프로필로 설정된 VS 도구 모음의 실행 단추.](development-time-iis-support/_static/toolbar.png)
+* 빌드 구성 드롭다운 목록이 **디버그**로 설정되었는지 확인합니다.
+* [실행] 단추를 **IIS** 프로필로 설정하고 단추를 선택하여 앱을 시작합니다.
+
+![VS 도구 모음의 [실행] 단추가 빌드 구성 드롭다운 목록이 [릴리스]로 설정된 IIS 프로필로 설정됩니다.](development-time-iis-support/_static/toolbar.png)
 
 관리자로 실행하고 있지 않으면 Visual Studio에서 다시 시작하라는 메시지가 표시될 수 있습니다. 메시지가 표시되면 Visual Studio를 다시 시작합니다.
 
 신뢰할 수 없는 개발 인증서를 사용하는 경우 브라우저에서 신뢰할 수 없는 인증서에 대한 예외를 만들어야 할 수 있습니다.
+
+> [!NOTE]
+> [내 코드만](/visualstudio/debugger/just-my-code) 및 컴파일러 최적화를 사용하여 릴리스 빌드 구성을 디버그하면 성능이 저하됩니다. 예를 들어 중단점이 적중되지 않습니다.
 
 ## <a name="additional-resources"></a>추가 자료
 
