@@ -2,241 +2,299 @@
 title: Windows 서비스에서 ASP.NET Core 호스트
 author: guardrex
 description: Windows 서비스에서 ASP.NET Core 앱을 호스트하는 방법을 알아봅니다.
-monikerRange: '>= aspnetcore-2.1'
+monikerRange: '>= aspnetcore-2.2'
 ms.author: tdykstra
 ms.custom: mvc
-ms.date: 10/30/2018
+ms.date: 11/26/2018
 uid: host-and-deploy/windows-service
-ms.openlocfilehash: 11913019bfe5d06c259b806fce9cc580a8280ad5
-ms.sourcegitcommit: fc2486ddbeb15ab4969168d99b3fe0fbe91e8661
+ms.openlocfilehash: f857e96108b68bb6ec64a85910bf4d889cdf2822
+ms.sourcegitcommit: e7fafb153b9de7595c2558a0133f8d1c33a3bddb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "50758195"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52458519"
 ---
-# <a name="host-aspnet-core-in-a-windows-service"></a><span data-ttu-id="6bbd8-103">Windows 서비스에서 ASP.NET Core 호스트</span><span class="sxs-lookup"><span data-stu-id="6bbd8-103">Host ASP.NET Core in a Windows Service</span></span>
+# <a name="host-aspnet-core-in-a-windows-service"></a><span data-ttu-id="8fcb7-103">Windows 서비스에서 ASP.NET Core 호스트</span><span class="sxs-lookup"><span data-stu-id="8fcb7-103">Host ASP.NET Core in a Windows Service</span></span>
 
-<span data-ttu-id="6bbd8-104">작성자: [Luke Latham](https://github.com/guardrex) 및 [Tom Dykstra](https://github.com/tdykstra)</span><span class="sxs-lookup"><span data-stu-id="6bbd8-104">By [Luke Latham](https://github.com/guardrex) and [Tom Dykstra](https://github.com/tdykstra)</span></span>
+<span data-ttu-id="8fcb7-104">작성자: [Luke Latham](https://github.com/guardrex) 및 [Tom Dykstra](https://github.com/tdykstra)</span><span class="sxs-lookup"><span data-stu-id="8fcb7-104">By [Luke Latham](https://github.com/guardrex) and [Tom Dykstra](https://github.com/tdykstra)</span></span>
 
-<span data-ttu-id="6bbd8-105">IIS를 [Windows 서비스](/dotnet/framework/windows-services/introduction-to-windows-service-applications)로 사용하지 않고 Windows에서 ASP.NET Core 앱을 호스트할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="6bbd8-105">An ASP.NET Core app can be hosted on Windows without using IIS as a [Windows Service](/dotnet/framework/windows-services/introduction-to-windows-service-applications).</span></span> <span data-ttu-id="6bbd8-106">Windows Service로 호스팅되는 앱은 재부팅 후 자동으로 시작됩니다.</span><span class="sxs-lookup"><span data-stu-id="6bbd8-106">When hosted as a Windows Service, the app automatically starts after reboots.</span></span>
+<span data-ttu-id="8fcb7-105">IIS를 사용하지 않고 Windows에서 ASP.NET Core 앱을 [Windows 서비스](/dotnet/framework/windows-services/introduction-to-windows-service-applications)로 호스트할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-105">An ASP.NET Core app can be hosted on Windows as a [Windows Service](/dotnet/framework/windows-services/introduction-to-windows-service-applications) without using IIS.</span></span> <span data-ttu-id="8fcb7-106">Windows Service로 호스팅되는 앱은 재부팅 후 자동으로 시작됩니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-106">When hosted as a Windows Service, the app automatically starts after reboots.</span></span>
 
-<span data-ttu-id="6bbd8-107">[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/host-and-deploy/windows-service/samples)([다운로드 방법](xref:index#how-to-download-a-sample))</span><span class="sxs-lookup"><span data-stu-id="6bbd8-107">[View or download sample code](https://github.com/aspnet/Docs/tree/master/aspnetcore/host-and-deploy/windows-service/samples) ([how to download](xref:index#how-to-download-a-sample))</span></span>
+<span data-ttu-id="8fcb7-107">[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/host-and-deploy/windows-service/samples) ([다운로드 방법](xref:index#how-to-download-a-sample))</span><span class="sxs-lookup"><span data-stu-id="8fcb7-107">[View or download sample code](https://github.com/aspnet/Docs/tree/master/aspnetcore/host-and-deploy/windows-service/samples) ([how to download](xref:index#how-to-download-a-sample))</span></span>
 
-## <a name="convert-a-project-into-a-windows-service"></a><span data-ttu-id="6bbd8-108">프로젝트를 Windows 서비스로 변환</span><span class="sxs-lookup"><span data-stu-id="6bbd8-108">Convert a project into a Windows Service</span></span>
+## <a name="deployment-type"></a><span data-ttu-id="8fcb7-108">배포 유형</span><span class="sxs-lookup"><span data-stu-id="8fcb7-108">Deployment type</span></span>
 
-<span data-ttu-id="6bbd8-109">기존 ASP.NET Core 프로젝트를 서비스로 실행되도록 설정하려면 다음과 같은 최소 변경 작업이 필요합니다.</span><span class="sxs-lookup"><span data-stu-id="6bbd8-109">The following minimum changes are required to set up an existing ASP.NET Core project to run as a service:</span></span>
+<span data-ttu-id="8fcb7-109">프레임워크 종속 또는 자체 포함 Windows 서비스 배포를 만들 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-109">You can create either a framework-dependent or self-contained Windows Service deployment.</span></span> <span data-ttu-id="8fcb7-110">배포 시나리오에 대한 자세한 내용은 [.NET Core 애플리케이션 배포](/dotnet/core/deploying/)를 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-110">For information and advice on deployment scenarios, see [.NET Core application deployment](/dotnet/core/deploying/).</span></span>
 
-1. <span data-ttu-id="6bbd8-110">프로젝트 파일에서:</span><span class="sxs-lookup"><span data-stu-id="6bbd8-110">In the project file:</span></span>
+### <a name="framework-dependent-deployment"></a><span data-ttu-id="8fcb7-111">프레임워크 종속 배포</span><span class="sxs-lookup"><span data-stu-id="8fcb7-111">Framework-dependent deployment</span></span>
 
-   * <span data-ttu-id="6bbd8-111">Windows [RID(런타임 식별자)](/dotnet/core/rid-catalog)가 있는지 확인하거나, 대상 프레임워크가 포함된 `<PropertyGroup>`에 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="6bbd8-111">Confirm the presence of a Windows [Runtime Identifier (RID)](/dotnet/core/rid-catalog) or add it to the `<PropertyGroup>` that contains the target framework:</span></span>
+<span data-ttu-id="8fcb7-112">FDD(프레임워크 종속 배포)에서는 대상 시스템에 .NET Core의 공유 시스템 차원 버전이 있어야 합니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-112">Framework-dependent deployment (FDD) relies on the presence of a shared system-wide version of .NET Core on the target system.</span></span> <span data-ttu-id="8fcb7-113">ASP.NET Core Windows 서비스 앱과 함께 FDD 시나리오를 사용하는 경우 SDK에서 *프레임워크 종속 실행 파일*이라는 실행 파일(*\*.exe*)을 생성합니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-113">When the FDD scenario is used with an ASP.NET Core Windows Service app, the SDK produces an executable (*\*.exe*), called a *framework-dependent executable*.</span></span>
 
-      ```xml
-      <PropertyGroup>
-        <TargetFramework>netcoreapp2.2</TargetFramework>
-        <RuntimeIdentifier>win7-x64</RuntimeIdentifier>
-      </PropertyGroup>
-      ```
+### <a name="self-contained-deployment"></a><span data-ttu-id="8fcb7-114">자체 포함 배포</span><span class="sxs-lookup"><span data-stu-id="8fcb7-114">Self-contained deployment</span></span>
 
-      <span data-ttu-id="6bbd8-112">여러 개의 RID를 게시하려면</span><span class="sxs-lookup"><span data-stu-id="6bbd8-112">To publish for multiple RIDs:</span></span>
+<span data-ttu-id="8fcb7-115">SCD(자체 포함 배포)에서는 대상 시스템에 공유 구성 요소가 없어도 됩니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-115">Self-contained deployment (SCD) doesn't rely on the presence of shared components on the target system.</span></span> <span data-ttu-id="8fcb7-116">런타임 및 앱의 종속성이 앱과 함께 호스팅 시스템에 배포됩니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-116">The runtime and the app's dependencies are deployed with the app to the hosting system.</span></span>
 
-      * <span data-ttu-id="6bbd8-113">세미콜론으로 구분된 목록으로 RID를 제공합니다.</span><span class="sxs-lookup"><span data-stu-id="6bbd8-113">Provide the RIDs in a semicolon-delimited list.</span></span>
-      * <span data-ttu-id="6bbd8-114">속성 이름 `<RuntimeIdentifiers>`(복수)를 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="6bbd8-114">Use the property name `<RuntimeIdentifiers>` (plural).</span></span>
+## <a name="convert-a-project-into-a-windows-service"></a><span data-ttu-id="8fcb7-117">프로젝트를 Windows 서비스로 변환</span><span class="sxs-lookup"><span data-stu-id="8fcb7-117">Convert a project into a Windows Service</span></span>
 
-      <span data-ttu-id="6bbd8-115">자세한 내용은 [.NET Core RID 카탈로그](/dotnet/core/rid-catalog)를 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="6bbd8-115">For more information, see [.NET Core RID Catalog](/dotnet/core/rid-catalog).</span></span>
+<span data-ttu-id="8fcb7-118">기존 ASP.NET Core 프로젝트를 다음과 같이 변경하여 앱을 서비스로 실행합니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-118">Make the following changes to an existing ASP.NET Core project to run the app as a service:</span></span>
 
-   * <span data-ttu-id="6bbd8-116">[Microsoft.AspNetCore.Hosting.WindowsServices](https://www.nuget.org/packages/Microsoft.AspNetCore.Hosting.WindowsServices)에 패키지 참조를 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="6bbd8-116">Add a package reference for [Microsoft.AspNetCore.Hosting.WindowsServices](https://www.nuget.org/packages/Microsoft.AspNetCore.Hosting.WindowsServices).</span></span>
+1. <span data-ttu-id="8fcb7-119">선택한 [배포 유형](#deployment-type)에 따라 프로젝트 파일을 업데이트합니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-119">Based on your choice of [deployment type](#deployment-type), update the project file:</span></span>
 
-1. <span data-ttu-id="6bbd8-117">`Program.Main`에서 다음과 같이 변경합니다.</span><span class="sxs-lookup"><span data-stu-id="6bbd8-117">Make the following changes in `Program.Main`:</span></span>
+   * <span data-ttu-id="8fcb7-120">**FDD(프레임워크 종속 배포)** &ndash; 대상 프레임워크가 포함된 `<PropertyGroup>`에 Windows [RID(런타임 식별자)](/dotnet/core/rid-catalog)를 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-120">**Framework-dependent Deployment (FDD)** &ndash; Add a Windows [Runtime Identifier (RID)](/dotnet/core/rid-catalog) to the `<PropertyGroup>` that contains the target framework.</span></span> <span data-ttu-id="8fcb7-121">`<SelfContained>` 속성을 `false`로 설정하여 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-121">Add the `<SelfContained>` property set to `false`.</span></span> <span data-ttu-id="8fcb7-122">`<IsTransformWebConfigDisabled>` 속성을 `true`로 설정하여 추가하면 *web.config* 파일이 생성되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-122">Disable the creation of a *web.config* file by adding the `<IsTransformWebConfigDisabled>` property set to `true`.</span></span>
 
-   * <span data-ttu-id="6bbd8-118">`host.Run` 대신 [host.RunAsService](/dotnet/api/microsoft.aspnetcore.hosting.windowsservices.webhostwindowsserviceextensions.runasservice)를 호출합니다.</span><span class="sxs-lookup"><span data-stu-id="6bbd8-118">Call [host.RunAsService](/dotnet/api/microsoft.aspnetcore.hosting.windowsservices.webhostwindowsserviceextensions.runasservice) instead of `host.Run`.</span></span>
+     ```xml
+     <PropertyGroup>
+       <TargetFramework>netcoreapp2.2</TargetFramework>
+       <RuntimeIdentifier>win7-x64</RuntimeIdentifier>
+       <SelfContained>false</SelfContained>
+       <IsTransformWebConfigDisabled>true</IsTransformWebConfigDisabled>
+     </PropertyGroup>
+     ```
 
-   * <span data-ttu-id="6bbd8-119">[UseContentRoot](xref:fundamentals/host/web-host#content-root)를 호출하여 `Directory.GetCurrentDirectory()` 대신 앱의 게시 위치에 대한 경로를 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="6bbd8-119">Call [UseContentRoot](xref:fundamentals/host/web-host#content-root) and use a path to the app's published location instead of `Directory.GetCurrentDirectory()`.</span></span>
+     <span data-ttu-id="8fcb7-123">**SCD(자체 포함 배포)** &ndash; Windows [RID(런타임 식별자)](/dotnet/core/rid-catalog)가 있는지 확인하거나, 대상 프레임워크가 포함된 `<PropertyGroup>`에 RID를 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-123">**Self-contained Deployment (SCD)** &ndash; Confirm the presence of a Windows [Runtime Identifier (RID)](/dotnet/core/rid-catalog) or add a RID to the `<PropertyGroup>` that contains the target framework.</span></span> <span data-ttu-id="8fcb7-124">`<IsTransformWebConfigDisabled>` 속성을 `true`로 설정하여 추가하면 *web.config* 파일이 생성되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-124">Disable the creation of a *web.config* file by adding the `<IsTransformWebConfigDisabled>` property set to `true`.</span></span>
 
-     [!code-csharp[](windows-service/samples/2.x/AspNetCoreService/Program.cs?name=ServiceOnly&highlight=8-9,16)]
+     ```xml
+     <PropertyGroup>
+       <TargetFramework>netcoreapp2.2</TargetFramework>
+       <RuntimeIdentifier>win7-x64</RuntimeIdentifier>
+       <IsTransformWebConfigDisabled>true</IsTransformWebConfigDisabled>
+     </PropertyGroup>
+     ```
 
-1. <span data-ttu-id="6bbd8-120">[dotnet publish](/dotnet/articles/core/tools/dotnet-publish), [Visual Studio 게시 프로필](xref:host-and-deploy/visual-studio-publish-profiles) 또는 Visual Studio Code를 사용하여 앱을 게시합니다.</span><span class="sxs-lookup"><span data-stu-id="6bbd8-120">Publish the app using [dotnet publish](/dotnet/articles/core/tools/dotnet-publish), a [Visual Studio publish profile](xref:host-and-deploy/visual-studio-publish-profiles), or Visual Studio Code.</span></span> <span data-ttu-id="6bbd8-121">Visual Studio를 사용하는 경우 **FolderProfile**을 선택하고 **대상 위치**를 구성한 후 **게시** 단추를 선택합니다.</span><span class="sxs-lookup"><span data-stu-id="6bbd8-121">When using Visual Studio, select the **FolderProfile** and configure the **Target Location** before selecting the **Publish** button.</span></span>
+     <span data-ttu-id="8fcb7-125">여러 개의 RID를 게시하려면</span><span class="sxs-lookup"><span data-stu-id="8fcb7-125">To publish for multiple RIDs:</span></span>
 
-   <span data-ttu-id="6bbd8-122">CLI(명령줄 인터페이스) 도구를 사용하여 샘플 앱을 게시하려면 프로젝트 폴더의 명령 프롬프트에서 [dotnet publish](/dotnet/core/tools/dotnet-publish) 명령을 실행합니다.</span><span class="sxs-lookup"><span data-stu-id="6bbd8-122">To publish the sample app using command-line interface (CLI) tools, run the [dotnet publish](/dotnet/core/tools/dotnet-publish) command at a command prompt from the project folder.</span></span> <span data-ttu-id="6bbd8-123">프로젝트 파일의 `<RuntimeIdenfifier>`(또는 `<RuntimeIdentifiers>`) 속성에 RID를 지정해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="6bbd8-123">The RID must be specified in the `<RuntimeIdenfifier>` (or `<RuntimeIdentifiers>`) property of the project file.</span></span> <span data-ttu-id="6bbd8-124">다음 예제에서는 앱이 `win7-x64` 런타임에 대한 릴리스 구성에서 *c:\\svc*에 생성된 폴더에 게시됩니다.</span><span class="sxs-lookup"><span data-stu-id="6bbd8-124">In the following example, the app is published in Release configuration for the `win7-x64` runtime to a folder created at *c:\\svc*:</span></span>
+     * <span data-ttu-id="8fcb7-126">세미콜론으로 구분된 목록으로 RID를 제공합니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-126">Provide the RIDs in a semicolon-delimited list.</span></span>
+     * <span data-ttu-id="8fcb7-127">속성 이름 `<RuntimeIdentifiers>`(복수)를 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-127">Use the property name `<RuntimeIdentifiers>` (plural).</span></span>
 
-   ```console
-   dotnet publish --configuration Release --runtime win7-x64 --output c:\svc
-   ```
+     <span data-ttu-id="8fcb7-128">자세한 내용은 [.NET Core RID 카탈로그](/dotnet/core/rid-catalog)를 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-128">For more information, see [.NET Core RID Catalog](/dotnet/core/rid-catalog).</span></span>
 
-1. <span data-ttu-id="6bbd8-125">`net user` 명령을 사용하여 서비스에 대한 사용자 계정을 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="6bbd8-125">Create a user account for the service using the `net user` command:</span></span>
+   * <span data-ttu-id="8fcb7-129">[Microsoft.AspNetCore.Hosting.WindowsServices](https://www.nuget.org/packages/Microsoft.AspNetCore.Hosting.WindowsServices)에 패키지 참조를 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-129">Add a package reference for [Microsoft.AspNetCore.Hosting.WindowsServices](https://www.nuget.org/packages/Microsoft.AspNetCore.Hosting.WindowsServices).</span></span>
+
+   * <span data-ttu-id="8fcb7-130">Windows 이벤트 로그 로깅을 사용하도록 설정하려면 [Microsoft.Extensions.Logging.EventLog](https://www.nuget.org/packages/Microsoft.Extensions.Logging.EventLog)에 대한 패키지 참조를 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-130">To enable Windows Event Log logging, add a package reference for [Microsoft.Extensions.Logging.EventLog](https://www.nuget.org/packages/Microsoft.Extensions.Logging.EventLog).</span></span>
+
+     <span data-ttu-id="8fcb7-131">자세한 내용은 [시작 및 중지 이벤트 처리](#handle-starting-and-stopping-events) 섹션을 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-131">For more information, see the [Handle starting and stopping events](#handle-starting-and-stopping-events) section.</span></span>
+
+1. <span data-ttu-id="8fcb7-132">`Program.Main`에서 다음과 같이 변경합니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-132">Make the following changes in `Program.Main`:</span></span>
+
+   * <span data-ttu-id="8fcb7-133">서비스 외부에서 실행할 때 테스트 및 디버그하려면 앱이 서비스 또는 콘솔 앱으로 실행되고 있는지 확인하는 코드를 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-133">To test and debug when running outside of a service, add code to determine if the app is running as a service or a console app.</span></span> <span data-ttu-id="8fcb7-134">디버거가 연결되었는지 또는 `--console` 명령줄 인수가 있는지 검사합니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-134">Inspect if the debugger is attached or a `--console` command-line argument is present.</span></span>
+
+     <span data-ttu-id="8fcb7-135">두 조건 중 하나라도 true이면(앱이 서비스로 실행되지 않음) 웹 호스트에 대해 <xref:Microsoft.AspNetCore.Hosting.WebHostExtensions.Run*>을 호출합니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-135">If either condition is true (the app isn't run as a service), call <xref:Microsoft.AspNetCore.Hosting.WebHostExtensions.Run*> on the Web Host.</span></span>
+
+     <span data-ttu-id="8fcb7-136">두 조건이 모두 false이면(앱이 서비스로 실행됨) 다음을 수행합니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-136">If the conditions are false (the app is run as a service):</span></span>
+
+     * <span data-ttu-id="8fcb7-137"><xref:Microsoft.Extensions.Hosting.HostingHostBuilderExtensions.UseContentRoot*>를 호출하고 앱의 게시 위치에 대한 경로를 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-137">Call <xref:Microsoft.Extensions.Hosting.HostingHostBuilderExtensions.UseContentRoot*> and use a path to the app's published location.</span></span> <span data-ttu-id="8fcb7-138">`GetCurrentDirectory`를 호출하는 경우 Windows 서비스 앱이 *C:\\WINDOWS\\system32* 폴더를 반환하므로 경로를 얻기 위해 <xref:System.IO.Directory.GetCurrentDirectory*>를 호출하지는 마세요.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-138">Don't call <xref:System.IO.Directory.GetCurrentDirectory*> to obtain the path because a Windows Service app returns the *C:\\WINDOWS\\system32* folder when `GetCurrentDirectory` is called.</span></span> <span data-ttu-id="8fcb7-139">자세한 내용은 [현재 디렉터리 및 콘텐츠 루트](#current-directory-and-content-root) 섹션을 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-139">For more information, see the [Current directory and content root](#current-directory-and-content-root) section.</span></span>
+     * <span data-ttu-id="8fcb7-140"><xref:Microsoft.AspNetCore.Hosting.WindowsServices.WebHostWindowsServiceExtensions.RunAsService*>를 호출하여 앱을 서비스로 실행합니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-140">Call <xref:Microsoft.AspNetCore.Hosting.WindowsServices.WebHostWindowsServiceExtensions.RunAsService*> to run the app as a service.</span></span>
+
+     <span data-ttu-id="8fcb7-141">[명령줄 구성 공급자](xref:fundamentals/configuration/index#command-line-configuration-provider)에는 명령줄 인수에 대한 이름-값 쌍이 필요하므로 <xref:Microsoft.AspNetCore.WebHost.CreateDefaultBuilder*>가 수신하기 전에 `--console` 스위치가 인수에서 제거됩니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-141">Because the [Command-line Configuration Provider](xref:fundamentals/configuration/index#command-line-configuration-provider) requires name-value pairs for command-line arguments, the `--console` switch is removed from the arguments before <xref:Microsoft.AspNetCore.WebHost.CreateDefaultBuilder*> receives them.</span></span>
+
+   * <span data-ttu-id="8fcb7-142">Windows 이벤트 로그에 기록하려면 <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder.ConfigureLogging*>에 EventLog 공급자를 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-142">To write to the Windows Event Log, add the EventLog provider to <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder.ConfigureLogging*>.</span></span> <span data-ttu-id="8fcb7-143">*appsettings.Production.json* 파일에서 `Logging:LogLevel:Default` 키를 사용하여 로깅 수준을 설정합니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-143">Set the logging level with the `Logging:LogLevel:Default` key in the *appsettings.Production.json* file.</span></span> <span data-ttu-id="8fcb7-144">데모 및 테스트 목적으로, 샘플 앱의 프로덕션 설정 파일에서는 로깅 수준이 `Information`으로 설정됩니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-144">For demonstration and testing purposes, the sample app's Production settings file sets the logging level to `Information`.</span></span> <span data-ttu-id="8fcb7-145">프로덕션에서 이 값은 일반적으로 `Error`로 설정됩니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-145">In production, the value is typically set to `Error`.</span></span> <span data-ttu-id="8fcb7-146">자세한 내용은 <xref:fundamentals/logging/index#windows-eventlog-provider>을 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-146">For more information, see <xref:fundamentals/logging/index#windows-eventlog-provider>.</span></span>
+
+   [!code-csharp[](windows-service/samples/2.x/AspNetCoreService/Program.cs?name=snippet_Program)]
+
+1. <span data-ttu-id="8fcb7-147">[dotnet publish](/dotnet/articles/core/tools/dotnet-publish), [Visual Studio 게시 프로필](xref:host-and-deploy/visual-studio-publish-profiles) 또는 Visual Studio Code를 사용하여 앱을 게시합니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-147">Publish the app using [dotnet publish](/dotnet/articles/core/tools/dotnet-publish), a [Visual Studio publish profile](xref:host-and-deploy/visual-studio-publish-profiles), or Visual Studio Code.</span></span> <span data-ttu-id="8fcb7-148">Visual Studio를 사용하는 경우 **FolderProfile**을 선택하고 **대상 위치**를 구성한 후 **게시** 단추를 선택합니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-148">When using Visual Studio, select the **FolderProfile** and configure the **Target Location** before selecting the **Publish** button.</span></span>
+
+   <span data-ttu-id="8fcb7-149">CLI(명령줄 인터페이스) 도구를 사용하여 샘플 앱을 게시하려면 [-c|--configuration](/dotnet/core/tools/dotnet-publish#options) 옵션에 릴리스 구성을 전달하여 프로젝트 폴더의 명령 프롬프트에서 [dotnet publish](/dotnet/core/tools/dotnet-publish) 명령을 실행합니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-149">To publish the sample app using command-line interface (CLI) tools, run the [dotnet publish](/dotnet/core/tools/dotnet-publish) command at a command prompt from the project folder with a Release configuration passed to the [-c|--configuration](/dotnet/core/tools/dotnet-publish#options) option.</span></span> <span data-ttu-id="8fcb7-150">앱 외부 폴더에 게시하려면 [-o|--output](/dotnet/core/tools/dotnet-publish#options) 옵션에 경로를 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-150">Use the [-o|--output](/dotnet/core/tools/dotnet-publish#options) option with a path to publish to a folder outside of the app.</span></span>
+
+   * <span data-ttu-id="8fcb7-151">**FDD(프레임워크 종속 배포)**</span><span class="sxs-lookup"><span data-stu-id="8fcb7-151">**Framework-dependent Deployment (FDD)**</span></span>
+
+     <span data-ttu-id="8fcb7-152">다음 예제에서는 앱이 *c:\\svc* 폴더에 게시됩니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-152">In the following example, the app is published to the *c:\\svc* folder:</span></span>
+
+     ```console
+     dotnet publish --configuration Release --output c:\svc
+     ```
+
+   * <span data-ttu-id="8fcb7-153">**SCD(자체 포함 배포)** &ndash; 프로젝트 파일의 `<RuntimeIdenfifier>`(또는 `<RuntimeIdentifiers>`) 속성에 RID를 지정해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-153">**Self-contained Deployment (SCD)** &ndash; The RID must be specified in the `<RuntimeIdenfifier>` (or `<RuntimeIdentifiers>`) property of the project file.</span></span> <span data-ttu-id="8fcb7-154">`dotnet publish` 명령의 [-r|--runtime](/dotnet/core/tools/dotnet-publish#options) 옵션에 런타임을 제공합니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-154">Supply the runtime to the [-r|--runtime](/dotnet/core/tools/dotnet-publish#options) option of the `dotnet publish` command.</span></span>
+
+     <span data-ttu-id="8fcb7-155">다음 예제에서는 앱이 `win7-x64` 런타임의 *c:\\svc* 폴더에 게시됩니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-155">In the following example, the app is published for the `win7-x64` runtime to the *c:\\svc* folder:</span></span>
+
+     ```console
+     dotnet publish --configuration Release --runtime win7-x64 --output c:\svc
+     ```
+
+1. <span data-ttu-id="8fcb7-156">`net user` 명령을 사용하여 서비스에 대한 사용자 계정을 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-156">Create a user account for the service using the `net user` command:</span></span>
 
    ```console
    net user {USER ACCOUNT} {PASSWORD} /add
    ```
 
-   <span data-ttu-id="6bbd8-126">샘플 앱의 경우, 이름이 `ServiceUser`인 사용자 계정과 암호를 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="6bbd8-126">For the sample app, create a user account with the name `ServiceUser` and a password.</span></span> <span data-ttu-id="6bbd8-127">다음 명령에서 `{PASSWORD}`를 [강력한 암호](/windows/security/threat-protection/security-policy-settings/password-must-meet-complexity-requirements)로 바꿉니다.</span><span class="sxs-lookup"><span data-stu-id="6bbd8-127">In the following command, replace `{PASSWORD}` with a [strong password](/windows/security/threat-protection/security-policy-settings/password-must-meet-complexity-requirements).</span></span>
+   <span data-ttu-id="8fcb7-157">샘플 앱의 경우, 이름이 `ServiceUser`인 사용자 계정과 암호를 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-157">For the sample app, create a user account with the name `ServiceUser` and a password.</span></span> <span data-ttu-id="8fcb7-158">다음 명령에서 `{PASSWORD}`를 [강력한 암호](/windows/security/threat-protection/security-policy-settings/password-must-meet-complexity-requirements)로 바꿉니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-158">In the following command, replace `{PASSWORD}` with a [strong password](/windows/security/threat-protection/security-policy-settings/password-must-meet-complexity-requirements).</span></span>
 
    ```console
    net user ServiceUser {PASSWORD} /add
    ```
 
-   <span data-ttu-id="6bbd8-128">그룹에 사용자를 추가해야 하는 경우 `net localgroup` 명령을 사용합니다. 여기서 `{GROUP}`은 그룹의 이름입니다.</span><span class="sxs-lookup"><span data-stu-id="6bbd8-128">If you need to add the user to a group, use the `net localgroup` command, where `{GROUP}` is the name of the group:</span></span>
+   <span data-ttu-id="8fcb7-159">그룹에 사용자를 추가해야 하는 경우 `net localgroup` 명령을 사용합니다. 여기서 `{GROUP}`은 그룹의 이름입니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-159">If you need to add the user to a group, use the `net localgroup` command, where `{GROUP}` is the name of the group:</span></span>
 
    ```console
    net localgroup {GROUP} {USER ACCOUNT} /add
    ```
 
-   <span data-ttu-id="6bbd8-129">자세한 내용은 [서비스 사용자 계정](/windows/desktop/services/service-user-accounts)을 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="6bbd8-129">For more information, see [Service User Accounts](/windows/desktop/services/service-user-accounts).</span></span>
+   <span data-ttu-id="8fcb7-160">자세한 내용은 [서비스 사용자 계정](/windows/desktop/services/service-user-accounts)을 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-160">For more information, see [Service User Accounts](/windows/desktop/services/service-user-accounts).</span></span>
 
-1. <span data-ttu-id="6bbd8-130">[icacls](/windows-server/administration/windows-commands/icacls) 명령을 사용하여 앱의 폴더에 쓰기/읽기/실행 액세스 권한을 부여합니다.</span><span class="sxs-lookup"><span data-stu-id="6bbd8-130">Grant write/read/execute access to the app's folder using the [icacls](/windows-server/administration/windows-commands/icacls) command:</span></span>
+1. <span data-ttu-id="8fcb7-161">[icacls](/windows-server/administration/windows-commands/icacls) 명령을 사용하여 앱의 폴더에 쓰기/읽기/실행 액세스 권한을 부여합니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-161">Grant write/read/execute access to the app's folder using the [icacls](/windows-server/administration/windows-commands/icacls) command:</span></span>
 
    ```console
    icacls "{PATH}" /grant {USER ACCOUNT}:(OI)(CI){PERMISSION FLAGS} /t
    ```
 
-   * <span data-ttu-id="6bbd8-131">`{PATH}` &ndash; 앱의 폴더에 대한 경로입니다.</span><span class="sxs-lookup"><span data-stu-id="6bbd8-131">`{PATH}` &ndash; Path to the app's folder.</span></span>
-   * <span data-ttu-id="6bbd8-132">`{USER ACCOUNT}` &ndash; 사용자 계정(SID)입니다.</span><span class="sxs-lookup"><span data-stu-id="6bbd8-132">`{USER ACCOUNT}` &ndash; The user account (SID).</span></span>
-   * <span data-ttu-id="6bbd8-133">`(OI)` &ndash; 개체 상속 플래그는 권한을 하위 파일에 전파합니다.</span><span class="sxs-lookup"><span data-stu-id="6bbd8-133">`(OI)` &ndash; The Object Inherit flag propagates permissions to subordinate files.</span></span>
-   * <span data-ttu-id="6bbd8-134">`(CI)` &ndash; 컨테이너 상속 플래그는 권한을 하위 폴더에 전파합니다.</span><span class="sxs-lookup"><span data-stu-id="6bbd8-134">`(CI)` &ndash; The Container Inherit flag propagates permissions to subordinate folders.</span></span>
-   * <span data-ttu-id="6bbd8-135">`{PERMISSION FLAGS}` &ndash; 앱의 액세스 권한을 설정합니다.</span><span class="sxs-lookup"><span data-stu-id="6bbd8-135">`{PERMISSION FLAGS}` &ndash; Sets the app's access permissions.</span></span>
-     * <span data-ttu-id="6bbd8-136">쓰기(`W`)</span><span class="sxs-lookup"><span data-stu-id="6bbd8-136">Write (`W`)</span></span>
-     * <span data-ttu-id="6bbd8-137">읽기(`R`)</span><span class="sxs-lookup"><span data-stu-id="6bbd8-137">Read (`R`)</span></span>
-     * <span data-ttu-id="6bbd8-138">실행(`X`)</span><span class="sxs-lookup"><span data-stu-id="6bbd8-138">Execute (`X`)</span></span>
-     * <span data-ttu-id="6bbd8-139">전체(`F`)</span><span class="sxs-lookup"><span data-stu-id="6bbd8-139">Full (`F`)</span></span>
-     * <span data-ttu-id="6bbd8-140">수정(`M`)</span><span class="sxs-lookup"><span data-stu-id="6bbd8-140">Modify (`M`)</span></span>
-   * <span data-ttu-id="6bbd8-141">`/t` &ndash; 기존 하위 폴더 및 파일에 재귀적으로 적용합니다.</span><span class="sxs-lookup"><span data-stu-id="6bbd8-141">`/t` &ndash; Apply recursively to existing subordinate folders and files.</span></span>
+   * <span data-ttu-id="8fcb7-162">`{PATH}` &ndash; 앱의 폴더에 대한 경로입니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-162">`{PATH}` &ndash; Path to the app's folder.</span></span>
+   * <span data-ttu-id="8fcb7-163">`{USER ACCOUNT}` &ndash; 사용자 계정(SID)입니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-163">`{USER ACCOUNT}` &ndash; The user account (SID).</span></span>
+   * <span data-ttu-id="8fcb7-164">`(OI)` &ndash; 개체 상속 플래그는 권한을 하위 파일에 전파합니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-164">`(OI)` &ndash; The Object Inherit flag propagates permissions to subordinate files.</span></span>
+   * <span data-ttu-id="8fcb7-165">`(CI)` &ndash; 컨테이너 상속 플래그는 권한을 하위 폴더에 전파합니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-165">`(CI)` &ndash; The Container Inherit flag propagates permissions to subordinate folders.</span></span>
+   * <span data-ttu-id="8fcb7-166">`{PERMISSION FLAGS}` &ndash; 앱의 액세스 권한을 설정합니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-166">`{PERMISSION FLAGS}` &ndash; Sets the app's access permissions.</span></span>
+     * <span data-ttu-id="8fcb7-167">쓰기(`W`)</span><span class="sxs-lookup"><span data-stu-id="8fcb7-167">Write (`W`)</span></span>
+     * <span data-ttu-id="8fcb7-168">읽기(`R`)</span><span class="sxs-lookup"><span data-stu-id="8fcb7-168">Read (`R`)</span></span>
+     * <span data-ttu-id="8fcb7-169">실행(`X`)</span><span class="sxs-lookup"><span data-stu-id="8fcb7-169">Execute (`X`)</span></span>
+     * <span data-ttu-id="8fcb7-170">전체(`F`)</span><span class="sxs-lookup"><span data-stu-id="8fcb7-170">Full (`F`)</span></span>
+     * <span data-ttu-id="8fcb7-171">수정(`M`)</span><span class="sxs-lookup"><span data-stu-id="8fcb7-171">Modify (`M`)</span></span>
+   * <span data-ttu-id="8fcb7-172">`/t` &ndash; 기존 하위 폴더 및 파일에 재귀적으로 적용합니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-172">`/t` &ndash; Apply recursively to existing subordinate folders and files.</span></span>
 
-   <span data-ttu-id="6bbd8-142">*c:\\svc* 폴더에 게시된 샘플 앱과 쓰기/읽기/실행 권한이 있는 `ServiceUser` 계정의 경우 다음 명령을 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="6bbd8-142">For the sample app published to the *c:\\svc* folder and the `ServiceUser` account with write/read/execute permissions, use the following command:</span></span>
+   <span data-ttu-id="8fcb7-173">*c:\\svc* 폴더에 게시된 샘플 앱과 쓰기/읽기/실행 권한이 있는 `ServiceUser` 계정의 경우 다음 명령을 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-173">For the sample app published to the *c:\\svc* folder and the `ServiceUser` account with write/read/execute permissions, use the following command:</span></span>
 
    ```console
    icacls "c:\svc" /grant ServiceUser:(OI)(CI)WRX /t
    ```
 
-   <span data-ttu-id="6bbd8-143">자세한 내용은 [icacls](/windows-server/administration/windows-commands/icacls)를 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="6bbd8-143">For more information, see [icacls](/windows-server/administration/windows-commands/icacls).</span></span>
+   <span data-ttu-id="8fcb7-174">자세한 내용은 [icacls](/windows-server/administration/windows-commands/icacls)를 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-174">For more information, see [icacls](/windows-server/administration/windows-commands/icacls).</span></span>
 
-1. <span data-ttu-id="6bbd8-144">[sc.exe](https://technet.microsoft.com/library/bb490995) 명령줄 도구를 사용하여 서비스를 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="6bbd8-144">Use the [sc.exe](https://technet.microsoft.com/library/bb490995) command-line tool to create the service.</span></span> <span data-ttu-id="6bbd8-145">`binPath` 값은 실행 파일 이름을 포함하는 앱의 실행 파일 경로입니다.</span><span class="sxs-lookup"><span data-stu-id="6bbd8-145">The `binPath` value is the path to the app's executable, which includes the executable file name.</span></span> <span data-ttu-id="6bbd8-146">**각 매개 변수의 등호 및 인용 문자 값 사이에 공백이 필요합니다.**</span><span class="sxs-lookup"><span data-stu-id="6bbd8-146">**The space between the equal sign and the quote character of each parameter and value is required.**</span></span>
+1. <span data-ttu-id="8fcb7-175">[sc.exe](https://technet.microsoft.com/library/bb490995) 명령줄 도구를 사용하여 서비스를 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-175">Use the [sc.exe](https://technet.microsoft.com/library/bb490995) command-line tool to create the service.</span></span> <span data-ttu-id="8fcb7-176">`binPath` 값은 실행 파일 이름을 포함하는 앱의 실행 파일 경로입니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-176">The `binPath` value is the path to the app's executable, which includes the executable file name.</span></span> <span data-ttu-id="8fcb7-177">**각 매개 변수의 등호 및 인용 문자 값 사이에 공백이 필요합니다.**</span><span class="sxs-lookup"><span data-stu-id="8fcb7-177">**The space between the equal sign and the quote character of each parameter and value is required.**</span></span>
 
    ```console
    sc create {SERVICE NAME} binPath= "{PATH}" obj= "{DOMAIN}\{USER ACCOUNT}" password= "{PASSWORD}"
    ```
 
-   * <span data-ttu-id="6bbd8-147">`{SERVICE NAME}` &ndash; [서비스 제어 관리자](/windows/desktop/services/service-control-manager)의 서비스에 할당하는 이름입니다.</span><span class="sxs-lookup"><span data-stu-id="6bbd8-147">`{SERVICE NAME}` &ndash; The name to assign to the service in [Service Control Manager](/windows/desktop/services/service-control-manager).</span></span>
-   * <span data-ttu-id="6bbd8-148">`{PATH}` &ndash; 서비스 실행 파일의 경로입니다.</span><span class="sxs-lookup"><span data-stu-id="6bbd8-148">`{PATH}` &ndash; The path to the service executable.</span></span>
-   * <span data-ttu-id="6bbd8-149">`{DOMAIN}` (또는 머신이 도메인에 가입되어 있지 않은 경우 로컬 머신 이름) 및 `{USER ACCOUNT}` &ndash; 서비스가 실행되는 도메인(또는 로컬 머신 이름) 및 사용자 계정입니다.</span><span class="sxs-lookup"><span data-stu-id="6bbd8-149">`{DOMAIN}` (or if the machine isn't domain joined, the local machine name) and `{USER ACCOUNT}` &ndash; The domain (or local machine name) and user account under which the service runs.</span></span> <span data-ttu-id="6bbd8-150">`obj` 매개 변수를 생략하지 **마세요**.</span><span class="sxs-lookup"><span data-stu-id="6bbd8-150">Do **not** omit the `obj` parameter.</span></span> <span data-ttu-id="6bbd8-151">`obj`의 기본값은 [LocalSystem 계정](/windows/desktop/services/localsystem-account) 계정입니다.</span><span class="sxs-lookup"><span data-stu-id="6bbd8-151">The default value for `obj` is the [LocalSystem account](/windows/desktop/services/localsystem-account) account.</span></span> <span data-ttu-id="6bbd8-152">`LocalSystem` 계정으로 서비스를 실행하면 상당한 보안 위험이 발생합니다.</span><span class="sxs-lookup"><span data-stu-id="6bbd8-152">Running a service under the `LocalSystem` account presents a significant security risk.</span></span> <span data-ttu-id="6bbd8-153">항상 서버에서 제한된 권한을 가진 사용자 계정으로 서비스를 실행하세요.</span><span class="sxs-lookup"><span data-stu-id="6bbd8-153">Always run a service under a user account with restricted privileges on the server.</span></span>
-   * <span data-ttu-id="6bbd8-154">`{PASSWORD}` &ndash; 사용자 계정 암호입니다.</span><span class="sxs-lookup"><span data-stu-id="6bbd8-154">`{PASSWORD}` &ndash; The user account password.</span></span>
+   * <span data-ttu-id="8fcb7-178">`{SERVICE NAME}` &ndash; [서비스 제어 관리자](/windows/desktop/services/service-control-manager)의 서비스에 할당하는 이름입니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-178">`{SERVICE NAME}` &ndash; The name to assign to the service in [Service Control Manager](/windows/desktop/services/service-control-manager).</span></span>
+   * <span data-ttu-id="8fcb7-179">`{PATH}` &ndash; 서비스 실행 파일의 경로입니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-179">`{PATH}` &ndash; The path to the service executable.</span></span>
+   * <span data-ttu-id="8fcb7-180">`{DOMAIN}` &ndash; 도메인 가입 머신의 도메인입니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-180">`{DOMAIN}` &ndash; The domain of a domain-joined machine.</span></span> <span data-ttu-id="8fcb7-181">도메인에 가입되지 않은 머신의 경우 로컬 머신 이름입니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-181">If the machine isn't domain-joined, the local machine name.</span></span>
+   * <span data-ttu-id="8fcb7-182">`{USER ACCOUNT}` &ndash; 서비스 실행에 사용되는 사용자 계정입니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-182">`{USER ACCOUNT}` &ndash; The user account under which the service runs.</span></span>
+   * <span data-ttu-id="8fcb7-183">`{PASSWORD}` &ndash; 사용자 계정 암호입니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-183">`{PASSWORD}` &ndash; The user account password.</span></span>
 
-   <span data-ttu-id="6bbd8-155">다음 예제에서는</span><span class="sxs-lookup"><span data-stu-id="6bbd8-155">In the following example:</span></span>
+   > [!WARNING]
+   > <span data-ttu-id="8fcb7-184">`obj` 매개 변수를 생략하지 **마세요**.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-184">Do **not** omit the `obj` parameter.</span></span> <span data-ttu-id="8fcb7-185">`obj`의 기본값은 [LocalSystem 계정](/windows/desktop/services/localsystem-account) 계정입니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-185">The default value for `obj` is the [LocalSystem account](/windows/desktop/services/localsystem-account) account.</span></span> <span data-ttu-id="8fcb7-186">`LocalSystem` 계정으로 서비스를 실행하면 상당한 보안 위험이 발생합니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-186">Running a service under the `LocalSystem` account presents a significant security risk.</span></span> <span data-ttu-id="8fcb7-187">항상 제한된 권한을 가진 사용자 계정으로 서비스를 실행하세요.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-187">Always run a service with a user account that has restricted privileges.</span></span>
 
-   * <span data-ttu-id="6bbd8-156">서비스의 이름은 **MyService**입니다.</span><span class="sxs-lookup"><span data-stu-id="6bbd8-156">The service is named **MyService**.</span></span>
-   * <span data-ttu-id="6bbd8-157">게시된 서비스는 *c:\\svc* 폴더에 있습니다.</span><span class="sxs-lookup"><span data-stu-id="6bbd8-157">The published service resides in the *c:\\svc* folder.</span></span> <span data-ttu-id="6bbd8-158">앱 실행 파일의 이름은 *AspNetCoreService.exe*입니다.</span><span class="sxs-lookup"><span data-stu-id="6bbd8-158">The app executable is named *AspNetCoreService.exe*.</span></span> <span data-ttu-id="6bbd8-159">`binPath` 값은 곧은 따옴표(")로 묶입니다.</span><span class="sxs-lookup"><span data-stu-id="6bbd8-159">The `binPath` value is enclosed in straight quotation marks (").</span></span>
-   * <span data-ttu-id="6bbd8-160">서비스는 `ServiceUser` 계정으로 실행됩니다.</span><span class="sxs-lookup"><span data-stu-id="6bbd8-160">The service runs under the `ServiceUser` account.</span></span> <span data-ttu-id="6bbd8-161">`{DOMAIN}`을 사용자 계정의 도메인 또는 로컬 머신 이름으로 바꿉니다.</span><span class="sxs-lookup"><span data-stu-id="6bbd8-161">Replace `{DOMAIN}` with the user account's domain or local machine name.</span></span> <span data-ttu-id="6bbd8-162">`obj` 값을 곧은 따옴표(")로 묶습니다.</span><span class="sxs-lookup"><span data-stu-id="6bbd8-162">Enclose the `obj` value in straight quotation marks (").</span></span> <span data-ttu-id="6bbd8-163">예: 호스팅 시스템이 이름이 `MairaPC`인 로컬 머신인 경우 `obj`를 `"MairaPC\ServiceUser"`로 설정합니다.</span><span class="sxs-lookup"><span data-stu-id="6bbd8-163">Example: If the hosting system is a local machine named `MairaPC`, set `obj` to `"MairaPC\ServiceUser"`.</span></span>
-   * <span data-ttu-id="6bbd8-164">`{PASSWORD}`를 사용자 계정의 암호로 바꿉니다.</span><span class="sxs-lookup"><span data-stu-id="6bbd8-164">Replace `{PASSWORD}` with the user account's password.</span></span> <span data-ttu-id="6bbd8-165">`password` 값은 곧은 따옴표(")로 묶입니다.</span><span class="sxs-lookup"><span data-stu-id="6bbd8-165">The `password` value is enclosed in straight quotation marks (").</span></span>
+   <span data-ttu-id="8fcb7-188">샘플 앱에 대한 예제는 다음과 같습니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-188">In the following example for the sample app:</span></span>
+
+   * <span data-ttu-id="8fcb7-189">서비스의 이름은 **MyService**입니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-189">The service is named **MyService**.</span></span>
+   * <span data-ttu-id="8fcb7-190">게시된 서비스는 *c:\\svc* 폴더에 있습니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-190">The published service resides in the *c:\\svc* folder.</span></span> <span data-ttu-id="8fcb7-191">앱 실행 파일의 이름은 *SampleApp.exe*입니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-191">The app executable is named *SampleApp.exe*.</span></span> <span data-ttu-id="8fcb7-192">`binPath` 값을 큰따옴표(")로 묶습니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-192">Enclose the `binPath` value in double quotation marks (").</span></span>
+   * <span data-ttu-id="8fcb7-193">서비스는 `ServiceUser` 계정으로 실행됩니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-193">The service runs under the `ServiceUser` account.</span></span> <span data-ttu-id="8fcb7-194">`{DOMAIN}`을 사용자 계정의 도메인 또는 로컬 머신 이름으로 바꿉니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-194">Replace `{DOMAIN}` with the user account's domain or local machine name.</span></span> <span data-ttu-id="8fcb7-195">`obj` 값을 큰따옴표(")로 묶습니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-195">Enclose the `obj` value in double quotation marks (").</span></span> <span data-ttu-id="8fcb7-196">예: 호스팅 시스템이 이름이 `MairaPC`인 로컬 머신인 경우 `obj`를 `"MairaPC\ServiceUser"`로 설정합니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-196">Example: If the hosting system is a local machine named `MairaPC`, set `obj` to `"MairaPC\ServiceUser"`.</span></span>
+   * <span data-ttu-id="8fcb7-197">`{PASSWORD}`를 사용자 계정의 암호로 바꿉니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-197">Replace `{PASSWORD}` with the user account's password.</span></span> <span data-ttu-id="8fcb7-198">`password` 값을 큰따옴표(")로 묶습니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-198">Enclose the `password` value in double quotation marks (").</span></span>
 
    ```console
-   sc create MyService binPath= "c:\svc\aspnetcoreservice.exe" obj= "{DOMAIN}\ServiceUser" password= "{PASSWORD}"
+   sc create MyService binPath= "c:\svc\sampleapp.exe" obj= "{DOMAIN}\ServiceUser" password= "{PASSWORD}"
    ```
 
    > [!IMPORTANT]
-   > <span data-ttu-id="6bbd8-166">매개 변수의 등호와 매개 변수의 값 사이에 공백이 있는지 확인합니다.</span><span class="sxs-lookup"><span data-stu-id="6bbd8-166">Make sure that the spaces between the parameters' equal signs and the parameters' values are present.</span></span>
+   > <span data-ttu-id="8fcb7-199">매개 변수의 등호와 매개 변수의 값 사이에 공백이 있는지 확인합니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-199">Make sure that the spaces between the parameters' equal signs and the parameters' values are present.</span></span>
 
-1. <span data-ttu-id="6bbd8-167">`sc start {SERVICE NAME}` 명령을 사용하여 서비스를 시작합니다.</span><span class="sxs-lookup"><span data-stu-id="6bbd8-167">Start the service with the `sc start {SERVICE NAME}` command.</span></span>
+1. <span data-ttu-id="8fcb7-200">`sc start {SERVICE NAME}` 명령을 사용하여 서비스를 시작합니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-200">Start the service with the `sc start {SERVICE NAME}` command.</span></span>
 
-   <span data-ttu-id="6bbd8-168">샘플 앱 서비스를 시작하려면 다음 명령을 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="6bbd8-168">To start the sample app service, use the following command:</span></span>
+   <span data-ttu-id="8fcb7-201">샘플 앱 서비스를 시작하려면 다음 명령을 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-201">To start the sample app service, use the following command:</span></span>
 
    ```console
    sc start MyService
    ```
 
-   <span data-ttu-id="6bbd8-169">명령은 서비스를 시작하는 데 몇 초 정도 걸립니다.</span><span class="sxs-lookup"><span data-stu-id="6bbd8-169">The command takes a few seconds to start the service.</span></span>
+   <span data-ttu-id="8fcb7-202">명령은 서비스를 시작하는 데 몇 초 정도 걸립니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-202">The command takes a few seconds to start the service.</span></span>
 
-1. <span data-ttu-id="6bbd8-170">서비스 상태를 확인하려면 `sc query {SERVICE NAME}` 명령을 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="6bbd8-170">To check the status of the service, use the `sc query {SERVICE NAME}` command.</span></span> <span data-ttu-id="6bbd8-171">상태는 다음 값 중 하나로 보고됩니다.</span><span class="sxs-lookup"><span data-stu-id="6bbd8-171">The status is reported as one of the following values:</span></span>
+1. <span data-ttu-id="8fcb7-203">서비스 상태를 확인하려면 `sc query {SERVICE NAME}` 명령을 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-203">To check the status of the service, use the `sc query {SERVICE NAME}` command.</span></span> <span data-ttu-id="8fcb7-204">상태는 다음 값 중 하나로 보고됩니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-204">The status is reported as one of the following values:</span></span>
 
    * `START_PENDING`
    * `RUNNING`
    * `STOP_PENDING`
    * `STOPPED`
 
-   <span data-ttu-id="6bbd8-172">다음 명령을 사용하여 샘플 앱 서비스의 상태를 확인합니다.</span><span class="sxs-lookup"><span data-stu-id="6bbd8-172">Use the following command to check the status of the sample app service:</span></span>
+   <span data-ttu-id="8fcb7-205">다음 명령을 사용하여 샘플 앱 서비스의 상태를 확인합니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-205">Use the following command to check the status of the sample app service:</span></span>
 
    ```console
    sc query MyService
    ```
 
-1. <span data-ttu-id="6bbd8-173">이 서비스가 `RUNNING` 상태이며 서비스가 웹앱인 경우 해당 경로에서 앱을 찾습니다(기본적으로 `http://localhost:5000`이며 [HTTPS 리디렉션 미들웨어](xref:security/enforcing-ssl)를 사용하는 경우 `https://localhost:5001`로 리디렉션함).</span><span class="sxs-lookup"><span data-stu-id="6bbd8-173">When the service is in the `RUNNING` state and if the service is a web app, browse the app at its path (by default, `http://localhost:5000`, which redirects to `https://localhost:5001` when using [HTTPS Redirection Middleware](xref:security/enforcing-ssl)).</span></span>
+1. <span data-ttu-id="8fcb7-206">이 서비스가 `RUNNING` 상태이며 서비스가 웹앱인 경우 해당 경로에서 앱을 찾습니다(기본적으로 `http://localhost:5000`이며 [HTTPS 리디렉션 미들웨어](xref:security/enforcing-ssl)를 사용하는 경우 `https://localhost:5001`로 리디렉션함).</span><span class="sxs-lookup"><span data-stu-id="8fcb7-206">When the service is in the `RUNNING` state and if the service is a web app, browse the app at its path (by default, `http://localhost:5000`, which redirects to `https://localhost:5001` when using [HTTPS Redirection Middleware](xref:security/enforcing-ssl)).</span></span>
 
-   <span data-ttu-id="6bbd8-174">샘플 앱 서비스의 경우 `http://localhost:5000`에서 앱을 찾아봅니다.</span><span class="sxs-lookup"><span data-stu-id="6bbd8-174">For the sample app service, browse the app at `http://localhost:5000`.</span></span>
+   <span data-ttu-id="8fcb7-207">샘플 앱 서비스의 경우 `http://localhost:5000`에서 앱을 찾아봅니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-207">For the sample app service, browse the app at `http://localhost:5000`.</span></span>
 
-1. <span data-ttu-id="6bbd8-175">`sc stop {SERVICE NAME}` 명령을 사용하여 서비스를 중지합니다.</span><span class="sxs-lookup"><span data-stu-id="6bbd8-175">Stop the service with the `sc stop {SERVICE NAME}` command.</span></span>
+1. <span data-ttu-id="8fcb7-208">`sc stop {SERVICE NAME}` 명령을 사용하여 서비스를 중지합니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-208">Stop the service with the `sc stop {SERVICE NAME}` command.</span></span>
 
-   <span data-ttu-id="6bbd8-176">다음 명령은 샘플 앱 서비스를 중지합니다.</span><span class="sxs-lookup"><span data-stu-id="6bbd8-176">The following command stops the sample app service:</span></span>
+   <span data-ttu-id="8fcb7-209">다음 명령은 샘플 앱 서비스를 중지합니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-209">The following command stops the sample app service:</span></span>
 
    ```console
    sc stop MyService
    ```
 
-1. <span data-ttu-id="6bbd8-177">서비스를 중지하는 짧은 지연 후에 `sc delete {SERVICE NAME}` 명령을 사용하여 서비스를 제거합니다.</span><span class="sxs-lookup"><span data-stu-id="6bbd8-177">After a short delay to stop a service, uninstall the service with the `sc delete {SERVICE NAME}` command.</span></span>
+1. <span data-ttu-id="8fcb7-210">서비스를 중지하는 짧은 지연 후에 `sc delete {SERVICE NAME}` 명령을 사용하여 서비스를 제거합니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-210">After a short delay to stop a service, uninstall the service with the `sc delete {SERVICE NAME}` command.</span></span>
 
-   <span data-ttu-id="6bbd8-178">샘플 앱 서비스의 상태를 확인합니다.</span><span class="sxs-lookup"><span data-stu-id="6bbd8-178">Check the status of the sample app service:</span></span>
+   <span data-ttu-id="8fcb7-211">샘플 앱 서비스의 상태를 확인합니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-211">Check the status of the sample app service:</span></span>
 
    ```console
    sc query MyService
    ```
 
-   <span data-ttu-id="6bbd8-179">이 샘플 앱 서비스가 `STOPPED` 상태인 경우 다음 명령을 사용하여 샘플 앱 서비스를 제거합니다.</span><span class="sxs-lookup"><span data-stu-id="6bbd8-179">When the sample app service is in the `STOPPED` state, use the following command to uninstall the sample app service:</span></span>
+   <span data-ttu-id="8fcb7-212">이 샘플 앱 서비스가 `STOPPED` 상태인 경우 다음 명령을 사용하여 샘플 앱 서비스를 제거합니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-212">When the sample app service is in the `STOPPED` state, use the following command to uninstall the sample app service:</span></span>
 
    ```console
    sc delete MyService
    ```
 
-## <a name="run-the-app-outside-of-a-service"></a><span data-ttu-id="6bbd8-180">서비스 외부에서 앱 실행</span><span class="sxs-lookup"><span data-stu-id="6bbd8-180">Run the app outside of a service</span></span>
+## <a name="handle-starting-and-stopping-events"></a><span data-ttu-id="8fcb7-213">시작 및 중지 이벤트 처리</span><span class="sxs-lookup"><span data-stu-id="8fcb7-213">Handle starting and stopping events</span></span>
 
-<span data-ttu-id="6bbd8-181">서비스 외부에서 실행하면 테스트하고 디버그하기가 더 쉬우므로 특정 조건에서만 `RunAsService`를 호출하는 코드를 추가하는 것이 좋습니다.</span><span class="sxs-lookup"><span data-stu-id="6bbd8-181">It's easier to test and debug when running outside of a service, so it's customary to add code that calls `RunAsService` only under certain conditions.</span></span> <span data-ttu-id="6bbd8-182">예를 들어 `--console` 명령줄 인수를 사용하거나 디버거가 연결된 경우 앱을 콘솔 앱으로 실행할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="6bbd8-182">For example, the app can run as a console app with a `--console` command-line argument or if the debugger is attached:</span></span>
+<span data-ttu-id="8fcb7-214"><xref:Microsoft.AspNetCore.Hosting.WindowsServices.WebHostService.OnStarting*>, <xref:Microsoft.AspNetCore.Hosting.WindowsServices.WebHostService.OnStarted*> 및 <xref:Microsoft.AspNetCore.Hosting.WindowsServices.WebHostService.OnStopping*> 이벤트를 처리하려면 추가로 다음과 같이 변경합니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-214">To handle <xref:Microsoft.AspNetCore.Hosting.WindowsServices.WebHostService.OnStarting*>, <xref:Microsoft.AspNetCore.Hosting.WindowsServices.WebHostService.OnStarted*>, and <xref:Microsoft.AspNetCore.Hosting.WindowsServices.WebHostService.OnStopping*> events, perform the following additional changes:</span></span>
 
-[!code-csharp[](windows-service/samples/2.x/AspNetCoreService/Program.cs?name=ServiceOrConsole)]
+1. <span data-ttu-id="8fcb7-215">`OnStarting`, `OnStarted` 및 `OnStopping` 메서드를 사용하여 <xref:Microsoft.AspNetCore.Hosting.WindowsServices.WebHostService>에서 파생되는 클래스를 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-215">Create a class that derives from <xref:Microsoft.AspNetCore.Hosting.WindowsServices.WebHostService> with the `OnStarting`, `OnStarted`, and `OnStopping` methods:</span></span>
 
-<span data-ttu-id="6bbd8-183">ASP.NET Core 구성에 명령줄 인수에 대한 이름 값 쌍이 필요하기 때문에 인수가 [CreateDefaultBuilder](/dotnet/api/microsoft.aspnetcore.webhost.createdefaultbuilder)에 전달되기 전에 `--console` 스위치를 제거합니다.</span><span class="sxs-lookup"><span data-stu-id="6bbd8-183">Because ASP.NET Core configuration requires name-value pairs for command-line arguments, the `--console` switch is removed before the arguments are passed to [CreateDefaultBuilder](/dotnet/api/microsoft.aspnetcore.webhost.createdefaultbuilder).</span></span>
+   [!code-csharp[](windows-service/samples/2.x/AspNetCoreService/CustomWebHostService.cs?name=snippet_CustomWebHostService)]
 
-> [!NOTE]
-> <span data-ttu-id="6bbd8-184">[통합 테스트](xref:test/integration-tests)가 제대로 작동하려면 `CreateWebHostBuilder`의 서명이 `CreateWebHostBuilder(string[])`이어야 하므로 `isService`는 `Main`에서 `CreateWebHostBuilder`로 전달되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="6bbd8-184">`isService` isn't passed from `Main` into `CreateWebHostBuilder` because the signature of `CreateWebHostBuilder` must be `CreateWebHostBuilder(string[])` in order for [integration testing](xref:test/integration-tests) to work properly.</span></span>
-
-## <a name="handle-stopping-and-starting-events"></a><span data-ttu-id="6bbd8-185">이벤트 중지 및 시작 처리</span><span class="sxs-lookup"><span data-stu-id="6bbd8-185">Handle stopping and starting events</span></span>
-
-<span data-ttu-id="6bbd8-186">[OnStarting](/dotnet/api/microsoft.aspnetcore.hosting.windowsservices.webhostservice.onstarting), [OnStarted](/dotnet/api/microsoft.aspnetcore.hosting.windowsservices.webhostservice.onstarted) 및 [OnStopping](/dotnet/api/microsoft.aspnetcore.hosting.windowsservices.webhostservice.onstopping) 이벤트를 처리하려면 다음과 같이 추가로 변경합니다.</span><span class="sxs-lookup"><span data-stu-id="6bbd8-186">To handle [OnStarting](/dotnet/api/microsoft.aspnetcore.hosting.windowsservices.webhostservice.onstarting), [OnStarted](/dotnet/api/microsoft.aspnetcore.hosting.windowsservices.webhostservice.onstarted), and [OnStopping](/dotnet/api/microsoft.aspnetcore.hosting.windowsservices.webhostservice.onstopping) events, make the following additional changes:</span></span>
-
-1. <span data-ttu-id="6bbd8-187">[WebHostService](/dotnet/api/microsoft.aspnetcore.hosting.windowsservices.webhostservice)에서 파생되는 클래스를 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="6bbd8-187">Create a class that derives from [WebHostService](/dotnet/api/microsoft.aspnetcore.hosting.windowsservices.webhostservice):</span></span>
-
-   [!code-csharp[](windows-service/samples/2.x/AspNetCoreService/CustomWebHostService.cs?name=NoLogging)]
-
-2. <span data-ttu-id="6bbd8-188">사용자 지정 `WebHostService`를 [ServiceBase.Run](/dotnet/api/system.serviceprocess.servicebase.run)에 전달하는 [IWebHost](/dotnet/api/microsoft.aspnetcore.hosting.iwebhost)에 대한 확장 메서드를 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="6bbd8-188">Create an extension method for [IWebHost](/dotnet/api/microsoft.aspnetcore.hosting.iwebhost) that passes the custom `WebHostService` to [ServiceBase.Run](/dotnet/api/system.serviceprocess.servicebase.run):</span></span>
+2. <span data-ttu-id="8fcb7-216">`CustomWebHostService`를 <xref:System.ServiceProcess.ServiceBase.Run*>에 전달하는 <xref:Microsoft.AspNetCore.Hosting.IWebHost>에 대한 확장 메서드를 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-216">Create an extension method for <xref:Microsoft.AspNetCore.Hosting.IWebHost> that passes the `CustomWebHostService` to <xref:System.ServiceProcess.ServiceBase.Run*>:</span></span>
 
    [!code-csharp[](windows-service/samples/2.x/AspNetCoreService/WebHostServiceExtensions.cs?name=ExtensionsClass)]
 
-3. <span data-ttu-id="6bbd8-189">`Program.Main`에서 [RunAsService](/dotnet/api/microsoft.aspnetcore.hosting.windowsservices.webhostwindowsserviceextensions.runasservice) 대신 새 확장 메서드(`RunAsCustomService`)를 호출합니다.</span><span class="sxs-lookup"><span data-stu-id="6bbd8-189">In `Program.Main`, call the new extension method, `RunAsCustomService`, instead of [RunAsService](/dotnet/api/microsoft.aspnetcore.hosting.windowsservices.webhostwindowsserviceextensions.runasservice):</span></span>
+3. <span data-ttu-id="8fcb7-217">`Program.Main`에서 <xref:Microsoft.AspNetCore.Hosting.WindowsServices.WebHostWindowsServiceExtensions.RunAsService*> 대신 `RunAsCustomService` 확장 메서드를 호출합니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-217">In `Program.Main`, call the `RunAsCustomService` extension method instead of <xref:Microsoft.AspNetCore.Hosting.WindowsServices.WebHostWindowsServiceExtensions.RunAsService*>:</span></span>
 
-   [!code-csharp[](windows-service/samples/2.x/AspNetCoreService/Program.cs?name=HandleStopStart&highlight=17)]
+   ```csharp
+   host.RunAsCustomService();
+   ```
 
-   > [!NOTE]
-   > <span data-ttu-id="6bbd8-190">[통합 테스트](xref:test/integration-tests)가 제대로 작동하려면 `CreateWebHostBuilder`의 서명이 `CreateWebHostBuilder(string[])`이어야 하므로 `isService`는 `Main`에서 `CreateWebHostBuilder`로 전달되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="6bbd8-190">`isService` isn't passed from `Main` into `CreateWebHostBuilder` because the signature of `CreateWebHostBuilder` must be `CreateWebHostBuilder(string[])` in order for [integration testing](xref:test/integration-tests) to work properly.</span></span>
+   <span data-ttu-id="8fcb7-218">`Program.Main`에서 <xref:Microsoft.AspNetCore.Hosting.WindowsServices.WebHostWindowsServiceExtensions.RunAsService*>의 위치를 확인하려면 [프로젝트를 Windows 서비스로 변환](#convert-a-project-into-a-windows-service) 섹션에 표시된 코드 샘플을 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-218">To see the location of <xref:Microsoft.AspNetCore.Hosting.WindowsServices.WebHostWindowsServiceExtensions.RunAsService*> in `Program.Main`, refer to the code sample shown in the [Convert a project into a Windows Service](#convert-a-project-into-a-windows-service) section.</span></span>
 
-<span data-ttu-id="6bbd8-191">사용자 지정 `WebHostService` 코드에 종속성 주입의 서비스(예: 로거)가 필요한 경우 [IWebHost.Services](/dotnet/api/microsoft.aspnetcore.hosting.iwebhost.services) 속성에서 서비스를 가져옵니다.</span><span class="sxs-lookup"><span data-stu-id="6bbd8-191">If the custom `WebHostService` code requires a service from dependency injection (such as a logger), obtain it from the [IWebHost.Services](/dotnet/api/microsoft.aspnetcore.hosting.iwebhost.services) property:</span></span>
+## <a name="proxy-server-and-load-balancer-scenarios"></a><span data-ttu-id="8fcb7-219">프록시 서버 및 부하 분산 장치 시나리오</span><span class="sxs-lookup"><span data-stu-id="8fcb7-219">Proxy server and load balancer scenarios</span></span>
 
-[!code-csharp[](windows-service/samples/2.x/AspNetCoreService/CustomWebHostService.cs?name=Logging&highlight=7-8)]
+<span data-ttu-id="8fcb7-220">인터넷 또는 회사 네트워크의 요청과 상호 작용하고 프록시 또는 부하 분산 장치 뒤에 있는 서비스에는 추가 구성이 필요합니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-220">Services that interact with requests from the Internet or a corporate network and are behind a proxy or load balancer might require additional configuration.</span></span> <span data-ttu-id="8fcb7-221">자세한 내용은 <xref:host-and-deploy/proxy-load-balancer>을 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-221">For more information, see <xref:host-and-deploy/proxy-load-balancer>.</span></span>
 
-## <a name="proxy-server-and-load-balancer-scenarios"></a><span data-ttu-id="6bbd8-192">프록시 서버 및 부하 분산 장치 시나리오</span><span class="sxs-lookup"><span data-stu-id="6bbd8-192">Proxy server and load balancer scenarios</span></span>
+## <a name="configure-https"></a><span data-ttu-id="8fcb7-222">HTTPS 구성</span><span class="sxs-lookup"><span data-stu-id="8fcb7-222">Configure HTTPS</span></span>
 
-<span data-ttu-id="6bbd8-193">인터넷 또는 회사 네트워크의 요청과 상호 작용하고 프록시 또는 부하 분산 장치 뒤에 있는 서비스에는 추가 구성이 필요합니다.</span><span class="sxs-lookup"><span data-stu-id="6bbd8-193">Services that interact with requests from the Internet or a corporate network and are behind a proxy or load balancer might require additional configuration.</span></span> <span data-ttu-id="6bbd8-194">자세한 내용은 <xref:host-and-deploy/proxy-load-balancer>을 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="6bbd8-194">For more information, see <xref:host-and-deploy/proxy-load-balancer>.</span></span>
+<span data-ttu-id="8fcb7-223">보안 엔드포인트로 서비스를 구성하려면 다음을 수행합니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-223">To configure the service with a secure endpoint:</span></span>
 
-## <a name="configure-https"></a><span data-ttu-id="6bbd8-195">HTTPS 구성</span><span class="sxs-lookup"><span data-stu-id="6bbd8-195">Configure HTTPS</span></span>
+1. <span data-ttu-id="8fcb7-224">플랫폼의 인증서 획득 및 배포 메커니즘을 사용하여 호스팅 시스템에 대한 X.509 인증서를 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-224">Create an X.509 certificate for the hosting system using your platform's certificate acquisition and deployment mechanisms.</span></span>
 
-<span data-ttu-id="6bbd8-196">보안 엔드포인트로 서비스를 구성하려면 다음을 수행합니다.</span><span class="sxs-lookup"><span data-stu-id="6bbd8-196">To configure the service with a secure endpoint:</span></span>
+1. <span data-ttu-id="8fcb7-225">[Kestrel 서버 HTTPS 엔드포인트 구성](xref:fundamentals/servers/kestrel#endpoint-configuration)을 지정하여 인증서를 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-225">Specify a [Kestrel server HTTPS endpoint configuration](xref:fundamentals/servers/kestrel#endpoint-configuration) to use the certificate.</span></span>
 
-1. <span data-ttu-id="6bbd8-197">플랫폼의 인증서 획득 및 배포 메커니즘을 사용하여 호스팅 시스템에 대한 X.509 인증서를 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="6bbd8-197">Create an X.509 certificate for the hosting system using your platform's certificate acquisition and deployment mechanisms.</span></span>
-1. <span data-ttu-id="6bbd8-198">[Kestrel 서버 HTTPS 엔드포인트 구성](xref:fundamentals/servers/kestrel#endpoint-configuration)을 지정하여 인증서를 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="6bbd8-198">Specify a [Kestrel server HTTPS endpoint configuration](xref:fundamentals/servers/kestrel#endpoint-configuration) to use the certificate.</span></span>
+<span data-ttu-id="8fcb7-226">서비스 엔드포인트를 보호하기 위해 ASP.NET Core HTTPS 개발 인증서 사용은 지원되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-226">Use of the ASP.NET Core HTTPS development certificate to secure a service endpoint isn't supported.</span></span>
 
-<span data-ttu-id="6bbd8-199">서비스 엔드포인트를 보호하기 위해 ASP.NET Core HTTPS 개발 인증서 사용은 지원되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="6bbd8-199">Use of the ASP.NET Core HTTPS development certificate to secure a service endpoint isn't supported.</span></span>
+## <a name="current-directory-and-content-root"></a><span data-ttu-id="8fcb7-227">현재 디렉터리 및 콘텐츠 루트</span><span class="sxs-lookup"><span data-stu-id="8fcb7-227">Current directory and content root</span></span>
 
-## <a name="current-directory-and-content-root"></a><span data-ttu-id="6bbd8-200">현재 디렉터리 및 콘텐츠 루트</span><span class="sxs-lookup"><span data-stu-id="6bbd8-200">Current directory and content root</span></span>
+<span data-ttu-id="8fcb7-228">Windows 서비스에 대해 <xref:System.IO.Directory.GetCurrentDirectory*>를 호출하여 반환된 현재 작업 디렉터리는 *C:\\WINDOWS\\system32* 폴더입니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-228">The current working directory returned by calling <xref:System.IO.Directory.GetCurrentDirectory*> for a Windows Service is the *C:\\WINDOWS\\system32* folder.</span></span> <span data-ttu-id="8fcb7-229">*system32* 폴더는 서비스의 파일(예: 설정 파일)을 저장을 저장하는 데 적절한 위치가 아닙니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-229">The *system32* folder isn't a suitable location to store a service's files (for example, settings files).</span></span> <span data-ttu-id="8fcb7-230">다음 방법 중 하나를 사용하여 서비스의 자산 및 설정 파일을 유지 관리하고 액세스합니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-230">Use one of the following approaches to maintain and access a service's assets and settings files.</span></span>
 
-<span data-ttu-id="6bbd8-201">Windows 서비스에 대해 `Directory.GetCurrentDirectory()`를 호출하여 반환된 현재 작업 디렉터리는 *C:\\WINDOWS\\system32* 폴더입니다.</span><span class="sxs-lookup"><span data-stu-id="6bbd8-201">The current working directory returned by calling `Directory.GetCurrentDirectory()` for a Windows Service is the *C:\\WINDOWS\\system32* folder.</span></span> <span data-ttu-id="6bbd8-202">*system32* 폴더는 서비스의 파일(예: 설정 파일)을 저장을 저장하는 데 적절한 위치가 아닙니다.</span><span class="sxs-lookup"><span data-stu-id="6bbd8-202">The *system32* folder isn't a suitable location to store a service's files (for example, settings files).</span></span> <span data-ttu-id="6bbd8-203">다음 방법 중 하나를 사용하여 [IConfigurationBuilder](/dotnet/api/microsoft.extensions.configuration.iconfigurationbuilder)를 사용할 때 [FileConfigurationExtensions.SetBasePath](/dotnet/api/microsoft.extensions.configuration.fileconfigurationextensions.setbasepath)로 서비스의 자산 및 설정 파일을 유지 관리 및 액세스합니다.</span><span class="sxs-lookup"><span data-stu-id="6bbd8-203">Use one of the following approaches to maintain and access a service's assets and settings files with [FileConfigurationExtensions.SetBasePath](/dotnet/api/microsoft.extensions.configuration.fileconfigurationextensions.setbasepath) when using an [IConfigurationBuilder](/dotnet/api/microsoft.extensions.configuration.iconfigurationbuilder):</span></span>
+### <a name="set-the-content-root-path-to-the-apps-folder"></a><span data-ttu-id="8fcb7-231">콘텐츠 루트 경로를 앱 폴더로 설정</span><span class="sxs-lookup"><span data-stu-id="8fcb7-231">Set the content root path to the app's folder</span></span>
 
-* <span data-ttu-id="6bbd8-204">콘텐츠 루트 경로를 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="6bbd8-204">Use the content root path.</span></span> <span data-ttu-id="6bbd8-205">`IHostingEnvironment.ContentRootPath`는 서비스가 만들어질 때 `binPath` 인수에 제공된 동일한 경로입니다.</span><span class="sxs-lookup"><span data-stu-id="6bbd8-205">The `IHostingEnvironment.ContentRootPath` is the same path provided to the `binPath` argument when the service is created.</span></span> <span data-ttu-id="6bbd8-206">설정 파일에 대한 경로를 만들려면 `Directory.GetCurrentDirectory()`를 사용하는 대신 콘텐츠 루트 경로를 사용하고 앱의 콘텐츠 루트의 파일을 유지 관리합니다.</span><span class="sxs-lookup"><span data-stu-id="6bbd8-206">Instead of using `Directory.GetCurrentDirectory()` to create paths to settings files, use the content root path and maintain the files in the app's content root.</span></span>
-* <span data-ttu-id="6bbd8-207">디스크의 적합한 위치에 파일을 저장합니다.</span><span class="sxs-lookup"><span data-stu-id="6bbd8-207">Store the files in a suitable location on disk.</span></span> <span data-ttu-id="6bbd8-208">파일을 포함하는 폴더에 `SetBasePath`로 절대 경로를 지정합니다.</span><span class="sxs-lookup"><span data-stu-id="6bbd8-208">Specify an absolute path with `SetBasePath` to the folder containing the files.</span></span>
+<span data-ttu-id="8fcb7-232"><xref:Microsoft.Extensions.Hosting.IHostingEnvironment.ContentRootPath*>는 서비스가 만들어질 때 `binPath` 인수에 제공된 동일한 경로입니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-232">The <xref:Microsoft.Extensions.Hosting.IHostingEnvironment.ContentRootPath*> is the same path provided to the `binPath` argument when the service is created.</span></span> <span data-ttu-id="8fcb7-233">`GetCurrentDirectory`를 호출하여 설정 파일의 경로를 만드는 대신, 앱의 콘텐츠 루트 경로를 사용하여 <xref:Microsoft.Extensions.Hosting.HostingHostBuilderExtensions.UseContentRoot*>를 호출합니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-233">Instead of calling `GetCurrentDirectory` to create paths to settings files, call <xref:Microsoft.Extensions.Hosting.HostingHostBuilderExtensions.UseContentRoot*> with the path to the app's content root.</span></span>
 
-## <a name="additional-resources"></a><span data-ttu-id="6bbd8-209">추가 자료</span><span class="sxs-lookup"><span data-stu-id="6bbd8-209">Additional resources</span></span>
+<span data-ttu-id="8fcb7-234">`Program.Main`에서 서비스 실행 파일의 폴더 경로를 확인하고 이 경로를 사용하여 앱의 콘텐츠 루트를 설정합니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-234">In `Program.Main`, determine the path to the folder of the service's executable and use the path to establish the app's content root:</span></span>
 
-* <span data-ttu-id="6bbd8-210">[Kestrel 엔드포인트 구성](xref:fundamentals/servers/kestrel#endpoint-configuration)(HTTPS 구성 및 SNI 지원 포함)</span><span class="sxs-lookup"><span data-stu-id="6bbd8-210">[Kestrel endpoint configuration](xref:fundamentals/servers/kestrel#endpoint-configuration) (includes HTTPS configuration and SNI support)</span></span>
+```csharp
+var pathToExe = Process.GetCurrentProcess().MainModule.FileName;
+var pathToContentRoot = Path.GetDirectoryName(pathToExe);
+
+CreateWebHostBuilder(args)
+    .UseContentRoot(pathToContentRoot)
+    .Build()
+    .RunAsService();
+```
+
+### <a name="store-the-services-files-in-a-suitable-location-on-disk"></a><span data-ttu-id="8fcb7-235">디스크의 적합한 위치에 서비스 파일을 저장합니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-235">Store the service's files in a suitable location on disk</span></span>
+
+<span data-ttu-id="8fcb7-236">파일이 포함된 폴더로 <xref:Microsoft.Extensions.Configuration.IConfigurationBuilder>를 사용하는 경우 <xref:Microsoft.Extensions.Configuration.FileConfigurationExtensions.SetBasePath*>를 통해 절대 경로를 지정합니다.</span><span class="sxs-lookup"><span data-stu-id="8fcb7-236">Specify an absolute path with <xref:Microsoft.Extensions.Configuration.FileConfigurationExtensions.SetBasePath*> when using an <xref:Microsoft.Extensions.Configuration.IConfigurationBuilder> to the folder containing the files.</span></span>
+
+## <a name="additional-resources"></a><span data-ttu-id="8fcb7-237">추가 자료</span><span class="sxs-lookup"><span data-stu-id="8fcb7-237">Additional resources</span></span>
+
+* <span data-ttu-id="8fcb7-238">[Kestrel 엔드포인트 구성](xref:fundamentals/servers/kestrel#endpoint-configuration)(HTTPS 구성 및 SNI 지원 포함)</span><span class="sxs-lookup"><span data-stu-id="8fcb7-238">[Kestrel endpoint configuration](xref:fundamentals/servers/kestrel#endpoint-configuration) (includes HTTPS configuration and SNI support)</span></span>
 * <xref:fundamentals/host/web-host>
+* <xref:test/troubleshoot>
