@@ -391,7 +391,7 @@ Razor 페이지의 뷰 검색에는 *Pages* 폴더가 포함됩니다. MVC 컨�
 | RedirectToPage(x)| 페이지 |
 | ----------------- | ------------ |
 | RedirectToPage("/Index") | *Pages/Index* |
-| RedirectToPage("./Index"); | *Pages/Customers/Index* |
+| RedirectToPage("./Index") | *Pages/Customers/Index* |
 | RedirectToPage("../Index") | *Pages/Index* |
 | RedirectToPage("Index")  | *Pages/Customers/Index* |
 
