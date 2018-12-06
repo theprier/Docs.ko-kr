@@ -6,12 +6,12 @@ monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 05/12/2018
 uid: razor-pages/index
-ms.openlocfilehash: 7fc048e427fd49e2142160615a12989fd4f40303
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: cc881ff42d57ab1654f492a70006a995939e4844
+ms.sourcegitcommit: 8a65f6c2cbe290fb2418eed58f60fb74c95392c8
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50207617"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52892122"
 ---
 # <a name="introduction-to-razor-pages-in-aspnet-core"></a>ASP.NET Core의 Razor 페이지 소개
 
@@ -25,15 +25,15 @@ Razor 페이지는 더 쉽고 더 생산적으로 코딩 페이지에 초점을 
 
 ## <a name="prerequisites"></a>전제 조건
 
-[!INCLUDE [](~/includes/net-core-prereqs.md)]
+[!INCLUDE[](~/includes/net-core-prereqs-all-2.2.md)]
 
 <a name="rpvs17"></a>
 
-## <a name="creating-a-razor-pages-project"></a>Razor 페이지 프로젝트 만들기
+## <a name="create-a-razor-pages-project"></a>Razor Pages 프로젝트 만들기
 
 # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
 
-Visual Studio를 사용하여 Razor 페이지 프로젝트를 만드는 방법에 대한 자세한 내용은 [Razor 페이지 시작](xref:tutorials/razor-pages/razor-pages-start)을 참조하세요.
+Razor Pages 프로젝트를 만드는 방법에 대한 자세한 내용은 [Razor Pages 시작](xref:tutorials/razor-pages/razor-pages-start)을 참조하세요.
 
 # <a name="visual-studio-for-mactabvisual-studio-mac"></a>[Visual Studio for Mac](#tab/visual-studio-mac)
 
@@ -52,20 +52,6 @@ Visual Studio를 사용하여 Razor 페이지 프로젝트를 만드는 방법�
 Mac용 Visual Studio에서 생성된 *.csproj* 파일을 엽니다.
 
 # <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code)
-
-::: moniker range=">= aspnetcore-2.1"
-
-명령줄에서 `dotnet new webapp`를 실행합니다.
-
-::: moniker-end
-
-::: moniker range="= aspnetcore-2.0"
-
-명령줄에서 `dotnet new razor`를 실행합니다.
-
-::: moniker-end
-
-# <a name="net-core-clitabnetcore-cli"></a>[.NET Core CLI](#tab/netcore-cli)
 
 ::: moniker range=">= aspnetcore-2.1"
 
@@ -117,7 +103,7 @@ Razor 페이지는 *Startup.cs*에서 사용하도록 설정됩니다.
 * 런타임은 기본적으로 *Pages* 폴더에서 Razor 페이지 파일을 검색합니다.
 * URL에 페이지가 포함되어 있지 않을 경우 `Index`가 기본 페이지입니다.
 
-## <a name="writing-a-basic-form"></a>기본 폼 작성
+## <a name="write-a-basic-form"></a>기본 양식 작성
 
 Razor 페이지는 웹 브라우저에서 사용되는 일반 패턴을 쉽게 구현할 수 있도록 설계되었습니다. [모델 바인딩](xref:mvc/models/model-binding), [태그 도우미](xref:mvc/views/tag-helpers/intro) 및 HTML 도우미는 모두 Razor 페이지 클래스에 정의된 속성에서 *제대로 작동*합니다. `Contact` 모델에 대한 기본 “연락처” 폼을 구현하는 페이지를 고려해 봅니다.
 
@@ -173,10 +159,7 @@ db 컨텍스트:
 
 Razor 페이지는 기본적으로 GET이 아닌 동사에만 속성을 바인딩합니다. 속성에 바인딩하면 작성해야 하는 코드 양이 감소할 수 있습니다. 바인딩은 동일한 속성을 사용하여 폼 필드(`<input asp-for="Customer.Name" />`)를 렌더링하고 입력을 허용하는 방식으로 코드를 줄입니다.
 
-> [!NOTE]
-> 보안상의 이유로 페이지 모델 속성에 GET 요청 데이터를 바인딩하기 위해 옵트인해야 합니다. 속성에 매핑하기 전에 사용자 입력을 확인합니다. 쿼리 문자열이나 경로 값을 사용하는 시나리오를 해결할 때 이 동작을 옵트인하면 유용합니다.
->
-> GET 요청에 속성을 바인딩하려면 `[BindProperty]` 특성의 `SupportsGet` 속성을 `true`로 설정합니다. `[BindProperty(SupportsGet = true)]`
+[!INCLUDE[](~/includes/bind-get.md)]
 
 홈페이지(*Index.cshtml*):
 
@@ -246,7 +229,7 @@ Razor 페이지는 기본적으로 GET이 아닌 동사에만 속성을 바인�
 
 ## <a name="manage-head-requests-with-the-onget-handler"></a>OnGet 처리기를 사용하여 HEAD 요청 관리
 
-HEAD 요청을 사용하면 특정 리소스의 헤더를 검색할 수 있습니다. GET 요청과 달리 HEAD 요청은 응답 본문을 반환하지 않습니다. 
+HEAD 요청을 사용하면 특정 리소스의 헤더를 검색할 수 있습니다. GET 요청과 달리 HEAD 요청은 응답 본문을 반환하지 않습니다.
 
 일반적으로 HEAD 처리기는 HEAD 요청에 대해 생성 및 호출됩니다. 
 
