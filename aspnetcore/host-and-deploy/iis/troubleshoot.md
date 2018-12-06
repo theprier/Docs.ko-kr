@@ -4,14 +4,14 @@ author: guardrex
 description: ASP.NET Core 앱의 IIS(인터넷 정보 서비스) 배포에 대한 문제 진단 방법을 알아봅니다.
 ms.author: riande
 ms.custom: mvc
-ms.date: 10/24/2018
+ms.date: 11/26/2018
 uid: host-and-deploy/iis/troubleshoot
-ms.openlocfilehash: 2b23bf8230f7a1c207ef7870da098ffb0c597fd5
-ms.sourcegitcommit: fc7eb4243188950ae1f1b52669edc007e9d0798d
+ms.openlocfilehash: 2ff870623de43676be38c5de8f338a7913e885a8
+ms.sourcegitcommit: e9b99854b0a8021dafabee0db5e1338067f250a9
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51225449"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52450712"
 ---
 # <a name="troubleshoot-aspnet-core-on-iis"></a>IIS에서 ASP.NET Core 문제 해결
 
@@ -47,7 +47,8 @@ Visual Studio Code에 기본 제공되는 디버깅 지원에 대해 알아봅�
 
 ## <a name="app-startup-errors"></a>앱 시작 오류
 
-**502.5 프로세스 실패**  
+### <a name="5025-process-failure"></a>502.5 프로세스 실패
+
 작업자 프로세스가 실패합니다. 앱이 시작되지 않습니다.
 
 ASP.NET Core 모듈이 백엔드 dotnet 프로세스를 시작하려고 하지만 시작할 수 없습니다. 프로세스 시작 실패의 원인은 일반적으로 [응용 프로그램 이벤트 로그](#application-event-log) 및 [ASP.NET Core 모듈 stdout 로그](#aspnet-core-module-stdout-log)의 항목에서 확인할 수 있습니다. 
@@ -60,7 +61,7 @@ ASP.NET Core 모듈이 백엔드 dotnet 프로세스를 시작하려고 하지�
 
 ::: moniker range=">= aspnetcore-2.2"
 
-**500.30 In-Process 시작 실패**
+### <a name="50030-in-process-startup-failure"></a>500.30 In-Process 시작 실패
 
 작업자 프로세스가 실패합니다. 앱이 시작되지 않습니다.
 
@@ -68,7 +69,7 @@ ASP.NET Core 모듈이 .NET Core CLR in-process를 시작하려고 하지만 시
 
 일반적인 실패 조건은 존재하지 않는 ASP.NET Core 공유 프레임워크의 버전을 대상으로 하여 앱이 잘못 구성되었다는 것입니다. 대상 머신에 설치된 ASP.NET Core 공유 프레임워크의 버전을 확인합니다.
 
-**500.0 In-Process 처리기 로드 실패**
+### <a name="5000-in-process-handler-load-failure"></a>500.0 In-Process 처리기 로드 실패
 
 작업자 프로세스가 실패합니다. 앱이 시작되지 않습니다.
 
@@ -77,7 +78,7 @@ ASP.NET Core 모듈이 .NET Core CLR을 찾지 못하고 in-process 요청 처�
 * 앱은 [Microsoft.AspNetCore.Server.IIS](https://www.nuget.org/packages/Microsoft.AspNetCore.Server.IIS) NuGet 패키지 또는 [Microsoft.AspNetCore.App 메타패키지](xref:fundamentals/metapackage-app) 중 하나를 대상으로 합니다.
 * 앱이 대상으로 하는 ASP.NET Core 공유 프레임워크의 버전이 대상 머신에 설치됩니다.
 
-**500.0 Out-Of-Process 처리기 로드 실패**
+### <a name="5000-out-of-process-handler-load-failure"></a>500.0 Out-Of-Process 처리기 로드 실패
 
 작업자 프로세스가 실패합니다. 앱이 시작되지 않습니다.
 
@@ -85,12 +86,13 @@ ASP.NET Core 모듈이 out-of-process 호스팅 요청 처리기를 찾지 못�
 
 ::: moniker-end
 
-**500 내부 서버 오류**  
+### <a name="500-internal-server-error"></a>500 내부 서버 오류
+
 앱이 시작되지만 오류로 인해 서버에서 요청을 처리할 수 없습니다.
 
 이 오류는 시작하는 동안 또는 응답을 만드는 동안 앱 코드 내에서 발생합니다. 응답에 콘텐츠가 없거나 응답이 브라우저에 ‘500 내부 서버 오류’로 표시될 수 있습니다. 응용 프로그램 이벤트 로그는 일반적으로 앱이 정상적으로 시작되었음을 나타냅니다. 서버의 관점에서 보면 맞습니다. 앱이 시작되었지만 유효한 응답을 생성할 수 없습니다. 서버의 [명령 프롬프트에서 앱을 실행](#run-the-app-at-a-command-prompt)하거나 [ASP.NET Core 모듈 stdout 로그를 사용](#aspnet-core-module-stdout-log)하여 문제를 해결합니다.
 
-**연결 다시 설정**
+### <a name="connection-reset"></a>연결 다시 설정
 
 헤더가 전송된 후 오류가 발생할 경우, 오류가 발생할 때 서버에서 **500 내부 서버 오류**를 전송하는 것은 너무 늦은 것입니다. 응답에 대한 복잡한 개체의 serialization 중에 오류가 발생할 때 이 문제가 종종 발생합니다. 이 유형의 오류는 클라이언트에서 ‘연결 다시 설정’ 오류로 나타납니다. [응용 프로그램 로깅](xref:fundamentals/logging/index)은 이러한 유형의 오류를 해결하는 데 도움이 될 수 있습니다.
 
@@ -113,7 +115,7 @@ ASP.NET Core 모듈은 기본 *startupTimeLimit*이 120초로 구성됩니다. �
 
 응용 프로그램 이벤트 로그에서 대부분의 시작 오류는 유용한 정보를 생성하지 않습니다. 호스팅 시스템의 명령 프롬프트에서 앱을 실행하여 일부 오류의 원인을 찾을 수 있습니다.
 
-**프레임워크 종속 배포**
+#### <a name="framework-dependent-deployment"></a>프레임워크 종속 배포
 
 앱이 [프레임워크 종속 배포](/dotnet/core/deploying/#framework-dependent-deployments-fdd)인 경우:
 
@@ -121,7 +123,7 @@ ASP.NET Core 모듈은 기본 *startupTimeLimit*이 120초로 구성됩니다. �
 1. 오류를 표시하는 앱의 콘솔 출력이 콘솔 창에 기록됩니다.
 1. 앱에 대한 요청을 실행할 때 오류가 발생하는 경우에는 Kestrel이 수신 대기하는 호스트 및 포트에 대한 요청을 실행합니다. 기본 호스트 및 게시를 사용하여 `http://localhost:5000/`에 대한 요청을 실행합니다. 앱이 Kestrel 엔드포인트 주소에서 정상적으로 응답하는 경우, 문제는 역방향 프록시 구성과 관련이 있으며 앱 내에서 관련되었을 가능성은 작습니다.
 
-**자체 포함 배포**
+#### <a name="self-contained-deployment"></a>자체 포함 배포
 
 앱이 [자체 포함 배포](/dotnet/core/deploying/#self-contained-deployments-scd)인 경우:
 
@@ -142,7 +144,8 @@ stdout 로그를 사용하고 보려면:
 1. *logs* 폴더로 이동합니다. 가장 최근의 stdout 로그를 찾아서 엽니다.
 1. 오류에 대한 로그를 검토합니다.
 
-**중요!** 문제 해결이 완료되면 stdout 로깅을 사용하지 않도록 설정합니다.
+> [!IMPORTANT]
+> 문제 해결이 완료되면 stdout 로깅을 사용하지 않도록 설정합니다.
 
 1. *web.config* 파일을 편집합니다.
 1. **stdoutLogEnabled**를 `false`로 설정합니다.
@@ -153,9 +156,27 @@ stdout 로그를 사용하고 보려면:
 >
 > ASP.NET Core 앱의 루틴 로깅에는 로그 파일 크기를 제한하고 로그를 회전하는 로깅 라이브러리를 사용합니다. 자세한 내용은 [타사 로깅 공급자](xref:fundamentals/logging/index#third-party-logging-providers)를 참조하세요.
 
-## <a name="enabling-the-developer-exception-page"></a>개발자 예외 페이지 사용
+## <a name="enable-the-developer-exception-page"></a>개발자 예외 페이지 사용
 
 `ASPNETCORE_ENVIRONMENT` [환경 변수를 web.config에 추가](xref:host-and-deploy/aspnet-core-module#setting-environment-variables)하여 개발 환경에서 앱을 실행할 수 있습니다. 앱 시작 시 호스트 작성기의 `UseEnvironment`에 의해 환경이 재정의되지 않는 한, 환경 변수를 설정하면 앱이 실행될 때 [개발자 예외 페이지](xref:fundamentals/error-handling)가 표시될 수 있습니다.
+
+::: moniker range=">= aspnetcore-2.2"
+
+```xml
+<aspNetCore processPath="dotnet"
+      arguments=".\MyApp.dll"
+      stdoutLogEnabled="false"
+      stdoutLogFile=".\logs\stdout"
+      hostingModel="inprocess">
+  <environmentVariables>
+    <environmentVariable name="ASPNETCORE_ENVIRONMENT" value="Development" />
+  </environmentVariables>
+</aspNetCore>
+```
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.2"
 
 ```xml
 <aspNetCore processPath="dotnet"
@@ -168,11 +189,17 @@ stdout 로그를 사용하고 보려면:
 </aspNetCore>
 ```
 
+::: moniker-end
+
 `ASPNETCORE_ENVIRONMENT`에 대한 환경 변수 설정은 인터넷에 노출되지 않은 스테이징 및 테스트 서버에서만 사용하는 것이 좋습니다. 문제를 해결한 후 *web.config* 파일에서 환경 변수를 제거합니다. *web.config*에서 환경 변수를 설정하는 방법에 대한 자세한 내용은[aspNetCore의 environmentVariables 자식 요소](xref:host-and-deploy/aspnet-core-module#setting-environment-variables)를 참조하세요.
 
-## <a name="common-startup-errors"></a>일반 시작 오류 
+## <a name="common-startup-errors"></a>일반 시작 오류
 
 <xref:host-and-deploy/azure-iis-errors-reference>을 참조하세요. 앱 시작을 차단하는 대부분의 일반적인 문제는 참조 항목에서 다룹니다.
+
+## <a name="obtain-data-from-an-app"></a>앱에서 데이터 얻기
+
+앱이 요청에 응답할 수 있는 경우 터미널 인라인 미들웨어를 사용하여 앱에서 요청, 연결 및 추가 데이터를 가져옵니다. 자세한 내용과 샘플 코드는 <xref:test/troubleshoot#obtain-data-from-an-app>을 참조하세요.
 
 ## <a name="slow-or-hanging-app"></a>앱이 느리거나 중단됨
 
@@ -190,7 +217,7 @@ Visual Studio 설명서에서 [Visual Studio 2017의 원격 IIS 컴퓨터에서 
 
 [Application Insights](/azure/application-insights/)에서는 오류 로깅 및 보고 기능을 포함하여 IIS를 통해 호스트된 앱의 원격 분석을 제공합니다. Application Insights는 앱의 로깅 기능을 사용할 수 있게 될 때 응용 프로그램이 시작된 후 발생하는 오류만 보고할 수 있습니다. 자세한 내용은 [ASP.NET Core용 Application Insights](/azure/application-insights/app-insights-asp-net-core)를 참조하세요.
 
-## <a name="additional-troubleshooting-advice"></a>추가 문제 해결 권장 사항
+## <a name="additional-advice"></a>추가적인 조언
 
 개발 컴퓨터의 .NET Core SDK 또는 앱 내의 패키지 버전을 업그레이드한 후에 즉시 작동 중인 앱에서 오류가 발생하는 경우가 있습니다. 경우에 따라 중요한 업그레이드를 수행할 때 일관되지 않은 패키지로 인해 응용 프로그램이 중단될 수 있습니다. 이러한 대부분의 문제는 다음 지침에 따라 수정할 수 있습니다.
 
@@ -201,11 +228,12 @@ Visual Studio 설명서에서 [Visual Studio 2017의 원격 IIS 컴퓨터에서 
 
 > [!TIP]
 > 명령 프롬프트에서 `dotnet nuget locals all --clear`를 실행하면 간편하게 패키지 캐시를 지울 수 있습니다.
-> 
+>
 > [nuget.exe](https://www.nuget.org/downloads) 도구를 사용하고 명령 `nuget locals all -clear`를 실행하여 패키지 캐시를 지울 수도 있습니다. *nuget.exe*는 Windows 데스크톱 운영 체제와 함께 제공되는 설치가 아니므로 [NuGet 웹 사이트](https://www.nuget.org/downloads)에서 별도로 다운로드해야 합니다.
 
 ## <a name="additional-resources"></a>추가 자료
 
+* <xref:test/troubleshoot>
 * <xref:fundamentals/error-handling>
 * <xref:host-and-deploy/azure-iis-errors-reference>
 * <xref:host-and-deploy/aspnet-core-module>

@@ -4,14 +4,14 @@ author: guardrex
 description: 웹 팜 환경에서 공유 리소스가 있는 ASP.NET Core 앱의 여러 인스턴스를 호스트하는 방법을 알아봅니다.
 ms.author: riande
 ms.custom: mvc
-ms.date: 07/16/2018
+ms.date: 11/26/2018
 uid: host-and-deploy/web-farm
-ms.openlocfilehash: 2435c24bc205486331c828337ca81c43e6e60448
-ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
+ms.openlocfilehash: 4873665e6174a6acf885e1ebb41fb005d646bd1f
+ms.sourcegitcommit: e9b99854b0a8021dafabee0db5e1338067f250a9
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39096095"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52450673"
 ---
 # <a name="host-aspnet-core-in-a-web-farm"></a>웹 팜에 ASP.NET Core 호스트
 
@@ -67,11 +67,13 @@ ms.locfileid: "39096095"
 
 ## <a name="troubleshoot"></a>문제 해결
 
-데이터 보호 또는 캐싱이 웹 팜 환경에 맞게 구성되지 않으면 요청이 처리될 때 간헐적인 오류가 발생합니다. 이 오류의 원인은 노드가 동일한 리소스를 공유하지 않고 사용자 요청이 항상 동일한 노드로 다시 라우팅되지는 않기 때문입니다.
+### <a name="data-protection-and-caching"></a>데이터 보호 및 캐싱
+
+데이터 보호 또는 캐싱이 웹 팜 환경에 맞게 구성되어 있지 않으면 요청을 처리할 때 간헐적인 오류가 발생합니다. 이 오류의 원인은 노드가 동일한 리소스를 공유하지 않고 사용자 요청이 항상 동일한 노드로 다시 라우팅되지는 않기 때문입니다.
 
 쿠키 인증을 사용하여 앱에 로그인하는 사용자를 가정해 보겠습니다. 사용자는 하나의 웹 팜 노드에서 앱에 로그인합니다. 다음 요청이 사용자가 로그인한 동일한 노드에 도착하면 앱은 인증 쿠키를 암호 해독할 수 있고 앱의 리소스에 액세스할 수 있습니다. 다음 요청이 다른 노드에 도착하면 앱은 사용자가 로그인한 노드의 인증 쿠키를 암호 해독할 수 없으며 요청된 리소스에 대한 권한 부여가 실패합니다.
 
-다음 증상 중 하나라도 **간헐적**으로 발생하면 일반적으로 웹 팜 환경에 대한 부적절한 데이터 보호 또는 캐싱 구성으로 문제가 추적됩니다.
+다음 증상 중 하나라도 **간헐적**으로 발생할 경우 일반적으로 웹 팜 환경에 대한 부적절한 데이터 보호 또는 캐싱 구성 문제로 추적됩니다.
 
 * 인증 중단 &ndash; 인증 쿠키가 잘못 구성되었거나 암호 해독할 수 없습니다. OAuth(Facebook, Microsoft, Twitter) 또는 OpenIdConnect 로그인이 “상관 관계 실패” 오류로 인해 실패합니다.
 * 권한 부여 중단 &ndash; ID가 손실되었습니다.
@@ -81,3 +83,7 @@ ms.locfileid: "39096095"
 * POST 실패 &ndash; 위조 방지 검사가 실패합니다.
 
 웹 팜 배포의 데이터 보호 구성에 대한 자세한 내용은 <xref:security/data-protection/configuration/overview>를 참조하세요. 웹 팜 배포의 캐싱 구성에 대한 자세한 내용은 <xref:performance/caching/distributed>를 참조하세요.
+
+## <a name="obtain-data-from-apps"></a>앱에서 데이터 얻기
+
+웹 팜 앱이 요청에 응답할 수 있는 경우 터미널 인라인 미들웨어를 사용하여 앱에서 요청, 연결 및 추가 데이터를 가져옵니다. 자세한 내용과 샘플 코드는 <xref:test/troubleshoot#obtain-data-from-an-app>을 참조하세요.
