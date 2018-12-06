@@ -23,7 +23,7 @@ ms.locfileid: "52256552"
 
 ## <a name="what-is-javascriptservices"></a>JavaScriptServices란
 
-JavaScriptServices는 ASP.NET Core를 위한 클라이언트 측 기술들의 모음입니다. 이 기술의 목표는 ASP.NET Core를 SPA 구축 시 개발자가 선호하는 서버 측 플랫폼으로 자리매김 하는 것입니다.
+JavaScriptServices는 ASP.NET Core를 위한 클라이언트 측 기술들의 모음입니다. 이 기술의 목표는 ASP.NET Core를 SPA 구축 시 개발자가 선호하는 서버 측 플랫폼으로 자리매김하는 것입니다.
 
 JavaScriptServices는 개별적인 세 가지 NuGet 패키지로 이루어져 있습니다.
 
@@ -43,7 +43,7 @@ JavaScriptServices는 개별적인 세 가지 NuGet 패키지로 이루어져 �
 
 ## <a name="what-is-spaservices"></a>SpaServices란
 
-SpaServices는 ASP.NET Core를 SPA 구축 시 개발자가 선호하는 서버 측 플랫폼으로 자리매김 하기 위해서 개발되었습니다. ASP.NET Core로 SPA를 개발하기 위해서 SpaServices가 필수적인 것은 아니며 특정 클라이언트 프레임워크로 제한하지도 않습니다.
+SpaServices는 ASP.NET Core를 SPA 구축 시 개발자가 선호하는 서버 측 플랫폼으로 자리매김하기 위해서 개발되었습니다. ASP.NET Core로 SPA를 개발하기 위해서 SpaServices가 필수적인 것은 아니며 특정 클라이언트 프레임워크로 제한하지도 않습니다.
 
 SpaServices는 다음과 같은 유용한 인프라를 제공합니다.
 
@@ -60,7 +60,7 @@ SpaServices는 다음과 같은 유용한 인프라를 제공합니다.
 
 SpaServices를 사용하려면 다음을 설치합니다.
 
-* npm을 비롯한 [Node.js](https://nodejs.org/) (버전 6 이상)
+* npm을 비롯한 [Node.js](https://nodejs.org/)(버전 6 이상)
   * 구성 요소가 설치되어 있으며 찾을 수 있는지 확인해보려면 명령줄에서 다음을 실행합니다.
 
     ```console
@@ -79,7 +79,7 @@ SpaServices를 사용하려면 다음을 설치합니다.
 
 ## <a name="server-side-prerendering"></a>서버 측 사전 렌더링
 
-유니버설 (또는 동형) 응용 프로그램은 서버 및 클라이언트 양쪽 모두에서 실행할 수 있는 JavaScript 응용 프로그램입니다. Angular, React 및 기타 인기 있는 프레임워크는 이 응용 프로그램 개발 스타일을 위한 유니버설 플랫폼을 제공합니다. 그 개념은 우선 서버에서 Node.js를 통해서 프레임워크 구성 요소를 렌더링 한 다음 이후의 실행은 클라이언트에 위임하는 것입니다.
+유니버설(또는 동형) 응용 프로그램은 서버 및 클라이언트 양쪽 모두에서 실행할 수 있는 JavaScript 응용 프로그램입니다. Angular, React 및 기타 인기 있는 프레임워크는 이 응용 프로그램 개발 스타일을 위한 유니버설 플랫폼을 제공합니다. 그 개념은 우선 서버에서 Node.js를 통해서 프레임워크 구성 요소를 렌더링한 다음 이후의 실행은 클라이언트에 위임하는 것입니다.
 
 SpaServices가 제공하는 ASP.NET Core [태그 도우미](xref:mvc/views/tag-helpers/intro)는 서버에서 JavaScript 함수를 호출하여 서버 측 사전 렌더링의 구현을 단순화합니다.
 
@@ -169,7 +169,7 @@ Webpack Dev 미들웨어는 *Startup.cs* 파일의 `Configure` 메서드에서 �
 
 ## <a name="hot-module-replacement"></a>실시간 모듈 교체
 
-Webpack의 [실시간 모듈 교체 (HMR)](https://webpack.js.org/concepts/hot-module-replacement/) 기능은 [Webpack Dev 미들웨어](#webpack-dev-middleware)가 진화한 것으로 생각하면 됩니다. HMR은 모든 동일한 이점을 제공할뿐만 아니라 변경 사항을 컴파일 한 뒤 페이지의 내용을 자동으로 갱신하여 개발 워크플로우를 더욱 간소화합니다. SPA의 현재 메모리 내 상태와 디버깅 세션을 방해하지 않도록 이 기능과 브라우저 새로 고침을 혼동하지 마십시오. Webpack Dev 미들웨어 서비스와 브라우저 간에는 실시간 링크가 존재하며, 이 얘기는 변경 사항이 브라우저로 푸시된다는 뜻입니다.
+Webpack의 [실시간 모듈 교체(HMR)](https://webpack.js.org/concepts/hot-module-replacement/) 기능은 [Webpack Dev 미들웨어](#webpack-dev-middleware)가 진화한 것으로 생각하면 됩니다. HMR은 모든 동일한 이점을 제공할 뿐만 아니라 변경 사항을 컴파일 한 뒤 페이지의 내용을 자동으로 갱신하여 개발 워크플로우를 더욱 간소화합니다. SPA의 현재 메모리 내 상태와 디버깅 세션을 방해하지 않도록 이 기능과 브라우저 새로 고침을 혼동하지 마십시오. Webpack Dev 미들웨어 서비스와 브라우저 간에는 실시간 링크가 존재하며, 이 얘기는 변경 사항이 브라우저로 푸시된다는 뜻입니다.
 
 ### <a name="prerequisites"></a>전제 조건
 
@@ -205,7 +205,7 @@ app.UseWebpackDevMiddleware(new WebpackDevMiddlewareOptions {
 
 ## <a name="routing-helpers"></a>라우팅 도우미
 
-대부분의 ASP.NET Core 기반 SPA에서는 서버 측 라우팅뿐만 아니라 클라이언트 측 라우팅이 필요합니다. SPA 및 MVC 라우팅 시스템은 서로 간섭없이 독립적으로 동작할 수 있습니다. 그러나 404 HTTP 응답 식별이라는 한 가지 까다로운 문제가 존재합니다.
+대부분의 ASP.NET Core 기반 SPA에서는 서버 측 라우팅뿐만 아니라 클라이언트 측 라우팅이 필요합니다. SPA 및 MVC 라우팅 시스템은 서로 간섭 없이 독립적으로 동작할 수 있습니다. 그러나 404 HTTP 응답 식별이라는 한 가지 까다로운 문제가 존재합니다.
 
 확장자가 존재하지 않는 `/some/page`라는 경로가 사용되는 시나리오를 생각해보겠습니다. 요청이 서버 측 경로와는 패턴이 일치하지 않지만 클라이언트 측 경로와는 패턴이 일치한다고 가정합니다. 이제 일반적으로 서버에서 이미지 파일을 찾는 것으로 예상되는 `/images/user-512.png`에 대한 들어오는 요청을 생각해보겠습니다. 요청한 리소스 경로가 모든 서버 측 경로 또는 정적 파일과 일치하지 않으면 클라이언트 측 응용 프로그램이 처리하지 않을 가능성이 있으며, 일반적으로는 404 HTTP 상태 코드를 반환해야 합니다.
 
@@ -292,7 +292,9 @@ dotnet run
 
 ## <a name="testing-the-app"></a>앱 테스트하기
 
-SpaServices 템플릿은 [Karma](https://karma-runner.github.io/1.0/index.html)와 [Jasmine](https://jasmine.github.io/)을 사용하여 클라이언트 측 테스트를 실행하도록 미리 구성되어 있습니다. Jasmine은 인기 있는 JavaScript 용 단위 테스트 프레임워크인 반면, Karma는 해당 테스트에 대한 테스트 러너입니다. Karma는 [Webpack Dev 미들웨어](#webpack-dev-middleware)와 함께 동작하도록 구성되어 있으므로 개발자는 변경 사항이 있을 때마다 매번 중단하고 테스트를 실행할 필요가 없습니다. 테스트 케이스에 대해 실행 중인 코드든 테스트 케이스 자체든 상관없이 테스트가 자동으로 실행됩니다. Angular 응용 프로그램을 예로 들면, *counter.component.spec.ts* 파일에 `CounterComponent`에 대한 두 가지 Jasmine 테스트 케이스가 미리 제공됩니다.
+SpaServices 템플릿은 [Karma](https://karma-runner.github.io/1.0/index.html)와 [Jasmine](https://jasmine.github.io/)을 사용하여 클라이언트 측 테스트를 실행하도록 미리 구성되어 있습니다. Jasmine은 인기 있는 JavaScript 용 단위 테스트 프레임워크인 반면, Karma는 해당 테스트에 대한 테스트 러너입니다. Karma는 [Webpack Dev 미들웨어](#webpack-dev-middleware)와 함께 동작하도록 구성되어 있으므로 개발자는 변경 사항이 있을 때마다 매번 중단하고 테스트를 실행할 필요가 없습니다. 테스트 케이스에 대해 실행 중인 코드든 테스트 케이스 자체든 상관없이 테스트가 자동으로 실행됩니다.
+
+Angular 응용 프로그램을 예로 들면, *counter.component.spec.ts* 파일에 `CounterComponent`에 대한 두 가지 Jasmine 테스트 케이스가 미리 제공됩니다.
 
 [!code-typescript[](../client-side/spa-services/sample/SpaServicesSampleApp/ClientApp/app/components/counter/counter.component.spec.ts?range=15-28)]
 
