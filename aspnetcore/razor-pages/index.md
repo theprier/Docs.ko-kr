@@ -1,7 +1,7 @@
 ---
 title: ASP.NET Core의 Razor 페이지 소개
 author: Rick-Anderson
-description: ASP.NET Core의 Razor 페이지를 통해 MVC를 사용하는 것보다 더 쉽고 더 생산적으로 코딩 페이지에 초점을 맞춘 시나리오를 만드는 방법을 알아봅니다.
+description: 페이지 코딩 중심의 시나리오에서 ASP.NET Core의 Razor 페이지를 사용하면 MVC를 사용할 때보다 어떻게 더 쉽고 생산적인지 알아봅니다.
 monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 05/12/2018
@@ -17,11 +17,11 @@ ms.locfileid: "52892122"
 
 작성자: [Rick Anderson](https://twitter.com/RickAndMSFT) 및 [Ryan Nowak](https://github.com/rynowak)
 
-Razor 페이지는 더 쉽고 더 생산적으로 코딩 페이지에 초점을 맞춘 시나리오를 만드는 ASP.NET Core MVC의 새로운 기능입니다.
+Razor 페이지는 페이지 코딩 중심의 시나리오를 보다 쉽고 생산적으로 만들어주는 ASP.NET Core MVC의 새로운 기능입니다.
 
-모델-뷰-컨트롤러 방법을 사용하는 자습서를 검색할 경우 [ASP.NET Core MVC 시작](xref:tutorials/first-mvc-app/start-mvc)을 참조하세요.
+모델-뷰-컨트롤러 방식을 사용하는 자습서를 찾고 있다면 [ASP.NET Core MVC 시작하기](xref:tutorials/first-mvc-app/start-mvc)를 참고하시기 바랍니다.
 
-이 문서에서는 Razor 페이지를 소개합니다. 이 문서는 단계별 자습서가 아닙니다. 섹션이 너무 고급인 경우 [Razor 페이지 시작](xref:tutorials/razor-pages/razor-pages-start)을 참조하세요. ASP.NET Core의 개요는 [ASP.NET Core 소개](xref:index)를 참조하세요.
+이 문서에서는 Razor 페이지에 대한 소개를 제공합니다. 단계별 자습서가 아닙니다. 일부 섹션이 너무 어렵다고 느껴진다면 [Razor 페이지 시작하기](xref:tutorials/razor-pages/razor-pages-start)를 참고하시기 바랍니다. ASP.NET Core에 대한 개요는 [ASP.NET Core 소개](xref:index)를 참고하시기 바랍니다.
 
 ## <a name="prerequisites"></a>전제 조건
 
@@ -39,13 +39,13 @@ Razor Pages 프로젝트를 만드는 방법에 대한 자세한 내용은 [Razo
 
 ::: moniker range=">= aspnetcore-2.1"
 
-명령줄에서 `dotnet new webapp`를 실행합니다.
+명령줄에서 `dotnet new webapp`을 실행합니다.
 
 ::: moniker-end
 
 ::: moniker range="= aspnetcore-2.0"
 
-명령줄에서 `dotnet new razor`를 실행합니다.
+명령줄에서 `dotnet new razor`을 실행합니다.
 
 ::: moniker-end
 
@@ -55,13 +55,13 @@ Mac용 Visual Studio에서 생성된 *.csproj* 파일을 엽니다.
 
 ::: moniker range=">= aspnetcore-2.1"
 
-명령줄에서 `dotnet new webapp`를 실행합니다.
+명령줄에서 `dotnet new webapp`을 실행합니다.
 
 ::: moniker-end
 
 ::: moniker range="= aspnetcore-2.0"
 
-명령줄에서 `dotnet new razor`를 실행합니다.
+명령줄에서 `dotnet new razor`을 실행합니다.
 
 ::: moniker-end
 
@@ -69,7 +69,7 @@ Mac용 Visual Studio에서 생성된 *.csproj* 파일을 엽니다.
 
 ## <a name="razor-pages"></a>Razor 페이지
 
-Razor 페이지는 *Startup.cs*에서 사용하도록 설정됩니다.
+Razor 페이지는 *Startup.cs*에서 사용할 수 있게 설정됩니다.
 
 [!code-cs[](index/sample/RazorPagesIntro/Startup.cs?name=snippet_Startup)]
 
@@ -79,17 +79,17 @@ Razor 페이지는 *Startup.cs*에서 사용하도록 설정됩니다.
 
 이전 코드는 Razor 뷰 파일과 매우 비슷합니다. 차이점은 `@page` 지시문입니다. `@page`는 파일을 MVC 작업으로 만듭니다. 즉, 컨트롤러를 거치지 않고 요청을 직접 처리합니다. `@page`는 페이지의 첫 번째 Razor 지시문이어야 합니다. `@page`는 다른 Razor 생성자의 동작에 영향을 미칩니다.
 
-`PageModel` 클래스를 사용하는 비슷한 페이지는 다음 두 파일에 표시됩니다. *Pages/Index2.cshtml* 파일:
+다음 두 파일은 `PageModel` 클래스를 사용하는 비슷한 페이지를 보여줍니다. *Pages/Index2.cshtml* 파일은 다음과 같습니다.
 
 [!code-cshtml[](index/sample/RazorPagesIntro/Pages/Index2.cshtml)]
 
-*Pages/Index2.cshtml.cs* 페이지 모델:
+*Pages/Index2.cshtml.cs* 페이지 모델은 다음과 같습니다.
 
 [!code-cs[](index/sample/RazorPagesIntro/Pages/Index2.cshtml.cs)]
 
-일반적으로 `PageModel` 클래스 파일의 이름은 Razor 페이지 파일과 동일하고 *.cs*가 추가됩니다. 예를 들어 이전 Razor 페이지는 *Pages/Index2.cshtml*입니다. `PageModel` 클래스가 포함된 파일의 이름은 *Pages/Index2.cshtml.cs*입니다.
+규약에 따라 `PageModel` 클래스 파일의 이름은 *.cs*가 추가된 Razor 페이지 파일의 이름과 동일합니다. 예를 들어 위의 Razor 페이지는 *Pages/Index2.cshtml*입니다. 그리고 `PageModel` 클래스가 포함된 파일의 이름은 *Pages/Index2.cshtml.cs*입니다.
 
-페이지에 대한 URL 경로 연결은 파일 시스템의 페이지 위치에 따라 결정됩니다. 다음 표에서는 Razor 페이지 경로 및 일치하는 URL을 보여 줍니다.
+페이지에 대한 URL 경로 연결은 파일 시스템 상의 페이지 위치에 따라 결정됩니다. 다음 표는 Razor 페이지 경로 및 그와 일치하는 URL을 보여줍니다.
 
 | 파일 이름 및 경로               | 일치하는 URL |
 | ----------------- | ------------ |
@@ -101,35 +101,35 @@ Razor 페이지는 *Startup.cs*에서 사용하도록 설정됩니다.
 메모:
 
 * 런타임은 기본적으로 *Pages* 폴더에서 Razor 페이지 파일을 검색합니다.
-* URL에 페이지가 포함되어 있지 않을 경우 `Index`가 기본 페이지입니다.
+* URL에 페이지가 지정되어 있지 않을 경우 `Index`가 기본 페이지입니다.
 
 ## <a name="write-a-basic-form"></a>기본 양식 작성
 
-Razor 페이지는 웹 브라우저에서 사용되는 일반 패턴을 쉽게 구현할 수 있도록 설계되었습니다. [모델 바인딩](xref:mvc/models/model-binding), [태그 도우미](xref:mvc/views/tag-helpers/intro) 및 HTML 도우미는 모두 Razor 페이지 클래스에 정의된 속성에서 *제대로 작동*합니다. `Contact` 모델에 대한 기본 “연락처” 폼을 구현하는 페이지를 고려해 봅니다.
+Razor 페이지는 앱을 만들때 웹 브라우저에서 사용되는 일반적인 패턴을 손쉽게 구현할 수 있도록 설계되었습니다. [모델 바인딩](xref:mvc/models/model-binding), [태그 도우미](xref:mvc/views/tag-helpers/intro) 및 HTML 도우미는 모두 Razor 페이지 클래스에 정의된 속성을 통해서 *정확하게 동작*합니다. `Contact` 모델에 대한 기본적인 "연락처" 양식을 구현하는 페이지를 생각해보겠습니다.
 
-이 문서에 있는 샘플의 경우 `DbContext`는 [Startup.cs](https://github.com/aspnet/Docs/blob/master/aspnetcore/razor-pages/index/sample/RazorPagesContacts/Startup.cs#L15-L16) 파일에서 초기화됩니다.
+이 문서의 예제에서 `DbContext`는 [Startup.cs](https://github.com/aspnet/Docs/blob/master/aspnetcore/razor-pages/index/sample/RazorPagesContacts/Startup.cs#L15-L16) 파일에서 초기화됩니다.
 
 [!code-cs[](index/sample/RazorPagesContacts/Startup.cs?highlight=15-16)]
 
-데이터 모델:
+데이터 모델은 다음과 같습니다.
 
 [!code-cs[](index/sample/RazorPagesContacts/Data/Customer.cs)]
 
-db 컨텍스트:
+db 컨텍스트는 다음과 같습니다.
 
 [!code-cs[](index/sample/RazorPagesContacts/Data/AppDbContext.cs)]
 
-*Pages/Create.cshtml* 뷰 파일:
+*Pages/Create.cshtml* 뷰 파일은 다음과 같습니다.
 
 [!code-cshtml[](index/sample/RazorPagesContacts/Pages/Create.cshtml)]
 
-*Pages/Create.cshtml.cs* 페이지 모델:
+*Pages/Create.cshtml.cs* 페이지 모델은 다음과 같습니다.
 
 [!code-cs[](index/sample/RazorPagesContacts/Pages/Create.cshtml.cs?name=snippet_ALL)]
 
-일반적으로 `PageModel` 클래스를 `<PageName>Model`이라고 하고 이 클래스는 페이지와 동일한 네임스페이스에 있습니다.
+규약에 따라 `PageModel` 클래스의 이름은 `<PageName>Model`로 지정하며 페이지와 동일한 네임스페이스에 위치합니다.
 
-`PageModel` 클래스를 사용하면 해당 프레젠테이션에서 페이지의 논리를 분리합니다. 페이지에 전송된 요청 및 페이지를 렌더링하는 데 사용되는 데이터에 대한 페이지 처리기를 정의합니다. 이렇게 분리하면 [종속성 주입](xref:fundamentals/dependency-injection)을 통해 페이지 종속성을 관리할 수 있고 [단위 테스트](xref:test/razor-pages-tests)를 페이지로 관리할 수 있습니다.
+`PageModel` 클래스를 사용하면 페이지의 논리를 페이지의 표현으로부터 분리할 수 있습니다. 이 클래스는 페이지로 전송된 요청에 대한 페이지 처리기와 페이지를 렌더링하기 위해 사용되는 데이터를 정의합니다. 이렇게 분리함으로써 [종속성 주입](xref:fundamentals/dependency-injection)을 통해서 페이지의 종속성을 관리할 수 있고 페이지를 [단위 테스트](xref:test/razor-pages-tests) 할 수 있습니다.
 
 페이지에는 `POST` 요청에서 실행되는 `OnPostAsync` *처리기 메서드*가 있습니다(사용자가 폼을 게시할 때). HTTP 동사에 대한 처리기 메서드를 추가할 수 있습니다. 가장 일반적인 처리기는 다음과 같습니다.
 

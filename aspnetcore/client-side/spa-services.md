@@ -67,7 +67,7 @@ SpaServices를 사용하려면 다음을 설치합니다.
     node -v && npm -v
     ```
 
-참고: Azure 웹 사이트에 배포하는 경우 이 단계에서 아무 것도 할 필요가 없습니다. 서버 환경에는 이미 Node.js가 설치되어 있으며 사용할 수 있습니다.
+참고: Azure 웹 사이트에 배포 하는 경우 필요가 여기에서 모든 작업을 수행할 &mdash; Node.js 설치 되어 서버 환경에서 사용할 수 있습니다.
 
 * [!INCLUDE [](~/includes/net-core-sdk-download-link.md)]
 
@@ -191,7 +191,7 @@ app.UseWebpackDevMiddleware(new WebpackDevMiddlewareOptions {
 });
 ```
 
-[Webpack Dev 미들웨어](#webpack-dev-middleware)의 경우와 마찬가지로 `UseStaticFiles` 확장 메서드보다 `UseWebpackDevMiddleware` 확장 메서드를 먼저 호출해야 합니다. 보안 상의 이유로 앱이 개발 모드에서 실행될 때만 이 미들웨어를 등록해야 합니다.
+가 사용 하 여 true로 [Webpack 개발 미들웨어](#webpack-dev-middleware)의 `UseWebpackDevMiddleware` 확장 메서드를 호출 하기 전에 `UseStaticFiles` 확장 메서드. 보안 상의 이유로 앱이 개발 모드에서 실행될 때만 이 미들웨어를 등록해야 합니다.
 
 *webpack.config.js* 파일에서는 `plugins` 배열이 비어 있더라도 이를 정의해야 합니다.
 
@@ -241,11 +241,11 @@ dotnet new --install Microsoft.AspNetCore.SpaTemplates::*
 
 사용 가능한 SPA 템플릿 목록은 다음과 같습니다.
 
-| 템플릿                                    | 약식 이름   | 언어      | 태그        |
+| 템플릿                                 | 약식 이름 | 언어 | 태그        |
 |:------------------------------------------|:-----------|:---------|:------------|
-| MVC ASP.NET Core with Angular             | angular    | [C#]     | Web/MVC/SPA |
-| MVC ASP.NET Core with React.js            | react      | [C#]     | Web/MVC/SPA |
-| MVC ASP.NET Core with React.js and Redux  | reactredux | [C#]     | Web/MVC/SPA |
+| Angular를 사용 하 여 ASP.NET Core MVC             | angular    | [C#]     | 웹/MVC/SPA |
+| MVC ASP.NET Core (react.js 사용)            | react      | [C#]     | 웹/MVC/SPA |
+| React.js 및 Redux MVC ASP.NET Core  | reactredux | [C#]     | 웹/MVC/SPA |
 
 SPA 템플릿 중 하나를 사용하여 새로운 프로젝트를 만들려면 [dotnet new](/dotnet/core/tools/dotnet-new) 명령 뒤에 템플릿의 **약식 이름**을 추가합니다. 다음 명령은 서버 측에 ASP.NET Core MVC가 구성된 Angular 응용 프로그램을 생성합니다.
 
@@ -266,7 +266,7 @@ dotnet new angular
   * 소스 맵을 제외합니다.
   * 번들링 및 축소를 통해서 클라이언트 측 코드를 최적화합니다.
 
-ASP.NET Core는 `ASPNETCORE_ENVIRONMENT`라는 환경 변수를 사용하여 구성 모드를 저장합니다. 자세한 내용은 **[환경 설정하기](xref:fundamentals/environments#set-the-environment)**를 참고하시기 바랍니다.
+ASP.NET Core 라는 환경 변수를 사용 하 여 `ASPNETCORE_ENVIRONMENT` 구성 모드를 저장 합니다. 참조 **[환경을 설정할](xref:fundamentals/environments#set-the-environment)** 자세한 내용은 합니다.
 
 ### <a name="running-with-net-core-cli"></a>.NET Core CLI로 실행하기
 
