@@ -24,7 +24,7 @@ ASP.NET은 HTML, CSS 및 JavaScript를 사용하여 유용한 웹 사이트와 �
 
 ## <a name="get-started"></a>시작
 
-ASP.NET 용 무료 IDE인 [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017) Community edition을 설치하세요
+ASP.NET용 무료 IDE인 [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017) Community edition을 설치하세요.
 
 ## <a name="websites-and-web-applications"></a>웹 사이트 및 웹 응용 프로그램
 
@@ -42,7 +42,7 @@ ASP.NET 용 무료 IDE인 [Visual Studio 2017](https://visualstudio.microsoft.co
 
 ### <a name="web-forms"></a>Web Forms
 
-ASP.NET Web Forms를 사용하면 익숙한 끌어서 놓기, 이벤트 중심 모델을 사용하여 동적 웹 사이트를 빌드 할 수 있습니다. 디자인 화면과 수백 개의 컨트롤 및 구성 요소를 통해 데이터 액세스를 지원하는 정교하고 강력한 UI 중심 사이트를 신속하게 빌드 할 수 있습니다.
+ASP.NET Web Forms를 사용하면 익숙한 끌어서 놓기, 이벤트 중심 모델을 사용하여 동적 웹 사이트를 빌드할 수 있습니다. 디자인 화면과 수백 개의 컨트롤 및 구성 요소를 통해 데이터 액세스를 지원하는 정교하고 강력한 UI 중심 사이트를 신속하게 빌드할 수 있습니다.
 
 [Web Forms에 대한 자세한 정보](web-forms/index.md)
 
@@ -54,7 +54,7 @@ ASP.NET MVC는 즐겁고, 민첩한 개발을 위해 관점을 명확하게 분�
 
 ### <a name="aspnet-web-pages"></a>ASP.NET Web Pages
 
-ASP.NET Web Pages 및 Razor 구문은 서버 코드를 HTML과 결합하여 동적 웹 콘텐츠를 만들 수 있는 빠르고 간단하며 사용하기 쉬운 방식을 제공합니다. 데이터베이스에 연결하고, 비디오를 추가하고, 소셜 네트워킹 사이트에 연결하고, 최신 웹 표준을 준수하는 멋진 사이트를 만드는데 도움이 되는 여러 가지 기능을 포함하고 있습니다.
+ASP.NET Web Pages 및 Razor 구문은 서버 코드를 HTML과 결합하여 동적 웹 콘텐츠를 만들 수 있는 빠르고 간단하며 사용하기 쉬운 방식을 제공합니다. 데이터베이스에 연결하고, 비디오를 추가하고, 소셜 네트워킹 사이트에 연결하고, 최신 웹 표준을 준수하는 멋진 사이트를 만드는 데 도움이 되는 여러 가지 기능이 포함되어 있습니다.
 
 [Web Pages에 대한 자세한 정보](web-pages/index.md)
 
@@ -66,7 +66,7 @@ ASP.NET Web Pages 및 Razor 구문은 서버 코드를 HTML과 결합하여 동�
 
 ## <a name="web-apis"></a>Web API
 
-ASP.NET Web API는 브라우저 및 모바일 장치를 비롯한 광범위한 클라이언트에 연결하는 HTTP 서비스를 쉽게 빌드 할 수 있게 해 주는 프레임워크입니다. ASP.NET Web API는 .NET Framework에서 RESTful 응용 프로그램을 빌드 하는데 이상적인 플랫폼입니다.
+ASP.NET Web API는 브라우저 및 모바일 장치를 비롯한 광범위한 클라이언트에 연결하는 HTTP 서비스를 쉽게 빌드할 수 있게 해 주는 프레임워크입니다. ASP.NET Web API는 .NET Framework에서 RESTful 응용 프로그램을 빌드하는 데 이상적인 플랫폼입니다.
 
 [Web API에 대한 자세한 정보](web-api/index.md)
 
@@ -74,7 +74,7 @@ ASP.NET Web API는 브라우저 및 모바일 장치를 비롯한 광범위한 �
 
 ## <a name="real-time-technologies"></a>실시간 기술
 
-ASP.NET SignalR은 실시간 웹 기능을 좀 더 쉽게 개발할 수 있도록 도와주는 새로운 ASP.NET 개발자용 라이브러리입니다. SignalR을 사용하면 서버와 클라이언트 간에 양방향 통신이 가능합니다. 클라이언트를 사용할 수 있게 되면 서버는 그 즉시 연결된 클라이언트로 콘텐츠를 푸시 할 수 있습니다. SignalR은 웹 소켓을 지원하며, 이전 버전의 브라우저와 호환되는 다른 기술로 대체합니다. SignalR은 연결 관리(예: 이벤트 연결 및 연결 끊기), 연결 그룹화 및 권한 부여를 위한 API를 제공합니다.
+ASP.NET SignalR은 실시간 웹 기능을 좀 더 쉽게 개발할 수 있도록 도와주는 새로운 ASP.NET 개발자용 라이브러리입니다. SignalR을 사용하면 서버와 클라이언트 간에 양방향 통신이 가능합니다. 클라이언트를 사용할 수 있게 되면 서버는 그 즉시 연결된 클라이언트로 콘텐츠를 푸시할 수 있습니다. SignalR은 웹 소켓을 지원하며, 이전 버전의 브라우저와 호환되는 다른 기술로 대체합니다. SignalR은 연결 관리(예: 이벤트 연결 및 연결 끊기), 연결 그룹화 및 권한 부여를 위한 API를 제공합니다.
 
 [SignalR에 대한 자세한 정보](signalr/index.md)
 
@@ -82,7 +82,7 @@ ASP.NET SignalR은 실시간 웹 기능을 좀 더 쉽게 개발할 수 있도�
 
 ## <a name="mobile-apps-and-sites"></a>모바일 앱 및 사이트
 
-ASP.NET은 Web API 백 엔드로 네이티브 모바일 앱을 활용할 수 있을 뿐 아니라 Twitter Bootstrap 같은 반응형 디자인 프레임워크를 사용하여 모바일 웹 사이트를 만들 수 있습니다. 네이티브 모바일 앱을 빌드 하는 경우 데이터 액세스, 인증, 앱의 푸시 알림을 처리하는 JSON 기반 Web API를 손쉽게 만들 수 있습니다. 반응형 모바일 사이트를 빌드 하는 경우 선호하는 CSS 프레임워크 또는 오픈 그리드 시스템을 사용해도 되고, jQuery Mobile 또는 Sencha 같은 강력한 모바일 시스템과 PhoneGap 같은 뛰어난 모바일 응용 프로그램을 선택해도 됩니다.
+ASP.NET은 Web API 백 엔드로 네이티브 모바일 앱을 활용할 수 있을 뿐 아니라 Twitter Bootstrap 같은 반응형 디자인 프레임워크를 사용하여 모바일 웹 사이트를 만들 수 있습니다. 네이티브 모바일 앱을 빌드하는 경우 데이터 액세스, 인증, 앱의 푸시 알림을 처리하는 JSON 기반 Web API를 손쉽게 만들 수 있습니다. 반응형 모바일 사이트를 빌드하는 경우 선호하는 CSS 프레임워크 또는 오픈 그리드 시스템을 사용해도 되고, jQuery Mobile 또는 Sencha 같은 강력한 모바일 시스템과 PhoneGap 같은 뛰어난 모바일 응용 프로그램을 선택해도 됩니다.
 
 [모바일 앱 및 사이트 개발에 대한 자세한 정보](mobile/index.md)
 
@@ -90,7 +90,7 @@ ASP.NET은 Web API 백 엔드로 네이티브 모바일 앱을 활용할 수 있
 
 ## <a name="single-page-applications"></a>단일 페이지 응용 프로그램
 
-ASP.NET SPA(단일 페이지 응용 프로그램)는 HTML 5, CSS 3 및 JavaScript를 사용하여 중요한 클라이언트 쪽 상호 작용을 포함하는 응용 프로그램을 빌드 할 수 있도록 도와줍니다. Visual Studio에는 knockout.js 및 ASP.NET Web API를 사용하여 단일 페이지 응용 프로그램을 구축할 수 있는 템플릿이 포함되어 있습니다. 기본 제공 SPA 템플릿 외에도 커뮤니티에서 만든 다양한 SPA 템플릿을 다운로드할 수 있습니다.
+ASP.NET SPA(단일 페이지 응용 프로그램)는 HTML 5, CSS 3 및 JavaScript를 사용하여 중요한 클라이언트 쪽 상호 작용을 포함하는 응용 프로그램을 빌드할 수 있도록 도와줍니다. Visual Studio에는 knockout.js 및 ASP.NET Web API를 사용하여 단일 페이지 응용 프로그램을 구축할 수 있는 템플릿이 포함되어 있습니다. 기본 제공 SPA 템플릿 외에도 커뮤니티에서 만든 SPA 템플릿을 다운로드할 수 있습니다.
 
 [단일 페이지 앱 개발에 대한 자세한 정보](single-page-application/index.md)
 
