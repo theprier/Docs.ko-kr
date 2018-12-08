@@ -191,7 +191,7 @@ app.UseWebpackDevMiddleware(new WebpackDevMiddlewareOptions {
 });
 ```
 
-가 사용 하 여 true로 [Webpack 개발 미들웨어](#webpack-dev-middleware)의 `UseWebpackDevMiddleware` 확장 메서드를 호출 하기 전에 `UseStaticFiles` 확장 메서드. 보안 상의 이유로 앱이 개발 모드에서 실행될 때만 이 미들웨어를 등록해야 합니다.
+[Webpack Dev 미들웨어](#webpack-dev-middleware)의 경우와 마찬가지로`UseStaticFiles` 확장 메서드를 호출 하기 전에 `UseWebpackDevMiddleware` 확장 메서드를 먼저 호출해야 합니다. 보안 상의 이유로 앱이 개발 모드에서 실행될 때만 이 미들웨어를 등록해야 합니다.
 
 *webpack.config.js* 파일에서는 `plugins` 배열이 비어 있더라도 이를 정의해야 합니다.
 
@@ -243,9 +243,9 @@ dotnet new --install Microsoft.AspNetCore.SpaTemplates::*
 
 | 템플릿                                 | 약식 이름 | 언어 | 태그        |
 |:------------------------------------------|:-----------|:---------|:------------|
-| Angular를 사용 하 여 ASP.NET Core MVC             | angular    | [C#]     | 웹/MVC/SPA |
-| MVC ASP.NET Core (react.js 사용)            | react      | [C#]     | 웹/MVC/SPA |
-| React.js 및 Redux MVC ASP.NET Core  | reactredux | [C#]     | 웹/MVC/SPA |
+| MVC ASP.NET Core with Angular             | angular    | [C#]     | Web/MVC/SPA |
+| MVC ASP.NET Core with React.js             | react      | [C#]     | Web/MVC/SPA |
+| MVC ASP.NET Core with React.js and Redux  | reactredux | [C#]     | Web/MVC/SPA |
 
 SPA 템플릿 중 하나를 사용하여 새로운 프로젝트를 만들려면 [dotnet new](/dotnet/core/tools/dotnet-new) 명령 뒤에 템플릿의 **약식 이름**을 추가합니다. 다음 명령은 서버 측에 ASP.NET Core MVC가 구성된 Angular 응용 프로그램을 생성합니다.
 
@@ -266,7 +266,7 @@ dotnet new angular
   * 소스 맵을 제외합니다.
   * 번들링 및 축소를 통해서 클라이언트 측 코드를 최적화합니다.
 
-ASP.NET Core 라는 환경 변수를 사용 하 여 `ASPNETCORE_ENVIRONMENT` 구성 모드를 저장 합니다. 참조 **[환경을 설정할](xref:fundamentals/environments#set-the-environment)** 자세한 내용은 합니다.
+ASP.NET Core는 `ASPNETCORE_ENVIRONMENT` 라는 환경 변수를 사용하여 구성 모드를 저장합니다. 자세한 내용은 **[환경 설정하기](xref:fundamentals/environments#set-the-environment)** 를 참고하시기 바랍니다.
 
 ### <a name="running-with-net-core-cli"></a>.NET Core CLI로 실행하기
 
