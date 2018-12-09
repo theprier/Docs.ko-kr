@@ -4,13 +4,14 @@ author: CamSoper
 description: Azure에서 호스팅되는 ASP.NET Core 앱에 대한 DevOps 파이프라인을 빌드하는 방법에 대한 종단 간 지침을 제공하는 가이드입니다.
 ms.author: casoper
 ms.date: 08/07/2018
+ms.custom: seodec18
 uid: azure/devops/index
-ms.openlocfilehash: 53667831f5e33107178a947f23d957ff22e8c1a0
-ms.sourcegitcommit: 57eccdea7d89a62989272f71aad655465f1c600a
+ms.openlocfilehash: 6b6f17fd917f32b9e0682414febee10643cf3d13
+ms.sourcegitcommit: 49faca2644590fc081d86db46ea5e29edfc28b7b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44340097"
+ms.lasthandoff: 12/09/2018
+ms.locfileid: "53121195"
 ---
 # <a name="devops-with-aspnet-core-and-azure"></a>ASP.NET Core 및 Azure에서 DevOps
 
