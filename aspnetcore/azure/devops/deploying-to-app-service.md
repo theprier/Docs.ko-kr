@@ -1,17 +1,17 @@
 ---
-title: ASP.NET Core 및 Azure를 사용 하 여 DevOps | App Service에 앱 배포
+title: App Service-ASP.NET Core 및 Azure를 사용 하 여 DevOps에 앱 배포
 author: CamSoper
-description: Azure에서 호스팅되는 ASP.NET Core 앱에 대한 DevOps 파이프라인을 빌드하는 방법에 대한 종단 간 지침을 제공하는 가이드입니다.
+description: Azure App service에 ASP.NET Core 및 Azure를 사용 하 여 DevOps에 대 한 첫 번째 단계는 ASP.NET Core 앱을 배포 합니다.
 ms.author: casoper
-ms.custom: mvc
+ms.custom: mvc, seodec18
 ms.date: 10/24/2018
 uid: azure/devops/deploy-to-app-service
-ms.openlocfilehash: 33026ed510aae63a9e580aa5d708f94aad778fca
-ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
+ms.openlocfilehash: 4424d3d15cbd234357c8265fa276834cb9abf352
+ms.sourcegitcommit: 49faca2644590fc081d86db46ea5e29edfc28b7b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50090939"
+ms.lasthandoff: 12/09/2018
+ms.locfileid: "53121222"
 ---
 # <a name="deploy-an-app-to-app-service"></a>App Service에 앱 배포
 
@@ -91,7 +91,7 @@ ms.locfileid: "50090939"
 
     합니다 `az` 명령을 호출 합니다 [Azure CLI](/cli/azure/)합니다. CLI를 로컬로 실행할 수 있지만 시간 및 구성 저장 사용 하 여 Cloud Shell에서.
 
-    c. S1 계층에서 App Service 계획을 만듭니다. App Service 계획은 동일한 가격 책정 계층을 공유 하는 웹 앱의 그룹입니다. S1 계층을 무료로 사용할 수 있는 없지만 스테이징 슬롯 기능 필요 합니다.
+    다. S1 계층에서 App Service 계획을 만듭니다. App Service 계획은 동일한 가격 책정 계층을 공유 하는 웹 앱의 그룹입니다. S1 계층을 무료로 사용할 수 있는 없지만 스테이징 슬롯 기능 필요 합니다.
 
     ```azure-cli
     az appservice plan create --name $webappname --resource-group AzureTutorial --sku S1
@@ -150,12 +150,12 @@ ms.locfileid: "50090939"
 3. 키를 눌러 **Ctrl**+**Shift**+**B** 앱을 빌드할 수 있습니다.
 4. 솔루션 탐색기에서 프로젝트를 마우스 오른쪽 단추로 클릭 하 고 클릭 **게시**합니다.
 
-    ![마우스 오른쪽 단추로 클릭, 게시](./media/deploying-to-app-service/publish.png)
+    ![마우스 오른쪽 단추로 클릭, 게시를 보여 주는 스크린샷](./media/deploying-to-app-service/publish.png)
 5. Visual Studio에서 새 App Service 리소스를 만들 수 있지만이 업데이트는 기존 배포를 통해 게시 될 예정입니다. 에 **게시 대상 선택** 대화 상자에서 **App Service** 왼쪽에 있는 목록에서 선택한 후 **기존 선택**합니다. **게시**를 클릭합니다.
 6. 에 **App Service** 대화 상자에서 Microsoft 또는 조직 계정을 Azure 구독을 만드는 데 오른쪽 위에 표시 되는지 확인 합니다. 없는 경우 드롭다운을 클릭 하 고 추가 합니다.
 7. 확인 하는 올바른 Azure **구독** 을 선택 합니다. 에 대 한 **뷰**를 선택 **리소스 그룹**합니다. 확장 된 **AzureTutorial** 리소스 그룹 및 기존 웹 앱을 선택 합니다. **확인**을 클릭합니다.
 
-    ![App Service 대화 상자 게시](./media/deploying-to-app-service/publish-dialog.png)
+    ![App Service 게시 대화 상자 보여 주는 스크린샷](./media/deploying-to-app-service/publish-dialog.png)
 
 Visual Studio 빌드하고 Azure에 앱을 배포 합니다. 웹 앱 URL로 이동 합니다. 확인 된 `<h2>` 요소를 수정 하는 라이브입니다.
 
@@ -180,7 +180,7 @@ Visual Studio 빌드하고 Azure에 앱을 배포 합니다. 웹 앱 URL로 이�
     echo Git deployment URL for staging: $(az webapp deployment source config-local-git --name $webappname --resource-group AzureTutorial --slot staging --query url --output tsv)
     ```
 
-    c. 스테이징 슬롯의 URL을 표시 합니다. 빈 스테이징 슬롯을 확인 하려면 URL로 이동 합니다. **나중에 참조에 대 한 url이**합니다.
+    다. 스테이징 슬롯의 URL을 표시 합니다. 빈 스테이징 슬롯을 확인 하려면 URL로 이동 합니다. **나중에 참조에 대 한 url이**합니다.
 
     ```console
     echo Staging web app URL: http://$webappname-staging.azurewebsites.net
@@ -211,7 +211,7 @@ Visual Studio 빌드하고 Azure에 앱을 배포 합니다. 웹 앱 URL로 이�
 
 6. V3 스테이징 슬롯에 배포한 있는지를 확인 하려면 두 개의 브라우저 창을 엽니다. 하나의 창에서 원본 웹 앱 URL로 이동 합니다. 다른 창에서 스테이징 웹 앱 URL로 이동 합니다. 프로덕션 URL은 앱의 V2에 사용 됩니다. 스테이징 URL에는 앱의 V3 사용 됩니다.
 
-    ![브라우저 창을 비교](./media/deploying-to-app-service/ready-to-swap.png)
+    ![브라우저 창을 비교 스크린 샷](./media/deploying-to-app-service/ready-to-swap.png)
 
 7. Cloud Shell에서 확인/준비 접속 스테이징 슬롯을 프로덕션으로 교환 합니다.
 

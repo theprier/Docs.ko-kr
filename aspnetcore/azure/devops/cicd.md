@@ -1,16 +1,17 @@
 ---
-title: ASP.NET Core 및 Azure를 사용 하 여 DevOps | 지속적인 통합 및 배포
+title: 지속적인 통합 및 배포-ASP.NET Core 및 Azure를 사용 하 여 DevOps
 author: CamSoper
-description: Azure에서 호스팅되는 ASP.NET Core 앱에 대한 DevOps 파이프라인을 빌드하는 방법에 대한 종단 간 지침을 제공하는 가이드입니다.
+description: 지속적인 통합 및 ASP.NET Core 및 Azure를 사용 하 여 DevOps에 배포
 ms.author: scaddie
 ms.date: 10/24/2018
+ms.custom: seodec18
 uid: azure/devops/cicd
-ms.openlocfilehash: edaf2c2e1428e5e82104786d94584a4ef08f9ee3
-ms.sourcegitcommit: 408921a932448f66cb46fd53c307a864f5323fe5
+ms.openlocfilehash: e5bddde41291c9573f58d749bbf830de9ea9319d
+ms.sourcegitcommit: 49faca2644590fc081d86db46ea5e29edfc28b7b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51570089"
+ms.lasthandoff: 12/09/2018
+ms.locfileid: "53121597"
 ---
 # <a name="continuous-integration-and-deployment"></a>지속적인 통합 및 배포
 
@@ -92,7 +93,7 @@ ms.locfileid: "51570089"
 
     ![소스-GitHub를 선택 합니다.](media/cicd/vsts-select-source.png)
 
-1. Azure DevOps GitHub 리포지토리에 액세스 하기 전에 권한 부여 필요 합니다. 입력 *< GitHub_username > GitHub 연결* 에 **연결 이름** 텍스트 상자에 붙여넣습니다. 예를 들어:
+1. Azure DevOps GitHub 리포지토리에 액세스 하기 전에 권한 부여 필요 합니다. 입력 *< GitHub_username > GitHub 연결* 에 **연결 이름** 텍스트 상자에 붙여넣습니다. 예를 들어 다음과 같습니다.
 
     ![GitHub 연결 이름](media/cicd/vsts-repo-authz.png)
 
@@ -235,15 +236,15 @@ ms.locfileid: "51570089"
 
 빌드 정의 클릭 **요약** 정의 사용 하 여 빌드 기록을 보려면 링크:
 
-![빌드 정의 기록](media/cicd/build-definition-summary.png)
+![표시 된 빌드 정의 기록을 스크린 샷](media/cicd/build-definition-summary.png)
 
 결과 페이지에서 고유한 빌드 번호에 해당 하는 링크를 클릭 합니다.
 
-![빌드 정의 요약 페이지](media/cicd/build-definition-completed.png)
+![스크린 샷 빌드 정의 요약 페이지를 보여 주는](media/cicd/build-definition-completed.png)
 
 이 특정 빌드 요약이 표시 됩니다. 클릭 합니다 **아티팩트** 탭을 확인 합니다 *drop* 빌드에서 생성 된 폴더가 나열 됩니다:
 
-![빌드 아티팩트 정의-drop 폴더](media/cicd/build-definition-artifacts.png)
+![빌드 정의 아티팩트-저장 폴더를 보여 주는 스크린샷](media/cicd/build-definition-artifacts.png)
 
 사용 된 **다운로드** 및 **탐색** 게시 된 아티팩트를 검사 하는 링크입니다.
 
@@ -251,25 +252,25 @@ ms.locfileid: "51570089"
 
 릴리스 파이프라인 이름을 만들어졌으므로 *MyFirstProject ASP.NET Core-CD*:
 
-![릴리스 파이프라인 개요](media/cicd/release-definition-overview.png)
+![스크린 샷 보여 주는 릴리스 파이프라인 개요](media/cicd/release-definition-overview.png)
 
 릴리스 파이프라인의 두 가지 주요 구성 요소를 **아티팩트** 하며 **환경**합니다. 상자를 **아티팩트** 섹션에는 다음 창이 표시 됩니다.
 
-![릴리스 파이프라인 아티팩트](media/cicd/release-definition-artifacts.png)
+![표시 된 릴리스 파이프라인 아티팩트 스크린 샷](media/cicd/release-definition-artifacts.png)
 
 합니다 **소스 (빌드 정의)** 값이 릴리스 파이프라인은 연결 되는 빌드 정의 나타냅니다. 합니다 *.zip* 빌드 정의의 실행을 성공적으로 생성 된 파일에 제공 됩니다 합니다 *프로덕션* Azure에 배포 하기 위한 환경입니다. 클릭 합니다 *1 단계, 2 개의 태스크가* 링크를 *프로덕션* 릴리스 파이프라인 작업을 확인 하려면 상자, 환경:
 
-![릴리스 파이프라인 작업](media/cicd/release-definition-tasks.png)
+![릴리스 파이프라인 작업을 보여 주는 스크린샷](media/cicd/release-definition-tasks.png)
 
 릴리스 파이프라인 두 작업으로 구성 됩니다. *Azure App Service 슬롯에 배포* 및 *슬롯 전환-관리 Azure App Service를*입니다. 첫 번째 작업을 클릭 하면 다음 작업 구성을 표시 됩니다.
 
-![릴리스 파이프라인 배포 작업](media/cicd/release-definition-task1.png)
+![스크린 샷 보여 주는 릴리스 파이프라인 배포 작업](media/cicd/release-definition-task1.png)
 
 Azure 구독, 서비스 유형, 웹 앱 이름, 리소스 그룹 및 배포 슬롯은 배포 작업에 정의 됩니다. **패키지 또는 폴더가** 보유 하는 텍스트 상자를 *.zip* 파일 경로를 추출 하 고 배포를 *준비* 의 슬롯을 *mywebapp\<고유 수 (_n)\>*  웹 앱입니다.
 
 슬롯 스왑 작업을 클릭 하면 다음 작업 구성을 표시 됩니다.
 
-![릴리스 파이프라인 슬롯 스왑 작업](media/cicd/release-definition-task2.png)
+![스크린 샷 보여 주는 릴리스 파이프라인 슬롯 스왑 작업](media/cicd/release-definition-task2.png)
 
 구독, 리소스 그룹, 서비스 유형, 웹 앱 이름 및 배포 슬롯 세부 정보 제공 됩니다. 합니다 **프로덕션과 교환** 확인란을 선택 합니다. 비트를 배포 하는 결과적으로 *준비* 슬롯은 프로덕션 환경으로 교체 합니다.
 

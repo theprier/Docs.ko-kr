@@ -1,19 +1,19 @@
 ---
-title: Web Api ASP.NET Core에서 Azure Active Directory B2C를 사용 하 여의 클라우드 인증
+title: Web Api ASP.NET Core에서 Azure Active Directory B2C를 사용 하 여 인증
 author: camsoper
 description: ASP.NET Core Web API를 사용 하 여 Azure Active Directory B2C 인증을 설정 하는 방법을 알아봅니다. 인증 된 웹 Postman 사용 하 여 API를 테스트 합니다.
 ms.author: casoper
 ms.date: 09/21/2018
-ms.custom: mvc
+ms.custom: mvc, seodec18
 uid: security/authentication/azure-ad-b2c-webapi
-ms.openlocfilehash: a7a109909d66b1016e78eedc8b802068143c65e3
-ms.sourcegitcommit: 6e6002de467cd135a69e5518d4ba9422d693132a
+ms.openlocfilehash: e8ac1e33819dd369460139df25597e1aa0979c91
+ms.sourcegitcommit: 49faca2644590fc081d86db46ea5e29edfc28b7b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49348548"
+ms.lasthandoff: 12/09/2018
+ms.locfileid: "53121715"
 ---
-# <a name="cloud-authentication-in-web-apis-with-azure-active-directory-b2c-in-aspnet-core"></a>Web Api ASP.NET Core에서 Azure Active Directory B2C를 사용 하 여의 클라우드 인증
+# <a name="authentication-in-web-apis-with-azure-active-directory-b2c-in-aspnet-core"></a>Web Api ASP.NET Core에서 Azure Active Directory B2C를 사용 하 여 인증
 
 작성자: [Cam Soper](https://twitter.com/camsoper)
 
@@ -69,7 +69,7 @@ API를 등록 한 후에 테 넌 트에서 앱 및 Api의 목록이 표시 됩�
 
 Visual Studio 웹 응용 프로그램 템플릿은 인증에 Azure AD B2C 테 넌 트를 사용 하도록 구성할 수 있습니다.
 
-Visual studio:
+Visual Studio에서 다음을 수행합니다.
 
 1. 새 ASP.NET Core 웹 응용 프로그램을 만듭니다. 
 2. 선택 **Web API** 템플릿 목록에서.
@@ -178,7 +178,7 @@ Web API에 요청을 인증된 하는 전달자 토큰을 필요 합니다. Post
    |       <strong>인증 URL</strong>        | `https://login.microsoftonline.com/{tenant domain name}/oauth2/v2.0/authorize?p=B2C_1_SiUpIn` |  바꿉니다 *{테 넌 트 도메인 이름}* 테 넌 트의 도메인 이름입니다. **중요**:이 URL에 있는 내용으로 동일한 도메인 이름이 있어야 `AzureAdB2C.Instance` 웹 API의 *appsettings.json* 파일입니다. 참고&dagger;합니다.                                                  |
    |       <strong>클라이언트 ID</strong>       |                *{Postman 앱의 입력 <b>응용 프로그램 ID</b>}*                              |                                                                                                                                                                                                                                                                              |
    |         <strong>범위</strong>         |         `https://{tenant domain name}/{api}/user_impersonation openid offline_access`       | 바꿉니다 *{테 넌 트 도메인 이름}* 테 넌 트의 도메인 이름입니다. 바꿉니다 *{api}* 앱 ID URI를 사용 하 여 지정한 웹 API 처음 등록할 때 (이때 `api`). URL 패턴은: `https://{tenant}.onmicrosoft.com/{api-id-uri}/{scope name}`합니다.         |
-   |         <strong>상태</strong>         |                                      *{비워}*                                          |                                                                                                                                                                                                                                                                              |
+   |         <strong>State</strong>         |                                      *{비워}*                                          |                                                                                                                                                                                                                                                                              |
    | <strong>클라이언트 인증</strong> |                                본문에 클라이언트 자격 증명 보내기                                |                                                                                                                                                                                                                                                                              |
 
     > [!NOTE]
@@ -200,7 +200,7 @@ Web API에 요청을 인증된 하는 전달자 토큰을 필요 합니다. Post
 
 ## <a name="next-steps"></a>다음 단계
 
-이 자습서에서는 다음 방법을 학습했습니다.
+본 자습서에서는 다음 작업에 관한 방법을 학습했습니다.
 
 > [!div class="checklist"]
 > * Azure Active Directory B2C 테 넌 트를 만듭니다.

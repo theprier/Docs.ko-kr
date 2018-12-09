@@ -5,13 +5,14 @@ description: ASP.NET Core 앱을 사용 하 여 2 단계 인증 (2FA)을 설정 
 monikerRange: < aspnetcore-2.0
 ms.author: riande
 ms.date: 09/22/2018
+ms.custom: seodec18
 uid: security/authentication/2fa
-ms.openlocfilehash: 5b0866ecf15381b040e3646eecc22374b6b0c9e2
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: 6f20928b0dec9b235fa17c1b44c81a48d031e9e0
+ms.sourcegitcommit: 49faca2644590fc081d86db46ea5e29edfc28b7b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50205888"
+ms.lasthandoff: 12/09/2018
+ms.locfileid: "53121663"
 ---
 # <a name="two-factor-authentication-with-sms-in-aspnet-core"></a>ASP.NET Core에서 SMS 사용한 2 단계 인증
 
@@ -57,7 +58,7 @@ ms.locfileid: "50205888"
 
 [!code-csharp[](2fa/sample/Web2FA/Services/SMSoptions.cs)]
 
-설정 합니다 `SMSAccountIdentification`, `SMSAccountPassword` 하 고 `SMSAccountFrom` 사용 하 여를 [암호 관리자 도구](xref:security/app-secrets). 예를 들어:
+설정 합니다 `SMSAccountIdentification`, `SMSAccountPassword` 하 고 `SMSAccountFrom` 사용 하 여를 [암호 관리자 도구](xref:security/app-secrets). 예를 들어 다음과 같습니다.
 
 ```none
 C:/Web2FA/src/WebApp1>dotnet user-secrets set SMSAccountIdentification 12345
@@ -97,7 +98,7 @@ info: Successfully saved SMSAccountIdentification = 12345 to the secret store.
 
 * 활성화 하는 사용자 이름을 탭 합니다 `Index` 관리 컨트롤러의 동작 메서드. 전화 번호를 누릅니다 **추가** 링크 합니다.
 
-![보기 관리](2fa/_static/login2fa2.png)
+![보기 관리-"추가" 링크를 탭 합니다.](2fa/_static/login2fa2.png)
 
 * 확인 코드를 받고 탭는 전화 번호를 추가할 **확인 코드 보내기**합니다.
 
@@ -111,11 +112,11 @@ info: Successfully saved SMSAccountIdentification = 12345 to the secret store.
 
 * 관리 보기를 보여 줍니다 전화 번호를 추가 했습니다.
 
-![보기 관리](2fa/_static/login2fa5.png)
+![관리 보기-전화 번호가 추가 했습니다.](2fa/_static/login2fa5.png)
 
 * 탭 **사용** 2 단계 인증을 사용 하도록 설정 합니다.
 
-![보기 관리](2fa/_static/login2fa6.png)
+![보기 관리-2 단계 인증을 사용 하도록 설정](2fa/_static/login2fa6.png)
 
 ### <a name="test-two-factor-authentication"></a>2 단계 인증 테스트
 

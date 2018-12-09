@@ -3,15 +3,15 @@ title: ASP.NET Core에서 Facebook 외부 로그인 설정
 author: rick-anderson
 description: 이 자습서에서는 기존 ASP.NET Core 앱에 Facebook 계정 사용자 인증의 통합을 보여 줍니다.
 ms.author: riande
-ms.custom: mvc
+ms.custom: mvc, seodec18
 ms.date: 11/11/2018
 uid: security/authentication/facebook-logins
-ms.openlocfilehash: e8ae16538b5d6844af7d983071fad629ebbe6217
-ms.sourcegitcommit: 09bcda59a58019fdf47b2db5259fe87acf19dd38
+ms.openlocfilehash: 8bb22dc6df9879e827ff9a5ac11e9e3ad5346dc2
+ms.sourcegitcommit: 49faca2644590fc081d86db46ea5e29edfc28b7b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51708506"
+ms.lasthandoff: 12/09/2018
+ms.locfileid: "53121507"
 ---
 # <a name="facebook-external-login-setup-in-aspnet-core"></a>ASP.NET Core에서 Facebook 외부 로그인 설정
 
@@ -129,7 +129,7 @@ app.UseFacebookAuthentication(new FacebookOptions()
 
 Facebook 인증 기본적으로 공용 프로필 및 전자 메일 주소를 요청합니다.
 
-![Facebook 인증 페이지](index/_static/FBLoginDone.png)
+![Facebook 인증 페이지 동의 화면](index/_static/FBLoginDone.png)
 
 Facebook 자격 증명을 입력 한 후 전자 메일을 설정할 수 있는 사이트로 다시 리디렉션됩니다.
 

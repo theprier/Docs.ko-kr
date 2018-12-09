@@ -1,17 +1,17 @@
 ---
-title: ASP.NET Core 및 Azure를 사용 하 여 DevOps | 모니터링 및 디버그
+title: 모니터링 및 디버그-ASP.NET Core 및 Azure를 사용 하 여 DevOps
 author: CamSoper
-description: Azure에서 호스팅되는 ASP.NET Core 앱에 대한 DevOps 파이프라인을 빌드하는 방법에 대한 종단 간 지침을 제공하는 가이드입니다.
+description: 모니터링 및 ASP.NET Core 및 Azure를 사용 하 여 DevOps 솔루션의 일부로 코드 디버깅
 ms.author: casoper
-ms.custom: mvc
+ms.custom: mvc, seodec18
 ms.date: 10/24/2018
 uid: azure/devops/monitor
-ms.openlocfilehash: c4013de574fdf34114f2ae6c6a2150d72f807578
-ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
+ms.openlocfilehash: e005b951aec578b396fc19dec5d2f55cbce4f664
+ms.sourcegitcommit: 49faca2644590fc081d86db46ea5e29edfc28b7b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50090197"
+ms.lasthandoff: 12/09/2018
+ms.locfileid: "53121611"
 ---
 # <a name="monitor-and-debug"></a>모니터링 및 디버그
 
@@ -35,7 +35,7 @@ App Service 웹 앱은 쉽게 실시간으로 모니터링 됩니다. Azure port
 
 1. 합니다 **개요** 탭 최근 메트릭을 표시 하는 그래프를 포함 하 여 "a 일목요연" 유용한 정보를 표시 합니다.
 
-    ![개요 패널](./media/monitoring/overview.png)
+    ![스크린 샷 보여 주는 요약 패널](./media/monitoring/overview.png)
 
     * **Http 5xx**: 서버 쪽 오류 개수, 일반적으로 ASP.NET Core 코드의 예외입니다.
     * **데이터에서**: 웹 앱으로 들어오는 데이터 수신 합니다.
@@ -45,7 +45,7 @@ App Service 웹 앱은 쉽게 실시간으로 모니터링 됩니다. Azure port
 
     여러 셀프 서비스 도구 문제 해결 및 최적화를 위한이 페이지에도 있습니다.
 
-    ![셀프 서비스 도구](./media/monitoring/wizards.png)
+    ![스크린 샷 보여 주는 셀프 서비스 도구](./media/monitoring/wizards.png)
 
     * **문제 진단 및 해결** 셀프 서비스 문제 해결사에 전달 됩니다.
     * **Application Insights** 성능과 앱 동작을 프로 파일링 되며이 섹션의 뒷부분에서 설명 됩니다.
@@ -103,11 +103,11 @@ ASP.NET Core 및 웹 서버 (App Service) 로그는 웹 앱에 대 한 생성 �
 1. 열기는 [Azure portal](https://portal.azure.com)로 이동 합니다 *mywebapp\<unique_number\>*  App Service.
 1. 왼쪽 메뉴에서 아래로 스크롤하여 합니다 **모니터링** 선택한 섹션 **로그 스트림**합니다.
 
-    ![로그 스트림 연결](./media/monitoring/log-stream.png)
+    ![링크가 표시 된 스크린샷 로그 스트림](./media/monitoring/log-stream.png)
 
 로그 수도 있습니다 [Azure CLI 또는 Azure PowerShell을 통해 스트리밍할](/azure/app-service/web-sites-enable-diagnostic-log#streamlogs)Cloud Shell을 통해 등입니다.
 
-## <a name="alerts"></a>경고
+## <a name="alerts"></a>,
 
 Azure Monitor 해줍니다 [실시간으로 경고](/azure/monitoring-and-diagnostics/insights-alerts-portal) 메트릭, 관리 이벤트 및 기타 조건을 기준으로 합니다.
 

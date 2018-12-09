@@ -3,15 +3,15 @@ title: ASP.NET Core에서 Windows 인증을 구성 합니다.
 author: scottaddie
 description: ASP.NET core에서 IIS Express, IIS, HTTP.sys 및 WebListener를 사용 하 여 Windows 인증을 구성 하는 방법에 알아봅니다.
 ms.author: riande
-ms.custom: mvc
+ms.custom: mvc, seodec18
 ms.date: 11/01/2018
 uid: security/authentication/windowsauth
-ms.openlocfilehash: 87fcab75555c1dae0b2815c30d79fd4615df9660
-ms.sourcegitcommit: 85f2939af7a167b9694e1d2093277ffc9a741b23
+ms.openlocfilehash: 342759a6ff4b5679e0d54c979188ae66d339562d
+ms.sourcegitcommit: 49faca2644590fc081d86db46ea5e29edfc28b7b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "50968295"
+ms.lasthandoff: 12/09/2018
+ms.locfileid: "53121299"
 ---
 # <a name="configure-windows-authentication-in-aspnet-core"></a>ASP.NET Core에서 Windows 인증을 구성 합니다.
 
@@ -31,7 +31,7 @@ Visual Studio 웹 응용 프로그램 템플릿은 Windows 인증을 지원 하�
 
 ### <a name="use-the-windows-authentication-app-template"></a>Windows 인증 앱 템플릿 사용
 
-Visual studio:
+Visual Studio에서 다음을 수행합니다.
 
 1. 새 ASP.NET Core 웹 응용 프로그램을 만듭니다.
 1. 템플릿 목록에서 웹 응용 프로그램을 선택 합니다.
@@ -47,7 +47,7 @@ IIS Express를 사용 하 여 개발 작업에 대 한 템플릿을 Windows 인�
 
 Visual Studio 프로젝트 **속성** 페이지의 **디버그** 탭은 Windows 인증 및 익명 인증에 대 한 확인란을 제공 합니다.
 
-![Windows 인증에 대 한 브라우저 스크린 샷](windowsauth/_static/vs-auth-property-menu.png)
+![강조 표시 하는 인증 옵션을 사용 하 여 Windows 인증 브라우저 스크린 샷](windowsauth/_static/vs-auth-property-menu.png)
 
 이러한 두 속성을 구성할 수 있습니다 또는 합니다 *launchSettings.json* 파일:
 

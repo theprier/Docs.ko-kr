@@ -29,11 +29,11 @@ Razor 페이지는 페이지 코딩 중심의 시나리오를 보다 쉽고 생�
 
 <a name="rpvs17"></a>
 
-## <a name="create-a-razor-pages-project"></a>Razor 페이지 프로젝트 만들기
+## <a name="create-a-razor-pages-project"></a>Razor Pages 프로젝트 만들기
 
 # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
 
-Razor 페이지 프로젝트를 만드는 방법에 대한 자세한 내용은 [Razor 페이지 시작하기](xref:tutorials/razor-pages/razor-pages-start)를 참고하시기 바랍니다.
+Razor Pages 프로젝트를 만드는 방법에 대한 자세한 내용은 [Razor Pages 시작](xref:tutorials/razor-pages/razor-pages-start)을 참조하세요.
 
 # <a name="visual-studio-for-mactabvisual-studio-mac"></a>[Visual Studio for Mac](#tab/visual-studio-mac)
 
@@ -73,11 +73,11 @@ Razor 페이지는 *Startup.cs*에서 사용할 수 있게 설정됩니다.
 
 [!code-cs[](index/sample/RazorPagesIntro/Startup.cs?name=snippet_Startup)]
 
-기본적인 페이지를 살펴보겠습니다. <a name="OnGet"></a>
+기본 페이지를 고려해 봅니다. <a name="OnGet"></a>
 
 [!code-cshtml[](index/sample/RazorPagesIntro/Pages/Index.cshtml)]
 
-위의 코드는 Razor 뷰 파일과 매우 비슷합니다. 차이점은 `@page` 지시문입니다. `@page`는 파일을 MVC 액션으로 만드는데, 이 말은 컨트롤러를 거치지 않고 이 파일이 요청을 직접 처리한다는 뜻입니다. `@page`는 페이지의 첫 번째 Razor 지시문이어야 합니다. `@page`는 다른 Razor 구조의 동작에 영향을 줍니다.
+이전 코드는 Razor 뷰 파일과 매우 비슷합니다. 차이점은 `@page` 지시문입니다. `@page`는 파일을 MVC 작업으로 만듭니다. 즉, 컨트롤러를 거치지 않고 요청을 직접 처리합니다. `@page`는 페이지의 첫 번째 Razor 지시문이어야 합니다. `@page`는 다른 Razor 생성자의 동작에 영향을 미칩니다.
 
 다음 두 파일은 `PageModel` 클래스를 사용하는 비슷한 페이지를 보여줍니다. *Pages/Index2.cshtml* 파일은 다음과 같습니다.
 
@@ -91,9 +91,9 @@ Razor 페이지는 *Startup.cs*에서 사용할 수 있게 설정됩니다.
 
 페이지에 대한 URL 경로 연결은 파일 시스템 상의 페이지 위치에 따라 결정됩니다. 다음 표는 Razor 페이지 경로 및 그와 일치하는 URL을 보여줍니다.
 
-| 파일 이름 및 경로 | 일치하는 URL |
+| 파일 이름 및 경로               | 일치하는 URL |
 | ----------------- | ------------ |
-	| */Pages/Index.cshtml* | `/` 또는 `/Index` |
+| */Pages/Index.cshtml* | `/` 또는 `/Index` |
 | */Pages/Contact.cshtml* | `/Contact` |
 | */Pages/Store/Contact.cshtml* | `/Store/Contact` |
 | */Pages/Store/Index.cshtml* | `/Store` 또는 `/Store/Index` |
@@ -103,7 +103,7 @@ Razor 페이지는 *Startup.cs*에서 사용할 수 있게 설정됩니다.
 * 런타임은 기본적으로 *Pages* 폴더에서 Razor 페이지 파일을 검색합니다.
 * URL에 페이지가 지정되어 있지 않을 경우 `Index`가 기본 페이지입니다.
 
-## <a name="writing-a-basic-form"></a>기본적인 양식 작성하기
+## <a name="write-a-basic-form"></a>기본 양식 작성
 
 Razor 페이지는 앱을 만들때 웹 브라우저에서 사용되는 일반적인 패턴을 손쉽게 구현할 수 있도록 설계되었습니다. [모델 바인딩](xref:mvc/models/model-binding), [태그 도우미](xref:mvc/views/tag-helpers/intro) 및 HTML 도우미는 모두 Razor 페이지 클래스에 정의된 속성을 통해서 *정확하게 동작*합니다. `Contact` 모델에 대한 기본적인 "연락처" 양식을 구현하는 페이지를 생각해보겠습니다.
 
@@ -136,7 +136,7 @@ db 컨텍스트는 다음과 같습니다.
 * `OnGet`: 페이지에 필요한 상태를 초기화합니다. [OnGet](#OnGet) 예제.
 * `OnPost`: 양식 제출을 처리합니다.
 
-`Async` 명명 접미사는 선택 사항이지만 비동기 함수에 대한 규약으로 자주 사용됩니다. 위의 예제에 사용된 `OnPostAsync`의 코드는 일반적으로 컨트롤러에서 작성하던 코드와 비슷해 보입니다. 위의 코드는 Razor 페이지의 일반적인 코드입니다. [모델 바인딩](xref:mvc/models/model-binding), [유효성 검사](xref:mvc/models/validation) 및 액션 결과 같은 MVC의 기본적인 기능들이 대부분 공유됩니다. <!-- Review: Ryan, can we get a list of what is shared and what isn't? -->
+`Async` 명명 접미사는 선택 사항이지만 비동기 함수에 대한 규약으로 자주 사용됩니다. 위의 예제에 사용된 `OnPostAsync`의 코드는 일반적으로 컨트롤러에서 작성하던 코드와 비슷해 보입니다. 위의 코드는 Razor 페이지의 일반적인 코드입니다. [모델 바인딩](xref:mvc/models/model-binding), [유효성 검사](xref:mvc/models/validation) 및 액션 결과 같은 MVC의 기본적인 기능들이 대부분 공유됩니다.  <!-- Review: Ryan, can we get a list of what is shared and what isn't? -->
 
 위의 `OnPostAsync` 메서드는 다음과 같습니다.
 
@@ -151,7 +151,7 @@ db 컨텍스트는 다음과 같습니다.
 
 데이터가 성공적으로 입력되면 `OnPostAsync` 처리기 메서드가 `RedirectToPage` 도우미 메서드를 호출하여 `RedirectToPageResult`의 인스턴스를 반환합니다. `RedirectToPage`는 `RedirectToAction`이나 `RedirectToRoute`와 비슷하지만 페이지에 맞춰진 새로운 액션 결과입니다. 위의 예제에서 이 메서드는 루트 인덱스 페이지(`/Index`)로 리디렉션합니다. `RedirectToPage`는 [페이지에 대한 URL 생성](#url_gen) 섹션에서 자세히 설명합니다.
 
-서버로 전달된 제출 양식에 유효성 검사 오류가 존재할 경우 `OnPostAsync` 처리기 메서드가 `Page` 도우미 메서드를 호출합니다. `Page`는 `PageResult`의 인스턴스를 반환합니다. `Page`를 반환하는 것은 컨트롤의 액션에서 `View`를 반환하는 것과 비슷합니다. `PageResult`는 처리기 메서드의 기본 <!-- Review --> 반환 형식입니다. `void`를 반환하는 처리기 메서드는 페이지를 렌더링합니다.
+서버로 전달된 제출 양식에 유효성 검사 오류가 존재할 경우 `OnPostAsync` 처리기 메서드가 `Page` 도우미 메서드를 호출합니다. `Page`는 `PageResult`의 인스턴스를 반환합니다. `Page`를 반환하는 것은 컨트롤의 액션에서 `View`를 반환하는 것과 비슷합니다. `PageResult`는 처리기 메서드의 기본 <!-- Review  --> 반환 형식입니다. `void`를 반환하는 처리기 메서드는 페이지를 렌더링합니다.
 
 `Customer` 속성은 `[BindProperty]` 특성을 이용해서 모델 바인딩 대상으로 명시적으로 지정(opt in)합니다.
 
@@ -231,7 +231,7 @@ Razor 페이지는 기본적으로 비 GET 동사에 대해서만 속성을 바�
 
 HEAD 요청을 사용하면 특정 리소스의 헤더를 검색할 수 있습니다. GET 요청과는 달리 HEAD 요청은 응답 본문을 반환하지 않습니다.
 
-일반적으로 HEAD 요청에 대한 HEAD 처리기를 만들고 호출합니다.
+일반적으로 HEAD 요청에 대한 HEAD 처리기를 만들고 호출합니다. 
 
 ```csharp
 public void OnHead()
@@ -311,7 +311,7 @@ services.AddMvc()
 
 ::: moniker range="= aspnetcore-2.0"
 
-레이아웃은 *Pages* 폴더에 위치합니다. 페이지는 현재 페이지와 동일한 폴더에서부터 시작하여 계층적으로 다른 뷰들(레이아웃, 템플릿, 부분 뷰)을 검색합니다. *Pages* 폴더의 레이아웃은 *Pages* 폴더 하위의 모든 Razor 페이지에서 사용할 수 있습니다.
+레이아웃은 *Pages* 폴더에 있습니다. 페이지는 현재 페이지와 동일한 폴더에서부터 시작하여 계층적으로 다른 뷰(레이아웃, 템플릿, 부분 뷰)들을 검색합니다. *Pages* 폴더의 레이아웃은 *Pages* 폴더 아래의 Razor 페이지에서 사용될 수 있습니다.
 
 ::: moniker-end
 
@@ -391,11 +391,11 @@ Razor 페이지의 뷰 검색에는 *Pages* 폴더가 포함됩니다. MVC 컨�
 | RedirectToPage(x)| 페이지 |
 | ----------------- | ------------ |
 | RedirectToPage("/Index") | *Pages/Index* |
-| RedirectToPage("./Index")  | *Pages/Customers/Index* |
+| RedirectToPage("./Index") | *Pages/Customers/Index* |
 | RedirectToPage("../Index") | *Pages/Index* |
-| RedirectToPage("Index") | *Pages/Customers/Index* |
+| RedirectToPage("Index")  | *Pages/Customers/Index* |
 
-`RedirectToPage("Index")`, `RedirectToPage("./Index")` 및 `RedirectToPage("../Index")`는 *상대적 이름*입니다. `RedirectToPage`의 매개 변수는 현재 페이지의 경로와 *결합*되어 대상 페이지의 이름을 계산합니다.  <!-- Review: Original had The provided string is combined with the page name of the current page to compute the name of the destination page.  page name, not page path -->
+`RedirectToPage("Index")`, `RedirectToPage("./Index")` 및 `RedirectToPage("../Index")`는 <em>상대적 이름</em>입니다. `RedirectToPage`의 매개 변수는 현재 페이지의 경로와 <em>결합</em>되어 대상 페이지의 이름을 계산합니다.  <!-- Review: Original had The provided string is combined with the page name of the current page to compute the name of the destination page.  page name, not page path -->
 
 상대적 이름 연결은 구조가 복잡한 사이트를 만들때 유용합니다. 상대적 이름을 사용하여 한 폴더의 여러 페이지들을 연결하면 해당 폴더의 이름을 바꿀 수 있습니다. 그래도 여전히 모든 링크는 동작합니다(링크에 폴더 이름이 포함되어 있지 않기 때문입니다).
 
@@ -499,7 +499,7 @@ URL에서 쿼리 문자열 `?handler=JoinList`를 사용하지 않으려면 경�
 
 [!code-cshtml[](index/sample/RazorPagesContacts2/Pages/Customers/CreateRoute.cshtml?highlight=1)]
 
-위의 코드를 사용할 경우 `OnPostJoinListAsync`에 제출되는 URL 경로는 `http://localhost:5000/Customers/CreateFATH/JoinList`입니다. `OnPostJoinListUCAsync`에 제출되는 URL 경로는 `http://localhost:5000/Customers/CreateFATH/JoinListUC`입니다.
+이 코드를 사용할 경우 `OnPostJoinListAsync`에 제출되는 URL 경로는 `http://localhost:5000/Customers/CreateFATH/JoinList`입니다. `OnPostJoinListUCAsync`에 제출되는 URL 경로는 `http://localhost:5000/Customers/CreateFATH/JoinListUC`입니다.
 
 `handler` 뒤의 `?`는 경로 매개 변수가 선택 사항임을 의미합니다.
 
@@ -532,7 +532,7 @@ services.AddMvc()
 
 ### <a name="specify-that-razor-pages-are-at-a-custom-root-directory"></a>Razor 페이지가 사용자 지정 루트 디렉터리에 위치하도록 지정하기
 
-(/dotnet/api/microsoft.extensions.dependencyinjection.mvcservicecollectionextensions.addmvc#Microsoft_Extensions_DependencyInjection_MvcServiceCollectionExtensions_AddMvc_Microsoft_Extensions_DependencyInjection_IServiceCollection_)에 [WithRazorPagesRoot](/dotnet/api/microsoft.extensions.dependencyinjection.mvcrazorpagesmvccorebuilderextensions.withrazorpagesroot)를 추가하여 Razor 페이지가 앱의 사용자 지정 루트 디렉터리에 위치하도록 지정합니다(상대 경로 제공).
+[AddMvc](/dotnet/api/microsoft.extensions.dependencyinjection.mvcservicecollectionextensions.addmvc#Microsoft_Extensions_DependencyInjection_MvcServiceCollectionExtensions_AddMvc_Microsoft_Extensions_DependencyInjection_IServiceCollection_)에 [WithRazorPagesRoot](/dotnet/api/microsoft.extensions.dependencyinjection.mvcrazorpagesmvccorebuilderextensions.withrazorpagesroot)를 추가하여 Razor 페이지가 앱의 사용자 지정 루트 디렉터리에 있도록 지정합니다(상대 경로 제공).
 
 ```csharp
 services.AddMvc()
