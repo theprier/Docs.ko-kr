@@ -3,14 +3,15 @@ title: ASP.NET Core에서 Entity Framework Core를 사용한 Razor 페이지 - �
 author: rick-anderson
 description: Entity Framework Core를 사용하여 Razor 페이지 앱을 만드는 방법을 보여 줍니다.
 ms.author: riande
+ms.custom: seodec18
 ms.date: 11/22/2018
 uid: data/ef-rp/intro
-ms.openlocfilehash: afba4395fe9dbe22516b6c4ebdc4c582381981fd
-ms.sourcegitcommit: 710fc5fcac258cc8415976dc66bdb355b3e061d5
+ms.openlocfilehash: 34c7238b689993245e033625dcd0e728b7c45163
+ms.sourcegitcommit: 49faca2644590fc081d86db46ea5e29edfc28b7b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52299471"
+ms.lasthandoff: 12/09/2018
+ms.locfileid: "53121702"
 ---
 # <a name="razor-pages-with-entity-framework-core-in-aspnet-core---tutorial-1-of-8"></a>ASP.NET Core에서 Entity Framework Core를 사용한 Razor 페이지 - 자습서 1/8
 
@@ -306,7 +307,7 @@ EF Core를 사용하는 비동기 코드를 작성할 때 고려해야 할 몇 �
 * EF Core 컨텍스트는 스레드로부터 안전하지 않습니다. 동시에 여러 작업을 수행하지 마십시오.
 * 비동기 코드의 성능 이점을 활용하려면 쿼리를 DB에 보내는 EF Core 메서드를 호출하는 경우 라이브러리 패키지(예: 페이징)가 비동기를 사용하는지 확인합니다.
 
-.NET에서의 비동기 프로그래밍에 대한 자세한 내용은 [비동기 개요](/dotnet/articles/standard/async) 및 [Async 및 Await를 사용한 비동기 프로그래밍](/dotnet/csharp/programming-guide/concepts/async/)을 참조하세요.
+.NET에서의 비동기 프로그래밍에 대한 자세한 내용은 [비동기 개요](/dotnet/standard/async) 및 [Async 및 Await를 사용한 비동기 프로그래밍](/dotnet/csharp/programming-guide/concepts/async/)을 참조하세요.
 
 다음 자습서에서는 기본 CRUD(만들기, 읽기, 업데이트, 삭제) 작업을 검사합니다.
 

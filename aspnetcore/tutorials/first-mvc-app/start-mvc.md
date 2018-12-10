@@ -5,12 +5,12 @@ description: ASP.NET Core MVC 및 Visual Studio를 시작하는 방법을 배웁
 ms.author: riande
 ms.date: 10/07/2017
 uid: tutorials/first-mvc-app/start-mvc
-ms.openlocfilehash: 9d50607899058c887597a3d73198552d3ef5b020
-ms.sourcegitcommit: c4572be5ebb301013a5698caf9b5572b76cb2e34
+ms.openlocfilehash: 738c49272c2ae2b075866001f06ad09fe73969f9
+ms.sourcegitcommit: 9bb58d7c8dad4bbd03419bcc183d027667fefa20
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "52710090"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52862202"
 ---
 # <a name="get-started-with-aspnet-core-mvc-and-visual-studio"></a>ASP.NET Core MVC 및 Visual Studio 시작
 
@@ -25,7 +25,7 @@ ms.locfileid: "52710090"
 * macOS, Linux 및 Windows: [Visual Studio Code를 사용하여 ASP.NET Core MVC 앱 만들기](xref:tutorials/first-mvc-app-xplat/start-mvc)
 
 > [!NOTE]
-> ASP.NET Core 목차에 대해 제안된 새 구조의 유용성을 테스트합니다.  몇 분 동안 현재 또는 제안된 목차에서 다른 7개의 항목을 찾는 연습을 수행하는 경우 [여기를 클릭하여 연구에 참여하세요](https://dpk4xbh5.optimalworkshop.com/treejack/rps16hd5).
+> ASP.NET Core 목차에 대해 제안된 새 구조의 유용성을 테스트합니다.  몇 분 동안 현재 또는 제안된 목차에서 다른 7개의 항목을 찾는 연습을 수행하는 경우 [여기를 클릭하여 연구에 참여하세요](https://dpk4xbh5.optimalworkshop.com/treejack/aa11wn82).
 
 ## <a name="install-visual-studio-and-net-core"></a>Visual Studio 및 .NET Core 설치
 

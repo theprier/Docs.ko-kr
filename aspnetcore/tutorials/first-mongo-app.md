@@ -1,17 +1,17 @@
 ---
 title: ASP.NET Core 및 MongoDB를 사용하여 웹 API 빌드
-author: pratik-khandelwal
+author: prkhandelwal
 description: 이 자습서에서는 MongoDB NoSQL 데이터베이스를 사용하여 ASP.NET Core 웹 API를 빌드하는 방법을 보여 줍니다.
 ms.author: scaddie
-ms.custom: mvc
+ms.custom: mvc,seodec18
 ms.date: 11/29/2018
 uid: tutorials/first-mongo-app
-ms.openlocfilehash: becf55bf94a1bfe78935013d802168a0b05dccce
-ms.sourcegitcommit: 0fc89b80bb1952852ecbcf3c5c156459b02a6ceb
+ms.openlocfilehash: df3b8656618c813838d6618efc9394f0ccb6e563
+ms.sourcegitcommit: 49faca2644590fc081d86db46ea5e29edfc28b7b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "52618092"
+ms.lasthandoff: 12/09/2018
+ms.locfileid: "53121481"
 ---
 # <a name="create-a-web-api-with-aspnet-core-and-mongodb"></a>ASP.NET Core 및 MongoDB를 사용하여 웹 API 만들기
 
