@@ -1,16 +1,17 @@
 ---
 title: ASP.NET Core와 Azure Active Directory
 author: rick-anderson
-description: ASP.NET Core와 관련된 Azure Active Directory 항목을 검색합니다.
+description: ASP.NET Core에서 Azure Active Directory를 사용하여 인증과 관련된 토픽을 검색합니다.
 ms.author: riande
 ms.date: 10/4/2017
+ms.custom: seodec18
 uid: security/authentication/azure-active-directory/index
-ms.openlocfilehash: 3a520bd8f8ad6c6afaed59960a95f531a18c9164
-ms.sourcegitcommit: 931b6a2d7eb28a0f1295e8a95690b8c4c5f58477
+ms.openlocfilehash: d165ac7be607d07ca3c519709d4db08f54f7801c
+ms.sourcegitcommit: 49faca2644590fc081d86db46ea5e29edfc28b7b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37077727"
+ms.lasthandoff: 12/09/2018
+ms.locfileid: "53121352"
 ---
 # <a name="azure-active-directory-with-aspnet-core"></a>ASP.NET Core와 Azure Active Directory
 
