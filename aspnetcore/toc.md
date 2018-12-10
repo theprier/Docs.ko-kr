@@ -6,20 +6,11 @@
 # [시작](xref:getting-started)
 
 # 자습서
-## [Web API 만들기](xref:tutorials/first-web-api)
+## Web API
+### [Web API 만들기](xref:tutorials/first-web-api)
+### [MongoDB를 사용하는 Web API](xref:tutorials/first-mongo-app)
 ## 웹앱
-### Razor 페이지
-#### [Razor 페이지 소개](xref:razor-pages/index)
-
-#### [Razor 페이지 자습서](xref:tutorials/razor-pages/index)
-##### [시작](xref:tutorials/razor-pages/razor-pages-start)
-##### [모델 추가](xref:tutorials/razor-pages/model)
-##### [스캐폴딩](xref:tutorials/razor-pages/page)
-##### [DB 작업](xref:tutorials/razor-pages/sql)
-##### [페이지 업데이트](xref:tutorials/razor-pages/da1)
-##### [검색 추가](xref:tutorials/razor-pages/search)
-##### [새 필드 추가](xref:tutorials/razor-pages/new-field)
-##### [유효성 검사 추가](xref:tutorials/razor-pages/validation)
+### [Razor 페이지](xref:tutorials/razor-pages/index)
 
 ### MVC
 #### [Visual Studio 사용](xref:tutorials/first-mvc-app/index)
@@ -65,7 +56,7 @@
 # 웹앱
 ## Razor 페이지
 ### [개요](xref:razor-pages/index)
-### [Razor 페이지 자습서](xref:tutorials/razor-pages/index)
+### [Razor Pages 자습서](xref:tutorials/razor-pages/index)
 #### [시작](xref:tutorials/razor-pages/razor-pages-start)
 #### [모델 추가](xref:tutorials/razor-pages/model)
 #### [스캐폴딩](xref:tutorials/razor-pages/page)
@@ -165,7 +156,9 @@
 # Web API
 ## [개요](xref:web-api/index)
 
-## [Web API 만들기](xref:tutorials/first-web-api)
+## 자습서
+### [Web API 만들기](xref:tutorials/first-web-api)
+### [MongoDB를 사용하는 Web API](xref:tutorials/first-mongo-app)
 
 ## Swagger/OpenAPI
 ### [개요](xref:tutorials/web-api-help-pages-using-swagger)
@@ -420,7 +413,7 @@
 ## [토큰 변경](xref:fundamentals/change-tokens)
 ## [OWIN(Open Web Interface for .NET)](xref:fundamentals/owin)
 ## [호스티드 서비스를 사용하는 백그라운드 작업](xref:fundamentals/host/hosted-services)
-## [외부 어셈블리에서 앱 강화](xref:fundamentals/configuration/platform-specific-configuration)
+## [호스팅 시작 어셈블리](xref:fundamentals/configuration/platform-specific-configuration)
 ## [Microsoft.AspNetCore.App 메타패키지](xref:fundamentals/metapackage-app)
 ## [Microsoft.AspNetCore.All 메타패키지](xref:fundamentals/metapackage)
 ## [LoggerMessage를 사용하여 로깅](xref:fundamentals/logging/loggermessage)
