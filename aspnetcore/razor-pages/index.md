@@ -21,7 +21,7 @@ Razor 페이지는 페이지 코딩 중심의 시나리오를 보다 쉽고 생�
 
 모델-뷰-컨트롤러 방식을 사용하는 자습서를 찾고 있다면 [ASP.NET Core MVC 시작하기](xref:tutorials/first-mvc-app/start-mvc)를 참고하시기 바랍니다.
 
-이 문서에서는 Razor 페이지에 대한 소개를 제공합니다. 단계별 자습서가 아닙니다. 일부 섹션이 너무 어렵다고 느껴진다면 [Razor 페이지 시작하기](xref:tutorials/razor-pages/razor-pages-start)를 참고하시기 바랍니다. ASP.NET Core에 대한 개요는 [ASP.NET Core 소개](xref:index)를 참고하시기 바랍니다.
+이 문서에서는 Razor 페이지에 대한 소개를 제공합니다. 단계별 자습서가 아닙니다. Visual Studio를 사용하여 Razor 페이지 프로젝트를 만드는 방법에 대한 자세한 내용은 [Razor 페이지 시작하기](xref:tutorials/razor-pages/razor-pages-start)를 참고하시기 바랍니다. ASP.NET Core에 대한 개요는 [ASP.NET Core 소개](xref:index)를 참고하시기 바랍니다.
 
 ## <a name="prerequisites"></a>전제 조건
 
@@ -73,11 +73,11 @@ Razor 페이지는 *Startup.cs*에서 사용할 수 있게 설정됩니다.
 
 [!code-cs[](index/sample/RazorPagesIntro/Startup.cs?name=snippet_Startup)]
 
-기본 페이지를 고려해 봅니다. <a name="OnGet"></a>
+기본적인 페이지를 살펴보겠습니다. <a name="OnGet"></a>
 
 [!code-cshtml[](index/sample/RazorPagesIntro/Pages/Index.cshtml)]
 
-이전 코드는 Razor 뷰 파일과 매우 비슷합니다. 차이점은 `@page` 지시문입니다. `@page`는 파일을 MVC 작업으로 만듭니다. 즉, 컨트롤러를 거치지 않고 요청을 직접 처리합니다. `@page`는 페이지의 첫 번째 Razor 지시문이어야 합니다. `@page`는 다른 Razor 생성자의 동작에 영향을 미칩니다.
+위의 코드는 Razor 뷰 파일과 매우 비슷합니다. 차이점은 `@page` 지시문입니다. `@page`는 파일을 MVC 액션으로 만드는데, 이 말은 컨트롤러를 거치지 않고 이 파일이 요청을 직접 처리한다는 뜻입니다. `@page`는 페이지의 첫 번째 Razor 지시문이어야 합니다. `@page`는 다른 Razor 구조의 동작에 영향을 줍니다.
 
 다음 두 파일은 `PageModel` 클래스를 사용하는 비슷한 페이지를 보여줍니다. *Pages/Index2.cshtml* 파일은 다음과 같습니다.
 
@@ -103,7 +103,7 @@ Razor 페이지는 *Startup.cs*에서 사용할 수 있게 설정됩니다.
 * 런타임은 기본적으로 *Pages* 폴더에서 Razor 페이지 파일을 검색합니다.
 * URL에 페이지가 지정되어 있지 않을 경우 `Index`가 기본 페이지입니다.
 
-## <a name="write-a-basic-form"></a>기본 양식 작성
+## <a name="write-a-basic-form"></a>기본적인 양식 작성하기
 
 Razor 페이지는 앱을 만들때 웹 브라우저에서 사용되는 일반적인 패턴을 손쉽게 구현할 수 있도록 설계되었습니다. [모델 바인딩](xref:mvc/models/model-binding), [태그 도우미](xref:mvc/views/tag-helpers/intro) 및 HTML 도우미는 모두 Razor 페이지 클래스에 정의된 속성을 통해서 *정확하게 동작*합니다. `Contact` 모델에 대한 기본적인 "연락처" 양식을 구현하는 페이지를 생각해보겠습니다.
 
@@ -311,7 +311,7 @@ services.AddMvc()
 
 ::: moniker range="= aspnetcore-2.0"
 
-레이아웃은 *Pages* 폴더에 있습니다. 페이지는 현재 페이지와 동일한 폴더에서부터 시작하여 계층적으로 다른 뷰(레이아웃, 템플릿, 부분 뷰)들을 검색합니다. *Pages* 폴더의 레이아웃은 *Pages* 폴더 아래의 Razor 페이지에서 사용될 수 있습니다.
+레이아웃은 *Pages* 폴더에 위치합니다. 페이지는 현재 페이지와 동일한 폴더에서부터 시작하여 계층적으로 다른 뷰들(레이아웃, 템플릿, 부분 뷰)을 검색합니다. *Pages* 폴더의 레이아웃은 *Pages* 폴더 하위의 모든 Razor 페이지에서 사용할 수 있습니다.
 
 ::: moniker-end
 
@@ -481,7 +481,7 @@ public string Message { get; set; }
 
 [!code-cshtml[](index/sample/RazorPagesContacts2/Pages/Customers/CreateFATH.cshtml?range=12-13)]
 
-이 코드를 사용할 경우 `OnPostJoinListAsync`에 제출되는 URL 경로는 `http://localhost:5000/Customers/CreateFATH?handler=JoinList`입니다. `OnPostJoinListUCAsync`에 제출되는 URL 경로는 `http://localhost:5000/Customers/CreateFATH?handler=JoinListUC`입니다.
+위의 코드를 사용할 경우 `OnPostJoinListAsync`에 제출되는 URL 경로는 `http://localhost:5000/Customers/CreateFATH?handler=JoinList`입니다. `OnPostJoinListUCAsync`에 제출되는 URL 경로는 `http://localhost:5000/Customers/CreateFATH?handler=JoinListUC`입니다.
 
 ## <a name="custom-routes"></a>사용자 지정 경로
 
