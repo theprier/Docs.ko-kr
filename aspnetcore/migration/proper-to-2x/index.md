@@ -3,14 +3,14 @@ title: ASP.NET에서 ASP.NET Core로 마이그레이션
 author: isaac2004
 description: 기존 ASP.NET MVC 또는 Web API 앱을 ASP.NET Core.web으로 마이그레이션하기 위한 지침을 받으세요.
 ms.author: scaddie
-ms.date: 08/27/2017
+ms.date: 12/10/2018
 uid: migration/proper-to-2x/index
-ms.openlocfilehash: 1a3e3f0b514c262cfe13ea8391ab97b95aa4384e
-ms.sourcegitcommit: 54655f1e1abf0b64d19506334d94cfdb0caf55f6
+ms.openlocfilehash: 6808fefb890dcdec6abdd0604ab61dfd2573d910
+ms.sourcegitcommit: 1872d2e6f299093c78a6795a486929ffb0bbffff
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50148800"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53216796"
 ---
 # <a name="migrate-from-aspnet-to-aspnet-core"></a>ASP.NET에서 ASP.NET Core로 마이그레이션
 
@@ -66,7 +66,7 @@ ASP.NET Core는 비슷한 방법을 사용하지만 항목을 처리하는 데 O
 
 `Startup`에는 `Configure` 메서드가 포함되어야 합니다. `Configure`에서 파이프라인에 필요한 미들웨어를 추가합니다. 기본 웹 사이트 템플릿을 기반으로 한 다음 예제에서는 여러 확장 메서드를 사용하여 다음 지원을 통해 파이프라인을 구성합니다.
 
-* [BrowserLink](http://vswebessentials.com/features/browserlink)
+* [브라우저 링크](xref:client-side/using-browserlink)
 * 오류 페이지
 * 정적 파일
 * ASP.NET Core MVC

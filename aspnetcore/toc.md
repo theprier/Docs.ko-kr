@@ -441,6 +441,6 @@
 ## [2.0의 새로운 기능](xref:aspnetcore-2.0)
 ## [1.1의 새로운 기능](xref:aspnetcore-1.1)
 
-# [API 참조](/dotnet/api/?view=aspnetcore-2.0)
+# [API 참조](/dotnet/api/?view=aspnetcore-2.2)
 
 # [참가](https://github.com/aspnet/Docs/blob/master/CONTRIBUTING.md)

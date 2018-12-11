@@ -4,14 +4,14 @@ author: ardalis
 description: ASP.NET Core MVC로 웹 API 구현을 ASP.NET 4.x Web API에서 마이그레이션하는 방법에 알아봅니다.
 ms.author: scaddie
 ms.custom: mvc
-ms.date: 10/01/2018
+ms.date: 12/10/2018
 uid: migration/webapi
-ms.openlocfilehash: f5d886a7c3182b5cd372762ade67c2e748051049
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: 9806c502f8f5244740f9f9614657a40cfaa03314
+ms.sourcegitcommit: 1872d2e6f299093c78a6795a486929ffb0bbffff
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50207279"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53216835"
 ---
 # <a name="migrate-from-aspnet-web-api-to-aspnet-core"></a>ASP.NET Core에 ASP.NET Web API에서 마이그레이션
 
@@ -23,8 +23,7 @@ ASP.NET 4.x Web API에는 광범위 한 브라우저 및 모바일 장치 등의
 
 ## <a name="prerequisites"></a>전제 조건
 
-* [.NET Core 2.1 SDK 이상](https://www.microsoft.com/net/download/all)
-* [Visual Studio 2017](https://www.visualstudio.com/downloads/) 버전 15.7.3 이상(**ASP.NET 및 웹 개발** 워크로드 포함)
+[!INCLUDE [net-core-prereqs-vs-2.2](../includes/net-core-prereqs-vs-2.2.md)]
 
 ## <a name="review-aspnet-4x-web-api-project"></a>ASP.NET 4.x Web API 프로젝트를 검토 합니다.
 
@@ -34,15 +33,15 @@ ASP.NET 4.x Web API에는 광범위 한 브라우저 및 모바일 장치 등의
 
 [!code-csharp[](webapi/sample/ProductsApp/Global.asax.cs?highlight=14)]
 
-`WebApiConfig` 에 정의 된 *App_Start* 폴더입니다. 하나의 정적 있기 `Register` 메서드:
+합니다 `WebApiConfig` 클래스에서 발견 되는 *App_Start* 폴더에 및 `Register` 메서드:
 
-[!code-csharp[](webapi/sample/ProductsApp/App_Start/WebApiConfig.cs?highlight=15-20)]
+[!code-csharp[](webapi/sample/ProductsApp/App_Start/WebApiConfig.cs)]
 
 이 클래스를 구성 [특성 라우팅은](/aspnet/web-api/overview/web-api-routing-and-actions/attribute-routing-in-web-api-2)이지만 프로젝트에 실제로 사용 되는 합니다. 또한 ASP.NET Web API에서 사용 되는 라우팅 테이블을 구성 합니다. 이 경우 ASP.NET 4.x Web API 예상 형식과 일치 하도록 Url `/api/{controller}/{id}`를 사용 하 여 `{id}` 선택 사항입니다.
 
-합니다 *ProductsApp* 프로젝트에 하나의 컨트롤러에 포함 됩니다. 컨트롤러에서 상속 `ApiController` 두 메서드를 노출 합니다.
+합니다 *ProductsApp* 프로젝트에 하나의 컨트롤러에 포함 됩니다. 컨트롤러에서 상속 `ApiController` 두 작업을 포함 합니다.
 
-[!code-csharp[](webapi/sample/ProductsApp/Controllers/ProductsController.cs?highlight=19,24)]
+[!code-csharp[](webapi/sample/ProductsApp/Controllers/ProductsController.cs?highlight=28,33)]
 
 합니다 `Product` 사용 되는 모델 `ProductsController` 간단한 클래스입니다.
 
@@ -88,6 +87,12 @@ ASP.NET Core mvc에서 기본적으로 포함 된 특성 라우팅은 때 <xref:
 1. `using System.Web.Http;`를 삭제합니다.
 1. 변경 된 `GetProduct` 에서 작업의 반환 형식을 `IHttpActionResult` 에 `ActionResult<Product>`입니다.
 
+간소화 된 `GetProduct` 작업의 `return` 다음 문을:
+
+```csharp
+return product;
+```
+
 ## <a name="configure-routing"></a>라우팅 구성
 
 다음과 같이 라우팅을 구성 합니다.
@@ -102,11 +107,19 @@ ASP.NET Core mvc에서 기본적으로 포함 된 특성 라우팅은 때 <xref:
     위의 [[Route]](xref:Microsoft.AspNetCore.Mvc.RouteAttribute) 특성이 컨트롤러의 특성 라우팅 패턴을 구성 합니다. 합니다 [[ApiController]](xref:Microsoft.AspNetCore.Mvc.ApiControllerAttribute) 특성을 사용 하면이 컨트롤러에서 요구 하는 모든 작업에 대 한 라우팅 특성입니다.
 
     특성 라우팅은 같은 토큰을 지원 `[controller]` 고 `[action]`입니다. 런타임 시 각 토큰이 바뀝니다 컨트롤러 또는 작업의 이름으로 각각 특성이 적용 되었습니다. 토큰을 프로젝트에서 매직 문자열의 수를 줄입니다. 경로 해당 컨트롤러를 사용 하 여 동기화 된 상태로 유지 하 고 자동 리팩터링 이름 바꾸기 때 작업을 적용할 때에 토큰을 확인 합니다.
+1. ASP.NET Core 2.2을 프로젝트의 호환성 모드를 설정 합니다.
+
+    [!code-csharp[](webapi/sample/ProductsCore/Startup.cs?name=snippet_ConfigureServices&highlight=4)]
+
+    이전 변경:
+
+    * 사용 해야는 `[ApiController]` 컨트롤러 수준 특성입니다.
+    * 잠재적으로 중요 ASP.NET Core 2.2에 정의 된 동작으로 옵트인 합니다.
 1. HTTP Get 요청을 사용 하도록 설정 된 `ProductController` 작업:
     * 적용 된 [[HttpGet]](xref:Microsoft.AspNetCore.Mvc.HttpGetAttribute) 특성을 `GetAllProducts` 동작 합니다.
     * 적용 된 `[HttpGet("{id}")]` 특성을 `GetProduct` 동작 합니다.
 
-이러한 변경 및 제거 사용 하지 않는 한 후 `using` 문 *ProductsController.cs* 파일은 다음과 같습니다.
+위의 변경 후 사용 되지 않는 제거 `using` 문 *ProductsController.cs* 파일은 다음과 같습니다.
 
 [!code-csharp[](webapi/sample/ProductsCore/Controllers/ProductsController.cs)]
 
@@ -147,3 +160,4 @@ Web API 호환성 shim 마이그레이션 대규모 ASP.NET 4.x Web API 프로�
 
 * <xref:web-api/index>
 * <xref:web-api/action-return-types>
+* <xref:mvc/compatibility-version>
