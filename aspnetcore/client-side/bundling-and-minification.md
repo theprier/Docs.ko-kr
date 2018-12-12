@@ -265,7 +265,7 @@ Visual Studio [Bundler & Minifier](https://marketplace.visualstudio.com/items?it
 > [!NOTE]
 > Bundler & Minifier 확장 Microsoft 지원 되지 않습니다 제공 하는 GitHub의 커뮤니티 기반 프로젝트에 속합니다. 문제점은 [여기](https://github.com/madskristensen/BundlerMinifier/issues)에 제출해야 합니다.
 
-마우스 오른쪽 단추로 클릭 합니다 *bundleconfig.json* 솔루션 탐색기에서 파일을 선택 **Bundler & Minifier** > **Gulp를 변환 하는 중...** :
+솔루션 탐색기에서 *bundleconfig.json* 파일을 마우스 오른쪽 버튼으로 클릭하고 **Bundler & Minifier**  >  **Convert To Gulp...** 를 선택합니다.
 
 ![Convert To Gulp 컨텍스트 메뉴](../client-side/bundling-and-minification/_static/convert-to-gulp.png)
 
@@ -283,7 +283,7 @@ npm i -g gulp-cli
 
 ### <a name="convert-manually"></a>직접 변환하기
 
-Visual Studio 및/또는 Bundler & Minifier 확장을 사용할 수 없는 경우 수동으로 변환 합니다.
+Visual Studio나 Bundler & Minifier 확장을 사용할 수 없는 경우 직접 수작업으로 변환합니다.
 
 프로젝트 루트에 다음 `devDependencies`가 지정된 *package.json* 파일을 추가합니다.
 
