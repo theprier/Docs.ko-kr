@@ -3,27 +3,27 @@ title: ASP.NET Core의 웹 호스트 및 일반 호스트
 author: guardrex
 description: 앱 시작 및 수명 관리를 담당하는 ASP.NET Core 웹 호스트 및 .NET 일반 호스트에 대해 알아봅니다.
 ms.author: riande
-ms.custom: mvc,seodec18
+ms.custom: mvc, seodec18
 ms.date: 08/28/2018
 uid: fundamentals/host/index
-ms.openlocfilehash: 3e67d8338aa7ac1b1530d0498ee0126d36a8d72b
-ms.sourcegitcommit: 49faca2644590fc081d86db46ea5e29edfc28b7b
+ms.openlocfilehash: 43a68f67368ce37a1fb4032579c6c4e4c05d2719
+ms.sourcegitcommit: b34b25da2ab68e6495b2460ff570468f16a9bf0d
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/09/2018
-ms.locfileid: "53121520"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53284580"
 ---
-# <a name="web-host-and-generic-host-in-aspnet-core"></a><span data-ttu-id="d5338-103">ASP.NET Core의 웹 호스트 및 일반 호스트</span><span class="sxs-lookup"><span data-stu-id="d5338-103">Web Host and Generic Host in ASP.NET Core</span></span>
+# <a name="web-host-and-generic-host-in-aspnet-core"></a><span data-ttu-id="507a5-103">ASP.NET Core의 웹 호스트 및 일반 호스트</span><span class="sxs-lookup"><span data-stu-id="507a5-103">Web Host and Generic Host in ASP.NET Core</span></span>
 
-<span data-ttu-id="d5338-104">.NET 앱은 *호스트*를 구성 및 실행합니다.</span><span class="sxs-lookup"><span data-stu-id="d5338-104">.NET apps configure and launch a *host*.</span></span> <span data-ttu-id="d5338-105">호스트는 앱 시작 및 수명 관리를 담당합니다.</span><span class="sxs-lookup"><span data-stu-id="d5338-105">The host is responsible for app startup and lifetime management.</span></span> <span data-ttu-id="d5338-106">두 개의 호스트 API를 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="d5338-106">Two host APIs are available for use:</span></span>
+<span data-ttu-id="507a5-104">.NET 앱은 *호스트*를 구성 및 실행합니다.</span><span class="sxs-lookup"><span data-stu-id="507a5-104">.NET apps configure and launch a *host*.</span></span> <span data-ttu-id="507a5-105">호스트는 앱 시작 및 수명 관리를 담당합니다.</span><span class="sxs-lookup"><span data-stu-id="507a5-105">The host is responsible for app startup and lifetime management.</span></span> <span data-ttu-id="507a5-106">두 개의 호스트 API를 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="507a5-106">Two host APIs are available for use:</span></span>
 
-* <span data-ttu-id="d5338-107">[웹 호스트](xref:fundamentals/host/web-host) &ndash; 웹 응용 프로그램을 호스팅하는 데 적합합니다.</span><span class="sxs-lookup"><span data-stu-id="d5338-107">[Web Host](xref:fundamentals/host/web-host) &ndash; Suitable for hosting web apps.</span></span>
-* <span data-ttu-id="d5338-108">[일반 호스트](xref:fundamentals/host/generic-host)(ASP.NET Core 2.1 이상) &ndash; 웹이 아닌 앱(예: 백그라운드 작업을 실행하는 앱)을 호스팅하는 데 적합합니다.</span><span class="sxs-lookup"><span data-stu-id="d5338-108">[Generic Host](xref:fundamentals/host/generic-host) (ASP.NET Core 2.1 or later) &ndash; Suitable for hosting non-web apps (for example, apps that run background tasks).</span></span> <span data-ttu-id="d5338-109">이후 릴리스에서는 일반 호스트가 웹앱을 포함한 모든 종류의 앱을 호스팅하는 데 적합해질 것입니다.</span><span class="sxs-lookup"><span data-stu-id="d5338-109">In a future release, the Generic Host will be suitable for hosting any kind of app, including web apps.</span></span> <span data-ttu-id="d5338-110">일반 호스트는 결국 웹 호스트를 대체하게 됩니다.</span><span class="sxs-lookup"><span data-stu-id="d5338-110">The Generic Host will eventually replace the Web Host.</span></span>
+* <span data-ttu-id="507a5-107">[웹 호스트](xref:fundamentals/host/web-host) &ndash; 웹 응용 프로그램을 호스팅하는 데 적합합니다.</span><span class="sxs-lookup"><span data-stu-id="507a5-107">[Web Host](xref:fundamentals/host/web-host) &ndash; Suitable for hosting web apps.</span></span>
+* <span data-ttu-id="507a5-108">[일반 호스트](xref:fundamentals/host/generic-host)(ASP.NET Core 2.1 이상) &ndash; 웹이 아닌 앱(예: 백그라운드 작업을 실행하는 앱)을 호스팅하는 데 적합합니다.</span><span class="sxs-lookup"><span data-stu-id="507a5-108">[Generic Host](xref:fundamentals/host/generic-host) (ASP.NET Core 2.1 or later) &ndash; Suitable for hosting non-web apps (for example, apps that run background tasks).</span></span> <span data-ttu-id="507a5-109">이후 릴리스에서는 일반 호스트가 웹앱을 포함한 모든 종류의 앱을 호스팅하는 데 적합해질 것입니다.</span><span class="sxs-lookup"><span data-stu-id="507a5-109">In a future release, the Generic Host will be suitable for hosting any kind of app, including web apps.</span></span> <span data-ttu-id="507a5-110">일반 호스트는 결국 웹 호스트를 대체하게 됩니다.</span><span class="sxs-lookup"><span data-stu-id="507a5-110">The Generic Host will eventually replace the Web Host.</span></span>
 
-<span data-ttu-id="d5338-111">ASP.NET Core *웹앱*을 호스팅할 때 개발자는 <xref:Microsoft.AspNetCore.Hosting.IWebHostBuilder>에 기반한 웹 호스트를 사용해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="d5338-111">For hosting ASP.NET Core *web apps*, developers should use the Web Host based on <xref:Microsoft.AspNetCore.Hosting.IWebHostBuilder>.</span></span> <span data-ttu-id="d5338-112">*비 웹앱*을 호스팅할 때 개발자는 <xref:Microsoft.Extensions.Hosting.HostBuilder>에 기반한 제네릭 호스트를 사용해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="d5338-112">For hosting *non-web apps*, developers should use the Generic Host based on <xref:Microsoft.Extensions.Hosting.HostBuilder>.</span></span>
+<span data-ttu-id="507a5-111">ASP.NET Core *웹앱*을 호스팅할 때 개발자는 <xref:Microsoft.AspNetCore.Hosting.IWebHostBuilder>에 기반한 웹 호스트를 사용해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="507a5-111">For hosting ASP.NET Core *web apps*, developers should use the Web Host based on <xref:Microsoft.AspNetCore.Hosting.IWebHostBuilder>.</span></span> <span data-ttu-id="507a5-112">*비 웹앱*을 호스팅할 때 개발자는 <xref:Microsoft.Extensions.Hosting.HostBuilder>에 기반한 제네릭 호스트를 사용해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="507a5-112">For hosting *non-web apps*, developers should use the Generic Host based on <xref:Microsoft.Extensions.Hosting.HostBuilder>.</span></span>
 
 <xref:fundamentals/host/hosted-services>  
-<span data-ttu-id="d5338-113">ASP.NET Core에서 호스팅되는 서비스를 사용하는 백그라운드 작업을 구현하는 방법을 배웁니다.</span><span class="sxs-lookup"><span data-stu-id="d5338-113">Learn how to implement background tasks with hosted services in ASP.NET Core.</span></span>
+<span data-ttu-id="507a5-113">ASP.NET Core에서 호스팅되는 서비스를 사용하는 백그라운드 작업을 구현하는 방법을 배웁니다.</span><span class="sxs-lookup"><span data-stu-id="507a5-113">Learn how to implement background tasks with hosted services in ASP.NET Core.</span></span>
 
 <xref:fundamentals/configuration/platform-specific-configuration>  
-<span data-ttu-id="d5338-114"><xref:Microsoft.AspNetCore.Hosting.IHostingStartup> 구현을 사용하여 참조되거나 참조되지 않은 어셈블리에서 ASP.NET Core 앱을 강화하는 방법을 알아봅니다.</span><span class="sxs-lookup"><span data-stu-id="d5338-114">Discover how to enhance an ASP.NET Core app from a referenced or unreferenced assembly using an <xref:Microsoft.AspNetCore.Hosting.IHostingStartup> implementation.</span></span>
+<span data-ttu-id="507a5-114"><xref:Microsoft.AspNetCore.Hosting.IHostingStartup> 구현을 사용하여 참조되거나 참조되지 않은 어셈블리에서 ASP.NET Core 앱을 강화하는 방법을 알아봅니다.</span><span class="sxs-lookup"><span data-stu-id="507a5-114">Discover how to enhance an ASP.NET Core app from a referenced or unreferenced assembly using an <xref:Microsoft.AspNetCore.Hosting.IHostingStartup> implementation.</span></span>
