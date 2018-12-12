@@ -8,16 +8,18 @@ ms.date: 06/10/2014
 ms.assetid: d1983524-e0d5-4ee6-9d87-1f552f7cb964
 msc.legacyurl: /signalr/overview/testing-and-debugging/unit-testing-signalr-applications
 msc.type: authoredcontent
-ms.openlocfilehash: ba8f5d4577403fe9765641d7ee5d88bde045680a
-ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
+ms.openlocfilehash: d8f3afdc2749173d1e260096ee6bd4bf1ae4c7cb
+ms.sourcegitcommit: 74e3be25ea37b5fc8b4b433b0b872547b4b99186
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48910826"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53287519"
 ---
 <a name="unit-testing-signalr-applications"></a>SignalR Applications 단위 테스트
 ====================
 [Patrick Fletcher](https://github.com/pfletcher)
+
+[!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
 
 > 이 문서에서는 SignalR 2의 단위 테스트 기능을 사용 하 여 설명 합니다.
 >
@@ -42,7 +44,7 @@ SignalR 응용 프로그램에 대 한 단위 테스트를 만들려면 SignalR 
 
 이 섹션에서는에서 만든 응용 프로그램에 대 한 단위 테스트 추가 합니다 [시작 자습서](../getting-started/tutorial-getting-started-with-signalr.md) 를 사용 하 여 [XUnit.net](https://github.com/xunit/xunit) 하 고 [Moq](https://github.com/Moq/moq4)합니다.
 
-XUnit.net는 테스트를 제어 하는 Moq를 만들 수는 [모의](http://en.wikipedia.org/wiki/Mock_object) 테스트에 대 한 개체입니다. 필요한 경우 다른 모의 프레임 워크를 사용할 수 있습니다. [NSubstitute](http://nsubstitute.github.io/) 적합 한 선택 이기도 합니다. 이 자습서에서는 두 가지 방법으로 모의 개체를 설정 하는 방법을 보여 줍니다: 첫 번째를 사용 하는 `dynamic` (.NET Framework 4에 도입 된), 개체 및 인터페이스를 사용 하 여 두 번째입니다.
+XUnit.net는 테스트를 제어 하는 Moq를 만들 수는 [모의](http://en.wikipedia.org/wiki/Mock_object) 테스트에 대 한 개체입니다. 필요한 경우 다른 모의 프레임 워크를 사용할 수 있습니다. [NSubstitute](http://nsubstitute.github.io/) 적합 한 선택 이기도 합니다. 이 자습서에는 두 가지 방법으로 모의 개체를 설정 하는 방법을 보여 줍니다. 첫 번째를 사용 하는 `dynamic` (.NET Framework 4에 도입 된), 개체 및 인터페이스를 사용 하 여 두 번째입니다.
 
 ### <a name="contents"></a>목차
 

@@ -8,16 +8,18 @@ ms.date: 04/17/2013
 ms.assetid: 03e4b9f5-0fea-4d94-959f-014b2762a301
 msc.legacyurl: /signalr/overview/older-versions/signalr-1x-hubs-api-guide-server
 msc.type: authoredcontent
-ms.openlocfilehash: f21f458e790b0103beb5c315bd7c1192e8866da3
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: a51a2077e0b6cde80bc679e3a310c0c804d19d68
+ms.sourcegitcommit: 74e3be25ea37b5fc8b4b433b0b872547b4b99186
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41827563"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53288029"
 ---
 <a name="aspnet-signalr-hubs-api-guide---server-signalr-1x"></a>ASP.NET SignalR 허브 API 가이드-서버 (SignalR 1.x)
 ====================
 하 여 [Patrick Fletcher](https://github.com/pfletcher), [Tom Dykstra](https://github.com/tdykstra)
+
+[!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
 
 > 이 문서에서는 일반 옵션을 보여 주는 코드 샘플을 사용 하 여 서버 쪽 ASP.NET SignalR 허브 API의 버전 1.1에서 SignalR에 대 한 프로그래밍을 소개 합니다.
 > 
@@ -86,7 +88,7 @@ ms.locfileid: "41827563"
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample2.cs?highlight=5)]
 
-ASP.NET MVC 응용 프로그램에 SignalR 기능을 추가 하는 경우에 SignalR 경로의 다른 경로 보다 먼저 추가 되었는지 확인 합니다. 자세한 내용은 [자습서: SignalR 및 MVC 4 시작](index.md)합니다.
+ASP.NET MVC 응용 프로그램에 SignalR 기능을 추가 하는 경우에 SignalR 경로의 다른 경로 보다 먼저 추가 되었는지 확인 합니다. 자세한 내용은 참조 하세요. [자습서: SignalR 및 MVC 4 시작](index.md)합니다.
 
 <a id="signalrurl"></a>
 
@@ -205,7 +207,7 @@ SignalR;에 대 한 기본 URL을 사용할 수 없습니다 하는 특수 상�
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample14.cs?highlight=3)]
 
-반환 형식 및 C# 메서드에서 마찬가지로 복합 형식 및 배열 등 매개 변수를 지정할 수 있습니다. 매개 변수에서 받거나 호출자에 게 반환 하는 모든 데이터는 JSON을 사용 하 여 클라이언트와 서버 간에 전송 되 고 자동으로 SignalR 처리 복잡 한 개체의 바인딩 및 개체의 배열 합니다.
+일반적인 C# 메서드와 마찬가지로 복합 형식 및 배열 등을 사용해서 반환 형식과 매개 변수를 지정할 수 있습니다. 매개 변수에서 받거나 호출자에 게 반환 하는 모든 데이터는 JSON을 사용 하 여 클라이언트와 서버 간에 전송 되 고 자동으로 SignalR 처리 복잡 한 개체의 바인딩 및 개체의 배열 합니다.
 
 <a id="methodnames"></a>
 

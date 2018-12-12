@@ -8,16 +8,18 @@ ms.date: 06/10/2014
 ms.assetid: 3751f5e7-59db-4be0-a290-50abc24e5c84
 msc.legacyurl: /signalr/overview/performance/signalr-performance
 msc.type: authoredcontent
-ms.openlocfilehash: 269c10d7a73f181eaceac1c43ad51f3933d6711c
-ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
+ms.openlocfilehash: 9346f0ff9720361f07afe196f59305f0f38ffe8a
+ms.sourcegitcommit: 74e3be25ea37b5fc8b4b433b0b872547b4b99186
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48911862"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53287787"
 ---
 <a name="signalr-performance"></a>SignalR 성능
 ====================
 [Patrick Fletcher](https://github.com/pfletcher)
+
+[!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
 
 > 이 항목에 대 한 디자인, 측정 및 SignalR 응용 프로그램의 성능을 향상 하는 방법을 설명 합니다.
 >
@@ -88,7 +90,7 @@ SignalR 응용 프로그램에서 성능 향상을 위해 서버를 튜닝 하�
 
 **SignalR 구성 설정**
 
-- **DefaultMessageBufferSize**: 기본적으로 SignalR 허브 연결당 당 메모리에 1000 개의 메시지를 유지 합니다. 큰 메시지를 사용 하는 경우이이 값을 줄여 완화할 수 있는 메모리 문제를 발생할 수 있습니다. 이 설정을 지정할 수 있습니다 합니다 `Application_Start` 또는 ASP.NET 응용 프로그램에서 이벤트 처리기는 `Configuration` 자체 호스팅된 응용 프로그램의 OWIN 시작 클래스의 메서드. 다음 샘플을 사용 하는 서버 메모리의 양을 줄이기 위해 응용 프로그램의 메모리 공간을 줄이기 위해이 값을 줄이는 방법을 보여 줍니다.
+- **DefaultMessageBufferSize**: 기본적으로 SignalR 허브 연결당 당 메모리에 1000 개의 메시지를 유지합니다. 큰 메시지를 사용 하는 경우이이 값을 줄여 완화할 수 있는 메모리 문제를 발생할 수 있습니다. 이 설정을 지정할 수 있습니다 합니다 `Application_Start` 또는 ASP.NET 응용 프로그램에서 이벤트 처리기는 `Configuration` 자체 호스팅된 응용 프로그램의 OWIN 시작 클래스의 메서드. 다음 샘플을 사용 하는 서버 메모리의 양을 줄이기 위해 응용 프로그램의 메모리 공간을 줄이기 위해이 값을 줄이는 방법을 보여 줍니다.
 
     **기본 메시지 버퍼 크기를 줄이는 것에 대 한 Startup.cs에서.NET 서버 코드**
 
@@ -96,7 +98,7 @@ SignalR 응용 프로그램에서 성능 향상을 위해 서버를 튜닝 하�
 
 **IIS 구성 설정**
 
-- **응용 프로그램 당 최대 동시 요청**: 동시 IIS의 수를 늘리면 요청 증가 요청을 처리 하는 것에 대 한 사용 가능한 서버 리소스입니다. 기본값은 5000입니다. 이 설정을 늘릴, 관리자 권한 명령 프롬프트에서 다음 명령을 실행 합니다.
+- **응용 프로그램 당 최대 동시 요청**: 동시 IIS의 수를 늘리면 요청 요청을 처리 하는 것에 대 한 사용 가능한 서버 리소스를 증가 합니다. 기본값은 5000입니다. 이 설정을 늘릴, 관리자 권한 명령 프롬프트에서 다음 명령을 실행 합니다.
 
     [!code-console[Main](signalr-performance/samples/sample4.cmd)]
 - **ApplicationPool QueueLength**: 응용 프로그램 풀에 대 한 Http.sys 큐는 요청의 최대 수입니다. 큐 가득 차면 새 요청 503 "서비스를 사용할 수 없음" 응답을 수신 합니다. 기본값은 1000입니다.
@@ -112,7 +114,7 @@ SignalR 응용 프로그램에서 성능 향상을 위해 서버를 튜닝 하�
 
 SignalR 성능 향상 시킬 수 있는 ASP.NET 설정은 다음과 같습니다.
 
-- **CPU 당 최대 동시 요청**:이 설정을 성능 병목 현상을 줄일 수 있습니다. 이 설정을 늘릴를 추가 하려면 다음 구성 설정을 `aspnet.config` 파일:
+- **CPU 당 최대 동시 요청**: 이 설정을 성능 병목 현상을 줄일 수 있습니다. 이 설정을 늘릴를 추가 하려면 다음 구성 설정을 `aspnet.config` 파일:
 
     [!code-xml[Main](signalr-performance/samples/sample5.xml?highlight=4)]
 - **요청 큐 제한**: 총 연결 수를 초과 하는 경우는 `maxConcurrentRequestsPerCPU` 설정을 ASP.NET 요청 큐를 사용 하 여 제한을 시작 됩니다. 큐의 크기를 늘리려면 늘릴 수 있습니다는 `requestQueueLimit` 설정 합니다. 이 작업을 수행 하려면 다음 구성 설정을 추가 합니다 `processModel` 에 노드 `config/machine.config` (대신 `aspnet.config`):
@@ -200,10 +202,10 @@ SignalR 성능 카운터를 제거 하려면 다음 매개 변수를 사용 하 
 - **오류: 모든 합계**
 - **오류: All/Sec**
 - **오류: 허브 확인 합계**
-- **오류: 허브 확인/Sec**
-- **허브 호출 총 오류 수:**
-- **오류: 허브 호출/Sec**
-- **총 오류: 전송 수**
+- **오류: 초당 허브 확인**
+- **오류: 허브 호출 합계**
+- **오류: 초당 허브 호출**
+- **오류: 전송 합계**
 - **오류: 전송 수/초**
 
 <a id="scaleout_metrics"></a>
