@@ -6,72 +6,72 @@ ms.author: riande
 ms.custom: mvc, seodec18
 ms.date: 11/11/2018
 uid: security/authentication/facebook-logins
-ms.openlocfilehash: 8bb22dc6df9879e827ff9a5ac11e9e3ad5346dc2
-ms.sourcegitcommit: 49faca2644590fc081d86db46ea5e29edfc28b7b
+ms.openlocfilehash: d4f3e210b0d3c79eaf2233f97a29a6d96cd69b39
+ms.sourcegitcommit: b34b25da2ab68e6495b2460ff570468f16a9bf0d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/09/2018
-ms.locfileid: "53121507"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53284385"
 ---
-# <a name="facebook-external-login-setup-in-aspnet-core"></a><span data-ttu-id="8583b-103">ASP.NET Core에서 Facebook 외부 로그인 설정</span><span class="sxs-lookup"><span data-stu-id="8583b-103">Facebook external login setup in ASP.NET Core</span></span>
+# <a name="facebook-external-login-setup-in-aspnet-core"></a><span data-ttu-id="5cdcc-103">ASP.NET Core에서 Facebook 외부 로그인 설정</span><span class="sxs-lookup"><span data-stu-id="5cdcc-103">Facebook external login setup in ASP.NET Core</span></span>
 
-<span data-ttu-id="8583b-104">작성자: [Valeriy Novytskyy](https://github.com/01binary) 및 [Rick Anderson](https://twitter.com/RickAndMSFT)</span><span class="sxs-lookup"><span data-stu-id="8583b-104">By [Valeriy Novytskyy](https://github.com/01binary) and [Rick Anderson](https://twitter.com/RickAndMSFT)</span></span>
+<span data-ttu-id="5cdcc-104">작성자: [Valeriy Novytskyy](https://github.com/01binary) 및 [Rick Anderson](https://twitter.com/RickAndMSFT)</span><span class="sxs-lookup"><span data-stu-id="5cdcc-104">By [Valeriy Novytskyy](https://github.com/01binary) and [Rick Anderson](https://twitter.com/RickAndMSFT)</span></span>
 
-<span data-ttu-id="8583b-105">이 자습서에서 만든 샘플 ASP.NET Core 2.0 프로젝트를 사용 하 여 Facebook 계정으로 로그인 사용자가 사용 하도록 설정 하는 방법을 보여 줍니다.는 [이전 페이지](xref:security/authentication/social/index)합니다.</span><span class="sxs-lookup"><span data-stu-id="8583b-105">This tutorial shows you how to enable your users to sign in with their Facebook account using a sample ASP.NET Core 2.0 project created on the [previous page](xref:security/authentication/social/index).</span></span> <span data-ttu-id="8583b-106">Facebook 인증에 필요 합니다 [Microsoft.AspNetCore.Authentication.Facebook](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.Facebook) NuGet 패키지.</span><span class="sxs-lookup"><span data-stu-id="8583b-106">Facebook authentication requires the [Microsoft.AspNetCore.Authentication.Facebook](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.Facebook) NuGet package.</span></span> <span data-ttu-id="8583b-107">수행 하 여 Facebook 앱 ID를 만드는 것으로 시작 합니다 [공식 단계](https://developers.facebook.com)합니다.</span><span class="sxs-lookup"><span data-stu-id="8583b-107">We start by creating a Facebook App ID by following the [official steps](https://developers.facebook.com).</span></span>
+<span data-ttu-id="5cdcc-105">이 자습서에서 만든 샘플 ASP.NET Core 2.0 프로젝트를 사용 하 여 Facebook 계정으로 로그인 사용자가 사용 하도록 설정 하는 방법을 보여 줍니다.는 [이전 페이지](xref:security/authentication/social/index)합니다.</span><span class="sxs-lookup"><span data-stu-id="5cdcc-105">This tutorial shows you how to enable your users to sign in with their Facebook account using a sample ASP.NET Core 2.0 project created on the [previous page](xref:security/authentication/social/index).</span></span> <span data-ttu-id="5cdcc-106">Facebook 인증에 필요 합니다 [Microsoft.AspNetCore.Authentication.Facebook](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.Facebook) NuGet 패키지.</span><span class="sxs-lookup"><span data-stu-id="5cdcc-106">Facebook authentication requires the [Microsoft.AspNetCore.Authentication.Facebook](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.Facebook) NuGet package.</span></span> <span data-ttu-id="5cdcc-107">수행 하 여 Facebook 앱 ID를 만드는 것으로 시작 합니다 [공식 단계](https://developers.facebook.com)합니다.</span><span class="sxs-lookup"><span data-stu-id="5cdcc-107">We start by creating a Facebook App ID by following the [official steps](https://developers.facebook.com).</span></span>
 
-## <a name="create-the-app-in-facebook"></a><span data-ttu-id="8583b-108">Facebook에서 앱 만들기</span><span class="sxs-lookup"><span data-stu-id="8583b-108">Create the app in Facebook</span></span>
+## <a name="create-the-app-in-facebook"></a><span data-ttu-id="5cdcc-108">Facebook에서 앱 만들기</span><span class="sxs-lookup"><span data-stu-id="5cdcc-108">Create the app in Facebook</span></span>
 
-* <span data-ttu-id="8583b-109">로 이동 합니다 [Facebook 개발자 앱](https://developers.facebook.com/apps/) 페이지 하 고 로그인 합니다.</span><span class="sxs-lookup"><span data-stu-id="8583b-109">Navigate to the [Facebook Developers app](https://developers.facebook.com/apps/) page and sign in.</span></span> <span data-ttu-id="8583b-110">사용 하 여 Facebook 계정이 아직 없다면 합니다 **Facebook에 대 한 등록** 만들려면 로그인 페이지에 링크 합니다.</span><span class="sxs-lookup"><span data-stu-id="8583b-110">If you don't already have a Facebook account, use the **Sign up for Facebook** link on the login page to create one.</span></span>
+* <span data-ttu-id="5cdcc-109">로 이동 합니다 [Facebook 개발자 앱](https://developers.facebook.com/apps/) 페이지 하 고 로그인 합니다.</span><span class="sxs-lookup"><span data-stu-id="5cdcc-109">Navigate to the [Facebook Developers app](https://developers.facebook.com/apps/) page and sign in.</span></span> <span data-ttu-id="5cdcc-110">사용 하 여 Facebook 계정이 아직 없다면 합니다 **Facebook에 대 한 등록** 만들려면 로그인 페이지에 링크 합니다.</span><span class="sxs-lookup"><span data-stu-id="5cdcc-110">If you don't already have a Facebook account, use the **Sign up for Facebook** link on the login page to create one.</span></span>
 
-* <span data-ttu-id="8583b-111">탭의 **새 앱 추가** 단추는 오른쪽 위 모서리에는 새 앱 ID를 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="8583b-111">Tap the **Add a New App** button in the upper right corner to create a new App ID.</span></span>
+* <span data-ttu-id="5cdcc-111">탭의 **새 앱 추가** 단추는 오른쪽 위 모서리에는 새 앱 ID를 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="5cdcc-111">Tap the **Add a New App** button in the upper right corner to create a new App ID.</span></span>
 
    ![Facebook 개발자 포털에 대 한 Microsoft Edge에서 열린](index/_static/FBMyApps.png)
 
-* <span data-ttu-id="8583b-113">양식을 작성 하 고 탭의 **앱 ID 만들기** 단추입니다.</span><span class="sxs-lookup"><span data-stu-id="8583b-113">Fill out the form and tap the **Create App ID** button.</span></span>
+* <span data-ttu-id="5cdcc-113">양식을 작성 하 고 탭의 **앱 ID 만들기** 단추입니다.</span><span class="sxs-lookup"><span data-stu-id="5cdcc-113">Fill out the form and tap the **Create App ID** button.</span></span>
 
   ![새 앱 ID 양식 만들기](index/_static/FBNewAppId.png)
 
-* <span data-ttu-id="8583b-115">에 **제품을 선택** 페이지에서 클릭 **설정** 에 **Facebook 로그인** 카드.</span><span class="sxs-lookup"><span data-stu-id="8583b-115">On the **Select a product** page, click **Set Up** on the **Facebook Login** card.</span></span>
+* <span data-ttu-id="5cdcc-115">에 **제품을 선택** 페이지에서 클릭 **설정** 에 **Facebook 로그인** 카드.</span><span class="sxs-lookup"><span data-stu-id="5cdcc-115">On the **Select a product** page, click **Set Up** on the **Facebook Login** card.</span></span>
 
   ![제품 설치 페이지](index/_static/FBProductSetup.png)
 
-* <span data-ttu-id="8583b-117">합니다 **퀵 스타트** 마법사가 시작 됩니다 **플랫폼을 선택** 의 첫 번째 페이지입니다.</span><span class="sxs-lookup"><span data-stu-id="8583b-117">The **Quickstart** wizard will launch with **Choose a Platform** as the first page.</span></span> <span data-ttu-id="8583b-118">마법사를 클릭 하 여 지금은 무시 합니다 **설정을** 왼쪽 메뉴에서 링크:</span><span class="sxs-lookup"><span data-stu-id="8583b-118">Bypass the wizard for now by clicking the **Settings** link in the menu on the left:</span></span>
+* <span data-ttu-id="5cdcc-117">합니다 **퀵 스타트** 마법사가 시작 됩니다 **플랫폼을 선택** 의 첫 번째 페이지입니다.</span><span class="sxs-lookup"><span data-stu-id="5cdcc-117">The **Quickstart** wizard will launch with **Choose a Platform** as the first page.</span></span> <span data-ttu-id="5cdcc-118">마법사를 클릭 하 여 지금은 무시 합니다 **설정을** 왼쪽 메뉴에서 링크:</span><span class="sxs-lookup"><span data-stu-id="5cdcc-118">Bypass the wizard for now by clicking the **Settings** link in the menu on the left:</span></span>
 
   ![Skip 빠른 시작](index/_static/FBSkipQuickStart.png)
 
-* <span data-ttu-id="8583b-120">표시 되는 **클라이언트 OAuth 설정** 페이지:</span><span class="sxs-lookup"><span data-stu-id="8583b-120">You are presented with the **Client OAuth Settings** page:</span></span>
+* <span data-ttu-id="5cdcc-120">표시 되는 **클라이언트 OAuth 설정** 페이지:</span><span class="sxs-lookup"><span data-stu-id="5cdcc-120">You are presented with the **Client OAuth Settings** page:</span></span>
 
   ![클라이언트 OAuth 설정 페이지](index/_static/FBOAuthSetup.png)
 
-* <span data-ttu-id="8583b-122">개발 URI를 입력으로 */signin-facebook* 에 추가 합니다 **유효한 OAuth 리디렉션 Uri** 필드 (예를 들어: `https://localhost:44320/signin-facebook`).</span><span class="sxs-lookup"><span data-stu-id="8583b-122">Enter your development URI with */signin-facebook* appended into the **Valid OAuth Redirect URIs** field (for example: `https://localhost:44320/signin-facebook`).</span></span> <span data-ttu-id="8583b-123">이 자습서의 뒷부분에서 구성 된 Facebook 인증에는 요청을 자동으로 처리할 */signin-facebook* OAuth 흐름을 구현 하는 경로입니다.</span><span class="sxs-lookup"><span data-stu-id="8583b-123">The Facebook authentication configured later in this tutorial will automatically handle requests at */signin-facebook* route to implement the OAuth flow.</span></span>
+* <span data-ttu-id="5cdcc-122">개발 URI를 입력으로 */signin-facebook* 에 추가 합니다 **유효한 OAuth 리디렉션 Uri** 필드 (예를 들어: `https://localhost:44320/signin-facebook`).</span><span class="sxs-lookup"><span data-stu-id="5cdcc-122">Enter your development URI with */signin-facebook* appended into the **Valid OAuth Redirect URIs** field (for example: `https://localhost:44320/signin-facebook`).</span></span> <span data-ttu-id="5cdcc-123">이 자습서의 뒷부분에서 구성 된 Facebook 인증에는 요청을 자동으로 처리할 */signin-facebook* OAuth 흐름을 구현 하는 경로입니다.</span><span class="sxs-lookup"><span data-stu-id="5cdcc-123">The Facebook authentication configured later in this tutorial will automatically handle requests at */signin-facebook* route to implement the OAuth flow.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="8583b-124">URI */signin-facebook* Facebook 인증 공급자의 기본 콜백으로 설정 됩니다.</span><span class="sxs-lookup"><span data-stu-id="8583b-124">The URI */signin-facebook* is set as the default callback of the Facebook authentication provider.</span></span> <span data-ttu-id="8583b-125">상속 된 통해 Facebook 인증 미들웨어를 구성 하는 동안 기본 콜백 URI를 변경할 수 있습니다 [RemoteAuthenticationOptions.CallbackPath](/dotnet/api/microsoft.aspnetcore.authentication.remoteauthenticationoptions.callbackpath) 의 속성을 [FacebookOptions](/dotnet/api/microsoft.aspnetcore.authentication.facebook.facebookoptions) 클래스입니다.</span><span class="sxs-lookup"><span data-stu-id="8583b-125">You can change the default callback URI while configuring the Facebook authentication middleware via the inherited [RemoteAuthenticationOptions.CallbackPath](/dotnet/api/microsoft.aspnetcore.authentication.remoteauthenticationoptions.callbackpath) property of the [FacebookOptions](/dotnet/api/microsoft.aspnetcore.authentication.facebook.facebookoptions) class.</span></span>
+> <span data-ttu-id="5cdcc-124">URI */signin-facebook* Facebook 인증 공급자의 기본 콜백으로 설정 됩니다.</span><span class="sxs-lookup"><span data-stu-id="5cdcc-124">The URI */signin-facebook* is set as the default callback of the Facebook authentication provider.</span></span> <span data-ttu-id="5cdcc-125">상속 된 통해 Facebook 인증 미들웨어를 구성 하는 동안 기본 콜백 URI를 변경할 수 있습니다 [RemoteAuthenticationOptions.CallbackPath](/dotnet/api/microsoft.aspnetcore.authentication.remoteauthenticationoptions.callbackpath) 의 속성을 [FacebookOptions](/dotnet/api/microsoft.aspnetcore.authentication.facebook.facebookoptions) 클래스입니다.</span><span class="sxs-lookup"><span data-stu-id="5cdcc-125">You can change the default callback URI while configuring the Facebook authentication middleware via the inherited [RemoteAuthenticationOptions.CallbackPath](/dotnet/api/microsoft.aspnetcore.authentication.remoteauthenticationoptions.callbackpath) property of the [FacebookOptions](/dotnet/api/microsoft.aspnetcore.authentication.facebook.facebookoptions) class.</span></span>
 
-* <span data-ttu-id="8583b-126">클릭 **변경 내용을 저장**합니다.</span><span class="sxs-lookup"><span data-stu-id="8583b-126">Click **Save Changes**.</span></span>
+* <span data-ttu-id="5cdcc-126">클릭 **변경 내용을 저장**합니다.</span><span class="sxs-lookup"><span data-stu-id="5cdcc-126">Click **Save Changes**.</span></span>
 
-* <span data-ttu-id="8583b-127">클릭 **설정을** > **기본** 왼쪽된 탐색 창에서 링크 합니다.</span><span class="sxs-lookup"><span data-stu-id="8583b-127">Click **Settings** > **Basic** link in the left navigation.</span></span>
+* <span data-ttu-id="5cdcc-127">클릭 **설정을** > **기본** 왼쪽된 탐색 창에서 링크 합니다.</span><span class="sxs-lookup"><span data-stu-id="5cdcc-127">Click **Settings** > **Basic** link in the left navigation.</span></span>
 
-  <span data-ttu-id="8583b-128">이 페이지에서는 기록해 하 `App ID` 고 `App Secret`입니다.</span><span class="sxs-lookup"><span data-stu-id="8583b-128">On this page, make a note of your `App ID` and your `App Secret`.</span></span> <span data-ttu-id="8583b-129">다음 섹션에서 ASP.NET Core 응용 프로그램에 둘 다를 추가 합니다.</span><span class="sxs-lookup"><span data-stu-id="8583b-129">You will add both into your ASP.NET Core application in the next section:</span></span>
+  <span data-ttu-id="5cdcc-128">이 페이지에서는 기록해 하 `App ID` 고 `App Secret`입니다.</span><span class="sxs-lookup"><span data-stu-id="5cdcc-128">On this page, make a note of your `App ID` and your `App Secret`.</span></span> <span data-ttu-id="5cdcc-129">다음 섹션에서 ASP.NET Core 응용 프로그램에 둘 다를 추가 합니다.</span><span class="sxs-lookup"><span data-stu-id="5cdcc-129">You will add both into your ASP.NET Core application in the next section:</span></span>
 
-* <span data-ttu-id="8583b-130">다시 방문 해야 하는 사이트를 배포 하는 경우는 **Facebook 로그인** 페이지를 설정 하 고 새 공용 URI를 등록 합니다.</span><span class="sxs-lookup"><span data-stu-id="8583b-130">When deploying the site you need to revisit the **Facebook Login** setup page and register a new public URI.</span></span>
+* <span data-ttu-id="5cdcc-130">다시 방문 해야 하는 사이트를 배포 하는 경우는 **Facebook 로그인** 페이지를 설정 하 고 새 공용 URI를 등록 합니다.</span><span class="sxs-lookup"><span data-stu-id="5cdcc-130">When deploying the site you need to revisit the **Facebook Login** setup page and register a new public URI.</span></span>
 
-## <a name="store-facebook-app-id-and-app-secret"></a><span data-ttu-id="8583b-131">Facebook 앱 ID 및 앱 암호를 저장 합니다.</span><span class="sxs-lookup"><span data-stu-id="8583b-131">Store Facebook App ID and App Secret</span></span>
+## <a name="store-facebook-app-id-and-app-secret"></a><span data-ttu-id="5cdcc-131">Facebook 앱 ID 및 앱 암호를 저장 합니다.</span><span class="sxs-lookup"><span data-stu-id="5cdcc-131">Store Facebook App ID and App Secret</span></span>
 
-<span data-ttu-id="8583b-132">Facebook과 같은 중요 한 설정 연결 `App ID` 하 고 `App Secret` 사용 하 여 응용 프로그램 구성에는 [암호 관리자](xref:security/app-secrets)합니다.</span><span class="sxs-lookup"><span data-stu-id="8583b-132">Link sensitive settings like Facebook `App ID` and `App Secret` to your application configuration using the [Secret Manager](xref:security/app-secrets).</span></span> <span data-ttu-id="8583b-133">이 자습서에서는 이름을 토큰 `Authentication:Facebook:AppId` 고 `Authentication:Facebook:AppSecret`입니다.</span><span class="sxs-lookup"><span data-stu-id="8583b-133">For the purposes of this tutorial, name the tokens `Authentication:Facebook:AppId` and `Authentication:Facebook:AppSecret`.</span></span>
+<span data-ttu-id="5cdcc-132">Facebook과 같은 중요 한 설정 연결 `App ID` 하 고 `App Secret` 사용 하 여 응용 프로그램 구성에는 [암호 관리자](xref:security/app-secrets)합니다.</span><span class="sxs-lookup"><span data-stu-id="5cdcc-132">Link sensitive settings like Facebook `App ID` and `App Secret` to your application configuration using the [Secret Manager](xref:security/app-secrets).</span></span> <span data-ttu-id="5cdcc-133">이 자습서에서는 이름을 토큰 `Authentication:Facebook:AppId` 고 `Authentication:Facebook:AppSecret`입니다.</span><span class="sxs-lookup"><span data-stu-id="5cdcc-133">For the purposes of this tutorial, name the tokens `Authentication:Facebook:AppId` and `Authentication:Facebook:AppSecret`.</span></span>
 
-<span data-ttu-id="8583b-134">안전 하 게 저장 하려면 다음 명령을 실행 `App ID` 고 `App Secret` 암호 관리자를 사용 하 여:</span><span class="sxs-lookup"><span data-stu-id="8583b-134">Execute the following commands to securely store `App ID` and `App Secret` using Secret Manager:</span></span>
+<span data-ttu-id="5cdcc-134">안전 하 게 저장 하려면 다음 명령을 실행 `App ID` 고 `App Secret` 암호 관리자를 사용 하 여:</span><span class="sxs-lookup"><span data-stu-id="5cdcc-134">Execute the following commands to securely store `App ID` and `App Secret` using Secret Manager:</span></span>
 
 ```console
 dotnet user-secrets set Authentication:Facebook:AppId <app-id>
 dotnet user-secrets set Authentication:Facebook:AppSecret <app-secret>
 ```
 
-## <a name="configure-facebook-authentication"></a><span data-ttu-id="8583b-135">Facebook 인증 구성</span><span class="sxs-lookup"><span data-stu-id="8583b-135">Configure Facebook Authentication</span></span>
+## <a name="configure-facebook-authentication"></a><span data-ttu-id="5cdcc-135">Facebook 인증 구성</span><span class="sxs-lookup"><span data-stu-id="5cdcc-135">Configure Facebook Authentication</span></span>
 
 ::: moniker range=">= aspnetcore-2.0"
 
-<span data-ttu-id="8583b-136">Facebook 서비스에 추가 합니다 `ConfigureServices` 의 메서드를 *Startup.cs* 파일:</span><span class="sxs-lookup"><span data-stu-id="8583b-136">Add the Facebook service in the `ConfigureServices` method in the *Startup.cs* file:</span></span>
+<span data-ttu-id="5cdcc-136">Facebook 서비스에 추가 합니다 `ConfigureServices` 의 메서드를 *Startup.cs* 파일:</span><span class="sxs-lookup"><span data-stu-id="5cdcc-136">Add the Facebook service in the `ConfigureServices` method in the *Startup.cs* file:</span></span>
 
 ```csharp
 services.AddIdentity<ApplicationUser, IdentityRole>()
@@ -93,14 +93,14 @@ services.AddAuthentication().AddFacebook(facebookOptions =>
 
 ::: moniker range="< aspnetcore-2.0"
 
-<span data-ttu-id="8583b-137">설치 합니다 [Microsoft.AspNetCore.Authentication.Facebook](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.Facebook) 패키지 있습니다.</span><span class="sxs-lookup"><span data-stu-id="8583b-137">Install the [Microsoft.AspNetCore.Authentication.Facebook](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.Facebook) package.</span></span>
+<span data-ttu-id="5cdcc-137">설치 합니다 [Microsoft.AspNetCore.Authentication.Facebook](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.Facebook) 패키지 있습니다.</span><span class="sxs-lookup"><span data-stu-id="5cdcc-137">Install the [Microsoft.AspNetCore.Authentication.Facebook](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.Facebook) package.</span></span>
 
-* <span data-ttu-id="8583b-138">Visual Studio 2017을 사용 하 여이 패키지를 설치 하려면 마우스 오른쪽 단추로 클릭 프로젝트를 마우스 **NuGet 패키지 관리**합니다.</span><span class="sxs-lookup"><span data-stu-id="8583b-138">To install this package with Visual Studio 2017, right-click on the project and select **Manage NuGet Packages**.</span></span>
-* <span data-ttu-id="8583b-139">.NET Core CLI를 설치 하려면 프로젝트 디렉터리에서 다음을 실행 합니다.</span><span class="sxs-lookup"><span data-stu-id="8583b-139">To install with .NET Core CLI, execute the following in your project directory:</span></span>
+* <span data-ttu-id="5cdcc-138">Visual Studio 2017을 사용 하 여이 패키지를 설치 하려면 마우스 오른쪽 단추로 클릭 프로젝트를 마우스 **NuGet 패키지 관리**합니다.</span><span class="sxs-lookup"><span data-stu-id="5cdcc-138">To install this package with Visual Studio 2017, right-click on the project and select **Manage NuGet Packages**.</span></span>
+* <span data-ttu-id="5cdcc-139">.NET Core CLI를 설치 하려면 프로젝트 디렉터리에서 다음을 실행 합니다.</span><span class="sxs-lookup"><span data-stu-id="5cdcc-139">To install with .NET Core CLI, execute the following in your project directory:</span></span>
 
    `dotnet add package Microsoft.AspNetCore.Authentication.Facebook`
 
-<span data-ttu-id="8583b-140">Facebook 미들웨어를 추가 합니다 `Configure` 의 메서드 *Startup.cs* 파일:</span><span class="sxs-lookup"><span data-stu-id="8583b-140">Add the Facebook middleware in the `Configure` method in *Startup.cs* file:</span></span>
+<span data-ttu-id="5cdcc-140">Facebook 미들웨어를 추가 합니다 `Configure` 의 메서드 *Startup.cs* 파일:</span><span class="sxs-lookup"><span data-stu-id="5cdcc-140">Add the Facebook middleware in the `Configure` method in *Startup.cs* file:</span></span>
 
 ```csharp
 app.UseFacebookAuthentication(new FacebookOptions()
@@ -112,42 +112,42 @@ app.UseFacebookAuthentication(new FacebookOptions()
 
 ::: moniker-end
 
-<span data-ttu-id="8583b-141">참조 된 [FacebookOptions](/dotnet/api/microsoft.aspnetcore.builder.facebookoptions) Facebook 인증에서 지 원하는 구성 옵션에 대 한 자세한 내용은 API 참조.</span><span class="sxs-lookup"><span data-stu-id="8583b-141">See the [FacebookOptions](/dotnet/api/microsoft.aspnetcore.builder.facebookoptions) API reference for more information on configuration options supported by Facebook authentication.</span></span> <span data-ttu-id="8583b-142">구성 옵션을 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="8583b-142">Configuration options can be used to:</span></span>
+<span data-ttu-id="5cdcc-141">참조 된 [FacebookOptions](/dotnet/api/microsoft.aspnetcore.builder.facebookoptions) Facebook 인증에서 지 원하는 구성 옵션에 대 한 자세한 내용은 API 참조.</span><span class="sxs-lookup"><span data-stu-id="5cdcc-141">See the [FacebookOptions](/dotnet/api/microsoft.aspnetcore.builder.facebookoptions) API reference for more information on configuration options supported by Facebook authentication.</span></span> <span data-ttu-id="5cdcc-142">구성 옵션을 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="5cdcc-142">Configuration options can be used to:</span></span>
 
-* <span data-ttu-id="8583b-143">사용자에 대 한 다른 정보를 요청 합니다.</span><span class="sxs-lookup"><span data-stu-id="8583b-143">Request different information about the user.</span></span>
-* <span data-ttu-id="8583b-144">로그인 환경을 사용자 지정 하는 쿼리 문자열 인수를 추가 합니다.</span><span class="sxs-lookup"><span data-stu-id="8583b-144">Add query string arguments to customize the login experience.</span></span>
+* <span data-ttu-id="5cdcc-143">사용자에 대 한 다른 정보를 요청 합니다.</span><span class="sxs-lookup"><span data-stu-id="5cdcc-143">Request different information about the user.</span></span>
+* <span data-ttu-id="5cdcc-144">로그인 환경을 사용자 지정 하는 쿼리 문자열 인수를 추가 합니다.</span><span class="sxs-lookup"><span data-stu-id="5cdcc-144">Add query string arguments to customize the login experience.</span></span>
 
-## <a name="sign-in-with-facebook"></a><span data-ttu-id="8583b-145">Facebook으로 로그인</span><span class="sxs-lookup"><span data-stu-id="8583b-145">Sign in with Facebook</span></span>
+## <a name="sign-in-with-facebook"></a><span data-ttu-id="5cdcc-145">Facebook으로 로그인</span><span class="sxs-lookup"><span data-stu-id="5cdcc-145">Sign in with Facebook</span></span>
 
-<span data-ttu-id="8583b-146">응용 프로그램을 실행 하 고 클릭 **로그인**합니다.</span><span class="sxs-lookup"><span data-stu-id="8583b-146">Run your application and click **Log in**.</span></span> <span data-ttu-id="8583b-147">Facebook으로 로그인 하는 옵션이 표시 됩니다.</span><span class="sxs-lookup"><span data-stu-id="8583b-147">You see an option to sign in with Facebook.</span></span>
+<span data-ttu-id="5cdcc-146">응용 프로그램을 실행 하 고 클릭 **로그인**합니다.</span><span class="sxs-lookup"><span data-stu-id="5cdcc-146">Run your application and click **Log in**.</span></span> <span data-ttu-id="5cdcc-147">Facebook으로 로그인 하는 옵션이 표시 됩니다.</span><span class="sxs-lookup"><span data-stu-id="5cdcc-147">You see an option to sign in with Facebook.</span></span>
 
 ![웹 응용 프로그램: 인증 되지 않은 사용자](index/_static/DoneFacebook.png)
 
-<span data-ttu-id="8583b-149">클릭 하면 **Facebook**, 인증에 대 한 Facebook로 리디렉션됩니다.</span><span class="sxs-lookup"><span data-stu-id="8583b-149">When you click on **Facebook**, you are redirected to Facebook for authentication:</span></span>
+<span data-ttu-id="5cdcc-149">클릭 하면 **Facebook**, 인증에 대 한 Facebook로 리디렉션됩니다.</span><span class="sxs-lookup"><span data-stu-id="5cdcc-149">When you click on **Facebook**, you are redirected to Facebook for authentication:</span></span>
 
 ![Facebook 인증 페이지](index/_static/FBLogin.png)
 
-<span data-ttu-id="8583b-151">Facebook 인증 기본적으로 공용 프로필 및 전자 메일 주소를 요청합니다.</span><span class="sxs-lookup"><span data-stu-id="8583b-151">Facebook authentication requests public profile and email address by default:</span></span>
+<span data-ttu-id="5cdcc-151">Facebook 인증 기본적으로 공용 프로필 및 전자 메일 주소를 요청합니다.</span><span class="sxs-lookup"><span data-stu-id="5cdcc-151">Facebook authentication requests public profile and email address by default:</span></span>
 
 ![Facebook 인증 페이지 동의 화면](index/_static/FBLoginDone.png)
 
-<span data-ttu-id="8583b-153">Facebook 자격 증명을 입력 한 후 전자 메일을 설정할 수 있는 사이트로 다시 리디렉션됩니다.</span><span class="sxs-lookup"><span data-stu-id="8583b-153">Once you enter your Facebook credentials you are redirected back to your site where you can set your email.</span></span>
+<span data-ttu-id="5cdcc-153">Facebook 자격 증명을 입력 한 후 전자 메일을 설정할 수 있는 사이트로 다시 리디렉션됩니다.</span><span class="sxs-lookup"><span data-stu-id="5cdcc-153">Once you enter your Facebook credentials you are redirected back to your site where you can set your email.</span></span>
 
-<span data-ttu-id="8583b-154">이제 Facebook 자격 증명을 사용 하 여 로그인 됩니다.</span><span class="sxs-lookup"><span data-stu-id="8583b-154">You are now logged in using your Facebook credentials:</span></span>
+<span data-ttu-id="5cdcc-154">이제 Facebook 자격 증명을 사용 하 여 로그인 됩니다.</span><span class="sxs-lookup"><span data-stu-id="5cdcc-154">You are now logged in using your Facebook credentials:</span></span>
 
-![웹 응용 프로그램: 사용자 인증](index/_static/Done.png)
+![웹 응용 프로그램: 인증 된 사용자](index/_static/Done.png)
 
 [!INCLUDE[Forward request information when behind a proxy or load balancer section](includes/forwarded-headers-middleware.md)]
 
-## <a name="troubleshooting"></a><span data-ttu-id="8583b-156">문제 해결</span><span class="sxs-lookup"><span data-stu-id="8583b-156">Troubleshooting</span></span>
+## <a name="troubleshooting"></a><span data-ttu-id="5cdcc-156">문제 해결</span><span class="sxs-lookup"><span data-stu-id="5cdcc-156">Troubleshooting</span></span>
 
-* <span data-ttu-id="8583b-157">**ASP.NET Core 2.x만:** 경우 Identity를 호출 하 여 구성 되지 않았습니다 `services.AddIdentity` 에 `ConfigureServices`에 인증 하려고 하면 *ArgumentException: 'SignInScheme' 옵션을 제공 해야*합니다.</span><span class="sxs-lookup"><span data-stu-id="8583b-157">**ASP.NET Core 2.x only:** If Identity isn't configured by calling `services.AddIdentity` in `ConfigureServices`, attempting to authenticate will result in *ArgumentException: The 'SignInScheme' option must be provided*.</span></span> <span data-ttu-id="8583b-158">이 자습서에 사용 되는 프로젝트 템플릿이이 수행 되도록 보장 합니다.</span><span class="sxs-lookup"><span data-stu-id="8583b-158">The project template used in this tutorial ensures that this is done.</span></span>
-* <span data-ttu-id="8583b-159">사이트 데이터베이스를 초기 마이그레이션을 적용 하 여 만들어지지 않은, 하는 경우 얻게 *요청을 처리 하는 동안 데이터베이스 작업이 실패 했습니다.* 오류입니다.</span><span class="sxs-lookup"><span data-stu-id="8583b-159">If the site database has not been created by applying the initial migration, you get *A database operation failed while processing the request* error.</span></span> <span data-ttu-id="8583b-160">탭 **마이그레이션 적용** 데이터베이스를 만들고 오류 지 나 새로 고침 합니다.</span><span class="sxs-lookup"><span data-stu-id="8583b-160">Tap **Apply Migrations** to create the database and refresh to continue past the error.</span></span>
+* <span data-ttu-id="5cdcc-157">**ASP.NET Core 2.x만:** 호출 하 여 구성 되어 있지 않으면 Identity `services.AddIdentity` 에 `ConfigureServices`를 인증 하려고 하면 *ArgumentException: 'SignInScheme' 옵션을 제공 해야*합니다.</span><span class="sxs-lookup"><span data-stu-id="5cdcc-157">**ASP.NET Core 2.x only:** If Identity isn't configured by calling `services.AddIdentity` in `ConfigureServices`, attempting to authenticate will result in *ArgumentException: The 'SignInScheme' option must be provided*.</span></span> <span data-ttu-id="5cdcc-158">이 자습서에 사용 되는 프로젝트 템플릿이이 수행 되도록 보장 합니다.</span><span class="sxs-lookup"><span data-stu-id="5cdcc-158">The project template used in this tutorial ensures that this is done.</span></span>
+* <span data-ttu-id="5cdcc-159">사이트 데이터베이스를 초기 마이그레이션을 적용 하 여 만들어지지 않은, 하는 경우 얻게 *요청을 처리 하는 동안 데이터베이스 작업이 실패 했습니다.* 오류입니다.</span><span class="sxs-lookup"><span data-stu-id="5cdcc-159">If the site database has not been created by applying the initial migration, you get *A database operation failed while processing the request* error.</span></span> <span data-ttu-id="5cdcc-160">탭 **마이그레이션 적용** 데이터베이스를 만들고 오류 지 나 새로 고침 합니다.</span><span class="sxs-lookup"><span data-stu-id="5cdcc-160">Tap **Apply Migrations** to create the database and refresh to continue past the error.</span></span>
 
-## <a name="next-steps"></a><span data-ttu-id="8583b-161">다음 단계</span><span class="sxs-lookup"><span data-stu-id="8583b-161">Next steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="5cdcc-161">다음 단계</span><span class="sxs-lookup"><span data-stu-id="5cdcc-161">Next steps</span></span>
 
-* <span data-ttu-id="8583b-162">이 문서에서는 Facebook을 사용 하 여 인증 하는 보여 주었습니다.</span><span class="sxs-lookup"><span data-stu-id="8583b-162">This article showed how you can authenticate with Facebook.</span></span> <span data-ttu-id="8583b-163">에 나열 된 다른 공급자를 사용 하 여 인증 하는 유사한 방법을 따를 수 있습니다 합니다 [이전 페이지](xref:security/authentication/social/index)합니다.</span><span class="sxs-lookup"><span data-stu-id="8583b-163">You can follow a similar approach to authenticate with other providers listed on the [previous page](xref:security/authentication/social/index).</span></span>
+* <span data-ttu-id="5cdcc-162">이 문서에서는 Facebook을 사용 하 여 인증 하는 보여 주었습니다.</span><span class="sxs-lookup"><span data-stu-id="5cdcc-162">This article showed how you can authenticate with Facebook.</span></span> <span data-ttu-id="5cdcc-163">에 나열 된 다른 공급자를 사용 하 여 인증 하는 유사한 방법을 따를 수 있습니다 합니다 [이전 페이지](xref:security/authentication/social/index)합니다.</span><span class="sxs-lookup"><span data-stu-id="5cdcc-163">You can follow a similar approach to authenticate with other providers listed on the [previous page](xref:security/authentication/social/index).</span></span>
 
-* <span data-ttu-id="8583b-164">다시 설정 해야 Azure 웹 앱에 웹 사이트를 게시 하면는 `AppSecret` Facebook 개발자 포털에서 합니다.</span><span class="sxs-lookup"><span data-stu-id="8583b-164">Once you publish your web site to Azure web app, you should reset the `AppSecret` in the Facebook developer portal.</span></span>
+* <span data-ttu-id="5cdcc-164">다시 설정 해야 Azure 웹 앱에 웹 사이트를 게시 하면는 `AppSecret` Facebook 개발자 포털에서 합니다.</span><span class="sxs-lookup"><span data-stu-id="5cdcc-164">Once you publish your web site to Azure web app, you should reset the `AppSecret` in the Facebook developer portal.</span></span>
 
-* <span data-ttu-id="8583b-165">설정 된 `Authentication:Facebook:AppId` 및 `Authentication:Facebook:AppSecret` Azure portal에서 응용 프로그램 설정 합니다.</span><span class="sxs-lookup"><span data-stu-id="8583b-165">Set the `Authentication:Facebook:AppId` and `Authentication:Facebook:AppSecret` as application settings in the Azure portal.</span></span> <span data-ttu-id="8583b-166">구성 시스템 환경 변수에서 키를 읽을 수 설정 됩니다.</span><span class="sxs-lookup"><span data-stu-id="8583b-166">The configuration system is set up to read keys from environment variables.</span></span>
+* <span data-ttu-id="5cdcc-165">설정 된 `Authentication:Facebook:AppId` 및 `Authentication:Facebook:AppSecret` Azure portal에서 응용 프로그램 설정 합니다.</span><span class="sxs-lookup"><span data-stu-id="5cdcc-165">Set the `Authentication:Facebook:AppId` and `Authentication:Facebook:AppSecret` as application settings in the Azure portal.</span></span> <span data-ttu-id="5cdcc-166">구성 시스템 환경 변수에서 키를 읽을 수 설정 됩니다.</span><span class="sxs-lookup"><span data-stu-id="5cdcc-166">The configuration system is set up to read keys from environment variables.</span></span>
