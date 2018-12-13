@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 12/11/2018
 uid: getting-started
-ms.openlocfilehash: cf9e731f7638687b3f40b42864ef7ee8f5522b39
-ms.sourcegitcommit: b34b25da2ab68e6495b2460ff570468f16a9bf0d
+ms.openlocfilehash: dc85fe9189c93476859a6c00d60ec24d6eeec3fa
+ms.sourcegitcommit: a16352c1c88a71770ab3922200a8cd148fb278a6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53284358"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53335314"
 ---
 # <a name="tutorial-get-started-with-aspnet-core"></a>자습서: ASP.NET Core 시작
 
@@ -111,6 +111,3 @@ ASP.NET Core에 대한 자세한 내용은 다음을 참조하세요.
 
 > [!div class="nextstepaction"]
 > <xref:index>
-
-> [!NOTE]
-> 현재 ASP.NET Core 목차에 대해 제안된 새로운 구조의 유용성을 테스트하고 있습니다. 잠시 시간을 내어 현행 및 제안된 목차에서 7가지 항목을 찾는 연습에 참여할 의향이 있으시면 [여기를 클릭하여 연구에 참여해 주세요](https://dpk4xbh5.optimalworkshop.com/treejack/aa11wn82).
