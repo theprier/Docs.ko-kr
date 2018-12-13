@@ -4,14 +4,14 @@ author: rick-anderson
 description: ASP.NET Core를 사용하여 간단한 Hello World 앱을 만들고 실행하는 빠른 자습서입니다.
 ms.author: riande
 ms.custom: mvc
-ms.date: 12/01/2018
+ms.date: 12/11/2018
 uid: getting-started
-ms.openlocfilehash: 29a328b610b0a6e1616cd6ebc70a8fa3e515eb92
-ms.sourcegitcommit: 9bb58d7c8dad4bbd03419bcc183d027667fefa20
+ms.openlocfilehash: cf9e731f7638687b3f40b42864ef7ee8f5522b39
+ms.sourcegitcommit: b34b25da2ab68e6495b2460ff570468f16a9bf0d
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52861708"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53284358"
 ---
 # <a name="tutorial-get-started-with-aspnet-core"></a>자습서: ASP.NET Core 시작
 
@@ -31,7 +31,7 @@ ms.locfileid: "52861708"
 
 ## <a name="prerequisites"></a>전제 조건
 
-[!INCLUDE [](~/includes/2.1-SDK.md)]를 설치합니다.
+* [.NET Core 2.2 SDK](https://www.microsoft.com/net/download/all)
 
 ## <a name="create-a-web-app-project"></a>웹앱 프로젝트 만들기
 
@@ -91,11 +91,11 @@ dotnet run
 
 ## <a name="edit-a-razor-page"></a>Razor 페이지 편집
 
-*Pages/About.cshtml*을 열고 다음에서 강조 표시된 영역처럼 페이지를 수정합니다.
+*Pages/Index.cshtml*을 열고 다음에서 강조 표시된 영역처럼 페이지를 수정합니다.
 
-[!code-cshtml[](sample/getting-started/about.cshtml?highlight=9)]
+[!code-cshtml[](sample/index.cshtml?highlight=9)]
 
-[https://localhost:5001/About](https://localhost:5001/About)으로 이동하여 수정한 내용이 표시되는지 확인합니다.
+[https://localhost:5001](https://localhost:5001)로 이동하여 변경 내용이 표시되는지 확인합니다.
 
 ## <a name="next-steps"></a>다음 단계
 
