@@ -4,14 +4,14 @@ author: guardrex
 description: ASP.NET Core 앱의 IIS(인터넷 정보 서비스) 배포에 대한 문제 진단 방법을 알아봅니다.
 ms.author: riande
 ms.custom: mvc
-ms.date: 11/26/2018
+ms.date: 12/06/2018
 uid: host-and-deploy/iis/troubleshoot
-ms.openlocfilehash: 2ff870623de43676be38c5de8f338a7913e885a8
-ms.sourcegitcommit: e9b99854b0a8021dafabee0db5e1338067f250a9
+ms.openlocfilehash: 6d43057639ea88bb21ac66f2799062e06fffc530
+ms.sourcegitcommit: 49faca2644590fc081d86db46ea5e29edfc28b7b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52450712"
+ms.lasthandoff: 12/09/2018
+ms.locfileid: "53121689"
 ---
 # <a name="troubleshoot-aspnet-core-on-iis"></a>IIS에서 ASP.NET Core 문제 해결
 
@@ -92,6 +92,26 @@ ASP.NET Core 모듈이 out-of-process 호스팅 요청 처리기를 찾지 못�
 
 이 오류는 시작하는 동안 또는 응답을 만드는 동안 앱 코드 내에서 발생합니다. 응답에 콘텐츠가 없거나 응답이 브라우저에 ‘500 내부 서버 오류’로 표시될 수 있습니다. 응용 프로그램 이벤트 로그는 일반적으로 앱이 정상적으로 시작되었음을 나타냅니다. 서버의 관점에서 보면 맞습니다. 앱이 시작되었지만 유효한 응답을 생성할 수 없습니다. 서버의 [명령 프롬프트에서 앱을 실행](#run-the-app-at-a-command-prompt)하거나 [ASP.NET Core 모듈 stdout 로그를 사용](#aspnet-core-module-stdout-log)하여 문제를 해결합니다.
 
+### <a name="failed-to-start-application-errorcode-0x800700c1"></a>애플리케이션을 시작하지 못함(오류 코드 '0x800700c1')
+
+```
+EventID: 1010
+Source: IIS AspNetCore Module V2
+Failed to start application '/LM/W3SVC/6/ROOT/', ErrorCode '0x800700c1'.
+```
+
+앱의 어셈블리(*.dll*)를 로드할 수 없기 때문에 앱을 시작하지 못했습니다.
+
+게시된 앱과 w3wp/iisexpress 프로세스 간에 비트 수가 불일치하는 경우 이 오류가 발생합니다.
+
+앱 풀의 32비트 설정이 올바른지 확인합니다.
+
+1. IIS 관리자의 **애플리케이션 풀**에서 앱 풀을 선택합니다.
+1. **작업** 패널의 **애플리케이션 풀 편집**에서 **고급 설정**을 선택합니다.
+1. **32비트 애플리케이션 사용**을 설정합니다.
+   * 32비트(x86) 앱을 배포하는 경우 값을 `True`로 설정합니다.
+   * 64비트(x64) 앱을 배포하는 경우 값을 `False`로 설정합니다.
+
 ### <a name="connection-reset"></a>연결 다시 설정
 
 헤더가 전송된 후 오류가 발생할 경우, 오류가 발생할 때 서버에서 **500 내부 서버 오류**를 전송하는 것은 너무 늦은 것입니다. 응답에 대한 복잡한 개체의 serialization 중에 오류가 발생할 때 이 문제가 종종 발생합니다. 이 유형의 오류는 클라이언트에서 ‘연결 다시 설정’ 오류로 나타납니다. [응용 프로그램 로깅](xref:fundamentals/logging/index)은 이러한 유형의 오류를 해결하는 데 도움이 될 수 있습니다.
@@ -101,6 +121,21 @@ ASP.NET Core 모듈이 out-of-process 호스팅 요청 처리기를 찾지 못�
 ASP.NET Core 모듈은 기본 *startupTimeLimit*이 120초로 구성됩니다. 기본값으로 남아 있으면 앱에서 모듈이 프로세스 실패를 기록하기 전에 시작하는 데 최대 2분이 걸릴 수 있습니다. 모듈 구성에 대한 자세한 내용은 [aspNetCore 요소의 특성](xref:host-and-deploy/aspnet-core-module#attributes-of-the-aspnetcore-element)을 참조하세요.
 
 ## <a name="troubleshoot-app-startup-errors"></a>앱 시작 오류 해결
+
+### <a name="enable-the-aspnet-core-module-debug-log"></a>ASP.NET Core 모듈 디버그 로그 사용
+
+앱의 *web.config* 파일에 다음 처리기 설정을 추가하여 ASP.NET Core 모듈 디버그 로그를 사용합니다.
+
+```xml
+<aspNetCore ...>
+  <handlerSettings>
+    <handlerSetting name="debugLevel" value="file" />
+    <handlerSetting name="debugFile" value="c:\temp\ancm.log" />
+  </handlerSettings>
+</aspNetCore>
+```
+
+로그에 대해 지정된 경로가 있는지 및 앱 풀의 ID에 해당 위치에 대한 쓰기 권한이 있는지 확인합니다.
 
 ### <a name="application-event-log"></a>응용 프로그램 이벤트 로그
 
@@ -121,7 +156,7 @@ ASP.NET Core 모듈은 기본 *startupTimeLimit*이 120초로 구성됩니다. �
 
 1. 명령 프롬프트에서 배포 폴더로 이동하고 *dotnet.exe*로 앱의 어셈블리를 실행하여 앱을 실행합니다. `dotnet .\<assembly_name>.dll` 명령에서 \<assembly_name>을 앱 어셈블리의 이름으로 대체합니다.
 1. 오류를 표시하는 앱의 콘솔 출력이 콘솔 창에 기록됩니다.
-1. 앱에 대한 요청을 실행할 때 오류가 발생하는 경우에는 Kestrel이 수신 대기하는 호스트 및 포트에 대한 요청을 실행합니다. 기본 호스트 및 게시를 사용하여 `http://localhost:5000/`에 대한 요청을 실행합니다. 앱이 Kestrel 엔드포인트 주소에서 정상적으로 응답하는 경우, 문제는 역방향 프록시 구성과 관련이 있으며 앱 내에서 관련되었을 가능성은 작습니다.
+1. 앱에 대한 요청을 실행할 때 오류가 발생하는 경우에는 Kestrel이 수신 대기하는 호스트 및 포트에 대한 요청을 실행합니다. 기본 호스트 및 게시를 사용하여 `http://localhost:5000/`에 대한 요청을 실행합니다. 앱이 Kestrel 엔드포인트 주소에서 정상적으로 응답하는 경우 문제는 호스팅 구성과 관련이 있으며 앱 내에서 관련되었을 가능성은 작습니다.
 
 #### <a name="self-contained-deployment"></a>자체 포함 배포
 
@@ -129,7 +164,7 @@ ASP.NET Core 모듈은 기본 *startupTimeLimit*이 120초로 구성됩니다. �
 
 1. 명령 프롬프트에서 배포 폴더로 이동하고 앱의 실행 파일을 실행합니다. `<assembly_name>.exe` 명령에서 \<assembly_name>을 앱 어셈블리의 이름으로 대체합니다.
 1. 오류를 표시하는 앱의 콘솔 출력이 콘솔 창에 기록됩니다.
-1. 앱에 대한 요청을 실행할 때 오류가 발생하는 경우에는 Kestrel이 수신 대기하는 호스트 및 포트에 대한 요청을 실행합니다. 기본 호스트 및 게시를 사용하여 `http://localhost:5000/`에 대한 요청을 실행합니다. 앱이 Kestrel 엔드포인트 주소에서 정상적으로 응답하는 경우, 문제는 역방향 프록시 구성과 관련이 있으며 앱 내에서 관련되었을 가능성은 작습니다.
+1. 앱에 대한 요청을 실행할 때 오류가 발생하는 경우에는 Kestrel이 수신 대기하는 호스트 및 포트에 대한 요청을 실행합니다. 기본 호스트 및 게시를 사용하여 `http://localhost:5000/`에 대한 요청을 실행합니다. 앱이 Kestrel 엔드포인트 주소에서 정상적으로 응답하는 경우 문제는 호스팅 구성과 관련이 있으며 앱 내에서 관련되었을 가능성은 작습니다.
 
 ### <a name="aspnet-core-module-stdout-log"></a>ASP.NET Core 모듈 stdout 로그
 
@@ -167,7 +202,7 @@ stdout 로그를 사용하고 보려면:
       arguments=".\MyApp.dll"
       stdoutLogEnabled="false"
       stdoutLogFile=".\logs\stdout"
-      hostingModel="inprocess">
+      hostingModel="InProcess">
   <environmentVariables>
     <environmentVariable name="ASPNETCORE_ENVIRONMENT" value="Development" />
   </environmentVariables>

@@ -6,18 +6,18 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/24/2018
 uid: mvc/views/tag-helpers/authoring
-ms.openlocfilehash: 78e5281d109977e8f41fe1f207254d3016f9c569
-ms.sourcegitcommit: c43a6f1fe72d7c2db4b5815fd532f2b45d964e07
+ms.openlocfilehash: 16f3a435af267a5a17a24ee9fbda2b1c7c8818fd
+ms.sourcegitcommit: 49faca2644590fc081d86db46ea5e29edfc28b7b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50244868"
+ms.lasthandoff: 12/09/2018
+ms.locfileid: "53121624"
 ---
 # <a name="author-tag-helpers-in-aspnet-core"></a>ASP.NET Core의 작성자 태그 도우미
 
 작성자: [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/views/tag-helpers/authoring/sample)([다운로드 방법](xref:index#how-to-download-a-sample))
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/views/tag-helpers/authoring/sample) ([다운로드 방법](xref:index#how-to-download-a-sample))
 
 ## <a name="get-started-with-tag-helpers"></a>태그 도우미 시작
 
@@ -49,7 +49,7 @@ ms.locfileid: "50244868"
 
    [!code-csharp[](authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/TagHelpers/z1EmailTagHelperCopy.cs)]
 
-   * 태그 도우미는 루트 클래스 이름의 요소를 대상으로 하는 명명 규칙을 사용합니다(클래스 이름의 *TagHelper* 부분 제외). 이 예에서 **Email**TagHelper의 루트 이름이 *email*이므로 `<email>` 태그가 대상으로 지정됩니다. 이 명명 규칙은 대부분의 태그 도우미에서 작동하며, 나중에는 재정의하는 방법에 대해 설명하기로 합니다.
+   * 태그 도우미는 루트 클래스 이름의 요소를 대상으로 하는 명명 규칙을 사용합니다(클래스 이름의 *TagHelper* 부분 제외). 이 예에서 **EmailTagHelper**의 루트 이름이 *email*이므로 `<email>` 태그가 대상으로 지정됩니다. 이 명명 규칙은 대부분의 태그 도우미에서 작동하며, 나중에는 재정의하는 방법에 대해 설명하기로 합니다.
 
    * `EmailTagHelper` 클래스는 `TagHelper`에서 파생됩니다. `TagHelper` 클래스는 태그 도우미를 작성하기 위한 메서드 및 속성을 제공합니다.
 

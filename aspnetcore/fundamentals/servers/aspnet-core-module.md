@@ -1,17 +1,17 @@
 ---
 title: ASP.NET Core 모듈
 author: guardrex
-description: ASP.NET Core 모듈이 Kestrel 웹 서버에서 역방향 프록시 서버로 IIS 또는 IIS Express를 어떻게 사용하도록 허용하는지 알아봅니다.
+description: ASP.NET Core 모듈이 Kestrel 웹 서버에서 IIS 또는 IIS Express를 사용하도록 허용하는 방법을 알아봅니다.
 ms.author: tdykstra
 ms.custom: mvc
-ms.date: 09/21/2018
+ms.date: 11/30/2018
 uid: fundamentals/servers/aspnet-core-module
-ms.openlocfilehash: 39c1b364f9dab635c79e00561d212c858c0c4395
-ms.sourcegitcommit: 09affee3d234cb27ea6fe33bc113b79e68900d22
+ms.openlocfilehash: d3f3a42dd7aebc425905b865376a584bcf0e5153
+ms.sourcegitcommit: 9bb58d7c8dad4bbd03419bcc183d027667fefa20
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "51191258"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52861461"
 ---
 # <a name="aspnet-core-module"></a>ASP.NET Core 모듈
 
@@ -36,7 +36,7 @@ ASP.NET Core 모듈은 역방향 프록시 구성에서 ASP.NET Core 앱을 IIS 
 
 ::: moniker range=">= aspnetcore-2.2"
 
-In-Process로 호스트하는 경우 모듈에는 자체 서버 구현인 `IISHttpServer`가 있습니다.
+In Process를 호스트하는 경우 모듈에서는 IIS In Process 서버 구현, IIS HTTP Server(`IISHttpServer`)를 사용합니다.
 
 Out-of-Process로 호스트하는 경우 모듈은 Kestrel에서만 작동합니다. 이 모듈은 [HTTP.sys](xref:fundamentals/servers/httpsys)(이전 명칭 [WebListener](xref:fundamentals/servers/weblistener))와 호환되지 않습니다.
 
@@ -73,9 +73,9 @@ ASP.NET Core 모듈:
 
 ![ASP.NET Core 모듈](aspnet-core-module/_static/ancm-inprocess.png)
 
-요청은 웹에서 커널 모드 HTTP.sys 드라이버로 도착합니다. 드라이버는 웹 사이트의 구성된 포트[일반적으로 80(HTTP) 또는 443(HTTPS)]에서 IIS로 네이티브 요청을 라우팅합니다. 이 모듈은 네이티브 요청을 수신하고 제어를 `IISHttpServer`로 전달합니다. 그러면 이 서버는 요청을 네이티브에서 관리 상태로 변환합니다.
+요청은 웹에서 커널 모드 HTTP.sys 드라이버로 도착합니다. 드라이버는 웹 사이트의 구성된 포트[일반적으로 80(HTTP) 또는 443(HTTPS)]에서 IIS로 네이티브 요청을 라우팅합니다. 모듈에서는 기본 요청을 수신하고 IIS HTTP Server(`IISHttpServer`)에 전달합니다. IIS HTTP Server는 기본 요청을 관리 요청으로 변환하는 IIS In-process 서버 구현입니다.
 
-`IISHttpServer`가 요청을 선택하면 해당 요청이 ASP.NET Core 미들웨어 파이프라인에 푸시됩니다. 미들웨어 파이프라인은 요청을 처리하고 앱의 논리에 `HttpContext` 인스턴스로 전달합니다. 앱의 응답은 IIS로 다시 전달되고, 요청을 시작한 HTTP 클라이언트에 다시 푸시됩니다.
+IIS HTTP Server가 요청을 처리하면 해당 요청이 ASP.NET Core 미들웨어 파이프라인에 푸시됩니다. 미들웨어 파이프라인은 요청을 처리하고 앱의 논리에 `HttpContext` 인스턴스로 전달합니다. 앱의 응답은 IIS로 다시 전달되고, 요청을 시작한 클라이언트에 다시 푸시됩니다.
 
 ### <a name="out-of-process-hosting-model"></a>Out-of-Process 호스팅 모델
 

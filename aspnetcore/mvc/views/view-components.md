@@ -3,20 +3,20 @@ title: ASP.NET Core의 보기 구성 요소
 author: rick-anderson
 description: ASP.NET Core에서 보기 구성 요소가 사용되는 방법 및 이를 앱에 추가하는 방법을 알아봅니다.
 ms.author: riande
-ms.date: 02/14/2017
+ms.date: 12/03/2018
 uid: mvc/views/view-components
-ms.openlocfilehash: 91399acafb36f1f8759ed1783e70e59b631e3bf0
-ms.sourcegitcommit: 4a6bbe84db24c2f3dd2de065de418fde952c8d40
+ms.openlocfilehash: 5812abad80cd906d6b9a7175bd7cdefd03a99eb3
+ms.sourcegitcommit: 9bb58d7c8dad4bbd03419bcc183d027667fefa20
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50253134"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52861331"
 ---
 # <a name="view-components-in-aspnet-core"></a>ASP.NET Core의 보기 구성 요소
 
 작성자: [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/views/view-components/sample)([다운로드 방법](xref:index#how-to-download-a-sample))
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/views/view-components/sample) ([다운로드 방법](xref:index#how-to-download-a-sample))
 
 ## <a name="view-components"></a>뷰 구성 요소
 
@@ -63,12 +63,12 @@ ms.locfileid: "50253134"
 
 ### <a name="view-component-methods"></a>뷰 구성 요소 메서드
 
-뷰 구성 요소는 해당 논리를 `IViewComponentResult`를 반환하는 `InvokeAsync` 메서드에 정의합니다. 매개 변수는 모델 바인딩이 아닌 뷰 구성 요소 호출에서 직접 가져옵니다. 뷰 구성 요소는 요청을 직접 처리하지 않습니다. 일반적으로 뷰 구성 요소는 모델을 초기화하고 `View` 메서드를 호출하여 뷰에 전달합니다. 요약하자면, 뷰 구성 요소 메서드는 다음과 같습니다.
+보기 구성 요소는 `Task<IViewComponentResult>`를 반환하는 `InvokeAsync` 메서드 또는 `IViewComponentResult`를 반환하는 동기 `Invoke` 메서드에서 해당 논리를 정의합니다. 매개 변수는 모델 바인딩이 아닌 뷰 구성 요소 호출에서 직접 가져옵니다. 뷰 구성 요소는 요청을 직접 처리하지 않습니다. 일반적으로 뷰 구성 요소는 모델을 초기화하고 `View` 메서드를 호출하여 뷰에 전달합니다. 요약하자면, 뷰 구성 요소 메서드는 다음과 같습니다.
 
-* `IViewComponentResult`를 반환하는 `InvokeAsync` 메서드를 정의합니다.
-* 일반적으로 모델을 초기화하고 `ViewComponent` `View` 메서드를 호출하여 뷰에 전달합니다.
-* 매개 변수는 HTTP가 아닌 호출 메서드에서 가져오며 모델 바인딩이 없습니다.
-* HTTP 엔드포인트로 직접 연결할 수 없으며 코드(일반적으로 뷰에서)에서 호출됩니다. 뷰 구성 요소는 요청을 처리하지 않습니다.
+* `Task<IViewComponentResult>`를 반환하는 `InvokeAsync` 메서드 또는 `IViewComponentResult`를 반환하는 동기 `Invoke` 메서드를 정의합니다.
+* 일반적으로 모델을 초기화하고 `ViewComponent` `View` 메서드를 호출하여 보기에 전달합니다.
+* 매개 변수는 HTTP가 아닌 호출 메서드에서 가져옵니다. 모델 바인딩이 없습니다.
+* HTTP 엔드포인트로 직접 연결할 수 없습니다. (일반적으로 보기의) 코드에서 호출됩니다. 보기 구성 요소는 요청을 처리하지 않습니다.
 * 현재 HTTP 요청의 세부 정보가 아닌 서명에 오버로드됩니다.
 
 ### <a name="view-search-path"></a>뷰 검색 경로
