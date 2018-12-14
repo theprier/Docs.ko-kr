@@ -1,85 +1,117 @@
 ---
-title: SQL Server LocalDB 및 ASP.NET Core 사용
+title: 데이터베이스 및 ASP.NET Core 작업
 author: rick-anderson
-description: SQL Server LocalDB 및 ASP.NET Core 사용을 설명합니다.
-monikerRange: '>= aspnetcore-2.0'
+description: 데이터베이스 및 ASP.NET Core 작업을 설명합니다.
+monikerRange: '>= aspnetcore-2.2'
 ms.author: riande
-ms.date: 08/07/2017
+ms.date: 12/07/2017
 uid: tutorials/razor-pages/sql
-ms.openlocfilehash: 20e2353eb2e453235c2fb04c696a7e3d27bed5bf
-ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
+ms.openlocfilehash: 817102a7b89ef4f078d7d0a0bf03ba7cb2745a5d
+ms.sourcegitcommit: 9bb58d7c8dad4bbd03419bcc183d027667fefa20
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46011276"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52861279"
 ---
-# <a name="work-with-sql-server-localdb-and-aspnet-core"></a><span data-ttu-id="cb3d3-103">SQL Server LocalDB 및 ASP.NET Core 사용</span><span class="sxs-lookup"><span data-stu-id="cb3d3-103">Work with SQL Server LocalDB and ASP.NET Core</span></span>
+# <a name="work-with-a-database-and-aspnet-core"></a><span data-ttu-id="f9a1f-103">데이터베이스 및 ASP.NET Core 작업</span><span class="sxs-lookup"><span data-stu-id="f9a1f-103">Work with a database and ASP.NET Core</span></span>
 
-<span data-ttu-id="cb3d3-104">작성자: [Rick Anderson](https://twitter.com/RickAndMSFT) 및 [Joe Audette](https://twitter.com/joeaudette)</span><span class="sxs-lookup"><span data-stu-id="cb3d3-104">By [Rick Anderson](https://twitter.com/RickAndMSFT) and [Joe Audette](https://twitter.com/joeaudette)</span></span> 
+<span data-ttu-id="f9a1f-104">작성자: [Rick Anderson](https://twitter.com/RickAndMSFT) 및 [Joe Audette](https://twitter.com/joeaudette)</span><span class="sxs-lookup"><span data-stu-id="f9a1f-104">By [Rick Anderson](https://twitter.com/RickAndMSFT) and [Joe Audette](https://twitter.com/joeaudette)</span></span>
 
-<span data-ttu-id="cb3d3-105">`MovieContext` 개체는 데이터베이스에 연결하고 데이터베이스 레코드에 `Movie` 개체를 매핑하는 작업을 처리합니다.</span><span class="sxs-lookup"><span data-stu-id="cb3d3-105">The `MovieContext` object handles the task of connecting to the database and mapping `Movie` objects to database records.</span></span> <span data-ttu-id="cb3d3-106">데이터베이스 컨텍스트는 *Startup.cs* 파일의 `ConfigureServices` 메서드에서 [종속성 주입](xref:fundamentals/dependency-injection) 컨테이너에 등록됩니다.</span><span class="sxs-lookup"><span data-stu-id="cb3d3-106">The database context is registered with the [Dependency Injection](xref:fundamentals/dependency-injection) container in the `ConfigureServices` method in the *Startup.cs* file:</span></span>
+[!INCLUDE[](~/includes/rp/download.md)]
 
-::: moniker range="= aspnetcore-2.0"
+<span data-ttu-id="f9a1f-105">`RazorPagesMovieContext` 개체는 데이터베이스에 연결하고 데이터베이스 레코드에 `Movie` 개체를 매핑하는 작업을 처리합니다.</span><span class="sxs-lookup"><span data-stu-id="f9a1f-105">The `RazorPagesMovieContext` object handles the task of connecting to the database and mapping `Movie` objects to database records.</span></span> <span data-ttu-id="f9a1f-106">데이터베이스 컨텍스트는 *Startup.cs*의 `ConfigureServices` 메서드에서 [종속성 주입](xref:fundamentals/dependency-injection) 컨테이너에 등록됩니다.</span><span class="sxs-lookup"><span data-stu-id="f9a1f-106">The database context is registered with the [Dependency Injection](xref:fundamentals/dependency-injection) container in the `ConfigureServices` method in *Startup.cs*:</span></span>
 
-[!code-csharp[](razor-pages-start/sample/RazorPagesMovie/Startup.cs?name=snippet_ConfigureServices&highlight=7-8)]
+<!-- VS -------------------------->
+# <a name="visual-studiotabvisual-studio"></a>[<span data-ttu-id="f9a1f-107">Visual Studio</span><span class="sxs-lookup"><span data-stu-id="f9a1f-107">Visual Studio</span></span>](#tab/visual-studio)
 
-::: moniker-end
+[!code-csharp[](razor-pages-start/sample/RazorPagesMovie22/Startup.cs?name=snippet_ConfigureServices&highlight=15-18)]
 
-::: moniker range=">= aspnetcore-2.1"
+<!-- Code -------------------------->
+# <a name="visual-studio-codetabvisual-studio-code"></a>[<span data-ttu-id="f9a1f-108">Visual Studio Code</span><span class="sxs-lookup"><span data-stu-id="f9a1f-108">Visual Studio Code</span></span>](#tab/visual-studio-code)
 
-[!code-csharp[](razor-pages-start/sample/RazorPagesMovie21/Startup.cs?name=snippet_ConfigureServices&highlight=12-13)]
+[!code-csharp[](razor-pages-start/sample/RazorPagesMovie22/Startup.cs?name=snippet_UseSqlite&highlight=11-12)]
 
-<span data-ttu-id="cb3d3-107">`ConfigureServices`에서 사용되는 메서드에 대한 자세한 내용은 다음을 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="cb3d3-107">For more information on the methods used in `ConfigureServices`, see:</span></span>
+<!-- Mac -------------------------->
+# <a name="visual-studio-for-mactabvisual-studio-mac"></a>[<span data-ttu-id="f9a1f-109">Visual Studio for Mac</span><span class="sxs-lookup"><span data-stu-id="f9a1f-109">Visual Studio for Mac</span></span>](#tab/visual-studio-mac)
 
-* <span data-ttu-id="cb3d3-108">`CookiePolicyOptions`에 대한 [EU GDPR(일반 데이터 보호 규정) 지원](xref:security/gdpr)</span><span class="sxs-lookup"><span data-stu-id="cb3d3-108">[EU General Data Protection Regulation (GDPR) support in ASP.NET Core](xref:security/gdpr) for `CookiePolicyOptions`.</span></span>
-* [<span data-ttu-id="cb3d3-109">SetCompatibilityVersion</span><span class="sxs-lookup"><span data-stu-id="cb3d3-109">SetCompatibilityVersion</span></span>](xref:mvc/compatibility-version)
+[!code-csharp[](razor-pages-start/sample/RazorPagesMovie22/Startup.cs?name=snippet_UseSqlite&highlight=11-12)]
 
-::: moniker-end
+---  
+<!-- End of VS tabs -->
 
-<span data-ttu-id="cb3d3-110">ASP.NET Core [구성](xref:fundamentals/configuration/index) 시스템은 `ConnectionString`을 읽습니다.</span><span class="sxs-lookup"><span data-stu-id="cb3d3-110">The ASP.NET Core [Configuration](xref:fundamentals/configuration/index) system reads the `ConnectionString`.</span></span> <span data-ttu-id="cb3d3-111">로컬 개발의 경우 *appsettings.json* 파일에서 연결 문자열을 가져옵니다.</span><span class="sxs-lookup"><span data-stu-id="cb3d3-111">For local development, it gets the connection string from the *appsettings.json* file.</span></span> <span data-ttu-id="cb3d3-112">데이터베이스의 이름 값(`Database={Database name}`)은 생성된 코드에 따라 달라집니다.</span><span class="sxs-lookup"><span data-stu-id="cb3d3-112">The name value for the database (`Database={Database name}`) will be different for your generated code.</span></span> <span data-ttu-id="cb3d3-113">이름 값은 임의적입니다.</span><span class="sxs-lookup"><span data-stu-id="cb3d3-113">The name value is arbitrary.</span></span>
+<span data-ttu-id="f9a1f-110">`ConfigureServices`에서 사용되는 메서드에 대한 자세한 내용은 다음을 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="f9a1f-110">For more information on the methods used in `ConfigureServices`, see:</span></span>
 
-[!code-json[](razor-pages-start/sample/RazorPagesMovie/appsettings.json?highlight=2&range=8-10)]
+* <span data-ttu-id="f9a1f-111">`CookiePolicyOptions`에 대한 [EU GDPR(일반 데이터 보호 규정) 지원](xref:security/gdpr)</span><span class="sxs-lookup"><span data-stu-id="f9a1f-111">[EU General Data Protection Regulation (GDPR) support in ASP.NET Core](xref:security/gdpr) for `CookiePolicyOptions`.</span></span>
+* [<span data-ttu-id="f9a1f-112">SetCompatibilityVersion</span><span class="sxs-lookup"><span data-stu-id="f9a1f-112">SetCompatibilityVersion</span></span>](xref:mvc/compatibility-version)
 
-<span data-ttu-id="cb3d3-114">테스트 또는 프로덕션 서버에 앱을 배포할 때 환경 변수 또는 다른 방법을 사용하여 실제 SQL Server에 연결 문자열을 설정할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="cb3d3-114">When you deploy the app to a test or production server, you can use an environment variable or another approach to set the connection string to a real SQL Server.</span></span> <span data-ttu-id="cb3d3-115">자세한 내용은 [구성](xref:fundamentals/configuration/index)을 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="cb3d3-115">See [Configuration](xref:fundamentals/configuration/index) for more information.</span></span>
+<span data-ttu-id="f9a1f-113">ASP.NET Core [구성](xref:fundamentals/configuration/index) 시스템은 `ConnectionString`을 읽습니다.</span><span class="sxs-lookup"><span data-stu-id="f9a1f-113">The ASP.NET Core [Configuration](xref:fundamentals/configuration/index) system reads the `ConnectionString`.</span></span> <span data-ttu-id="f9a1f-114">로컬 개발의 경우 *appsettings.json* 파일에서 연결 문자열을 가져옵니다.</span><span class="sxs-lookup"><span data-stu-id="f9a1f-114">For local development, it gets the connection string from the *appsettings.json* file.</span></span>
 
-## <a name="sql-server-express-localdb"></a><span data-ttu-id="cb3d3-116">SQL Server Express LocalDB</span><span class="sxs-lookup"><span data-stu-id="cb3d3-116">SQL Server Express LocalDB</span></span>
+<!-- VS -------------------------->
+# <a name="visual-studiotabvisual-studio"></a>[<span data-ttu-id="f9a1f-115">Visual Studio</span><span class="sxs-lookup"><span data-stu-id="f9a1f-115">Visual Studio</span></span>](#tab/visual-studio)
 
-<span data-ttu-id="cb3d3-117">LocalDB는 프로그램 개발용으로 대상이 지정된 SQL Server Express 데이터베이스 엔진의 간단 버전입니다.</span><span class="sxs-lookup"><span data-stu-id="cb3d3-117">LocalDB is a lightweight version of the SQL Server Express Database Engine that's targeted for program development.</span></span> <span data-ttu-id="cb3d3-118">LocalDB는 요청 시 시작하고 사용자 모드에서 실행되므로 복잡한 구성이 없습니다.</span><span class="sxs-lookup"><span data-stu-id="cb3d3-118">LocalDB starts on demand and runs in user mode, so there's no complex configuration.</span></span> <span data-ttu-id="cb3d3-119">기본적으로 LocalDB 데이터베이스는 *C:/사용자/\<user\>* 디렉터리에 "\*.mdf" 파일을 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="cb3d3-119">By default, LocalDB database creates "\*.mdf" files in the *C:/Users/\<user\>* directory.</span></span>
+<span data-ttu-id="f9a1f-116">데이터베이스의 이름 값(`Database={Database name}`)은 생성된 코드에 따라 달라집니다.</span><span class="sxs-lookup"><span data-stu-id="f9a1f-116">The name value for the database (`Database={Database name}`) will be different for your generated code.</span></span> <span data-ttu-id="f9a1f-117">이름 값은 임의적입니다.</span><span class="sxs-lookup"><span data-stu-id="f9a1f-117">The name value is arbitrary.</span></span>
+
+[!code-json[](razor-pages-start/sample/RazorPagesMovie22/appsettings.json)]
+
+<!-- Code -------------------------->
+# <a name="visual-studio-codetabvisual-studio-code"></a>[<span data-ttu-id="f9a1f-118">Visual Studio Code</span><span class="sxs-lookup"><span data-stu-id="f9a1f-118">Visual Studio Code</span></span>](#tab/visual-studio-code)
+
+[!code-json[](~/tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie/appsettings_SQLite.json?highlight=8-10)]
+
+<!-- Mac -------------------------->
+# <a name="visual-studio-for-mactabvisual-studio-mac"></a>[<span data-ttu-id="f9a1f-119">Visual Studio for Mac</span><span class="sxs-lookup"><span data-stu-id="f9a1f-119">Visual Studio for Mac</span></span>](#tab/visual-studio-mac)
+
+[!code-json[](~/tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie/appsettings_SQLite.json?highlight=8-10)]
+
+---  
+<!-- End of VS tabs -->
+
+<span data-ttu-id="f9a1f-120">앱이 테스트 또는 프로덕션 서버에 배포되는 경우 환경 변수를 사용하여 연결 문자열을 실제 데이터베이스 서버로 설정할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="f9a1f-120">When the app is deployed to a test or production server, an environment variable can be used to set the connection string to a real database server.</span></span> <span data-ttu-id="f9a1f-121">자세한 내용은 [구성](xref:fundamentals/configuration/index)을 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="f9a1f-121">See [Configuration](xref:fundamentals/configuration/index) for more information.</span></span>
+
+<!-- VS -------------------------->
+# <a name="visual-studiotabvisual-studio"></a>[<span data-ttu-id="f9a1f-122">Visual Studio</span><span class="sxs-lookup"><span data-stu-id="f9a1f-122">Visual Studio</span></span>](#tab/visual-studio)
+
+## <a name="sql-server-express-localdb"></a><span data-ttu-id="f9a1f-123">SQL Server Express LocalDB</span><span class="sxs-lookup"><span data-stu-id="f9a1f-123">SQL Server Express LocalDB</span></span>
+
+<span data-ttu-id="f9a1f-124">LocalDB는 프로그램 개발용으로 대상이 지정된 간단한 버전의 SQL Server Express 데이터베이스 엔진입니다.</span><span class="sxs-lookup"><span data-stu-id="f9a1f-124">LocalDB is a lightweight version of the SQL Server Express database engine that's targeted for program development.</span></span> <span data-ttu-id="f9a1f-125">LocalDB는 요청 시 시작하고 사용자 모드에서 실행되므로 복잡한 구성이 없습니다.</span><span class="sxs-lookup"><span data-stu-id="f9a1f-125">LocalDB starts on demand and runs in user mode, so there's no complex configuration.</span></span> <span data-ttu-id="f9a1f-126">기본적으로 LocalDB 데이터베이스는 `C:/Users/<user/>` 디렉터리에서 `*.mdf` 파일을 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="f9a1f-126">By default, LocalDB database creates `*.mdf` files in the `C:/Users/<user/>` directory.</span></span>
 
 <a name="ssox"></a>
-* <span data-ttu-id="cb3d3-120">**보기** 메뉴에서 SSOX(**SQL Server 개체 탐색기**)를 엽니다.</span><span class="sxs-lookup"><span data-stu-id="cb3d3-120">From the **View** menu, open **SQL Server Object Explorer** (SSOX).</span></span>
+* <span data-ttu-id="f9a1f-127">**보기** 메뉴에서 SSOX(**SQL Server 개체 탐색기**)를 엽니다.</span><span class="sxs-lookup"><span data-stu-id="f9a1f-127">From the **View** menu, open **SQL Server Object Explorer** (SSOX).</span></span>
 
   ![보기 메뉴](sql/_static/ssox.png)
 
-* <span data-ttu-id="cb3d3-122">`Movie` 테이블을 마우스 오른쪽 단추로 클릭하고 **디자이너 보기**를 선택합니다.</span><span class="sxs-lookup"><span data-stu-id="cb3d3-122">Right click on the `Movie` table and select **View Designer**:</span></span>
+* <span data-ttu-id="f9a1f-129">`Movie` 테이블을 마우스 오른쪽 단추로 클릭하고 **디자이너 보기**를 선택합니다.</span><span class="sxs-lookup"><span data-stu-id="f9a1f-129">Right click on the `Movie` table and select **View Designer**:</span></span>
 
   ![동영상 테이블에서 열린 바로 가기 메뉴](sql/_static/design.png)
 
   ![디자이너에 열린 동영상 테이블](sql/_static/dv.png)
 
-<span data-ttu-id="cb3d3-125">`ID` 옆의 키 아이콘을 확인합니다.</span><span class="sxs-lookup"><span data-stu-id="cb3d3-125">Note the key icon next to `ID`.</span></span> <span data-ttu-id="cb3d3-126">기본적으로 EF는 기본 키에 대해 `ID`라는 속성을 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="cb3d3-126">By default, EF creates a property named `ID` for the primary key.</span></span>
+<span data-ttu-id="f9a1f-132">`ID` 옆의 키 아이콘을 확인합니다.</span><span class="sxs-lookup"><span data-stu-id="f9a1f-132">Note the key icon next to `ID`.</span></span> <span data-ttu-id="f9a1f-133">기본적으로 EF는 기본 키에 대해 `ID`라는 속성을 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="f9a1f-133">By default, EF creates a property named `ID` for the primary key.</span></span>
 
-* <span data-ttu-id="cb3d3-127">`Movie` 테이블을 마우스 오른쪽 단추로 클릭하고 **데이터 보기**를 선택합니다.</span><span class="sxs-lookup"><span data-stu-id="cb3d3-127">Right click on the `Movie` table and select **View Data**:</span></span>
+* <span data-ttu-id="f9a1f-134">`Movie` 테이블을 마우스 오른쪽 단추로 클릭하고 **데이터 보기**를 선택합니다.</span><span class="sxs-lookup"><span data-stu-id="f9a1f-134">Right click on the `Movie` table and select **View Data**:</span></span>
 
-  ![테이블 데이터를 보여 주는 열린 동영상 테이블](sql/_static/vd22.png)
+  <span data-ttu-id="f9a1f-135">![테이블 데이터를 보여주는 열린 동영상 테이블](sql/_static/vd22.png)
+<!-- Code --------------------------></span><span class="sxs-lookup"><span data-stu-id="f9a1f-135">![Movie table open showing table data](sql/_static/vd22.png)
+<!-- Code --------------------------></span></span>
+# <a name="visual-studio-codetabvisual-studio-code"></a>[<span data-ttu-id="f9a1f-136">Visual Studio Code</span><span class="sxs-lookup"><span data-stu-id="f9a1f-136">Visual Studio Code</span></span>](#tab/visual-studio-code)
 
-## <a name="seed-the-database"></a><span data-ttu-id="cb3d3-129">데이터베이스 시드</span><span class="sxs-lookup"><span data-stu-id="cb3d3-129">Seed the database</span></span>
+[!INCLUDE[](~/includes/rp/sqlite.md)]
 
-<span data-ttu-id="cb3d3-130">*Models* 폴더에 `SeedData`라는 새 클래스를 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="cb3d3-130">Create a new class named `SeedData` in the *Models* folder.</span></span> <span data-ttu-id="cb3d3-131">생성된 코드를 다음으로 바꿉니다.</span><span class="sxs-lookup"><span data-stu-id="cb3d3-131">Replace the generated code with the following:</span></span>
+<!-- Mac -------------------------->
+# <a name="visual-studio-for-mactabvisual-studio-mac"></a>[<span data-ttu-id="f9a1f-137">Visual Studio for Mac</span><span class="sxs-lookup"><span data-stu-id="f9a1f-137">Visual Studio for Mac</span></span>](#tab/visual-studio-mac)
 
-::: moniker range="= aspnetcore-2.0"
+[!INCLUDE[](~/includes/rp/sqlite.md)]
 
-[!code-csharp[](razor-pages-start/sample/RazorPagesMovie/Models/SeedData.cs?name=snippet_1)]
+---  
+<!-- End of VS tabs -->
 
-::: moniker-end
+## <a name="seed-the-database"></a><span data-ttu-id="f9a1f-138">데이터베이스 시드</span><span class="sxs-lookup"><span data-stu-id="f9a1f-138">Seed the database</span></span>
 
-::: moniker range=">= aspnetcore-2.1"
+<span data-ttu-id="f9a1f-139">다음 코드를 사용하여 *Models* 폴더에 `SeedData`라는 새 클래스를 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="f9a1f-139">Create a new class named `SeedData` in the *Models* folder with the following code:</span></span>
 
-[!code-csharp[](razor-pages-start/sample/RazorPagesMovie21/Models/SeedData.cs?name=snippet_1)]
+[!code-csharp[](razor-pages-start/sample/RazorPagesMovie22/Models/SeedData.cs?name=snippet_1)]
 
-::: moniker-end
-
-<span data-ttu-id="cb3d3-132">DB에 동영상이 있는 경우 시드 이니셜라이저가 반환되고 동영상이 추가되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="cb3d3-132">If there are any movies in the DB, the seed initializer returns and no movies are added.</span></span>
+<span data-ttu-id="f9a1f-140">DB에 동영상이 있는 경우 시드 이니셜라이저가 반환되고 동영상이 추가되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="f9a1f-140">If there are any movies in the DB, the seed initializer returns and no movies are added.</span></span>
 
 ```csharp
 if (context.Movie.Any())
@@ -88,54 +120,66 @@ if (context.Movie.Any())
 }
 ```
 <a name="si"></a>
-### <a name="add-the-seed-initializer"></a><span data-ttu-id="cb3d3-133">시드 이니셜라이저 추가</span><span class="sxs-lookup"><span data-stu-id="cb3d3-133">Add the seed initializer</span></span>
+### <a name="add-the-seed-initializer"></a><span data-ttu-id="f9a1f-141">시드 이니셜라이저 추가</span><span class="sxs-lookup"><span data-stu-id="f9a1f-141">Add the seed initializer</span></span>
 
-<span data-ttu-id="cb3d3-134">*Program.cs*에서 다음을 수행하는 `Main` 메서드를 수정합니다.</span><span class="sxs-lookup"><span data-stu-id="cb3d3-134">In *Program.cs*, modify the `Main` method to do the following:</span></span>
+<span data-ttu-id="f9a1f-142">*Program.cs*에서 다음을 수행하는 `Main` 메서드를 수정합니다.</span><span class="sxs-lookup"><span data-stu-id="f9a1f-142">In *Program.cs*, modify the `Main` method to do the following:</span></span>
 
-* <span data-ttu-id="cb3d3-135">종속성 주입 컨테이너에서 DB 컨텍스트 인스턴스를 가져옵니다.</span><span class="sxs-lookup"><span data-stu-id="cb3d3-135">Get a DB context instance from the dependency injection container.</span></span>
-* <span data-ttu-id="cb3d3-136">컨텍스트를 전달하는 시드 메서드를 호출합니다.</span><span class="sxs-lookup"><span data-stu-id="cb3d3-136">Call the seed method, passing to it the context.</span></span>
-* <span data-ttu-id="cb3d3-137">시드 메서드가 완료되면 컨텍스트를 삭제합니다.</span><span class="sxs-lookup"><span data-stu-id="cb3d3-137">Dispose the context when the seed method completes.</span></span>
+* <span data-ttu-id="f9a1f-143">종속성 주입 컨테이너에서 DB 컨텍스트 인스턴스를 가져옵니다.</span><span class="sxs-lookup"><span data-stu-id="f9a1f-143">Get a DB context instance from the dependency injection container.</span></span>
+* <span data-ttu-id="f9a1f-144">컨텍스트를 전달하는 시드 메서드를 호출합니다.</span><span class="sxs-lookup"><span data-stu-id="f9a1f-144">Call the seed method, passing to it the context.</span></span>
+* <span data-ttu-id="f9a1f-145">시드 메서드가 완료되면 컨텍스트를 삭제합니다.</span><span class="sxs-lookup"><span data-stu-id="f9a1f-145">Dispose the context when the seed method completes.</span></span>
 
-<span data-ttu-id="cb3d3-138">다음 코드는 업데이트된 *Program.cs* 파일을 보여 줍니다.</span><span class="sxs-lookup"><span data-stu-id="cb3d3-138">The following code shows the updated *Program.cs* file.</span></span>
+<span data-ttu-id="f9a1f-146">다음 코드는 업데이트된 *Program.cs* 파일을 보여 줍니다.</span><span class="sxs-lookup"><span data-stu-id="f9a1f-146">The following code shows the updated *Program.cs* file.</span></span>
 
-::: moniker range="= aspnetcore-2.0"
+[!code-csharp[](razor-pages-start/sample/RazorPagesMovie22/Program.cs)]
 
-[!code-csharp[](razor-pages-start/sample/RazorPagesMovie/Program.cs)]
+<span data-ttu-id="f9a1f-147">프로덕션 앱은 `Database.Migrate`를 호출하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="f9a1f-147">A production app would not call `Database.Migrate`.</span></span> <span data-ttu-id="f9a1f-148">`Update-Database`가 실행되지 않는 경우 다음 예외를 방지하기 위해 위의 코드에 추가됩니다.</span><span class="sxs-lookup"><span data-stu-id="f9a1f-148">It's added to the preceding code to prevent the following exception when `Update-Database` has not been run:</span></span>
 
-::: moniker-end
+<span data-ttu-id="f9a1f-149">SqlException: 로그인에서 요청한 "RazorPagesMovieContext-21" 데이터베이스를 열 수 없습니다.</span><span class="sxs-lookup"><span data-stu-id="f9a1f-149">SqlException: Cannot open database "RazorPagesMovieContext-21" requested by the login.</span></span> <span data-ttu-id="f9a1f-150">로그인에 실패했습니다.</span><span class="sxs-lookup"><span data-stu-id="f9a1f-150">The login failed.</span></span>
+<span data-ttu-id="f9a1f-151">'user name' 사용자에 대한 로그인에 실패했습니다.</span><span class="sxs-lookup"><span data-stu-id="f9a1f-151">Login failed for user 'user name'.</span></span>
 
-::: moniker range=">= aspnetcore-2.1"
+### <a name="test-the-app"></a><span data-ttu-id="f9a1f-152">앱 테스트</span><span class="sxs-lookup"><span data-stu-id="f9a1f-152">Test the app</span></span>
 
-[!code-csharp[](razor-pages-start/sample/RazorPagesMovie21/Program.cs)]
+<!-- VS -------------------------->
+# <a name="visual-studiotabvisual-studio"></a>[<span data-ttu-id="f9a1f-153">Visual Studio</span><span class="sxs-lookup"><span data-stu-id="f9a1f-153">Visual Studio</span></span>](#tab/visual-studio)
 
-::: moniker-end
+* <span data-ttu-id="f9a1f-154">DB의 모든 레코드를 삭제합니다.</span><span class="sxs-lookup"><span data-stu-id="f9a1f-154">Delete all the records in the DB.</span></span> <span data-ttu-id="f9a1f-155">브라우저 또는 [SSOX](xref:tutorials/razor-pages/new-field#ssox)에서 삭제 링크를 사용하여 이를 수행할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="f9a1f-155">You can do this with the delete links in the browser or from [SSOX](xref:tutorials/razor-pages/new-field#ssox)</span></span>
+* <span data-ttu-id="f9a1f-156">시드 메서드가 실행되도록 앱에서 초기화를 적용하도록 합니다(`Startup` 클래스에서 메서드 호출).</span><span class="sxs-lookup"><span data-stu-id="f9a1f-156">Force the app to initialize (call the methods in the `Startup` class) so the seed method runs.</span></span> <span data-ttu-id="f9a1f-157">초기화를 적용하려면 IIS Express를 중지하고 다시 시작해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="f9a1f-157">To force initialization, IIS Express must be stopped and restarted.</span></span> <span data-ttu-id="f9a1f-158">다음 접근 방식 중 하나를 사용하여 이를 수행할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="f9a1f-158">You can do this with any of the following approaches:</span></span>
 
-<span data-ttu-id="cb3d3-139">프로덕션 앱은 `Database.Migrate`를 호출하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="cb3d3-139">A production app would not call `Database.Migrate`.</span></span> <span data-ttu-id="cb3d3-140">`Update-Database`가 실행되지 않는 경우 다음 예외를 방지하기 위해 위의 코드에 추가됩니다.</span><span class="sxs-lookup"><span data-stu-id="cb3d3-140">It's added to the preceding code to prevent the following exception when `Update-Database` has not been run:</span></span>
-
-<span data-ttu-id="cb3d3-141">SqlException: 로그인에서 요청한 "RazorPagesMovieContext-21" 데이터베이스를 열 수 없습니다.</span><span class="sxs-lookup"><span data-stu-id="cb3d3-141">SqlException: Cannot open database "RazorPagesMovieContext-21" requested by the login.</span></span> <span data-ttu-id="cb3d3-142">로그인에 실패했습니다.</span><span class="sxs-lookup"><span data-stu-id="cb3d3-142">The login failed.</span></span>
-<span data-ttu-id="cb3d3-143">'user name' 사용자에 대한 로그인에 실패했습니다.</span><span class="sxs-lookup"><span data-stu-id="cb3d3-143">Login failed for user 'user name'.</span></span>
-
-### <a name="test-the-app"></a><span data-ttu-id="cb3d3-144">앱 테스트</span><span class="sxs-lookup"><span data-stu-id="cb3d3-144">Test the app</span></span>
-
-* <span data-ttu-id="cb3d3-145">DB의 모든 레코드를 삭제합니다.</span><span class="sxs-lookup"><span data-stu-id="cb3d3-145">Delete all the records in the DB.</span></span> <span data-ttu-id="cb3d3-146">브라우저 또는 [SSOX](xref:tutorials/razor-pages/new-field#ssox)에서 삭제 링크를 사용하여 이를 수행할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="cb3d3-146">You can do this with the delete links in the browser or from [SSOX](xref:tutorials/razor-pages/new-field#ssox)</span></span>
-* <span data-ttu-id="cb3d3-147">시드 메서드가 실행되도록 앱에서 초기화를 적용하도록 합니다(`Startup` 클래스에서 메서드 호출).</span><span class="sxs-lookup"><span data-stu-id="cb3d3-147">Force the app to initialize (call the methods in the `Startup` class) so the seed method runs.</span></span> <span data-ttu-id="cb3d3-148">초기화를 적용하려면 IIS Express를 중지하고 다시 시작해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="cb3d3-148">To force initialization, IIS Express must be stopped and restarted.</span></span> <span data-ttu-id="cb3d3-149">다음 접근 방식 중 하나를 사용하여 이를 수행할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="cb3d3-149">You can do this with any of the following approaches:</span></span>
-
-  * <span data-ttu-id="cb3d3-150">알림 영역에서 IIS Express 시스템 트레이 아이콘을 마우스 오른쪽 단추로 클릭하고 **종료** 또는 **사이트 중지**를 탭합니다.</span><span class="sxs-lookup"><span data-stu-id="cb3d3-150">Right click the IIS Express system tray icon in the notification area and tap **Exit** or **Stop Site**:</span></span>
+  * <span data-ttu-id="f9a1f-159">알림 영역에서 IIS Express 시스템 트레이 아이콘을 마우스 오른쪽 단추로 클릭하고 **종료** 또는 **사이트 중지**를 탭합니다.</span><span class="sxs-lookup"><span data-stu-id="f9a1f-159">Right click the IIS Express system tray icon in the notification area and tap **Exit** or **Stop Site**:</span></span>
 
     ![IIS Express 시스템 트레이 아이콘](../first-mvc-app/working-with-sql/_static/iisExIcon.png)
 
     ![바로 가기 메뉴](sql/_static/stopIIS.png)
 
-    * <span data-ttu-id="cb3d3-153">비디버그 모드에서 VS를 실행했던 경우 F5 키를 눌러 디버그 모드에서 실행되도록 합니다.</span><span class="sxs-lookup"><span data-stu-id="cb3d3-153">If you were running VS in non-debug mode, press F5 to run in debug mode.</span></span>
-    * <span data-ttu-id="cb3d3-154">디버그 모드에서 VS를 실행했던 경우 디버거를 중지하고 F5 키를 누릅니다.</span><span class="sxs-lookup"><span data-stu-id="cb3d3-154">If you were running VS in debug mode, stop the debugger and press F5.</span></span>
+    * <span data-ttu-id="f9a1f-162">비디버그 모드에서 VS를 실행했던 경우 F5 키를 눌러 디버그 모드에서 실행되도록 합니다.</span><span class="sxs-lookup"><span data-stu-id="f9a1f-162">If you were running VS in non-debug mode, press F5 to run in debug mode.</span></span>
+    * <span data-ttu-id="f9a1f-163">디버그 모드에서 VS를 실행했던 경우 디버거를 중지하고 F5 키를 누릅니다.</span><span class="sxs-lookup"><span data-stu-id="f9a1f-163">If you were running VS in debug mode, stop the debugger and press F5.</span></span>
+
+<!-- Code -------------------------->
+# <a name="visual-studio-codetabvisual-studio-code"></a>[<span data-ttu-id="f9a1f-164">Visual Studio Code</span><span class="sxs-lookup"><span data-stu-id="f9a1f-164">Visual Studio Code</span></span>](#tab/visual-studio-code)
+
+<span data-ttu-id="f9a1f-165">DB의 모든 레코드 삭제(시드 메서드 실행을 위해).</span><span class="sxs-lookup"><span data-stu-id="f9a1f-165">Delete all the records in the DB (So the seed method will run).</span></span> <span data-ttu-id="f9a1f-166">앱을 중지 및 시작하여 데이터베이스를 시드합니다.</span><span class="sxs-lookup"><span data-stu-id="f9a1f-166">Stop and start the app to seed the database.</span></span>
+
+<span data-ttu-id="f9a1f-167">앱에서 시드된 데이터를 보여 줍니다.</span><span class="sxs-lookup"><span data-stu-id="f9a1f-167">The app shows the seeded data.</span></span>
+
+<!-- Mac -------------------------->
+# <a name="visual-studio-for-mactabvisual-studio-mac"></a>[<span data-ttu-id="f9a1f-168">Visual Studio for Mac</span><span class="sxs-lookup"><span data-stu-id="f9a1f-168">Visual Studio for Mac</span></span>](#tab/visual-studio-mac)
+
+<span data-ttu-id="f9a1f-169">DB의 모든 레코드 삭제(시드 메서드 실행을 위해).</span><span class="sxs-lookup"><span data-stu-id="f9a1f-169">Delete all the records in the DB (So the seed method will run).</span></span> <span data-ttu-id="f9a1f-170">앱을 중지 및 시작하여 데이터베이스를 시드합니다.</span><span class="sxs-lookup"><span data-stu-id="f9a1f-170">Stop and start the app to seed the database.</span></span>
+
+<span data-ttu-id="f9a1f-171">앱에서 시드된 데이터를 보여 줍니다.</span><span class="sxs-lookup"><span data-stu-id="f9a1f-171">The app shows the seeded data.</span></span>
+
+---  
+<!-- End of VS tabs -->
+
+
    
-<span data-ttu-id="cb3d3-155">앱에서 시드된 데이터를 보여 줍니다.</span><span class="sxs-lookup"><span data-stu-id="cb3d3-155">The app shows the seeded data:</span></span>
+<span data-ttu-id="f9a1f-172">앱에서 시드된 데이터를 보여 줍니다.</span><span class="sxs-lookup"><span data-stu-id="f9a1f-172">The app shows the seeded data:</span></span>
 
 ![동영상 데이터를 표시하는 크롬에서 열린 동영상 응용 프로그램](sql/_static/m55.png)
 
-<span data-ttu-id="cb3d3-157">다음 자습서는 데이터의 표현을 정리합니다.</span><span class="sxs-lookup"><span data-stu-id="cb3d3-157">The next tutorial will clean up the presentation of the data.</span></span>
+<span data-ttu-id="f9a1f-174">다음 자습서는 데이터의 표현을 정리합니다.</span><span class="sxs-lookup"><span data-stu-id="f9a1f-174">The next tutorial will clean up the presentation of the data.</span></span>
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="cb3d3-158">[이전: 스캐폴드된 Razor 페이지](xref:tutorials/razor-pages/page)
-> [다음: 페이지 업데이트](xref:tutorials/razor-pages/da1)</span><span class="sxs-lookup"><span data-stu-id="cb3d3-158">[Previous: Scaffolded Razor Pages](xref:tutorials/razor-pages/page)
+> <span data-ttu-id="f9a1f-175">[이전: 스캐폴드된 Razor 페이지](xref:tutorials/razor-pages/page)
+> [다음: 페이지 업데이트](xref:tutorials/razor-pages/da1)</span><span class="sxs-lookup"><span data-stu-id="f9a1f-175">[Previous: Scaffolded Razor Pages](xref:tutorials/razor-pages/page)
 [Next: Updating the pages](xref:tutorials/razor-pages/da1)</span></span>
