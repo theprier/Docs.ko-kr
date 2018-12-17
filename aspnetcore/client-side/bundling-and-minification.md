@@ -101,7 +101,7 @@ ASP.NET Core 2.1 이상 버전에서는 명명 된 새 JSON 파일을 추가 *bu
 합니다 [BuildBundlerMinifier](https://www.nuget.org/packages/BuildBundlerMinifier/) 실행 묶음 및 축소 빌드 시 NuGet 패키지에 사용 하도록 설정 합니다. 패키지를 삽입 [MSBuild 대상](/visualstudio/msbuild/msbuild-targets) 는 빌드 및 정리 시간에 실행 합니다. 합니다 *bundleconfig.json* 정의 된 구성에 따라 출력 파일을 생성 하는 빌드 프로세스에서 분석 하는 파일입니다.
 
 > [!NOTE]
-> BuildBundlerMinifier는 Microsoft 지원 되지 않습니다 제공 하는 GitHub의 커뮤니티 기반 프로젝트에 속합니다. 문제를 제출 해야 [여기](https://github.com/madskristensen/BundlerMinifier/issues)합니다.
+> BuildBundlerMinifier는 Microsoft 지원 되지 않습니다 제공 하는 GitHub의 커뮤니티 기반 프로젝트에 속합니다. 문제점은 [여기](https://github.com/madskristensen/BundlerMinifier/issues)에 제출해야 합니다.
 
 # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
 
@@ -183,12 +183,12 @@ Copyright (C) Microsoft Corporation. All rights reserved.
 
 ## <a name="ad-hoc-execution-of-bundling-and-minification"></a>묶음 및 축소의 임시 실행
 
-프로젝트를 빌드하지 않고 임시 단위로 묶음 및 축소 작업을 실행 하는 것이 가능 합니다. 추가 된 [BundlerMinifier.Core](https://www.nuget.org/packages/BundlerMinifier.Core/) NuGet 패키지를 프로젝트:
+프로젝트를 빌드하지 않고도 필요할 때마다 번들링 및 축소 작업을 실행할 수 있습니다. [BundlerMinifier.Core](https://www.nuget.org/packages/BundlerMinifier.Core/) NuGet 패키지를 프로젝트에 추가합니다.
 
 [!code-xml[](../client-side/bundling-and-minification/samples/BuildBundlerMinifierApp/BuildBundlerMinifierApp.csproj?range=10)]
 
 > [!NOTE]
-> BundlerMinifier.Core는 Microsoft 지원 되지 않습니다 제공 하는 GitHub의 커뮤니티 기반 프로젝트에 속합니다. 문제를 제출 해야 [여기](https://github.com/madskristensen/BundlerMinifier/issues)합니다.
+> BundlerMinifier.Core는 Microsoft에서 지원을 제공하지 않는 GitHub의 커뮤니티 주도 프로젝트에 속해 있습니다. 문제점은 [여기](https://github.com/madskristensen/BundlerMinifier/issues)에 제출해야 합니다.
 
 이 패키지에 포함 하도록.NET Core CLI를 확장 합니다 *dotnet 번들* 도구입니다. 다음 명령은 패키지 관리자 콘솔 (PMC) 창 또는 명령 셸에서 실행할 수 있습니다.
 
@@ -197,20 +197,20 @@ dotnet bundle
 ```
 
 > [!IMPORTANT]
-> NuGet 패키지 관리자와 *.csproj 파일에 종속성 추가 `<PackageReference />` 노드. 합니다 `dotnet bundle` 명령은.NET Core CLI와 함께 등록 되어 경우에만 `<DotNetCliToolReference />` 노드를 사용 합니다. *.Csproj 파일을 적절 하 게 수정 합니다.
+> NuGet 패키지 관리자는 *.csproj 파일에 `<PackageReference />` 노드로 종속성을 추가합니다. `dotnet bundle` 명령은 `<DotNetCliToolReference />` 노드가 사용되는 경우에만 .NET Core CLI에 등록됩니다. 그에 맞춰 *.Csproj 파일을 수정해야 합니다.
 
-## <a name="add-files-to-workflow"></a>워크플로 파일을 추가 합니다.
+## <a name="add-files-to-workflow"></a>워크플로에 파일 추가하기
 
 예를 살펴봅니다 추가 *custom.css* 다음과 같은 파일이 추가 됩니다.
 
 [!code-css[](../client-side/bundling-and-minification/samples/BuildBundlerMinifierApp/wwwroot/css/custom.css)]
 
-축소 하려면 *custom.css* 고 사용 하 여 번들 *site.css* 에 *site.min.css* 파일에 상대 경로 추가 합니다 *bundleconfig.json*:
+*custom.css*를 축소하고 이를 *site.css*와 함께 *site.min.css* 파일에 번들하려면 다음과 같이 상대 경로를 *bundleconfig.json*에 추가합니다.
 
 [!code-json[](../client-side/bundling-and-minification/samples/BuildBundlerMinifierApp/bundleconfig2.json?highlight=6)]
 
 > [!NOTE]
-> 또는 다음 와일드 카드 사용 패턴을 사용할 수 있습니다.
+> 또는 다음과 같은 와일드 카드 사용 패턴을 사용할 수도 있습니다.
 >
 > ```json
 > "inputFiles": ["wwwroot/**/*(*.css|!(*.min.css))"]
@@ -218,13 +218,13 @@ dotnet bundle
 >
 > 모든 CSS 파일과 일치 하는 축소 된 파일 패턴을 제외 하는이 와일드 카드 사용 패턴입니다.
 
-응용 프로그램을 빌드합니다. 오픈 *site.min.css* 의 내용을 확인 하 고 *custom.css* 파일의 끝에 추가 됩니다.
+응용 프로그램을 빌드합니다. *site.min.css*를 열고 *custom.css*의 내용이 파일 끝에 추가되었음을 확인합니다.
 
 ## <a name="environment-based-bundling-and-minification"></a>환경 기반 묶음 및 축소
 
 모범 사례로, 프로덕션 환경에서 앱의 번들 및 축소 된 파일은을 사용 해야 합니다. 개발 하는 동안 원래 파일은 앱의 쉬운 디버깅에 대 한 확인 합니다.
 
-사용 하 여 페이지에 포함할 파일을 지정 합니다 [환경 태그 도우미](xref:mvc/views/tag-helpers/builtin-th/environment-tag-helper) 보기에 있습니다. 특정에서 실행할 때만 해당 콘텐츠를 렌더링 환경 태그 도우미 [환경](xref:fundamentals/environments)합니다.
+뷰에서 [Environment 태그 도우미](xref:mvc/views/tag-helpers/builtin-th/environment-tag-helper)를 사용하여 페이지에 포함할 파일을 지정합니다. Environment 태그 도우미는 특정 [환경](xref:fundamentals/environments)에서 실행될 때만 자신의 내용을 렌더링합니다.
 
 다음 `environment` 태그 실행 하는 경우 처리 되지 않은 CSS 파일을 렌더링 합니다 `Development` 환경:
 
@@ -263,33 +263,33 @@ dotnet bundle
 Visual Studio [Bundler & Minifier](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.BundlerMinifier) 확장 처리 Gulp로 변환 합니다.
 
 > [!NOTE]
-> Bundler & Minifier 확장 Microsoft 지원 되지 않습니다 제공 하는 GitHub의 커뮤니티 기반 프로젝트에 속합니다. 문제를 제출 해야 [여기](https://github.com/madskristensen/BundlerMinifier/issues)합니다.
+> Bundler & Minifier 확장 Microsoft 지원 되지 않습니다 제공 하는 GitHub의 커뮤니티 기반 프로젝트에 속합니다. 문제점은 [여기](https://github.com/madskristensen/BundlerMinifier/issues)에 제출해야 합니다.
 
-마우스 오른쪽 단추로 클릭 합니다 *bundleconfig.json* 솔루션 탐색기에서 파일을 선택 **Bundler & Minifier** > **Gulp를 변환 하는 중...** :
+솔루션 탐색기에서 *bundleconfig.json* 파일을 마우스 오른쪽 버튼으로 클릭하고 **Bundler & Minifier**  >  **Convert To Gulp...** 를 선택합니다.
 
-![Gulp를 변환 상황에 맞는 메뉴 항목](../client-side/bundling-and-minification/_static/convert-to-gulp.png)
+![Convert To Gulp 컨텍스트 메뉴](../client-side/bundling-and-minification/_static/convert-to-gulp.png)
 
-합니다 *gulpfile.js* 하 고 *package.json* 파일이 프로젝트에 추가 됩니다. 지원 [npm](https://www.npmjs.com/) 에 나열 된 패키지를 *package.json* 파일의 `devDependencies` 섹션 설치 됩니다.
+그러면 프로젝트에 *gulpfile.js* 및 *package.json* 파일이 추가됩니다. 그리고 *package.json* 파일의 `devDependencies` 섹션에 나열된 지원 [npm](https://www.npmjs.com/) 패키지들이 설치됩니다.
 
-전역 종속성으로 Gulp CLI를 설치 하려면 PMC 창에서 다음 명령을 실행 합니다.
+PMC 창에서 다음 명령을 실행하여 Gulp CLI를 전역 종속성으로 설치합니다.
 
 ```console
 npm i -g gulp-cli
 ```
 
-합니다 *gulpfile.js* 읽기 파일을 *bundleconfig.json* 입력, 출력 및 설정에 대 한 파일입니다.
+입력, 출력 및 설정을 위해 *gulpfile.js* 파일에서 *bundleconfig.json* 파일을 읽습니다.
 
 [!code-javascript[](../client-side/bundling-and-minification/samples/BuildBundlerMinifierApp/gulpfile.js?range=1-12&highlight=10)]
 
-### <a name="convert-manually"></a>수동으로 변환
+### <a name="convert-manually"></a>직접 변환하기
 
-Visual Studio 및/또는 Bundler & Minifier 확장을 사용할 수 없는 경우 수동으로 변환 합니다.
+Visual Studio나 Bundler & Minifier 확장을 사용할 수 없는 경우 직접 수작업으로 변환합니다.
 
-추가 된 *package.json* 파일에 다음을 사용 하 여 `devDependencies`, 프로젝트 루트에:
+프로젝트 루트에 다음 `devDependencies`가 지정된 *package.json* 파일을 추가합니다.
 
 [!code-json[](../client-side/bundling-and-minification/samples/BuildBundlerMinifierApp/package.json?range=5-13)]
 
-동일한 수준에서 다음 명령을 실행 하 여 종속성을 설치 *package.json*:
+*package.json*과 동일한 수준에서 다음 명령을 실행하여 종속성을 설치합니다.
 
 ```console
 npm i
@@ -301,11 +301,11 @@ npm i
 npm i -g gulp-cli
 ```
 
-복사 합니다 *gulpfile.js* 프로젝트 루트 아래의 파일:
+*gulpfile.js* 파일을 프로젝트 루트 아래에 복사합니다.
 
 [!code-javascript[](../client-side/bundling-and-minification/samples/BuildBundlerMinifierApp/gulpfile.js?range=1-11,14-)]
 
-### <a name="run-gulp-tasks"></a>Gulp 작업 실행
+### <a name="run-gulp-tasks"></a>Gulp 작업 실행하기
 
 Gulp 축소 작업 전에 Visual Studio에서 프로젝트 빌드를 트리거하려면 다음을 추가 [MSBuild 대상](/visualstudio/msbuild/msbuild-targets) *.csproj 파일에:
 
@@ -325,11 +325,11 @@ Gulp 축소 작업 전에 Visual Studio에서 프로젝트 빌드를 트리거�
 ========== Build: 1 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========
 ```
 
-또는 Visual Studio의 특정 이벤트 Gulp 작업을 바인딩할 Visual Studio의 Task Runner 탐색기를 사용할 수 있습니다. 참조 [실행 중인 기본 작업](xref:client-side/using-gulp#running-default-tasks) 그에 대 한 지침은 합니다.
+또는 Visual Studio의 작업 러너 탐색기를 사용하여 Gulp 작업을 특정 Visual Studio 이벤트에 바인딩 할 수 있습니다. 이에 대한 지침은 [기본 작업 실행하기](xref:client-side/using-gulp#running-default-tasks)를 참고하시기 바랍니다.
 
 ## <a name="additional-resources"></a>추가 자료
 
-* [Gulp 사용](xref:client-side/using-gulp)
-* [Grunt 사용](xref:client-side/using-grunt)
+* [Gulp 사용하기](xref:client-side/using-gulp)
+* [Grunt 사용하기](xref:client-side/using-grunt)
 * [여러 환경 사용](xref:fundamentals/environments)
 * [태그 도우미](xref:mvc/views/tag-helpers/intro)

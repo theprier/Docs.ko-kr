@@ -1,6 +1,6 @@
 ---
 uid: signalr/overview/getting-started/tutorial-high-frequency-realtime-with-signalr
-title: '자습서: 고주파수 SignalR 2 사용 하 여 | Microsoft Docs'
+title: '자습서: SignalR 2 사용 하 여 고주파수 | Microsoft Docs'
 author: pfletcher
 description: 이 자습서에는 빈도가 높은 메시징 기능을 제공 하는 데 ASP.NET SignalR을 사용 하는 웹 응용 프로그램을 만드는 방법을 보여 줍니다. 빈도가 높은 메시징에 중...
 ms.author: riande
@@ -8,16 +8,18 @@ ms.date: 06/10/2014
 ms.assetid: 9f969dda-78ea-4329-b1e3-e51c02210a2b
 msc.legacyurl: /signalr/overview/getting-started/tutorial-high-frequency-realtime-with-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: 23dc9cc7fd469e934ed9915922a3baa772d9e1ab
-ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
+ms.openlocfilehash: 04ce650509268ee63daafe24bc8dcc9725aea16b
+ms.sourcegitcommit: 74e3be25ea37b5fc8b4b433b0b872547b4b99186
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48912035"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53287732"
 ---
 <a name="tutorial-high-frequency-realtime-with-signalr-2"></a>자습서: 고주파수 SignalR 2 사용 하 여
 ====================
 [Patrick Fletcher](https://github.com/pfletcher)
+
+[!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
 
 [완료 된 프로젝트 다운로드](http://code.msdn.microsoft.com/SignalR-20-MoveShape-Demo-6285b83a)
 

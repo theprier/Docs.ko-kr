@@ -8,16 +8,18 @@ ms.date: 10/17/2013
 ms.assetid: 715a4059-d307-4631-abbb-c789c95d6eb4
 msc.legacyurl: /signalr/overview/older-versions/introduction-to-security
 msc.type: authoredcontent
-ms.openlocfilehash: 4534cd2936d5e0276dc2b0a5fde553a17540b903
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 662ce8d5581d16709ea79de39e078bfa36b02b5c
+ms.sourcegitcommit: 74e3be25ea37b5fc8b4b433b0b872547b4b99186
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41829877"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53287652"
 ---
 <a name="introduction-to-signalr-security-signalr-1x"></a>SignalR 보안 소개 (SignalR 1.x)
 ====================
 하 여 [Patrick Fletcher](https://github.com/pfletcher), [Tom FitzMacken](https://github.com/tfitzmac)
+
+[!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
 
 > 이 문서에는 SignalR 응용 프로그램을 개발할 때 고려해 야 할 보안 문제를 설명 합니다.
 

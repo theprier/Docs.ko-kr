@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 11/19/2018
 uid: fundamentals/url-rewriting
-ms.openlocfilehash: 98787891a97e49081d72107484f030d216d82f45
-ms.sourcegitcommit: ad28d1bc6657a743d5c2fa8902f82740689733bb
+ms.openlocfilehash: 84052789717738a48c346d35d1a2642017a9ab93
+ms.sourcegitcommit: 9bb58d7c8dad4bbd03419bcc183d027667fefa20
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52256569"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52861916"
 ---
 # <a name="url-rewriting-middleware-in-aspnet-core"></a>ASP.NET Core에서 URL 재작성 미들웨어
 
@@ -210,7 +210,7 @@ URL을 재작성하는 규칙을 만들려면 <xref:Microsoft.AspNetCore.Rewrite
 리소스를 가져오기 위해 서버를 왕복하지 않습니다. 리소스가 있으면 이를 가져와서 *200 - 정상* 상태 코드와 함께 클라이언트에 반환합니다. 클라이언트는 리디렉션 되지 않으므로 브라우저 주소 표시줄의 URL은 변경되지 않습니다. 클라이언트는 서버에서 URL 재작성 작업이 발생했음을 검색할 수 없습니다.
 
 > [!NOTE]
-> 일치 규칙은 컴퓨팅 측면에서 비용이 많이 들고 앱의 응답 속도가 저하되므로 가능한 경우 `skipRemainingRules: true`를 사용합니다. 최대한 빠른 응용 프로그램 응답을 위해서는:
+> 일치 규칙은 컴퓨팅 측면에서 비용이 많이 들고 앱의 응답 속도가 증가되므로 가능한 경우 `skipRemainingRules: true`를 사용합니다. 최대한 빠른 응용 프로그램 응답을 위해서는:
 >
 > * 재작성 규칙을 가장 자주 일치하는 규칙에서 가장 드물게 일치하는 규칙으로의 순서로 정렬합니다.
 > * 일치가 발생하고 추가적인 규칙 처리가 필요하지 않다면 나머지 규칙의 처리를 생략합니다.

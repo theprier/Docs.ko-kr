@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc, seodec18
 ms.date: 10/24/2018
 uid: security/data-protection/extensibility/key-management
-ms.openlocfilehash: e5ed2a65355a1dba34af09379f2583b3e73c24d7
-ms.sourcegitcommit: 49faca2644590fc081d86db46ea5e29edfc28b7b
+ms.openlocfilehash: 28932cbef1cc797338980f3e0de8b09caee324c0
+ms.sourcegitcommit: b34b25da2ab68e6495b2460ff570468f16a9bf0d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/09/2018
-ms.locfileid: "53121429"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53284606"
 ---
 # <a name="key-management-extensibility-in-aspnet-core"></a>ASP.NET Core에서 키 관리 확장성
 
@@ -175,7 +175,7 @@ services.AddSingleton<IXmlRepository>(new MyCustomXmlRepository());
 
 `IXmlEncryptor` 인터페이스에는 일반 텍스트 XML 요소를 암호화할 수 있는 형식을 나타냅니다. 단일 API를 노출 합니다.
 
-* (XElement plaintextElement) 암호화: EncryptedXmlInfo
+* Encrypt(XElement plaintextElement): EncryptedXmlInfo
 
 직렬화 된 경우 `IAuthenticatedEncryptorDescriptor` 다음의 "암호화"가 필요한 것으로 표시 하는 요소가 `XmlKeyManager` 요소를 통해 구성 된 실행 됩니다 `IXmlEncryptor`의 `Encrypt` 메서드를 읽거나 요소가 유지 됩니다 보다는 일반 텍스트 요소를 `IXmlRepository`입니다. 출력을 `Encrypt` 메서드는 `EncryptedXmlInfo` 개체입니다. 이 개체는 모두를 읽거나 결과 포함 하는 래퍼 `XElement` 형식을 나타내는 `IXmlDecryptor` 해당 요소를 해독에 사용할 수 있는 합니다.
 
@@ -210,7 +210,7 @@ services.AddSingleton<IXmlEncryptor>(new MyCustomXmlEncryptor());
 
 합니다 `IXmlDecryptor` 인터페이스에는 암호를 해독 하는 방법을 알고 있는 유형을 나타냅니다는 `XElement` 는 된 암호화를 통해는 `IXmlEncryptor`합니다. 단일 API를 노출 합니다.
 
-* (XElement encryptedElement) 암호 해독: XElement
+* 암호 해독 (XElement encryptedElement): XElement
 
 합니다 `Decrypt` 메서드를 실행 취소 하 여 수행 된 암호화 `IXmlEncryptor.Encrypt`합니다. 일반적으로 각 구체적 `IXmlEncryptor` 구현에는 해당 구체적인 해야 `IXmlDecryptor` 구현 합니다.
 

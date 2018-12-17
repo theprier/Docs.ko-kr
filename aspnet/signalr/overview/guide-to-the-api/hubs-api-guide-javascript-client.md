@@ -8,16 +8,18 @@ ms.date: 09/28/2015
 ms.assetid: a9fd4dc0-1b96-4443-82ca-932a5b4a8ea4
 msc.legacyurl: /signalr/overview/guide-to-the-api/hubs-api-guide-javascript-client
 msc.type: authoredcontent
-ms.openlocfilehash: 9edb7fd100a3f4c5331454045ac206d2f7a81961
-ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
+ms.openlocfilehash: 8e493eda256351904da49e1222773f188e6a2058
+ms.sourcegitcommit: 74e3be25ea37b5fc8b4b433b0b872547b4b99186
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48912451"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53288068"
 ---
 <a name="aspnet-signalr-hubs-api-guide---javascript-client"></a>ASP.NET SignalR 허브 API 가이드-JavaScript 클라이언트
 ====================
 하 여 [Patrick Fletcher](https://github.com/pfletcher), [Tom Dykstra](https://github.com/tdykstra)
+
+[!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
 
 > 이 문서에서는 허브 API를 사용 하 여 SignalR 브라우저 및 Windows 스토어 (WinJS) 응용 프로그램과 같은 JavaScript 클라이언트에서 버전 2에 대 한 소개를 제공 합니다.
 >
@@ -41,7 +43,6 @@ ms.locfileid: "48912451"
 > ## <a name="questions-and-comments"></a>질문이 나 의견이 있으면
 >
 > 이 자습서를 연결 하는 방법 및 새로운 개선할 수 있습니다 페이지의 맨 아래에 의견에서에 의견을 남겨 주세요. 에 자습서로 직접 관련 되지 않은 질문이 있을 경우 게시할 수 하는 [ASP.NET SignalR 포럼](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR) 또는 [StackOverflow.com](http://stackoverflow.com/)합니다.
-
 
 ## <a name="overview"></a>개요
 
@@ -226,7 +227,7 @@ SignalR 1.x에서 도메인 간 요청 된 단일 EnableCrossDomain 플래그로
 
 JSONP (이전 브라우저에서 도메인 간 요청을 지원)를 클라이언트에 필요한 경우 설정 하 여 명시적으로 설정 해야 합니다 `EnableJSONP` 에 `HubConfiguration` 개체를 `true`다음과 같이 합니다. JSONP는 CORS 보다 안전 하지 않은 것 처럼 기본적으로 비활성화 됩니다.
 
-**Microsoft.Owin.Cors 프로젝트 추가:** 이 라이브러리를 설치 하려면 패키지 관리자 콘솔에서 다음 명령을 실행 합니다.
+**Microsoft.Owin.Cors 프로젝트에 추가 합니다.** 이 라이브러리를 설치 하려면 패키지 관리자 콘솔에서 다음 명령을 실행 합니다.
 
 `Install-Package Microsoft.Owin.Cors`
 
@@ -466,7 +467,7 @@ SignalR 처리할 수 있는 수명 이벤트 다음 연결을 제공 합니다.
 
 - `starting`: 데이터 연결을 통해 전송 되기 전에 발생 합니다.
 - `received`: 연결에서 모든 데이터를 수신할 때 발생 합니다. 수신된 된 데이터를 제공합니다.
-- `connectionSlow`: 클라이언트 느리거나 자주 삭제 연결을 검색 하는 경우 발생 합니다.
+- `connectionSlow`: 클라이언트가 느리거나 자주 삭제 연결을 검색 하는 경우 발생 합니다.
 - `reconnecting`: 기본 전송 다시 시작 될 때 발생 합니다.
 - `reconnected`: 기본 전송에 다시 연결 되 면 발생 합니다.
 - `stateChanged`: 연결 상태가 변경 될 때 발생 합니다. 이전 상태 및 새 상태 (연결, 연결 됨, 다시 연결, 또는 Disconnected)를 제공합니다.

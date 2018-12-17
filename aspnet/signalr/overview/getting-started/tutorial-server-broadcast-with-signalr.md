@@ -1,6 +1,6 @@
 ---
 uid: signalr/overview/getting-started/tutorial-server-broadcast-with-signalr
-title: '자습서: SignalR 2 사용 하 여 서버 브로드캐스트 한다 | Microsoft Docs'
+title: '자습서: SignalR 2 사용 하 여 서버 브로드캐스트 | Microsoft Docs'
 author: tdykstra
 description: 이 자습서에는 ASP.NET SignalR 2를 사용 하 여 서버 브로드캐스트 기능을 제공 하는 웹 응용 프로그램을 만드는 방법을 보여 줍니다. 서버 브로드캐스트는 commun 의미 하는 중...
 ms.author: riande
@@ -8,16 +8,18 @@ ms.date: 10/13/2014
 ms.assetid: 1568247f-60b5-4eca-96e0-e661fbb2b273
 msc.legacyurl: /signalr/overview/getting-started/tutorial-server-broadcast-with-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: 7a85a704dc5d830ec793540fbc44a3ce7ec8c934
-ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
+ms.openlocfilehash: ad2eee8742d5bc45dc2bdc90f76736b4dc94d14b
+ms.sourcegitcommit: 74e3be25ea37b5fc8b4b433b0b872547b4b99186
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48911545"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53288020"
 ---
-<a name="tutorial-server-broadcast-with-signalr-2"></a>자습서: SignalR 2 사용 하 여 서버 브로드캐스트 한다
+<a name="tutorial-server-broadcast-with-signalr-2"></a>자습서: SignalR 2 사용 하 여 서버 브로드캐스트
 ====================
 하 여 [Tom Dykstra](https://github.com/tdykstra), [Tom FitzMacken](https://github.com/tfitzmac)
+
+[!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
 
 > 이 자습서에는 ASP.NET SignalR 2를 사용 하 여 서버 브로드캐스트 기능을 제공 하는 웹 응용 프로그램을 만드는 방법을 보여 줍니다. 서버 브로드캐스트 클라이언트로 전송 되는 통신 서버에서 시작 되는 것을 의미 합니다. 이 시나리오에는 클라이언트로 전송 되는 통신 클라이언트 중 하나 이상으로 시작 되는 채팅 응용 프로그램과 같은 피어-투-피어 시나리오 보다 다른 프로그래밍 접근 방법이 필요 합니다.
 >
@@ -52,7 +54,6 @@ ms.locfileid: "48911545"
 > ## <a name="questions-and-comments"></a>질문이 나 의견이 있으면
 >
 > 이 자습서를 연결 하는 방법 및 새로운 개선할 수 있습니다 페이지의 맨 아래에 의견에서에 의견을 남겨 주세요. 에 자습서로 직접 관련 되지 않은 질문이 있을 경우 게시할 수 하는 [ASP.NET SignalR 포럼](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR) 또는 [StackOverflow.com](http://stackoverflow.com/)합니다.
-
 
 ## <a name="overview"></a>개요
 

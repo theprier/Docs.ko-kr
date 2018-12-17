@@ -8,16 +8,18 @@ ms.date: 10/21/2013
 ms.assetid: c34bc627-41af-4c21-a817-e97a19a7f252
 msc.legacyurl: /signalr/overview/older-versions/persistent-connection-authorization
 msc.type: authoredcontent
-ms.openlocfilehash: 6c13a63630948a8b6bd1f6e3a6e752b9695256bf
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 4973cb9bd03088106fe9502e0e706c6c28d2d46d
+ms.sourcegitcommit: 74e3be25ea37b5fc8b4b433b0b872547b4b99186
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41839167"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53286859"
 ---
 <a name="authentication-and-authorization-for-signalr-persistent-connections-signalr-1x"></a>SignalR 영구 연결 프로그램용 인증과 권한 부여 (SignalR 1.x)
 ====================
 하 여 [Patrick Fletcher](https://github.com/pfletcher), [Tom FitzMacken](https://github.com/tfitzmac)
+
+[!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
 
 > 이 항목에서는 영구 연결에 권한 부여를 적용 하는 방법을 설명 합니다. SignalR 응용 프로그램에 보안을 통합 하는 방법에 대 한 일반적인 정보를 참조 하세요 [보안 소개](index.md)합니다.
 

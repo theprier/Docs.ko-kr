@@ -6,12 +6,12 @@ ms.author: casoper
 ms.custom: mvc, seodec18
 ms.date: 10/24/2018
 uid: azure/devops/deploy-to-app-service
-ms.openlocfilehash: 4424d3d15cbd234357c8265fa276834cb9abf352
-ms.sourcegitcommit: 49faca2644590fc081d86db46ea5e29edfc28b7b
+ms.openlocfilehash: 9fe17c9e210d4dda9b74818104fc52a60d4f0077
+ms.sourcegitcommit: b34b25da2ab68e6495b2460ff570468f16a9bf0d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/09/2018
-ms.locfileid: "53121222"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53284541"
 ---
 # <a name="deploy-an-app-to-app-service"></a>App Service에 앱 배포
 
@@ -73,7 +73,7 @@ ms.locfileid: "53121222"
 
 앱을 배포 하려면 App Service 만들기 해야 [웹 앱](/azure/app-service/app-service-web-overview)합니다. 웹 앱을 만든 후 Git를 사용 하 여 로컬 컴퓨터에서를 배포할 수 있습니다.
 
-1. 에 로그인 합니다 [Azure Cloud Shell](https://shell.azure.com/bash)합니다. 참고: 처음으로 로그인 할 때 Cloud Shell 프롬프트를 구성 파일에 대 한 저장소 계정을 만듭니다. 기본값을 사용 하거나 고유 이름을 제공 합니다.
+1. 에 로그인 합니다 [Azure Cloud Shell](https://shell.azure.com/bash)합니다. 참고: 처음으로 로그인 할 때 Cloud Shell은 구성 파일에 대 한 저장소 계정을 만들려면 요구 합니다. 기본값을 사용 하거나 고유 이름을 제공 합니다.
 
 2. 다음 단계에서 Cloud Shell을 사용 합니다.
 
@@ -141,7 +141,7 @@ ms.locfileid: "53121222"
 
 ## <a name="deployment-with-visual-studio"></a>Visual Studio 사용 하 여 배포
 
-> *참고:이 섹션에만 적용 됩니다 Windows. Linux 및 macOS 사용자는 2 단계 아래에 설명 된 변경 내용을 확인 해야 합니다. 파일을 저장 하 고 사용 하 여 로컬 리포지토리에 변경 내용을 커밋하기 `git commit`합니다. 마지막으로 사용 하 여 변경 내용을 푸시 `git push`첫 번째 섹션 에서처럼 합니다.*
+> *참고: 이 섹션에서는 Windows에만 적용 됩니다. Linux 및 macOS 사용자는 2 단계 아래에 설명 된 변경 내용을 확인 해야 합니다. 파일을 저장 하 고 사용 하 여 로컬 리포지토리에 변경 내용을 커밋하기 `git commit`합니다. 마지막으로 사용 하 여 변경 내용을 푸시 `git push`첫 번째 섹션 에서처럼 합니다.*
 
 앱 명령 셸에서 이미 배포 되었습니다. 앱에 업데이트를 배포 하려면 Visual Studio의 통합된 도구를 사용해 보겠습니다. 배후에서 Visual Studio 도구, 명령줄 같지만 Visual Studio의 친숙 한 UI 내에서 동일한 작업을 수행 합니다.
 

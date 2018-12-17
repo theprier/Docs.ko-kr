@@ -8,23 +8,24 @@ ms.date: 04/18/2018
 ms.assetid: eac31beb-0f46-4afa-9def-e80904dea4f0
 msc.legacyurl: /signalr/overview/getting-started/supported-platforms
 msc.type: authoredcontent
-ms.openlocfilehash: d522602c3523d97a12c74b2d901391bd00d4f2b9
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: e270f9a328f36854fdfb3e23b78e0b40cdda6411
+ms.sourcegitcommit: 74e3be25ea37b5fc8b4b433b0b872547b4b99186
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41829949"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53287377"
 ---
 <a name="supported-platforms"></a>지원되는 플랫폼
 ====================
 [Patrick Fletcher](https://github.com/pfletcher)
+
+[!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
 
 > 이 문서에서는 어떤 클라이언트 및 서버에 SignalR 지 설명 합니다. 
 > 
 > ## <a name="questions-and-comments"></a>질문이 나 의견이 있으면
 > 
 > 이 자습서를 연결 하는 방법 및 새로운 개선할 수 있습니다 페이지의 맨 아래에 의견에서에 의견을 남겨 주세요. 에 자습서로 직접 관련 되지 않은 질문이 있을 경우 게시할 수 하는 [ASP.NET SignalR 포럼](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR) 또는 [StackOverflow.com](http://stackoverflow.com/)합니다.
-
 
 SignalR은 다양 한 서버 및 클라이언트 구성에서 지원 됩니다. 또한 각 전송 옵션에는 고유한; 요구 사항 전송에 대 한 시스템 요구 사항에 사용할 수 없으면 SignalR 정상적으로 장애 조치 다른 전송 됩니다. SignalR을 지 원하는 전송에 대 한 자세한 내용은 참조 하세요. [전송과 대체](introduction-to-signalr.md#transports)합니다.
 
@@ -91,7 +92,7 @@ SignalR을 다양 한 웹 브라우저에서에서 사용할 수 있지만 일�
 | ForeverFrame | 8+ | N/A | N/A | N/A | 4.1 |
 | 긴 폴링 | 8+ | 1-현재 | 1-현재 | 1-현재 | 4.1 |
 
-\*: 6 이상 전체 기능에 대 한 필요 합니다.
+\*: 6 + 전체 기능에 필요 합니다.
 
 #### <a name="unsupported-browsers"></a>지원 되지 않는 브라우저
 

@@ -8,16 +8,18 @@ ms.date: 06/10/2014
 ms.assetid: 4b559e6c-4fb0-4a04-9812-45cf08ae5779
 msc.legacyurl: /signalr/overview/testing-and-debugging/troubleshooting
 msc.type: authoredcontent
-ms.openlocfilehash: bdb0562955f3bde56a95ce937c27fdbe4aa94823
-ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
+ms.openlocfilehash: e41061f0310c021b10dc6667a5c3297788213b0a
+ms.sourcegitcommit: 74e3be25ea37b5fc8b4b433b0b872547b4b99186
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48911695"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53287956"
 ---
 <a name="signalr-troubleshooting"></a>SignalR 문제 해결
 ====================
 [Patrick Fletcher](https://github.com/pfletcher)
+
+[!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
 
 > 이 문서는 SignalR 사용 하 여 일반적인 문제를 설명합니다.
 >
@@ -71,7 +73,7 @@ SignalR을 서버와 클라이언트 간의 호출을 serialize 하는 데 사�
 
 ### <a name="mixing-hub-and-persistentconnection-syntax"></a>허브 및 PersistentConnection 구문을 함께 사용
 
-두 통신 모델을 사용 하 여 SignalR: 허브 및 PersistentConnections 합니다. 이러한 두 통신 모델을 호출 하기 위한 구문은 클라이언트 코드에서 다릅니다. 서버 코드에서 허브를 추가한 경우에 적절 한 허브 구문을 사용 하는 모든 클라이언트 코드를 확인 합니다.
+SignalR 두 통신 모델을 사용합니다. 허브 및 PersistentConnections 합니다. 이러한 두 통신 모델을 호출 하기 위한 구문은 클라이언트 코드에서 다릅니다. 서버 코드에서 허브를 추가한 경우에 적절 한 허브 구문을 사용 하는 모든 클라이언트 코드를 확인 합니다.
 
 **JavaScript 클라이언트를 만드는 코드를 한 PersistentConnection JavaScript 클라이언트에서**
 
@@ -135,7 +137,7 @@ SignalR은 자동으로 JSON을 사용 메서드를 serialize 할 매개 변수-
 
 이 동작은 설계 시 의도된 것입니다. 사용자 활성 SignalR 연결을 사용 하 여 페이지 외부로 이동할 때 SignalR 클라이언트는 클라이언트 연결이 중지 되는 서버에 알리기 위해 시도 하는 최상의 노력을 확인 합니다. SignalR 클라이언트의 최상의 노력을 다 하는 경우 서버에 도달 하도록 시도가 실패 하면, 서버는 구성 가능한 후 연결을 삭제 `DisconnectTimeout` 이때 나중의 `OnDisconnected` 이벤트가 발생 합니다. SignalR 클라이언트의 최상의 시도가 성공한 경우에 `OnDisconnected` 이벤트는 즉시 발생 합니다.
 
-설정에 대 한 정보에 대 한 합니다 `DisconnectTimeout` 설정을 참조 하세요 [연결 수명 이벤트를 처리: DisconnectTimeout](../guide-to-the-api/handling-connection-lifetime-events.md#disconnecttimeout)합니다.
+설정에 대 한 정보에 대 한 합니다 `DisconnectTimeout` 참조 설정, [연결 수명 이벤트를 처리 합니다. DisconnectTimeout](../guide-to-the-api/handling-connection-lifetime-events.md#disconnecttimeout)합니다.
 
 ### <a name="connection-limit-reached"></a>연결 제한에 도달 함
 
@@ -187,10 +189,10 @@ SignalR 서버 클라이언트 인지 배달 못 한 편지 및 즉 연결 실�
 
 이 문제에 대 한 여러 원인이 있습니다. 다음을 모두 확인 합니다.
 
-- **허브 프록시 주소 참조 형식이 올바르지 않습니다:** 생성 된 허브 프록시 주소에 대 한 참조의 형식이 올바르게 지정 되지 않았습니다 하는 경우이 오류는 일반적으로 표시 됩니다. 허브 주소에 대 한 참조가 제대로 만들어지기를 확인 합니다. 참조 [동적으로 생성 된 프록시를 참조 하는 방법을](../guide-to-the-api/hubs-api-guide-javascript-client.md#dynamicproxy) 세부 정보에 대 한 합니다.
+- **허브 프록시 주소 참조 형식이 올바르지 않습니다.** 이 오류는 일반적으로 생성 된 허브 프록시 주소에 대 한 참조의 형식이 올바르게 지정 되지 않았습니다 하는 경우에 표시 됩니다. 허브 주소에 대 한 참조가 제대로 만들어지기를 확인 합니다. 참조 [동적으로 생성 된 프록시를 참조 하는 방법을](../guide-to-the-api/hubs-api-guide-javascript-client.md#dynamicproxy) 세부 정보에 대 한 합니다.
 - **허브 경로 추가 하기 전에 응용 프로그램에 경로 추가 합니다.** 응용 프로그램에서 다른 경로 사용 하는 경우 추가 하는 첫 번째 경로에 대 한 호출 인지 확인 `MapSignalR`합니다.
-- **확장명 없는 Url에 대 한 업데이트 없이 7.5 또는 IIS 7을 사용 하 여:** 를 사용 하 여 IIS 7 또는 7.5를 업데이트 해야 확장명 없는 Url에 대 한 서버에서 허브 정의에 대 한 액세스를 제공할 수 있도록 `/signalr/hubs`입니다. 업데이트를 확인할 수 있습니다 [여기](https://support.microsoft.com/kb/980368)합니다.
-- **IIS 캐시 만료 또는 손상:** 캐시 콘텐츠 만료 없는지를 확인 하려면 캐시를 지우는 PowerShell 창에서 다음 명령을 입력 합니다.
+- **IIS 7 또는 업데이트 하지 않고 7.5를 사용 하 여 확장명 없는 Url에 대 한 합니다.** 서버에서 허브 정의에 대 한 액세스를 제공할 수 있도록 확장명 없는 Url에 대 한 업데이트를 필요한 IIS 7 또는 7.5를 사용 하 여 `/signalr/hubs`입니다. 업데이트를 확인할 수 있습니다 [여기](https://support.microsoft.com/kb/980368)합니다.
+- **IIS 캐시 만료 되었거나 손상 되었습니다.** 캐시 콘텐츠 만료 되지 않았는지를 확인 하려면 캐시를 지우는 PowerShell 창에서 다음 명령을 입력 합니다.
 
     [!code-powershell[Main](troubleshooting/samples/sample11.ps1)]
 
@@ -200,7 +202,7 @@ SignalR 서버 클라이언트 인지 배달 못 한 편지 및 즉 연결 실�
 
 이 오류는 일반적으로 방화벽 또는 프록시를 제대로 구성 되지 않았습니다, 다시 작성 요청 헤더를 유발 하는 경우에 표시 됩니다. 솔루션 포트 80에서 방화벽 또는 프록시 활성화 되어 있는지 확인 하는 것입니다.
 
-### <a name="unexpected-response-code-500"></a>"예기치 않은 응답 코드: 500"
+### <a name="unexpected-response-code-500"></a>"예기치 않은 응답 코드: 500 "
 
 응용 프로그램에 사용 되는.NET framework의 버전 Web.Config에 지정 된 버전과 일치 하지 않으면이 오류가 발생할 수 있습니다. 솔루션은.NET 4.5 응용 프로그램 설정 및 Web.Config 파일에서 사용 되 고 있는지 확인 하는 것입니다.
 
@@ -212,7 +214,7 @@ SignalR 서버 클라이언트 인지 배달 못 한 편지 및 즉 연결 실�
 
 메서드에 전송 하는 매개 변수를 직렬화 형식 (예: 파일 핸들, 데이터베이스 연결) 들어 있지 않은지 확인 합니다. 사용 하 여 (또는 보안에 대 한 serialization 위해), 클라이언트에 전송 하지 않으려는 서버 쪽 개체의 멤버를 사용 하는 경우는 `JSONIgnore` 특성입니다.
 
-### <a name="protocol-error-unknown-transport-error"></a>"프로토콜 오류: 알 수 없는 전송" 오류
+### <a name="protocol-error-unknown-transport-error"></a>"프로토콜 오류: 알 수 없는 전송"오류
 
 이 오류는 클라이언트에 SignalR 사용 되는 전송을 지원 하지 않는 경우에 발생할 수 있습니다. 참조 [전송과 대체](../getting-started/introduction-to-signalr.md#transports) 정보는 브라우저 사용 하 여 SignalR에 대 한 합니다.
 
@@ -224,11 +226,11 @@ SignalR 서버 클라이언트 인지 배달 못 한 편지 및 즉 연결 실�
 
 클라이언트 로그 아웃 됩니다. 연결을 중지 하기 전에 인증을 사용 중인 경우이 오류가 나타날 수 있습니다. 솔루션은 클라이언트에는 로그 아웃 하기 전에 SignalR 연결을 중지 하는 것입니다.
 
-### <a name="uncaught-error-signalr-jquery-not-found-please-ensure-jquery-is-referenced-before-the-signalrjs-file-error"></a>"오류를 확인할 수 없는: SignalR: jQuery 찾을 수 없습니다. JQuery SignalR.js 파일 전에 참조를 확인 하세요"오류
+### <a name="uncaught-error-signalr-jquery-not-found-please-ensure-jquery-is-referenced-before-the-signalrjs-file-error"></a>"오류를 확인할 수 없는 합니다. SignalR: jQuery를 찾을 수 없습니다. JQuery SignalR.js 파일 전에 참조를 확인 하세요"오류
 
 SignalR JavaScript 클라이언트를 실행 하는 jQuery 필요 합니다. JQuery에 대 한 참조에 사용 되는 경로가 올바른지 및 SignalR에 대 한 참조 하기 전에 jQuery에 대 한 참조는 정확한 지 확인 합니다.
 
-### <a name="uncaught-typeerror-cannot-read-property-ltpropertygt-of-undefined-error"></a>"TypeError를 확인할 수 없는: 속성을 읽을 수 없습니다. '&lt;속성&gt;' 정의 되지 않은의" 오류
+### <a name="uncaught-typeerror-cannot-read-property-ltpropertygt-of-undefined-error"></a>"TypeError를 확인할 수 없는 합니다. 속성을 읽을 수 없습니다. '&lt;속성&gt;' 정의 되지 않은의 "오류
 
 jQuery 또는 적절히 참조 허브 프록시를가지고 있지 않은 경우이 오류가 발생 합니다. JQuery와 허브 프록시에 대 한 참조에 사용 된 경로가 유효 하며 허브 프록시에 대 한 참조 하기 전에 jQuery에 대 한 참조는 정확한 지 확인 합니다. 허브 프록시에 대 한 기본 참조는 다음과 같이 표시 됩니다.
 
@@ -282,7 +284,7 @@ Silverlight에서 이벤트를 보낸 서버를 사용 하는 경우 메시지�
 
 이 설명 된 알려진된 문제 [여기](https://github.com/SignalR/SignalR/issues/1963)합니다. 최신 JQuery 라이브러리를 사용 하 여 이러한 현상이 나타날 수 있습니다. JQuery 1.8.2 응용 프로그램을 다운 그레이드 하려면이 문제를 해결 합니다.
 
-### <a name="invalidoperationexception-not-a-valid-web-socket-request"></a>"InvalidOperationException: 유효한 웹 소켓 요청 되지 않습니다.
+### <a name="invalidoperationexception-not-a-valid-web-socket-request"></a>"InvalidOperationException: 하지는 올바른 웹 소켓 요청입니다.
 
 WebSocket 프로토콜을 사용 하지만 네트워크 프록시 요청 헤더를 수정 하는 경우이 오류가 발생할 수 있습니다. 솔루션 포트 80에서 WebSocket을 허용 하도록 프록시를 구성 하는 것입니다.
 
