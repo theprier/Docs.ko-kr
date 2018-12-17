@@ -2,16 +2,17 @@
 title: Azure App Service에 ASP.NET Core 앱 배포
 author: guardrex
 description: 이 문서에는 Azure 호스트 및 배포 리소스의 링크가 포함됩니다.
+monikerRange: '>= aspnetcore-2.1'
 ms.author: riande
 ms.custom: mvc
-ms.date: 10/24/2018
+ms.date: 12/10/2018
 uid: host-and-deploy/azure-apps/index
-ms.openlocfilehash: c55a5202643bb947b3f38f67aec55ee5cf7b1496
-ms.sourcegitcommit: c43a6f1fe72d7c2db4b5815fd532f2b45d964e07
+ms.openlocfilehash: b6ff2124aac7e866f630cf359cbd188e88906844
+ms.sourcegitcommit: b34b25da2ab68e6495b2460ff570468f16a9bf0d
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50244751"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53284697"
 ---
 # <a name="deploy-aspnet-core-apps-to-azure-app-service"></a>Azure App Service에 ASP.NET Core 앱 배포
 
@@ -41,23 +42,35 @@ ASP.NET Core 앱에 대한 CI 빌드를 설정하고 Azure App Service에 대한
 [Azure Web App 샌드박스](https://github.com/projectkudu/kudu/wiki/Azure-Web-App-sandbox)  
 Azure 앱 플랫폼에서 적용하는 Azure App Service 런타임 실행 제한 사항을 알아봅니다.
 
-::: moniker range=">= aspnetcore-2.0"
-
 ## <a name="application-configuration"></a>응용 프로그램 구성
 
-다음 NuGet 패키지는 Azure App Service에 배포된 앱에 대한 자동 로깅 기능을 제공합니다.
+### <a name="platform"></a>플랫폼
+
+::: moniker range=">= aspnetcore-2.2"
+
+64비트(x64) 및 32비트(x86) 앱은 Azure App Service에 있습니다. App Service에서 사용 가능한 [.NET Core SDK](/dotnet/core/sdk)는 32비트이지만 [Kudu](https://github.com/projectkudu/kudu/wiki) 콘솔 또는 [Visual Studio 게시 프로필이나 CLI 명령을 사용하는 MSDeploy](xref:host-and-deploy/visual-studio-publish-profiles)를 통해 64비트 앱을 배포할 수 있습니다.
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.2"
+
+원시 종속 항목을 지원하는 앱의 경우 32비트(x86) 앱의 런타임이 Azure App Service에 있습니다. App Service에서 사용 가능한 [.NET Core SDK](/dotnet/core/sdk)는 32비트입니다.
+
+::: moniker-end
+
+### <a name="packages"></a>패키지
+
+Azure App Service에 배포된 앱에 대한 자동 로깅 기능을 제공하려면 다음 NuGet 패키지를 포함합니다.
 
 * [Microsoft.AspNetCore.AzureAppServices.HostingStartup](https://www.nuget.org/packages/Microsoft.AspNetCore.AzureAppServices.HostingStartup/)은 [IHostingStartup](xref:fundamentals/configuration/platform-specific-configuration)을 사용하여 Azure App Service와 ASP.NET Core의 강화 통합을 제공합니다. 추가된 로깅 기능은 `Microsoft.AspNetCore.AzureAppServicesIntegration` 패키지에서 제공합니다.
 * [Microsoft.AspNetCore.AzureAppServicesIntegration](https://www.nuget.org/packages/Microsoft.AspNetCore.AzureAppServicesIntegration/)은 [AddAzureWebAppDiagnostics](/dotnet/api/microsoft.extensions.logging.azureappservicesloggerfactoryextensions.addazurewebappdiagnostics)를 실행하여 `Microsoft.Extensions.Logging.AzureAppServices` 패키지의 Azure App Service 진단 로깅 공급자를 추가합니다.
 * [Microsoft.Extensions.Logging.AzureAppServices](https://www.nuget.org/packages/Microsoft.Extensions.Logging.AzureAppServices/)는 Azure App Service 진단 로그 및 로그 스트리밍 기능을 지원하는 로거 구현을 제공합니다.
 
-.NET Core를 대상으로 지정하고 [Microsoft.AspNetCore.All 메타패키지](xref:fundamentals/metapackage)를 참조하는 경우 이전 패키지가 포함됩니다. 패키지는 [Microsoft.AspNetCore.App 메타패키지](xref:fundamentals/metapackage-app)에 포함되어 있지 않습니다. .NET Framework를 대상으로 지정하거나 `Microsoft.AspNetCore.App` 메타패키지를 참조하는 경우 개별 로깅 패키지를 참조합니다.
-
-::: moniker-end
+이전의 패키지는 [Microsoft.AspNetCore.App 메타패키지](xref:fundamentals/metapackage-app)에 없습니다. .NET Framework를 대상으로 하거나 `Microsoft.AspNetCore.App` 메타패키지를 참조하는 앱은 앱 프로젝트 파일의 개별 패키지를 명시적으로 참조해야 합니다.
 
 ## <a name="override-app-configuration-using-the-azure-portal"></a>Azure Portal을 사용하여 앱 구성 재정의
 
-**응용 프로그램 설정** 블레이드의 **앱 설정** 영역에서는 앱의 환경 변수를 설정할 수 있습니다. 환경 변수는 [환경 변수 구성 공급자](xref:fundamentals/configuration/index#environment-variables-configuration-provider)가 사용할 수 있습니다.
+Azure Portal의 앱 설정을 사용하면 앱의 환경 변수를 설정할 수 있습니다. 환경 변수는 [환경 변수 구성 공급자](xref:fundamentals/configuration/index#environment-variables-configuration-provider)가 사용할 수 있습니다.
 
 Azure Portal에서 앱 설정을 만들거나 수정하고**저장** 단추를 선택하면 Azure 앱이 다시 시작됩니다. 서비스를 다시 시작한 후에 환경 변수를 앱에서 사용할 수 있습니다.
 
@@ -70,6 +83,8 @@ Azure Portal에서 앱 설정을 만들거나 수정하고**저장** 단추를 �
 체계(HTTP/HTTPS) 및 요청이 시작된 원격 IP 주소를 전달하도록 전달된 헤더 미들웨어를 구성하는 IIS 통합 미들웨어 및 ASP.NET Core 모듈을 구성합니다. 추가 프록시 서버 및 부하 분산 장치 외에도 호스팅되는 앱에 추가 구성이 필요할 수 있습니다. 자세한 내용은 [프록시 서버 및 부하 분산 장치를 사용하도록 ASP.NET Core 구성](xref:host-and-deploy/proxy-load-balancer)을 참조하세요.
 
 ## <a name="monitoring-and-logging"></a>모니터링 및 로깅
+
+App Service에 배포된 ASP.NET Core 앱은 자동으로 App Service 확장인 **ASP.NET Core 로깅 확장**을 받습니다. 이 확장은 Azure 로깅을 사용하도록 설정합니다.
 
 모니터링, 로깅 및 문제 해결에 대한 자세한 내용은 다음 문서를 참조하세요.
 
@@ -113,48 +128,36 @@ Azure App Service/IIS에서 호스트하는 앱의 일반적인 배포 구성 �
 
 미리 보기 사이트 확장을 사용하는 데 문제가 발생하는 경우 [GitHub](https://github.com/aspnet/azureintegration/issues/new)에서 문제를 엽니다.
 
-1. Azure Portal에서 App Service 블레이드로 이동합니다.
+1. Azure Portal에서 App Service로 이동합니다.
 1. 웹앱을 선택합니다.
-1. 검색 상자에 "ex"를 입력하거나 관리 섹션 목록을 **개발 도구** 아래로 스크롤합니다.
-1. **개발 도구** > **확장**을 선택합니다.
+1. 검색 상자에 "ex"를 입력하여 "확장"으로 필터링하거나 관리 도구 목록을 아래로 스크롤합니다.
+1. **확장**을 선택합니다.
 1. **추가**를 선택합니다.
-1. 목록에서 **ASP.NET Core &lt;x.y&gt;(x86) 런타임** 확장을 선택합니다. 여기서 `<x.y>`는 ASP.NET Core 미리 보기 버전입니다(예: **ASP.NET Core 2.2(x86) 런타임**). x86 런타임은ASP.NET Core 모듈에 의해 호스트되는 out-of-process를 사용하는 [프레임워크 종속 배포](/dotnet/core/deploying/#framework-dependent-deployments-fdd)에 적합합니다.
+1. 목록에서 **ASP.NET Core {X.Y}({x64|x86}) 런타임** 확장을 선택합니다. 여기서 `{X.Y}`는 ASP.NET Core 미리 보기 버전이며 `{x64|x86}`은 플랫폼을 지정합니다.
 1. **확인**을 선택하여 적합한 조건을 적용합니다.
 1. 확장을 설치하려면 **확인**을 선택합니다.
 
 작업이 완료되면 최신.NET Core 미리 보기가 설치됩니다. 설치를 확인합니다.
 
-1. **개발 도구** 아래에서 **고급 도구**를 선택합니다.
-1. **고급 도구** 블레이드에서 **이동**을 선택합니다.
+1. **고급 도구**를 선택합니다.
+1. **고급 도구**에서 **Go**를 선택합니다.
 1. **디버그 콘솔** > **PowerShell** 메뉴 항목을 선택합니다.
-1. PowerShell 프롬프트에서 다음 명령을 실행합니다. 명령에서 `<x.y>`에 대한 ASP.NET Core 런타임 버전을 대체합니다.
+1. PowerShell 프롬프트에서 다음 명령을 실행합니다. 명령에서 `{X.Y}`를 ASP.NET Core 런타임 버전으로 대체하고, `{PLATFORM}`을 플랫폼으로 대체합니다.
 
    ```powershell
-   Test-Path D:\home\SiteExtensions\AspNetCoreRuntime.<x.y>.x86\
-   ```
-   설치된 미리 보기 런타임이 ASP.NET Core 2.2용인 경우 명령은 다음과 같습니다.
-   ```powershell
-   Test-Path D:\home\SiteExtensions\AspNetCoreRuntime.2.2.x86\
+   Test-Path D:\home\SiteExtensions\AspNetCoreRuntime.{X.Y}.{PLATFORM}\
    ```
    x64 미리 보기 런타임이 설치된 경우 명령이 `True`를 반환합니다.
 
-::: moniker range=">= aspnetcore-2.2"
-
 > [!NOTE]
-> App Services 앱의 플랫폼 아키텍처(x86/x64)를 A 시리즈 계산 또는 더 나은 호스트 계층에서 호스트되는 앱에 대한 **일반 설정** 아래의 **응용 프로그램 설정** 블레이드에서 설정합니다. 앱이 in-process 모드에서 실행되고 플랫폼 아키텍처가 64비트(x64)에 대해 구성되는 경우 ASP.NET Core 모듈은 64비트 미리 보기 런타임을 사용합니다(있는 경우). **ASP.NET Core &lt;x.y&gt;(x64) 런타임** 확장을 설치합니다(예: **ASP.NET Core 2.2(x64) 런타임**).
+> A 시리즈 컴퓨팅 또는 더 나은 호스트 계층에서 호스트되는 앱이 필요한 경우 Azure Portal의 앱 설정에서 App Services 앱의 플랫폼 아키텍처(x86/x64)를 설정합니다. 앱이 in-process 모드에서 실행되고 플랫폼 아키텍처가 64비트(x64)에 대해 구성되는 경우 ASP.NET Core 모듈은 64비트 미리 보기 런타임을 사용합니다(있는 경우). **ASP.NET Core {X.Y}(x64) 런타임** 확장을 설치합니다.
 >
-> x64 미리 보기 런타임을 설치한 후에 Kudu PowerShell 명령 창에서 다음 명령을 실행하여 설치를 확인합니다. 명령에서 `<x.y>`에 대한 ASP.NET Core 런타임 버전을 대체합니다.
+> x64 미리 보기 런타임을 설치한 후에 Kudu PowerShell 명령 창에서 다음 명령을 실행하여 설치를 확인합니다. 명령에서 `{X.Y}`에 대한 ASP.NET Core 런타임 버전을 대체합니다.
 >
 > ```powershell
-> Test-Path D:\home\SiteExtensions\AspNetCoreRuntime.<x.y>.x64\
-> ```
-> 설치된 미리 보기 런타임이 ASP.NET Core 2.2용인 경우 명령은 다음과 같습니다.
-> ```powershell
-> Test-Path D:\home\SiteExtensions\AspNetCoreRuntime.2.2.x64\
+> Test-Path D:\home\SiteExtensions\AspNetCoreRuntime.{X.Y}.x64\
 > ```
 > x64 미리 보기 런타임이 설치된 경우 명령이 `True`를 반환합니다.
-
-::: moniker-end
 
 > [!NOTE]
 > **ASP.NET Core 확장**을 사용하면 Azure 로깅을 사용하는 등 Azure App Services에서 ASP.NET Core에 대한 추가 기능을 사용할 수 있습니다. Visual Studio에서 배포할 경우 확장은 자동으로 설치됩니다. 확장이 설치되지 않은 경우 앱에서 설치합니다.
@@ -212,11 +215,11 @@ ARM 템플릿을 사용하여 앱을 만들고 배포하는 경우 `siteextensio
 
 보안 프로토콜 바인딩을 사용하면 HTTPS를 통한 요청에 응답할 때 사용할 인증서를 지정할 수 있습니다. 바인딩을 위해서는 특정 호스트 이름에 대해 발행된 유효한 개인 인증서(*.pfx*)가 필요합니다. 자세한 내용은 [자습서: 기존 사용자 지정 SSL 인증서를 Azure Web Apps에 바인딩](/azure/app-service/app-service-web-tutorial-custom-ssl)을 참조하세요.
 
-## <a name="additional-resources"></a>추가 리소스
+## <a name="additional-resources"></a>추가 자료
 
-* [Web Apps 개요(5분 개요 비디오)](/azure/app-service/app-service-web-overview)
-* [Azure App Service: .NET 앱을 호스트하기에 가장 좋은 서비스(55분 개요 비디오)](https://channel9.msdn.com/events/dotnetConf/2017/T222)
-* [Azure Friday: Azure App Service 진단 및 문제 해결 환경(12분 비디오)](https://channel9.msdn.com/Shows/Azure-Friday/Azure-App-Service-Diagnostic-and-Troubleshooting-Experience)
+* [Web Apps 개요(5분 개요 동영상)](/azure/app-service/app-service-web-overview)
+* [Azure App Service: .NET 앱을 호스트하기에 가장 좋은 서비스(55분 개요 동영상)](https://channel9.msdn.com/events/dotnetConf/2017/T222)
+* [Azure Friday: Azure App Service 진단 및 문제 해결 환경(12분 동영상)](https://channel9.msdn.com/Shows/Azure-Friday/Azure-App-Service-Diagnostic-and-Troubleshooting-Experience)
 * [Azure App Service 진단 개요](/azure/app-service/app-service-diagnostics)
 * <xref:host-and-deploy/web-farm>
 

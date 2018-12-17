@@ -8,16 +8,18 @@ ms.date: 06/05/2013
 ms.assetid: e608e263-264d-448b-b0eb-6eeb77713b22
 msc.legacyurl: /signalr/overview/older-versions/handling-connection-lifetime-events
 msc.type: authoredcontent
-ms.openlocfilehash: 5a0e912540bf24abd8a7e91c73c87ed9213be487
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: f965c38e18c442268f9bb1d7ffb5e98a135efade
+ms.sourcegitcommit: 74e3be25ea37b5fc8b4b433b0b872547b4b99186
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41835555"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53287686"
 ---
 <a name="understanding-and-handling-connection-lifetime-events-in-signalr-1x"></a>이해 및 SignalR에 대 한 연결 수명 이벤트를 처리 1.x
 ====================
 하 여 [Patrick Fletcher](https://github.com/pfletcher), [Tom Dykstra](https://github.com/tdykstra)
+
+[!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
 
 > 이 문서는 SignalR 연결, 다시 연결 및 연결 끊기 이벤트를 처리할 수 있는 및 구성할 수 있는 시간 제한 및 keepalive 설정의 개요를 제공 합니다.
 > 
@@ -63,7 +65,7 @@ ms.locfileid: "41835555"
 이 문서를 구분할 *SignalR 연결*, *연결 전송*, 및 *물리적 연결*:
 
 - **SignalR 연결** 클라이언트와 서버 URL, SignalR API에 의해 유지 관리 하 고 고유 ID로 식별 연결 간의 논리적 관계를 가리킵니다. 이 관계에 대 한 데이터는 SignalR에서 유지 관리 하 고 전송 연결을 설정 하는 데 사용 됩니다. 클라이언트가 호출할 때 관계 끝 및 SignalR 데이터의 삭제를 `Stop` 메서드 또는 시간 제한에 도달 하면 SignalR 손실된 전송 연결을 다시 설정 하려고 하는 동안.
-- **연결 전송** 클라이언트 및 네 개의 전송 Api 중 하나에 의해 유지 관리 서버 간의 논리적 관계를 가리킵니다: Websocket을 서버에서 전송 하는 이벤트를 영구적으로 프레임 또는 장기 폴링. SignalR 전송 API를 사용 하 여 전송 연결을 만들려고 하 고 전송 API 전송 연결을 만들려면 실제 네트워크 연결의 존재 여부에 따라 달라 집니다. 전송 연결 SignalR 종료 때나 전송 API 물리적 연결이 끊어진 지 감지할 때 종료 됩니다.
+- **연결 전송** 클라이언트 및 네 개의 전송 Api 중 하나에 의해 유지 관리 서버 간의 논리적 관계를 가리킵니다. Websocket, 서버에서 전송 하는 이벤트, 영원히 프레임 또는 긴 폴링 SignalR 전송 API를 사용 하 여 전송 연결을 만들려고 하 고 전송 API 전송 연결을 만들려면 실제 네트워크 연결의 존재 여부에 따라 달라 집니다. 전송 연결 SignalR 종료 때나 전송 API 물리적 연결이 끊어진 지 감지할 때 종료 됩니다.
 - **실제 연결** 가리킵니다 와이어, 실제 네트워크 링크-신호는 무선 라우터, 등-클라이언트 컴퓨터와 서버 컴퓨터 간의 통신을 원활 하 합니다. 실제 연결 전송 연결을 설정 하기 위해 있어야 하 고 SignalR 연결을 만드는 데는 전송 연결을 설정 해야 합니다. 그러나 실제 연결을 중단 하지 항상 즉시 전송 연결 또는 종료 SignalR 연결에이 항목의 뒷부분에 설명 하겠지만 합니다.
 
 다음 다이어그램에서 SignalR 연결은 Hubs API 계층과 PersistentConnection API SignalR 표현, 전송 연결으로 전송 계층을 나타내고 실제 연결 서버 사이의 선으로 표시 됩니다. 및 클라이언트입니다.

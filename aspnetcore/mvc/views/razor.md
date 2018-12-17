@@ -5,12 +5,12 @@ description: 웹 페이지에 서버 기반 코드를 포함하는 Razor 태그 
 ms.author: riande
 ms.date: 10/26/2018
 uid: mvc/views/razor
-ms.openlocfilehash: ab9fb3f55399764c5fe985811d92c504ed210767
-ms.sourcegitcommit: ad28d1bc6657a743d5c2fa8902f82740689733bb
+ms.openlocfilehash: 2ec86c774e0fd26c4455829680a2b1db687b8090
+ms.sourcegitcommit: 49faca2644590fc081d86db46ea5e29edfc28b7b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52256582"
+ms.lasthandoff: 12/09/2018
+ms.locfileid: "53121592"
 ---
 # <a name="razor-syntax-reference-for-aspnet-core"></a>ASP.NET Core에 대한 Razor 구문 참조
 
@@ -741,7 +741,7 @@ Razor 보기 엔진은 보기에 대한 대/소문자 구분 조회를 수행합
 
 개발자는 파일 및 디렉터리 이름의 대/소문자를 다음의 대/소문자와 매칭하는 것이 좋습니다.
 
-    * 영역, 컨트롤러 및 작업 이름.
-    * Razor 페이지.
+* 영역, 컨트롤러 및 작업 이름.
+* Razor 페이지.
 
 대/소문자를 일치시키면 배포 시 기본 파일 시스템에 관계 없이 해당 보기를 잘 찾습니다.

@@ -3,16 +3,16 @@ uid: mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-an-
 title: Entity Framework 6 Code First MVC 5를 사용 하 여 시작 | Microsoft Docs
 author: tdykstra
 ms.author: riande
-ms.date: 10/04/2018
+ms.date: 12/04/2018
 ms.assetid: 00bc8b51-32ed-4fd3-9745-be4c2a9c1eaf
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 5dd9a5a24d8c67c5190c98e3240d132eaa27661c
-ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
+ms.openlocfilehash: c7ab9458f83e05af84f72d9a2519a8c1c39b84b5
+ms.sourcegitcommit: 9bb58d7c8dad4bbd03419bcc183d027667fefa20
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48912412"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52861435"
 ---
 # <a name="get-started-with-entity-framework-6-code-first-using-mvc-5"></a>Entity Framework 6 Code First MVC 5를 사용 하 여 시작
 
@@ -21,7 +21,7 @@ ms.locfileid: "48912412"
 [완료 된 프로젝트 다운로드](http://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8)
 
 > [!NOTE]
-> A [이 자습서 시리즈의 최신 버전](/aspnet/core/tutorials/razor-pages/razor-pages-start?view=aspnetcore-2.1) 가 사용 하는 사용 가능한 [Razor 페이지](/aspnet/core/razor-pages)합니다. Razor Pages는 웹 UI를 쉽게 빌드하고 생산성을 높일 수 있는 페이지 기반 프로그래밍 모델입니다. MVC 버전 보다 Razor Pages 자습서를 권장합니다. Razor 페이지 자습서:
+> 새 개발을 위한 것이 좋습니다 [ASP.NET Core Razor 페이지](/aspnet/core/razor-pages) ASP.NET MVC 컨트롤러 및 뷰를 통해. 이 이와 유사한 자습서 시리즈는 Razor 페이지에 사용할 수는 [Razor 페이지 자습서](/aspnet/core/tutorials/razor-pages/razor-pages-start):
 >
 > * 자습서 내용을 좀 더 쉽게 진행할 수 있습니다.
 > * 더 많은 EF Core 모범 사례를 제공합니다.

@@ -3,15 +3,15 @@ title: ASP.NET Core에서 Google 외부 로그인 설정
 author: rick-anderson
 description: 이 자습서에서는 기존 ASP.NET Core 앱에 Google 계정 사용자 인증의 통합을 보여 줍니다.
 ms.author: riande
-ms.custom: mvc
+ms.custom: mvc, seodec18
 ms.date: 11/11/2018
 uid: security/authentication/google-logins
-ms.openlocfilehash: dfda83e1d7cf3c5ff8e31de20c15d468de5d15c0
-ms.sourcegitcommit: 09bcda59a58019fdf47b2db5259fe87acf19dd38
+ms.openlocfilehash: 372504eb4f6fea412b5b160e0d5e9251dafe0d56
+ms.sourcegitcommit: b34b25da2ab68e6495b2460ff570468f16a9bf0d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51708454"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53284496"
 ---
 # <a name="google-external-login-setup-in-aspnet-core"></a>ASP.NET Core에서 Google 외부 로그인 설정
 
@@ -27,7 +27,7 @@ ms.locfileid: "51708454"
 
 * 리디렉션됩니다 **API Manager 라이브러리** 페이지:
 
-![API Manager 라이브러리 페이지](index/_static/GoogleConsoleSwitchboard.png)
+![API Manager 라이브러리 페이지 방문](index/_static/GoogleConsoleSwitchboard.png)
 
 * 탭 **Create** 입력 하 **프로젝트 이름을**:
 
@@ -35,15 +35,15 @@ ms.locfileid: "51708454"
 
 * 대화 상자를 수락 하면 새 앱에 대 한 기능을 선택할 수 있도록 라이브러리 페이지로 다시 리디렉션됩니다. 찾을 **Google + API** 목록 및 API 기능을 추가 하려면 해당 링크를 클릭 합니다.
 
-![API Manager 라이브러리 페이지](index/_static/GoogleConsoleChooseApi.png)
+![API Manager 라이브러리 페이지에서 "Google + API"에 대 한 검색](index/_static/GoogleConsoleChooseApi.png)
 
 * 새로 추가 된 API에 대 한 페이지가 표시 됩니다. 탭 **사용** 기능에서 앱에 Google + 기호를 추가 하려면:
 
-![API Manager Google + API 페이지](index/_static/GoogleConsoleEnableApi.png)
+![API Manager Google + API 페이지 방문](index/_static/GoogleConsoleEnableApi.png)
 
 * API를 사용 하도록 설정한 후 탭 **자격 증명 만들기** 암호를 구성 하려면:
 
-![API Manager Google + API 페이지](index/_static/GoogleConsoleGoCredentials.png)
+![API Manager Google + API 페이지에서 자격 증명 단추 만들기](index/_static/GoogleConsoleGoCredentials.png)
 
 * 다음 중 하나를 선택합니다.
   * **Google+ API**
@@ -136,7 +136,7 @@ app.UseGoogleAuthentication(new GoogleOptions()
 
 응용 프로그램을 실행 하 고 클릭 **로그인**합니다. Google로 로그인 하는 옵션이 표시 됩니다.
 
-![Microsoft Edge에서 실행 되는 웹 응용 프로그램: 인증 되지 않은 사용자](index/_static/DoneGoogle.png)
+![Microsoft Edge에서 실행 중인 웹 응용 프로그램: 인증 되지 않은 사용자](index/_static/DoneGoogle.png)
 
 Google을 클릭할 때 리디렉션됩니다 Google 인증을 위해:
 
@@ -146,14 +146,14 @@ Google 자격 증명을 입력 한 후 다음 리디렉션됩니다 전자 메�
 
 이제 Google 자격 증명을 사용 하 여 로그인 됩니다.
 
-![Microsoft Edge에서 실행 되는 웹 응용 프로그램: 사용자 인증](index/_static/Done.png)
+![Microsoft Edge에서 실행 중인 웹 응용 프로그램: 인증 된 사용자](index/_static/Done.png)
 
 [!INCLUDE[Forward request information when behind a proxy or load balancer section](includes/forwarded-headers-middleware.md)]
 
 ## <a name="troubleshooting"></a>문제 해결
 
 * 표시 되 면을 `403 (Forbidden)` 개발 모드 (또는 동일한 오류로 디버거로 중단)에서 실행 되도록 하는 경우 사용자 고유의 앱에서 오류 페이지 **Google + API** 에서 설정 되어 있는지를 **APIManager라이브러리** 나열 된 단계를 수행 하 여 [이 페이지에서 이전](#create-the-app-in-google-api-console)합니다. 로그인 작동 하지 않습니다 하 고 오류를 가져오지 않음, 문제를 더 쉽게 디버그 하려면 개발 모드를 전환 합니다.
-* **ASP.NET Core 2.x만:** 경우 Identity를 호출 하 여 구성 되지 않았습니다 `services.AddIdentity` 에 `ConfigureServices`에 인증 하려고 하면 *ArgumentException: 'SignInScheme' 옵션을 제공 해야*합니다. 이 자습서에 사용 되는 프로젝트 템플릿이이 수행 되도록 보장 합니다.
+* **ASP.NET Core 2.x만:** 호출 하 여 구성 되어 있지 않으면 Identity `services.AddIdentity` 에 `ConfigureServices`를 인증 하려고 하면 *ArgumentException: 'SignInScheme' 옵션을 제공 해야*합니다. 이 자습서에 사용 되는 프로젝트 템플릿이이 수행 되도록 보장 합니다.
 * 사이트 데이터베이스를 초기 마이그레이션을 적용 하 여 만들어지지 않은, 경우 받습니다 *요청을 처리 하는 동안 데이터베이스 작업이 실패 했습니다.* 오류입니다. 탭 **마이그레이션 적용** 데이터베이스를 만들고 오류 지 나 새로 고침 합니다.
 
 ## <a name="next-steps"></a>다음 단계

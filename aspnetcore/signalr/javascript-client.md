@@ -7,12 +7,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 11/14/2018
 uid: signalr/javascript-client
-ms.openlocfilehash: 7de7abd7176e160154a458a3b90f662ba8f47f8c
-ms.sourcegitcommit: 09bcda59a58019fdf47b2db5259fe87acf19dd38
+ms.openlocfilehash: cd64a65889227d84615768bc3d8fddcd362fbba4
+ms.sourcegitcommit: eef99d14d96dc8c3c1bb0e2c4cb14da152f8a952
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51708389"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53022481"
 ---
 # <a name="aspnet-core-signalr-javascript-client"></a>ASP.NET Core SignalR JavaScript 클라이언트
 
@@ -45,7 +45,7 @@ SignalR JavaScript 클라이언트 라이브러리는 [npm](https://www.npmjs.co
 
 다음 코드는 연결을 만들고 시작합니다. 허브의 이름은 대소문자를 구분하지 않습니다.
 
-[!code-javascript[Call hub methods](javascript-client/sample/wwwroot/js/chat.js?range=9-12,28)]
+[!code-javascript[Call hub methods](javascript-client/sample/wwwroot/js/chat.js?range=9-12)]
 
 ### <a name="cross-origin-connections"></a>원본 간 연결
 
@@ -86,7 +86,7 @@ SignalR은 `SendAsync`와 `connection.on`에 정의된 메서드 이름과 인�
 
 클라이언트 쪽 오류를 처리하려면 `start` 메서드의 끝에 `catch` 메서드를 연결합니다. 브라우저의 콘솔에 오류를 출력하려면 `console.error`를 사용합니다.
 
-[!code-javascript[Error handling](javascript-client/sample/wwwroot/js/chat.js?range=28)]
+[!code-javascript[Error handling](javascript-client/sample/wwwroot/js/chat.js?range=43-45)]
 
 연결이 만들어지면 로거와 기록할 이벤트 유형을 전달하여 클라이언트 쪽 로그 추적을 설정합니다. 지정한 로그 수준 이상의 메시지가 기록됩니다. 사용 가능한 로그 수준은 다음과 같습니다.
 
@@ -106,14 +106,16 @@ SignalR에 대 한 JavaScript 클라이언트가 자동으로 다시 연결 하�
 1. 함수 (이 경우에 `start` 함수) 연결을 시작 하기 위해 만들어집니다.
 1. 호출 된 `start` 함수에서 연결의 `onclose` 이벤트 처리기입니다.
 
-[!code-javascript[Reconnect the JavaScript client](javascript-client/sample/wwwroot/js/chat.js?range=30-42)]
+[!code-javascript[Reconnect the JavaScript client](javascript-client/sample/wwwroot/js/chat.js?range=28-40)]
 
 실제 구현을는 지 수 백오프를 사용 하거나 포기 하기 전에 지정 된 횟수를 다시 시도 하세요. 
 
 ## <a name="additional-resources"></a>추가 자료
 
 * [JavaScript API 참조](/javascript/api/?view=signalr-js-latest)
+* [JavaScript 자습서](xref:tutorials/signalr)
+* [WebPack 및 TypeScript 자습서](xref:tutorials/signalr-typescript-webpack)
 * [허브](xref:signalr/hubs)
 * [.NET 클라이언트](xref:signalr/dotnet-client)
 * [Azure에 게시하기](xref:signalr/publish-to-azure-web-app)
-* [ASP.NET Core에서 원본 간 요청(CORS)을 사용하도록 설정하기](xref:security/cors)
+* [원본 간 요청 (CORS)](xref:security/cors)

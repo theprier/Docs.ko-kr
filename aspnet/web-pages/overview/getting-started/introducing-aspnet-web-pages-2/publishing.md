@@ -8,12 +8,12 @@ ms.date: 05/28/2015
 ms.assetid: 7e85c70e-1a88-4408-8b3d-29611c7713ed
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/publishing
 msc.type: authoredcontent
-ms.openlocfilehash: fe196e5db8fd1cecbe84b2eb970939303f9313d1
-ms.sourcegitcommit: 2d3e5422d530203efdaf2014d1d7df31f88d08d0
+ms.openlocfilehash: bd6611a03ee4940f5d4176ce23464f313b9ec884
+ms.sourcegitcommit: eef99d14d96dc8c3c1bb0e2c4cb14da152f8a952
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "51021458"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53022507"
 ---
 <a name="introducing-aspnet-web-pages---publishing-a-site-by-using-webmatrix"></a>ASP.NET Web Pages-WebMatrix를 사용 하 여 사이트를 게시 소개
 ====================
@@ -50,7 +50,7 @@ ms.locfileid: "51021458"
 <a id="defaultpage"></a>
 ## <a name="setting-up-the-default-page"></a>기본 페이지 설정
 
-사용자가 웹 사이트에 대 한 기본 주소를 탐색 하는 경우 사이트에 대 한 기본 페이지는 사용자에 게 표시 됩니다. 예를 들어 사이트에 대 한 기본 페이지로 www.contoso.com 에 Default.htm으로 설정 하면 다음 이동할 <strong>www.contoso.com</strong> 로 이동 하는 것과 같습니다 <strong>www.contoso.com/Default.htm</strong>합니다.
+사용자가 웹 사이트에 대 한 기본 주소를 탐색 하는 경우 사이트에 대 한 기본 페이지는 사용자에 게 표시 됩니다. 예를 들어, *Default.htm* 에서 사이트에 대 한 기본 페이지로 설정 됩니다 `www.contoso.com`로 이동한 후 `www.contoso.com` 로 이동 하는 것과 같습니다 `www.contoso.com/Default.htm`합니다.
 
 사이트에서 사용 하는 현재 **Default.cshtml** 기본 페이지와 합니다. 이 페이지는 사용자의 기본 페이지에 적합 하지만이 자습서에서는 추가 하지 않은 내용이 해당 페이지에 있으므로 빈 페이지가 표시 됩니다. Default.cshtml 열고 내용을 다음 코드로 바꿉니다.
 

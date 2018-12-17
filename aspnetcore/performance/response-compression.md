@@ -5,14 +5,14 @@ description: ASP.NET Core 앱에서 응답 압축 미들웨어를 사용하는 �
 monikerRange: '>= aspnetcore-1.1'
 ms.author: riande
 ms.custom: mvc
-ms.date: 09/21/2018
+ms.date: 12/01/2018
 uid: performance/response-compression
-ms.openlocfilehash: 8c3d74b6a346d51507d3c278b03ddc842feea13e
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: 2516fbb30e55990dc4ad0d92069853bc26874bc9
+ms.sourcegitcommit: 9bb58d7c8dad4bbd03419bcc183d027667fefa20
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50207981"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52861890"
 ---
 # <a name="response-compression-in-aspnet-core"></a>ASP.NET Core에서 응답 압축
 
@@ -24,7 +24,7 @@ ms.locfileid: "50207981"
 
 ## <a name="when-to-use-response-compression-middleware"></a>응답 압축 미들웨어를 사용 하는 경우
 
-IIS, Apache 또는 Nginx에서 서버 기반 응답 압축 기술을 사용 합니다. 미들웨어의 성능이 아마도 일치 하지 않기 때문 서버 모듈입니다. [HTTP.sys 서버](xref:fundamentals/servers/httpsys) 하 고 [Kestrel](xref:fundamentals/servers/kestrel) 현재 기본 제공 압축 지원을 제공 하지 않습니다.
+IIS, Apache 또는 Nginx에서 서버 기반 응답 압축 기술을 사용 합니다. 미들웨어의 성능이 아마도 일치 하지 않기 때문 서버 모듈입니다. [HTTP.sys 서버](xref:fundamentals/servers/httpsys) 서버와 [Kestrel](xref:fundamentals/servers/kestrel) server 기본 제공 압축 지원 현재 제공 하지 않습니다.
 
 경우에 응답 압축 미들웨어를 사용 합니다.
 
@@ -33,8 +33,8 @@ IIS, Apache 또는 Nginx에서 서버 기반 응답 압축 기술을 사용 합�
   * [Apache mod_deflate 모듈](http://httpd.apache.org/docs/current/mod/mod_deflate.html)
   * [Nginx 압축 및 압축 풀기](https://www.nginx.com/resources/admin-guide/compression-and-decompression/)
 * 직접 호스트:
-  * [HTTP.sys 서버](xref:fundamentals/servers/httpsys) (이전의 [WebListener](xref:fundamentals/servers/weblistener))
-  * [Kestrel](xref:fundamentals/servers/kestrel)
+  * [HTTP.sys](xref:fundamentals/servers/httpsys) server (이전의 [WebListener](xref:fundamentals/servers/weblistener))
+  * [Kestrel](xref:fundamentals/servers/kestrel) 서버
 
 ## <a name="response-compression"></a>응답 압축
 
@@ -94,7 +94,7 @@ IIS, Apache 또는 Nginx에서 서버 기반 응답 압축 기술을 사용 합�
 * Gzip 및 사용자 지정 압축 공급자를 사용 하 여 앱 응답을 압축 합니다.
 * 압축에 대 한 MIME 형식 목록을 기본 MIME 형식을 추가 하는 방법.
 
-## <a name="package"></a>패키지
+## <a name="package"></a>Package
 
 ::: moniker range=">= aspnetcore-2.1"
 
@@ -432,7 +432,7 @@ public void ConfigureServices(IServiceCollection services)
 
 ## <a name="middleware-issue-when-behind-an-nginx-reverse-proxy"></a>Nginx 역방향 프록시 뒤에 있을 때는 미들웨어 문제
 
-Nginx에서 프록시를 요청 하는 경우는 `Accept-Encoding` 헤더를 제거 합니다. 이렇게 하면에서 응답 압축 미들웨어를 않습니다. 자세한 내용은 [NGINX: 압축 및 압축 풀기](https://www.nginx.com/resources/admin-guide/compression-and-decompression/)합니다. 이 문제를 추적 하 여 [Nginx (BasicMiddleware #123)에 대 한 통과 압축 파악](https://github.com/aspnet/BasicMiddleware/issues/123)합니다.
+Nginx에서 프록시를 요청 하는 경우는 `Accept-Encoding` 헤더를 제거 합니다. 제거 된 `Accept-Encoding` 헤더에서 응답 압축 미들웨어를 방지 합니다. 자세한 내용은 [NGINX: 압축 및 압축 풀기](https://www.nginx.com/resources/admin-guide/compression-and-decompression/)합니다. 이 문제를 추적 하 여 [Nginx에 대 한 통과 압축 파악 (aspnet/BasicMiddleware \#123)](https://github.com/aspnet/BasicMiddleware/issues/123)합니다.
 
 ## <a name="working-with-iis-dynamic-compression"></a>IIS 동적 압축이 사용
 

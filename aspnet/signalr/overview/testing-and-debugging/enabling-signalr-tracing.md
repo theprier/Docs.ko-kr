@@ -8,16 +8,18 @@ ms.date: 08/08/2014
 ms.assetid: 30060acb-be3e-4347-996f-3870f0c37829
 msc.legacyurl: /signalr/overview/testing-and-debugging/enabling-signalr-tracing
 msc.type: authoredcontent
-ms.openlocfilehash: 6ab9a5de16a1440d14f7526c0cd417592ba415db
-ms.sourcegitcommit: 2d3e5422d530203efdaf2014d1d7df31f88d08d0
+ms.openlocfilehash: 733163699f83cbf68d6d5a27e86d208c3922272c
+ms.sourcegitcommit: 74e3be25ea37b5fc8b4b433b0b872547b4b99186
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "51021328"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53287665"
 ---
 <a name="enabling-signalr-tracing"></a>SignalR 추적 사용
 ====================
 [Tom FitzMacken](https://github.com/tfitzmac)
+
+[!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
 
 > 이 문서에 사용 하도록 설정 하 여 SignalR 서버 및 클라이언트에 대 한 추적을 구성 하는 방법을 설명 합니다. 추적을 사용 하 여 SignalR 응용 프로그램에서 이벤트에 대 한 진단 정보를 볼 수 있습니다.
 >

@@ -1,17 +1,17 @@
 ---
-title: ASP.NET Core 및 Azure를 사용 하 여 DevOps | 도구 및 다운로드
+title: 도구 및 다운로드-ASP.NET Core 및 Azure를 사용 하 여 DevOps
 author: CamSoper
-description: Azure에서 호스팅되는 ASP.NET Core 앱에 대한 DevOps 파이프라인을 빌드하는 방법에 대한 종단 간 지침을 제공하는 가이드입니다.
+description: ASP.NET Core 및 Azure를 사용 하 여 DevOps에 필요한 다운로드 및 도구입니다.
 ms.author: casoper
-ms.custom: mvc
+ms.custom: mvc, seodec18
 ms.date: 10/24/2018
 uid: azure/devops/tools-and-downloads
-ms.openlocfilehash: 573e257e6fc7614010a8749ff439f16011c2c10a
-ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
+ms.openlocfilehash: 0c64e723f1b912323103f201a66c1edaeccdcc2d
+ms.sourcegitcommit: b34b25da2ab68e6495b2460ff570468f16a9bf0d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50089385"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53284353"
 ---
 # <a name="tools-and-downloads"></a>도구 및 다운로드
 

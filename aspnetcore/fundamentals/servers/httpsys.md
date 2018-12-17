@@ -5,14 +5,14 @@ description: Windows의 ASP.NET Core에 대한 웹 서버인 HTTP.sys에 대해 
 monikerRange: '>= aspnetcore-2.0'
 ms.author: tdykstra
 ms.custom: mvc
-ms.date: 09/13/2018
+ms.date: 12/01/2018
 uid: fundamentals/servers/httpsys
-ms.openlocfilehash: 125008e2168ec55ffdfa62f5c3ff44c66066424c
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: 8810fd295e8c4269812e712ce2fdc9b9fa2bbb4f
+ms.sourcegitcommit: 9bb58d7c8dad4bbd03419bcc183d027667fefa20
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50207071"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52861695"
 ---
 # <a name="httpsys-web-server-implementation-in-aspnet-core"></a>ASP.NET Core에서 HTTP.sys 웹 서버 구현
 
@@ -21,7 +21,7 @@ ms.locfileid: "50207071"
 > [!NOTE]
 > 이 주제는 ASP.NET Core 2.0 이상에 적용됩니다. 이전 버전의 ASP.NET Core에서 HTTP.sys는 [WebListener](xref:fundamentals/servers/weblistener)라고 합니다.
 
-[HTTP.sys](/iis/get-started/introduction-to-iis/introduction-to-iis-architecture#hypertext-transfer-protocol-stack-httpsys)는 Windows에서만 실행되는 [ASP.NET Core에 대한 웹 서버](xref:fundamentals/servers/index)입니다. HTTP.sys는 [Kestrel](xref:fundamentals/servers/kestrel)에 대한 대안이며 Kestel이 제공하지 않는 일부 기능을 제공합니다.
+[HTTP.sys](/iis/get-started/introduction-to-iis/introduction-to-iis-architecture#hypertext-transfer-protocol-stack-httpsys)는 Windows에서만 실행되는 [ASP.NET Core에 대한 웹 서버](xref:fundamentals/servers/index)입니다. HTTP.sys는 [Kestrel](xref:fundamentals/servers/kestrel) 서버에 대한 대안이며 Kestel이 제공하지 않는 일부 기능을 제공합니다.
 
 > [!IMPORTANT]
 > HTTP.sys는 [ASP.NET Core 모듈](xref:fundamentals/servers/aspnet-core-module)과 호환되지 않으므로 IIS 또는 IIS Express와 함께 사용될 수 없습니다.
@@ -41,7 +41,7 @@ HTTP.sys는 다음과 같은 기능을 지원합니다.
 * Windows 7 이상
 * Windows Server 2008 R2 이상
 
-[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/servers/httpsys/sample)([다운로드 방법](xref:index#how-to-download-a-sample))
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/servers/httpsys/sample) ([다운로드 방법](xref:index#how-to-download-a-sample))
 
 ## <a name="when-to-use-httpsys"></a>HTTP.sys를 사용하는 경우
 
@@ -202,4 +202,5 @@ HTTP.sys는 Kerberos 인증 프로토콜을 사용하여 커널 모드 인증에
 
 * [HTTP Server API](https://msdn.microsoft.com/library/windows/desktop/aa364510.aspx)(HTTP 서버 API)
 * [aspnet/HttpSysServer GitHub 리포지토리(소스 코드)](https://github.com/aspnet/HttpSysServer/)
-* [ASP.NET Core의 호스트](xref:fundamentals/host/index)
+* <xref:fundamentals/host/index>
+* <xref:test/troubleshoot>

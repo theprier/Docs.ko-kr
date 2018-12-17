@@ -5,14 +5,14 @@ description: 이 자습서에서는 ASP.NET Core SignalR을 사용하는 채팅 
 monikerRange: '>= aspnetcore-2.1'
 ms.author: tdykstra
 ms.custom: mvc
-ms.date: 11/13/2018
+ms.date: 11/30/2018
 uid: tutorials/signalr
-ms.openlocfilehash: 8916b3659250c1bcbbc2dc9b3d466586f98bcc7e
-ms.sourcegitcommit: d3392f688cfebc1f25616da7489664d69c6ee330
+ms.openlocfilehash: c52041b34d6c9d1d8f06f980c900b805a0933293
+ms.sourcegitcommit: 9bb58d7c8dad4bbd03419bcc183d027667fefa20
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "51818384"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52861989"
 ---
 # <a name="tutorial-get-started-with-aspnet-core-signalr"></a>자습서: ASP.NET Core SignalR 시작
 
@@ -31,25 +31,11 @@ ms.locfileid: "51818384"
 
 [예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/tutorials/signalr/sample) ([다운로드 방법](xref:index#how-to-download-a-sample))
 
-## <a name="prerequisites"></a>전제 조건
+> [!NOTE]
+> ASP.NET Core 목차에 대해 제안된 새 구조의 유용성을 테스트합니다.  몇 분 동안 현재 또는 제안된 목차에서 다른 7개의 항목을 찾는 연습을 수행하는 경우 [여기를 클릭하여 연구에 참여하세요](https://dpk4xbh5.optimalworkshop.com/treejack/aa11wn82).
 
-# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
 
-* [Visual Studio 2017 버전 15.8 이상](https://www.visualstudio.com/downloads/)(**ASP.NET 및 웹 개발** 워크로드 포함)
-* [.NET Core SDK 2.1 이상](https://www.microsoft.com/net/download/all)
-
-# <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code)
-
-* [Visual Studio Code](https://code.visualstudio.com/download)
-* [.NET Core SDK 2.1 이상](https://www.microsoft.com/net/download/all)
-* [Visual Studio Code용 C#](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp)
-
-# <a name="visual-studio-for-mactabvisual-studio-mac"></a>[Visual Studio for Mac](#tab/visual-studio-mac)
-
-* [Mac용 Visual Studio 버전 7.5.4 이상](https://www.visualstudio.com/downloads/)
-* [.NET Core SDK 2.1 이상](https://www.microsoft.com/net/download/all) (Visual Studio 설치에 포함됨)
-
----
+[!INCLUDE [|Prerequisites](~/includes/net-core-prereqs-all-2.2.md)]
 
 ## <a name="create-a-web-project"></a>웹 프로젝트 만들기
 
@@ -63,7 +49,7 @@ ms.locfileid: "51818384"
 
 * Razor Pages를 사용하는 프로젝트를 생성하려면 **웹 응용 프로그램**을 선택합니다.
 
-* **.NET Core**의 대상 프레임워크를 선택하고, **ASP.NET Core 2.1**을 선택하고, **확인**을 클릭합니다.
+* **.NET Core**의 대상 프레임워크를 선택하고, **ASP.NET Core 2.2**를 선택하고, **확인**을 클릭합니다.
 
   ![Visual Studio의 새 프로젝트 대화 상자](signalr/_static/signalr-new-project-choose-type.png)
 
@@ -227,7 +213,7 @@ SignalR 서버는 SignalR에 SignalR 요청을 전달하도록 구성되어야 �
 * 통합 터미널에서 다음 명령을 실행합니다.
 
   ```console
-  dotnet run -p SignalRChat
+  dotnet run -p SignalRChat.csproj
   ```
   
 # <a name="visual-studio-for-mactabvisual-studio-mac"></a>[Visual Studio for Mac](#tab/visual-studio-mac)

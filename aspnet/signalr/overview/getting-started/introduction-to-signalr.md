@@ -8,26 +8,26 @@ ms.date: 06/10/2014
 ms.assetid: 0fab5e35-8c1f-43d4-8635-b8aba8766a71
 msc.legacyurl: /signalr/overview/getting-started/introduction-to-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: 0b7e223b6b793d1860797157be6021ffb7f1bc12
-ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
+ms.openlocfilehash: c865078c14b8615faa278819f86a9dd623a42f36
+ms.sourcegitcommit: 74e3be25ea37b5fc8b4b433b0b872547b4b99186
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50090295"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53287583"
 ---
 <a name="introduction-to-signalr"></a>SignalR 소개
 ====================
 
-참조 [ASP.NET Core SignalR 소개](/aspnet/core/signalr/introduction) 최신 버전의 Visual Studio를 사용 하는이 자습서의 업데이트 된 버전에 대 한 합니다. 새 자습서에 사용 하 여 [ASP.NET Core](/aspnet/core/),이 자습서를 통해 향상 된 기능이 많이 제공 합니다.
-
 [Patrick Fletcher](https://github.com/pfletcher)
+
+[!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
+
 
 > 이 문서에서는 설명 SignalR 이란, 일부 솔루션을 만들도록 설계 되었습니다. 
 > 
 > ## <a name="questions-and-comments"></a>질문이 나 의견이 있으면
 > 
 > 이 자습서를 연결 하는 방법 및 새로운 개선할 수 있습니다 페이지의 맨 아래에 의견에서에 의견을 남겨 주세요. 에 자습서로 직접 관련 되지 않은 질문이 있을 경우 게시할 수 하는 [ASP.NET SignalR 포럼](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR) 또는 [StackOverflow.com](https://stackoverflow.com/questions/tagged/signalr)합니다.
-
 
 ## <a name="what-is-signalr"></a>SignalR이란?
 
@@ -132,7 +132,7 @@ SignalR은 클라이언트와 서버 간의 실시간 작업을 수행 하는 �
 
 ## <a name="connections-and-hubs"></a>연결 및 허브
 
-클라이언트와 서버 간의 통신을 위한 두 가지 모델을 포함 하는 SignalR API: 허브 및 영구 연결 합니다.
+SignalR API는 클라이언트와 서버 간의 통신을 위한 두 가지 모델을 포함 되어 있습니다. 영구 연결 및 허브입니다.
 
 연결에는 간단한 단일 받는 사람, 그룹화 또는 브로드캐스트 메시지를 보낼 끝점을 나타냅니다. 개발자는 SignalR 노출 하는 하위 수준 통신 프로토콜에 대 한 액세스를 직접 (PersistentConnection 클래스에 의해.NET 코드에 표시 됨) 영구 연결 API 제공 합니다. 연결 통신 모델을 사용 하 여 Windows Communication Foundation 같은 연결 기반 Api를 사용한 적이 있는 개발자에 게 친숙 한 됩니다.
 

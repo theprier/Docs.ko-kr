@@ -4,14 +4,14 @@ author: rick-anderson
 description: ASP.NET Core 미들웨어 및 요청 파이프라인에 대해 알아봅니다.
 ms.author: riande
 ms.custom: mvc
-ms.date: 08/21/2018
+ms.date: 10/10/2018
 uid: fundamentals/middleware/index
-ms.openlocfilehash: 6daf201654d68de978141f3dd42d48732c1161f7
-ms.sourcegitcommit: 408921a932448f66cb46fd53c307a864f5323fe5
+ms.openlocfilehash: 4e5da1036b77e876899ccdea48bdec69454e1657
+ms.sourcegitcommit: 9bb58d7c8dad4bbd03419bcc183d027667fefa20
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51570037"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52861487"
 ---
 # <a name="aspnet-core-middleware"></a>ASP.NET Core 미들웨어
 
@@ -237,6 +237,7 @@ ASP.NET Core는 다음과 같은 미들웨어 구성 요소가 함께 제공됩�
 | [CORS](xref:security/cors) | 원본 간 리소스 공유를 구성합니다. | CORS를 사용하는 구성 요소 이전. |
 | [진단](xref:fundamentals/error-handling) | 진단을 구성합니다. | 오류를 생성하는 구성 요소 이전. |
 | [전달된 헤더](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersextensions) | 프록시된 헤더를 현재 요청에 전달합니다. | 업데이트된 필드를 사용하는 구성 요소 전에. 예: 체계, 호스트, 클라이언트 IP, 메서드. |
+| [상태 검사](xref:host-and-deploy/health-checks) | ASP.NET Core 앱 및 그 종속성(데이터베이스 가용성 등)의 상태를 검사합니다. | 요청이 상태 검사 엔드포인트와 일치하는 경우 마지막입니다. |
 | [HTTP 메서드 재정의](/dotnet/api/microsoft.aspnetcore.builder.httpmethodoverrideextensions) | 들어오는 POST 요청이 메서드를 재정의하도록 허용합니다. | 업데이트된 메서드를 사용하는 구성 요소 앞입니다. |
 | [HTTPS 리디렉션](xref:security/enforcing-ssl#require-https) | HTTPS로 모든 HTTP 요청을 리디렉션합니다(ASP.NET Core 2.1 이상). | URL을 사용하는 구성 요소 이전. |
 | [HSTS(HTTP 엄격한 전송 보안)](xref:security/enforcing-ssl#http-strict-transport-security-protocol-hsts) | 특별한 응답 헤더를 추가하는 보안 향상 미들웨어입니다(ASP.NET Core 2.1 이상). | 응답이 전송되기 이전, 요청을 수정하는 구성 요소 이후에. 예: 전달된 헤더, URL 재작성. |

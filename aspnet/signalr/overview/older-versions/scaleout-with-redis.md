@@ -8,16 +8,18 @@ ms.date: 05/01/2013
 ms.assetid: 6abecf80-8ffa-41ba-b0d9-1d9edbe7687b
 msc.legacyurl: /signalr/overview/older-versions/scaleout-with-redis
 msc.type: authoredcontent
-ms.openlocfilehash: 90f1f1429dcdf8f1015365e5aa337371c6307715
-ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
+ms.openlocfilehash: 3f70536a4bda90a0298f6bb4f7ef47b8a257175b
+ms.sourcegitcommit: 74e3be25ea37b5fc8b4b433b0b872547b4b99186
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48910722"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53287548"
 ---
 <a name="signalr-scaleout-with-redis-signalr-1x"></a>Redis로 SignalR 규모 확장 (SignalR 1.x)
 ====================
 하 여 [Mike Wasson](https://github.com/MikeWasson), [Patrick Fletcher](https://github.com/pfletcher)
+
+[!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
 
 이 자습서에서는 사용할지 [Redis](http://redis.io/) 에 메시지를 두 개의 별도 IIS 인스턴스에 배포 된 SignalR 응용 프로그램을 분산 합니다.
 
@@ -107,7 +109,7 @@ Redis 이진이 빌드는 `src` 디렉터리입니다.
 - "password"는 redis.conf 파일에 정의 된 암호가입니다.
 - "AppName"는 문자열입니다. SignalR이이 이름을 가진 Redis pub/sub 채널을 만듭니다.
 
-예를 들어:
+예를 들면 다음과 같습니다.
 
 [!code-csharp[Main](scaleout-with-redis/samples/sample7.cs)]
 

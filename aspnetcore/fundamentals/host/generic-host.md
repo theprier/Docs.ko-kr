@@ -5,14 +5,14 @@ description: 앱 시작 및 수명 관리를 담당하는 .NET의 일반 호스�
 monikerRange: '>= aspnetcore-2.1'
 ms.author: riande
 ms.custom: mvc
-ms.date: 10/30/2018
+ms.date: 11/28/2018
 uid: fundamentals/host/generic-host
-ms.openlocfilehash: cac5ccdea7838d26b7468f9bf1ab8d317b444b46
-ms.sourcegitcommit: 09bcda59a58019fdf47b2db5259fe87acf19dd38
+ms.openlocfilehash: 4d435984d8169b558ab026ef8541c90f7a2a96b9
+ms.sourcegitcommit: 0fc89b80bb1952852ecbcf3c5c156459b02a6ceb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51708519"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "52618157"
 ---
 # <a name="net-generic-host"></a>.NET 일반 호스트
 
@@ -44,6 +44,28 @@ Visual Studio Code에서 콘솔을 설정하려면:
 <xref:Microsoft.Extensions.Hosting.IHostBuilder>는 라이브러리 및 앱이 호스트를 초기화, 빌드 및 실행하는 데 사용하는 주 구성 요소입니다.
 
 [!code-csharp[](generic-host/samples-snapshot/2.x/GenericHostSample/Program.cs?name=snippet_HostBuilder)]
+
+## <a name="options"></a>옵션
+
+<xref:Microsoft.Extensions.Hosting.HostOptions>는 <xref:Microsoft.Extensions.Hosting.IHost>에 대한 옵션을 구성합니다.
+
+### <a name="shutdown-timeout"></a>시스템 종료 시간 제한
+
+<xref:Microsoft.Extensions.Hosting.HostOptions.ShutdownTimeout*>은 <xref:Microsoft.Extensions.Hosting.IHost.StopAsync*>에 대한 시간 제한을 설정합니다. 기본값은 5초입니다.
+
+`Program.Main`의 다음 옵션 구성은 기본 5초 시스템 종료 시간 제한을 20초로 늘립니다.
+
+```csharp
+var host = new HostBuilder()
+    .ConfigureServices((hostContext, services) =>
+    {
+        services.Configure<HostOptions>(option =>
+        {
+            option.ShutdownTimeout = System.TimeSpan.FromSeconds(20);
+        });
+    })
+    .Build();
+```
 
 ## <a name="default-services"></a>기본 서비스
 

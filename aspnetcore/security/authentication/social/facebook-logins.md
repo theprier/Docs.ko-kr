@@ -3,15 +3,15 @@ title: ASP.NET Core에서 Facebook 외부 로그인 설정
 author: rick-anderson
 description: 이 자습서에서는 기존 ASP.NET Core 앱에 Facebook 계정 사용자 인증의 통합을 보여 줍니다.
 ms.author: riande
-ms.custom: mvc
+ms.custom: mvc, seodec18
 ms.date: 11/11/2018
 uid: security/authentication/facebook-logins
-ms.openlocfilehash: e8ae16538b5d6844af7d983071fad629ebbe6217
-ms.sourcegitcommit: 09bcda59a58019fdf47b2db5259fe87acf19dd38
+ms.openlocfilehash: d4f3e210b0d3c79eaf2233f97a29a6d96cd69b39
+ms.sourcegitcommit: b34b25da2ab68e6495b2460ff570468f16a9bf0d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51708506"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53284385"
 ---
 # <a name="facebook-external-login-setup-in-aspnet-core"></a>ASP.NET Core에서 Facebook 외부 로그인 설정
 
@@ -129,19 +129,19 @@ app.UseFacebookAuthentication(new FacebookOptions()
 
 Facebook 인증 기본적으로 공용 프로필 및 전자 메일 주소를 요청합니다.
 
-![Facebook 인증 페이지](index/_static/FBLoginDone.png)
+![Facebook 인증 페이지 동의 화면](index/_static/FBLoginDone.png)
 
 Facebook 자격 증명을 입력 한 후 전자 메일을 설정할 수 있는 사이트로 다시 리디렉션됩니다.
 
 이제 Facebook 자격 증명을 사용 하 여 로그인 됩니다.
 
-![웹 응용 프로그램: 사용자 인증](index/_static/Done.png)
+![웹 응용 프로그램: 인증 된 사용자](index/_static/Done.png)
 
 [!INCLUDE[Forward request information when behind a proxy or load balancer section](includes/forwarded-headers-middleware.md)]
 
 ## <a name="troubleshooting"></a>문제 해결
 
-* **ASP.NET Core 2.x만:** 경우 Identity를 호출 하 여 구성 되지 않았습니다 `services.AddIdentity` 에 `ConfigureServices`에 인증 하려고 하면 *ArgumentException: 'SignInScheme' 옵션을 제공 해야*합니다. 이 자습서에 사용 되는 프로젝트 템플릿이이 수행 되도록 보장 합니다.
+* **ASP.NET Core 2.x만:** 호출 하 여 구성 되어 있지 않으면 Identity `services.AddIdentity` 에 `ConfigureServices`를 인증 하려고 하면 *ArgumentException: 'SignInScheme' 옵션을 제공 해야*합니다. 이 자습서에 사용 되는 프로젝트 템플릿이이 수행 되도록 보장 합니다.
 * 사이트 데이터베이스를 초기 마이그레이션을 적용 하 여 만들어지지 않은, 하는 경우 얻게 *요청을 처리 하는 동안 데이터베이스 작업이 실패 했습니다.* 오류입니다. 탭 **마이그레이션 적용** 데이터베이스를 만들고 오류 지 나 새로 고침 합니다.
 
 ## <a name="next-steps"></a>다음 단계

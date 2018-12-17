@@ -24,11 +24,11 @@ ASP.NET은 HTML, CSS 및 JavaScript를 사용하여 유용한 웹 사이트와 �
 
 ## <a name="get-started"></a>시작
 
-설치할 [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017) Community edition, Windows의 ASP.NET 용 무료 IDE입니다.
+ASP.NET용 무료 IDE인 [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017) Community edition을 설치하세요.
 
 ## <a name="websites-and-web-applications"></a>웹 사이트 및 웹 응용 프로그램
 
- ASP.NET은 웹 응용 프로그램을 만들기 위한 세 가지 프레임워크 Web Forms, ASP.NET MVC 및 ASP.NET Web Pages를 제공합니다. 세 프레임워크 모두 안정적이고 완성된 기술이며, 어떤 것을 사용해도 멋진 웹 응용 프로그램을 만들 수 있습니다. 어떤 프레임워크를 선택하더라도 어디서나 ASP.NET의 장점과 기능을 모두 누릴 수 있습니다.
+ ASP.NET은 웹 응용 프로그램을 만들기 위한 세 가지 프레임워크 ASP.NET Web Forms, ASP.NET MVC 및 ASP.NET Web Pages를 제공합니다. 세 프레임워크 모두 안정적이고 완성된 기술이며, 어떤 것을 사용해도 멋진 웹 응용 프로그램을 만들 수 있습니다. 또, 어떤 프레임워크를 선택하더라도 어디에서나 ASP.NET의 모든 장점과 기능을 사용할 수 있습니다.
 
 각 프레임워크는 서로 다른 개발 스타일을 대상으로 합니다. 어떤 프레임워크를 선택해야 하는지는 프로그래밍 자산(지식, 기술 및 개발 경험), 만들려는 응용 프로그램 종류, 익숙한 개발 방식에 따라 달라집니다.
 
@@ -36,9 +36,9 @@ ASP.NET은 HTML, CSS 및 JavaScript를 사용하여 유용한 웹 사이트와 �
 
 |   | 다음 분야에 대한 경험이 있는 경우 | 개발 스타일 | 전문 지식 |
 |-----------|----------------------|-----------------------------------------------------|----------------|
-| Web Forms | Win Forms, WPF, .NET | HTML 표시를 캡슐화하는 풍부한 컨트롤 라이브러리를 사용하여 신속하게 개발 | 중간 수준, 고급 RAD |
-| MVC       | Ruby on Rails, .NET  | HTML 표시를 완벽하게 제어할 수 있고, 코드와 표시가 분리되고, 테스트를 쉽게 작성할 수 있습니다. 모바일 및 단일 페이지 응용 프로그램(SPA)에 적합합니다. | 중간 수준, 고급 |
-| 웹 페이지  | 클래식 ASP, PHP     | HTML 표시와 코드가 같은 파일에 있습니다. | 최신, 중간 수준 |
+| Web Forms | Win Forms, WPF, .NET | HTML 태그를 캡슐화하는 풍부한 컨트롤 라이브러리를 사용하여 신속하게 개발 | 중간 수준, 고급 RAD |
+| MVC       | Ruby on Rails, .NET  | HTML 태그를 완벽하게 제어할 수 있고, 코드와 태그가 분리되고, 테스트를 쉽게 작성할 수 있습니다. 모바일 및 단일 페이지 응용 프로그램(SPA)에 적합합니다. | 중간 수준, 고급 |
+| Web Pages  | 클래식 ASP, PHP     | HTML 태그와 코드가 같은 파일에 있습니다. | 최신, 중간 수준 |
 
 ### <a name="web-forms"></a>Web Forms
 
@@ -48,19 +48,19 @@ ASP.NET Web Forms를 사용하면 익숙한 끌어서 놓기, 이벤트 중심 �
 
 ### <a name="mvc"></a>MVC
 
-즐겁고, 민첩한 개발을 위해 전체 제어 태그를 제공하여 명확한 영역 분리를 사용할 수 있는 동적 웹 사이트를 만들도록 강력한 패턴 기반의 방법인 ASP.NET MVC를 사용합니다. ASP.NET MVC에는 최신 웹 표준을 사용하는 정교한 응용 프로그램을 만들기 위한 TDD 친화적 개발을 지원하는 여러 기능이 포함되어 있습니다.
+ASP.NET MVC는 즐겁고, 민첩한 개발을 위해 관점을 명확하게 분리할 수 있으며 마크업을 완벽하게 제어할 수 있는 강력한 패턴 기반의 방법을 제공합니다. 또한, 최신 웹 표준을 사용하는 정교한 응용 프로그램을 만들기 위한 TDD 친화적 개발을 지원하는 여러 가지 기능이 포함되어 있습니다.
 
 [MVC에 대한 자세한 정보](mvc/index.md)
 
-### <a name="aspnet-web-pages"></a>ASP.NET 웹 페이지
+### <a name="aspnet-web-pages"></a>ASP.NET Web Pages
 
-ASP.NET Web Pages 및 Razor 구문은 서버 코드를 HTML과 결합하여 동적 웹 콘텐츠를 만들 수 있는 빠르고 간단하며 사용하기 쉬운 방식을 제공합니다. 데이터베이스에 연결하고, 비디오를 추가하고, 소셜 네트워킹 사이트에 연결하고, 최신 웹 표준을 따르는 아름다운 사이트를 만들 수 있는 여러 기능을 포함하세요.
+ASP.NET Web Pages 및 Razor 구문은 서버 코드를 HTML과 결합하여 동적 웹 콘텐츠를 만들 수 있는 빠르고 간단하며 사용하기 쉬운 방식을 제공합니다. 데이터베이스에 연결하고, 비디오를 추가하고, 소셜 네트워킹 사이트에 연결하고, 최신 웹 표준을 준수하는 멋진 사이트를 만드는 데 도움이 되는 여러 가지 기능이 포함되어 있습니다.
 
 [Web Pages에 대한 자세한 정보](web-pages/index.md)
 
 ### <a name="notes-about-web-forms-mvc-and-web-pages"></a>Web Forms, MVC 및 Web Pages에 대한 참고 사항
 
-세 ASP.NET 프레임워크는 모두 .NET Framework를 기반으로 하고 .NET 및 ASP.NET의 핵심 기능을 공유합니다. 예를 들어 세 프레임워크 모두 멤버 자격 기반의 로그인 보안 모델을 제공하며, 요청을 관리하고 세션을 처리하기 위한 시설과 그 밖의 핵심 ASP.NET 기능을 공유합니다.
+세 ASP.NET 프레임워크는 모두 .NET Framework를 기반으로 하고 .NET 및 ASP.NET의 핵심 기능을 공유합니다. 예를 들어 세 프레임워크 모두 멤버 자격 기반의 로그인 보안 모델을 제공하며, 요청을 관리하고 세션을 처리하기 위한 기능과 그 밖의 핵심 ASP.NET 기능을 공유합니다.
 
 뿐만 아니라 세 프레임워크가 완전히 독립적인 것은 아니기 때문에 한 프레임워크를 선택한다고 해서 나머지 두 프레임워크를 사용할 수 없는 것은 아닙니다. 여러 프레임워크가 동일한 웹 응용 프로그램에서 공존할 수 있으므로 응용 프로그램의 개별 구성 요소가 서로 다른 프레임워크를 사용하여 작성된 것을 어렵지 않게 볼 수 있습니다. 예를 들어 앱에서 고객 응대 부분은 MVC에서 개발하여 표시를 최적화하고, 데이터 및 관리 부분은 Web Forms로 개발하여 데이터 제어 및 간단한 데이터 액세스를 활용할 수 있습니다.
 
@@ -96,7 +96,7 @@ ASP.NET SPA(단일 페이지 응용 프로그램)는 HTML 5, CSS 3 및 JavaScrip
 
 ## <a name="webhooks"></a>웹후크
 
-WebHook는 Web API와 SaaS 서비스를 연결하는 간단한 pub/sub 모델을 제공하는 가벼운 HTTP 패턴입니다. 서비스에서 이벤트가 발생하면 등록된 구독자에게 HTTP POST 요청의 형태로 알림이 전송됩니다. POST 요청에는 수신자가 적절하게 대처할 수 있도록 이벤트에 대한 정보를 포함되어 있습니다.
+WebHook는 Web API와 SaaS 서비스를 연결하는 간단한 pub/sub 모델을 제공하는 가벼운 HTTP 패턴입니다. 서비스에서 이벤트가 발생하면 등록된 구독자에게 HTTP POST 요청의 형태로 알림이 전송됩니다. POST 요청에는 수신자가 적절하게 대처할 수 있도록 이벤트에 대한 정보가 포함되어 있습니다.
 
 Dropbox, GitHub, Instagram, MailChimp, PayPal, Slack, Trello를 포함한 여러 서비스에 WebHook가 노출됩니다. 예를 들어 WebHook는 Dropbox에서 파일이 변경되었거나, GitHub에서 코드가 변경되었거나, PayPal에서 대금 결제가 시작되었거나, Trello에서 카드가 생성되었음을 나타낼 수 있습니다.
 

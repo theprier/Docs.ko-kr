@@ -3,14 +3,15 @@ title: 권한 부여로 보호 되는 사용자 데이터를 사용 하 여 ASP.
 author: rick-anderson
 description: 권한 부여로 보호 되는 사용자 데이터를 사용 하 여 Razor 페이지 앱을 만드는 방법에 알아봅니다. HTTPS, 인증, 보안, ASP.NET Core Id를 포함합니다.
 ms.author: riande
-ms.date: 7/24/2018
+ms.date: 12/07/2018
+ms.custom: seodec18
 uid: security/authorization/secure-data
-ms.openlocfilehash: 185628d4e06c9b5ae7f2685c10ea9e46dd5abe92
-ms.sourcegitcommit: 4a6bbe84db24c2f3dd2de065de418fde952c8d40
+ms.openlocfilehash: d49ee7779b425d625b81c8a65694121c616bfba6
+ms.sourcegitcommit: 49faca2644590fc081d86db46ea5e29edfc28b7b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50253223"
+ms.lasthandoff: 12/09/2018
+ms.locfileid: "53121637"
 ---
 # <a name="create-an-aspnet-core-app-with-user-data-protected-by-authorization"></a>권한 부여로 보호 되는 사용자 데이터를 사용 하 여 ASP.NET Core 앱 만들기
 
@@ -38,21 +39,21 @@ ms.locfileid: "50253223"
 
 다음 이미지에서는 Rick 사용자 (`rick@example.com`)에 로그인 됩니다. Rick 승인 된 연락처를 보기만 할 수 있습니다 하 고 **편집할**/**삭제**/**새로 만들기** 자신의 연락처에 대 한 링크입니다. Rick을 표시 하 여 만든 마지막 레코드만 **편집** 하 고 **삭제** 링크 합니다. 다른 사용자에 게는 관리자가 "승인 됨" 상태 변경 될 때까지 마지막 레코드를 표시 되지 않습니다.
 
-![이전 이미지 설명](secure-data/_static/rick.png)
+![로그인 한 Rick을 보여 주는 스크린샷](secure-data/_static/rick.png)
 
 다음 이미지에서는 `manager@contoso.com` managers 역할에 서명 합니다.
 
-![이전 이미지 설명](secure-data/_static/manager1.png)
+![보여 주는 스크린샷 manager@contoso.com 로그인](secure-data/_static/manager1.png)
 
 다음 이미지는 관리자의 연락처 세부 정보 보기를 보여 줍니다.
 
-![이전 이미지 설명](secure-data/_static/manager.png)
+![연락처의 관리자의 보기](secure-data/_static/manager.png)
 
 합니다 **승인** 하 고 **거부** 단추가 관리자와 관리자만 표시 됩니다.
 
 다음 이미지에서는 `admin@contoso.com` 로그인 하 여 관리자 역할에:
 
-![이전 이미지 설명](secure-data/_static/admin.png)
+![보여 주는 스크린샷 admin@contoso.com 로그인](secure-data/_static/admin.png)
 
 관리자는 모든 권한을 갖습니다. 그녀는 연락처 읽기/편집/삭제할 수 및 연락처의 상태를 변경 합니다.
 
@@ -208,7 +209,7 @@ Entity Framework Core를 사용 하 여 서비스에 등록 해야 합니다 [�
 
 [!code-csharp[](secure-data/samples/final2.1/Pages/Contacts/DI_BasePageModel.cs)]
 
-위의 코드:
+위의 코드는:
 
 * 추가 된 `IAuthorizationService` 권한 부여 처리기에 액세스 하는 서비스입니다.
 * Id 추가 `UserManager` 서비스입니다.
@@ -281,25 +282,32 @@ Entity Framework Core를 사용 하 여 서비스에 등록 해야 합니다 [�
 
 ## <a name="test-the-completed-app"></a>완성된 된 앱 테스트
 
+시드 된 사용자 계정의 암호를 이미 설정 하지 않은 경우 사용 합니다 [암호 관리자 도구](xref:security/app-secrets#secret-manager) 암호를 설정 하려면:
+
+* 강력한 암호를 선택 합니다: 사용 하 여 8 이상의 문자 및 하나 이상의 대문자, 숫자 및 기호입니다. 예를 들어 `Passw0rd!` 강력한 암호 요구 사항을 충족 합니다.
+* 프로젝트의 폴더에서 다음 명령을 실행 하는 `<PW>` 암호입니다.
+
+  ```console
+  dotnet user-secrets set SeedUserPW <PW>
+  ```
+
 앱에 있는 경우 연락처:
 
 * 모든 레코드를 삭제 합니다 `Contact` 테이블입니다.
 * 데이터베이스를 시드하려면 앱을 다시 시작 합니다.
 
-연락처를 검색 하는 사용자를 등록 합니다.
+완성된 된 앱을 테스트 하는 간편한 방법은 3 개의 서로 다른 브라우저 (또는 incognito/InPrivate 세션)을 시작 하는 것입니다. 하나의 브라우저에서 새 사용자를 등록 합니다 (예를 들어 `test@example.com`). 다른 사용자와 각 브라우저에 로그인 합니다. 다음 작업을 확인 합니다.
 
-완성된 된 앱을 테스트 하는 간편한 방법은 3 개의 서로 다른 브라우저 (또는 incognito/InPrivate 버전)를 시작 하는 것입니다. 하나의 브라우저에서 새 사용자를 등록 합니다 (예를 들어 `test@example.com`). 다른 사용자와 각 브라우저에 로그인 합니다. 다음 작업을 확인 합니다.
-
-* 등록 된 사용자의 승인 된 모든 연락처 데이터를 볼 수 있습니다.
+* 등록 된 사용자의 모든 승인 된 연락처 데이터를 볼 수 있습니다.
 * 등록 된 사용자 편집/삭제할 수 있습니다 자신의 고유 데이터입니다.
-* 관리자 승인 하거나 연락처 데이터를 거부할 수 있습니다. 합니다 `Details` 표시를 볼 **승인** 하 고 **거부** 단추입니다.
+* 관리자 수 승인/거부할 연락처 데이터입니다. 합니다 `Details` 표시를 볼 **승인** 하 고 **거부** 단추입니다.
 * 관리자 승인/거부를 편집/삭제할 모든 데이터입니다.
 
-| 사용자| 옵션 |
-| ------------ | ---------|
-| test@example.com | 편집/삭제할 수 있습니다 자체 데이터 |
-| manager@contoso.com | 승인/거부 하 고 편집/삭제할 데이터 소유할 수 있습니다 |
-| admin@contoso.com | 수 편집/삭제 및 모든 데이터를 승인/거부 합니다.|
+| 사용자                | 앱에서 시드 | 옵션                                  |
+| ------------------- | :---------------: | ---------------------------------------- |
+| test@example.com    | 아니요                | 자체 데이터를 편집/삭제 합니다.                |
+| manager@contoso.com | 예               | 승인/거부 하 고 편집/삭제할 데이터를 소유 합니다. |
+| admin@contoso.com   | 예               | 승인/거부 하 고 모든 데이터를 편집/삭제 합니다. |
 
 관리자의 브라우저에서 연락처를 만듭니다. 삭제에 대 한 URL을 복사 하 고 관리자 연락처에서 편집 합니다. 테스트 사용자를 이러한 작업을 수행할 수 없습니다 확인 하려면 테스트 사용자의 브라우저에 이러한 링크를 붙여 넣습니다.
 

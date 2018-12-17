@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 06/14/2018
 uid: fundamentals/app-state
-ms.openlocfilehash: 5ca909681ca9da3fae0391991902da97581852be
-ms.sourcegitcommit: 4a6bbe84db24c2f3dd2de065de418fde952c8d40
+ms.openlocfilehash: ccaaa6fafd611c3cf35a9171d5bfd6100535eeb9
+ms.sourcegitcommit: 0fc89b80bb1952852ecbcf3c5c156459b02a6ceb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50253184"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "52618131"
 ---
 # <a name="session-and-app-state-in-aspnet-core"></a>ASP.NET Core에서 세션 및 앱 상태
 
@@ -19,7 +19,7 @@ ms.locfileid: "50253184"
 
 HTTP는 상태 비저장 프로토콜입니다. HTTP 요청은 추가 단계를 수행하지 않고 사용자 값 또는 앱 상태를 유지하지 않는 독립적인 메시지입니다. 이 문서에서는 요청 간 사용자 데이터와 앱 상태를 유지하는 몇 가지 방법에 대해 설명합니다.
 
-[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/app-state/samples)([다운로드 방법](xref:index#how-to-download-a-sample))
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/app-state/samples) ([다운로드 방법](xref:index#how-to-download-a-sample))
 
 ## <a name="state-management"></a>상태 관리
 
@@ -374,7 +374,7 @@ app.Run(async (context) =>
 
 캐시된 데이터는 특정 요청, 사용자 또는 세션과 연관되지 않습니다. **다른 사용자의 요청으로 검색될 수 있는 사용자별 데이터를 캐시하지 않도록 주의합니다.**
 
-자세한 내용은 [캐시 응답](xref:performance/caching/index) 항목을 참조하세요.
+자세한 내용은 <xref:performance/caching/response>을 참조하세요.
 
 ## <a name="dependency-injection"></a>종속성 주입
 

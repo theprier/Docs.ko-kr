@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 11/16/2018
 uid: index
-ms.openlocfilehash: 13bb8fafe8d5d34185b3016630d5dd3df4212119
-ms.sourcegitcommit: bdfba5e7575b2a786ef27c0edf688c7dbd09ee95
+ms.openlocfilehash: fed81090f123084f3f33e75f86d09f55ac7fb481
+ms.sourcegitcommit: a16352c1c88a71770ab3922200a8cd148fb278a6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "52288657"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53335301"
 ---
 # <a name="introduction-to-aspnet-core"></a>ASP.NET Core 소개
 
@@ -35,7 +35,7 @@ ASP.NET Core는 클라우드 기반 인터넷에 연결된 최신 응용 프로�
 ASP.NET Core MVC에서는 [Web API](xref:tutorials/first-web-api) 및 [웹앱](xref:tutorials/razor-pages/index)을 빌드하는 기능을 제공합니다.
 
 * [MVC(모델-뷰-컨트롤러) 패턴](xref:mvc/overview)을 통해 웹 API 및 웹앱을 테스트 가능하게 합니다.
-* [Razor 페이지](xref:razor-pages/index) (2.0의 새로운 기능)는 웹 UI를 쉽게 빌드하고 생산성을 높일 수 있는 페이지 기반 프로그래밍 모델입니다.
+* [Razor Pages](xref:razor-pages/index)는 웹 UI를 쉽게 빌드하고 생산성을 높일 수 있는 페이지 기반 프로그래밍 모델입니다.
 * [Razor 태그](xref:mvc/views/razor)는 [Razor 페이지](xref:razor-pages/index) 및 [MVC 뷰](xref:mvc/views/overview)에 생산적인 구문을 제공합니다.
 * [태그 도우미](xref:mvc/views/tag-helpers/intro)를 사용하면 서버 쪽 코드를 Razor 파일에서 HTML 요소를 만들고 렌더링하는 데 사용할 수 있습니다.
 * [여러 데이터 형식 및 콘텐츠 협상](xref:web-api/advanced/formatting)에 대한 기본 제공 지원을 통해 웹 API를 브라우저 및 모바일 장치를 포함한 다양한 클라이언트에 연결할 수 있습니다.
@@ -120,7 +120,7 @@ WebHost.CreateDefaultBuilder(args)
 
 코드를 둘러싸고 있는 `#region` 및 `#end-region` 문을 안전하게 무시(또는 제거)할 수 있습니다. 항목에 설명된 샘플 시나리오를 실행하려는 경우 이러한 명령문 내에서 코드를 변경하지 마십시오. 다른 시나리오를 실험하는 경우 자유롭게 코드를 변경할 수 있습니다.
 
-자세한 내용은 [ASP.NET 설명서에 참여: 코드 조각](https://github.com/aspnet/Docs/blob/master/CONTRIBUTING.md#code-snippets)을 참조하세요.
+자세한 내용은 다음을 참조하세요. [ASP.NET 설명서에 참여: 코드 조각](https://github.com/aspnet/Docs/blob/master/CONTRIBUTING.md#code-snippets).
 
 ## <a name="next-steps"></a>다음 단계
 
@@ -130,6 +130,3 @@ WebHost.CreateDefaultBuilder(args)
 * <xref:tutorials/publish-to-azure-webapp-using-vs>
 * [ASP.NET Core 기본 사항](xref:fundamentals/index)
 * [매주 ASP.NET 커뮤니티 스탠드업](https://live.asp.net/)은 팀의 진행률 및 계획을 다루고 새 블로그 및 타사 소프트웨어를 설명합니다.
-
-> [!NOTE]
-> ASP.NET Core 목차에 대해 제안된 새 구조의 유용성을 테스트합니다.  몇 분 동안 현재 또는 제안된 목차에서 다른 7개의 항목을 찾는 연습을 수행하는 경우 [여기를 클릭하여 연구에 참여하세요](https://dpk4xbh5.optimalworkshop.com/treejack/rps16hd5).

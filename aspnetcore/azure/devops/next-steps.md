@@ -1,17 +1,17 @@
 ---
-title: ASP.NET Core 및 Azure를 사용 하 여 DevOps | 다음 단계
+title: 다음 단계-ASP.NET Core 및 Azure를 사용 하 여 DevOps
 author: CamSoper
-description: Azure에서 호스팅되는 ASP.NET Core 앱에 대한 DevOps 파이프라인을 빌드하는 방법에 대한 종단 간 지침을 제공하는 가이드입니다.
+description: ASP.NET Core 및 Azure를 사용 하 여 DevOps에 대 한 학습 경로 추가 합니다.
 ms.author: casoper
-ms.custom: mvc
+ms.custom: mvc, seodec18
 ms.date: 10/24/2018
 uid: azure/devops/next-steps
-ms.openlocfilehash: b82e7251b507f8d141930673d50722cfaa576db5
-ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
+ms.openlocfilehash: a775dc42551a43bcce72b5f9ca364ed00b1dc4e6
+ms.sourcegitcommit: b34b25da2ab68e6495b2460ff570468f16a9bf0d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50089882"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53284472"
 ---
 # <a name="next-steps"></a>다음 단계
 
@@ -29,7 +29,7 @@ ms.locfileid: "50089882"
 
 [Cosmos DB](/azure/cosmos-db/) 전역적으로 분산 된 다중 모델 NoSQL 데이터베이스 서비스입니다. 여러 Api (이전의 DocumentDB)는 SQL API, Cassandra, MongoDB 등에서 사용할 수 있습니다.
 
-## <a name="identity"></a>클레임
+## <a name="identity"></a>ID
 
 [Azure Active Directory](/azure/active-directory/) 하 고 [Azure Active Directory B2C](/azure/active-directory-b2c/) 두 id 서비스 됩니다. Azure Active Directory는 엔터프라이즈 시나리오를 위해 설계 되었습니다 및 Azure Active Directory B2C는 의도 한 비즈니스 고객 시나리오, 소셜 네트워크 로그인 포함 하 여 Azure AD B2B (기업 간) 공동 작업을 사용 하도록 설정 합니다.
 

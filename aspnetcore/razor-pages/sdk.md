@@ -1,18 +1,18 @@
 ---
 title: ASP.NET Core Razor SDK
 author: Rick-Anderson
-description: ASP.NET Core의 Razor 페이지를 통해 MVC를 사용하는 것보다 더 쉽고 더 생산적으로 코딩 페이지에 초점을 맞춘 시나리오를 만드는 방법을 알아봅니다.
+description: 페이지 코딩 중심의 시나리오에서 ASP.NET Core의 Razor 페이지를 사용하면 MVC를 사용할 때보다 어떻게 더 쉽고 생산적인지 알아봅니다.
 monikerRange: '>= aspnetcore-2.1'
 ms.author: riande
-ms.custom: mvc
+ms.custom: mvc, seodec18
 ms.date: 10/25/2018
 uid: razor-pages/sdk
-ms.openlocfilehash: 1f38d768d872175e20f5cb0cb679bc3d52696eb9
-ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
+ms.openlocfilehash: 2df7dc4234207d3dbac8a4ff47751adc8fc6a192
+ms.sourcegitcommit: b34b25da2ab68e6495b2460ff570468f16a9bf0d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50090195"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53284451"
 ---
 # <a name="aspnet-core-razor-sdk"></a>ASP.NET Core Razor SDK
 
@@ -72,7 +72,7 @@ Razor SDK를 사용하여 Razor 보기 또는 Razor 페이지를 포함하는 �
 | ----- | ----------- |
 | `RazorGenerate` | 코드 생성 대상에 입력되는 항목 요소(*.cshtml* 파일). |
 | `RazorCompile` | 항목 요소 (*.cs* 파일)는 Razor 컴파일 대상에 입력 합니다. 이 ItemGroup을 사용하여 Razor 어셈블리에 컴파일할 추가 파일을 지정합니다. |
-| `RazorTargetAssemblyAttribute` | 코드에 사용된 항목 요소는 Razor 어셈블리의 특성을 생성합니다. 예를 들어:  <br>`RazorAssemblyAttribute`<br>`Include="System.Reflection.AssemblyMetadataAttribute"`<br>`_Parameter1="BuildSource" _Parameter2="https://docs.microsoft.com/">` |
+| `RazorTargetAssemblyAttribute` | 코드에 사용된 항목 요소는 Razor 어셈블리의 특성을 생성합니다. 예를 들어 다음과 같습니다.  <br>`RazorAssemblyAttribute`<br>`Include="System.Reflection.AssemblyMetadataAttribute"`<br>`_Parameter1="BuildSource" _Parameter2="https://docs.microsoft.com/">` |
 | `RazorEmbeddedResource` | 항목 요소에서 생성 된 Razor 어셈블리에 포함 리소스로 추가 합니다. |
 
 | 속성 | 설명 |

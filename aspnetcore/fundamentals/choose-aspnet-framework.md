@@ -3,14 +3,15 @@ title: ASP.NET 4.x와 ASP.NET Core 중에서 선택
 author: rick-anderson
 description: ASP.NET Core 및 ASP.NET 4.x에 대해 설명하고 둘 중 선택하는 방법을 설명합니다.
 ms.author: riande
+ms.custom: seodec18
 ms.date: 09/11/2018
 uid: fundamentals/choose-between-aspnet-and-aspnetcore
-ms.openlocfilehash: 79e56e10b756677431ceff289300c251e54bf632
-ms.sourcegitcommit: bdfba5e7575b2a786ef27c0edf688c7dbd09ee95
+ms.openlocfilehash: b75fbea330e48075c4a2789454e973d4c56ffa53
+ms.sourcegitcommit: 49faca2644590fc081d86db46ea5e29edfc28b7b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "52288670"
+ms.lasthandoff: 12/09/2018
+ms.locfileid: "53121182"
 ---
 # <a name="choose-between-aspnet-4x-and-aspnet-core"></a>ASP.NET 4.x와 ASP.NET Core 중에서 선택
 
@@ -37,7 +38,7 @@ ASP.NET 4.x는 Windows에서 엔터프라이즈급 서버 기반 웹앱을 빌�
 |컴퓨터당 여러 버전|컴퓨터당 하나의 버전|
 |C# 또는 F#을 사용하여 Visual Studio, [Mac용 Visual Studio](https://www.visualstudio.com/vs/visual-studio-mac/) 또는 [Visual Studio Code](https://code.visualstudio.com/)에서 개발|C#, VB 또는 F#을 사용하여 Visual Studio에서 개발|
 |ASP.NET 4.x보다 고성능|성능 양호|
-|[.NET Framework 또는 .NET Core 런타임 선택](/dotnet/articles/standard/choosing-core-framework-server)|.NET Framework 런타임 사용|
+|[.NET Framework 또는 .NET Core 런타임 선택](/dotnet/standard/choosing-core-framework-server)|.NET Framework 런타임 사용|
 
 .NET Framework의 ASP.NET Core 2.x 지원에 대한 자세한 내용은 [ASP.NET Core 대상 .NET Framework](xref:index#target-framework)를 참조하세요.
 

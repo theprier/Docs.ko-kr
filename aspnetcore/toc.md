@@ -6,24 +6,22 @@
 # [시작](xref:getting-started)
 
 # 자습서
+## Web API
+### [Web API 만들기](xref:tutorials/first-web-api)
+### [MongoDB를 사용하는 Web API](xref:tutorials/first-mongo-app)
 ## 웹앱
-### Razor 페이지
-#### [Visual Studio 사용](xref:tutorials/razor-pages/index)
-#### [Visual Studio Code 사용](xref:tutorials/razor-pages-vsc/index)
-#### [Mac용 Visual Studio 사용](xref:tutorials/razor-pages-mac/index)
+### [Razor 페이지](xref:tutorials/razor-pages/index)
+
 ### MVC
 #### [Visual Studio 사용](xref:tutorials/first-mvc-app/index)
 #### [Visual Studio Code 사용](xref:tutorials/first-mvc-app-xplat/index)
 #### [Mac용 Visual Studio 사용](xref:tutorials/first-mvc-app-mac/index)
-## Web API
-### [Visual Studio 사용](xref:tutorials/first-web-api)
-### [Visual Studio Code 사용](xref:tutorials/web-api-vsc)
-### [Mac용 Visual Studio 사용](xref:tutorials/first-web-api-mac)
-### [네이티브 모바일 앱의 경우](xref:mobile/native-mobile-backend)
-### [MongoDB 사용](xref:tutorials/first-mongo-app)
+
 ## 실시간 웹앱
 ### [JavaScript를 사용한 SignalR](xref:tutorials/signalr)
 ### [TypeScript를 사용한 SignalR](xref:tutorials/signalr-typescript-webpack)
+## [네이티브 모바일 앱에 대한 백 엔드 서비스 만들기](xref:mobile/native-mobile-backend)
+
 ## 데이터 액세스
 ### [Razor Pages를 사용한 EF Core](xref:data/ef-rp/index)
 ### [MVC, 기존 DB를 사용한 EF Core](/ef/core/get-started/aspnetcore/existing-db)
@@ -58,33 +56,16 @@
 # 웹앱
 ## Razor 페이지
 ### [개요](xref:razor-pages/index)
-### 자습서
-#### Visual Studio를 사용한 Razor Pages
-##### [개요](xref:tutorials/razor-pages/index)
-##### [시작](xref:tutorials/razor-pages/razor-pages-start)
-##### [모델 추가](xref:tutorials/razor-pages/model)
-##### [스캐폴딩](xref:tutorials/razor-pages/page)
-##### [SQL Server](xref:tutorials/razor-pages/sql)
-##### [페이지 업데이트](xref:tutorials/razor-pages/da1)
-##### [검색 추가](xref:tutorials/razor-pages/search)
-##### [새 필드 추가](xref:tutorials/razor-pages/new-field)
-##### [유효성 검사 추가](xref:tutorials/razor-pages/validation)
-#### Visual Studio Code를 사용한 Razor Pages
-##### [개요](xref:tutorials/razor-pages-vsc/index)
-##### [Razor 페이지 시작](xref:tutorials/razor-pages-vsc/razor-pages-start)
-##### [모델 추가](xref:tutorials/razor-pages-vsc/model)
-##### [스캐폴드된 Razor 페이지](xref:tutorials/razor-pages-vsc/page)
-##### [SQLite 작업](xref:tutorials/razor-pages-vsc/sql)
-##### [페이지 업데이트](xref:tutorials/razor-pages-vsc/da1)
-##### [검색 추가](xref:tutorials/razor-pages-vsc/search)
-#### Mac용 Visual Studio를 사용한 Razor Pages
-##### [개요](xref:tutorials/razor-pages-mac/index)
-##### [Razor 페이지 시작](xref:tutorials/razor-pages-mac/razor-pages-start)
-##### [모델 추가](xref:tutorials/razor-pages-mac/model)
-##### [스캐폴드된 Razor 페이지](xref:tutorials/razor-pages-mac/page)
-##### [SQLite 작업](xref:tutorials/razor-pages-mac/sql)
-##### [페이지 업데이트](xref:tutorials/razor-pages-mac/da1)
-##### [검색 추가](xref:tutorials/razor-pages-mac/search)
+### [Razor Pages 자습서](xref:tutorials/razor-pages/index)
+#### [시작](xref:tutorials/razor-pages/razor-pages-start)
+#### [모델 추가](xref:tutorials/razor-pages/model)
+#### [스캐폴딩](xref:tutorials/razor-pages/page)
+#### [DB 작업](xref:tutorials/razor-pages/sql)
+#### [페이지 업데이트](xref:tutorials/razor-pages/da1)
+#### [검색 추가](xref:tutorials/razor-pages/search)
+#### [새 필드 추가](xref:tutorials/razor-pages/new-field)
+#### [유효성 검사 추가](xref:tutorials/razor-pages/validation)
+
 ### [필터](xref:razor-pages/filter)
 ### [Razor 클래스 라이브러리](xref:razor-pages/ui-class)
 ### [경로 및 앱 규칙](xref:razor-pages/razor-pages-conventions)
@@ -99,7 +80,7 @@
 ##### [컨트롤러 추가](xref:tutorials/first-mvc-app/adding-controller)
 ##### [보기 추가](xref:tutorials/first-mvc-app/adding-view)
 ##### [모델 추가](xref:tutorials/first-mvc-app/adding-model)
-##### [SQL Server 작업](xref:tutorials/first-mvc-app/working-with-sql)
+##### [DB 작업](xref:tutorials/first-mvc-app/working-with-sql)
 ##### [컨트롤러 작업 및 보기](xref:tutorials/first-mvc-app/controller-methods-views)
 ##### [검색 추가](xref:tutorials/first-mvc-app/search)
 ##### [새 필드 추가](xref:tutorials/first-mvc-app/new-field)
@@ -174,12 +155,11 @@
 
 # Web API
 ## [개요](xref:web-api/index)
+
 ## 자습서
-### [Visual Studio를 사용한 Web API](xref:tutorials/first-web-api)
-### [Visual Studio Code를 사용하는 Web API](xref:tutorials/web-api-vsc)
-### [Mac용 Visual Studio를 사용하는 Web API](xref:tutorials/first-web-api-mac)
-### [네이티브 모바일 앱용 Web API](xref:mobile/native-mobile-backend)
+### [Web API 만들기](xref:tutorials/first-web-api)
 ### [MongoDB를 사용하는 Web API](xref:tutorials/first-mongo-app)
+
 ## Swagger/OpenAPI
 ### [개요](xref:tutorials/web-api-help-pages-using-swagger)
 ### [Swashbuckle 시작](xref:tutorials/get-started-with-swashbuckle)
@@ -187,6 +167,7 @@
 ## [작업 반환 형식](xref:web-api/action-return-types)
 ## [응답 데이터 서식 지정](xref:web-api/advanced/formatting)
 ## [사용자 지정 서식 지정기](xref:web-api/advanced/custom-formatters)
+
 ## [분석기](xref:web-api/advanced/analyzers)
 ## [규칙](xref:web-api/advanced/conventions)
 
@@ -196,6 +177,7 @@
 ## 자습서
 ### [JavaScript를 사용한 SignalR](xref:tutorials/signalr)
 ### [TypeScript를 사용한 SignalR](xref:tutorials/signalr-typescript-webpack)
+## [샘플](https://github.com/aspnet/SignalR-samples)
 ## 서버 개념
 ### [허브](xref:signalr/hubs)
 ### [HubContext](xref:signalr/hubcontext)
@@ -209,7 +191,6 @@
 ### [Java API 참조](/java/api/com.microsoft.signalr?view=aspnet-signalr-java)
 ### [JavaScript 클라이언트](xref:signalr/javascript-client)
 ### [JavaScript API 참조](/javascript/api/?view=signalr-js-latest)
-### [WebPack 및 TypeScript](xref:tutorials/signalr-typescript-webpack)
 ## 호스팅 및 크기 조정
 ### [개요](xref:signalr/scale)
 ### [Azure SignalR Service](/azure/azure-signalr/signalr-overview)
@@ -319,6 +300,7 @@
 ## [Visual Studio 게시 프로필](xref:host-and-deploy/visual-studio-publish-profiles)
 ## [디렉터리 구조](xref:host-and-deploy/directory-structure)
 ## [Azure App Service 및 IIS에 대한 오류 참조](xref:host-and-deploy/azure-iis-errors-reference)
+## [상태 검사](xref:host-and-deploy/health-checks)
 
 # 보안 및 ID
 ## [개요](xref:security/index)
@@ -421,6 +403,7 @@
 ### [분산 캐싱](xref:performance/caching/distributed)
 ### [응답 캐싱 미들웨어](xref:performance/caching/middleware)
 ## [응답 압축](xref:performance/response-compression)
+## [진단 도구](xref:performance/diagnostic-tools)
 
 # 다른 항목
 ## [전역화 및 지역화](xref:fundamentals/localization)
@@ -432,7 +415,7 @@
 ## [토큰 변경](xref:fundamentals/change-tokens)
 ## [OWIN(Open Web Interface for .NET)](xref:fundamentals/owin)
 ## [호스티드 서비스를 사용하는 백그라운드 작업](xref:fundamentals/host/hosted-services)
-## [외부 어셈블리에서 앱 강화](xref:fundamentals/configuration/platform-specific-configuration)
+## [호스팅 시작 어셈블리](xref:fundamentals/configuration/platform-specific-configuration)
 ## [Microsoft.AspNetCore.App 메타패키지](xref:fundamentals/metapackage-app)
 ## [Microsoft.AspNetCore.All 메타패키지](xref:fundamentals/metapackage)
 ## [LoggerMessage를 사용하여 로깅](xref:fundamentals/logging/loggermessage)
@@ -455,10 +438,11 @@
 ### [HTTP 모듈을 미들웨어로](xref:migration/http-modules)
 
 # 새로운 기능
+## [2.2의 새로운 기능](xref:aspnetcore-2.2)
 ## [2.1의 새로운 기능](xref:aspnetcore-2.1)
 ## [2.0의 새로운 기능](xref:aspnetcore-2.0)
 ## [1.1의 새로운 기능](xref:aspnetcore-1.1)
 
-# [API 참조](/dotnet/api/?view=aspnetcore-2.0)
+# [API 참조](/dotnet/api/?view=aspnetcore-2.2)
 
 # [참가](https://github.com/aspnet/Docs/blob/master/CONTRIBUTING.md)

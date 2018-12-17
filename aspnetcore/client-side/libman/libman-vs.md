@@ -100,7 +100,7 @@ Visual Studio는 색 지정, 서식 지정, IntelliSense 및 스키마 유효성
 
 * CDNJS 공급자에서 [jQuery](https://jquery.com/) 버전 3.3.1의 하위 집합이 검색됩니다. 하위 집합은 `files` 속성에 정의됩니다 (&mdash;*jquery.min.js*, *jquery.js* 및 *jquery.min.map*). 이러한 파일은 프로젝트의 *wwwroot/lib/jquery* 폴더에 배치됩니다.
 * [부트스트랩](https://getbootstrap.com/) 버전 4.1.3 전체가 검색되어 *wwwroot/lib/bootstrap* 폴더에 배치됩니다. 개체 리터럴의 `provider` 속성은 `defaultProvider` 속성 값을 재정의합니다. LibMan은 unpkg 공급자에서 부트스트랩 파일을 검색합니다.
-* [Lodash](https://lodash.com/)의 하위 집합은 조직 내 관리 기관의 승인을 받았습니다. *lodash.js* 및 *lodash.min.js* 파일은 로컬 파일 시스템의 *c:\\temp\\lodash\\*에서 검색됩니다. 이러한 파일은 프로젝트의 *wwwroot/lib/lodash* 폴더에 복사됩니다.
+* [Lodash](https://lodash.com/)의 하위 집합은 조직 내 관리 기관의 승인을 받았습니다. *lodash.js* 및 *lodash.min.js* 파일은 로컬 파일 시스템의 *C:\\temp\\lodash\\* 에서 검색됩니다. 이러한 파일은 프로젝트의 *wwwroot/lib/lodash* 폴더에 복사됩니다.
 
 [!code-json[](samples/LibManSample/libman.json)]
 

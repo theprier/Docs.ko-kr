@@ -4,14 +4,14 @@ author: guardrex
 description: 구성 API를 사용하여 ASP.NET Core 앱을 구성하는 방법을 알아봅니다.
 ms.author: riande
 ms.custom: mvc
-ms.date: 11/15/2018
+ms.date: 12/07/2018
 uid: fundamentals/configuration/index
-ms.openlocfilehash: 766ac77a2af01509f8e4bc646a18f7dfbc923511
-ms.sourcegitcommit: d3392f688cfebc1f25616da7489664d69c6ee330
+ms.openlocfilehash: 6f0378ffc4f9a1efa95c8f70d70e7799abef130b
+ms.sourcegitcommit: 1872d2e6f299093c78a6795a486929ffb0bbffff
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "51818397"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53216900"
 ---
 # <a name="configuration-in-aspnet-core"></a>ASP.NET Core의 구성
 
@@ -201,7 +201,7 @@ ASP.NET Core의 앱 구성은 ‘구성 공급자’가 설정한 키-값 쌍을
 
 ::: moniker range=">= aspnetcore-2.0"
 
-이 공급자 순서는 <xref:Microsoft.AspNetCore.WebHost.CreateDefaultBuilder*>를 사용하여 새 <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder>를 초기화할 때 적용됩니다. 자세한 내용은 [웹 호스트: 호스트 설정](xref:fundamentals/host/web-host#set-up-a-host)을 참조하세요.
+이 공급자 순서는 <xref:Microsoft.AspNetCore.WebHost.CreateDefaultBuilder*>를 사용하여 새 <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder>를 초기화할 때 적용됩니다. 자세한 내용은 [웹 호스트: 호스트 설정 편을](xref:fundamentals/host/web-host#set-up-a-host) 참조하세요.
 
 ::: moniker-end
 
@@ -260,7 +260,7 @@ public void ConfigureServices(IServiceCollection services)
 
 ::: moniker range=">= aspnetcore-2.0"
 
-`AddCommandLine`는 <xref:Microsoft.AspNetCore.WebHost.CreateDefaultBuilder*>를 사용하여 새 <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder>를 초기화할 때 자동으로 호출됩니다. 자세한 내용은 [웹 호스트: 호스트 설정](xref:fundamentals/host/web-host#set-up-a-host)을 참조하세요.
+`AddCommandLine`는 <xref:Microsoft.AspNetCore.WebHost.CreateDefaultBuilder*>를 사용하여 새 <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder>를 초기화할 때 자동으로 호출됩니다. 자세한 내용은 [웹 호스트: 호스트 설정 편을](xref:fundamentals/host/web-host#set-up-a-host) 참조하세요.
 
 `CreateDefaultBuilder`는 다음 항목도 로드합니다.
 
@@ -381,7 +381,7 @@ var host = new WebHostBuilder()
 
 값은 등호(`=`) 다음에 와야 합니다. 또는 값이 공백 다음에 오는 경우 키에 접두사(`--` 또는 `/`)가 있어야 합니다. 등호를 사용하는 경우 값이 null일 수 있습니다(예: `CommandLineKey=`).
 
-| 키 접두사               | 예                                                |
+| 키 접두사               | 예제                                                |
 | ------------------------ | ------------------------------------------------------ |
 | 접두사 없음                | `CommandLineKey1=value1`                               |
 | 대시 2개(`--`)        | `--CommandLineKey2=value2`, `--CommandLineKey2 value2` |
@@ -534,18 +534,18 @@ dotnet run -CLKey1=value1 -CLKey2=value2
 
 환경 변수에서 계층적 키를 사용할 경우 일부 플랫폼에서 콜론 구분 기호(`:`)가 작동하지 않을 수 있습니다. 두 개의 밑줄(`__`)은 모든 플랫폼에서 지원되며 콜론으로 바뀝니다.
 
-[Azure App Service](https://azure.microsoft.com/services/app-service/)를 사용하면 Azure Portal에서 환경 변수를 설정할 수 있으므로 환경 변수 구성 공급자를 사용한 앱 구성을 재정의할 수 있습니다. 자세한 내용은 [Azure 앱: Azure Portal을 사용하여 앱 구성 재정의](xref:host-and-deploy/azure-apps/index#override-app-configuration-using-the-azure-portal)를 참조하세요.
+[Azure App Service](https://azure.microsoft.com/services/app-service/)를 사용하면 Azure Portal에서 환경 변수를 설정할 수 있으므로 환경 변수 구성 공급자를 사용한 앱 구성을 재정의할 수 있습니다. 자세한 내용은 [Azure 앱: Azure Portal을 사용하여 앱 구성 재정의](xref:host-and-deploy/azure-apps/index#override-app-configuration-using-the-azure-portal) 편을 참조하세요.
 
 ::: moniker range=">= aspnetcore-2.0"
 
-새 <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder>를 초기화할 때 `ASPNETCORE_`가 접두사인 환경 변수의 경우 `AddEnvironmentVariables`가 자동으로 호출됩니다. 자세한 내용은 [웹 호스트: 호스트 설정](xref:fundamentals/host/web-host#set-up-a-host)을 참조하세요.
+새 <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder>를 초기화할 때 `ASPNETCORE_`가 접두사인 환경 변수의 경우 `AddEnvironmentVariables`가 자동으로 호출됩니다. 자세한 내용은 [웹 호스트: 호스트 설정 편을](xref:fundamentals/host/web-host#set-up-a-host) 참조하세요.
 
 `CreateDefaultBuilder`는 다음 항목도 로드합니다.
 
 * 접두사가 없는 `AddEnvironmentVariables`의 호출을 통한 접두사가 없는 환경 변수의 앱 구성
-* *appsettings.json* 및 *appsettings.{Environment}.json*의 선택적 구성
+* *appsettings.json* 및 *appsettings.{Environment}.json*에서 선택적 구성
 * [사용자 비밀(비밀 관리자)](xref:security/app-secrets)(개발 환경에서)
-* 명령줄 인수
+* 명령줄 인수.
 
 사용자 비밀 및 *appsettings* 파일을 통해 구성을 설정한 후 환경 변수 구성 공급자를 호출합니다. 이 위치에서 공급자를 호출하면 런타임에 환경 변수를 읽어 들여 사용자 비밀 및 *appsettings* 파일로 설정한 구성을 재정의할 수 있습니다.
 
@@ -859,7 +859,7 @@ JSON 파일 구성을 활성화하려면 <xref:Microsoft.Extensions.Configuratio
 * *appsettings.json* &ndash; 이 파일을 먼저 읽습니다. 파일의 환경 버전이 *appsettings.json* 파일에서 제공한 값을 재정의할 수 있습니다.
 * *appsettings.{Environment}.json* &ndash; 파일의 환경 버전은 [IHostingEnvironment.EnvironmentName](xref:Microsoft.Extensions.Hosting.IHostingEnvironment.EnvironmentName*)을 기반으로 로드됩니다.
 
-자세한 내용은 [웹 호스트: 호스트 설정](xref:fundamentals/host/web-host#set-up-a-host)을 참조하세요.
+자세한 내용은 [웹 호스트: 호스트 설정 편을](xref:fundamentals/host/web-host#set-up-a-host) 참조하세요.
 
 `CreateDefaultBuilder`는 다음 항목도 로드합니다.
 
@@ -1136,6 +1136,8 @@ XML 구성 파일에서는 반복 섹션에 고유 요소 이름을 사용할 �
 
 * 소스를 구성하는 `Action<KeyPerFileConfigurationSource>` 대리자
 * 디렉터리가 선택 사항인지 여부와 디렉터리의 경로
+
+두 개의 밑줄(`__`)은 파일 이름에서 구성 키 구분 기호로 사용됩니다. 예를 들어, 파일 이름 `Logging__LogLevel__System`은 구성 키 `Logging:LogLevel:System`을 생성합니다.
 
 호스트를 빌드할 때 <xref:Microsoft.Extensions.Hosting.HostBuilder.ConfigureAppConfiguration*>을 호출하여 앱의 구성을 지정합니다.
 
@@ -1810,7 +1812,7 @@ public class Startup
 }
 ```
 
-시작 편의 메서드를 사용하여 구성에 액세스하는 방법의 예는 [앱 시작: 편의 메서드](xref:fundamentals/startup#convenience-methods)를 참조하세요.
+시작 편의 메서드를 사용하여 구성에 액세스하는 방법의 예는 [앱 시작: 편리한 메서드](xref:fundamentals/startup#convenience-methods) 편을 참조하세요.
 
 ## <a name="access-configuration-in-a-razor-pages-page-or-mvc-view"></a>Razor Pages 페이지 또는 MVC 뷰에서 구성에 액세스
 

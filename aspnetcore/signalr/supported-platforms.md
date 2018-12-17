@@ -5,14 +5,14 @@ description: ASP.NET Core SignalR에 대 한 지원 되는 플랫폼에 알아�
 monikerRange: '>= aspnetcore-2.1'
 ms.author: tdykstra
 ms.custom: mvc
-ms.date: 10/31/2018
+ms.date: 11/12/2018
 uid: signalr/supported-platforms
-ms.openlocfilehash: 773f6c020dbb2982911e177b55855473c750d52a
-ms.sourcegitcommit: fc2486ddbeb15ab4969168d99b3fe0fbe91e8661
+ms.openlocfilehash: be3d4d0049395fb2499bd0b4aac126e953ce7910
+ms.sourcegitcommit: 9bb58d7c8dad4bbd03419bcc183d027667fefa20
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "50758182"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52861721"
 ---
 # <a name="aspnet-core-signalr-supported-platforms"></a>ASP.NET Core SignalR 지원 플랫폼
 
@@ -34,7 +34,7 @@ ASP.NET core SignalR은 ASP.NET Core에서 지 원하는 서버 플랫폼을 지
  
 ## <a name="net-client"></a>.NET 클라이언트
 
-[.NET 클라이언트](https://www.nuget.org/packages/Microsoft.AspNetCore.SignalR/)는 ASP.NET Core가 지원하는 모든 서버 플랫폼에서 실행됩니다.
+합니다 [.NET 클라이언트](https://www.nuget.org/packages/Microsoft.AspNetCore.SignalR/) ASP.NET Core에서 지 원하는 모든 플랫폼에서 실행 됩니다. 예를 들어 [Xamarin 개발자 SignalR을 사용 하 여](https://github.com/aspnet/Announcements/issues/305) 8.4.0.1 Xamarin.Android를 사용 하 여 Android 앱을 빌드하기 위한 나중 및 11.14.0.4 Xamarin.iOS를 사용 하 여 iOS 앱 이상.
 
 서버에서 IIS를 실행 하는 경우 Websocket 전송이 IIS 8.0 또는 Windows Server 2012에서 더 이상 필요 합니다. 다른 전송 방식들은 모든 플랫폼에서 지원됩니다.
 

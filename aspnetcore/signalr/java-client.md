@@ -5,14 +5,14 @@ description: ASP.NET Core SignalR Java 클라이언트를 사용 하는 방법�
 monikerRange: '>= aspnetcore-2.2'
 ms.author: mimengis
 ms.custom: mvc
-ms.date: 11/06/2018
+ms.date: 11/07/2018
 uid: signalr/java-client
-ms.openlocfilehash: 4ee4e61fc301ebeec4d95b1167f94f16c38f3ac5
-ms.sourcegitcommit: fc7eb4243188950ae1f1b52669edc007e9d0798d
+ms.openlocfilehash: d0eff38c1f622b896ed1dc3002238aec7b6bfd38
+ms.sourcegitcommit: 8a65f6c2cbe290fb2418eed58f60fb74c95392c8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51225423"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52892096"
 ---
 # <a name="aspnet-core-signalr-java-client"></a>ASP.NET Core SignalR Java 클라이언트
 
@@ -22,17 +22,16 @@ Java 클라이언트 Android 앱을 포함 하 여 Java 코드에서 ASP.NET Cor
 
 이 문서에에서 나와 있는 샘플 Java 콘솔 앱 SignalR Java 클라이언트를 사용 합니다.
 
-[샘플 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/signalr/java-client/sample)([다운로드 방법](xref:index#how-to-download-a-sample))
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/signalr/java-client/sample) ([다운로드 방법](xref:index#how-to-download-a-sample))
 
 ## <a name="install-the-signalr-java-client-package"></a>SignalR Java 클라이언트 패키지를 설치 합니다.
 
-합니다 *signalr 1.0.0-preview3 35501* JAR 파일에는 클라이언트가 SignalR 허브에 연결할 수 있습니다. 최신 JAR 파일 버전 번호를 찾으려면 다음을 참조 합니다 [Maven 검색 결과](https://search.maven.org/search?q=g:com.microsoft.signalr%20AND%20a:signalr)합니다.
+합니다 *signalr 1.0.0* JAR 파일에는 클라이언트가 SignalR 허브에 연결할 수 있습니다. 최신 JAR 파일 버전 번호를 찾으려면 다음을 참조 합니다 [Maven 검색 결과](https://search.maven.org/search?q=g:com.microsoft.signalr%20AND%20a:signalr)합니다.
 
 Gradle을 사용 하는 경우에 다음 줄을 추가 합니다 `dependencies` 의 섹션에 *build.gradle* 파일:
 
 ```gradle
-implementation 'com.microsoft.signalr:signalr:1.0.0-preview3-35501'
-implementation 'io.reactivex.rxjava2:rxjava:2.2.2'
+implementation 'com.microsoft.signalr:signalr:1.0.0'
 ```
 
 Maven을 사용 하 여 내에 다음 줄을 추가 합니다 `<dependencies>` 의 요소에 *pom.xml* 파일:
@@ -75,6 +74,12 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 
 이 안전 하 게 무시할 수 있습니다.
 
+## <a name="android-development-notes"></a>Android 개발 정보
+
+SignalR 클라이언트 기능에 대 한 호환성 Android SDK와 관련 하 여 대상 Android SDK 버전을 지정 하는 경우 다음 사항을 고려 합니다.
+
+* SignalR Java 클라이언트에는 Android API 레벨 16 이상 실행 됩니다.
+* Android API 레벨 20 이상 Azure SignalR Service를 통해 연결 해야 하기 때문에 합니다 [Azure SignalR Service](/azure/azure-signalr/signalr-overview) TLS 1.2를 차지 하며 s h A-1부터 시작 하는 암호 그룹을 지원 하지 않습니다. Android [지원에 대 한 SHA-256 이상 나열한 추가](https://developer.android.com/reference/javax/net/ssl/SSLSocket) API 레벨 20에서.
 
 ## <a name="configure-bearer-token-authentication"></a>전달자 토큰 인증을 구성
 
@@ -89,8 +94,6 @@ HubConnection hubConnection = HubConnectionBuilder.create("YOUR HUB URL HERE")
 ```
 
 ## <a name="known-limitations"></a>알려진 제한 사항
-
-이 Java 클라이언트의 미리 보기 릴리스입니다. 일부 기능은 지원 되지 않습니다.
 
 * JSON 프로토콜에만 지원 됩니다.
 * Websocket 전송만 지원 됩니다.
