@@ -190,7 +190,7 @@ Copyright (C) Microsoft Corporation. All rights reserved.
 > [!NOTE]
 > BundlerMinifier.Core는 Microsoft에서 지원을 제공하지 않는 GitHub의 커뮤니티 주도 프로젝트에 속해 있습니다. 문제점은 [여기](https://github.com/madskristensen/BundlerMinifier/issues)에 제출해야 합니다.
 
-이 패키지에 포함 하도록.NET Core CLI를 확장 합니다 *dotnet 번들* 도구입니다. 다음 명령은 패키지 관리자 콘솔 (PMC) 창 또는 명령 셸에서 실행할 수 있습니다.
+이 패키지는 .NET Core CLI가 *dotnet-bundle* 도구를 포함하도록 확장합니다. 다음 명령을 패키지 관리자 콘솔(PMC) 창 또는 명령 셸에서 실행할 수 있습니다.
 
 ```console
 dotnet bundle
@@ -201,7 +201,7 @@ dotnet bundle
 
 ## <a name="add-files-to-workflow"></a>워크플로에 파일 추가하기
 
-예를 살펴봅니다 추가 *custom.css* 다음과 같은 파일이 추가 됩니다.
+다음과 비슷한 또 다른 *custom.css* 파일이 추가되는 예제를 가정해 봅니다.
 
 [!code-css[](../client-side/bundling-and-minification/samples/BuildBundlerMinifierApp/wwwroot/css/custom.css)]
 
@@ -216,13 +216,13 @@ dotnet bundle
 > "inputFiles": ["wwwroot/**/*(*.css|!(*.min.css))"]
 > ```
 >
-> 모든 CSS 파일과 일치 하는 축소 된 파일 패턴을 제외 하는이 와일드 카드 사용 패턴입니다.
+> 이 와일드 카드 사용 패턴은 축소된 파일 패턴을 제외한 모든 CSS 파일을 매칭합니다.
 
 응용 프로그램을 빌드합니다. *site.min.css*를 열고 *custom.css*의 내용이 파일 끝에 추가되었음을 확인합니다.
 
-## <a name="environment-based-bundling-and-minification"></a>환경 기반 묶음 및 축소
+## <a name="environment-based-bundling-and-minification"></a>환경 기반 번들링 및 축소
 
-모범 사례로, 프로덕션 환경에서 앱의 번들 및 축소 된 파일은을 사용 해야 합니다. 개발 하는 동안 원래 파일은 앱의 쉬운 디버깅에 대 한 확인 합니다.
+프로덕션 환경에서는 번들링되고 축소된 앱의 파일을 사용하는 것이 가장 좋습니다. 개발하는 중에는 원본 파일을 사용해야 앱을 손쉽게 디버깅할 수 있습니다.
 
 뷰에서 [Environment 태그 도우미](xref:mvc/views/tag-helpers/builtin-th/environment-tag-helper)를 사용하여 페이지에 포함할 파일을 지정합니다. Environment 태그 도우미는 특정 [환경](xref:fundamentals/environments)에서 실행될 때만 자신의 내용을 렌더링합니다.
 
@@ -307,11 +307,11 @@ npm i -g gulp-cli
 
 ### <a name="run-gulp-tasks"></a>Gulp 작업 실행하기
 
-Gulp 축소 작업 전에 Visual Studio에서 프로젝트 빌드를 트리거하려면 다음을 추가 [MSBuild 대상](/visualstudio/msbuild/msbuild-targets) *.csproj 파일에:
+Visual Studio에서 프로젝트를 빌드하기 전에 Gulp 축소 작업을 트리거하려면 *.csproj 파일에 다음 [MSBuild 대상](/visualstudio/msbuild/msbuild-targets)을 추가합니다.
 
 [!code-xml[](../client-side/bundling-and-minification/samples/BuildBundlerMinifierApp/BuildBundlerMinifierApp.csproj?range=14-16)]
 
-이 예제에서는 모든 작업 내에서 정의 합니다 `MyPreCompileTarget` 대상 전에 미리 정의 된 실행 `Build` 대상입니다. Visual Studio의 출력 창에 다음과 유사한 출력이 표시 됩니다.
+이 예제에서 `MyPreCompileTarget` 대상 내에 정의된 모든 작업은 사전 정의된 `Build` 대상보다 먼저 실행됩니다. Visual Studio의 출력 창에 다음과 비슷한 출력이 나타납니다.
 
 ```console
 1>------ Build started: Project: BuildBundlerMinifierApp, Configuration: Debug Any CPU ------
