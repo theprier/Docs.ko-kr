@@ -15,7 +15,7 @@ ms.locfileid: "52282145"
 ---
 # <a name="bundle-and-minify-static-assets-in-aspnet-core"></a>번들 및 ASP.NET Core에서 정적 자산을 축소
 
-하 여 [Scott Addie](https://twitter.com/Scott_Addie) 고 [David 소나무](https://twitter.com/davidpine7)
+작성자: [Scott Addie](https://twitter.com/Scott_Addie) 및 [David Pine](https://twitter.com/davidpine7)
 
 이 문서에서는 묶음 및 축소, ASP.NET Core 웹 앱을 사용 하 여 이러한 기능을 사용할 수 있는 방법을 포함 하 여 적용 하는 이점에 설명 합니다.
 
@@ -96,7 +96,7 @@ ASP.NET Core 2.1 이상 버전에서는 명명 된 새 JSON 파일을 추가 *bu
 * `sourceMap`: 해당 번들된 파일에 대 한 소스 맵을 생성할지 여부를 나타내는 플래그입니다. **optional**, *default - false*
 * `sourceMapRootPath`: 생성 된 소스 맵 파일을 저장 하는 것에 대 한 루트 경로입니다.
 
-## <a name="build-time-execution-of-bundling-and-minification"></a>묶음 및 축소의 빌드 시간 실행
+## <a name="build-time-execution-of-bundling-and-minification"></a>빌드 시 번들링 및 축소 실행하기
 
 합니다 [BuildBundlerMinifier](https://www.nuget.org/packages/BuildBundlerMinifier/) 실행 묶음 및 축소 빌드 시 NuGet 패키지에 사용 하도록 설정 합니다. 패키지를 삽입 [MSBuild 대상](/visualstudio/msbuild/msbuild-targets) 는 빌드 및 정리 시간에 실행 합니다. 합니다 *bundleconfig.json* 정의 된 구성에 따라 출력 파일을 생성 하는 빌드 프로세스에서 분석 하는 파일입니다.
 
