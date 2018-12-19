@@ -210,19 +210,19 @@ dotnet bundle
 [!code-json[](../client-side/bundling-and-minification/samples/BuildBundlerMinifierApp/bundleconfig2.json?highlight=6)]
 
 > [!NOTE]
-> 또는 다음과 같은 와일드 카드 사용 패턴을 사용할 수도 있습니다.
+> 또는 다음과 같은 와일드카드 사용 패턴을 사용할 수도 있습니다.
 >
 > ```json
 > "inputFiles": ["wwwroot/**/*(*.css|!(*.min.css))"]
 > ```
 >
-> 이 와일드 카드 사용 패턴은 축소된 파일 패턴을 제외한 모든 CSS 파일과 일치합니다.
+> 이 와일드카드 사용 패턴은 축소된 파일 패턴을 제외한 모든 CSS 파일과 일치합니다.
 
 응용 프로그램을 빌드합니다. *site.min.css*를 열고 *custom.css*의 내용이 파일 끝에 추가되었음을 확인합니다.
 
 ## <a name="environment-based-bundling-and-minification"></a>환경 기반 번들링 및 축소하기
 
-프로덕션 환경에서는 번들링 되고 압축된 앱의 파일을 사용하는 것이 가장 좋습니다. 개발하는 중에는 원본 파일을 사용해야 앱을 손쉽게 디버깅 할 수 있습니다.
+프로덕션 환경에서는 번들링되고 축소된 앱의 파일을 사용하는 것이 가장 좋습니다. 개발하는 중에는 원본 파일을 사용해야 앱을 손쉽게 디버깅 할 수 있습니다.
 
 뷰에서 [Environment 태그 도우미](xref:mvc/views/tag-helpers/builtin-th/environment-tag-helper)를 사용하여 페이지에 포함할 파일을 지정합니다. Environment 태그 도우미는 특정 [환경](xref:fundamentals/environments)에서 실행될 때만 자신의 내용을 렌더링합니다.
 
