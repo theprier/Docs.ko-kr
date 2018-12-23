@@ -51,7 +51,7 @@ ms.locfileid: "52450777"
 
 ![경고 메시지를 보여 주는 OneASP.NET 대화 상자의 스크린샷](troubleshoot/_static/multiplelocations.png)
 
-하나 이상의.NET Core SDK 설치 디렉터리 외부에 있는 경우에이 메시지를 참조 하세요 *c:\\Program Files\\dotnet\\sdk\\*합니다. 일반적으로.NET Core SDK MSI 설치 관리자 대신 복사/붙여넣기를 사용 하는 컴퓨터에 배포 된 경우 발생 합니다.
+하나 이상의.NET Core SDK 설치 디렉터리 외부에 있는 경우에이 메시지를 참조 하세요 *c:\\Program Files\\dotnet\\sdk\\* 합니다. 일반적으로.NET Core SDK MSI 설치 관리자 대신 복사/붙여넣기를 사용 하는 컴퓨터에 배포 된 경우 발생 합니다.
 
 이 경고를 방지 하기 위해 32 비트.NET Core SDK를 제거 합니다. 제거할 **Control Panel** > **프로그램 및 기능** > **제거 또는 변경 프로그램**합니다. 경고가 발생 하는 이유 및 그 의미를 이해 하면 경고를 무시할 수 있습니다.
 
