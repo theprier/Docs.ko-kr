@@ -4,14 +4,14 @@ author: shirhatti
 description: Windows Server에서 IIS를 통해 실행될 경우 ASP.NET Core 앱 디버그에 대한 지원을 확인해 보세요.
 ms.author: riande
 ms.custom: mvc
-ms.date: 11/26/2018
+ms.date: 11/30/2018
 uid: host-and-deploy/iis/development-time-iis-support
-ms.openlocfilehash: 65dbe690a33d82a4edddf315803dc4c656db27a0
-ms.sourcegitcommit: e8d80ff566bfe505b43389d7bc4551edb1c0c872
+ms.openlocfilehash: 51375e6a6bb25a469d467ca97a151abd305c1ece
+ms.sourcegitcommit: 9bb58d7c8dad4bbd03419bcc183d027667fefa20
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52549103"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52862384"
 ---
 # <a name="development-time-iis-support-in-visual-studio-for-aspnet-core"></a>ASP.NET Core용 Visual Studio의 개발 시간 IIS 지원
 
@@ -54,7 +54,7 @@ IIS 설치에 앱의 시작 프로필 URL 호스트 이름과 일치하는 호�
 ## <a name="enable-development-time-iis-support-in-visual-studio"></a>Visual Studio에서 개발 시간 IIS 지원 사용
 
 1. Visual Studio 설치 관리자를 시작합니다.
-1. **개발 시간 IIS 지원** 구성 요소를 선택합니다. 이 구성 요소는 **ASP.NET 및 웹 개발** 워크로드에 대한 **요약** 패널에 선택 사항으로 나열됩니다. 구성 요소는 역방향 프록시 구성에서 IIS를 통해 ASP.NET Core 앱을 실행하는 데 필요한 네이티브 IIS 모듈인 [ASP.NET Core 모듈](xref:fundamentals/servers/aspnet-core-module)을 설치합니다.
+1. **개발 시간 IIS 지원** 구성 요소를 선택합니다. 이 구성 요소는 **ASP.NET 및 웹 개발** 워크로드에 대한 **요약** 패널에 선택 사항으로 나열됩니다. 이 구성 요소는 IIS를 사용하여 ASP.NET Core 앱을 실행하는 데 필요한 네이티브 IIS 모듈인 [ASP.NET Core 모듈](xref:fundamentals/servers/aspnet-core-module)을 설치합니다.
 
 ![Visual Studio 기능 수정: 워크로드 탭이 선택되어 있습니다. 웹 및 클라우드 섹션에는 ASP.NET 및 웹 개발 패널이 선택되어 있습니다. [요약] 패널의 [선택 사항] 영역 오른쪽에 [개발 시간 IIS 지원] 확인란이 있습니다.](development-time-iis-support/_static/development_time_support.png)
 

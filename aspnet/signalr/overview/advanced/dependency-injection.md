@@ -8,16 +8,18 @@ ms.date: 06/10/2014
 ms.assetid: a14121ae-02cf-4024-8af0-9dd0dc810690
 msc.legacyurl: /signalr/overview/advanced/dependency-injection
 msc.type: authoredcontent
-ms.openlocfilehash: 607738e7531eaf9ee9f6a24267b65e153cc4d599
-ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
+ms.openlocfilehash: f5959902b030621a19d912d7db2ea0faf95b7a7c
+ms.sourcegitcommit: 74e3be25ea37b5fc8b4b433b0b872547b4b99186
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48912872"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53287796"
 ---
 <a name="dependency-injection-in-signalr"></a>SignalR에서 종속성 주입
 ====================
 하 여 [Mike Wasson](https://github.com/MikeWasson), [Patrick Fletcher](https://github.com/pfletcher)
+
+[!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
 
 > ## <a name="software-versions-used-in-this-topic"></a>이 항목에서 사용 하는 소프트웨어 버전
 >
@@ -99,8 +101,8 @@ ms.locfileid: "48912872"
 
 StockTicker 샘플 두 가지 주요 클래스를 정의합니다.
 
-- `StockTickerHub`클라이언트 연결을 관리 하는: 허브 클래스입니다.
-- `StockTicker`: 단일은 주식 시세를 보유 하 고 정기적으로 업데이트 합니다.
+- `StockTickerHub`: 클라이언트 연결을 관리 하는 허브 클래스입니다.
+- `StockTicker`: 주식 시세를 보유 하 고 정기적으로 새 레코드를 업데이트 하는 단일 항목입니다.
 
 `StockTickerHub` 에 대 한 참조를 보유 합니다 `StockTicker` singleton을 하는 동안 `StockTicker` 에 대 한 참조를 보유 합니다 **IHubConnectionContext** 에 대 한를 `StockTickerHub`. 이 인터페이스를 사용 하 여 통신할 `StockTickerHub` 인스턴스. (자세한 내용은 [ASP.NET SignalR을 사용 하 여 서버 브로드캐스트](../getting-started/tutorial-server-broadcast-with-signalr.md).)
 

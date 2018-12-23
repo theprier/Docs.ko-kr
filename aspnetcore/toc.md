@@ -177,6 +177,7 @@
 ## 자습서
 ### [JavaScript를 사용한 SignalR](xref:tutorials/signalr)
 ### [TypeScript를 사용한 SignalR](xref:tutorials/signalr-typescript-webpack)
+## [샘플](https://github.com/aspnet/SignalR-samples)
 ## 서버 개념
 ### [허브](xref:signalr/hubs)
 ### [HubContext](xref:signalr/hubcontext)
@@ -402,6 +403,7 @@
 ### [분산 캐싱](xref:performance/caching/distributed)
 ### [응답 캐싱 미들웨어](xref:performance/caching/middleware)
 ## [응답 압축](xref:performance/response-compression)
+## [진단 도구](xref:performance/diagnostic-tools)
 
 # 다른 항목
 ## [전역화 및 지역화](xref:fundamentals/localization)
@@ -441,6 +443,6 @@
 ## [2.0의 새로운 기능](xref:aspnetcore-2.0)
 ## [1.1의 새로운 기능](xref:aspnetcore-1.1)
 
-# [API 참조](/dotnet/api/?view=aspnetcore-2.0)
+# [API 참조](/dotnet/api/?view=aspnetcore-2.2)
 
 # [참가](https://github.com/aspnet/Docs/blob/master/CONTRIBUTING.md)

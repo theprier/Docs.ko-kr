@@ -3,14 +3,14 @@ title: ASP.NET에서 ASP.NET Core로 마이그레이션
 author: isaac2004
 description: 기존 ASP.NET MVC 또는 Web API 앱을 ASP.NET Core.web으로 마이그레이션하기 위한 지침을 받으세요.
 ms.author: scaddie
-ms.date: 08/27/2017
+ms.date: 12/11/2018
 uid: migration/proper-to-2x/index
-ms.openlocfilehash: 1a3e3f0b514c262cfe13ea8391ab97b95aa4384e
-ms.sourcegitcommit: 54655f1e1abf0b64d19506334d94cfdb0caf55f6
+ms.openlocfilehash: a9eef832a68afa1a73e3c7c545378da190602ce2
+ms.sourcegitcommit: b34b25da2ab68e6495b2460ff570468f16a9bf0d
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50148800"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53284398"
 ---
 # <a name="migrate-from-aspnet-to-aspnet-core"></a>ASP.NET에서 ASP.NET Core로 마이그레이션
 
@@ -20,7 +20,7 @@ ms.locfileid: "50148800"
 
 ## <a name="prerequisites"></a>전제 조건
 
-[!INCLUDE [](~/includes/net-core-sdk-download-link.md)]
+[.NET Core SDK 2.2 이상](https://www.microsoft.com/net/download)
 
 ## <a name="target-frameworks"></a>대상 프레임워크
 
@@ -28,15 +28,15 @@ ASP.NET Core 프로젝트를 사용하면 개발자가 유연하게 .NET Core, .
 
 .NET Framework를 대상으로 지정할 경우 프로젝트는 개별 NuGet 패키지를 참조해야 합니다.
 
-.NET Core를 대상으로 지정하면 ASP.NET Core [메타패키지](xref:fundamentals/metapackage) 덕분에 수많은 명시적 패키지 참조를 제거할 수 있습니다. 프로젝트에서 `Microsoft.AspNetCore.All` 메타패키지를 설치합니다.
+.NET Core를 대상으로 지정하면 ASP.NET Core [메타패키지](xref:fundamentals/metapackage-app) 덕분에 수많은 명시적 패키지 참조를 제거할 수 있습니다. 프로젝트에서 `Microsoft.AspNetCore.App` 메타패키지를 설치합니다.
 
 ```xml
 <ItemGroup>
-  <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.9" />
+   <PackageReference Include="Microsoft.AspNetCore.App" />
 </ItemGroup>
 ```
 
-메타패키지를 사용하면 메타패키지에서 참조되는 패키지가 앱과 함께 배포되지 않습니다. .NET Core 런타임 저장소에는 이러한 자산이 포함되고 해당 자산은 성능을 개선하도록 미리 컴파일되어 있습니다. 자세한 내용은 [ASP.NET Core 2.x에 대한 Microsoft.AspNetCore.All 메타패키지](xref:fundamentals/metapackage)를 참조하세요.
+메타패키지를 사용하면 메타패키지에서 참조되는 패키지가 앱과 함께 배포되지 않습니다. .NET Core 런타임 저장소에는 이러한 자산이 포함되고 해당 자산은 성능을 개선하도록 미리 컴파일되어 있습니다. 자세한 내용은 [ASP.NET Core에 대한 Microsoft.AspNetCore.App 메타패키지](xref:fundamentals/metapackage-app)를 참조하세요.
 
 ## <a name="project-structure-differences"></a>프로젝트 구조 차이점
 
@@ -64,15 +64,14 @@ ASP.NET Core는 비슷한 방법을 사용하지만 항목을 처리하는 데 O
 
 [!code-csharp[](samples/program.cs)]
 
-`Startup`에는 `Configure` 메서드가 포함되어야 합니다. `Configure`에서 파이프라인에 필요한 미들웨어를 추가합니다. 기본 웹 사이트 템플릿을 기반으로 한 다음 예제에서는 여러 확장 메서드를 사용하여 다음 지원을 통해 파이프라인을 구성합니다.
+`Startup`에는 `Configure` 메서드가 포함되어야 합니다. `Configure`에서 파이프라인에 필요한 미들웨어를 추가합니다. 기본 웹 사이트 템플릿을 기반으로 한 다음 예제에서는 확장 메서드가 다음 지원을 통해 파이프라인을 구성합니다.
 
-* [BrowserLink](http://vswebessentials.com/features/browserlink)
 * 오류 페이지
-* 정적 파일
+* HTTP 엄격한 전송 보안
+* HTTPS로 HTTP 리디렉션
 * ASP.NET Core MVC
-* 클레임
 
-[!code-csharp[](../../common/samples/WebApplication1/Startup.cs?highlight=8,9,10,14,17,19,21&start=58&end=84)]
+[!code-csharp[](samples/startup.cs)]
 
 호스트와 응용 프로그램이 분리되었으므로 나중에 유연하게 다른 플랫폼으로 이동할 수 있습니다.
 

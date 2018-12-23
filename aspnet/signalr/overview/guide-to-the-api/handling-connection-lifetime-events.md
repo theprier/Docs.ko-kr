@@ -8,16 +8,18 @@ ms.date: 06/10/2014
 ms.assetid: 03960de2-8d95-4444-9169-4426dcc64913
 msc.legacyurl: /signalr/overview/guide-to-the-api/handling-connection-lifetime-events
 msc.type: authoredcontent
-ms.openlocfilehash: 1783a3ab292a5460d5cc1b7ad78073071d65d379
-ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
+ms.openlocfilehash: 6a354179a82eba1d4a64184bfdeb302472fabf5f
+ms.sourcegitcommit: 74e3be25ea37b5fc8b4b433b0b872547b4b99186
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48911958"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53287987"
 ---
 <a name="understanding-and-handling-connection-lifetime-events-in-signalr"></a>이해 및 SignalR의 연결 수명 이벤트를 처리 합니다.
 ====================
 하 여 [Patrick Fletcher](https://github.com/pfletcher), [Tom Dykstra](https://github.com/tdykstra)
+
+[!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
 
 > 이 문서는 SignalR 연결, 다시 연결 및 연결 끊기 이벤트를 처리할 수 있는 및 구성할 수 있는 시간 제한 및 keepalive 설정의 개요를 제공 합니다.
 >
@@ -43,7 +45,6 @@ ms.locfileid: "48911958"
 > ## <a name="questions-and-comments"></a>질문이 나 의견이 있으면
 >
 > 이 자습서를 연결 하는 방법 및 새로운 개선할 수 있습니다 페이지의 맨 아래에 의견에서에 의견을 남겨 주세요. 에 자습서로 직접 관련 되지 않은 질문이 있을 경우 게시할 수 하는 [ASP.NET SignalR 포럼](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR) 또는 [StackOverflow.com](http://stackoverflow.com/)합니다.
-
 
 ## <a name="overview"></a>개요
 
@@ -81,7 +82,7 @@ ms.locfileid: "48911958"
 이 문서를 구분할 *SignalR 연결*, *연결 전송*, 및 *물리적 연결*:
 
 - **SignalR 연결** 클라이언트와 서버 URL, SignalR API에 의해 유지 관리 하 고 고유 ID로 식별 연결 간의 논리적 관계를 가리킵니다. 이 관계에 대 한 데이터는 SignalR에서 유지 관리 하 고 전송 연결을 설정 하는 데 사용 됩니다. 클라이언트가 호출할 때 관계 끝 및 SignalR 데이터의 삭제를 `Stop` 메서드 또는 시간 제한에 도달 하면 SignalR 손실된 전송 연결을 다시 설정 하려고 하는 동안.
-- **연결 전송** 클라이언트 및 네 개의 전송 Api 중 하나에 의해 유지 관리 서버 간의 논리적 관계를 가리킵니다: Websocket을 서버에서 전송 하는 이벤트를 영구적으로 프레임 또는 장기 폴링. SignalR 전송 API를 사용 하 여 전송 연결을 만들려고 하 고 전송 API 전송 연결을 만들려면 실제 네트워크 연결의 존재 여부에 따라 달라 집니다. 전송 연결 SignalR 종료 때나 전송 API 물리적 연결이 끊어진 지 감지할 때 종료 됩니다.
+- **연결 전송** 클라이언트 및 네 개의 전송 Api 중 하나에 의해 유지 관리 서버 간의 논리적 관계를 가리킵니다. Websocket, 서버에서 전송 하는 이벤트, 영원히 프레임 또는 긴 폴링 SignalR 전송 API를 사용 하 여 전송 연결을 만들려고 하 고 전송 API 전송 연결을 만들려면 실제 네트워크 연결의 존재 여부에 따라 달라 집니다. 전송 연결 SignalR 종료 때나 전송 API 물리적 연결이 끊어진 지 감지할 때 종료 됩니다.
 - **실제 연결** 가리킵니다 와이어, 실제 네트워크 링크-신호는 무선 라우터, 등-클라이언트 컴퓨터와 서버 컴퓨터 간의 통신을 원활 하 합니다. 실제 연결 전송 연결을 설정 하기 위해 있어야 하 고 SignalR 연결을 만드는 데는 전송 연결을 설정 해야 합니다. 그러나 실제 연결을 중단 하지 항상 즉시 전송 연결 또는 종료 SignalR 연결에이 항목의 뒷부분에 설명 하겠지만 합니다.
 
 다음 다이어그램에서 SignalR 연결은 Hubs API 계층과 PersistentConnection API SignalR 표현, 전송 연결으로 전송 계층을 나타내고 실제 연결 서버 사이의 선으로 표시 됩니다. 및 클라이언트입니다.

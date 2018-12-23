@@ -1,6 +1,6 @@
 ---
 uid: signalr/overview/older-versions/tutorial-getting-started-with-signalr-and-mvc-4
-title: '자습서: 시작 SignalR 1.x 및 MVC 4 | Microsoft Docs'
+title: '자습서: Getting Started with SignalR 1.x 및 MVC 4 | Microsoft Docs'
 author: pfletcher
 description: ASP.NET SignalR 및 ASP.NET MVC 4를 사용 하 여 실시간 채팅 응용 프로그램을 빌드합니다.
 ms.author: riande
@@ -8,16 +8,18 @@ ms.date: 03/29/2013
 ms.assetid: eeef9f73-6de3-49f9-b50b-9af22108f2ce
 msc.legacyurl: /signalr/overview/older-versions/tutorial-getting-started-with-signalr-and-mvc-4
 msc.type: authoredcontent
-ms.openlocfilehash: 95fc3315149e07dbdb0505a2b5ab197bfedba097
-ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
+ms.openlocfilehash: a67d05288252c17d84b1d7df5f7bcddde3c887f5
+ms.sourcegitcommit: 74e3be25ea37b5fc8b4b433b0b872547b4b99186
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48910878"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53287725"
 ---
-<a name="tutorial-getting-started-with-signalr-1x-and-mvc-4"></a>자습서: 시작 SignalR 1.x 및 MVC 4
+<a name="tutorial-getting-started-with-signalr-1x-and-mvc-4"></a>자습서: Getting Started with SignalR 1.x 및 MVC 4
 ====================
 하 여 [Patrick Fletcher](https://github.com/pfletcher), [Tim Teebken](https://github.com/timlt)
+
+[!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
 
 > 이 자습서에는 ASP.NET SignalR을 사용 하 여 실시간 채팅 응용 프로그램을 만드는 방법을 보여 줍니다. SignalR MVC 4 응용 프로그램에 추가 하 고 보내고 메시지를 표시 하려면 채팅 뷰를 만듭니다.
 

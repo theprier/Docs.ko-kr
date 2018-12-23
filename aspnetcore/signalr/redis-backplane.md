@@ -7,12 +7,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 11/28/2018
 uid: signalr/redis-backplane
-ms.openlocfilehash: c8b09c0d482da344b54d167c0c9757167eaa6186
-ms.sourcegitcommit: e9b99854b0a8021dafabee0db5e1338067f250a9
+ms.openlocfilehash: 343cb5b2c7ed7162bae7865553a783fea45f0cfb
+ms.sourcegitcommit: b34b25da2ab68e6495b2460ff570468f16a9bf0d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52452986"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53284474"
 ---
 # <a name="set-up-a-redis-backplane-for-aspnet-core-signalr-scale-out"></a>ASP.NET Core SignalR 확장에 대 한를 Redis 백플레인으로 설정
 
@@ -32,7 +32,7 @@ ms.locfileid: "52452986"
 
 ::: moniker range="= aspnetcore-2.1"
 
-* SignalR 앱을 설치 합니다 `Microsoft.AspNetCore.SignalR.Redis` NuGet 패키지.
+* SignalR 앱을 설치 합니다 `Microsoft.AspNetCore.SignalR.Redis` NuGet 패키지. (또한는 `Microsoft.AspNetCore.SignalR.StackExchangeRedis` 패키지, 하지만 하나는 ASP.NET Core 2.2 이상용.)
 
 * 에 `Startup.ConfigureServices` 메서드를 호출 `AddRedis` 후 `AddSignalR`:
 
@@ -59,7 +59,10 @@ ms.locfileid: "52452986"
 
 ::: moniker range="> aspnetcore-2.1"
 
-* SignalR 앱을 설치 합니다 `Microsoft.AspNetCore.SignalR.StackExchangeRedis` NuGet 패키지.
+* SignalR 앱에서 다음 NuGet 패키지 중 하나를 설치 합니다.
+
+  * `Microsoft.AspNetCore.SignalR.StackExchangeRedis` -StackExchange.Redis 2.x.x로 지정 되었지만에 따라 달라 집니다. ASP.NET Core 2.2 이상용 권장 되는 패키지입니다.
+  * `Microsoft.AspNetCore.SignalR.Redis` -StackExchange.Redis 1.X.X에 따라 달라 집니다. ASP.NET Core 3.0에서이 패키지를 발송 되지 됩니다.
 
 * 에 `Startup.ConfigureServices` 메서드를 호출 `AddStackExchangeRedis` 후 `AddSignalR`:
 

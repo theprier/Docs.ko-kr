@@ -8,16 +8,18 @@ ms.date: 06/05/2013
 ms.assetid: 347210ba-c452-4feb-886f-b51d89f58971
 msc.legacyurl: /signalr/overview/older-versions/troubleshooting
 msc.type: authoredcontent
-ms.openlocfilehash: df949347cecd9ac617a52ad798f37bebdb8524fa
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 6c2a8e72959c9370ff46084ca135c2b2977f4f42
+ms.sourcegitcommit: 74e3be25ea37b5fc8b4b433b0b872547b4b99186
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41835700"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53287696"
 ---
 <a name="signalr-troubleshooting-signalr-1x"></a>SignalR 문제 해결 (SignalR 1.x)
 ====================
 [Patrick Fletcher](https://github.com/pfletcher)
+
+[!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
 
 > 이 문서는 SignalR 사용 하 여 일반적인 문제를 설명합니다.
 
@@ -53,7 +55,7 @@ SignalR을 서버와 클라이언트 간의 호출을 serialize 하는 데 사�
 
 ### <a name="mixing-hub-and-persistentconnection-syntax"></a>허브 및 PersistentConnection 구문을 함께 사용
 
-두 통신 모델을 사용 하 여 SignalR: 허브 및 PersistentConnections 합니다. 이러한 두 통신 모델을 호출 하기 위한 구문은 클라이언트 코드에서 다릅니다. 서버 코드에서 허브를 추가한 경우에 적절 한 허브 구문을 사용 하는 모든 클라이언트 코드를 확인 합니다.
+SignalR 두 통신 모델을 사용합니다. 허브 및 PersistentConnections 합니다. 이러한 두 통신 모델을 호출 하기 위한 구문은 클라이언트 코드에서 다릅니다. 서버 코드에서 허브를 추가한 경우에 적절 한 허브 구문을 사용 하는 모든 클라이언트 코드를 확인 합니다.
 
 **JavaScript 클라이언트를 만드는 코드를 한 PersistentConnection JavaScript 클라이언트에서**
 
@@ -157,7 +159,7 @@ Windows 7 같은 클라이언트 운영 체제에서 전체 버전의 IIS 사용
 
 이 문제에 대 한 여러 원인이 있습니다. 다음을 모두 확인 합니다.
 
-- **허브 프록시 주소 참조 형식이 올바르지 않습니다:** 생성 된 허브 프록시 주소에 대 한 참조의 형식이 올바르게 지정 되지 않았습니다 하는 경우이 오류는 일반적으로 표시 됩니다. 허브 주소에 대 한 참조가 제대로 만들어지기를 확인 합니다. 참조 [동적으로 생성 된 프록시를 참조 하는 방법을](../guide-to-the-api/hubs-api-guide-javascript-client.md#dynamicproxy) 세부 정보에 대 한 합니다.
+- **허브 프록시 주소 참조 형식이 올바르지 않습니다.** 이 오류는 일반적으로 생성 된 허브 프록시 주소에 대 한 참조의 형식이 올바르게 지정 되지 않았습니다 하는 경우에 표시 됩니다. 허브 주소에 대 한 참조가 제대로 만들어지기를 확인 합니다. 참조 [동적으로 생성 된 프록시를 참조 하는 방법을](../guide-to-the-api/hubs-api-guide-javascript-client.md#dynamicproxy) 세부 정보에 대 한 합니다.
 - **허브 경로 추가 하기 전에 응용 프로그램에 경로 추가 합니다.** 응용 프로그램에서 다른 경로 사용 하는 경우 추가 하는 첫 번째 경로에 대 한 호출 인지 확인 `MapHubs`합니다.
 
 ### <a name="500-internal-server-error"></a>"500 내부 서버 오류"
@@ -172,7 +174,7 @@ Windows 7 같은 클라이언트 운영 체제에서 전체 버전의 IIS 사용
 
 메서드에 전송 하는 매개 변수를 직렬화 형식 (예: 파일 핸들, 데이터베이스 연결) 들어 있지 않은지 확인 합니다. 사용 하 여 (또는 보안에 대 한 serialization 위해), 클라이언트에 전송 하지 않으려는 서버 쪽 개체의 멤버를 사용 하는 경우는 `JSONIgnore` 특성입니다.
 
-### <a name="protocol-error-unknown-transport-error"></a>"프로토콜 오류: 알 수 없는 전송" 오류
+### <a name="protocol-error-unknown-transport-error"></a>"프로토콜 오류: 알 수 없는 전송"오류
 
 이 오류는 클라이언트에 SignalR 사용 되는 전송을 지원 하지 않는 경우에 발생할 수 있습니다. 참조 [전송과 대체](../getting-started/introduction-to-signalr.md#transports) 정보는 브라우저 사용 하 여 SignalR에 대 한 합니다.
 
@@ -184,11 +186,11 @@ Windows 7 같은 클라이언트 운영 체제에서 전체 버전의 IIS 사용
 
 클라이언트 로그 아웃 됩니다. 연결을 중지 하기 전에 인증을 사용 중인 경우이 오류가 나타날 수 있습니다. 솔루션은 클라이언트에는 로그 아웃 하기 전에 SignalR 연결을 중지 하는 것입니다.
 
-### <a name="uncaught-error-signalr-jquery-not-found-please-ensure-jquery-is-referenced-before-the-signalrjs-file-error"></a>"오류를 확인할 수 없는: SignalR: jQuery 찾을 수 없습니다. JQuery SignalR.js 파일 전에 참조를 확인 하세요"오류
+### <a name="uncaught-error-signalr-jquery-not-found-please-ensure-jquery-is-referenced-before-the-signalrjs-file-error"></a>"오류를 확인할 수 없는 합니다. SignalR: jQuery를 찾을 수 없습니다. JQuery SignalR.js 파일 전에 참조를 확인 하세요"오류
 
 SignalR JavaScript 클라이언트를 실행 하는 jQuery 필요 합니다. JQuery에 대 한 참조에 사용 되는 경로가 올바른지 및 SignalR에 대 한 참조 하기 전에 jQuery에 대 한 참조는 정확한 지 확인 합니다.
 
-### <a name="uncaught-typeerror-cannot-read-property-ltpropertygt-of-undefined-error"></a>"TypeError를 확인할 수 없는: 속성을 읽을 수 없습니다. '&lt;속성&gt;' 정의 되지 않은의" 오류
+### <a name="uncaught-typeerror-cannot-read-property-ltpropertygt-of-undefined-error"></a>"TypeError를 확인할 수 없는 합니다. 속성을 읽을 수 없습니다. '&lt;속성&gt;' 정의 되지 않은의 "오류
 
 jQuery 또는 적절히 참조 허브 프록시를가지고 있지 않은 경우이 오류가 발생 합니다. JQuery와 허브 프록시에 대 한 참조에 사용 된 경로가 유효 하며 허브 프록시에 대 한 참조 하기 전에 jQuery에 대 한 참조는 정확한 지 확인 합니다. 허브 프록시에 대 한 기본 참조는 다음과 같이 표시 됩니다.
 

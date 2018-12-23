@@ -8,16 +8,18 @@ ms.date: 07/01/2015
 ms.assetid: 2a7517a0-b88c-4162-ade3-9bf6ca7062fd
 msc.legacyurl: /signalr/overview/deployment/using-signalr-with-azure-web-sites
 msc.type: authoredcontent
-ms.openlocfilehash: c5ede2891ef18b622ed269723603dea3b67a135d
-ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
+ms.openlocfilehash: da69e1aba1b56d69ad8e710cddd2b492168f1255
+ms.sourcegitcommit: 74e3be25ea37b5fc8b4b433b0b872547b4b99186
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48912607"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53287769"
 ---
 <a name="using-signalr-with-web-apps-in-azure-app-service"></a>Azure App Service에서 Web Apps에 SignalR 사용
 ====================
 [Patrick Fletcher](https://github.com/pfletcher)
+
+[!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
 
 > 이 문서에서는 Microsoft Azure에서 실행 되는 SignalR 응용 프로그램을 구성 하는 방법을 설명 합니다.
 >
@@ -98,7 +100,7 @@ Azure App Service Web Apps에서 Websocket을 사용 하려면 웹 앱의 구성
 
 구성 페이지에 **Websocket** 설정 선택 **에서**합니다.
 
-![Websocket 설정을:에](using-signalr-with-azure-web-sites/_static/image10.png)
+![Websocket 설정: 켜기](using-signalr-with-azure-web-sites/_static/image10.png)
 
 구성 페이지의 맨 아래에서 선택 **저장할** 변경 내용을 저장 합니다.
 
