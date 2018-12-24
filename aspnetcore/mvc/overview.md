@@ -179,7 +179,7 @@ ASP.NET Core는 기본적으로 [DI(종속성 주입 )](../fundamentals/dependen
 
 ### <a name="web-apis"></a>Web API
 
-ASP.NET Core MVC는 웹 사이트를 구축할 수 있는 훌륭한 플랫폼일 뿐 아니라 웹 API 빌드를 잘 지원합니다. 브라우저 및 모바일 장치를 비롯한 광범위한 클라이언트에 연결하는 서비스를 빌드할 수 있습니다.
+ASP.NET Core MVC는 웹 사이트를 구축할 수 있는 훌륭한 플랫폼일 뿐 아니라 웹 API 빌드를 잘 지원합니다. 브라우저 및 모바일 디바이스를 비롯한 광범위한 클라이언트에 연결하는 서비스를 빌드할 수 있습니다.
 
 이 프레임워크는 JSON 또는 XML로 [데이터 형식을 지정](xref:web-api/advanced/formatting)하는 기본 제공 지원을 통해 HTTP 콘텐츠 협상을 지원합니다. [사용자 지정 포맷터](xref:web-api/advanced/custom-formatters)를 작성하여 사용자 고유의 형식에 대한 지원을 추가할 수 있습니다.
 

@@ -168,7 +168,7 @@ MVC에 대 한 자세한 내용은 참조 하세요. [ASP.NET MVC](https://asp.n
 
 Web API 템플릿에서 MVC를 기반으로 하는 API 도움말 페이지를 포함 하 여 Web API에 따라 샘플 웹 서비스를 만듭니다.
 
-ASP.NET Web API는 브라우저 및 모바일 장치를 비롯한 광범위한 클라이언트에 연결하는 HTTP 서비스를 쉽게 빌드할 수 있게 해 주는 프레임워크입니다. ASP.NET Web API는.NET Framework에 RESTful 서비스를 빌드하기 위한 이상적인 플랫폼입니다.
+ASP.NET Web API는 브라우저 및 모바일 디바이스를 비롯한 광범위한 클라이언트에 연결하는 HTTP 서비스를 쉽게 빌드할 수 있게 해 주는 프레임워크입니다. ASP.NET Web API는.NET Framework에 RESTful 서비스를 빌드하기 위한 이상적인 플랫폼입니다.
 
 Web API 템플릿에서 샘플 웹 서비스를 만듭니다. 다음 그림은 샘플 도움말 페이지를 보여 줍니다.
 
