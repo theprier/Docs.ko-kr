@@ -82,7 +82,7 @@ ms.locfileid: "36277984"
 
 * 다른 처리기의 성공 여부와 관계없이 무조건 실패한 것으로 나타내려면 `context.Fail`을 호출합니다.
 
-로 설정 하면 `false`, [InvokeHandlersAfterFailure](/dotnet/api/microsoft.aspnetcore.authorization.authorizationoptions.invokehandlersafterfailure#Microsoft_AspNetCore_Authorization_AuthorizationOptions_InvokeHandlersAfterFailure) 속성 (ASP.NET Core 1.1의 사용 가능 하 고 이후) 처리기가 실행 short-circuits 때 `context.Fail` 라고 합니다. `InvokeHandlersAfterFailure` 기본적으로 `true`,이 경우 모든 처리기가 호출 됩니다. 이렇게 하면 항상 실행 되는 로깅, 같은 파생 작업이 생성 하기 위한 요구 사항은 경우에 `context.Fail` 다른 처리기에서 호출 되었습니다.
+[InvokeHandlersAfterFailure](/dotnet/api/microsoft.aspnetcore.authorization.authorizationoptions.invokehandlersafterfailure#Microsoft_AspNetCore_Authorization_AuthorizationOptions_InvokeHandlersAfterFailure) 속성이 (ASP.NET Core 1.1 이상에서 사용 가능) `false`로 설정되면 `context.Fail`이 호출될 경우 나머지 처리기들의 실행이 중단되고 즉시 빠져나갑니다. `InvokeHandlersAfterFailure`의 기본값은 `true`로, 이 경우 모든 처리기가 호출됩니다. 따라서 다른 처리기에서 `context.Fail`이 호출되는 경우에도, 로깅 같은 요구 사항의 부수적인 작업은 항상 수행됩니다.
 
 <a name="security-authorization-policies-based-multiple-handlers"></a>
 
