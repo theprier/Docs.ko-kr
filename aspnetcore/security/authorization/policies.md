@@ -29,7 +29,7 @@ ms.locfileid: "36277984"
 
 ## <a name="requirements"></a>요구 사항
 
-권한 부여 요구 사항은 정책이 현재 사용자의 신원을 평가하기 위해서 사용할 수 있는 데이터 매개 변수들의 모음입니다. 예제의 "AtLeast21" 정책의 경우 요구 사항은 단일 매개 변수, 즉 최소 연령입니다. 요구 사항은 빈 표식 인터페이스인 [IAuthorizationRequirement](/dotnet/api/microsoft.aspnetcore.authorization.iauthorizationrequirement) 인터페이스를 구현합니다. 매개 변수가 있는 최소 연령 요구 사항은 다음과 같이 구현할 수 있습니다.
+권한 부여 요구 사항은 정책이 현재 사용자의 신원을 평가하기 위해서 사용할 수 있는 데이터 매개 변수들의 모음입니다. 예제의 "AtLeast21" 정책의 경우 요구 사항은 단일 매개 변수, 즉 최소 연령입니다. 요구 사항은 빈 표식 인터페이스인 [IAuthorizationRequirement](/dotnet/api/microsoft.aspnetcore.authorization.iauthorizationrequirement) 인터페이스를 구현합니다. 매개 변수인 최소 연령 요구 사항은 다음과 같이 구현할 수 있습니다.
 
 [!code-csharp[](policies/samples/PoliciesAuthApp1/Services/Requirements/MinimumAgeRequirement.cs?name=snippet_MinimumAgeRequirementClass)]
 
@@ -52,7 +52,7 @@ ms.locfileid: "36277984"
 
 [!code-csharp[](policies/samples/PoliciesAuthApp1/Services/Handlers/MinimumAgeHandler.cs?name=snippet_MinimumAgeHandlerClass)]
 
-이 코드는 먼저 현재 사용자의 신원이 우리가 알고 있고 신뢰할 수 있는 발급자로부터 발급된 생년월일 클레임을 갖고 있는지부터 확인합니다. 만약 클레임이 누락되었다면 권한을 부여할 수 없으므로 완료된 작업이 반환됩니다. 반면 클레임이 존재할 경우, 사용자의 나이가 계산됩니다. 그리고 나이가 요구 사항에 의해 정의된 최소 연령을 만족할 경우 권한 부여가 성공한 것으로 간주됩니다. 권한 부여에 성공하면 만족한 요구 사항을 매개 변수로 전달해서 `context.Succeed` 메서드를 호출합니다.
+이 코드는 먼저 현재 사용자의 신원이 우리가 알고 있고 신뢰할 수 있는 발급자로부터 발급된 생년월일 클레임을 갖고 있는지부터 확인합니다. 만약 클레임이 누락되었다면 권한을 부여할 수 없으므로 완료된 작업이 반환됩니다. 반면 클레임이 존재할 경우, 사용자의 나이가 계산됩니다. 그리고 나이가 요구 사항에 의해 정의된 최소 연령을 만족할 경우 권한 부여가 성공한 것으로 간주됩니다. 권한 부여에 성공하면 만족한 요구 사항을 유일한 매개 변수로 전달하여 `context.Succeed`를 호출합니다.
 
 ### <a name="use-a-handler-for-multiple-requirements"></a>여러 요구 사항에 대한 처리기 사용하기
 
