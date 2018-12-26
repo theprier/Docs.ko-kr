@@ -102,7 +102,7 @@ ASP.NET Core 2.1 이상에서는 MVC 또는 Razor 페이지 프로젝트 루트�
     * [JavaScript Minifier](https://github.com/madskristensen/BundlerMinifier/wiki/JavaScript-Minifier-settings)
     * [HTML Minifier](https://github.com/madskristensen/BundlerMinifier/wiki)
 * `includeInProject`: 생성된 파일을 프로젝트 파일로 추가할지 여부를 나타내는 플래그입니다. **선택적**, *기본값 - false*
-* `sourceMap`: 번들된 파일에 대한 소스 맵을 생성할지 여부를 나타내는 플래그입니다. **선택적**, *기본값 - false*
+* `sourceMap`: 번들링된 파일에 대한 소스 맵을 생성할지 여부를 나타내는 플래그입니다. **선택적**, *기본값 - false*
 * `sourceMapRootPath`: 생성된 소스 맵 파일을 저장하기 위한 루트 경로입니다.
 
 ## <a name="build-time-execution-of-bundling-and-minification"></a>빌드 시 번들링 및 축소 실행하기

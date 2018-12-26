@@ -22,7 +22,7 @@ ms.locfileid: "47230180"
 
 ## <a name="the-sample-native-mobile-app"></a>샘플 네이티브 모바일 앱
 
-이 자습서에서는 네이티브 모바일 앱을 지원하기 위해 ASP.NET Core MVC를 사용하여 백 엔드 서비스를 만드는 방법을 보여 줍니다. Android, iOS, Windows 유니버설 및 Window Phone 장치에 대한 별도 네이티브 클라이언트를 포함하는 네이티브 클라이언트로 [Xamarin Forms ToDoRest 앱](/xamarin/xamarin-forms/data-cloud/consuming/rest)을 사용합니다. 연결된 자습서를 따라 네이티브 앱을 만들고(필요한 무료 Xamarin 도구 설치) Xamarin 샘플 솔루션을 다운로드할 수 있습니다. Xamarin 샘플에는 이 문서의 ASP.NET Core 앱이 바꾸는 ASP.NET Web API 2 서비스 프로젝트가 포함되어 있습니다(클라이언트에서 필요한 변경 내용 없이).
+이 자습서에서는 네이티브 모바일 앱을 지원하기 위해 ASP.NET Core MVC를 사용하여 백 엔드 서비스를 만드는 방법을 보여 줍니다. Android, iOS, Windows 유니버설 및 Window Phone 디바이스에 대한 별도 네이티브 클라이언트를 포함하는 네이티브 클라이언트로 [Xamarin Forms ToDoRest 앱](/xamarin/xamarin-forms/data-cloud/consuming/rest)을 사용합니다. 연결된 자습서를 따라 네이티브 앱을 만들고(필요한 무료 Xamarin 도구 설치) Xamarin 샘플 솔루션을 다운로드할 수 있습니다. Xamarin 샘플에는 이 문서의 ASP.NET Core 앱이 바꾸는 ASP.NET Web API 2 서비스 프로젝트가 포함되어 있습니다(클라이언트에서 필요한 변경 내용 없이).
 
 ![Android 스마트폰에서 실행되는 To Do Rest 응용 프로그램](native-mobile-backend/_static/todo-android.png)
 
@@ -40,7 +40,7 @@ ToDoRest 앱은 할 일 항목 나열, 추가, 삭제 및 업데이트를 지원
 
 ![항목 편집 대화 상자](native-mobile-backend/_static/todo-android-edit-item.png)
 
-이 샘플은 기본적으로 읽기 전용 작업을 허용하는 developer.xamarin.com에서 호스팅되는 백 엔드 서비스를 사용하도록 구성됩니다. 컴퓨터에서 실행되는 다음 섹션에서 만든 ASP.NET Core 앱을 직접 테스트하려면 앱의 `RestUrl` 상수를 업데이트해야 합니다. `ToDoREST` 프로젝트로 이동하고 *Constants.cs* 파일을 엽니다. `RestUrl`을 컴퓨터의 IP 주소를 포함하는 URL로 바꿉니다(이 주소는 컴퓨터에서가 아니라 장치 에뮬레이터에서 사용되므로 localhost 또는 127.0.0.1이 아님). 포트 번호도 포함합니다(5000). 서비스가 장치와 작동하는지 테스트하기 위해 이 포트에 대한 액세스를 차단하는 활성 방화벽이 없는지 확인합니다.
+이 샘플은 기본적으로 읽기 전용 작업을 허용하는 developer.xamarin.com에서 호스팅되는 백 엔드 서비스를 사용하도록 구성됩니다. 컴퓨터에서 실행되는 다음 섹션에서 만든 ASP.NET Core 앱을 직접 테스트하려면 앱의 `RestUrl` 상수를 업데이트해야 합니다. `ToDoREST` 프로젝트로 이동하고 *Constants.cs* 파일을 엽니다. `RestUrl`을 컴퓨터의 IP 주소를 포함하는 URL로 바꿉니다(이 주소는 컴퓨터에서가 아니라 장치 에뮬레이터에서 사용되므로 localhost 또는 127.0.0.1이 아님). 포트 번호도 포함합니다(5000). 서비스가 디바이스와 작동하는지 테스트하기 위해 이 포트에 대한 액세스를 차단하는 활성 방화벽이 없는지 확인합니다.
 
 ```csharp
 // URL of REST service (Xamarin ReadOnly Service)
