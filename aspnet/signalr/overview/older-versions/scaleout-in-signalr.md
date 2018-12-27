@@ -8,16 +8,18 @@ ms.date: 04/29/2013
 ms.assetid: 3fd9f11c-799b-4001-bd60-1e70cfc61c19
 msc.legacyurl: /signalr/overview/older-versions/scaleout-in-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: 0cd1e64af031fea8078c8c1ca4c64b1e2e69d7e9
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: fffa424ea4b62a54b9df48aaa409541ab5d1608f
+ms.sourcegitcommit: 74e3be25ea37b5fc8b4b433b0b872547b4b99186
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41828612"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53287600"
 ---
 <a name="introduction-to-scaleout-in-signalr-1x"></a>SignalR의 규모 확장 소개 1.x
 ====================
 하 여 [Mike Wasson](https://github.com/MikeWasson), [Patrick Fletcher](https://github.com/pfletcher)
+
+[!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
 
 일반적으로 두 가지 웹 응용 프로그램의 크기를 조정 하: *강화* 하 고 *확장할*합니다.
 
@@ -60,9 +62,9 @@ Signalr에서 모든 메시지는 메시지 버스를 통해 전송 됩니다. �
 
 백플레인으로 사용 하 여, 최대 메시지 처리량은 클라이언트와 직접 상담할 단일 서버 노드의 경우 보다 낮습니다. 백플레인에서 백플레인에서 병목 현상이 발생할 수 있으므로 모든 노드에 모든 메시지를 전달 하는 때문입니다. 이 제한은 문제가 있는지 여부를 응용 프로그램에 따라 달라 집니다. 예를 들어, 다음은 몇 가지 일반적인 SignalR 시나리오입니다.
 
-- [서버 브로드캐스트](tutorial-server-broadcast-with-aspnet-signalr.md) (예: 주식 시세 표시기): 서버 메시지 전송 되는 속도 제어 하므로이 시나리오에 적합 백플레인 작동 합니다.
-- [클라이언트-](tutorial-getting-started-with-signalr.md) (채팅 예):이 시나리오에서는 클라이언트의 수를 사용 하 여 메시지 수가 조정 하는 경우 백플레인에서 병목 지점이 될 수 있습니다; 그리고 즉, 메시지의 속도 증가 하면 비례적으로 더 많은 클라이언트 연결 합니다.
-- [고주파수](tutorial-high-frequency-realtime-with-signalr.md) (예: 실시간 게임):이 시나리오를 백플레인으로 권장 되지 않습니다.
+- [서버 브로드캐스트](tutorial-server-broadcast-with-aspnet-signalr.md) (예: 주식 시세 표시기): 백플레인 서버 메시지가 전송 되는 속도 제어 하므로이 시나리오에 대 한 잘 작동 합니다.
+- [클라이언트-](tutorial-getting-started-with-signalr.md) (채팅 예): 이 시나리오에서는 클라이언트의 수를 사용 하 여 메시지 수가 조정 하는 경우 백플레인에서 병목 지점이 될 수 있습니다. 즉, 메시지의 속도 증가 함에 따라 비례적으로 더 많은 클라이언트 조인 합니다.
+- [고주파수](tutorial-high-frequency-realtime-with-signalr.md) (예: 실시간 게임): 이 시나리오를 백플레인으로 권장 되지 않습니다.
 
 ## <a name="enabling-tracing-for-signalr-scaleout"></a>SignalR 규모 확장에 대 한 추적을 사용 하도록 설정
 

@@ -1,6 +1,6 @@
 ---
 uid: signalr/overview/older-versions/tutorial-getting-started-with-signalr
-title: '자습서: SignalR 시작 1.x | Microsoft Docs'
+title: '자습서: Getting Started with SignalR 1.x | Microsoft Docs'
 author: pfletcher
 description: HTML 페이지에 실시간 채팅 응용 프로그램을 빌드하려면 ASP.NET SignalR을 사용 합니다.
 ms.author: riande
@@ -8,16 +8,18 @@ ms.date: 02/18/2013
 ms.assetid: fdc3599a-5217-44c1-951f-0eec9812dce7
 msc.legacyurl: /signalr/overview/older-versions/tutorial-getting-started-with-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: d541dad19d8fd547d61e8850d64e514ea5db7fcf
-ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
+ms.openlocfilehash: 720a4879f5fbe3c0c2b4c7809cb94c22547329c3
+ms.sourcegitcommit: 74e3be25ea37b5fc8b4b433b0b872547b4b99186
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48912425"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53287371"
 ---
-<a name="tutorial-getting-started-with-signalr-1x"></a>자습서: SignalR 시작 1.x
+<a name="tutorial-getting-started-with-signalr-1x"></a>자습서: Getting Started with SignalR 1.x
 ====================
 하 여 [Patrick Fletcher](https://github.com/pfletcher), [Tim Teebken](https://github.com/timlt)
+
+[!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
 
 > 이 자습서에는 SignalR을 사용하여 실시간 채팅 응용 프로그램을 만드는 방법을 보여 줍니다. SignalR 빈 ASP.NET 웹 응용 프로그램에 추가 하 고 보내고 메시지를 표시 하려면 HTML 페이지를 만듭니다.
 

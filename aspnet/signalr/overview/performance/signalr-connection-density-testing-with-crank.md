@@ -8,21 +8,23 @@ ms.date: 02/22/2015
 ms.assetid: 148d9ca7-1af1-44b6-a9fb-91e261b9b463
 msc.legacyurl: /signalr/overview/performance/signalr-connection-density-testing-with-crank
 msc.type: authoredcontent
-ms.openlocfilehash: 556accb1bcc18e9e4d1f813a87fc6f4b67bda088
-ms.sourcegitcommit: 2d3e5422d530203efdaf2014d1d7df31f88d08d0
+ms.openlocfilehash: 308fed51953b085506488c5e0dda1ced9f4d09fb
+ms.sourcegitcommit: 74e3be25ea37b5fc8b4b433b0b872547b4b99186
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "51021484"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53287584"
 ---
 <a name="signalr-connection-density-testing-with-crank"></a>SignalR 연결 밀도 크랭크를 사용 하 여 테스트
 ====================
 [Tom FitzMacken](https://github.com/tfitzmac)
 
+[!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
+
 > 이 문서에서는 크랭크 도구를 사용 하 여 여러 시뮬레이션 된 클라이언트를 사용 하 여 응용 프로그램을 테스트 하는 방법을 설명 합니다.
 
 
-응용 프로그램 호스팅 환경 (중 하나는 Azure 웹 역할, IIS 또는 Owin을 사용 하 여 자체 호스팅)에서 실행 되 면 응용 프로그램의 높은 수준의 크랭크 도구를 사용 하 여 연결 밀도에 대 한 응답을 테스트할 수 있습니다. 인터넷 정보 서비스 (IIS) 서버를, Owin 호스트를 또는 Azure 웹 역할을 호스팅 환경 수 있습니다. (참고: 연결 밀도 테스트에서 성능 데이터를 가져올 수 없습니다 있도록 성능 카운터를 Azure App Service Web Apps에서 사용할 수 없습니다.)
+응용 프로그램 호스팅 환경 (중 하나는 Azure 웹 역할, IIS 또는 Owin을 사용 하 여 자체 호스팅)에서 실행 되 면 응용 프로그램의 높은 수준의 크랭크 도구를 사용 하 여 연결 밀도에 대 한 응답을 테스트할 수 있습니다. 인터넷 정보 서비스 (IIS) 서버를, Owin 호스트를 또는 Azure 웹 역할을 호스팅 환경 수 있습니다. (참고: 성능 카운터 하지 않으므로 Azure App Service Web Apps에서 사용할 수 있는 연결 밀도 테스트에서 성능 데이터를 가져올 수 없습니다.)
 
 연결 밀도 서버에 설정할 수 있는 동시 TCP 연결의 수를 나타냅니다. 자체 오버 헤드를 초래 하는 각 TCP 연결 및 많은 수의 유휴 연결을 열고 메모리 병목 상태가 최종적으로 만들어집니다.
 
@@ -49,15 +51,15 @@ ms.locfileid: "51021484"
 - **/ 전송**: 사용 되는 전송의 이름입니다. 기본값은 `auto`, 어떤 가장 사용 가능한 프로토콜 선택 됩니다. 옵션에 포함 됩니다 `WebSockets`, `ServerSentEvents`, 및 `LongPolling` (`ForeverFrame` 불가능 한 크랭크에 대 한.NET 클라이언트부터 Internet Explorer 사용 하는 것이 아니라). SignalR 전송을 선택 하는 방법에 대 한 자세한 내용은 참조 하세요. [전송과 대체](../getting-started/introduction-to-signalr.md#transports)합니다.
 - **/ BatchSize**: 각 일괄 처리에 추가 하는 클라이언트의 수입니다. 기본값은 50입니다.
 - **/ ConnectInterval**: 연결을 추가 하는 간격 (밀리초) 간격입니다. 기본값은 500입니다.
-- **/ 연결**: 부하 테스트 응용 프로그램에 사용 되는 연결 수입니다. 기본값은 100,000입니다.
-- **/ ConnectTimeout**: 테스트 중단 하기 전 시간 (초) 시간 제한입니다. 기본값은 300입니다.
+- **/ 연결**: 부하 테스트 응용 프로그램에 사용 되는 연결의 수입니다. 기본값은 100,000입니다.
+- **/ ConnectTimeout**: 테스트를 중단 하기 전 시간 (초)의 제한 시간입니다. 기본값은 300입니다.
 - **MinServerMBytes**: 연결할 최소 서버 메가바이트입니다. 기본값은 500입니다.
-- **SendBytes**: 바이트의 서버로 전송 된 페이로드 크기입니다. 기본값은 0입니다.
-- **SendInterval**: 지연 서버로 메시지 간의 밀리초입니다. 기본값은 500입니다.
+- **SendBytes**: 크기 (바이트)에서 서버에 전송 된 페이로드입니다. 기본값은 0입니다.
+- **SendInterval**: 서버로 메시지를 밀리초 단위로 지연입니다. 기본값은 500입니다.
 - **SendTimeout**: 서버에는 메시지에 대 한 밀리초 단위의 제한 시간입니다. 기본값은 300입니다.
-- **ControllerUrl**: 하나의 클라이언트 컨트롤러 허브를 호스트 하는 Url입니다. 기본값은 null (컨트롤러 허브 없음). 크랭크 세션이 시작 되 면 컨트롤러 허브 시작 더 이상 크랭크 고 컨트롤러 hub 간의 연결이 됩니다.
+- **ControllerUrl**: 클라이언트 컨트롤러 허브를 호스트 하는 Url입니다. 기본값은 null (컨트롤러 허브 없음). 크랭크 세션이 시작 되 면 컨트롤러 허브 시작 더 이상 크랭크 고 컨트롤러 hub 간의 연결이 됩니다.
 - **NumClients**: 시뮬레이션 된 클라이언트 응용 프로그램에 연결할 수 있습니다. 기본값은 1입니다.
-- **로그 파일**: 테스트 실행에 대 한 로그 파일의 파일 이름입니다. 기본값은 `crank.csv`입니다.
+- **로그 파일**: 테스트 실행에 대 한 로그 파일에 대 한 파일 이름입니다. 기본값은 `crank.csv`입니다.
 - **SampleInterval**: 성능 카운터 샘플 간격 (밀리초) 시간입니다. 기본값은 1000입니다.
 - **SignalRInstance**: 서버에서 성능 카운터에 대 한 인스턴스 이름입니다. 기본은 클라이언트 연결 상태를 사용 하는 것입니다.
 

@@ -4,14 +4,14 @@ author: guardrex
 description: ASP.NET Core 앱용 활성 및 비활성 IIS 모듈과 IIS 모듈을 관리하는 방법을 살펴봅니다.
 ms.author: riande
 ms.custom: mvc
-ms.date: 10/12/2018
+ms.date: 11/30/2018
 uid: host-and-deploy/iis/modules
-ms.openlocfilehash: b417d479d0c3f8b3e739d4c72b52247de0e88e56
-ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
+ms.openlocfilehash: c6a6cc9b6b3410267c6f5034f824648a1ebbe10f
+ms.sourcegitcommit: 9bb58d7c8dad4bbd03419bcc183d027667fefa20
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49325954"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52862241"
 ---
 # <a name="iis-modules-with-aspnet-core"></a>IIS 모듈 및 ASP.NET Core
 
@@ -21,7 +21,7 @@ ms.locfileid: "49325954"
 
 ## <a name="native-modules"></a>네이티브 모듈
 
-이 표는 ASP.NET Core 앱에 대한 역방향 프록시 요청에서 작동하는 네이티브 IIS 모듈을 나타냅니다.
+이 표는 ASP.NET Core 앱 및 ASP.NET Core 모듈에서 작동하는 네이티브 IIS 모듈을 나타냅니다.
 
 | Module | ASP.NET Core 앱 기능 | ASP.NET Core 옵션 |
 | --- | :---: | --- |

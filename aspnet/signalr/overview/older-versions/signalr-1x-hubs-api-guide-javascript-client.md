@@ -8,16 +8,18 @@ ms.date: 04/17/2013
 ms.assetid: dcd4593b-1118-418a-af71-d12ff33fb36d
 msc.legacyurl: /signalr/overview/older-versions/signalr-1x-hubs-api-guide-javascript-client
 msc.type: authoredcontent
-ms.openlocfilehash: 993ad7924d8335f79aa2c3e41c00ddfa8bc26874
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 2d50a92cff96be5c5c60105bba6682d38f9666b6
+ms.sourcegitcommit: 74e3be25ea37b5fc8b4b433b0b872547b4b99186
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41836388"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53288094"
 ---
 <a name="signalr-1x-hubs-api-guide---javascript-client"></a>SignalR 1.x 허브 API 가이드-JavaScript 클라이언트
 ====================
 하 여 [Patrick Fletcher](https://github.com/pfletcher), [Tom Dykstra](https://github.com/tdykstra)
+
+[!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
 
 > 이 문서에서는 허브 API를 사용 하 여 SignalR 브라우저 (WinJS) Windows 스토어 응용 프로그램 등의 JavaScript 클라이언트의 버전 1.1에 대 한 소개를 제공 합니다.
 > 
@@ -445,7 +447,7 @@ SignalR 처리할 수 있는 수명 이벤트 다음 연결을 제공 합니다.
 
 - `starting`: 데이터 연결을 통해 전송 되기 전에 발생 합니다.
 - `received`: 연결에서 모든 데이터를 수신할 때 발생 합니다. 수신된 된 데이터를 제공합니다.
-- `connectionSlow`: 클라이언트 느리거나 자주 삭제 연결을 검색 하는 경우 발생 합니다.
+- `connectionSlow`: 클라이언트가 느리거나 자주 삭제 연결을 검색 하는 경우 발생 합니다.
 - `reconnecting`: 기본 전송 다시 시작 될 때 발생 합니다.
 - `reconnected`: 기본 전송에 다시 연결 되 면 발생 합니다.
 - `stateChanged`: 연결 상태가 변경 될 때 발생 합니다. 이전 상태 및 새 상태 (연결, 연결 됨, 다시 연결, 또는 Disconnected)를 제공합니다.

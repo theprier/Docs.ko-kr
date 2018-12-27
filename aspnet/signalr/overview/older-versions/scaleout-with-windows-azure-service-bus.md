@@ -8,16 +8,18 @@ ms.date: 05/01/2013
 ms.assetid: 501db899-e68c-49ff-81b2-1dc561bfe908
 msc.legacyurl: /signalr/overview/older-versions/scaleout-with-windows-azure-service-bus
 msc.type: authoredcontent
-ms.openlocfilehash: d597eebc958815b1b1b9fdffc256c4453efce6b3
-ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
+ms.openlocfilehash: 687d3d7787baa69410ee35d651a029c69d28c70b
+ms.sourcegitcommit: 74e3be25ea37b5fc8b4b433b0b872547b4b99186
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48910956"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53287002"
 ---
 <a name="signalr-scaleout-with-azure-service-bus-signalr-1x"></a>Azure Service Bus로 SignalR 규모 확장 (SignalR 1.x)
 ====================
 하 여 [Mike Wasson](https://github.com/MikeWasson), [Patrick Fletcher](https://github.com/pfletcher)
+
+[!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
 
 이 자습서에서는 Service Bus 백플레인에서 사용 하 여 각 역할 인스턴스에 메시지를 분산 하는 Windows Azure 웹 역할에는 SignalR 응용 프로그램 배포.
 
@@ -53,7 +55,7 @@ Service Bus 백플레인에서 메시지를 보낼 항목을 사용 합니다. �
 
 ## <a name="create-the-azure-services"></a>Azure 서비스 만들기
 
-에 설명 된 대로 클라우드 서비스를 만듭니다 [클라우드 서비스 만들기 및 배포 하는 방법을](https://docs.microsoft.com/azure/cloud-services/cloud-services-how-to-create-deploy)합니다. 섹션의 단계에 따라 "방법: 빠른 생성을 사용 하 여 클라우드 서비스 만들기"입니다. 이 자습서에서는 인증서를 업로드할 필요가 없습니다.
+에 설명 된 대로 클라우드 서비스를 만듭니다 [클라우드 서비스 만들기 및 배포 하는 방법을](https://docs.microsoft.com/azure/cloud-services/cloud-services-how-to-create-deploy)합니다. 섹션의 단계에 따라 "방법: 빠른 생성을 사용 하 여 클라우드 서비스를 만들기 "입니다. 이 자습서에서는 인증서를 업로드할 필요가 없습니다.
 
 ![](scaleout-with-windows-azure-service-bus/_static/image2.png)
 
@@ -81,8 +83,8 @@ Visual Studio를 시작합니다. **파일** 메뉴에서 클릭 **새 프로젝
 
 에 **새 ASP.NET MVC 4 프로젝트** 마법사 **인터넷 응용 프로그램**합니다. **확인**을 클릭합니다. 프로젝트 마법사에서 두 개의 프로젝트를 만듭니다.
 
-- ChatService:이 프로젝트는 Windows Azure 응용 프로그램. Azure 역할 및 기타 구성 옵션을 정의합니다.
-- SignalRChat:이 프로젝트는 ASP.NET MVC 4 프로젝트.
+- ChatService: 이 프로젝트는 Windows Azure 응용 프로그램입니다. Azure 역할 및 기타 구성 옵션을 정의합니다.
+- SignalRChat: 이 프로젝트는 ASP.NET MVC 4 프로젝트입니다.
 
 ## <a name="create-the-signalr-chat-application"></a>SignalR 채팅 응용 프로그램 만들기
 

@@ -8,16 +8,18 @@ ms.date: 04/17/2013
 ms.assetid: c334adc3-d6dc-44f3-9f06-f7634475aad3
 msc.legacyurl: /signalr/overview/older-versions/signalr-1x-hubs-api-guide-net-client
 msc.type: authoredcontent
-ms.openlocfilehash: 5889429645ea1c682ea43c4b17afb3745318e32d
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 34356338f24788226351e8e22b47eaaf7ea03e61
+ms.sourcegitcommit: 74e3be25ea37b5fc8b4b433b0b872547b4b99186
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41824102"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53287985"
 ---
 <a name="aspnet-signalr-hubs-api-guide---net-client-signalr-1x"></a>ASP.NET SignalR 허브 API 가이드-.NET 클라이언트 (SignalR 1.x)
 ====================
 하 여 [Patrick Fletcher](https://github.com/pfletcher), [Tom Dykstra](https://github.com/tdykstra)
+
+[!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
 
 > 이 문서에서는 허브 API를 사용 하 여 버전 2 (WinRT) Windows 스토어, WPF, Silverlight 및 콘솔 응용 프로그램 등.NET 클라이언트에서 SignalR에 대 한 소개를 제공 합니다.
 > 
@@ -315,7 +317,7 @@ HTTP 헤더를 설정 하려면 사용 된 `Headers` 연결 개체의 속성입�
 SignalR 처리할 수 있는 수명 이벤트 다음 연결을 제공 합니다.
 
 - `Received`: 연결에서 모든 데이터를 수신할 때 발생 합니다. 수신된 된 데이터를 제공합니다.
-- `ConnectionSlow`: 클라이언트 느리거나 자주 삭제 연결을 검색 하는 경우 발생 합니다.
+- `ConnectionSlow`: 클라이언트가 느리거나 자주 삭제 연결을 검색 하는 경우 발생 합니다.
 - `Reconnecting`: 기본 전송 다시 시작 될 때 발생 합니다.
 - `Reconnected`: 기본 전송에 다시 연결 되 면 발생 합니다.
 - `StateChanged`: 연결 상태가 변경 될 때 발생 합니다. 이전 상태 및 새 상태를 제공합니다. 연결에 대 한 상태 값에 대해서 [ConnectionState 열거형](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.client.connectionstate(v=vs.111).aspx)합니다.

@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/15/2018
 uid: mvc/controllers/filters
-ms.openlocfilehash: e5305852fad058961661373f9310d6dcaf30aa16
-ms.sourcegitcommit: 4a6bbe84db24c2f3dd2de065de418fde952c8d40
+ms.openlocfilehash: d25976af860ed8733c0548a4102e0095969b2ba6
+ms.sourcegitcommit: 9bb58d7c8dad4bbd03419bcc183d027667fefa20
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50253197"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52861851"
 ---
 # <a name="filters-in-aspnet-core"></a>ASP.NET Core에서 필터링
 
@@ -252,7 +252,8 @@ System.InvalidOperationException: No service for type
 
 ## <a name="authorization-filters"></a>권한 부여 필터
 
-*권한 부여 필터:
+*권한 부여 필터*:
+
 * 동작 메서드에 대한 액세스를 제어합니다.
 * 필터 파이프라인 내에서 실행되어야 할 첫 번째 필터입니다. 
 * before 메서드는 있지만 after 메서드는 없습니다. 

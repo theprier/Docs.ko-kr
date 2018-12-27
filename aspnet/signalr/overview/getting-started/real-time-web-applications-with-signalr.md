@@ -8,16 +8,19 @@ ms.date: 07/16/2014
 ms.assetid: ba07958c-42e1-4da0-81db-ba6925ed6db0
 msc.legacyurl: /signalr/overview/getting-started/real-time-web-applications-with-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: 59831fb8497c86ec5e02de3912b36a15f416597c
-ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
+ms.openlocfilehash: de2f2349fc284e167bd8227ae55da79b9f1f4549
+ms.sourcegitcommit: 74e3be25ea37b5fc8b4b433b0b872547b4b99186
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48913243"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53288011"
 ---
-<a name="hands-on-lab-real-time-web-applications-with-signalr"></a>SignalR 사용 하 여 실시간 웹 응용 프로그램을 실습:
+<a name="hands-on-lab-real-time-web-applications-with-signalr"></a>실습: SignalR 사용 하 여 실시간 웹 응용 프로그램
 ====================
+
 [웹 캠프 팀](https://twitter.com/webcamps)
+
+[!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
 
 [웹 캠프 학습 키트 다운로드](http://aka.ms/webcamps-training-kit)
 
@@ -25,9 +28,9 @@ ms.locfileid: "48913243"
 > 
 > **SignalR** 클라이언트 RPC 서버 작업을 수행 하는 간단 하 고 상위 수준 API도 제공 (서버 쪽.NET 코드에서 클라이언트의 브라우저에서 JavaScript 함수 호출) 연결 관리에 대 한 유용한 후크 추가 뿐만 아니라 ASP.NET 응용 프로그램 연결/연결 끊기 이벤트, 연결 그룹화 및 권한 부여와 같은
 > 
-> **SignalR** 클라이언트와 서버 간의 실시간 작업을 수행 하는 데 필요한 전송의 몇 가지 추상화입니다. A **SignalR** 연결 HTTP로 시작 하 고 다음 수준으로 올린를 **WebSocket** 사용 가능한 경우 연결 합니다. **WebSocket** 에 대 한 이상적인 전송이 **SignalR**서버 메모리의 가장 효율적으로 사용 하기 때문에, 가장 낮은 대기 시간에이 있고 대부분의 기본 기능 (클라이언트 간의 전이중 통신 등 및 서버)를 하지만 요구 사항이 가장 엄격한 있습니다: **WebSocket** 서버를 사용 해야 **Windows Server 2012** 하거나 **Windows 8**를 함께 **.NET framework 4.5**합니다. 이러한 요구 사항을 충족 되지 않는 경우 **SignalR** 와 연결을 확인 하려면 다른 전송을 사용 하려고 합니다 (같은 *긴 폴링 Ajax*).
+> **SignalR** 클라이언트와 서버 간의 실시간 작업을 수행 하는 데 필요한 전송의 몇 가지 추상화입니다. A **SignalR** 연결 HTTP로 시작 하 고 다음 수준으로 올린를 **WebSocket** 사용 가능한 경우 연결 합니다. **WebSocket** 에 대 한 이상적인 전송이 **SignalR**서버 메모리의 가장 효율적으로 사용 하기 때문에, 가장 낮은 대기 시간에이 있고 대부분의 기본 기능 (클라이언트 간의 전이중 통신 등 및 server), 하지만 가장 엄격한 요구 사항이 있습니다. **WebSocket** 서버를 사용 해야 **Windows Server 2012** 하거나 **Windows 8**를 함께 **.NET Framework 4.5**합니다. 이러한 요구 사항을 충족 되지 않는 경우 **SignalR** 와 연결을 확인 하려면 다른 전송을 사용 하려고 합니다 (같은 *긴 폴링 Ajax*).
 > 
-> **SignalR** 클라이언트와 서버 간의 통신을 위한 두 가지 모델을 포함 하는 API: **영구 연결** 하 고 **Hubs**합니다. A **연결** -받는 사람, 단일 그룹화 보내거나 메시지를 브로드캐스트에 대 한 간단한 끝점을 나타냅니다. A **허브** 보다 높은 수준의 파이프라인 클라이언트 및 서버에서 서로 다른 메서드를 직접 호출할 수 있도록 연결 API를 기반으로 합니다.
+> 합니다 **SignalR** API 클라이언트와 서버 간의 통신을 위한 두 가지 모델을 포함 합니다. **영구 연결** 하 고 **Hubs**합니다. A **연결** -받는 사람, 단일 그룹화 보내거나 메시지를 브로드캐스트에 대 한 간단한 끝점을 나타냅니다. A **허브** 보다 높은 수준의 파이프라인 클라이언트 및 서버에서 서로 다른 메서드를 직접 호출할 수 있도록 연결 API를 기반으로 합니다.
 > 
 > ![SignalR 아키텍처](real-time-web-applications-with-signalr/_static/image1.png)
 > 
@@ -84,7 +87,7 @@ ms.locfileid: "48913243"
 1. [SignalR을 사용 하 여 실시간 데이터 사용](#Exercise1)
 2. [SQL Server를 사용 하 여 확장 합니다.](#Exercise2)
 
-이 랩을 완료 하기 위한 예상 시간: **60 분**
+이 랩을 완료 하는 시간을 예상 합니다. **60 분**
 
 > [!NOTE]
 > Visual Studio를 처음 시작 하면 미리 정의 된 설정 컬렉션 중 하나를 선택 해야 합니다. 미리 정의 된 각 컬렉션에는 특정 개발 스타일에 맞게 설계 되었습니다 및 창 레이아웃, 동작 편집기, IntelliSense 코드 조각 및 대화 상자 옵션을 결정 합니다. 이 랩의 절차에서는 사용 하는 경우 Visual Studio에서 지정된 된 태스크를 수행 하는 데 필요한 작업을 설명 합니다 **일반 개발 설정** 컬렉션입니다. 개발 환경에 대 한 다양 한 설정 컬렉션을 선택 하는 경우를 고려해 야 하는 단계에 차이가 있을 수 있습니다.
@@ -269,9 +272,9 @@ SignalR 백플레인으로 작동 원리,이 대 한 자세한 내용은 [문서
 > [!NOTE]
 > 가지를 백플레인으로 병목 현상이 발생할 수 있는 몇 가지 시나리오가 있습니다. 몇 가지 일반적인 SignalR 시나리오는 다음과 같습니다.
 > 
-> - [서버 브로드캐스트](tutorial-server-broadcast-with-signalr.md) (예: 주식 시세 표시기): 서버 메시지 전송 되는 속도 제어 하므로이 시나리오에 적합 백플레인 작동 합니다.
-> - [클라이언트-](tutorial-getting-started-with-signalr.md) (채팅 예):이 시나리오에서는 클라이언트의 수를 사용 하 여 메시지 수가 조정 하는 경우 백플레인에서 병목 지점이 될 수 있습니다; 그리고 즉, 메시지의 속도 증가 하면 비례적으로 더 많은 클라이언트 연결 합니다.
-> - [고주파수](tutorial-high-frequency-realtime-with-signalr.md) (예: 실시간 게임):이 시나리오를 백플레인으로 권장 되지 않습니다.
+> - [서버 브로드캐스트](tutorial-server-broadcast-with-signalr.md) (예: 주식 시세 표시기): 백플레인 서버 메시지가 전송 되는 속도 제어 하므로이 시나리오에 대 한 잘 작동 합니다.
+> - [클라이언트-](tutorial-getting-started-with-signalr.md) (채팅 예): 이 시나리오에서는 클라이언트의 수를 사용 하 여 메시지 수가 조정 하는 경우 백플레인에서 병목 지점이 될 수 있습니다. 즉, 메시지의 속도 증가 함에 따라 비례적으로 더 많은 클라이언트 조인 합니다.
+> - [고주파수](tutorial-high-frequency-realtime-with-signalr.md) (예: 실시간 게임): 이 시나리오를 백플레인으로 권장 되지 않습니다.
 
 
 이 연습에서는 사용할지 **SQL Server** 간에 메시지를 분산 하는 **Geek 퀴즈** 응용 프로그램입니다. 전체 효과 얻기 위해 있지만 구성을 설정 하는 방법은 단일 테스트 컴퓨터에서 이러한 작업을 실행 하는, 두 개 이상의 서버에 SignalR 응용 프로그램을 배포 해야 합니다. 서버 중 하나에서 또는 별도 전용 서버에 SQL Server를 설치 해야 합니다.
@@ -346,7 +349,7 @@ SignalR 백플레인으로 작동 원리,이 대 한 자세한 내용은 [문서
     ![Service Broker 상태를 쿼리할](real-time-web-applications-with-signalr/_static/image25.png "서비스 Broker 상태를 쿼리 합니다.")
 
     *Service Broker 상태를 쿼리합니다.*
-8. 경우 값을 **은\_broker\_사용 하도록 설정** 데이터베이스의 열은 &quot;0&quot;, 사용 하도록 설정 하려면 다음 명령을 사용 합니다. 바꿉니다 **&lt;YOUR DATABASE&gt;** 데이터베이스를 만들 때 설정한 이름 (예:: SignalR).
+8. 경우 값을 **은\_broker\_사용 하도록 설정** 데이터베이스의 열은 &quot;0&quot;, 사용 하도록 설정 하려면 다음 명령을 사용 합니다. 바꿉니다 **&lt;YOUR DATABASE&gt;** 데이터베이스를 만들 때 설정한 이름 (예: SignalR)입니다.
 
     [!code-sql[Main](real-time-web-applications-with-signalr/samples/sample12.sql)]
 
@@ -375,7 +378,7 @@ SignalR 백플레인으로 작동 원리,이 대 한 자세한 내용은 [문서
 5. 마찬가지로 **Visual Studio** 의 두 인스턴스가 시작 됩니다 **매니아 퀴즈** 서로 다른 포트에서. 왼쪽 및 오른쪽 화면에 다른 브라우저 중 하나를 고정 하 고 자격 증명으로 로그인 합니다. 왼쪽의 기타 정보 페이지를 유지 하 고 이동할 **통계** pagein 오른쪽 브라우저입니다.
 6. 왼쪽된 브라우저에서 질문을 시작 합니다. 이 이번에는 **통계** 백플레인에서 덕분에 페이지를 업데이트 합니다. 응용 프로그램 간 전환 (**통계** 왼쪽에 이제 및 **퀴즈** 오른쪽에 표시 됩니다) 인스턴스 모두에 대해 작동 하는지 유효성을 검사 하려면 테스트를 반복 합니다. 백플레인에서 역할도 *캐시 공유* 연결 된 클라이언트에 배포 하는 자체 로컬 캐시에서 메시지 저장은 각 연결 된 서버 및 각 서버에 대 한 메시지입니다.
 7. Visual Studio로 다시 이동 하 고 디버깅을 중지 합니다.
-8. SQL Server 백플레인 구성 요소는 자동으로 지정된 된 데이터베이스에 필요한 테이블을 생성합니다. 에 **SQL Server 개체 탐색기** 패널에서 백플레인에서 대해 만든 데이터베이스를 열 (예:: SignalR) 해당 테이블을 확장 하 고 있습니다. 다음 표에 표시 됩니다.
+8. SQL Server 백플레인 구성 요소는 자동으로 지정된 된 데이터베이스에 필요한 테이블을 생성합니다. 에 **SQL Server 개체 탐색기** 패널에서 백플레인에서 대해 만든 데이터베이스를 엽니다 (예: SignalR) 해당 테이블을 확장 합니다. 다음 표에 표시 됩니다.
 
     ![백플레인에서 테이블 생성](real-time-web-applications-with-signalr/_static/image27.png)
 
