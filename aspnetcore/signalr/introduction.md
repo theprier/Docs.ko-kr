@@ -7,12 +7,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 04/25/2018
 uid: signalr/introduction
-ms.openlocfilehash: 2fff24609caf7592bad763a077288990a29617aa
-ms.sourcegitcommit: 927e510d68f269d8335b5a7c8592621219a90965
+ms.openlocfilehash: da18837c690d2182589db5f486ae74e537ade931
+ms.sourcegitcommit: 6548c19f345850ee22b50f7ef9fca732895d9e08
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39342551"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53425148"
 ---
 # <a name="introduction-to-aspnet-core-signalr"></a>ASP.NET Core SignalR 소개
 
@@ -36,7 +36,7 @@ SignalR은 서버에서 클라이언트로 [원격 프로시저 호출(RPC)](htt
 * 특정 클라이언트 또는 클라이언트 그룹에 메시지를 보냅니다.
 * 트래픽 증가를 처리할 수 있도록 확장됩니다.
 
-소스는 [GitHub의 SignalR 리포지토리](https://github.com/aspnet/signalr)에서 호스트됩니다.
+소스는 [GitHub의 SignalR 리포지토리](https://github.com/aspnet/AspNetCore/tree/master/src/SignalR)에서 호스트됩니다.
 
 ## <a name="transports"></a>전송
 

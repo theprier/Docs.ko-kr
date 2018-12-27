@@ -3,15 +3,15 @@ title: 권한 부여로 보호 되는 사용자 데이터를 사용 하 여 ASP.
 author: rick-anderson
 description: 권한 부여로 보호 되는 사용자 데이터를 사용 하 여 Razor 페이지 앱을 만드는 방법에 알아봅니다. HTTPS, 인증, 보안, ASP.NET Core Id를 포함합니다.
 ms.author: riande
-ms.date: 12/07/2018
+ms.date: 12/18/2018
 ms.custom: seodec18
 uid: security/authorization/secure-data
-ms.openlocfilehash: d49ee7779b425d625b81c8a65694121c616bfba6
-ms.sourcegitcommit: 49faca2644590fc081d86db46ea5e29edfc28b7b
+ms.openlocfilehash: fa82d3d99f4e4b7ad17ed385fb7c029745797e8d
+ms.sourcegitcommit: 816f39e852a8f453e8682081871a31bc66db153a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/09/2018
-ms.locfileid: "53121637"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53637835"
 ---
 # <a name="create-an-aspnet-core-app-with-user-data-protected-by-authorization"></a>권한 부여로 보호 되는 사용자 데이터를 사용 하 여 ASP.NET Core 앱 만들기
 
@@ -57,7 +57,7 @@ ms.locfileid: "53121637"
 
 관리자는 모든 권한을 갖습니다. 그녀는 연락처 읽기/편집/삭제할 수 및 연락처의 상태를 변경 합니다.
 
-앱에서 만든 [스 캐 폴딩](xref:tutorials/first-mvc-app-xplat/adding-model#scaffold-the-moviecontroller) 다음 `Contact` 모델:
+앱에서 만든 [스 캐 폴딩](xref:tutorials/first-mvc-app/adding-model#scaffold-the-movie-model) 다음 `Contact` 모델:
 
 [!code-csharp[](secure-data/samples/starter2.1/Models/Contact.cs?name=snippet)]
 
@@ -284,7 +284,7 @@ Entity Framework Core를 사용 하 여 서비스에 등록 해야 합니다 [�
 
 시드 된 사용자 계정의 암호를 이미 설정 하지 않은 경우 사용 합니다 [암호 관리자 도구](xref:security/app-secrets#secret-manager) 암호를 설정 하려면:
 
-* 강력한 암호를 선택 합니다: 사용 하 여 8 이상의 문자 및 하나 이상의 대문자, 숫자 및 기호입니다. 예를 들어 `Passw0rd!` 강력한 암호 요구 사항을 충족 합니다.
+* 강력한 암호를 선택 합니다. 8을 사용 하거나 자세한 문자 및 하나 이상의 대문자 문자, 숫자 및 기호입니다. 예를 들어 `Passw0rd!` 강력한 암호 요구 사항을 충족 합니다.
 * 프로젝트의 폴더에서 다음 명령을 실행 하는 `<PW>` 암호입니다.
 
   ```console

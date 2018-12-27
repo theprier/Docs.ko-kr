@@ -3,14 +3,14 @@ title: ASP.NET Core에서 키 저장소 공급자
 author: rick-anderson
 description: ASP.NET Core 및 키 저장소 위치를 구성 하는 방법에 대 한 키 저장소 공급자에 알아봅니다.
 ms.author: riande
-ms.date: 12/06/2018
+ms.date: 12/19/2018
 uid: security/data-protection/implementation/key-storage-providers
-ms.openlocfilehash: e10271d5979b503a8a842f8866a0e2a3fa040656
-ms.sourcegitcommit: 49faca2644590fc081d86db46ea5e29edfc28b7b
+ms.openlocfilehash: d6dabc9e4581e0891d1dd14f73e086d50b45bba4
+ms.sourcegitcommit: 3e94d192b2ed9409fe72e3735e158b333354964c
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/09/2018
-ms.locfileid: "53121455"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53735741"
 ---
 # <a name="key-storage-providers-in-aspnet-core"></a>ASP.NET Core에서 키 저장소 공급자
 
@@ -125,6 +125,38 @@ EF Core 공급자를 구성 하려면 다음을 호출 합니다 [ `PersistKeysT
 제네릭 매개 변수 `TContext`에서 상속 되어야 [DbContext](/dotnet/api/microsoft.entityframeworkcore.dbcontext) 하 고 [IDataProtectionKeyContext](/dotnet/api/microsoft.aspnetcore.dataprotection.entityframeworkcore.idataprotectionkeycontext):
 
 [!code-csharp[Main](key-storage-providers/sample/MyKeysContext.cs)]
+
+만들기는 `DataProtectionKeys` 테이블입니다. 
+
+# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
+
+다음 명령을 실행 합니다 **패키지 관리자 콘솔** (PMC) 창:
+
+```PowerShell
+Add-Migration AddDataProtectionKeys -Context MyKeysContext
+Update-Database -Context MyKeysContext
+```
+
+# <a name="net-core-clitabnetcore-cli"></a>[.NET Core CLI](#tab/netcore-cli)
+
+명령 셸에서 다음 명령을 실행 합니다.
+
+```console
+dotnet ef migrations add AddDataProtectionKeys --context MyKeysContext
+dotnet ef database update --context MyKeysContext
+```
+
+---
+
+`MyKeysContext` 가 `DbContext` 앞의 코드 샘플에 정의 합니다. 사용 중인 경우는 `DbContext` 다른 이름으로 대체 하 `DbContext` 에 대 한 이름 `MyKeysContext`합니다.
+
+`DataProtectionKeys` 클래스/엔터티는 다음 표에 표시 되는 구조를 채택 합니다.
+
+| 속성/필드 | CLR 형식 | SQL 유형              |
+| -------------- | -------- | --------------------- |
+| `Id`           | `int`    | `int`PK를 null이 아님   |
+| `FriendlyName` | `string` | `nvarchar(MAX)`를 null |
+| `Xml`          | `string` | `nvarchar(MAX)`를 null |
 
 ::: moniker-end
 

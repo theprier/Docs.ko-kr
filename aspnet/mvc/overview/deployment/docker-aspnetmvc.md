@@ -5,14 +5,14 @@ description: 기존 ASP.NET MVC 응용 프로그램을 가져와 Windows Docker 
 keywords: Windows Containers,Docker,ASP.NET MVC
 author: BillWagner
 ms.author: wiwagn
-ms.date: 02/01/2017
+ms.date: 12/14/2018
 ms.assetid: c9f1d52c-b4bd-4b5d-b7f9-8f9ceaf778c4
-ms.openlocfilehash: 7b34187747d3081998b8b60a72adae78cafe2c3e
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: ef184f4256c20e2a66de8fd2d4f8e67f07d9a086
+ms.sourcegitcommit: 6548c19f345850ee22b50f7ef9fca732895d9e08
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50207968"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53425161"
 ---
 # <a name="migrating-aspnet-mvc-applications-to-windows-containers"></a>ASP.NET MVC 응용 프로그램을 Windows 컨테이너로 마이그레이션
 
@@ -68,9 +68,9 @@ Docker 이미지로 로드해야 하는 자산을 모두 한 곳에 수집합니
 
 ## <a name="build-the-image"></a>이미지 빌드
 
-Dockerfile에서 Docker 이미지를 정의합니다. Dockerfile에는 기본 이미지, 추가 구성 요소, 실행할 앱 및 기타 구성 이미지에 대한 지침이 포함되어 있습니다.  Dockerfile은 이미지를 만드는 `docker build` 명령에 대한 입력입니다.
+라는 새 파일을 만듭니다 *Dockerfile* Docker 이미지를 정의 합니다. *Dockerfile* 최종 이미지를 작성 하기 위한 지침을 포함 하 고 모든 기본 이미지 이름, 필수 구성 요소를 실행 하려는 앱 및 기타 구성 이미지를 포함 합니다. *Dockerfile* 를 입력 합니다 `docker build` 이미지를 만드는 명령입니다.
 
-[Docker 허브](https://hub.docker.com/r/microsoft/aspnet/)에 있는 `microsoft/aspnet` 이미지를 기반으로 해서 이미지를 빌드합니다.
+이 연습에서는 기준 이미지로 빌드됩니다 합니다 `microsoft/aspnet` 이미지에 있는 [Docker 허브](https://hub.docker.com/r/microsoft/aspnet/)합니다.
 기본 이미지인 `microsoft/aspnet`은 Windows Server 이미지입니다. Windows Server Core, IIS 및 ASP.NET 4.7.2 포함합니다. 컨테이너에서 이 이미지를 실행하면 IIS 및 설치된 웹 사이트가 자동으로 시작됩니다.
 
 이미지를 만드는 Dockerfile은 다음과 같이 표시됩니다.

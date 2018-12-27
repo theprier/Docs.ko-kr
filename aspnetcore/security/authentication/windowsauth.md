@@ -1,23 +1,23 @@
 ---
 title: ASP.NET Core에서 Windows 인증을 구성 합니다.
 author: scottaddie
-description: ASP.NET core에서 IIS Express, IIS, HTTP.sys 및 WebListener를 사용 하 여 Windows 인증을 구성 하는 방법에 알아봅니다.
+description: ASP.NET core에서 IIS Express, IIS 및 HTTP.sys를 사용 하 여 Windows 인증을 구성 하는 방법에 알아봅니다.
 ms.author: riande
 ms.custom: mvc, seodec18
-ms.date: 11/01/2018
+ms.date: 12/18/2018
 uid: security/authentication/windowsauth
-ms.openlocfilehash: 15e388433cc9b01e9db3e2fb56aca1ebb5ba5ba4
-ms.sourcegitcommit: b34b25da2ab68e6495b2460ff570468f16a9bf0d
+ms.openlocfilehash: 94dff2f47b2b076cb15f8d385239179b52786678
+ms.sourcegitcommit: 816f39e852a8f453e8682081871a31bc66db153a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53284426"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53637822"
 ---
 # <a name="configure-windows-authentication-in-aspnet-core"></a>ASP.NET Core에서 Windows 인증을 구성 합니다.
 
 작성자: [Steve Smith](https://ardalis.com) 및 [Scott Addie](https://twitter.com/Scott_Addie)
 
-Iis에서 호스팅되는 ASP.NET Core 앱에 대 한 Windows 인증을 구성할 수 있습니다 [HTTP.sys](xref:fundamentals/servers/httpsys), 또는 [WebListener](xref:fundamentals/servers/weblistener)합니다.
+IIS를 사용 하 여 호스팅되는 ASP.NET Core 앱에 대 한 Windows 인증을 구성할 수 있습니다 또는 [HTTP.sys](xref:fundamentals/servers/httpsys)합니다.
 
 ## <a name="windows-authentication"></a>Windows 인증
 
@@ -55,7 +55,7 @@ Visual Studio 프로젝트 **속성** 페이지의 **디버그** 탭은 Windows 
 
 ## <a name="enable-windows-authentication-with-iis"></a>IIS 사용 하 여 Windows 인증을 사용 하도록 설정
 
-IIS에서 사용 하 여 [ASP.NET Core 모듈](xref:fundamentals/servers/aspnet-core-module) ASP.NET Core 앱을 호스트 하 합니다. Windows 인증은 응용 프로그램이 아닌 IIS에서 구성 됩니다. 다음 섹션에서는 IIS 관리자를 사용 하 여 Windows 인증을 사용 하도록 ASP.NET Core 앱을 구성 하는 방법을 보여 줍니다.
+IIS에서 사용 하 여 [ASP.NET Core 모듈](xref:host-and-deploy/aspnet-core-module) ASP.NET Core 앱을 호스트 하 합니다. Windows 인증은 응용 프로그램이 아닌 IIS에서 구성 됩니다. 다음 섹션에서는 IIS 관리자를 사용 하 여 Windows 인증을 사용 하도록 ASP.NET Core 앱을 구성 하는 방법을 보여 줍니다.
 
 ### <a name="iis-configuration"></a>IIS 구성
 
@@ -89,8 +89,6 @@ ASP.NET Core 모듈은 기본적으로 앱에 Windows 인증 토큰을 전달 �
 
 Windows 인증이 작동을 확인 하려면 앱을 시작 합니다.
 
-::: moniker range=">= aspnetcore-2.0"
-
 ## <a name="enable-windows-authentication-with-httpsys"></a>HTTP.sys 사용 하 여 Windows 인증을 사용 하도록 설정
 
 Kestrel은 Windows 인증을 지원 하지 않지만 사용할 수 있습니다 [HTTP.sys](xref:fundamentals/servers/httpsys) Windows에서 자체 호스팅된 시나리오를 지원 합니다. 다음 예제에서는 Windows 인증을 사용 하 여 HTTP.sys를 사용 하도록 앱의 웹 호스트를 구성 합니다.
@@ -103,28 +101,13 @@ Kestrel은 Windows 인증을 지원 하지 않지만 사용할 수 있습니다 
 > [!NOTE]
 > HTTP.sys는 Nano Server 버전 1709 이상에서 지원 되지 않습니다. Nano Server를 사용 하 여 Windows 인증 및 HTTP.sys를 사용 하려면 사용 된 [Server Core (microsoft/windowsservercore) 컨테이너](https://hub.docker.com/r/microsoft/windowsservercore/)합니다. Server Core에 대 한 자세한 내용은 참조 하세요. [Windows Server의 Server Core 설치 옵션 이란?](/windows-server/administration/server-core/what-is-server-core)합니다.
 
-::: moniker-end
-
-::: moniker range="< aspnetcore-2.0"
-
-## <a name="enable-windows-authentication-with-weblistener"></a>WebListener 사용 하 여 Windows 인증을 사용 하도록 설정
-
-Kestrel은 Windows 인증을 지원 하지 않지만 사용할 수 있습니다 [WebListener](xref:fundamentals/servers/weblistener) Windows에서 자체 호스팅된 시나리오를 지원 합니다. 다음 예제에서는 Windows 인증을 사용 하 여 WebListener를 사용 하는 앱의 웹 호스트를 구성 합니다.
-
-[!code-csharp[](windowsauth/sample/Program1x.cs?highlight=6-11)]
-
-> [!NOTE]
-> WebListener는 Kerberos 인증 프로토콜을 사용하여 커널 모드 인증에 위임합니다. 사용자 모드 인증은 Kerberos 및 WebListener로 지원되지 않습니다. 머신 계정은 Active Directory에서 가져온 Kerberos 토큰/티켓의 암호를 해독하는 데 사용되고 사용자를 인증하는 서버에 클라이언트에 의해 전달되어야 합니다. 앱의 사용자가 아닌 호스트에 대해 SPN(서비스 사용자 이름)을 등록합니다.
-
-::: moniker-end
-
 ## <a name="work-with-windows-authentication"></a>Windows 인증 사용
 
 익명 액세스 구성 상태는 방식을 결정 합니다 `[Authorize]` 및 `[AllowAnonymous]` 특성은 앱에서 사용 합니다. 다음 두 섹션에는 익명 액세스는 허용 되지 않는 및 허용 된 구성 상태를 처리 하는 방법을 설명 합니다.
 
 ### <a name="disallow-anonymous-access"></a>익명 액세스 허용 안 함
 
-Windows 인증을 사용 하 고 익명 액세스가 비활성화 되어는 `[Authorize]` 고 `[AllowAnonymous]` 특성은 효과가 없습니다. IIS 사이트 (또는 HTTP.sys 또는 WebListener 서버)을 익명 액세스를 허용 하지 않도록 구성 된 경우 요청에 하지 앱에 도달 합니다. 이러한 이유로 `[AllowAnonymous]` 특성 적용 되지 않습니다.
+Windows 인증을 사용 하 고 익명 액세스가 비활성화 되어는 `[Authorize]` 고 `[AllowAnonymous]` 특성은 효과가 없습니다. IIS 사이트 (또는 HTTP.sys)를 익명 액세스를 허용 하도록 구성 하는 경우 요청에 하지 앱에 도달 합니다. 이러한 이유로 `[AllowAnonymous]` 특성 적용 되지 않습니다.
 
 ### <a name="allow-anonymous-access"></a>익명 액세스 허용
 

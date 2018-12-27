@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 11/11/2018
 uid: security/authentication/twitter-logins
-ms.openlocfilehash: 43a5ea59d8853d297ae2c1ec3f4b1c0c14ec80c3
-ms.sourcegitcommit: 09bcda59a58019fdf47b2db5259fe87acf19dd38
+ms.openlocfilehash: 49db8b921fde169380ca284f46e535786b2b8a30
+ms.sourcegitcommit: 3e94d192b2ed9409fe72e3735e158b333354964c
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51708428"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53735806"
 ---
 # <a name="twitter-external-login-setup-with-aspnet-core"></a>ASP.NET Core를 사용 하 여 twitter 외부 로그인 설정
 
@@ -62,9 +62,9 @@ Twitter와 같은 중요 한 설정이 연결 `Consumer Key` 하 고 `Consumer S
 Twitter 서비스를 추가 합니다 `ConfigureServices` 의 메서드 *Startup.cs* 파일:
 
 ```csharp
-services.AddIdentity<ApplicationUser, IdentityRole>()
-        .AddEntityFrameworkStores<ApplicationDbContext>()
-        .AddDefaultTokenProviders();
+services.AddDefaultIdentity<IdentityUser>()
+        .AddDefaultUI(UIFramework.Bootstrap4)
+        .AddEntityFrameworkStores<ApplicationDbContext>();
 
 services.AddAuthentication().AddTwitter(twitterOptions =>
 {
@@ -109,13 +109,13 @@ Twitter 자격 증명을 입력 한 후 전자 메일을 설정할 수 있는 �
 
 이제 Twitter 자격 증명을 사용 하 여 로그인 됩니다.
 
-![웹 응용 프로그램: 사용자 인증](index/_static/Done.png)
+![웹 응용 프로그램: 인증 된 사용자](index/_static/Done.png)
 
 [!INCLUDE[Forward request information when behind a proxy or load balancer section](includes/forwarded-headers-middleware.md)]
 
 ## <a name="troubleshooting"></a>문제 해결
 
-* **ASP.NET Core 2.x만:** 경우 Identity를 호출 하 여 구성 되지 않았습니다 `services.AddIdentity` 에 `ConfigureServices`에 인증 하려고 하면 *ArgumentException: 'SignInScheme' 옵션을 제공 해야*합니다. 이 자습서에 사용 되는 프로젝트 템플릿이이 수행 되도록 보장 합니다.
+* **ASP.NET Core 2.x만:** 호출 하 여 구성 되어 있지 않으면 Identity `services.AddIdentity` 에 `ConfigureServices`를 인증 하려고 하면 *ArgumentException: 'SignInScheme' 옵션을 제공 해야*합니다. 이 자습서에 사용 되는 프로젝트 템플릿이이 수행 되도록 보장 합니다.
 * 사이트 데이터베이스를 초기 마이그레이션을 적용 하 여 만들어지지 않은, 경우 받습니다 *요청을 처리 하는 동안 데이터베이스 작업이 실패 했습니다.* 오류입니다. 탭 **마이그레이션 적용** 데이터베이스를 만들고 오류 지 나 새로 고침 합니다.
 
 ## <a name="next-steps"></a>다음 단계

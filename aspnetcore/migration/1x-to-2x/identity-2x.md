@@ -3,14 +3,14 @@ title: ASP.NET Core 2.0으로 인증 및 Id 마이그레이션
 author: scottaddie
 description: 이 문서에서는 ASP.NET Core 2.0으로 ASP.NET Core 1.x 인증 및 Id 마이그레이션에 대 한 가장 일반적인 단계를 간략하게 설명 합니다.
 ms.author: scaddie
-ms.date: 10/26/2017
+ms.date: 12/18/2018
 uid: migration/1x-to-2x/identity-2x
-ms.openlocfilehash: 6d457d42ad29ca579ba74e3b097d143bd6531b72
-ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
+ms.openlocfilehash: d28b4af483c7ec9d6cff6db3e2f1693e765d4202
+ms.sourcegitcommit: 816f39e852a8f453e8682081871a31bc66db153a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41836151"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53637614"
 ---
 # <a name="migrate-authentication-and-identity-to-aspnet-core-20"></a>ASP.NET Core 2.0으로 인증 및 Id 마이그레이션
 
@@ -283,7 +283,7 @@ Windows 인증의 두 가지 변형이 있습니다.
 
 위에서 설명한 첫 번째 변형 2.0 변경 내용의 영향을 받지 않습니다.
 
-위에서 설명한 두 번째 변형 2.0 변경의 영향. 예를 들어, 있습니다 수 허용 해서는 익명 사용자가 IIS에서 응용 프로그램에 또는 [HTTP.sys](xref:fundamentals/servers/weblistener) 컨트롤러 수준에서 권한 부여 하지만 사용자 계층입니다. 이 시나리오에서는 기본 스키마로 설정 합니다 `IISDefaults.AuthenticationScheme` 에 `ConfigureServices` 메서드의 *Startup.cs*:
+위에서 설명한 두 번째 변형 2.0 변경의 영향. 예를 들어, 있습니다 수 허용 해서는 익명 사용자가 IIS에서 앱으로 또는 [HTTP.sys](xref:fundamentals/servers/httpsys) 컨트롤러 수준에서 권한 부여 하지만 사용자 계층입니다. 이 시나리오에서는 기본 스키마로 설정 합니다 `IISDefaults.AuthenticationScheme` 에 `Startup.ConfigureServices` 메서드:
 
 ```csharp
 services.AddAuthentication(IISDefaults.AuthenticationScheme);

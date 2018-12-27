@@ -5,14 +5,14 @@ description: ASP.NET Core 앱에서 응답 압축 미들웨어를 사용하는 �
 monikerRange: '>= aspnetcore-1.1'
 ms.author: riande
 ms.custom: mvc
-ms.date: 12/01/2018
+ms.date: 12/18/2018
 uid: performance/response-compression
-ms.openlocfilehash: 2516fbb30e55990dc4ad0d92069853bc26874bc9
-ms.sourcegitcommit: 9bb58d7c8dad4bbd03419bcc183d027667fefa20
+ms.openlocfilehash: 51ab51652a7b3f9b4ef97b3abbffe2e398c0bfb5
+ms.sourcegitcommit: 816f39e852a8f453e8682081871a31bc66db153a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52861890"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53637757"
 ---
 # <a name="response-compression-in-aspnet-core"></a>ASP.NET Core에서 응답 압축
 
@@ -33,12 +33,12 @@ IIS, Apache 또는 Nginx에서 서버 기반 응답 압축 기술을 사용 합�
   * [Apache mod_deflate 모듈](http://httpd.apache.org/docs/current/mod/mod_deflate.html)
   * [Nginx 압축 및 압축 풀기](https://www.nginx.com/resources/admin-guide/compression-and-decompression/)
 * 직접 호스트:
-  * [HTTP.sys](xref:fundamentals/servers/httpsys) server (이전의 [WebListener](xref:fundamentals/servers/weblistener))
-  * [Kestrel](xref:fundamentals/servers/kestrel) 서버
+  * [HTTP.sys 서버](xref:fundamentals/servers/httpsys) (이전의 WebListener)
+  * [Kestrel 서버](xref:fundamentals/servers/kestrel)
 
 ## <a name="response-compression"></a>응답 압축
 
-일반적으로 압축 되지 않음 응답에서 응답 압축 이점을 얻을 수 있습니다. 일반적으로 압축 되지 않음 응답에 포함 됩니다: CSS, JavaScript, HTML, XML 및 JSON입니다. PNG 파일 등 기본적으로 압축 된 자산을 압축 하지 않아야 합니다. 기본적으로 압축 된 응답을 압축 하려는 경우 크기와 전송 시간에 적은 추가 감소는 압축을 처리 하는 데 걸린 시간을 기준으로 늘린다 가능성이 높습니다. (파일의 콘텐츠 및 압축의 효율성)에 따라 약 150 1000 바이트 보다 작은 파일을 압축 하지 마십시오. 작은 파일을 압축 하는 오버 헤드는 압축 되지 않은 파일 보다 큰 압축 된 파일을 생성할 수 있습니다.
+일반적으로 압축 되지 않음 응답에서 응답 압축 이점을 얻을 수 있습니다. 일반적으로 압축 되지 않음 응답은 다음과 같습니다. CSS, JavaScript, HTML, XML 및 JSON입니다. PNG 파일 등 기본적으로 압축 된 자산을 압축 하지 않아야 합니다. 기본적으로 압축 된 응답을 압축 하려는 경우 크기와 전송 시간에 적은 추가 감소는 압축을 처리 하는 데 걸린 시간을 기준으로 늘린다 가능성이 높습니다. (파일의 콘텐츠 및 압축의 효율성)에 따라 약 150 1000 바이트 보다 작은 파일을 압축 하지 마십시오. 작은 파일을 압축 하는 오버 헤드는 압축 되지 않은 파일 보다 큰 압축 된 파일을 생성할 수 있습니다.
 
 클라이언트 전송 하 여 해당 기능의 서버를 알려야 클라이언트 압축 된 콘텐츠를 처리 하는 경우는 `Accept-Encoding` 요청 헤더입니다. 서버에서 압축 된 콘텐츠를 보내는 경우에서 정보를 포함 해야 하는 `Content-Encoding` 압축 된 응답 인코딩 되는 방법에 대 한 헤더입니다. 미들웨어에서 지 원하는 콘텐츠 인코딩 지정은 다음 표에 표시 됩니다.
 
@@ -50,7 +50,7 @@ IIS, Apache 또는 Nginx에서 서버 기반 응답 압축 기술을 사용 합�
 | `deflate`                       | 아니요                   | [DEFLATE 압축 된 데이터 형식](https://tools.ietf.org/html/rfc1951) |
 | `exi`                           | 아니요                   | [W3C 효율적인 XML 교환](https://tools.ietf.org/id/draft-varga-netconf-exi-capability-00.html) |
 | `gzip`                          | 예                  | [Gzip 파일 형식](https://tools.ietf.org/html/rfc1952) |
-| `identity`                      | 예                  | 식별자 "인코딩 없이": 응답을 인코딩할 수 있어야 합니다. |
+| `identity`                      | 예                  | "인코딩 없이" 식별자: 응답을 인코딩할 수 있어야 합니다. |
 | `pack200-gzip`                  | 아니요                   | [네트워크 전송 형식에 Java 아카이브](https://jcp.org/aboutJava/communityprocess/review/jsr200/index.html) |
 | `*`                             | 예                  | 모든 사용 가능한 콘텐츠 인코딩을 명시적으로 요청 하지 |
 
@@ -64,7 +64,7 @@ IIS, Apache 또는 Nginx에서 서버 기반 응답 압축 기술을 사용 합�
 | `deflate`                       | 아니요                   | [DEFLATE 압축 된 데이터 형식](https://tools.ietf.org/html/rfc1951) |
 | `exi`                           | 아니요                   | [W3C 효율적인 XML 교환](https://tools.ietf.org/id/draft-varga-netconf-exi-capability-00.html) |
 | `gzip`                          | 예 (기본값)        | [Gzip 파일 형식](https://tools.ietf.org/html/rfc1952) |
-| `identity`                      | 예                  | 식별자 "인코딩 없이": 응답을 인코딩할 수 있어야 합니다. |
+| `identity`                      | 예                  | "인코딩 없이" 식별자: 응답을 인코딩할 수 있어야 합니다. |
 | `pack200-gzip`                  | 아니요                   | [네트워크 전송 형식에 Java 아카이브](https://jcp.org/aboutJava/communityprocess/review/jsr200/index.html) |
 | `*`                             | 예                  | 모든 사용 가능한 콘텐츠 인코딩을 명시적으로 요청 하지 |
 
@@ -74,7 +74,7 @@ IIS, Apache 또는 Nginx에서 서버 기반 응답 압축 기술을 사용 합�
 
 미들웨어를 사용 하면 사용자 지정에 대 한 추가 압축 공급자를 추가 하려면 `Accept-Encoding` 헤더 값입니다. 자세한 내용은 [사용자 지정 공급자](#custom-providers) 아래.
 
-미들웨어 품질 값에 응답할 수 (qvalue, `q`) 가중치를 보내면 클라이언트에서 압축 체계를 우선 순위를 지정 합니다. 자세한 내용은 [RFC 7231: 허용 인코딩](https://tools.ietf.org/html/rfc7231#section-5.3.4)합니다.
+미들웨어 품질 값에 응답할 수 (qvalue, `q`) 가중치를 보내면 클라이언트에서 압축 체계를 우선 순위를 지정 합니다. 자세한 내용은 참조 하세요. [RFC 7231: 허용 인코딩](https://tools.ietf.org/html/rfc7231#section-5.3.4)합니다.
 
 압축 알고리즘은 압축 속도 압축의 효율성 간의 균형을 유지 될 수 있습니다. *효율성* 이 컨텍스트에서 참조 출력의 크기를 압축 합니다. 최소 크기를 가장 하 여 이루어집니다 *최적의* 압축 합니다.
 
@@ -114,7 +114,7 @@ IIS, Apache 또는 Nginx에서 서버 기반 응답 압축 기술을 사용 합�
 
 ::: moniker-end
 
-## <a name="configuration"></a>구성
+## <a name="configuration"></a>구성하기
 
 ::: moniker range=">= aspnetcore-2.2"
 
@@ -432,7 +432,7 @@ public void ConfigureServices(IServiceCollection services)
 
 ## <a name="middleware-issue-when-behind-an-nginx-reverse-proxy"></a>Nginx 역방향 프록시 뒤에 있을 때는 미들웨어 문제
 
-Nginx에서 프록시를 요청 하는 경우는 `Accept-Encoding` 헤더를 제거 합니다. 제거 된 `Accept-Encoding` 헤더에서 응답 압축 미들웨어를 방지 합니다. 자세한 내용은 [NGINX: 압축 및 압축 풀기](https://www.nginx.com/resources/admin-guide/compression-and-decompression/)합니다. 이 문제를 추적 하 여 [Nginx에 대 한 통과 압축 파악 (aspnet/BasicMiddleware \#123)](https://github.com/aspnet/BasicMiddleware/issues/123)합니다.
+Nginx에서 프록시를 요청 하는 경우는 `Accept-Encoding` 헤더를 제거 합니다. 제거 된 `Accept-Encoding` 헤더에서 응답 압축 미들웨어를 방지 합니다. 자세한 내용은 참조 하세요. [NGINX: 압축 및 압축 풀기](https://www.nginx.com/resources/admin-guide/compression-and-decompression/)합니다. 이 문제를 추적 하 여 [Nginx에 대 한 통과 압축 파악 (aspnet/BasicMiddleware \#123)](https://github.com/aspnet/BasicMiddleware/issues/123)합니다.
 
 ## <a name="working-with-iis-dynamic-compression"></a>IIS 동적 압축이 사용
 
@@ -465,6 +465,6 @@ Nginx에서 프록시를 요청 하는 경우는 `Accept-Encoding` 헤더를 제
 * <xref:fundamentals/startup>
 * <xref:fundamentals/middleware/index>
 * [Mozilla Developer Network: 허용 인코딩](https://developer.mozilla.org/docs/Web/HTTP/Headers/Accept-Encoding)
-* [RFC 7231 섹션 3.1.2.1: 콘텐츠 구분을 사용](https://tools.ietf.org/html/rfc7231#section-3.1.2.1)
+* [RFC 7231 섹션 3.1.2.1: 콘텐츠 구분을 사용 합니다.](https://tools.ietf.org/html/rfc7231#section-3.1.2.1)
 * [RFC 7230 섹션 4.2.3: Gzip 코딩](https://tools.ietf.org/html/rfc7230#section-4.2.3)
 * [GZIP 파일 형식 사양 버전 4.3](http://www.ietf.org/rfc/rfc1952.txt)

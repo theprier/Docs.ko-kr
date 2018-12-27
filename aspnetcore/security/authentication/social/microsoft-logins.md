@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 11/11/2018
 uid: security/authentication/microsoft-logins
-ms.openlocfilehash: 89969370cea66b7b6632f1b0be59e135767c831e
-ms.sourcegitcommit: 09bcda59a58019fdf47b2db5259fe87acf19dd38
+ms.openlocfilehash: 4909a0084994654777ad7a6ebda866ac727f0528
+ms.sourcegitcommit: 3e94d192b2ed9409fe72e3735e158b333354964c
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51708402"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53735754"
 ---
 # <a name="microsoft-account-external-login-setup-with-aspnet-core"></a>ASP.NET Core를 사용 하 여 Microsoft 계정 외부 로그인 설정
 
@@ -80,9 +80,9 @@ Microsoft와 같은 중요 한 설정이 연결 `Application ID` 하 고 `Passwo
 Microsoft 계정 서비스에 추가 합니다 `ConfigureServices` 의 메서드 *Startup.cs* 파일:
 
 ```csharp
-services.AddIdentity<ApplicationUser, IdentityRole>()
-        .AddEntityFrameworkStores<ApplicationDbContext>()
-        .AddDefaultTokenProviders();
+services.AddDefaultIdentity<IdentityUser>()
+        .AddDefaultUI(UIFramework.Bootstrap4)
+        .AddEntityFrameworkStores<ApplicationDbContext>();
 
 services.AddAuthentication().AddMicrosoftAccount(microsoftOptions =>
 {
@@ -119,7 +119,7 @@ app.UseMicrosoftAccountAuthentication(new MicrosoftAccountOptions()
 
 응용 프로그램을 실행 하 고 클릭 **로그인**합니다. Microsoft에 로그인 하는 옵션이 표시 됩니다.
 
-![웹 페이지에서 응용 프로그램 로그: 인증 되지 않은 사용자](index/_static/DoneMicrosoft.png)
+![웹 페이지 응용 프로그램 로그: 인증 되지 않은 사용자](index/_static/DoneMicrosoft.png)
 
 Microsoft를 클릭 하면 리디렉션됩니다 Microsoft 인증에 대 한 합니다. (아직 로그인 하지 않은) 하는 경우 Microsoft 계정으로 로그인 한 후 앱 정보에 액세스할 수 있도록 라는 메시지가 표시 됩니다.
 
@@ -129,7 +129,7 @@ Microsoft를 클릭 하면 리디렉션됩니다 Microsoft 인증에 대 한 합
 
 이제 Microsoft 자격 증명을 사용 하 여 로그인 됩니다.
 
-![웹 응용 프로그램: 사용자 인증](index/_static/Done.png)
+![웹 응용 프로그램: 인증 된 사용자](index/_static/Done.png)
 
 [!INCLUDE[Forward request information when behind a proxy or load balancer section](includes/forwarded-headers-middleware.md)]
 
@@ -138,7 +138,7 @@ Microsoft를 클릭 하면 리디렉션됩니다 Microsoft 인증에 대 한 합
 * Microsoft 계정 공급자는 로그인 오류 페이지로 리디렉션됩니다, 하는 경우 오류 제목과 설명을 쿼리 문자열 매개 변수 바로 다음을 유의 합니다 `#` (해시 태그) Uri에 있습니다.
 
   가장 일반적인 원인은 응용 프로그램의 모든 일치 하지 않는 Uri 오류 메시지는 Microsoft 인증에 문제가 있음을 나타낼 것 처럼 보이지만, 합니다 **리디렉션 Uri** 에 대해 지정 된 된 **웹** 플랫폼 .
-* **ASP.NET Core 2.x만:** 경우 Identity를 호출 하 여 구성 되지 않았습니다 `services.AddIdentity` 에 `ConfigureServices`에 인증 하려고 하면 *ArgumentException: 'SignInScheme' 옵션을 제공 해야*합니다. 이 자습서에 사용 되는 프로젝트 템플릿이이 수행 되도록 보장 합니다.
+* **ASP.NET Core 2.x만:** 호출 하 여 구성 되어 있지 않으면 Identity `services.AddIdentity` 에 `ConfigureServices`를 인증 하려고 하면 *ArgumentException: 'SignInScheme' 옵션을 제공 해야*합니다. 이 자습서에 사용 되는 프로젝트 템플릿이이 수행 되도록 보장 합니다.
 * 사이트 데이터베이스를 초기 마이그레이션을 적용 하 여 만들어지지 않은, 경우 받습니다 *요청을 처리 하는 동안 데이터베이스 작업이 실패 했습니다.* 오류입니다. 탭 **마이그레이션 적용** 데이터베이스를 만들고 오류 지 나 새로 고침 합니다.
 
 ## <a name="next-steps"></a>다음 단계

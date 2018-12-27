@@ -4,16 +4,16 @@ title: 라우팅 및 ASP.NET Web API에서에서 작업 선택 | Microsoft Docs
 author: MikeWasson
 description: ''
 ms.author: riande
-ms.date: 07/27/2012
+ms.date: 12/14/2018
 ms.assetid: bcf2d223-cb7f-411e-be05-f43e96a14015
 msc.legacyurl: /web-api/overview/web-api-routing-and-actions/routing-and-action-selection
 msc.type: authoredcontent
-ms.openlocfilehash: b4912d3ee1e13651f2a63d54d7dbfd92e00f85f8
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: ce54181996376cb5dde3b91c10c16f33b3c6a570
+ms.sourcegitcommit: 6548c19f345850ee22b50f7ef9fca732895d9e08
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41837354"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53425174"
 ---
 <a name="routing-and-action-selection-in-aspnet-web-api"></a>라우팅 및 ASP.NET Web API에서에서 작업 선택
 ====================
@@ -58,11 +58,11 @@ ms.locfileid: "41837354"
 
 ### <a name="defaults"></a>기본값
 
-기본값을 제공 하면 해당 세그먼트가 없는 URI 경로 일치 합니다. 예를 들어:
+기본값을 제공 하면 해당 세그먼트가 없는 URI 경로 일치 합니다. 예를 들면 다음과 같습니다.
 
 [!code-csharp[Main](routing-and-action-selection/samples/sample4.cs)]
 
-URI "`http://localhost/api/products`"이이 경로 일치 합니다. "{범주}" 세그먼트 "all 로" 기본 값이 할당 됩니다.
+Uri `http://localhost/api/products/all` 고 `http://localhost/api/products` 이전 경로 일치 합니다. 누락 된 두 번째 URI에 `{category}` 세그먼트에는 기본값이 할당 됩니다 `all`합니다.
 
 ### <a name="route-dictionary"></a>경로 사전
 
@@ -70,7 +70,7 @@ URI "`http://localhost/api/products`"이이 경로 일치 합니다. "{범주}" 
 
 이 경로 일치 하는 단계 동안 특별 한 "{컨트롤러}" 및 "{action}" 자리 표시자를 다른 자리 표시자와 마찬가지로 처리 됩니다. 다른 값을 사용 하 여 사전에 저장 하기만 하면 됩니다.
 
-기본값에는 특수 한 값을 가질 수 **RouteParameter.Optional**합니다. 자리 표시자 가져옵니다이 값을 할당 하는 경우 값 경로 사전에 추가 되지 않습니다. 예를 들어:
+기본값에는 특수 한 값을 가질 수 **RouteParameter.Optional**합니다. 자리 표시자 가져옵니다이 값을 할당 하는 경우 값 경로 사전에 추가 되지 않습니다. 예를 들면 다음과 같습니다.
 
 [!code-csharp[Main](routing-and-action-selection/samples/sample5.cs)]
 
@@ -85,7 +85,7 @@ URI "`http://localhost/api/products`"이이 경로 일치 합니다. "{범주}" 
 - 범주: "toys"
 - id: "123"
 
-기본값은 경로 템플릿에서 아무 곳 이나 표시 되지 않는 값을 포함할 수도 있습니다. 경로 일치 하는 경우 해당 값이 사전에 저장 됩니다. 예를 들어:
+기본값은 경로 템플릿에서 아무 곳 이나 표시 되지 않는 값을 포함할 수도 있습니다. 경로 일치 하는 경우 해당 값이 사전에 저장 됩니다. 예를 들면 다음과 같습니다.
 
 [!code-csharp[Main](routing-and-action-selection/samples/sample6.cs)]
 
@@ -122,7 +122,7 @@ URI 경로 "api/루트/8" 인 경우 사전 두 값이 포함 됩니다.
 
 **HTTP 메서드입니다.** 프레임 워크는만 다음과 같이 결정 요청의 HTTP 메서드를 일치 하는 작업을 선택 합니다.
 
-1. 특성을 사용 하 여 HTTP 메서드를 지정할 수 있습니다: **AcceptVerbs**, **HttpDelete**를 **HttpGet**를 **HttpHead**,  **HttpOptions**하십시오 **HttpPatch**, **HttpPost**, 또는 **HttpPut**합니다.
+1. 특성을 사용 하 여 HTTP 메서드를 지정할 수 있습니다. **AcceptVerbs**, **HttpDelete**합니다 **HttpGet**를 **HttpHead**를 **HttpOptions**, **HttpPatch**하십시오 **HttpPost**, 또는 **HttpPut**합니다.
 2. 이 고, 그렇지 컨트롤러 메서드의 이름을 "Get", "Post", "Put", "Delete", "Head", "옵션" 또는 "패치"를 사용 하 여 시작 되 면 다음 규칙에 따라 작업 해당 HTTP 메서드를 지원 합니다.
 3. 위의 none 인 경우 메서드는 POST를 지원 합니다.
 
