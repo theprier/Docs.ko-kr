@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 11/11/2018
 uid: security/authentication/social/index
-ms.openlocfilehash: 19074d5014a09446ceec1b89449e78760fc8e7cf
-ms.sourcegitcommit: 09bcda59a58019fdf47b2db5259fe87acf19dd38
+ms.openlocfilehash: 47ac1f966ff727957e6ed700c3c68efa16b1b38b
+ms.sourcegitcommit: 3e94d192b2ed9409fe72e3735e158b333354964c
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51708376"
+ms.lasthandoff: 12/24/2018
+ms.locfileid: "53735728"
 ---
 # <a name="facebook-google-and-external-provider-authentication-in-aspnet-core"></a>ASP.NET Core에서 Facebook, Google 및 외부 공급자 인증
 
@@ -25,8 +25,6 @@ ms.locfileid: "51708376"
 
 사용자가 자신의 기존 자격 증명을 사용하여 로그인할 수 있게 되면 사용자에게 편리하고 로그인 프로세스를 관리하는 복잡성을 타사에 양도합니다. 소셜 로그인이 트래픽 및 고객 변환을 제공할 수 있는 방법에 대한 예제는 [Facebook](https://www.facebook.com/unsupportedbrowser) 및 [Twitter](https://dev.twitter.com/resources/case-studies)의 사례 연구를 참조하세요.
 
-참고: 여기에 제공된 패키지는 OAuth 인증 흐름의 복잡성을 상당히 추상화하지만 문제를 해결하는 경우 자세히 이해해야 할 수도 있습니다. 많은 리소스를 사용할 수 있습니다. 예를 들어 [OAuth 2 소개](https://www.digitalocean.com/community/tutorials/an-introduction-to-oauth-2) 또는 [OAuth 2 이해](http://www.bubblecode.net/2016/01/22/understanding-oauth2/)를 참조하세요. [공급자 패키지의 ASP.NET Core 소스 코드](https://github.com/aspnet/Security/tree/master/src)를 확인하여 몇 가지 문제를 해결할 수 있습니다.
-
 ## <a name="create-a-new-aspnet-core-project"></a>새 ASP.NET Core 프로젝트 만들기
 
 * Visual Studio 2017의 시작 페이지에서 또는 **파일** > **새로 만들기** > **프로젝트**를 통해 새 프로젝트를 만듭니다.
@@ -39,7 +37,7 @@ ms.locfileid: "51708376"
 
 ![새 웹 응용 프로그램 대화 상자](index/_static/select-project.png)
 
-참고: 이 자습서에서는 마법사의 위쪽에서 선택할 수 있는 ASP.NET Core 2.0 SDK 버전에 적용됩니다.
+참고: 이 자습서는 마법사 상단에서 선택할 수 있는 ASP.NET Core 2.0 SDK 버전에 적용됩니다.
 
 ## <a name="apply-migrations"></a>마이그레이션 적용
 
