@@ -1,7 +1,7 @@
 ---
 title: ASP.NET Core의 정책 기반 권한 부여
 author: rick-anderson
-description: ASP.NET Core 앱에서 권한 정책 처리기를 만들고 사용하여 권한 부여 요구 사항을 적용하는 방법을 알아봅니다.
+description: ASP.NET Core 응용 프로그램에서 사용자 지정 권한 정책 처리기를 작성 및 사용해서 권한 부여 요구 사항을 적용하는 방법을 알아봅니다.
 ms.author: riande
 ms.custom: mvc
 ms.date: 11/21/2017
@@ -15,13 +15,13 @@ ms.locfileid: "36277984"
 ---
 # <a name="policy-based-authorization-in-aspnet-core"></a>ASP.NET Core의 정책 기반 권한 부여
 
-[역할 기반 권한 부여](xref:security/authorization/roles)와 [클레임 기반 권한 부여](xref:security/authorization/claims)는 내부적으로 요구 사항, 요구 사항 처리기, 그리고 미리 구성된 정책을 사용합니다. 이런 빌딩 블록들은 권한 부여 평가를 코드로 표현할 수 있는 기능을 제공합니다. 결과적으로 보다 풍부하고 재사용 가능하며 테스트 가능한 권한 부여 구조를 만들 수 있습니다.
+[역할 기반 권한 부여](xref:security/authorization/roles) 및 [클레임 기반 권한 부여](xref:security/authorization/claims) 는 내부적으로 요구 사항, 요구 사항 처리기, 그리고 미리 구성된 정책을 사용합니다. 이런 빌딩 블록들은 권한 부여 평가를 코드로 표현할 수 있는 기능을 지원합니다. 결과적으로 보다 풍부하고 재사용 가능하며 테스트 가능한 권한 부여 구조를 만들 수 있습니다.
 
 권한 부여 정책은 하나 이상의 요구 사항으로 구성됩니다. 그리고 `Startup.ConfigureServices`에서 권한 부여 서비스 구성의 일부로 등록됩니다.
 
 [!code-csharp[](policies/samples/PoliciesAuthApp1/Startup.cs?range=40-41,50-55,63,72)]
 
-이 예제에서는 "AtLeast21"이라는 정책이 만들어집니다. 이 정책은 요구 사항의 매개 변수로 제공되며 최소 연령을 뜻하는 단일 요구 사항을 갖습니다.
+위의 예제는 "AtLeast21"이라는 정책을 생성합니다. 이 정책은 요구 사항의 &mdash; 매개 변수로 제공되는, 최소 연령을 뜻하는 단일 요구 사항을 갖습니다.
 
 정책은 정책 이름이 지정된 `[Authorize]` 특성을 통해서 적용됩니다. 예를 들어:
 
@@ -29,7 +29,7 @@ ms.locfileid: "36277984"
 
 ## <a name="requirements"></a>요구 사항
 
-권한 부여 요구 사항은 정책이 현재 사용자의 신원을 평가하기 위해서 사용할 수 있는 데이터 매개 변수들의 모음입니다. 예제의 "AtLeast21" 정책의 경우 요구 사항은 단일 매개 변수, 즉 최소 연령입니다. 요구 사항은 빈 표식 인터페이스인 [IAuthorizationRequirement](/dotnet/api/microsoft.aspnetcore.authorization.iauthorizationrequirement) 인터페이스를 구현합니다. 매개 변수인 최소 연령 요구 사항은 다음과 같이 구현할 수 있습니다.
+권한 부여 요구 사항은 정책이 현재 사용자 주체를 평가하기 위해서 사용할 수 있는 데이터 매개 변수 컬렉션입니다. 예제의 "AtLeast21" 정책의 경우 요구 사항은 단일 매개 변수, 즉 최소 연령입니다. 요구 사항은 빈 표식 인터페이스인 [IAuthorizationRequirement](/dotnet/api/microsoft.aspnetcore.authorization.iauthorizationrequirement) 인터페이스를 구현합니다. 매개 변수인 최소 연령 요구 사항은 다음과 같이 구현할 수 있습니다.
 
 [!code-csharp[](policies/samples/PoliciesAuthApp1/Services/Requirements/MinimumAgeRequirement.cs?name=snippet_MinimumAgeRequirementClass)]
 
@@ -40,7 +40,7 @@ ms.locfileid: "36277984"
 
 ## <a name="authorization-handlers"></a>권한 부여 처리기
 
-권한 부여 처리기는 요구 사항의 속성을 평가하는 역할을 담당합니다. 권한 부여 처리기는 제공된 [AuthorizationHandlerContext](/dotnet/api/microsoft.aspnetcore.authorization.authorizationhandlercontext)를 대상으로 요구 사항을 평가하여 접근 허용 여부를 결정합니다.
+권한 부여 처리기는 요구 사항의 속성을 평가하는 역할을 담당합니다. 권한 부여 처리기는 제공된 [AuthorizationHandlerContext](/dotnet/api/microsoft.aspnetcore.authorization.authorizationhandlercontext)에 대해 요구 사항을 평가하여 접근 허용 여부를 결정합니다.
 
 하나의 요구 사항에 [여러 개의 처리기](#security-authorization-policies-based-multiple-handlers)가 존재할 수 있습니다. 처리기는 [AuthorizationHandler\<TRequirement>](/dotnet/api/microsoft.aspnetcore.authorization.authorizationhandler-1)를 상속받으며, 여기서 `TRequirement`는 처리해야 할 요구 사항입니다. 또는 처리기에서 [IAuthorizationHandler](/dotnet/api/microsoft.aspnetcore.authorization.iauthorizationhandler)를 구현하여 두 가지 이상의 요구 사항 형식을 처리할 수도 있습니다.
 
@@ -102,7 +102,7 @@ ms.locfileid: "36277984"
 
 [!code-csharp[](policies/samples/PoliciesAuthApp1/Services/Handlers/TemporaryStickerHandler.cs?name=snippet_TemporaryStickerHandlerClass)]
 
-두 처리기가 모두 [등록](xref:security/authorization/policies#security-authorization-policies-based-handler-registration)되어 있는지 확인합니다. 정책이 `EnterBuildingRequirement`를 평가할 때, 두 처리기 중 하나라도 성공하면 정책 평가가 성공한 것으로 간주됩니다.
+두 처리기가 모두 [등록되어 있는지](xref:security/authorization/policies#security-authorization-policies-based-handler-registration) 확인합니다. 정책이 `BuildingEntryRequirement` 를 평가할 때, 두 처리기 중 하나라도 성공하면 정책 평가가 성공한 것으로 간주됩니다.
 
 ## <a name="using-a-func-to-fulfill-a-policy"></a>func를 이용해서 정책 구성하기
 
@@ -118,7 +118,7 @@ ms.locfileid: "36277984"
 
 예를 들어, MVC는 `Resource` 속성에 [AuthorizationFilterContext](/dotnet/api/?term=AuthorizationFilterContext)의 인스턴스를 전달합니다. 이 속성은 `HttpContext`나 `RouteData`를 비롯한, MVC 및 Razor 페이지가 제공하는 다양한 정보들에 대한 접근을 제공합니다.
 
-`Resource` 속성을 사용하는 방식은 프레임워크에 따라서 달라집니다. 따라서 `Resource` 속성의 정보를 사용할 경우 권한 부여 정책이 특정 프레임워크를 대상으로 제한될 수 있습니다. 그러므로 먼저 `as` 키워드를 사용해서 `Resource` 속성의 형변환을 시도한 다음, 형변환의 성공 여부를 확인해서 처리기가 다른 프레임워크에서 실행될 때 `InvalidCastExceptions` 예외가 발생하지 않도록 주의해야 합니다.
+`Resource` 속성을 사용하는 방식은 프레임워크에 따라서 달라집니다. 따라서 `Resource` 속성의 정보를 사용할 경우 권한 부여 정책이 특정 프레임워크를 대상으로 제한될 수 있습니다. 그러므로 먼저 `as` 키워드를 사용해서 `Resource` 속성의 캐스팅을 시도한 다음, 캐스팅의 성공 여부를 확인해서 처리기가 다른 프레임워크에서 실행될 때 `InvalidCastExceptions` 예외가 발생하지 않도록 주의해야 합니다.
 
 ```csharp
 // Requires the following import:
