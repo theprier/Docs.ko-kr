@@ -5,14 +5,14 @@ description: 이 문서에는 Azure 호스트 및 배포 리소스의 링크가 
 monikerRange: '>= aspnetcore-2.1'
 ms.author: riande
 ms.custom: mvc
-ms.date: 12/10/2018
+ms.date: 12/18/2018
 uid: host-and-deploy/azure-apps/index
-ms.openlocfilehash: b6ff2124aac7e866f630cf359cbd188e88906844
-ms.sourcegitcommit: b34b25da2ab68e6495b2460ff570468f16a9bf0d
+ms.openlocfilehash: c70363c9cff94a682553745aba7fd4e396721f4e
+ms.sourcegitcommit: 816f39e852a8f453e8682081871a31bc66db153a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53284697"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53637679"
 ---
 # <a name="deploy-aspnet-core-apps-to-azure-app-service"></a>Azure App Service에 ASP.NET Core 앱 배포
 
@@ -42,7 +42,7 @@ ASP.NET Core 앱에 대한 CI 빌드를 설정하고 Azure App Service에 대한
 [Azure Web App 샌드박스](https://github.com/projectkudu/kudu/wiki/Azure-Web-App-sandbox)  
 Azure 앱 플랫폼에서 적용하는 Azure App Service 런타임 실행 제한 사항을 알아봅니다.
 
-## <a name="application-configuration"></a>응용 프로그램 구성
+## <a name="application-configuration"></a>애플리케이션 구성
 
 ### <a name="platform"></a>플랫폼
 
@@ -179,7 +179,7 @@ ARM 템플릿을 사용하여 앱을 만들고 배포하는 경우 `siteextensio
 
 #### <a name="publish-from-visual-studio"></a>Visual Studio에서 게시
 
-1. Visual Studio 도구 모음에서 **빌드** > **{응용 프로그램 이름} 게시**를 선택합니다.
+1. Visual Studio 도구 모음에서 **빌드** > **{애플리케이션 이름} 게시**를 선택합니다.
 1. **공개 대상 선택** 대화 상자에서 **App Service**가 선택되어 있는지 확인합니다.
 1. **고급**을 선택합니다. **게시** 대화 상자가 열립니다.
 1. **게시** 대화 상자에서:
@@ -217,7 +217,7 @@ ARM 템플릿을 사용하여 앱을 만들고 배포하는 경우 `siteextensio
 
 ## <a name="additional-resources"></a>추가 자료
 
-* [Web Apps 개요(5분 개요 동영상)](/azure/app-service/app-service-web-overview)
+* [Web Apps 개요(5분 개요 비디오)](/azure/app-service/app-service-web-overview)
 * [Azure App Service: .NET 앱을 호스트하기에 가장 좋은 서비스(55분 개요 동영상)](https://channel9.msdn.com/events/dotnetConf/2017/T222)
 * [Azure Friday: Azure App Service 진단 및 문제 해결 환경(12분 동영상)](https://channel9.msdn.com/Shows/Azure-Friday/Azure-App-Service-Diagnostic-and-Troubleshooting-Experience)
 * [Azure App Service 진단 개요](/azure/app-service/app-service-diagnostics)
@@ -226,7 +226,7 @@ ARM 템플릿을 사용하여 앱을 만들고 배포하는 경우 `siteextensio
 Windows Server의 Azure App Service는 [IIS(인터넷 정보 서비스)](https://www.iis.net/)를 사용합니다. 다음 항목은 기본 IIS 기술과 관련이 있습니다.
 
 * <xref:host-and-deploy/iis/index>
-* <xref:fundamentals/servers/aspnet-core-module>
+* <xref:host-and-deploy/aspnet-core-module>
 * <xref:host-and-deploy/aspnet-core-module>
 * <xref:host-and-deploy/iis/modules>
 * [Microsoft TechNet 라이브러리: Windows Server](/windows-server/windows-server-versions)
