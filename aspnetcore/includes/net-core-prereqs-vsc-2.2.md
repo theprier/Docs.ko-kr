@@ -1,3 +1,3 @@
-* [<span data-ttu-id="a8c08-101">Visual Studio Code</span><span class="sxs-lookup"><span data-stu-id="a8c08-101">Visual Studio Code</span></span>](https://code.visualstudio.com/download)
-* [<span data-ttu-id="a8c08-102">.NET Core SDK 2.2 이상</span><span class="sxs-lookup"><span data-stu-id="a8c08-102">.NET Core SDK 2.2 or later</span></span>](https://www.microsoft.com/net/download/all)
-* [<span data-ttu-id="a8c08-103">C# for Visual Studio Code 버전 1.17.1 이상</span><span class="sxs-lookup"><span data-stu-id="a8c08-103">C# for Visual Studio Code version 1.17.1 or later</span></span>](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp)
+* [<span data-ttu-id="d4330-101">Visual Studio Code</span><span class="sxs-lookup"><span data-stu-id="d4330-101">Visual Studio Code</span></span>](https://code.visualstudio.com/download)
+* [<span data-ttu-id="d4330-102">.NET Core SDK 2.2 이상</span><span class="sxs-lookup"><span data-stu-id="d4330-102">.NET Core SDK 2.2 or later</span></span>](https://www.microsoft.com/net/download/all)
+* [<span data-ttu-id="d4330-103">Visual Studio Code용 C# 버전 1.17.1 이상</span><span class="sxs-lookup"><span data-stu-id="d4330-103">C# for Visual Studio Code version 1.17.1 or later</span></span>](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp)
