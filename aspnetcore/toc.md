@@ -11,11 +11,7 @@
 ### [MongoDB를 사용하는 Web API](xref:tutorials/first-mongo-app)
 ## 웹앱
 ### [Razor 페이지](xref:tutorials/razor-pages/index)
-
-### MVC
-#### [Visual Studio 사용](xref:tutorials/first-mvc-app/index)
-#### [Visual Studio Code 사용](xref:tutorials/first-mvc-app-xplat/index)
-#### [Mac용 Visual Studio 사용](xref:tutorials/first-mvc-app-mac/index)
+### [MVC](xref:tutorials/first-mvc-app/index)
 
 ## 실시간 웹앱
 ### [JavaScript를 사용한 SignalR](xref:tutorials/signalr)
@@ -46,11 +42,7 @@
 ### [개요](xref:fundamentals/host/index)
 ### [웹 호스트](xref:fundamentals/host/web-host)
 ### [일반 호스트](xref:fundamentals/host/generic-host)
-## 서버
-### [개요](xref:fundamentals/servers/index)
-### [Kestrel](xref:fundamentals/servers/kestrel)
-### [ASP.NET Core 모듈](xref:fundamentals/servers/aspnet-core-module)
-### [HTTP.sys](xref:fundamentals/servers/httpsys)
+## [서버](xref:fundamentals/servers/index)
 ## [HTTP 요청 시작](xref:fundamentals/http-requests)
 
 # 웹앱
@@ -66,50 +58,26 @@
 #### [새 필드 추가](xref:tutorials/razor-pages/new-field)
 #### [유효성 검사 추가](xref:tutorials/razor-pages/validation)
 
+## MVC
+### [MVC 개요](xref:mvc/overview)
+### [MVC 자습서](xref:tutorials/first-mvc-app/index)
+#### [시작](xref:tutorials/first-mvc-app/start-mvc)
+#### [컨트롤러 추가](xref:tutorials/first-mvc-app/adding-controller)
+#### [보기 추가](xref:tutorials/first-mvc-app/adding-view)
+#### [모델 추가](xref:tutorials/first-mvc-app/adding-model)
+#### [DB 작업](xref:tutorials/first-mvc-app/working-with-sql)
+#### [컨트롤러 작업 및 보기](xref:tutorials/first-mvc-app/controller-methods-views)
+#### [검색 추가](xref:tutorials/first-mvc-app/search)
+#### [새 필드 추가](xref:tutorials/first-mvc-app/new-field)
+#### [유효성 검사 추가](xref:tutorials/first-mvc-app/validation)
+#### [세부 정보 및 삭제 메서드 검사](xref:tutorials/first-mvc-app/details)
+
 ### [필터](xref:razor-pages/filter)
 ### [Razor 클래스 라이브러리](xref:razor-pages/ui-class)
 ### [경로 및 앱 규칙](xref:razor-pages/razor-pages-conventions)
 ### [파일 업로드](xref:razor-pages/upload-files)
 ### [Razor SDK](xref:razor-pages/sdk)
-## MVC
-### [개요](xref:mvc/overview)
-### 자습서
-#### Visual Studio를 사용한 MVC
-##### [개요](xref:tutorials/first-mvc-app/index)
-##### [시작](xref:tutorials/first-mvc-app/start-mvc)
-##### [컨트롤러 추가](xref:tutorials/first-mvc-app/adding-controller)
-##### [보기 추가](xref:tutorials/first-mvc-app/adding-view)
-##### [모델 추가](xref:tutorials/first-mvc-app/adding-model)
-##### [DB 작업](xref:tutorials/first-mvc-app/working-with-sql)
-##### [컨트롤러 작업 및 보기](xref:tutorials/first-mvc-app/controller-methods-views)
-##### [검색 추가](xref:tutorials/first-mvc-app/search)
-##### [새 필드 추가](xref:tutorials/first-mvc-app/new-field)
-##### [유효성 검사 추가](xref:tutorials/first-mvc-app/validation)
-##### [세부 정보 및 삭제 메서드 검사](xref:tutorials/first-mvc-app/details)
-#### Visual Studio Code를 사용한 MVC
-##### [개요](xref:tutorials/first-mvc-app-xplat/index)
-##### [시작](xref:tutorials/first-mvc-app-xplat/start-mvc)
-##### [컨트롤러 추가](xref:tutorials/first-mvc-app-xplat/adding-controller)
-##### [보기 추가](xref:tutorials/first-mvc-app-xplat/adding-view)
-##### [모델 추가](xref:tutorials/first-mvc-app-xplat/adding-model)
-##### [SQLite 작업](xref:tutorials/first-mvc-app-xplat/working-with-sql)
-##### [컨트롤러 메서드 및 보기](xref:tutorials/first-mvc-app-xplat/controller-methods-views)
-##### [검색 추가](xref:tutorials/first-mvc-app-xplat/search)
-##### [새 필드 추가](xref:tutorials/first-mvc-app-xplat/new-field)
-##### [유효성 검사 추가](xref:tutorials/first-mvc-app-xplat/validation)
-##### [세부 정보 및 삭제 메서드 검사](xref:tutorials/first-mvc-app/details)
-#### Mac용 Visual Studio를 사용한 MVC
-##### [개요](xref:tutorials/first-mvc-app-mac/index)
-##### [시작](xref:tutorials/first-mvc-app-mac/start-mvc)
-##### [컨트롤러 추가](xref:tutorials/first-mvc-app-mac/adding-controller)
-##### [보기 추가](xref:tutorials/first-mvc-app-mac/adding-view)
-##### [모델 추가](xref:tutorials/first-mvc-app-mac/adding-model)
-##### [SQLite 작업](xref:tutorials/first-mvc-app-mac/working-with-sql)
-##### [컨트롤러 메서드 및 보기](xref:tutorials/first-mvc-app-mac/controller-methods-views)
-##### [검색 추가](xref:tutorials/first-mvc-app-mac/search)
-##### [새 필드 추가](xref:tutorials/first-mvc-app-mac/new-field)
-##### [유효성 검사 추가](xref:tutorials/first-mvc-app-mac/validation)
-##### [세부 정보 및 삭제 메서드 검사](xref:tutorials/first-mvc-app/details)
+
 ### [Views](xref:mvc/views/overview)
 ### [부분 뷰](xref:mvc/views/partial)
 ### [Controllers](xref:mvc/controllers/actions)
@@ -284,9 +252,11 @@
 ## IIS를 사용하여 Windows에서 호스트
 ### [개요](xref:host-and-deploy/iis/index)
 ### [IIS에 대한 문제 해결](xref:host-and-deploy/iis/troubleshoot)
-### [ASP.NET Core 모듈 참조](xref:host-and-deploy/aspnet-core-module)
+### [ASP.NET Core 모듈](xref:host-and-deploy/aspnet-core-module)
 ### [Visual Studio의 IIS 지원](xref:host-and-deploy/iis/development-time-iis-support)
 ### [IIS 모듈](xref:host-and-deploy/iis/modules)
+## [Kestrel](xref:fundamentals/servers/kestrel)
+## [HTTP.sys](xref:fundamentals/servers/httpsys)
 ## [Windows 서비스에서 호스트](xref:host-and-deploy/windows-service)
 ## [Nginx를 사용하여 Linux에서 호스트](xref:host-and-deploy/linux-nginx)
 ## [Apache를 사용하여 Linux에서 호스트](xref:host-and-deploy/linux-apache)
