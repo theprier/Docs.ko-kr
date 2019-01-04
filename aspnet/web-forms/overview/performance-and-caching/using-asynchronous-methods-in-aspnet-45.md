@@ -4,16 +4,16 @@ title: ASP.NET 4.5에서에서 비동기 메서드 사용 | Microsoft Docs
 author: Rick-Anderson
 description: 이 자습서는 Visual Studio Express 2012 for Web, 무료 인 사용 하 여 비동기 ASP.NET Web Forms 응용 프로그램을 빌드하는 기본 사항 설명...
 ms.author: riande
-ms.date: 06/06/2012
+ms.date: 01/02/2019
 ms.assetid: a585c9a2-7c8e-478b-9706-90f3739c50d1
 msc.legacyurl: /web-forms/overview/performance-and-caching/using-asynchronous-methods-in-aspnet-45
 msc.type: authoredcontent
-ms.openlocfilehash: 9a3c9fab4932c3bc85733a912cf1d1eaaecc1ab7
-ms.sourcegitcommit: fc7eb4243188950ae1f1b52669edc007e9d0798d
+ms.openlocfilehash: c36749f82051ee8965035eca9c2e4e57a5dbd616
+ms.sourcegitcommit: e1cc4c1ef6c9e07918a609d5ad7fadcb6abe3e12
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51225488"
+ms.lasthandoff: 01/03/2019
+ms.locfileid: "53997346"
 ---
 <a name="using-asynchronous-methods-in-aspnet-45"></a>ASP.NET 4.5에서에서 비동기 메서드 사용
 ====================
@@ -38,7 +38,7 @@ ms.locfileid: "51225488"
 
 사용 하 여 자세한 [await](https://msdn.microsoft.com/library/hh156528(VS.110).aspx) 및 [비동기](https://msdn.microsoft.com/library/hh156513(VS.110).aspx) 키워드 및 [태스크](https://msdn.microsoft.com/library/system.threading.tasks.task.aspx) 네임 스페이스에 다음을 참조 합니다.
 
-- [.NET에서 비동기 백서:](https://go.microsoft.com/fwlink/?LinkId=204844)
+- [백서: .NET의 비동기 방식](https://go.microsoft.com/fwlink/?LinkId=204844)
 - [Async/Await FAQ](https://blogs.msdn.com/b/pfxteam/archive/2012/04/12/10293335.aspx)
 - [Visual Studio 비동기 프로그래밍](https://msdn.microsoft.com/vstudio/gg316360)
 
@@ -68,7 +68,7 @@ ms.locfileid: "51225488"
 - 작업은 네트워크 또는 I/o-바인딩된 CPU 바인딩된 대신입니다.
 - 병렬 처리는 코드의 단순성 보다 더 중요 합니다.
 - 장기 실행 요청을 취소할 수 있는 메커니즘을 제공 해야 합니다.
-- 경우 out 스레드 전환의 이점은 가중치 컨텍스트 전환 비용을 적용 합니다. 일반적으로 지정 해야 메서드 비동기 작업도 수행 하지 하는 동안 ASP.NET 요청 스레드를 차단 하는 동기 메서드의 경우. 호출 하 여 비동기, ASP.NET 요청 스레드가 차단 되지 않습니다는 웹 서비스 요청을 완료할 때까지 대기 하는 동안 작업이 없습니다.
+- 때 스레드 전환의 이점은 컨텍스트 전환 비용을 보다 큽니다. 일반적으로 지정 해야 메서드 비동기 작업도 수행 하지 하는 동안 ASP.NET 요청 스레드를 차단 하는 동기 메서드의 경우. 호출 하 여 비동기, ASP.NET 요청 스레드가 차단 되지 않습니다는 웹 서비스 요청을 완료할 때까지 대기 하는 동안 작업이 없습니다.
 - 테스트 차단 사이트 성능에 병목 상태가 되 게 하 고 IIS가 이러한 차단 호출에 대 한 비동기 메서드를 사용 하 여 더 많은 요청을 처리할 수 있음을 보여 줍니다.
 
   다운로드 가능한 샘플에는 비동기 메서드를 효과적으로 사용 하는 방법을 보여 줍니다. 제공 된 샘플은 ASP.NET 4.5의 비동기 프로그래밍의 간단한 데모를 제공 하도록 설계 되었습니다. 샘플은 ASP.NET에서 비동기 프로그래밍을 위한 참조 아키텍처를 아닙니다. 샘플 프로그램 호출 [ASP.NET Web API](../../../web-api/index.md) 메서드를 호출 하는 [Task.Delay](https://msdn.microsoft.com/library/hh139096(VS.110).aspx) 장기 실행 웹 서비스 호출을 시뮬레이션할 수 있습니다. 대부분의 프로덕션 응용 프로그램에는 비동기 메서드 사용으로 뚜렷한 이점을 표시 되지 않습니다.   
