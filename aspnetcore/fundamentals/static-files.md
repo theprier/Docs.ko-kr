@@ -4,14 +4,14 @@ author: rick-anderson
 description: ASP.NET Core 웹앱에서 정적 파일을 제공 및 보호하고 정적 파일 호스팅 미들웨어 동작을 구성하는 방법을 알아봅니다.
 ms.author: riande
 ms.custom: mvc
-ms.date: 10/18/2018
+ms.date: 12/18/2018
 uid: fundamentals/static-files
-ms.openlocfilehash: fb92141b1864574242b29ecc386024ce72a6be87
-ms.sourcegitcommit: 408921a932448f66cb46fd53c307a864f5323fe5
+ms.openlocfilehash: 4c08d65cc1f658ef08a9b4b362ac7f8a3a243557
+ms.sourcegitcommit: 816f39e852a8f453e8682081871a31bc66db153a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51570128"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53637783"
 ---
 # <a name="static-files-in-aspnet-core"></a>ASP.NET Core의 고정 파일
 
@@ -43,7 +43,7 @@ HTML, CSS, 이미지 및 JavaScript와 같은 정적 파일은 ASP.NET Core 앱�
 
 ::: moniker-end
 
-정적 파일은 웹 루트를 기준으로 하는 경로를 통해 액세스할 수 있습니다. 예를 들어 **웹 응용 프로그램** 프로젝트 템플릿에는 *wwwroot* 폴더 내에 여러 폴더를 포함합니다.
+정적 파일은 웹 루트를 기준으로 하는 경로를 통해 액세스할 수 있습니다. 예를 들어 **웹 애플리케이션** 프로젝트 템플릿에는 *wwwroot* 폴더 내에 여러 폴더를 포함합니다.
 
 * **wwwroot**
   * **css**
@@ -246,7 +246,7 @@ URL은 파일 계층 구조 및 이전 코드를 사용하여 다음과 같이 �
 
 * `UseDirectoryBrowser` 및 `UseStaticFiles`로 노출된 콘텐츠에 대한 URL은 대/소문자 구분 및 기본 파일 시스템의 문자 제한이 적용됩니다. 예를 들어 Windows는 대/소문자를 구분하지 않는 반면 macOS 및 Linux는 그렇지 않습니다.
 
-* IIS에서 호스팅되는 ASP.NET Core 앱은 [ASP.NET Core 모듈](xref:fundamentals/servers/aspnet-core-module)을 사용하여 정적 파일 요청을 비롯한 모든 요청을 앱에 전달합니다. IIS 정적 파일 처리기는 사용되지 않습니다. 모듈에서 처리하기 전에는 요청을 처리할 수 없습니다.
+* IIS에서 호스팅되는 ASP.NET Core 앱은 [ASP.NET Core 모듈](xref:host-and-deploy/aspnet-core-module)을 사용하여 정적 파일 요청을 비롯한 모든 요청을 앱에 전달합니다. IIS 정적 파일 처리기는 사용되지 않습니다. 모듈에서 처리하기 전에는 요청을 처리할 수 없습니다.
 
 * 서버 또는 웹 사이트 수준에서 IIS 정적 파일 처리기를 제거하려면 IIS 관리자에서 다음 단계를 완료합니다.
     1. **모듈** 기능으로 이동합니다.

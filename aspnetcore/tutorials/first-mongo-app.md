@@ -3,15 +3,15 @@ title: ASP.NET Core 및 MongoDB를 사용하여 웹 API 빌드
 author: prkhandelwal
 description: 이 자습서에서는 MongoDB NoSQL 데이터베이스를 사용하여 ASP.NET Core 웹 API를 빌드하는 방법을 보여 줍니다.
 ms.author: scaddie
-ms.custom: mvc,seodec18
+ms.custom: mvc, seodec18
 ms.date: 11/29/2018
 uid: tutorials/first-mongo-app
-ms.openlocfilehash: df3b8656618c813838d6618efc9394f0ccb6e563
-ms.sourcegitcommit: 49faca2644590fc081d86db46ea5e29edfc28b7b
+ms.openlocfilehash: bd9a36c5eb06542c820e71e937b8da10f735a0f8
+ms.sourcegitcommit: 68a3081dd175d6518d1bfa31b4712bd8a2dd3864
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/09/2018
-ms.locfileid: "53121481"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53577840"
 ---
 # <a name="create-a-web-api-with-aspnet-core-and-mongodb"></a>ASP.NET Core 및 MongoDB를 사용하여 웹 API 만들기
 
@@ -34,7 +34,7 @@ ms.locfileid: "53121481"
 # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
 
 * [.NET Core SDK 2.2 이상](https://www.microsoft.com/net/download/all)
-* [Visual Studio 2017 버전 15.9 이상](https://www.visualstudio.com/downloads/)(**ASP.NET 및 웹 개발** 워크로드 필요)
+* [Visual Studio 2017 버전 15.9 이상](https://www.visualstudio.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017)(**ASP.NET 및 웹 개발** 워크로드 필요)
 * [MongoDB](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-windows/)
 
 # <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code)
