@@ -7,12 +7,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 11/28/2018
 uid: signalr/redis-backplane
-ms.openlocfilehash: 343cb5b2c7ed7162bae7865553a783fea45f0cfb
-ms.sourcegitcommit: b34b25da2ab68e6495b2460ff570468f16a9bf0d
+ms.openlocfilehash: fde7f08ae2310b0b9bf9b7fe25a1dfc4a568adb6
+ms.sourcegitcommit: 97d7a00bd39c83a8f6bccb9daa44130a509f75ce
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53284474"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54099357"
 ---
 # <a name="set-up-a-redis-backplane-for-aspnet-core-signalr-scale-out"></a>ASP.NET Core SignalR 확장에 대 한를 Redis 백플레인으로 설정
 
@@ -24,7 +24,10 @@ ms.locfileid: "53284474"
 
 * Redis 서버를 배포 합니다.
 
-  프로덕션 사용에 대 한 Redis 백플레인 온-프레미스 인프라에만 권장 됩니다. 대기 시간을 최소화 하려면 Redis 서버가 SignalR 앱과 동일한 데이터 센터에 있어야 합니다. SignalR 앱은 Azure 클라우드에서 실행 중인 경우 Azure SignalR Service를 Redis 백플레인으로 대신 권장 합니다. Azure Redis Cache Service를 사용 하 여 개발 및 테스트 환경 수 있습니다. 자세한 내용은 다음 리소스를 참조하세요.
+  > [!IMPORTANT] 
+  > 프로덕션 사용에 대 한 Redis 백플레인 SignalR 앱과 동일한 데이터 센터에서 실행 하는 경우에이 좋습니다. 그렇지 않은 경우 네트워크 대기 시간 성능 저하 됩니다. SignalR 앱은 Azure 클라우드에서 실행 중인 경우 Azure SignalR Service를 Redis 백플레인으로 대신 권장 합니다. Azure Redis Cache Service를 사용 하 여 개발 및 테스트 환경 수 있습니다.
+
+  자세한 내용은 다음 리소스를 참조하세요.
 
   * <xref:signalr/scale>
   * [Redis 설명서](https://redis.io/)

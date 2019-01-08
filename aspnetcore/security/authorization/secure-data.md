@@ -6,12 +6,12 @@ ms.author: riande
 ms.date: 12/18/2018
 ms.custom: seodec18
 uid: security/authorization/secure-data
-ms.openlocfilehash: fa82d3d99f4e4b7ad17ed385fb7c029745797e8d
-ms.sourcegitcommit: 816f39e852a8f453e8682081871a31bc66db153a
+ms.openlocfilehash: bdba706c1ef24ebe35129cb8bb2d9949196245a1
+ms.sourcegitcommit: 97d7a00bd39c83a8f6bccb9daa44130a509f75ce
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53637835"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54098924"
 ---
 # <a name="create-an-aspnet-core-app-with-user-data-protected-by-authorization"></a>권한 부여로 보호 되는 사용자 데이터를 사용 하 여 ASP.NET Core 앱 만들기
 
@@ -59,7 +59,7 @@ ms.locfileid: "53637835"
 
 앱에서 만든 [스 캐 폴딩](xref:tutorials/first-mvc-app/adding-model#scaffold-the-movie-model) 다음 `Contact` 모델:
 
-[!code-csharp[](secure-data/samples/starter2.1/Models/Contact.cs?name=snippet)]
+[!code-csharp[](secure-data/samples/starter2.1/Models/Contact.cs?name=snippet1)]
 
 다음 인증 처리기를 포함 하는 샘플:
 
@@ -314,33 +314,33 @@ Entity Framework Core를 사용 하 여 서비스에 등록 해야 합니다 [�
 ## <a name="create-the-starter-app"></a>시작 앱 만들기
 
 * "ContactManager" 라는 Razor 페이지 앱 만들기
-   * 응용 프로그램을 만들 **개별 사용자 계정**합니다.
-   * 네임 스페이스에는 샘플에 사용 된 네임 스페이스와 일치 하므로 "ContactManager" 이름을 지정 합니다.
-   * `-uld` SQLite 대신 LocalDB를 지정합니다.
+  * 응용 프로그램을 만들 **개별 사용자 계정**합니다.
+  * 네임 스페이스에는 샘플에 사용 된 네임 스페이스와 일치 하므로 "ContactManager" 이름을 지정 합니다.
+  * `-uld` SQLite 대신 LocalDB를 지정합니다.
 
   ```console
   dotnet new webapp -o ContactManager -au Individual -uld
   ```
 
-* 추가 *Models\Contact.cs*:
+* 추가 *Models/Contact.cs*:
 
   [!code-csharp[](secure-data/samples/starter2.1/Models/Contact.cs?name=snippet1)]
 
 * 스 캐 폴드는 `Contact` 모델입니다.
 * 초기 마이그레이션을 만들고 데이터베이스를 업데이트 합니다.
 
-```console
-dotnet aspnet-codegenerator razorpage -m Contact -udl -dc ApplicationDbContext -outDir Pages\Contacts --referenceScriptLibraries
-dotnet ef database drop -f
-dotnet ef migrations add initial
-dotnet ef database update
-```
+  ```console
+  dotnet aspnet-codegenerator razorpage -m Contact -udl -dc ApplicationDbContext -outDir Pages\Contacts --referenceScriptLibraries
+  dotnet ef database drop -f
+  dotnet ef migrations add initial
+  dotnet ef database update
+  ```
 
 * 업데이트를 **ContactManager** 에 고정 합니다 *pages/_layout.cshtml* 파일:
 
-```cshtml
-<a asp-page="/Contacts/Index" class="navbar-brand">ContactManager</a>
-```
+  ```cshtml
+  <a asp-page="/Contacts/Index" class="navbar-brand">ContactManager</a>
+  ```
 
 * 만들기, 편집 및 연락처를 삭제 하 여 앱 테스트
 

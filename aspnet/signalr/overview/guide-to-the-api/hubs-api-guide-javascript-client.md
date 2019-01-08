@@ -8,12 +8,12 @@ ms.date: 09/28/2015
 ms.assetid: a9fd4dc0-1b96-4443-82ca-932a5b4a8ea4
 msc.legacyurl: /signalr/overview/guide-to-the-api/hubs-api-guide-javascript-client
 msc.type: authoredcontent
-ms.openlocfilehash: 8e493eda256351904da49e1222773f188e6a2058
-ms.sourcegitcommit: 74e3be25ea37b5fc8b4b433b0b872547b4b99186
+ms.openlocfilehash: a8352045d99b77713c94ab809417c5dc4675557f
+ms.sourcegitcommit: 97d7a00bd39c83a8f6bccb9daa44130a509f75ce
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53288068"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54099275"
 ---
 <a name="aspnet-signalr-hubs-api-guide---javascript-client"></a>ASP.NET SignalR 허브 API 가이드-JavaScript 클라이언트
 ====================
@@ -531,4 +531,4 @@ SignalR JavaScript 클라이언트 제공는 `error` 이벤트에 대 한 처리
 
 [!code-javascript[Main](hubs-api-guide-javascript-client/samples/sample54.js?highlight=2)]
 
-로그를 확인 하려면 브라우저의 개발자 도구를 열고 콘솔 탭으로 이동 합니다. 이 작업을 수행 하는 방법을 보여주는 스크린샷 단계별 지침 및 화면을 보여 주는 자습서를 참조 하세요 [로깅을 사용 하도록 설정-ASP.NET Signalr을 사용 하 여 서버 브로드캐스트](../getting-started/tutorial-server-broadcast-with-signalr.md#enablelogging)합니다.
+로그를 확인 하려면 브라우저의 개발자 도구를 열고 콘솔 탭으로 이동 합니다. 이 작업을 수행 하는 방법을 보여주는 스크린샷 단계별 지침 및 화면을 보여 주는 자습서를 참조 하세요 [로깅을 사용 하도록 설정-ASP.NET Signalr을 사용 하 여 서버 브로드캐스트](../getting-started/tutorial-server-broadcast-with-signalr.md#enable-logging)합니다.

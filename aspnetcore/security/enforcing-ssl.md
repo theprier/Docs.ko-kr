@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 12/01/2018
 uid: security/enforcing-ssl
-ms.openlocfilehash: b15c6b5ac77f047c40704c9e164165c55b6ae93b
-ms.sourcegitcommit: 9bb58d7c8dad4bbd03419bcc183d027667fefa20
+ms.openlocfilehash: 0c3add9c8860a47932cda3a8b07c83dc774bf1f1
+ms.sourcegitcommit: 97d7a00bd39c83a8f6bccb9daa44130a509f75ce
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52861526"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54098976"
 ---
 # <a name="enforce-https-in-aspnet-core"></a>ASP.NET Core에서 HTTPS 적용
 
@@ -69,9 +69,9 @@ ASP.NET Core는 프로덕션 웹 앱 호출을 좋습니다.
 
   **키**: `https_port`  
   **형식**: *string*  
-  **기본**: 기본값이 설정 되지 않습니다.  
+  **기본**: 기본값 설정 되지 않았습니다.  
   **설정 방법**: `UseSetting`  
-  **환경 변수**: `<PREFIX_>HTTPS_PORT` (접두사 `ASPNETCORE_` 사용 하는 경우의 [웹 호스트](xref:fundamentals/host/web-host).)
+  **환경 변수**: `<PREFIX_>HTTPS_PORT` (접두사 `ASPNETCORE_` 사용 하는 경우는 [웹 호스트](xref:fundamentals/host/web-host).)
 
   구성 하는 경우는 <xref:Microsoft.AspNetCore.Hosting.IWebHostBuilder> 에서 `Program`:
 
@@ -98,7 +98,7 @@ Kestrel 또는 HTTP.sys를에 지 서버는 공용으로 사용 하면 둘 다�
 
 요청은 역방향 프록시 구성에서 전달 하는 경우 사용 하 여 [전달 된 헤더 미들웨어](xref:host-and-deploy/proxy-load-balancer) HTTPS 리디렉션을 미들웨어를 호출 하기 전에 합니다. 헤더 미들웨어 업데이트를 전달 합니다 `Request.Scheme`를 사용 하 여는 `X-Forwarded-Proto` 헤더입니다. 미들웨어 허용 Uri 및 기타 보안 정책이 제대로 작동 하려면 리디렉션합니다. 전달 된 헤더 미들웨어를 사용 하지 않는 경우 백 엔드 앱 올바른 스키마 수신 및 리디렉션 루프가 하지 않을 수 있습니다. 일반적인 최종 사용자 오류 메시지 리디렉션이 너무 많습니다. 발생 한 경우
 
-Azure App Service에 배포할 때의 지침을 따르세요 [자습서: Azure Web Apps에 기존 사용자 지정 SSL 인증서 바인딩](/azure/app-service/app-service-web-tutorial-custom-ssl)합니다.
+Azure App Service에 배포할 때의 지침에 따라 [자습서: 기존 사용자 지정 SSL 인증서를 Azure Web Apps에 바인딩](/azure/app-service/app-service-web-tutorial-custom-ssl)을 참조하세요.
 
 ### <a name="options"></a>옵션
 
@@ -192,9 +192,9 @@ ASP.NET Core 2.1 이상을 사용 하 여 HSTS를 구현 합니다 `UseHsts` 확
 
 `UseHsts` 다음 루프백 호스트를 제외:
 
-* `localhost` : IPv4 루프백 주소입니다.
-* `127.0.0.1` : IPv4 루프백 주소입니다.
-* `[::1]` : IPv6 루프백 주소입니다.
+* `localhost`은: IPv4 루프백 주소입니다.
+* `127.0.0.1`은: IPv4 루프백 주소입니다.
+* `[::1]`은: IPv6 루프백 주소입니다.
 
 ::: moniker-end
 
@@ -260,7 +260,7 @@ dotnet dev-certs https --help
 ## <a name="additional-information"></a>추가 정보
 
 * <xref:host-and-deploy/proxy-load-balancer>
-* [Apache 사용 하 여 Linux에서 ASP.NET Core 호스트: SSL 구성](xref:host-and-deploy/linux-apache#ssl-configuration)
-* [Nginx 사용 하 여 Linux에서 ASP.NET Core 호스트: SSL 구성](xref:host-and-deploy/linux-nginx#configure-ssl)
+* [Apache 사용 하 여 Linux에서 ASP.NET Core를 호스트 합니다. HTTPS 구성](xref:host-and-deploy/linux-apache#https-configuration)
+* [Nginx 사용 하 여 Linux에서 ASP.NET Core를 호스트 합니다. HTTPS 구성](xref:host-and-deploy/linux-nginx#https-configuration)
 * [IIS에서 SSL 설정 하는 방법](/iis/manage/configuring-security/how-to-set-up-ssl-on-iis)
 * [OWASP HSTS 브라우저 지원](https://www.owasp.org/index.php/HTTP_Strict_Transport_Security_Cheat_Sheet#Browser_Support)

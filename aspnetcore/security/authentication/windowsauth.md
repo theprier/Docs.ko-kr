@@ -2,62 +2,77 @@
 title: ASP.NET Core에서 Windows 인증을 구성 합니다.
 author: scottaddie
 description: ASP.NET core에서 IIS Express, IIS 및 HTTP.sys를 사용 하 여 Windows 인증을 구성 하는 방법에 알아봅니다.
+monikerRange: '>= aspnetcore-2.1'
 ms.author: riande
 ms.custom: mvc, seodec18
-ms.date: 12/18/2018
+ms.date: 12/23/2018
 uid: security/authentication/windowsauth
-ms.openlocfilehash: 94dff2f47b2b076cb15f8d385239179b52786678
-ms.sourcegitcommit: 816f39e852a8f453e8682081871a31bc66db153a
+ms.openlocfilehash: 64178c8fce71445fc6a728a236d811484b21e3e0
+ms.sourcegitcommit: 97d7a00bd39c83a8f6bccb9daa44130a509f75ce
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53637822"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54099262"
 ---
 # <a name="configure-windows-authentication-in-aspnet-core"></a>ASP.NET Core에서 Windows 인증을 구성 합니다.
 
-작성자: [Steve Smith](https://ardalis.com) 및 [Scott Addie](https://twitter.com/Scott_Addie)
+하 여 [Scott Addie](https://twitter.com/Scott_Addie) 고 [Luke Latham](https://github.com/guardrex)
 
-IIS를 사용 하 여 호스팅되는 ASP.NET Core 앱에 대 한 Windows 인증을 구성할 수 있습니다 또는 [HTTP.sys](xref:fundamentals/servers/httpsys)합니다.
+[Windows 인증](/iis/configuration/system.webServer/security/authentication/windowsAuthentication/) 사용 하 여 호스팅되는 ASP.NET Core 앱에 대해 구성할 수 있습니다 [IIS](xref:host-and-deploy/iis/index) 하거나 [HTTP.sys](xref:fundamentals/servers/httpsys)합니다.
 
-## <a name="windows-authentication"></a>Windows 인증
-
-Windows 인증은 ASP.NET Core 앱의 사용자를 인증 하는 운영 체제에서 사용 합니다. 서버에 다른 Windows 계정 또는 Active Directory 도메인 id를 사용 하 여 사용자를 식별 하는 회사 네트워크에서 실행 될 때 Windows 인증을 사용할 수 있습니다. Windows 인증 사용자, 클라이언트 응용 프로그램 및 웹 서버는 동일한 Windows 도메인에 속해 인트라넷 환경에 가장 적합 합니다.
-
-[Windows 인증에 자세히 알아보기 및 IIS에 대 한 설치](/iis/configuration/system.webServer/security/authentication/windowsAuthentication/)합니다.
+Windows 인증은 ASP.NET Core 앱의 사용자를 인증 하는 운영 체제에서 사용 합니다. 서버는 Windows 계정 또는 Active Directory 도메인 id를 사용 하 여 사용자를 식별 하는 회사 네트워크에서 실행 될 때 Windows 인증을 사용할 수 있습니다. Windows 인증은 인트라넷 환경 사용자, 클라이언트 앱 및 웹 서버는 동일한 Windows 도메인에 속해야 하는 위치에 가장 적합 합니다.
 
 ## <a name="enable-windows-authentication-in-an-aspnet-core-app"></a>ASP.NET Core 앱에서 Windows 인증을 사용 하도록 설정
 
-Visual Studio 웹 응용 프로그램 템플릿은 Windows 인증을 지원 하도록 구성할 수 있습니다.
+합니다 **웹 응용 프로그램** Windows 인증을 지원 하도록 Visual Studio 또는.NET Core CLI를 통해 사용할 수 있는 템플릿을 구성할 수 있습니다.
 
-### <a name="use-the-windows-authentication-app-template"></a>Windows 인증 앱 템플릿 사용
+# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
+
+### <a name="use-the-windows-authentication-app-template-for-a-new-project"></a>새 프로젝트를 위해 Windows 인증 앱 템플릿 사용
 
 Visual Studio에서 다음을 수행합니다.
 
-1. 새 ASP.NET Core 웹 응용 프로그램을 만듭니다.
-1. 템플릿 목록에서 웹 응용 프로그램을 선택 합니다.
+1. 새 **ASP.NET Core 웹 응용 프로그램**합니다.
+1. 선택 **웹 응용 프로그램** 템플릿 목록에서.
 1. 선택 된 **인증 변경** 단추를 선택 **Windows 인증**합니다.
 
-앱을 실행합니다. 위쪽에 표시 되는 사용자 앱의 오른쪽입니다.
+앱을 실행합니다. 렌더링 된 앱의 사용자 인터페이스에 사용자 이름이 표시 됩니다.
 
-![Windows 인증에 대 한 브라우저 스크린 샷](windowsauth/_static/browser-screenshot.png)
+### <a name="manual-configuration-for-an-existing-project"></a>기존 프로젝트에 대 한 수동 구성
 
-IIS Express를 사용 하 여 개발 작업에 대 한 템플릿을 Windows 인증을 사용 하는 데 필요한 모든 구성을 제공 합니다. 다음 섹션에는 Windows 인증에 대 한 ASP.NET Core 앱을 수동으로 구성 하는 방법을 보여 줍니다.
+프로젝트의 속성을 사용 하면 Windows 인증을 사용 하 여 익명 인증을 사용 하지 않도록 설정:
 
-### <a name="visual-studio-settings-for-windows-and-anonymous-authentication"></a>Windows 및 익명 인증을 위해 visual Studio 설정
+1. Visual Studio에서 프로젝트를 마우스 오른쪽 단추로 클릭 **솔루션 탐색기** 선택한 **속성**합니다.
+1. **디버그** 탭을 선택합니다.
+1. 에 대 한 확인란의 선택을 취소 **익명 인증 사용**합니다.
+1. 에 대 한 확인란을 선택 **Windows 인증 사용**합니다.
 
-Visual Studio 프로젝트 **속성** 페이지의 **디버그** 탭은 Windows 인증 및 익명 인증에 대 한 확인란을 제공 합니다.
+속성에서 구성할 수 있습니다 또는 합니다 `iisSettings` 의 노드는 *launchSettings.json* 파일:
 
-![강조 표시 하는 인증 옵션을 사용 하 여 Windows 인증 브라우저 스크린 샷](windowsauth/_static/vs-auth-property-menu.png)
+[!code-json[](windowsauth/sample_snapshot/launchSettings.json?highlight=2-3)]
 
-이러한 두 속성을 구성할 수 있습니다 또는 합니다 *launchSettings.json* 파일:
+# <a name="net-core-clitabnetcore-cli"></a>[.NET Core CLI](#tab/netcore-cli)
 
-[!code-json[](windowsauth/sample/launchSettings.json?highlight=3-4)]
+사용 된 **Windows 인증** 앱 템플릿.
+
+실행 합니다 [새 dotnet](/dotnet/core/tools/dotnet-new) 명령에 `webapp` 인수 (ASP.NET Core 웹 앱) 및 `--auth Windows` 전환:
+
+```console
+dotnet new webapp --auth Windows
+```
+
+---
 
 ## <a name="enable-windows-authentication-with-iis"></a>IIS 사용 하 여 Windows 인증을 사용 하도록 설정
 
-IIS에서 사용 하 여 [ASP.NET Core 모듈](xref:host-and-deploy/aspnet-core-module) ASP.NET Core 앱을 호스트 하 합니다. Windows 인증은 응용 프로그램이 아닌 IIS에서 구성 됩니다. 다음 섹션에서는 IIS 관리자를 사용 하 여 Windows 인증을 사용 하도록 ASP.NET Core 앱을 구성 하는 방법을 보여 줍니다.
+IIS에서 사용 하 여 [ASP.NET Core 모듈](xref:host-and-deploy/aspnet-core-module) ASP.NET Core 앱을 호스트 하 합니다. Windows 인증을 통해 IIS에 대해 구성 된 합니다 *web.config* 파일입니다. 다음 섹션은 표시 하는 방법.
+
+* 로컬 제공할 *web.config* 앱을 배포할 때 서버에서 Windows 인증을 활성화 하는 파일입니다.
+* IIS 관리자를 사용 하 여 구성 하는 *web.config* 서버에 이미 배포 된 ASP.NET Core 앱의 파일입니다.
 
 ### <a name="iis-configuration"></a>IIS 구성
+
+이미 않았다면 IIS을 사용 하 여 ASP.NET Core 앱을 호스트할 수 있습니다. 자세한 내용은 <xref:host-and-deploy/iis/index>을 참조하세요.
 
 Windows 인증을 위해 IIS 역할 서비스를 사용 하도록 설정 합니다. 자세한 내용은 [IIS 역할 서비스 (2 단계 참조)에서 Windows 인증 사용](xref:host-and-deploy/iis/index#iis-configuration)합니다.
 
@@ -69,23 +84,53 @@ ASP.NET Core 모듈은 기본적으로 앱에 Windows 인증 토큰을 전달 �
 
 이름 및 폴더를 지정 하 고 새 응용 프로그램 풀을 만들 수 있도록 합니다.
 
-### <a name="customize-authentication"></a>인증을 사용자 지정
+### <a name="enable-windows-authentication-for-the-app-in-iis"></a>IIS에서 앱에 대 한 Windows 인증을 사용 하도록 설정
 
-사이트에 대 한 인증 기능을 엽니다.
+사용 하 여 **하거나** 다음 방법 중:
 
-![IIS 인증 메뉴](windowsauth/_static/iis-authentication-menu.png)
+* [앱을 게시 하기 전에 개발 쪽 구성](#development-side-configuration-with-a-local-webconfig-file) (*권장*)
+* [앱을 게시 한 후 서버 쪽 구성](#server-side-configuration-with-the-iis-manager)
 
-익명 인증을 사용 하지 않도록 설정 하 고 Windows 인증을 사용 하도록 설정 합니다.
+#### <a name="development-side-configuration-with-a-local-webconfig-file"></a>로컬 web.config 파일을 사용 하 여 개발 쪽 구성
 
-![IIS 인증 설정](windowsauth/_static/iis-auth-settings.png)
+다음 단계를 수행 **하기 전에** 있습니다 [게시 하 고 프로젝트를 배포](#publish-and-deploy-your-project-to-the-iis-site-folder)합니다.
 
-### <a name="publish-your-project-to-the-iis-site-folder"></a>IIS 사이트 폴더에 프로젝트 게시
+다음을 추가 합니다 *web.config* 프로젝트 루트에 파일:
 
-대상 폴더에 앱을 게시 Visual Studio 또는.NET Core CLI를 사용 합니다.
+[!code-xml[](windowsauth/sample_snapshot/web_2.config)]
 
-![Visual Studio 게시 대화 상자](windowsauth/_static/vs-publish-app.png)
+프로젝트 SDK를 통해 게시 되는 경우 (없이 `<IsTransformWebConfigDisabled>` 속성이로 설정 `true` 프로젝트 파일에서), 게시 된 *web.config* 파일에는 `<location><system.webServer><security><authentication>` 섹션입니다. 에 대 한 자세한 합니다 `<IsTransformWebConfigDisabled>` 속성 참조 <xref:host-and-deploy/iis/index#webconfig-file>합니다.
 
-에 대해 자세히 알아보세요 [IIS에 게시](xref:host-and-deploy/iis/index)합니다.
+#### <a name="server-side-configuration-with-the-iis-manager"></a>IIS 관리자를 사용 하 여 서버 쪽 구성
+
+다음 단계를 수행 **한 후** 있습니다 [게시 하 고 프로젝트를 배포](#publish-and-deploy-your-project-to-the-iis-site-folder)합니다.
+
+1. IIS 관리자에서 IIS 사이트를 선택 합니다 **사이트** 노드의 합니다 **연결** 사이드바 합니다.
+1. 두 번 클릭 **Authentication** 에 **IIS** 영역입니다.
+1. 선택 **익명 인증**합니다. 선택 **사용 안 함** 에 **작업** 사이드바 합니다.
+1. **Windows 인증**을 선택합니다. 선택 **사용 하도록 설정** 에 **작업** 보충 합니다.
+
+이러한 조치로, IIS 관리자 앱의 수정 *web.config* 파일입니다. A `<system.webServer><security><authentication>` 에 대 한 업데이트 된 설정으로 노드가 추가 됩니다 `anonymousAuthentication` 고 `windowsAuthentication`:
+
+[!code-xml[](windowsauth/sample_snapshot/web_1.config?highlight=4-5)]
+
+`<system.webServer>` 섹션에 추가 합니다 *web.config* IIS 관리자에 의해 파일이 앱의 외부 `<location>` 섹션에서는 앱을 게시할 때.NET Core SDK에 의해 추가 합니다. 섹션 외부의 추가 되기 때문에 합니다 `<location>` 노드를 설정에서 상속 됩니다 [하위 앱](xref:host-and-deploy/iis/index#sub-applications) 현재 앱. 상속을 방지 하려면 추가 이동 `<security>` 섹션 내에 `<location><system.webServer>` SDK에서 제공 하는 섹션입니다.
+
+앱에만 적용 IIS 구성을 추가 하려면 IIS 관리자를 사용 하면 *web.config* 서버의 파일입니다. 앱의 후속 배포 하는 경우 서버에서 설정을 덮어쓸 수 있습니다 서버의 복사본 *web.config* 프로젝트의 바뀝니다 *web.config* 파일입니다. 사용 하 여 **하거나** 설정을 관리 하려면 다음 방법 중:
+
+* 설정을 다시 설정 하려면 IIS 관리자를 사용 합니다 *web.config* 배포에서 파일을 덮어쓸지 후 파일입니다.
+* 추가 된 *web.config 파일* 설정 사용 하 여 로컬 앱. 자세한 내용은 참조는 [개발 쪽 구성](#development-side-configuration-with-a-local-webconfig-file) 섹션입니다.
+
+### <a name="publish-and-deploy-your-project-to-the-iis-site-folder"></a>게시 하 고 IIS 사이트 폴더를 프로젝트 배포
+
+Visual Studio 또는.NET Core CLI를 사용 하 여, 게시 및 대상 폴더에 앱을 배포 합니다.
+
+게시 및 배포에는 IIS를 사용 하 여 호스트에 대 한 자세한 내용은 다음 항목을 참조:
+
+* [dotnet publish](/dotnet/core/tools/dotnet-publish)
+* <xref:host-and-deploy/iis/index>
+* <xref:host-and-deploy/aspnet-core-module>
+* <xref:host-and-deploy/visual-studio-publish-profiles>
 
 Windows 인증이 작동을 확인 하려면 앱을 시작 합니다.
 
@@ -93,7 +138,7 @@ Windows 인증이 작동을 확인 하려면 앱을 시작 합니다.
 
 Kestrel은 Windows 인증을 지원 하지 않지만 사용할 수 있습니다 [HTTP.sys](xref:fundamentals/servers/httpsys) Windows에서 자체 호스팅된 시나리오를 지원 합니다. 다음 예제에서는 Windows 인증을 사용 하 여 HTTP.sys를 사용 하도록 앱의 웹 호스트를 구성 합니다.
 
-[!code-csharp[](windowsauth/sample/Program2x.cs?highlight=9-14)]
+[!code-csharp[](windowsauth/sample_snapshot/Program.cs?highlight=9-14)]
 
 > [!NOTE]
 > HTTP.sys는 Kerberos 인증 프로토콜을 사용하여 커널 모드 인증에 위임합니다. 사용자 모드 인증은 Kerberos 및 HTTP.sys로 지원되지 않습니다. 머신 계정은 Active Directory에서 가져온 Kerberos 토큰/티켓의 암호를 해독하는 데 사용되고 사용자를 인증하는 서버에 클라이언트에 의해 전달되어야 합니다. 앱의 사용자가 아닌 호스트에 대해 SPN(서비스 사용자 이름)을 등록합니다.
@@ -140,8 +185,8 @@ services.AddAuthentication(HttpSysDefaults.AuthenticationScheme);
 
 ### <a name="impersonation"></a>가장
 
-Asp.net 가장을 구현 하지 않습니다. 앱 풀 또는 프로세스 id를 사용 하 여 모든 요청에 대해 응용 프로그램 id를 사용 하 여 앱이 실행 됩니다. 사용 하 여 명시적으로 사용자를 대신 하 여 작업을 수행 해야 할 경우 `WindowsIdentity.RunImpersonated`합니다. 이 컨텍스트에서 단일 작업을 실행 하 고 컨텍스트를 닫습니다.
+Asp.net 가장을 구현 하지 않습니다. 앱 풀 또는 프로세스 id를 사용 하 여 모든 요청에 대해 앱의 id를 사용 하 여 앱이 실행 됩니다. 사용 하 여 명시적으로 사용자를 대신 하 여 작업을 수행 해야 할 경우 [WindowsIdentity.RunImpersonated](xref:System.Security.Principal.WindowsIdentity.RunImpersonated*) 에 [터미널 인라인 미들웨어](xref:fundamentals/middleware/index#create-a-middleware-pipeline-with-iapplicationbuilder) 에서 `Startup.Configure`합니다. 이 컨텍스트에서 단일 작업을 실행 하 고 컨텍스트를 닫습니다.
 
-[!code-csharp[](windowsauth/sample/Startup.cs?name=snippet_Impersonate&highlight=10-18)]
+[!code-csharp[](windowsauth/sample_snapshot/Startup.cs?highlight=10-19)]
 
 `RunImpersonated` 비동기 작업을 지원 하지 않으며 복잡 한 시나리오에 사용할 수 없습니다. 예를 들어 전체 요청 또는 미들웨어 체인 래핑 지원 없거나 것이 좋습니다.

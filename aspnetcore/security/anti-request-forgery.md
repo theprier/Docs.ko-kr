@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/11/2018
 uid: security/anti-request-forgery
-ms.openlocfilehash: c4a512e5518380f5f0a43d08cd0bcba2f8c26141
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: 3c1ea8f41eb6ed847bf24141ef0ae0c7e03d8a79
+ms.sourcegitcommit: 97d7a00bd39c83a8f6bccb9daa44130a509f75ce
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50207669"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54099223"
 ---
 # <a name="prevent-cross-site-request-forgery-xsrfcsrf-attacks-in-aspnet-core"></a>ASP.NET Core에서 방지 교차 사이트 요청 위조 (XSRF/CSRF) 공격
 
@@ -225,7 +225,7 @@ services.AddAntiforgery(options =>
 | [CookiePath](/dotnet/api/microsoft.aspnetcore.antiforgery.antiforgeryoptions.cookiepath) | 쿠키에 설정 된 경로입니다. 이 속성은 사용 되지 않습니다 및 이후 버전에서 제거 됩니다. 권장 되는 대안은 Cookie.Path을 보여 줍니다. |
 | [FormFieldName](/dotnet/api/microsoft.aspnetcore.antiforgery.antiforgeryoptions.formfieldname) | 위조 방지 토큰 보기에서 렌더링할 위조 방지 시스템에서 사용 하는 숨겨진된 폼 필드의 이름입니다. |
 | [HeaderName](/dotnet/api/microsoft.aspnetcore.antiforgery.antiforgeryoptions.headername) | 위조 방지 시스템에서 사용 하는 헤더의 이름입니다. 경우 `null`, 시스템 데이터 형식에만 고려 합니다. |
-| [RequireSsl](/dotnet/api/microsoft.aspnetcore.antiforgery.antiforgeryoptions.requiressl) | SSL이 위조 방지 시스템에서 여부를 지정 합니다. 경우 `true`, 비 SSL 요청은 실패 합니다. 기본값은 `false`입니다. 이 속성은 사용 되지 않습니다 및 이후 버전에서 제거 됩니다. 권장된 대안 Cookie.SecurePolicy를 설정 하는 것입니다. |
+| [RequireSsl](/dotnet/api/microsoft.aspnetcore.antiforgery.antiforgeryoptions.requiressl) | 위조 방지 시스템에서 HTTPS가 필요한 지 여부를 지정 합니다. 경우 `true`, HTTPS가 아닌 요청이 실패 합니다. 기본값은 `false`입니다. 이 속성은 사용 되지 않습니다 및 이후 버전에서 제거 됩니다. 권장된 대안 Cookie.SecurePolicy를 설정 하는 것입니다. |
 | [SuppressXFrameOptionsHeader](/dotnet/api/microsoft.aspnetcore.antiforgery.antiforgeryoptions.suppressxframeoptionsheader) | 생성을 보류할 지 여부를 지정 된 `X-Frame-Options` 헤더입니다. 기본적으로 헤더는 "SAMEORIGIN"의 값을 사용 하 여 생성 됩니다. 기본값은 `false`입니다. |
 
 ::: moniker-end

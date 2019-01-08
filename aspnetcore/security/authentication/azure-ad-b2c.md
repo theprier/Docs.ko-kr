@@ -5,12 +5,12 @@ description: ASP.NET Core를 사용 하 여 Azure Active Directory B2C 인증을
 ms.date: 01/25/2018
 ms.custom: mvc
 uid: security/authentication/azure-ad-b2c
-ms.openlocfilehash: 73a66cea1533cc835796f673021bfa45c35f5935
-ms.sourcegitcommit: 4cd8dce371d63a66d780e4af1baab2bcf9d61b24
+ms.openlocfilehash: 2c544475ccd3eb76f2737fec1cf269ac86add372
+ms.sourcegitcommit: 97d7a00bd39c83a8f6bccb9daa44130a509f75ce
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43893196"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54098989"
 ---
 # <a name="cloud-authentication-with-azure-active-directory-b2c-in-aspnet-core"></a>ASP.NET Core에서 Azure Active Directory B2C를 사용 하 여 클라우드 인증
 
@@ -19,7 +19,7 @@ ms.locfileid: "43893196"
 [Azure Active Directory B2C](/azure/active-directory-b2c/active-directory-b2c-overview) (Azure AD B2C)는 웹 및 모바일 앱에 대 한 클라우드 id 관리 솔루션입니다. 서비스는 클라우드 및 온-프레미스에서 호스트 되는 앱에 대 한 인증을 제공 합니다. 인증 유형 포함할 개별 계정, 소셜 네트워크 계정 및 enterprise 계정 페더레이션 합니다. 또한 Azure AD B2C는 최소 구성으로 multi-factor authentication 인증을 제공할 수 있습니다.
 
 > [!TIP]
-> Azure Active Directory (Azure AD) 및 Azure AD B2C는 별개 제품입니다. Azure AD 테 넌 트 조직을 나타내고 Azure AD B2C 테 넌 트를 신뢰 당사자 응용 프로그램을 사용 하 여 사용할 id의 컬렉션을 나타냅니다. 자세한 내용은 참조 하세요 [Azure AD B2C: 질문과 대답 (FAQ)](/azure/active-directory-b2c/active-directory-b2c-faqs)합니다.
+> Azure Active Directory (Azure AD) 및 Azure AD B2C는 별개 제품입니다. Azure AD 테 넌 트 조직을 나타내고 Azure AD B2C 테 넌 트를 신뢰 당사자 응용 프로그램을 사용 하 여 사용할 id의 컬렉션을 나타냅니다. 자세한 내용은를 참조 하세요. [Azure AD B2C: 질문과 대답 (FAQ)](/azure/active-directory-b2c/active-directory-b2c-faqs)합니다.
 
 이 자습서에 설명 하는 방법.
 
@@ -66,9 +66,9 @@ Nothing 자세히 이때 Azure AD B2C 테 넌 트에서 구성할 수 있지만 
 
 Visual Studio 웹 응용 프로그램 템플릿은 인증에 Azure AD B2C 테 넌 트를 사용 하도록 구성할 수 있습니다.
 
-Visual studio:
+Visual Studio에서 다음을 수행합니다.
 
-1. 새 ASP.NET Core 웹 응용 프로그램을 만듭니다. 
+1. 새 ASP.NET Core 웹 애플리케이션을 만듭니다. 
 2. 선택 **웹 응용 프로그램** 템플릿 목록에서.
 3. 선택 된 **인증 변경** 단추입니다.
     
@@ -96,7 +96,7 @@ Visual studio:
 아직 열려 B2C 앱 속성을 사용 하 여 브라우저 창으로 돌아갑니다. 임시 변경 **회신 URL** Visual Studio에서 복사한 이전 값으로 지정 합니다. 선택 **저장할** 창의 맨 위에 있는 합니다.
 
 > [!TIP]
-> 회신 URL을 복사 하지 않은 경우 웹 프로젝트 속성에서 디버그 탭에서 SSL 주소를 사용 하 고 추가 합니다 **CallbackPath** 에서 값 *appsettings.json*합니다.
+> 회신 URL을 복사 하지 않은 경우 웹 프로젝트 속성에서 디버그 탭에서 HTTPS 주소를 사용 하 고 추가 합니다 **CallbackPath** 에서 값 *appsettings.json*합니다.
 
 ## <a name="configure-policies"></a>정책 구성
 

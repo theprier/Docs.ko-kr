@@ -4,16 +4,16 @@ title: 유효성 검사 추가 | Microsoft Docs
 author: Rick-Anderson
 description: ''
 ms.author: riande
-ms.date: 10/17/2013
+ms.date: 01/06/2019
 ms.assetid: 9f35ca15-e216-4db6-9ebf-24380b0f31b4
 msc.legacyurl: /mvc/overview/getting-started/introduction/adding-validation
 msc.type: authoredcontent
-ms.openlocfilehash: 22e59a99a179a7a414447036b973e3ad3b462515
-ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
+ms.openlocfilehash: 6831259ce19c3747c179d6fc1b7e2095051a603b
+ms.sourcegitcommit: 97d7a00bd39c83a8f6bccb9daa44130a509f75ce
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48577953"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54099028"
 ---
 <a name="adding-validation"></a>유효성 검사 추가
 ====================
@@ -97,7 +97,7 @@ ASP.NET MVC 및 Entity Framework Code First에서 제공 되는 유효성 검사
 
 [!code-csharp[Main](adding-validation/samples/sample5.cs)]
 
-첫 번째(HTTP GET) `Create` 작업 메서드는 최초 만들기 양식을 표시합니다. 두 번째(`[HttpPost]`) 버전은 양식 게시를 처리합니다. 두 번째 `Create` 메서드(`HttpPost` 버전)은 `ModelState.IsValid`를 호출하여 동영상의 유효성 검사 오류 여부를 확인합니다. 이 메서드 호출에서는 개체에 적용된 모든 유효성 검사 특성을 평가합니다. 개체에 유효성 검사 오류가 있으면 `Create` 메서드는 양식을 다시 표시합니다. 오류가 없으면 메서드가 데이터베이스에 새 동영상을 저장합니다. 영화 예에서 **양식을 서버에 게시 되지 클라이언트측;에서 검색 하는 유효성 검사 오류가 있을 때 두 번째** `Create` **메서드가 절대 호출**합니다. 클라이언트 유효성 검사가 해제 된 경우 브라우저에서 JavaScript를 비활성화 하 고 HTTP POST `Create` 메서드 호출 `ModelState.IsValid` 동영상에 유효성 검사 오류가 있는지 확인 하려면.
+첫 번째(HTTP GET) `Create` 작업 메서드는 최초 만들기 양식을 표시합니다. 두 번째(`[HttpPost]`) 버전은 양식 게시를 처리합니다. 두 번째 `Create` 메서드 (합니다 `HttpPost` 버전) 확인 `ModelState.IsValid` 동영상 유효성 검사 오류가 있는지 여부를 확인 합니다. 이 속성을 가져오는 개체에 적용 된 모든 유효성 검사 특성을 평가 합니다. 개체 유효성 검사 오류가 있으면는 `Create` 메서드 다시 표시 되 고 있습니다. 오류가 없으면 메서드가 데이터베이스에 새 동영상을 저장합니다. 영화 예에서 **클라이언트측;에서 검색 하는 유효성 검사 오류가 있을 때 양식이 서버에 게시 되지 두 번째** `Create` **메서드가 절대 호출**합니다. 브라우저에서 JavaScript를 사용 하지 않으면 클라이언트 유효성 검사 활성화 되지 않고, HTTP POST `Create` 메서드 `ModelState.IsValid` 동영상에 유효성 검사 오류가 발생 했는지 여부를 확인 합니다.
 
 `HttpPost Create` 메서드에서 중단점을 설정하고 메서드가 호출되지 않게 확인할 수 있으며, 유효성 검사 오류가 탐지되면 클라이언트 쪽 유효성 검사가 양식 데이터를 제출하지 않습니다. 브라우저에서 JavaScript를 사용하지 않으면서 오류가 있는 상태로 양식을 제출하면 중단점에 이르게 됩니다. JavaScript 없이도 전체 유효성 검사가 가능합니다. 다음 이미지에는 Internet Explorer에서 JavaScript를 사용 하지 않도록 설정 하는 방법을 보여 줍니다.
 
@@ -121,7 +121,7 @@ ASP.NET MVC 및 Entity Framework Code First에서 제공 되는 유효성 검사
 
 이 방법에서는 컨트롤러나 `Create` 보기 템플릿이 실제 적용되는 유효성 검사 규칙이나, 표시되는 특정 오류 메시지에 대해 전혀 알지 못한다는 장점이 있습니다. 유효성 검사 규칙 및 오류 문자열은 `Movie` 클래스에서만 지정됩니다. 이러한 유효성 검사 규칙은 `Edit` 보기와, 모델을 편집하여 만들 수 있는 다른 보기 템플릿에 자동으로 적용됩니다.
 
-나중에 유효성 검사 논리를 변경 하려는 경우 하면 정확 하 게 한 곳에서 모델 유효성 검사 특성을 추가 하 여 (이 예는 `movie` 클래스). 모든 유효성 검사 논리가 한 곳에 정의되어 모든 곳에서 사용되므로 응용 프로그램의 서로 다른 부분이 규칙 적용 방법에 부합하는지 우려하지 않아도 됩니다. 이렇게 하면 코드가 매우 깔끔해지고 유지 관리 및 확장이 간편합니다. 수는 있습니다 됩니다 수 완벽 하 게 구분 하지 않고 있음을 의미 합니다 *DRY* 원칙입니다.
+나중에 유효성 검사 논리를 변경 하려는 경우 하면 정확 하 게 한 곳에서 모델 유효성 검사 특성을 추가 하 여 (이 예는 `movie` 클래스). 모든 유효성 검사 논리가 한 곳에 정의되어 모든 곳에서 사용되므로 애플리케이션의 서로 다른 부분이 규칙 적용 방법에 부합하는지 우려하지 않아도 됩니다. 이렇게 하면 코드가 매우 깔끔해지고 유지 관리 및 확장이 간편합니다. 수는 있습니다 됩니다 수 완벽 하 게 구분 하지 않고 있음을 의미 합니다 *DRY* 원칙입니다.
 
 ## <a name="using-datatype-attributes"></a>DataType 특성 사용
 
@@ -159,9 +159,9 @@ ASP.NET MVC 및 Entity Framework Code First에서 제공 되는 유효성 검사
 
 다음 코드는 한 줄에 결합 특성을 보여 줍니다.
 
-[!code-csharp[Main](adding-validation/samples/sample10.cs?highlight=6,10)]
+[!code-csharp[Main](adding-validation/samples/sample10.cs?highlight=4,6,10,12)]
 
-이 시리즈의 다음 부분에서는 응용 프로그램을 검토하고 자동 생성된 `Details` 및 `Delete` 메서드를 몇 가지 개선합니다.
+이 시리즈의 다음 부분에서는 애플리케이션을 검토하고 자동 생성된 `Details` 및 `Delete` 메서드를 몇 가지 개선합니다.
 
 > [!div class="step-by-step"]
 > [이전](adding-a-new-field.md)

@@ -7,12 +7,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 12/18/2018
 uid: performance/response-compression
-ms.openlocfilehash: 51ab51652a7b3f9b4ef97b3abbffe2e398c0bfb5
-ms.sourcegitcommit: 816f39e852a8f453e8682081871a31bc66db153a
+ms.openlocfilehash: a9f72a6816298b11e7b7d30b2b4bd44083baab3a
+ms.sourcegitcommit: 97d7a00bd39c83a8f6bccb9daa44130a509f75ce
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53637757"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54099041"
 ---
 # <a name="response-compression-in-aspnet-core"></a>ASP.NET Core에서 응답 압축
 
@@ -143,8 +143,10 @@ public class Startup
 }
 ```
 
-> [!NOTE]
-> 와 같은 도구를 사용 하 여 [Fiddler](http://www.telerik.com/fiddler)를 [Firebug](http://getfirebug.com/), 또는 [Postman](https://www.getpostman.com/) 설정 하는 `Accept-Encoding` 요청 헤더 및 응답 헤더, 크기 및 본문을 연구 합니다.
+메모: 
+
+* `app.UseResponseCompression` 먼저 호출 해야 `app.UseMvc`합니다.
+* 와 같은 도구를 사용 [Fiddler](http://www.telerik.com/fiddler)를 [Firebug](http://getfirebug.com/), 또는 [Postman](https://www.getpostman.com/) 설정 하는 `Accept-Encoding` 요청 헤더 및 응답 헤더, 크기 및 본문을 연구 합니다.
 
 요청 하지 않고 샘플 앱을 제출 합니다 `Accept-Encoding` 헤더 응답 압축 되지를 확인 합니다. `Content-Encoding` 및 `Vary` 헤더 응답에 없습니다.
 

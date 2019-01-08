@@ -4,14 +4,14 @@ author: mjrousos
 description: 일반적인 성능 문제 방지 및 ASP.NET Core 앱에서 성능 향상에 대 한 팁입니다.
 monikerRange: '>= aspnetcore-1.1'
 ms.author: riande
-ms.date: 11/29/2018
+ms.date: 1/9/2019
 uid: performance/performance-best-practices
-ms.openlocfilehash: 9f3ed97bf4d4eb371ff5ae3874234b44745cc4ca
-ms.sourcegitcommit: 0fc89b80bb1952852ecbcf3c5c156459b02a6ceb
+ms.openlocfilehash: 25aa4c1e22ead7db4775c6e5e81b6fd627c6d7a6
+ms.sourcegitcommit: 97d7a00bd39c83a8f6bccb9daa44130a509f75ce
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "52618118"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54099067"
 ---
 # <a name="aspnet-core-performance-best-practices"></a>ASP.NET Core 성능 모범 사례
 
@@ -19,8 +19,7 @@ ms.locfileid: "52618118"
 
 이 항목에서는 지침 성능에 대 한 ASP.NET Core를 사용 하 여 모범 사례.
 
-<a name="hot"></a>
-<!-- TODO review hot code paths is jargon that won't MT (machine translate) and is not well defined for native speakers. --> 이 문서에서는 핫 코드 경로 자주 호출 되는 및 실행 시간이 많이 발생 하는 코드 경로로 정의 됩니다. 핫 코드 경로 일반적으로 앱 확장 및 성능 제한 합니다.
+<a name="hot"></a> 이 문서에서는 핫 코드 경로 자주 호출 되는 및 실행 시간이 많이 발생 하는 코드 경로로 정의 됩니다. 핫 코드 경로 일반적으로 앱 확장 및 성능 제한 합니다.
 
 ## <a name="cache-aggressively"></a>적극적으로 캐시
 
@@ -129,6 +128,10 @@ ASP.NET Core 앱의 일반적인 성능 문제는 비동기 될 수 있는 호�
 
 * **수행할** ASP.NET Core를 사용 하 여 [기본 제공 지원](xref:client-side/bundling-and-minification) 클라이언트 자산 묶음 및 축소에 대 한 합니다.
 * **수행할** 다른 타사 도구와 같은 것이 좋습니다 [Gulp](uid:client-side/bundling-and-minification#consume-bundleconfigjson-from-gulp) 또는 [Webpack](https://webpack.js.org/) 클라이언트 관리용으로 더 복잡 한 자산입니다.
+
+## <a name="compress-responses"></a>응답 압축
+
+ 일반적으로 응답의 크기를 줄이면 앱의 응답성 데이터는 종종 크게 증가 합니다. 페이로드 크기를 줄이는 한 가지 방법은 응용 프로그램의 응답을 압축 하는 경우 자세한 내용은 [응답 압축](xref:performance/response-compression)합니다.
 
 ## <a name="use-the-latest-aspnet-core-release"></a>최신 ASP.NET Core 릴리스를 사용 합니다.
 

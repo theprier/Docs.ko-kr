@@ -4,16 +4,16 @@ title: 편집 메서드 및 편집 보기 검사 | Microsoft Docs
 author: Rick-Anderson
 description: ''
 ms.author: riande
-ms.date: 05/22/2015
+ms.date: 01/06/2019
 ms.assetid: 52a4d5fe-aa31-4471-b3cb-a064f82cb791
 msc.legacyurl: /mvc/overview/getting-started/introduction/examining-the-edit-methods-and-edit-view
 msc.type: authoredcontent
-ms.openlocfilehash: 29ece7754bc6e25ea968c25a99a2f48ab837e12c
-ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
+ms.openlocfilehash: 75fd3a7dd55107cbdb9095d5b54b616133b4f65e
+ms.sourcegitcommit: 97d7a00bd39c83a8f6bccb9daa44130a509f75ce
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48911548"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54099398"
 ---
 <a name="examining-the-edit-methods-and-edit-view"></a>편집 메서드 및 편집 보기 검사
 ====================
@@ -83,15 +83,19 @@ ms.locfileid: "48911548"
 
 [ValidateAntiForgeryToken](https://msdn.microsoft.com/library/system.web.mvc.validateantiforgerytokenattribute(v=vs.108).aspx) 특성의 유효성을 검사 합니다 [XSRF](../../security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages.md) 에서 생성 된 토큰은 `@Html.AntiForgeryToken()` 보기에서 호출 합니다.
 
-[ASP.NET MVC 모델 바인더](https://msdn.microsoft.com/library/dd410405.aspx) 게시 된 양식 값을 사용 하 고 만듭니다는 `Movie` 로 전달 되는 개체는 `movie` 매개 변수입니다. `ModelState.IsValid` 메서드는 양식에서 제출된 데이터가 `Movie` 개체를 수정하는 데(편집 또는 업데이트) 사용될 수 있음을 확인합니다. 영화 데이터에 저장 됩니다 데이터가 유효한 경우 합니다 `Movies` 의 컬렉션을 `db(MovieDBContext` 인스턴스). 새 영화 데이터는 호출 하 여 데이터베이스에 저장 합니다 `SaveChanges` 메서드의 `MovieDBContext`합니다. 데이터를 저장한 후 코드는 사용자를 `MoviesController` 클래스의 `Index` 동작 메서드로 다시 전달하며, 여기에는 방금 수행한 변경 사항을 포함하여 동영상 컬렉션이 표시됩니다.
+[ASP.NET MVC 모델 바인더](https://msdn.microsoft.com/library/dd410405.aspx) 게시 된 양식 값을 사용 하 고 만듭니다는 `Movie` 로 전달 되는 개체는 `movie` 매개 변수입니다. 합니다 `ModelState.IsValid` (편집 또는 업데이트)를 수정 하려면 폼의 제출 된 데이터를 사용할 수 있도록 확인을 `Movie` 개체입니다. 영화 데이터에 저장 됩니다 데이터가 유효한 경우 합니다 `Movies` 의 컬렉션을 `db`(`MovieDBContext` 인스턴스). 새 영화 데이터는 호출 하 여 데이터베이스에 저장 합니다 `SaveChanges` 메서드의 `MovieDBContext`합니다. 데이터를 저장한 후 코드는 사용자를 `MoviesController` 클래스의 `Index` 동작 메서드로 다시 전달하며, 여기에는 방금 수행한 변경 사항을 포함하여 동영상 컬렉션이 표시됩니다.
 
-클라이언트 쪽 유효성 검사 필드의 값이 유효한 지를 결정 하는 즉시 오류 메시지가 표시 됩니다. JavaScript를 비활성화 하는 경우 클라이언트 쪽 유효성 검사 권한이 없지만 서버는 게시 된 값을 유효 하지 않으며 오류 메시지를 사용 하 여 양식 값을 다시 표시 됩니다 감지 됩니다. 이 자습서의 뒷부분에 나오는 유효성 검사를를 자세히 살펴봅니다.
+클라이언트 쪽 유효성 검사 필드의 값이 잘못 결정 하면 즉시 오류 메시지가 표시 됩니다. JavaScript를 사용 하지 않도록 설정 하는 경우 클라이언트 쪽 유효성 검사가 비활성화 됩니다. 그러나 서버는 게시 된 값이 유효 하지 및 양식 값은 오류 메시지와 함께 다시 표시를 검색 합니다.
+
+유효성 검사를 자습서의 뒷부분에서 자세히 검사 합니다.
 
 `Html.ValidationMessageFor` 도우미를 *Edit.cshtml* 보기 템플릿을 적절 한 오류 메시지를 표시 하는 주의 해야 합니다.
 
 ![abcNotValid](examining-the-edit-methods-and-edit-view/_static/image4.png)
 
 모든는 `HttpGet` 메서드는 유사한 패턴을 따릅니다. 동영상 개체를 얻을 수 (또는 개체의 경우에서 목록을 `Index`), 모델 보기에 전달 합니다. `Create` 메서드 뷰 만들기에는 빈 동영상 개체를 전달 합니다. 생성, 편집, 삭제 또는 어떤 식으로든 데이터를 수정하는 모든 메서드는 메서드의 `HttpPost` 오버로드에서 해당 작업을 수행합니다. 블로그 게시물에에서 설명 된 대로 보안 위험이 초래 됩니다 데이터는 HTTP GET 메서드를 수정 [ASP.NET MVC 팁 #46 – 보안 허점을 만들기 때문에 삭제 링크를 사용 하지 않는](http://stephenwalther.com/blog/archive/2009/01/21/asp.net-mvc-tip-46-ndash-donrsquot-use-delete-links-because.aspx)합니다. HTTP 모범 사례와 구조적도 위배 데이터 GET 메서드를 수정 [REST](http://en.wikipedia.org/wiki/Representational_State_Transfer) 패턴 GET 요청 응용 프로그램의 상태를 변경 하지 않아야 합니다. 다시 말해 GET 작업 수행은 부작용 없이 안전하고 영속 데이터를 수정하지 않는 방법으로 이루어져야 합니다.
+
+## <a name="jquery-validation-for-non-english-locales"></a>영어가 아닌 로캘의 jQuery 유효성 검사
 
 영어 (미국) 컴퓨터를 사용 하는 경우이 섹션을 건너뛸 하 수 다음 자습서로 이동 합니다. 이 자습서의 Globalize 버전을 다운로드할 수 있습니다 [여기](https://archive.msdn.microsoft.com/Project/Download/FileDownload.aspx?ProjectName=aspnetmvcsamples&amp;DownloadId=16475)합니다. 국제화에 뛰어난 2 부 자습서를 참조 하세요 [Nadeem의 ASP.NET MVC 5 국제화](http://afana.me/post/aspnet-mvc-internationalization.aspx)합니다.
 
