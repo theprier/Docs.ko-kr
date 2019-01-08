@@ -8,12 +8,12 @@ ms.date: 03/28/2008
 ms.assetid: 54d9df99-1161-4899-b4e8-2679c85915e7
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-partial-page-updates-with-asp-net-ajax
 msc.type: authoredcontent
-ms.openlocfilehash: 2e0b1e1d4cbb282e7fd4b27e0a93ba1b9702edea
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 4883046aa16d5e67b7f0c92e15c897ef1a933b67
+ms.sourcegitcommit: 97d7a00bd39c83a8f6bccb9daa44130a509f75ce
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41828700"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54098937"
 ---
 <a name="understanding-partial-page-updates-with-aspnet-ajax"></a>ASP.NET AJAX를 사용 하 여 이해 부분 페이지 업데이트
 ====================
@@ -53,11 +53,11 @@ Microsoft의 ASP.NET AJAX 확장을 입력 합니다. AJAX의 약자인 **A** �
 2. 기본 ASP.NET 태그를 사용 하 여 빈 기본 페이지를 사용 하 여 표시 됩니다 (서버 쪽 양식의 및 `@Page` 지시문). 라는 레이블을 넣으면 `Label1` 단추를 호출 하 고 `Button1` form 요소 안에 있는 페이지를 합니다. 원하는을 해당 텍스트 속성을 설정할 수 있습니다.
 3. 디자인 뷰에서 두 번 클릭 `Button1` 코드 숨김 이벤트 처리기를 생성 합니다. 이 이벤트 처리기 내에서 설정 `Label1.Text` 에 단추를 클릭 하면! .
 
-**부분 렌더링이 활성화 전에 default.aspx에 대 한 태그 목록 1:**
+**목록 1: 부분 렌더링이 활성화 전에 default.aspx에 대 한 태그**
 
 [!code-aspx[Main](understanding-partial-page-updates-with-asp-net-ajax/samples/sample1.aspx)]
 
-**Default.aspx.cs의 (트리밍) 목록 2: 코드 숨김**
+**2를 나열 합니다. 코드 숨김 default.aspx.cs의 (트리밍)**
 
 [!code-csharp[Main](understanding-partial-page-updates-with-asp-net-ajax/samples/sample2.cs)]
 
@@ -85,13 +85,13 @@ Microsoft의 ASP.NET AJAX 확장을 입력 합니다. AJAX의 약자인 **A** �
 1. 어느 부분에 `<form>` 요소를 ScriptManager 컨트롤을 두 번 클릭 하 여 포함는 `ScriptManager` 도구 상자의 항목.
 2. 편집 된 `<asp:ScriptManager>` 특성이 포함 되도록 태그 `EnablePartialRendering= true`합니다.
 
-**사용 하도록 설정 하는 부분 렌더링을 사용 하 여 default.aspx에 대 한 태그 코드 3:**
+**코드 3: 사용 하도록 설정 하는 부분 렌더링을 사용 하 여 default.aspx에 대 한 태그**
 
 [!code-aspx[Main](understanding-partial-page-updates-with-asp-net-ajax/samples/sample3.aspx)]
 
 1. Web.config 파일을 엽니다. Visual Studio System.Web.Extensions.dll 컴파일 참조를 자동으로 추가 했습니다 알 수 있습니다.
 
-1. Visual Studio 2008의 새로운 기능: ASP.NET 웹 사이트 프로젝트 템플릿을 사용 하 여 자동으로 제공 되는 web.config의 ASP.NET AJAX 확장에 대 한 모든 필요한 참조를 포함 하 고 수 있는 구성 정보의 주석 처리 된 섹션이 포함 되어 있습니다 추가 기능을 사용 하도록 설정 되지 않은 주석입니다. Visual Studio 2005는 ASP.NET 2.0 AJAX Extensions가 설치 된 경우 유사한 템플릿이 있었습니다. 그러나 Visual Studio 2008에서의 AJAX 확장은 옵트아웃 기본적으로 (즉, 기본적으로 참조는 있지만 참조를 제거할 수 있습니다).
+1. Visual Studio 2008의 새로운: Web.config를 사용 하 여 ASP.NET 웹 사이트 프로젝트 템플릿을 자동으로 ASP.NET AJAX 확장에 대 한 모든 필요한 참조를 포함 하 고 포함을 함께 제공 되는 추가 사용 하도록 설정 되지 않은 mmented 수 있는 구성 정보의 섹션을 주석 처리 기능입니다. Visual Studio 2005는 ASP.NET 2.0 AJAX Extensions가 설치 된 경우 유사한 템플릿이 있었습니다. 그러나 Visual Studio 2008에서의 AJAX 확장은 옵트아웃 기본적으로 (즉, 기본적으로 참조는 있지만 참조를 제거할 수 있습니다).
 
 
 [![](understanding-partial-page-updates-with-asp-net-ajax/_static/image8.png)](understanding-partial-page-updates-with-asp-net-ajax/_static/image7.png)
@@ -153,7 +153,7 @@ Visual Studio 2008에는 ASP.NET AJAX 지원 웹 사이트에 대 한 미리 정
 
 ScriptManager 컨트롤이 ASP.NET AJAX 확장에 대 한 필수 핵심입니다. 스크립트 라이브러리 (광범위 한 클라이언트 쪽 스크립트 형식 시스템 포함)에 대 한 액세스를 제공, 부분 렌더링을 지원 하 고 추가 ASP.NET 서비스 (예: 인증 하 고 프로 파일링 뿐만 아니라 다른 웹 서비스)에 대 한 광범위 한 지원을 제공 합니다. ScriptManager 컨트롤은 또한 클라이언트 스크립트에 대 한 전역화 및 지역화 지원 제공 합니다.
 
-## <a name="providing-alterative-and-supplemental-scripts"></a>Alterative 및 추가 스크립트를 제공합니다.
+## <a name="providing-alternative-and-supplemental-scripts"></a>대체 및 추가 스크립트를 제공합니다.
 
 개발자는 ScriptManager를 사용자 지정된 스크립트 파일을 리디렉션할 수 있을 뿐만 아니라 등록 Microsoft ASP.NET 2.0 AJAX Extensions 디버그에 전체 스크립트 코드를 포함 하는 참조 된 어셈블리에 포함 된 리소스로 버전을 릴리스 하는 동안 필요한 스크립트를 추가 합니다.
 
@@ -169,7 +169,7 @@ AsyncPostBackError 이벤트를 사용 하 여 지정할 수 있습니다는 `As
 
 클라이언트 쪽 사용자 지정의 기본 경고 상자를 사용 하는 대신도 가능. 사용자 지정 표시 해야 하는 예를 들어 `<div>` 기본 브라우저 모달 대화 상자를 사용 하지 않고 요소입니다. 이 경우 클라이언트 스크립트에서 오류를 처리할 수 있습니다.
 
-**사용자 지정 오류를 표시 하려면 클라이언트 쪽 스크립트 코드 5:**
+**코드 5: 사용자 지정 오류를 표시 하는 클라이언트 쪽 스크립트**
 
 [!code-html[Main](understanding-partial-page-updates-with-asp-net-ajax/samples/sample4.html)]
 

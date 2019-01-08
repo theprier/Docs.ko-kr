@@ -3,14 +3,14 @@ title: ASP.NET core에서 응답 캐싱
 author: rick-anderson
 description: 낮은 대역폭 요구 사항에 대응하고 ASP.NET Core 응용 프로그램의 성능을 향상시키기 위해 응답 캐싱을 사용하는 방법을 알아봅니다.
 ms.author: riande
-ms.date: 09/20/2017
+ms.date: 01/07/2018
 uid: performance/caching/response
-ms.openlocfilehash: 99093cd281ffa8dddc574dc27254c0175e2651b3
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: 5fbcaddff6e53d01a19ba8a7455c719feb614326
+ms.sourcegitcommit: 97d7a00bd39c83a8f6bccb9daa44130a509f75ce
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50207370"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54098950"
 ---
 # <a name="response-caching-in-aspnet-core"></a>ASP.NET core에서 응답 캐싱
 
@@ -23,7 +23,7 @@ ms.locfileid: "50207370"
 
 응답 캐싱은 클라이언트나 프록시가 웹 서버에 요청하는 회수를 줄여줍니다. 또한 응답 캐싱은 웹 서버가 응답을 생성하기 위해 수행해야 하는 작업의 총량도 줄여줍니다. 응답 캐싱은 클라이언트, 프록시, 및 미들웨어가 응답을 캐싱해야 하는 방식을 지시하는 헤더에 의해 제어됩니다.
 
-[응답 캐싱 미들웨어](xref:performance/caching/middleware)를 추가하면 웹 서버가 응답을 캐시할 수 있습니다.
+합니다 [ResponseCache 특성](#responsecache-attribute) 응답 헤더는 클라이언트가 응답을 캐시 하는 경우 적용 될 수 있습니다 캐싱 설정에 참여 합니다. [응답 캐싱 미들웨어](xref:performance/caching/middleware) 서버의 응답을 캐시 하는 데 사용 됩니다. 미들웨어를 사용 하 여 수 `ResponseCache` 특성 속성 서버 쪽 캐싱 동작에 영향을 줍니다.
 
 ## <a name="http-based-response-caching"></a>HTTP 기반 응답 캐싱
 
@@ -35,9 +35,9 @@ ms.locfileid: "50207370"
 | --------------------------------------------------------------- | ------ |
 | [public](https://tools.ietf.org/html/rfc7234#section-5.2.2.5)   | 캐시에 응답을 저장할 수 있습니다. |
 | [private](https://tools.ietf.org/html/rfc7234#section-5.2.2.6)  | 공유 캐시는 응답을 저장하지 않습니다. 사설 캐시는 응답을 저장하고 재사용할 수 있습니다. |
-| [max-age](https://tools.ietf.org/html/rfc7234#section-5.2.1.1)  | 클라이언트는 지정된 초 수보다 오래된 응답을 수락하지 않습니다. 예: `max-age=60` (60초), `max-age=2592000` (1개월) |
-| [no-cache](https://tools.ietf.org/html/rfc7234#section-5.2.1.4) | **요청 시**: 캐시는 저장된 응답을 사용해서 요청에 대응하면 안 됩니다. 주의: 원본 서버는 클라이언트에 대한 응답을 다시 생성하고 미들웨어는 캐시에 저장된 응답을 갱신해야 합니다.<br><br>**응답 시**: 원본 서버에서 유효성을 검사받지 않은 응답을 후속 요청에 사용하면 안 됩니다. |
-| [no-store](https://tools.ietf.org/html/rfc7234#section-5.2.1.5) | **요청 시**: 캐시가 요청을 저장하지 않습니다.<br><br>**응답 시**: 캐시가 응답의 모든 부분에서 응답을 저장하지 않습니다. |
+| [max-age](https://tools.ietf.org/html/rfc7234#section-5.2.1.1)  | 클라이언트는 지정된 초 수보다 오래된 응답을 수락하지 않습니다. 예를 들면 다음과 같습니다. `max-age=60` (60 초), `max-age=2592000` (1 월) |
+| [no-cache](https://tools.ietf.org/html/rfc7234#section-5.2.1.4) | **요청에**: 캐시 요청을 충족 하도록 저장된 응답을 사용 해야 합니다. 참고: 원본 서버를 클라이언트에 대 한 응답을 다시 생성 하 고 미들웨어 저장된 응답을 캐시를 업데이트 합니다.<br><br>**응답에서**: 원본 서버에서 유효성을 검사 하지 않고 후속 요청에 대 한 응답을 사용 되어야 합니다. |
+| [no-store](https://tools.ietf.org/html/rfc7234#section-5.2.1.5) | **요청에**: 캐시는 요청을 저장 하지 않아야 합니다.<br><br>**응답에서**: 캐시에서 응답의 일부를 저장 하지 않아야 합니다. |
 
 캐싱 역할을 수행하는 다른 캐시 헤더는 다음 표와 같습니다.
 
@@ -54,7 +54,7 @@ ms.locfileid: "50207370"
 
 HTTP 캐싱의 목적을 고려했을 때 항상 클라이언트의 `Cache-Control` 요청 헤더를 준수하는 것이 이치에 맞습니다. 공식 사양에서 캐싱은 클라이언트, 프록시 및 서버 간의 네트워크에서 요청의 대기 시간 및 네트워크 오버헤드를 만족스럽게 줄이기 위한 것입니다. 원본 서버에서 부하를 제어하기 위한 방법이 필수적인 것은 아닙니다.
 
-[응답 캐싱 미들웨어](xref:performance/caching/middleware)를 사용할 때 캐싱 동작에 관해서 개발자가 제어할 수 있는 부분은 현재 존재하지 않으며, 그 이유는 미들웨어가 공식 캐싱 사양을 따르고 있기 때문입니다. 캐시된 응답을 제공하기로 결정할 경우 미들웨어가 요청의 `Cache-Control`` 헤더를 무시하게 구성할 수 있도록 [향후에는 미들웨어를 개선](https://github.com/aspnet/ResponseCaching/issues/96)할 것입니다. 이렇게 하면 미들웨어를 사용할 때 서버의 부하를 보다 세밀하게 제어할 수 있습니다.
+사용 하는 경우이 캐싱 동작을 통해 개발자 컨트롤이 없는 합니다 [응답 캐싱 미들웨어](xref:performance/caching/middleware) 미들웨어 캐싱 사양 공식 준수 때문입니다. [미들웨어의 향상 된 기능을 계획](https://github.com/aspnet/AspNetCore/issues/2612) 요청을 무시 하도록 미들웨어를 구성 하는 기회는 `Cache-Control` 헤더 캐시 된 응답을 제공 하고자 하는 경우. 계획 된 향상 된 기능에는 제어 서버 부하를 효과적으로 기회를 제공 합니다.
 
 ## <a name="other-caching-technology-in-aspnet-core"></a>ASP.NET Core의 다른 캐싱 기술
 
@@ -91,7 +91,7 @@ HTTP 캐싱의 목적을 고려했을 때 항상 클라이언트의 `Cache-Contr
 
 [VaryByQueryKeys](/dotnet/api/microsoft.aspnetcore.mvc.responsecacheattribute.varybyquerykeys) 속성은 지정한 쿼리 키 목록의 값에 따라 저장된 응답을 변경합니다. 단일 값으로 `*`를 지정하면 모든 쿼리 문자열 매개 변수별로 미들웨어의 응답이 달라집니다. `VaryByQueryKeys` 를 사용하려면 ASP.NET Core 1.1 이상이 필요합니다.
 
-응답 캐싱 미들웨어는 반드시 `VaryByQueryKeys` 속성을 설정할 수 있어야 합니다. 그렇지 않을 경우 런타임 예외가 발생합니다. `VaryByQueryKeys` 속성에 대응하는 HTTP 헤더는 존재하지 않습니다. 이 속성은 응답 캐싱 미들웨어에 의해서 처리되는 HTTP 기능입니다. 미들웨어가 캐시된 응답을 제공하려면 쿼리 문자열 및 쿼리 문자열 값이 이전 요청과 동일해야 합니다. 예를 들어, 다음 표는 요청 순서에 따른 결과를 보여줍니다.
+[응답 캐싱 미들웨어](xref:performance/caching/middleware) 설정에 사용 하도록 설정 해야 합니다는 `VaryByQueryKeys` 속성 그렇지 않으면 런타임 예외가 throw 됩니다. `VaryByQueryKeys` 속성에 대응하는 HTTP 헤더는 존재하지 않습니다. 이 속성은 응답 캐싱 미들웨어에 의해서 처리되는 HTTP 기능입니다. 미들웨어가 캐시된 응답을 제공하려면 쿼리 문자열 및 쿼리 문자열 값이 이전 요청과 동일해야 합니다. 예를 들어, 다음 표는 요청 순서에 따른 결과를 보여줍니다.
 
 | 요청                          | 결과                   |
 | -------------------------------- | ------------------------ |

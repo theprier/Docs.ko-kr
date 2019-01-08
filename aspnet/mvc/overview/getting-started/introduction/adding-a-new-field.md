@@ -8,12 +8,12 @@ ms.date: 10/17/2013
 ms.assetid: 4085de68-d243-4378-8a64-86236ea8d2da
 msc.legacyurl: /mvc/overview/getting-started/introduction/adding-a-new-field
 msc.type: authoredcontent
-ms.openlocfilehash: 87bb2c5f64e714268f5e2631b44fbb8a93a6a4b6
-ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
+ms.openlocfilehash: 950ae17ebd6b0f15520c2a4e9372703f5374dfbe
+ms.sourcegitcommit: 97d7a00bd39c83a8f6bccb9daa44130a509f75ce
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48578094"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54098690"
 ---
 <a name="adding-a-new-field"></a>새 필드 추가
 ====================
@@ -94,7 +94,7 @@ Code First 마이그레이션을에 다른 클래스 파일을 만듭니다는 *
 
 ![](adding-a-new-field/_static/image7.png)
 
-테이블에서 이미 존재 하 고 만들 수 없습니다를 나타내는 오류를 받게 되 면 것 및 실행 하기 전에 데이터베이스를 삭제 한 후 응용 프로그램을 실행 했으므로 `update-database`합니다. 이 경우 삭제 합니다 *Movies.mdf* 파일을 다시 시도 `update-database` 명령입니다. 오류가 여전히 발생 하면, 마이그레이션 폴더 및 내용을 삭제 한 후이 페이지의 맨 위에 있는 지침을 사용 하 여 시작 (삭제 되는 *Movies.mdf* Enable-migrations 진행 한 다음 파일). 오류를 받은 여전히 발생 하면, SQL Server 개체 탐색기를 열고 목록에서 데이터베이스를 제거 합니다.
+테이블에서 이미 존재 하 고 만들 수 없습니다를 나타내는 오류를 받게 되 면 것 및 실행 하기 전에 데이터베이스를 삭제 한 후 응용 프로그램을 실행 했으므로 `update-database`합니다. 이 경우 삭제 합니다 *Movies.mdf* 파일을 다시 시도 `update-database` 명령입니다. 오류가 여전히 발생 하면, 마이그레이션 폴더 및 내용을 삭제 한 후이 페이지의 맨 위에 있는 지침을 사용 하 여 시작 (삭제 되는 *Movies.mdf* Enable-migrations 진행 한 다음 파일). 오류가 여전히 발생 하면, SQL Server 개체 탐색기를 열고 목록에서 데이터베이스를 제거 합니다.
 
 응용 프로그램을 실행 하 고 이동 합니다 */Movies* URL입니다. 초기값 데이터가 표시 됩니다.
 
@@ -141,7 +141,7 @@ Code First 마이그레이션을에 다른 클래스 파일을 만듭니다는 *
 
 오류를 해결하는 몇 가지 방법이 있습니다.
 
-1. Entity Framework에서 새 모델 클래스 스키마에 따라 데이터베이스를 자동으로 삭제하고 다시 만들도록 합니다. 이 방법은 테스트 데이터베이스에서 활발한 개발을 수행할 때 개발 주기의 초기 단계에서 매우 편리하며 신속하게 모델 및 데이터베이스 스키마를 함께 개발할 수 있습니다. 그러나 단점은 데이터베이스의 기존 데이터를 손실 하는-있도록 있습니다 *하지* 프로덕션 데이터베이스에서이 방법을 사용 하려면! 테스트 데이터로 데이터베이스를 자동으로 시드하는 데 이니셜라이저를 사용하는 것은 종종 응용 프로그램을 개발하는 효율적인 방법입니다. Entity Framework 데이터베이스 이니셜라이저에 대 한 자세한 내용은 참조 하세요. [ASP.NET MVC/Entity Framework 자습서](../getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)합니다.
+1. Entity Framework에서 새 모델 클래스 스키마에 따라 데이터베이스를 자동으로 삭제하고 다시 만들도록 합니다. 이 방법은 테스트 데이터베이스에서 활발한 개발을 수행할 때 개발 주기의 초기 단계에서 매우 편리하며 신속하게 모델 및 데이터베이스 스키마를 함께 개발할 수 있습니다. 그러나 단점은 데이터베이스의 기존 데이터를 손실 하는-있도록 있습니다 *하지* 프로덕션 데이터베이스에서이 방법을 사용 하려면! 테스트 데이터로 데이터베이스를 자동으로 시드하는 데 이니셜라이저를 사용하는 것은 종종 애플리케이션을 개발하는 효율적인 방법입니다. Entity Framework 데이터베이스 이니셜라이저에 대 한 자세한 내용은 참조 하세요. [ASP.NET MVC/Entity Framework 자습서](../getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)합니다.
 2. 모델 클래스와 일치하도록 기존 데이터베이스의 스키마를 명시적으로 수정합니다. 이 방법의 장점은 데이터를 유지한다는 점입니다. 이러한 변경을 수동으로 수행하거나 데이터베이스 변경 스크립트를 만들어 수행할 수 있습니다.
 3. Code First 마이그레이션을 사용하여 데이터베이스 스키마를 업데이트합니다.
 

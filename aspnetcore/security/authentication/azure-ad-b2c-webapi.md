@@ -6,12 +6,12 @@ ms.author: casoper
 ms.date: 09/21/2018
 ms.custom: mvc, seodec18
 uid: security/authentication/azure-ad-b2c-webapi
-ms.openlocfilehash: 9c541644d276bbdc990bb01f8bd80c92862cd6f0
-ms.sourcegitcommit: b34b25da2ab68e6495b2460ff570468f16a9bf0d
+ms.openlocfilehash: 6d0365b103572d6059ce61c54b9b3406da9e5bd4
+ms.sourcegitcommit: 97d7a00bd39c83a8f6bccb9daa44130a509f75ce
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53284619"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54098703"
 ---
 # <a name="authentication-in-web-apis-with-azure-active-directory-b2c-in-aspnet-core"></a>Web Api ASP.NET Core에서 Azure Active Directory B2C를 사용 하 여 인증
 
@@ -71,7 +71,7 @@ Visual Studio 웹 응용 프로그램 템플릿은 인증에 Azure AD B2C 테 �
 
 Visual Studio에서 다음을 수행합니다.
 
-1. 새 ASP.NET Core 웹 응용 프로그램을 만듭니다. 
+1. 새 ASP.NET Core 웹 애플리케이션을 만듭니다. 
 2. 선택 **Web API** 템플릿 목록에서.
 3. 선택 된 **인증 변경** 단추입니다.
 
@@ -157,8 +157,8 @@ Postman을 시작 합니다. Postman 기본적으로 표시 합니다 **새로 �
     ![401 권한 없음된 응답](./azure-ad-b2c-webapi/postman-401-status.png)
 
 > [!IMPORTANT]
-> SSL 인증서 유효성 검사를 사용 하지 않도록 설정 해야 "응답을 가져오지 못했습니다" 오류가 발생할 경우 합니다 [Postman 설정](https://learning.getpostman.com/docs/postman/launching_postman/settings)합니다. 
- 
+> SSL 인증서 유효성 검사를 사용 하지 않도록 설정 해야 "응답을 가져오지 못했습니다" 오류가 발생 하는 경우는 [Postman 설정](https://learning.getpostman.com/docs/postman/launching_postman/settings)합니다.
+
 ### <a name="obtain-a-bearer-token"></a>전달자 토큰을 가져옵니다
 
 Web API에 요청을 인증된 하는 전달자 토큰을 필요 합니다. Postman을 사용 하면 쉽게 Azure AD B2C 테 넌 트에 로그인 하 고 토큰을 가져옵니다.

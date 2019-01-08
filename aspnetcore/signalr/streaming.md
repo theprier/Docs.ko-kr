@@ -7,12 +7,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 11/14/2018
 uid: signalr/streaming
-ms.openlocfilehash: 6d5f707bd2a37e1999c6e87e3cfc369aa0301207
-ms.sourcegitcommit: 09bcda59a58019fdf47b2db5259fe87acf19dd38
+ms.openlocfilehash: e0d201a7ffebbbe387a874c6d788994faa2be7a5
+ms.sourcegitcommit: 97d7a00bd39c83a8f6bccb9daa44130a509f75ce
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51708441"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54098807"
 ---
 # <a name="use-streaming-in-aspnet-core-signalr"></a>ASP.NET Core SignalR에서 스트리밍 사용
 
@@ -27,20 +27,20 @@ ASP.NET Core SignalR은 서버 메서드의 스트리밍 반환 값을 지원합
 `ChannelReader<T>` 또는 `Task<ChannelReader<T>>`를 반환하는 허브 메서드는 자동으로 스트리밍 허브 메서드로 간주됩니다. 다음은 클라이언트로 데이터를 스트리밍하는 기본적인 방법을 보여주는 예제입니다. 개체가 `ChannelReader`에 쓰여질 때마다 해당 개체는 클라이언트로 즉시 전송됩니다. 마지막으로 `ChannelReader`가 완료되어 스트림이 닫혔음을 클라이언트에 알려줍니다.
 
 > [!NOTE]
-> 백그라운드 스레드에서 `ChannelReader`에 쓰고 최대한 빨리 `ChannelReader`를 반환하십시오. `ChannelReader`가 반환될 때까지 다른 허브 호출들은 차단됩니다.
+> * 백그라운드 스레드에서 `ChannelReader`에 쓰고 최대한 빨리 `ChannelReader`를 반환하십시오. `ChannelReader`가 반환될 때까지 다른 허브 호출들은 차단됩니다.
+> * 논리를 래핑하는 `try ... catch` 완료를 `Channel` 메서드 호출이 제대로 완료 하 고 catch 되도록 허브 외부 catch에 합니다.
 
 ::: moniker range="= aspnetcore-2.1"
 
-[!code-csharp[Streaming hub method](streaming/sample/Hubs/StreamHub.aspnetcore21.cs?range=12-36)]
+[!code-csharp[Streaming hub method](streaming/sample/Hubs/StreamHub.aspnetcore21.cs?name=snippet1)]
 
 ::: moniker-end
 
 ::: moniker range=">= aspnetcore-2.2"
 
-[!code-csharp[Streaming hub method](streaming/sample/Hubs/StreamHub.cs?range=11-35)]
+[!code-csharp[Streaming hub method](streaming/sample/Hubs/StreamHub.cs?name=snippet1)]
 
-> [!NOTE]
-> ASP.NET Core 2.2 이상에서는 허브 메서드를 스트리밍 허용할 수는 `CancellationToken` 스트림에서 클라이언트 등록을 취소 하는 경우 트리거되는 매개 변수입니다. 이 토큰을 사용 하 여 서버 작업을 중지 및 스트림 종료 되기 전에 클라이언트 연결이 끊어지면 리소스를 해제 합니다.
+ASP.NET Core 2.2 이상에서는 허브 메서드를 스트리밍 허용할 수는 `CancellationToken` 스트림에서 클라이언트 등록을 취소 하는 경우 트리거되는 매개 변수입니다. 이 토큰을 사용 하 여 서버 작업을 중지 및 스트림 종료 되기 전에 클라이언트 연결이 끊어지면 리소스를 해제 합니다.
 
 ::: moniker-end
 
@@ -116,7 +116,7 @@ JavaScript 클라이언트는 `connection.stream`을 사용하여 허브의 스�
 
 ::: moniker-end
 
-## <a name="related-resources"></a>관련 자료
+## <a name="related-resources"></a>관련 참고 자료
 
 * [허브](xref:signalr/hubs)
 * [.NET 클라이언트](xref:signalr/dotnet-client)
