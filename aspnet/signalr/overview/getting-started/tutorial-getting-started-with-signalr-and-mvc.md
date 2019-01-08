@@ -1,208 +1,200 @@
 ---
 uid: signalr/overview/getting-started/tutorial-getting-started-with-signalr-and-mvc
-title: '자습서: SignalR 2 및 MVC 5 시작 | Microsoft Docs'
+title: '자습서: SignalR 2 및 MVC 5를 사용 하 여 실시간 채팅 | Microsoft Docs'
 author: pfletcher
-description: 이 자습서에는 ASP.NET SignalR 2를 사용 하 여 실시간 채팅 응용 프로그램을 만드는 방법을 보여 줍니다. SignalR MVC 5 응용 프로그램에 추가 하 고 채팅 보기를 만드는 중...
+description: 이 자습서에는 ASP.NET SignalR 2를 사용 하 여 실시간 채팅 응용 프로그램을 만드는 방법을 보여 줍니다. MVC 5 응용 프로그램에 SignalR을 추가합니다.
 ms.author: riande
-ms.date: 06/10/2014
+ms.date: 01/02/2019
 ms.assetid: 80bfe5fb-bdfc-41fe-ac43-2132e5d69fac
 msc.legacyurl: /signalr/overview/getting-started/tutorial-getting-started-with-signalr-and-mvc
 msc.type: authoredcontent
-ms.openlocfilehash: 568f82daa67f33736c2bf7a45a3e1339f265c487
-ms.sourcegitcommit: 74e3be25ea37b5fc8b4b433b0b872547b4b99186
+ms.topic: tutorial
+ms.openlocfilehash: eb4b7e1403f4070d65702b756bf98c5294c7fb17
+ms.sourcegitcommit: 97d7a00bd39c83a8f6bccb9daa44130a509f75ce
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53287520"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54098606"
 ---
-<a name="tutorial-getting-started-with-signalr-2-and-mvc-5"></a><span data-ttu-id="298fd-104">자습서: SignalR 2 및 MVC 5 시작</span><span class="sxs-lookup"><span data-stu-id="298fd-104">Tutorial: Getting Started with SignalR 2 and MVC 5</span></span>
-====================
-<span data-ttu-id="298fd-105">하 여 [Patrick Fletcher](https://github.com/pfletcher), [Tim Teebken](https://github.com/timlt)</span><span class="sxs-lookup"><span data-stu-id="298fd-105">by [Patrick Fletcher](https://github.com/pfletcher), [Tim Teebken](https://github.com/timlt)</span></span>
+# <a name="tutorial-real-time-chat-with-signalr-2-and-mvc-5"></a><span data-ttu-id="41b7b-104">자습서: SignalR 2 및 MVC 5를 사용 하 여 실시간 채팅</span><span class="sxs-lookup"><span data-stu-id="41b7b-104">Tutorial: Real-time chat with SignalR 2 and MVC 5</span></span>
+
+<span data-ttu-id="41b7b-105">이 자습서에는 ASP.NET SignalR 2를 사용 하 여 실시간 채팅 응용 프로그램을 만드는 방법을 보여 줍니다.</span><span class="sxs-lookup"><span data-stu-id="41b7b-105">This tutorial shows how to use ASP.NET SignalR 2 to create a real-time chat application.</span></span> <span data-ttu-id="41b7b-106">SignalR MVC 5 응용 프로그램에 추가 하 고이 정보를 보내고 메시지를 표시 하는 채팅 보기를 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="41b7b-106">You add SignalR to an MVC 5 application and create a chat view to send and display messages.</span></span>
+
+<span data-ttu-id="41b7b-107">이 자습서에서는 있습니다.</span><span class="sxs-lookup"><span data-stu-id="41b7b-107">In this tutorial, you:</span></span>
+
+> [!div class="checklist"]
+> * <span data-ttu-id="41b7b-108">프로젝트 설정</span><span class="sxs-lookup"><span data-stu-id="41b7b-108">Set up the project</span></span>
+> * <span data-ttu-id="41b7b-109">샘플 실행</span><span class="sxs-lookup"><span data-stu-id="41b7b-109">Run the sample</span></span>
+> * <span data-ttu-id="41b7b-110">코드 검사</span><span class="sxs-lookup"><span data-stu-id="41b7b-110">Examine the code</span></span>
 
 [!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
 
-[<span data-ttu-id="298fd-106">완료 된 프로젝트 다운로드</span><span class="sxs-lookup"><span data-stu-id="298fd-106">Download Completed Project</span></span>](http://code.msdn.microsoft.com/Getting-Started-with-c366b2f3)
+## <a name="prerequisites"></a><span data-ttu-id="41b7b-111">전제 조건</span><span class="sxs-lookup"><span data-stu-id="41b7b-111">Prerequisites</span></span>
 
-> <span data-ttu-id="298fd-107">이 자습서에는 ASP.NET SignalR 2를 사용 하 여 실시간 채팅 응용 프로그램을 만드는 방법을 보여 줍니다.</span><span class="sxs-lookup"><span data-stu-id="298fd-107">This tutorial shows how to use ASP.NET SignalR 2 to create a real-time chat application.</span></span> <span data-ttu-id="298fd-108">SignalR MVC 5 응용 프로그램에 추가 하 고 보내고 메시지를 표시 하려면 채팅 뷰를 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="298fd-108">You will add SignalR to an MVC 5 application and create a chat view to send and display messages.</span></span>
->
-> ## <a name="software-versions-used-in-the-tutorial"></a><span data-ttu-id="298fd-109">이 자습서에 사용 되는 소프트웨어 버전</span><span class="sxs-lookup"><span data-stu-id="298fd-109">Software versions used in the tutorial</span></span>
->
->
-> - [<span data-ttu-id="298fd-110">Visual Studio 2013</span><span class="sxs-lookup"><span data-stu-id="298fd-110">Visual Studio 2013</span></span>](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
-> - <span data-ttu-id="298fd-111">.NET 4.5</span><span class="sxs-lookup"><span data-stu-id="298fd-111">.NET 4.5</span></span>
-> - <span data-ttu-id="298fd-112">MVC 5</span><span class="sxs-lookup"><span data-stu-id="298fd-112">MVC 5</span></span>
-> - <span data-ttu-id="298fd-113">SignalR 버전 2</span><span class="sxs-lookup"><span data-stu-id="298fd-113">SignalR version 2</span></span>
->
->
->
-> ## <a name="using-visual-studio-2012-with-this-tutorial"></a><span data-ttu-id="298fd-114">이 자습서를 사용 하 여 Visual Studio 2012를 사용 하 여</span><span class="sxs-lookup"><span data-stu-id="298fd-114">Using Visual Studio 2012 with this tutorial</span></span>
->
->
-> <span data-ttu-id="298fd-115">이 자습서를 사용 하 여 Visual Studio 2012를 사용 하려면 다음을 수행 합니다.</span><span class="sxs-lookup"><span data-stu-id="298fd-115">To use Visual Studio 2012 with this tutorial, do the following:</span></span>
->
-> - <span data-ttu-id="298fd-116">업데이트 프로그램 [패키지 관리자](http://docs.nuget.org/docs/start-here/installing-nuget) 최신 버전으로 합니다.</span><span class="sxs-lookup"><span data-stu-id="298fd-116">Update your [Package Manager](http://docs.nuget.org/docs/start-here/installing-nuget) to the latest version.</span></span>
-> - <span data-ttu-id="298fd-117">설치 합니다 [웹 플랫폼 설치 관리자](https://www.microsoft.com/web/downloads/platform.aspx)합니다.</span><span class="sxs-lookup"><span data-stu-id="298fd-117">Install the [Web Platform Installer](https://www.microsoft.com/web/downloads/platform.aspx).</span></span>
-> - <span data-ttu-id="298fd-118">웹 플랫폼 설치 관리자에서 검색 하 고 설치 **ASP.NET 및 Visual Studio 2012 용 웹 도구 2013.1**합니다.</span><span class="sxs-lookup"><span data-stu-id="298fd-118">In the Web Platform Installer, search for and install **ASP.NET and Web Tools 2013.1 for Visual Studio 2012**.</span></span> <span data-ttu-id="298fd-119">SignalR 클래스에 대 한 Visual Studio 템플릿 같은 설치 합니다 **허브**합니다.</span><span class="sxs-lookup"><span data-stu-id="298fd-119">This will install Visual Studio templates for SignalR classes such as **Hub**.</span></span>
-> - <span data-ttu-id="298fd-120">일부 템플릿 (와 같은 **OWIN 시작 클래스**)를 사용할 수 없습니다;이 대 한 클래스 파일을 대신 사용 합니다.</span><span class="sxs-lookup"><span data-stu-id="298fd-120">Some templates (such as **OWIN Startup Class**) will not be available; for these, use a Class file instead.</span></span>
->
->
-> ## <a name="tutorial-versions"></a><span data-ttu-id="298fd-121">자습서 버전</span><span class="sxs-lookup"><span data-stu-id="298fd-121">Tutorial Versions</span></span>
->
-> <span data-ttu-id="298fd-122">이전 버전의 SignalR에 대 한 정보를 참조 하세요 [SignalR 이전 버전](../older-versions/index.md)합니다.</span><span class="sxs-lookup"><span data-stu-id="298fd-122">For information about earlier versions of SignalR, see [SignalR Older Versions](../older-versions/index.md).</span></span>
->
-> ## <a name="questions-and-comments"></a><span data-ttu-id="298fd-123">질문이 나 의견이 있으면</span><span class="sxs-lookup"><span data-stu-id="298fd-123">Questions and comments</span></span>
->
-> <span data-ttu-id="298fd-124">이 자습서를 연결 하는 방법 및 새로운 개선할 수 있습니다 페이지의 맨 아래에 의견에서에 의견을 남겨 주세요.</span><span class="sxs-lookup"><span data-stu-id="298fd-124">Please leave feedback on how you liked this tutorial and what we could improve in the comments at the bottom of the page.</span></span> <span data-ttu-id="298fd-125">에 자습서로 직접 관련 되지 않은 질문이 있을 경우 게시할 수 하는 [ASP.NET SignalR 포럼](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR) 또는 [StackOverflow.com](http://stackoverflow.com/)합니다.</span><span class="sxs-lookup"><span data-stu-id="298fd-125">If you have questions that are not directly related to the tutorial, you can post them to the [ASP.NET SignalR forum](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR) or [StackOverflow.com](http://stackoverflow.com/).</span></span>
+* <span data-ttu-id="41b7b-112">[Visual Studio 2017](https://visualstudio.microsoft.com/downloads/) 사용 하 여 합니다 **ASP.NET 및 웹 개발** 워크 로드.</span><span class="sxs-lookup"><span data-stu-id="41b7b-112">[Visual Studio 2017](https://visualstudio.microsoft.com/downloads/) with the **ASP.NET and web development** workload.</span></span>
 
+## <a name="set-up-the-project"></a><span data-ttu-id="41b7b-113">프로젝트 설정</span><span class="sxs-lookup"><span data-stu-id="41b7b-113">Set up the Project</span></span>
 
-## <a name="overview"></a><span data-ttu-id="298fd-126">개요</span><span class="sxs-lookup"><span data-stu-id="298fd-126">Overview</span></span>
+<span data-ttu-id="41b7b-114">이 섹션에는 Visual Studio 2017 및 SignalR 2 빈 ASP.NET MVC 5 응용 프로그램, SignalR 라이브러리를 추가 및 채팅 응용 프로그램 만들기를 사용 하는 방법을 보여 줍니다.</span><span class="sxs-lookup"><span data-stu-id="41b7b-114">This section shows how to use Visual Studio 2017 and SignalR 2 to create an empty ASP.NET MVC 5 application, add the SignalR library, and create the chat application.</span></span>
 
-<span data-ttu-id="298fd-127">이 자습서에서는 ASP.NET SignalR 2 및 ASP.NET MVC 5를 사용 하 여 실시간 웹 응용 프로그램 개발 소개 합니다.</span><span class="sxs-lookup"><span data-stu-id="298fd-127">This tutorial introduces you to real-time web application development with ASP.NET SignalR 2 and ASP.NET MVC 5.</span></span> <span data-ttu-id="298fd-128">이 자습서에서는 같은 채팅 응용 프로그램 코드를 사용 합니다 [SignalR 시작 자습서](tutorial-getting-started-with-signalr.md), 하지만 MVC 5 응용 프로그램에 추가 하는 방법을 보여 줍니다.</span><span class="sxs-lookup"><span data-stu-id="298fd-128">The tutorial uses the same chat application code as the [SignalR Getting Started tutorial](tutorial-getting-started-with-signalr.md), but shows how to add it to an MVC 5 application.</span></span>
+1. <span data-ttu-id="41b7b-115">Visual Studio에서 C# ASP.NET 응용 프로그램을.NET Framework 4.5를 대상으로 하는, SignalRChat, 이름을 만들고 확인을 클릭 합니다.</span><span class="sxs-lookup"><span data-stu-id="41b7b-115">In Visual Studio, create a C# ASP.NET application that targets .NET Framework 4.5, name it SignalRChat, and click OK.</span></span>
 
-<span data-ttu-id="298fd-129">이 항목에서는 다음 SignalR 개발 작업을 배웁니다.</span><span class="sxs-lookup"><span data-stu-id="298fd-129">In this topic you will learn the following SignalR development tasks:</span></span>
+    ![웹 만들기](tutorial-getting-started-with-signalr-and-mvc/_static/image1.png)
 
-- <span data-ttu-id="298fd-130">MVC 5 응용 프로그램에 SignalR 라이브러리에 추가 합니다.</span><span class="sxs-lookup"><span data-stu-id="298fd-130">Adding the SignalR library to an MVC 5 application.</span></span>
-- <span data-ttu-id="298fd-131">허브 및 클라이언트에 콘텐츠를 푸시 하려면 OWIN 시작 클래스를 만드는 중입니다.</span><span class="sxs-lookup"><span data-stu-id="298fd-131">Creating hub and OWIN startup classes to push content to clients.</span></span>
-- <span data-ttu-id="298fd-132">웹 페이지에서 SignalR jQuery 라이브러리를 사용 하 여 메시지를 보내고 허브에서 업데이트를 표시 합니다.</span><span class="sxs-lookup"><span data-stu-id="298fd-132">Using the SignalR jQuery library in a web page to send messages and display updates from the hub.</span></span>
+1. <span data-ttu-id="41b7b-117">**새 ASP.NET 웹 응용 프로그램-SignalRMvcChat**를 선택 **MVC** 선택한 후 **인증 변경**합니다.</span><span class="sxs-lookup"><span data-stu-id="41b7b-117">In **New ASP.NET Web Application - SignalRMvcChat**, select **MVC** and then select **Change Authentication**.</span></span>
 
-<span data-ttu-id="298fd-133">다음 스크린샷은 완료 된 채팅 응용 프로그램을 브라우저에서 실행을 보여 줍니다.</span><span class="sxs-lookup"><span data-stu-id="298fd-133">The following screen shot shows the completed chat application running in a browser.</span></span>
+1. <span data-ttu-id="41b7b-118">**인증 변경**를 선택 **인증 안 함** 누릅니다 **확인**합니다.</span><span class="sxs-lookup"><span data-stu-id="41b7b-118">In **Change Authentication**, select **No Authentication** and click **OK**.</span></span>
 
-![채트 인스턴스](tutorial-getting-started-with-signalr-and-mvc/_static/image1.png)
+    ![인증 안 함을 선택 합니다.](tutorial-getting-started-with-signalr-and-mvc/_static/image2.png)
 
-<span data-ttu-id="298fd-135">섹션:</span><span class="sxs-lookup"><span data-stu-id="298fd-135">Sections:</span></span>
+1. <span data-ttu-id="41b7b-120">**새 ASP.NET 웹 응용 프로그램-SignalRMvcChat**를 선택 **확인**합니다.</span><span class="sxs-lookup"><span data-stu-id="41b7b-120">In **New ASP.NET Web Application - SignalRMvcChat**, select **OK**.</span></span>
 
-- [<span data-ttu-id="298fd-136">프로젝트 설정</span><span class="sxs-lookup"><span data-stu-id="298fd-136">Set up the Project</span></span>](#setup)
-- [<span data-ttu-id="298fd-137">샘플 실행</span><span class="sxs-lookup"><span data-stu-id="298fd-137">Run the Sample</span></span>](#run)
-- [<span data-ttu-id="298fd-138">코드 검사</span><span class="sxs-lookup"><span data-stu-id="298fd-138">Examine the Code</span></span>](#code)
-- [<span data-ttu-id="298fd-139">다음 단계</span><span class="sxs-lookup"><span data-stu-id="298fd-139">Next Steps</span></span>](#next)
+1. <span data-ttu-id="41b7b-121">**솔루션 탐색기**, 프로젝트를 마우스 오른쪽 단추로 **추가** > **새 항목**합니다.</span><span class="sxs-lookup"><span data-stu-id="41b7b-121">In **Solution Explorer**, right-click the project and select **Add** > **New Item**.</span></span>
 
-<a id="setup"></a>
+1. <span data-ttu-id="41b7b-122">**새 항목 추가-SignalRChat**를 선택 **설치 됨** > **시각적 C#**   >  **Web**  >  **SignalR** 선택한 후 **SignalR 허브 클래스 (v2)** 합니다.</span><span class="sxs-lookup"><span data-stu-id="41b7b-122">In **Add New Item - SignalRChat**, select **Installed** > **Visual C#** > **Web** > **SignalR**  and then select **SignalR Hub Class (v2)**.</span></span>
 
-## <a name="set-up-the-project"></a><span data-ttu-id="298fd-140">프로젝트 설정</span><span class="sxs-lookup"><span data-stu-id="298fd-140">Set up the Project</span></span>
+1. <span data-ttu-id="41b7b-123">클래스의 이름을 *ChatHub* 하 고 프로젝트에 추가 합니다.</span><span class="sxs-lookup"><span data-stu-id="41b7b-123">Name the class *ChatHub* and add it to the project.</span></span>
 
-<span data-ttu-id="298fd-141">필수 구성 요소:</span><span class="sxs-lookup"><span data-stu-id="298fd-141">Prerequisites:</span></span>
+    <span data-ttu-id="41b7b-124">이 단계에서는 합니다 *ChatHub.cs* 클래스 파일 및 스크립트 파일 및 프로젝트에 SignalR을 지 원하는 어셈블리 참조의 집합을 추가 합니다.</span><span class="sxs-lookup"><span data-stu-id="41b7b-124">This step creates the *ChatHub.cs* class file and adds a set of script files and assembly references that support SignalR to the project.</span></span>
 
-- <span data-ttu-id="298fd-142">Visual Studio 2013.</span><span class="sxs-lookup"><span data-stu-id="298fd-142">Visual Studio 2013.</span></span> <span data-ttu-id="298fd-143">Visual Studio가 없는 경우 [ASP.NET 다운로드](https://www.asp.net/downloads) 무료 Visual Studio 2013 Express 개발 도구를 가져오려고 합니다.</span><span class="sxs-lookup"><span data-stu-id="298fd-143">If you do not have Visual Studio, see [ASP.NET Downloads](https://www.asp.net/downloads) to get the free Visual Studio 2013 Express Development Tool.</span></span>
-
-<span data-ttu-id="298fd-144">이 섹션에서는 ASP.NET MVC 5 응용 프로그램을 만들고 SignalR 라이브러리를 추가, 채팅 응용 프로그램을 만드는 방법을 보여 줍니다.</span><span class="sxs-lookup"><span data-stu-id="298fd-144">This section shows how to create an ASP.NET MVC 5 application, add the SignalR library, and create the chat application.</span></span>
-
-1. <span data-ttu-id="298fd-145">Visual Studio에서 C# ASP.NET 응용 프로그램을.NET Framework 4.5를 대상으로 하는, SignalRChat, 이름을 만들고 확인을 클릭 합니다.</span><span class="sxs-lookup"><span data-stu-id="298fd-145">In Visual Studio, create a C# ASP.NET application that targets .NET Framework 4.5, name it SignalRChat, and click OK.</span></span>
-
-    ![웹 만들기](tutorial-getting-started-with-signalr-and-mvc/_static/image2.png)
-2. <span data-ttu-id="298fd-147">에 `New ASP.NET Project` 대화 상자에서 선택한 **MVC**, 클릭 **인증 변경**합니다.</span><span class="sxs-lookup"><span data-stu-id="298fd-147">In the `New ASP.NET Project` dialog, and select **MVC**, and click **Change Authentication**.</span></span>
-
-    ![웹 만들기](tutorial-getting-started-with-signalr-and-mvc/_static/image3.png)
-3. <span data-ttu-id="298fd-149">선택 **인증 없음** 에 **인증 변경** 대화 상자에서을 클릭 **확인**합니다.</span><span class="sxs-lookup"><span data-stu-id="298fd-149">Select **No Authentication** in the **Change Authentication** dialog, and click **OK**.</span></span>
-
-    ![인증 안 함을 선택 합니다.](tutorial-getting-started-with-signalr-and-mvc/_static/image4.png)
-
-    > [!NOTE]
-    > <span data-ttu-id="298fd-151">응용 프로그램에 대 한 다른 인증 공급자를 선택 하는 경우는 `Startup.cs` 클래스를 만들 수는 않으면 직접 만들 필요가 없습니다 `Startup.cs` 10 아래 단계에는 클래스입니다.</span><span class="sxs-lookup"><span data-stu-id="298fd-151">If you select a different authentication provider for your application, a `Startup.cs` class will be created for you; you will not need to create your own `Startup.cs` class in step 10 below.</span></span>
-4. <span data-ttu-id="298fd-152">클릭 **확인** 에 **새 ASP.NET 프로젝트** 대화 합니다.</span><span class="sxs-lookup"><span data-stu-id="298fd-152">Click **OK** in the **New ASP.NET Project** dialog.</span></span>
-5. <span data-ttu-id="298fd-153">엽니다는 **도구 > NuGet 패키지 관리자 > 패키지 관리자 콘솔** 하 고 다음 명령을 실행 합니다.</span><span class="sxs-lookup"><span data-stu-id="298fd-153">Open the **Tools > NuGet Package Manager > Package Manager Console** and run the following command.</span></span> <span data-ttu-id="298fd-154">이 단계는 스크립트 파일 및 SignalR 기능을 사용 하는 어셈블리 참조의 집합을 프로젝트에 추가 합니다.</span><span class="sxs-lookup"><span data-stu-id="298fd-154">This step adds to the project a set of script files and assembly references that enable SignalR functionality.</span></span>
-
-    `install-package Microsoft.AspNet.SignalR`
-6. <span data-ttu-id="298fd-155">**솔루션 탐색기**를 스크립트 폴더를 확장 합니다.</span><span class="sxs-lookup"><span data-stu-id="298fd-155">In **Solution Explorer**, expand the Scripts folder.</span></span> <span data-ttu-id="298fd-156">SignalR에 대 한 스크립트 라이브러리를 프로젝트에 추가한 참고 합니다.</span><span class="sxs-lookup"><span data-stu-id="298fd-156">Note that script libraries for SignalR have been added to the project.</span></span>
-
-    ![스크립트 폴더](tutorial-getting-started-with-signalr-and-mvc/_static/image5.png)
-7. <span data-ttu-id="298fd-158">**솔루션 탐색기**프로젝트를 마우스 오른쪽 단추로 클릭을 **추가 | 새 폴더**, 라는 새 폴더를 추가한 **Hubs**합니다.</span><span class="sxs-lookup"><span data-stu-id="298fd-158">In **Solution Explorer**, right-click the project, select **Add | New Folder**, and add a new folder named **Hubs**.</span></span>
-8. <span data-ttu-id="298fd-159">마우스 오른쪽 단추로 클릭 합니다 **Hubs** 폴더를 클릭 **추가 | 새 항목**를 선택 합니다 **Visual C# | 웹 | SignalR** 에서 노드를 **설치 됨** 창 **SignalR 허브 클래스 (v2)** 가운데 창에서 이라는 새 허브를 만들고 **ChatHub.cs**합니다.</span><span class="sxs-lookup"><span data-stu-id="298fd-159">Right-click the **Hubs** folder, click **Add | New Item**, select the **Visual C# | Web | SignalR** node in the **Installed** pane, select **SignalR Hub Class (v2)** from the center pane, and create a new hub named **ChatHub.cs**.</span></span> <span data-ttu-id="298fd-160">이 클래스를 사용 하 여 모든 클라이언트에 메시지를 보내는 SignalR server 허브로 합니다.</span><span class="sxs-lookup"><span data-stu-id="298fd-160">You will use this class as a SignalR server hub that sends messages to all clients.</span></span>
-
-    ![새 허브 만들기](tutorial-getting-started-with-signalr-and-mvc/_static/image6.png)
-9. <span data-ttu-id="298fd-162">코드를 대체 합니다 **ChatHub** 다음 코드를 사용 하 여 클래스입니다.</span><span class="sxs-lookup"><span data-stu-id="298fd-162">Replace the code in the **ChatHub** class with the following code.</span></span>
+1. <span data-ttu-id="41b7b-125">새 코드를 바꿉니다 *ChatHub.cs* 이 코드를 사용 하 여 클래스 파일:</span><span class="sxs-lookup"><span data-stu-id="41b7b-125">Replace the code in the new *ChatHub.cs* class file with this code:</span></span>
 
     [!code-csharp[Main](tutorial-getting-started-with-signalr-and-mvc/samples/sample1.cs)]
-10. <span data-ttu-id="298fd-163">Startup.cs 라는 새 클래스를 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="298fd-163">Create a new class called Startup.cs.</span></span> <span data-ttu-id="298fd-164">다음 파일의 내용을 변경 합니다.</span><span class="sxs-lookup"><span data-stu-id="298fd-164">Change the contents of the file to the following.</span></span>
+
+1. <span data-ttu-id="41b7b-126">**솔루션 탐색기**, 프로젝트를 마우스 오른쪽 단추로 **추가** > **클래스**합니다.</span><span class="sxs-lookup"><span data-stu-id="41b7b-126">In **Solution Explorer**, right-click the project and select **Add** > **Class**.</span></span>
+
+1. <span data-ttu-id="41b7b-127">새 클래스 이름을 *시작* 하 고 프로젝트에 추가 합니다.</span><span class="sxs-lookup"><span data-stu-id="41b7b-127">Name the new class *Startup* and add it to the project.</span></span>
+
+1. <span data-ttu-id="41b7b-128">코드를 대체 합니다 *Startup.cs* 이 코드를 사용 하 여 클래스 파일:</span><span class="sxs-lookup"><span data-stu-id="41b7b-128">Replace the code in the *Startup.cs* class file with this code:</span></span>
 
     [!code-csharp[Main](tutorial-getting-started-with-signalr-and-mvc/samples/sample2.cs)]
-11. <span data-ttu-id="298fd-165">편집 합니다 `HomeController` 클래스에서 찾을 **controllers/Homecontroller.cs** 클래스에 다음 메서드를 추가 합니다.</span><span class="sxs-lookup"><span data-stu-id="298fd-165">Edit the `HomeController` class found in **Controllers/HomeController.cs** and add the following method to the class.</span></span> <span data-ttu-id="298fd-166">이 메서드는 반환 된 **채팅** 이후 단계에서 만들 뷰.</span><span class="sxs-lookup"><span data-stu-id="298fd-166">This method returns the **Chat** view that you will create in a later step.</span></span>
+
+1. <span data-ttu-id="41b7b-129">**솔루션 탐색기**를 선택 **컨트롤러** > **HomeController.cs**합니다.</span><span class="sxs-lookup"><span data-stu-id="41b7b-129">In **Solution Explorer**, select **Controllers** > **HomeController.cs**.</span></span>
+
+1. <span data-ttu-id="41b7b-130">이 메서드를 추가 합니다 *HomeController.cs*합니다.</span><span class="sxs-lookup"><span data-stu-id="41b7b-130">Add this method to the *HomeController.cs*.</span></span>
 
     [!code-csharp[Main](tutorial-getting-started-with-signalr-and-mvc/samples/sample3.cs)]
-12. <span data-ttu-id="298fd-167">마우스 오른쪽 단추로 클릭 합니다 **Views/Home** 폴더를 선택한 **추가.... | 보기**합니다.</span><span class="sxs-lookup"><span data-stu-id="298fd-167">Right-click the **Views/Home** folder, and select **Add... | View**.</span></span>
-13. <span data-ttu-id="298fd-168">에 **뷰 추가** 대화 상자에서 새 뷰의 이름 **채팅**합니다.</span><span class="sxs-lookup"><span data-stu-id="298fd-168">In the **Add View** dialog, name the new view **Chat**.</span></span>
 
-    ![보기 추가](tutorial-getting-started-with-signalr-and-mvc/_static/image7.png)
-14. <span data-ttu-id="298fd-170">내용을 바꿉니다 **Chat.cshtml** 다음 코드를 사용 합니다.</span><span class="sxs-lookup"><span data-stu-id="298fd-170">Replace the contents of **Chat.cshtml** with the following code.</span></span>
+    <span data-ttu-id="41b7b-131">이 메서드는 반환 된 **채팅** 이후 단계에서 만든 뷰.</span><span class="sxs-lookup"><span data-stu-id="41b7b-131">This method returns the **Chat** view that you create in a later step.</span></span>
 
-    > [!IMPORTANT]
-    > <span data-ttu-id="298fd-171">SignalR 및 기타 스크립트 라이브러리를 Visual Studio 프로젝트에 추가 하면 패키지 관리자는이 항목에 표시 된 버전 보다 최신 SignalR 스크립트 파일의 버전을 설치할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="298fd-171">When you add SignalR and other script libraries to your Visual Studio project, the Package Manager might install a version of the SignalR script file that is more recent than the version shown in this topic.</span></span> <span data-ttu-id="298fd-172">코드에서 스크립트 참조를 프로젝트에 설치 스크립트 라이브러리의 버전과 일치 하는지 확인 합니다.</span><span class="sxs-lookup"><span data-stu-id="298fd-172">Make sure that the script reference in your code matches the version of the script library installed in your project.</span></span>
+1. <span data-ttu-id="41b7b-132">**솔루션 탐색기**를 마우스 오른쪽 단추로 클릭 **뷰** > **홈**를 선택 하 고 **추가**  >    **보기**합니다.</span><span class="sxs-lookup"><span data-stu-id="41b7b-132">In **Solution Explorer**, right-click **Views** > **Home**, and select **Add** >  **View**.</span></span>
+
+1. <span data-ttu-id="41b7b-133">**뷰 추가**에서 새 뷰의 이름을 **채팅** 선택한 **추가**합니다.</span><span class="sxs-lookup"><span data-stu-id="41b7b-133">In **Add View**, name the new view **Chat** and select **Add**.</span></span>
+
+1. <span data-ttu-id="41b7b-134">내용을 바꿉니다 **Chat.cshtml** 이 코드를 사용 하 여:</span><span class="sxs-lookup"><span data-stu-id="41b7b-134">Replace the contents of **Chat.cshtml** with this code:</span></span>
 
     [!code-cshtml[Main](tutorial-getting-started-with-signalr-and-mvc/samples/sample4.cshtml)]
-15. <span data-ttu-id="298fd-173">**모두 저장** 프로젝트에 대 한 합니다.</span><span class="sxs-lookup"><span data-stu-id="298fd-173">**Save All** for the project.</span></span>
 
-<a id="run"></a>
+1. <span data-ttu-id="41b7b-135">**솔루션 탐색기**를 확장 하 고 **스크립트**합니다.</span><span class="sxs-lookup"><span data-stu-id="41b7b-135">In **Solution Explorer**, expand **Scripts**.</span></span>
 
-## <a name="run-the-sample"></a><span data-ttu-id="298fd-174">샘플 실행</span><span class="sxs-lookup"><span data-stu-id="298fd-174">Run the Sample</span></span>
+    <span data-ttu-id="41b7b-136">JQuery 및 SignalR에 대 한 스크립트 라이브러리 프로젝트에 표시 됩니다.</span><span class="sxs-lookup"><span data-stu-id="41b7b-136">Script libraries for jQuery and SignalR are visible in the project.</span></span>
 
-1. <span data-ttu-id="298fd-175">F5 키를 눌러 디버그 모드에서 프로젝트를 실행 합니다.</span><span class="sxs-lookup"><span data-stu-id="298fd-175">Press F5 to run the project in debug mode.</span></span>
-2. <span data-ttu-id="298fd-176">브라우저 주소 줄에 추가할 **/home/채팅** 프로젝트에 대 한 기본 페이지의 url입니다.</span><span class="sxs-lookup"><span data-stu-id="298fd-176">In the browser address line, append **/home/chat** to the URL of the default page for the project.</span></span> <span data-ttu-id="298fd-177">채팅 페이지가 브라우저 인스턴스를 사용자 이름에 대 한 프롬프트에 로드 합니다.</span><span class="sxs-lookup"><span data-stu-id="298fd-177">The Chat page loads in a browser instance and prompts for a user name.</span></span>
+    > [!IMPORTANT]
+    > <span data-ttu-id="41b7b-137">패키지 관리자 SignalR 스크립트의 이후 버전이 설치 될 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="41b7b-137">The package manager may have installed a later version of the SignalR scripts.</span></span>
 
-    ![사용자 이름 입력](tutorial-getting-started-with-signalr-and-mvc/_static/image8.png)
-3. <span data-ttu-id="298fd-179">사용자 이름을 입력 합니다.</span><span class="sxs-lookup"><span data-stu-id="298fd-179">Enter a user name.</span></span>
-4. <span data-ttu-id="298fd-180">브라우저의 주소 줄에서 URL을 복사 하 고 사용 하 여 자세한 두 브라우저 인스턴스를 엽니다.</span><span class="sxs-lookup"><span data-stu-id="298fd-180">Copy the URL from the address line of the browser and use it to open two more browser instances.</span></span> <span data-ttu-id="298fd-181">브라우저 인스턴스마다에서 고유한 사용자 이름을 입력 합니다.</span><span class="sxs-lookup"><span data-stu-id="298fd-181">In each browser instance, enter a unique user name.</span></span>
-5. <span data-ttu-id="298fd-182">각 브라우저 인스턴스에서 주석을 추가 하 고 클릭 **보낼**합니다.</span><span class="sxs-lookup"><span data-stu-id="298fd-182">In each browser instance, add a comment and click **Send**.</span></span> <span data-ttu-id="298fd-183">주석을 모든 브라우저 인스턴스에 표시 됩니다.</span><span class="sxs-lookup"><span data-stu-id="298fd-183">The comments should display in all browser instances.</span></span>
+1. <span data-ttu-id="41b7b-138">프로젝트에서 스크립트 파일의 버전에 해당 하는 코드 블록에 대 한 스크립트 참조는 확인 합니다.</span><span class="sxs-lookup"><span data-stu-id="41b7b-138">Check that the script references in the code block correspond to the versions of the script files in the project.</span></span>
+
+    <span data-ttu-id="41b7b-139">원래 코드 블록에서 스크립트 참조:</span><span class="sxs-lookup"><span data-stu-id="41b7b-139">Script references from the original code block:</span></span>
+
+    ```cshtml
+    <!--Script references. -->
+    <!--The jQuery library is required and is referenced by default in _Layout.cshtml. -->
+    <!--Reference the SignalR library. -->
+    <script src="~/Scripts/jquery.signalR-2.1.0.min.js"></script>
+    ```
+
+1. <span data-ttu-id="41b7b-140">일치 하지 않으면 업데이트 합니다 *.cshtml* 파일입니다.</span><span class="sxs-lookup"><span data-stu-id="41b7b-140">If they don't match, update the *.cshtml* file.</span></span>
+
+1. <span data-ttu-id="41b7b-141">메뉴 모음에서 선택 **파일** > **모두 저장**합니다.</span><span class="sxs-lookup"><span data-stu-id="41b7b-141">From the menu bar, select **File** > **Save All**.</span></span>
+
+## <a name="run-the-sample"></a><span data-ttu-id="41b7b-142">샘플 실행</span><span class="sxs-lookup"><span data-stu-id="41b7b-142">Run the Sample</span></span>
+
+1. <span data-ttu-id="41b7b-143">도구 모음에서 설정 **스크립트 디버깅** 다음 디버그 모드에서 샘플을 실행 하려면 재생 단추를 선택 합니다.</span><span class="sxs-lookup"><span data-stu-id="41b7b-143">In the toolbar, turn on **Script Debugging** and then select the play button to run the sample in Debug mode.</span></span>
+
+    ![사용자 이름 입력](tutorial-getting-started-with-signalr-and-mvc/_static/image3.png)
+
+1. <span data-ttu-id="41b7b-145">브라우저가 열리면 채팅 id에 대 한 이름을 입력 합니다.</span><span class="sxs-lookup"><span data-stu-id="41b7b-145">When the browser opens, enter a name for your chat identity.</span></span>
+
+1. <span data-ttu-id="41b7b-146">브라우저에서 URL을 복사 하 고 다른 두 브라우저를 열고 주소 표시줄에 Url을 붙여 넣습니다.</span><span class="sxs-lookup"><span data-stu-id="41b7b-146">Copy the URL from the browser, open two other browsers, and paste the URLs into the address bars.</span></span>
+
+1. <span data-ttu-id="41b7b-147">각 브라우저에서 고유한 이름을 입력 합니다.</span><span class="sxs-lookup"><span data-stu-id="41b7b-147">In each browser, enter a unique name.</span></span>
+
+1. <span data-ttu-id="41b7b-148">이제 선택한 주석 추가 **보낼**합니다.</span><span class="sxs-lookup"><span data-stu-id="41b7b-148">Now, add a comment and select **Send**.</span></span> <span data-ttu-id="41b7b-149">다른 브라우저에는 반복 합니다.</span><span class="sxs-lookup"><span data-stu-id="41b7b-149">Repeat that in the other browsers.</span></span> <span data-ttu-id="41b7b-150">설명이는 실시간으로 나타납니다.</span><span class="sxs-lookup"><span data-stu-id="41b7b-150">The comments appear in real time.</span></span>
 
     > [!NOTE]
-    > <span data-ttu-id="298fd-184">이 간단한 채팅 응용 프로그램 서버에서 토론 컨텍스트를 유지 하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="298fd-184">This simple chat application does not maintain the discussion context on the server.</span></span> <span data-ttu-id="298fd-185">허브는 모든 현재 사용자에 게 의견을 브로드캐스트합니다.</span><span class="sxs-lookup"><span data-stu-id="298fd-185">The hub broadcasts comments to all current users.</span></span> <span data-ttu-id="298fd-186">채팅을 나중에 조인 하는 사용자에 가입할 때부터 추가 된 메시지를 표시 됩니다.</span><span class="sxs-lookup"><span data-stu-id="298fd-186">Users who join the chat later will see messages added from the time they join.</span></span>
-6. <span data-ttu-id="298fd-187">다음 스크린 샷은 채팅 응용 프로그램을 브라우저에서 실행을 보여 줍니다.</span><span class="sxs-lookup"><span data-stu-id="298fd-187">The following screen shot shows the chat application running in a browser.</span></span>
+    > <span data-ttu-id="41b7b-151">이 간단한 채팅 응용 프로그램 서버에서 토론 컨텍스트를 유지 하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="41b7b-151">This simple chat application does not maintain the discussion context on the server.</span></span> <span data-ttu-id="41b7b-152">허브는 모든 현재 사용자에 게 의견을 브로드캐스트합니다.</span><span class="sxs-lookup"><span data-stu-id="41b7b-152">The hub broadcasts comments to all current users.</span></span> <span data-ttu-id="41b7b-153">채팅을 나중에 조인 하는 사용자에 가입할 때부터 추가 된 메시지를 표시 됩니다.</span><span class="sxs-lookup"><span data-stu-id="41b7b-153">Users who join the chat later will see messages added from the time they join.</span></span>
 
-    ![채팅 브라우저](tutorial-getting-started-with-signalr-and-mvc/_static/image9.png)
-7. <span data-ttu-id="298fd-189">**솔루션 탐색기**를 검사 합니다 **스크립트 문서** 실행 중인 응용 프로그램에 대 한 노드.</span><span class="sxs-lookup"><span data-stu-id="298fd-189">In **Solution Explorer**, inspect the **Script Documents** node for the running application.</span></span> <span data-ttu-id="298fd-190">이 노드는 브라우저와 Internet Explorer를 사용 하는 경우 디버그 모드에서 표시 합니다.</span><span class="sxs-lookup"><span data-stu-id="298fd-190">This node is visible in debug mode if you are using Internet Explorer as your browser.</span></span> <span data-ttu-id="298fd-191">명명 된 스크립트 파일이 **hubs** SignalR 라이브러리 런타임에 동적으로 생성 하는 합니다.</span><span class="sxs-lookup"><span data-stu-id="298fd-191">There is a script file named **hubs** that the SignalR library dynamically generates at runtime.</span></span> <span data-ttu-id="298fd-192">이 파일 jQuery 스크립트와 서버 쪽 코드 간의 통신을 관리합니다.</span><span class="sxs-lookup"><span data-stu-id="298fd-192">This file manages the communication between jQuery script and server-side code.</span></span> <span data-ttu-id="298fd-193">Internet Explorer 이외의 브라우저를 사용 하는 경우 동적도 액세스할 수 있습니다 **hubs** 탐색 하 여 직접 예를 들어 파일 http://mywebsite/signalr/hubs합니다.</span><span class="sxs-lookup"><span data-stu-id="298fd-193">If you use a browser other than Internet Explorer, you can also access the dynamic **hubs** file by browsing to it directly, for example http://mywebsite/signalr/hubs.</span></span>
+    <span data-ttu-id="41b7b-154">세 가지 다른 브라우저에서 채팅 응용 프로그램을 실행 하는 방법을 참조 하세요.</span><span class="sxs-lookup"><span data-stu-id="41b7b-154">See how the chat application runs in three different browsers.</span></span> <span data-ttu-id="41b7b-155">Tom, Anand, 및 Susan 메시지를 보낼 때, 모든 브라우저 실시간으로 업데이트 합니다.</span><span class="sxs-lookup"><span data-stu-id="41b7b-155">When Tom, Anand, and Susan send messages, all browsers update in real time:</span></span>
 
-<a id="code"></a>
+    ![모든 세 가지 브라우저 동일한 채팅 기록 표시](tutorial-getting-started-with-signalr-and-mvc/_static/image4.png)
 
-## <a name="examine-the-code"></a><span data-ttu-id="298fd-194">코드 검사</span><span class="sxs-lookup"><span data-stu-id="298fd-194">Examine the Code</span></span>
+1. <span data-ttu-id="41b7b-157">**솔루션 탐색기**를 검사 합니다 **스크립트 문서** 실행 중인 응용 프로그램에 대 한 노드.</span><span class="sxs-lookup"><span data-stu-id="41b7b-157">In **Solution Explorer**, inspect the **Script Documents** node for the running application.</span></span> <span data-ttu-id="41b7b-158">명명 된 스크립트 파일이 *hubs* SignalR 라이브러리는 런타임에 생성 하는 합니다.</span><span class="sxs-lookup"><span data-stu-id="41b7b-158">There's a script file named *hubs* that the SignalR library generates at runtime.</span></span> <span data-ttu-id="41b7b-159">이 파일 jQuery 스크립트와 서버 쪽 코드 간의 통신을 관리합니다.</span><span class="sxs-lookup"><span data-stu-id="41b7b-159">This file manages the communication between jQuery script and server-side code.</span></span>
 
-<span data-ttu-id="298fd-195">SignalR 채팅 응용 프로그램에는 두 개의 기본 SignalR 개발 작업 방법을 보여 줍니다.: 서버에서 주 조정 개체로 허브를 만들고 SignalR jQuery 라이브러리를 사용 하 여 메시지를 주고받을 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="298fd-195">The SignalR chat application demonstrates two basic SignalR development tasks: creating a hub as the main coordination object on the server, and using the SignalR jQuery library to send and receive messages.</span></span>
+    ![스크립트 문서 노드의 hubs 스크립트 자동 생성](tutorial-getting-started-with-signalr-and-mvc/_static/image5.png)
 
-### <a name="signalr-hubs"></a><span data-ttu-id="298fd-196">SignalR 허브</span><span class="sxs-lookup"><span data-stu-id="298fd-196">SignalR Hubs</span></span>
+## <a name="examine-the-code"></a><span data-ttu-id="41b7b-161">코드 검사</span><span class="sxs-lookup"><span data-stu-id="41b7b-161">Examine the Code</span></span>
 
-<span data-ttu-id="298fd-197">코드 샘플에는 **ChatHub** 클래스에서 파생 되는 **Microsoft.AspNet.SignalR.Hub** 클래스입니다.</span><span class="sxs-lookup"><span data-stu-id="298fd-197">In the code sample the **ChatHub** class derives from the **Microsoft.AspNet.SignalR.Hub** class.</span></span> <span data-ttu-id="298fd-198">파생 된 **허브** 클래스는 SignalR 응용 프로그램을 빌드하는 유용한 방법입니다.</span><span class="sxs-lookup"><span data-stu-id="298fd-198">Deriving from the **Hub** class is a useful way to build a SignalR application.</span></span> <span data-ttu-id="298fd-199">허브 클래스에서 공용 메서드를 만들 수 있으며 그런 다음 웹 페이지의 스크립트에서 호출 하 여 이러한 메서드에 액세스할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="298fd-199">You can create public methods on your hub class and then access those methods by calling them from scripts in a web page.</span></span>
+<span data-ttu-id="41b7b-162">SignalR 채팅 응용 프로그램에서는 두 가지 기본 SignalR 개발 작업을 보여 줍니다.</span><span class="sxs-lookup"><span data-stu-id="41b7b-162">The SignalR chat application demonstrates two basic SignalR development tasks.</span></span> <span data-ttu-id="41b7b-163">허브를 만드는 방법을 보여줍니다.</span><span class="sxs-lookup"><span data-stu-id="41b7b-163">It shows you how to create a hub.</span></span> <span data-ttu-id="41b7b-164">서버는 주 조정 개체와 해당 허브를 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="41b7b-164">The server uses that hub as the main coordination object.</span></span> <span data-ttu-id="41b7b-165">허브는 SignalR jQuery 라이브러리를 사용 하 여 메시지 보내기 및 받기.</span><span class="sxs-lookup"><span data-stu-id="41b7b-165">The hub uses the SignalR jQuery library to send and receive messages.</span></span>
 
-<span data-ttu-id="298fd-200">채팅 코드에서 클라이언트 호출을 **ChatHub.Send** 새 메시지를 전송 하는 방법입니다.</span><span class="sxs-lookup"><span data-stu-id="298fd-200">In the chat code, clients call the **ChatHub.Send** method to send a new message.</span></span> <span data-ttu-id="298fd-201">허브에 메시지를 보냅니다 모든 클라이언트를 호출 하 여 **Clients.All.addNewMessageToPage**합니다.</span><span class="sxs-lookup"><span data-stu-id="298fd-201">The hub in turn sends the message to all clients by calling **Clients.All.addNewMessageToPage**.</span></span>
+### <a name="signalr-hubs-in-the-chathubcs"></a><span data-ttu-id="41b7b-166">SignalR 허브를 ChatHub.cs에서</span><span class="sxs-lookup"><span data-stu-id="41b7b-166">SignalR Hubs in the ChatHub.cs</span></span>
 
-<span data-ttu-id="298fd-202">합니다 **보낼** 메서드 여러 허브 개념을 보여 줍니다.</span><span class="sxs-lookup"><span data-stu-id="298fd-202">The **Send** method demonstrates several hub concepts :</span></span>
+<span data-ttu-id="41b7b-167">코드 샘플에서는 합니다 `ChatHub` 클래스에서 파생 되는 `Microsoft.AspNet.SignalR.Hub` 클래스입니다.</span><span class="sxs-lookup"><span data-stu-id="41b7b-167">In the code sample, the `ChatHub` class derives from the `Microsoft.AspNet.SignalR.Hub` class.</span></span> <span data-ttu-id="41b7b-168">파생 된 `Hub` 클래스는 SignalR 응용 프로그램을 빌드하는 유용한 방법입니다.</span><span class="sxs-lookup"><span data-stu-id="41b7b-168">Deriving from the `Hub` class is a useful way to build a SignalR application.</span></span> <span data-ttu-id="41b7b-169">허브 클래스에서 공용 메서드를 만들 수 있으며 그런 다음 웹 페이지의 스크립트에서 호출 하 여 이러한 메서드에 액세스할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="41b7b-169">You can create public methods on your hub class and then access those methods by calling them from scripts in a web page.</span></span>
 
-- <span data-ttu-id="298fd-203">클라이언트에서 호출할 수 있도록 허브에서 공용 메서드를 선언 합니다.</span><span class="sxs-lookup"><span data-stu-id="298fd-203">Declare public methods on a hub so that clients can call them.</span></span>
-- <span data-ttu-id="298fd-204">사용 된 **Microsoft.AspNet.SignalR.Hub.Clients** 이 허브에 연결 된 속성을 모든 클라이언트에 액세스 합니다.</span><span class="sxs-lookup"><span data-stu-id="298fd-204">Use the **Microsoft.AspNet.SignalR.Hub.Clients** property to access all clients connected to this hub.</span></span>
-- <span data-ttu-id="298fd-205">클라이언트에서 함수를 호출 (같은 `addNewMessageToPage` 함수) 클라이언트를 업데이트 합니다.</span><span class="sxs-lookup"><span data-stu-id="298fd-205">Call a function on the client (such as the `addNewMessageToPage` function) to update clients.</span></span>
+<span data-ttu-id="41b7b-170">채팅 코드에서 클라이언트 호출을 `ChatHub.Send` 새 메시지를 전송 하는 방법입니다.</span><span class="sxs-lookup"><span data-stu-id="41b7b-170">In the chat code, clients call the `ChatHub.Send` method to send a new message.</span></span> <span data-ttu-id="41b7b-171">허브에 메시지를 보냅니다 모든 클라이언트를 호출 하 여 `Clients.All.addNewMessageToPage`입니다.</span><span class="sxs-lookup"><span data-stu-id="41b7b-171">The hub in turn sends the message to all clients by calling `Clients.All.addNewMessageToPage`.</span></span>
+
+<span data-ttu-id="41b7b-172">`Send` 메서드 여러 허브 개념을 보여 줍니다.</span><span class="sxs-lookup"><span data-stu-id="41b7b-172">The `Send` method demonstrates several hub concepts:</span></span>
+
+* <span data-ttu-id="41b7b-173">클라이언트에서 호출할 수 있도록 허브에서 공용 메서드를 선언 합니다.</span><span class="sxs-lookup"><span data-stu-id="41b7b-173">Declare public methods on a hub so that clients can call them.</span></span>
+
+* <span data-ttu-id="41b7b-174">사용 된 `Microsoft.AspNet.SignalR.Hub.Clients` 이 허브에 연결 된 모든 클라이언트와 통신 하는 동적 속성입니다.</span><span class="sxs-lookup"><span data-stu-id="41b7b-174">Use the `Microsoft.AspNet.SignalR.Hub.Clients` dynamic property to communicate with all clients connected to this hub.</span></span>
+
+* <span data-ttu-id="41b7b-175">클라이언트에서 함수를 호출 (같은 `addNewMessageToPage` 함수) 클라이언트를 업데이트 합니다.</span><span class="sxs-lookup"><span data-stu-id="41b7b-175">Call a function on the client (like the `addNewMessageToPage` function) to update clients.</span></span>
 
     [!code-csharp[Main](tutorial-getting-started-with-signalr-and-mvc/samples/sample5.cs)]
 
-### <a name="signalr-and-jquery"></a><span data-ttu-id="298fd-206">SignalR 및 jQuery</span><span class="sxs-lookup"><span data-stu-id="298fd-206">SignalR and jQuery</span></span>
+### <a name="signalr-and-jquery-chatcshtml"></a><span data-ttu-id="41b7b-176">SignalR 및 jQuery Chat.cshtml</span><span class="sxs-lookup"><span data-stu-id="41b7b-176">SignalR and jQuery Chat.cshtml</span></span>
 
-<span data-ttu-id="298fd-207">합니다 **Chat.cshtml** 코드 샘플에서 파일 보기 SignalR jQuery 라이브러리를 사용 하 여 SignalR 허브와 통신 하는 방법을 보여 줍니다.</span><span class="sxs-lookup"><span data-stu-id="298fd-207">The **Chat.cshtml** view file in the code sample shows how to use the SignalR jQuery library to communicate with a SignalR hub.</span></span> <span data-ttu-id="298fd-208">코드에서 필수 작업을 자동으로 생성 된 프록시에 허브에 대 한 서버는 클라이언트 밀어넣기 콘텐츠를 호출할 수 있는 함수를 선언 하 고 연결을 시작 하는 허브에 메시지를 보낼 대 한 참조를 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="298fd-208">The essential tasks in the code are creating a reference to the auto-generated proxy for the hub, declaring a function that the server can call to push content to clients, and starting a connection to send messages to the hub.</span></span>
-
-<span data-ttu-id="298fd-209">다음 코드는 허브 프록시에 대 한 참조를 선언 합니다.</span><span class="sxs-lookup"><span data-stu-id="298fd-209">The following code declares a reference to a hub proxy.</span></span>
+<span data-ttu-id="41b7b-177">합니다 *Chat.cshtml* 코드 샘플에서 파일 보기 SignalR jQuery 라이브러리를 사용 하 여 SignalR 허브와 통신 하는 방법을 보여 줍니다.</span><span class="sxs-lookup"><span data-stu-id="41b7b-177">The *Chat.cshtml* view file in the code sample shows how to use the SignalR jQuery library to communicate with a SignalR hub.</span></span>  <span data-ttu-id="41b7b-178">코드는 여러 중요 한 작업을 수행합니다.</span><span class="sxs-lookup"><span data-stu-id="41b7b-178">The code carries out many important tasks.</span></span> <span data-ttu-id="41b7b-179">이 허브에 대 한 자동 생성 된 프록시에 대 한 참조를 만들고, 서버 클라이언트에 콘텐츠를 푸시 하려면 호출할 수 있으며 허브에 메시지를 보내기 위해 연결을 시작 하는 함수를 선언 합니다.</span><span class="sxs-lookup"><span data-stu-id="41b7b-179">It creates a reference to the autogenerated proxy for the hub, declares a function that the server can call to push content to clients, and it starts a connection to send messages to the hub.</span></span>
 
 [!code-javascript[Main](tutorial-getting-started-with-signalr-and-mvc/samples/sample6.js)]
 
 > [!NOTE]
-> <span data-ttu-id="298fd-210">JavaScript (camel case)에서 서버 클래스 및 해당 멤버에 대 한 참조는입니다.</span><span class="sxs-lookup"><span data-stu-id="298fd-210">In JavaScript the reference to the server class and its members is in camel case.</span></span> <span data-ttu-id="298fd-211">코드 샘플을 참조 하는 C# **ChatHub** JavaScript는 클래스 **chatHub**합니다.</span><span class="sxs-lookup"><span data-stu-id="298fd-211">The code sample references the C# **ChatHub** class in JavaScript as **chatHub**.</span></span> <span data-ttu-id="298fd-212">참조 하려는 경우는 `ChatHub` 클래스 기존 파스칼을 사용 하 여 jquery에서 ChatHub.cs 클래스 파일을 편집 하듯이 C#에서는 대/소문자 구분 합니다.</span><span class="sxs-lookup"><span data-stu-id="298fd-212">If you want to reference the `ChatHub` class in jQuery with conventional Pascal casing as you would in C#, edit the ChatHub.cs class file.</span></span> <span data-ttu-id="298fd-213">추가 `using` 문을 참조 하는 `Microsoft.AspNet.SignalR.Hubs` 네임 스페이스입니다.</span><span class="sxs-lookup"><span data-stu-id="298fd-213">Add a `using` statement to reference the `Microsoft.AspNet.SignalR.Hubs` namespace.</span></span> <span data-ttu-id="298fd-214">추가한 합니다 `HubName` 특성을 합니다 `ChatHub` 클래스, 예를 들어 `[HubName("ChatHub")]`합니다.</span><span class="sxs-lookup"><span data-stu-id="298fd-214">Then add the `HubName` attribute to the `ChatHub` class, for example `[HubName("ChatHub")]`.</span></span> <span data-ttu-id="298fd-215">마지막으로 업데이트 하려면 jQuery 참조는 `ChatHub` 클래스입니다.</span><span class="sxs-lookup"><span data-stu-id="298fd-215">Finally, update your jQuery reference to the `ChatHub` class.</span></span>
+> <span data-ttu-id="41b7b-180">JavaScript 서버 클래스 및 해당 멤버에 대 한 참조는 camelCase 있습니다.</span><span class="sxs-lookup"><span data-stu-id="41b7b-180">In JavaScript, the reference to the server class and its members is in camelCase.</span></span> <span data-ttu-id="41b7b-181">코드 샘플 참조는 C# `ChatHub` 으로 JavaScript에서 클래스 `chatHub`합니다.</span><span class="sxs-lookup"><span data-stu-id="41b7b-181">The code sample references the C# `ChatHub` class in JavaScript as `chatHub`.</span></span>
 
-
-<span data-ttu-id="298fd-216">다음 코드에는 스크립트에 콜백 함수를 만드는 방법을 보여 줍니다.</span><span class="sxs-lookup"><span data-stu-id="298fd-216">The following code shows how to create a callback function in the script.</span></span> <span data-ttu-id="298fd-217">서버의 허브 클래스는 각 클라이언트에 콘텐츠 업데이트를 푸시 하려면이 함수를 호출 합니다.</span><span class="sxs-lookup"><span data-stu-id="298fd-217">The hub class on the server calls this function to push content updates to each client.</span></span> <span data-ttu-id="298fd-218">에 대 한 선택적인 호출을 `htmlEncode` 함수 표시 방법은 HTML 스크립트 삽입을 방지 하는 방법으로 페이지에 표시 하기 전에 메시지 콘텐츠를 인코딩.</span><span class="sxs-lookup"><span data-stu-id="298fd-218">The optional call to the `htmlEncode` function shows a way to HTML encode the message content before displaying it in the page, as a way to prevent script injection.</span></span>
+<span data-ttu-id="41b7b-182">이 코드 블록을 스크립트에 콜백 함수를 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="41b7b-182">In this code block, you create a callback function in the script.</span></span>
 
 [!code-html[Main](tutorial-getting-started-with-signalr-and-mvc/samples/sample7.html)]
 
-<span data-ttu-id="298fd-219">다음 코드에는 허브를 사용 하 여 연결을 여는 방법을 보여 줍니다.</span><span class="sxs-lookup"><span data-stu-id="298fd-219">The following code shows how to open a connection with the hub.</span></span> <span data-ttu-id="298fd-220">코드는 연결을 시작 하 고 다음에 클릭 이벤트를 처리 하는 함수 전달 합니다 **보낼** 채팅 페이지에서 단추.</span><span class="sxs-lookup"><span data-stu-id="298fd-220">The code starts the connection and then passes it a function to handle the click event on the **Send** button in the Chat page.</span></span>
+<span data-ttu-id="41b7b-183">서버의 허브 클래스는 각 클라이언트에 콘텐츠 업데이트를 푸시 하려면이 함수를 호출 합니다.</span><span class="sxs-lookup"><span data-stu-id="41b7b-183">The hub class on the server calls this function to push content updates to each client.</span></span> <span data-ttu-id="41b7b-184">에 대 한 선택적인 호출을 `htmlEncode` 함수 표시 방법은 HTML 페이지에 표시 하기 전에 메시지 콘텐츠를 인코딩.</span><span class="sxs-lookup"><span data-stu-id="41b7b-184">The optional call to the `htmlEncode` function shows a way to HTML encode the message content before displaying it in the page.</span></span> <span data-ttu-id="41b7b-185">스크립트 삽입을 방지 하는 방법입니다.</span><span class="sxs-lookup"><span data-stu-id="41b7b-185">It's a way to prevent script injection.</span></span>
 
-> [!NOTE]
-> <span data-ttu-id="298fd-221">이 방법은 이벤트 처리기 실행 되기 전에 연결이 설정 되어 있는지 확인 합니다.</span><span class="sxs-lookup"><span data-stu-id="298fd-221">This approach ensures that the connection is established before the event handler executes.</span></span>
-
+<span data-ttu-id="41b7b-186">이 코드는 허브를 사용 하 여 연결을 엽니다.</span><span class="sxs-lookup"><span data-stu-id="41b7b-186">This code opens a connection with the hub.</span></span>
 
 [!code-javascript[Main](tutorial-getting-started-with-signalr-and-mvc/samples/sample8.js)]
 
-<a id="next"></a>
+> [!NOTE]
+> <span data-ttu-id="41b7b-187">이 방법을 사용 하면 이벤트 처리기 실행 되기 전에 연결을 설정 합니다.</span><span class="sxs-lookup"><span data-stu-id="41b7b-187">This approach ensures that you establish a connection before the event handler executes.</span></span>
 
-## <a name="next-steps"></a><span data-ttu-id="298fd-222">다음 단계</span><span class="sxs-lookup"><span data-stu-id="298fd-222">Next Steps</span></span>
+<span data-ttu-id="41b7b-188">코드는 연결을 시작 하 고 다음에 클릭 이벤트를 처리 하는 함수 전달 합니다 **보낼** 채팅 페이지에서 단추.</span><span class="sxs-lookup"><span data-stu-id="41b7b-188">The code starts the connection and then passes it a function to handle the click event on the **Send** button in the Chat page.</span></span>
 
-<span data-ttu-id="298fd-223">SignalR은 실시간 웹 응용 프로그램을 빌드하기 위한 프레임 워크는 배웠습니다.</span><span class="sxs-lookup"><span data-stu-id="298fd-223">You learned that SignalR is a framework for building real-time web applications.</span></span> <span data-ttu-id="298fd-224">여러 SignalR 개발 작업에 배웠습니다: SignalR ASP.NET 응용 프로그램에 추가 하는 방법, 허브 클래스를 만드는 방법 및 허브에서 메시지를 송수신 하는 방법입니다.</span><span class="sxs-lookup"><span data-stu-id="298fd-224">You also learned several SignalR development tasks: how to add SignalR to an ASP.NET application, how to create a hub class, and how to send and receive messages from the hub.</span></span>
+## <a name="additional-resources"></a><span data-ttu-id="41b7b-189">추가 자료</span><span class="sxs-lookup"><span data-stu-id="41b7b-189">Additional resources</span></span>
 
-<span data-ttu-id="298fd-225">연습은 샘플 SignalR 응용 프로그램을 Azure에 배포 하는 방법에 대해서 [Azure App Service에서 Web apps를 사용 하 여 SignalR](../deployment/using-signalr-with-azure-web-sites.md)합니다.</span><span class="sxs-lookup"><span data-stu-id="298fd-225">For a walkthrough on how to deploy the sample SignalR application to Azure, see [Using SignalR with Web Apps in Azure App Service](../deployment/using-signalr-with-azure-web-sites.md).</span></span> <span data-ttu-id="298fd-226">Visual Studio 웹 프로젝트를 Windows Azure 웹 사이트를 배포 하는 방법에 대 한 자세한 내용은 참조 하세요. [Azure App Service에서 ASP.NET 웹 앱 만들기](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-get-started/)합니다.</span><span class="sxs-lookup"><span data-stu-id="298fd-226">For detailed information about how to deploy a Visual Studio web project to a Windows Azure Web Site, see [Create an ASP.NET web app in Azure App Service](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-get-started/).</span></span>
+<span data-ttu-id="41b7b-190">SignalR에 대 한 자세한 내용은 다음 리소스를 참조 하세요.</span><span class="sxs-lookup"><span data-stu-id="41b7b-190">For more about SignalR, see the following resources:</span></span>
 
-<span data-ttu-id="298fd-227">고급 SignalR 개발 개념에 알아보려면 SignalR 소스 코드 및 리소스에 대 한 다음 사이트를 방문 하십시오.</span><span class="sxs-lookup"><span data-stu-id="298fd-227">To learn more advanced SignalR developments concepts, visit the following sites for SignalR source code and resources :</span></span>
+* [<span data-ttu-id="41b7b-191">SignalR 프로젝트</span><span class="sxs-lookup"><span data-stu-id="41b7b-191">SignalR Project</span></span>](http://signalr.net)
 
-- [<span data-ttu-id="298fd-228">SignalR 프로젝트</span><span class="sxs-lookup"><span data-stu-id="298fd-228">SignalR Project</span></span>](http://signalr.net)
-- [<span data-ttu-id="298fd-229">SignalR Github 및 샘플</span><span class="sxs-lookup"><span data-stu-id="298fd-229">SignalR Github and Samples</span></span>](https://github.com/SignalR/SignalR)
-- [<span data-ttu-id="298fd-230">SignalR Wiki</span><span class="sxs-lookup"><span data-stu-id="298fd-230">SignalR Wiki</span></span>](https://github.com/SignalR/SignalR/wiki)
+* [<span data-ttu-id="41b7b-192">SignalR GitHub 및 샘플</span><span class="sxs-lookup"><span data-stu-id="41b7b-192">SignalR GitHub and Samples</span></span>](https://github.com/SignalR/SignalR)
+
+* [<span data-ttu-id="41b7b-193">SignalR Wiki</span><span class="sxs-lookup"><span data-stu-id="41b7b-193">SignalR Wiki</span></span>](https://github.com/SignalR/SignalR/wiki)
+
+## <a name="next-steps"></a><span data-ttu-id="41b7b-194">다음 단계</span><span class="sxs-lookup"><span data-stu-id="41b7b-194">Next steps</span></span>
+
+<span data-ttu-id="41b7b-195">이 자습서에서는 있습니다.</span><span class="sxs-lookup"><span data-stu-id="41b7b-195">In this tutorial, you:</span></span>
+
+> [!div class="checklist"]
+> * <span data-ttu-id="41b7b-196">프로젝트 설정</span><span class="sxs-lookup"><span data-stu-id="41b7b-196">Set up the project</span></span>
+> * <span data-ttu-id="41b7b-197">샘플 실행</span><span class="sxs-lookup"><span data-stu-id="41b7b-197">Ran the sample</span></span>
+> * <span data-ttu-id="41b7b-198">코드 검사</span><span class="sxs-lookup"><span data-stu-id="41b7b-198">Examined the code</span></span>
+
+<span data-ttu-id="41b7b-199">빈도가 높은 메시징 기능을 제공 하는 데 ASP.NET SignalR 2를 사용 하는 웹 응용 프로그램을 만드는 방법을 알아보려면 다음 문서로 이동 합니다.</span><span class="sxs-lookup"><span data-stu-id="41b7b-199">Advance to the next article to learn how to create a web application that uses ASP.NET SignalR 2 to provide high-frequency messaging functionality.</span></span>
+> [!div class="nextstepaction"]
+> [<span data-ttu-id="41b7b-200">고주파 메시징을 사용 하 여 웹 앱</span><span class="sxs-lookup"><span data-stu-id="41b7b-200">Web app with high-frequency messaging</span></span>](tutorial-high-frequency-realtime-with-signalr.md)
