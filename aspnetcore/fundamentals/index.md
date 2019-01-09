@@ -4,14 +4,14 @@ author: rick-anderson
 description: ASP.NET Core 앱을 구축하기 위한 기본적인 개념을 알아봅니다.
 ms.author: riande
 ms.custom: mvc
-ms.date: 12/18/2018
+ms.date: 01/06/2019
 uid: fundamentals/index
-ms.openlocfilehash: 11dc6336ae7667038983c967f28232bef325f5bb
-ms.sourcegitcommit: 816f39e852a8f453e8682081871a31bc66db153a
+ms.openlocfilehash: a56beebd796448705c7b84f47699e9739f451419
+ms.sourcegitcommit: 97d7a00bd39c83a8f6bccb9daa44130a509f75ce
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53637772"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54099236"
 ---
 # <a name="aspnet-core-fundamentals"></a>ASP.NET Core 기본 사항
 
@@ -63,7 +63,7 @@ ASP.NET Core 앱은 `Program.Main` 메서드에서 웹 서버를 생성하는 �
 
 ::: moniker-end
 
-`Startup` 클래스는 요청 처리 파이프라인을 정의하고 앱에 필요한 모든 서비스를 구성하는 곳입니다. `Startup` 클래스는 public으로 지정해야 하며 다음과 같은 메서드들을 제공해야 합니다.
+`Startup` 클래스는 앱에 필요한 모든 서비스를 구성하고 요청 처리 파이프라인을 정의하는 곳입니다. `Startup` 클래스는 public으로 지정해야 하며 일반적으로 다음 메서드를 포함해야 합니다. `Startup.ConfigureServices`는 선택적 요소입니다.
 
 ::: moniker range=">= aspnetcore-2.0"
 

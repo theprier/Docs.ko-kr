@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 11/11/2018
 uid: security/authentication/social/index
-ms.openlocfilehash: 47ac1f966ff727957e6ed700c3c68efa16b1b38b
-ms.sourcegitcommit: 3e94d192b2ed9409fe72e3735e158b333354964c
+ms.openlocfilehash: 063d452fb6ab91b712ade7f7b7ed99823dbdc657
+ms.sourcegitcommit: 97d7a00bd39c83a8f6bccb9daa44130a509f75ce
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/24/2018
-ms.locfileid: "53735728"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54098820"
 ---
 # <a name="facebook-google-and-external-provider-authentication-in-aspnet-core"></a>ASP.NET Core에서 Facebook, Google 및 외부 공급자 인증
 
@@ -33,9 +33,9 @@ ms.locfileid: "53735728"
 
 ![새 프로젝트 대화 상자](index/_static/new-project.png)
 
-* **웹 응용 프로그램**을 누르고 **인증**이 **개별 사용자 계정**으로 설정되었는지 확인합니다.
+* **웹 애플리케이션**을 누르고 **인증**이 **개별 사용자 계정**으로 설정되었는지 확인합니다.
 
-![새 웹 응용 프로그램 대화 상자](index/_static/select-project.png)
+![새 웹 애플리케이션 대화 상자](index/_static/select-project.png)
 
 참고: 이 자습서는 마법사 상단에서 선택할 수 있는 ASP.NET Core 2.0 SDK 버전에 적용됩니다.
 
@@ -46,11 +46,11 @@ ms.locfileid: "53735728"
 * 새 계정의 메일과 암호를 입력한 다음 **등록**을 선택합니다.
 * 지침에 따라 마이그레이션을 적용합니다.
 
-## <a name="require-ssl"></a>SSL 필요
+## <a name="require-https"></a>HTTPS 필요
 
-OAuth 2.0은 HTTPS 프로토콜을 통한 인증을 위해 SSL을 사용해야 합니다.
+OAuth 2.0은 HTTPS 프로토콜을 통한 인증을 위해 SSL/TLS를 사용해야 합니다.
 
-ASP.NET Core 2.1 이상에서 **웹 애플리케이션** 또는 **Web API** 프로젝트 템플릿을 사용하여 만든 프로젝트는 SSL을 사용하도록 자동으로 구성됩니다. 프로젝트 마법사의 **인증 변경 대화 상자**에서 **개별 사용자 계정** 옵션을 선택한 경우 앱이 안전한 기본 엔드포인트에서 시작됩니다.
+ASP.NET Core 2.1 이상에서 **웹 애플리케이션** 또는 **Web API** 프로젝트 템플릿을 사용하여 만든 프로젝트는 HTTPS를 사용하도록 자동으로 구성됩니다. 프로젝트 마법사의 **인증 변경 대화 상자**에서 **개별 사용자 계정** 옵션을 선택한 경우 앱이 안전한 기본 엔드포인트에서 시작됩니다.
 
 자세한 내용은 <xref:security/enforcing-ssl>을 참조하세요.
 
@@ -58,16 +58,16 @@ ASP.NET Core 2.1 이상에서 **웹 애플리케이션** 또는 **Web API** 프�
 
 ## <a name="use-secretmanager-to-store-tokens-assigned-by-login-providers"></a>SecretManager를 사용하여 로그인 공급자에 의해 할당된 토큰 저장
 
-소셜 로그인 공급자는 등록 프로세스 중에 **응용 프로그램 ID** 및 **응용 프로그램 암호** 토큰을 할당합니다. 정확한 토큰 이름은 공급자에 따라 달라집니다. 이러한 토큰은 앱이 API에 액세스하는 데 사용하는 자격 증명을 나타냅니다. 토큰은 [Secret Manager](xref:security/app-secrets#secret-manager)의 도움으로 앱 구성에 연결할 수 있는 "암호"를 구성합니다. Secret Manager는 *appsettings.json*과 같은 구성 파일에 토큰을 저장하는 보다 안전한 대안입니다.
+소셜 로그인 공급자는 등록 프로세스 중에 **애플리케이션 ID** 및 **애플리케이션 암호** 토큰을 할당합니다. 정확한 토큰 이름은 공급자에 따라 달라집니다. 이러한 토큰은 앱이 API에 액세스하는 데 사용하는 자격 증명을 나타냅니다. 토큰은 [Secret Manager](xref:security/app-secrets#secret-manager)의 도움으로 앱 구성에 연결할 수 있는 "암호"를 구성합니다. Secret Manager는 *appsettings.json*과 같은 구성 파일에 토큰을 저장하는 보다 안전한 대안입니다.
 
 > [!IMPORTANT]
 > Secret Manager는 개발 목적으로만 사용됩니다. [Azure Key Vault 구성 제공자](xref:security/key-vault-configuration)로 Azure 테스트 및 프로덕션 암호를 저장하고 보호할 수 있습니다.
 
 [ASP.NET Core에서 개발 중인 앱 암호의 안전한 저장소](xref:security/app-secrets) 항목의 단계에 따라 아래의 각 로그인 공급자에 의해 할당된 토큰을 저장합니다.
 
-## <a name="setup-login-providers-required-by-your-application"></a>응용 프로그램에 필요한 로그인 공급자 설정
+## <a name="setup-login-providers-required-by-your-application"></a>애플리케이션에 필요한 로그인 공급자 설정
 
-다음 항목을 사용하여 해당 공급자를 사용하도록 응용 프로그램을 구성합니다.
+다음 항목을 사용하여 해당 공급자를 사용하도록 애플리케이션을 구성합니다.
 
 * [Facebook](xref:security/authentication/facebook-logins) 지침
 * [Twitter](xref:security/authentication/twitter-logins) 지침
@@ -85,7 +85,7 @@ ASP.NET Core 2.1 이상에서 **웹 애플리케이션** 또는 **Web API** 프�
 
 * 오른쪽 위 모서리에 있는 **Hello &lt;이메일 별칭&gt;** 링크를 눌러 **관리** 보기로 이동합니다.
 
-![웹 응용 프로그램 관리 뷰](index/_static/pass1a.png)
+![웹 애플리케이션 관리 뷰](index/_static/pass1a.png)
 
 * **만들기** 탭
 

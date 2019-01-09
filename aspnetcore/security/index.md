@@ -6,16 +6,16 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 10/24/2018
 uid: security/index
-ms.openlocfilehash: 579e472e01efd08bbafe949e37a3b655a42a5b46
-ms.sourcegitcommit: 04b55a5ce9d649ff2df926157ec28ae47afe79e2
+ms.openlocfilehash: 933501411169d89c4b24edda743c47591aa7a87a
+ms.sourcegitcommit: 97d7a00bd39c83a8f6bccb9daa44130a509f75ce
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52156921"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54098963"
 ---
 # <a name="overview-of-aspnet-core-security"></a>ASP.NET Core 보안 개요
 
-개발자는 ASP.NET Core를 사용하여 앱의 보안을 간편하게 구성 및 관리할 수 있습니다. ASP.NET Core는 인증, 권한 부여, 데이터 보호, SSL 적용, 앱 비밀, 요청 위조 방지 및 CORS 관리를 위한 기능을 포함하고 있습니다. 이러한 보안 기능을 사용하여 강력하면서도 안전한 ASP.NET Core 앱을 빌드할 수 있습니다.
+개발자는 ASP.NET Core를 사용하여 앱의 보안을 간편하게 구성 및 관리할 수 있습니다. ASP.NET Core는 인증, 권한 부여, 데이터 보호, HTTPS 적용, 앱 비밀, 요청 위조 방지 및 CORS 관리를 위한 기능을 포함하고 있습니다. 이러한 보안 기능을 사용하여 강력하면서도 안전한 ASP.NET Core 앱을 빌드할 수 있습니다.
 
 ## <a name="aspnet-core-security-features"></a>ASP.NET Core 보안 기능
 
