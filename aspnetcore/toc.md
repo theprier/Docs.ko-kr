@@ -179,7 +179,9 @@
 ## [스냅숏 디버깅](/azure/application-insights/app-insights-snapshot-debugger)
 ## [Visual Studio에서 스냅숏 디버깅](/visualstudio/debugger/debug-live-azure-applications)
 ## [통합 테스트](xref:test/integration-tests)
+## [로드 및 스트레스 테스트](xref:test/loadtests)
 ## [문제 해결](xref:test/troubleshoot)
+## [로깅](xref:fundamentals/logging/index)
 
 # 데이터 액세스
 ## 자습서
@@ -392,6 +394,7 @@
 ## [파일 감시자 사용](xref:tutorials/dotnet-watch)
 
 # 마이그레이션
+## [2.2-3.0](xref:migration/22-to-30)
 ## [2.1-2.2](xref:migration/21-to-22)
 ## [2.0-2.1](xref:migration/20_21)
 ## 1.x-2.0
@@ -406,6 +409,7 @@
 ### [ClaimsPrincipal.Current](xref:migration/claimsprincipal-current)
 ### [멤버 자격에서 ID로](xref:migration/proper-to-2x/membership-to-core-identity)
 ### [HTTP 모듈을 미들웨어로](xref:migration/http-modules)
+## [로깅(ASP.NET Core 아님)](xref:migration/logging-nonaspnetcore)
 
 # 새로운 기능
 ## [2.2의 새로운 기능](xref:aspnetcore-2.2)
