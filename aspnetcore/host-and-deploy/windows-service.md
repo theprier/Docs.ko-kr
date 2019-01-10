@@ -7,12 +7,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 12/01/2018
 uid: host-and-deploy/windows-service
-ms.openlocfilehash: f53c303dc63e092f08e933fea79eb805523cde9b
-ms.sourcegitcommit: 9bb58d7c8dad4bbd03419bcc183d027667fefa20
+ms.openlocfilehash: bdb29c318c66ac884b9225ba8c2a0dfc1f364255
+ms.sourcegitcommit: 816f39e852a8f453e8682081871a31bc66db153a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52861396"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53637705"
 ---
 # <a name="host-aspnet-core-in-a-windows-service"></a>Windows 서비스에서 ASP.NET Core 호스트
 
@@ -108,7 +108,7 @@ Windows 이벤트 로그 로깅을 사용하도록 설정하려면 [Microsoft.Ex
 
   두 조건이 모두 false이면(앱이 서비스로 실행됨) 다음을 수행합니다.
 
-  * <xref:Microsoft.Extensions.Hosting.HostingHostBuilderExtensions.UseContentRoot*>를 호출하고 앱의 게시 위치에 대한 경로를 사용합니다. `GetCurrentDirectory`를 호출하는 경우 Windows 서비스 앱이 *C:\\WINDOWS\\system32* 폴더를 반환하므로 경로를 얻기 위해 <xref:System.IO.Directory.GetCurrentDirectory*>를 호출하지는 마세요. 자세한 내용은 [현재 디렉터리 및 콘텐츠 루트](#current-directory-and-content-root) 섹션을 참조하세요.
+  * <xref:System.IO.Directory.SetCurrentDirectory*>를 호출하고 앱의 게시 위치에 대한 경로를 사용합니다. `GetCurrentDirectory`를 호출하는 경우 Windows 서비스 앱이 *C:\\WINDOWS\\system32* 폴더를 반환하므로 경로를 얻기 위해 <xref:System.IO.Directory.GetCurrentDirectory*>를 호출하지는 마세요. 자세한 내용은 [현재 디렉터리 및 콘텐츠 루트](#current-directory-and-content-root) 섹션을 참조하세요.
   * <xref:Microsoft.AspNetCore.Hosting.WindowsServices.WebHostWindowsServiceExtensions.RunAsService*>를 호출하여 앱을 서비스로 실행합니다.
 
   [명령줄 구성 공급자](xref:fundamentals/configuration/index#command-line-configuration-provider)에는 명령줄 인수에 대한 이름-값 쌍이 필요하므로 <xref:Microsoft.AspNetCore.WebHost.CreateDefaultBuilder*>가 수신하기 전에 `--console` 스위치가 인수에서 제거됩니다.
@@ -214,7 +214,7 @@ sc create {SERVICE NAME} binPath= "{PATH}" obj= "{DOMAIN}\{USER ACCOUNT}" passwo
 
 * 서비스의 이름은 **MyService**입니다.
 * 게시된 서비스는 *c:\\svc* 폴더에 있습니다. 앱 실행 파일의 이름은 *SampleApp.exe*입니다. `binPath` 값을 큰따옴표(")로 묶습니다.
-* 서비스는 `ServiceUser` 계정으로 실행됩니다. `{DOMAIN}`을 사용자 계정의 도메인 또는 로컬 머신 이름으로 바꿉니다. `obj` 값을 큰따옴표(")로 묶습니다. 예: 호스팅 시스템이 이름이 `MairaPC`인 로컬 머신인 경우 `obj`를 `"MairaPC\ServiceUser"`로 설정합니다.
+* 서비스는 `ServiceUser` 계정으로 실행됩니다. `{DOMAIN}`을 사용자 계정의 도메인 또는 로컬 머신 이름으로 바꿉니다. `obj` 값을 큰따옴표(")로 묶습니다. 예제: 호스팅 시스템이 `MairaPC`라는 로컬 머신인 경우 `obj`를 `"MairaPC\ServiceUser"`로 설정합니다.
 * `{PASSWORD}`를 사용자 계정의 암호로 바꿉니다. `password` 값을 큰따옴표(")로 묶습니다.
 
 ```console
@@ -323,16 +323,16 @@ Windows 서비스에 대해 <xref:System.IO.Directory.GetCurrentDirectory*>를 �
 
 ### <a name="set-the-content-root-path-to-the-apps-folder"></a>콘텐츠 루트 경로를 앱 폴더로 설정
 
-<xref:Microsoft.Extensions.Hosting.IHostingEnvironment.ContentRootPath*>는 서비스가 만들어질 때 `binPath` 인수에 제공된 동일한 경로입니다. `GetCurrentDirectory`를 호출하여 설정 파일의 경로를 만드는 대신, 앱의 콘텐츠 루트 경로를 사용하여 <xref:Microsoft.Extensions.Hosting.HostingHostBuilderExtensions.UseContentRoot*>를 호출합니다.
+<xref:Microsoft.Extensions.Hosting.IHostingEnvironment.ContentRootPath*>는 서비스가 만들어질 때 `binPath` 인수에 제공된 동일한 경로입니다. `GetCurrentDirectory`를 호출하여 설정 파일의 경로를 만드는 대신, 앱의 콘텐츠 루트 경로를 사용하여 <xref:System.IO.Directory.SetCurrentDirectory*>를 호출합니다.
 
 `Program.Main`에서 서비스 실행 파일의 폴더 경로를 확인하고 이 경로를 사용하여 앱의 콘텐츠 루트를 설정합니다.
 
 ```csharp
 var pathToExe = Process.GetCurrentProcess().MainModule.FileName;
 var pathToContentRoot = Path.GetDirectoryName(pathToExe);
+Directory.SetCurrentDirectory(pathToContentRoot);
 
 CreateWebHostBuilder(args)
-    .UseContentRoot(pathToContentRoot)
     .Build()
     .RunAsService();
 ```

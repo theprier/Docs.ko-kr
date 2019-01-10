@@ -4,14 +4,14 @@ author: rick-anderson
 description: ASP.NET Core 앱에서 생성된 페이지를 업데이트하는 방법을 알아봅니다.
 monikerRange: '>= aspnetcore-2.2'
 ms.author: riande
-ms.date: 12/3/2018
+ms.date: 12/20/2018
 uid: tutorials/razor-pages/da1
-ms.openlocfilehash: b88dcd12ee670eb2e0919bdb07b9b7556a5b80e7
-ms.sourcegitcommit: 9bb58d7c8dad4bbd03419bcc183d027667fefa20
+ms.openlocfilehash: 396cb9b9eeaab2d3db6108feeba71dbc2bc8981d
+ms.sourcegitcommit: e1cc4c1ef6c9e07918a609d5ad7fadcb6abe3e12
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52862410"
+ms.lasthandoff: 01/03/2019
+ms.locfileid: "53997203"
 ---
 # <a name="update-the-generated-pages-in-an-aspnet-core-app"></a>ASP.NET Core 앱에서 생성된 페이지 업데이트
 
@@ -69,7 +69,7 @@ ms.locfileid: "52862410"
 @page "{id:int?}"
 ```
 
-동작 또는 `@page "{id:int?}"`를 테스트하려면:
+`@page "{id:int?}"`의 동작을 테스트하려면:
 
 * *Pages/Movies/Details.cshtml*에서 페이지 지시문을 `@page "{id:int?}"`로 설정합니다.
 * *Pages/Movies/Details.cshtml.cs*의 `public async Task<IActionResult> OnGetAsync(int? id)`에서 중단점을 설정합니다.
@@ -77,14 +77,14 @@ ms.locfileid: "52862410"
 
 `@page "{id:int}"` 지시문을 사용하면 중단점에 도달하지 않습니다. 라우팅 엔진은 HTTP 404를 반환합니다. `OnGetAsync` 메서드는 `@page "{id:int?}"`를 사용하여 `NotFound`(HTTP 404)를 반환합니다.
 
-추천하지 않지만 다음과 같은 삭제 메서드를 작성할 수 있습니다.
+권장되지는 않지만 `OnGetAsync` 메서드(*Pages/Movies/Delete.cshtml.cs*에서)를 다음과 같이 작성할 수 있습니다.
 
 [!code-csharp[](~/tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie22/Pages/Movies/Delete.cshtml.cs?name=snippet)]
 
 이전 코드를 테스트합니다.
 
-* 삭제 링크를 선택합니다.
-* URL에서 ID를 제거합니다. 예를 들어 `https://localhost:5001/Movies/Delete/8`을 `https://localhost:5001/Movies/Delete`로 변경합니다.
+* **삭제** 링크를 선택합니다.
+* URL에서 ID를 제거합니다. 예를 들어, `https://localhost:5001/Movies/Delete/8`를 `https://localhost:5001/Movies/Delete`로 변경합니다.
 * 디버거에서 코드를 단계별로 실행합니다.
 
 ### <a name="review-concurrency-exception-handling"></a>동시성 예외 처리 검토
@@ -125,7 +125,7 @@ ms.locfileid: "52862410"
   public Movie Movie { get; set; }
   ```
 
-* 모델 상태에 오류가 있는 경우(예: `ReleaseDate`를 날짜로 변환할 수 없는 경우) 양식이 제출된 값으로 다시 게시됩니다.
+* 모델 상태에 오류가 있는 경우(예: `ReleaseDate`를 날짜로 변환할 수 없는 경우) 양식은 제출된 값으로 표시됩니다.
 * 모델 오류가 없는 경우 동영상이 저장됩니다.
 
 인덱스, 만들기 및 삭제 Razor 페이지의 HTTP GET 메서드는 유사한 패턴을 따릅니다. 만들기 Razor 페이지에서 HTTP POST `OnPostAsync` 메서드는 편집 Razor 페이지의 `OnPostAsync` 메서드와 유사한 패턴을 따릅니다.

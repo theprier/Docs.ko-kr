@@ -6,12 +6,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 10/24/2018
 uid: data/ef-mvc/intro
-ms.openlocfilehash: f1682203850f2c5440fe8d0b98830ca8772ff70f
-ms.sourcegitcommit: c4572be5ebb301013a5698caf9b5572b76cb2e34
+ms.openlocfilehash: 1191632555dc9331f815c1bfb1f313459824754a
+ms.sourcegitcommit: 68a3081dd175d6518d1bfa31b4712bd8a2dd3864
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "50244890"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53577905"
 ---
 # <a name="aspnet-core-mvc-with-entity-framework-core---tutorial-1-of-10"></a>Entity Framework Core를 사용한 ASP.NET Core MVC - 자습서 1/10
 
@@ -23,11 +23,11 @@ ms.locfileid: "50244890"
 
 [!INCLUDE [RP better than MVC](~/includes/RP-EF/rp-over-mvc.md)]
 
-Contoso University 샘플 웹 응용 프로그램은 EF(Entity Framework) Core 2.0 및 Visual Studio 2017을 사용하여 ASP.NET Core 2.0 MVC 웹 응용 프로그램을 만드는 방법을 보여 줍니다.
+Contoso University 샘플 웹 애플리케이션은 EF(Entity Framework) Core 2.0 및 Visual Studio 2017을 사용하여 ASP.NET Core 2.0 MVC 웹 애플리케이션을 만드는 방법을 보여 줍니다.
 
-샘플 응용 프로그램은 가상 Contoso University의 웹 사이트입니다. 학생 입학, 강좌 개설 및 강사 할당과 같은 기능이 있습니다. 이는 Contoso University 샘플 응용 프로그램을 처음부터 빌드하는 방법을 설명하는 일련의 자습서 중 첫 번째입니다.
+샘플 애플리케이션은 가상 Contoso University의 웹 사이트입니다. 학생 입학, 강좌 개설 및 강사 할당과 같은 기능이 있습니다. 이는 Contoso University 샘플 애플리케이션을 처음부터 빌드하는 방법을 설명하는 일련의 자습서 중 첫 번째입니다.
 
-[완성된 응용 프로그램을 다운로드하거나 확인합니다.](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-mvc/intro/samples/cu-final)
+[완성된 애플리케이션을 다운로드하거나 확인합니다.](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-mvc/intro/samples/cu-final)
 
 EF Core 2.0은 최신 버전의 EF이지만 EF 6.x의 모든 기능을 가지고 있지 않습니다. EF 6.x 및 EF Core 중에 선택하는 방법에 대한 내용은 [EF Core와  EF6.x 비교](/ef/efcore-and-ef6/)를 참조합니다. EF 6.x를 선택하는 경우 [이 자습서 시리즈의 이전 버전](/aspnet/mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application)을 참조하세요.
 
@@ -45,9 +45,9 @@ EF Core 2.0은 최신 버전의 EF이지만 EF 6.x의 모든 기능을 가지고
 > [!TIP]
 > 10 자습서의 시리즈이며, 각각은 이전 자습서에서 수행된 작업을 기반으로 합니다. 각 자습서를 성공적으로 완료한 후에 프로젝트 복사본의 저장을 고려합니다. 그런 다음, 문제가 발생한 경우 전체 시리즈의 처음으로 다시 이동하는 대신 이전 자습서부터 시작할 수 있습니다.
 
-## <a name="the-contoso-university-web-application"></a>Contoso University 웹 응용 프로그램
+## <a name="the-contoso-university-web-application"></a>Contoso University 웹 애플리케이션
 
-이 자습서에서 빌드하는 응용 프로그램은 간단한 대학 웹 사이트입니다.
+이 자습서에서 빌드하는 애플리케이션은 간단한 대학 웹 사이트입니다.
 
 사용자는 학생, 강좌 및 강사 정보를 보고 업데이트할 수 있습니다. 다음은 만들 몇 가지 화면입니다.
 
@@ -57,7 +57,7 @@ EF Core 2.0은 최신 버전의 EF이지만 EF 6.x의 모든 기능을 가지고
 
 자습서가 Entity Framework를 사용하는 방법에 주로 초점을 맞출 수 있도록 이 사이트의 UI 스타일은 기본 제공 템플릿에서 생성된 내용에 가깝게 유지되었습니다.
 
-## <a name="create-an-aspnet-core-mvc-web-application"></a>ASP.NET Core MVC 웹 응용 프로그램 만들기
+## <a name="create-an-aspnet-core-mvc-web-application"></a>ASP.NET Core MVC 웹 애플리케이션 만들기
 
 Visual Studio를 열고 "ContosoUniversity"라는 새로운 ASP.NET Core C# 웹 프로젝트를 만듭니다.
 
@@ -65,15 +65,15 @@ Visual Studio를 열고 "ContosoUniversity"라는 새로운 ASP.NET Core C# 웹 
 
 * 왼쪽 창에서 **설치됨 > Visual C# > 웹**을 선택합니다.
 
-* **ASP.NET Core 웹 응용 프로그램** 프로젝트 템플릿을 선택합니다.
+* **ASP.NET Core 웹 애플리케이션** 프로젝트 템플릿을 선택합니다.
 
 * 이름으로 **ContosoUniversity**를 입력하고 **확인**을 클릭합니다.
 
   ![새 프로젝트 대화 상자](intro/_static/new-project.png)
 
-* **새 ASP.NET Core 웹 응용 프로그램(.NET Core)** 대화 상자가 표시될 때까지 기다립니다.
+* **새 ASP.NET Core 웹 애플리케이션(.NET Core)** 대화 상자가 표시될 때까지 기다립니다.
 
-* **ASP.NET Core 2.0** 및 **웹 응용 프로그램(모델-뷰-컨트롤러)** 템플릿을 선택합니다.
+* **ASP.NET Core 2.0** 및 **웹 애플리케이션(모델-뷰-컨트롤러)** 템플릿을 선택합니다.
 
   **참고:** 이 자습서에는 ASP.NET Core 2.0 및 EF Core 2.0 이상이 필요합니다. **ASP.NET Core 1.1**이 선택되지 않았는지 확인합니다.
 
@@ -97,7 +97,7 @@ Visual Studio를 열고 "ContosoUniversity"라는 새로운 ASP.NET Core C# 웹 
 
 [!code-cshtml[](intro/samples/cu/Views/Shared/_Layout.cshtml?highlight=6,30,36-39,48)]
 
-*Views/Home/Index.cshtml*에서 다음 코드로 파일의 콘텐츠를 텍스트를 대체하여 ASP.NET 및 MVC에 대한 텍스트를 이 응용 프로그램에 대한 텍스트로 바꿉니다.
+*Views/Home/Index.cshtml*에서 다음 코드로 파일의 콘텐츠를 텍스트를 대체하여 ASP.NET 및 MVC에 대한 텍스트를 이 애플리케이션에 대한 텍스트로 바꿉니다.
 
 [!code-cshtml[](intro/samples/cu/Views/Home/Index.cshtml)]
 
@@ -115,7 +115,7 @@ Entity Framework Core에 사용할 수 있는 다른 데이터베이스 공급�
 
 ## <a name="create-the-data-model"></a>데이터 모델 만들기
 
-다음으로 Contoso University 응용 프로그램에 대한 엔터티 클래스를 만듭니다. 다음과 같은 세 가지 엔터티로 시작합니다.
+다음으로 Contoso University 애플리케이션에 대한 엔터티 클래스를 만듭니다. 다음과 같은 세 가지 엔터티로 시작합니다.
 
 ![강좌-등록-학생 데이터 모델 다이어그램](intro/_static/data-model-diagram.png)
 
@@ -187,7 +187,7 @@ Entity Framework는 속성 이름이 `<navigation property name><primary key pro
 
 ## <a name="register-the-context-with-dependency-injection"></a>종속성 주입으로 컨텍스트 등록
 
-ASP.NET Core는 기본적으로 [종속성 주입](../../fundamentals/dependency-injection.md)을 구현합니다. 서비스(예: EF 데이터베이스 컨텍스트)는 응용 프로그램 시작 중에 종속성 주입에 등록됩니다. 이러한 서비스(예: MVC 컨트롤러)가 필요한 구성 요소에는 생성자 매개 변수를 통해 이러한 서비스가 제공됩니다. 이 자습서의 뒷부분에서 컨텍스트 인스턴스를 가져오는 컨트롤러 생성자 코드를 볼 수 있습니다.
+ASP.NET Core는 기본적으로 [종속성 주입](../../fundamentals/dependency-injection.md)을 구현합니다. 서비스(예: EF 데이터베이스 컨텍스트)는 애플리케이션 시작 중에 종속성 주입에 등록됩니다. 이러한 서비스(예: MVC 컨트롤러)가 필요한 구성 요소에는 생성자 매개 변수를 통해 이러한 서비스가 제공됩니다. 이 자습서의 뒷부분에서 컨텍스트 인스턴스를 가져오는 컨트롤러 생성자 코드를 볼 수 있습니다.
 
 `SchoolContext`를 서비스로 등록하려면 *Startup.cs*를 열고 강조 표시된 줄을 `ConfigureServices` 메서드에 추가합니다.
 
@@ -205,7 +205,7 @@ ASP.NET Core는 기본적으로 [종속성 주입](../../fundamentals/dependency
 
 ### <a name="sql-server-express-localdb"></a>SQL Server Express LocalDB
 
-연결 문자열은 SQL Server LocalDB 데이터베이스를 지정합니다. LocalDB는 프로덕션 사용이 아닌 응용 프로그램 개발용으로 고안된 SQL Server Express 데이터베이스 엔진의 경량 버전입니다. LocalDB는 요청 시 시작하고 사용자 모드에서 실행되므로 복잡한 구성이 없습니다. 기본적으로 LocalDB는 *.mdf* 데이터베이스 파일을 `C:/Users/<user>` 디렉터리에 만듭니다.
+연결 문자열은 SQL Server LocalDB 데이터베이스를 지정합니다. LocalDB는 프로덕션 사용이 아닌 애플리케이션 개발용으로 고안된 SQL Server Express 데이터베이스 엔진의 경량 버전입니다. LocalDB는 요청 시 시작하고 사용자 모드에서 실행되므로 복잡한 구성이 없습니다. 기본적으로 LocalDB는 *.mdf* 데이터베이스 파일을 `C:/Users/<user>` 디렉터리에 만듭니다.
 
 ## <a name="add-code-to-initialize-the-database-with-test-data"></a>코드를 추가하여 테스트 데이터로 데이터베이스 초기화
 
@@ -219,7 +219,7 @@ Entity Framework에서 빈 데이터베이스를 만듭니다. 이 섹션에서�
 
 코드는 데이터베이스에 학생이 있는지를 확인하고 없는 경우 데이터베이스가 새 것이며 테스트 데이터로 시드되어야 한다고 가정합니다. `List<T>` 컬렉션이 아닌 배열에 테스트 데이터를 로드하여 성능을 최적화합니다.
 
-*Program.cs*에서 응용 프로그램 시작 시에 다음을 수행하는 `Main` 메서드를 수정합니다.
+*Program.cs*에서 애플리케이션 시작 시에 다음을 수행하는 `Main` 메서드를 수정합니다.
 
 * 종속성 주입 컨테이너에서 데이터베이스 컨텍스트 인스턴스를 가져옵니다.
 * 컨텍스트를 전달하는 시드 메서드를 호출합니다.
@@ -231,9 +231,9 @@ Entity Framework에서 빈 데이터베이스를 만듭니다. 이 섹션에서�
 
 [!code-csharp[](intro/samples/cu/Program.cs?name=snippet_Usings)]
 
-이전 자습서에서는 *Startup.cs*의 `Configure` 메서드에서 유사한 코드를 볼 수 있습니다. 요청 파이프라인을 설정하는 데에만 `Configure` 메서드를 사용하는 것이 좋습니다. 응용 프로그램 시작 코드는 `Main` 메서드에 속합니다.
+이전 자습서에서는 *Startup.cs*의 `Configure` 메서드에서 유사한 코드를 볼 수 있습니다. 요청 파이프라인을 설정하는 데에만 `Configure` 메서드를 사용하는 것이 좋습니다. 애플리케이션 시작 코드는 `Main` 메서드에 속합니다.
 
-이제 응용 프로그램을 처음으로 실행하면 데이터베이스가 생성되고 테스트 데이터로 시드됩니다. 데이터 모델을 변경할 때마다 데이터베이스를 삭제하고, 시드 메서드를 업데이트하고, 동일한 방식으로 새 데이터베이스를 사용하여 새로 시작합니다. 이후의 자습서에서는 데이터 모델이 변경될 때 데이터베이스를 삭제하고 다시 작성하지 않고 데이터베이스를 수정하는 방법을 볼 수 있습니다.
+이제 애플리케이션을 처음으로 실행하면 데이터베이스가 생성되고 테스트 데이터로 시드됩니다. 데이터 모델을 변경할 때마다 데이터베이스를 삭제하고, 시드 메서드를 업데이트하고, 동일한 방식으로 새 데이터베이스를 사용하여 새로 시작합니다. 이후의 자습서에서는 데이터 모델이 변경될 때 데이터베이스를 삭제하고 다시 작성하지 않고 데이터베이스를 수정하는 방법을 볼 수 있습니다.
 
 ## <a name="create-a-controller-and-views"></a>컨트롤러 및 보기 만들기
 
@@ -245,7 +245,7 @@ CRUD 작업 메서드와 보기를 자동으로 만드는 작업을 스캐폴딩
 
 **MVC 종속성 추가** 대화 상자가 나타나는 경우:
 
-* [Visual Studio를 최신 버전으로 업데이트합니다](https://www.visualstudio.com/downloads/). Visual Studio 15.5 이전 버전이 이 대화 상자를 표시합니다.
+* [Visual Studio를 최신 버전으로 업데이트합니다](https://www.visualstudio.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017). Visual Studio 15.5 이전 버전이 이 대화 상자를 표시합니다.
 * 업데이트할 수 없는 경우 **추가**를 선택한 다음 컨트롤러 추가 단계를 다시 따릅니다.
 
 * **스캐폴드 추가** 대화 상자에서:
@@ -296,7 +296,7 @@ CTRL+F5 키를 눌러 프로젝트를 실행하거나 메뉴 모음에서 **디�
 
 ## <a name="view-the-database"></a>데이터베이스 보기
 
-응용 프로그램을 시작했을 때 `DbInitializer.Initialize` 메서드는 `EnsureCreated`를 호출합니다. EF는 데이터베이스가 없는 것을 확인하고 하나를 만들었습니다. 그런 다음, `Initialize` 메서드 코드의 나머지 부분은 데이터베이스를 데이터로 채웠습니다. **SQL Server 개체 탐색기**(SSOX)를 사용하여 Visual Studio에서 데이터베이스를 볼 수 있습니다.
+애플리케이션을 시작했을 때 `DbInitializer.Initialize` 메서드는 `EnsureCreated`를 호출합니다. EF는 데이터베이스가 없는 것을 확인하고 하나를 만들었습니다. 그런 다음, `Initialize` 메서드 코드의 나머지 부분은 데이터베이스를 데이터로 채웠습니다. **SQL Server 개체 탐색기**(SSOX)를 사용하여 Visual Studio에서 데이터베이스를 볼 수 있습니다.
 
 브라우저를 닫습니다.
 
@@ -314,7 +314,7 @@ SSOX에서 **(localdb) \MSSQLLocalDB > 데이터베이스**를 클릭한 다음,
 
 <em>.mdf</em> 및 <em>.ldf</em> 데이터베이스 파일은 <em>C:\Users\\<yourusername></em> 폴더에 있습니다.
 
-앱 시작 시 실행되는 이니셜라이저 메서드에서 `EnsureCreated`를 호출하기 때문에 이제 `Student` 클래스에 변경 내용을 만들고, 데이터베이스를 삭제하고, 응용 프로그램을 다시 시작할 수 있으며, 데이터베이스는 변경 내용에 맞도록 자동으로 다시 생성됩니다. 예를 들어 `EmailAddress` 속성을 `Student` 클래스에 추가하는 경우 다시 만들어진 테이블에 새 `EmailAddress` 열이 표시됩니다.
+앱 시작 시 실행되는 이니셜라이저 메서드에서 `EnsureCreated`를 호출하기 때문에 이제 `Student` 클래스에 변경 내용을 만들고, 데이터베이스를 삭제하고, 애플리케이션을 다시 시작할 수 있으며, 데이터베이스는 변경 내용에 맞도록 자동으로 다시 생성됩니다. 예를 들어 `EmailAddress` 속성을 `Student` 클래스에 추가하는 경우 다시 만들어진 테이블에 새 `EmailAddress` 열이 표시됩니다.
 
 ## <a name="conventions"></a>규칙
 
@@ -362,7 +362,7 @@ Entity Framework를 사용하는 비동기 코드를 작성할 때 고려해야 
 
 ## <a name="summary"></a>요약
 
-이제 Entity Framework Core 및 SQL Server Express LocalDB를 사용하여 데이터를 저장하고 표시하는 간단한 응용 프로그램을 만들었습니다. 다음 자습서에서는 기본 CRUD(만들기, 읽기, 업데이트, 삭제) 작업을 수행하는 방법을 배웁니다.
+이제 Entity Framework Core 및 SQL Server Express LocalDB를 사용하여 데이터를 저장하고 표시하는 간단한 애플리케이션을 만들었습니다. 다음 자습서에서는 기본 CRUD(만들기, 읽기, 업데이트, 삭제) 작업을 수행하는 방법을 배웁니다.
 
 ::: moniker-end
 

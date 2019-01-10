@@ -7,12 +7,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 12/5/2018
 uid: tutorials/razor-pages/new-field
-ms.openlocfilehash: e280bc9553113982a1f1a77eabab32575c905237
-ms.sourcegitcommit: 9bb58d7c8dad4bbd03419bcc183d027667fefa20
+ms.openlocfilehash: 9b3ad5f6c4b1c9b5f016f5591127c8d1b213948d
+ms.sourcegitcommit: 1ea1b4fc58055c62728143388562689f1ef96cb2
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52862293"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53329135"
 ---
 # <a name="add-a-new-field-to-a-razor-page-in-aspnet-core"></a>ASP.NET Core의 Razor 페이지에 새 필드 추가
 
@@ -96,9 +96,13 @@ Update-Database
 
 "Rating" 이름은 임의로 지정되며 마이그레이션 파일의 이름을 지정하는 데 사용됩니다. 마이그레이션 파일에 의미 있는 이름을 사용하는 것이 좋습니다.
 
+`Update-Database` 명령은 스키마 변경 내용을 데이터베이스에 적용하기 위한 프레임워크를 알려줍니다.
+
 <a name="ssox"></a>
 
-DB의 모든 레코드를 삭제하는 경우 이니셜라이저에서 DB를 시드하고 `Rating` 필드를 포함합니다. 브라우저 또는 [SSOX](xref:tutorials/razor-pages/sql#ssox)(Sql Server 개체 탐색기)에서 삭제 링크를 사용하여 이를 수행할 수 있습니다. SSOX에서 데이터베이스를 삭제하려면:
+DB의 모든 레코드를 삭제하는 경우 이니셜라이저에서 DB를 시드하고 `Rating` 필드를 포함합니다. 브라우저 또는 [SSOX](xref:tutorials/razor-pages/sql#ssox)(Sql Server 개체 탐색기)에서 삭제 링크를 사용하여 이를 수행할 수 있습니다.
+
+다른 옵션은 데이터베이스를 삭제하고 마이그레이션을 사용하여 데이터베이스를 다시 만드는 것입니다. SSOX에서 데이터베이스를 삭제하려면:
 
 * SSOX에서 데이터베이스를 선택합니다.
 * 데이터베이스를 마우스 오른쪽 단추로 클릭하고 *삭제*를 선택합니다.
@@ -111,12 +115,9 @@ DB의 모든 레코드를 삭제하는 경우 이니셜라이저에서 DB를 시
   ```
 
 <!-- Code -------------------------->
-# <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code)
+# <a name="visual-studio-code--visual-studio-for-mactabvisual-studio-codevisual-studio-mac"></a>[Visual Studio Code / Visual Studio for Mac](#tab/visual-studio-code+visual-studio-mac)
 
-<!-- copy/paste this tab to the next. Not worth an include  --> SQLite는 마이그레이션을 지원하지 않습니다.
-
-* *appsettings.json* 파일에서 데이터베이스를 삭제하거나 데이터베이스 이름을 변경합니다.
-* *Migrations* 폴더(및 폴더의 모든 파일)를 삭제합니다.
+<!-- copy/paste this tab to the next. Not worth an include  -->
 
 다음 .NET Core CLI 명령을 실행합니다.
 
@@ -125,20 +126,28 @@ dotnet ef migrations add Rating
 dotnet ef database update
 ```
 
-<!-- Mac -------------------------->
-# <a name="visual-studio-for-mactabvisual-studio-mac"></a>[Visual Studio for Mac](#tab/visual-studio-mac)
+`ef migrations add` 명령은 프레임워크에 다음 작업을 지시합니다.
 
-SQLite는 마이그레이션을 지원하지 않습니다.
+* `Movie` 모델을 `Movie` DB 스키마와 비교합니다.
+* DB 스키마를 새 모델로 마이그레이션하도록 코드를 만듭니다.
 
-* *appsettings.json* 파일에서 데이터베이스를 삭제하거나 데이터베이스 이름을 변경합니다.
-* *Migrations* 폴더(및 폴더의 모든 파일)를 삭제합니다.
+"Rating" 이름은 임의로 지정되며 마이그레이션 파일의 이름을 지정하는 데 사용됩니다. 마이그레이션 파일에 의미 있는 이름을 사용하는 것이 좋습니다.
 
-다음 .NET Core CLI 명령을 실행합니다.
+`ef database update` 명령은 스키마 변경 내용을 데이터베이스에 적용하기 위한 프레임워크를 알려줍니다.
+
+DB의 모든 레코드를 삭제하는 경우 이니셜라이저에서 DB를 시드하고 `Rating` 필드를 포함합니다. 브라우저의 삭제 링크를 사용하거나 SQLite 도구를 사용하여 이를 수행할 수 있습니다.
+
+다른 옵션은 데이터베이스를 삭제하고 마이그레이션을 사용하여 데이터베이스를 다시 만드는 것입니다. 데이터베이스를 삭제하려면 데이터베이스 파일(*MvcMovie.db*)을 삭제합니다. 그런 다음, `ef database update` 명령을 실행합니다. 
 
 ```console
-dotnet ef migrations add Rating
 dotnet ef database update
 ```
+
+> [!NOTE]
+> 다양한 스키마 변경 작업은 EF Core SQLite 공급자에서 지원하지 않습니다. 예를 들어 열 추가는 지원되지만 열 제거는 지원되지 않습니다. 열을 제거하기 위해 마이그레이션을 추가하면 `ef migrations add` 명령은 성공하지만 `ef database update` 명령은 실패합니다. 수동으로 마이그레이션 코드를 작성하여 테이블 다시 빌드를 수행함으로써 코드를 몇 가지 제한 사항을 해결할 수 있습니다. 테이블 다시 빌드에는 기존 테이블 이름 바꾸기, 새 테이블 만들기, 새 테이블에 데이터 복사 및 이전 테이블 삭제가 포함됩니다. 자세한 내용은 다음 리소스를 참조하세요.
+> * [SQLite EF Core 데이터베이스 공급자 제한 사항](/ef/core/providers/sqlite/limitations)
+> * [마이그레이션 코드 사용자 지정](/ef/core/managing-schemas/migrations/#customize-migration-code)
+> * [데이터 시드](/ef/core/modeling/data-seeding)
 
 ---  
 <!-- End of VS tabs -->

@@ -4,14 +4,14 @@ author: rick-anderson
 description: Visual Studio를 사용하여 ASP.NET Core 웹앱을 만들고 연속 배포를 위한 Git을 사용하여 Azure App Service에 배포하는 방법을 알아봅니다.
 ms.author: riande
 ms.custom: mvc
-ms.date: 10/14/2016
+ms.date: 12/06/2018
 uid: host-and-deploy/azure-apps/azure-continuous-deployment
-ms.openlocfilehash: 5ae8ce01610828417fc76ed6626e518c8493bd0f
-ms.sourcegitcommit: 57eccdea7d89a62989272f71aad655465f1c600a
+ms.openlocfilehash: e12c2ee0b78db105b431770e8644e7d19d915765
+ms.sourcegitcommit: b34b25da2ab68e6495b2460ff570468f16a9bf0d
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44340201"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53284445"
 ---
 # <a name="continuous-deployment-to-azure-with-visual-studio-and-git-with-aspnet-core"></a>ASP.NET Core와 함께 Visual Studio 및 Git을 사용하여 Azure에 지속적인 배포
 
@@ -40,7 +40,7 @@ Azure DevOps Services를 사용하여 [Azure App Service](/azure/app-service/app
 
 1. **파일** 메뉴에서 **새로 만들기** > **프로젝트**를 선택합니다.
 
-1. **ASP.NET Core 웹 응용 프로그램** 프로젝트 템플릿을 선택합니다. **설치됨** > **템플릿** > **Visual C#** > **.NET Core** 아래에 표시됩니다. 프로젝트 이름을 `SampleWebAppDemo`로 지정합니다. **새 Git 리포지토리 만들기** 옵션을 선택하고 **확인**을 클릭합니다.
+1. **ASP.NET Core 웹 애플리케이션** 프로젝트 템플릿을 선택합니다. **설치됨** > **템플릿** > **Visual C#** > **.NET Core** 아래에 표시됩니다. 프로젝트 이름을 `SampleWebAppDemo`로 지정합니다. **새 Git 리포지토리 만들기** 옵션을 선택하고 **확인**을 클릭합니다.
 
    ![새 프로젝트 대화 상자](azure-continuous-deployment/_static/01-new-project.png)
 
@@ -57,7 +57,7 @@ Azure DevOps Services를 사용하여 [Azure App Service](/azure/app-service/app
 
    Visual Studio 및 새 앱을 초기화하는 데 시간이 걸릴 수 있습니다. 완료되면 브라우저에 실행 중인 앱이 표시됩니다.
 
-   ![브라우저 창에서는 'Hello World!'을 표시하는 응용 프로그램이 실행 중이라고 표시합니다.](azure-continuous-deployment/_static/04-browser-runapp.png)
+   ![브라우저 창에서는 'Hello World!'을 표시하는 애플리케이션이 실행 중이라고 표시합니다.](azure-continuous-deployment/_static/04-browser-runapp.png)
 
 1. 실행 중인 웹앱을 검토한 후 브라우저를 닫고 Visual Studio의 도구 모음에서 “디버깅 중지” 아이콘을 선택하여 앱을 중지합니다.
 
@@ -71,7 +71,7 @@ Azure DevOps Services를 사용하여 [Azure App Service](/azure/app-service/app
 
 1. **웹 + 모바일** > **웹앱**을 선택합니다.
 
-   ![Microsoft Azure Portal: 새 단추: Marketplace 아래에서 웹 + 모바일: 주요 앱 아래에서 Web App 단추](azure-continuous-deployment/_static/05-azure-newwebapp.png)
+   ![Microsoft Azure Portal: 새 단추: Marketplace 아래의 웹 + 모바일: 추천 앱 아래의 Web App 단추](azure-continuous-deployment/_static/05-azure-newwebapp.png)
 
 1. **Web App** 블레이드에서 **App Service 이름**에 고유한 값을 입력합니다.
 
@@ -98,7 +98,7 @@ Git은 Azure App Service 웹앱을 배포하는 데 사용할 수 있는 분산 
 
 1. **배포** 블레이드에서 **배포 옵션** > **원본 선택** > **로컬 Git 리포지토리**를 선택합니다.
 
-   ![설정 블레이드: 배포 원본 블레이드: 원본 블레이드 선택](azure-continuous-deployment/_static/deployment-options.png)
+   ![설정 블레이드: 배포 소스 블레이드: 소스 블레이드 선택](azure-continuous-deployment/_static/deployment-options.png)
 
 1. **확인**을 선택합니다.
 
@@ -112,7 +112,7 @@ Git은 Azure App Service 웹앱을 배포하는 데 사용할 수 있는 분산 
 
 1. 나중에 자습서에서 사용할 **GIT URL** 값을 복사합니다.
 
-   ![Azure Portal: 응용 프로그램 속성 블레이드](azure-continuous-deployment/_static/09-azure-giturl.png)
+   ![Azure Portal: 애플리케이션 속성 블레이드](azure-continuous-deployment/_static/09-azure-giturl.png)
 
 ## <a name="publish-the-web-app-to-azure-app-service"></a>Azure App Service에 웹앱 게시
 
@@ -230,3 +230,4 @@ Azure Portal의 웹앱 블레이드에서 **찾아보기**를 선택하거나 �
 
 * [Azure Pipelines를 사용하여 첫 번째 파이프라인 만들기](/azure/devops/pipelines/get-started-yaml)
 * [프로젝트 Kudu](https://github.com/projectkudu/kudu/wiki)
+* <xref:host-and-deploy/visual-studio-publish-profiles>

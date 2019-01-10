@@ -4,14 +4,14 @@ author: rick-anderson
 description: ASP.NET Core 라우팅에서 요청 URI를 엔드포인트 선택기에 매핑하고, 들어오는 요청을 엔드포인트로 디스패치하는 방법을 알아봅니다.
 ms.author: riande
 ms.custom: mvc
-ms.date: 11/15/2018
+ms.date: 12/29/2018
 uid: fundamentals/routing
-ms.openlocfilehash: f18ec1da2affbf67b7ada570b68f98a42c7256a5
-ms.sourcegitcommit: ad28d1bc6657a743d5c2fa8902f82740689733bb
+ms.openlocfilehash: c57b309e4474f9aff5c0594a3d9d1c796990d31e
+ms.sourcegitcommit: e1cc4c1ef6c9e07918a609d5ad7fadcb6abe3e12
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52256595"
+ms.lasthandoff: 01/03/2019
+ms.locfileid: "53997359"
 ---
 # <a name="routing-in-aspnet-core"></a>ASP.NET Core에서 라우팅
 
@@ -117,7 +117,7 @@ URL 생성 지원을 사용하면 URL을 하드 코드하지 않고 앱을 개�
 
 라우팅은 *경로*(<xref:Microsoft.AspNetCore.Routing.IRouter>의 구현)를 사용하여 다음 작업을 수행합니다.
 
-* 들어오는 요청을 *경로 처리기*에 매핑합니다.
+* 들어오는 요청을 *경로 처리기*에 매핑
 * 응답에 사용되는 URL을 생성합니다.
 
 기본적으로 앱에는 단일 경로 컬렉션이 있습니다. 요청이 도착하면 컬렉션의 경로가 컬렉션에 있는 순서대로 처리됩니다. 프레임워크는 컬렉션의 각 경로에서 <xref:Microsoft.AspNetCore.Routing.IRouter.RouteAsync*> 메서드를 호출하여 들어오는 요청 URL을 컬렉션의 경로와 일치시키려고 합니다. 응답은 라우팅을 사용하여 경로 정보에 따라 URL(예: 리디렉션 또는 링크)을 생성하므로 하드 코드된 URL을 방지하여 유지 관리에 도움이 됩니다.
@@ -276,7 +276,7 @@ ASP.NET Core 2.2 이상의 엔드포인트 라우팅과 ASP.NET Core 이전 버�
 
   ASP.NET Core 2.2 이상을 사용하는 엔드포인트 라우팅에서 결과는 `/Login`입니다. 연결된 대상이 다른 작업 또는 페이지인 경우 앰비언트 값은 다시 사용되지 않습니다.
 
-* 왕복 경로 매개 변수 구문: 이중 별표(`**`) 범용(catch-all) 매개 변수 구문을 사용하는 경우 슬래시는 인코딩되지 않습니다.
+* 라운드트립 경로 매개 변수 구문: 이중 별표(`**`) 범용(catch-all) 매개 변수 구문을 사용하는 경우 슬래시는 인코딩되지 않습니다.
 
   링크를 생성하는 동안 라우팅 시스템은 슬래시를 제외한 이중 별표(`**`) 범용 매개 변수(예: `{**myparametername}`)에서 캡처된 값을 인코딩합니다. 이중 별표 범용 매개 변수는 ASP.NET Core 2.2 이상의 `IRouter` 기반 라우팅에서 지원됩니다.
 
@@ -292,6 +292,8 @@ ASP.NET Core 2.2 이상의 엔드포인트 라우팅과 ASP.NET Core 이전 버�
 다음 예제에서는 미들웨어에서 `LinkGenerator` API를 사용하여 저장소 제품을 나열하는 작업 메서드에 대한 링크를 만듭니다. 링크 생성기를 클래스에 주입하고 `GenerateLink`를 호출하여 앱의 모든 클래스에서 해당 링크 생성기를 사용할 수 있습니다.
 
 ```csharp
+using Microsoft.AspNetCore.Routing;
+
 public class ProductsLinkMiddleware
 {
     private readonly LinkGenerator _linkGenerator;
@@ -303,8 +305,7 @@ public class ProductsLinkMiddleware
 
     public async Task InvokeAsync(HttpContext httpContext)
     {
-        var url = _linkGenerator.GenerateLink(new { controller = "Store",
-                                                    action = "ListProducts" });
+        var url = _linkGenerator.GetPathByAction("ListProducts", "Store");
 
         httpContext.Response.ContentType = "text/plain";
 
@@ -608,7 +609,7 @@ catch-all 매개 변수는 경로 구분 기호(`/`) 문자를 포함하여 URL�
 
 다음 표에서는 경로 제약 조건 예제 및 예상되는 해당 동작을 보여 줍니다.
 
-| 제약 조건 | 예 | 일치하는 예제 | 노트 |
+| 제약 조건 | 예제 | 일치하는 예제 | 노트 |
 | ---------- | ------- | --------------- | ----- |
 | `int` | `{id:int}` | `123456789`, `-123456789` | 임의의 정수와 일치 |
 | `bool` | `{active:bool}` | `true`, `FALSE` | `true` 또는 `false` 일치(대/소문자 구분하지 않음) |
@@ -679,12 +680,23 @@ ASP.NET Core 프레임워크는 정규식 생성자에 `RegexOptions.IgnoreCase 
 
 예를 들어, `Url.Action(new { article = "MyTestArticle" })`을 사용하는 경로 패턴 `blog\{article:slugify}`의 사용자 지정 `slugify` 매개 변수 변환기는 `blog\my-test-article`을 생성합니다.
 
+경로 패턴에서 매개 변수 변환기를 사용하려면 먼저 `Startup.ConfigureServices`의 <xref:Microsoft.AspNetCore.Routing.RouteOptions.ConstraintMap>을 사용하여 구성합니다.
+
+```csharp
+services.AddRouting(options =>
+{
+    // Replace the type and the name used to refer to it with your own
+    // IOutboundParameterTransformer implementation
+    options.ConstraintMap["slugify"] = typeof(SlugifyParameterTransformer);
+});
+```
+
 매개 변수 변환기는 프레임워크에서 사용하여 엔드포인트가 확인되는 URI를 변환합니다. 예를 들어 ASP.NET Core MVC는 매개 변수 변환기를 사용하여 `area` , `controller` , `action` 및 `page`와 일치하도록 사용되는 경로 값을 변환합니다.
 
 ```csharp
 routes.MapRoute(
     name: "default",
-    template: "{controller=Home:slugify}/{action=Index:slugify}/{id?}");
+    template: "{controller:slugify=Home}/{action:slugify=Index}/{id?}");
 ```
 
 이전 경로를 사용하면 `SubscriptionManagementController.GetAll()` 작업이 URI `/subscription-management/get-all`과 일치됩니다. 매개 변수 변환기는 링크를 생성하는 데 사용되는 경로 값을 변경하지 않습니다. 예를 들어 `Url.Action("GetAll", "SubscriptionManagement")`는 `/subscription-management/get-all`을 출력합니다.

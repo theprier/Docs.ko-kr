@@ -3,14 +3,14 @@ title: ASP.NET Core 1.1의 새로운 기능
 author: rick-anderson
 description: ASP.NET Core 1.1의 새로운 기능에 대해 알아봅니다.
 ms.author: riande
-ms.date: 02/14/2017
+ms.date: 12/18/2018
 uid: aspnetcore-1.1
-ms.openlocfilehash: 1f35874b253ca23743e1b046732723c3a75e855e
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: a21b2b82bfefb5b24898cf58ef97284a143e2e4a
+ms.sourcegitcommit: 816f39e852a8f453e8682081871a31bc66db153a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50207825"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53637601"
 ---
 # <a name="whats-new-in-aspnet-core-11"></a>ASP.NET Core 1.1의 새로운 기능
 
@@ -24,7 +24,7 @@ ASP.NET Core 1.1에는 다음과 같은 새로운 기능이 포함됩니다.
 - [Azure App Service 로깅 공급자](xref:fundamentals/logging/index#azure-app-service-provider)
 - [Azure Key Vault 구성 공급자](xref:security/key-vault-configuration)
 - [Azure 및 Redis 저장소 데이터 보호 키 리포지토리](xref:security/data-protection/implementation/key-storage-providers#azure-and-redis)
-- [Windows용 WebListener 서버](xref:fundamentals/servers/weblistener)
+- Windows용 WebListener 서버
 - [WebSockets 지원](xref:fundamentals/websockets)
 
 ## <a name="choosing-between-versions-10-and-11-of-aspnet-core"></a>ASP.NET Core 버전 1.0과 1.1 중에서 선택

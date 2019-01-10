@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/24/2018
 uid: data/ef-rp/complex-data-model
-ms.openlocfilehash: 9a0d5a8e722487ccf7e08aadb39f838a0963451d
-ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
+ms.openlocfilehash: 930a6f2b860c71b6f499cff53e0d909a130f7948
+ms.sourcegitcommit: 816f39e852a8f453e8682081871a31bc66db153a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50090977"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53637900"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---data-model---5-of-8"></a>ASP.NET Core에서 EF Core를 사용한 Razor 페이지 - 데이터 모델 - 5/8
 
@@ -306,7 +306,7 @@ FK 속성 `DepartmentID`가 데이터 모델에 포함된 경우 업데이트하
 
 ### <a name="the-databasegenerated-attribute"></a>DatabaseGenerated 특성
 
-`[DatabaseGenerated(DatabaseGeneratedOption.None)]` 특성은 PK가 데이터베이스에서 생성되지 않고 응용 프로그램에서 제공되는 것을 지정합니다.
+`[DatabaseGenerated(DatabaseGeneratedOption.None)]` 특성은 PK가 데이터베이스에서 생성되지 않고 애플리케이션에서 제공되는 것을 지정합니다.
 
 ```csharp
 [DatabaseGenerated(DatabaseGeneratedOption.None)]
@@ -538,10 +538,7 @@ protected override void OnModelCreating(ModelBuilder modelBuilder)
 
 [!code-csharp[](intro/samples/cu21/Data/DbInitializer.cs?name=snippet_Final)]
 
-위의 코드는 새 엔터티에 대한 시드 데이터를 제공합니다. 이 코드의 대부분은 새 엔터티 개체를 만들고 샘플 데이터를 로드합니다. 샘플 데이터는 테스트를 위해 사용됩니다. 위의 코드는 다음과 같은 다대다 관계를 만듭니다.
-
-* `Enrollments`
-* `CourseAssignment`
+위의 코드는 새 엔터티에 대한 시드 데이터를 제공합니다. 이 코드의 대부분은 새 엔터티 개체를 만들고 샘플 데이터를 로드합니다. 샘플 데이터는 테스트를 위해 사용됩니다. 다 대 다 조인 테이블을 시드할 수 있는 예제는 `Enrollments` 및 `CourseAssignments`를 참조하세요.
 
 ## <a name="add-a-migration"></a>마이그레이션 추가
 

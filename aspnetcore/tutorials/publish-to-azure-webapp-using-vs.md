@@ -4,14 +4,14 @@ author: rick-anderson
 description: Visual Studio를 사용하여 Azure App Service에 ASP.NET Core 앱을 게시하는 방법을 알아봅니다.
 ms.author: riande
 ms.custom: mvc
-ms.date: 10/24/2018
+ms.date: 12/06/2018
 uid: tutorials/publish-to-azure-webapp-using-vs
-ms.openlocfilehash: 7eab773746f76b00e8e796387c4ee1dc042a4c23
-ms.sourcegitcommit: 49faca2644590fc081d86db46ea5e29edfc28b7b
+ms.openlocfilehash: e71cb8badbbc852685c845e6bbb0bbb12ab5499f
+ms.sourcegitcommit: 68a3081dd175d6518d1bfa31b4712bd8a2dd3864
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/09/2018
-ms.locfileid: "53121273"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53577814"
 ---
 # <a name="publish-an-aspnet-core-app-to-azure-with-visual-studio"></a>Visual Studio를 사용하여 Azure에 ASP.NET Core 앱 게시
 
@@ -36,14 +36,14 @@ Visual Studio 시작 페이지에서 **파일 > 새로 만들기 > 프로젝트.
 **새 프로젝트** 대화 상자를 완료합니다.
 
 * 왼쪽 창에서 **.NET Core**를 선택합니다.
-* 가운데 창에서 **ASP.NET Core 웹 응용 프로그램**을 선택합니다.
+* 가운데 창에서 **ASP.NET Core 웹 애플리케이션**을 선택합니다.
 * **확인**을 선택합니다.
 
 ![새 프로젝트 대화 상자](publish-to-azure-webapp-using-vs/_static/new_prj.png)
 
-**새 ASP.NET Core 웹 응용 프로그램** 대화 상자에서:
+**새 ASP.NET Core 웹 애플리케이션** 대화 상자에서:
 
-* **웹 응용 프로그램**을 선택합니다.
+* **웹 애플리케이션**을 선택합니다.
 * **인증 변경**을 선택합니다.
 
 ![새 프로젝트 대화 상자](publish-to-azure-webapp-using-vs/_static/new_prj_2.png)
@@ -51,7 +51,7 @@ Visual Studio 시작 페이지에서 **파일 > 새로 만들기 > 프로젝트.
 **인증 변경** 대화 상자가 나타납니다. 
 
 * **개별 사용자 계정**을 선택합니다.
-* **확인**을 선택하여 **새 ASP.NET Core 웹 응용 프로그램**으로 돌아간 다음 다시 **확인**을 선택합니다.
+* **확인**을 선택하여 **새 ASP.NET Core 웹 애플리케이션**으로 돌아간 다음 다시 **확인**을 선택합니다.
 
 ![새 ASP.NET Core 웹 인증 대화 상자](publish-to-azure-webapp-using-vs/_static/new_prj_auth.png) 
 
@@ -62,20 +62,20 @@ Visual Studio는 솔루션을 만듭니다.
 * Ctrl+F5를 눌러 프로젝트를 실행합니다.
 * **정보** 및 **연락처** 링크를 테스트합니다.
 
-![localhost의 Microsoft Edge에서 열린 웹 응용 프로그램](publish-to-azure-webapp-using-vs/_static/show.png)
+![localhost의 Microsoft Edge에서 열린 웹 애플리케이션](publish-to-azure-webapp-using-vs/_static/show.png)
 
 ### <a name="register-a-user"></a>사용자 등록
 
 * **등록**을 선택하고 새 사용자를 등록합니다. 가상의 전자 메일 주소를 사용할 수 있습니다. 제출하면 페이지에 다음과 같은 오류가 표시됩니다.
 
-    *“내부 서버 오류: 요청을 처리하는 동안 데이터베이스 작업이 실패했습니다. SQL 예외: 데이터베이스를 열 수 없습니다. 응용 프로그램 DB 컨텍스트에 대한 기존 마이그레이션 적용으로 이 문제를 해결할 수 있습니다.”*
+    *"내부 서버 오류: 요청을 처리하는 동안 데이터베이스 작업이 실패했습니다. SQL 예외: 데이터베이스를 열 수 없습니다. 애플리케이션 DB 컨텍스트에 대한 기존 마이그레이션 적용으로 이 문제를 해결할 수 있습니다.”*
 * **마이그레이션 적용**을 선택한 다음 페이지가 업데이트되면 페이지를 새로 고칩니다.
 
-![내부 서버 오류: 요청을 처리하는 동안 데이터베이스 작업이 실패했습니다. SQL 예외: 데이터베이스를 열 수 없습니다. 응용 프로그램 DB 컨텍스트에 대한 기존 마이그레이션 적용으로 이 문제를 해결할 수 있습니다.](publish-to-azure-webapp-using-vs/_static/mig.png)
+![내부 서버 오류: 요청을 처리하는 동안 데이터베이스 작업이 실패했습니다. SQL 예외: 데이터베이스를 열 수 없습니다. 애플리케이션 DB 컨텍스트에 대한 기존 마이그레이션 적용으로 이 문제를 해결할 수 있습니다.](publish-to-azure-webapp-using-vs/_static/mig.png)
 
 앱은 새 사용자를 등록하는 데 사용한 전자 메일 및 **로그아웃** 링크를 표시합니다.
 
-![Microsoft Edge에서 열린 웹 응용 프로그램. 레지스터 링크는 텍스트 Hello email@domain.com으로 교체됩니다.](publish-to-azure-webapp-using-vs/_static/hello.png)
+![Microsoft Edge에서 열린 웹 애플리케이션. 레지스터 링크는 텍스트 Hello email@domain.com으로 교체됩니다.](publish-to-azure-webapp-using-vs/_static/hello.png)
 
 ## <a name="deploy-the-app-to-azure"></a>Azure에 앱 배포
 
@@ -150,11 +150,13 @@ Visual Studio는 Azure에서 웹앱 및 SQL Server를 만듭니다. 이 단계�
 
 * 새 사용자 등록
 
-![Azure App Service의 Microsoft Edge에서 열린 웹 응용 프로그램](publish-to-azure-webapp-using-vs/_static/register.png)
+![Azure App Service의 Microsoft Edge에서 열린 웹 애플리케이션](publish-to-azure-webapp-using-vs/_static/register.png)
 
 ### <a name="update-the-app"></a>앱 업데이트
 
-* *Pages/About.cshtml* Razor 페이지를 편집하고 내용을 변경합니다. 예를 들어 단락을 수정하여 “Hello ASP.NET Core!” 문구를 표시할 수 있습니다. [!code-html[About](publish-to-azure-webapp-using-vs/sample/about.cshtml?highlight=9&range=1-9)]
+* *Pages/About.cshtml* Razor 페이지를 편집하고 내용을 변경합니다. 예를 들어 단락을 수정하여 “Hello ASP.NET Core!” 문구를 표시할 수 있습니다.
+
+    [!code-html[About](publish-to-azure-webapp-using-vs/sample/about.cshtml?highlight=9&range=1-9)]
 
 * 프로젝트를 마우스 오른쪽 단추로 클릭하고 **게시...** 를 선택합니다.
 
@@ -187,4 +189,5 @@ Visual Studio는 Azure에서 웹앱 및 SQL Server를 만듭니다. 이 단계�
 * [Azure App Service](/azure/app-service/app-service-web-overview)
 * [Azure 리소스 그룹](/azure/azure-resource-manager/resource-group-overview#resource-groups)
 * [Azure SQL Database](/azure/sql-database/)
+* <xref:host-and-deploy/visual-studio-publish-profiles>
 * <xref:host-and-deploy/azure-apps/troubleshoot>

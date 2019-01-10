@@ -3,16 +3,15 @@ title: '자습서: ASP.NET Core MVC를 사용하여 웹 API 만들기'
 author: rick-anderson
 description: ASP.NET Core MVC를 사용하여 웹 API 빌드
 ms.author: riande
-monikerRange: '> aspnetcore-2.1'
 ms.custom: mvc
-ms.date: 11/19/2018
+ms.date: 12/10/2018
 uid: tutorials/first-web-api
-ms.openlocfilehash: 1af14b85cbaefc00fd97db7c721c4f9436a65fb2
-ms.sourcegitcommit: 49faca2644590fc081d86db46ea5e29edfc28b7b
+ms.openlocfilehash: c2b4dcddd5332330cd6e6abe7d3a12697cde845e
+ms.sourcegitcommit: 4e87712029de2aceb1cf2c52e9e3dda8195a5b8e
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/09/2018
-ms.locfileid: "53121468"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53382006"
 ---
 # <a name="tutorial-create-a-web-api-with-aspnet-core-mvc"></a>자습서: ASP.NET Core MVC를 사용하여 웹 API 만들기
 
@@ -23,7 +22,7 @@ ms.locfileid: "53121468"
 이 자습서에서는 다음과 같은 작업을 수행하는 방법을 살펴봅니다.
 
 > [!div class="checklist"]
-> * 웹 API 프로젝트 만들기
+> * 웹 API 프로젝트를 만듭니다.
 > * 모델 클래스 추가
 > * 데이터베이스 컨텍스트 만들기
 > * 데이터베이스 컨텍스트 등록
@@ -32,7 +31,7 @@ ms.locfileid: "53121468"
 > * 라우팅 및 URL 경로 구성
 > * 반환 값 지정
 > * Postman을 사용하여 웹 API 호출
-> * jQuery를 사용하여 웹 API 호출
+> * jQuery를 사용하여 웹 API를 호출합니다.
 
 작업을 완료하면 웹 API는 관계형 데이터베이스에 저장된 "할 일" 항목을 관리할 수 있게 됩니다.
 
@@ -50,7 +49,7 @@ ms.locfileid: "53121468"
 
 다음 다이어그램에서는 앱의 디자인을 보여줍니다.
 
-![클라이언트는 왼쪽에 상자로 표시되며 요청을 제출하고 오른쪽에 그린 상자인 응용 프로그램에서 응답을 받습니다. 응용 프로그램 상자 내에서 3개의 상자는 컨트롤러, 모델 및 데이터 액세스 계층을 나타냅니다. 요청은 응용 프로그램의 컨트롤러로 들어오고 읽기/쓰기 작업은 컨트롤러와 데이터 액세스 계층 간에 발생합니다. 모델은 직렬화되며 응답에서 클라이언트에 반환됩니다.](first-web-api/_static/architecture.png)
+![클라이언트는 왼쪽에 상자로 표시되며 요청을 제출하고 오른쪽에 그린 상자인 애플리케이션에서 응답을 받습니다. 애플리케이션 상자 내에서 3개의 상자는 컨트롤러, 모델 및 데이터 액세스 계층을 나타냅니다. 요청은 애플리케이션의 컨트롤러로 들어오고 읽기/쓰기 작업은 컨트롤러와 데이터 액세스 계층 간에 발생합니다. 모델은 직렬화되며 응답에서 클라이언트에 반환됩니다.](first-web-api/_static/architecture.png)
 
 [!INCLUDE[](~/includes/net-core-prereqs-all-2.2.md)]
 
@@ -59,8 +58,8 @@ ms.locfileid: "53121468"
 # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
 
 * **파일** 메뉴에서 **새로 만들기** > **프로젝트**를 선택합니다.
-* **ASP.NET Core 웹 응용 프로그램** 템플릿을 선택합니다. 프로젝트 이름을 *TodoApi*로 지정하고 **확인**을 클릭합니다.
-* **새 ASP.NET Core 웹 응용 프로그램 - TodoApi** 대화 상자에서 ASP.NET Core 버전을 선택합니다. **API** 템플릿을 선택하고 **확인**을 클릭합니다. **Docker 지원 사용**을 선택하지 **마세요**.
+* **ASP.NET Core 웹 애플리케이션** 템플릿을 선택합니다. 프로젝트 이름을 *TodoApi*로 지정하고 **확인**을 클릭합니다.
+* **새 ASP.NET Core 웹 애플리케이션 - TodoApi** 대화 상자에서 ASP.NET Core 버전을 선택합니다. **API** 템플릿을 선택하고 **확인**을 클릭합니다. **Docker 지원 사용**을 선택하지 **마세요**.
 
 ![VS 새 프로젝트 대화 상자](first-web-api/_static/vs.png)
 
@@ -359,7 +358,7 @@ ASP.NET Core에서는 DB 컨텍스트와 같은 서비스를 [DI(종속성 주�
 
 [!code-csharp[](first-web-api/samples/2.2/TodoApi/Controllers/TodoController.cs?name=snippet_Update)]
 
-HTTP PUT을 사용하는 것을 제외하고 `PutTodoItem`는 `PostTodoItem`와 비슷합니다. 응답은 [204(콘텐츠 없음)](https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html)입니다. HTTP 사양에 따라 PUT 요청의 경우 클라이언트는 변경 내용만이 아니라 전체 업데이트된 엔터티를 보내야 합니다. 부분 업데이트를 지원하려면 [HTTP PATCH](/dotnet/api/microsoft.aspnetcore.mvc.httppostattribute)를 사용합니다.
+HTTP PUT을 사용하는 것을 제외하고 `PutTodoItem`는 `PostTodoItem`와 비슷합니다. 응답은 [204(콘텐츠 없음)](https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html)입니다. HTTP 사양에 따라 PUT 요청의 경우 클라이언트는 변경 내용만이 아니라 전체 업데이트된 엔터티를 보내야 합니다. 부분 업데이트를 지원하려면 [HTTP PATCH](xref:Microsoft.AspNetCore.Mvc.HttpPatchAttribute)를 사용합니다.
 
 ### <a name="test-the-puttodoitem-method"></a>PutTodoItem 메서드 테스트
 

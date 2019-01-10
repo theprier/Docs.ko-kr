@@ -5,14 +5,14 @@ description: 앱 및 데이터베이스와 같은 ASP.NET Core 인프라의 상�
 monikerRange: '>= aspnetcore-2.2'
 ms.author: riande
 ms.custom: mvc
-ms.date: 12/03/2018
+ms.date: 12/12/2018
 uid: host-and-deploy/health-checks
-ms.openlocfilehash: d8fd43d9d689396cf30ca371763cdf7ac9423c77
-ms.sourcegitcommit: 9bb58d7c8dad4bbd03419bcc183d027667fefa20
+ms.openlocfilehash: cf2aea91221887dad5646604214f810493d4b175
+ms.sourcegitcommit: 1ea1b4fc58055c62728143388562689f1ef96cb2
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52862632"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53329148"
 ---
 # <a name="health-checks-in-aspnet-core"></a>ASP.NET Core의 상태 검사
 
@@ -36,10 +36,12 @@ ASP.NET Core는 앱 인프라 구성 요소의 상태를 보고하기 위해 상
 
 [Microsoft.AspNetCore.App 메타패키지](xref:fundamentals/metapackage-app)를 참조하거나 [Microsoft.AspNetCore.Diagnostics.HealthChecks](https://www.nuget.org/packages/Microsoft.AspNetCore.Diagnostics.HealthChecks) 패키지에 대한 패키지 참조를 추가합니다.
 
-샘플 앱은 여러 시나리오의 상태 검사를 보여주는 시작 코드를 제공합니다. [데이터베이스 프로브](#database-probe) 시나리오는 [BeatPulse](https://github.com/Xabaril/BeatPulse)를 사용하여 데이터베이스 연결의 상태를 프로브합니다. [DbContext 프로브](#entity-framework-core-dbcontext-probe) 시나리오는 EF Core `DbContext`를 사용하여 데이터베이스를 프로브합니다. 샘플 앱을 사용하여 데이터베이스 시나리오를 탐색하려면 다음을 수행하세요.
+샘플 앱은 여러 시나리오의 상태 검사를 보여주는 시작 코드를 제공합니다. [데이터베이스 프로브](#database-probe) 시나리오는 [BeatPulse](https://github.com/Xabaril/BeatPulse)를 사용하여 데이터베이스 연결의 상태를 검사합니다. [DbContext 프로브](#entity-framework-core-dbcontext-probe) 시나리오는 EF Core `DbContext`를 사용하여 데이터베이스를 검사합니다. 데이터베이스 시나리오를 탐색하려면 샘플 앱:
 
-* 데이터베이스를 만들고 앱의 *appsettings.json* 파일에서 연결 문자열을 제공합니다.
-* [AspNetCore.HealthChecks.SqlServer](https://www.nuget.org/packages/AspNetCore.HealthChecks.SqlServer/)에 패키지 참조를 추가합니다.
+* 데이터베이스를 만들고 *appsettings.json* 파일에서 연결 문자열을 제공합니다.
+* 해당 프로젝트 파일에 다음 패키지 참조가 있습니다.
+  * [AspNetCore.HealthChecks.SqlServer](https://www.nuget.org/packages/AspNetCore.HealthChecks.SqlServer/)
+  * [Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore](https://www.nuget.org/packages/Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore/)
 
 > [!NOTE]
 > [BeatPulse](https://github.com/Xabaril/BeatPulse)는 Microsoft에서 유지 관리하거나 지원하지 않습니다.
@@ -50,7 +52,7 @@ ASP.NET Core는 앱 인프라 구성 요소의 상태를 보고하기 위해 상
 
 많은 앱의 경우, 요청을 처리할 수 있는 앱의 가용성(*활동성*)을 보고하는 기본 상태 검사 구성으로 앱 상태를 충분히 파악할 수 있습니다.
 
-기본 구성은 상태 검사 서비스를 등록하고 상태 검사 미들웨어를 호출하여 URL 엔드포인트에서 상태 응답을 사용하여 응답합니다. 기본적으로 특정 종속성이나 하위 시스템을 테스트하기 위해 특정 상태 검사가 등록되지 않습니다. 상태 엔드포인트 URL에서 응답할 수 있는 경우 앱 상태가 좋은 것으로 간주됩니다. 기본 응답 기록기는 상태(`HealthCheckStatus`)를 클라이언트에 대한 일반 텍스트 응답으로 기록하여 `HealthCheckResult.Healthy` 또는 `HealthCheckResult.Unhealthy` 상태를 나타냅니다.
+기본 구성은 상태 검사 서비스를 등록하고 상태 검사 미들웨어를 호출하여 URL 엔드포인트에서 상태 응답을 사용하여 응답합니다. 기본적으로 특정 종속성이나 하위 시스템을 테스트하기 위해 특정 상태 검사가 등록되지 않습니다. 상태 엔드포인트 URL에서 응답할 수 있는 경우 앱 상태가 좋은 것으로 간주됩니다. 기본 응답 기록기는 상태(`HealthStatus`)를 클라이언트에 대한 일반 텍스트 응답으로 기록하여 `HealthStatus.Healthy`, `HealthStatus.Degraded` 또는 `HealthStatus.Unhealthy` 상태를 나타냅니다.
 
 `Startup.ConfigureServices`의 `AddHealthChecks`에 상태 검사 서비스를 등록합니다. `Startup.Configure`의 요청 처리 파이프라인에 있는 `UseHealthChecks`로 상태 검사 미들웨어를 추가합니다.
 
@@ -216,12 +218,12 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
     app.UseHealthChecks("/health", new HealthCheckOptions()
     {
         // The following StatusCodes are the default assignments for
-        // the HealthCheckStatus properties.
+        // the HealthStatus properties.
         ResultStatusCodes =
         {
-            [HealthCheckStatus.Healthy] = StatusCodes.Status200OK,
-            [HealthCheckStatus.Degraded] = StatusCodes.Status200OK,
-            [HealthCheckStatus.Unhealthy] = StatusCodes.Status503ServiceUnavailable
+            [HealthStatus.Healthy] = StatusCodes.Status200OK,
+            [HealthStatus.Degraded] = StatusCodes.Status200OK,
+            [HealthStatus.Unhealthy] = StatusCodes.Status503ServiceUnavailable
         }
     });
 }
@@ -314,9 +316,17 @@ dotnet run --scenario db
 
 ## <a name="entity-framework-core-dbcontext-probe"></a>Entity Framework Core DbContext 프로브
 
-`DbContext` 검사는 [EF(Entity Framework) Core](/ef/core/)를 사용하는 앱에서 지원됩니다. 이 검사는 앱이 EF Core `DbContext`에 대해 구성된 데이터베이스와 통신할 수 있음을 확인합니다. 기본적으로 `DbContextHealthCheck`는 EF Core의 `CanConnectAsync` 메서드를 호출합니다. `AddDbContextCheck` 메서드의 오버로드를 사용하여 상태를 검사할 때 실행되는 작업을 사용자 정의할 수 있습니다.
+`DbContext` 검사는 앱이 EF Core `DbContext`에 대해 구성된 데이터베이스와 통신할 수 있음을 확인합니다. `DbContext` 검사는 다음과 같은 앱에서 지원됩니다.
 
-`AddDbContextCheck<TContext>`는 `DbContext`(`TContext`)에 대한 상태 검사를 등록합니다. 기본적으로 상태 검사의 이름은 `TContext` 형식의 이름입니다. 오버로드는 오류 상태, 태그 및 사용자 지정 테스트 쿼리를 구성할 수 있습니다.
+* [EF(Entity Framework) Core](/ef/core/)를 사용합니다.
+* [Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore](https://www.nuget.org/packages/Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore/)에 대한 패키지 참조를 포함합니다.
+
+`AddDbContextCheck<TContext>`는 `DbContext`에 대한 상태 검사를 등록합니다. `DbContext`는 메서드에 `TContext`로 제공됩니다. 오버로드는 오류 상태, 태그 및 사용자 지정 테스트 쿼리를 구성할 수 있습니다.
+
+기본적으로:
+
+* `DbContextHealthCheck`는 EF Core의 `CanConnectAsync` 메서드를 호출합니다. `AddDbContextCheck` 메서드 오버로드를 사용하여 상태를 검사할 때 실행되는 작업을 사용자 정의할 수 있습니다.
+* 상태 검사의 이름은 `TContext` 형식의 이름입니다.
 
 샘플 앱에서 `AppDbContext`는 `AddDbContextCheck`에 제공되고 `Startup.ConfigureServices`의 서비스로서 등록됩니다.
 

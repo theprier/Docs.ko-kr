@@ -4,14 +4,14 @@ author: tdykstra
 description: ASP.NET Core 2.2의 새로운 기능에 대해 알아봅니다.
 ms.author: tdykstra
 ms.custom: mvc
-ms.date: 12/03/2018
+ms.date: 12/18/2018
 uid: aspnetcore-2.2
-ms.openlocfilehash: d0bb0698526e2f7af8f0e99b0393f3ce48657b34
-ms.sourcegitcommit: a3a15d3ad4d6e160a69614a29c03bbd50db110a2
+ms.openlocfilehash: 13d7dec834a5661b445b4fc0c0be8be9b7b41b9e
+ms.sourcegitcommit: 816f39e852a8f453e8682081871a31bc66db153a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52952059"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53637731"
 ---
 # <a name="whats-new-in-aspnet-core-22"></a>ASP.NET Core 2.2의 새로운 기능
 
@@ -25,7 +25,7 @@ ms.locfileid: "52952059"
 
 * <xref:web-api/advanced/analyzers>
 * <xref:web-api/advanced/conventions>
-* [ASP.NET Core 2.2.0-preview1: 공개 API 분석기 및 규칙](https://blogs.msdn.microsoft.com/webdev/2018/08/23/asp-net-core-2-20-preview1-open-api-analyzers-conventions/)
+* [ASP.NET Core 2.2.0 미리 보기1: Open API 분석기 및 규칙](https://blogs.msdn.microsoft.com/webdev/2018/08/23/asp-net-core-2-20-preview1-open-api-analyzers-conventions/)
 
 ## <a name="problem-details-support"></a>문제 세부 정보 지원
 
@@ -41,7 +41,7 @@ ASP.NET Core 2.2는 요청 디스패치를 향상시키기 위해 새로운 *엔
 * [경로 매개 변수 변환기](https://www.hanselman.com/blog/ASPNETCore22ParameterTransformersForCleanURLGenerationAndSlugsInRazorPagesOrMVC.aspx)(**라우팅** 섹션 참조)
 * [IRouter 기반 라우팅과 엔드포인트 기반 라우팅의 차이점](xref:fundamentals/routing?view=aspnetcore-2.2#differences-from-earlier-versions-of-routing)
 
-## <a name="health-checks"></a>상태 검사
+## <a name="health-checks"></a>상태 확인
 
 새로운 상태 검사 서비스를 사용하면 Kubernetes와 같은 상태 검사가 필요한 환경에서 ASP.NET Core를 보다 쉽게 사용할 수 있습니다. 상태 검사에는 미들웨어와 `IHealthCheck` 추상화 및 서비스를 정의하는 라이브러리 세트가 포함됩니다.
 
@@ -72,7 +72,7 @@ HTTP/2는 HTTP 프로토콜의 주요 수정 버전입니다. HTTP/2의 주목�
 
 이전 버전의 ASP.NET Core에서 IIS는 역방향 프록시 역할을 합니다. 2.2에서 ASP.NET Core 모듈은 CoreCLR을 부팅하고 IIS 작업자 프로세스(*w3wp.exe*) 내부에서 앱을 호스팅할 수 있습니다. In Process 호스팅은 IIS로 실행할 때 성능 및 진단 이득을 제공합니다.
 
-자세한 내용은 [IIS In Process 호스팅](xref:fundamentals/servers/aspnet-core-module?view=aspnetcore-2.2#in-process-hosting-model)을 참조하세요.
+자세한 내용은 [IIS에 대한 In Process 호스팅](xref:host-and-deploy/aspnet-core-module?view=aspnetcore-2.2#in-process-hosting-model)을 참조하세요.
 
 ## <a name="signalr-java-client"></a>SignalR Java 클라이언트
 

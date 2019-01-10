@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 06/14/2018
 uid: fundamentals/app-state
-ms.openlocfilehash: ccaaa6fafd611c3cf35a9171d5bfd6100535eeb9
-ms.sourcegitcommit: 0fc89b80bb1952852ecbcf3c5c156459b02a6ceb
+ms.openlocfilehash: 2d9fe4fc7c69f23a903b4ada44e328ef140963db
+ms.sourcegitcommit: e1cc4c1ef6c9e07918a609d5ad7fadcb6abe3e12
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "52618131"
+ms.lasthandoff: 01/03/2019
+ms.locfileid: "53997307"
 ---
 # <a name="session-and-app-state-in-aspnet-core"></a>ASP.NET Core에서 세션 및 앱 상태
 
@@ -64,13 +64,14 @@ ASP.NET Core는 각 요청과 함께 앱으로 전송되는 세션 ID를 포함�
 * 앱은 마지막 요청 이후 제한된 시간 동안 세션을 유지합니다. 앱은 세션 시간 제한을 설정하거나 20분의 기본값을 사용합니다. 세션 상태는 특정 세션과 관련된 사용자 데이터를 저장하되, 데이터가 세션 간에 영구적으로 저장할 필요가 없는 경우에 적합합니다.
 * 세션 데이터는 [ISession.Clear](/dotnet/api/microsoft.aspnetcore.http.isession.clear) 구현이 호출되거나 세션이 만료될 때 삭제됩니다.
 * 클라이언트 브라우저가 닫혔거나 세션 쿠키가 삭제 또는 클라이언트에서 만료되었을 때 앱 코드에 이를 알려주는 기본 메커니즘은 없습니다.
+ASP.NET Core MVC 및 Razor 페이지 템플릿에는 [GDPR(일반 데이터 보호 규정) 지원](xref:security/gdpr)에 대한 지원이 포함됩니다. [세션 상태 쿠키는 필수 항목이 아니며](xref:security/gdpr#tempdata-provider-and-session-state-cookies-are-not-essential), 추적이 비활성화되면 세션 상태가 작동하지 않습니다.
 
 > [!WARNING]
 > 중요한 데이터를 세션 상태에 저장하지 마세요. 사용자는 브라우저를 닫지 않고 세션 쿠키를 지울 수 있습니다. 일부 브라우저는 브라우저 창이 닫혀도 유효한 세션 쿠키를 유지 관리합니다. 세션은 단일 사용자로 제한될 수 없으므로 다음 사용자는 동일한 세션 쿠키로 앱을 계속 검색할 수 있습니다.
 
 메모리 내 캐시 공급자는 앱이 있는 서버의 메모리에 세션 데이터를 저장합니다. 서버 팜 시나리오:
 
-* *고정 세션*을 사용하여 각 세션을 개별 서버의 특정 앱 인스턴스에 연결합니다. [Azure App Service](https://azure.microsoft.com/services/app-service/)는 [ARR(응용 프로그램 요청 라우팅)](/iis/extensions/planning-for-arr/using-the-application-request-routing-module)을 사용하여 기본적으로 고정 세션을 적용합니다. 그러나 고정 세션은 확장성에 영향을 주고 웹앱 업데이트를 복잡하게 만들 수 있습니다. 더 나은 방법은 고정 세션이 필요 없는 Redis 또는 SQL Server 분산 캐시를 사용하는 것입니다. 자세한 내용은 <xref:performance/caching/distributed>을 참조하세요.
+* *고정 세션*을 사용하여 각 세션을 개별 서버의 특정 앱 인스턴스에 연결합니다. [Azure App Service](https://azure.microsoft.com/services/app-service/)는 [ARR(애플리케이션 요청 라우팅)](/iis/extensions/planning-for-arr/using-the-application-request-routing-module)을 사용하여 기본적으로 고정 세션을 적용합니다. 그러나 고정 세션은 확장성에 영향을 주고 웹앱 업데이트를 복잡하게 만들 수 있습니다. 더 나은 방법은 고정 세션이 필요 없는 Redis 또는 SQL Server 분산 캐시를 사용하는 것입니다. 자세한 내용은 <xref:performance/caching/distributed>을 참조하세요.
 * 세션 쿠키는 [IDataProtector](/dotnet/api/microsoft.aspnetcore.dataprotection.idataprotector)를 통해 암호화됩니다. 데이터 보호는 각 컴퓨터에서 세션 쿠키를 읽을 수 있도록 올바르게 구성되어야 합니다. 자세한 내용은 <xref:security/data-protection/introduction> 및 [키 저장소 공급자](xref:security/data-protection/implementation/key-storage-providers)를 참조하세요.
 
 ### <a name="configure-session-state"></a>세션 상태 구성
@@ -250,7 +251,7 @@ Name: @HttpContext.Session.GetString(IndexModel.SessionKeyName)
 
 ## <a name="tempdata"></a>TempData
 
-ASP.NET Core는 [Razor Pages 페이지 모델의 TempData 속성](/dotnet/api/microsoft.aspnetcore.mvc.razorpages.pagemodel.tempdata) 또는 [MVC 컨트롤러의 TempData](/dotnet/api/microsoft.aspnetcore.mvc.controller.tempdata)를 공개합니다. 이 속성은 판독될 때까지 데이터를 저장합니다. [Keep](/dotnet/api/microsoft.aspnetcore.mvc.viewfeatures.itempdatadictionary.keep) 및 [Peek](/dotnet/api/microsoft.aspnetcore.mvc.viewfeatures.itempdatadictionary.peek) 메서드를 사용하여 삭제 없이 데이터를 검사할 수 있습니다. TempData는 두 개 이상의 요청에 데이터가 필요한 리디렉션에 특히 유용합니다. TempData는 TempData 공급자가 쿠키 또는 세션 상태를 사용하여 구현합니다.
+ASP.NET Core는 [Razor Pages 페이지 모델의 TempData 속성](/dotnet/api/microsoft.aspnetcore.mvc.razorpages.pagemodel.tempdata) 또는 [MVC 컨트롤러의 TempData](/dotnet/api/microsoft.aspnetcore.mvc.controller.tempdata)를 공개합니다. 이 속성은 해당 속성이 읽혀질 때까지만 데이터를 저장합니다. [Keep](/dotnet/api/microsoft.aspnetcore.mvc.viewfeatures.itempdatadictionary.keep) 및 [Peek](/dotnet/api/microsoft.aspnetcore.mvc.viewfeatures.itempdatadictionary.peek) 메서드를 사용하여 삭제 없이 데이터를 검사할 수 있습니다. TempData는 두 개 이상의 요청에 데이터가 필요한 리디렉션에 특히 유용합니다. TempData는 TempData 공급자가 쿠키 또는 세션 상태를 사용하여 구현합니다.
 
 ### <a name="tempdata-providers"></a>TempData 공급자
 

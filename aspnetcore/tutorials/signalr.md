@@ -2,17 +2,16 @@
 title: ASP.NET Core SignalR로 시작
 author: tdykstra
 description: 이 자습서에서는 ASP.NET Core SignalR을 사용하는 채팅 앱을 만듭니다.
-monikerRange: '>= aspnetcore-2.1'
 ms.author: tdykstra
 ms.custom: mvc
 ms.date: 11/30/2018
 uid: tutorials/signalr
-ms.openlocfilehash: c52041b34d6c9d1d8f06f980c900b805a0933293
-ms.sourcegitcommit: 9bb58d7c8dad4bbd03419bcc183d027667fefa20
+ms.openlocfilehash: 36296513726f7e098a536afc22fcbfb2cafe946d
+ms.sourcegitcommit: e1cc4c1ef6c9e07918a609d5ad7fadcb6abe3e12
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52861989"
+ms.lasthandoff: 01/03/2019
+ms.locfileid: "53997281"
 ---
 # <a name="tutorial-get-started-with-aspnet-core-signalr"></a>자습서: ASP.NET Core SignalR 시작
 
@@ -31,10 +30,6 @@ ms.locfileid: "52861989"
 
 [예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/tutorials/signalr/sample) ([다운로드 방법](xref:index#how-to-download-a-sample))
 
-> [!NOTE]
-> ASP.NET Core 목차에 대해 제안된 새 구조의 유용성을 테스트합니다.  몇 분 동안 현재 또는 제안된 목차에서 다른 7개의 항목을 찾는 연습을 수행하는 경우 [여기를 클릭하여 연구에 참여하세요](https://dpk4xbh5.optimalworkshop.com/treejack/aa11wn82).
-
-
 [!INCLUDE [|Prerequisites](~/includes/net-core-prereqs-all-2.2.md)]
 
 ## <a name="create-a-web-project"></a>웹 프로젝트 만들기
@@ -43,11 +38,11 @@ ms.locfileid: "52861989"
 
 * 메뉴에서 **파일 > 새 프로젝트**를 선택합니다.
 
-* **새 프로젝트** 대화 상자에서 **설치됨 > Visual C# > 웹 > ASP.NET Core 웹 응용 프로그램**을 선택합니다. 프로젝트의 이름을 *SignalRChat*로 지정합니다.
+* **새 프로젝트** 대화 상자에서 **설치됨 &gt; Visual C# &gt; 웹 &gt; ASP.NET Core 웹 애플리케이션**을 선택합니다. 프로젝트의 이름을 *SignalRChat*로 지정합니다.
 
   ![Visual Studio의 새 프로젝트 대화 상자](signalr/_static/signalr-new-project-dialog.png)
 
-* Razor Pages를 사용하는 프로젝트를 생성하려면 **웹 응용 프로그램**을 선택합니다.
+* Razor Pages를 사용하는 프로젝트를 생성하려면 **웹 애플리케이션**을 선택합니다.
 
 * **.NET Core**의 대상 프레임워크를 선택하고, **ASP.NET Core 2.2**를 선택하고, **확인**을 클릭합니다.
 
@@ -168,7 +163,7 @@ SignalR 서버 라이브러리는 `Microsoft.AspNetCore.App` 메타패키지에 
 
   `ChatHub` 클래스는 SignalR `Hub` 클래스에서 상속합니다. `Hub` 클래스는 연결, 그룹 및 메시징을 관리합니다.
 
-  연결된 모든 클라이언트에서 `SendMessage` 메서드를 호출할 수 있습니다. 모든 클라이언트에 수신된 메시지를 보냅니다. SignalR 코드는 최대한의 확장성을 제공할 수 있도록 비동기적입니다.
+  연결된 클라이언트에서 `SendMessage` 메서드를 호출하여 모든 클라이언트에 메시지를 보낼 수 있습니다. 메서드를 호출하는 JavaScript 클라이언트 코드는 자습서 뒷부분에 나와 있습니다. SignalR 코드는 최대한의 확장성을 제공할 수 있도록 비동기적입니다.
 
 ## <a name="configure-signalr"></a>SignalR 구성
 
@@ -190,7 +185,7 @@ SignalR 서버는 SignalR에 SignalR 요청을 전달하도록 구성되어야 �
 
   * 이름 및 메시지 텍스트에 대한 텍스트 상자 및 전송 단추를 만듭니다.
   * SignalR 허브에서 받은 메시지를 표시하기 위해 `id="messagesList"`를 사용하여 목록을 만듭니다.
-  * SignalR에 대한 스크립트 참조 및 다음 단계에서 만드는 *chat.js* 응용 프로그램 코드를 포함합니다.
+  * SignalR에 대한 스크립트 참조 및 다음 단계에서 만드는 *chat.js* 애플리케이션 코드를 포함합니다.
 
 * *wwwroot/js* 폴더에서 다음 코드를 사용하여 *chat.js* 파일을 만듭니다.
 

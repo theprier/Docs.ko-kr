@@ -4,14 +4,14 @@ author: shirhatti
 description: Windows Server에서 IIS를 통해 실행될 경우 ASP.NET Core 앱 디버그에 대한 지원을 확인해 보세요.
 ms.author: riande
 ms.custom: mvc
-ms.date: 11/30/2018
+ms.date: 12/18/2018
 uid: host-and-deploy/iis/development-time-iis-support
-ms.openlocfilehash: 51375e6a6bb25a469d467ca97a151abd305c1ece
-ms.sourcegitcommit: 9bb58d7c8dad4bbd03419bcc183d027667fefa20
+ms.openlocfilehash: 44570bb28451ce4c5fde12ec77e3856fb5bd3062
+ms.sourcegitcommit: 816f39e852a8f453e8682081871a31bc66db153a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52862384"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53637666"
 ---
 # <a name="development-time-iis-support-in-visual-studio-for-aspnet-core"></a>ASP.NET Core용 Visual Studio의 개발 시간 IIS 지원
 
@@ -54,17 +54,17 @@ IIS 설치에 앱의 시작 프로필 URL 호스트 이름과 일치하는 호�
 ## <a name="enable-development-time-iis-support-in-visual-studio"></a>Visual Studio에서 개발 시간 IIS 지원 사용
 
 1. Visual Studio 설치 관리자를 시작합니다.
-1. **개발 시간 IIS 지원** 구성 요소를 선택합니다. 이 구성 요소는 **ASP.NET 및 웹 개발** 워크로드에 대한 **요약** 패널에 선택 사항으로 나열됩니다. 이 구성 요소는 IIS를 사용하여 ASP.NET Core 앱을 실행하는 데 필요한 네이티브 IIS 모듈인 [ASP.NET Core 모듈](xref:fundamentals/servers/aspnet-core-module)을 설치합니다.
+1. **개발 시간 IIS 지원** 구성 요소를 선택합니다. 이 구성 요소는 **ASP.NET 및 웹 개발** 워크로드에 대한 **요약** 패널에 선택 사항으로 나열됩니다. 이 구성 요소는 IIS를 사용하여 ASP.NET Core 앱을 실행하는 데 필요한 네이티브 IIS 모듈인 [ASP.NET Core 모듈](xref:host-and-deploy/aspnet-core-module)을 설치합니다.
 
-![Visual Studio 기능 수정: 워크로드 탭이 선택되어 있습니다. 웹 및 클라우드 섹션에는 ASP.NET 및 웹 개발 패널이 선택되어 있습니다. [요약] 패널의 [선택 사항] 영역 오른쪽에 [개발 시간 IIS 지원] 확인란이 있습니다.](development-time-iis-support/_static/development_time_support.png)
+![Visual Studio 기능 수정: 워크로드 탭이 선택됩니다. 웹 및 클라우드 섹션에는 ASP.NET 및 웹 개발 패널이 선택되어 있습니다. [요약] 패널의 [선택 사항] 영역 오른쪽에 [개발 시간 IIS 지원] 확인란이 있습니다.](development-time-iis-support/_static/development_time_support.png)
 
 ## <a name="configure-the-project"></a>프로젝트 구성
 
 ### <a name="https-redirection"></a>HTTPS 리디렉션
 
-새 프로젝트의 경우 **새 ASP.NET Core 웹 응용 프로그램** 창에서 **HTTPS에 대한 구성** 확인란을 선택합니다.
+새 프로젝트의 경우 **새 ASP.NET Core 웹 애플리케이션** 창에서 **HTTPS에 대한 구성** 확인란을 선택합니다.
 
-![HTTPS에 대한 구성 확인란이 선택된 새 ASP.NET Core 웹 응용 프로그램 창.](development-time-iis-support/_static/new-app.png)
+![HTTPS에 대한 구성 확인란이 선택된 새 ASP.NET Core 웹 애플리케이션 창.](development-time-iis-support/_static/new-app.png)
 
 기존 프로젝트에서는 [UseHttpsRedirection](/dotnet/api/microsoft.aspnetcore.builder.httpspolicybuilderextensions.usehttpsredirection) 확장 메서드를 호출하여 `Startup.Configure`에서 HTTPS 리디렉션 미들웨어를 사용합니다.
 
@@ -146,6 +146,6 @@ Visual Studio에서 다음을 수행합니다.
 ## <a name="additional-resources"></a>추가 자료
 
 * [IIS가 있는 Windows에서 ASP.NET Core 호스팅](xref:host-and-deploy/iis/index)
-* [ASP.NET Core 모듈 소개](xref:fundamentals/servers/aspnet-core-module)
+* [ASP.NET Core 모듈 소개](xref:host-and-deploy/aspnet-core-module)
 * [ASP.NET Core 모듈 구성 참조](xref:host-and-deploy/aspnet-core-module)
 * [HTTPS 적용](xref:security/enforcing-ssl)

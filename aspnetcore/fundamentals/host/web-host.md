@@ -4,14 +4,14 @@ author: guardrex
 description: 앱 시작 및 수명 관리를 담당하는 ASP.NET Core에서의 웹 호스트에 대해 알아봅니다.
 ms.author: riande
 ms.custom: mvc
-ms.date: 12/01/2018
+ms.date: 12/18/2018
 uid: fundamentals/host/web-host
-ms.openlocfilehash: bc77413127273aba207e68e7fbcb8ad916267e8e
-ms.sourcegitcommit: 9bb58d7c8dad4bbd03419bcc183d027667fefa20
+ms.openlocfilehash: 7215027a083c0ed0bc3b15196e390a31c5dcfc14
+ms.sourcegitcommit: 816f39e852a8f453e8682081871a31bc66db153a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52862280"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53637848"
 ---
 # <a name="aspnet-core-web-host"></a>ASP.NET Core 웹 호스트
 
@@ -57,7 +57,7 @@ public class Program
   * 환경 변수.
   * 명령줄 인수.
 * 콘솔 및 디버그 출력에 대한 [로깅](xref:fundamentals/logging/index)을 구성합니다. 로깅은 *appsettings.json* 또는 *appsettings.{Environment}.json* 파일의 로깅 구성 섹션에 지정된 [로그 필터링](xref:fundamentals/logging/index#log-filtering) 규칙을 포함합니다.
-* [ASP.NET Core 모듈](xref:fundamentals/servers/aspnet-core-module)을 사용하여 IIS에서 실행하는 경우 `CreateDefaultBuilder`는 앱의 기본 주소와 포트를 구성하는 [IIS 통합](xref:host-and-deploy/iis/index)을 활성화합니다. 또한 IIS 통합은 [시작 오류를 캡처](#capture-startup-errors)하도록 앱을 구성합니다. IIS 기본 옵션은 <xref:host-and-deploy/iis/index#iis-options>를 참조합니다.
+* [ASP.NET Core 모듈](xref:host-and-deploy/aspnet-core-module)을 사용하여 IIS에서 실행하는 경우 `CreateDefaultBuilder`는 앱의 기본 주소와 포트를 구성하는 [IIS 통합](xref:host-and-deploy/iis/index)을 활성화합니다. 또한 IIS 통합은 [시작 오류를 캡처](#capture-startup-errors)하도록 앱을 구성합니다. IIS 기본 옵션은 <xref:host-and-deploy/iis/index#iis-options>를 참조합니다.
 * 앱의 환경이 개발인 경우 [ServiceProviderOptions.ValidateScopes](/dotnet/api/microsoft.extensions.dependencyinjection.serviceprovideroptions.validatescopes)을 `true`으로 설정합니다. 자세한 내용은 [범위 유효성 검사](#scope-validation)를 참조하세요.
 
 `CreateDefaultBuilder`에 의해 정의된 구성은 [ConfigureAppConfiguration](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderextensions.configureappconfiguration), [ConfigureLogging](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderextensions.configurelogging), 기타 메서드 및 [IWebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.iwebhostbuilder)의 확장 메서드로 재정의되고 확대될 수 있습니다. 몇 가지 예제는 다음과 같습니다.
@@ -131,7 +131,7 @@ public class Program
 
 호스트는 마지막에 값을 설정한 옵션을 사용합니다. 자세한 내용은 다음 섹션의 [구성 재정의](#override-configuration)를 참조하세요.
 
-### <a name="application-key-name"></a>응용 프로그램 키(이름)
+### <a name="application-key-name"></a>애플리케이션 키(이름)
 
 [UseStartup](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderextensions.usestartup) 또는 [구성](/dotnet/api/microsoft.aspnetcore.hosting.istartup.configure)이 호스트 생성 중에 호출되는 경우 [IHostingEnvironment.ApplicationName](/dotnet/api/microsoft.extensions.hosting.ihostingenvironment.applicationname) 속성이 자동으로 설정됩니다. 해당 값은 앱의 진입점을 포함하는 어셈블리의 이름으로 설정됩니다. 값을 명시적으로 설정하려면 [WebHostDefaults.ApplicationKey](/dotnet/api/microsoft.aspnetcore.hosting.webhostdefaults.applicationkey)를 사용합니다.
 
@@ -203,7 +203,7 @@ WebHost.CreateDefaultBuilder(args)
 
 **키**: environment  
 **형식**: *string*  
-**기본값**: Production  
+**기본값**: 프로덕션  
 **설정 방법**: `UseEnvironment`  
 **환경 변수**: `ASPNETCORE_ENVIRONMENT`
 
@@ -237,9 +237,9 @@ WebHost.CreateDefaultBuilder(args)
 
 HTTPS 리디렉션 포트를 설정합니다. [HTTPS 적용](xref:security/enforcing-ssl)에 사용됩니다.
 
-**키**: https_port **형식**: ‘문자열’
-**기본값**: 기본값이 설정되어 있지 않습니다.
-**using 설정**: `UseSetting`
+**키**: https_port **형식**: *문자열*
+**기본값**: 기본값은 설정되지 않습니다.
+**설정 방법**: `UseSetting`
 **환경 변수**: `ASPNETCORE_HTTPS_PORT`
 
 ```csharp

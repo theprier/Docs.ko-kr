@@ -2,17 +2,16 @@
 title: TypeScript 및 WebPack과 함께 ASP.NET Core SignalR 사용
 author: ssougnez
 description: 이 자습서에서는 해당 클라이언트가 TypeScript로 작성된 ASP.NET Core SignalR 웹앱을 번들링 및 빌드하도록 WebPack을 구성합니다.
-monikerRange: '>= aspnetcore-2.2'
 ms.author: scaddie
 ms.custom: mvc
 ms.date: 11/30/2018
 uid: tutorials/signalr-typescript-webpack
-ms.openlocfilehash: b2d59dfc449953cc2d747b507295c00ac0f652dd
-ms.sourcegitcommit: 9bb58d7c8dad4bbd03419bcc183d027667fefa20
+ms.openlocfilehash: 92709beb7a99289b8639135aab9d821937825103
+ms.sourcegitcommit: a16352c1c88a71770ab3922200a8cd148fb278a6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52862254"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53335288"
 ---
 # <a name="use-aspnet-core-signalr-with-typescript-and-webpack"></a>TypeScript 및 WebPack과 함께 ASP.NET Core SignalR 사용
 
@@ -46,7 +45,7 @@ ms.locfileid: "52862254"
 
 Visual Studio 구성이 완료되었습니다. 이제 프로젝트를 만들어야 합니다.
 
-1. **파일** > **새로 만들기** > **프로젝트** 메뉴 옵션을 사용하고 **ASP.NET Core 웹 응용 프로그램** 템플릿을 선택합니다.
+1. **파일** > **새로 만들기** > **프로젝트** 메뉴 옵션을 사용하고 **ASP.NET Core 웹 애플리케이션** 템플릿을 선택합니다.
 1. 프로젝트의 이름을 *SignalRWebPack*으로 지정하고 **확인**을 선택합니다.
 1. 대상 프레임워크 드롭다운에서 *.NET Core*를 선택하고, 프레임워크 선택기 드롭다운에서 *ASP.NET Core 2.2*를 선택합니다. **빈** 템플릿을 선택하고, **확인**을 선택합니다.
 
@@ -105,7 +104,7 @@ dotnet new web -o SignalRWebPack
 
     * `build`: 개발 모드에서 클라이언트 쪽 리소스를 번들링하고 파일 변경을 감시합니다. 파일 감시자는 프로젝트 파일이 변경될 때마다 번들이 다시 생성되도록 합니다. `mode` 옵션은 프로덕션 최적화(예: 트리 셰이킹 및 축소)를 비활성화합니다. 개발 시에는 `build`만 사용합니다.
     * `release`: 프로덕션 모드에서 클라이언트 쪽 리소스를 번들링합니다.
-    * `publish`: 프로덕션 모드에서 `release` 스크립트를 실행하여 클라이언트 쪽 리소스를 번들링합니다. 이는 .NET Core CLI의 [게시](/dotnet/core/tools/dotnet-publish) 명령을 호출하여 앱을 게시합니다.
+    * `publish`: 프로덕션 모드에서 `release` 스크립트를 실행하여 클라이언트 쪽 리소스를 번들링합니다. 이는 .NET Core CLI의 [publish](/dotnet/core/tools/dotnet-publish) 명령을 호출하여 앱을 게시합니다.
 
 1. 프로젝트 루트에 다음 내용을 포함한 *webpack.config.js*라는 파일을 생성합니다.
 
@@ -142,10 +141,10 @@ dotnet new web -o SignalRWebPack
 
     [!code-typescript[index.ts](signalr-typescript-webpack/sample/snippets/index1.ts?name=snippet_IndexTsPhase1File)]
 
-    앞의 TypeScript는 DOM 요소에 대한 참조를 검색하고 이벤트 핸들러 두 개를 연결합니다.
+    이 TypeScript는 DOM 요소 참조를 조회하여 두 가지 이벤트 핸들러를 연결합니다.
 
-    * `keyup`: 이 이벤트는 사용자가 텍스트 상자에 `tbMessage`로 식별된 내용을 입력할 때 시작합니다. `send` 함수는 사용자가 **Enter** 키를 누를 때 호출됩니다.
-    * `click`: 이 이벤트는 사용자가 **보내기** 단추를 클릭할 때 시작합니다. `send` 함수가 호출됩니다.
+    * `keyup`: 이 이벤트는 사용자가 `tbMessage`로 식별되는 텍스트 상자에 내용을 입력할 때 발생합니다. `send` 함수는 사용자가 **Enter** 키를 누를 때 호출됩니다.
+    * `click`: 이 이벤트는 사용자가 **보내기** 단추를 클릭할 때 발생합니다. `send` 함수가 호출됩니다.
 
 ## <a name="configure-the-aspnet-core-app"></a>ASP.NET Core 앱 구성
 
