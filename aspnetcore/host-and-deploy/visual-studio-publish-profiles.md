@@ -4,24 +4,48 @@ author: rick-anderson
 description: Visual Studio에서 게시 프로필을 만들고 다양한 대상에 대한 ASP.NET Core 앱 배포를 관리하는 데 사용하는 방법에 대해 알아봅니다.
 ms.author: riande
 ms.custom: mvc
-ms.date: 10/24/2018
+ms.date: 12/06/2018
 uid: host-and-deploy/visual-studio-publish-profiles
-ms.openlocfilehash: 3e626f99b06b0343360d6c46447e357890433dda
-ms.sourcegitcommit: 54655f1e1abf0b64d19506334d94cfdb0caf55f6
+ms.openlocfilehash: 3d24cd2cd4697e8e7cf7e4bdf4d076a09b6a6a23
+ms.sourcegitcommit: b34b25da2ab68e6495b2460ff570468f16a9bf0d
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50148930"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53284710"
 ---
-# <a name="visual-studio-publish-profiles-for-aspnet-core-app-deployment"></a><span data-ttu-id="f14ff-103">ASP.NET Core 앱 배포용 Visual Studio 게시 프로필</span><span class="sxs-lookup"><span data-stu-id="f14ff-103">Visual Studio publish profiles for ASP.NET Core app deployment</span></span>
+# <a name="visual-studio-publish-profiles-for-aspnet-core-app-deployment"></a><span data-ttu-id="31c4b-103">ASP.NET Core 앱 배포용 Visual Studio 게시 프로필</span><span class="sxs-lookup"><span data-stu-id="31c4b-103">Visual Studio publish profiles for ASP.NET Core app deployment</span></span>
 
-<span data-ttu-id="f14ff-104">작성자: [Sayed Ibrahim Hashimi](https://github.com/sayedihashimi) 및 [Rick Anderson](https://twitter.com/RickAndMSFT)</span><span class="sxs-lookup"><span data-stu-id="f14ff-104">By [Sayed Ibrahim Hashimi](https://github.com/sayedihashimi) and [Rick Anderson](https://twitter.com/RickAndMSFT)</span></span>
+<span data-ttu-id="31c4b-104">작성자: [Sayed Ibrahim Hashimi](https://github.com/sayedihashimi) 및 [Rick Anderson](https://twitter.com/RickAndMSFT)</span><span class="sxs-lookup"><span data-stu-id="31c4b-104">By [Sayed Ibrahim Hashimi](https://github.com/sayedihashimi) and [Rick Anderson](https://twitter.com/RickAndMSFT)</span></span>
 
-<span data-ttu-id="f14ff-105">이 문서에서는 Visual Studio 2017을 사용하여 게시 프로필을 만들고 사용하는 방법에 초점을 맞춥니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-105">This document focuses on using Visual Studio 2017 to create and use publish profiles.</span></span> <span data-ttu-id="f14ff-106">Visual Studio에서 만들어진 게시 프로필은 MSBuild 및 Visual Studio 2017에서 실행할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-106">The publish profiles created with Visual Studio can be run from MSBuild and Visual Studio 2017.</span></span> <span data-ttu-id="f14ff-107">Azure에 게시에 관한 지침은 [Visual Studio를 사용하여 Azure App Service에 ASP.NET Core 웹앱 게시](xref:tutorials/publish-to-azure-webapp-using-vs)를 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="f14ff-107">See [Publish an ASP.NET Core web app to Azure App Service using Visual Studio](xref:tutorials/publish-to-azure-webapp-using-vs) for instructions on publishing to Azure.</span></span>
+::: moniker range="<= aspnetcore-1.1"
 
-<span data-ttu-id="f14ff-108">다음 프로젝트 파일은 `dotnet new mvc` 명령을 사용하여 만들어졌습니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-108">The following project file was created with the command `dotnet new mvc`:</span></span>
+<span data-ttu-id="31c4b-105">이 항목 1.1 버전의 경우 [ASP.NET Core 앱 배포용 Visual Studio 게시 프로필(버전 1.1, PDF)](https://webpifeed.blob.core.windows.net/webpifeed/Partners/VS_Publish_Profiles_1.1.pdf)을 다운로드합니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-105">For the 1.1 version of this topic, download [Visual Studio publish profiles for ASP.NET Core app deployment (version 1.1, PDF)](https://webpifeed.blob.core.windows.net/webpifeed/Partners/VS_Publish_Profiles_1.1.pdf).</span></span>
 
-::: moniker range=">= aspnetcore-2.1"
+::: moniker-end
+
+<span data-ttu-id="31c4b-106">이 문서에서는 Visual Studio 2017 이상을 사용하여 게시 프로필을 만들고 사용하는 방법에 초점을 맞춥니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-106">This document focuses on using Visual Studio 2017 or later to create and use publish profiles.</span></span> <span data-ttu-id="31c4b-107">Visual Studio로 만들어진 게시 프로필은 MSBuild 및 Visual Studio에서 실행할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-107">The publish profiles created with Visual Studio can be run from MSBuild and Visual Studio.</span></span> <span data-ttu-id="31c4b-108">Azure에 게시에 관한 지침은 [Visual Studio를 사용하여 Azure App Service에 ASP.NET Core 웹앱 게시](xref:tutorials/publish-to-azure-webapp-using-vs)를 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="31c4b-108">See [Publish an ASP.NET Core web app to Azure App Service using Visual Studio](xref:tutorials/publish-to-azure-webapp-using-vs) for instructions on publishing to Azure.</span></span>
+
+<span data-ttu-id="31c4b-109">다음 프로젝트 파일은 `dotnet new mvc` 명령을 사용하여 만들어졌습니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-109">The following project file was created with the command `dotnet new mvc`:</span></span>
+
+::: moniker range=">= aspnetcore-2.2"
+
+```xml
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+</Project>
+```
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.2"
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk.Web">
@@ -39,117 +63,65 @@ ms.locfileid: "50148930"
 
 ::: moniker-end
 
-::: moniker range="= aspnetcore-2.0"
+<span data-ttu-id="31c4b-110">`<Project>` 요소의 `Sdk` 특성은 다음 작업을 수행합니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-110">The `<Project>` element's `Sdk` attribute accomplishes the following tasks:</span></span>
 
-```xml
-<Project Sdk="Microsoft.NET.Sdk.Web">
+* <span data-ttu-id="31c4b-111">시작 시 *$(MSBuildSDKsPath)\Microsoft.NET.Sdk.Web\Sdk\Sdk.Props*에서 속성 파일을 가져옵니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-111">Imports the properties file from *$(MSBuildSDKsPath)\Microsoft.NET.Sdk.Web\Sdk\Sdk.Props* at the beginning.</span></span>
+* <span data-ttu-id="31c4b-112">종료 시 *$(MSBuildSDKsPath)\Microsoft.NET.Sdk.Web\Sdk\Sdk.targets*에서 대상 파일을 가져옵니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-112">Imports the targets file from *$(MSBuildSDKsPath)\Microsoft.NET.Sdk.Web\Sdk\Sdk.targets* at the end.</span></span>
 
-  <PropertyGroup>
-    <TargetFramework>netcoreapp2.0</TargetFramework>
-  </PropertyGroup>
+<span data-ttu-id="31c4b-113">`MSBuildSDKsPath`의 기본 위치(Visual Studio 2017 Enterprise 사용)는 *%programfiles(x86)%\Microsoft Visual Studio\2017\Enterprise\MSBuild\Sdks* 폴더입니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-113">The default location for `MSBuildSDKsPath` (with Visual Studio 2017 Enterprise) is the *%programfiles(x86)%\Microsoft Visual Studio\2017\Enterprise\MSBuild\Sdks* folder.</span></span>
 
-  <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.9" />
-  </ItemGroup>
+<span data-ttu-id="31c4b-114">`Microsoft.NET.Sdk.Web` SDK는 다음에 따라 달라집니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-114">The `Microsoft.NET.Sdk.Web` SDK depends on:</span></span>
 
-</Project>
-```
+* <span data-ttu-id="31c4b-115">*Microsoft.NET.Sdk.Web.ProjectSystem*</span><span class="sxs-lookup"><span data-stu-id="31c4b-115">*Microsoft.NET.Sdk.Web.ProjectSystem*</span></span>
+* <span data-ttu-id="31c4b-116">*Microsoft.NET.Sdk.Publish*</span><span class="sxs-lookup"><span data-stu-id="31c4b-116">*Microsoft.NET.Sdk.Publish*</span></span>
 
-::: moniker-end
+<span data-ttu-id="31c4b-117">이러한 항목은 다음 속성 및 대상을 가져옵니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-117">Which causes the following properties and targets to be imported:</span></span>
 
-::: moniker range="< aspnetcore-2.0"
+* <span data-ttu-id="31c4b-118">*$(MSBuildSDKsPath)\Microsoft.NET.Sdk.Web.ProjectSystem\Sdk\Sdk.Props*</span><span class="sxs-lookup"><span data-stu-id="31c4b-118">*$(MSBuildSDKsPath)\Microsoft.NET.Sdk.Web.ProjectSystem\Sdk\Sdk.Props*</span></span>
+* <span data-ttu-id="31c4b-119">*$(MSBuildSDKsPath)\Microsoft.NET.Sdk.Web.ProjectSystem\Sdk\Sdk.targets*</span><span class="sxs-lookup"><span data-stu-id="31c4b-119">*$(MSBuildSDKsPath)\Microsoft.NET.Sdk.Web.ProjectSystem\Sdk\Sdk.targets*</span></span>
+* <span data-ttu-id="31c4b-120">*$(MSBuildSDKsPath)\Microsoft.NET.Sdk.Publish\Sdk\Sdk.Props*</span><span class="sxs-lookup"><span data-stu-id="31c4b-120">*$(MSBuildSDKsPath)\Microsoft.NET.Sdk.Publish\Sdk\Sdk.Props*</span></span>
+* <span data-ttu-id="31c4b-121">*$(MSBuildSDKsPath)\Microsoft.NET.Sdk.Publish\Sdk\Sdk.targets*</span><span class="sxs-lookup"><span data-stu-id="31c4b-121">*$(MSBuildSDKsPath)\Microsoft.NET.Sdk.Publish\Sdk\Sdk.targets*</span></span>
 
-```xml
-<Project Sdk="Microsoft.NET.Sdk.Web">
+<span data-ttu-id="31c4b-122">게시 대상은 사용된 게시 방법에 따라 올바른 대상 집합을 가져옵니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-122">Publish targets import the right set of targets based on the publish method used.</span></span>
 
-  <PropertyGroup>
-    <TargetFramework>netcoreapp1.1</TargetFramework>
-  </PropertyGroup>
+<span data-ttu-id="31c4b-123">MSBuild 또는 Visual Studio가 프로젝트를 로드하면 다음 높은 수준의 작업이 수행됩니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-123">When MSBuild or Visual Studio loads a project, the following high-level actions occur:</span></span>
 
-  <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore" Version="1.1.7" />
-    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.1.8" />
-    <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="1.1.3" />
-  </ItemGroup>
+* <span data-ttu-id="31c4b-124">프로젝트 빌드</span><span class="sxs-lookup"><span data-stu-id="31c4b-124">Build project</span></span>
+* <span data-ttu-id="31c4b-125">게시할 파일 계산</span><span class="sxs-lookup"><span data-stu-id="31c4b-125">Compute files to publish</span></span>
+* <span data-ttu-id="31c4b-126">대상에 파일 게시</span><span class="sxs-lookup"><span data-stu-id="31c4b-126">Publish files to destination</span></span>
 
-</Project>
-```
+## <a name="compute-project-items"></a><span data-ttu-id="31c4b-127">프로젝트 항목 계산</span><span class="sxs-lookup"><span data-stu-id="31c4b-127">Compute project items</span></span>
 
-::: moniker-end
+<span data-ttu-id="31c4b-128">프로젝트가 로드되면 프로젝트 항목(파일)이 계산됩니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-128">When the project is loaded, the project items (files) are computed.</span></span> <span data-ttu-id="31c4b-129">`item type` 특성에 따라 파일 처리 방법이 결정됩니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-129">The `item type` attribute determines how the file is processed.</span></span> <span data-ttu-id="31c4b-130">기본적으로 *.cs* 파일은 `Compile` 항목 목록에 포함됩니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-130">By default, *.cs* files are included in the `Compile` item list.</span></span> <span data-ttu-id="31c4b-131">`Compile` 항목 목록의 파일이 컴파일됩니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-131">Files in the `Compile` item list are compiled.</span></span>
 
-<span data-ttu-id="f14ff-109">`<Project>` 요소의 `Sdk` 특성은 다음 작업을 수행합니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-109">The `<Project>` element's `Sdk` attribute accomplishes the following tasks:</span></span>
+<span data-ttu-id="31c4b-132">`Content` 항목 목록에는 빌드 출력 이외에 게시될 파일이 포함됩니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-132">The `Content` item list contains files that are published in addition to the build outputs.</span></span> <span data-ttu-id="31c4b-133">기본적으로 패턴 `wwwroot/**`와 일치하는 파일은 `Content` 항목에 포함됩니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-133">By default, files matching the pattern `wwwroot/**` are included in the `Content` item.</span></span> <span data-ttu-id="31c4b-134">[와일드카드 사용 패턴](https://gruntjs.com/configuring-tasks#globbing-patterns)인 `wwwroot/\*\*`는 *wwwroot* **및** 하위 폴더에서 모든 파일을 일치시킵니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-134">The `wwwroot/\*\*` [globbing pattern](https://gruntjs.com/configuring-tasks#globbing-patterns) matches all files in the *wwwroot* folder **and** subfolders.</span></span> <span data-ttu-id="31c4b-135">게시 목록에 파일을 명시적으로 추가하려면 [포함 파일](#include-files)에 표시된 대로 *.csproj* 파일에서 직접 파일을 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-135">To explicitly add a file to the publish list, add the file directly in the *.csproj* file as shown in [Include Files](#include-files).</span></span>
 
-* <span data-ttu-id="f14ff-110">시작 시 *$(MSBuildSDKsPath)\Microsoft.NET.Sdk.Web\Sdk\Sdk.Props*에서 속성 파일을 가져옵니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-110">Imports the properties file from *$(MSBuildSDKsPath)\Microsoft.NET.Sdk.Web\Sdk\Sdk.Props* at the beginning.</span></span>
-* <span data-ttu-id="f14ff-111">종료 시 *$(MSBuildSDKsPath)\Microsoft.NET.Sdk.Web\Sdk\Sdk.targets*에서 대상 파일을 가져옵니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-111">Imports the targets file from *$(MSBuildSDKsPath)\Microsoft.NET.Sdk.Web\Sdk\Sdk.targets* at the end.</span></span>
+<span data-ttu-id="31c4b-136">Visual Studio에서 **게시** 단추를 선택하거나 명령줄에서 게시할 경우:</span><span class="sxs-lookup"><span data-stu-id="31c4b-136">When selecting the **Publish** button in Visual Studio or when publishing from the command line:</span></span>
 
-<span data-ttu-id="f14ff-112">`MSBuildSDKsPath`의 기본 위치(Visual Studio 2017 Enterprise 사용)는 *%programfiles(x86)%\Microsoft Visual Studio\2017\Enterprise\MSBuild\Sdks* 폴더입니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-112">The default location for `MSBuildSDKsPath` (with Visual Studio 2017 Enterprise) is the *%programfiles(x86)%\Microsoft Visual Studio\2017\Enterprise\MSBuild\Sdks* folder.</span></span>
+* <span data-ttu-id="31c4b-137">속성/항목이 계산됩니다(빌드하는 데 필요한 파일).</span><span class="sxs-lookup"><span data-stu-id="31c4b-137">The properties/items are computed (the files that are needed to build).</span></span>
+* <span data-ttu-id="31c4b-138">**Visual Studio 전용**: NuGet 패키지가 복원됩니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-138">**Visual Studio only**: NuGet packages are restored.</span></span> <span data-ttu-id="31c4b-139">(CLI에서 사용자가 명시적으로 복원해야 합니다.)</span><span class="sxs-lookup"><span data-stu-id="31c4b-139">(Restore needs to be explicit by the user on the CLI.)</span></span>
+* <span data-ttu-id="31c4b-140">프로젝트가 빌드됩니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-140">The project builds.</span></span>
+* <span data-ttu-id="31c4b-141">게시 항목이 계산됩니다(게시하는 데 필요한 파일).</span><span class="sxs-lookup"><span data-stu-id="31c4b-141">The publish items are computed (the files that are needed to publish).</span></span>
+* <span data-ttu-id="31c4b-142">프로젝트가 게시됩니다(계산된 파일이 게시 대상에 복사됨).</span><span class="sxs-lookup"><span data-stu-id="31c4b-142">The project is published (the computed files are copied to the publish destination).</span></span>
 
-<span data-ttu-id="f14ff-113">`Microsoft.NET.Sdk.Web` SDK는 다음에 따라 달라집니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-113">The `Microsoft.NET.Sdk.Web` SDK depends on:</span></span>
+<span data-ttu-id="31c4b-143">ASP.NET Core 프로젝트가 프로젝트 파일의 `Microsoft.NET.Sdk.Web`을 참조하면 *app_offline.htm* 파일은 웹앱 디렉터리의 루트에 배치됩니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-143">When an ASP.NET Core project references `Microsoft.NET.Sdk.Web` in the project file, an *app_offline.htm* file is placed at the root of the web app directory.</span></span> <span data-ttu-id="31c4b-144">파일이 있는 경우 ASP.NET Core 모듈은 앱을 정상적으로 종료하고, 배포하는 동안 *app_offline.htm* 파일을 제공합니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-144">When the file is present, the ASP.NET Core Module gracefully shuts down the app and serves the *app_offline.htm* file during the deployment.</span></span> <span data-ttu-id="31c4b-145">자세한 내용은 [ASP.NET Core 모듈 구성 참조](xref:host-and-deploy/aspnet-core-module#app_offlinehtm)를 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="31c4b-145">For more information, see the [ASP.NET Core Module configuration reference](xref:host-and-deploy/aspnet-core-module#app_offlinehtm).</span></span>
 
-* <span data-ttu-id="f14ff-114">*Microsoft.NET.Sdk.Web.ProjectSystem*</span><span class="sxs-lookup"><span data-stu-id="f14ff-114">*Microsoft.NET.Sdk.Web.ProjectSystem*</span></span>
-* <span data-ttu-id="f14ff-115">*Microsoft.NET.Sdk.Publish*</span><span class="sxs-lookup"><span data-stu-id="f14ff-115">*Microsoft.NET.Sdk.Publish*</span></span>
+## <a name="basic-command-line-publishing"></a><span data-ttu-id="31c4b-146">기본 명령줄 게시</span><span class="sxs-lookup"><span data-stu-id="31c4b-146">Basic command-line publishing</span></span>
 
-<span data-ttu-id="f14ff-116">이러한 항목은 다음 속성 및 대상을 가져옵니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-116">Which causes the following properties and targets to be imported:</span></span>
-
-* <span data-ttu-id="f14ff-117">*$(MSBuildSDKsPath)\Microsoft.NET.Sdk.Web.ProjectSystem\Sdk\Sdk.Props*</span><span class="sxs-lookup"><span data-stu-id="f14ff-117">*$(MSBuildSDKsPath)\Microsoft.NET.Sdk.Web.ProjectSystem\Sdk\Sdk.Props*</span></span>
-* <span data-ttu-id="f14ff-118">*$(MSBuildSDKsPath)\Microsoft.NET.Sdk.Web.ProjectSystem\Sdk\Sdk.targets*</span><span class="sxs-lookup"><span data-stu-id="f14ff-118">*$(MSBuildSDKsPath)\Microsoft.NET.Sdk.Web.ProjectSystem\Sdk\Sdk.targets*</span></span>
-* <span data-ttu-id="f14ff-119">*$(MSBuildSDKsPath)\Microsoft.NET.Sdk.Publish\Sdk\Sdk.Props*</span><span class="sxs-lookup"><span data-stu-id="f14ff-119">*$(MSBuildSDKsPath)\Microsoft.NET.Sdk.Publish\Sdk\Sdk.Props*</span></span>
-* <span data-ttu-id="f14ff-120">*$(MSBuildSDKsPath)\Microsoft.NET.Sdk.Publish\Sdk\Sdk.targets*</span><span class="sxs-lookup"><span data-stu-id="f14ff-120">*$(MSBuildSDKsPath)\Microsoft.NET.Sdk.Publish\Sdk\Sdk.targets*</span></span>
-
-<span data-ttu-id="f14ff-121">게시 대상은 사용된 게시 방법에 따라 올바른 대상 집합을 가져옵니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-121">Publish targets import the right set of targets based on the publish method used.</span></span>
-
-<span data-ttu-id="f14ff-122">MSBuild 또는 Visual Studio가 프로젝트를 로드하면 다음 높은 수준의 작업이 수행됩니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-122">When MSBuild or Visual Studio loads a project, the following high-level actions occur:</span></span>
-
-* <span data-ttu-id="f14ff-123">프로젝트 빌드</span><span class="sxs-lookup"><span data-stu-id="f14ff-123">Build project</span></span>
-* <span data-ttu-id="f14ff-124">게시할 파일 계산</span><span class="sxs-lookup"><span data-stu-id="f14ff-124">Compute files to publish</span></span>
-* <span data-ttu-id="f14ff-125">대상에 파일 게시</span><span class="sxs-lookup"><span data-stu-id="f14ff-125">Publish files to destination</span></span>
-
-## <a name="compute-project-items"></a><span data-ttu-id="f14ff-126">프로젝트 항목 계산</span><span class="sxs-lookup"><span data-stu-id="f14ff-126">Compute project items</span></span>
-
-<span data-ttu-id="f14ff-127">프로젝트가 로드되면 프로젝트 항목(파일)이 계산됩니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-127">When the project is loaded, the project items (files) are computed.</span></span> <span data-ttu-id="f14ff-128">`item type` 특성에 따라 파일 처리 방법이 결정됩니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-128">The `item type` attribute determines how the file is processed.</span></span> <span data-ttu-id="f14ff-129">기본적으로 *.cs* 파일은 `Compile` 항목 목록에 포함됩니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-129">By default, *.cs* files are included in the `Compile` item list.</span></span> <span data-ttu-id="f14ff-130">`Compile` 항목 목록의 파일이 컴파일됩니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-130">Files in the `Compile` item list are compiled.</span></span>
-
-<span data-ttu-id="f14ff-131">`Content` 항목 목록에는 빌드 출력 이외에 게시될 파일이 포함됩니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-131">The `Content` item list contains files that are published in addition to the build outputs.</span></span> <span data-ttu-id="f14ff-132">기본적으로 패턴 `wwwroot/**`와 일치하는 파일은 `Content` 항목에 포함됩니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-132">By default, files matching the pattern `wwwroot/**` are included in the `Content` item.</span></span> <span data-ttu-id="f14ff-133">[와일드카드 사용 패턴](https://gruntjs.com/configuring-tasks#globbing-patterns)인 `wwwroot/\*\*`는 *wwwroot* **및** 하위 폴더에서 모든 파일을 일치시킵니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-133">The `wwwroot/\*\*` [globbing pattern](https://gruntjs.com/configuring-tasks#globbing-patterns) matches all files in the *wwwroot* folder **and** subfolders.</span></span> <span data-ttu-id="f14ff-134">게시 목록에 파일을 명시적으로 추가하려면 [포함 파일](#include-files)에 표시된 대로 *.csproj* 파일에서 직접 파일을 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-134">To explicitly add a file to the publish list, add the file directly in the *.csproj* file as shown in [Include Files](#include-files).</span></span>
-
-<span data-ttu-id="f14ff-135">Visual Studio에서 **게시** 단추를 선택하거나 명령줄에서 게시할 경우:</span><span class="sxs-lookup"><span data-stu-id="f14ff-135">When selecting the **Publish** button in Visual Studio or when publishing from the command line:</span></span>
-
-* <span data-ttu-id="f14ff-136">속성/항목이 계산됩니다(빌드하는 데 필요한 파일).</span><span class="sxs-lookup"><span data-stu-id="f14ff-136">The properties/items are computed (the files that are needed to build).</span></span>
-* <span data-ttu-id="f14ff-137">**Visual Studio에만 해당**: NuGet 패키지가 복원됩니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-137">**Visual Studio only**: NuGet packages are restored.</span></span> <span data-ttu-id="f14ff-138">(CLI에서 사용자가 명시적으로 복원해야 합니다.)</span><span class="sxs-lookup"><span data-stu-id="f14ff-138">(Restore needs to be explicit by the user on the CLI.)</span></span>
-* <span data-ttu-id="f14ff-139">프로젝트가 빌드됩니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-139">The project builds.</span></span>
-* <span data-ttu-id="f14ff-140">게시 항목이 계산됩니다(게시하는 데 필요한 파일).</span><span class="sxs-lookup"><span data-stu-id="f14ff-140">The publish items are computed (the files that are needed to publish).</span></span>
-* <span data-ttu-id="f14ff-141">프로젝트가 게시됩니다(계산된 파일이 게시 대상에 복사됨).</span><span class="sxs-lookup"><span data-stu-id="f14ff-141">The project is published (the computed files are copied to the publish destination).</span></span>
-
-<span data-ttu-id="f14ff-142">ASP.NET Core 프로젝트가 프로젝트 파일의 `Microsoft.NET.Sdk.Web`을 참조하면 *app_offline.htm* 파일은 웹앱 디렉터리의 루트에 배치됩니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-142">When an ASP.NET Core project references `Microsoft.NET.Sdk.Web` in the project file, an *app_offline.htm* file is placed at the root of the web app directory.</span></span> <span data-ttu-id="f14ff-143">파일이 있는 경우 ASP.NET Core 모듈은 앱을 정상적으로 종료하고, 배포하는 동안 *app_offline.htm* 파일을 제공합니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-143">When the file is present, the ASP.NET Core Module gracefully shuts down the app and serves the *app_offline.htm* file during the deployment.</span></span> <span data-ttu-id="f14ff-144">자세한 내용은 [ASP.NET Core 모듈 구성 참조](xref:host-and-deploy/aspnet-core-module#app_offlinehtm)를 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="f14ff-144">For more information, see the [ASP.NET Core Module configuration reference](xref:host-and-deploy/aspnet-core-module#app_offlinehtm).</span></span>
-
-## <a name="basic-command-line-publishing"></a><span data-ttu-id="f14ff-145">기본 명령줄 게시</span><span class="sxs-lookup"><span data-stu-id="f14ff-145">Basic command-line publishing</span></span>
-
-<span data-ttu-id="f14ff-146">명령줄 게시는 모든 .NET Core 지원 플랫폼에 적용되며 Visual Studio가 필요하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-146">Command-line publishing works on all .NET Core-supported platforms and doesn't require Visual Studio.</span></span> <span data-ttu-id="f14ff-147">아래 샘플에서 [dotnet publish](/dotnet/core/tools/dotnet-publish) 명령은 *.csproj* 파일이 포함된 프로젝트 디렉터리에서 실행됩니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-147">In the samples below, the [dotnet publish](/dotnet/core/tools/dotnet-publish) command is run from the project directory (which contains the *.csproj* file).</span></span> <span data-ttu-id="f14ff-148">프로젝트 폴더에 없는 경우 프로젝트 파일 경로를 명시적으로 전달합니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-148">If not in the project folder, explicitly pass in the project file path.</span></span> <span data-ttu-id="f14ff-149">예:</span><span class="sxs-lookup"><span data-stu-id="f14ff-149">For example:</span></span>
+<span data-ttu-id="31c4b-147">명령줄 게시는 모든 .NET Core 지원 플랫폼에 적용되며 Visual Studio가 필요하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-147">Command-line publishing works on all .NET Core-supported platforms and doesn't require Visual Studio.</span></span> <span data-ttu-id="31c4b-148">아래 샘플에서 [dotnet publish](/dotnet/core/tools/dotnet-publish) 명령은 *.csproj* 파일이 포함된 프로젝트 디렉터리에서 실행됩니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-148">In the samples below, the [dotnet publish](/dotnet/core/tools/dotnet-publish) command is run from the project directory (which contains the *.csproj* file).</span></span> <span data-ttu-id="31c4b-149">프로젝트 폴더에 없는 경우 프로젝트 파일 경로를 명시적으로 전달합니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-149">If not in the project folder, explicitly pass in the project file path.</span></span> <span data-ttu-id="31c4b-150">예:</span><span class="sxs-lookup"><span data-stu-id="31c4b-150">For example:</span></span>
 
 ```console
 dotnet publish C:\Webs\Web1
 ```
 
-<span data-ttu-id="f14ff-150">다음 명령을 실행하여 웹앱을 만들고 게시합니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-150">Run the following commands to create and publish a web app:</span></span>
-
-::: moniker range=">= aspnetcore-2.0"
+<span data-ttu-id="31c4b-151">다음 명령을 실행하여 웹앱을 만들고 게시합니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-151">Run the following commands to create and publish a web app:</span></span>
 
 ```console
 dotnet new mvc
 dotnet publish
 ```
 
-::: moniker-end
-
-::: moniker range="< aspnetcore-2.0"
-
-```console
-dotnet new mvc
-dotnet restore
-dotnet publish
-```
-
-::: moniker-end
-
-<span data-ttu-id="f14ff-151">[dotnet publish](/dotnet/core/tools/dotnet-publish) 명령은 다음과 유사한 출력 결과를 표시합니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-151">The [dotnet publish](/dotnet/core/tools/dotnet-publish) command produces output similar to the following:</span></span>
+<span data-ttu-id="31c4b-152">[dotnet publish](/dotnet/core/tools/dotnet-publish) 명령은 다음과 유사한 출력 결과를 표시합니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-152">The [dotnet publish](/dotnet/core/tools/dotnet-publish) command produces output similar to the following:</span></span>
 
 ```console
 C:\Webs\Web1>dotnet publish
@@ -160,95 +132,95 @@ Copyright (C) Microsoft Corporation. All rights reserved.
   Web1 -> C:\Webs\Web1\bin\Debug\netcoreapp2.0\publish\
 ```
 
-<span data-ttu-id="f14ff-152">기본 게시 폴더는 `bin\$(Configuration)\netcoreapp<version>\publish`입니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-152">The default publish folder is `bin\$(Configuration)\netcoreapp<version>\publish`.</span></span> <span data-ttu-id="f14ff-153">`$(Configuration)`의 기본값은 *Debug*입니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-153">The default for `$(Configuration)` is *Debug*.</span></span> <span data-ttu-id="f14ff-154">앞의 예제에서 `<TargetFramework>`는 `netcoreapp2.0`입니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-154">In the preceding sample, the `<TargetFramework>` is `netcoreapp2.0`.</span></span>
+<span data-ttu-id="31c4b-153">기본 게시 폴더는 `bin\$(Configuration)\netcoreapp<version>\publish`입니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-153">The default publish folder is `bin\$(Configuration)\netcoreapp<version>\publish`.</span></span> <span data-ttu-id="31c4b-154">`$(Configuration)`의 기본값은 *Debug*입니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-154">The default for `$(Configuration)` is *Debug*.</span></span> <span data-ttu-id="31c4b-155">앞의 예제에서 `<TargetFramework>`는 `netcoreapp2.0`입니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-155">In the preceding sample, the `<TargetFramework>` is `netcoreapp2.0`.</span></span>
 
-<span data-ttu-id="f14ff-155">`dotnet publish -h`는 게시에 대한 도움말 정보를 표시합니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-155">`dotnet publish -h` displays help information for publish.</span></span>
+<span data-ttu-id="31c4b-156">`dotnet publish -h`는 게시에 대한 도움말 정보를 표시합니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-156">`dotnet publish -h` displays help information for publish.</span></span>
 
-<span data-ttu-id="f14ff-156">다음 명령은 `Release` 빌드 및 게시 디렉터리를 지정합니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-156">The following command specifies a `Release` build and the publishing directory:</span></span>
+<span data-ttu-id="31c4b-157">다음 명령은 `Release` 빌드 및 게시 디렉터리를 지정합니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-157">The following command specifies a `Release` build and the publishing directory:</span></span>
 
 ```console
 dotnet publish -c Release -o C:\MyWebs\test
 ```
 
-<span data-ttu-id="f14ff-157">[dotnet publish](/dotnet/core/tools/dotnet-publish) 명령은 `Publish` 대상을 호출하는 MSBuild를 호출합니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-157">The [dotnet publish](/dotnet/core/tools/dotnet-publish) command calls MSBuild, which invokes the `Publish` target.</span></span> <span data-ttu-id="f14ff-158">`dotnet publish` 및 MSBuild에 전달된 모든 매개 변수.</span><span class="sxs-lookup"><span data-stu-id="f14ff-158">Any parameters passed to `dotnet publish` are passed to MSBuild.</span></span> <span data-ttu-id="f14ff-159">`-c` 매개 변수는 `Configuration` MSBuild 속성에 매핑됩니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-159">The `-c` parameter maps to the `Configuration` MSBuild property.</span></span> <span data-ttu-id="f14ff-160">`-o` 매개 변수는 `OutputPath`에 매핑됩니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-160">The `-o` parameter maps to `OutputPath`.</span></span>
+<span data-ttu-id="31c4b-158">[dotnet publish](/dotnet/core/tools/dotnet-publish) 명령은 `Publish` 대상을 호출하는 MSBuild를 호출합니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-158">The [dotnet publish](/dotnet/core/tools/dotnet-publish) command calls MSBuild, which invokes the `Publish` target.</span></span> <span data-ttu-id="31c4b-159">`dotnet publish` 및 MSBuild에 전달된 모든 매개 변수.</span><span class="sxs-lookup"><span data-stu-id="31c4b-159">Any parameters passed to `dotnet publish` are passed to MSBuild.</span></span> <span data-ttu-id="31c4b-160">`-c` 매개 변수는 `Configuration` MSBuild 속성에 매핑됩니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-160">The `-c` parameter maps to the `Configuration` MSBuild property.</span></span> <span data-ttu-id="31c4b-161">`-o` 매개 변수는 `OutputPath`에 매핑됩니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-161">The `-o` parameter maps to `OutputPath`.</span></span>
 
-<span data-ttu-id="f14ff-161">다음 형식 중 하나를 사용하여 MSBuild 속성을 전달할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-161">MSBuild properties can be passed using either of the following formats:</span></span>
+<span data-ttu-id="31c4b-162">다음 형식 중 하나를 사용하여 MSBuild 속성을 전달할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-162">MSBuild properties can be passed using either of the following formats:</span></span>
 
-* ` p:<NAME>=<VALUE>`
+* `p:<NAME>=<VALUE>`
 * `/p:<NAME>=<VALUE>`
 
-<span data-ttu-id="f14ff-162">다음 명령은 `Release` 빌드를 네트워크 공유에 게시합니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-162">The following command publishes a `Release` build to a network share:</span></span>
+<span data-ttu-id="31c4b-163">다음 명령은 `Release` 빌드를 네트워크 공유에 게시합니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-163">The following command publishes a `Release` build to a network share:</span></span>
 
 `dotnet publish -c Release /p:PublishDir=//r8/release/AdminWeb`
 
-<span data-ttu-id="f14ff-163">네트워크 공유는 슬래시(*//r8/*)를 사용하여 지정하고 모든 .NET Core 지원 플랫폼에서 작동합니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-163">The network share is specified with forward slashes (*//r8/*) and works on all .NET Core supported platforms.</span></span>
+<span data-ttu-id="31c4b-164">네트워크 공유는 슬래시(*//r8/*)를 사용하여 지정하고 모든 .NET Core 지원 플랫폼에서 작동합니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-164">The network share is specified with forward slashes (*//r8/*) and works on all .NET Core supported platforms.</span></span>
 
-<span data-ttu-id="f14ff-164">배포할 게시된 앱이 실행되고 있지 않은지 확인합니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-164">Confirm that the published app for deployment isn't running.</span></span> <span data-ttu-id="f14ff-165">앱이 실행 중이면 *publish* 폴더의 파일이 잠겨 있습니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-165">Files in the *publish* folder are locked when the app is running.</span></span> <span data-ttu-id="f14ff-166">잠긴 파일을 복사할 수 없으므로 배포를 수행할 수 없습니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-166">Deployment can't occur because locked files can't be copied.</span></span>
+<span data-ttu-id="31c4b-165">배포할 게시된 앱이 실행되고 있지 않은지 확인합니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-165">Confirm that the published app for deployment isn't running.</span></span> <span data-ttu-id="31c4b-166">앱이 실행 중이면 *publish* 폴더의 파일이 잠겨 있습니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-166">Files in the *publish* folder are locked when the app is running.</span></span> <span data-ttu-id="31c4b-167">잠긴 파일을 복사할 수 없으므로 배포를 수행할 수 없습니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-167">Deployment can't occur because locked files can't be copied.</span></span>
 
-## <a name="publish-profiles"></a><span data-ttu-id="f14ff-167">게시 프로필</span><span class="sxs-lookup"><span data-stu-id="f14ff-167">Publish profiles</span></span>
+## <a name="publish-profiles"></a><span data-ttu-id="31c4b-168">게시 프로필</span><span class="sxs-lookup"><span data-stu-id="31c4b-168">Publish profiles</span></span>
 
-<span data-ttu-id="f14ff-168">이 섹션에서는 Visual Studio 2017을 사용하여 게시 프로필을 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-168">This section uses Visual Studio 2017 to create a publishing profile.</span></span> <span data-ttu-id="f14ff-169">만들어진 후에는 Visual Studio 또는 명령줄에서 게시할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-169">Once created, publishing from Visual Studio or the command line is available.</span></span>
+<span data-ttu-id="31c4b-169">이 섹션에서는 Visual Studio 2017 이상을 사용하여 게시 프로필을 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-169">This section uses Visual Studio 2017 or later to create a publishing profile.</span></span> <span data-ttu-id="31c4b-170">프로필이 만들어지면 Visual Studio 또는 명령줄에서 게시할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-170">Once the profile is created, publishing from Visual Studio or the command line is available.</span></span>
 
-<span data-ttu-id="f14ff-170">게시 프로필을 사용하면 게시 프로세스를 간소화할 수 있고 제한 없이 프로필을 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-170">Publish profiles can simplify the publishing process, and any number of profiles can exist.</span></span> <span data-ttu-id="f14ff-171">다음 경로 중 하나를 선택하여 Visual Studio에서 게시 프로필을 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-171">Create a publish profile in Visual Studio by choosing one of the following paths:</span></span>
+<span data-ttu-id="31c4b-171">게시 프로필을 사용하면 게시 프로세스를 간소화할 수 있고 제한 없이 프로필을 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-171">Publish profiles can simplify the publishing process, and any number of profiles can exist.</span></span> <span data-ttu-id="31c4b-172">다음 경로 중 하나를 선택하여 Visual Studio에서 게시 프로필을 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-172">Create a publish profile in Visual Studio by choosing one of the following paths:</span></span>
 
-* <span data-ttu-id="f14ff-172">솔루션 탐색기에서 프로젝트를 마우스 오른쪽 단추로 클릭하고 **게시**를 선택합니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-172">Right-click the project in Solution Explorer and select **Publish**.</span></span>
-* <span data-ttu-id="f14ff-173">**빌드** 메뉴에서 **&lt;project_name&gt; 게시**를 선택합니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-173">Select **Publish &lt;project_name&gt;** from the **Build** menu.</span></span>
+* <span data-ttu-id="31c4b-173">솔루션 탐색기에서 프로젝트를 마우스 오른쪽 단추로 클릭하고 **게시**를 선택합니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-173">Right-click the project in Solution Explorer and select **Publish**.</span></span>
+* <span data-ttu-id="31c4b-174">**빌드** 메뉴에서 **게시 {PROJECT NAME}** 를 선택합니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-174">Select **Publish {PROJECT NAME}** from the **Build** menu.</span></span>
 
-<span data-ttu-id="f14ff-174">앱 기능 페이지의 **게시** 탭이 표시됩니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-174">The **Publish** tab of the app capacities page is displayed.</span></span> <span data-ttu-id="f14ff-175">프로젝트에 게시 프로필이 없으면 다음 페이지가 표시됩니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-175">If the project lacks a publish profile, the following page is displayed:</span></span>
+<span data-ttu-id="31c4b-175">앱 기능 페이지의 **게시** 탭이 표시됩니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-175">The **Publish** tab of the app capacities page is displayed.</span></span> <span data-ttu-id="31c4b-176">프로젝트에 게시 프로필이 없으면 다음 페이지가 표시됩니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-176">If the project lacks a publish profile, the following page is displayed:</span></span>
 
 ![앱 기능 페이지의 게시 탭](visual-studio-publish-profiles/_static/az.png)
 
-<span data-ttu-id="f14ff-177">**폴더**를 선택할 경우 게시된 자산을 저장할 폴더 경로를 지정합니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-177">When **Folder** is selected, specify a folder path to store the published assets.</span></span> <span data-ttu-id="f14ff-178">기본 폴더는 *bin\Release\PublishOutput*입니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-178">The default folder is *bin\Release\PublishOutput*.</span></span> <span data-ttu-id="f14ff-179">**프로필 만들기** 단추를 클릭하여 완료합니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-179">Click the **Create Profile** button to finish.</span></span>
+<span data-ttu-id="31c4b-178">**폴더**를 선택할 경우 게시된 자산을 저장할 폴더 경로를 지정합니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-178">When **Folder** is selected, specify a folder path to store the published assets.</span></span> <span data-ttu-id="31c4b-179">기본 폴더는 *bin\Release\PublishOutput*입니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-179">The default folder is *bin\Release\PublishOutput*.</span></span> <span data-ttu-id="31c4b-180">**프로필 만들기** 단추를 클릭하여 완료합니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-180">Click the **Create Profile** button to finish.</span></span>
 
-<span data-ttu-id="f14ff-180">게시 프로필이 만들어지면 **게시** 탭이 변경됩니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-180">Once a publish profile is created, the **Publish** tab changes.</span></span> <span data-ttu-id="f14ff-181">새로 만들어진 프로필이 드롭다운 목록에 표시됩니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-181">The newly created profile appears in a drop-down list.</span></span> <span data-ttu-id="f14ff-182">**새 프로필 만들기**를 클릭하여 또 다른 새 프로필을 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-182">Click **Create new profile** to create another new profile.</span></span>
+<span data-ttu-id="31c4b-181">게시 프로필이 만들어지면 **게시** 탭이 변경됩니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-181">Once a publish profile is created, the **Publish** tab changes.</span></span> <span data-ttu-id="31c4b-182">새로 만들어진 프로필이 드롭다운 목록에 표시됩니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-182">The newly created profile appears in a drop-down list.</span></span> <span data-ttu-id="31c4b-183">**새 프로필 만들기**를 클릭하여 또 다른 새 프로필을 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-183">Click **Create new profile** to create another new profile.</span></span>
 
 ![FolderProfile을 표시하는 앱 기능 페이지의 게시 탭](visual-studio-publish-profiles/_static/create_new.png)
 
-<span data-ttu-id="f14ff-184">게시 마법사는 다음 게시 대상을 지원합니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-184">The Publish wizard supports the following publish targets:</span></span>
+<span data-ttu-id="31c4b-185">게시 마법사는 다음 게시 대상을 지원합니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-185">The Publish wizard supports the following publish targets:</span></span>
 
-* <span data-ttu-id="f14ff-185">Azure App Service</span><span class="sxs-lookup"><span data-stu-id="f14ff-185">Azure App Service</span></span>
-* <span data-ttu-id="f14ff-186">Azure Virtual Machines</span><span class="sxs-lookup"><span data-stu-id="f14ff-186">Azure Virtual Machines</span></span>
-* <span data-ttu-id="f14ff-187">IIS, FTP 등(웹 서버의 경우)</span><span class="sxs-lookup"><span data-stu-id="f14ff-187">IIS, FTP, etc. (for any web server)</span></span>
-* <span data-ttu-id="f14ff-188">폴더</span><span class="sxs-lookup"><span data-stu-id="f14ff-188">Folder</span></span>
-* <span data-ttu-id="f14ff-189">프로필 가져오기</span><span class="sxs-lookup"><span data-stu-id="f14ff-189">Import Profile</span></span>
+* <span data-ttu-id="31c4b-186">Azure App Service</span><span class="sxs-lookup"><span data-stu-id="31c4b-186">Azure App Service</span></span>
+* <span data-ttu-id="31c4b-187">Azure Virtual Machines</span><span class="sxs-lookup"><span data-stu-id="31c4b-187">Azure Virtual Machines</span></span>
+* <span data-ttu-id="31c4b-188">IIS, FTP 등(웹 서버의 경우)</span><span class="sxs-lookup"><span data-stu-id="31c4b-188">IIS, FTP, etc. (for any web server)</span></span>
+* <span data-ttu-id="31c4b-189">폴더</span><span class="sxs-lookup"><span data-stu-id="31c4b-189">Folder</span></span>
+* <span data-ttu-id="31c4b-190">프로필 가져오기</span><span class="sxs-lookup"><span data-stu-id="31c4b-190">Import Profile</span></span>
 
-<span data-ttu-id="f14ff-190">자세한 내용은 [내게 적합한 게시 옵션](/visualstudio/ide/not-in-toc/web-publish-options)을 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="f14ff-190">For more information, see [What publishing options are right for me](/visualstudio/ide/not-in-toc/web-publish-options).</span></span>
+<span data-ttu-id="31c4b-191">자세한 내용은 [내게 적합한 게시 옵션](/visualstudio/ide/not-in-toc/web-publish-options)을 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="31c4b-191">For more information, see [What publishing options are right for me](/visualstudio/ide/not-in-toc/web-publish-options).</span></span>
 
-<span data-ttu-id="f14ff-191">Visual Studio를 사용하여 게시 프로필을 만들면 *Properties/PublishProfiles/&lt;profile_name&gt;.pubxml* MSBuild 파일이 만들어집니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-191">When creating a publish profile with Visual Studio, a *Properties/PublishProfiles/&lt;profile_name&gt;.pubxml* MSBuild file is created.</span></span> <span data-ttu-id="f14ff-192">이 *.pubxml* 파일은 MSBuild 파일이고 게시 구성 설정을 포함합니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-192">The *.pubxml* file is a MSBuild file and contains publish configuration settings.</span></span> <span data-ttu-id="f14ff-193">이 파일을 변경하여 빌드 및 게시 프로세스를 사용자 지정할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-193">This file can be changed to customize the build and publish process.</span></span> <span data-ttu-id="f14ff-194">게시 프로세스에서 이 파일을 읽습니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-194">This file is read by the publishing process.</span></span> <span data-ttu-id="f14ff-195">`<LastUsedBuildConfiguration>`은 전역 속성이고 빌드에서 가져온 파일에 포함되면 안 되므로 특별합니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-195">`<LastUsedBuildConfiguration>` is special because it's a global property and shouldn't be in any file that's imported in the build.</span></span> <span data-ttu-id="f14ff-196">자세한 내용은 [MSBuild: 구성 속성을 설정하는 방법](http://sedodream.com/2012/10/27/MSBuildHowToSetTheConfigurationProperty.aspx)을 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="f14ff-196">See [MSBuild: how to set the configuration property](http://sedodream.com/2012/10/27/MSBuildHowToSetTheConfigurationProperty.aspx) for more information.</span></span>
+<span data-ttu-id="31c4b-192">Visual Studio를 사용하여 게시 프로필을 만들면 *Properties/PublishProfiles/{PROFILE NAME}.pubxml* MSBuild 파일이 만들어집니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-192">When creating a publish profile with Visual Studio, a *Properties/PublishProfiles/{PROFILE NAME}.pubxml* MSBuild file is created.</span></span> <span data-ttu-id="31c4b-193">이 *.pubxml* 파일은 MSBuild 파일이고 게시 구성 설정을 포함합니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-193">The *.pubxml* file is a MSBuild file and contains publish configuration settings.</span></span> <span data-ttu-id="31c4b-194">이 파일을 변경하여 빌드 및 게시 프로세스를 사용자 지정할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-194">This file can be changed to customize the build and publish process.</span></span> <span data-ttu-id="31c4b-195">게시 프로세스에서 이 파일을 읽습니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-195">This file is read by the publishing process.</span></span> <span data-ttu-id="31c4b-196">`<LastUsedBuildConfiguration>`은 전역 속성이고 빌드에서 가져온 파일에 포함되면 안 되므로 특별합니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-196">`<LastUsedBuildConfiguration>` is special because it's a global property and shouldn't be in any file that's imported in the build.</span></span> <span data-ttu-id="31c4b-197">자세한 내용은 [MSBuild: 구성 속성을 설정하는 방법](http://sedodream.com/2012/10/27/MSBuildHowToSetTheConfigurationProperty.aspx)을 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="31c4b-197">See [MSBuild: how to set the configuration property](http://sedodream.com/2012/10/27/MSBuildHowToSetTheConfigurationProperty.aspx) for more information.</span></span>
 
-<span data-ttu-id="f14ff-197">Azure 대상에 게시하는 경우 *.pubxml* 파일에는 Azure 구독 식별자가 포함됩니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-197">When publishing to an Azure target, the *.pubxml* file contains your Azure subscription identifier.</span></span> <span data-ttu-id="f14ff-198">대상 유형을 사용할 경우 이 파일을 소스 제어에 추가하지 않는 것이 좋습니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-198">With that target type, adding this file to source control is discouraged.</span></span> <span data-ttu-id="f14ff-199">Azure 이외 대상에 게시하는 경우 *.pubxml* 파일을 체크 인해도 안전합니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-199">When publishing to a non-Azure target, it's safe to check in the *.pubxml* file.</span></span>
+<span data-ttu-id="31c4b-198">Azure 대상에 게시하는 경우 *.pubxml* 파일에는 Azure 구독 식별자가 포함됩니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-198">When publishing to an Azure target, the *.pubxml* file contains your Azure subscription identifier.</span></span> <span data-ttu-id="31c4b-199">대상 유형을 사용할 경우 이 파일을 소스 제어에 추가하지 않는 것이 좋습니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-199">With that target type, adding this file to source control is discouraged.</span></span> <span data-ttu-id="31c4b-200">Azure 이외 대상에 게시하는 경우 *.pubxml* 파일을 체크 인해도 안전합니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-200">When publishing to a non-Azure target, it's safe to check in the *.pubxml* file.</span></span>
 
-<span data-ttu-id="f14ff-200">중요 정보(예: 게시 암호)는 사용자/컴퓨터 수준별로 암호화됩니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-200">Sensitive information (like the publish password) is encrypted on a per user/machine level.</span></span> <span data-ttu-id="f14ff-201">이 정보는 *Properties/PublishProfiles/&lt;profile_name&gt;.pubxml.user* 파일에 저장됩니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-201">It's stored in the *Properties/PublishProfiles/&lt;profile_name&gt;.pubxml.user* file.</span></span> <span data-ttu-id="f14ff-202">중요 정보가 저장될 수 있는 파일이므로 소스 제어에 체크 인하면 안 됩니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-202">Because this file can store sensitive information, it shouldn't be checked into source control.</span></span>
+<span data-ttu-id="31c4b-201">중요 정보(예: 게시 암호)는 사용자/컴퓨터 수준별로 암호화됩니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-201">Sensitive information (like the publish password) is encrypted on a per user/machine level.</span></span> <span data-ttu-id="31c4b-202">이 정보는 *Properties/PublishProfiles/{PROFILE NAME}.pubxml.user* 파일에 저장됩니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-202">It's stored in the *Properties/PublishProfiles/{PROFILE NAME}.pubxml.user* file.</span></span> <span data-ttu-id="31c4b-203">중요 정보가 저장될 수 있는 파일이므로 소스 제어에 체크 인하면 안 됩니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-203">Because this file can store sensitive information, it shouldn't be checked into source control.</span></span>
 
-<span data-ttu-id="f14ff-203">ASP.NET Core에서 웹앱을 게시하는 방법에 대한 개요는 [호스트 및 배포](xref:host-and-deploy/index)를 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="f14ff-203">For an overview of how to publish a web app on ASP.NET Core, see [Host and deploy](xref:host-and-deploy/index).</span></span> <span data-ttu-id="f14ff-204">ASP.NET Core 앱을 게시하는 데 필요한 MSBuild 작업 및 대상은 https://github.com/aspnet/websdk의 오픈 소스입니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-204">The MSBuild tasks and targets necessary to publish an ASP.NET Core app are open-source at https://github.com/aspnet/websdk.</span></span>
+<span data-ttu-id="31c4b-204">ASP.NET Core에서 웹앱을 게시하는 방법에 대한 개요는 [호스트 및 배포](xref:host-and-deploy/index)를 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="31c4b-204">For an overview of how to publish a web app on ASP.NET Core, see [Host and deploy](xref:host-and-deploy/index).</span></span> <span data-ttu-id="31c4b-205">ASP.NET Core 앱을 게시하는 데 필요한 MSBuild 작업 및 대상은 https://github.com/aspnet/websdk의 오픈 소스입니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-205">The MSBuild tasks and targets necessary to publish an ASP.NET Core app are open-source at https://github.com/aspnet/websdk.</span></span>
 
-<span data-ttu-id="f14ff-205">`dotnet publish`는 MSDeploy 폴더와 [Kudu](https://github.com/projectkudu/kudu/wiki) 게시 프로필을 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-205">`dotnet publish` can use folder, MSDeploy, and [Kudu](https://github.com/projectkudu/kudu/wiki) publish profiles:</span></span>
+<span data-ttu-id="31c4b-206">`dotnet publish`는 MSDeploy 폴더와 [Kudu](https://github.com/projectkudu/kudu/wiki) 게시 프로필을 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-206">`dotnet publish` can use folder, MSDeploy, and [Kudu](https://github.com/projectkudu/kudu/wiki) publish profiles:</span></span>
 
-<span data-ttu-id="f14ff-206">폴더(플랫폼 간에 작동):</span><span class="sxs-lookup"><span data-stu-id="f14ff-206">Folder (works cross-platform):</span></span>
+<span data-ttu-id="31c4b-207">폴더(플랫폼 간에 작동):</span><span class="sxs-lookup"><span data-stu-id="31c4b-207">Folder (works cross-platform):</span></span>
 
 ```console
 dotnet publish WebApplication.csproj /p:PublishProfile=<FolderProfileName>
 ```
 
-<span data-ttu-id="f14ff-207">MSDeploy(MSDeploy가 플랫폼 간이 아니기 때문에 현재 Windows에서만 작동):</span><span class="sxs-lookup"><span data-stu-id="f14ff-207">MSDeploy (currently this only works in Windows since MSDeploy isn't cross-platform):</span></span>
+<span data-ttu-id="31c4b-208">MSDeploy(MSDeploy가 플랫폼 간이 아니기 때문에 현재 Windows에서만 작동):</span><span class="sxs-lookup"><span data-stu-id="31c4b-208">MSDeploy (currently this only works in Windows since MSDeploy isn't cross-platform):</span></span>
 
 ```console
 dotnet publish WebApplication.csproj /p:PublishProfile=<MsDeployProfileName> /p:Password=<DeploymentPassword>
 ```
 
-<span data-ttu-id="f14ff-208">MSDeploy 패키지(MSDeploy가 플랫폼 간이 아니기 때문에 현재 Windows에서만 작동):</span><span class="sxs-lookup"><span data-stu-id="f14ff-208">MSDeploy package (currently this only works in Windows since MSDeploy isn't cross-platform):</span></span>
+<span data-ttu-id="31c4b-209">MSDeploy 패키지(MSDeploy가 플랫폼 간이 아니기 때문에 현재 Windows에서만 작동):</span><span class="sxs-lookup"><span data-stu-id="31c4b-209">MSDeploy package (currently this only works in Windows since MSDeploy isn't cross-platform):</span></span>
 
 ```console
 dotnet publish WebApplication.csproj /p:PublishProfile=<MsDeployPackageProfileName>
 ```
 
-<span data-ttu-id="f14ff-209">위 샘플에서 `deployonbuild`를 `dotnet publish`에 전달하지 **마세요**.</span><span class="sxs-lookup"><span data-stu-id="f14ff-209">In the preceding samples, **don't** pass `deployonbuild` to `dotnet publish`.</span></span>
+<span data-ttu-id="31c4b-210">위 샘플에서 `deployonbuild`를 `dotnet publish`에 전달하지 **마세요**.</span><span class="sxs-lookup"><span data-stu-id="31c4b-210">In the preceding samples, **don't** pass `deployonbuild` to `dotnet publish`.</span></span>
 
-<span data-ttu-id="f14ff-210">자세한 내용은 [Microsoft.NET.Sdk.Publish](https://github.com/aspnet/websdk#microsoftnetsdkpublish)를 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="f14ff-210">For more information, see [Microsoft.NET.Sdk.Publish](https://github.com/aspnet/websdk#microsoftnetsdkpublish).</span></span>
+<span data-ttu-id="31c4b-211">자세한 내용은 [Microsoft.NET.Sdk.Publish](https://github.com/aspnet/websdk#microsoftnetsdkpublish)를 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="31c4b-211">For more information, see [Microsoft.NET.Sdk.Publish](https://github.com/aspnet/websdk#microsoftnetsdkpublish).</span></span>
 
-<span data-ttu-id="f14ff-211">`dotnet publish`는 모든 플랫폼에서 Azure에 게시하기 위해 Kudu API를 지원합니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-211">`dotnet publish` supports Kudu APIs to publish to Azure from any platform.</span></span> <span data-ttu-id="f14ff-212">Visual Studio 게시는 Kudu API를 지원하지만 플랫폼 간 Azure에 게시에 대해 WebSDK에 의해 지원됩니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-212">Visual Studio publish supports the Kudu APIs, but it's supported by WebSDK for cross-platform publish to Azure.</span></span>
+<span data-ttu-id="31c4b-212">`dotnet publish`는 모든 플랫폼에서 Azure에 게시하기 위해 Kudu API를 지원합니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-212">`dotnet publish` supports Kudu APIs to publish to Azure from any platform.</span></span> <span data-ttu-id="31c4b-213">Visual Studio 게시는 Kudu API를 지원하지만 플랫폼 간 Azure에 게시에 대해 WebSDK에 의해 지원됩니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-213">Visual Studio publish supports the Kudu APIs, but it's supported by WebSDK for cross-platform publish to Azure.</span></span>
 
-<span data-ttu-id="f14ff-213">다음 콘텐츠와 함께 *Properties/PublishProfiles* 폴더에 게시 프로필을 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-213">Add a publish profile to the *Properties/PublishProfiles* folder with the following content:</span></span>
+<span data-ttu-id="31c4b-214">다음 콘텐츠와 함께 *Properties/PublishProfiles* 폴더에 게시 프로필을 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-214">Add a publish profile to the *Properties/PublishProfiles* folder with the following content:</span></span>
 
 ```xml
 <Project>
@@ -261,25 +233,25 @@ dotnet publish WebApplication.csproj /p:PublishProfile=<MsDeployPackageProfileNa
 </Project>
 ```
 
-<span data-ttu-id="f14ff-214">다음 명령을 실행하면 게시 콘텐츠가 압축되고 Kudu API를 사용하여 Azure에 게시됩니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-214">Run the following command to zip up the publish contents and publish it to Azure using the Kudu APIs:</span></span>
+<span data-ttu-id="31c4b-215">다음 명령을 실행하면 게시 콘텐츠가 압축되고 Kudu API를 사용하여 Azure에 게시됩니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-215">Run the following command to zip up the publish contents and publish it to Azure using the Kudu APIs:</span></span>
 
 ```console
 dotnet publish /p:PublishProfile=Azure /p:Configuration=Release
 ```
 
-<span data-ttu-id="f14ff-215">게시 프로필을 사용할 경우 다음 MSBuild 속성을 설정합니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-215">Set the following MSBuild properties when using a publish profile:</span></span>
+<span data-ttu-id="31c4b-216">게시 프로필을 사용할 경우 다음 MSBuild 속성을 설정합니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-216">Set the following MSBuild properties when using a publish profile:</span></span>
 
 * `DeployOnBuild=true`
-* `PublishProfile=<Publish profile name>`
+* `PublishProfile={PUBLISH PROFILE}`
 
-<span data-ttu-id="f14ff-216">*FolderProfile*이라는 프로필을 사용하여 게시할 경우 다음 명령 중 하나를 실행할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-216">When publishing with a profile named *FolderProfile*, either of the commands below can be executed:</span></span>
+<span data-ttu-id="31c4b-217">*FolderProfile*이라는 프로필을 사용하여 게시할 경우 다음 명령 중 하나를 실행할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-217">When publishing with a profile named *FolderProfile*, either of the commands below can be executed:</span></span>
 
 * `dotnet build /p:DeployOnBuild=true /p:PublishProfile=FolderProfile`
 * `msbuild      /p:DeployOnBuild=true /p:PublishProfile=FolderProfile`
 
-<span data-ttu-id="f14ff-217">[dotnet build](/dotnet/core/tools/dotnet-build)를 호출하면 이 명령은 `msbuild`를 호출하여 빌드 및 게시 프로세스를 실행합니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-217">When invoking [dotnet build](/dotnet/core/tools/dotnet-build), it calls `msbuild` to run the build and publish process.</span></span> <span data-ttu-id="f14ff-218">폴더 프로필을 전달할 경우 `dotnet build` 또는 `msbuild` 호출은 동일합니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-218">Calling either `dotnet build` or `msbuild` is equivalent when passing in a folder profile.</span></span> <span data-ttu-id="f14ff-219">Windows에서 MSBuild를 직접 호출하면 MSBuild의 .NET Framework 버전이 사용됩니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-219">When calling MSBuild directly on Windows, the .NET Framework version of MSBuild is used.</span></span> <span data-ttu-id="f14ff-220">MSDeploy는 현재 게시를 위해 Windows 컴퓨터로 제한됩니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-220">MSDeploy is currently limited to Windows machines for publishing.</span></span> <span data-ttu-id="f14ff-221">폴더가 아닌 프로필에서 `dotnet build`를 호출하면 MSBuild가 호출되고 MSBuild는 폴더가 아닌 프로필에서 MSDeploy를 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-221">Calling `dotnet build` on a non-folder profile invokes MSBuild, and MSBuild uses MSDeploy on non-folder profiles.</span></span> <span data-ttu-id="f14ff-222">폴더가 아닌 프로필에서 `dotnet build`를 호출하면 MSBuild가 호출되고(MSDeploy 사용) Windows 플랫폼에서 실행될 경우에도 오류가 발생합니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-222">Calling `dotnet build` on a non-folder profile invokes MSBuild (using MSDeploy) and results in a failure (even when running on a Windows platform).</span></span> <span data-ttu-id="f14ff-223">폴더가 아닌 프로필을 사용하여 게시하려면 MSBuild를 직접 호출합니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-223">To publish with a non-folder profile, call MSBuild directly.</span></span>
+<span data-ttu-id="31c4b-218">[dotnet build](/dotnet/core/tools/dotnet-build)를 호출하면 이 명령은 `msbuild`를 호출하여 빌드 및 게시 프로세스를 실행합니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-218">When invoking [dotnet build](/dotnet/core/tools/dotnet-build), it calls `msbuild` to run the build and publish process.</span></span> <span data-ttu-id="31c4b-219">폴더 프로필을 전달할 경우 `dotnet build` 또는 `msbuild` 호출은 동일합니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-219">Calling either `dotnet build` or `msbuild` is equivalent when passing in a folder profile.</span></span> <span data-ttu-id="31c4b-220">Windows에서 MSBuild를 직접 호출하면 MSBuild의 .NET Framework 버전이 사용됩니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-220">When calling MSBuild directly on Windows, the .NET Framework version of MSBuild is used.</span></span> <span data-ttu-id="31c4b-221">MSDeploy는 현재 게시를 위해 Windows 컴퓨터로 제한됩니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-221">MSDeploy is currently limited to Windows machines for publishing.</span></span> <span data-ttu-id="31c4b-222">폴더가 아닌 프로필에서 `dotnet build`를 호출하면 MSBuild가 호출되고 MSBuild는 폴더가 아닌 프로필에서 MSDeploy를 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-222">Calling `dotnet build` on a non-folder profile invokes MSBuild, and MSBuild uses MSDeploy on non-folder profiles.</span></span> <span data-ttu-id="31c4b-223">폴더가 아닌 프로필에서 `dotnet build`를 호출하면 MSBuild가 호출되고(MSDeploy 사용) Windows 플랫폼에서 실행될 경우에도 오류가 발생합니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-223">Calling `dotnet build` on a non-folder profile invokes MSBuild (using MSDeploy) and results in a failure (even when running on a Windows platform).</span></span> <span data-ttu-id="31c4b-224">폴더가 아닌 프로필을 사용하여 게시하려면 MSBuild를 직접 호출합니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-224">To publish with a non-folder profile, call MSBuild directly.</span></span>
 
-<span data-ttu-id="f14ff-224">다음 폴더 게시 프로필은 Visual Studio를 사용하여 만들어졌고 네트워크 공유에 게시됩니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-224">The following folder publish profile was created with Visual Studio and publishes to a network share:</span></span>
+<span data-ttu-id="31c4b-225">다음 폴더 게시 프로필은 Visual Studio를 사용하여 만들어졌고 네트워크 공유에 게시됩니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-225">The following folder publish profile was created with Visual Studio and publishes to a network share:</span></span>
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -305,54 +277,69 @@ MSBuild file.
 </Project>
 ```
 
-<span data-ttu-id="f14ff-225">`<LastUsedBuildConfiguration>`은 `Release`로 설정됩니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-225">Note `<LastUsedBuildConfiguration>` is set to `Release`.</span></span> <span data-ttu-id="f14ff-226">Visual Studio에서 게시할 경우 `<LastUsedBuildConfiguration>` 구성 속성 값은 게시 프로세스가 시작될 때의 값을 사용하여 설정됩니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-226">When publishing from Visual Studio, the `<LastUsedBuildConfiguration>` configuration property value is set using the value when the publish process is started.</span></span> <span data-ttu-id="f14ff-227">`<LastUsedBuildConfiguration>` 구성 속성은 특별하고 가져온 MSBuild 파일에서 재정의되면 안 됩니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-227">The `<LastUsedBuildConfiguration>` configuration property is special and shouldn't be overridden in an imported MSBuild file.</span></span> <span data-ttu-id="f14ff-228">이 속성은 명령줄에서 재정의할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-228">This property can be overridden from the command line.</span></span>
+<span data-ttu-id="31c4b-226">`<LastUsedBuildConfiguration>`은 `Release`로 설정됩니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-226">Note `<LastUsedBuildConfiguration>` is set to `Release`.</span></span> <span data-ttu-id="31c4b-227">Visual Studio에서 게시할 경우 `<LastUsedBuildConfiguration>` 구성 속성 값은 게시 프로세스가 시작될 때의 값을 사용하여 설정됩니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-227">When publishing from Visual Studio, the `<LastUsedBuildConfiguration>` configuration property value is set using the value when the publish process is started.</span></span> <span data-ttu-id="31c4b-228">`<LastUsedBuildConfiguration>` 구성 속성은 특별하고 가져온 MSBuild 파일에서 재정의되면 안 됩니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-228">The `<LastUsedBuildConfiguration>` configuration property is special and shouldn't be overridden in an imported MSBuild file.</span></span> <span data-ttu-id="31c4b-229">이 속성은 명령줄에서 재정의할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-229">This property can be overridden from the command line.</span></span>
 
-<span data-ttu-id="f14ff-229">.NET Core CLI 사용:</span><span class="sxs-lookup"><span data-stu-id="f14ff-229">Using the .NET Core CLI:</span></span>
+<span data-ttu-id="31c4b-230">.NET Core CLI 사용:</span><span class="sxs-lookup"><span data-stu-id="31c4b-230">Using the .NET Core CLI:</span></span>
 
 ```console
 dotnet build -c Release /p:DeployOnBuild=true /p:PublishProfile=FolderProfile
 ```
 
-<span data-ttu-id="f14ff-230">MSBuild 사용:</span><span class="sxs-lookup"><span data-stu-id="f14ff-230">Using MSBuild:</span></span>
+<span data-ttu-id="31c4b-231">MSBuild 사용:</span><span class="sxs-lookup"><span data-stu-id="31c4b-231">Using MSBuild:</span></span>
 
 ```console
 msbuild /p:Configuration=Release /p:DeployOnBuild=true /p:PublishProfile=FolderProfile
 ```
 
-## <a name="publish-to-an-msdeploy-endpoint-from-the-command-line"></a><span data-ttu-id="f14ff-231">명령줄에서 MSDeploy 엔드포인트에 게시</span><span class="sxs-lookup"><span data-stu-id="f14ff-231">Publish to an MSDeploy endpoint from the command line</span></span>
+## <a name="publish-to-an-msdeploy-endpoint-from-the-command-line"></a><span data-ttu-id="31c4b-232">명령줄에서 MSDeploy 엔드포인트에 게시</span><span class="sxs-lookup"><span data-stu-id="31c4b-232">Publish to an MSDeploy endpoint from the command line</span></span>
 
-<span data-ttu-id="f14ff-232">.NET Core CLI 또는 MSBuild를 사용하여 게시를 수행할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-232">Publishing can be accomplished using the .NET Core CLI or MSBuild.</span></span> <span data-ttu-id="f14ff-233">`dotnet publish`는 .NET Core의 컨텍스트에서 실행됩니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-233">`dotnet publish` runs in the context of .NET Core.</span></span> <span data-ttu-id="f14ff-234">`msbuild` 명령의 경우 명령을 Windows 환경으로 제한하는 .NET Framework가 필요합니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-234">The `msbuild` command requires .NET Framework, which limits it to Windows environments.</span></span>
+<span data-ttu-id="31c4b-233">다음 예제에서는 *AzureWebApp*라는 Visual Studio에서 만든 ASP.NET Core 웹앱을 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-233">The following example uses an ASP.NET Core web app created by Visual Studio named *AzureWebApp*.</span></span> <span data-ttu-id="31c4b-234">Azure 게시 프로필이 Visual Studio에 추가되었습니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-234">An Azure Apps publish profile is added with Visual Studio.</span></span> <span data-ttu-id="31c4b-235">프로필을 만드는 방법에 대한 자세한 내용은 [게시 프로필](#publish-profiles) 섹션을 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="31c4b-235">For more information on how to create a profile, see the [Publish profiles](#publish-profiles) section.</span></span>
 
-<span data-ttu-id="f14ff-235">MSDeploy를 사용하여 게시하는 가장 좋은 방법은 먼저 Visual Studio 2017에서 게시 프로필을 만들고 명령줄에서 프로필을 사용하는 것입니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-235">The easiest way to publish with MSDeploy is to first create a publish profile in Visual Studio 2017 and use the profile from the command line.</span></span>
+<span data-ttu-id="31c4b-236">게시 프로필을 사용하여 앱을 배포하려면 Visual Studio **개발자 명령 프롬프트**에서 `msbuild` 명령을 실행합니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-236">To deploy the app using a publish profile, execute the `msbuild` command from a Visual Studio **Developer Command Prompt**.</span></span> <span data-ttu-id="31c4b-237">명령 프롬프트는 Windows 작업 표시줄의 **시작** 메뉴에 있는 *Visual Studio* 폴더에서 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-237">The command prompt is available in the *Visual Studio* folder of the **Start** menu on the Windows taskbar.</span></span> <span data-ttu-id="31c4b-238">쉽게 액세스할 수 있도록 Visual Studio의 **도구** 메뉴에 명령 프롬프트를 추가할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-238">For easier access, you can add the command prompt to the **Tools** menu in Visual Studio.</span></span> <span data-ttu-id="31c4b-239">자세한 내용은 [Visual Studio용 개발자 명령 프롬프트](/dotnet/framework/tools/developer-command-prompt-for-vs#run-the-command-prompt-from-inside-visual-studio)를 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="31c4b-239">For more information, see [Developer Command Prompt for Visual Studio](/dotnet/framework/tools/developer-command-prompt-for-vs#run-the-command-prompt-from-inside-visual-studio).</span></span>
 
-<span data-ttu-id="f14ff-236">다음 샘플에서는 ASP.NET Core 웹앱을 만들고(`dotnet new mvc` 사용) Visual Studio를 사용하여 Azure 게시 프로필을 추가했습니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-236">In the following sample, an ASP.NET Core web app is created (using `dotnet new mvc`), and an Azure publish profile is added with Visual Studio.</span></span>
-
-<span data-ttu-id="f14ff-237">**VS 2017에 대한 개발자 명령 프롬프트**에서 `msbuild`를 실행합니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-237">Run `msbuild` from a **Developer Command Prompt for VS 2017**.</span></span> <span data-ttu-id="f14ff-238">개발자 명령 프롬프트에서는 일부 MSBuild 변수가 설정된 올바른 *msbuild.exe*가 해당 경로에 있습니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-238">The Developer Command Prompt has the correct *msbuild.exe* in its path with some MSBuild variables set.</span></span>
-
-<span data-ttu-id="f14ff-239">MSBuild는 다음 구문을 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-239">MSBuild uses the following syntax:</span></span>
+<span data-ttu-id="31c4b-240">MSBuild는 다음 명령 구문을 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-240">MSBuild uses the following command syntax:</span></span>
 
 ```console
-msbuild <path-to-project-file> /p:DeployOnBuild=true /p:PublishProfile=<Publish Profile> /p:Username=<USERNAME> /p:Password=<PASSWORD>
+msbuild {PATH} 
+    /p:DeployOnBuild=true 
+    /p:PublishProfile={PROFILE} 
+    /p:Username={USERNAME} 
+    /p:Password={PASSWORD}
 ```
 
-<span data-ttu-id="f14ff-240">*\<Publish name>.PublishSettings* 파일에서 `Password`를 가져옵니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-240">Get the `Password` from the *\<Publish name>.PublishSettings* file.</span></span> <span data-ttu-id="f14ff-241">다음 위치에서 *.PublishSettings* 파일을 다운로드합니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-241">Download the *.PublishSettings* file from either:</span></span>
+* <span data-ttu-id="31c4b-241">{PATH} &ndash; 앱의 프로젝트 파일 경로입니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-241">{PATH} &ndash; Path to the app's project file.</span></span>
+* <span data-ttu-id="31c4b-242">{PROFILE} &ndash; 게시 프로필의 이름입니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-242">{PROFILE} &ndash; Name of the publish profile.</span></span>
+* <span data-ttu-id="31c4b-243">{USERNAME} &ndash; MSDeploy 사용자 이름입니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-243">{USERNAME} &ndash; MSDeploy username.</span></span> <span data-ttu-id="31c4b-244">{USERNAME}은 게시 프로필에서 찾을 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-244">The {USERNAME} can be found in the publish profile.</span></span>
+* <span data-ttu-id="31c4b-245">{PASSWORD} &ndash; MSDeploy 암호입니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-245">{PASSWORD} &ndash; MSDeploy password.</span></span> <span data-ttu-id="31c4b-246">*{PROFILE}.PublishSettings* 파일에서 {PASSWORD}를 가져옵니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-246">Obtain the {PASSWORD} from the *{PROFILE}.PublishSettings* file.</span></span> <span data-ttu-id="31c4b-247">다음 위치에서 *.PublishSettings* 파일을 다운로드합니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-247">Download the *.PublishSettings* file from either:</span></span>
+  * <span data-ttu-id="31c4b-248">솔루션 탐색기: **보기** > **클라우드 탐색기**를 선택합니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-248">Solution Explorer: Select **View** > **Cloud Explorer**.</span></span> <span data-ttu-id="31c4b-249">Azure 구독으로 연결합니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-249">Connect with your Azure subscription.</span></span> <span data-ttu-id="31c4b-250">**App Services**를 엽니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-250">Open **App Services**.</span></span> <span data-ttu-id="31c4b-251">앱을 마우스 오른쪽 단추로 클릭합니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-251">Right-click the app.</span></span> <span data-ttu-id="31c4b-252">**게시 프로필 다운로드**를 선택합니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-252">Select **Download Publish Profile**.</span></span>
+  * <span data-ttu-id="31c4b-253">Azure Portal: 웹앱의 **개요** 패널에서 **게시 프로필 가져오기**를 선택합니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-253">Azure portal: Select **Get publish profile** in the web app's **Overview** panel.</span></span>
 
-* <span data-ttu-id="f14ff-242">솔루션 탐색기: 웹앱을 마우스 오른쪽 단추로 클릭하고 **게시 프로필 다운로드**를 선택합니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-242">Solution Explorer: Right-click on the Web App and select **Download Publish Profile**.</span></span>
-* <span data-ttu-id="f14ff-243">Azure Portal: 웹앱의 **개요** 패널에서 **게시 프로필 가져오기**를 클릭합니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-243">Azure portal: Click **Get publish profile** on the Web App's **Overview** panel.</span></span>
-
-<span data-ttu-id="f14ff-244">`Username`은 게시 프로필에서 찾을 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-244">`Username` can be found in the publish profile.</span></span>
-
-<span data-ttu-id="f14ff-245">다음 샘플에서는 *Web11112 - Web Deploy* 게시 프로필을 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-245">The following sample uses the *Web11112 - Web Deploy* publish profile:</span></span>
+<span data-ttu-id="31c4b-254">다음 예제에서는 *AzureWebApp - 웹 배포*라는 게시 프로필을 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-254">The following example uses a publish profile named *AzureWebApp - Web Deploy*:</span></span>
 
 ```console
-msbuild "C:\Webs\Web1\Web1.csproj" /p:DeployOnBuild=true
- /p:PublishProfile="Web11112 - Web Deploy"  /p:Username="$Web11112"
- /p:Password="<password removed>"
+msbuild "AzureWebApp.csproj" 
+    /p:DeployOnBuild=true 
+    /p:PublishProfile="AzureWebApp - Web Deploy" 
+    /p:Username="$AzureWebApp" 
+    /p:Password=".........."
 ```
 
-## <a name="exclude-files"></a><span data-ttu-id="f14ff-246">파일 제외</span><span class="sxs-lookup"><span data-stu-id="f14ff-246">Exclude files</span></span>
+<span data-ttu-id="31c4b-255">게시 프로필은 Windows 명령 프롬프트에서 .NET Core CLI [dotnet msbuild](/dotnet/core/tools/dotnet-msbuild) 명령과 함께 사용할 수도 있습니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-255">A publish profile can also be used with the .NET Core CLI [dotnet msbuild](/dotnet/core/tools/dotnet-msbuild) command from a Windows command prompt:</span></span>
 
-<span data-ttu-id="f14ff-247">ASP.NET Core 웹앱을 게시할 경우 *wwwroot* 폴더의 빌드 아티팩트 및 콘텐츠가 포함됩니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-247">When publishing ASP.NET Core web apps, the build artifacts and contents of the *wwwroot* folder are included.</span></span> <span data-ttu-id="f14ff-248">`msbuild`는 [와일드카드 사용 패턴](https://gruntjs.com/configuring-tasks#globbing-patterns)을 지원합니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-248">`msbuild` supports [globbing patterns](https://gruntjs.com/configuring-tasks#globbing-patterns).</span></span> <span data-ttu-id="f14ff-249">예를 들어 다음 `<Content>` 요소는 *wwwroot/content* 폴더와 모든 하위 폴더에서 모든 텍스트(*.txt*) 파일을 제외합니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-249">For example, the following `<Content>` element excludes all text (*.txt*) files from the *wwwroot/content* folder and all its subfolders.</span></span>
+```console
+dotnet msbuild "AzureWebApp.csproj"
+    /p:DeployOnBuild=true 
+    /p:PublishProfile="AzureWebApp - Web Deploy" 
+    /p:Username="$AzureWebApp" 
+    /p:Password=".........."
+```
+
+> [!NOTE]
+> <span data-ttu-id="31c4b-256">[dotnet msbuild](/dotnet/core/tools/dotnet-msbuild) 명령은 플랫폼 간 사용할 수 있으며 macOS 및 Linux에서 ASP.NET Core 앱을 컴파일할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-256">The [dotnet msbuild](/dotnet/core/tools/dotnet-msbuild) command is available cross-platform and can compile ASP.NET Core apps on macOS and Linux.</span></span> <span data-ttu-id="31c4b-257">그러나 macOS 및 Linux의 MSBuild는 Azure 또는 다른 MSDeploy 앤드포인트에 앱을 배포할 수 없습니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-257">However, MSBuild on macOS and Linux isn't capable of deploying an app to Azure or other MSDeploy endpoint.</span></span> <span data-ttu-id="31c4b-258">MSDeploy는 Windows에서만 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-258">MSDeploy is only available on Windows.</span></span>
+
+## <a name="exclude-files"></a><span data-ttu-id="31c4b-259">파일 제외</span><span class="sxs-lookup"><span data-stu-id="31c4b-259">Exclude files</span></span>
+
+<span data-ttu-id="31c4b-260">ASP.NET Core 웹앱을 게시할 경우 *wwwroot* 폴더의 빌드 아티팩트 및 콘텐츠가 포함됩니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-260">When publishing ASP.NET Core web apps, the build artifacts and contents of the *wwwroot* folder are included.</span></span> <span data-ttu-id="31c4b-261">`msbuild`는 [와일드카드 사용 패턴](https://gruntjs.com/configuring-tasks#globbing-patterns)을 지원합니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-261">`msbuild` supports [globbing patterns](https://gruntjs.com/configuring-tasks#globbing-patterns).</span></span> <span data-ttu-id="31c4b-262">예를 들어 다음 `<Content>` 요소는 *wwwroot/content* 폴더와 모든 하위 폴더에서 모든 텍스트(*.txt*) 파일을 제외합니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-262">For example, the following `<Content>` element excludes all text (*.txt*) files from the *wwwroot/content* folder and all its subfolders.</span></span>
 
 ```xml
 <ItemGroup>
@@ -360,9 +347,9 @@ msbuild "C:\Webs\Web1\Web1.csproj" /p:DeployOnBuild=true
 </ItemGroup>
 ```
 
-<span data-ttu-id="f14ff-250">앞의 태그는 게시 프로필 또는 *.csproj* 파일에 추가될 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-250">The preceding markup can be added to a publish profile or the *.csproj* file.</span></span> <span data-ttu-id="f14ff-251">*.csproj* 파일에 추가된 규칙은 프로젝트의 모든 게시 프로필에 추가됩니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-251">When added to the *.csproj* file, the rule is added to all publish profiles in the project.</span></span>
+<span data-ttu-id="31c4b-263">앞의 태그는 게시 프로필 또는 *.csproj* 파일에 추가될 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-263">The preceding markup can be added to a publish profile or the *.csproj* file.</span></span> <span data-ttu-id="31c4b-264">*.csproj* 파일에 추가된 규칙은 프로젝트의 모든 게시 프로필에 추가됩니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-264">When added to the *.csproj* file, the rule is added to all publish profiles in the project.</span></span>
 
-<span data-ttu-id="f14ff-252">다음 `<MsDeploySkipRules>` 요소는 *wwwroot/content* 폴더에서 모든 파일을 제외합니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-252">The following `<MsDeploySkipRules>` element excludes all files from the *wwwroot/content* folder:</span></span>
+<span data-ttu-id="31c4b-265">다음 `<MsDeploySkipRules>` 요소는 *wwwroot/content* 폴더에서 모든 파일을 제외합니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-265">The following `<MsDeploySkipRules>` element excludes all files from the *wwwroot/content* folder:</span></span>
 
 ```xml
 <ItemGroup>
@@ -373,13 +360,13 @@ msbuild "C:\Webs\Web1\Web1.csproj" /p:DeployOnBuild=true
 </ItemGroup>
 ```
 
-<span data-ttu-id="f14ff-253">`<MsDeploySkipRules>`는 배포 사이트에서 ‘건너뛰기’ 대상을 삭제하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-253">`<MsDeploySkipRules>` won't delete the *skip* targets from the deployment site.</span></span> <span data-ttu-id="f14ff-254">`<Content>` 대상 파일 및 폴더는 배포 사이트에서 삭제됩니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-254">`<Content>` targeted files and folders are deleted from the deployment site.</span></span> <span data-ttu-id="f14ff-255">예를 들어 배포된 웹앱에 다음 파일이 포함되었다고 가정합니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-255">For example, suppose a deployed web app had the following files:</span></span>
+<span data-ttu-id="31c4b-266">`<MsDeploySkipRules>`는 배포 사이트에서 ‘건너뛰기’ 대상을 삭제하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-266">`<MsDeploySkipRules>` won't delete the *skip* targets from the deployment site.</span></span> <span data-ttu-id="31c4b-267">`<Content>` 대상 파일 및 폴더는 배포 사이트에서 삭제됩니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-267">`<Content>` targeted files and folders are deleted from the deployment site.</span></span> <span data-ttu-id="31c4b-268">예를 들어 배포된 웹앱에 다음 파일이 포함되었다고 가정합니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-268">For example, suppose a deployed web app had the following files:</span></span>
 
-* <span data-ttu-id="f14ff-256">*Views/Home/About1.cshtml*</span><span class="sxs-lookup"><span data-stu-id="f14ff-256">*Views/Home/About1.cshtml*</span></span>
-* <span data-ttu-id="f14ff-257">*Views/Home/About2.cshtml*</span><span class="sxs-lookup"><span data-stu-id="f14ff-257">*Views/Home/About2.cshtml*</span></span>
-* <span data-ttu-id="f14ff-258">*Views/Home/About3.cshtml*</span><span class="sxs-lookup"><span data-stu-id="f14ff-258">*Views/Home/About3.cshtml*</span></span>
+* <span data-ttu-id="31c4b-269">*Views/Home/About1.cshtml*</span><span class="sxs-lookup"><span data-stu-id="31c4b-269">*Views/Home/About1.cshtml*</span></span>
+* <span data-ttu-id="31c4b-270">*Views/Home/About2.cshtml*</span><span class="sxs-lookup"><span data-stu-id="31c4b-270">*Views/Home/About2.cshtml*</span></span>
+* <span data-ttu-id="31c4b-271">*Views/Home/About3.cshtml*</span><span class="sxs-lookup"><span data-stu-id="31c4b-271">*Views/Home/About3.cshtml*</span></span>
 
-<span data-ttu-id="f14ff-259">다음 `<MsDeploySkipRules>` 요소가 추가되면 해당 파일은 배포 사이트에서 삭제되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-259">If the following `<MsDeploySkipRules>` elements are added, those files wouldn't be deleted on the deployment site.</span></span>
+<span data-ttu-id="31c4b-272">다음 `<MsDeploySkipRules>` 요소가 추가되면 해당 파일은 배포 사이트에서 삭제되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-272">If the following `<MsDeploySkipRules>` elements are added, those files wouldn't be deleted on the deployment site.</span></span>
 
 ```xml
 <ItemGroup>
@@ -400,9 +387,9 @@ msbuild "C:\Webs\Web1\Web1.csproj" /p:DeployOnBuild=true
 </ItemGroup>
 ```
 
-<span data-ttu-id="f14ff-260">앞의 `<MsDeploySkipRules>` 요소는 ‘건너뛴’ 파일이 배포되지 않도록 합니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-260">The preceding `<MsDeploySkipRules>` elements prevent the *skipped* files from being deployed.</span></span> <span data-ttu-id="f14ff-261">해당 파일은 배포된 후에 삭제되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-261">It won't delete those files once they're deployed.</span></span>
+<span data-ttu-id="31c4b-273">앞의 `<MsDeploySkipRules>` 요소는 ‘건너뛴’ 파일이 배포되지 않도록 합니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-273">The preceding `<MsDeploySkipRules>` elements prevent the *skipped* files from being deployed.</span></span> <span data-ttu-id="31c4b-274">해당 파일은 배포된 후에 삭제되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-274">It won't delete those files once they're deployed.</span></span>
 
-<span data-ttu-id="f14ff-262">다음 `<Content>` 요소는 배포 사이트에서 대상 파일을 삭제합니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-262">The following `<Content>` element deletes the targeted files at the deployment site:</span></span>
+<span data-ttu-id="31c4b-275">다음 `<Content>` 요소는 배포 사이트에서 대상 파일을 삭제합니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-275">The following `<Content>` element deletes the targeted files at the deployment site:</span></span>
 
 ```xml
 <ItemGroup>
@@ -410,7 +397,7 @@ msbuild "C:\Webs\Web1\Web1.csproj" /p:DeployOnBuild=true
 </ItemGroup>
 ```
 
-<span data-ttu-id="f14ff-263">앞의 `<Content>` 요소와 함께 명령줄 배포를 사용하면 다음 출력이 생성됩니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-263">Using command-line deployment with the preceding `<Content>` element yields the following output:</span></span>
+<span data-ttu-id="31c4b-276">앞의 `<Content>` 요소와 함께 명령줄 배포를 사용하면 다음 출력이 생성됩니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-276">Using command-line deployment with the preceding `<Content>` element yields the following output:</span></span>
 
 ```console
 MSDeployPublish:
@@ -429,9 +416,9 @@ MSDeployPublish:
 Done Building Project "C:\Webs\Web1\Web1.csproj" (default targets).
 ```
 
-## <a name="include-files"></a><span data-ttu-id="f14ff-264">포함 파일</span><span class="sxs-lookup"><span data-stu-id="f14ff-264">Include files</span></span>
+## <a name="include-files"></a><span data-ttu-id="31c4b-277">포함 파일</span><span class="sxs-lookup"><span data-stu-id="31c4b-277">Include files</span></span>
 
-<span data-ttu-id="f14ff-265">다음 태그는 게시 사이트의 *wwwroot/images* 폴더에 대한 프로젝트 디렉터리 외부에 *images* 폴더를 포함합니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-265">The following markup includes an *images* folder outside the project directory to the *wwwroot/images* folder of the publish site:</span></span>
+<span data-ttu-id="31c4b-278">다음 태그는 게시 사이트의 *wwwroot/images* 폴더에 대한 프로젝트 디렉터리 외부에 *images* 폴더를 포함합니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-278">The following markup includes an *images* folder outside the project directory to the *wwwroot/images* folder of the publish site:</span></span>
 
 ```xml
 <ItemGroup>
@@ -442,13 +429,13 @@ Done Building Project "C:\Webs\Web1\Web1.csproj" (default targets).
 </ItemGroup>
 ```
 
-<span data-ttu-id="f14ff-266">태그는 *.csproj* 파일 또는 게시 프로필에 추가될 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-266">The markup can be added to the *.csproj* file or the publish profile.</span></span> <span data-ttu-id="f14ff-267">태그가 *.csproj* 파일에 추가되면 프로젝트의 각 게시 프로필에 포함됩니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-267">If it's added to the *.csproj* file, it's included in each publish profile in the project.</span></span>
+<span data-ttu-id="31c4b-279">태그는 *.csproj* 파일 또는 게시 프로필에 추가될 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-279">The markup can be added to the *.csproj* file or the publish profile.</span></span> <span data-ttu-id="31c4b-280">태그가 *.csproj* 파일에 추가되면 프로젝트의 각 게시 프로필에 포함됩니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-280">If it's added to the *.csproj* file, it's included in each publish profile in the project.</span></span>
 
-<span data-ttu-id="f14ff-268">다음 강조 표시된 태그는 방법을 표시합니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-268">The following highlighted markup shows how to:</span></span>
+<span data-ttu-id="31c4b-281">다음 강조 표시된 태그는 방법을 표시합니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-281">The following highlighted markup shows how to:</span></span>
 
-* <span data-ttu-id="f14ff-269">프로젝트 외부에서 *wwwroot* 폴더로 파일을 복사합니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-269">Copy a file from outside the project into the *wwwroot* folder.</span></span>
-* <span data-ttu-id="f14ff-270">*wwwroot\Content* 폴더를 제외합니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-270">Exclude the *wwwroot\Content* folder.</span></span>
-* <span data-ttu-id="f14ff-271">*Views\Home\About2.cshtml*을 제외합니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-271">Exclude *Views\Home\About2.cshtml*.</span></span>
+* <span data-ttu-id="31c4b-282">프로젝트 외부에서 *wwwroot* 폴더로 파일을 복사합니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-282">Copy a file from outside the project into the *wwwroot* folder.</span></span>
+* <span data-ttu-id="31c4b-283">*wwwroot\Content* 폴더를 제외합니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-283">Exclude the *wwwroot\Content* folder.</span></span>
+* <span data-ttu-id="31c4b-284">*Views\Home\About2.cshtml*을 제외합니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-284">Exclude *Views\Home\About2.cshtml*.</span></span>
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -483,11 +470,11 @@ MSBuild file.
 </Project>
 ```
 
-<span data-ttu-id="f14ff-272">더 많은 배포 샘플을 보려면 [WebSDK Readme](https://github.com/aspnet/websdk)(WebSDK 추가 정보)를 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="f14ff-272">See the [WebSDK Readme](https://github.com/aspnet/websdk) for more deployment samples.</span></span>
+<span data-ttu-id="31c4b-285">더 많은 배포 샘플을 보려면 [WebSDK Readme](https://github.com/aspnet/websdk)(WebSDK 추가 정보)를 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="31c4b-285">See the [WebSDK Readme](https://github.com/aspnet/websdk) for more deployment samples.</span></span>
 
-## <a name="run-a-target-before-or-after-publishing"></a><span data-ttu-id="f14ff-273">게시 이전 또는 이후 대상 실행</span><span class="sxs-lookup"><span data-stu-id="f14ff-273">Run a target before or after publishing</span></span>
+## <a name="run-a-target-before-or-after-publishing"></a><span data-ttu-id="31c4b-286">게시 이전 또는 이후 대상 실행</span><span class="sxs-lookup"><span data-stu-id="31c4b-286">Run a target before or after publishing</span></span>
 
-<span data-ttu-id="f14ff-274">기본 제공 `BeforePublish` 및 `AfterPublish` 대상은 게시 대상 이전 또는 이후에 대상을 실행합니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-274">The built-in `BeforePublish` and `AfterPublish` targets execute a target before or after the publish target.</span></span> <span data-ttu-id="f14ff-275">다음 요소를 게시 프로필에 추가하여 게시 이전 및 이후에 콘솔 메시지를 기록합니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-275">Add the following elements to the publish profile to log console messages both before and after publishing:</span></span>
+<span data-ttu-id="31c4b-287">기본 제공 `BeforePublish` 및 `AfterPublish` 대상은 게시 대상 이전 또는 이후에 대상을 실행합니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-287">The built-in `BeforePublish` and `AfterPublish` targets execute a target before or after the publish target.</span></span> <span data-ttu-id="31c4b-288">다음 요소를 게시 프로필에 추가하여 게시 이전 및 이후에 콘솔 메시지를 기록합니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-288">Add the following elements to the publish profile to log console messages both before and after publishing:</span></span>
 
 ```xml
 <Target Name="CustomActionsBeforePublish" BeforeTargets="BeforePublish">
@@ -498,9 +485,9 @@ MSBuild file.
 </Target>
 ```
 
-## <a name="publish-to-a-server-using-an-untrusted-certificate"></a><span data-ttu-id="f14ff-276">신뢰할 수 없는 인증서를 사용하여 서버에 게시</span><span class="sxs-lookup"><span data-stu-id="f14ff-276">Publish to a server using an untrusted certificate</span></span>
+## <a name="publish-to-a-server-using-an-untrusted-certificate"></a><span data-ttu-id="31c4b-289">신뢰할 수 없는 인증서를 사용하여 서버에 게시</span><span class="sxs-lookup"><span data-stu-id="31c4b-289">Publish to a server using an untrusted certificate</span></span>
 
-<span data-ttu-id="f14ff-277">`True` 값을 사용하는 `<AllowUntrustedCertificate>` 속성을 게시 프로필에 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-277">Add the `<AllowUntrustedCertificate>` property with a value of `True` to the publish profile:</span></span>
+<span data-ttu-id="31c4b-290">`True` 값을 사용하는 `<AllowUntrustedCertificate>` 속성을 게시 프로필에 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-290">Add the `<AllowUntrustedCertificate>` property with a value of `True` to the publish profile:</span></span>
 
 ```xml
 <PropertyGroup>
@@ -508,19 +495,19 @@ MSBuild file.
 </PropertyGroup>
 ```
 
-## <a name="the-kudu-service"></a><span data-ttu-id="f14ff-278">Kudu 서비스</span><span class="sxs-lookup"><span data-stu-id="f14ff-278">The Kudu service</span></span>
+## <a name="the-kudu-service"></a><span data-ttu-id="31c4b-291">Kudu 서비스</span><span class="sxs-lookup"><span data-stu-id="31c4b-291">The Kudu service</span></span>
 
-<span data-ttu-id="f14ff-279">Azure App Service 웹앱 배포에 있는 파일을 보려면 [Kudu 서비스](https://github.com/projectkudu/kudu/wiki/Accessing-the-kudu-service)를 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-279">To view the files in an Azure App Service web app deployment, use the [Kudu service](https://github.com/projectkudu/kudu/wiki/Accessing-the-kudu-service).</span></span> <span data-ttu-id="f14ff-280">`scm` 토큰을 웹앱 이름에 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-280">Append the `scm` token to the web app name.</span></span> <span data-ttu-id="f14ff-281">예:</span><span class="sxs-lookup"><span data-stu-id="f14ff-281">For example:</span></span>
+<span data-ttu-id="31c4b-292">Azure App Service 웹앱 배포에 있는 파일을 보려면 [Kudu 서비스](https://github.com/projectkudu/kudu/wiki/Accessing-the-kudu-service)를 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-292">To view the files in an Azure App Service web app deployment, use the [Kudu service](https://github.com/projectkudu/kudu/wiki/Accessing-the-kudu-service).</span></span> <span data-ttu-id="31c4b-293">`scm` 토큰을 웹앱 이름에 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-293">Append the `scm` token to the web app name.</span></span> <span data-ttu-id="31c4b-294">예:</span><span class="sxs-lookup"><span data-stu-id="31c4b-294">For example:</span></span>
 
-| <span data-ttu-id="f14ff-282">URL</span><span class="sxs-lookup"><span data-stu-id="f14ff-282">URL</span></span>                                    | <span data-ttu-id="f14ff-283">결과</span><span class="sxs-lookup"><span data-stu-id="f14ff-283">Result</span></span>       |
+| <span data-ttu-id="31c4b-295">URL</span><span class="sxs-lookup"><span data-stu-id="31c4b-295">URL</span></span>                                    | <span data-ttu-id="31c4b-296">결과</span><span class="sxs-lookup"><span data-stu-id="31c4b-296">Result</span></span>       |
 | -------------------------------------- | ------------ |
-| `http://mysite.azurewebsites.net/`     | <span data-ttu-id="f14ff-284">웹앱</span><span class="sxs-lookup"><span data-stu-id="f14ff-284">Web App</span></span>      |
-| `http://mysite.scm.azurewebsites.net/` | <span data-ttu-id="f14ff-285">Kudu 서비스</span><span class="sxs-lookup"><span data-stu-id="f14ff-285">Kudu service</span></span> |
+| `http://mysite.azurewebsites.net/`     | <span data-ttu-id="31c4b-297">웹앱</span><span class="sxs-lookup"><span data-stu-id="31c4b-297">Web App</span></span>      |
+| `http://mysite.scm.azurewebsites.net/` | <span data-ttu-id="31c4b-298">Kudu 서비스</span><span class="sxs-lookup"><span data-stu-id="31c4b-298">Kudu service</span></span> |
 
-<span data-ttu-id="f14ff-286">[디버그 콘솔](https://github.com/projectkudu/kudu/wiki/Kudu-console) 메뉴 항목을 선택하여 파일을 표시, 편집, 삭제 또는 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-286">Select the [Debug Console](https://github.com/projectkudu/kudu/wiki/Kudu-console) menu item to view, edit, delete, or add files.</span></span>
+<span data-ttu-id="31c4b-299">[디버그 콘솔](https://github.com/projectkudu/kudu/wiki/Kudu-console) 메뉴 항목을 선택하여 파일을 표시, 편집, 삭제 또는 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-299">Select the [Debug Console](https://github.com/projectkudu/kudu/wiki/Kudu-console) menu item to view, edit, delete, or add files.</span></span>
 
-## <a name="additional-resources"></a><span data-ttu-id="f14ff-287">추가 자료</span><span class="sxs-lookup"><span data-stu-id="f14ff-287">Additional resources</span></span>
+## <a name="additional-resources"></a><span data-ttu-id="31c4b-300">추가 자료</span><span class="sxs-lookup"><span data-stu-id="31c4b-300">Additional resources</span></span>
 
-* <span data-ttu-id="f14ff-288">[웹 배포](https://www.iis.net/downloads/microsoft/web-deploy)(MSDeploy)는 IIS 서버에 대한 웹앱 및 웹 사이트 배포를 간소화합니다.</span><span class="sxs-lookup"><span data-stu-id="f14ff-288">[Web Deploy](https://www.iis.net/downloads/microsoft/web-deploy) (MSDeploy) simplifies deployment of web apps and websites to IIS servers.</span></span>
-* <span data-ttu-id="f14ff-289">[https://github.com/aspnet/websdk](https://github.com/aspnet/websdk/issues): 배포에 대한 파일 문제 및 요청 기능.</span><span class="sxs-lookup"><span data-stu-id="f14ff-289">[https://github.com/aspnet/websdk](https://github.com/aspnet/websdk/issues): File issues and request features for deployment.</span></span>
-* [<span data-ttu-id="f14ff-290">Visual Studio에서 Azure VM에 ASP.NET 웹앱 게시</span><span class="sxs-lookup"><span data-stu-id="f14ff-290">Publish an ASP.NET Web App to an Azure VM from Visual Studio</span></span>](/azure/virtual-machines/windows/publish-web-app-from-visual-studio)
+* <span data-ttu-id="31c4b-301">[웹 배포](https://www.iis.net/downloads/microsoft/web-deploy)(MSDeploy)는 IIS 서버에 대한 웹앱 및 웹 사이트 배포를 간소화합니다.</span><span class="sxs-lookup"><span data-stu-id="31c4b-301">[Web Deploy](https://www.iis.net/downloads/microsoft/web-deploy) (MSDeploy) simplifies deployment of web apps and websites to IIS servers.</span></span>
+* <span data-ttu-id="31c4b-302">[https://github.com/aspnet/websdk](https://github.com/aspnet/websdk/issues): 배포에 대한 파일 문제 및 요청 기능.</span><span class="sxs-lookup"><span data-stu-id="31c4b-302">[https://github.com/aspnet/websdk](https://github.com/aspnet/websdk/issues): File issues and request features for deployment.</span></span>
+* [<span data-ttu-id="31c4b-303">Visual Studio에서 Azure VM에 ASP.NET 웹앱 게시</span><span class="sxs-lookup"><span data-stu-id="31c4b-303">Publish an ASP.NET Web App to an Azure VM from Visual Studio</span></span>](/azure/virtual-machines/windows/publish-web-app-from-visual-studio)
