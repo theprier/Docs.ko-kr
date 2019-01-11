@@ -1,3 +1,5 @@
+# [ASP.NET Core 설명서](/aspnet/#pivot=core)
+
 # 개요
 ## [ASP.NET Core 정보](xref:index)
 ## [ASP.NET Core와 ASP.NET 비교](xref:fundamentals/choose-between-aspnet-and-aspnetcore)
@@ -5,8 +7,14 @@
 
 # [시작](xref:getting-started)
 
+# 새로운 기능
+## [2.2의 새로운 기능](xref:aspnetcore-2.2)
+## [2.1의 새로운 기능](xref:aspnetcore-2.1)
+## [2.0의 새로운 기능](xref:aspnetcore-2.0)
+## [1.1의 새로운 기능](xref:aspnetcore-1.1)
+
 # 자습서
-## Web API
+## Web API 앱
 ### [Web API 만들기](xref:tutorials/first-web-api)
 ### [MongoDB를 사용하는 Web API](xref:tutorials/first-mongo-app)
 ## 웹앱
@@ -121,7 +129,7 @@
 ### [사용자 지정 모델 바인딩](xref:mvc/advanced/custom-model-binding)
 ### [호환성 버전](xref:mvc/compatibility-version)
 
-# Web API
+# Web API 앱
 ## [개요](xref:web-api/index)
 
 ## 자습서
@@ -376,6 +384,7 @@
 ### [응답 캐싱 미들웨어](xref:performance/caching/middleware)
 ## [응답 압축](xref:performance/response-compression)
 ## [진단 도구](xref:performance/diagnostic-tools)
+## [로드 및 스트레스 테스트](xref:test/loadtests)
 
 # 다른 항목
 ## [전역화 및 지역화](xref:fundamentals/localization)
@@ -410,12 +419,6 @@
 ### [멤버 자격에서 ID로](xref:migration/proper-to-2x/membership-to-core-identity)
 ### [HTTP 모듈을 미들웨어로](xref:migration/http-modules)
 ## [로깅(ASP.NET Core 아님)](xref:migration/logging-nonaspnetcore)
-
-# 새로운 기능
-## [2.2의 새로운 기능](xref:aspnetcore-2.2)
-## [2.1의 새로운 기능](xref:aspnetcore-2.1)
-## [2.0의 새로운 기능](xref:aspnetcore-2.0)
-## [1.1의 새로운 기능](xref:aspnetcore-1.1)
 
 # [API 참조](/dotnet/api/?view=aspnetcore-2.2)
 
