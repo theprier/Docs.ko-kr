@@ -1,17 +1,17 @@
 ---
 title: ASP.NET Core에서 URL 재작성 미들웨어
 author: guardrex
-description: ASP.NET Core 응용 프로그램에서 URL 재작성 미들웨어로 URL 재작성 및 리디렉션 하는 방법에 대해 알아봅니다.
+description: ASP.NET Core 애플리케이션에서 URL 재작성 미들웨어로 URL 재작성 및 리디렉션 하는 방법에 대해 알아봅니다.
 ms.author: riande
 ms.custom: mvc
-ms.date: 11/19/2018
+ms.date: 12/18/2018
 uid: fundamentals/url-rewriting
-ms.openlocfilehash: 84052789717738a48c346d35d1a2642017a9ab93
-ms.sourcegitcommit: 9bb58d7c8dad4bbd03419bcc183d027667fefa20
+ms.openlocfilehash: d2dd5e9b7f196bcbd1940f7ef58331dabd2367a1
+ms.sourcegitcommit: 816f39e852a8f453e8682081871a31bc66db153a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52861916"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53637809"
 ---
 # <a name="url-rewriting-middleware-in-aspnet-core"></a>ASP.NET Core에서 URL 재작성 미들웨어
 
@@ -78,7 +78,7 @@ URL 재작성은 하나 이상의 미리 정의된 규칙을 기반으로 하는
 * Apache Server의 [Apache mod_rewrite 모듈](https://httpd.apache.org/docs/2.4/rewrite/)
 * [Nginx의 URL 재작성](https://www.nginx.com/blog/creating-nginx-rewrite-rules/)
 
-또한 앱이 [HTTP.sys 서버](xref:fundamentals/servers/httpsys)(이전의 [WebListener](xref:fundamentals/servers/weblistener))에서 호스팅되는 경우 미들웨어를 사용합니다.
+또한 앱이 [HTTP.sys 서버](xref:fundamentals/servers/httpsys)(이전의 WebListener)에서 호스팅되는 경우 미들웨어를 사용합니다.
 
 IIS, Apache 및 Nginx에서 서버 기반 URL 재작성 기술을 사용하는 주요 이유는 다음과 같습니다.
 
@@ -375,7 +375,7 @@ ASP.NET Core 2.x로 출시된 미들웨어는 다음과 같은 IIS URL 재작성
 
 ## <a name="additional-resources"></a>추가 자료
 
-* [응용 프로그램 시작](startup.md)
+* [애플리케이션 시작](startup.md)
 * [미들웨어](xref:fundamentals/middleware/index)
 * [.NET에서의 정규식](/dotnet/articles/standard/base-types/regular-expressions)
 * [정규식 언어 - 빠른 참조](/dotnet/articles/standard/base-types/quick-ref)
