@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 11/21/2017
 uid: security/authorization/policies
-ms.openlocfilehash: 81ca6ad9ddba3de094762f5608bb6a5719bca7a1
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 4e8a9ac6c0594f9bab67214aaa8cab9199cca29d
+ms.sourcegitcommit: cec77d5ad8a0cedb1ecbec32834111492afd0cd2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36277984"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54207397"
 ---
 # <a name="policy-based-authorization-in-aspnet-core"></a>ASP.NET Core의 정책 기반 권한 부여
 
@@ -23,13 +23,13 @@ ms.locfileid: "36277984"
 
 위의 예제는 "AtLeast21"이라는 정책을 생성합니다. 이 정책은 요구 사항의 &mdash; 매개 변수로 제공되는, 최소 연령을 뜻하는 단일 요구 사항을 갖습니다.
 
-정책은 정책 이름이 지정된 `[Authorize]` 특성을 통해서 적용됩니다. 예를 들어:
+정책은 정책 이름이 지정된 `[Authorize]` 특성을 통해서 적용됩니다. 예를 들어 다음과 같습니다.
 
 [!code-csharp[](policies/samples/PoliciesAuthApp1/Controllers/AlcoholPurchaseController.cs?name=snippet_AlcoholPurchaseControllerClass&highlight=4)]
 
 ## <a name="requirements"></a>요구 사항
 
-권한 부여 요구 사항은 정책이 현재 사용자 주체를 평가하기 위해서 사용할 수 있는 데이터 매개 변수 컬렉션입니다. 예제의 "AtLeast21" 정책의 경우 요구 사항은 단일 매개 변수, 즉 최소 연령입니다. 요구 사항은 빈 표식 인터페이스인 [IAuthorizationRequirement](/dotnet/api/microsoft.aspnetcore.authorization.iauthorizationrequirement) 인터페이스를 구현합니다. 매개 변수인 최소 연령 요구 사항은 다음과 같이 구현할 수 있습니다.
+권한 부여 요구 사항은 현재 사용자 보안 주체를 평가 하는 정책을 사용할 수 있는 데이터 매개 변수의 컬렉션입니다. 요구 사항인 단일 매개 변수는 "AtLeast21" 정책에서&mdash;최소 보존 기간입니다. 요구 사항 구현 [IAuthorizationRequirement](/dotnet/api/microsoft.aspnetcore.authorization.iauthorizationrequirement), 빈 표식을 인터페이스인 합니다. 매개 변수가 있는 최소 보존 기간 요구 사항이 다음과 같이 구현할 수 있습니다.
 
 [!code-csharp[](policies/samples/PoliciesAuthApp1/Services/Requirements/MinimumAgeRequirement.cs?name=snippet_MinimumAgeRequirementClass)]
 
@@ -42,7 +42,7 @@ ms.locfileid: "36277984"
 
 권한 부여 처리기는 요구 사항의 속성을 평가하는 역할을 담당합니다. 권한 부여 처리기는 제공된 [AuthorizationHandlerContext](/dotnet/api/microsoft.aspnetcore.authorization.authorizationhandlercontext)에 대해 요구 사항을 평가하여 접근 허용 여부를 결정합니다.
 
-하나의 요구 사항에 [여러 개의 처리기](#security-authorization-policies-based-multiple-handlers)가 존재할 수 있습니다. 처리기는 [AuthorizationHandler\<TRequirement>](/dotnet/api/microsoft.aspnetcore.authorization.authorizationhandler-1)를 상속받으며, 여기서 `TRequirement`는 처리해야 할 요구 사항입니다. 또는 처리기에서 [IAuthorizationHandler](/dotnet/api/microsoft.aspnetcore.authorization.iauthorizationhandler)를 구현하여 두 가지 이상의 요구 사항 형식을 처리할 수도 있습니다.
+하나의 요구 사항에 [여러 개의 처리기](#security-authorization-policies-based-multiple-handlers) 가 존재할 수 있습니다. 처리기는 [AuthorizationHandler\<TRequirement>](/dotnet/api/microsoft.aspnetcore.authorization.authorizationhandler-1)를 상속받으며, 여기서 `TRequirement` 는 처리해야 할 요구 사항입니다. 또는 처리기를 구현할 수 있습니다 [IAuthorizationHandler](/dotnet/api/microsoft.aspnetcore.authorization.iauthorizationhandler) 요구 사항 둘 이상의 유형을 처리 하도록 합니다.
 
 ### <a name="use-a-handler-for-one-requirement"></a>한 가지 요구 사항에 대한 처리기 사용하기
 
@@ -56,11 +56,11 @@ ms.locfileid: "36277984"
 
 ### <a name="use-a-handler-for-multiple-requirements"></a>여러 요구 사항에 대한 처리기 사용하기
 
-다음은 권한 처리기가 세 가지 요구 사항을 사용하는 일대다 관계의 예제입니다.
+다음은 권한 처리기는 세 가지 유형의 요구 사항 처리할 수 있습니다-다 관계의 예입니다.
 
 [!code-csharp[](policies/samples/PoliciesAuthApp1/Services/Handlers/PermissionHandler.cs?name=snippet_PermissionHandlerClass)]
 
-위의 코드는 성공으로 표시되지 않은 요구 사항들을 담고 있는 속성인 [PendingRequirements](/dotnet/api/microsoft.aspnetcore.authorization.authorizationhandlercontext.pendingrequirements#Microsoft_AspNetCore_Authorization_AuthorizationHandlerContext_PendingRequirements)를 트래버스합니다. 사용자가 읽기 권한을 갖고 있는 경우 요청된 리소스에 접근하려면 해당 사용자가 소유자 또는 스폰서여야 합니다. 사용자가 편집이나 삭제 권한을 갖고 있는 경우 요청된 리소스에 접근하려면 해당 사용자가 소유자여야 합니다. 권한 부여에 성공하면 만족한 요구 사항을 유일한 매개 변수로 전달하여 `context.Succeed`를 호출합니다.
+앞의 코드를 통과 [PendingRequirements](/dotnet/api/microsoft.aspnetcore.authorization.authorizationhandlercontext.pendingrequirements#Microsoft_AspNetCore_Authorization_AuthorizationHandlerContext_PendingRequirements)&mdash;성공으로 표시 되지 않습니다 요구 사항을 포함 하는 속성입니다. 에 대 한는 `ReadPermission` 요구 사항, 소유자 또는 스폰서 요청 된 리소스에 액세스 하는 사용자 여야 합니다. 경우에 `EditPermission` 또는 `DeletePermission` 요구 사항, 자신이 요청한 리소스에 액세스 하려면 소유자 여야 합니다.
 
 <a name="security-authorization-policies-based-handler-registration"></a>
 
@@ -82,7 +82,7 @@ ms.locfileid: "36277984"
 
 * 다른 처리기의 성공 여부와 관계없이 무조건 실패한 것으로 나타내려면 `context.Fail`을 호출합니다.
 
-[InvokeHandlersAfterFailure](/dotnet/api/microsoft.aspnetcore.authorization.authorizationoptions.invokehandlersafterfailure#Microsoft_AspNetCore_Authorization_AuthorizationOptions_InvokeHandlersAfterFailure) 속성이 (ASP.NET Core 1.1 이상에서 사용 가능) `false`로 설정되면 `context.Fail`이 호출될 경우 나머지 처리기들의 실행이 중단되고 즉시 빠져나갑니다. `InvokeHandlersAfterFailure`의 기본값은 `true`로, 이 경우 모든 처리기가 호출됩니다. 따라서 다른 처리기에서 `context.Fail()`이 호출되는 경우에도, 로깅 같은 요구 사항의 부수적인 작업은 항상 수행됩니다.
+[InvokeHandlersAfterFailure](/dotnet/api/microsoft.aspnetcore.authorization.authorizationoptions.invokehandlersafterfailure#Microsoft_AspNetCore_Authorization_AuthorizationOptions_InvokeHandlersAfterFailure) 속성이 (ASP.NET Core 1.1 이상에서 사용 가능) `false`로 설정되면 `context.Fail`이 호출될 경우 나머지 처리기들의 실행이 중단되고 즉시 빠져나갑니다. `InvokeHandlersAfterFailure`의 기본값은 `true`로, 이 경우 모든 처리기가 호출됩니다. 따라서 다른 처리기에서 `context.Fail`이 호출되는 경우에도, 로깅 같은 요구 사항의 부수적인 작업은 항상 수행됩니다.
 
 <a name="security-authorization-policies-based-multiple-handlers"></a>
 
@@ -118,7 +118,7 @@ ms.locfileid: "36277984"
 
 예를 들어, MVC는 `Resource` 속성에 [AuthorizationFilterContext](/dotnet/api/?term=AuthorizationFilterContext)의 인스턴스를 전달합니다. 이 속성은 `HttpContext`나 `RouteData`를 비롯한, MVC 및 Razor 페이지가 제공하는 다양한 정보들에 대한 접근을 제공합니다.
 
-`Resource` 속성을 사용하는 방식은 프레임워크에 따라서 달라집니다. 따라서 `Resource` 속성의 정보를 사용할 경우 권한 부여 정책이 특정 프레임워크를 대상으로 제한될 수 있습니다. 그러므로 먼저 `as` 키워드를 사용해서 `Resource` 속성의 캐스팅을 시도한 다음, 캐스팅의 성공 여부를 확인해서 처리기가 다른 프레임워크에서 실행될 때 `InvalidCastExceptions` 예외가 발생하지 않도록 주의해야 합니다.
+`Resource` 속성을 사용하는 방식은 프레임워크에 따라서 달라집니다. 따라서 `Resource` 속성의 정보를 사용할 경우 권한 부여 정책이 특정 프레임워크를 대상으로 제한될 수 있습니다. 그러므로 먼저 `as` 키워드를 사용해서 `Resource` 속성의 캐스팅을 시도한 다음, 캐스팅의 성공 여부를 확인해서 처리기가 다른 프레임워크에서 실행될 때 `InvalidCastException` 예외가 발생하지 않도록 주의해야 합니다.
 
 ```csharp
 // Requires the following import:

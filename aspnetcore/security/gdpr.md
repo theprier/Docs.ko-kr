@@ -7,12 +7,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 05/29/2018
 uid: security/gdpr
-ms.openlocfilehash: 8fba3016de5460fd61574887501f7c453d5e5c30
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: 7688ac6264b089ebd3544494c967684cb291a547
+ms.sourcegitcommit: cec77d5ad8a0cedb1ecbec32834111492afd0cd2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50207929"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54207517"
 ---
 # <a name="eu-general-data-protection-regulation-gdpr-support-in-aspnet-core"></a>ASP.NET Core에서 EU 데이터 보호 규정 GDPR (일반) 지원
 
@@ -90,7 +90,7 @@ Razor 페이지 및 MVC 프로젝트 템플릿을 사용 하 여 만든 프로�
 메모:
 
 * 생성 하는 `Account/Manage` 코드를 참조 하십시오 [스 캐 폴드 Identity](xref:security/authentication/scaffold-identity)합니다.
-* 삭제 하 고 영향 기본 id 데이터를 다운로드 합니다. 앱 사용자 지정 사용자 데이터를 만든 사용자 지정 사용자 데이터를 다운로드/삭제를 확장 해야 합니다. 자세한 내용은 [추가, 다운로드 및 삭제 사용자 지정 사용자 데이터 Id로](xref:security/authentication/add-user-data)합니다.
+* 합니다 **삭제** 하 고 **다운로드** 링크는 기본 id 데이터에만 작동 합니다. 앱 사용자 지정 사용자 데이터를 만든 사용자 지정 사용자 데이터를 다운로드/삭제를 확장 해야 합니다. 자세한 내용은 [추가, 다운로드 및 삭제 사용자 지정 사용자 데이터 Id로](xref:security/authentication/add-user-data)합니다.
 * Id 데이터베이스 테이블에 저장 된 사용자에 대 한 토큰을 저장 `AspNetUserTokens` 사용자로 인해 연계 delete 동작을 통해 삭제 될 때 삭제 되는 [외래 키](https://github.com/aspnet/Identity/blob/release/2.1/src/EF/IdentityUserContext.cs#L152)합니다.
 
 ## <a name="encryption-at-rest"></a>휴지 상태의 암호화
