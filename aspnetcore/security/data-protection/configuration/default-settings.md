@@ -20,7 +20,7 @@ ms.locfileid: "39095101"
 
 응용 프로그램은 자신이 실행되는 운영 환경을 감지해서 자체적으로 키 구성을 처리하려고 시도합니다.
 
-1. 앱에서 호스팅되는 경우 [Azure 앱](https://azure.microsoft.com/services/app-service/), 키에 유지 되는 *%HOME%\ASP.NET\DataProtection-Keys* 폴더입니다. 이 폴더는 네트워크 저장소에서 지원하고, 앱을 호스트하는 모든 컴퓨터에서 동기화됩니다.
+1. 앱에서 호스팅되는 경우 [Azure 앱](https://azure.microsoft.com/services/app-service/), 키에 유지 되는 *%HOME%\ASP.NET\DataProtection-Keys* 폴더입니다. 이 폴더는 네트워크 스토리지에서 지원하고, 앱을 호스트하는 모든 머신에서 동기화됩니다.
    * 저장된 키는 보호되지 않습니다.
    * *DataProtection-Keys* 폴더는 단일 배포 슬롯에 위치한 응용 프로그램의 모든 인스턴스에 키 링을 제공합니다.
    * 준비 및 프로덕션과 같은 별도의 배포 슬롯은 키 링을 공유하지 않습니다. 예를 들어 스테이징 및 프로덕션을 교환 또는 A를 사용 하 여 배포 슬롯 간에 교환할 때 / B 테스트, 데이터 보호를 사용 하 여 모든 앱은 이전 슬롯 내 키 링을 사용 하 여 저장 된 데이터를 해독할 수 없습니다. 이렇게 하면 사용자 데이터 보호를 사용 하 여 쿠키를 보호 하기 위해 표준 Asp.net 쿠키 인증을 사용 하는 앱에서 기록 합니다. 슬롯에 관계 없는 키 링을 설치 하려는 경우 Azure Blob Storage, Azure Key Vault를 SQL 저장소 등의 외부 키 링 공급자를 사용 하거나 Redis 캐시 합니다.

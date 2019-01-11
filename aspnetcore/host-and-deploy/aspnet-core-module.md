@@ -124,7 +124,7 @@ Windows 인증 등의 많은 네이티브 모듈이 활성 상태로 유지됩�
 ASP.NET Core 모듈은 다음 작업을 수행할 수도 있습니다.
 
 * 작업자 프로세스의 환경 변수를 설정합니다.
-* 시작 문제를 해결하기 위해 stdout 출력을 파일 저장소에 기록합니다.
+* 시작 문제를 해결하기 위해 stdout 출력을 파일 스토리지에 기록합니다.
 * Windows 인증 토큰을 전달합니다.
 
 ## <a name="how-to-install-and-use-the-aspnet-core-module"></a>ASP.NET Core 모듈을 설치하고 사용하는 방법

@@ -71,7 +71,7 @@ public interface IFormFile
 
 [!code-csharp[](file-uploads/sample/FileUploadSample/Controllers/UploadFilesController.cs?name=snippet1)]
 
-`IFormFile` 기술을 사용하여 업로드된 파일은 처리되기 전에 웹 서버의 메모리나 디스크에 버퍼링됩니다. 작업 메서드 내부에서 `IFormFile` 내용을 스트림으로 액세스할 수 있습니다. 로컬 파일 시스템 외에도 파일을 [Azure Blob Storage](/azure/visual-studio/vs-storage-aspnet5-getting-started-blobs) 또는 [Entity Framework](/ef/core/index)에 스트리밍할 수 있습니다.
+`IFormFile` 기술을 사용하여 업로드된 파일은 처리되기 전에 웹 서버의 메모리나 디스크에 버퍼링됩니다. 작업 메서드 내부에서 `IFormFile` 내용을 스트림으로 액세스할 수 있습니다. 로컬 파일 시스템 외에도 파일을 [Azure Blob 스토리지](/azure/visual-studio/vs-storage-aspnet5-getting-started-blobs) 또는 [Entity Framework](/ef/core/index)에 스트리밍할 수 있습니다.
 
 Entity Framework를 사용하여 데이터베이스에 이진 파일 데이터를 저장하려면 엔터티에서 `byte[]` 형식의 속성을 정의합니다.
 

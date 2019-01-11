@@ -110,7 +110,7 @@ DI에서 <xref:Microsoft.Extensions.Logging.ILogger`1> 개체를 가져옵니다
 
 ### <a name="no-asynchronous-logger-methods"></a>비동기 로거 메서드 없음
 
-로깅은 매우 빨라서 비동기 코드의 성능 비용을 들일 필요가 없습니다. 로깅 데이터 저장소가 느린 경우 직접 작성하지 마세요. 로그 메시지를 처음에 빠른 저장소에 작성한 다음, 나중에 느린 저장소로 이동하는 것이 좋습니다. 예를 들어 다른 프로세스에서 읽고 지속하는 느린 저장소인 메시지 큐에 기록합니다.
+로깅은 매우 빨라서 비동기 코드의 성능 비용을 들일 필요가 없습니다. 로깅 데이터 저장소가 느린 경우 직접 작성하지 마세요. 로그 메시지를 처음에 빠른 저장소에 작성한 다음, 나중에 느린 저장소로 이동하는 것이 좋습니다. 예를 들어 다른 프로세스에서 읽고 지속하는 느린 스토리지인 메시지 큐에 기록합니다.
 
 ## <a name="configuration"></a>구성
 
@@ -120,7 +120,7 @@ DI에서 <xref:Microsoft.Extensions.Logging.ILogger`1> 개체를 가져옵니다
 * 명령줄 인수.
 * 환경 변수.
 * 메모리 내 .NET 개체.
-* 암호화되지 않은 [암호 관리자](xref:security/app-secrets) 저장소.
+* 암호화되지 않은 [암호 관리자](xref:security/app-secrets) 스토리지.
 * 암호화된 사용자 저장소(예:[Azure Key Vault](xref:security/key-vault-configuration)).
 * 사용자 지정 공급자(설치 또는 생성된).
 
@@ -210,7 +210,7 @@ Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker:Information: Executed 
 Microsoft.AspNetCore.Hosting.Internal.WebHost:Information: Request finished in 316.3195ms 404
 ```
 
-이전 섹션에 표시된 `ILogger` 호출을 통해 생성된 로그는 "TodoApi.Controllers.TodoController"로 시작합니다. "Microsoft" 범주로 시작하는 로그는 ASP.NET Core 프레임워크 코드에서 온 것입니다. ASP.NET Core 및 응용 프로그램 코드는 동일한 로깅 API와 공급자를 사용합니다.
+이전 섹션에 표시된 `ILogger` 호출을 통해 생성된 로그는 "TodoApi.Controllers.TodoController"로 시작합니다. "Microsoft" 범주로 시작하는 로그는 ASP.NET Core 프레임워크 코드에서 온 것입니다. ASP.NET Core 및 애플리케이션 코드는 동일한 로깅 API와 공급자를 사용합니다.
 
 이 문서의 나머지 부분에서는 로깅에 대한 일부 세부 정보 및 옵션을 설명합니다.
 
@@ -278,7 +278,7 @@ ASP.NET Core는 다음 로그 수준을 정의하며, 여기에 가장 낮은 �
 
 * 추적 = 0
 
-  일반적으로 디버깅에만 유용한 정보입니다. 이러한 메시지는 중요한 응용 프로그램 데이터를 포함할 수 있으므로 프로덕션 환경에서 사용하면 안 됩니다. *기본적으로 사용하지 않도록 설정됩니다.*
+  일반적으로 디버깅에만 유용한 정보입니다. 이러한 메시지는 중요한 애플리케이션 데이터를 포함할 수 있으므로 프로덕션 환경에서 사용하면 안 됩니다. *기본적으로 사용하지 않도록 설정됩니다.*
 
 * 디버그 = 1
 
@@ -300,7 +300,7 @@ ASP.NET Core는 다음 로그 수준을 정의하며, 여기에 가장 낮은 �
 
   즉각적인 대응이 필요한 오류입니다. 예: 데이터 손실 시나리오, 디스크 공간 부족.
 
-로그 수준을 사용하여 특정 저장 매체 또는 디스플레이 창에 기록되는 로그 출력의 양을 제어합니다. 예:
+로그 수준을 사용하여 특정 스토리지 매체 또는 디스플레이 창에 기록되는 로그 출력의 양을 제어합니다. 예:
 
 * 프로덕션 환경에서 `Trace` ~ `Information` 수준을 볼륨 데이터 저장소로 보냅니다. 값 데이터 저장소에 `Warning` ~ `Critical`을 보냅니다.
 * 개발 중에 `Warning` ~ `Critical`을 콘솔에 보내고 문제 해결 시 `Trace` ~ `Information`을 추가합니다.
@@ -520,7 +520,7 @@ System.Exception: Item not found exception.
 
 ::: moniker range="< aspnetcore-2.0"
 
-일부 로깅 공급자는 로그 수준 및 범주에 따라 로그를 저장 매체에 기록할 것인지 아니면 무시할 것인지를 개발자가 지정할 수 있게 해줍니다.
+일부 로깅 공급자는 로그 수준 및 범주에 따라 로그를 스토리지 매체에 기록할 것인지 아니면 무시할 것인지를 개발자가 지정할 수 있게 해줍니다.
 
 `AddConsole` 및 `AddDebug` 확장 메서드는 필터링 조건을 허용하는 오버로드를 제공합니다. 다음 샘플 코드는 콘솔 공급자가 `Warning` 수준 미만의 로그를 무시하게 만들고, 디버그 공급자는 프레임워크에서 만드는 로그를 무시합니다.
 
@@ -826,13 +826,13 @@ loggerFactory.AddAzureWebAppDiagnostics();
 
 <xref:Microsoft.Extensions.Logging.AzureAppServicesLoggerFactoryExtensions.AddAzureWebAppDiagnostics*> 오버로드로 <xref:Microsoft.Extensions.Logging.AzureAppServices.AzureAppServicesDiagnosticsSettings>를 전달할 수 있습니다. 설정 개체는 로깅 출력 템플릿, BLOB 이름, 파일 크기 제한과 같은 기본 설정을 재정의할 수 있습니다. (*출력 템플릿*은 `ILogger` 메서드를 호출과 함께 제공되는 것 이외에 모든 로그에 적용되는 메시지 템플릿입니다.)
 
-App Service 앱에 배포할 때 응용 프로그램은 Azure Portal **App Service** 페이지의 [진단 로그](/azure/app-service/web-sites-enable-diagnostic-log/#enablediag) 섹션에 있는 설정을 따릅니다. 이러한 설정을 업데이트하는 경우 앱을 다시 시작하거나 재배포하지 않아도 변경 내용은 즉시 적용됩니다.
+App Service 앱에 배포할 때 애플리케이션은 Azure Portal **App Service** 페이지의 [진단 로그](/azure/app-service/web-sites-enable-diagnostic-log/#enablediag) 섹션에 있는 설정을 따릅니다. 이러한 설정을 업데이트하는 경우 앱을 다시 시작하거나 재배포하지 않아도 변경 내용은 즉시 적용됩니다.
 
 ![Azure 로깅 설정](index/_static/azure-logging-settings.png)
 
 로그 파일의 기본 위치는 *D:\\home\\LogFiles\\Application* 폴더이며, 기본 파일 이름은 *diagnostics-yyyymmdd.txt*입니다. 기본 파일 크기 제한은 10MB이고, 보존되는 기본 최대 파일 수는 2입니다. 기본 BLOB 이름은 *{app-name}{timestamp}/yyyy/mm/dd/hh/{guid}-applicationLog.txt*입니다. 기본 동작에 대한 자세한 내용은 <xref:Microsoft.Extensions.Logging.AzureAppServices.AzureAppServicesDiagnosticsSettings>를 참조하세요.
 
-공급자는 프로젝트가 Azure 환경에서 실행되는 경우에만 작동합니다. 프로젝트를 로컬로 실행하는 경우에는 아무 영향도 없습니다&mdash;Blob에 대한 로컬 파일 또는 로컬 개발 저장소에 기록하지 않습니다.
+공급자는 프로젝트가 Azure 환경에서 실행되는 경우에만 작동합니다. 프로젝트를 로컬로 실행하는 경우에는 아무 영향도 없습니다&mdash;Blob에 대한 로컬 파일 또는 로컬 개발 스토리지에 기록하지 않습니다.
 
 ::: moniker-end
 
@@ -853,7 +853,7 @@ Azure 로그 스트리밍을 구성하려면:
 
 **로그 스트리밍** 페이지로 이동하여 앱 메시지를 봅니다. 앱이 `ILogger` 인터페이스를 통해 기록한 것입니다.
 
-![Azure Portal 응용 프로그램 로그 스트리밍](index/_static/azure-log-streaming.png)
+![Azure Portal 애플리케이션 로그 스트리밍](index/_static/azure-log-streaming.png)
 
 ::: moniker range=">= aspnetcore-1.1"
 

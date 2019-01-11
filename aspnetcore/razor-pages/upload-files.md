@@ -117,7 +117,7 @@ public async Task<IActionResult> OnPostAsync()
 
 ### <a name="save-the-file-to-azure-blob-storage"></a>Azure Blob Storage에 파일 저장
 
-Azure Blob Storage에 파일 콘텐츠를 업로드하려면 [.NET을 사용하여 Azure Blob Storage 시작](/azure/storage/blobs/storage-dotnet-how-to-use-blobs)을 참조하세요. 이 항목에서는 [UploadFromStream](/dotnet/api/microsoft.windowsazure.storage.file.cloudfile.uploadfromstreamasync)을 사용하여 Blob Storage에 [FileStream](/dotnet/api/system.io.filestream)을 저장하는 방법을 보여 줍니다.
+Azure Blob Storage에 파일 콘텐츠를 업로드하려면 [.NET을 사용하여 Azure Blob Storage 시작](/azure/storage/blobs/storage-dotnet-how-to-use-blobs)을 참조하세요. 이 항목에서는 [UploadFromStream](/dotnet/api/microsoft.windowsazure.storage.file.cloudfile.uploadfromstreamasync)을 사용하여 Blob 스토리지에 [FileStream](/dotnet/api/system.io.filestream)을 저장하는 방법을 보여 줍니다.
 
 ## <a name="add-the-schedule-class"></a>일정 클래스 추가
 
