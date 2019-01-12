@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 05/02/2018
 uid: security/authorization/iauthorizationpolicyprovider
-ms.openlocfilehash: fdd8f9232c4332aa8307b9dbdfba6af48dfafa72
-ms.sourcegitcommit: 317f9be24db600499e79d25872d743af74bd86c0
+ms.openlocfilehash: ef3e81da6fb9e2e332b553607be35fcd79e9362d
+ms.sourcegitcommit: ec71fd5a988f927ae301813aae5ff764feb3bb6a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48045499"
+ms.lasthandoff: 01/12/2019
+ms.locfileid: "54249375"
 ---
 # <a name="custom-authorization-policy-providers-using-iauthorizationpolicyprovider-in-aspnet-core"></a>ASP.NET Core에서 IAuthorizationPolicyProvider를 사용 하 여 사용자 지정 권한 부여 정책 공급자 
 
@@ -25,7 +25,7 @@ ms.locfileid: "48045499"
 * (다른 방 번호 또는 예를 들어 연령대)에 광범위 한 정책 사용 하므로 것은 의미가 없습니다 사용 하 여 각 개별 권한 부여 정책을 추가 하는 `AuthorizationOptions.AddPolicy` 호출 합니다.
 * 외부 데이터 원본 (예: 데이터베이스)에 대 한 정보를 기반으로 하는 런타임 시 정책 만들기 또는 다른 메커니즘을 통해 권한 부여 요구 사항을 동적으로 결정 합니다.
 
-[샘플 코드 보기 또는 다운로드](https://github.com/aspnet/AuthSamples/tree/master/samples/CustomPolicyProvider) 에서 합니다 [aspnet/AuthSamples GitHub 리포지토리](https://github.com/aspnet/AuthSamples)합니다. Aspnet/AuthSamples 리포지토리 ZIP 파일을 다운로드 합니다.
+[샘플 코드 보기 또는 다운로드](https://github.com/aspnet/AspNetCore/tree/release/2.2/src/AuthSamples/) 에서 합니다 [AspNetCore GitHub 리포지토리](https://github.com/aspnet/AspNetCore)합니다. Aspnet/AuthSamples 리포지토리 ZIP 파일을 다운로드 합니다.
 압축을 풉니다 합니다 *AuthSamples master.zip* 파일입니다. 로 이동 합니다 *샘플/CustomPolicyProvider* 프로젝트 폴더입니다.
 
 ## <a name="customize-policy-retrieval"></a>정책 검색을 사용자 지정

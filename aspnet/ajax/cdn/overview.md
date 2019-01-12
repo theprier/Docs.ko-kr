@@ -8,12 +8,12 @@ ms.date: 10/14/2017
 ms.assetid: 8935bf14-ca6d-4a4e-9dbe-b96ce74cef49
 msc.legacyurl: /ajax/cdn
 msc.type: content
-ms.openlocfilehash: 0da6955a6062571d917fb8c9651417fe834ad34f
-ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
+ms.openlocfilehash: 2445d788df8ae80ccaad2dfeb19d1ccb91954d40
+ms.sourcegitcommit: ec71fd5a988f927ae301813aae5ff764feb3bb6a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48912658"
+ms.lasthandoff: 01/12/2019
+ms.locfileid: "54249583"
 ---
 <a name="microsoft-ajax-content-delivery-network"></a>Microsoft Ajax Content Delivery Network
 ====================
@@ -603,6 +603,7 @@ jQuery 버전 1.2.0 마이그레이션
 
 이 CDN의 jQuery 유효성 검사 라이브러리의 다음 릴리스가 호스팅됩니다. 파일의 실제 목록을 보려면 각 링크를 클릭 합니다.
 
+- [jQuery 유효성 검사 1.19.0](jquery-validate/cdnjqueryvalidate1190.md "jQuery 유효성 검사 1.19.0")
 - [jQuery 유효성 검사 1.17.0](jquery-validate/cdnjqueryvalidate1170.md "jQuery 유효성 검사 1.17.0")
 - [jQuery 유효성 검사 1.16.0](jquery-validate/cdnjqueryvalidate1160.md "jQuery 유효성 검사 1.16.0")
 - [jQuery 유효성 검사 1.15.1](jquery-validate/cdnjqueryvalidate1151.md "jQuery 유효성 검사 1.15.1")

@@ -5,14 +5,14 @@ description: 통합 테스트를 사용하여 앱의 구성 요소가 데이터�
 monikerRange: '>= aspnetcore-2.1'
 ms.author: riande
 ms.custom: mvc
-ms.date: 11/26/2018
+ms.date: 01/11/2019
 uid: test/integration-tests
-ms.openlocfilehash: 9729925c89c212bb6e6fac1a484b6288697afe57
-ms.sourcegitcommit: e9b99854b0a8021dafabee0db5e1338067f250a9
+ms.openlocfilehash: 0f919d7715a26f1efdb37d35b047a7050e46a272
+ms.sourcegitcommit: ec71fd5a988f927ae301813aae5ff764feb3bb6a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52450751"
+ms.lasthandoff: 01/12/2019
+ms.locfileid: "54249518"
 ---
 # <a name="integration-tests-in-aspnet-core"></a>ASP.NET Core에서 통합 테스트
 
@@ -72,9 +72,9 @@ ASP.NET Core에서 통합 테스트 하려면 다음 항목이 필요 합니다.
 
 1. SUT의 웹 호스트 구성 됩니다.
 1. 앱에 대 한 요청을 제출 하는 테스트 서버 클라이언트 생성 됩니다.
-1. *정렬* 테스트 단계가 실행 됩니다: 테스트 응용 프로그램 요청을 준비 합니다.
-1. *Act* 테스트 단계가 실행 됩니다: 클라이언트 요청을 제출 하 고 응답을 수신 합니다.
-1. *Assert* 테스트 단계가 실행 됩니다: 합니다 *실제* 응답으로 유효성을 검사를 *전달* 또는 *실패* 기반는 *필요 합니다.*  응답 합니다.
+1. 합니다 *정렬* 테스트 단계가 실행 됩니다. 테스트 응용 프로그램 요청을 준비합니다.
+1. 합니다 *Act* 테스트 단계가 실행 됩니다. 클라이언트 요청을 제출 하 고 응답을 받습니다.
+1. 합니다 *Assert* 테스트 단계가 실행 됩니다. *실제* 응답으로 유효성을 검사를 *전달* 또는 *실패* 기반을 *예상* 응답 합니다.
 1. 프로세스가 모든 테스트 실행 될 때까지 계속 됩니다.
 1. 테스트 결과 보고 됩니다.
 
@@ -114,7 +114,7 @@ ASP.NET Core에서 통합 테스트 하려면 다음 항목이 필요 합니다.
 
 [WebApplicationFactory&lt;TEntryPoint&gt; ](/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1) 만드는 데 사용 되는 [TestServer](/dotnet/api/microsoft.aspnetcore.testhost.testserver) 통합 테스트에 대 한 합니다. `TEntryPoint` SUT의 진입점 클래스는 일반적으로 `Startup` 클래스입니다.
 
-테스트 클래스 구현 된 *클래스 fixture* 인터페이스 (`IClassFixture`)를 나타내고 클래스 테스트가 포함 된 클래스에서 테스트 간에 공유 개체 인스턴스를 제공 합니다.
+테스트 클래스 구현 된 *클래스 fixture* 인터페이스 ([IClassFixture](https://xunit.github.io/docs/shared-context#class-fixture))를 나타내고 클래스 테스트가 포함 된 클래스에서 테스트 간에 공유 개체 인스턴스를 제공 합니다.
 
 ### <a name="basic-test-of-app-endpoints"></a>앱 끝점의 기본 테스트
 
@@ -173,9 +173,9 @@ SUT 대 한 모든 POST 요청에는 앱의 자동으로 수행 하는 위조 �
 
 * `GetDocumentAsync` &ndash; 수신 합니다 [HttpResponseMessage](/dotnet/api/system.net.http.httpresponsemessage) 반환 하 고는 `IHtmlDocument`합니다. `GetDocumentAsync` 준비 하는 팩터리를 사용 하는 *가상 응답* 원본을 `HttpResponseMessage`합니다. 자세한 내용은 참조는 [AngleSharp 설명서](https://github.com/AngleSharp/AngleSharp#documentation)합니다.
 * `SendAsync` 에 대 한 확장 메서드는 `HttpClient` compose는 [HttpRequestMessage](/dotnet/api/system.net.http.httprequestmessage) 호출 [SendAsync(HttpRequestMessage)](/dotnet/api/system.net.http.httpclient.sendasync#System_Net_Http_HttpClient_SendAsync_System_Net_Http_HttpRequestMessage_) 는 SUT에 요청을 제출 하 합니다. 에 대 한 오버 로드가 `SendAsync` HTML 양식을 수락 (`IHtmlFormElement`) 및 다음:
-  - 폼의 단추를 제출 (`IHtmlElement`)
-  - 폼 값 컬렉션 (`IEnumerable<KeyValuePair<string, string>>`)
-  - 제출 단추 (`IHtmlElement`) 값을 구성 하 고 (`IEnumerable<KeyValuePair<string, string>>`)
+  * 폼의 단추를 제출 (`IHtmlElement`)
+  * 폼 값 컬렉션 (`IEnumerable<KeyValuePair<string, string>>`)
+  * 제출 단추 (`IHtmlElement`) 값을 구성 하 고 (`IEnumerable<KeyValuePair<string, string>>`)
 
 > [!NOTE]
 > [AngleSharp](https://anglesharp.github.io/) 타사 구문 분석 하는 데모용으로이 항목에서는 샘플 앱에 사용 되는 라이브러리입니다. AngleSharp는 ASP.NET Core 앱의 통합 테스트에 필요한 또는 지원 되지 않습니다. 다른 파서 사용할 수와 같은 합니다 [Html 민첩성 팩 (HAP)](http://html-agility-pack.net/)합니다. 다른 방법은 위조 방지 시스템의 요청 확인 토큰 및 위조 방지 쿠키를 직접 처리 하는 코드를 작성 하는 것입니다.
@@ -325,7 +325,7 @@ _client = _factory.CreateClient(clientOptions);
 
 합니다 [샘플 앱](https://github.com/aspnet/Docs/tree/master/aspnetcore/test/integration-tests/samples) 두 개의 앱으로 구성 됩니다.
 
-| 앱 | 프로젝트 폴더 | 설명 |
+| App | 프로젝트 폴더 | 설명 |
 | --- | -------------- | ----------- |
 | 메시지 앱 (SUT) | *src/RazorPagesProject* | 추가, 하나를 삭제, all, 삭제 및 메시지를 분석할 수 있습니다. |
 | 테스트 앱 | *tests/RazorPagesProject.Tests* | 통합 테스트는 SUT 하는 데 사용 합니다. |
