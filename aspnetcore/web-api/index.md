@@ -4,14 +4,14 @@ author: scottaddie
 description: ASP.NET Core에서 Web API를 빌드하는 데 사용할 수 있는 기능과 각 기능을 사용하기에 적합한 시기에 대해 알아봅니다.
 ms.author: scaddie
 ms.custom: mvc
-ms.date: 11/06/2018
+ms.date: 01/11/2019
 uid: web-api/index
-ms.openlocfilehash: 7541c4c308deaecda0bda9a9c77d9372b65a5100
-ms.sourcegitcommit: f202864efca81a72ea7120c0692940c40d9d0630
+ms.openlocfilehash: a826bdecdd3a25eb23597123166695c169ba4229
+ms.sourcegitcommit: ec71fd5a988f927ae301813aae5ff764feb3bb6a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51635305"
+ms.lasthandoff: 01/12/2019
+ms.locfileid: "54249440"
 ---
 # <a name="build-web-apis-with-aspnet-core"></a>ASP.NET Core에서 Web API 빌드
 
@@ -141,7 +141,10 @@ services.AddMvc()
 
 * **[FromBody]** 는 복합 형식 매개 변수에 대해 유추됩니다. 이 규칙은 <xref:Microsoft.AspNetCore.Http.IFormCollection> 및 <xref:System.Threading.CancellationToken> 같이 특별한 의미를 지닌 복합 기본 제공 형식에는 적용되지 않습니다. 바인딩 소스 유추 코드는 이러한 특별한 형식을 무시합니다. `[FromBody]`는 `string` 또는 `int` 같은 단순 형식에 대해 유추되지 않습니다. 따라서 해당 기능이 필요한 경우 단순 형식에 `[FromBody]` 특성을 사용해야 합니다. 작업에 명시적으로 지정(`[FromBody]`를 통해)되거나 요청 본문의 바인딩으로 유추된 한 개를 초과하는 매개 변수가 있는 경우 예외가 throw됩니다. 예를 들어 다음 작업 서명으로 예외가 발생합니다.
 
-[!code-csharp[](define-controller/samples/WebApiSample.Api.21/Controllers/TestController.cs?name=snippet_ActionsCausingExceptions)]
+    [!code-csharp[](define-controller/samples/WebApiSample.Api.21/Controllers/TestController.cs?name=snippet_ActionsCausingExceptions)]
+
+    > [!NOTE]
+    > ASP.NET Core 2.1에서 목록, 배열 등의 컬렉션 형식 매개 변수를 [[FromQuery]](xref:Microsoft.AspNetCore.Mvc.FromQueryAttribute)로 잘못 유추합니다. 이러한 매개 변수가 요청 본문에서 바인딩되는 경우 해당 매개 변수에 [[FromBody]](xref:Microsoft.AspNetCore.Mvc.FromBodyAttribute)를 사용해야 합니다. 이 문제는 ASP.NET Core 2.2 이상에서 해결됩니다. 즉, 기본적으로 컬렉션 형식 매개 변수를 본문에서 바인딩되도록 유추합니다.
 
 * **[FromForm]** 은 <xref:Microsoft.AspNetCore.Http.IFormFile> 및 <xref:Microsoft.AspNetCore.Http.IFormFileCollection> 형식의 작업 매개 변수에 대해 유추됩니다. 단순 또는 사용자 정의 형식에 대해서는 유추되지 않습니다.
 * **[FromRoute]** 는 경로 템플릿에서 매개 변수와 일치하는 작업 매개 변수 이름에 대해 유추됩니다. 둘 이상의 경로가 작업 매개 변수와 일치하는 경우 모든 경로 값은 `[FromRoute]`로 간주됩니다.

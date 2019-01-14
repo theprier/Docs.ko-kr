@@ -4,14 +4,14 @@ author: guardrex
 description: ASP.NET Core의 웹 서버 Kestrel 및 HTTP.sys를 검색합니다. 서버를 선택하는 방법 및 역방향 프록시 서버를 사용하는 시기에 대해 알아봅니다.
 ms.author: tdykstra
 ms.custom: mvc
-ms.date: 12/18/2018
+ms.date: 01/11/2019
 uid: fundamentals/servers/index
-ms.openlocfilehash: 2c209942ed219b6d6ca309d8aba94b264d421158
-ms.sourcegitcommit: 816f39e852a8f453e8682081871a31bc66db153a
+ms.openlocfilehash: 4210d67397c85a1608f79fc4ed9d283521356226
+ms.sourcegitcommit: ec71fd5a988f927ae301813aae5ff764feb3bb6a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53637744"
+ms.lasthandoff: 01/12/2019
+ms.locfileid: "54249492"
 ---
 # <a name="web-server-implementations-in-aspnet-core"></a>ASP.NET Core의 웹 서버 구현
 
@@ -48,6 +48,8 @@ ASP.NET Core 모듈:
   * [CoreCLR](/dotnet/standard/glossary#coreclr)을 로드합니다.
   * `Program.Main`.
 * IIS 네이티브 요청의 수명을 처리합니다.
+
+In-process 호스팅 모델은 .NET Framework를 대상으로 하는 ASP.NET Core 앱을 지원하지 않습니다.
 
 다음 다이어그램은 IIS, ASP.NET Core 모듈 및 In-Process에 호스트된 앱 간의 관계를 보여 줍니다.
 
