@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 12/13/2018
 uid: tutorials/first-mvc-app/new-field
-ms.openlocfilehash: c6e7fe13a55a14533949d212bfb149ccd91103e5
-ms.sourcegitcommit: e1cc4c1ef6c9e07918a609d5ad7fadcb6abe3e12
+ms.openlocfilehash: 7993b36bf9115225e082d2929bb253aba5b18310
+ms.sourcegitcommit: cec77d5ad8a0cedb1ecbec32834111492afd0cd2
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/03/2019
-ms.locfileid: "53997242"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54207371"
 ---
 # <a name="add-a-new-field-to-an-aspnet-core-mvc-app"></a>ASP.NET Core MVC 앱에 새 필드 추가
 
@@ -45,7 +45,7 @@ EF Code First를 사용하여 자동으로 데이터베이스를 만들 경우 C
 
 */Views/Movies/Index.cshtml* 파일을 편집하고 `Rating` 필드를 추가합니다.
 
-[!code-HTML[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie22/Views/Movies/IndexGenreRating.cshtml?highlight=17,39&range=24-64)]
+[!code-HTML[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie22/Views/Movies/IndexGenreRating.cshtml?highlight=16,38&range=24-64)]
 
 `Rating` 필드로 */Views/Movies/Create.cshtml*을 업데이트합니다.
 

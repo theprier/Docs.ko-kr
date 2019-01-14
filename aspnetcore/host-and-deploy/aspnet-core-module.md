@@ -4,14 +4,14 @@ author: guardrex
 description: ASP.NET Core 앱을 호스팅하기 위해 ASP.NET Core 모듈을 구성하는 방법을 알아봅니다.
 ms.author: riande
 ms.custom: mvc
-ms.date: 12/18/2018
+ms.date: 01/11/2019
 uid: host-and-deploy/aspnet-core-module
-ms.openlocfilehash: dee4fe7a498d211cb8ef6a3c49017c3cc8a56847
-ms.sourcegitcommit: 816f39e852a8f453e8682081871a31bc66db153a
+ms.openlocfilehash: f97d6f188bfcba6285cbd1fa91ce530e96395929
+ms.sourcegitcommit: ec71fd5a988f927ae301813aae5ff764feb3bb6a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53637861"
+ms.lasthandoff: 01/12/2019
+ms.locfileid: "54249570"
 ---
 # <a name="aspnet-core-module"></a>ASP.NET Core 모듈
 
@@ -44,6 +44,8 @@ In-Process 호스팅용 앱을 구성하려면 `<AspNetCoreHostingModel>` 속성
   <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
 </PropertyGroup>
 ```
+
+In-process 호스팅 모델은 .NET Framework를 대상으로 하는 ASP.NET Core 앱을 지원하지 않습니다.
 
 파일에 `<AspNetCoreHostingModel>` 속성이 없으면 기본값은 `OutOfProcess`입니다.
 
