@@ -6,12 +6,12 @@ ms.author: spboyer
 ms.custom: mvc
 ms.date: 12/20/2018
 uid: host-and-deploy/linux-apache
-ms.openlocfilehash: 8c590743328885336498ca2446c618b13a7d2ce2
-ms.sourcegitcommit: e1cc4c1ef6c9e07918a609d5ad7fadcb6abe3e12
+ms.openlocfilehash: 217dc840748ef33173ae6a8c001aee558864ec59
+ms.sourcegitcommit: 97d7a00bd39c83a8f6bccb9daa44130a509f75ce
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/03/2019
-ms.locfileid: "53997229"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54099411"
 ---
 # <a name="host-aspnet-core-on-linux-with-apache"></a>Apache를 사용하여 Linux에서 ASP.NET Core 호스트
 
@@ -324,15 +324,15 @@ icmp-blocks:
 rich rules: 
 ```
 
-### <a name="ssl-configuration"></a>SSL 구성
+### <a name="https-configuration"></a>HTTPS 구성
 
-SSL에 Apache를 구성하려면 *mod_ssl* 모듈을 사용합니다. *httpd* 모듈이 설치될 때 *mod_ssl* 모듈도 설치되었습니다. 설치되지 않은 경우 `yum`을 사용하여 구성에 추가합니다.
+HTTPS에 Apache를 구성하려면 *mod_ssl* 모듈을 사용합니다. *httpd* 모듈이 설치될 때 *mod_ssl* 모듈도 설치되었습니다. 설치되지 않은 경우 `yum`을 사용하여 구성에 추가합니다.
 
 ```bash
 sudo yum install mod_ssl
 ```
 
-SSL을 적용하려면 URL 재작성을 사용할 수 있도록 `mod_rewrite` 모듈을 설치합니다.
+HTTPS를 적용하려면 URL 재작성을 사용할 수 있도록 `mod_rewrite` 모듈을 설치합니다.
 
 ```bash
 sudo yum install mod_rewrite

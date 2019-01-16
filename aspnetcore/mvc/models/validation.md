@@ -4,14 +4,14 @@ author: tdykstra
 description: ASP.NET Core MVC의 모델 유효성 검사에 대해 알아봅니다.
 ms.author: riande
 ms.custom: mvc
-ms.date: 11/06/2018
+ms.date: 01/04/2019
 uid: mvc/models/validation
-ms.openlocfilehash: f1757f807e50019e5071abc42ec3129935ab77aa
-ms.sourcegitcommit: fc7eb4243188950ae1f1b52669edc007e9d0798d
+ms.openlocfilehash: f3a34972006b5fdee307c9a8d9989b2cc1e36893
+ms.sourcegitcommit: 97d7a00bd39c83a8f6bccb9daa44130a509f75ce
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51225462"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54099385"
 ---
 # <a name="model-validation-in-aspnet-core-mvc"></a>ASP.NET Core MVC의 모델 유효성 검사
 
@@ -48,7 +48,7 @@ public string MyProperty { get; set; }
 
 * `[Compare]`: 모델의 두 속성이 일치하는지 유효성을 검사합니다.
 
-* `[EmailAddress]`: 속성에 이메일 형식이 있는지 유효성을 검사합니다.
+* `[EmailAddress]`: 속성에 전자 메일 형식이 있는지 유효성을 검사합니다.
 
 * `[Phone]`: 속성에 전화 번호 형식이 있는지 유효성을 검사합니다.
 
@@ -84,7 +84,7 @@ nullable 형식이 아닌 [값 형식](/dotnet/csharp/language-reference/keyword
 
 MVC는 최대 오류 수(기본적으로 200개)에 도달할 때까지 필드의 유효성 검사를 계속합니다. `Startup.ConfigureServices`에 다음 코드로 이 번호를 구성할 수 있습니다.
 
-[!code-csharp[](validation/sample/Startup.cs?range=27)]
+[!code-csharp[](validation/sample/Startup.cs?name=snippet_MaxModelValidationErrors)]
 
 ## <a name="handle-model-state-errors"></a>모델 상태 오류 처리
 
@@ -138,7 +138,7 @@ MVC는 최대 오류 수(기본적으로 200개)에 도달할 때까지 필드�
 
 [!code-cshtml[](validation/sample/Views/Movies/Create.cshtml?highlight=4,5&range=19-25)]
 
-위의 태그 도우미는 아래의 HTML을 렌더링합니다. HTML의 `data-` 특성 출력은 `ReleaseDate` 속성에 대한 유효성 검사 특성에 해당합니다. 아래의 `data-val-required` 특성은 사용자가 릴리스 날짜 필드를 입력하지 않았음을 표시하는 오류 메시지를 포함합니다. jQuery 비간섭 유효성 검사는 jQuery 유효성 검사 [`required()`](https://jqueryvalidation.org/required-method/) 메서드에 이 값을 전달합니다. 그러면**\<span>** 요소와 함께 해당 메시지를 표시합니다.
+위의 태그 도우미는 아래의 HTML을 렌더링합니다. HTML의 `data-` 특성 출력은 `ReleaseDate` 속성에 대한 유효성 검사 특성에 해당합니다. 아래의 `data-val-required` 특성은 사용자가 릴리스 날짜 필드를 입력하지 않았음을 표시하는 오류 메시지를 포함합니다. jQuery 비간섭 유효성 검사는 jQuery 유효성 검사 [`required()`](https://jqueryvalidation.org/required-method/) 메서드에 이 값을 전달합니다. 그러면 **\<span>** 요소와 함께 해당 메시지를 표시합니다.
 
 ```html
 <form action="/Movies/Create" method="post">

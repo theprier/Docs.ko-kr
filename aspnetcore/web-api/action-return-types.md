@@ -4,20 +4,20 @@ author: scottaddie
 description: ASP.NET Core Web API에서 다양한 컨트롤러 작업 메서드 반환 형식을 사용하는 방법을 알아봅니다.
 ms.author: scaddie
 ms.custom: mvc
-ms.date: 07/23/2018
+ms.date: 01/04/2019
 uid: web-api/action-return-types
-ms.openlocfilehash: 84300eae4271c3ee4387be022c3576dc83e144eb
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: 98d70e0379d353cff98a6d7a13f2dd00eb4da206
+ms.sourcegitcommit: 97d7a00bd39c83a8f6bccb9daa44130a509f75ce
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50207526"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54098742"
 ---
 # <a name="controller-action-return-types-in-aspnet-core-web-api"></a>ASP.NET Core Web API에서 컨트롤러 작업 반환 형식
 
 작성자: [Scott Addie](https://github.com/scottaddie)
 
-[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/web-api/action-return-types/samples)([다운로드 방법](xref:index#how-to-download-a-sample))
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/web-api/action-return-types/samples) ([다운로드 방법](xref:index#how-to-download-a-sample))
 
 ASP.NET Core에서는 Web API 컨트롤러 작업 반환 형식에 다음 옵션을 제공합니다.
 
@@ -68,13 +68,18 @@ ASP.NET Core에서는 Web API 컨트롤러 작업 반환 형식에 다음 옵션
 
 [!code-csharp[](../web-api/action-return-types/samples/WebApiSample.Api.Pre21/Controllers/ProductsController.cs?name=snippet_CreateAsync&highlight=8,13)]
 
-위의 작업에서 모델 유효성 검사에 실패하고 [BadRequest](/dotnet/api/microsoft.aspnetcore.mvc.controllerbase.badrequest) 도우미 메서드를 호출할 때 400 상태 코드가 반환됩니다. 예를 들어 다음 모델은 요청이 `Name` 속성 및 값을 제공해야 함을 나타냅니다. 따라서 요청에서 적절한 `Name`을 제공하지 못하면 모델 유효성 검사에 실패합니다.
+위의 코드에서
 
-[!code-csharp[](../web-api/action-return-types/samples/WebApiSample.DataAccess/Models/Product.cs?name=snippet_ProductClass&highlight=5-6)]
+* 제품 설명에 “XYZ 위젯”이 포함된 경우 ASP.NET Core 런타임에서 400 상태 코드([BadRequest](xref:Microsoft.AspNetCore.Mvc.ControllerBase.BadRequest*))가 반환됩니다.
+* 제품이 만들어지면 [CreatedAtAction](xref:Microsoft.AspNetCore.Mvc.ControllerBase.CreatedAtAction*) 메서드에서 201 상태 코드가 생성됩니다. 이 코드 경로에 `Product` 개체가 반환됩니다.
 
-이전 동작의 기타 알려진 반환 코드는 201이며 [CreatedAtAction](/dotnet/api/microsoft.aspnetcore.mvc.controllerbase.createdataction) 도우미 메서드에서 생성합니다. 이 경로에 `Product` 개체가 반환됩니다.
+예를 들어 다음 모델은 요청이 `Name` 및 `Description` 속성을 포함해야 함을 나타냅니다. 따라서 요청에서 `Name` 및 `Description`을 제공하지 못하면 모델 유효성 검사에 실패합니다.
+
+[!code-csharp[](../web-api/action-return-types/samples/WebApiSample.DataAccess/Models/Product.cs?name=snippet_ProductClass&highlight=5-6,8-9)]
 
 ::: moniker range=">= aspnetcore-2.1"
+
+ASP.NET Core 2.1 이상의 [[ApiController]](xref:Microsoft.AspNetCore.Mvc.ApiControllerAttribute) 특성이 적용되면 모델 유효성 검사 오류로 인해 400 상태 코드가 생성됩니다. 자세한 정보는 [자동 HTTP 400 응답](xref:web-api/index#automatic-http-400-responses)을 참조하세요.
 
 ## <a name="actionresultt-type"></a>ActionResult\<T> 형식
 
@@ -114,7 +119,12 @@ public ActionResult<IEnumerable<Product>> Get()
 
 [!code-csharp[](../web-api/action-return-types/samples/WebApiSample.Api.21/Controllers/ProductsController.cs?name=snippet_CreateAsync&highlight=8,13)]
 
-모델 유효성 검사에 실패하는 경우 [BadRequest](/dotnet/api/microsoft.aspnetcore.mvc.controllerbase.badrequest#Microsoft_AspNetCore_Mvc_ControllerBase_BadRequest_Microsoft_AspNetCore_Mvc_ModelBinding_ModelStateDictionary_) 메서드를 호출하여 400 상태 코드를 반환합니다. 특정 유효성 검사 오류를 포함하는 [ModelState](/dotnet/api/microsoft.aspnetcore.mvc.controllerbase.modelstate) 속성을 전달합니다. 모델 유효성 검사에 성공하는 경우 제품이 데이터베이스에서 만들어집니다. 201 상태 코드가 반환됩니다.
+위의 코드에서
+
+* 다음과 같은 경우 ASP.NET Core 런타임에서 400 상태 코드([BadRequest](xref:Microsoft.AspNetCore.Mvc.ControllerBase.BadRequest*))가 반환됩니다.
+  * [[ApiController]](xref:Microsoft.AspNetCore.Mvc.ApiControllerAttribute) 특성이 적용되었고 모델 유효성 검사에 실패합니다.
+  * 제품 설명에 “XYZ 위젯”이 포함됩니다.
+* 제품이 만들어지면 [CreatedAtAction](xref:Microsoft.AspNetCore.Mvc.ControllerBase.CreatedAtAction*) 메서드에서 201 상태 코드가 생성됩니다. 이 코드 경로에 `Product` 개체가 반환됩니다.
 
 > [!TIP]
 > ASP.NET Core 2.1을 기준으로 작업 매개 변수 바인딩 원본 유추는 컨트롤러 클래스를 `[ApiController]` 특성으로 데코레이팅할 때 사용합니다. 복합 형식 매개 변수는 요청 본문을 사용하여 자동으로 바인딩됩니다. 따라서 위 작업의 `product` 매개 변수가 [[FromBody]](/dotnet/api/microsoft.aspnetcore.mvc.frombodyattribute) 특성을 사용하여 명시적으로 주석으로 추가되지 않습니다.

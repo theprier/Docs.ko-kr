@@ -5,14 +5,14 @@ description: Windows의 ASP.NET Core에 대한 웹 서버인 HTTP.sys에 대해 
 monikerRange: '>= aspnetcore-2.0'
 ms.author: tdykstra
 ms.custom: mvc
-ms.date: 12/18/2018
+ms.date: 01/03/2019
 uid: fundamentals/servers/httpsys
-ms.openlocfilehash: a779fee53109d4c1cabb2005896e757f23467540
-ms.sourcegitcommit: 816f39e852a8f453e8682081871a31bc66db153a
+ms.openlocfilehash: 46538d256ae2c5f3b7e6c725fa8f29092759f69f
+ms.sourcegitcommit: 97d7a00bd39c83a8f6bccb9daa44130a509f75ce
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53637627"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54098856"
 ---
 # <a name="httpsys-web-server-implementation-in-aspnet-core"></a>ASP.NET Core에서 HTTP.sys 웹 서버 구현
 
@@ -134,62 +134,133 @@ HTTP.sys는 Kerberos 인증 프로토콜을 사용하여 커널 모드 인증에
 
 ### <a name="configure-windows-server"></a>Windows Server 구성
 
+1. 앱용으로 열 포트를 결정하고 Windows 방화벽 또는 [PowerShell cmdlet](https://technet.microsoft.com/library/jj554906)을 통해 방화벽 포트를 열어 HTTP.sys에 도달하는 트래픽을 허용합니다. Azure VM에 배포할 경우 [네트워크 보안 그룹](/azure/virtual-network/security-overview)에서 포트를 엽니다. 다음 명령 및 앱 구성에서는 포트 443이 사용됩니다.
+
+1. 필요한 경우 X.509 인증서를 구하여 설치합니다.
+
+   Windows에서 [New-SelfSignedCertificate PowerShell cmdlet](/powershell/module/pkiclient/new-selfsignedcertificate)을 사용하여 자체 서명된 인증서를 만듭니다. 지원되지 않는 예는 [UpdateIISExpressSSLForChrome.ps1](https://github.com/aspnet/Docs/tree/master/aspnetcore/includes/make-x509-cert/UpdateIISExpressSSLForChrome.ps1)을 참조하세요.
+
+   서버의 **로컬 머신** > **개인** 저장소에 자체 서명 또는 CA 서명 인증서를 설치합니다.
+
 1. 앱이 [프레임워크 종속 배포](/dotnet/core/deploying/#framework-dependent-deployments-fdd)인 경우 .NET Core, .NET Framework 또는 둘 다(앱이 NET Framework를 대상으로 하는 .NET Core 앱인 경우)를 설치합니다.
 
-   * **.NET Core** &ndash; 앱에 .NET Core가 필요한 경우 [.NET 모든 다운로드](https://www.microsoft.com/net/download/all)에서 .NET Core 설치 관리자를 가져와 실행합니다.
-   * **.NET framework** &ndash; 앱에 .NET Framework가 필요한 경우 [.NET Framework: 설치 가이드](/dotnet/framework/install/)를 참조하여 설치 지침을 찾을 수 있습니다. 필수 .NET Framework를 설치합니다. 최신 .NET Framework의 설치 관리자는 [.NET 모든 다운로드](https://www.microsoft.com/net/download/all)에서 찾을 수 있습니다.
+   * **.NET Core** &ndash; 앱에 .NET Core가 필요한 경우 [.NET Core 다운로드](https://dotnet.microsoft.com/download)에서 **.NET Core 런타임** 설치 관리자를 가져와 실행합니다. 서버에 전체 SDK를 설치하지 마세요.
+   * **.NET Framework** &ndash; 앱에 .NET Framework가 필요한 경우 [.NET Framework: 설치 가이드](/dotnet/framework/install/)를 참조하세요. 필수 .NET Framework를 설치합니다. 최신 .NET Framework의 설치 관리자는 [.NET Core 다운로드](https://dotnet.microsoft.com/download) 페이지에서 사용할 수 있습니다.
 
-2. 앱에 대한 URL 및 포트를 구성합니다.
+   앱이 [자체 포함 배포](/dotnet/core/deploying/#framework-dependent-deployments-scd)인 경우 앱의 배포에 런타임이 포함됩니다. 서버에 프레임워크를 설치할 필요가 없습니다.
 
-   기본적으로 ASP.NET Core는 `http://localhost:5000`으로 바인딩합니다. URL 접두사 및 포트를 구성하려면 다음을 사용하는 옵션이 포함됩니다.
+1. 앱에서 URL 및 포트를 구성합니다.
+
+   기본적으로 ASP.NET Core는 `http://localhost:5000`으로 바인딩합니다. URL 접두사 및 포트를 구성하려면 다음 옵션을 사용합니다.
 
    * [UseUrls](/dotnet/api/microsoft.aspnetcore.hosting.hostingabstractionswebhostbuilderextensions.useurls)
    * `urls` 명령줄 인수
    * `ASPNETCORE_URLS`환경 변수
    * [UrlPrefixes](/dotnet/api/microsoft.aspnetcore.server.httpsys.httpsysoptions.urlprefixes)
 
-   다음 코드 예제에서는 [UrlPrefixes](/dotnet/api/microsoft.aspnetcore.server.httpsys.httpsysoptions.urlprefixes)를 사용하는 방법을 보여줍니다.
+   다음 코드 예제는 포트 443에서 서버의 로컬 IP 주소 `10.0.0.4`와 함께 [UrlPrefixes](/dotnet/api/microsoft.aspnetcore.server.httpsys.httpsysoptions.urlprefixes)를 사용하는 방법을 보여 줍니다.
 
-   [!code-csharp[](httpsys/sample/Program.cs?name=snippet1&highlight=11)]
+   [!code-csharp[](httpsys/sample_snapshot/Program.cs?name=snippet1&highlight=11)]
 
    `UrlPrefixes`의 장점은 형식이 잘못된 접두사에 대해 오류 메시지가 즉시 생성된다는 점입니다.
 
-   `UrlPrefixes`의 설정은 `UseUrls`/`urls`/`ASPNETCORE_URLS` 설정을 재정의합니다. 따라서 `UseUrls`, `urls` 및 `ASPNETCORE_URLS` 환경 변수의 장점은 Kestrel과 HTTP.sys 간을 쉽게 전환할 수 있다는 점입니다. `UseUrls`, `urls` 및 `ASPNETCORE_URLS`에 대한 자세한 내용은 [ASP.NET Core의 호스트](xref:fundamentals/host/index) 항목을 참조하세요.
+   `UrlPrefixes`의 설정은 `UseUrls`/`urls`/`ASPNETCORE_URLS` 설정을 재정의합니다. 따라서 `UseUrls`, `urls` 및 `ASPNETCORE_URLS` 환경 변수의 장점은 Kestrel과 HTTP.sys 간을 쉽게 전환할 수 있다는 점입니다. 자세한 내용은 <xref:fundamentals/host/web-host>을 참조하세요.
 
    HTTP.sys는 [HTTP Server API UrlPrefix 문자열 형식](https://msdn.microsoft.com/library/windows/desktop/aa364698.aspx)을 사용합니다.
 
    > [!WARNING]
-   > 최상위 와일드카드 바인딩(`http://*:80/` 및 `http://+:80`)을 사용하지 **않아야** 합니다. 최상위 와일드카드 바인딩은 보안 취약점에 앱을 노출시킬 수 있습니다. 강력한 와일드카드와 약한 와일드카드 모두에 적용됩니다. 와일드카드보다는 명시적 호스트 이름을 사용합니다. 전체 부모 도메인을 제어하는 경우 하위 도메인 와일드카드 바인딩(예: `*.mysub.com`)에는 이러한 보안 위험이 없습니다(취약한 `*.com`과 반대임). 자세한 내용은 [rfc7230 섹션-5.4](https://tools.ietf.org/html/rfc7230#section-5.4)를 참조하세요.
+   > 최상위 와일드카드 바인딩(`http://*:80/` 및 `http://+:80`)을 사용하지 **않아야** 합니다. 최상위 와일드카드 바인딩으로 인해 앱 보안 취약성이 생길 수 있습니다. 강력한 와일드카드와 약한 와일드카드 모두에 적용됩니다. 와일드카드보다는 명시적 호스트 이름 또는 IP 주소를 사용합니다. 전체 부모 도메인을 제어하는 경우 하위 도메인 와일드카드 바인딩(예: `*.mysub.com`)은 보안 위험이 아닙니다(취약한 `*.com`과 반대임). 자세한 내용은 [RFC 7230: Section 5.4: Host](https://tools.ietf.org/html/rfc7230#section-5.4)(RFC 7230: 섹션 5.4: 호스트)를 참조하세요.
 
-3. URL 접두사를 미리 등록하여 HTTP.sys에 대해 바인딩하고 x.509 인증서를 설정합니다.
+1. 서버에 URL 접두사를 미리 등록합니다.
 
-   URL 접두사가 Windows에 미리 등록되어 있지 않은 경우 관리자 권한으로 앱을 실행합니다. 1024보다 큰 포트 번호로 HTTP(HTTPS 아님)를 사용하여 localhost에 바인딩하는 경우에만 관리자 권한이 필요하지 않습니다.
+   HTTP.sys 구성에 대한 기본 제공 도구는 *netsh.exe*입니다. *netsh.exe*는 URL 접두사를 예약하고 X.509 인증서를 할당하는 데 사용됩니다. 도구를 사용하려면 관리자 권한이 필요합니다.
 
-   1. HTTP.sys 구성에 대한 기본 제공 도구는 *netsh.exe*입니다. *netsh.exe*는 URL 접두사를 예약하고 X.509 인증서를 할당하는 데 사용됩니다. 도구를 사용하려면 관리자 권한이 필요합니다.
+   *netsh.exe* 도구를 사용하여 앱의 URL을 등록합니다.
 
-      다음 예제에서는 포트 80 및 443에 대해 URL 접두사를 예약하는 명령을 보여줍니다.
+   ```console
+   netsh http add urlacl url=<URL> user=<USER>
+   ```
 
-      ```console
-      netsh http add urlacl url=http://+:80/ user=Users
-      netsh http add urlacl url=https://+:443/ user=Users
-      ```
+   * `<URL>` &ndash; 정규화된 URL(Uniform Resource Locator)입니다. 와일드카드 바인딩을 사용하지 마세요. 유효한 호스트 이름 또는 로컬 IP 주소를 사용합니다. ‘URL에는 후행 슬래시가 포함되어야 합니다.’
+   * `<USER>` &ndash; 사용자 또는 사용자-그룹 이름을 지정합니다.
 
-      다음 예제에서는 X.509 인증서를 할당하는 방법을 보여줍니다.
+   다음 예제에서 서버의 로컬 IP 주소는 `10.0.0.4`입니다.
 
-      ```console
-      netsh http add sslcert ipport=0.0.0.0:443 certhash=MyCertHash_Here appid="{00000000-0000-0000-0000-000000000000}"
-      ```
+   ```console
+   netsh http add urlacl url=https://10.0.0.4:443/ user=Users
+   ```
 
-      *netsh.exe*에 대한 참조 문서입니다.
+   URL이 등록되면 도구가 `URL reservation successfully added`로 응답합니다.
 
-      * [HTTP(Hypertext Transfer Protocol)에 대한 Netsh 명령](https://technet.microsoft.com/library/cc725882.aspx)
-      * [UrlPrefix 문자열](https://msdn.microsoft.com/library/windows/desktop/aa364698.aspx)
+   등록된 URL을 삭제하려면 `delete urlacl` 명령을 사용합니다.
 
-   2. 필요한 경우, 자체 서명 X.509 인증서를 생성합니다.
+   ```console
+   netsh http delete urlacl url=<URL>
+   ```
 
-      [!INCLUDE [How to make an X.509 cert](~/includes/make-x509-cert.md)]
+1. 서버에 X.509 인증서를 등록합니다.
 
-4. 방화벽 포트를 열어 HTTP.sys에 도달하는 트래픽을 허용합니다. *netsh.exe* 또는 [PowerShell cmdlet](https://technet.microsoft.com/library/jj554906)을 사용합니다.
+   *netsh.exe* 도구를 사용하여 앱의 인증서를 등록합니다.
+
+   ```console
+   netsh http add sslcert ipport=<IP>:<PORT> certhash=<THUMBPRINT> appid="{<GUID>}"
+   ```
+
+   * `<IP>` &ndash; 바인딩의 로컬 IP 주소를 지정합니다. 와일드카드 바인딩을 사용하지 마세요. 유효한 IP 주소를 사용합니다.
+   * `<PORT>` &ndash; 바인딩의 포트를 지정합니다.
+   * `<THUMBPRINT>` &ndash; X.509 인증서 지문입니다.
+   * `<GUID>` &ndash; 정보 제공용 앱을 나타내는 개발자가 생성한 GUID입니다.
+
+   참조용으로 GUID를 패키지 태그로 앱에 저장합니다.
+
+   * Visual Studio에서 다음을 수행합니다.
+     * **솔루션 탐색기**에서 앱을 마우스 오른쪽 단추로 클릭하고 **속성**을 선택하여 앱의 프로젝트 속성을 엽니다.
+     * **패키지** 탭을 선택합니다.
+     * **태그** 필드에 직접 만든 GUID를 입력합니다.
+   * Visual Studio를 사용하지 않는 경우:
+     * 앱의 프로젝트 파일을 엽니다.
+     * 직접 만든 GUID를 사용하여 `<PackageTags>` 속성을 새로운 또는 기존 `<PropertyGroup>`에 추가합니다.
+
+       ```xml
+       <PropertyGroup>
+         <PackageTags>9412ee86-c21b-4eb8-bd89-f650fbf44931</PackageTags>
+       </PropertyGroup>
+       ```
+
+   다음 예제에서는
+
+   * 서버의 로컬 IP 주소는 `10.0.0.4`입니다.
+   * 온라인 임의 GUID 생성기는 `appid` 값을 제공합니다.
+
+   ```console
+   netsh http add sslcert 
+       ipport=10.0.0.4:443 
+       certhash=b66ee04419d4ee37464ab8785ff02449980eae10 
+       appid="{9412ee86-c21b-4eb8-bd89-f650fbf44931}"
+   ```
+
+   인증서가 등록되면 도구가 `SSL Certificate successfully added`로 응답합니다.
+
+   인증서 등록을 삭제하려면 `delete sslcert` 명령을 사용합니다.
+
+   ```console
+   netsh http delete sslcert ipport=<IP>:<PORT>
+   ```
+
+   *netsh.exe*에 대한 참조 문서입니다.
+
+   * [HTTP(Hypertext Transfer Protocol)에 대한 Netsh 명령](https://technet.microsoft.com/library/cc725882.aspx)
+   * [UrlPrefix 문자열](https://msdn.microsoft.com/library/windows/desktop/aa364698.aspx)
+
+1. 앱을 실행합니다.
+
+   1024보다 큰 포트 번호로 HTTP(HTTPS 아님)를 사용하여 localhost에 바인딩하는 경우에는 앱을 실행하는 데 관리자 권한이 필요하지 않습니다. 다른 구성(예: 로컬 IP 주소 사용 또는 포트 443에 바인딩)의 경우 관리자 권한으로 앱을 실행합니다.
+
+   이 앱은 서버의 공용 IP 주소에서 응답합니다. 이 예제에서는 서버가 `104.214.79.47`의 공용 IP 주소에 있는 인터넷에서 연결됩니다.
+
+   이 예제에는 개발 인증서가 사용됩니다. 브라우저의 신뢰할 수 없는 인증서 경고를 무시한 후 페이지가 안전하게 로드됩니다.
+
+   ![로드된 앱의 인덱스 페이지를 보여 주는 브라우저 창](httpsys/_static/browser.png)
 
 ## <a name="proxy-server-and-load-balancer-scenarios"></a>프록시 서버 및 부하 분산 장치 시나리오
 
@@ -197,6 +268,7 @@ HTTP.sys는 Kerberos 인증 프로토콜을 사용하여 커널 모드 인증에
 
 ## <a name="additional-resources"></a>추가 자료
 
+* [HTTP.sys에서 Windows 인증 사용](xref:security/authentication/windowsauth#enable-windows-authentication-with-httpsys)
 * [HTTP Server API](https://msdn.microsoft.com/library/windows/desktop/aa364510.aspx)(HTTP 서버 API)
 * [aspnet/HttpSysServer GitHub 리포지토리(소스 코드)](https://github.com/aspnet/HttpSysServer/)
 * <xref:fundamentals/host/index>
