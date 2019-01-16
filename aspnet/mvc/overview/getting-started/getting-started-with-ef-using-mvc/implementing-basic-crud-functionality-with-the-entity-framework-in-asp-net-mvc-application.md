@@ -1,40 +1,49 @@
 ---
 uid: mvc/overview/getting-started/getting-started-with-ef-using-mvc/implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application
-title: ASP.NET MVC 응용 프로그램에서 Entity Framework 사용 하 여 기본 CRUD 기능 구현 | Microsoft Docs
+title: '자습서: ASP.NET MVC에서 Entity Framework 사용 하 여 CRUD 기능 구현 | Microsoft Docs'
+description: 검토 및 만들기를 사용자 지정, 읽기, 업데이트, MVC 스 캐 폴딩 컨트롤러 및 보기에서 자동으로 만드는 (CRUD) 코드를 삭제 합니다.
 author: tdykstra
-description: Contoso University 샘플 웹 응용 프로그램에는 Entity Framework 6 Code First 및 Visual Studio를 사용 하 여 ASP.NET MVC 5 응용 프로그램을 만드는 방법을 보여 줍니다...
 ms.author: riande
-ms.date: 10/05/2015
+ms.date: 01/11/2019
+ms.topic: tutorial
 ms.assetid: a2f70ba4-83d1-4002-9255-24732726c4f2
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 08b5d38b38d3323e347f0f849ccc0c25fe49efb9
-ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
+ms.openlocfilehash: 9c6f8f3a2ffc0a9c5e15111ae47c331dab24ff43
+ms.sourcegitcommit: 42a8164b8aba21f322ffefacb92301bdfb4d3c2d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48912670"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54341726"
 ---
-<a name="implementing-basic-crud-functionality-with-the-entity-framework-in-aspnet-mvc-application"></a>ASP.NET MVC 응용 프로그램에서 Entity Framework 사용 하 여 기본 CRUD 기능 구현
-====================
-[Tom Dykstra](https://github.com/tdykstra)
+# <a name="tutorial-implement-crud-functionality-with-the-entity-framework-in-aspnet-mvc"></a>자습서: ASP.NET MVC에서 Entity Framework 사용 하 여 CRUD 기능 구현
 
-[완료 된 프로젝트 다운로드](http://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8)
-
-> Contoso University 샘플 웹 응용 프로그램에는 Entity Framework 6 Code First 및 Visual Studio를 사용 하 여 ASP.NET MVC 5 응용 프로그램을 만드는 방법을 보여 줍니다. 자습서 시리즈에 대한 정보는 [시리즈의 첫 번째 자습서](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)를 참조하세요.
-
-이전 자습서에서 Entity Framework 및 SQL Server LocalDB를 사용하여 데이터를 저장하고 표시하는 MVC 응용 프로그램을 만들었습니다. 이 자습서에서는 있습니다에서는 검토 및 만들기를 사용자 지정, 읽기, 업데이트, 삭제 (CRUD) MVC 스 캐 폴딩 자동으로 만드는 코드를 컨트롤러 및 보기에서 합니다.
+에 [이전 자습서](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md), 저장 하 고 Entity Framework (EF) 6 및 SQL Server LocalDB를 사용 하 여 데이터를 표시 하는 MVC 응용 프로그램을 생성 합니다. 이 자습서에서는 있습니다 검토 및 만들기를 사용자 지정, 읽기, 업데이트, 삭제 (CRUD) MVC 스 캐 폴딩 자동으로 만드는 코드를 컨트롤러 및 보기에서 합니다.
 
 > [!NOTE]
-> 컨트롤러와 데이터 액세스 계층 간에 추상화 계층을 만들기 위해 리포지토리 패턴을 구현하는 일반적인 사례입니다. 이러한 자습서를 간단하고 Entity Framework 자체를 사용하는 방법을 가르치는 데 초점을 두도록 유지하기 위해 리포지토리를 사용하지 않습니다. 리포지토리를 구현 하는 방법에 대 한 내용은 참조는 [ASP.NET 데이터 액세스 콘텐츠 맵](../../../../whitepapers/aspnet-data-access-content-map.md)합니다.
+> 컨트롤러와 데이터 액세스 계층 간에 추상화 계층을 만들기 위해 리포지토리 패턴을 구현하는 일반적인 사례입니다. 이 자습서를 간단 하 고 자체 EF 6을 사용 하는 방법을 가르치는 데 초점을 유지 하려면 해당 리포지토리를 사용 하지 마세요. 리포지토리를 구현 하는 방법에 대 한 내용은 참조는 [ASP.NET 데이터 액세스 콘텐츠 맵](../../../../whitepapers/aspnet-data-access-content-map.md)합니다.
 
-이 자습서에서는 다음 웹 페이지를 만듭니다.
+만든 웹 페이지의 예는 다음과 같습니다.
 
-![Student_Details_page](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application/_static/image1.png)
+![학생 세부 정보 페이지의 스크린샷입니다.](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application/_static/image1.png)
 
-![Student_Edit_page](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application/_static/image2.png)
+![학생의 스크린 샷을 페이지를 만듭니다.](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application/_static/image2.png)
 
-![Student_delete_page](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application/_static/image3.png)
+![스크린 샷을 ot 학생 페이지를 삭제 합니다.](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application/_static/image3.png)
+
+이 자습서에서는 다음을 수행했습니다.
+
+> [!div class="checklist"]
+> * 세부 정보 페이지 만들기
+> * 만들기 페이지 업데이트
+> * HttpPost 편집 메서드를 업데이트 합니다.
+> * 삭제 페이지 업데이트
+> * 닫기 데이터베이스 연결
+> * 트랜잭션 처리
+
+## <a name="prerequisites"></a>전제 조건
+
+* [Entity Framework 데이터 모델 만들기](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)
 
 ## <a name="create-a-details-page"></a>세부 정보 페이지 만들기
 
@@ -46,7 +55,7 @@ ms.locfileid: "48912670"
 
 키 값으로 메서드에 전달 됩니다는 `id` 매개 변수에서 제공 됩니다 *데이터 라우팅* 에 **세부 정보** 인덱스 페이지의 하이퍼링크입니다.
 
-### <a name="tip-route-data"></a>팁: **데이터 라우팅**
+### <a name="tip-route-data"></a>팁: **경로 데이터**
 
 경로 데이터는 모델 바인더는 라우팅 테이블에 지정 된 URL 세그먼트에 있는 데이터입니다. 기본 경로 지정 하는 예를 들어 `controller`하십시오 `action`, 및 `id` 세그먼트:
 
@@ -70,7 +79,7 @@ Url에 의해 만들어집니다 `ActionLink` Razor 보기의 문입니다. 다�
 
 ### <a name="to-create-the-details-page"></a>세부 정보 페이지를 만들려면
 
-1. 오픈 *Views\Student\Details.cshtml*합니다.
+1. Open *Views\Student\Details.cshtml*.
 
    사용 하 여 각 필드가 표시 되는 `DisplayFor` 다음 예와에서 같이 도우미:
 
@@ -86,9 +95,7 @@ Url에 의해 만들어집니다 `ActionLink` Razor 보기의 문입니다. 다�
 
 3. 프로그램을 시작 하 여 세부 정보 페이지를 엽니다 (**Ctrl**+**F5**)을 선택 하면 합니다 **학생** 탭을 클릭 한 다음는 **세부정보** Alexander Carson에 대 한 링크입니다. (키를 누르면 **Ctrl**+**F5** 하는 동안 합니다 *Details.cshtml* 파일이 열려, HTTP 400 오류가 발생 합니다. Visual Studio에서 세부 정보 페이지를 실행 하려고 시도 하지만 표시할 학생을 지정 하는 링크에서에 도달 하지 못한 때문입니다. 경우 URL에서 "학생/세부 정보"를 제거 하 고 다시 시도 또는 브라우저를 닫습니다, 프로젝트를 마우스 오른쪽 단추로 클릭 하 고 클릭 **뷰** > **브라우저에서 보기**.)
 
-    선택한 학생에 대한 강좌 및 등급의 목록이 표시됩니다.
-
-    ![Student_Details_page](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application/_static/image4.png)
+    선택한 학생에 대 한 강좌 및 등급의 목록이 표시 됩니다.
 
 4. 브라우저를 닫습니다.
 
@@ -122,7 +129,7 @@ Url에 의해 만들어집니다 `ActionLink` Razor 보기의 문입니다. 다�
 
     여러 개발자가는 것이 좋습니다는 초과 게시를 방지 하는 다른 방법은 모델 바인딩을 사용 하 여 엔터티 클래스를 사용 하지 않고 보기 모델을 사용 하는 것입니다. 보기 모델에서 업데이트하려는 속성만 포함합니다. MVC 모델 바인더가 완료 되 면 필요에 따라 같은 도구를 사용 하는 엔터티 인스턴스에 보기 모델 속성 복사 [AutoMapper](http://automapper.org/)합니다. Db를 사용 합니다. 엔터티의 항목 인스턴스를 해당 상태를 Unchanged로 설정 하 고 Property("PropertyName")를 설정 합니다. 보기 모델에 포함 된 각 엔터티 속성에서 true로 IsModified 합니다. 이 방법은 편집 및 만들기 시나리오에서 모두 작동합니다.
 
-    이외의 합니다 `Bind` 특성을 `try-catch` 블록은 스 캐 폴드 된 코드에 대 한 유일한 변경 내용. <xref:System.Data.DataException>에서 파생되는 예외가 변경 내용이 저장되는 동안 발견되는 경우 일반 오류 메시지가 표시됩니다. <xref:System.Data.DataException> 예외는 경우에 따라 프로그래밍 오류가 아니라 응용 프로그램에 대한 외부적인 문제로 발생하므로 사용자는 다시 시도하는 것이 좋습니다. 이 샘플에서 구현되지 않지만 프로덕션 품질 응용 프로그램은 예외를 기록합니다. 자세한 내용은 [모니터링 및 원격 분석(Azure로 실제 클라우드 앱 빌드)](../../../../aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/monitoring-and-telemetry.md#log)에서 **정보에 대한 로그** 섹션을 참조하세요.
+    이외의 합니다 `Bind` 특성을 `try-catch` 블록은 스 캐 폴드 된 코드에 대 한 유일한 변경 내용. <xref:System.Data.DataException>에서 파생되는 예외가 변경 내용이 저장되는 동안 발견되는 경우 일반 오류 메시지가 표시됩니다. <xref:System.Data.DataException> 예외는 경우에 따라 프로그래밍 오류가 아니라 응용 프로그램에 대한 외부적인 문제로 발생하므로 사용자는 다시 시도하는 것이 좋습니다. 이 샘플에서 구현되지 않지만 프로덕션 품질 애플리케이션은 예외를 기록합니다. 자세한 내용은 [모니터링 및 원격 분석(Azure로 실제 클라우드 앱 빌드)](../../../../aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/monitoring-and-telemetry.md#log)에서 **정보에 대한 로그** 섹션을 참조하세요.
 
     코드 *Views\Student\Create.cshtml* 에서 살펴본 내용과 비슷합니다 *Details.cshtml*점을 제외 하 고 `EditorFor` 고 `ValidationMessageFor` 도우미 대신각필드에사용됩니다`DisplayFor`. 관련 코드는 다음과 같습니다.
 
@@ -136,19 +143,15 @@ Url에 의해 만들어집니다 `ActionLink` Razor 보기의 문입니다. 다�
 
 3. 이름 및 잘못 된 날짜를 입력 하 고 클릭 **만들기** 오류 메시지를 확인 합니다.
 
-    ![Students_Create_page_error_message](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application/_static/image6.png)
-
     이 기본적으로 얻을 수 있는 서버 쪽 유효성 검사 합니다. 자습서의 뒷부분에서 클라이언트 쪽 유효성 검사에 대 한 코드를 생성 하는 특성을 추가 하는 방법을 배웁니다. 다음 강조 표시 된 코드에서 모델 유효성 검사를 표시 합니다 **만들기** 메서드.
 
     [!code-csharp[Main](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application/samples/sample10.cs?highlight=1)]
 
 4. 유효한 값으로 날짜를 변경하고 **만들기**를 클릭하여 **인덱스** 페이지에 표시되는 새 학생을 봅니다.
 
-    ![Students_Index_page_with_new_student](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application/_static/image7.png)
-
 5. 브라우저를 닫습니다.
 
-## <a name="update-the-edit-httppost-method"></a>HttpPost 편집 메서드를 업데이트 합니다.
+## <a name="update-httppost-edit-method"></a>HttpPost 편집 메서드를 업데이트 합니다.
 
 1. 대체는 <xref:System.Web.Mvc.HttpPostAttribute> `Edit` 작업 메서드를 다음 코드로:
 
@@ -179,7 +182,7 @@ Url에 의해 만들어집니다 `ActionLink` Razor 보기의 문입니다. 다�
    > - `Deleted`. 엔터티가 삭제되도록 표시되었습니다. 합니다 `SaveChanges` 메서드를 실행 해야 합니다는 `DELETE` 문입니다.
    > - `Detached`. 엔터티가 데이터베이스 컨텍스트에 의해 추적되지 않습니다.
    >
-   > 데스크톱 응용 프로그램에서는 일반적으로 상태 변경 내용이 자동으로 설정됩니다. 데스크톱 응용 프로그램 유형, 엔터티를 읽을 하 고 해당 속성 값의 일부를 변경 합니다. 이렇게 하면 해당 엔터티 상태가 자동으로 `Modified`로 변경됩니다. 호출 하면 `SaveChanges`, Entity Framework는 SQL 생성 `UPDATE` 변경한 실제 속성만 업데이트 하는 문이 있습니다.
+   > 데스크톱 애플리케이션에서는 일반적으로 상태 변경 내용이 자동으로 설정됩니다. 데스크톱 응용 프로그램 유형, 엔터티를 읽을 하 고 해당 속성 값의 일부를 변경 합니다. 이렇게 하면 해당 엔터티 상태가 자동으로 `Modified`로 변경됩니다. 호출 하면 `SaveChanges`, Entity Framework는 SQL 생성 `UPDATE` 변경한 실제 속성만 업데이트 하는 문이 있습니다.
    >
    > 이 연속 시퀀스에 대 한 웹 앱의 연결이 끊긴된 특성을 허용 하지 않습니다. 합니다 [DbContext](https://msdn.microsoft.com/library/system.data.entity.dbcontext(v=VS.103).aspx) 읽는 엔터티 페이지를 렌더링 한 후 삭제 됩니다. 경우는 `HttpPost` `Edit` 동작 메서드는, 새 요청은 및의 새 인스턴스를 갖습니다 합니다 [DbContext](https://msdn.microsoft.com/library/system.data.entity.dbcontext(v=VS.103).aspx)이므로 엔터티 상태를 수동으로 설정 해야 `Modified.` 호출 하는 경우 다음 `SaveChanges`, Entity Framework는 컨텍스트에서 변경한 속성을 알 수 있는 방법이 있으므로 데이터베이스 행의 모든 열을 업데이트 합니다.
    >
@@ -189,11 +192,7 @@ Url에 의해 만들어집니다 `ActionLink` Razor 보기의 문입니다. 다�
 
 2. 프로그램을 시작 하 여 페이지를 실행 합니다. 선택 하는 **학생** 탭을 클릭 한 다음는 **편집** 하이퍼링크입니다.
 
-   ![Student_Edit_page](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application/_static/image8.png)
-
 3. 데이터의 일부를 변경하고 **저장**을 클릭합니다. 인덱스 페이지의 변경 된 데이터가 표시 됩니다.
-
-   ![Students_Index_page_after_edit](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application/_static/image9.png)
 
 4. 브라우저를 닫습니다.
 
@@ -229,9 +228,7 @@ Url에 의해 만들어집니다 `ActionLink` Razor 보기의 문입니다. 다�
 
     [!code-cshtml[Main](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application/samples/sample15.cshtml?highlight=2)]
 
-4. 프로그램을 시작 하 여 페이지를 실행 합니다. 선택 하는 **학생** 탭을 클릭 한 다음는 **삭제** 하이퍼링크:
-
-    ![Student_Delete_page](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application/_static/image10.png)
+4. 프로그램을 시작 하 여 페이지를 실행을 선택 하는 **학생** 탭을 클릭 한 다음는 **삭제** 하이퍼링크입니다.
 
 5. 선택 **삭제할** 라는 페이지의 **삭제 하 시겠습니까?** 합니다.
 
@@ -249,16 +246,24 @@ Url에 의해 만들어집니다 `ActionLink` Razor 보기의 문입니다. 다�
 
 기본적으로 Entity Framework는 트랜잭션을 암시적으로 구현합니다. 여러 행 또는 테이블을 변경 하 고 호출 하는 시나리오에서 `SaveChanges`, Entity Framework 했는지를 자동으로 변경 내용을 모두 성공 하거나 모두 실패 합니다. 일부 변경 내용이 먼저 완료된 다음, 오류가 발생하는 경우 해당 변경 내용이 자동으로 롤백됩니다. 더 제어 해야 하는 시나리오에 대 한&mdash;예를 들어 트랜잭션의 Entity Framework 밖에 서 수행한 작업을 포함할&mdash;참조 [트랜잭션과 작업](/ef/ef6/saving/transactions)합니다.
 
-## <a name="summary"></a>요약
+## <a name="additional-resources"></a>추가 자료
 
 이제 대 한 간단한 CRUD 작업을 수행 하는 페이지의 전체 집합 `Student` 엔터티. 데이터 필드에 대 한 UI 요소를 생성 하려면 MVC 도우미를 사용 합니다. MVC 도우미에 대 한 자세한 내용은 참조 하세요. [양식을 사용 하 여 HTML 도우미 렌더링](/previous-versions/aspnet/dd410596(v=vs.98)) (이 문서는 MVC 3 하지만 MVC 5에도 적용이 대 한).
 
-다음 자습서에서는 정렬 및 페이징을 추가 하 여 인덱스 페이지의 기능을 확장할 수 있습니다.
+기타 EF 6 리소스 링크에서 찾을 수 있습니다 [ASP.NET 데이터 액세스-권장 리소스](../../../../whitepapers/aspnet-data-access-content-map.md)합니다.
 
-이 자습서를 연결 하는 방법을 개선할 수 것에 의견을 남겨 주세요.
+## <a name="next-steps"></a>다음 단계
 
-다른 Entity Framework 리소스에 대 한 링크에서 찾을 수 있습니다 [ASP.NET 데이터 액세스-권장 리소스](../../../../whitepapers/aspnet-data-access-content-map.md)합니다.
+이 자습서에서는 다음을 수행했습니다.
 
-> [!div class="step-by-step"]
-> [이전](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)
-> [다음](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application.md)
+> [!div class="checklist"]
+> * 세부 정보 페이지를 생성합니다.
+> * 만들기 페이지 업데이트
+> * HttpPost 편집 메서드를 업데이트합니다.
+> * 삭제 페이지 업데이트
+> * 닫힌된 데이터베이스 연결
+> * 트랜잭션 처리
+
+정렬, 필터링 및 페이징 프로젝트에 추가 하는 방법을 알아보려면 다음 문서로 계속 진행 하세요.
+> [!div class="nextstepaction"]
+> [정렬, 필터링 및 페이징](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application.md)

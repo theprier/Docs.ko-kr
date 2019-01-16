@@ -1,88 +1,71 @@
 ---
 uid: mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application
-title: Entity Framework 6 Code First MVC 5를 사용 하 여 시작 | Microsoft Docs
+title: '자습서: Entity Framework 6 Code First MVC 5를 사용 하 여 시작 | Microsoft Docs'
+description: 이 시리즈의 자습서에서 데이터 액세스용 Entity Framework 6을 사용 하는 ASP.NET MVC 5 응용 프로그램을 빌드하는 방법을 알아봅니다.
 author: tdykstra
 ms.author: riande
-ms.date: 12/04/2018
+ms.date: 01/10/2019
+ms.topic: tutorial
 ms.assetid: 00bc8b51-32ed-4fd3-9745-be4c2a9c1eaf
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: c7ab9458f83e05af84f72d9a2519a8c1c39b84b5
-ms.sourcegitcommit: 9bb58d7c8dad4bbd03419bcc183d027667fefa20
+ms.openlocfilehash: 5d524c981af2d9d8f44254c61631937e6f049cdb
+ms.sourcegitcommit: 42a8164b8aba21f322ffefacb92301bdfb4d3c2d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52861435"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54341708"
 ---
-# <a name="get-started-with-entity-framework-6-code-first-using-mvc-5"></a>Entity Framework 6 Code First MVC 5를 사용 하 여 시작
-
-[Tom Dykstra](https://github.com/tdykstra)
-
-[완료 된 프로젝트 다운로드](http://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8)
+# <a name="tutorial-get-started-with-entity-framework-6-code-first-using-mvc-5"></a>자습서: Entity Framework 6 Code First MVC 5를 사용 하 여 시작
 
 > [!NOTE]
-> 새 개발을 위한 것이 좋습니다 [ASP.NET Core Razor 페이지](/aspnet/core/razor-pages) ASP.NET MVC 컨트롤러 및 뷰를 통해. 이 이와 유사한 자습서 시리즈는 Razor 페이지에 사용할 수는 [Razor 페이지 자습서](/aspnet/core/tutorials/razor-pages/razor-pages-start):
->
+> 새 개발을 위한 것이 좋습니다 [ASP.NET Core Razor 페이지](/aspnet/core/razor-pages) ASP.NET MVC 컨트롤러 및 뷰를 통해. 이 이와 유사한 자습서 시리즈에 대 한 Razor 페이지를 사용 하 여, [자습서: ASP.NET Core에서 Razor 페이지 시작](/aspnet/core/tutorials/razor-pages/razor-pages-start)합니다. 새 자습서:
 > * 자습서 내용을 좀 더 쉽게 진행할 수 있습니다.
 > * 더 많은 EF Core 모범 사례를 제공합니다.
 > * 더 효율적인 쿼리를 사용합니다.
 > * 최신 API가 탑재되어 최신 상태입니다.
 > * 더 많은 기능을 다룹니다.
-> * 새 응용 프로그램 개발을 위해 선호되는 방법입니다.
+> * 새 애플리케이션 개발을 위해 선호되는 방법입니다.
 
-> 이 문서에는 Entity Framework 6 및 Visual Studio를 사용 하 여 ASP.NET MVC 5 응용 프로그램을 만드는 방법을 보여 줍니다. 이 자습서에서는 Code First 워크플로 사용 합니다. Code First, Database First 및 Model First 중에서 선택 하는 방법에 대 한 자세한 내용은 [모델을 만드는](/ef/ef6/modeling/)합니다.
->
-> 샘플 응용 프로그램은 가상 Contoso University 라는 university에 대 한 웹 사이트입니다. 학생 입학, 강좌 개설 및 강사 할당과 같은 기능이 있습니다. 이 자습서 시리즈에는 Contoso University 샘플 응용 프로그램을 빌드하는 방법을 설명 합니다. 할 수 있습니다 [완성된 된 응용 프로그램 다운로드](https://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8)합니다.
->
-> Mike Brind에서 변환 하는 Visual Basic 버전을 사용할 수: [MVC 5를 Visual Basic의 EF 6](http://www.mikesdotnetting.com/Article/241/MVC-5-with-EF-6-in-Visual-Basic-Creating-an-Entity-Framework-Data-Model) Mikesdotnetting 사이트입니다.
->
-> ## <a name="software-versions-used-in-the-tutorial"></a>이 자습서에 사용 되는 소프트웨어 버전
->
-> - [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017)
-> - [Entity Framework 6](https://www.nuget.org/packages/EntityFramework)
-> - [Windows Azure SDK 2.2](https://go.microsoft.com/fwlink/p/?linkid=323510) (선택 사항)
->
-> ## <a name="tutorial-versions"></a>자습서 버전
->
-> 이 자습서의 이전 버전에 대 한 참조 [EF 4.1 / MVC 3 전자책](https://social.technet.microsoft.com/wiki/contents/articles/11608.e-book-gallery-for-microsoft-technologies.aspx#GettingStartedwiththeEntityFramework4.1usingASP.NETMVC) 하 고 [MVC 4를 사용 하 여 EF 5 시작](../../older-versions/getting-started-with-ef-5-using-mvc-4/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)합니다.
->
-> ## <a name="questions-and-comments"></a>질문이 나 의견이 있으면
->
-> 이 자습서와 연결 하는 방법에 의견을 남겨 주세요 페이지의 맨 아래에서 주석을 사용 하 여 개선할 수 있습니다. 에 자습서로 직접 관련 되지 않은 질문이 있을 경우 게시할 수 하는 [ASP.NET Entity Framework 포럼](https://forums.asp.net/1227.aspx) 또는 [StackOverflow.com](http://stackoverflow.com/)합니다.
->
-> 해결할 수 없는 문제를 실행 하는 경우 다운로드할 수 있는 완성 된 프로젝트에 코드를 비교 하 여 일반적으로 문제에 솔루션을 찾을 수 있습니다. 몇 가지 일반적인 오류 및 해결 방법을 참조 하세요 [일반적인 오류 해결 방법 또는](advanced-entity-framework-scenarios-for-an-mvc-web-application.md#errors)합니다.
+이 시리즈의 자습서에서 데이터 액세스용 Entity Framework 6을 사용 하는 ASP.NET MVC 5 응용 프로그램을 빌드하는 방법을 알아봅니다. 이 자습서에서는 Code First 워크플로 사용 합니다. Code First, Database First 및 Model First 중에서 선택 하는 방법에 대 한 자세한 내용은 [모델을 만드는](/ef/ef6/modeling/)합니다.
 
-## <a name="the-contoso-university-web-app"></a>Contoso University 웹앱
-
-이 자습서에서 빌드할 응용 프로그램은 간단한 대학 웹 사이트입니다. 사용자는 학생, 강좌 및 강사 정보를 보고 업데이트할 수 있습니다. 만든 화면 중 몇 가지는 다음과 같습니다.
+이 자습서 시리즈에는 Contoso University 샘플 응용 프로그램을 빌드하는 방법을 설명 합니다. 샘플 응용 프로그램은 간단한 대학 웹 사이트입니다. 사용 하 여 확인 하 고 학생, 강좌 및 강사 정보를 업데이트할 수 있습니다. 다음은 만든 화면 중 두 가지입니다.
 
 ![Students_Index_page](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/_static/image1.png)
 
 ![학생 편집](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/_static/image2.png)
 
-자습서 Entity Framework를 사용 하는 방법에 주로 초점을 맞출 수 있도록 웹 사이트의 사용자 인터페이스 않습니다 변경할 수 많은 정보를 새로운 기본 제공 템플릿에서 생성 됩니다.
+이 자습서에서는 다음을 수행했습니다.
+
+> [!div class="checklist"]
+> * MVC 웹 앱 만들기
+> * 사이트 스타일 설정
+> * Entity Framework 6를 설치 합니다.
+> * 데이터 모델 만들기
+> * 데이터베이스 컨텍스트 만들기
+> * 테스트 데이터로 DB 초기화
+> * EF 6 LocalDB를 사용 하도록 설정
+> * 컨트롤러 및 뷰 만들기
+> * 데이터베이스 뷰
 
 ## <a name="prerequisites"></a>전제 조건
 
-참조 **소프트웨어 버전** 페이지의 맨 위에 있는 합니다. Entity Framework 6 아니므로 필수 구성 요소 자습서의 일부로 EF NuGet 패키지를 설치 합니다.
+* [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017)
 
 ## <a name="create-an-mvc-web-app"></a>MVC 웹 앱 만들기
 
-1. Visual Studio를 열고 새 만들기 C# 웹 프로젝트를 **ASP.NET 웹 응용 프로그램 (.NET Framework)** 템플릿. "ContosoUniversity" 프로젝트를 이름을 지정 합니다.
+1. Visual Studio를 열고 만듭니다는 C# 사용 하 여 웹 프로젝트를 **ASP.NET 웹 응용 프로그램 (.NET Framework)** 템플릿. 프로젝트 이름을 *ContosoUniversity* 선택한 **확인**합니다.
 
    ![Visual Studio에서 새 프로젝트 대화 상자](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/_static/new-project-dialog.png)
 
-2. 새 ASP.NET 프로젝트 대화 상자에서 선택 합니다 **MVC** 템플릿.
+1. **새 ASP.NET 웹 응용 프로그램-ContosoUniversity**를 선택 **MVC**합니다.
 
    ![Visual Studio에서 새 웹 앱 대화 상자](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/_static/new-web-app-dialog.png)
 
-3. 하는 경우 **인증** 로 설정 되어 있지 **인증 안 함**를 클릭 하 여 변경할 **인증 변경**합니다.
+    > [!NOTE]
+    > 기본적으로 **Authentication** 옵션을 설정 **인증 안 함**합니다. 이 자습서에서는 웹 앱에 로그인 할 필요 하지 않습니다. 또한 누가 로그인에 따라 액세스를 제한 하지 것입니다.
 
-   에 **인증 변경** 대화 상자에서 **인증 안 함**를 선택한 후 **확인**합니다. 이 자습서에서는 웹 앱에 로그인 할 필요가 없으며 누가 로그인에 따라 액세스 제한.
-
-   ![Visual Studio에서 인증 대화 상자 변경](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/_static/change-authentication.png)
-
-4. 새 ASP.NET 프로젝트 대화 상자에서 다시 **확인** 프로젝트를 만듭니다.
+1. **확인**을 선택하여 프로젝트를 만듭니다.
 
 ## <a name="set-up-the-site-style"></a>사이트 스타일 설정
 
@@ -101,9 +84,7 @@ ms.locfileid: "52861435"
 
    [!code-cshtml[Main](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/samples/sample2.cshtml)]
 
-3. 키를 눌러 **Ctrl**+**F5** 웹 사이트를 실행 합니다. 주 메뉴를 사용 하 여 홈 페이지가 표시 됩니다.
-
-   ![Contoso University 홈페이지](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/_static/image6.png)
+3. 웹 사이트를 실행 하려면 Ctrl + F5 키를 누릅니다. 주 메뉴를 사용 하 여 홈 페이지가 표시 됩니다.
 
 ## <a name="install-entity-framework-6"></a>Entity Framework 6를 설치 합니다.
 
@@ -115,17 +96,18 @@ ms.locfileid: "52861435"
    Install-Package EntityFramework
    ```
 
-   ![EF 설치](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/_static/image7.png)
-
-   이미지 설치 되 고 6.0.0 보여주지만 NuGet 설치할지 최신 버전 (시험판 버전 제외), Entity Framework의 최신 자습서 업데이트를 기준으로 6.2.0입니다.
-
 이 단계를 수행 하기 위해 자동으로 ASP.NET MVC 스 캐 폴딩 기능별 있지만이 자습서에는 수동으로 작업을 수행할 수 있는 몇 가지 단계 중 하나입니다. EF (Entity Framework)를 사용 하는 데 필요한 단계를 볼 수 있도록 수동으로 수행 하 고 있습니다. 스 캐 폴딩 MVC 컨트롤러 및 뷰를 만들려면 나중에 사용 합니다. 스 캐 폴딩 자동으로 EF NuGet 패키지를 설치할 데이터베이스 컨텍스트 클래스를 만들고 연결 문자열을 만들 수 있도록 것이 좋습니다. 이런 방식으로 작업을 수행 하는 준비 된 경우 수행 해야 하는 모든 경우 이러한 단계를 건너뛰고 엔터티 클래스를 만든 후에 MVC 컨트롤러를 스 캐 폴드
 
 ## <a name="create-the-data-model"></a>데이터 모델 만들기
 
-다음으로 Contoso University 응용 프로그램에 대한 엔터티 클래스를 만듭니다. 다음 세 가지 엔터티를 사용 하 여 시작할 수 있습니다.
+다음으로 Contoso University 애플리케이션에 대한 엔터티 클래스를 만듭니다. 다음 세 가지 엔터티를 사용 하 여 시작할 수 있습니다.
 
-![Class_diagram](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/_static/image8.png)
+**코스** <-> **등록** <-> **학생**
+
+| 엔터티 | Relationship |
+| -------- | ------------ |
+| 등록 과정 | 1 대 다 |
+| 학생 등록 | 1 대 다 |
 
 `Student` 및 `Enrollment` 엔터티 간에 일대다 관계가 있으며 `Course` 및 `Enrollment` 엔터티 간에 일대다 관계가 있습니다. 즉, 학생은 개수에 관계 없이 강좌에 등록될 수 있으며 강좌는 등록된 학생이 여러 명일 수 있습니다.
 
@@ -135,8 +117,6 @@ ms.locfileid: "52861435"
 > 이러한 엔터티 클래스의 모든 만들기를 완료 하기 전에 프로젝트를 컴파일할 하려고 하면 컴파일러 오류를 얻게 됩니다.
 
 ### <a name="the-student-entity"></a>학생 엔터티
-
-![Student_entity](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/_static/image9.png)
 
 - 에 *모델* 폴더를 라는 클래스 파일을 만듭니다 *Student.cs* 폴더를 마우스 오른쪽 단추로 클릭 하 여 **솔루션 탐색기** 선택 하 고 **추가**  >  **클래스**합니다. 템플릿 코드를 다음 코드로 바꿉니다.
 
@@ -151,8 +131,6 @@ ms.locfileid: "52861435"
 탐색 속성이 여러 엔터티를 포함할 수 있는 경우(다대다 또는 일대다 관계로), 해당 형식은 `ICollection`와 같이 항목이 추가, 삭제 및 업데이트될 수 있는 목록이어야 합니다.
 
 ### <a name="the-enrollment-entity"></a>등록 엔터티
-
-![Enrollment_entity](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/_static/image10.png)
 
 - *Models* 폴더에서*Enrollment.cs*를 만들고 기존 코드를 다음 코드로 바꿉니다.
 
@@ -169,8 +147,6 @@ ms.locfileid: "52861435"
 엔터티 프레임 워크 라고 하는 경우 외래 키 속성으로 속성을 해석 *&lt;탐색 속성 이름을&gt;&lt;기본 키 속성 이름&gt;* (예를 들어 `StudentID`에 대 한 합니다 `Student` 이후의 탐색 속성을 `Student` 엔터티의 기본 키가 `ID`). 외래 키 속성 수도 같은 이름 단순히 *&lt;기본 키 속성 이름&gt;* (예를 들어 `CourseID` 이므로 합니다 `Course` 엔터티의 기본 키가 `CourseID`).
 
 ### <a name="the-course-entity"></a>강좌 엔터티
-
-![Course_entity](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/_static/image11.png)
 
 - 에 *모델* 폴더를 만듭니다 *Course.cs*, 템플릿 코드를 다음 코드로 바꾸어:
 
@@ -210,7 +186,7 @@ ms.locfileid: "52861435"
 
 합니다 `modelBuilder.Conventions.Remove` 문에서 [OnModelCreating](https://msdn.microsoft.com/library/system.data.entity.dbcontext.onmodelcreating(v=vs.103).aspx) 메서드는 테이블 이름을 복수화 되에서 않도록 합니다. 데이터베이스에서 생성된 된 테이블 이름은이 수행 하지 않은 경우 `Students`, `Courses`, 및 `Enrollments`합니다. 테이블 이름 대신 됩니다 `Student`, `Course`, 및 `Enrollment`합니다. 개발자는 테이블 이름을 복수화할지 여부에 대해 동의하지 않습니다. 이 자습서에서는 단 수 형태를 사용 하지만 중요 한 점은 포함 하거나 코드이 줄을 생략 하 여 원하는 어떤 폼을 선택할 수 있습니다.
 
-## <a name="set-up-ef-to-initialize-the-database-with-test-data"></a>테스트 데이터로 데이터베이스를 초기화 하려면 EF 설정
+## <a name="initialize-db-with-test-data"></a>테스트 데이터로 DB 초기화
 
 Entity Framework 수 자동으로 만듭니다 (또는 삭제 및 다시 만들기) 하는 응용 프로그램을 실행 하는 경우에 대 한 데이터베이스입니다. 이 작업은 응용 프로그램이 실행 될 때마다 또는 모델은 기존 데이터베이스와 동기화 하는 경우에 지정할 수 있습니다. 작성할 수도 있습니다는 `Seed` 메서드는 Entity Framework 테스트 데이터로 채우기 위해 데이터베이스를 만든 후 자동으로 호출 합니다.
 
@@ -235,7 +211,7 @@ Entity Framework 수 자동으로 만듭니다 (또는 삭제 및 다시 만들�
 > [!NOTE]
 > 프로덕션 웹 서버에 응용 프로그램을 배포한 경우 제거 하거나 삭제 되 고 데이터베이스를 다시 생성 하는 코드를 사용 하지 않도록 설정 해야 합니다. 이 시리즈의 자습서의 뒷부분에서 할 수 있습니다.
 
-## <a name="set-up-ef-to-use-a-sql-server-express-localdb-database"></a>EF는 SQL Server Express LocalDB 데이터베이스를 사용 하도록 설정
+## <a name="set-up-ef-6-to-use-localdb"></a>EF 6 LocalDB를 사용 하도록 설정
 
 [LocalDB](/sql/database-engine/configure-windows/sql-server-2016-express-localdb?view=sql-server-2017) SQL Server Express 데이터베이스 엔진의 경량 버전입니다. 설치 및 구성 하는 작업을 쉽게, 요청 시 시작 하며 사용자 모드에서 실행 됩니다. LocalDB 데이터베이스를 사용 하 여 작업할 수 있도록 하는 SQL Server Express의 특수 실행 모드에서 실행 *.mdf* 파일입니다. LocalDB 데이터베이스 파일에 넣을 수 있습니다 합니다 *앱\_데이터* 프로젝트를 사용 하 여 데이터베이스를 복사할 수 있게 되기를 원하는 경우 웹 프로젝트의 폴더입니다. SQL Server express 사용자 인스턴스 기능 또한 작업할 수 있습니다 *.mdf* 파일을 하지만 사용자 인스턴스 기능 사용 되지 않으면 따라서 LocalDB가 사용 하기 위한 권장 *.mdf* 파일입니다. LocalDB는 Visual Studio를 사용 하 여 기본적으로 설치 됩니다.
 
@@ -249,7 +225,7 @@ Entity Framework는 명명 된 LocalDB 데이터베이스를 사용 하 여 추�
 
 연결 문자열을 실제로 필요 하지는 *Web.config* 파일입니다. 연결 문자열을 지정 하지 않으면, Entity Framework 컨텍스트 클래스를 기반으로 기본 연결 문자열을 사용 합니다. 자세한 내용은 [Code First 새 데이터베이스로](/ef/ef6/modeling/code-first/workflows/new-database)합니다.
 
-## <a name="create-a-student-controller-and-views"></a>학생 컨트롤러 및 뷰 만들기
+## <a name="create-controller-and-views"></a>컨트롤러 및 뷰 만들기
 
 이제 데이터를 표시할 웹 페이지를 만들어야 합니다. 데이터를 자동으로 요청 프로세스를 데이터베이스의 생성을 트리거합니다. 새 컨트롤러를 만들어 시작할 수 있습니다. 하지만 그렇게 하기 전에 모델 및 상황에 맞는 클래스를 MVC 컨트롤러 스 캐 폴딩 가능 프로젝트를 빌드합니다.
 
@@ -261,11 +237,9 @@ Entity Framework는 명명 된 LocalDB 데이터베이스를 사용 하 여 추�
 3. 에 **컨트롤러 추가** 대화 상자에서 다음 옵션을 선택 하 고 선택한 **추가**:
 
    - 모델 클래스: **학생 (ContosoUniversity.Models)** 합니다. (드롭다운 목록에서이 옵션을 보이지 않으면 프로젝트를 빌드 및 다시 시도 하십시오.)
-   - 데이터 컨텍스트 클래스: **SchoolContext (ContosoUniversity.DAL)** 합니다.
+   - 데이터 컨텍스트 클래스: **SchoolContext (ContosoUniversity.DAL)**.
    - 컨트롤러 이름: **StudentController** (없습니다 StudentsController).
    - 다른 필드에 대 한 기본값을 그대로 둡니다.
-
-     ![컨트롤러 추가 대화 상자에서 Visual Studio](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/_static/add-controller.png)
 
      클릭 하면 **추가**를 스 캐 폴더를 만듭니다를 *StudentController.cs* 파일과 뷰 집합 (*.cshtml* 파일) 컨트롤러와 작동 하는 합니다. 나중에 Entity Framework를 사용 하는 프로젝트를 만든 경우 있습니다도 활용을 스 캐 폴더의 몇 가지 추가 기능: 첫 번째 모델 클래스를 만들고, 연결 문자열을 만들지 한 다음는 **컨트롤러 추가** 상자 지정 **새 데이터 컨텍스트에** 선택 하 여 합니다 **+** 옆 **데이터 컨텍스트 클래스**합니다. 캐 만들어집니다 프로그램 `DbContext` 뿐만 아니라 컨트롤러 및 뷰 클래스 및 연결 문자열입니다.
 4. Visual Studio가 열립니다는 *Controllers\StudentController.cs* 파일입니다. 클래스 변수를 이미 만들었다고 데이터베이스 컨텍스트 개체를 인스턴스화하는 것이 표시 됩니다.
@@ -279,13 +253,11 @@ Entity Framework는 명명 된 LocalDB 데이터베이스를 사용 하 여 추�
      합니다 *Student\Index.cshtml* 보기 테이블의이 목록에 표시 됩니다.
 
      [!code-cshtml[Main](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/samples/sample13.cshtml)]
-5. 키를 눌러 **Ctrl**+**F5** 프로젝트를 실행 합니다. ("섀도 복사본을 만들 수 없습니다" 오류가 발생할 경우 브라우저를 닫고 다시 시도 하십시오.)
+5. 프로젝트를 실행 하려면 ctrl+f5 키를 누릅니다. ("섀도 복사본을 만들 수 없습니다" 오류가 발생할 경우 브라우저를 닫고 다시 시도 하십시오.)
 
      클릭 합니다 **학생** 테스트 데이터를 보려면 탭은는 `Seed` 삽입 하는 메서드. 폭에 따라 브라우저 창을 인 상위 주소 표시줄에 학생 탭 링크가 표시 또는 링크를 보기 위해 오른쪽 위 모서리를 클릭 해야 합니다.
 
      ![메뉴 단추](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/_static/image14.png)
-
-     ![학생 인덱스 페이지](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/_static/image15.png)
 
 ## <a name="view-the-database"></a>데이터베이스 뷰
 
@@ -296,11 +268,8 @@ Entity Framework는 명명 된 LocalDB 데이터베이스를 사용 하 여 추�
 1. 브라우저를 닫습니다.
 2. **서버 탐색기**를 확장 하 고 **데이터 연결** (먼저 새로 고침 단추를 선택 해야 할 수 있습니다), 확장 **학교 컨텍스트 (ContosoUniversity)** 를 펼친 다음  **테이블** 에 새 데이터베이스의 테이블을 확인 합니다.
 
-    ![서버 탐색기에서 데이터베이스 테이블](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/_static/image16.png)
-
 3. 마우스 오른쪽 단추로 클릭 합니다 **학생** 테이블을 클릭 **테이블 데이터 표시** 생성 된 열 및 테이블에 삽입 된 행을 볼 수 있습니다.
 
-    ![Student 테이블](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/_static/table-data.png)
 4. 닫기 합니다 **서버 탐색기** 연결 합니다.
 
 *ContosoUniversity1.mdf* 하 고 *.ldf* 데이터베이스 파일에는 *% USERPROFILE %* 폴더.
@@ -316,15 +285,32 @@ Entity Framework는 명명 된 LocalDB 데이터베이스를 사용 하 여 추�
 - 명명 된 엔터티 속성 `ID` 나 *classname* `ID` 기본 키 속성으로 인식 됩니다.
 - 라고 하는 경우 외래 키 속성으로는 속성을 해석 *&lt;탐색 속성 이름을&gt;&lt;기본 키 속성 이름&gt;* (예를 들어 `StudentID` 합니다 에대한`Student` 이후의 탐색 속성을 `Student` 엔터티의 기본 키가 `ID`). 외래 키 속성 수도 같은 이름 단순히 &lt;기본 키 속성 이름&gt; (예를 들어 `EnrollmentID` 되므로 합니다 `Enrollment` 엔터티의 기본 키가 `EnrollmentID`).
 
-규칙을 재정의할 수 있음을 확인 했습니다. 예를 들어 지정한 테이블 이름을 복수화 하지 않아야, 나중에 볼 수 명시적으로 외래 키 속성으로 속성을 표시 하는 방법입니다. 규칙 및 재정의에 해당 하는 방법을 자세히 알아봅니다 합니다 [더 복잡 한 데이터 모델을 만드는](creating-a-more-complex-data-model-for-an-asp-net-mvc-application.md) 이 시리즈의 뒷부분에 나오는 자습서입니다. 규칙에 대 한 자세한 내용은 참조 하세요. [코드의 첫 번째 규칙](/ef/ef6/modeling/code-first/conventions/built-in)합니다.
+규칙을 재정의할 수 있음을 확인 했습니다. 예를 들어 지정한 테이블 이름을 복수화 하지 않아야, 나중에 볼 수 명시적으로 외래 키 속성으로 속성을 표시 하는 방법입니다.
+## <a name="additional-resources"></a>추가 자료
 
-## <a name="summary"></a>요약
+EF 6 대 한 자세한 내용은 다음이 문서를 참조 합니다.
 
-Entity Framework 및 SQL Server Express LocalDB를 사용 하 여 저장 하 고 데이터를 표시 하는 간단한 응용 프로그램을 만들었습니다. 다음에서 기본 수행 하는 방법을 알아봅니다 자습서 만들기, 읽기, 업데이트 및 삭제 (CRUD) 작업 합니다.
+* [ASP.NET 데이터 액세스 - 권장 리소스](../../../../whitepapers/aspnet-data-access-content-map.md)
 
-이 자습서를 연결 하는 방법을 개선할 수 것에 의견을 남겨 주세요.
+* [코드의 첫 번째 규칙](/ef/ef6/modeling/code-first/conventions/built-in)
 
-다른 Entity Framework 리소스에 대 한 링크에서 찾을 수 있습니다 [ASP.NET 데이터 액세스-권장 리소스](../../../../whitepapers/aspnet-data-access-content-map.md)합니다.
+* [좀 더 복잡한 데이터 모델 만들기](creating-a-more-complex-data-model-for-an-asp-net-mvc-application.md)
 
-> [!div class="step-by-step"]
-> [다음](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application.md)
+## <a name="next-steps"></a>다음 단계
+
+이 자습서에서는 다음을 수행했습니다.
+
+> [!div class="checklist"]
+> * MVC 웹 앱을 생성합니다.
+> * 사이트 스타일 설정
+> * 설치 된 Entity Framework 6
+> * 데이터 모델 생성
+> * 데이터베이스 컨텍스트를 생성합니다.
+> * 테스트 데이터로 초기화 DB
+> * EF 6 LocalDB를 사용 하도록 설정
+> * 만든된 컨트롤러 및 뷰
+> * 데이터베이스를 표시합니다.
+
+검토 및 만들기를 사용자 지정, 읽기, 업데이트, 컨트롤러 및 보기 (CRUD) 코드를 삭제 하는 방법을 알아보려면 다음 문서로 이동 합니다.
+> [!div class="nextstepaction"]
+> [기본 CRUD 기능 구현](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application.md)

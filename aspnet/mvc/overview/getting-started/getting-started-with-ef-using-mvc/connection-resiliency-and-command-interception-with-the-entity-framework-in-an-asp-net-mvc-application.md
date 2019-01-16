@@ -1,33 +1,39 @@
 ---
 uid: mvc/overview/getting-started/getting-started-with-ef-using-mvc/connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application
-title: 연결 복원 력 및 명령 인터 셉 션 ASP.NET MVC 응용 프로그램에서 Entity Framework 사용 하 여 | Microsoft Docs
+title: '자습서: ASP.NET MVC 앱에서 EF 연결 복원 력 및 명령 인터 셉 션 사용'
 author: tdykstra
-description: Contoso University 샘플 웹 응용 프로그램에는 Entity Framework 6 Code First 및 Visual Studio를 사용 하 여 ASP.NET MVC 5 응용 프로그램을 만드는 방법을 보여 줍니다...
+description: 이 자습서에서는 연결 복원 력 및 명령 인터 셉 션을 사용 하는 방법을 배웁니다. 이들은 Entity Framework 6의 두 가지 중요 한 기능입니다.
 ms.author: riande
-ms.date: 01/13/2015
+ms.date: 01/14/2018
+ms.topic: tutorial
 ms.assetid: c89d809f-6c65-4425-a3fa-c9f6e8ac89f2
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: ab6a553100d704746840eaad512ec140d4576c44
-ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
+ms.openlocfilehash: fae5c7e1ad1000ed90630c3620b853de3a735d60
+ms.sourcegitcommit: 42a8164b8aba21f322ffefacb92301bdfb4d3c2d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48911788"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54341734"
 ---
-<a name="connection-resiliency-and-command-interception-with-the-entity-framework-in-an-aspnet-mvc-application"></a>연결 복원 력 및 명령 인터 셉 션 ASP.NET MVC 응용 프로그램에서 Entity Framework 사용 하 여
-====================
-[Tom Dykstra](https://github.com/tdykstra)
-
-[완료 된 프로젝트 다운로드](http://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8)
-
-> Contoso University 샘플 웹 응용 프로그램에는 Entity Framework 6 Code First 및 Visual Studio를 사용 하 여 ASP.NET MVC 5 응용 프로그램을 만드는 방법을 보여 줍니다. 자습서 시리즈에 대한 정보는 [시리즈의 첫 번째 자습서](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)를 참조하세요.
+# <a name="tutorial-use-connection-resiliency-and-command-interception-with-entity-framework-in-an-aspnet-mvc-app"></a>자습서: Entity Framework를 사용 하 여 연결 복원 력 및 명령 인터 셉 션을 사용 하 여 ASP.NET MVC 앱에서
 
 지금까지 응용 프로그램에서 실행 되었음을 로컬 IIS Express 개발 컴퓨터에 있습니다. 실제 응용 프로그램을 사용 하 여 인터넷을 통해 다른 사람들이 사용할 수 있도록 하려면 웹 호스팅 공급자를 배포 해야 하 고 데이터베이스 서버에 데이터베이스를 배포 해야 합니다.
 
-이 자습서에서는 클라우드 환경에 배포 하는 경우 특히 가치가 있는 Entity Framework 6의 두 가지 기능을 사용 하는 방법을 알아봅니다: 연결 복원 력 (일시적인 오류에 대 한 자동 다시 시도) 및 명령 인터 셉 션 (모든 catch SQL 쿼리 데이터베이스에 전송 로그 또는 변경 하기 위해).
+이 자습서에서는 연결 복원 력 및 명령 인터 셉 션을 사용 하는 방법을 배웁니다. 이러한 기능은 두 가지 중요 한 Entity Framework 6의는 클라우드 환경에 배포 하는 경우에 특히 유용 합니다: 연결 복원 력 (일시적인 오류에 대 한 자동 다시 시도) 및 명령 인터 셉 션 (catch 데이터베이스로 전송 된 모든 SQL 쿼리 하기 위해 로그 또는 변경).
 
 이 연결 복원 력 및 명령 인터 셉 션 자습서는 선택 사항입니다. 이 자습서를 건너뛰면 이후 자습서에서 몇 가지 사소한 측면을 조정 해야 합니다.
+
+이 자습서에서는 다음을 수행했습니다.
+
+> [!div class="checklist"]
+> * 연결 복원 력을 지원합니다
+> * 명령 인터 셉 션을 사용 하도록 설정
+> * 새 구성 테스트
+
+## <a name="prerequisites"></a>전제 조건
+
+* [정렬, 필터링 및 페이징](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application.md)
 
 ## <a name="enable-connection-resiliency"></a>연결 복원 력을 지원합니다
 
@@ -135,7 +141,7 @@ A [로깅에 대 한 최상의](../../../../aspnet/overview/developing-apps-with
 
     UI에서 다른 값을 입력 하 여 일시적인 오류가 발생할 수 있는 방식으로 일시적인 오류 시뮬레이션 코드를 작성 했습니다. 대신 항상 특정 매개 변수 값을 확인 하지 않고 일시적 예외 시퀀스를 생성 하는 인터셉터 코드를 작성할 수 있습니다. 그런 다음 일시적인 오류를 생성 하려는 경우에 인터셉터를 추가할 수 있습니다. 하지만이 작업을 수행, 추가 하지 마세요까지 인터셉터 데이터베이스 초기화 완료. 일시적인 오류를 생성 하려면 먼저에 즉, 엔터티 집합 하나에 쿼리와 같은 하나 이상의 데이터베이스 작업을 수행 합니다. Entity Framework 데이터베이스 초기화 하는 동안 여러 개의 쿼리를 실행 하 고 초기화 하는 동안 오류가 일관 되지 않은 상태가 가져올 컨텍스트입니다 발생할 수 있습니다 트랜잭션에서 실행 되지 않습니다.
 
-## <a name="test-logging-and-connection-resiliency"></a>테스트 로깅, 연결 복원 력
+## <a name="test-the-new-configuration"></a>새 구성 테스트
 
 1. 키를 눌러 **F5** 디버그 모드에서 응용 프로그램을 실행 한 다음 클릭 합니다 **학생** 탭 합니다.
 2. Visual Studio 살펴보기 **출력** 창 추적 출력을 확인 합니다. 로 거에 의해 기록 된 로그를 이동 하려면 일부 JavaScript 오류가 구성 스크롤해야 할 수도 있습니다.
@@ -167,14 +173,19 @@ A [로깅에 대 한 최상의](../../../../aspnet/overview/developing-apps-with
     ![더미 예외](connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image4.png)
 5. 주석 처리를 제거 합니다 *SetExecutionStrategy* 줄 *SchoolConfiguration.cs*합니다.
 
-## <a name="summary"></a>요약
-
-이 자습서에서는 연결 복원 력을 지원 및 Entity Framework를 작성 하 고 데이터베이스를 전송 하는 SQL 명령을 기록 하는 방법을 살펴보았습니다. 다음 자습서에서는 Code First 마이그레이션을 사용 하 여 데이터베이스를 배포 하려면 인터넷에 응용 프로그램 배포.
-
-이 자습서를 연결 하는 방법을 개선할 수 것에 의견을 남겨 주세요.
+## <a name="additional-resources"></a>추가 자료
 
 다른 Entity Framework 리소스에 대 한 링크에서 찾을 수 있습니다 [ASP.NET 데이터 액세스-권장 리소스](../../../../whitepapers/aspnet-data-access-content-map.md)합니다.
 
-> [!div class="step-by-step"]
-> [이전](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application.md)
-> [다음](migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application.md)
+## <a name="next-steps"></a>다음 단계
+
+이 자습서에서는 다음을 수행했습니다.
+
+> [!div class="checklist"]
+> * 활성화 된 연결 복원 력
+> * 설정 된 명령 인터 셉 션
+> * 새 구성 테스트
+
+Code First 마이그레이션 및 Azure 배포에 대해 자세히 알아보려면 다음 문서로 계속 진행 하세요.
+> [!div class="nextstepaction"]
+> [Code First 마이그레이션 및 Azure 배포](migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application.md)

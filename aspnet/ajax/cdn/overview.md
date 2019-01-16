@@ -8,12 +8,12 @@ ms.date: 10/14/2017
 ms.assetid: 8935bf14-ca6d-4a4e-9dbe-b96ce74cef49
 msc.legacyurl: /ajax/cdn
 msc.type: content
-ms.openlocfilehash: 2445d788df8ae80ccaad2dfeb19d1ccb91954d40
-ms.sourcegitcommit: ec71fd5a988f927ae301813aae5ff764feb3bb6a
+ms.openlocfilehash: 65eee9bc477fc8adf10e8d819b93375ffbb72d7b
+ms.sourcegitcommit: 42a8164b8aba21f322ffefacb92301bdfb4d3c2d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/12/2019
-ms.locfileid: "54249583"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54341841"
 ---
 <a name="microsoft-ajax-content-delivery-network"></a>Microsoft Ajax Content Delivery Network
 ====================
@@ -27,7 +27,7 @@ ms.locfileid: "54249583"
 ## <a name="table-of-contents"></a>목차
 
 **[ajax.microsoft.com ajax.aspnetcdn.com로 변경](#ajaxmicrosoftcom_renamed_to_ajaxaspnetcdncom_18)**  
-**[Visual Studio.vsdoc 지원](#Visual_Studio_vsdoc_Support_19)**  
+**[Visual Studio .vsdoc Support](#Visual_Studio_vsdoc_Support_19)**  
 **[CDN에서 ASP.NET Ajax를 사용 하 여](#Using_ASPNET_Ajax_from_the_CDN_20)**  
 **[CDN에서 jQuery를 사용 하 여](#Using_jQuery_from_the_CDN_21)**  
 **[CDN에서 jQuery를 사용 하 여](#Using_jQuery_UI_from_the_CDN_22)**  
@@ -89,7 +89,7 @@ CDN은 microsoft.com 도메인 이름을 사용 하는 데 사용 하 고 aspnet
 
 <a id="Visual_Studio_vsdoc_Support_19"></a>
 
-## <a name="visual-studio-vsdoc-support"></a>Visual Studio.vsdoc 지원
+## <a name="visual-studio-vsdoc-support"></a>Visual Studio .vsdoc Support
 
 VS 2008 sp1이 설치 되어 있는지 확인 해야 하는 Visual Studio 2008을 사용 하 여.vsdoc 파일을 제대로 사용 하려면 설치 하 고 vsdoc 파일에 대 한 핫픽스를 설치 합니다. 여기에서 가져올 수 있습니다.
 
@@ -595,7 +595,7 @@ jQuery 버전 1.2.0 마이그레이션
 - [jQuery UI 1.8.8](jquery-ui/cdnjqueryui188.md "Microsoft Ajax CDN의 jQuery UI 1.8.8")
 - [jQuery UI 1.8.7](jquery-ui/cdnjqueryui187.md "jQuery UI 1.8.7 Microsoft Ajax CDN")
 - [jQuery UI 1.8.6](jquery-ui/cdnjqueryui186.md "jQuery UI 1.8.6 Microsoft Ajax CDN")
-- [jQuery UI 1.8.5](jquery-ui/cdnjqueryui185.md "의 jQuery UI 1.8.5")
+- [jQuery UI 1.8.5](jquery-ui/cdnjqueryui185.md "jQuery UI 1.8.5")
 
 <a id="jQuery_Validation_Releases_on_the_CDN_3"></a>
 
@@ -660,8 +660,8 @@ jQuery 버전 1.2.0 마이그레이션
 
 다음 릴리스의 jQuery 주기 플러그 인이이 CDN에서 호스트 됩니다. 파일의 실제 목록을 보려면 각 링크를 클릭 합니다.
 
-- [jQuery 주기 2.99](jquery-cycle/cdnjquerycycle299.md "jQuery 주기 2.99")
-- [jQuery 주기 2.94](jquery-cycle/cdnjquerycycle294.md "jQuery 주기 2.94")
+- [jQuery Cycle 2.99](jquery-cycle/cdnjquerycycle299.md "jQuery Cycle 2.99")
+- [jQuery Cycle 2.94](jquery-cycle/cdnjquerycycle294.md "jQuery Cycle 2.94")
 - [jQuery 주기 2.88](jquery-cycle/cdnjquerycycle288.md "jQuery 주기 2.88")
 
 <a id="jQuery_DataTables_Releases_on_the_CDN_7"></a>
@@ -797,6 +797,21 @@ JQuery DataTables 플러그인의 다음 릴리스에서이 CDN에서 호스트 
 
 다음 릴리스에서 [getbootstrap.com](http://getbootstrap.com "getbootstrap.com") 부트스트랩 CDN에서 호스팅됩니다.
 
+#### <a name="bootstrap-version-421"></a>부트스트랩 버전 4.2.1
+
+- https://ajax.aspnetcdn.com/ajax/bootstrap/4.2.1/bootstrap.js
+- https://ajax.aspnetcdn.com/ajax/bootstrap/4.2.1/bootstrap.min.js
+- https://ajax.aspnetcdn.com/ajax/bootstrap/4.2.1/bootstrap.bundle.js
+- https://ajax.aspnetcdn.com/ajax/bootstrap/4.2.1/css/bootstrap.css
+- https://ajax.aspnetcdn.com/ajax/bootstrap/4.2.1/css/bootstrap.css.map
+- https://ajax.aspnetcdn.com/ajax/bootstrap/4.2.1/css/bootstrap.min.css
+- https://ajax.aspnetcdn.com/ajax/bootstrap/4.2.1/css/bootstrap-grid.css
+- https://ajax.aspnetcdn.com/ajax/bootstrap/4.2.1/css/bootstrap-grid.min.css
+- https://ajax.aspnetcdn.com/ajax/bootstrap/4.2.1/css/bootstrap-grid.css.map
+- https://ajax.aspnetcdn.com/ajax/bootstrap/4.2.1/css/bootstrap-reboot.css
+- https://ajax.aspnetcdn.com/ajax/bootstrap/4.2.1/css/bootstrap-reboot.min.css
+- https://ajax.aspnetcdn.com/ajax/bootstrap/4.2.1/css/bootstrap-reboot.css.map
+
 #### <a name="bootstrap-version-411"></a>부트스트랩 버전 4.1.1
 
 - https://ajax.aspnetcdn.com/ajax/bootstrap/4.1.1/bootstrap.js
@@ -826,6 +841,22 @@ JQuery DataTables 플러그인의 다음 릴리스에서이 CDN에서 호스트 
 - https://ajax.aspnetcdn.com/ajax/bootstrap/4.0.0/css/bootstrap-reboot.css
 - https://ajax.aspnetcdn.com/ajax/bootstrap/4.0.0/css/bootstrap-reboot.min.css
 - https://ajax.aspnetcdn.com/ajax/bootstrap/4.0.0/css/bootstrap-reboot.css.map
+
+#### <a name="bootstrap-version-340"></a>부트스트랩 버전 3.4.0
+
+- https://ajax.aspnetcdn.com/ajax/bootstrap/3.4.0/bootstrap.js
+- https://ajax.aspnetcdn.com/ajax/bootstrap/3.4.0/bootstrap.min.js
+- https://ajax.aspnetcdn.com/ajax/bootstrap/3.4.0/css/bootstrap.css
+- https://ajax.aspnetcdn.com/ajax/bootstrap/3.4.0/css/bootstrap.css.map
+- https://ajax.aspnetcdn.com/ajax/bootstrap/3.4.0/css/bootstrap.min.css
+- https://ajax.aspnetcdn.com/ajax/bootstrap/3.4.0/css/bootstrap-theme.css
+- https://ajax.aspnetcdn.com/ajax/bootstrap/3.4.0/css/bootstrap-theme.css.map
+- https://ajax.aspnetcdn.com/ajax/bootstrap/3.4.0/css/bootstrap-theme.min.css
+- https://ajax.aspnetcdn.com/ajax/bootstrap/3.4.0/fonts/glyphicons-halflings-regular.eot
+- https://ajax.aspnetcdn.com/ajax/bootstrap/3.4.0/fonts/glyphicons-halflings-regular.svg
+- https://ajax.aspnetcdn.com/ajax/bootstrap/3.4.0/fonts/glyphicons-halflings-regular.ttf
+- https://ajax.aspnetcdn.com/ajax/bootstrap/3.4.0/fonts/glyphicons-halflings-regular.woff
+- https://ajax.aspnetcdn.com/ajax/bootstrap/3.4.0/fonts/glyphicons-halflings-regular.woff2
 
 #### <a name="bootstrap-version-337"></a>부트스트랩 버전 3.3.7
 

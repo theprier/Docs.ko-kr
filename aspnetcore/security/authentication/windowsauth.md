@@ -5,14 +5,14 @@ description: ASP.NET core에서 IIS Express, IIS 및 HTTP.sys를 사용 하 여 
 monikerRange: '>= aspnetcore-2.1'
 ms.author: riande
 ms.custom: mvc, seodec18
-ms.date: 12/23/2018
+ms.date: 01/15/2019
 uid: security/authentication/windowsauth
-ms.openlocfilehash: 64178c8fce71445fc6a728a236d811484b21e3e0
-ms.sourcegitcommit: 97d7a00bd39c83a8f6bccb9daa44130a509f75ce
+ms.openlocfilehash: c98bdedcf943a9057c96a8e5d62615e400074899
+ms.sourcegitcommit: 42a8164b8aba21f322ffefacb92301bdfb4d3c2d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54099262"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54341656"
 ---
 # <a name="configure-windows-authentication-in-aspnet-core"></a>ASP.NET Core에서 Windows 인증을 구성 합니다.
 
@@ -62,6 +62,8 @@ dotnet new webapp --auth Windows
 ```
 
 ---
+
+기존 프로젝트를 수정 하는 경우 프로젝트 파일에 대 한 패키지 참조를 포함 되어 있는지 확인 합니다 [Microsoft.AspNetCore.App 메타 패키지](xref:fundamentals/metapackage-app) **하거나** 는 [ Microsoft.AspNetCore.Authentication](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication/) NuGet 패키지.
 
 ## <a name="enable-windows-authentication-with-iis"></a>IIS 사용 하 여 Windows 인증을 사용 하도록 설정
 

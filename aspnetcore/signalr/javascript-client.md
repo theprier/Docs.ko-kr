@@ -7,12 +7,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 11/14/2018
 uid: signalr/javascript-client
-ms.openlocfilehash: cd64a65889227d84615768bc3d8fddcd362fbba4
-ms.sourcegitcommit: eef99d14d96dc8c3c1bb0e2c4cb14da152f8a952
+ms.openlocfilehash: acdb4d1a59d980010fe89fe381190425cbb12901
+ms.sourcegitcommit: 42a8164b8aba21f322ffefacb92301bdfb4d3c2d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53022481"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54341462"
 ---
 # <a name="aspnet-core-signalr-javascript-client"></a>ASP.NET Core SignalR JavaScript 클라이언트
 
@@ -60,7 +60,7 @@ SignalR JavaScript 클라이언트 라이브러리는 [npm](https://www.npmjs.co
 JavaScript 클라이언트는 [HubConnection](/javascript/api/%40aspnet/signalr/hubconnection)의 [invoke](/javascript/api/%40aspnet/signalr/hubconnection#invoke) 메서드를 통해서 허브의 public 메서드를 호출합니다. 이 `invoke` 메서드는 두 가지 인수를 전달받습니다.
 
 * 허브 메서드의 이름. 다음 예제에서 허브 메서드의 이름은 `SendMessage`입니다.
-* 허브 메서드에 정의된 모든 인수. 다음 예제에서 인수의 이름은 `message`입니다.
+* 허브 메서드에 정의된 모든 인수. 다음 예제에서 인수의 이름은 `message`입니다. 이 예제 코드에서는 최신 버전의 Internet Explorer를 제외 하 고 모든 주요 브라우저에서 지원 되는 화살표 함수 구문입니다.
 
   [!code-javascript[Call hub methods](javascript-client/sample/wwwroot/js/chat.js?range=24)]
 
