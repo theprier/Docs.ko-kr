@@ -4,14 +4,14 @@ author: tdykstra
 description: ASP.NET Core의 로깅 프레임워크에 대해 알아봅니다. 기본 제공 로깅 공급자를 살펴보고 인기 있는 타사 공급자에 대해 알아봅니다.
 ms.author: tdykstra
 ms.custom: mvc
-ms.date: 10/11/2018
+ms.date: 01/14/2019
 uid: fundamentals/logging/index
-ms.openlocfilehash: f7cfb3823a188f28398d59e0d009e9ddc159dc32
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: 0908cc6eeaaba4006a0029ef86d3e47dcf3f9a28
+ms.sourcegitcommit: 42a8164b8aba21f322ffefacb92301bdfb4d3c2d
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50207578"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54341747"
 ---
 # <a name="logging-in-aspnet-core"></a>ASP.NET Core에 로그인
 
@@ -19,7 +19,7 @@ ms.locfileid: "50207578"
 
 ASP.NET Core는 다양한 기본 제공 및 타사 로깅 공급자와 함께 작동하는 로깅 API를 지원합니다. 이 문서에서는 기본 제공 공급자에서 로깅 API를 사용하는 방법을 보여줍니다.
 
-[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/logging/index/samples)([다운로드 방법](xref:index#how-to-download-a-sample))
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/logging/index/samples) ([다운로드 방법](xref:index#how-to-download-a-sample))
 
 ## <a name="add-providers"></a>공급자 추가
 
@@ -272,7 +272,7 @@ Microsoft.AspNetCore.Hosting.Internal.WebHost:Information: Request finished in 3
 
 이전 코드에서 첫 번째 매개 변수는 [로그 이벤트 ID](#log-event-id)입니다. 두 번째 매개 변수는 나머지 메서드 매개 변수가 제공하는 인수 값에 대한 자리 표시자가 있는 메시지 템플릿입니다. 메서드 매개 변수는 이 문서의 뒷부분에 있는 [메시지 템플릿 섹션](#log-message-template)에 설명되어 있습니다.
 
-메서드 이름(예: `LogInformation` 및 `LogWarning`)의 수준을 포함하는 로그 메서드는 [ILogger에 대한 확장 메서드](xref:Microsoft.Extensions.Logging.LoggerExtensions)입니다. 이러한 메서드는 `LogLevel` 매개 변수를 사용하는 `Log` 메서드를 호출합니다. 이러한 확장 메서드 중 하나를 호출하는 대신 `Log` 메서드를 직접 호출할 수 있지만, 구문이 비교적 복잡합니다. 자세한 내용은 <xref:Microsoft.Extensions.Logging.ILogger> 및 [로거 확장 소스 코드](https://github.com/aspnet/Logging/blob/master/src/Microsoft.Extensions.Logging.Abstractions/LoggerExtensions.cs)를 참조하세요.
+메서드 이름(예: `LogInformation` 및 `LogWarning`)의 수준을 포함하는 로그 메서드는 [ILogger에 대한 확장 메서드](xref:Microsoft.Extensions.Logging.LoggerExtensions)입니다. 이러한 메서드는 `LogLevel` 매개 변수를 사용하는 `Log` 메서드를 호출합니다. 이러한 확장 메서드 중 하나를 호출하는 대신 `Log` 메서드를 직접 호출할 수 있지만, 구문이 비교적 복잡합니다. 자세한 내용은 <xref:Microsoft.Extensions.Logging.ILogger> 및 [로거 확장 소스 코드](https://github.com/aspnet/Extensions/blob/release/2.2/src/Logging/Logging.Abstractions/src/LoggerExtensions.cs)를 참조하세요.
 
 ASP.NET Core는 다음 로그 수준을 정의하며, 여기에 가장 낮은 심각도에서 가장 높은 심각도 순으로 정렬됩니다.
 
@@ -282,7 +282,7 @@ ASP.NET Core는 다음 로그 수준을 정의하며, 여기에 가장 낮은 �
 
 * 디버그 = 1
 
-  개발 및 디버깅에 유용할 수 있는 정보입니다. 예: `Entering method Configure with flag set to true.` 로그 볼륨이 크기 때문에 문제 해결 시에만 `Debug` 수준 로그를 프로덕션 환경에서 사용합니다.
+  개발 및 디버깅에 유용할 수 있는 정보입니다. 예제: `Entering method Configure with flag set to true.` 로그 볼륨이 크기 때문에 문제 해결 시에만 `Debug` 수준 로그를 프로덕션 환경에서 사용합니다.
 
 * 정보 = 2
 
@@ -782,7 +782,7 @@ Azure에서 로깅에 대한 자세한 내용은 다음 섹션을 참조하세�
 
 ### <a name="azure-app-service-provider"></a>Azure App Service 공급자
 
-[Microsoft.Extensions.Logging.AzureAppServices](https://www.nuget.org/packages/Microsoft.Extensions.Logging.AzureAppServices) 공급자 패키지는 Azure App Service 앱의 파일 시스템과 Azure Storage 계정의 [BLOB 저장소](https://azure.microsoft.com/documentation/articles/storage-dotnet-how-to-use-blobs/#what-is-blob-storage)에 텍스트 파일을 기록합니다. 공급자 패키지는 .NET Core 1.1 이상을 대상으로 하는 앱에 사용할 수 있습니다.
+[Microsoft.Extensions.Logging.AzureAppServices](https://www.nuget.org/packages/Microsoft.Extensions.Logging.AzureAppServices) 공급자 패키지는 Azure App Service 앱의 파일 시스템과 Azure Storage 계정의 [Blob 스토리지](https://azure.microsoft.com/documentation/articles/storage-dotnet-how-to-use-blobs/#what-is-blob-storage)에 텍스트 파일을 기록합니다. 공급자 패키지는 .NET Core 1.1 이상을 대상으로 하는 앱에 사용할 수 있습니다.
 
 ::: moniker range=">= aspnetcore-2.0"
 
@@ -847,7 +847,7 @@ Azure 로그 스트리밍을 통해 로그 작업을 실시간으로 볼 수 있
 Azure 로그 스트리밍을 구성하려면:
 
 * 앱의 포털 페이지에서 **진단 로그** 페이지로 이동합니다.
-* **응용 프로그램 로깅(파일 시스템)** 을 **On**으로 설정합니다.
+* **애플리케이션 로깅(파일 시스템)** 을 **On**으로 설정합니다.
 
 ![Azure Portal 진단 로그 페이지](index/_static/azure-diagnostic-logs.png)
 
@@ -863,7 +863,7 @@ Application Insights SDK는 ASP.NET Core 로깅 인프라에 생성된 로그를
 
 * [Application Insights 개요](/azure/application-insights/app-insights-overview)
 * [ASP.NET Core용 Application Insights](/azure/application-insights/app-insights-asp-net-core)
-* [Microsoft/ApplicationInsights-aspnetcore Wiki: Logging](https://github.com/Microsoft/ApplicationInsights-aspnetcore/wiki/Logging).
+* [Microsoft/ApplicationInsights-aspnetcore Wiki: Logging](https://github.com/Microsoft/ApplicationInsights-aspnetcore/wiki/Logging)(Microsoft/ApplicationInsights-aspnetcore Wiki: 로깅)
 
 ::: moniker-end
 

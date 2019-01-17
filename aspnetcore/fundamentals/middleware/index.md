@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/10/2018
 uid: fundamentals/middleware/index
-ms.openlocfilehash: 4e5da1036b77e876899ccdea48bdec69454e1657
-ms.sourcegitcommit: 9bb58d7c8dad4bbd03419bcc183d027667fefa20
+ms.openlocfilehash: c55dbd5a9ac31f55daf1cb3146fb18b91b016919
+ms.sourcegitcommit: 42a8164b8aba21f322ffefacb92301bdfb4d3c2d
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52861487"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54341591"
 ---
 # <a name="aspnet-core-middleware"></a>ASP.NET Core 미들웨어
 
@@ -20,7 +20,7 @@ ms.locfileid: "52861487"
 미들웨어는 요청 및 응답을 처리하는 앱 파이프라인으로 어셈블리되는 소프트웨어입니다. 각 구성 요소:
 
 * 요청을 파이프라인의 다음 구성 요소로 전달할지 여부를 선택합니다.
-* 파이프라인의 다음 구성 요소가 호출되기 전과 후에 작업을 수행할 수 있습니다.
+* 파이프라인의 다음 구성 요소 전과 후에 작업을 수행할 수 있습니다.
 
 요청 대리자는 요청 파이프라인을 빌드하는 데 사용됩니다. 요청 대리자는 각 HTTP 요청을 처리합니다.
 
@@ -67,7 +67,7 @@ ASP.NET Core 요청 파이프라인은 하나씩 차례로 호출되는 요청 �
 1. HTTPS 리디렉션
 1. 정적 파일 서버
 1. 쿠키 정책 적용
-1. 인증
+1. Authentication
 1. 세션
 1. MVC
 
@@ -121,7 +121,7 @@ public void Configure(IApplicationBuilder app)
 
 1. 예외/오류 처리
 1. 정적 파일
-1. 인증
+1. Authentication
 1. 세션
 1. MVC
 
@@ -233,14 +233,14 @@ ASP.NET Core는 다음과 같은 미들웨어 구성 요소가 함께 제공됩�
 | 미들웨어 | 설명 | 순서 |
 | ---------- | ----------- | ----- |
 | [인증](xref:security/authentication/identity) | 인증 지원을 제공합니다. | `HttpContext.User`가 필요하기 전에. OAuth 콜백에 대한 터미널. |
-| [쿠키 정책](xref:security/gdpr) | 개인 정보 저장과 관련한 사용자의 동의를 추적하고 쿠키 필드(예: `secure` 및 `SameSite`)에 대해 최소한의 표준을 적용합니다. | 쿠키를 발행하는 미들웨어 전에. 예: 인증, 세션, MVC(TempData). |
+| [쿠키 정책](xref:security/gdpr) | 개인 정보 저장과 관련한 사용자의 동의를 추적하고 쿠키 필드(예: `secure` 및 `SameSite`)에 대해 최소한의 표준을 적용합니다. | 쿠키를 발행하는 미들웨어 전에. 예를 들면 다음과 같습니다. 인증, 세션, MVC(TempData). |
 | [CORS](xref:security/cors) | 원본 간 리소스 공유를 구성합니다. | CORS를 사용하는 구성 요소 이전. |
 | [진단](xref:fundamentals/error-handling) | 진단을 구성합니다. | 오류를 생성하는 구성 요소 이전. |
 | [전달된 헤더](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersextensions) | 프록시된 헤더를 현재 요청에 전달합니다. | 업데이트된 필드를 사용하는 구성 요소 전에. 예: 체계, 호스트, 클라이언트 IP, 메서드. |
 | [상태 검사](xref:host-and-deploy/health-checks) | ASP.NET Core 앱 및 그 종속성(데이터베이스 가용성 등)의 상태를 검사합니다. | 요청이 상태 검사 엔드포인트와 일치하는 경우 마지막입니다. |
 | [HTTP 메서드 재정의](/dotnet/api/microsoft.aspnetcore.builder.httpmethodoverrideextensions) | 들어오는 POST 요청이 메서드를 재정의하도록 허용합니다. | 업데이트된 메서드를 사용하는 구성 요소 앞입니다. |
 | [HTTPS 리디렉션](xref:security/enforcing-ssl#require-https) | HTTPS로 모든 HTTP 요청을 리디렉션합니다(ASP.NET Core 2.1 이상). | URL을 사용하는 구성 요소 이전. |
-| [HSTS(HTTP 엄격한 전송 보안)](xref:security/enforcing-ssl#http-strict-transport-security-protocol-hsts) | 특별한 응답 헤더를 추가하는 보안 향상 미들웨어입니다(ASP.NET Core 2.1 이상). | 응답이 전송되기 이전, 요청을 수정하는 구성 요소 이후에. 예: 전달된 헤더, URL 재작성. |
+| [HSTS(HTTP 엄격한 전송 보안)](xref:security/enforcing-ssl#http-strict-transport-security-protocol-hsts) | 특별한 응답 헤더를 추가하는 보안 향상 미들웨어입니다(ASP.NET Core 2.1 이상). | 응답이 전송되기 이전, 요청을 수정하는 구성 요소 이후에. 예를 들면 다음과 같습니다. 전달된 헤더, URL 재작성. |
 | [MVC](xref:mvc/overview) | MVC/Razor Pages(ASP.NET Core 2.0 이상)를 사용하여 요청을 처리합니다. | 요청이 경로와 일치하는 경우 터미널입니다. |
 | [OWIN](xref:fundamentals/owin) | OWIN 기반 앱, 서버 및 미들웨어와 상호 운용됩니다. | OWIN 미들웨어가 요청을 완벽하게 처리하는 경우 터미널입니다. |
 | [응답 캐싱](xref:performance/caching/middleware) | 응답 캐시에 대한 지원을 제공합니다. | 캐싱이 필요한 구성 요소 이전. |
@@ -280,7 +280,7 @@ ASP.NET Core는 다음과 같은 미들웨어 구성 요소가 함께 제공됩�
 
 [!code-csharp[](index/snapshot/Culture/Startup.cs?name=snippet1&highlight=5)]
 
-미들웨어는 해당 생성자에서 해당 종속성을 노출하여 [명시적 종속성 원칙](/dotnet/standard/modern-web-apps-azure-architecture/architectural-principles#explicit-dependencies)을 따라야 합니다. 미들웨어는 *응용 프로그램 수명*당 한 번 생성됩니다. 요청 내에서 서비스를 미들웨어와 공유해야 하는 경우 [요청당 종속성](#per-request-dependencies) 섹션을 참조하세요.
+미들웨어는 해당 생성자에서 해당 종속성을 노출하여 [명시적 종속성 원칙](/dotnet/standard/modern-web-apps-azure-architecture/architectural-principles#explicit-dependencies)을 따라야 합니다. 미들웨어는 *애플리케이션 수명*당 한 번 생성됩니다. 요청 내에서 서비스를 미들웨어와 공유해야 하는 경우 [요청당 종속성](#per-request-dependencies) 섹션을 참조하세요.
 
 미들웨어 구성 요소는 생성자 매개 변수를 통해 [DI(종속성 주입)](xref:fundamentals/dependency-injection)에서 해당 종속성을 확인할 수 있습니다. [UseMiddleware&lt;T&gt;](/dotnet/api/microsoft.aspnetcore.builder.usemiddlewareextensions.usemiddleware#Microsoft_AspNetCore_Builder_UseMiddlewareExtensions_UseMiddleware_Microsoft_AspNetCore_Builder_IApplicationBuilder_System_Type_System_Object___)는 추가 매개 변수를 직접 수락할 수도 있습니다.
 

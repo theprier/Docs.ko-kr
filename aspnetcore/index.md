@@ -1,23 +1,23 @@
 ---
 title: ASP.NET Core 소개
 author: rick-anderson
-description: 클라우드 기반 인터넷에 연결된 최신 응용 프로그램을 빌드하기 위한 플랫폼 간 고성능 오픈 소스 프레임워크인 ASP.NET Core에 대한 소개를 가져옵니다.
+description: 클라우드 기반 인터넷에 연결된 최신 애플리케이션을 빌드하기 위한 플랫폼 간 고성능 오픈 소스 프레임워크인 ASP.NET Core에 대한 소개를 가져옵니다.
 ms.author: riande
 ms.custom: mvc
-ms.date: 11/16/2018
+ms.date: 01/15/2019
 uid: index
-ms.openlocfilehash: fed81090f123084f3f33e75f86d09f55ac7fb481
-ms.sourcegitcommit: a16352c1c88a71770ab3922200a8cd148fb278a6
+ms.openlocfilehash: e7c81ff82e5206a5aca217417f6cb1c339d72e89
+ms.sourcegitcommit: 42a8164b8aba21f322ffefacb92301bdfb4d3c2d
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53335301"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54341409"
 ---
 # <a name="introduction-to-aspnet-core"></a>ASP.NET Core 소개
 
 작성자: [Daniel Roth](https://github.com/danroth27), [Rick Anderson](https://twitter.com/RickAndMSFT) 및 [Shaun Luttin](https://twitter.com/dicshaunary)
 
-ASP.NET Core는 클라우드 기반 인터넷에 연결된 최신 응용 프로그램을 빌드하기 위한 플랫폼 간 고성능 [오픈 소스](https://github.com/aspnet/home) 프레임워크입니다. ASP.NET Core를 사용하면 다음과 같은 작업을 수행할 수 있습니다.
+ASP.NET Core는 클라우드 기반 인터넷에 연결된 최신 애플리케이션을 빌드하기 위한 플랫폼 간 고성능 [오픈 소스](https://github.com/aspnet/home) 프레임워크입니다. ASP.NET Core를 사용하면 다음과 같은 작업을 수행할 수 있습니다.
 
 * 웹앱 및 서비스, [IoT](https://www.microsoft.com/internet-of-things/) 앱 및 모바일 백 엔드를 빌드합니다.
 * Windows, macOS 및 Linux에서 즐겨 찾는 개발 도구를 사용합니다.
@@ -38,7 +38,7 @@ ASP.NET Core MVC에서는 [Web API](xref:tutorials/first-web-api) 및 [웹앱](x
 * [Razor Pages](xref:razor-pages/index)는 웹 UI를 쉽게 빌드하고 생산성을 높일 수 있는 페이지 기반 프로그래밍 모델입니다.
 * [Razor 태그](xref:mvc/views/razor)는 [Razor 페이지](xref:razor-pages/index) 및 [MVC 뷰](xref:mvc/views/overview)에 생산적인 구문을 제공합니다.
 * [태그 도우미](xref:mvc/views/tag-helpers/intro)를 사용하면 서버 쪽 코드를 Razor 파일에서 HTML 요소를 만들고 렌더링하는 데 사용할 수 있습니다.
-* [여러 데이터 형식 및 콘텐츠 협상](xref:web-api/advanced/formatting)에 대한 기본 제공 지원을 통해 웹 API를 브라우저 및 모바일 장치를 포함한 다양한 클라이언트에 연결할 수 있습니다.
+* [여러 데이터 형식 및 콘텐츠 협상](xref:web-api/advanced/formatting)에 대한 기본 제공 지원을 통해 웹 API를 브라우저 및 모바일 디바이스를 포함한 다양한 클라이언트에 연결할 수 있습니다.
 * [모델 바인딩](xref:mvc/models/model-binding)은 작업 메서드 매개 변수에 HTTP 요청의 데이터를 자동으로 매핑합니다.
 * [모델 유효성 검사](xref:mvc/models/validation)는 자동으로 클라이언트 쪽 및 서버 쪽 유효성 검사를 수행합니다.
 
@@ -97,7 +97,7 @@ ASP.NET Core 3.0 이상은 .NET Core에서만 실행됩니다. 이 변경 사항
 
 ### <a name="regions-in-sample-code"></a>샘플 코드의 지역
 
-일부 샘플 앱에는 [#region](/dotnet/csharp/language-reference/preprocessor-directives/preprocessor-region) 및 [#end-region](/dotnet/csharp/language-reference/preprocessor-directives/preprocessor-endregion) C# 문으로 둘러싼 코드의 섹션이 포함됩니다. 설명서 빌드 시스템은 렌더링된 설명서 토픽에 이러한 지역을 삽입합니다.  
+일부 샘플 앱에는 [#region](/dotnet/csharp/language-reference/preprocessor-directives/preprocessor-region) 및 [#endregion](/dotnet/csharp/language-reference/preprocessor-directives/preprocessor-endregion) C# 문으로 둘러싼 코드의 섹션이 포함됩니다. 설명서 빌드 시스템은 렌더링된 설명서 토픽에 이러한 지역을 삽입합니다.  
 
 지역 이름에는 일반적으로 "snippet"이라는 단어가 포함됩니다. 다음 예제에서는 `snippet_FilterInCode`라는 지역을 보여줍니다.
 
@@ -118,7 +118,7 @@ WebHost.CreateDefaultBuilder(args)
 [!code-csharp[](sample/SampleApp/Program.cs?name=snippet_FilterInCode)]
 ```
 
-코드를 둘러싸고 있는 `#region` 및 `#end-region` 문을 안전하게 무시(또는 제거)할 수 있습니다. 항목에 설명된 샘플 시나리오를 실행하려는 경우 이러한 명령문 내에서 코드를 변경하지 마십시오. 다른 시나리오를 실험하는 경우 자유롭게 코드를 변경할 수 있습니다.
+코드를 둘러싸고 있는 `#region` 및 `#endregion` 문을 안전하게 무시(또는 제거)할 수 있습니다. 항목에 설명된 샘플 시나리오를 실행하려는 경우 이러한 명령문 내에서 코드를 변경하지 마십시오. 다른 시나리오를 실험하는 경우 자유롭게 코드를 변경할 수 있습니다.
 
 자세한 내용은 다음을 참조하세요. [ASP.NET 설명서에 참여: 코드 조각](https://github.com/aspnet/Docs/blob/master/CONTRIBUTING.md#code-snippets).
 
