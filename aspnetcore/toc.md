@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: a3ac1ac389892681e8c122d569e6325353ed6e88
+ms.sourcegitcommit: 42a8164b8aba21f322ffefacb92301bdfb4d3c2d
+ms.translationtype: HT
+ms.contentlocale: ko-KR
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54341682"
+---
 # [ASP.NET Core 설명서](/aspnet/#pivot=core)
 
 # 개요
@@ -220,9 +228,9 @@
 ## [ASP.NET Core를 사용한 EF 6](xref:data/entity-framework-6)
 ## Visual Studio를 사용한 Azure Storage
 ### [연결된 서비스](/azure/vs-azure-tools-connected-services-storage)
-### [Blob 저장소](/azure/vs-storage-aspnet5-getting-started-blobs/)
-### [큐 저장소](/azure/vs-storage-aspnet5-getting-started-queues/)
-### [테이블 저장소](/azure/vs-storage-aspnet5-getting-started-tables/)
+### [Blob 스토리지](/azure/vs-storage-aspnet5-getting-started-blobs/)
+### [Queue 스토리지](/azure/vs-storage-aspnet5-getting-started-queues/)
+### [Table 스토리지](/azure/vs-storage-aspnet5-getting-started-tables/)
 
 # 클라이언트 쪽 개발
 ## [개요](xref:client-side/index)
@@ -251,7 +259,9 @@
 ### [CLI 도구를 사용하여 게시](/azure/app-service/app-service-web-tutorial-dotnetcore-sqldb)
 ### [Visual Studio 및 Git를 사용하여 게시](xref:host-and-deploy/azure-apps/azure-continuous-deployment)
 ### [Azure Pipelines를 사용하여 지속적인 배포](/azure/devops/pipelines/get-started-yaml)
-### [시작 오류 문제 해결](xref:host-and-deploy/azure-apps/troubleshoot)
+### [ASP.NET Core 모듈](xref:host-and-deploy/aspnet-core-module)
+### [문제 해결](xref:host-and-deploy/azure-apps/troubleshoot)
+### [오류 참조](xref:host-and-deploy/azure-iis-errors-reference)
 ## DevOps 
 ### [개요](xref:azure/devops/index)
 ### [도구 및 다운로드](xref:azure/devops/tools-and-downloads)
@@ -261,10 +271,11 @@
 ### [다음 단계](xref:azure/devops/next-steps)
 ## IIS를 사용하여 Windows에서 호스트
 ### [개요](xref:host-and-deploy/iis/index)
-### [IIS에 대한 문제 해결](xref:host-and-deploy/iis/troubleshoot)
 ### [ASP.NET Core 모듈](xref:host-and-deploy/aspnet-core-module)
 ### [Visual Studio의 IIS 지원](xref:host-and-deploy/iis/development-time-iis-support)
 ### [IIS 모듈](xref:host-and-deploy/iis/modules)
+### [문제 해결](xref:host-and-deploy/iis/troubleshoot)
+### [오류 참조](xref:host-and-deploy/azure-iis-errors-reference)
 ## [Kestrel](xref:fundamentals/servers/kestrel)
 ## [HTTP.sys](xref:fundamentals/servers/httpsys)
 ## [Windows 서비스에서 호스트](xref:host-and-deploy/windows-service)
@@ -279,7 +290,6 @@
 ## [웹 팜에서 호스트](xref:host-and-deploy/web-farm)
 ## [Visual Studio 게시 프로필](xref:host-and-deploy/visual-studio-publish-profiles)
 ## [디렉터리 구조](xref:host-and-deploy/directory-structure)
-## [Azure App Service 및 IIS에 대한 오류 참조](xref:host-and-deploy/azure-iis-errors-reference)
 ## [상태 검사](xref:host-and-deploy/health-checks)
 
 # 보안 및 ID
@@ -292,7 +302,7 @@
 ### [커뮤니티 OSS 인증 옵션](xref:security/authentication/community)
 ### [ID 구성](xref:security/authentication/identity-configuration)
 ### [Windows 인증 구성](xref:security/authentication/windowsauth)
-### [ID에 대한 사용자 지정 저장소 공급자](xref:security/authentication/identity-custom-storage-providers)
+### [ID에 대한 사용자 지정 스토리지 공급자](xref:security/authentication/identity-custom-storage-providers)
 ### 외부 공급자
 #### [개요](xref:security/authentication/social/index)
 #### [Facebook 인증](xref:security/authentication/facebook-logins)
@@ -356,10 +366,10 @@
 #### [하위 키 파생 및 인증된 암호화](xref:security/data-protection/implementation/subkeyderivation)
 #### [컨텍스트 헤더](xref:security/data-protection/implementation/context-headers)
 #### [키 관리](xref:security/data-protection/implementation/key-management)
-#### [키 저장소 공급자](xref:security/data-protection/implementation/key-storage-providers)
+#### [키 스토리지 공급자](xref:security/data-protection/implementation/key-storage-providers)
 #### [미사용 키 암호화](xref:security/data-protection/implementation/key-encryption-at-rest)
 #### [키 불변성 및 설정](xref:security/data-protection/implementation/key-immutability)
-#### [키 저장소 형식](xref:security/data-protection/implementation/key-storage-format)
+#### [키 스토리지 형식](xref:security/data-protection/implementation/key-storage-format)
 #### [삭제되는 데이터 보호 공급자](xref:security/data-protection/implementation/key-storage-ephemeral)
 ### 호환성
 #### [개요](xref:security/data-protection/compatibility/index)
@@ -420,6 +430,6 @@
 ### [HTTP 모듈을 미들웨어로](xref:migration/http-modules)
 ## [로깅(ASP.NET Core 아님)](xref:migration/logging-nonaspnetcore)
 
-# [API 참조](/dotnet/api/?view=aspnetcore-2.2)
+# [API 참조](/dotnet/api/?view=aspnetcore-2.1)
 
 # [참가](https://github.com/aspnet/Docs/blob/master/CONTRIBUTING.md)
