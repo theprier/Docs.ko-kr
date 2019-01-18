@@ -1,89 +1,89 @@
 ---
-title: ASP.NET Core에서는 Ws-federation로 사용자를 인증
+title: ASP.NET Core에서 Ws-federation을 사용 하 여 사용자 인증
 author: chlowell
-description: 이 자습서에서는 ASP.NET Core 응용 프로그램의 Ws-federation을 사용 하는 방법을 설명 합니다.
+description: 이 자습서에는 ASP.NET Core 앱에서 Ws-federation을 사용 하는 방법을 보여 줍니다.
 ms.author: scaddie
 ms.custom: mvc
-ms.date: 02/27/2018
+ms.date: 01/16/2019
 uid: security/authentication/ws-federation
-ms.openlocfilehash: 55504ed28cf8ef1095bf16c101c09a6f374f038c
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 6b568928aaf6c958d66279af9fef80ac0c968c8b
+ms.sourcegitcommit: 184ba5b44d1c393076015510ac842b77bc9d4d93
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36277441"
+ms.lasthandoff: 01/18/2019
+ms.locfileid: "54396157"
 ---
-# <a name="authenticate-users-with-ws-federation-in-aspnet-core"></a>ASP.NET Core에서는 Ws-federation로 사용자를 인증
+# <a name="authenticate-users-with-ws-federation-in-aspnet-core"></a>ASP.NET Core에서 Ws-federation을 사용 하 여 사용자 인증
 
-이 자습서에서는 사용자가 WS-페더레이션 인증 공급자와 같은 페더레이션 서비스 ADFS (Active Directory)로 로그인 할 수 있도록 하는 방법을 설명 또는 [Azure Active Directory](/azure/active-directory/) (AAD). 에 설명 된 ASP.NET 코어 2.0 샘플 응용 프로그램을 사용 하 여 [Facebook, Google, 및 외부 공급자 인증](xref:security/authentication/social/index)합니다.
+이 자습서에는 사용자가 Active Directory 페더레이션 서비스 (ADFS)을 같은 WS-페더레이션 인증 공급자를 사용 하 여 로그인 하는 방법을 보여 줍니다. 또는 [Azure Active Directory](/azure/active-directory/) (AAD). 에 설명 된 ASP.NET Core 2.0 샘플 앱 사용 [Facebook, Google 및 외부 공급자 인증](xref:security/authentication/social/index)합니다.
 
-ASP.NET Core 2.0 응용 프로그램의 경우 Ws-federation 지원은가 제공 [Microsoft.AspNetCore.Authentication.WsFederation](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.WsFederation)합니다. 이 구성 요소에서 이식는 [Microsoft.Owin.Security.WsFederation](https://www.nuget.org/packages/Microsoft.Owin.Security.WsFederation) 및 해당 구성 요소의 메커니즘을 많이 공유 합니다. 그러나 구성 요소는 몇 가지 중요 한 방법으로 다.
+ASP.NET Core 2.0 앱 WS-페더레이션이 지원 기능을 제공 [Microsoft.AspNetCore.Authentication.WsFederation](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.WsFederation)합니다. 이 구성 요소에서 이식 [Microsoft.Owin.Security.WsFederation](https://www.nuget.org/packages/Microsoft.Owin.Security.WsFederation) 하 고 다양 한 해당 구성 요소의 메커니즘을 공유 합니다. 그러나 구성 요소는 몇 가지 중요 한 방법이 다릅니다.
 
 기본적으로 새 미들웨어:
 
-* 원치 않는 로그인을 허용 하지 않습니다. 이 Ws-federation 프로토콜 기능은 XSRF 공격에 취약 합니다. 그러나으로 사용할 수 있습니다는 `AllowUnsolicitedLogins` 옵션입니다.
-* 로그인 메시지에 대 한 모든 폼 게시를 검사 하지 않습니다. 만 요청을 `CallbackPath` 기호 기능에 대 한 검사 `CallbackPath` 기본값으로 `/signin-wsfed` 되지만 변경할 수 있습니다 통해 상속 된 [RemoteAuthenticationOptions.CallbackPath](/dotnet/api/microsoft.aspnetcore.authentication.remoteauthenticationoptions.callbackpath) 속성은 [ WsFederationOptions](/dotnet/api/microsoft.aspnetcore.authentication.wsfederation.wsfederationoptions) 클래스입니다. 이 경로 사용 하 여 다른 인증 공급자와 공유할 수는 [SkipUnrecognizedRequests](/dotnet/api/microsoft.aspnetcore.authentication.wsfederation.wsfederationoptions.skipunrecognizedrequests) 옵션입니다.
+* 원치 않는 로그인을 허용 하지 않습니다. WS-페더레이션 프로토콜의이 기능은 XSRF 공격에 취약 합니다. 그러나와 함께 사용할 수는 `AllowUnsolicitedLogins` 옵션입니다.
+* 로그인 메시지에 대 한 모든 폼 게시를 확인 하지 않습니다. 만 요청을 합니다 `CallbackPath` 로그인 기능 확인 됩니다 `CallbackPath` 기본값으로 `/signin-wsfed` 되지만 변경할 수 있습니다 통해 상속 된 [RemoteAuthenticationOptions.CallbackPath](/dotnet/api/microsoft.aspnetcore.authentication.remoteauthenticationoptions.callbackpath) 속성은 [ WsFederationOptions](/dotnet/api/microsoft.aspnetcore.authentication.wsfederation.wsfederationoptions) 클래스입니다. 이 경로 사용 하 여 다른 인증 공급자를 사용 하 여 공유할 수는 [SkipUnrecognizedRequests](/dotnet/api/microsoft.aspnetcore.authentication.wsfederation.wsfederationoptions.skipunrecognizedrequests) 옵션입니다.
 
-## <a name="register-the-app-with-active-directory"></a>Active Directory에 앱 등록
+## <a name="register-the-app-with-active-directory"></a>Active Directory 앱 등록
 
 ### <a name="active-directory-federation-services"></a>Active Directory Federation Services
 
-* 서버를 열고 **신뢰 당사자 트러스트 추가 마법사** ADFS 관리 콘솔에서:
+* 서버를 엽니다 **신뢰 당사자 트러스트 추가 마법사** ADFS 관리 콘솔에서:
 
-![신뢰 당사자 트러스트 마법사 추가: 시작](ws-federation/_static/AdfsAddTrust.png)
+![신뢰 당사자 트러스트 추가 마법사: 환영](ws-federation/_static/AdfsAddTrust.png)
 
 * 데이터를 수동으로 입력 하려면 선택 합니다.
 
-![데이터 원본을 선택 신뢰 당사자 트러스트 추가 마법사:](ws-federation/_static/AdfsSelectDataSource.png)
+![신뢰 당사자 트러스트 추가 마법사: 데이터 원본 선택](ws-federation/_static/AdfsSelectDataSource.png)
 
-* 신뢰 당사자에 대 한 표시 이름을 입력 합니다. 이름이는 ASP.NET Core 응용 프로그램에 중요 하지 않습니다.
+* 신뢰 당사자에 대 한 표시 이름을 입력 합니다. 이름을 ASP.NET Core 앱에 중요 하지 않습니다.
 
-* [Microsoft.AspNetCore.Authentication.WsFederation](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.WsFederation) 토큰 암호화 인증서를 구성 하지 않으면 하므로 토큰 암호화에 대 한 지원이 부족 합니다.
+* [Microsoft.AspNetCore.Authentication.WsFederation](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.WsFederation) 토큰 암호화, 토큰 암호화 인증서를 구성 하지 되므로 지원 되지 않습니다.
 
-![인증서를 구성 신뢰 당사자 트러스트 추가 마법사:](ws-federation/_static/AdfsConfigureCert.png)
+![신뢰 당사자 트러스트 추가 마법사: 인증서 구성](ws-federation/_static/AdfsConfigureCert.png)
 
-* 응용 프로그램의 URL을 사용 하 여 Ws-federation 수동 프로토콜 지원을 사용 하도록 설정 합니다. 응용 프로그램에 대 한 올바른 포트를 확인 합니다.
+* 앱의 URL을 사용 하 여 Ws-federation 수동 프로토콜 지원을 사용 하도록 설정 합니다. 앱에는 포트가 올바른지 확인 합니다.
 
-![URL 구성 신뢰 당사자 트러스트 추가 마법사:](ws-federation/_static/AdfsConfigureUrl.png)
+![신뢰 당사자 트러스트 추가 마법사: URL 구성](ws-federation/_static/AdfsConfigureUrl.png)
 
 > [!NOTE]
-> HTTPS URL 이어야 합니다. IIS Express 응용 프로그램을 개발 하는 동안 호스트 하는 경우 자체 서명 된 인증서를 제공할 수 있습니다. Kestrel은 인증서를 수동으로 구성을 해야합니다. 참조는 [Kestrel 설명서](xref:fundamentals/servers/kestrel) 내용을 확인 합니다.
+> 이 HTTPS URL 이어야 합니다. IIS Express 개발 하는 동안 앱을 호스트 하는 경우 자체 서명 된 인증서를 제공할 수 있습니다. Kestrel에는 인증서를 수동으로 구성을 해야합니다. 참조 된 [Kestrel 설명서](xref:fundamentals/servers/kestrel) 대 한 자세한 내용은 합니다.
 
-* 클릭 **다음** 마법사의 나머지 부분을 및 **닫기** 끝입니다.
+* 클릭 **다음** 마법사의 나머지와 **닫기** 끝입니다.
 
-* ASP.NET Core Id 필요는 **이름 ID** 클레임입니다. 추가 된 **클레임 규칙 편집** 대화 상자:
+* ASP.NET Core Id 필요는 **이름 ID** 클레임입니다. 하나를 추가 합니다 **클레임 규칙 편집** 대화 상자:
 
 ![클레임 규칙 편집](ws-federation/_static/EditClaimRules.png)
 
-* 에 **변환 클레임 규칙 추가 마법사**, 기본값을 그대로 적용 **LDAP 특성을 클레임으로 보내기** 서식 파일을 선택 하 고 클릭 **다음**합니다. 규칙 매핑을 추가 **SAM 계정 이름을** LDAP 특성을는 **이름 ID** 나가는 클레임:
+* 에 **변환 클레임 규칙 추가 마법사**, 기본값을 그대로 두고 **LDAP 특성을 클레임으로 보내기** 템플릿을 선택 하 고 **다음**합니다. 규칙 매핑을 추가 합니다 **SAM 계정 이름** LDAP 특성을 **이름 ID** 나가는 클레임:
 
-![클레임 규칙 구성 변환 클레임 규칙 추가 마법사:](ws-federation/_static/AddTransformClaimRule.png)
+![변환 클레임 규칙 추가 마법사: 클레임 규칙 구성](ws-federation/_static/AddTransformClaimRule.png)
 
-* 클릭 **마침** > **확인** 에 **클레임 규칙 편집** 창.
+* 클릭 **완료** > **확인** 에 **클레임 규칙 편집** 창입니다.
 
 ### <a name="azure-active-directory"></a>Azure Active Directory
 
-* AAD 테 넌 트의 응용 프로그램 등록 블레이드로 이동 합니다. 클릭 **새 응용 프로그램 등록**:
+* AAD 테 넌 트의 앱 등록 블레이드로 이동 합니다. 클릭 **새 응용 프로그램 등록**:
 
-![Azure Active Directory: 응용 프로그램 등록](ws-federation/_static/AadNewAppRegistration.png)
+![Azure Active Directory: 앱 등록](ws-federation/_static/AadNewAppRegistration.png)
 
-* 앱 등록에 대 한 이름을 입력 합니다. 이 ASP.NET Core 응용 프로그램에 중요 하지 않습니다.
-* 로 응용 프로그램에서 수신 대기 하는 URL을 입력에서 **로그온 URL**:
+* 앱 등록에 대 한 이름을 입력 합니다. 이 ASP.NET Core 앱에 중요 하지 않습니다.
+* 으로 앱에서 수신 대기 하는 URL을 입력 합니다 **로그온 URL**:
 
-![Azure Active Directory: 응용 프로그램 등록 만들기](ws-federation/_static/AadCreateAppRegistration.png)
+![Azure Active Directory: 앱 등록 만들기](ws-federation/_static/AadCreateAppRegistration.png)
 
-* 클릭 **끝점** 확인는 **페더레이션 메타 데이터 문서** URL입니다. 이 Ws-federation 미들웨어 `MetadataAddress`:
+* 클릭 **끝점** 을 확인 합니다 **페더레이션 메타 데이터 문서** URL입니다. 이 Ws-federation 미들웨어의 `MetadataAddress`:
 
-![Azure Active Directory: 끝점](ws-federation/_static/AadFederationMetadataDocument.png)
+![Azure Active Directory: 엔드포인트](ws-federation/_static/AadFederationMetadataDocument.png)
 
-* 새 응용 프로그램 등록으로 이동 합니다. 클릭 **설정** > **속성** 를 기록 하 고는 **앱 ID URI**합니다. 이 Ws-federation 미들웨어 `Wtrealm`:
+* 새 앱 등록으로 이동 합니다. 클릭 **설정을** > **속성** 기록해 합니다 **앱 ID URI**합니다. 이 Ws-federation 미들웨어의 `Wtrealm`:
 
-![Azure Active Directory: 응용 프로그램 등록 속성](ws-federation/_static/AadAppIdUri.png)
+![Azure Active Directory: 앱 등록 속성](ws-federation/_static/AadAppIdUri.png)
 
-## <a name="add-ws-federation-as-an-external-login-provider-for-aspnet-core-identity"></a>WS-페더레이션 ASP.NET Core Id에 대 한 외부 로그인 공급자로 추가
+## <a name="add-ws-federation-as-an-external-login-provider-for-aspnet-core-identity"></a>ASP.NET Core Id에 대 한 외부 로그인 공급자로 WS-페더레이션 추가
 
-* 대 한 종속성 추가 [Microsoft.AspNetCore.Authentication.WsFederation](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.WsFederation) 프로젝트에 있습니다.
-* Ws-federation을 추가 `Configure` 메서드에서 *Startup.cs*:
+* 종속성을 추가 [Microsoft.AspNetCore.Authentication.WsFederation](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.WsFederation) 프로젝트입니다.
+* Ws-federation을 추가 `Startup.ConfigureServices`:
 
     ```csharp
     services.AddIdentity<ApplicationUser, IdentityRole>()
@@ -110,19 +110,19 @@ ASP.NET Core 2.0 응용 프로그램의 경우 Ws-federation 지원은가 제공
 
 [!INCLUDE [default settings configuration](social/includes/default-settings.md)]
 
-### <a name="log-in-with-ws-federation"></a>Ws-federation 로그인
+### <a name="log-in-with-ws-federation"></a>WS-페더레이션 로그인
 
-응용 프로그램 찾아서 클릭은 **로그인** nav 헤더의 링크입니다. WsFederation으로 로그인 하는 옵션은: ![로그인 페이지](ws-federation/_static/WsFederationButton.png)
+이동 하 여 앱을 클릭 합니다 **로그인** 탐색 헤더에 링크 합니다. WsFederation 사용 하 여 로그인 하는 옵션이 있습니다. ![로그인 페이지](ws-federation/_static/WsFederationButton.png)
 
-Ad FS 로그인 페이지를 리디렉션합니다 단추 공급자로 adfs를: ![ADFS 로그인 페이지](ws-federation/_static/AdfsLoginPage.png)
+공급자로 ADFS를 사용 하 여 단추 ADFS 로그인 페이지로 리디렉션합니다. ![ADFS 로그인 페이지](ws-federation/_static/AdfsLoginPage.png)
 
-공급자와 Azure Active Directory와 단추를 AAD에 로그인 페이지로 리디렉션합니다: ![AAD 로그인 페이지](ws-federation/_static/AadSignIn.png)
+공급자로 Azure Active Directory를 사용 하 여 AAD 로그인 페이지에 단추를 리디렉션합니다. ![AAD 로그인 페이지](ws-federation/_static/AadSignIn.png)
 
-한 성공적인 로그인에서 새 사용자에 대 한 응용 프로그램의 사용자 등록 페이지를 리디렉션합니다: ![등록 페이지](ws-federation/_static/Register.png)
+성공적인 로그인을 새 사용자에 대 한 앱의 사용자 등록 페이지로 리디렉션됩니다. ![등록 페이지](ws-federation/_static/Register.png)
 
-## <a name="use-ws-federation-without-aspnet-core-identity"></a>ASP.NET Core Identity 없이 Ws-federation을 사용 하 여
+## <a name="use-ws-federation-without-aspnet-core-identity"></a>ASP.NET Core Id 없이 사용 하 여 Ws-federation
 
-WS-페더레이션 미들웨어 Identity 없이 사용할 수 있습니다. 예를 들어:
+Id 없이 Ws-federation 미들웨어를 사용할 수 있습니다. 예를 들어:
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)

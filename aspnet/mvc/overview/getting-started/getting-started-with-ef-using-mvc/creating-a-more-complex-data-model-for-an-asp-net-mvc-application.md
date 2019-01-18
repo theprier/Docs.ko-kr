@@ -1,36 +1,49 @@
 ---
 uid: mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-a-more-complex-data-model-for-an-asp-net-mvc-application
-title: ASP.NET MVC 응용 프로그램을 위한 더 복잡 한 데이터 모델 만들기 | Microsoft Docs
+title: '자습서: ASP.NET MVC 앱에 대 한 더 복잡 한 데이터 모델 만들기'
 author: tdykstra
-description: Contoso University 샘플 웹 응용 프로그램에는 Entity Framework 6 Code First 및 Visual Studio를 사용 하 여 ASP.NET MVC 5 응용 프로그램을 만드는 방법을 보여 줍니다...
+description: 이 자습서에서는 더 많은 엔터티 및 관계를 추가 합니다 및 서식 지정, 유효성 검사 및 데이터베이스 매핑 규칙을 지정 하 여 데이터 모델을 사용자 지정할 수 있습니다.
 ms.author: riande
-ms.date: 11/07/2014
+ms.date: 01/16/2019
+ms.topic: tutorial
 ms.assetid: 46f7f3c9-274f-4649-811d-92222a9b27e2
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-a-more-complex-data-model-for-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 25cec8bb9384dbd053f8af12855171a54675a40e
-ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
+ms.openlocfilehash: 50cbc184983b3e37c34332dad52bc0d70ade18c2
+ms.sourcegitcommit: 184ba5b44d1c393076015510ac842b77bc9d4d93
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48912490"
+ms.lasthandoff: 01/18/2019
+ms.locfileid: "54396300"
 ---
-<a name="creating-a-more-complex-data-model-for-an-aspnet-mvc-application"></a>ASP.NET MVC 응용 프로그램을 위한 더 복잡 한 데이터 모델 만들기
-====================
-[Tom Dykstra](https://github.com/tdykstra)
+# <a name="tutorial-create-a-more-complex-data-model-for-an-aspnet-mvc-app"></a>자습서: ASP.NET MVC 앱에 대 한 더 복잡 한 데이터 모델 만들기
 
-[완료 된 프로젝트 다운로드](http://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8)
-
-> Contoso University 샘플 웹 응용 프로그램에는 Entity Framework 6 Code First 및 Visual Studio를 사용 하 여 ASP.NET MVC 5 응용 프로그램을 만드는 방법을 보여 줍니다. 자습서 시리즈에 대한 정보는 [시리즈의 첫 번째 자습서](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)를 참조하세요.
-
-
-이전 자습서의 세 가지 엔터티로 구성 된 간단한 데이터 모델을 사용 하 여 작동 합니다. 이 자습서에서는 더 많은 엔터티 및 관계를 추가 합니다 및 서식 지정, 유효성 검사 및 데이터베이스 매핑 규칙을 지정 하 여 데이터 모델을 사용자 지정할 수 있습니다. 데이터 모델을 사용자 지정 하는 두 가지 방법 표시: 데이터베이스 컨텍스트 클래스에 코드를 추가 하 여 엔터티 클래스에 특성을 추가 하 여 합니다.
+이전 자습서의 세 가지 엔터티로 구성 된 간단한 데이터 모델을 사용 하 여 작동 합니다. 이 자습서에서는 추가 더 많은 엔터티 및 관계 및 서식 지정, 유효성 검사 및 데이터베이스 매핑 규칙을 지정 하 여 데이터 모델을 사용자 지정 합니다. 이 문서에서는 데이터 모델을 사용자 지정 하는 두 가지 방법: 데이터베이스 컨텍스트 클래스에 코드를 추가 하 여 엔터티 클래스에 특성을 추가 하 여 합니다.
 
 완료되면 엔터티 클래스는 다음 그림에 표시된 완성된 데이터 모델을 구성하게 됩니다.
 
 ![School_class_diagram](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/_static/image1.png)
 
-## <a name="customize-the-data-model-by-using-attributes"></a>특성을 사용하여 데이터 모델 사용자 지정
+이 자습서에서는 다음을 수행했습니다.
+
+> [!div class="checklist"]
+> * 데이터 모델을 사용자 지정
+> * 학생 엔터티를 업데이트 합니다.
+> * 강사 엔터티 만들기
+> * OfficeAssignment 엔터티 만들기
+> * 강좌 엔터티 수정
+> * 부서 엔터티 만들기
+> * 등록 엔터티 수정
+> * 데이터베이스 컨텍스트를 코드를 추가 합니다.
+> * 테스트 데이터로 데이터베이스 시드
+> * 마이그레이션 추가
+> * 데이터베이스 업데이트
+
+## <a name="prerequisites"></a>전제 조건
+
+* [코드 첫 번째 마이그레이션 및 배포](migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application.md)
+
+## <a name="customize-the-data-model"></a>데이터 모델을 사용자 지정
 
 이 섹션에서는 서식 지정, 유효성 검사 및 데이터베이스 매핑 규칙을 지정하는 특성을 사용하여 데이터 모델을 사용자 지정하는 방법을 배웁니다. 다음 섹션 중 일부에서는 전체 만듭니다 다음 `School` 추가 하 여 데이터 모델 특성 클래스에 이미 모델에 나머지 엔터티 형식에 대 한 새 클래스를 만들어 만들기.
 
@@ -62,7 +75,7 @@ ms.locfileid: "48912490"
 
 사용 하는 경우는 `DataType` 특성 날짜 필드를 사용 하 여 지정 해야 합니다 `DisplayFormat` 필드 Chrome 브라우저에서 올바르게 렌더링 되도록 하기 위해도 특성입니다. 자세한 내용은 [이 StackOverflow 스레드](http://stackoverflow.com/questions/12633471/mvc4-datatype-date-editorfor-wont-display-date-value-in-chrome-fine-in-ie)합니다.
 
-MVC에서 다른 날짜 형식을 처리 하는 방법에 대 한 자세한 내용은 이동 [MVC 5 소개: 편집 메서드 및 편집 보기 검사](../introduction/examining-the-edit-methods-and-edit-view.md) 페이지에서 검색 하 고 &quot;국제화&quot;.
+MVC에서 다른 날짜 형식을 처리 하는 방법에 대 한 자세한 내용은 이동 [MVC 5 소개: 편집 메서드 및 편집 보기 검사](../introduction/examining-the-edit-methods-and-edit-view.md) 페이지에서 검색 하 고 &quot;국제화&quot;합니다.
 
 학생 인덱스 페이지를 다시 실행 하 고 등록 날짜에 대 한 번 이상 표시 됩니다. 동일 사용 하는 모든 보기에 대 한 true가 됩니다는 `Student` 모델입니다.
 
@@ -96,9 +109,7 @@ PMC(패키지 관리자 콘솔)에서 다음 명령을 입력합니다.
 
 마이그레이션 파일 이름 앞에 타임 스탬프는 마이그레이션을 Entity Framework에서 사용 됩니다. 실행 하기 전에 여러 마이그레이션을 만들 수 있습니다는 `update-database` 명령 및 다음 모든 마이그레이션이 생성 된 순서 대로 적용 됩니다.
 
-실행 합니다 **만들기** 페이지 및 50 자 보다 긴 이름을 입력 합니다. **만들기**를 클릭하면, 클라이언트 쪽 유효성 검사가 오류 메시지를 표시합니다.
-
-![클라이언트 쪽 val 오류](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/_static/image3.png)
+실행 합니다 **만들기** 페이지 및 50 자 보다 긴 이름을 입력 합니다. 클릭 하면 **만들기**, 클라이언트 쪽 유효성 검사 오류 메시지를 표시 합니다. *LastName 필드를 최대 길이가 50 인 문자열 이어야 합니다.*
 
 ### <a name="the-column-attribute"></a>열 특성
 
@@ -116,8 +127,6 @@ PMC(패키지 관리자 콘솔)에서 다음 명령을 입력합니다.
 
 **서버 탐색기**오픈 합니다 *학생* 두 번 클릭 하면 테이블 디자이너를 *학생* 테이블.
 
-![](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/_static/image4.png)
-
 다음 그림에서는 처음 두 마이그레이션을 적용 하기 전의 원래 열 이름을 보여 줍니다. 변경 된 열 이름 외에도 `FirstMidName` 하 `FirstName`, 두 개의 이름 열에서 변경 `MAX` 길이를 50 자로 합니다.
 
 ![](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/_static/image5.png)
@@ -127,10 +136,7 @@ PMC(패키지 관리자 콘솔)에서 다음 명령을 입력합니다.
 > [!NOTE]
 > 다음 섹션의 모든 엔터티 클래스 만들기를 완료하기 전에 컴파일을 시도하는 경우 컴파일러 오류가 발생할 수 있습니다.
 
-
-## <a name="complete-changes-to-the-student-entity"></a>학생 엔터티에 대 한 변경을 완료합니다
-
-![Student_entity](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/_static/image6.png)
+## <a name="update-student-entity"></a>학생 엔터티를 업데이트 합니다.
 
 *Models\Student.cs*, 다음 코드를 사용 하 여 앞서 추가한 코드를 대체 합니다. 변경 내용은 강조 표시되어 있습니다.
 
@@ -150,9 +156,7 @@ PMC(패키지 관리자 콘솔)에서 다음 명령을 입력합니다.
 
 `FullName`은 다른 두 개의 속성을 연결하여 생성되는 값을 반환하는 계산된 속성입니다. 만 있는 따라서를 `get` 접근자와 아니요 `FullName` 데이터베이스에 열이 생성 됩니다.
 
-## <a name="create-the-instructor-entity"></a>강사 엔터티 만들기
-
-![Instructor_entity](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/_static/image7.png)
+## <a name="create-instructor-entity"></a>강사 엔터티 만들기
 
 만들 *Models\Instructor.cs*, 템플릿 코드를 다음 코드로 바꿉니다.
 
@@ -176,9 +180,7 @@ Instructor 클래스를 다음과 같이 작성할 수도 수 있도록 한 줄�
 
 [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample12.cs)]
 
-## <a name="create-the-officeassignment-entity"></a>OfficeAssignment 엔터티 만들기
-
-![OfficeAssignment_entity](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/_static/image8.png)
+## <a name="create-officeassignment-entity"></a>OfficeAssignment 엔터티 만들기
 
 만들 *Models\OfficeAssignment.cs* 다음 코드를 사용 하 여:
 
@@ -210,8 +212,6 @@ Instructor 클래스를 다음과 같이 작성할 수도 수 있도록 한 줄�
 
 ## <a name="modify-the-course-entity"></a>강좌 엔터티 수정
 
-![Course_entity](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/_static/image9.png)
-
 *Models\Course.cs*, 다음 코드를 사용 하 여 앞서 추가한 코드를 대체 합니다.
 
 [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample15.cs)]
@@ -242,8 +242,6 @@ Instructor 클래스를 다음과 같이 작성할 수도 수 있도록 한 줄�
 
 ## <a name="create-the-department-entity"></a>부서 엔터티 만들기
 
-![Department_entity](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/_static/image10.png)
-
 만들 *Models\Department.cs* 다음 코드를 사용 하 여:
 
 [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample20.cs)]
@@ -272,10 +270,7 @@ Instructor 클래스를 다음과 같이 작성할 수도 수 있도록 한 줄�
 
 [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample24.cs)]
 
-
 ## <a name="modify-the-enrollment-entity"></a>등록 엔터티 수정
-
-![Enrollment_entity](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/_static/image11.png)
 
  *Models\Enrollment.cs*, 다음 코드를 사용 하 여 앞서 추가한 코드를 대체
 
@@ -312,15 +307,15 @@ Instructor 클래스를 다음과 같이 작성할 수도 수 있도록 한 줄�
 
 Entity Framework를 자동으로 만듭니다는 `CourseInstructor` 읽기 및 업데이트 직접 읽기 및 업데이트 하 여 테이블에 `Instructor.Courses` 고 `Course.Instructors` 탐색 속성입니다.
 
-## <a name="entity-diagram-showing-relationships"></a>관계를 보여 주는 엔터티 다이어그램
+## <a name="entity-relationship-diagram"></a>엔터티 관계 다이어그램
 
 다음 그림에는 Entity Framework 파워 도구가 완벽한 School 모델을 만드는 다이어그램이 나와 있습니다.
 
-![School_data_model_diagram](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/_static/image15.png)
+![School_data_model_diagram](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/_static/image1.png)
 
 다 대 다 관계 줄 외에도 (\* 하 \*) 및-일대다 관계 줄 (1 \*), 여기 보이는--0-또는-일대일 관계 줄 (1 ~ 0..1) 간에 `Instructor` 및 `OfficeAssignment` 엔터티 및 0-또는--일대다 관계 줄 (0..1 ~ \*) 강사 및 부서 엔터티 간의 합니다.
 
-## <a name="customize-the-data-model-by-adding-code-to-the-database-context"></a>데이터베이스 컨텍스트를 코드를 추가 하 여 데이터 모델을 사용자 지정
+## <a name="add-code-to-database-context"></a>데이터베이스 컨텍스트를 코드를 추가 합니다.
 
 다음 새 엔터티를 추가 합니다 `SchoolContext` 클래스 및 일부를 사용 하 여 매핑을 사용자 지정할 [fluent API](https://msdn.microsoft.com/data/jj591617) 호출 합니다. API "흐름" 이므로 일련의 메서드 호출을 다음 예제와 같이 단일 명령문으로 함께 연결 하 여 자주 사용 됩니다.
 
@@ -346,7 +341,7 @@ Entity Framework를 자동으로 만듭니다는 `CourseInstructor` 읽기 및 �
 
 백그라운드에서 수행 하는 "fluent API" 명령문에 대 한 내용은 참조는 [Fluent API](https://blogs.msdn.com/b/aspnetue/archive/2011/05/04/entity-framework-code-first-tutorial-supplement-what-is-going-on-in-a-fluent-api-call.aspx) 블로그 게시물.
 
-## <a name="seed-the-database-with-test-data"></a>테스트 데이터로 데이터베이스 시드
+## <a name="seed-database-with-test-data"></a>테스트 데이터로 데이터베이스 시드
 
 코드를 대체 합니다 *migrations\ configuration.cs* 만든 새 엔터티에 대 한 시드 데이터를 제공 하기 위해 다음 코드를 사용 하 여 파일입니다.
 
@@ -358,7 +353,7 @@ Entity Framework를 자동으로 만듭니다는 `CourseInstructor` 읽기 및 �
 
 만들 때를 `Course` 개체를 초기화 합니다 `Instructors` 코드를 사용 하 여 빈 컬렉션으로 탐색 속성 `Instructors = new List<Instructor>()`합니다. 따라서 추가할 `Instructor` 이 관련 된 엔터티 `Course` 사용 하 여를 `Instructors.Add` 메서드. 빈 목록을 만들지 않은 경우 수 이러한 관계를 추가 하기 때문에 합니다 `Instructors` 속성은 null 되며 부족할는 `Add` 메서드. 목록 초기화를 사용 하는 생성자에 추가할 수도 있습니다.
 
-## <a name="add-a-migration-and-update-the-database"></a>마이그레이션을 추가 하 고 데이터베이스를 업데이트 합니다.
+## <a name="add-a-migration"></a>마이그레이션 추가
 
 PMC에서 다음을 입력 합니다 `add-migration` 명령 (사용 하지는 `update-database` 아직 명령):
 
@@ -376,6 +371,8 @@ PMC에서 다음을 입력 합니다 `add-migration` 명령 (사용 하지는 `u
 
 경우는 `Seed` 메서드를 실행에서 행을 삽입 합니다 합니다 `Department` 테이블 하며 기존 관련 됩니다 `Course` 이러한 새 행 `Department` 행. UI에서 모든 강좌를 추가 하지 않았다면, 더 이상 해야 "Temp" 부서 또는 기본값에는 `Course.DepartmentID` 열입니다. 에 사용자 추가 과정 응용 프로그램을 사용 하 여 가능성에 대 한 허용 하려면 또한 하려는 업데이트를 `Seed` 되도록 메서드 코드 모든 `Course` 행 (뿐 아니라의 이전 실행으로 삽입 합니다 `Seed` 메서드)가 유효한 `DepartmentID` 값 기본값을 제거 하기 전에 열에서 값과 "Temp" 부서를 삭제 합니다.
 
+## <a name="update-the-database"></a>데이터베이스 업데이트
+
 편집을 마친 후는 &lt; *타임 스탬프&gt;\_ComplexDataModel.cs* 파일을 입력 합니다 `update-database` 마이그레이션을 실행 하는 PMC에서 명령을 합니다.
 
 [!code-powershell[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample35.ps1)]
@@ -391,7 +388,6 @@ PMC에서 다음을 입력 합니다 `add-migration` 명령 (사용 하지는 `u
 >
 > `update-database -TargetMigration:0`
 
-
 데이터베이스를 엽니다 **서버 탐색기** 을 이전 하 고 확장 합니다 **테이블** 모든 테이블이 만들어졌는지 확인 하려면 노드. (아직 있는 경우 **서버 탐색기** 이전 시점에서 열기를 클릭 합니다 **새로 고침** 단추입니다.)
 
 ![](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/_static/image16.png)
@@ -402,14 +398,28 @@ PMC에서 다음을 입력 합니다 `add-migration` 명령 (사용 하지는 `u
 
 ![Table_data_in_CourseInstructor_table](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/_static/image17.png)
 
-## <a name="summary"></a>요약
-
-이제 더 복잡한 데이터 모델 및 해당 데이터베이스가 만들어졌습니다. 다음 자습서를 관련된 데이터에 액세스 하는 다른 방법에 대해 자세히 알아봅니다.
-
-이 자습서를 연결 하는 방법을 개선할 수 것에 의견을 남겨 주세요.
+## <a name="additional-resources"></a>추가 자료
 
 다른 Entity Framework 리소스에 대 한 링크에서 찾을 수 있습니다 합니다 [ASP.NET 데이터 액세스-권장 리소스](../../../../whitepapers/aspnet-data-access-content-map.md)합니다.
 
-> [!div class="step-by-step"]
-> [이전](migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application.md)
-> [다음](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application.md)
+## <a name="next-steps"></a>다음 단계
+
+이 자습서에서는 다음을 수행했습니다.
+
+> [!div class="checklist"]
+> * 데이터 모델을 사용자 지정
+> * 학생 엔터티 업데이트
+> * 생성된 된 강사 엔터티
+> * 만든된 OfficeAssignment 엔터티
+> * 강좌 엔터티 수정
+> * 부서 엔터티를 생성합니다.
+> * 등록 엔터티 수정
+> * 데이터베이스 컨텍스트를 추가한 코드
+> * 테스트 데이터로 시드 된 데이터베이스
+> * 마이그레이션을 추가합니다.
+> * 데이터베이스를 업데이트합니다.
+
+읽기 및 Entity Framework는 탐색 속성으로 로드 하는 관련된 데이터를 표시 하는 방법을 알아보려면 다음 문서로 이동 합니다.
+
+> [!div class="nextstepaction"]
+> [관련 데이터 읽기](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application.md)

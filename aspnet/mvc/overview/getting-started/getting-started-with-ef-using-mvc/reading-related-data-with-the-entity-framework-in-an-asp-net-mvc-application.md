@@ -1,28 +1,22 @@
 ---
 uid: mvc/overview/getting-started/getting-started-with-ef-using-mvc/reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application
-title: ASP.NET MVC 응용 프로그램에서 Entity Framework 사용 하 여 관련된 데이터 읽기 | Microsoft Docs
+title: '자습서: ASP.NET MVC 앱에서 EF 사용 하 여 관련된 데이터 읽기'
+description: 이 자습서에서는 읽기 및 관련된 데이터 표시 됩니다-즉, Entity Framework는 탐색 속성으로 로드 하는 데이터입니다.
 author: tdykstra
-description: /ajax/tutorials/using-ajax-control-toolkit-controls-and-control-extenders-vb
 ms.author: riande
-ms.date: 11/07/2014
+ms.date: 01/17/2019
+ms.topic: tutorial
 ms.assetid: 18cdd896-8ed9-4547-b143-114711e3eafb
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 18d3720f891e2356af42b58389776f2d04eee39d
-ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
+ms.openlocfilehash: 8660a75655b801364cce7c4b59847c5c00562a27
+ms.sourcegitcommit: 184ba5b44d1c393076015510ac842b77bc9d4d93
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48913205"
+ms.lasthandoff: 01/18/2019
+ms.locfileid: "54396209"
 ---
-<a name="reading-related-data-with-the-entity-framework-in-an-aspnet-mvc-application"></a>ASP.NET MVC 응용 프로그램에서 Entity Framework 사용 하 여 데이터 관련 읽기
-====================
-[Tom Dykstra](https://github.com/tdykstra)
-
-[완료 된 프로젝트 다운로드](http://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8)
-
-> Contoso University 샘플 웹 응용 프로그램에는 Entity Framework 6 Code First 및 Visual Studio를 사용 하 여 ASP.NET MVC 5 응용 프로그램을 만드는 방법을 보여 줍니다. 자습서 시리즈에 대한 정보는 [시리즈의 첫 번째 자습서](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)를 참조하세요.
-
+# <a name="tutorial-read-related-data-with-ef-in-an-aspnet-mvc-app"></a>자습서: ASP.NET MVC 앱에서 EF 사용 하 여 관련된 데이터 읽기
 
 이전 자습서에서 School 데이터 모델을 완료 했습니다. 이 자습서에서는 읽기 및 관련된 데이터 표시 됩니다-즉, Entity Framework는 탐색 속성으로 로드 하는 데이터입니다.
 
@@ -32,7 +26,18 @@ ms.locfileid: "48913205"
 
 ![Instructors_index_page_with_instructor_and_course_selected](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image2.png)
 
-## <a name="lazy-eager-and-explicit-loading-of-related-data"></a>관련된 데이터의 지연 로딩과 명시적 로드
+이 자습서에서는 다음을 수행했습니다.
+
+> [!div class="checklist"]
+> * 관련된 데이터를 로드 하는 방법 알아보기
+> * 강좌 페이지 만들기
+> * 강사 페이지 만들기
+
+## <a name="prerequisites"></a>전제 조건
+
+* [더 복잡 한 데이터 모델 만들기](creating-a-more-complex-data-model-for-an-asp-net-mvc-application.md)
+
+## <a name="learn-how-to-load-related-data"></a>관련된 데이터를 로드 하는 방법 알아보기
 
 Entity Framework 관련된 데이터를 엔터티의 탐색 속성으로 로드할 수는 여러 가지가 있습니다.
 
@@ -54,7 +59,7 @@ Entity Framework 관련된 데이터를 엔터티의 탐색 속성으로 로드�
 
 반면에 일부 시나리오에서는 지연 로딩을 더 효율적입니다. 즉시 로드는 SQL Server를 효율적으로 처리할 수 없습니다는 매우 복잡 한 조인이 생성 될 발생할 수 있습니다. 또는 처리 하는 엔터티 집합의 하위 집합에 대해서만 엔터티의 탐색 속성에 액세스 해야 할 경우, 지연 로드는 즉시 로드는 필요한 것 보다 더 많은 데이터를 검색 하므로 더 잘 수행할 수 있습니다. 성능이 중요한 경우 최상의 선택을 위해 두 가지 방식으로 성능을 테스트하는 것이 가장 좋습니다.
 
-지연 로드 성능 문제를 일으키는 코드를 숨길 수 있습니다. 예를 들어, 즉시 또는 명시적 로드를 지정 하지 않으면 하지만 대량의 엔터티를 처리 하 고, 각 반복에서 여러 탐색 속성을 사용 하는 코드 않을 매우 효율적인 (때문에 데이터베이스에 여러 번 왕복). 온-프레미스 SQL server를 사용 하 여 개발에서 효율적으로 작동 하는 응용 프로그램 대기 시간이 증가 및 지연 로드로 인해 Azure SQL Database를 이동할 때 성능 문제가 있을 수 있습니다. 현실적인 테스트 부하를 사용 하 여 데이터베이스 쿼리를 프로 파일링 지연 로딩은 적절 한 경우를 결정 하는 데 도움이 됩니다. 자세한 내용은 참조 하세요. [Entity Framework 전략 익히기: 관련 데이터 로드](https://msdn.microsoft.com/magazine/hh205756.aspx) 하 고 [줄이고 네트워크 대기 시간을 SQL Azure Entity Framework를 사용 하 여](https://msdn.microsoft.com/magazine/gg309181.aspx)입니다.
+지연 로드 성능 문제를 일으키는 코드를 숨길 수 있습니다. 예를 들어, 즉시 또는 명시적 로드를 지정 하지 않으면 하지만 대량의 엔터티를 처리 하 고, 각 반복에서 여러 탐색 속성을 사용 하는 코드 않을 매우 효율적인 (때문에 데이터베이스에 여러 번 왕복). 온-프레미스 SQL server를 사용 하 여 개발에서 효율적으로 작동 하는 응용 프로그램 대기 시간이 증가 및 지연 로드로 인해 Azure SQL Database를 이동할 때 성능 문제가 있을 수 있습니다. 현실적인 테스트 부하를 사용 하 여 데이터베이스 쿼리를 프로 파일링 지연 로딩은 적절 한 경우를 결정 하는 데 도움이 됩니다. 자세한 내용은 참조 하세요. [Entity Framework 전략 익히기: 관련된 데이터 로드](https://msdn.microsoft.com/magazine/hh205756.aspx) 하 고 [SQL Azure 네트워크 대기 시간을 줄이기 위해 Entity Framework를 사용 하 여](https://msdn.microsoft.com/magazine/gg309181.aspx)입니다.
 
 ### <a name="disable-lazy-loading-before-serialization"></a>Serialization 전에 지연 로딩을 사용 하지 않도록 설정
 
@@ -73,13 +78,19 @@ Dto를 사용 하지 않는 경우 지연 로드를 사용 하지 않도록 설�
 
     [!code-csharp[Main](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample1.cs)]
 
-## <a name="create-a-courses-page-that-displays-department-name"></a>해당 표시 부서 이름을 강좌 페이지 만들기
+## <a name="create-a-courses-page"></a>강좌 페이지 만들기
 
 합니다 `Course` 엔터티를 포함 하는 탐색 속성을 포함 합니다 `Department` 강좌에 할당 된 부서 엔터티. 가져오기 과정의 목록에 할당 된 부서의 이름을 표시할 해야는 `Name` 속성을를 `Department` 에 있는 엔터티는 `Course.Department` 탐색 속성.
 
-라는 컨트롤러를 만듭니다 `CourseController` (없습니다 CoursesController)에 대 한 합니다 `Course` 엔터티 형식에 대 한 동일한 옵션을 사용 하는 **Entity Framework를 사용 하 여 뷰를 사용 하 여 MVC 5 컨트롤러** 스 캐 폴더는 이전 합니다 `Student` 다음 그림에 나와 있는 것 처럼 컨트롤러:
+라는 컨트롤러를 만듭니다 `CourseController` (없습니다 CoursesController)에 대 한 합니다 `Course` 엔터티 형식에 대 한 동일한 옵션을 사용 하는 **Entity Framework를 사용 하 여 뷰를 사용 하 여 MVC 5 컨트롤러** 스 캐 폴더는 이전 합니다 `Student` 컨트롤러:
 
-![Add_Controller_dialog_box_for_Course_controller](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image3.png)
+| 설정 | 값 |
+| ------- | ----- |
+| 모델 클래스 | 선택 **코스 (ContosoUniversity.Models)** 합니다. |
+| 데이터 컨텍스트 클래스 | 선택 **SchoolContext (ContosoUniversity.DAL)** 합니다. |
+| 컨트롤러 이름 | 입력 *CourseController*합니다. 마찬가지로 되지 *CoursesController* 사용 하 여는 *s*입니다. 선택 했 **코스 (ContosoUniversity.Models)** 의 **컨트롤러 이름** 값 자동으로 채워진 합니다. 값을 변경 해야 합니다. |
+
+다른 기본값을 그대로 적용 하 고 컨트롤러를 추가 합니다.
 
 오픈 *Controllers\CourseController.cs* 확인을 `Index` 메서드:
 
@@ -103,15 +114,9 @@ Department 열에 대 한 스 캐 폴드 된 코드를 표시 하는 `Name` 의 
 
 페이지를 실행 합니다 (선택 된 **과정** Contoso University 홈페이지 탭) 부서 이름의 목록을 보려면.
 
-![Courses_index_page_with_department_names](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image4.png)
+## <a name="create-an-instructors-page"></a>강사 페이지 만들기
 
-## <a name="create-an-instructors-page-that-shows-courses-and-enrollments"></a>과정 및 등록을 보여 주는 강사 페이지 만들기
-
-이 섹션의 컨트롤러를 만들고에 대 한 보기를 `Instructor` 강사 페이지를 표시 하기 위해 엔터티:
-
-![Instructors_index_page_with_instructor_and_course_selected](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image5.png)
-
-이 페이지는 다음과 같은 방법으로 관련된 데이터를 읽고 표시합니다.
+이 섹션의 컨트롤러를 만들고에 대 한 보기를 `Instructor` 강사 페이지를 표시 하기 위해 엔터티. 이 페이지는 다음과 같은 방법으로 관련된 데이터를 읽고 표시합니다.
 
 - 강사 목록은의 관련된 데이터를 표시 합니다 `OfficeAssignment` 엔터티. `Instructor` 및 `OfficeAssignment` 엔터티는 일대영 또는 일 관계에 있습니다. 에 대 한 즉시 로드를 사용 하 여 `OfficeAssignment` 엔터티. 이전에 설명한 대로 기본 테이블의 검색된 모든 행에 관련된 데이터가 필요한 경우 즉시 로드는 일반적으로 더 효율적입니다. 이 경우 표시된 모든 강사에 대한 사무실 할당을 표시하길 원합니다.
 - 사용자가 관련 강사를 선택 하는 경우 `Course` 엔터티가 표시 됩니다. `Instructor` 및 `Course` 엔터티는 다대다 관계에 있습니다. 에 대 한 즉시 로드를 사용 하 여 `Course` 엔터티 및 해당 관련 `Department` 엔터티. 이 경우 선택한 강사에 대해서만 강좌가 필요 하기 때문에 지연 로드 더 효율적일 수 있습니다. 그러나 이 예제에서는 탐색 속성에 있는 엔터티 내에서 탐색 속성에 대한 즉시 로드를 사용하는 방법을 보여 줍니다.
@@ -127,9 +132,15 @@ Department 열에 대 한 스 캐 폴드 된 코드를 표시 하는 `Name` 의 
 
 ### <a name="create-the-instructor-controller-and-views"></a>강사 컨트롤러 및 뷰 만들기
 
-만들기는 `InstructorController` (없습니다 InstructorsController) 다음 그림에 나와 있는 것 처럼 EF 읽기/쓰기 동작이 포함 된 컨트롤러:
+만들기는 `InstructorController` (없습니다 InstructorsController) EF 읽기/쓰기 작업을 사용 하 여 컨트롤러:
 
-![Add_Controller_dialog_box_for_Instructor_controller](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image6.png)
+| 설정 | 값 |
+| ------- | ----- |
+| 모델 클래스 | 선택 **강사 (ContosoUniversity.Models)** 합니다. |
+| 데이터 컨텍스트 클래스 | 선택 **SchoolContext (ContosoUniversity.DAL)** 합니다. |
+| 컨트롤러 이름 | 입력 *InstructorController*합니다. 마찬가지로 되지 *InstructorsController* 사용 하 여는 *s*입니다. 선택 했 **코스 (ContosoUniversity.Models)** 의 **컨트롤러 이름** 값 자동으로 채워진 합니다. 값을 변경 해야 합니다. |
+
+다른 기본값을 그대로 적용 하 고 컨트롤러를 추가 합니다.
 
 오픈 *Controllers\InstructorController.cs* 추가한를 `using` 방침을 `ViewModels` 네임 스페이스:
 
@@ -193,8 +204,6 @@ Department 열에 대 한 스 캐 폴드 된 코드를 표시 하는 `Name` 의 
 
 응용 프로그램을 실행 하 고 선택 합니다 **강사** 탭 합니다. 페이지에 표시 됩니다는 `Location` 관련 된 속성 `OfficeAssignment` 엔터티와 빈 테이블 셀 있을 때 관련 없는 `OfficeAssignment` 엔터티.
 
-![Instructors_index_page_with_nothing_selected](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image7.png)
-
 에 *Views\Instructor\Index.cshtml* 파일을 닫은 후 `table` (끝에 있는 요소 파일의), 다음 코드를 추가 합니다. 이 코드는 강사가 선택된 경우 강사와 관련된 강좌의 목록을 표시합니다.
 
 [!code-cshtml[Main](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample18.cshtml)]
@@ -203,8 +212,6 @@ Department 열에 대 한 스 캐 폴드 된 코드를 표시 하는 `Name` 의 
 
 페이지를 실행 하 고 강사를 선택 합니다. 이제 선택된 강사에 할당된 강좌를 표시하는 표가 표시되고 각 강좌에 대해 할당된 부서의 이름이 표시됩니다.
 
-![Instructors_index_page_with_instructor_selected](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image8.png)
-
 방금 추가한 코드 블록 뒤에 다음 코드를 추가합니다. 해당 강좌가 선택된 경우에 강좌에 등록된 학생의 목록을 표시합니다.
 
 [!code-cshtml[Main](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample19.cshtml)]
@@ -212,8 +219,6 @@ Department 열에 대 한 스 캐 폴드 된 코드를 표시 하는 `Name` 의 
 이 코드를 읽기는 `Enrollments` 과정에 등록 된 학생의 목록을 표시 하기 위해 보기 모델의 속성입니다.
 
 페이지를 실행 하 고 강사를 선택 합니다. 그런 다음, 강좌를 선택하여 등록된 학생 및 해당 등급의 목록을 봅니다.
-
-![Instructors_index_page_with_instructor_and_course_selected](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image9.png)
 
 ### <a name="adding-explicit-loading"></a>명시적 로드를 추가합니다.
 
@@ -239,14 +244,20 @@ Department 열에 대 한 스 캐 폴드 된 코드를 표시 하는 `Name` 의 
 
 강사 인덱스 페이지를 이제 실행 하 고 데이터를 검색 하는 방법을 변경 했더라도 페이지에 표시 되는 항목의 차이가 표시 됩니다.
 
-## <a name="summary"></a>요약
-
-이제 모든 세 가지 방법 (지연, 즉시, 및 명시적) 탐색 속성에서 관련된 데이터 로드를 사용 했습니다. 다음 자습서에서는 관련된 데이터를 업데이트하는 방법을 설명합니다.
-
-이 자습서를 연결 하는 방법을 개선할 수 것에 의견을 남겨 주세요.
+## <a name="additional-resources"></a>추가 자료
 
 다른 Entity Framework 리소스에 대 한 링크에서 찾을 수 있습니다 합니다 [ASP.NET 데이터 액세스-권장 리소스](../../../../whitepapers/aspnet-data-access-content-map.md)합니다.
 
-> [!div class="step-by-step"]
-> [이전](creating-a-more-complex-data-model-for-an-asp-net-mvc-application.md)
-> [다음](updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application.md)
+## <a name="next-steps"></a>다음 단계
+
+이 자습서에서는 다음을 수행했습니다.
+
+> [!div class="checklist"]
+> * 관련된 데이터를 로드 하는 방법
+> * 강좌 페이지를 생성합니다.
+> * 강사 페이지를 생성합니다.
+
+관련된 데이터를 업데이트 하는 방법을 알아보려면 다음 문서로 계속 진행 하세요.
+
+> [!div class="nextstepaction"]
+> [관련 데이터 업데이트](updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application.md)

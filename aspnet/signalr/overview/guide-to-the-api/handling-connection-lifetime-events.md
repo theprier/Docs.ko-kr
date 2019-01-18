@@ -4,20 +4,19 @@ title: 이해 및 SignalR의 연결 수명 이벤트 처리 | Microsoft Docs
 author: pfletcher
 description: 이 문서에서는 Hubs API에서 노출 하는 이벤트를 사용 하는 방법을 설명 합니다.
 ms.author: riande
-ms.date: 06/10/2014
+ms.date: 01/15/2019
 ms.assetid: 03960de2-8d95-4444-9169-4426dcc64913
 msc.legacyurl: /signalr/overview/guide-to-the-api/handling-connection-lifetime-events
 msc.type: authoredcontent
-ms.openlocfilehash: 6a354179a82eba1d4a64184bfdeb302472fabf5f
-ms.sourcegitcommit: 74e3be25ea37b5fc8b4b433b0b872547b4b99186
+ms.openlocfilehash: 5aaec6795f714ba0877ec3b22eff45eb281b44aa
+ms.sourcegitcommit: 184ba5b44d1c393076015510ac842b77bc9d4d93
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53287987"
+ms.lasthandoff: 01/18/2019
+ms.locfileid: "54396170"
 ---
 <a name="understanding-and-handling-connection-lifetime-events-in-signalr"></a>이해 및 SignalR의 연결 수명 이벤트를 처리 합니다.
 ====================
-하 여 [Patrick Fletcher](https://github.com/pfletcher), [Tom Dykstra](https://github.com/tdykstra)
 
 [!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
 
@@ -32,7 +31,7 @@ ms.locfileid: "53287987"
 > ## <a name="software-versions-used-in-this-topic"></a>이 항목에서 사용 하는 소프트웨어 버전
 >
 >
-> - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
+> - [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/)
 > - .NET 4.5
 > - SignalR 버전 2
 >
@@ -147,7 +146,7 @@ ms.locfileid: "53287987"
 
 > [!NOTE]
 >
-> **중요 한**: 여기에 설명 된 이벤트의 순서는 보장 되지 않습니다. SignalR에서는이 스키마에 따라 예측 가능한 방식으로 연결 수명 이벤트를 발생 시키는 모든 있지만 가지 다양 한 네트워크 이벤트 및 전송 Api와 같은 기본 통신 프레임 워크 처리 하는 다양 합니다. 예를 들어를 `Reconnected` 클라이언트는 다음 작업을 다시 연결 되 면 이벤트가 발생할 수 있습니다 또는 `OnConnected` 서버에서 처리기는 연결을 설정 하려는 시도가 성공적으로 수행 되지 경우에 실행할 수 있습니다. 이 항목에서는 일반적인 상황에서 정상적으로 생성 되는 영향만 설명 합니다.
+> **중요**: 여기에 설명 된 이벤트의 순서는 보장 되지 않습니다. SignalR에서는이 스키마에 따라 예측 가능한 방식으로 연결 수명 이벤트를 발생 시키는 모든 있지만 가지 다양 한 네트워크 이벤트 및 전송 Api와 같은 기본 통신 프레임 워크 처리 하는 다양 합니다. 예를 들어를 `Reconnected` 클라이언트는 다음 작업을 다시 연결 되 면 이벤트가 발생할 수 있습니다 또는 `OnConnected` 서버에서 처리기는 연결을 설정 하려는 시도가 성공적으로 수행 되지 경우에 실행할 수 있습니다. 이 항목에서는 일반적인 상황에서 정상적으로 생성 되는 영향만 설명 합니다.
 
 
 <a id="clientdisconnect"></a>

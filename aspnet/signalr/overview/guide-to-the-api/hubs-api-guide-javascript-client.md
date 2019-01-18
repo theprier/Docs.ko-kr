@@ -4,20 +4,19 @@ title: ASP.NET SignalR 허브 API 가이드-JavaScript 클라이언트 | Microso
 author: pfletcher
 description: 이 문서에서는 허브 API를 사용 하 여 SignalR 브라우저 등 Windows 스토어 (WinJS) applicat JavaScript 클라이언트에서 버전 2에 대 한 소개를 제공 하는 중...
 ms.author: riande
-ms.date: 09/28/2015
+ms.date: 01/15/2019
 ms.assetid: a9fd4dc0-1b96-4443-82ca-932a5b4a8ea4
 msc.legacyurl: /signalr/overview/guide-to-the-api/hubs-api-guide-javascript-client
 msc.type: authoredcontent
-ms.openlocfilehash: a8352045d99b77713c94ab809417c5dc4675557f
-ms.sourcegitcommit: 97d7a00bd39c83a8f6bccb9daa44130a509f75ce
+ms.openlocfilehash: 12d675b6a2f2f6acdd8c3a5d0d27b5ad2fb1efc4
+ms.sourcegitcommit: 184ba5b44d1c393076015510ac842b77bc9d4d93
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54099275"
+ms.lasthandoff: 01/18/2019
+ms.locfileid: "54396313"
 ---
 <a name="aspnet-signalr-hubs-api-guide---javascript-client"></a>ASP.NET SignalR 허브 API 가이드-JavaScript 클라이언트
 ====================
-하 여 [Patrick Fletcher](https://github.com/pfletcher), [Tom Dykstra](https://github.com/tdykstra)
 
 [!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
 
@@ -30,7 +29,7 @@ ms.locfileid: "54099275"
 > ## <a name="software-versions-used-in-this-topic"></a>이 항목에서 사용 하는 소프트웨어 버전
 >
 >
-> - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
+> - [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/)
 > - .NET 4.5
 > - SignalR 버전 2
 >
@@ -142,9 +141,7 @@ ASP.NET Web Forms 응용 프로그램에서 사용 하 여 `ResolveClientUrl` �
 
 일반적으로 CSS 또는 JavaScript 파일에 사용 하는 "/ signalr 허브" URL을 지정 하는 데 동일한 메서드를 사용 합니다. 물결표를 사용 하지 않고 URL을 지정 하는 경우 일부 시나리오에서는 응용 프로그램은 제대로 작동 IIS Express를 사용 하 여 Visual Studio에서 테스트 해도 전체 IIS를 배포할 때 404 오류와 함께 실패 하는 경우. 자세한 내용은 **루트 수준 리소스에 대 한 참조 해결** 에서 [ASP.NET 웹 프로젝트에 대 한 Visual Studio에서 웹 서버](https://msdn.microsoft.com/library/58wxa9w5.aspx) MSDN 사이트입니다.
 
-디버그 모드에서 Visual Studio 2013에서 웹 프로젝트를 실행 하 고 브라우저를 Internet Explorer를 사용 하는 경우에 프록시 파일을 볼 수 있습니다 **솔루션 탐색기** 아래에서 **스크립트 문서**에서처럼 합니다 다음 그림에서는 합니다.
-
-![솔루션 탐색기에서 JavaScript 생성 된 프록시 파일](hubs-api-guide-javascript-client/_static/image1.png)
+디버그 모드에서 Visual Studio 2017에서 웹 프로젝트를 실행 하 고 브라우저를 Internet Explorer를 사용 하는 경우에 프록시 파일을 볼 수 있습니다 **솔루션 탐색기** 아래에서 **스크립트**합니다.
 
 파일의 내용을 보려면, 두 번 클릭 **hubs**합니다. Visual Studio 2012 또는 2013 및 Internet Explorer를 사용 하지 않는 경우, 디버그 모드에서 없는 경우에 "/ signalR 허브" URL로 이동 하 여 파일의 콘텐츠를 가져올 수 있습니다. 예를 들어 사이트에서 실행 중인 `http://localhost:56699`으로 이동 하 여 `http://localhost:56699/SignalR/hubs` 브라우저에서 합니다.
 
