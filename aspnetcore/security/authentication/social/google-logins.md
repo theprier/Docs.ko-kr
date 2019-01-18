@@ -4,162 +4,72 @@ author: rick-anderson
 description: 이 자습서에서는 기존 ASP.NET Core 앱에 Google 계정 사용자 인증의 통합을 보여 줍니다.
 ms.author: riande
 ms.custom: mvc, seodec18
-ms.date: 11/11/2018
+ms.date: 1/11/2019
 uid: security/authentication/google-logins
-ms.openlocfilehash: 4bb5a36cf654deb694d60da126fa42baf382f729
-ms.sourcegitcommit: 3e94d192b2ed9409fe72e3735e158b333354964c
+ms.openlocfilehash: 98857a84238124e75d695242c8d421b9a29f02e7
+ms.sourcegitcommit: 184ba5b44d1c393076015510ac842b77bc9d4d93
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53735767"
+ms.lasthandoff: 01/18/2019
+ms.locfileid: "54396097"
 ---
-# <a name="google-external-login-setup-in-aspnet-core"></a><span data-ttu-id="52d1c-103">ASP.NET Core에서 Google 외부 로그인 설정</span><span class="sxs-lookup"><span data-stu-id="52d1c-103">Google external login setup in ASP.NET Core</span></span>
+# <a name="google-external-login-setup-in-aspnet-core"></a><span data-ttu-id="9b1b4-103">ASP.NET Core에서 Google 외부 로그인 설정</span><span class="sxs-lookup"><span data-stu-id="9b1b4-103">Google external login setup in ASP.NET Core</span></span>
 
-<span data-ttu-id="52d1c-104">작성자: [Valeriy Novytskyy](https://github.com/01binary) 및 [Rick Anderson](https://twitter.com/RickAndMSFT)</span><span class="sxs-lookup"><span data-stu-id="52d1c-104">By [Valeriy Novytskyy](https://github.com/01binary) and [Rick Anderson](https://twitter.com/RickAndMSFT)</span></span>
+<span data-ttu-id="9b1b4-104">작성자: [Valeriy Novytskyy](https://github.com/01binary) 및 [Rick Anderson](https://twitter.com/RickAndMSFT)</span><span class="sxs-lookup"><span data-stu-id="9b1b4-104">By [Valeriy Novytskyy](https://github.com/01binary) and [Rick Anderson](https://twitter.com/RickAndMSFT)</span></span>
 
-<span data-ttu-id="52d1c-105">이 자습서에서 만든 샘플 ASP.NET Core 2.0 프로젝트를 사용 하 여 Google + 계정으로 로그인 사용자가 사용 하도록 설정 하는 방법을 보여 줍니다.는 [이전 페이지](xref:security/authentication/social/index)합니다.</span><span class="sxs-lookup"><span data-stu-id="52d1c-105">This tutorial shows you how to enable your users to sign in with their Google+ account using a sample ASP.NET Core 2.0 project created on the [previous page](xref:security/authentication/social/index).</span></span> <span data-ttu-id="52d1c-106">수행 하 여 시작 합니다 [공식 단계](https://developers.google.com/identity/sign-in/web/devconsole-project) Google API 콘솔에서 새 앱을 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="52d1c-106">We start by following the [official steps](https://developers.google.com/identity/sign-in/web/devconsole-project) to create a new app in Google API Console.</span></span>
+<span data-ttu-id="9b1b4-105">2019 년 1 월에서에서 Google을 시작 [종료](https://developers.google.com/+/api-shutdown) Google +에 로그인 하 고 개발자는 시스템에서 새 Google 로그인을 3 월에서 이동 해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="9b1b4-105">In January 2019 Google started to [shut down](https://developers.google.com/+/api-shutdown) Google+ sign in and developers must move to a new Google sign in system by March.</span></span> <span data-ttu-id="9b1b4-106">ASP.NET Core 2.1 및 2.2 패키지 Google 인증에 대 한 변경 내용에 맞게 2 월에 업데이트 됩니다.</span><span class="sxs-lookup"><span data-stu-id="9b1b4-106">The ASP.NET Core 2.1 and 2.2 packages for Google Authentication will be updated in February to accommodate the changes.</span></span> <span data-ttu-id="9b1b4-107">자세한 정보 및 ASP.NET Core에 대 한 임시 완화 [이 GitHub 문제](https://github.com/aspnet/AspNetCore/issues/6486)합니다.</span><span class="sxs-lookup"><span data-stu-id="9b1b4-107">For more information and temporary mitigations for ASP.NET Core, see [this GitHub issue](https://github.com/aspnet/AspNetCore/issues/6486).</span></span> <span data-ttu-id="9b1b4-108">이 자습서는 새로운 설치 프로세스를 사용 하 여 업데이트 되었습니다.</span><span class="sxs-lookup"><span data-stu-id="9b1b4-108">This tutorial has been updated with the new setup process.</span></span>
 
-## <a name="create-the-app-in-google-api-console"></a><span data-ttu-id="52d1c-107">Google API 콘솔에서 앱 만들기</span><span class="sxs-lookup"><span data-stu-id="52d1c-107">Create the app in Google API Console</span></span>
+<span data-ttu-id="9b1b4-109">이 자습서에서 만든 ASP.NET Core 2.2 프로젝트를 사용 하 여 Google 계정으로 로그인 할 수 있도록 하는 방법을 보여 줍니다.는 [이전 페이지](xref:security/authentication/social/index)합니다.</span><span class="sxs-lookup"><span data-stu-id="9b1b4-109">This tutorial shows you how to enable users to sign in with their Google account using the ASP.NET Core 2.2 project created on the [previous page](xref:security/authentication/social/index).</span></span>
 
-* <span data-ttu-id="52d1c-108">이동할 [ https://console.developers.google.com/projectselector/apis/library ](https://console.developers.google.com/projectselector/apis/library) 에 로그인 합니다.</span><span class="sxs-lookup"><span data-stu-id="52d1c-108">Navigate to [https://console.developers.google.com/projectselector/apis/library](https://console.developers.google.com/projectselector/apis/library) and sign in.</span></span> <span data-ttu-id="52d1c-109">사용 하 여 Google 계정이 아직 없다면 **더 많은 옵션** > **[계정을 만들려면](https://accounts.google.com/SignUpWithoutGmail?service=cloudconsole&continue=https%3A%2F%2Fconsole.developers.google.com%2Fprojectselector%2Fapis%2Flibrary&ltmpl=api)**  만들려면 링크:</span><span class="sxs-lookup"><span data-stu-id="52d1c-109">If you don't already have a Google account, use **More options** > **[Create account](https://accounts.google.com/SignUpWithoutGmail?service=cloudconsole&continue=https%3A%2F%2Fconsole.developers.google.com%2Fprojectselector%2Fapis%2Flibrary&ltmpl=api)** link to create one:</span></span>
+## <a name="create-a-google-api-console-project-and-client-id"></a><span data-ttu-id="9b1b4-110">Google API 콘솔 프로젝트와 클라이언트 ID 만들기</span><span class="sxs-lookup"><span data-stu-id="9b1b4-110">Create a Google API Console project and client ID</span></span>
 
-![Google API 콘솔](index/_static/GoogleConsoleLogin.png)
+* <span data-ttu-id="9b1b4-111">이동할 [통합 Google 로그인에 웹 앱](https://developers.google.com/identity/sign-in/web/devconsole-project) 선택한 **는 프로젝트 구성**합니다.</span><span class="sxs-lookup"><span data-stu-id="9b1b4-111">Navigate to [Integrating Google Sign-In into your web app](https://developers.google.com/identity/sign-in/web/devconsole-project) and select **CONFIGURE A PROJECT**.</span></span>
+* <span data-ttu-id="9b1b4-112">에 **OAuth 클라이언트 구성** 대화 상자에서 **웹 서버**합니다.</span><span class="sxs-lookup"><span data-stu-id="9b1b4-112">In the **Configure your OAuth client** dialog, select **Web server**.</span></span>
+* <span data-ttu-id="9b1b4-113">에 **권한이 부여 된 리디렉션 Uri** 텍스트 입력 상자 리디렉션 URI를 설정 합니다.</span><span class="sxs-lookup"><span data-stu-id="9b1b4-113">In the **Authorized redirect URIs** text entry box, set the redirect URI.</span></span> <span data-ttu-id="9b1b4-114">예를 들면 `https://localhost:5001/signin-google`과 같습니다.</span><span class="sxs-lookup"><span data-stu-id="9b1b4-114">For example, `https://localhost:5001/signin-google`</span></span>
+* <span data-ttu-id="9b1b4-115">저장 된 **클라이언트 ID** 하 고 **클라이언트 비밀**합니다.</span><span class="sxs-lookup"><span data-stu-id="9b1b4-115">Save the **Client ID** and **Client Secret**.</span></span>
+* <span data-ttu-id="9b1b4-116">사이트를 배포할 때 새 공용 url을 등록 합니다 **Google 콘솔**합니다.</span><span class="sxs-lookup"><span data-stu-id="9b1b4-116">When deploying the site, register the new public url from the **Google Console**.</span></span>
 
-* <span data-ttu-id="52d1c-111">리디렉션됩니다 **API Manager 라이브러리** 페이지:</span><span class="sxs-lookup"><span data-stu-id="52d1c-111">You are redirected to **API Manager Library** page:</span></span>
+## <a name="store-google-clientid-and-clientsecret"></a><span data-ttu-id="9b1b4-117">저장소 Google ClientID 및 ClientSecret</span><span class="sxs-lookup"><span data-stu-id="9b1b4-117">Store Google ClientID and ClientSecret</span></span>
 
-![API Manager 라이브러리 페이지 방문](index/_static/GoogleConsoleSwitchboard.png)
+<span data-ttu-id="9b1b4-118">Google 같은 중요 한 설정을 저장 `Client ID` 하 고 `Client Secret` 사용 하 여 합니다 [암호 관리자](xref:security/app-secrets)합니다.</span><span class="sxs-lookup"><span data-stu-id="9b1b4-118">Store sensitive settings such as the Google `Client ID` and `Client Secret` with the [Secret Manager](xref:security/app-secrets).</span></span> <span data-ttu-id="9b1b4-119">이 자습서에서는 이름을 토큰 `Authentication:Google:ClientId` 고 `Authentication:Google:ClientSecret`:</span><span class="sxs-lookup"><span data-stu-id="9b1b4-119">For the purposes of this tutorial, name the tokens `Authentication:Google:ClientId` and `Authentication:Google:ClientSecret`:</span></span>
 
-* <span data-ttu-id="52d1c-113">탭 **Create** 입력 하 **프로젝트 이름을**:</span><span class="sxs-lookup"><span data-stu-id="52d1c-113">Tap **Create** and enter your **Project name**:</span></span>
-
-![새 프로젝트 대화 상자](index/_static/GoogleConsoleNewProj.png)
-
-* <span data-ttu-id="52d1c-115">대화 상자를 수락 하면 새 앱에 대 한 기능을 선택할 수 있도록 라이브러리 페이지로 다시 리디렉션됩니다.</span><span class="sxs-lookup"><span data-stu-id="52d1c-115">After accepting the dialog, you are redirected back to the Library page allowing you to choose features for your new app.</span></span> <span data-ttu-id="52d1c-116">찾을 **Google + API** 목록 및 API 기능을 추가 하려면 해당 링크를 클릭 합니다.</span><span class="sxs-lookup"><span data-stu-id="52d1c-116">Find **Google+ API** in the list and click on its link to add the API feature:</span></span>
-
-![API Manager 라이브러리 페이지에서 "Google + API"에 대 한 검색](index/_static/GoogleConsoleChooseApi.png)
-
-* <span data-ttu-id="52d1c-118">새로 추가 된 API에 대 한 페이지가 표시 됩니다.</span><span class="sxs-lookup"><span data-stu-id="52d1c-118">The page for the newly added API is displayed.</span></span> <span data-ttu-id="52d1c-119">탭 **사용** 기능에서 앱에 Google + 기호를 추가 하려면:</span><span class="sxs-lookup"><span data-stu-id="52d1c-119">Tap **Enable** to add Google+ sign in feature to your app:</span></span>
-
-![API Manager Google + API 페이지 방문](index/_static/GoogleConsoleEnableApi.png)
-
-* <span data-ttu-id="52d1c-121">API를 사용 하도록 설정한 후 탭 **자격 증명 만들기** 암호를 구성 하려면:</span><span class="sxs-lookup"><span data-stu-id="52d1c-121">After enabling the API, tap **Create credentials** to configure the secrets:</span></span>
-
-![API Manager Google + API 페이지에서 자격 증명 단추 만들기](index/_static/GoogleConsoleGoCredentials.png)
-
-* <span data-ttu-id="52d1c-123">다음 중 하나를 선택합니다.</span><span class="sxs-lookup"><span data-stu-id="52d1c-123">Choose:</span></span>
-  * <span data-ttu-id="52d1c-124">**Google+ API**</span><span class="sxs-lookup"><span data-stu-id="52d1c-124">**Google+ API**</span></span>
-  * <span data-ttu-id="52d1c-125">**웹 서버 (예:: node.js, Tomcat)**, 및</span><span class="sxs-lookup"><span data-stu-id="52d1c-125">**Web server (e.g. node.js, Tomcat)**, and</span></span>
-  * <span data-ttu-id="52d1c-126">**사용자 데이터**:</span><span class="sxs-lookup"><span data-stu-id="52d1c-126">**User data**:</span></span>
-
-![API 관리자 자격 증명 페이지: 어떤 종류의 자격 증명에 대해 알아보세요 필요한 패널](index/_static/GoogleConsoleChooseCred.png)
-
-* <span data-ttu-id="52d1c-128">탭 **어떤 자격 증명 필요 합니까?** 안내 하는 앱 구성의 두 번째 단계로 **OAuth 2.0 클라이언트 ID 만들기**:</span><span class="sxs-lookup"><span data-stu-id="52d1c-128">Tap **What credentials do I need?** which takes you to the second step of app configuration, **Create an OAuth 2.0 client ID**:</span></span>
-
-![API 관리자 자격 증명 페이지: OAuth 2.0 클라이언트 ID 만들기](index/_static/GoogleConsoleCreateClient.png)
-
-* <span data-ttu-id="52d1c-130">하나의 기능 (로그인)를 동일한 입력 수를 사용 하 여 Google + 프로젝트를 만드는 것 때문에 **이름을** 에서는 프로젝트에 대해 사용 되는 OAuth 2.0 클라이언트 ID에 대 한 합니다.</span><span class="sxs-lookup"><span data-stu-id="52d1c-130">Because we are creating a Google+ project with just one feature (sign in), we can enter the same **Name** for the OAuth 2.0 client ID as the one we used for the project.</span></span>
-
-* <span data-ttu-id="52d1c-131">개발 URI를 입력으로 `/signin-google` 에 추가 합니다 **권한이 부여 된 리디렉션 Uri** 필드 (예를 들어: `https://localhost:44320/signin-google`).</span><span class="sxs-lookup"><span data-stu-id="52d1c-131">Enter your development URI with `/signin-google` appended into the **Authorized redirect URIs** field (for example: `https://localhost:44320/signin-google`).</span></span> <span data-ttu-id="52d1c-132">이 자습서의 뒷부분에서 구성 된 Google 인증에서 요청을 자동으로 처리 됩니다 `/signin-google` OAuth 흐름을 구현 하는 경로입니다.</span><span class="sxs-lookup"><span data-stu-id="52d1c-132">The Google authentication configured later in this tutorial will automatically handle requests at `/signin-google` route to implement the OAuth flow.</span></span>
-
-> [!NOTE]
-> <span data-ttu-id="52d1c-133">URI 세그먼트 `/signin-google` Google 인증 공급자의 기본 콜백으로 설정 됩니다.</span><span class="sxs-lookup"><span data-stu-id="52d1c-133">The URI segment `/signin-google` is set as the default callback of the Google authentication provider.</span></span> <span data-ttu-id="52d1c-134">상속을 통해 Google 인증 미들웨어를 구성 하는 동안 기본 콜백 URI를 변경할 수 있습니다 [RemoteAuthenticationOptions.CallbackPath](/dotnet/api/microsoft.aspnetcore.authentication.remoteauthenticationoptions.callbackpath) 의 속성을 [GoogleOptions](/dotnet/api/microsoft.aspnetcore.authentication.google.googleoptions) 클래스입니다.</span><span class="sxs-lookup"><span data-stu-id="52d1c-134">You can change the default callback URI while configuring the Google authentication middleware via the inherited [RemoteAuthenticationOptions.CallbackPath](/dotnet/api/microsoft.aspnetcore.authentication.remoteauthenticationoptions.callbackpath) property of the [GoogleOptions](/dotnet/api/microsoft.aspnetcore.authentication.google.googleoptions) class.</span></span>
-
-* <span data-ttu-id="52d1c-135">Tab 키를 추가 합니다 **권한이 부여 된 리디렉션 Uri** 항목입니다.</span><span class="sxs-lookup"><span data-stu-id="52d1c-135">Press TAB to add the **Authorized redirect URIs** entry.</span></span>
-
-* <span data-ttu-id="52d1c-136">탭 **클라이언트 ID 만들기**, 세 번째 단계로, 그러면 **OAuth 2.0 동의 화면 설정**:</span><span class="sxs-lookup"><span data-stu-id="52d1c-136">Tap **Create client ID**, which takes you to the third step, **Set up the OAuth 2.0 consent screen**:</span></span>
-
-![API 관리자 자격 증명 페이지: OAuth 2.0 동의 화면 설정](index/_static/GoogleConsoleAddCred.png)
-
-* <span data-ttu-id="52d1c-138">입력에 공개 **전자 메일 주소** 하며 **제품 이름** Google + 라는 로그인 할 때 앱에 대 한 표시 합니다.</span><span class="sxs-lookup"><span data-stu-id="52d1c-138">Enter your public facing **Email address** and the **Product name** shown for your app when Google+ prompts the user to sign in.</span></span> <span data-ttu-id="52d1c-139">추가 옵션을 사용할 수 있습니다 **더 많은 사용자 지정 옵션**합니다.</span><span class="sxs-lookup"><span data-stu-id="52d1c-139">Additional options are available under **More customization options**.</span></span>
-
-* <span data-ttu-id="52d1c-140">탭 **계속** 마지막 단계를 계속 하려면 **자격 증명 다운로드**:</span><span class="sxs-lookup"><span data-stu-id="52d1c-140">Tap **Continue** to proceed to the last step, **Download credentials**:</span></span>
-
-![API 관리자 자격 증명 페이지: 자격 증명 다운로드](index/_static/GoogleConsoleFinish.png)
-
-* <span data-ttu-id="52d1c-142">탭 **다운로드** 응용 프로그램 비밀을 사용 하 여 JSON 파일을 저장 하 고 **수행** 새 앱 만들기를 완료 합니다.</span><span class="sxs-lookup"><span data-stu-id="52d1c-142">Tap **Download** to save a JSON file with application secrets, and **Done** to complete creation of the new app.</span></span>
-
-* <span data-ttu-id="52d1c-143">다시 방문 해야 사이트를 배포 하는 경우는 **Google 콘솔** 새 공용 url을 등록 합니다.</span><span class="sxs-lookup"><span data-stu-id="52d1c-143">When deploying the site you'll need to revisit the **Google Console** and register a new public url.</span></span>
-
-## <a name="store-google-clientid-and-clientsecret"></a><span data-ttu-id="52d1c-144">저장소 Google ClientID 및 ClientSecret</span><span class="sxs-lookup"><span data-stu-id="52d1c-144">Store Google ClientID and ClientSecret</span></span>
-
-<span data-ttu-id="52d1c-145">Google와 같은 중요 한 설정이 연결 `Client ID` 하 고 `Client Secret` 사용 하 여 응용 프로그램 구성에는 [암호 관리자](xref:security/app-secrets).</span><span class="sxs-lookup"><span data-stu-id="52d1c-145">Link sensitive settings like Google `Client ID` and `Client Secret` to your application configuration using the [Secret Manager](xref:security/app-secrets).</span></span> <span data-ttu-id="52d1c-146">이 자습서에서는 이름을 토큰 `Authentication:Google:ClientId` 고 `Authentication:Google:ClientSecret`입니다.</span><span class="sxs-lookup"><span data-stu-id="52d1c-146">For the purposes of this tutorial, name the tokens `Authentication:Google:ClientId` and `Authentication:Google:ClientSecret`.</span></span>
-
-<span data-ttu-id="52d1c-147">이러한 토큰에 대 한 값에서 이전 단계에서 다운로드 한 JSON 파일에서 찾을 수 있습니다 `web.client_id` 고 `web.client_secret`입니다.</span><span class="sxs-lookup"><span data-stu-id="52d1c-147">The values for these tokens can be found in the JSON file downloaded in the previous step under `web.client_id` and `web.client_secret`.</span></span>
-
-## <a name="configure-google-authentication"></a><span data-ttu-id="52d1c-148">Google 인증 구성</span><span class="sxs-lookup"><span data-stu-id="52d1c-148">Configure Google Authentication</span></span>
-
-::: moniker range=">= aspnetcore-2.0"
-
-<span data-ttu-id="52d1c-149">Google 서비스에 추가 합니다 `ConfigureServices` 의 메서드 *Startup.cs* 파일:</span><span class="sxs-lookup"><span data-stu-id="52d1c-149">Add the Google service in the `ConfigureServices` method in *Startup.cs* file:</span></span>
-
-```csharp
-services.AddDefaultIdentity<IdentityUser>()
-        .AddDefaultUI(UIFramework.Bootstrap4)
-        .AddEntityFrameworkStores<ApplicationDbContext>();
-
-services.AddAuthentication().AddGoogle(googleOptions =>
-{
-    googleOptions.ClientId = Configuration["Authentication:Google:ClientId"];
-    googleOptions.ClientSecret = Configuration["Authentication:Google:ClientSecret"];
-});
+```console
+dotnet user-secrets set "Authentication:Google:ClientId" "X.apps.googleusercontent.com"
+dotnet user-secrets set "Authentication:Google:ClientSecret" "<client secret>"
 ```
 
-[!INCLUDE [default settings configuration](includes/default-settings.md)]
+<span data-ttu-id="9b1b4-120">API 자격 증명 및에서 사용량을 관리할 수 있습니다 합니다 [API 콘솔](https://console.developers.google.com/apis/dashboard)합니다.</span><span class="sxs-lookup"><span data-stu-id="9b1b4-120">You can manage your API credentials and usage in the [API Console](https://console.developers.google.com/apis/dashboard).</span></span>
 
-[!INCLUDE[](includes/chain-auth-providers.md)]
+## <a name="configure-google-authentication"></a><span data-ttu-id="9b1b4-121">Google 인증 구성</span><span class="sxs-lookup"><span data-stu-id="9b1b4-121">Configure Google authentication</span></span>
 
-::: moniker-end
+<span data-ttu-id="9b1b4-122">Google 서비스를 추가할 `Startup.ConfigureServices`합니다.</span><span class="sxs-lookup"><span data-stu-id="9b1b4-122">Add the Google service to `Startup.ConfigureServices`.</span></span>
 
-::: moniker range="< aspnetcore-2.0"
+[!INCLUDE [default settings configuration](includes/default-settings2-2.md)]
 
-<span data-ttu-id="52d1c-150">이 자습서에 사용 되는 프로젝트 템플릿이 되도록 [Microsoft.AspNetCore.Authentication.Google](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.Google) 패키지를 설치 합니다.</span><span class="sxs-lookup"><span data-stu-id="52d1c-150">The project template used in this tutorial ensures that [Microsoft.AspNetCore.Authentication.Google](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.Google) package is installed.</span></span>
+## <a name="sign-in-with-google"></a><span data-ttu-id="9b1b4-123">Google로 로그인</span><span class="sxs-lookup"><span data-stu-id="9b1b4-123">Sign in with Google</span></span>
 
-* <span data-ttu-id="52d1c-151">Visual Studio 2017을 사용 하 여이 패키지를 설치 하려면 마우스 오른쪽 단추로 클릭 프로젝트를 마우스 **NuGet 패키지 관리**합니다.</span><span class="sxs-lookup"><span data-stu-id="52d1c-151">To install this package with Visual Studio 2017, right-click on the project and select **Manage NuGet Packages**.</span></span>
-* <span data-ttu-id="52d1c-152">.NET Core CLI를 설치 하려면 프로젝트 디렉터리에서 다음을 실행 합니다.</span><span class="sxs-lookup"><span data-stu-id="52d1c-152">To install with .NET Core CLI, execute the following in your project directory:</span></span>
-
-`dotnet add package Microsoft.AspNetCore.Authentication.Google`
-
-<span data-ttu-id="52d1c-153">Google 미들웨어를 추가 합니다 `Configure` 의 메서드 *Startup.cs* 파일:</span><span class="sxs-lookup"><span data-stu-id="52d1c-153">Add the Google middleware in the `Configure` method in *Startup.cs* file:</span></span>
-
-```csharp
-app.UseGoogleAuthentication(new GoogleOptions()
-{
-    ClientId = Configuration["Authentication:Google:ClientId"],
-    ClientSecret = Configuration["Authentication:Google:ClientSecret"]
-});
-```
-
-::: moniker-end
-
-<span data-ttu-id="52d1c-154">참조 된 [GoogleOptions](/dotnet/api/microsoft.aspnetcore.builder.googleoptions) Google 인증에서 지 원하는 구성 옵션에 대 한 자세한 내용은 API 참조.</span><span class="sxs-lookup"><span data-stu-id="52d1c-154">See the [GoogleOptions](/dotnet/api/microsoft.aspnetcore.builder.googleoptions) API reference for more information on configuration options supported by Google authentication.</span></span> <span data-ttu-id="52d1c-155">이 사용 하 여 사용자에 대 한 다른 정보를 요청할 수 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="52d1c-155">This can be used to request different information about the user.</span></span>
-
-## <a name="sign-in-with-google"></a><span data-ttu-id="52d1c-156">Google로 로그인</span><span class="sxs-lookup"><span data-stu-id="52d1c-156">Sign in with Google</span></span>
-
-<span data-ttu-id="52d1c-157">응용 프로그램을 실행 하 고 클릭 **로그인**합니다.</span><span class="sxs-lookup"><span data-stu-id="52d1c-157">Run your application and click **Log in**.</span></span> <span data-ttu-id="52d1c-158">Google로 로그인 하는 옵션이 표시 됩니다.</span><span class="sxs-lookup"><span data-stu-id="52d1c-158">An option to sign in with Google appears:</span></span>
-
-![Microsoft Edge에서 실행 중인 웹 응용 프로그램: 인증 되지 않은 사용자](index/_static/DoneGoogle.png)
-
-<span data-ttu-id="52d1c-160">Google을 클릭할 때 리디렉션됩니다 Google 인증을 위해:</span><span class="sxs-lookup"><span data-stu-id="52d1c-160">When you click on Google, you are redirected to Google for authentication:</span></span>
-
-![Google 인증 대화 상자](index/_static/GoogleLogin.png)
-
-<span data-ttu-id="52d1c-162">Google 자격 증명을 입력 한 후 다음 리디렉션됩니다 전자 메일을 설정할 수 있는 웹 사이트로 다시 합니다.</span><span class="sxs-lookup"><span data-stu-id="52d1c-162">After entering your Google credentials, then you are redirected back to the web site where you can set your email.</span></span>
-
-<span data-ttu-id="52d1c-163">이제 Google 자격 증명을 사용 하 여 로그인 됩니다.</span><span class="sxs-lookup"><span data-stu-id="52d1c-163">You are now logged in using your Google credentials:</span></span>
-
-![Microsoft Edge에서 실행 중인 웹 응용 프로그램: 인증 된 사용자](index/_static/Done.png)
+* <span data-ttu-id="9b1b4-124">앱을 실행 하 고 클릭 **로그인**합니다.</span><span class="sxs-lookup"><span data-stu-id="9b1b4-124">Run the app and click **Log in**.</span></span> <span data-ttu-id="9b1b4-125">Google로 로그인 하는 옵션이 표시 됩니다.</span><span class="sxs-lookup"><span data-stu-id="9b1b4-125">An option to sign in with Google appears.</span></span>
+* <span data-ttu-id="9b1b4-126">클릭 합니다 **Google** 단추를 인증에 대 한 Google에 리디렉션합니다.</span><span class="sxs-lookup"><span data-stu-id="9b1b4-126">Click the **Google** button, which redirects to Google for authentication.</span></span>
+* <span data-ttu-id="9b1b4-127">Google 자격 증명을 입력 한 후 웹 사이트로 다시 리디렉션됩니다.</span><span class="sxs-lookup"><span data-stu-id="9b1b4-127">After entering your Google credentials, you are redirected back to the web site.</span></span>
 
 [!INCLUDE[Forward request information when behind a proxy or load balancer section](includes/forwarded-headers-middleware.md)]
 
-## <a name="troubleshooting"></a><span data-ttu-id="52d1c-165">문제 해결</span><span class="sxs-lookup"><span data-stu-id="52d1c-165">Troubleshooting</span></span>
+[!INCLUDE[](includes/chain-auth-providers.md)]
 
-* <span data-ttu-id="52d1c-166">표시 되 면을 `403 (Forbidden)` 개발 모드 (또는 동일한 오류로 디버거로 중단)에서 실행 되도록 하는 경우 사용자 고유의 앱에서 오류 페이지 **Google + API** 에서 설정 되어 있는지를 **APIManager라이브러리** 나열 된 단계를 수행 하 여 [이 페이지에서 이전](#create-the-app-in-google-api-console)합니다.</span><span class="sxs-lookup"><span data-stu-id="52d1c-166">If you receive a `403 (Forbidden)` error page from your own app when running in development mode (or break into the debugger with the same error), ensure that **Google+ API** has been enabled in the **API Manager Library** by following the steps listed [earlier on this page](#create-the-app-in-google-api-console).</span></span> <span data-ttu-id="52d1c-167">로그인 작동 하지 않습니다 하 고 오류를 가져오지 않음, 문제를 더 쉽게 디버그 하려면 개발 모드를 전환 합니다.</span><span class="sxs-lookup"><span data-stu-id="52d1c-167">If the sign in doesn't work and you aren't getting any errors, switch to development mode to make the issue easier to debug.</span></span>
-* <span data-ttu-id="52d1c-168">**ASP.NET Core 2.x만:** 호출 하 여 구성 되어 있지 않으면 Identity `services.AddIdentity` 에 `ConfigureServices`를 인증 하려고 하면 *ArgumentException: 'SignInScheme' 옵션을 제공 해야*합니다.</span><span class="sxs-lookup"><span data-stu-id="52d1c-168">**ASP.NET Core 2.x only:** If Identity isn't configured by calling `services.AddIdentity` in `ConfigureServices`, attempting to authenticate will result in *ArgumentException: The 'SignInScheme' option must be provided*.</span></span> <span data-ttu-id="52d1c-169">이 자습서에 사용 되는 프로젝트 템플릿이이 수행 되도록 보장 합니다.</span><span class="sxs-lookup"><span data-stu-id="52d1c-169">The project template used in this tutorial ensures that this is done.</span></span>
-* <span data-ttu-id="52d1c-170">사이트 데이터베이스를 초기 마이그레이션을 적용 하 여 만들어지지 않은, 경우 받습니다 *요청을 처리 하는 동안 데이터베이스 작업이 실패 했습니다.* 오류입니다.</span><span class="sxs-lookup"><span data-stu-id="52d1c-170">If the site database has not been created by applying the initial migration, you will get *A database operation failed while processing the request* error.</span></span> <span data-ttu-id="52d1c-171">탭 **마이그레이션 적용** 데이터베이스를 만들고 오류 지 나 새로 고침 합니다.</span><span class="sxs-lookup"><span data-stu-id="52d1c-171">Tap **Apply Migrations** to create the database and refresh to continue past the error.</span></span>
+<span data-ttu-id="9b1b4-128">참조 된 [GoogleOptions](/dotnet/api/microsoft.aspnetcore.builder.googleoptions) Google 인증에서 지 원하는 구성 옵션에 대 한 자세한 내용은 API 참조.</span><span class="sxs-lookup"><span data-stu-id="9b1b4-128">See the [GoogleOptions](/dotnet/api/microsoft.aspnetcore.builder.googleoptions) API reference for more information on configuration options supported by Google authentication.</span></span> <span data-ttu-id="9b1b4-129">이 사용 하 여 사용자에 대 한 다른 정보를 요청할 수 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="9b1b4-129">This can be used to request different information about the user.</span></span>
 
-## <a name="next-steps"></a><span data-ttu-id="52d1c-172">다음 단계</span><span class="sxs-lookup"><span data-stu-id="52d1c-172">Next steps</span></span>
+## <a name="change-the-default-callback-uri"></a><span data-ttu-id="9b1b4-130">기본 콜백 URI를 변경 합니다.</span><span class="sxs-lookup"><span data-stu-id="9b1b4-130">Change the default callback URI</span></span>
 
-* <span data-ttu-id="52d1c-173">이 문서에서는 Google을 사용 하 여 인증 하는 보여 주었습니다.</span><span class="sxs-lookup"><span data-stu-id="52d1c-173">This article showed how you can authenticate with Google.</span></span> <span data-ttu-id="52d1c-174">에 나열 된 다른 공급자를 사용 하 여 인증 하는 유사한 방법을 따를 수 있습니다 합니다 [이전 페이지](xref:security/authentication/social/index)합니다.</span><span class="sxs-lookup"><span data-stu-id="52d1c-174">You can follow a similar approach to authenticate with other providers listed on the [previous page](xref:security/authentication/social/index).</span></span>
+<span data-ttu-id="9b1b4-131">URI 세그먼트 `/signin-google` Google 인증 공급자의 기본 콜백으로 설정 됩니다.</span><span class="sxs-lookup"><span data-stu-id="9b1b4-131">The URI segment `/signin-google` is set as the default callback of the Google authentication provider.</span></span> <span data-ttu-id="9b1b4-132">상속을 통해 Google 인증 미들웨어를 구성 하는 동안 기본 콜백 URI를 변경할 수 있습니다 [RemoteAuthenticationOptions.CallbackPath](/dotnet/api/microsoft.aspnetcore.authentication.remoteauthenticationoptions.callbackpath) 의 속성을 [GoogleOptions](/dotnet/api/microsoft.aspnetcore.authentication.google.googleoptions) 클래스입니다.</span><span class="sxs-lookup"><span data-stu-id="9b1b4-132">You can change the default callback URI while configuring the Google authentication middleware via the inherited [RemoteAuthenticationOptions.CallbackPath](/dotnet/api/microsoft.aspnetcore.authentication.remoteauthenticationoptions.callbackpath) property of the [GoogleOptions](/dotnet/api/microsoft.aspnetcore.authentication.google.googleoptions) class.</span></span>
 
-* <span data-ttu-id="52d1c-175">다시 설정 해야 Azure 웹 앱에 웹 사이트를 게시 하면는 `ClientSecret` Google API 콘솔에서.</span><span class="sxs-lookup"><span data-stu-id="52d1c-175">Once you publish your web site to Azure web app, you should reset the `ClientSecret` in the Google API Console.</span></span>
+## <a name="troubleshooting"></a><span data-ttu-id="9b1b4-133">문제 해결</span><span class="sxs-lookup"><span data-stu-id="9b1b4-133">Troubleshooting</span></span>
 
-* <span data-ttu-id="52d1c-176">설정 된 `Authentication:Google:ClientId` 및 `Authentication:Google:ClientSecret` Azure portal에서 응용 프로그램 설정 합니다.</span><span class="sxs-lookup"><span data-stu-id="52d1c-176">Set the `Authentication:Google:ClientId` and `Authentication:Google:ClientSecret` as application settings in the Azure portal.</span></span> <span data-ttu-id="52d1c-177">구성 시스템 환경 변수에서 키를 읽을 수 설정 됩니다.</span><span class="sxs-lookup"><span data-stu-id="52d1c-177">The configuration system is set up to read keys from environment variables.</span></span>
+* <span data-ttu-id="9b1b4-134">로그인 작동 하지 않습니다 하 고 오류를 가져오지 않음, 문제를 더 쉽게 디버그 하려면 개발 모드를 전환 합니다.</span><span class="sxs-lookup"><span data-stu-id="9b1b4-134">If the sign-in doesn't work and you aren't getting any errors, switch to development mode to make the issue easier to debug.</span></span>
+* <span data-ttu-id="9b1b4-135">호출 하 여 구성 되어 있지 않으면 Identity `services.AddIdentity` 에 `ConfigureServices`에서 결과 인증 하는 동안, *ArgumentException: 'SignInScheme' 옵션을 제공 해야*합니다.</span><span class="sxs-lookup"><span data-stu-id="9b1b4-135">If Identity isn't configured by calling `services.AddIdentity` in `ConfigureServices`, attempting to authenticate results in *ArgumentException: The 'SignInScheme' option must be provided*.</span></span> <span data-ttu-id="9b1b4-136">이 자습서에 사용 되는 프로젝트 템플릿이이 수행 되도록 보장 합니다.</span><span class="sxs-lookup"><span data-stu-id="9b1b4-136">The project template used in this tutorial ensures that this is done.</span></span>
+* <span data-ttu-id="9b1b4-137">사이트 데이터베이스를 초기 마이그레이션을 적용 하 여 만들어지지 않은, 하는 경우 얻게 *요청을 처리 하는 동안 데이터베이스 작업이 실패 했습니다.* 오류입니다.</span><span class="sxs-lookup"><span data-stu-id="9b1b4-137">If the site database has not been created by applying the initial migration, you get *A database operation failed while processing the request* error.</span></span> <span data-ttu-id="9b1b4-138">탭 **마이그레이션 적용** 데이터베이스를 만들고 오류 지 나 새로 고침 합니다.</span><span class="sxs-lookup"><span data-stu-id="9b1b4-138">Tap **Apply Migrations** to create the database and refresh to continue past the error.</span></span>
+
+## <a name="next-steps"></a><span data-ttu-id="9b1b4-139">다음 단계</span><span class="sxs-lookup"><span data-stu-id="9b1b4-139">Next steps</span></span>
+
+* <span data-ttu-id="9b1b4-140">이 문서에서는 Google을 사용 하 여 인증 하는 보여 주었습니다.</span><span class="sxs-lookup"><span data-stu-id="9b1b4-140">This article showed how you can authenticate with Google.</span></span> <span data-ttu-id="9b1b4-141">에 나열 된 다른 공급자를 사용 하 여 인증 하는 유사한 방법을 따를 수 있습니다 합니다 [이전 페이지](xref:security/authentication/social/index)합니다.</span><span class="sxs-lookup"><span data-stu-id="9b1b4-141">You can follow a similar approach to authenticate with other providers listed on the [previous page](xref:security/authentication/social/index).</span></span>
+* <span data-ttu-id="9b1b4-142">Azure에 앱을 게시 하면 다시 설정 된 `ClientSecret` Google API 콘솔에서.</span><span class="sxs-lookup"><span data-stu-id="9b1b4-142">Once you publish the app to Azure, reset the `ClientSecret` in the Google API Console.</span></span>
+* <span data-ttu-id="9b1b4-143">설정 된 `Authentication:Google:ClientId` 및 `Authentication:Google:ClientSecret` Azure portal에서 응용 프로그램 설정 합니다.</span><span class="sxs-lookup"><span data-stu-id="9b1b4-143">Set the `Authentication:Google:ClientId` and `Authentication:Google:ClientSecret` as application settings in the Azure portal.</span></span> <span data-ttu-id="9b1b4-144">구성 시스템 환경 변수에서 키를 읽을 수 설정 됩니다.</span><span class="sxs-lookup"><span data-stu-id="9b1b4-144">The configuration system is set up to read keys from environment variables.</span></span>
