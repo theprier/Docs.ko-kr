@@ -4,14 +4,14 @@ author: rick-anderson
 description: ASP.NET Core 라우팅에서 요청 URI를 엔드포인트 선택기에 매핑하고, 들어오는 요청을 엔드포인트로 디스패치하는 방법을 알아봅니다.
 ms.author: riande
 ms.custom: mvc
-ms.date: 12/29/2018
+ms.date: 01/14/2019
 uid: fundamentals/routing
-ms.openlocfilehash: c57b309e4474f9aff5c0594a3d9d1c796990d31e
-ms.sourcegitcommit: e1cc4c1ef6c9e07918a609d5ad7fadcb6abe3e12
+ms.openlocfilehash: 96d098115f2f9b150f796e08cf14e60611f59e17
+ms.sourcegitcommit: 42a8164b8aba21f322ffefacb92301bdfb4d3c2d
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/03/2019
-ms.locfileid: "53997359"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54341760"
 ---
 # <a name="routing-in-aspnet-core"></a>ASP.NET Core에서 라우팅
 
@@ -46,7 +46,7 @@ services.AddMvc(options => options.EnableEndpointRouting = false)
     .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 ```
 
-<xref:Microsoft.AspNetCore.Routing.IRouter> 기반 라우팅에 대한 자세한 내용은 [이 항목의 ASP.NET Core 2.1 버전](xref:fundamentals/routing?view=aspnetcore-2.1)을 참조하세요.
+<xref:Microsoft.AspNetCore.Routing.IRouter> 기반 라우팅에 대한 자세한 내용은 [이 항목의 ASP.NET Core 2.1 버전](/aspnet/core/fundamentals/routing?view=aspnetcore-2.1)을 참조하세요.
 
 ::: moniker-end
 
