@@ -7,12 +7,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 11/06/2018
 uid: fundamentals/websockets
-ms.openlocfilehash: 3a649f88699d61636d9aa7fbfe4468ca67b3b018
-ms.sourcegitcommit: fc7eb4243188950ae1f1b52669edc007e9d0798d
+ms.openlocfilehash: 6c32269181ea3311c4aea99c08a1c043e7833b05
+ms.sourcegitcommit: 42a8164b8aba21f322ffefacb92301bdfb4d3c2d
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51225410"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54341454"
 ---
 # <a name="websockets-support-in-aspnet-core"></a>ASP.NET Core에서 WebSocket 지원
 
@@ -156,13 +156,7 @@ CORS에서 제공하는 보호 기능은 WebSocket에 적용되지 않습니다.
 
 "https://server.com"에서 서버를 호스팅하고 "https://client.com"에서 클라이언트를 호스팅하는 경우 `AllowedOrigins` 목록에 "https://client.com"을 추가하여 WebSocket을 확인합니다.
 
-```csharp
-app.UseWebSockets(new WebSocketOptions()
-{
-    AllowedOrigins.Add("https://client.com");
-    AllowedOrigins.Add("https://www.client.com");
-});
-```
+[!code-csharp[](websockets/samples/2.x/WebSocketsSample/Startup.cs?name=UseWebSocketsOptionsAO&highlight=6-7)]
 
 > [!NOTE]
 > `Origin` 헤더는 클라이언트에 의해 제어되며 `Referer` 헤더와 마찬가지로 위조될 수 있습니다. 이러한 헤더를 인증 메커니즘으로 사용하지 **마세요**.
@@ -186,7 +180,7 @@ Windows Server 2012 이상에서 WebSocket 프로토콜을 지원하려면:
 1. **관리** 메뉴 또는 **서버 관리자**의 링크를 통해 **역할 및 기능 추가** 마법사를 사용합니다.
 1. **역할 기반 또는 기능 기반 설치**를 선택합니다. **새로 만들기**를 선택합니다.
 1. 적절한 서버를 선택합니다(로컬 서버가 기본적으로 선택됨). **새로 만들기**를 선택합니다.
-1. **역할** 트리에서 **Web Server(IIS)** 를 확장하고 **Web Server**를 확장한 다음, **응용 프로그램 개발**을 확장합니다.
+1. **역할** 트리에서 **Web Server(IIS)** 를 확장하고 **Web Server**를 확장한 다음, **애플리케이션 개발**을 확장합니다.
 1. **WebSocket 프로토콜**을 선택합니다. **새로 만들기**를 선택합니다.
 1. 추가 기능이 필요 없는 경우 **다음**을 선택합니다.
 1. **설치**를 선택합니다.
@@ -198,7 +192,7 @@ Windows 8 이상에서 WebSocket 프로토콜을 지원하려면:
 > IIS Express를 사용할 때 이러한 단계가 필요하지 않습니다.
 
 1. **제어판** > **프로그램** > **프로그램 및 기능** > **Windows 기능 Windows 기능 사용/사용 안 함**(화면 왼쪽)으로 차례로 이동합니다.
-1. **인터넷 정보 서비스** > **World Wide Web 서비스** > **응용 프로그램 개발 기능** 노드를 엽니다.
+1. 다음 노드를 엽니다. **인터넷 정보 서비스** > **World Wide Web 서비스** > **애플리케이션 개발 기능**.
 1. **WebSocket 프로토콜** 기능을 선택합니다. **확인**을 선택합니다.
 
 ### <a name="disable-websocket-when-using-socketio-on-nodejs"></a>Node.js에서 socket.io를 사용할 때 WebSocket 비활성화

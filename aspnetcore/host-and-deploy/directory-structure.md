@@ -7,12 +7,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 12/11/2018
 uid: host-and-deploy/directory-structure
-ms.openlocfilehash: ee0bebb8b5c688f8471d6420d1641b87ac271f6c
-ms.sourcegitcommit: b34b25da2ab68e6495b2460ff570468f16a9bf0d
+ms.openlocfilehash: 4bc5ead8e24c4bb7fe6cd2f52fd2aa622187180c
+ms.sourcegitcommit: 42a8164b8aba21f322ffefacb92301bdfb4d3c2d
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53284567"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54341396"
 ---
 # <a name="aspnet-core-directory-structure"></a>ASP.NET Core 디렉터리 구조
 
@@ -37,7 +37,7 @@ ms.locfileid: "53284567"
 
 *wwwroot* 디렉터리(있는 경우)에는 정적 자산만 포함됩니다.
 
-다음 두 가지 방법 중 하나를 사용하여 stdout *Logs* 디렉터리를 배포용으로 만들 수 있습니다.
+다음 두 가지 방법 중 하나를 사용하여 *Logs* 디렉터리를 배포용으로 만들 수 있습니다.
 
 * 다음 `<Target>` 요소를 프로젝트 파일에 추가합니다.
 
@@ -57,6 +57,8 @@ ms.locfileid: "53284567"
 * 배포 시 서버에서 *Logs* 디렉터리를 실제로 만드세요.
 
 배포 디렉터리에는 읽기/실행 권한이 필요합니다. *Logs* 디렉터리에는 읽기/쓰기 권한이 필요합니다. 파일이 작성되는 추가 디렉터리에는 읽기/쓰기 권한이 필요합니다.
+
+[ASP.NET Core 모듈 stdout 로깅](xref:host-and-deploy/aspnet-core-module#log-creation-and-redirection)은 배포에 *로그* 폴더가 필요하지 않습니다. 모듈은 로그 파일을 만들 때 `stdoutLogFile` 경로에 폴더를 만들 수 있습니다. *로그* 폴더를 만드는 것은 [ASP.NET Core 모듈 향상된 디버그 로깅](xref:host-and-deploy/aspnet-core-module#enhanced-diagnostic-logs)에 유용합니다. `<handlerSetting>` 값에 제공된 경로에 있는 폴더는 모듈에서 자동으로 생성되지 않으며 모듈이 디버그 로그를 작성할 수 있도록 배포에 미리 존재해야 합니다.
 
 ## <a name="additional-resources"></a>추가 자료
 

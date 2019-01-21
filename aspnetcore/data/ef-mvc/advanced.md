@@ -3,14 +3,15 @@ title: ASP.NET Core MVC 및 EF Core - 고급 - 10/10
 author: rick-anderson
 description: 이 자습서에서는 Entity Framework Core를 사용하는 ASP.NET Core 웹앱 개발의 기본 개념을 넘어 유용한 토픽을 소개합니다.
 ms.author: tdykstra
-ms.date: 03/15/2017
+ms.custom: mvc
+ms.date: 10/24/2018
 uid: data/ef-mvc/advanced
-ms.openlocfilehash: 5cdba79c0b8edd9b865bda8328c86356cbe6a0a2
-ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
+ms.openlocfilehash: ba3834b29e78972bf914a5cba1a2cae3cc19a315
+ms.sourcegitcommit: 184ba5b44d1c393076015510ac842b77bc9d4d93
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46010925"
+ms.lasthandoff: 01/18/2019
+ms.locfileid: "50090786"
 ---
 # <a name="aspnet-core-mvc-with-ef-core---advanced---10-of-10"></a>ASP.NET Core MVC 및 EF Core - 고급 - 10/10
 
@@ -20,9 +21,9 @@ ms.locfileid: "46010925"
 
 작성자: [Tom Dykstra](https://github.com/tdykstra) 및 [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-Contoso University 웹 응용 프로그램 예제는 Entity Framework Core 및 Visual Studio를 사용하여 ASP.NET Core MVC 웹 응용 프로그램을 만드는 방법을 보여 줍니다. 자습서 시리즈에 대한 정보는 [시리즈의 첫 번째 자습서](intro.md)를 참조하세요.
+Contoso University 웹 애플리케이션 예제는 Entity Framework Core 및 Visual Studio를 사용하여 ASP.NET Core MVC 웹 애플리케이션을 만드는 방법을 보여 줍니다. 자습서 시리즈에 대한 정보는 [시리즈의 첫 번째 자습서](intro.md)를 참조하세요.
 
-이전 자습서에서는 계층당 하나의 테이블 상속을 구현했습니다. 이 자습서에서는 Entity Framework Core를 사용하는 ASP.NET Core 웹 응용 프로그램을 개발하는 기본 개념을 넘어 알아 두면 유용한 여러 가지 항목을 소개합니다.
+이전 자습서에서는 계층당 하나의 테이블 상속을 구현했습니다. 이 자습서에서는 Entity Framework Core를 사용하는 ASP.NET Core 웹 애플리케이션을 개발하는 기본 개념을 넘어 알아 두면 유용한 여러 가지 항목을 소개합니다.
 
 ## <a name="raw-sql-queries"></a>원시 SQL 쿼리
 
@@ -34,7 +35,7 @@ Entity Framework를 사용할 때 장점 중 하나는 코드가 데이터를 �
 
 엔터티가 아닌 형식을 반환하는 쿼리를 실행해야 하는 경우 EF에서 제공하는 데이터베이스 연결로 ADO.NET을 사용할 수 있습니다. 이 메서드를 사용하여 엔터티 형식을 검색하더라도 반환된 데이터는 데이터베이스 컨텍스트에 의해 추적되지 않습니다.
 
-웹 응용 프로그램에서 SQL 명령을 실행할 때 항상 그렇듯이 SQL 삽입 공격으로부터 사이트를 보호하기 위한 예방 조치를 취해야 합니다. 이를 수행하는 한 가지 방법은 매개 변수가 있는 쿼리를 사용하여 웹 페이지에서 제출한 문자열을 SQL 명령으로 해석할 수 없도록 하는 것입니다. 이 자습서에서는 사용자 입력을 쿼리에 통합할 때 매개 변수가 있는 쿼리를 사용합니다.
+웹 애플리케이션에서 SQL 명령을 실행할 때 항상 그렇듯이 SQL 삽입 공격으로부터 사이트를 보호하기 위한 예방 조치를 취해야 합니다. 이를 수행하는 한 가지 방법은 매개 변수가 있는 쿼리를 사용하여 웹 페이지에서 제출한 문자열을 SQL 명령으로 해석할 수 없도록 하는 것입니다. 이 자습서에서는 사용자 입력을 쿼리에 통합할 때 매개 변수가 있는 쿼리를 사용합니다.
 
 ## <a name="call-a-query-that-returns-entities"></a>엔터티를 반환하는 쿼리 호출
 
@@ -100,7 +101,7 @@ Contoso University 관리자가 모든 과정의 학점 수를 변경하는 등 
 
 프로덕션 코드는 항상 업데이트로 인해 항상 유효한 데이터가 생기도록 보장해 줍니다. 여기에 표시된 간소화된 코드에서는 5보다 큰 숫자가 생길 만큼 충분한 학점 수를 곱할 수 있습니다. (`Credits` 속성에는 `[Range(0, 5)]` 특성이 포함됩니다.) 업데이트 쿼리가 작동하지만 잘못된 데이터로 인해 학점이 5 이하라고 가정하는 시스템의 다른 부분에 예기치 않은 결과가 발생할 수 있습니다.
 
-원시 SQL 쿼리에 대한 자세한 내용은 [원시 SQL 쿼리](https://docs.microsoft.com/ef/core/querying/raw-sql)를 참조하세요.
+원시 SQL 쿼리에 대한 자세한 내용은 [원시 SQL 쿼리](/ef/core/querying/raw-sql)를 참조하세요.
 
 ## <a name="examine-sql-sent-to-the-database"></a>데이터베이스에 전송된 SQL 검사
 
@@ -140,7 +141,7 @@ ORDER BY [t].[ID]
 
 ## <a name="repository-and-unit-of-work-patterns"></a>리포지토리 및 작업 패턴 단위
 
-대부분의 개발자는 리포지토리 및 작업 패턴 단위를 구현하기 위한 코드를 Entity Framework에서 작동하는 코드를 둘러싼 래퍼로 작성합니다. 이러한 패턴은 응용 프로그램의 데이터 액세스 계층 및 비즈니스 논리 계층 간에 추상화 계층을 만드는 데 사용됩니다. 이러한 패턴을 구현하면 데이터 저장소의 변경 내용으로부터 응용 프로그램을 격리할 수 있으며 자동화된 단위 테스트 또는 TDD(테스트 중심 개발)를 용이하게 수행할 수 있습니다. 그러나 EF를 사용하는 응용 프로그램에 대해 이러한 패턴을 구현하는 추가 코드를 작성하는 것이 항상 좋은 것만은 아닙니다. 다음과 같은 몇 가지 이유 때문입니다.
+대부분의 개발자는 리포지토리 및 작업 패턴 단위를 구현하기 위한 코드를 Entity Framework에서 작동하는 코드를 둘러싼 래퍼로 작성합니다. 이러한 패턴은 애플리케이션의 데이터 액세스 계층 및 비즈니스 논리 계층 간에 추상화 계층을 만드는 데 사용됩니다. 이러한 패턴을 구현하면 데이터 저장소의 변경 내용으로부터 애플리케이션을 격리할 수 있으며 자동화된 단위 테스트 또는 TDD(테스트 중심 개발)를 용이하게 수행할 수 있습니다. 그러나 EF를 사용하는 애플리케이션에 대해 이러한 패턴을 구현하는 추가 코드를 작성하는 것이 항상 좋은 것만은 아닙니다. 다음과 같은 몇 가지 이유 때문입니다.
 
 * EF 컨텍스트 클래스 자체에서 데이터 저장소별 코드로부터 사용자 코드를 격리합니다.
 
@@ -176,7 +177,7 @@ Entity Framework Core 소스는 [https://github.com/aspnet/EntityFrameworkCore](
 
 ## <a name="reverse-engineer-from-existing-database"></a>기존 데이터베이스에서 리버스 엔지니어링
 
-기존 데이터베이스에서 엔터티 클래스를 포함한 데이터 모델을 리버스 엔지니어링하려면 [scaffold-dbcontext](https://docs.microsoft.com/ef/core/miscellaneous/cli/powershell#scaffold-dbcontext) 명령을 사용합니다. [시작 자습서](https://docs.microsoft.com/ef/core/get-started/aspnetcore/existing-db)를 참조하세요.
+기존 데이터베이스에서 엔터티 클래스를 포함한 데이터 모델을 리버스 엔지니어링하려면 [scaffold-dbcontext](/ef/core/miscellaneous/cli/powershell#scaffold-dbcontext) 명령을 사용합니다. [시작 자습서](/ef/core/get-started/aspnetcore/existing-db)를 참조하세요.
 
 <a id="dynamic-linq"></a>
 ## <a name="use-dynamic-linq-to-simplify-sort-selection-code"></a>동적 LINQ를 사용하여 정렬 선택 코드 단순화
@@ -187,13 +188,13 @@ Entity Framework Core 소스는 [https://github.com/aspnet/EntityFrameworkCore](
 
 ## <a name="next-steps"></a>다음 단계
 
-이것으로 ASP.NET Core MVC 응용 프로그램에서 Entity Framework Core 사용에 대한 자습서 시리즈를 마칩니다.
+이것으로 ASP.NET Core MVC 애플리케이션에서 Entity Framework Core 사용에 대한 자습서 시리즈를 마칩니다.
 
-EF Core에 대한 자세한 내용은 [Entity Framework Core 설명서](https://docs.microsoft.com/ef/core)를 참조하세요. 다음 설명서도 제공됩니다. [Entity Framework Core in Action(영문)](https://www.manning.com/books/entity-framework-core-in-action).
+EF Core에 대한 자세한 내용은 [Entity Framework Core 설명서](/ef/core)를 참조하세요. 책에도 사용할 수 있습니다. [작업 중인 Entity Framework Core](https://www.manning.com/books/entity-framework-core-in-action).
 
-웹앱을 배포하는 방법에 대한 정보는 [호스트 및 배포](xref:host-and-deploy/index)를 참조하세요.
+웹앱을 배포하는 방법에 대한 정보는 <xref:host-and-deploy/index>를 참조하세요.
 
-인증 및 권한 부여와 같은 ASP.NET Core MVC와 관련된 다른 항목에 대한 정보는 [ASP.NET Core 설명서](xref:index)를 참조하세요.
+인증 및 권한 부여와 같은 ASP.NET Core MVC와 관련된 다른 항목에 대한 정보는 <xref:index>를 참조하세요.
 
 ## <a name="acknowledgments"></a>감사의 글
 
@@ -239,7 +240,7 @@ dotnet ef database drop
 
 오류 메시지:
 
-> SQL Server에 연결하는 중에 네트워크 관련 오류 또는 인스턴스별 오류가 발생했습니다. 서버를 찾을 수 없거나 액세스할 수 없습니다. 인스턴스 이름이 올바르고 SQL Server가 원격 연결을 허용하도록 구성되어 있는지 확인합니다. (공급자: SQL 네트워크 인터페이스, 오류: 26-지정된 서버/인스턴스를 찾는 동안 오류가 발생했습니다)
+> SQL Server에 연결하는 중에 네트워크 관련 오류 또는 인스턴스별 오류가 발생했습니다. 서버를 찾을 수 없거나 액세스할 수 없습니다. 인스턴스 이름이 올바르고 SQL Server가 원격 연결을 허용하도록 구성되어 있는지 확인합니다. (공급자: SQL 네트워크 인터페이스, 오류: 26 - 지정된 서버/인스턴스 찾기 오류)
 
 해결책:
 

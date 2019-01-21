@@ -4,14 +4,14 @@ author: guardrex
 description: ASP.NET Core 앱용 활성 및 비활성 IIS 모듈과 IIS 모듈을 관리하는 방법을 살펴봅니다.
 ms.author: riande
 ms.custom: mvc
-ms.date: 11/30/2018
+ms.date: 01/17/2019
 uid: host-and-deploy/iis/modules
-ms.openlocfilehash: c6a6cc9b6b3410267c6f5034f824648a1ebbe10f
-ms.sourcegitcommit: 9bb58d7c8dad4bbd03419bcc183d027667fefa20
+ms.openlocfilehash: 8c32a668b3945f0da0194162e19e965b4aed3934
+ms.sourcegitcommit: 184ba5b44d1c393076015510ac842b77bc9d4d93
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52862241"
+ms.lasthandoff: 01/18/2019
+ms.locfileid: "54396274"
 ---
 # <a name="iis-modules-with-aspnet-core"></a>IIS 모듈 및 ASP.NET Core
 
@@ -79,7 +79,7 @@ ms.locfileid: "52862241"
 | UrlRoutingModule-4.0    | [ASP.NET Core ID](xref:security/authentication/identity) |
 | WindowsAuthentication   | |
 
-## <a name="iis-manager-application-changes"></a>IIS 관리자 응용 프로그램 변경 내용
+## <a name="iis-manager-application-changes"></a>IIS 관리자 애플리케이션 변경 내용
 
 IIS 관리자를 사용하여 설정을 구성하는 경우 앱의 *web.config* 파일이 변경됩니다. 앱을 배포하고 *web.config*를 포함하는 경우 IIS 관리자를 사용하여 변경한 모든 내용을 배포된 *web.config* 파일이 덮어씁니다. 서버의 *web.config* 파일을 변경하는 경우 서버의 업데이트된 *web.config* 파일을 로컬 프로젝트에 즉시 복사합니다.
 
@@ -105,13 +105,13 @@ IIS 모듈이 앱에 대해 사용되지 않아야 하는 서버 수준에서 �
 
 *web.config*에서 설정과 함께 모듈을 제거하도록 선택한 경우 먼저 모듈을 잠금 해제하고 *web.config*의 `<modules>` 섹션을 작금 해제합니다.
 
-1. 서버 수준에서 모듈의 잠금을 해제합니다. IIS 관리자 **연결** 사이드바에서 IIS 서버를 선택합니다. **IIS** 영역에서 **모듈**을 엽니다. 목록에서 모듈을 선택합니다. 오른쪽의 **작업** 사이드바에서 **잠금 해제**를 선택합니다. 나중에 *web.config*에서 제거하려고 계획한 만큼 모듈을 잠금 해제합니다.
+1. 서버 수준에서 모듈의 잠금을 해제합니다. IIS 관리자 **연결** 사이드바에서 IIS 서버를 선택합니다. **IIS** 영역에서 **모듈**을 엽니다. 목록에서 모듈을 선택합니다. 오른쪽의 **작업** 사이드바에서 **잠금 해제**를 선택합니다. 모듈에 대한 작업 항목이 **잠금**으로 나타나면 모듈이 이미 잠금 해제되어 있으며 작업이 필요하지 않습니다. 나중에 *web.config*에서 제거하려고 계획한 만큼 모듈을 잠금 해제합니다.
 
 2. *web.config*의 `<modules>` 섹션 없이 앱을 배포합니다. IIS 관리자에서 먼저 섹션을 잠금 해제하지 않고 `<modules>` 섹션이 포함된 *web.config*를 사용하여 앱을 배포하면 Configuration Manager에서 섹션을 잠금 해제하려고 할 때 예외가 throw됩니다. 따라서 `<modules>` 섹션 없이 앱을 배포합니다.
 
-3. *web.config*의 `<modules>` 섹션을 잠금 해제합니다. **연결** 사이드바의 **사이트**에서 웹 사이트를 선택합니다. **관리** 영역에서 **구성 편집기**를 엽니다. 탐색 컨트롤을 사용하여 `system.webServer/modules` 섹션을 선택합니다. 오른쪽의 **작업** 사이드바에서 섹션을 **잠금 해제**하도록 선택합니다.
+3. *web.config*의 `<modules>` 섹션을 잠금 해제합니다. **연결** 사이드바의 **사이트**에서 웹 사이트를 선택합니다. **관리** 영역에서 **구성 편집기**를 엽니다. 탐색 컨트롤을 사용하여 `system.webServer/modules` 섹션을 선택합니다. 오른쪽의 **작업** 사이드바에서 섹션을 **잠금 해제**하도록 선택합니다. 모듈 섹션에 대한 작업 항목이 **섹션 잠금**으로 나타나면 모듈 섹션이 이미 잠금 해제되어 있으며 작업이 필요하지 않습니다.
 
-4. 이때 `<modules>` 섹션을 `<remove>` 요소가 포함된 *web.config* 파일에 추가하여 앱에서 모듈을 제거할 수 있습니다. 여러 `<remove>` 요소를 추가하여 여러 모듈을 제거할 수 있습니다. 서버에서 *web.config*가 변경되면 로컬에서 프로젝트의 *web.config* 파일에 동일한 변경 내용이 즉시 적용됩니다. 이 방법으로 모듈을 제거해도 서버의 다른 앱과 함께 모듈을 사용하는 데 영향을 주지 않습니다.
+4. `<modules>` 섹션을 `<remove>` 요소가 포함된 앱의 로컬 *web.config* 파일에 추가하여 앱에서 모듈을 제거합니다. 여러 `<remove>` 요소를 추가하여 여러 모듈을 제거합니다. 서버에서 *web.config*가 변경되면 로컬에서 프로젝트의 *web.config* 파일에 동일한 변경 내용이 즉시 적용됩니다. 이 방법을 사용하여 모듈을 제거해도 서버의 다른 앱과 함께 모듈을 사용하는 데 영향을 주지 않습니다.
 
    ```xml
    <configuration>
@@ -122,6 +122,26 @@ IIS 모듈이 앱에 대해 사용되지 않아야 하는 서버 수준에서 �
     </system.webServer>
    </configuration>
    ```
+   
+*web.config*를 사용하여 IIS Express용 모듈을 추가 또는 제거하려면 *applicationHost.config*를 수정하여 `<modules>` 섹션을 잠금 해제합니다.
+
+1. *{APPLICATION ROOT}\\.vs\config\applicationhost.config*를 엽니다.
+
+1. IIS 모듈에 대한 `<section>` 요소를 찾고 `overrideModeDefault`를 `Deny`에서 `Allow`로 변경합니다.
+
+   ```xml
+   <section name="modules" 
+            allowDefinition="MachineToApplication" 
+            overrideModeDefault="Allow" />
+   ```
+   
+1. `<location path="" overrideMode="Allow"><system.webServer><modules>` 섹션을 찾습니다. 제거하려는 모듈의 경우 `lockItem`을 `true`에서 `false`로 설정합니다. 다음 예제에서는 CGI 모듈의 잠금이 해제됩니다.
+
+   ```xml
+   <add name="CgiModule" lockItem="false" />
+   ```
+   
+1. `<modules>` 섹션과 개별 모듈의 잠금이 해제된 후에는 IIS Express에서 앱을 실행하기 위한 앱의 *web.config* 파일을 사용하여 IIS 모듈을 추가하거나 제거할 수 있습니다.
 
 IIS 모듈을 *Appcmd.exe*를 사용하여 제거할 수도 있습니다. 다음 명령에 `MODULE_NAME` 및 `APPLICATION_NAME`을 제공합니다.
 

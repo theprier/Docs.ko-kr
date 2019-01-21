@@ -1,17 +1,17 @@
 ---
-title: Azure App Service에서 ASP.NET Core 시작 오류 문제 해결
+title: Azure App Service에서 ASP.NET Core 문제 해결
 author: guardrex
 description: ASP.NET Core Azure App Service 배포에 대한 문제 진단 방법을 알아봅니다.
 ms.author: riande
 ms.custom: mvc
-ms.date: 12/18/2018
+ms.date: 01/11/2019
 uid: host-and-deploy/azure-apps/troubleshoot
-ms.openlocfilehash: b36c321c6ba6801a32b5187651063337b4533fd1
-ms.sourcegitcommit: 816f39e852a8f453e8682081871a31bc66db153a
+ms.openlocfilehash: 65a5e355bc15db6de9060331395c441160c8b62d
+ms.sourcegitcommit: 42a8164b8aba21f322ffefacb92301bdfb4d3c2d
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53637654"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54341643"
 ---
 # <a name="troubleshoot-aspnet-core-on-azure-app-service"></a>Azure App Service에서 ASP.NET Core 문제 해결
 
@@ -51,15 +51,15 @@ ASP.NET Core 모듈은 기본 *startupTimeLimit*이 120초로 구성됩니다. �
 
 애플리케이션 이벤트 로그에 액세스하려면 Azure Portal에서 **문제 진단 및 해결** 블레이드를 사용합니다.
 
-1. Azure Portal에서 **App Services** 블레이드에서 앱의 블레이드를 엽니다.
-1. **문제 진단 및 해결** 블레이드를 선택합니다.
-1. **문제 범주 선택** 아래에서 **웹앱 작동 중단** 단추를 선택합니다.
-1. **추천 솔루션** 아래에서 **애플리케이션 이벤트 로그 열기**를 위한 창을 엽니다. **애플리케이션 이벤트 로그 열기** 단추를 선택합니다.
-1. **소스** 열에서 *IIS AspNetCoreModule*이 제공하는 최신 오류를 검토합니다.
+1. Azure Portal에서 **Azure App Services**의 앱을 엽니다.
+1. **문제 진단 및 해결**을 선택합니다.
+1. **진단 도구** 제목을 선택합니다.
+1. **지원 도구**에서 **애플리케이션 이벤트** 단추를 선택합니다.
+1. **원본** 열에서 *IIS AspNetCoreModule* 또는 *IIS AspNetCoreModule V2* 항목이 제공하는 최신 오류를 검토합니다.
 
 **문제 진단 및 해결** 블레이드를 사용하는 대신에 [Kudu](https://github.com/projectkudu/kudu/wiki)를 사용하여 애플리케이션 이벤트 로그 파일을 직접 검토하는 것입니다.
 
-1. **개발 도구** 영역에서 **고급 도구** 블레이드를 선택합니다. **이동&rarr;** 단추를 선택합니다. 새 브라우저 탭 또는 창에서 Kudu 콘솔이 열립니다.
+1. **개발 도구** 영역에서 **고급 도구**를 엽니다. **이동&rarr;** 단추를 선택합니다. 새 브라우저 탭 또는 창에서 Kudu 콘솔이 열립니다.
 1. 페이지 위쪽의 탐색 모음을 사용하여 **디버그 콘솔**을 열고 **CMD**를 선택합니다.
 1. **LogFiles** 폴더를 엽니다.
 1. *eventlog.xml* 파일 옆에 있는 연필 아이콘을 선택합니다.
@@ -69,7 +69,7 @@ ASP.NET Core 모듈은 기본 *startupTimeLimit*이 120초로 구성됩니다. �
 
 애플리케이션 이벤트 로그에서 대부분의 시작 오류는 유용한 정보를 생성하지 않습니다. [Kudu](https://github.com/projectkudu/kudu/wiki) 원격 실행 콘솔에서 앱을 실행하여 오류를 검색할 수 있습니다.
 
-1. **개발 도구** 영역에서 **고급 도구** 블레이드를 선택합니다. **이동&rarr;** 단추를 선택합니다. 새 브라우저 탭 또는 창에서 Kudu 콘솔이 열립니다.
+1. **개발 도구** 영역에서 **고급 도구**를 엽니다. **이동&rarr;** 단추를 선택합니다. 새 브라우저 탭 또는 창에서 Kudu 콘솔이 열립니다.
 1. 페이지 위쪽의 탐색 모음을 사용하여 **디버그 콘솔**을 열고 **CMD**를 선택합니다.
 1. 폴더를 **site** >  **wwwroot** 경로로 엽니다.
 1. 콘솔에서 앱의 어셈블리를 실행하여 앱을 실행합니다.
@@ -95,7 +95,7 @@ ASP.NET Core 모듈 stdout 로그는 종종 애플리케이션 이벤트 로그�
 1. **수정됨** 열을 검사하고 연필 아이콘을 선택하여 최신 수정 날짜가 있는 stdout 로그를 편집합니다.
 1. 로그 파일이 열리면 오류가 표시됩니다.
 
-**중요!** 문제 해결이 완료되면 stdout 로깅을 사용하지 않도록 설정합니다.
+문제 해결이 완료되면 stdout 로깅을 사용하지 않도록 설정합니다.
 
 1. Kudu **진단 콘솔**에서 **site** > **wwwroot** 경로로 돌아가서 *web.config* 파일을 표시합니다. 연필 아이콘을 선택하여 **web.config** 파일을 다시 엽니다.
 1. **stdoutLogEnabled**를 `false`로 설정합니다.
@@ -106,7 +106,37 @@ ASP.NET Core 모듈 stdout 로그는 종종 애플리케이션 이벤트 로그�
 >
 > 시작 후 ASP.NET Core 앱의 일반적인 로깅에는 로그 파일 크기를 제한하고 로그를 회전하는 로깅 라이브러리를 사용합니다. 자세한 내용은 [타사 로깅 공급자](xref:fundamentals/logging/index#third-party-logging-providers)를 참조하세요.
 
-## <a name="common-startup-errors"></a>일반 시작 오류 
+::: moniker range=">= aspnetcore-2.2"
+
+### <a name="aspnet-core-module-debug-log"></a>ASP.NET Core 모듈 디버그 로그
+
+ASP.NET Core 모듈 디버그 로그는 ASP.NET Core 모듈에서 추가로 심층적인 로깅을 제공합니다. stdout 로그를 사용하고 보려면:
+
+1. 개선된 진단 로그를 사용하도록 설정하려면 다음 중 하나를 수행합니다.
+   * [개선된 진단 로그](xref:host-and-deploy/aspnet-core-module#enhanced-diagnostic-logs)의 지침에 따라 개선된 진단 로깅을 위한 앱을 구성합니다. 앱을 다시 배포합니다.
+   * Kudu 콘솔을 사용하여 [개선된 진단 로그](xref:host-and-deploy/aspnet-core-module#enhanced-diagnostic-logs)에 표시되는 `<handlerSettings>`를 라이브 앱의 *web.config* 파일에 추가합니다.
+     1. **개발 도구** 영역에서 **고급 도구**를 엽니다. **이동&rarr;** 단추를 선택합니다. 새 브라우저 탭 또는 창에서 Kudu 콘솔이 열립니다.
+     1. 페이지 위쪽의 탐색 모음을 사용하여 **디버그 콘솔**을 열고 **CMD**를 선택합니다.
+     1. 폴더를 **site** >  **wwwroot** 경로로 엽니다. 연필 단추를 선택하여 *web.config* 파일을 편집합니다. [개선된 진단 로그](xref:host-and-deploy/aspnet-core-module#enhanced-diagnostic-logs)에 표시된 대로 `<handlerSettings>` 섹션을 추가합니다. **저장** 단추를 선택합니다.
+1. **개발 도구** 영역에서 **고급 도구**를 엽니다. **이동&rarr;** 단추를 선택합니다. 새 브라우저 탭 또는 창에서 Kudu 콘솔이 열립니다.
+1. 페이지 위쪽의 탐색 모음을 사용하여 **디버그 콘솔**을 열고 **CMD**를 선택합니다.
+1. 폴더를 **site** >  **wwwroot** 경로로 엽니다. *aspnetcore debug.log* 파일에 대한 경로를 제공하지 않는 경우 파일이 목록에 나타납니다. 경로를 제공한 경우 로그 파일의 위치로 이동합니다.
+1. 파일 이름 옆의 연필 단추를 사용하여 로그 파일을 엽니다.
+
+문제 해결이 완료되면 디버그 로깅을 사용하지 않도록 설정합니다.
+
+1. 향상된 디버그 로그를 비활성하려면 다음 중 하나를 수행합니다.
+   * *web.config* 파일에서 `<handlerSettings>`를 로컬에서 제거하고 앱을 다시 배포합니다.
+   * Kudu 콘솔을 사용하여 *web.config* 파일을 편집하고 `<handlerSettings>` 섹션을 제거합니다. 파일을 저장합니다.
+
+> [!WARNING]
+> 디버그 로그를 사용하지 않도록 설정하지 않으면 앱 또는 서버 오류가 발생할 수 있습니다. 로그 파일 크기에는 제한이 없습니다. 앱 시작 문제를 해결하려면 디버그 로깅만 사용합니다.
+>
+> 시작 후 ASP.NET Core 앱의 일반적인 로깅에는 로그 파일 크기를 제한하고 로그를 회전하는 로깅 라이브러리를 사용합니다. 자세한 내용은 [타사 로깅 공급자](xref:fundamentals/logging/index#third-party-logging-providers)를 참조하세요.
+
+::: moniker-end
+
+## <a name="common-startup-errors"></a>일반 시작 오류
 
 <xref:host-and-deploy/azure-iis-errors-reference>을 참조하세요. 앱 시작을 차단하는 대부분의 일반적인 문제는 참조 항목에서 다룹니다.
 
@@ -157,7 +187,7 @@ stdout 로깅을 사용할 수 없는 경우 다음 단계를 따릅니다.
 1. 앱에 대한 요청을 실행합니다.
 1. 로그 스트림 데이터 내에 오류의 원인이 표시됩니다.
 
-**중요!** 문제 해결이 완료되면 stdout 로깅을 사용하지 않도록 설정해야 합니다. [ASP.NET Core 모듈 stdout 로그](#aspnet-core-module-stdout-log) 섹션의 지침을 참조하세요.
+문제 해결이 완료되면 stdout 로깅을 사용하지 않도록 설정해야 합니다. [ASP.NET Core 모듈 stdout 로그](#aspnet-core-module-stdout-log) 섹션의 지침을 참조하세요.
 
 실패한 요청 추적 로그(FREB 로그)를 보려면:
 
