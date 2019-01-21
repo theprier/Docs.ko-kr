@@ -4,20 +4,20 @@ author: rick-anderson
 description: 이 자습서에는 외부 인증 공급자에 OAuth 2.0을 사용하여 ASP.NET Core 2.x 앱을 빌드하는 방법을 보여줍니다.
 ms.author: riande
 ms.custom: mvc
-ms.date: 11/11/2018
+ms.date: 1/19/2019
 uid: security/authentication/social/index
-ms.openlocfilehash: 063d452fb6ab91b712ade7f7b7ed99823dbdc657
-ms.sourcegitcommit: 97d7a00bd39c83a8f6bccb9daa44130a509f75ce
+ms.openlocfilehash: 48dd8b772234ff18158423a36ed1716102bc2f31
+ms.sourcegitcommit: 184ba5b44d1c393076015510ac842b77bc9d4d93
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54098820"
+ms.lasthandoff: 01/18/2019
+ms.locfileid: "54396144"
 ---
 # <a name="facebook-google-and-external-provider-authentication-in-aspnet-core"></a>ASP.NET Core에서 Facebook, Google 및 외부 공급자 인증
 
 작성자: [Valeriy Novytskyy](https://github.com/01binary) 및 [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-이 자습서에는 사용자가 외부 인증 공급자의 자격 증명으로 OAuth 2.0을 사용하여 로그인할 수 있도록 ASP.NET Core 2.x 앱을 빌드하는 방법을 보여줍니다.
+이 자습서에서는 사용자가 외부 인증 공급 기업의 자격 증명으로 OAuth 2.0을 사용하여 로그인할 수 있도록 ASP.NET Core 2.2 앱을 빌드하는 방법을 보여줍니다.
 
 [Facebook](xref:security/authentication/facebook-logins), [Twitter](xref:security/authentication/twitter-logins), [Google](xref:security/authentication/google-logins) 및 [Microsoft](xref:security/authentication/microsoft-logins) 공급자는 다음 섹션에서 다룹니다. 다른 공급자는 [AspNet.Security.OAuth.Providers](https://github.com/aspnet-contrib/AspNet.Security.OAuth.Providers) 및 [AspNet.Security.OpenId.Providers](https://github.com/aspnet-contrib/AspNet.Security.OpenId.Providers)와 같은 타사 패키지에서 사용할 수 있습니다.
 
@@ -30,29 +30,13 @@ ms.locfileid: "54098820"
 * Visual Studio 2017의 시작 페이지에서 또는 **파일** > **새로 만들기** > **프로젝트**를 통해 새 프로젝트를 만듭니다.
 
 * **Visual C#** > **.NET Core** 범주에서 사용할 수 있는 **ASP.NET Core 웹 애플리케이션** 템플릿을 선택합니다.
-
-![새 프로젝트 대화 상자](index/_static/new-project.png)
-
-* **웹 애플리케이션**을 누르고 **인증**이 **개별 사용자 계정**으로 설정되었는지 확인합니다.
-
-![새 웹 애플리케이션 대화 상자](index/_static/select-project.png)
-
-참고: 이 자습서는 마법사 상단에서 선택할 수 있는 ASP.NET Core 2.0 SDK 버전에 적용됩니다.
+* **인증 변경**을 선택하고 인증을 **개별 사용자 계정**으로 설정합니다.
 
 ## <a name="apply-migrations"></a>마이그레이션 적용
 
-* 앱을 실행하고 **로그인** 링크를 선택합니다.
-* **Register as a new user**(새 사용자로 등록) 링크를 선택합니다.
+* 앱을 실행하고 **레지스터** 링크를 선택합니다.
 * 새 계정의 메일과 암호를 입력한 다음 **등록**을 선택합니다.
 * 지침에 따라 마이그레이션을 적용합니다.
-
-## <a name="require-https"></a>HTTPS 필요
-
-OAuth 2.0은 HTTPS 프로토콜을 통한 인증을 위해 SSL/TLS를 사용해야 합니다.
-
-ASP.NET Core 2.1 이상에서 **웹 애플리케이션** 또는 **Web API** 프로젝트 템플릿을 사용하여 만든 프로젝트는 HTTPS를 사용하도록 자동으로 구성됩니다. 프로젝트 마법사의 **인증 변경 대화 상자**에서 **개별 사용자 계정** 옵션을 선택한 경우 앱이 안전한 기본 엔드포인트에서 시작됩니다.
-
-자세한 내용은 <xref:security/enforcing-ssl>을 참조하세요.
 
 [!INCLUDE[Forward request information when behind a proxy or load balancer section](includes/forwarded-headers-middleware.md)]
 
@@ -63,7 +47,7 @@ ASP.NET Core 2.1 이상에서 **웹 애플리케이션** 또는 **Web API** 프�
 > [!IMPORTANT]
 > Secret Manager는 개발 목적으로만 사용됩니다. [Azure Key Vault 구성 제공자](xref:security/key-vault-configuration)로 Azure 테스트 및 프로덕션 암호를 저장하고 보호할 수 있습니다.
 
-[ASP.NET Core에서 개발 중인 앱 암호의 안전한 저장소](xref:security/app-secrets) 항목의 단계에 따라 아래의 각 로그인 공급자에 의해 할당된 토큰을 저장합니다.
+[ASP.NET Core에서 개발 중인 앱 암호의 안전한 스토리지](xref:security/app-secrets) 항목의 단계에 따라 아래의 각 로그인 공급자에 의해 할당된 토큰을 저장합니다.
 
 ## <a name="setup-login-providers-required-by-your-application"></a>애플리케이션에 필요한 로그인 공급자 설정
 
@@ -83,11 +67,11 @@ ASP.NET Core 2.1 이상에서 **웹 애플리케이션** 또는 **Web API** 프�
 
 외부 공급자로 로그인하는 프로세스 중에 설정한 전자 메일을 사용하여 암호를 만들고 로그인하려면:
 
-* 오른쪽 위 모서리에 있는 **Hello &lt;이메일 별칭&gt;** 링크를 눌러 **관리** 보기로 이동합니다.
+* 오른쪽 위 모서리에 있는 **Hello &lt;이메일 별칭&gt;** 링크를 선택하여 **관리** 보기로 이동합니다.
 
 ![웹 애플리케이션 관리 뷰](index/_static/pass1a.png)
 
-* **만들기** 탭
+* **만들기**를 선택합니다.
 
 ![암호 페이지 설정](index/_static/pass2a.png)
 
