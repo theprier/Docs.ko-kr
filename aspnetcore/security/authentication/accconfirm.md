@@ -5,52 +5,52 @@ description: 전자 메일 확인 및 암호 재설정을 사용 하 여 ASP.NET
 ms.author: riande
 ms.date: 7/11/2018
 uid: security/authentication/accconfirm
-ms.openlocfilehash: 4c2e62335bc7dd004829dbc2a8c1f62ea91f334f
-ms.sourcegitcommit: 4a6bbe84db24c2f3dd2de065de418fde952c8d40
+ms.openlocfilehash: 0dc9907f9f54c8a0daf2e05a3769897e5145935f
+ms.sourcegitcommit: 728f4e47be91e1c87bb7c0041734191b5f5c6da3
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50253041"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54444144"
 ---
-# <a name="account-confirmation-and-password-recovery-in-aspnet-core"></a><span data-ttu-id="94c11-103">계정 확인 및 ASP.NET Core에서 암호 복구</span><span class="sxs-lookup"><span data-stu-id="94c11-103">Account confirmation and password recovery in ASP.NET Core</span></span>
+# <a name="account-confirmation-and-password-recovery-in-aspnet-core"></a><span data-ttu-id="c8af9-103">계정 확인 및 ASP.NET Core에서 암호 복구</span><span class="sxs-lookup"><span data-stu-id="c8af9-103">Account confirmation and password recovery in ASP.NET Core</span></span>
 
 ::: moniker range="<= aspnetcore-2.0"
 
-<span data-ttu-id="94c11-104">참조 [이 PDF 파일](https://webpifeed.blob.core.windows.net/webpifeed/Partners/asp.net_repo_pdf_1-16-18.pdf) ASP.NET Core 1.1 및 2.1 버전에 대 한 합니다.</span><span class="sxs-lookup"><span data-stu-id="94c11-104">See [this PDF file](https://webpifeed.blob.core.windows.net/webpifeed/Partners/asp.net_repo_pdf_1-16-18.pdf) for the ASP.NET Core 1.1 and 2.1 version.</span></span>
+<span data-ttu-id="c8af9-104">참조 [이 PDF 파일](https://webpifeed.blob.core.windows.net/webpifeed/Partners/asp.net_repo_pdf_1-16-18.pdf) ASP.NET Core 1.1 및 2.1 버전에 대 한 합니다.</span><span class="sxs-lookup"><span data-stu-id="c8af9-104">See [this PDF file](https://webpifeed.blob.core.windows.net/webpifeed/Partners/asp.net_repo_pdf_1-16-18.pdf) for the ASP.NET Core 1.1 and 2.1 version.</span></span>
 
 ::: moniker-end
 
 ::: moniker range=">= aspnetcore-2.1"
 
-<span data-ttu-id="94c11-105">작성자: [Rick Anderson](https://twitter.com/RickAndMSFT) 및 [Joe Audette](https://twitter.com/joeaudette)</span><span class="sxs-lookup"><span data-stu-id="94c11-105">By [Rick Anderson](https://twitter.com/RickAndMSFT) and [Joe Audette](https://twitter.com/joeaudette)</span></span>
+<span data-ttu-id="c8af9-105">작성자: [Rick Anderson](https://twitter.com/RickAndMSFT) 및 [Joe Audette](https://twitter.com/joeaudette)</span><span class="sxs-lookup"><span data-stu-id="c8af9-105">By [Rick Anderson](https://twitter.com/RickAndMSFT) and [Joe Audette](https://twitter.com/joeaudette)</span></span>
 
-<span data-ttu-id="94c11-106">이 자습서에서는 전자 메일 확인 및 암호 재설정을 사용 하 여 ASP.NET Core 앱을 빌드하는 방법을 보여 줍니다.</span><span class="sxs-lookup"><span data-stu-id="94c11-106">This tutorial shows how to build an ASP.NET Core app with email confirmation and password reset.</span></span> <span data-ttu-id="94c11-107">이 자습서는 **되지** 시작 항목입니다.</span><span class="sxs-lookup"><span data-stu-id="94c11-107">This tutorial is **not** a beginning topic.</span></span> <span data-ttu-id="94c11-108">에 대해 잘 알고 있어야 합니다.</span><span class="sxs-lookup"><span data-stu-id="94c11-108">You should be familiar with:</span></span>
+<span data-ttu-id="c8af9-106">이 자습서에서는 전자 메일 확인 및 암호 재설정을 사용 하 여 ASP.NET Core 앱을 빌드하는 방법을 보여 줍니다.</span><span class="sxs-lookup"><span data-stu-id="c8af9-106">This tutorial shows how to build an ASP.NET Core app with email confirmation and password reset.</span></span> <span data-ttu-id="c8af9-107">이 자습서는 **되지** 시작 항목입니다.</span><span class="sxs-lookup"><span data-stu-id="c8af9-107">This tutorial is **not** a beginning topic.</span></span> <span data-ttu-id="c8af9-108">에 대해 잘 알고 있어야 합니다.</span><span class="sxs-lookup"><span data-stu-id="c8af9-108">You should be familiar with:</span></span>
 
-* [<span data-ttu-id="94c11-109">ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="94c11-109">ASP.NET Core</span></span>](xref:tutorials/razor-pages/razor-pages-start)
-* [<span data-ttu-id="94c11-110">인증</span><span class="sxs-lookup"><span data-stu-id="94c11-110">Authentication</span></span>](xref:security/authentication/identity)
-* [<span data-ttu-id="94c11-111">Entity Framework Core</span><span class="sxs-lookup"><span data-stu-id="94c11-111">Entity Framework Core</span></span>](xref:data/ef-mvc/intro)
+* [<span data-ttu-id="c8af9-109">ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="c8af9-109">ASP.NET Core</span></span>](xref:tutorials/razor-pages/razor-pages-start)
+* [<span data-ttu-id="c8af9-110">인증</span><span class="sxs-lookup"><span data-stu-id="c8af9-110">Authentication</span></span>](xref:security/authentication/identity)
+* [<span data-ttu-id="c8af9-111">Entity Framework Core</span><span class="sxs-lookup"><span data-stu-id="c8af9-111">Entity Framework Core</span></span>](xref:data/ef-mvc/intro)
 
 <!-- see C:/Dropbox/wrk/Code/SendGridConsole/Program.cs -->
 
-## <a name="prerequisites"></a><span data-ttu-id="94c11-112">전제 조건</span><span class="sxs-lookup"><span data-stu-id="94c11-112">Prerequisites</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="c8af9-112">전제 조건</span><span class="sxs-lookup"><span data-stu-id="c8af9-112">Prerequisites</span></span>
 
 [!INCLUDE [](~/includes/2.1-SDK.md)]
 
-## <a name="create-a-web--app-and-scaffold-identity"></a><span data-ttu-id="94c11-113">웹 앱 만들기 및 Identity를 스 캐 폴드</span><span class="sxs-lookup"><span data-stu-id="94c11-113">Create a web  app and scaffold Identity</span></span>
+## <a name="create-a-web--app-and-scaffold-identity"></a><span data-ttu-id="c8af9-113">웹 앱 만들기 및 Identity를 스 캐 폴드</span><span class="sxs-lookup"><span data-stu-id="c8af9-113">Create a web  app and scaffold Identity</span></span>
 
-# <a name="visual-studiotabvisual-studio"></a>[<span data-ttu-id="94c11-114">Visual Studio</span><span class="sxs-lookup"><span data-stu-id="94c11-114">Visual Studio</span></span>](#tab/visual-studio) 
+# <a name="visual-studiotabvisual-studio"></a>[<span data-ttu-id="c8af9-114">Visual Studio</span><span class="sxs-lookup"><span data-stu-id="c8af9-114">Visual Studio</span></span>](#tab/visual-studio) 
 
-* <span data-ttu-id="94c11-115">Visual Studio에서 만드는 새 **웹 응용 프로그램** 라는 프로젝트가 **WebPWrecover**합니다.</span><span class="sxs-lookup"><span data-stu-id="94c11-115">In Visual Studio, create a new **Web Application** project named **WebPWrecover**.</span></span>
-* <span data-ttu-id="94c11-116">선택 **ASP.NET Core 2.1**합니다.</span><span class="sxs-lookup"><span data-stu-id="94c11-116">Select **ASP.NET Core 2.1**.</span></span>
-* <span data-ttu-id="94c11-117">기본값을 유지 **Authentication** 로 설정 **인증 안 함**합니다.</span><span class="sxs-lookup"><span data-stu-id="94c11-117">Keep the default **Authentication** set to **No Authentication**.</span></span> <span data-ttu-id="94c11-118">다음 단계에 인증 추가 됩니다.</span><span class="sxs-lookup"><span data-stu-id="94c11-118">Authentication is added in the next step.</span></span>
+* <span data-ttu-id="c8af9-115">Visual Studio에서 만드는 새 **웹 응용 프로그램** 라는 프로젝트가 **WebPWrecover**합니다.</span><span class="sxs-lookup"><span data-stu-id="c8af9-115">In Visual Studio, create a new **Web Application** project named **WebPWrecover**.</span></span>
+* <span data-ttu-id="c8af9-116">선택 **ASP.NET Core 2.1**합니다.</span><span class="sxs-lookup"><span data-stu-id="c8af9-116">Select **ASP.NET Core 2.1**.</span></span>
+* <span data-ttu-id="c8af9-117">기본값을 유지 **Authentication** 로 설정 **인증 안 함**합니다.</span><span class="sxs-lookup"><span data-stu-id="c8af9-117">Keep the default **Authentication** set to **No Authentication**.</span></span> <span data-ttu-id="c8af9-118">다음 단계에 인증 추가 됩니다.</span><span class="sxs-lookup"><span data-stu-id="c8af9-118">Authentication is added in the next step.</span></span>
 
-<span data-ttu-id="94c11-119">다음 단계:</span><span class="sxs-lookup"><span data-stu-id="94c11-119">In the next step:</span></span>
+<span data-ttu-id="c8af9-119">다음 단계:</span><span class="sxs-lookup"><span data-stu-id="c8af9-119">In the next step:</span></span>
 
-* <span data-ttu-id="94c11-120">레이아웃 페이지로 *~/Pages/Shared/_Layout.cshtml*</span><span class="sxs-lookup"><span data-stu-id="94c11-120">Set the layout page to *~/Pages/Shared/_Layout.cshtml*</span></span>
-* <span data-ttu-id="94c11-121">선택 *계정/등록*</span><span class="sxs-lookup"><span data-stu-id="94c11-121">Select *Account/Register*</span></span>
-* <span data-ttu-id="94c11-122">새 **데이터 컨텍스트 클래스**</span><span class="sxs-lookup"><span data-stu-id="94c11-122">Create a new **Data context class**</span></span>
+* <span data-ttu-id="c8af9-120">레이아웃 페이지로 *~/Pages/Shared/_Layout.cshtml*</span><span class="sxs-lookup"><span data-stu-id="c8af9-120">Set the layout page to *~/Pages/Shared/_Layout.cshtml*</span></span>
+* <span data-ttu-id="c8af9-121">선택 *계정/등록*</span><span class="sxs-lookup"><span data-stu-id="c8af9-121">Select *Account/Register*</span></span>
+* <span data-ttu-id="c8af9-122">새 **데이터 컨텍스트 클래스**</span><span class="sxs-lookup"><span data-stu-id="c8af9-122">Create a new **Data context class**</span></span>
 
-# <a name="net-core-clitabnetcore-cli"></a>[<span data-ttu-id="94c11-123">.NET Core CLI</span><span class="sxs-lookup"><span data-stu-id="94c11-123">.NET Core CLI</span></span>](#tab/netcore-cli)
+# <a name="net-core-clitabnetcore-cli"></a>[<span data-ttu-id="c8af9-123">.NET Core CLI</span><span class="sxs-lookup"><span data-stu-id="c8af9-123">.NET Core CLI</span></span>](#tab/netcore-cli)
 
 ```console
 dotnet new webapp -o WebPWrecover
@@ -65,62 +65,62 @@ dotnet ef database update
 dotnet build
 ```
 
-<span data-ttu-id="94c11-124">실행 `dotnet aspnet-codegenerator identity --help` 스 캐 폴딩 도구 도움말을 보려면.</span><span class="sxs-lookup"><span data-stu-id="94c11-124">Run `dotnet aspnet-codegenerator identity --help` to get help on the scaffolding tool.</span></span>
+<span data-ttu-id="c8af9-124">실행 `dotnet aspnet-codegenerator identity --help` 스 캐 폴딩 도구 도움말을 보려면.</span><span class="sxs-lookup"><span data-stu-id="c8af9-124">Run `dotnet aspnet-codegenerator identity --help` to get help on the scaffolding tool.</span></span>
 
 ------
 
-<span data-ttu-id="94c11-125">지침을 따릅니다 [인증을 사용](xref:security/authentication/scaffold-identity#useauthentication):</span><span class="sxs-lookup"><span data-stu-id="94c11-125">Follow the instructions in [Enable authentication](xref:security/authentication/scaffold-identity#useauthentication):</span></span>
+<span data-ttu-id="c8af9-125">지침을 따릅니다 [인증을 사용](xref:security/authentication/scaffold-identity#useauthentication):</span><span class="sxs-lookup"><span data-stu-id="c8af9-125">Follow the instructions in [Enable authentication](xref:security/authentication/scaffold-identity#useauthentication):</span></span>
 
-* <span data-ttu-id="94c11-126">추가 `app.UseAuthentication();` 를 `Startup.Configure`</span><span class="sxs-lookup"><span data-stu-id="94c11-126">Add `app.UseAuthentication();` to `Startup.Configure`</span></span>
-* <span data-ttu-id="94c11-127">추가 `<partial name="_LoginPartial" />` 레이아웃 파일입니다.</span><span class="sxs-lookup"><span data-stu-id="94c11-127">Add `<partial name="_LoginPartial" />` to the layout file.</span></span>
+* <span data-ttu-id="c8af9-126">추가 `app.UseAuthentication();` 를 `Startup.Configure`</span><span class="sxs-lookup"><span data-stu-id="c8af9-126">Add `app.UseAuthentication();` to `Startup.Configure`</span></span>
+* <span data-ttu-id="c8af9-127">추가 `<partial name="_LoginPartial" />` 레이아웃 파일입니다.</span><span class="sxs-lookup"><span data-stu-id="c8af9-127">Add `<partial name="_LoginPartial" />` to the layout file.</span></span>
 
-## <a name="test-new-user-registration"></a><span data-ttu-id="94c11-128">새 사용자 등록 테스트</span><span class="sxs-lookup"><span data-stu-id="94c11-128">Test new user registration</span></span>
+## <a name="test-new-user-registration"></a><span data-ttu-id="c8af9-128">새 사용자 등록 테스트</span><span class="sxs-lookup"><span data-stu-id="c8af9-128">Test new user registration</span></span>
 
-<span data-ttu-id="94c11-129">앱 실행을 선택 합니다 **등록** 링크를 선택한 사용자를 등록 합니다.</span><span class="sxs-lookup"><span data-stu-id="94c11-129">Run the app, select the **Register** link, and register a user.</span></span> <span data-ttu-id="94c11-130">이 시점에서 전자 메일에만 유효성 검사 된 합니다 [[EmailAddress]](/dotnet/api/system.componentmodel.dataannotations.emailaddressattribute) 특성입니다.</span><span class="sxs-lookup"><span data-stu-id="94c11-130">At this point, the only validation on the email is with the [[EmailAddress]](/dotnet/api/system.componentmodel.dataannotations.emailaddressattribute) attribute.</span></span> <span data-ttu-id="94c11-131">등록을 제출 후 앱에 로그인 됩니다.</span><span class="sxs-lookup"><span data-stu-id="94c11-131">After submitting the registration, you are logged into the app.</span></span> <span data-ttu-id="94c11-132">자습서의 뒷부분에 나오는 코드에는 전자 메일의 유효성을 검사할 때까지 새 사용자가 로그인 할 수 없습니다 있도록 업데이트 됩니다.</span><span class="sxs-lookup"><span data-stu-id="94c11-132">Later in the tutorial, the code is updated so new users can't log in until their email is validated.</span></span>
+<span data-ttu-id="c8af9-129">앱 실행을 선택 합니다 **등록** 링크를 선택한 사용자를 등록 합니다.</span><span class="sxs-lookup"><span data-stu-id="c8af9-129">Run the app, select the **Register** link, and register a user.</span></span> <span data-ttu-id="c8af9-130">이 시점에서 전자 메일에만 유효성 검사 된 합니다 [[EmailAddress]](/dotnet/api/system.componentmodel.dataannotations.emailaddressattribute) 특성입니다.</span><span class="sxs-lookup"><span data-stu-id="c8af9-130">At this point, the only validation on the email is with the [[EmailAddress]](/dotnet/api/system.componentmodel.dataannotations.emailaddressattribute) attribute.</span></span> <span data-ttu-id="c8af9-131">등록을 제출 후 앱에 로그인 됩니다.</span><span class="sxs-lookup"><span data-stu-id="c8af9-131">After submitting the registration, you are logged into the app.</span></span> <span data-ttu-id="c8af9-132">자습서의 뒷부분에 나오는 코드에는 전자 메일의 유효성을 검사할 때까지 새 사용자가 로그인 할 수 없습니다 있도록 업데이트 됩니다.</span><span class="sxs-lookup"><span data-stu-id="c8af9-132">Later in the tutorial, the code is updated so new users can't log in until their email is validated.</span></span>
 
 [!INCLUDE[](~/includes/view-identity-db.md)]
 
-<span data-ttu-id="94c11-133">테이블의 유의 `EmailConfirmed` 필드는 `False`합니다.</span><span class="sxs-lookup"><span data-stu-id="94c11-133">Note the table's `EmailConfirmed` field is `False`.</span></span>
+<span data-ttu-id="c8af9-133">테이블의 유의 `EmailConfirmed` 필드는 `False`합니다.</span><span class="sxs-lookup"><span data-stu-id="c8af9-133">Note the table's `EmailConfirmed` field is `False`.</span></span>
 
-<span data-ttu-id="94c11-134">앱에서 확인 전자 메일을 보낼 때 다음 단계에서는이 전자 메일에 다시 사용 하려는.</span><span class="sxs-lookup"><span data-stu-id="94c11-134">You might want to use this email again in the next step when the app sends a confirmation email.</span></span> <span data-ttu-id="94c11-135">선택한 행을 마우스 오른쪽 단추로 클릭 **삭제**합니다.</span><span class="sxs-lookup"><span data-stu-id="94c11-135">Right-click on the row and select **Delete**.</span></span> <span data-ttu-id="94c11-136">전자 메일 별칭을 삭제 하면 쉽게 다음 단계에 있습니다.</span><span class="sxs-lookup"><span data-stu-id="94c11-136">Deleting the email alias makes it easier in the following steps.</span></span>
+<span data-ttu-id="c8af9-134">앱에서 확인 전자 메일을 보낼 때 다음 단계에서는이 전자 메일에 다시 사용 하려는.</span><span class="sxs-lookup"><span data-stu-id="c8af9-134">You might want to use this email again in the next step when the app sends a confirmation email.</span></span> <span data-ttu-id="c8af9-135">선택한 행을 마우스 오른쪽 단추로 클릭 **삭제**합니다.</span><span class="sxs-lookup"><span data-stu-id="c8af9-135">Right-click on the row and select **Delete**.</span></span> <span data-ttu-id="c8af9-136">전자 메일 별칭을 삭제 하면 쉽게 다음 단계에 있습니다.</span><span class="sxs-lookup"><span data-stu-id="c8af9-136">Deleting the email alias makes it easier in the following steps.</span></span>
 
 <a name="prevent-login-at-registration"></a>
-## <a name="require-email-confirmation"></a><span data-ttu-id="94c11-137">전자 메일 확인이 필요</span><span class="sxs-lookup"><span data-stu-id="94c11-137">Require email confirmation</span></span>
+## <a name="require-email-confirmation"></a><span data-ttu-id="c8af9-137">전자 메일 확인이 필요</span><span class="sxs-lookup"><span data-stu-id="c8af9-137">Require email confirmation</span></span>
 
-<span data-ttu-id="94c11-138">새 사용자 등록 전자 메일을 확인 하는 것이 좋습니다.</span><span class="sxs-lookup"><span data-stu-id="94c11-138">It's a best practice to confirm the email of a new user registration.</span></span> <span data-ttu-id="94c11-139">다른 사람이 가장 하지는 확인 하려면 확인 하면 전자 메일 (즉, 다른 사용자의 전자 메일을 사용 하 여 등록 하지 않은).</span><span class="sxs-lookup"><span data-stu-id="94c11-139">Email confirmation helps to verify they're not impersonating someone else (that is, they haven't registered with someone else's email).</span></span> <span data-ttu-id="94c11-140">토론 포럼을 했으며 방지 하려고 한다고 가정해 보겠습니다 "yli@example.com"등록"에서nolivetto@contoso.com"입니다.</span><span class="sxs-lookup"><span data-stu-id="94c11-140">Suppose you had a discussion forum, and you wanted to prevent "yli@example.com" from registering as "nolivetto@contoso.com".</span></span> <span data-ttu-id="94c11-141">전자 메일 확인 하지 않고 "nolivetto@contoso.com" 앱에서 원치 않는 전자 메일을 받을 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="94c11-141">Without email confirmation, "nolivetto@contoso.com" could receive unwanted email from your app.</span></span> <span data-ttu-id="94c11-142">사용자는 실수로로 등록 되어 있다고 가정 "ylo@example.com" 및 "yli"의 오타 눈치채 합니다.</span><span class="sxs-lookup"><span data-stu-id="94c11-142">Suppose the user accidentally registered as "ylo@example.com" and hadn't noticed the misspelling of "yli".</span></span> <span data-ttu-id="94c11-143">이러한 앱에 올바른 전자 메일 없기 때문에 암호 복구를 사용 하려면 없게 됩니다.</span><span class="sxs-lookup"><span data-stu-id="94c11-143">They wouldn't be able to use password recovery because the app doesn't have their correct email.</span></span> <span data-ttu-id="94c11-144">전자 메일 확인 봇을에서 제한 된 보호를 제공합니다.</span><span class="sxs-lookup"><span data-stu-id="94c11-144">Email confirmation provides limited protection from bots.</span></span> <span data-ttu-id="94c11-145">전자 메일 확인 전자 메일 계정의 수를 사용 하 여 악의적인 사용자 로부터 보호를 제공 하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="94c11-145">Email confirmation doesn't provide protection from malicious users with many email accounts.</span></span>
+<span data-ttu-id="c8af9-138">새 사용자 등록 전자 메일을 확인 하는 것이 좋습니다.</span><span class="sxs-lookup"><span data-stu-id="c8af9-138">It's a best practice to confirm the email of a new user registration.</span></span> <span data-ttu-id="c8af9-139">다른 사람이 가장 하지는 확인 하려면 확인 하면 전자 메일 (즉, 다른 사용자의 전자 메일을 사용 하 여 등록 하지 않은).</span><span class="sxs-lookup"><span data-stu-id="c8af9-139">Email confirmation helps to verify they're not impersonating someone else (that is, they haven't registered with someone else's email).</span></span> <span data-ttu-id="c8af9-140">토론 포럼을 했으며 방지 하려고 한다고 가정해 보겠습니다 "yli@example.com"등록"에서nolivetto@contoso.com"입니다.</span><span class="sxs-lookup"><span data-stu-id="c8af9-140">Suppose you had a discussion forum, and you wanted to prevent "yli@example.com" from registering as "nolivetto@contoso.com".</span></span> <span data-ttu-id="c8af9-141">전자 메일 확인 하지 않고 "nolivetto@contoso.com" 앱에서 원치 않는 전자 메일을 받을 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="c8af9-141">Without email confirmation, "nolivetto@contoso.com" could receive unwanted email from your app.</span></span> <span data-ttu-id="c8af9-142">사용자는 실수로로 등록 되어 있다고 가정 "ylo@example.com" 및 "yli"의 오타 눈치채 합니다.</span><span class="sxs-lookup"><span data-stu-id="c8af9-142">Suppose the user accidentally registered as "ylo@example.com" and hadn't noticed the misspelling of "yli".</span></span> <span data-ttu-id="c8af9-143">이러한 앱에 올바른 전자 메일 없기 때문에 암호 복구를 사용 하려면 없게 됩니다.</span><span class="sxs-lookup"><span data-stu-id="c8af9-143">They wouldn't be able to use password recovery because the app doesn't have their correct email.</span></span> <span data-ttu-id="c8af9-144">전자 메일 확인 봇을에서 제한 된 보호를 제공합니다.</span><span class="sxs-lookup"><span data-stu-id="c8af9-144">Email confirmation provides limited protection from bots.</span></span> <span data-ttu-id="c8af9-145">전자 메일 확인 전자 메일 계정의 수를 사용 하 여 악의적인 사용자 로부터 보호를 제공 하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="c8af9-145">Email confirmation doesn't provide protection from malicious users with many email accounts.</span></span>
 
-<span data-ttu-id="94c11-146">일반적으로 새 사용자가 전자 메일을 확인된 하기 전에 먼저 웹 사이트에 데이터를 게시 하지 못하도록 좋습니다.</span><span class="sxs-lookup"><span data-stu-id="94c11-146">You generally want to prevent new users from posting any data to your web site before they have a confirmed email.</span></span>
+<span data-ttu-id="c8af9-146">일반적으로 새 사용자가 전자 메일을 확인된 하기 전에 먼저 웹 사이트에 데이터를 게시 하지 못하도록 좋습니다.</span><span class="sxs-lookup"><span data-stu-id="c8af9-146">You generally want to prevent new users from posting any data to your web site before they have a confirmed email.</span></span>
 
-<span data-ttu-id="94c11-147">업데이트 *Areas/Identity/IdentityHostingStartup.cs* 전자 메일을 확인된 해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="94c11-147">Update *Areas/Identity/IdentityHostingStartup.cs*  to require a confirmed email:</span></span>
+<span data-ttu-id="c8af9-147">업데이트 *Areas/Identity/IdentityHostingStartup.cs* 전자 메일을 확인된 해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="c8af9-147">Update *Areas/Identity/IdentityHostingStartup.cs*  to require a confirmed email:</span></span>
 
 [!code-csharp[](accconfirm/sample/WebPWrecover21/Areas/Identity/IdentityHostingStartup.cs?name=snippet1&highlight=10-13)]
 
-<span data-ttu-id="94c11-148">`config.SignIn.RequireConfirmedEmail = true;` 등록 된 사용자를가 해당 전자 메일이 확인 될 때까지 로그인 수 없습니다.</span><span class="sxs-lookup"><span data-stu-id="94c11-148">`config.SignIn.RequireConfirmedEmail = true;` prevents registered users from logging in until their email is confirmed.</span></span>
+<span data-ttu-id="c8af9-148">`config.SignIn.RequireConfirmedEmail = true;` 등록 된 사용자를가 해당 전자 메일이 확인 될 때까지 로그인 수 없습니다.</span><span class="sxs-lookup"><span data-stu-id="c8af9-148">`config.SignIn.RequireConfirmedEmail = true;` prevents registered users from logging in until their email is confirmed.</span></span>
 
-### <a name="configure-email-provider"></a><span data-ttu-id="94c11-149">전자 메일 공급자 구성</span><span class="sxs-lookup"><span data-stu-id="94c11-149">Configure email provider</span></span>
+### <a name="configure-email-provider"></a><span data-ttu-id="c8af9-149">전자 메일 공급자 구성</span><span class="sxs-lookup"><span data-stu-id="c8af9-149">Configure email provider</span></span>
 
-<span data-ttu-id="94c11-150">이 자습서에서는 [SendGrid](https://sendgrid.com) 전자 메일을 보내는 데 사용 됩니다.</span><span class="sxs-lookup"><span data-stu-id="94c11-150">In this tutorial, [SendGrid](https://sendgrid.com) is used to send email.</span></span> <span data-ttu-id="94c11-151">SendGrid 계정 및 전자 메일을 보내는 키 필요 합니다.</span><span class="sxs-lookup"><span data-stu-id="94c11-151">You need a SendGrid account and key to send email.</span></span> <span data-ttu-id="94c11-152">다른 이메일 공급자를 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="94c11-152">You can use other email providers.</span></span> <span data-ttu-id="94c11-153">ASP.NET Core 2.x 포함 `System.Net.Mail`, 앱에서 전자 메일을 보낼 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="94c11-153">ASP.NET Core 2.x includes `System.Net.Mail`, which allows you to send email from your app.</span></span> <span data-ttu-id="94c11-154">전자 메일을 보내려면 SendGrid 또는 다른 전자 메일 서비스를 사용 하는 것이 좋습니다.</span><span class="sxs-lookup"><span data-stu-id="94c11-154">We recommend you use SendGrid or another email service to send email.</span></span> <span data-ttu-id="94c11-155">SMTP를 보호 하 고 올바르게 설정 하기가 어렵습니다.</span><span class="sxs-lookup"><span data-stu-id="94c11-155">SMTP is difficult to secure and set up correctly.</span></span>
+<span data-ttu-id="c8af9-150">이 자습서에서는 [SendGrid](https://sendgrid.com) 전자 메일을 보내는 데 사용 됩니다.</span><span class="sxs-lookup"><span data-stu-id="c8af9-150">In this tutorial, [SendGrid](https://sendgrid.com) is used to send email.</span></span> <span data-ttu-id="c8af9-151">SendGrid 계정 및 전자 메일을 보내는 키 필요 합니다.</span><span class="sxs-lookup"><span data-stu-id="c8af9-151">You need a SendGrid account and key to send email.</span></span> <span data-ttu-id="c8af9-152">다른 이메일 공급자를 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="c8af9-152">You can use other email providers.</span></span> <span data-ttu-id="c8af9-153">ASP.NET Core 2.x 포함 `System.Net.Mail`, 앱에서 전자 메일을 보낼 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="c8af9-153">ASP.NET Core 2.x includes `System.Net.Mail`, which allows you to send email from your app.</span></span> <span data-ttu-id="c8af9-154">전자 메일을 보내려면 SendGrid 또는 다른 전자 메일 서비스를 사용 하는 것이 좋습니다.</span><span class="sxs-lookup"><span data-stu-id="c8af9-154">We recommend you use SendGrid or another email service to send email.</span></span> <span data-ttu-id="c8af9-155">SMTP를 보호 하 고 올바르게 설정 하기가 어렵습니다.</span><span class="sxs-lookup"><span data-stu-id="c8af9-155">SMTP is difficult to secure and set up correctly.</span></span>
 
-<span data-ttu-id="94c11-156">전자 메일 보안 키를 인출 하는 클래스를 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="94c11-156">Create a class to fetch the secure email key.</span></span> <span data-ttu-id="94c11-157">이 샘플을 만들 *Services/AuthMessageSenderOptions.cs*:</span><span class="sxs-lookup"><span data-stu-id="94c11-157">For this sample, create *Services/AuthMessageSenderOptions.cs*:</span></span>
+<span data-ttu-id="c8af9-156">전자 메일 보안 키를 인출 하는 클래스를 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="c8af9-156">Create a class to fetch the secure email key.</span></span> <span data-ttu-id="c8af9-157">이 샘플을 만들 *Services/AuthMessageSenderOptions.cs*:</span><span class="sxs-lookup"><span data-stu-id="c8af9-157">For this sample, create *Services/AuthMessageSenderOptions.cs*:</span></span>
 
 [!code-csharp[](accconfirm/sample/WebPWrecover21/Services/AuthMessageSenderOptions.cs?name=snippet1)]
 
-#### <a name="configure-sendgrid-user-secrets"></a><span data-ttu-id="94c11-158">SendGrid 사용자 암호를 구성 합니다.</span><span class="sxs-lookup"><span data-stu-id="94c11-158">Configure SendGrid user secrets</span></span>
+#### <a name="configure-sendgrid-user-secrets"></a><span data-ttu-id="c8af9-158">SendGrid 사용자 암호를 구성 합니다.</span><span class="sxs-lookup"><span data-stu-id="c8af9-158">Configure SendGrid user secrets</span></span>
 
-<span data-ttu-id="94c11-159">고유한 추가 `<UserSecretsId>` 값을 `<PropertyGroup>` 프로젝트 파일의 요소:</span><span class="sxs-lookup"><span data-stu-id="94c11-159">Add a unique `<UserSecretsId>` value to the `<PropertyGroup>` element of the project file:</span></span>
+<span data-ttu-id="c8af9-159">고유한 추가 `<UserSecretsId>` 값을 `<PropertyGroup>` 프로젝트 파일의 요소:</span><span class="sxs-lookup"><span data-stu-id="c8af9-159">Add a unique `<UserSecretsId>` value to the `<PropertyGroup>` element of the project file:</span></span>
 
 [!code-xml[](accconfirm/sample/WebPWrecover21/WebPWrecover.csproj?highlight=5)]
 
-<span data-ttu-id="94c11-160">설정 합니다 `SendGridUser` 하 고 `SendGridKey` 사용 하 여는 [암호 관리자 도구](xref:security/app-secrets)합니다.</span><span class="sxs-lookup"><span data-stu-id="94c11-160">Set the `SendGridUser` and `SendGridKey` with the [secret-manager tool](xref:security/app-secrets).</span></span> <span data-ttu-id="94c11-161">예를 들어:</span><span class="sxs-lookup"><span data-stu-id="94c11-161">For example:</span></span>
+<span data-ttu-id="c8af9-160">설정 합니다 `SendGridUser` 하 고 `SendGridKey` 사용 하 여는 [암호 관리자 도구](xref:security/app-secrets)합니다.</span><span class="sxs-lookup"><span data-stu-id="c8af9-160">Set the `SendGridUser` and `SendGridKey` with the [secret-manager tool](xref:security/app-secrets).</span></span> <span data-ttu-id="c8af9-161">예를 들어:</span><span class="sxs-lookup"><span data-stu-id="c8af9-161">For example:</span></span>
 
 ```console
 C:/WebAppl>dotnet user-secrets set SendGridUser RickAndMSFT
 info: Successfully saved SendGridUser = RickAndMSFT to the secret store.
 ```
 
-<span data-ttu-id="94c11-162">Windows, 암호 관리자의 키/값 쌍 저장 하는 *secrets.json* 파일을 `%APPDATA%/Microsoft/UserSecrets/<WebAppName-userSecretsId>` 디렉터리입니다.</span><span class="sxs-lookup"><span data-stu-id="94c11-162">On Windows, Secret Manager stores keys/value pairs in a *secrets.json* file in the `%APPDATA%/Microsoft/UserSecrets/<WebAppName-userSecretsId>` directory.</span></span>
+<span data-ttu-id="c8af9-162">Windows, 암호 관리자의 키/값 쌍 저장 하는 *secrets.json* 파일을 `%APPDATA%/Microsoft/UserSecrets/<WebAppName-userSecretsId>` 디렉터리입니다.</span><span class="sxs-lookup"><span data-stu-id="c8af9-162">On Windows, Secret Manager stores keys/value pairs in a *secrets.json* file in the `%APPDATA%/Microsoft/UserSecrets/<WebAppName-userSecretsId>` directory.</span></span>
 
-<span data-ttu-id="94c11-163">콘텐츠를 *secrets.json* 파일 암호화 되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="94c11-163">The contents of the *secrets.json* file aren't encrypted.</span></span> <span data-ttu-id="94c11-164">합니다 *secrets.json* 파일은 다음과 같습니다 (의 `SendGridKey` 값이 제거 되었습니다.)</span><span class="sxs-lookup"><span data-stu-id="94c11-164">The *secrets.json* file is shown below (the `SendGridKey` value has been removed.)</span></span>
+<span data-ttu-id="c8af9-163">콘텐츠를 *secrets.json* 파일 암호화 되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="c8af9-163">The contents of the *secrets.json* file aren't encrypted.</span></span> <span data-ttu-id="c8af9-164">합니다 *secrets.json* 파일은 다음과 같습니다 (의 `SendGridKey` 값이 제거 되었습니다.)</span><span class="sxs-lookup"><span data-stu-id="c8af9-164">The *secrets.json* file is shown below (the `SendGridKey` value has been removed.)</span></span>
 
  ```json
   {
@@ -129,25 +129,25 @@ info: Successfully saved SendGridUser = RickAndMSFT to the secret store.
   }
   ```
  
-<span data-ttu-id="94c11-165">자세한 내용은 참조는 [옵션 패턴](xref:fundamentals/configuration/options) 및 [구성](xref:fundamentals/configuration/index)합니다.</span><span class="sxs-lookup"><span data-stu-id="94c11-165">For more information, see the [Options pattern](xref:fundamentals/configuration/options) and [configuration](xref:fundamentals/configuration/index).</span></span>
+<span data-ttu-id="c8af9-165">자세한 내용은 참조는 [옵션 패턴](xref:fundamentals/configuration/options) 및 [구성](xref:fundamentals/configuration/index)합니다.</span><span class="sxs-lookup"><span data-stu-id="c8af9-165">For more information, see the [Options pattern](xref:fundamentals/configuration/options) and [configuration](xref:fundamentals/configuration/index).</span></span>
 
-### <a name="install-sendgrid"></a><span data-ttu-id="94c11-166">SendGrid를 설치 합니다.</span><span class="sxs-lookup"><span data-stu-id="94c11-166">Install SendGrid</span></span>
+### <a name="install-sendgrid"></a><span data-ttu-id="c8af9-166">SendGrid를 설치 합니다.</span><span class="sxs-lookup"><span data-stu-id="c8af9-166">Install SendGrid</span></span>
 
-<span data-ttu-id="94c11-167">이 자습서를 통해 전자 메일 알림을 추가 하는 방법을 보여 줍니다 [SendGrid](https://sendgrid.com/), 하지만 SMTP 및 다른 메커니즘을 사용 하 여 메일을 보낼 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="94c11-167">This tutorial shows how to add email notifications through [SendGrid](https://sendgrid.com/), but you can send email using SMTP and other mechanisms.</span></span>
+<span data-ttu-id="c8af9-167">이 자습서를 통해 전자 메일 알림을 추가 하는 방법을 보여 줍니다 [SendGrid](https://sendgrid.com/), 하지만 SMTP 및 다른 메커니즘을 사용 하 여 메일을 보낼 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="c8af9-167">This tutorial shows how to add email notifications through [SendGrid](https://sendgrid.com/), but you can send email using SMTP and other mechanisms.</span></span>
 
-<span data-ttu-id="94c11-168">설치는 `SendGrid` NuGet 패키지:</span><span class="sxs-lookup"><span data-stu-id="94c11-168">Install the `SendGrid` NuGet package:</span></span>
+<span data-ttu-id="c8af9-168">설치는 `SendGrid` NuGet 패키지:</span><span class="sxs-lookup"><span data-stu-id="c8af9-168">Install the `SendGrid` NuGet package:</span></span>
 
-# <a name="visual-studiotabvisual-studio"></a>[<span data-ttu-id="94c11-169">Visual Studio</span><span class="sxs-lookup"><span data-stu-id="94c11-169">Visual Studio</span></span>](#tab/visual-studio) 
+# <a name="visual-studiotabvisual-studio"></a>[<span data-ttu-id="c8af9-169">Visual Studio</span><span class="sxs-lookup"><span data-stu-id="c8af9-169">Visual Studio</span></span>](#tab/visual-studio) 
 
-<span data-ttu-id="94c11-170">패키지 관리자 콘솔에서 다음 명령을 입력 합니다.</span><span class="sxs-lookup"><span data-stu-id="94c11-170">From the Package Manager Console, enter the following command:</span></span>
+<span data-ttu-id="c8af9-170">패키지 관리자 콘솔에서 다음 명령을 입력 합니다.</span><span class="sxs-lookup"><span data-stu-id="c8af9-170">From the Package Manager Console, enter the following command:</span></span>
 
 ``` PMC
 Install-Package SendGrid
 ```
 
-# <a name="net-core-clitabnetcore-cli"></a>[<span data-ttu-id="94c11-171">.NET Core CLI</span><span class="sxs-lookup"><span data-stu-id="94c11-171">.NET Core CLI</span></span>](#tab/netcore-cli)
+# <a name="net-core-clitabnetcore-cli"></a>[<span data-ttu-id="c8af9-171">.NET Core CLI</span><span class="sxs-lookup"><span data-stu-id="c8af9-171">.NET Core CLI</span></span>](#tab/netcore-cli)
 
-<span data-ttu-id="94c11-172">콘솔에서 다음 명령을 입력 합니다.</span><span class="sxs-lookup"><span data-stu-id="94c11-172">From the console, enter the following command:</span></span>
+<span data-ttu-id="c8af9-172">콘솔에서 다음 명령을 입력 합니다.</span><span class="sxs-lookup"><span data-stu-id="c8af9-172">From the console, enter the following command:</span></span>
 
 ```cli
 dotnet add package SendGrid
@@ -155,104 +155,104 @@ dotnet add package SendGrid
 
 ------
 
-<span data-ttu-id="94c11-173">참조 [SendGrid를 사용 하 여 시작 해 보세요](https://sendgrid.com/free/) 무료 SendGrid 계정을 등록 합니다.</span><span class="sxs-lookup"><span data-stu-id="94c11-173">See [Get Started with SendGrid for Free](https://sendgrid.com/free/) to register for a free SendGrid account.</span></span>
-### <a name="implement-iemailsender"></a><span data-ttu-id="94c11-174">IEmailSender 구현</span><span class="sxs-lookup"><span data-stu-id="94c11-174">Implement IEmailSender</span></span>
+<span data-ttu-id="c8af9-173">참조 [SendGrid를 사용 하 여 시작 해 보세요](https://sendgrid.com/free/) 무료 SendGrid 계정을 등록 합니다.</span><span class="sxs-lookup"><span data-stu-id="c8af9-173">See [Get Started with SendGrid for Free](https://sendgrid.com/free/) to register for a free SendGrid account.</span></span>
+### <a name="implement-iemailsender"></a><span data-ttu-id="c8af9-174">IEmailSender 구현</span><span class="sxs-lookup"><span data-stu-id="c8af9-174">Implement IEmailSender</span></span>
 
-<span data-ttu-id="94c11-175">구현 `IEmailSender`를 만듭니다 *Services/EmailSender.cs* 다음과 비슷한 코드를 사용 하 여:</span><span class="sxs-lookup"><span data-stu-id="94c11-175">To Implement `IEmailSender`, create *Services/EmailSender.cs* with code similar to the following:</span></span>
+<span data-ttu-id="c8af9-175">구현 `IEmailSender`를 만듭니다 *Services/EmailSender.cs* 다음과 비슷한 코드를 사용 하 여:</span><span class="sxs-lookup"><span data-stu-id="c8af9-175">To Implement `IEmailSender`, create *Services/EmailSender.cs* with code similar to the following:</span></span>
 
 [!code-csharp[](accconfirm/sample/WebPWrecover21/Services/EmailSender.cs)]
 
-### <a name="configure-startup-to-support-email"></a><span data-ttu-id="94c11-176">시작 전자 메일을 지원 하도록 구성</span><span class="sxs-lookup"><span data-stu-id="94c11-176">Configure startup to support email</span></span>
+### <a name="configure-startup-to-support-email"></a><span data-ttu-id="c8af9-176">시작 전자 메일을 지원 하도록 구성</span><span class="sxs-lookup"><span data-stu-id="c8af9-176">Configure startup to support email</span></span>
 
-<span data-ttu-id="94c11-177">다음 코드를 추가 합니다 `ConfigureServices` 의 메서드를 *Startup.cs* 파일:</span><span class="sxs-lookup"><span data-stu-id="94c11-177">Add the following code to the `ConfigureServices` method in the *Startup.cs* file:</span></span>
+<span data-ttu-id="c8af9-177">다음 코드를 추가 합니다 `ConfigureServices` 의 메서드를 *Startup.cs* 파일:</span><span class="sxs-lookup"><span data-stu-id="c8af9-177">Add the following code to the `ConfigureServices` method in the *Startup.cs* file:</span></span>
 
-* <span data-ttu-id="94c11-178">추가 `EmailSender` singleton 서비스입니다.</span><span class="sxs-lookup"><span data-stu-id="94c11-178">Add `EmailSender` as a singleton service.</span></span>
-* <span data-ttu-id="94c11-179">등록 된 `AuthMessageSenderOptions` 구성 인스턴스.</span><span class="sxs-lookup"><span data-stu-id="94c11-179">Register the `AuthMessageSenderOptions` configuration instance.</span></span>
+* <span data-ttu-id="c8af9-178">추가 `EmailSender` singleton 서비스입니다.</span><span class="sxs-lookup"><span data-stu-id="c8af9-178">Add `EmailSender` as a singleton service.</span></span>
+* <span data-ttu-id="c8af9-179">등록 된 `AuthMessageSenderOptions` 구성 인스턴스.</span><span class="sxs-lookup"><span data-stu-id="c8af9-179">Register the `AuthMessageSenderOptions` configuration instance.</span></span>
 
 [!code-csharp[](accconfirm/sample/WebPWrecover21/Startup.cs?name=snippet2&highlight=12-99)]
 
-## <a name="enable-account-confirmation-and-password-recovery"></a><span data-ttu-id="94c11-180">계정 확인 및 암호 복구를 사용 하도록 설정</span><span class="sxs-lookup"><span data-stu-id="94c11-180">Enable account confirmation and password recovery</span></span>
+## <a name="enable-account-confirmation-and-password-recovery"></a><span data-ttu-id="c8af9-180">계정 확인 및 암호 복구를 사용 하도록 설정</span><span class="sxs-lookup"><span data-stu-id="c8af9-180">Enable account confirmation and password recovery</span></span>
 
-<span data-ttu-id="94c11-181">서식 파일에 계정 확인 및 암호 복구를 위한 코드가 있습니다.</span><span class="sxs-lookup"><span data-stu-id="94c11-181">The template has the code for account confirmation and password recovery.</span></span> <span data-ttu-id="94c11-182">찾을 합니다 `OnPostAsync` 의 메서드 *Areas/Identity/Pages/Account/Register.cshtml.cs*합니다.</span><span class="sxs-lookup"><span data-stu-id="94c11-182">Find the `OnPostAsync` method in *Areas/Identity/Pages/Account/Register.cshtml.cs*.</span></span>
+<span data-ttu-id="c8af9-181">서식 파일에 계정 확인 및 암호 복구를 위한 코드가 있습니다.</span><span class="sxs-lookup"><span data-stu-id="c8af9-181">The template has the code for account confirmation and password recovery.</span></span> <span data-ttu-id="c8af9-182">찾을 합니다 `OnPostAsync` 의 메서드 *Areas/Identity/Pages/Account/Register.cshtml.cs*합니다.</span><span class="sxs-lookup"><span data-stu-id="c8af9-182">Find the `OnPostAsync` method in *Areas/Identity/Pages/Account/Register.cshtml.cs*.</span></span>
 
-<span data-ttu-id="94c11-183">다음 줄을 주석으로 자동으로 로그온 하에서 새로 등록 된 사용자를 방지 합니다.</span><span class="sxs-lookup"><span data-stu-id="94c11-183">Prevent newly registered users from being automatically logged on by commenting out the following line:</span></span>
+<span data-ttu-id="c8af9-183">다음 줄을 주석으로 자동으로 로그온 하에서 새로 등록 된 사용자를 방지 합니다.</span><span class="sxs-lookup"><span data-stu-id="c8af9-183">Prevent newly registered users from being automatically logged on by commenting out the following line:</span></span>
 
 ```csharp
 await _signInManager.SignInAsync(user, isPersistent: false);
 ```
 
-<span data-ttu-id="94c11-184">전체 메서드는 강조 표시 된 변경 된 줄으로 표시 됩니다.</span><span class="sxs-lookup"><span data-stu-id="94c11-184">The complete method is shown with the changed line highlighted:</span></span>
+<span data-ttu-id="c8af9-184">전체 메서드는 강조 표시 된 변경 된 줄으로 표시 됩니다.</span><span class="sxs-lookup"><span data-stu-id="c8af9-184">The complete method is shown with the changed line highlighted:</span></span>
 
 [!code-csharp[](accconfirm/sample/WebPWrecover21/Areas/Identity/Pages/Account/Register.cshtml.cs?highlight=22&name=snippet_Register)]
 
-## <a name="register-confirm-email-and-reset-password"></a><span data-ttu-id="94c11-185">등록 하 고, 전자 메일을 확인 하 고, 암호 재설정</span><span class="sxs-lookup"><span data-stu-id="94c11-185">Register, confirm email, and reset password</span></span>
+## <a name="register-confirm-email-and-reset-password"></a><span data-ttu-id="c8af9-185">등록 하 고, 전자 메일을 확인 하 고, 암호 재설정</span><span class="sxs-lookup"><span data-stu-id="c8af9-185">Register, confirm email, and reset password</span></span>
 
-<span data-ttu-id="94c11-186">웹 앱을 실행 하 고 계정 확인 및 암호 복구 흐름을 테스트 합니다.</span><span class="sxs-lookup"><span data-stu-id="94c11-186">Run the web app, and test the account confirmation and password recovery flow.</span></span>
+<span data-ttu-id="c8af9-186">웹 앱을 실행 하 고 계정 확인 및 암호 복구 흐름을 테스트 합니다.</span><span class="sxs-lookup"><span data-stu-id="c8af9-186">Run the web app, and test the account confirmation and password recovery flow.</span></span>
 
-* <span data-ttu-id="94c11-187">앱을 실행 하 고 새 사용자 등록</span><span class="sxs-lookup"><span data-stu-id="94c11-187">Run the app and register a new user</span></span>
+* <span data-ttu-id="c8af9-187">앱을 실행 하 고 새 사용자 등록</span><span class="sxs-lookup"><span data-stu-id="c8af9-187">Run the app and register a new user</span></span>
 
   ![웹 응용 프로그램 계정 등록 보기](accconfirm/_static/loginaccconfirm1.png)
 
-* <span data-ttu-id="94c11-189">계정 확인 링크에 대 한 전자 메일을 확인 합니다.</span><span class="sxs-lookup"><span data-stu-id="94c11-189">Check your email for the account confirmation link.</span></span> <span data-ttu-id="94c11-190">참조 [전자 메일을 디버그](#debug) 전자 메일을 얻지 못한 경우.</span><span class="sxs-lookup"><span data-stu-id="94c11-190">See [Debug email](#debug) if you don't get the email.</span></span>
-* <span data-ttu-id="94c11-191">전자 메일 확인 하기 위한 링크를 클릭 합니다.</span><span class="sxs-lookup"><span data-stu-id="94c11-191">Click the link to confirm your email.</span></span>
-* <span data-ttu-id="94c11-192">전자 메일 및 암호를 로그인 합니다.</span><span class="sxs-lookup"><span data-stu-id="94c11-192">Log in with your email and password.</span></span>
-* <span data-ttu-id="94c11-193">로그 오프 합니다.</span><span class="sxs-lookup"><span data-stu-id="94c11-193">Log off.</span></span>
+* <span data-ttu-id="c8af9-189">계정 확인 링크에 대 한 전자 메일을 확인 합니다.</span><span class="sxs-lookup"><span data-stu-id="c8af9-189">Check your email for the account confirmation link.</span></span> <span data-ttu-id="c8af9-190">참조 [전자 메일을 디버그](#debug) 전자 메일을 얻지 못한 경우.</span><span class="sxs-lookup"><span data-stu-id="c8af9-190">See [Debug email](#debug) if you don't get the email.</span></span>
+* <span data-ttu-id="c8af9-191">전자 메일 확인 하기 위한 링크를 클릭 합니다.</span><span class="sxs-lookup"><span data-stu-id="c8af9-191">Click the link to confirm your email.</span></span>
+* <span data-ttu-id="c8af9-192">전자 메일 및 암호를 로그인 합니다.</span><span class="sxs-lookup"><span data-stu-id="c8af9-192">Log in with your email and password.</span></span>
+* <span data-ttu-id="c8af9-193">로그 오프 합니다.</span><span class="sxs-lookup"><span data-stu-id="c8af9-193">Log off.</span></span>
 
-### <a name="view-the-manage-page"></a><span data-ttu-id="94c11-194">관리 페이지 보기</span><span class="sxs-lookup"><span data-stu-id="94c11-194">View the manage page</span></span>
+### <a name="view-the-manage-page"></a><span data-ttu-id="c8af9-194">관리 페이지 보기</span><span class="sxs-lookup"><span data-stu-id="c8af9-194">View the manage page</span></span>
 
-<span data-ttu-id="94c11-195">브라우저에서 사용자 이름을 선택 합니다. ![사용자 이름이 있는 브라우저 창](accconfirm/_static/un.png)</span><span class="sxs-lookup"><span data-stu-id="94c11-195">Select your user name in the browser: ![browser window with user name](accconfirm/_static/un.png)</span></span>
+<span data-ttu-id="c8af9-195">브라우저에서 사용자 이름을 선택 합니다. ![사용자 이름이 있는 브라우저 창](accconfirm/_static/un.png)</span><span class="sxs-lookup"><span data-stu-id="c8af9-195">Select your user name in the browser: ![browser window with user name](accconfirm/_static/un.png)</span></span>
 
-<span data-ttu-id="94c11-196">사용자 이름을 보려면 탐색 모음을 확장 해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="94c11-196">You might need to expand the navbar to see user name.</span></span>
+<span data-ttu-id="c8af9-196">사용자 이름을 보려면 탐색 모음을 확장 해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="c8af9-196">You might need to expand the navbar to see user name.</span></span>
 
 ![탐색 모음](accconfirm/_static/x.png)
 
-<span data-ttu-id="94c11-198">사용 하 여 관리 페이지가 표시 되는 **프로필** 탭이 선택 합니다.</span><span class="sxs-lookup"><span data-stu-id="94c11-198">The manage page is displayed with the **Profile** tab selected.</span></span> <span data-ttu-id="94c11-199">합니다 **전자 메일** 확인 된 전자 메일을 나타내는 확인란을 보여 줍니다.</span><span class="sxs-lookup"><span data-stu-id="94c11-199">The **Email** shows a check box indicating the email has been confirmed.</span></span>
+<span data-ttu-id="c8af9-198">사용 하 여 관리 페이지가 표시 되는 **프로필** 탭이 선택 합니다.</span><span class="sxs-lookup"><span data-stu-id="c8af9-198">The manage page is displayed with the **Profile** tab selected.</span></span> <span data-ttu-id="c8af9-199">합니다 **전자 메일** 확인 된 전자 메일을 나타내는 확인란을 보여 줍니다.</span><span class="sxs-lookup"><span data-stu-id="c8af9-199">The **Email** shows a check box indicating the email has been confirmed.</span></span>
 
-### <a name="test-password-reset"></a><span data-ttu-id="94c11-200">테스트 암호 재설정</span><span class="sxs-lookup"><span data-stu-id="94c11-200">Test password reset</span></span>
+### <a name="test-password-reset"></a><span data-ttu-id="c8af9-200">테스트 암호 재설정</span><span class="sxs-lookup"><span data-stu-id="c8af9-200">Test password reset</span></span>
 
-* <span data-ttu-id="94c11-201">에 로그인 하는 경우 선택 **로그 아웃**합니다.</span><span class="sxs-lookup"><span data-stu-id="94c11-201">If you're logged in, select **Logout**.</span></span>
-* <span data-ttu-id="94c11-202">선택 합니다 **에 로그인** 연결 하 고 선택 합니다 **암호를 잊으셨나요?** 링크.</span><span class="sxs-lookup"><span data-stu-id="94c11-202">Select the **Log in** link and select the **Forgot your password?** link.</span></span>
-* <span data-ttu-id="94c11-203">계정을 등록 하는 데 전자 메일을 입력 합니다.</span><span class="sxs-lookup"><span data-stu-id="94c11-203">Enter the email you used to register the account.</span></span>
-* <span data-ttu-id="94c11-204">암호 재설정에 대 한 링크가 포함 된 전자 메일이 전송 됩니다.</span><span class="sxs-lookup"><span data-stu-id="94c11-204">An email with a link to reset your password is sent.</span></span> <span data-ttu-id="94c11-205">전자 메일을 확인 하 고 암호 재설정에 대 한 링크를 클릭 합니다.</span><span class="sxs-lookup"><span data-stu-id="94c11-205">Check your email and click the link to reset your password.</span></span> <span data-ttu-id="94c11-206">암호가 성공적으로 다시 설정, 메일 및 새 암호를 사용 하 여 기록할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="94c11-206">After your password has been successfully reset, you can log in with your email and new password.</span></span>
+* <span data-ttu-id="c8af9-201">에 로그인 하는 경우 선택 **로그 아웃**합니다.</span><span class="sxs-lookup"><span data-stu-id="c8af9-201">If you're logged in, select **Logout**.</span></span>
+* <span data-ttu-id="c8af9-202">선택 합니다 **에 로그인** 연결 하 고 선택 합니다 **암호를 잊으셨나요?** 링크.</span><span class="sxs-lookup"><span data-stu-id="c8af9-202">Select the **Log in** link and select the **Forgot your password?** link.</span></span>
+* <span data-ttu-id="c8af9-203">계정을 등록 하는 데 전자 메일을 입력 합니다.</span><span class="sxs-lookup"><span data-stu-id="c8af9-203">Enter the email you used to register the account.</span></span>
+* <span data-ttu-id="c8af9-204">암호 재설정에 대 한 링크가 포함 된 전자 메일이 전송 됩니다.</span><span class="sxs-lookup"><span data-stu-id="c8af9-204">An email with a link to reset your password is sent.</span></span> <span data-ttu-id="c8af9-205">전자 메일을 확인 하 고 암호 재설정에 대 한 링크를 클릭 합니다.</span><span class="sxs-lookup"><span data-stu-id="c8af9-205">Check your email and click the link to reset your password.</span></span> <span data-ttu-id="c8af9-206">암호가 성공적으로 다시 설정, 메일 및 새 암호를 사용 하 여 기록할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="c8af9-206">After your password has been successfully reset, you can log in with your email and new password.</span></span>
 
 <a name="debug"></a>
 
-### <a name="debug-email"></a><span data-ttu-id="94c11-207">전자 메일을 디버그</span><span class="sxs-lookup"><span data-stu-id="94c11-207">Debug email</span></span>
+### <a name="debug-email"></a><span data-ttu-id="c8af9-207">전자 메일을 디버그</span><span class="sxs-lookup"><span data-stu-id="c8af9-207">Debug email</span></span>
 
-<span data-ttu-id="94c11-208">경우 전자 메일 작업을 가져올 수 없습니다.</span><span class="sxs-lookup"><span data-stu-id="94c11-208">If you can't get email working:</span></span>
+<span data-ttu-id="c8af9-208">경우 전자 메일 작업을 가져올 수 없습니다.</span><span class="sxs-lookup"><span data-stu-id="c8af9-208">If you can't get email working:</span></span>
 
-* <span data-ttu-id="94c11-209">중단점을 설정 `EmailSender.Execute` 확인 하려면 `SendGridClient.SendEmailAsync` 라고 합니다.</span><span class="sxs-lookup"><span data-stu-id="94c11-209">Set a breakpoint in `EmailSender.Execute` to verify `SendGridClient.SendEmailAsync` is called.</span></span>
-* <span data-ttu-id="94c11-210">만들기는 [전자 메일을 보내는 콘솔 앱](https://sendgrid.com/docs/Integrate/Code_Examples/v2_Mail/csharp.html) 비슷한 코드를 사용 하 여 `EmailSender.Execute`입니다.</span><span class="sxs-lookup"><span data-stu-id="94c11-210">Create a [console app to send email](https://sendgrid.com/docs/Integrate/Code_Examples/v2_Mail/csharp.html) using similar code to `EmailSender.Execute`.</span></span>
-* <span data-ttu-id="94c11-211">검토 합니다 [전자 메일 작업](https://sendgrid.com/docs/User_Guide/email_activity.html) 페이지입니다.</span><span class="sxs-lookup"><span data-stu-id="94c11-211">Review the [Email Activity](https://sendgrid.com/docs/User_Guide/email_activity.html) page.</span></span>
-* <span data-ttu-id="94c11-212">스팸 폴더를 확인 합니다.</span><span class="sxs-lookup"><span data-stu-id="94c11-212">Check your spam folder.</span></span>
-* <span data-ttu-id="94c11-213">다른 전자 메일 별칭에는 다른 전자 메일 공급자 (Microsoft, Yahoo, Gmail 등)를 시도 하세요.</span><span class="sxs-lookup"><span data-stu-id="94c11-213">Try another email alias on a different email provider (Microsoft, Yahoo, Gmail, etc.)</span></span>
-* <span data-ttu-id="94c11-214">다른 메일 계정으로 보내기를 시도 합니다.</span><span class="sxs-lookup"><span data-stu-id="94c11-214">Try sending to different email accounts.</span></span>
+* <span data-ttu-id="c8af9-209">중단점을 설정 `EmailSender.Execute` 확인 하려면 `SendGridClient.SendEmailAsync` 라고 합니다.</span><span class="sxs-lookup"><span data-stu-id="c8af9-209">Set a breakpoint in `EmailSender.Execute` to verify `SendGridClient.SendEmailAsync` is called.</span></span>
+* <span data-ttu-id="c8af9-210">만들기는 [전자 메일을 보내는 콘솔 앱](https://sendgrid.com/docs/Integrate/Code_Examples/v2_Mail/csharp.html) 비슷한 코드를 사용 하 여 `EmailSender.Execute`입니다.</span><span class="sxs-lookup"><span data-stu-id="c8af9-210">Create a [console app to send email](https://sendgrid.com/docs/Integrate/Code_Examples/v2_Mail/csharp.html) using similar code to `EmailSender.Execute`.</span></span>
+* <span data-ttu-id="c8af9-211">검토 합니다 [전자 메일 작업](https://sendgrid.com/docs/User_Guide/email_activity.html) 페이지입니다.</span><span class="sxs-lookup"><span data-stu-id="c8af9-211">Review the [Email Activity](https://sendgrid.com/docs/User_Guide/email_activity.html) page.</span></span>
+* <span data-ttu-id="c8af9-212">스팸 폴더를 확인 합니다.</span><span class="sxs-lookup"><span data-stu-id="c8af9-212">Check your spam folder.</span></span>
+* <span data-ttu-id="c8af9-213">다른 전자 메일 별칭에는 다른 전자 메일 공급자 (Microsoft, Yahoo, Gmail 등)를 시도 하세요.</span><span class="sxs-lookup"><span data-stu-id="c8af9-213">Try another email alias on a different email provider (Microsoft, Yahoo, Gmail, etc.)</span></span>
+* <span data-ttu-id="c8af9-214">다른 메일 계정으로 보내기를 시도 합니다.</span><span class="sxs-lookup"><span data-stu-id="c8af9-214">Try sending to different email accounts.</span></span>
 
-<span data-ttu-id="94c11-215">**보안 모범 사례** 하는 것 **하지** 테스트 및 개발에서 프로덕션 비밀을 사용 합니다.</span><span class="sxs-lookup"><span data-stu-id="94c11-215">**A security best practice** is to **not** use production secrets in test and development.</span></span> <span data-ttu-id="94c11-216">Azure에 앱을 게시 하는 경우 Azure 웹 앱 포털에서 응용 프로그램 설정으로 SendGrid 비밀을 설정할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="94c11-216">If you publish the app to Azure, you can set the SendGrid secrets as application settings in the Azure Web App portal.</span></span> <span data-ttu-id="94c11-217">구성 시스템 환경 변수에서 키를 읽을 수 설정 됩니다.</span><span class="sxs-lookup"><span data-stu-id="94c11-217">The configuration system is set up to read keys from environment variables.</span></span>
+<span data-ttu-id="c8af9-215">**보안 모범 사례** 하는 것 **하지** 테스트 및 개발에서 프로덕션 비밀을 사용 합니다.</span><span class="sxs-lookup"><span data-stu-id="c8af9-215">**A security best practice** is to **not** use production secrets in test and development.</span></span> <span data-ttu-id="c8af9-216">Azure에 앱을 게시 하는 경우 Azure 웹 앱 포털에서 응용 프로그램 설정으로 SendGrid 비밀을 설정할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="c8af9-216">If you publish the app to Azure, you can set the SendGrid secrets as application settings in the Azure Web App portal.</span></span> <span data-ttu-id="c8af9-217">구성 시스템 환경 변수에서 키를 읽을 수 설정 됩니다.</span><span class="sxs-lookup"><span data-stu-id="c8af9-217">The configuration system is set up to read keys from environment variables.</span></span>
 
-## <a name="combine-social-and-local-login-accounts"></a><span data-ttu-id="94c11-218">로컬 및 소셜 로그인 계정을 병합합니다</span><span class="sxs-lookup"><span data-stu-id="94c11-218">Combine social and local login accounts</span></span>
+## <a name="combine-social-and-local-login-accounts"></a><span data-ttu-id="c8af9-218">로컬 및 소셜 로그인 계정을 병합합니다</span><span class="sxs-lookup"><span data-stu-id="c8af9-218">Combine social and local login accounts</span></span>
 
-<span data-ttu-id="94c11-219">이 섹션을 완료 하려면 먼저 외부 인증 공급자를 활성화 해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="94c11-219">To complete this section, you must first enable an external authentication provider.</span></span> <span data-ttu-id="94c11-220">참조 [Facebook, Google 및 외부 공급자 인증](xref:security/authentication/social/index)합니다.</span><span class="sxs-lookup"><span data-stu-id="94c11-220">See [Facebook, Google, and external provider authentication](xref:security/authentication/social/index).</span></span>
+<span data-ttu-id="c8af9-219">이 섹션을 완료 하려면 먼저 외부 인증 공급자를 활성화 해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="c8af9-219">To complete this section, you must first enable an external authentication provider.</span></span> <span data-ttu-id="c8af9-220">참조 [Facebook, Google 및 외부 공급자 인증](xref:security/authentication/social/index)합니다.</span><span class="sxs-lookup"><span data-stu-id="c8af9-220">See [Facebook, Google, and external provider authentication](xref:security/authentication/social/index).</span></span>
 
-<span data-ttu-id="94c11-221">로컬 및 소셜 계정 전자 메일 링크를 클릭 하 여 결합할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="94c11-221">You can combine local and social accounts by clicking on your email link.</span></span> <span data-ttu-id="94c11-222">그러나 다음 순서로 "RickAndMSFT@gmail.com" 로컬 로그인;으로 처음 만들어질 수 계정으로 소셜 로그인을 먼저 만든 다음 로컬 로그인을 추가 합니다.</span><span class="sxs-lookup"><span data-stu-id="94c11-222">In the following sequence, "RickAndMSFT@gmail.com" is first created as a local login; however, you can create the account as a social login first, then add a local login.</span></span>
+<span data-ttu-id="c8af9-221">로컬 및 소셜 계정 전자 메일 링크를 클릭 하 여 결합할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="c8af9-221">You can combine local and social accounts by clicking on your email link.</span></span> <span data-ttu-id="c8af9-222">그러나 다음 순서로 "RickAndMSFT@gmail.com" 로컬 로그인;으로 처음 만들어질 수 계정으로 소셜 로그인을 먼저 만든 다음 로컬 로그인을 추가 합니다.</span><span class="sxs-lookup"><span data-stu-id="c8af9-222">In the following sequence, "RickAndMSFT@gmail.com" is first created as a local login; however, you can create the account as a social login first, then add a local login.</span></span>
 
 ![웹 응용 프로그램: RickAndMSFT@gmail.com 인증 된 사용자](accconfirm/_static/rick.png)
 
-<span data-ttu-id="94c11-224">클릭 합니다 **관리** 링크 합니다.</span><span class="sxs-lookup"><span data-stu-id="94c11-224">Click on the **Manage** link.</span></span> <span data-ttu-id="94c11-225">이 계정과 연결 된 참고 0 외부 (소셜 로그인)</span><span class="sxs-lookup"><span data-stu-id="94c11-225">Note the 0 external (social logins) associated with this account.</span></span>
+<span data-ttu-id="c8af9-224">클릭 합니다 **관리** 링크 합니다.</span><span class="sxs-lookup"><span data-stu-id="c8af9-224">Click on the **Manage** link.</span></span> <span data-ttu-id="c8af9-225">이 계정과 연결 된 참고 0 외부 (소셜 로그인)</span><span class="sxs-lookup"><span data-stu-id="c8af9-225">Note the 0 external (social logins) associated with this account.</span></span>
 
 ![보기 관리](accconfirm/_static/manage.png)
 
-<span data-ttu-id="94c11-227">다른 로그인 서비스에 대 한 링크를 클릭 하 고 앱 요청을 수락 합니다.</span><span class="sxs-lookup"><span data-stu-id="94c11-227">Click the link to another login service and accept the app requests.</span></span> <span data-ttu-id="94c11-228">다음 이미지에서는 Facebook는 외부 인증 공급자:</span><span class="sxs-lookup"><span data-stu-id="94c11-228">In the following image, Facebook is the external authentication provider:</span></span>
+<span data-ttu-id="c8af9-227">다른 로그인 서비스에 대 한 링크를 클릭 하 고 앱 요청을 수락 합니다.</span><span class="sxs-lookup"><span data-stu-id="c8af9-227">Click the link to another login service and accept the app requests.</span></span> <span data-ttu-id="c8af9-228">다음 이미지에서는 Facebook는 외부 인증 공급자:</span><span class="sxs-lookup"><span data-stu-id="c8af9-228">In the following image, Facebook is the external authentication provider:</span></span>
 
 ![Facebook을 목록 외부 로그인 보기를 관리 합니다.](accconfirm/_static/fb.png)
 
-<span data-ttu-id="94c11-230">두 개의 계정은 결합 되었습니다.</span><span class="sxs-lookup"><span data-stu-id="94c11-230">The two accounts have been combined.</span></span> <span data-ttu-id="94c11-231">두 계정으로 로그온 할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="94c11-231">You are able to log on with either account.</span></span> <span data-ttu-id="94c11-232">사용자가 자신의 소셜 로그인 인증 서비스가 다운 된 또는 가능성이 소셜 계정에 대 한 액세스를 손실 했습니다 되는 경우 로컬 계정을 추가 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="94c11-232">You might want your users to add local accounts in case their social login authentication service is down, or more likely they've lost access to their social account.</span></span>
+<span data-ttu-id="c8af9-230">두 개의 계정은 결합 되었습니다.</span><span class="sxs-lookup"><span data-stu-id="c8af9-230">The two accounts have been combined.</span></span> <span data-ttu-id="c8af9-231">두 계정으로 로그온 할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="c8af9-231">You are able to log on with either account.</span></span> <span data-ttu-id="c8af9-232">사용자가 자신의 소셜 로그인 인증 서비스가 다운 된 또는 가능성이 소셜 계정에 대 한 액세스를 손실 했습니다 되는 경우 로컬 계정을 추가 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="c8af9-232">You might want your users to add local accounts in case their social login authentication service is down, or more likely they've lost access to their social account.</span></span>
 
-## <a name="enable-account-confirmation-after-a-site-has-users"></a><span data-ttu-id="94c11-233">사이트 사용자 후 계정 확인을 사용 하도록 설정</span><span class="sxs-lookup"><span data-stu-id="94c11-233">Enable account confirmation after a site has users</span></span>
+## <a name="enable-account-confirmation-after-a-site-has-users"></a><span data-ttu-id="c8af9-233">사이트 사용자 후 계정 확인을 사용 하도록 설정</span><span class="sxs-lookup"><span data-stu-id="c8af9-233">Enable account confirmation after a site has users</span></span>
 
-<span data-ttu-id="94c11-234">사용자를 사용 하 여 사이트에서 계정 확인을 사용 하도록 설정 하면 모든 기존 사용자를 잠급니다.</span><span class="sxs-lookup"><span data-stu-id="94c11-234">Enabling account confirmation on a site with users locks out all the existing users.</span></span> <span data-ttu-id="94c11-235">해당 계정 확인 되지 때문에 기존 사용자가 잠겨 있습니다.</span><span class="sxs-lookup"><span data-stu-id="94c11-235">Existing users are locked out because their accounts aren't confirmed.</span></span> <span data-ttu-id="94c11-236">기존 사용자 잠금 문제를 해결 하려면 다음 방법 중 하나를 사용 합니다.</span><span class="sxs-lookup"><span data-stu-id="94c11-236">To work around existing user lockout, use one of the following approaches:</span></span>
+<span data-ttu-id="c8af9-234">사용자를 사용 하 여 사이트에서 계정 확인을 사용 하도록 설정 하면 모든 기존 사용자를 잠급니다.</span><span class="sxs-lookup"><span data-stu-id="c8af9-234">Enabling account confirmation on a site with users locks out all the existing users.</span></span> <span data-ttu-id="c8af9-235">해당 계정 확인 되지 때문에 기존 사용자가 잠겨 있습니다.</span><span class="sxs-lookup"><span data-stu-id="c8af9-235">Existing users are locked out because their accounts aren't confirmed.</span></span> <span data-ttu-id="c8af9-236">기존 사용자 잠금 문제를 해결 하려면 다음 방법 중 하나를 사용 합니다.</span><span class="sxs-lookup"><span data-stu-id="c8af9-236">To work around existing user lockout, use one of the following approaches:</span></span>
 
-* <span data-ttu-id="94c11-237">로 확인 되 고 모든 기존 사용자를 표시 하도록 데이터베이스를 업데이트 합니다.</span><span class="sxs-lookup"><span data-stu-id="94c11-237">Update the database to mark all existing users as being confirmed.</span></span>
-* <span data-ttu-id="94c11-238">기존 사용자를 확인 합니다.</span><span class="sxs-lookup"><span data-stu-id="94c11-238">Confirm exiting users.</span></span> <span data-ttu-id="94c11-239">예를 들어 일괄 처리-송신 확인 링크를 사용 하 여 전자 메일입니다.</span><span class="sxs-lookup"><span data-stu-id="94c11-239">For example, batch-send emails with confirmation links.</span></span>
+* <span data-ttu-id="c8af9-237">로 확인 되 고 모든 기존 사용자를 표시 하도록 데이터베이스를 업데이트 합니다.</span><span class="sxs-lookup"><span data-stu-id="c8af9-237">Update the database to mark all existing users as being confirmed.</span></span>
+* <span data-ttu-id="c8af9-238">기존 사용자를 확인 합니다.</span><span class="sxs-lookup"><span data-stu-id="c8af9-238">Confirm existing users.</span></span> <span data-ttu-id="c8af9-239">예를 들어 일괄 처리-송신 확인 링크를 사용 하 여 전자 메일입니다.</span><span class="sxs-lookup"><span data-stu-id="c8af9-239">For example, batch-send emails with confirmation links.</span></span>
 
 ::: moniker-end
