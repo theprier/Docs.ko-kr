@@ -1,30 +1,24 @@
 ---
 uid: mvc/overview/getting-started/getting-started-with-ef-using-mvc/updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application
-title: ASP.NET MVC 응용 프로그램에서 Entity Framework를 사용 하 여 관련된 데이터 업데이트 | Microsoft Docs
+title: '자습서: ASP.NET MVC 앱에서 EF를 사용 하 여 관련된 데이터 업데이트'
+description: 이 자습서에서는 관련된 데이터를 업데이트 합니다. 대부분의 관계에 대 한 외래 키 필드 또는 탐색 속성을 업데이트 하 여 수행할 수 있습니다.
 author: tdykstra
-description: Contoso University 샘플 웹 응용 프로그램에는 Entity Framework 6 Code First 및 Visual Studio를 사용 하 여 ASP.NET MVC 5 응용 프로그램을 만드는 방법을 보여 줍니다...
 ms.author: riande
-ms.date: 05/01/2015
+ms.date: 01/17/2019
+ms.topic: tutorial
 ms.assetid: 7ba88418-5d0a-437d-b6dc-7c3816d4ec07
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 647793a65dec8feaf37de561ad77b4585bb869a8
-ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
+ms.openlocfilehash: 3f95470fd1832d7d25a331a1b6a9dfede7356f38
+ms.sourcegitcommit: 728f4e47be91e1c87bb7c0041734191b5f5c6da3
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48912217"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54444313"
 ---
-<a name="updating-related-data-with-the-entity-framework-in-an-aspnet-mvc-application"></a>ASP.NET MVC 응용 프로그램에서 Entity Framework를 사용 하 여 관련된 데이터 업데이트
-====================
-[Tom Dykstra](https://github.com/tdykstra)
+# <a name="tutorial-update-related-data-with-ef-in-an-aspnet-mvc-app"></a>자습서: ASP.NET MVC 앱에서 EF를 사용 하 여 관련된 데이터 업데이트
 
-[완료 된 프로젝트 다운로드](http://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8)
-
-> Contoso University 샘플 웹 응용 프로그램에는 Entity Framework 6 Code First 및 Visual Studio를 사용 하 여 ASP.NET MVC 5 응용 프로그램을 만드는 방법을 보여 줍니다. 자습서 시리즈에 대한 정보는 [시리즈의 첫 번째 자습서](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)를 참조하세요.
-
-
-이전 자습서에서 관련된 데이터 표시 이 자습서에서는 관련된 데이터를 업데이트 합니다. 대부분의 관계에 대 한 외래 키 필드 또는 탐색 속성을 업데이트 하 여 수행할 수 있습니다. 다 대 다 관계에 대 한 Entity Framework 노출 하지 조인 테이블을 직접 추가 하 고 해당 탐색 속성에서 엔터티를 제거할 수 있도록 합니다.
+이전 자습서에서 관련된 데이터를 표시 합니다. 이 자습서에서는 관련된 데이터를 업데이트 합니다. 대부분의 관계에 대 한 외래 키 필드 또는 탐색 속성을 업데이트 하 여 수행할 수 있습니다. 다 대 다 관계에 대 한 Entity Framework 노출 하지 조인 테이블을 직접 추가 하 고 해당 탐색 속성에서 엔터티를 제거할 수 있도록 합니다.
 
 다음 그림에서는 사용할 일부 페이지를 보여 줍니다.
 
@@ -34,7 +28,20 @@ ms.locfileid: "48912217"
 
 ![과정을 사용 하 여 강사 편집](updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image3.png)
 
-## <a name="customize-the-create-and-edit-pages-for-courses"></a>강좌에 대한 만들기 및 편집 페이지 사용자 지정
+이 자습서에서는 다음을 수행했습니다.
+
+> [!div class="checklist"]
+> * 강좌 페이지 사용자 지정
+> * Office 강사 페이지 추가
+> * 강사 페이지에 강좌 추가
+> * DeleteConfirmed 업데이트
+> * 만들기 페이지에 사무실 위치 및 강좌 추가
+
+## <a name="prerequisites"></a>전제 조건
+
+* [관련 데이터 읽기](updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application.md)
+
+## <a name="customize-courses-pages"></a>강좌 페이지 사용자 지정
 
 새 강좌 엔터티가 만들어질 때 기존 부서에 대한 관계가 있어야 합니다. 이를 수행하기 위해 스캐폴드 코드는 컨트롤러 메서드 및 부서를 선택하기 위한 드롭다운 목록을 포함하는 만들기 및 편집 보기를 포함합니다. 드롭다운 목록에서 집합을 `Course.DepartmentID` 외래 키 속성을 로드 하기 위해 Entity Framework에 필요한 모든입니다를 `Department` 적절 한 탐색 속성 `Department` 엔터티. 스캐폴드 코드를 사용하지만 오류 처리를 추가하고 드롭다운 목록을 정렬하도록 약간 변경합니다.
 
@@ -82,19 +89,20 @@ ms.locfileid: "48912217"
 
 실행 합니다 **만들기** 페이지 (과정 인덱스 페이지를 표시 하 고 클릭 **새로 만들기**) 새 강좌에 대 한 데이터를 입력 합니다.
 
-![Course_create_page](updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image4.png)
+| 값 | 설정 |
+| ----- | ------- |
+| 숫자 | 입력 *1000*합니다. |
+| 제목 | 입력 *대*합니다. |
+| 크레딧 | 입력 *4*합니다. |
+|Department | 선택 **수학**합니다. |
 
 **만들기**를 클릭합니다. 강좌 인덱스 페이지가 목록에 추가 된 새 강좌로 표시 됩니다. 인덱스 페이지 목록의 부서 이름은 관계가 올바르게 설정되었음을 표시하는 탐색 속성에서 제공됩니다.
 
-![Course_Index_page_showing_new_course](updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image5.png)
-
 실행 합니다 **편집할** 페이지 (과정 인덱스 페이지를 표시 하 고 클릭 **편집** 과정에서).
-
-![Course_edit_page](updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image6.png)
 
 페이지에서 데이터를 변경하고 **저장**을 클릭합니다. 강좌 인덱스 페이지가 업데이트 된 강좌 데이터로 표시 됩니다.
 
-## <a name="adding-an-edit-page-for-instructors"></a>강사에 대 한 편집 페이지를 추가합니다.
+## <a name="add-office-to-instructors-page"></a>Office 강사 페이지 추가
 
 강사 레코드를 편집할 때 강사의 사무실 할당을 업데이트할 수 있습니다. `Instructor` 엔터티 간의 관계가 0 또는 1을 하나는 `OfficeAssignment` 엔터티 즉, 다음과 같은 경우를 처리 해야 합니다.
 
@@ -116,7 +124,7 @@ ms.locfileid: "48912217"
 
 [!code-csharp[Main](updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample11.cs)]
 
-에 대 한 참조 `RetryLimitExceededException` 필요를 `using` 문에 추가 하려면 마우스 오른쪽 단추로 클릭 `RetryLimitExceededException`를 클릭 하 고 **해결** - **System.Data.Entity.Infrastructure를사용하여**.
+에 대 한 참조가 `RetryLimitExceededException` 필요를 `using` 문입니다. 마우스로를 추가 하려면 `RetryLimitExceededException`합니다. 문제 설명에 표시 됩니다. 선택 **잠재적 수정 사항 표시** 을 클릭 한 다음 **System.Data.Entity.Infrastructure;를 사용 하 여**입니다.
 
 ![다시 시도 예외 해결](updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image7.png)
 
@@ -138,13 +146,9 @@ ms.locfileid: "48912217"
 
 페이지를 실행 합니다 (선택 된 **강사** 탭을 클릭 한 다음 **편집** 강사에). **사무실 위치**를 변경하고 **저장**을 클릭합니다.
 
-![Changing_the_office_location](updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image8.png)
+## <a name="add-courses-to-instructors-page"></a>강사 페이지에 강좌 추가
 
-## <a name="adding-course-assignments-to-the-instructor-edit-page"></a>강사에 강좌 할당 추가 편집 페이지
-
-강사는 강좌 수에 관계 없이 가르칠 수 있습니다. 이제 다음 스크린샷에 표시된 것처럼 확인란 그룹을 사용하여 강좌 할당을 변경하는 기능을 추가하여 강사 편집 페이지를 향상시킵니다.
-
-![Instructor_edit_page_with_courses](updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image9.png)
+강사는 강좌 수에 관계 없이 가르칠 수 있습니다. 이제 확인란의 그룹을 사용 하 여 강좌 할당을 변경 하는 기능을 추가 하 여 강사 편집 페이지를 향상 시킬 수 있습니다.
 
 관계는 `Course` 및 `Instructor` 엔터티는 다 대 다 조인 테이블에 있는 외래 키 속성에 직접 액세스할 수 없는 의미 합니다. 추가 하 고에서 엔터티를 제거 하는 대신는 `Instructor.Courses` 탐색 속성입니다.
 
@@ -204,20 +208,15 @@ ms.locfileid: "48912217"
 
 [!code-cshtml[Main](updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample23.cshtml?highlight=7-14)]
 
-실행 합니다 **강사 인덱스** 각 강사에 할당 된 강좌 페이지:
-
-![Instructor_index_page](updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image10.png)
+실행 된 **강사 인덱스** 페이지를 각 강사에 할당 된 강좌를 참조 하세요.
 
 클릭 **편집** 에서 강사 편집 페이지를 볼 수 있습니다.
-
-![Instructor_edit_page_with_courses](updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image11.png)
 
 일부 강좌 할당을 변경 하 고 클릭 **저장할**합니다. 변경 내용은 인덱스 페이지에 반영됩니다.
 
  참고: 강사 강좌 데이터를 편집 하려면 다음을 수행 하는 방법은 제한 된 수의 과정 필요한 경우에 작동 합니다. 훨씬 큰 컬렉션의 경우 다른 UI 및 다른 업데이트 메서드가 필요합니다.
 
-
-## <a name="update-the-deleteconfirmed-method"></a>DeleteConfirmed 메서드 업데이트
+## <a name="update-deleteconfirmed"></a>DeleteConfirmed 업데이트
 
 *InstructorController.cs*, 삭제는 `DeleteConfirmed` 그 자리에 다음 코드 메서드 및 삽입 합니다.
 
@@ -258,21 +257,31 @@ HttpPost 만들 메서드 선택된 된 각 강좌 유효성 검사 오류를 �
 
 만들기 페이지를 실행 하 고 강사를 추가 합니다.
 
-![강사 강좌를 사용 하 여 만들기](updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image12.png)
-
 <a id="transactions"></a>
+
 ## <a name="handling-transactions"></a>트랜잭션 처리
 
 에 설명 된 대로 합니다 [기본 CRUD 기능 자습서](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application.md), 기본적으로 Entity Framework 트랜잭션을 암시적으로 구현 합니다. 여기서 더 본격적인 제어가 필요한-예를 들어 트랜잭션의 Entity Framework 밖에 서 수행한 작업을 포함 하려는 경우 시나리오를 참조 하세요 [트랜잭션과 작업](https://msdn.microsoft.com/data/dn456843) MSDN에 있습니다.
 
-## <a name="summary"></a>요약
+## <a name="get-the-code"></a>코드 가져오기
 
-이제 관련된 데이터를 사용 하 여 작업 한이 소개를 완료 했습니다. 지금까지 이러한 자습서에서 사용한 동기 I/O를 수행 하는 코드를 사용 하 여 합니다. 비동기 코드를 구현 하 여 웹 서버 리소스를 보다 효율적으로 사용할 응용 프로그램을 만들고 자습서에서 수행할 것입니다.
+[완료 된 프로젝트 다운로드](http://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8)
 
-이 자습서를 연결 하는 방법을 개선할 수 것에 의견을 남겨 주세요.
+## <a name="additional-resources"></a>추가 자료
 
 다른 Entity Framework 리소스에 대 한 링크에서 찾을 수 있습니다 [ASP.NET 데이터 액세스-권장 리소스](../../../../whitepapers/aspnet-data-access-content-map.md)합니다.
 
-> [!div class="step-by-step"]
-> [이전](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application.md)
-> [다음](async-and-stored-procedures-with-the-entity-framework-in-an-asp-net-mvc-application.md)
+## <a name="next-step"></a>다음 단계
+
+이 자습서에서는 다음을 수행했습니다.
+
+> [!div class="checklist"]
+> * 사용자 지정된 강좌 페이지
+> * 강사 페이지에 추가 된 office
+> * 강사 페이지에 추가 과정
+> * 업데이트 된 DeleteConfirmed
+> * 추가 사무실 위치 및 강좌 만들기 페이지
+
+비동기 프로그래밍 모델을 구현 하는 방법을 알아보려면 다음 문서로 이동 합니다.
+> [!div class="nextstepaction"]
+> [비동기 프로그래밍 모델](async-and-stored-procedures-with-the-entity-framework-in-an-asp-net-mvc-application.md)

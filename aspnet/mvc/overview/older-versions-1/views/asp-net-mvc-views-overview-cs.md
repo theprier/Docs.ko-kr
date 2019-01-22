@@ -8,12 +8,12 @@ ms.date: 02/16/2008
 ms.assetid: 152ab1e5-aec2-4ea7-b8cc-27a24dd9acb8
 msc.legacyurl: /mvc/overview/older-versions-1/views/asp-net-mvc-views-overview-cs
 msc.type: authoredcontent
-ms.openlocfilehash: ac47caa46d93c6157926f1c9b5112555fae4f8f5
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: a8e64a99549584f150d64d909ac97210257b1147
+ms.sourcegitcommit: 728f4e47be91e1c87bb7c0041734191b5f5c6da3
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41837575"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54444131"
 ---
 <a name="aspnet-mvc-views-overview-c"></a>ASP.NET MVC 보기 개요 (C#)
 ====================
@@ -28,11 +28,11 @@ ms.locfileid: "41837575"
 
 Active Server Pages, ASP.NET에 대 한 ASP.NET MVC 포함 되어 있지는 페이지에 직접 해당 합니다. ASP.NET MVC 응용 프로그램에서 않습니다 페이지 브라우저의 주소 표시줄에 입력 된 URL의 경로에 해당 하는 디스크. ASP.NET MVC 응용 프로그램의 페이지에 가깝습니다는 호출을 *보기*합니다.
 
-ASP.NET MVC 응용 프로그램, 들어오는 브라우저 요청 컨트롤러 작업에 매핑됩니다. 컨트롤러 작업 보기를 반환할 수 있습니다. 그러나 컨트롤러 작업을 다른 유형의 다른 컨트롤러 작업으로 리디렉션하는 중 등의 작업을 수행할 수 있습니다.
+ASP.NET MVC 응용 프로그램에서 들어오는 브라우저 요청 컨트롤러 작업에 매핑됩니다. 컨트롤러 작업 보기를 반환할 수 있습니다. 그러나 컨트롤러 작업을 다른 유형의 다른 컨트롤러 작업으로 리디렉션하는 중 등의 작업을 수행할 수 있습니다.
 
 목록 1 HomeController 라는 간단한 컨트롤러가 포함 되어 있습니다. HomeController는 index () 및 Details() 라는 두 개의 컨트롤러 작업을 표시 합니다.
 
-**1-HomeController.cs 나열**
+**Listing 1 - HomeController.cs**
 
 [!code-csharp[Main](asp-net-mvc-views-overview-cs/samples/sample1.cs)]
 
@@ -58,7 +58,7 @@ View();
 
 원하는 경우 뷰에 대 한 명시적 수 있습니다. 다음 코드 줄에 Fred 라는 뷰를 반환 합니다.
 
-보기 (Fred);
+View( Fred );
 
 이 코드 줄이 실행 되 면 뷰는 다음 경로에서 반환 됩니다.
 
@@ -75,7 +75,7 @@ View();
 
 예를 들어 목록 2에서 뷰는 현재 날짜 및 시간을 표시합니다.
 
-**2-나열 \Views\Home\Index.aspx**
+**Listing 2 - \Views\Home\Index.aspx**
 
 [!code-aspx[Main](asp-net-mvc-views-overview-cs/samples/sample2.aspx)]
 
@@ -91,7 +91,7 @@ Response.write ()를 자주 호출 되므로 Microsoft 제공 바로 가기를 �
 
 [!code-aspx[Main](asp-net-mvc-views-overview-cs/samples/sample3.aspx)]
 
-보기에서 동적 콘텐츠를 생성 하려면 모든.NET 언어를 사용할 수 있습니다. 일반적으로 안내 컨트롤러와 보기를 쓸 Visual Basic.NET 또는 C#을 사용 합니다.
+보기에서 동적 콘텐츠를 생성 하려면 모든.NET 언어를 사용할 수 있습니다. 일반적으로 사용 하 여 Visual Basic.NET 또는 C# 컨트롤러 및 뷰를 작성 합니다.
 
 ## <a name="using-html-helpers-to-generate-view-content"></a>HTML 도우미를 사용 하 여 콘텐츠 보기를 생성 합니다.
 
@@ -106,7 +106,7 @@ Response.write ()를 자주 호출 되므로 Microsoft 제공 바로 가기를 �
 
 [![새 프로젝트 대화 상자](asp-net-mvc-views-overview-cs/_static/image1.jpg)](asp-net-mvc-views-overview-cs/_static/image1.png)
 
-**그림 01**: 표준 로그인 폼 ([큰 이미지를 보려면 클릭](asp-net-mvc-views-overview-cs/_static/image2.png))
+**그림 01**: 표준 로그인 폼 ([클릭 하 여 큰 이미지 보기](asp-net-mvc-views-overview-cs/_static/image2.png))
 
 
 HTML 도우미 메서드의 모든 뷰의 Html 속성 이라고 합니다. 예를 들어 Html.TextBox() 메서드를 호출 하 여 텍스트를 렌더링 합니다.
@@ -125,7 +125,7 @@ HTML 도우미 메서드를 사용 하는 것은 선택 사항입니다. 이러�
 
 데이터 보기를 사용 하 여 컨트롤러에서 보기로 데이터를 전달 합니다. 메일을 통해 전송 되는 패키지와 같은 데이터 보기 생각할 수 있습니다. 이 패키지를 사용 하 여 컨트롤러에서 보기로 전달 된 모든 데이터를 전송 되어야 합니다. 예를 들어 목록 6의 컨트롤러 데이터를 보려면 메시지를 추가 합니다.
 
-**6-ProductController.cs 나열**
+**Listing 6 - ProductController.cs**
 
 [!code-csharp[Main](asp-net-mvc-views-overview-cs/samples/sample6.cs)]
 
@@ -133,13 +133,13 @@ ViewData 속성이 컨트롤러 이름 및 값 쌍의 컬렉션을 나타냅니�
 
 7 목록 뷰 데이터 보기에서에서 메시지를 검색 하 고 브라우저에 메시지를 렌더링 합니다.
 
-**7-나열 \Views\Product\Index.aspx**
+**Listing 7 -- \Views\Product\Index.aspx**
 
 [!code-aspx[Main](asp-net-mvc-views-overview-cs/samples/sample7.aspx)]
 
 뷰를 활용 한다는 Html.Encode() HTML 도우미 메서드는 메시지를 렌더링할 때 알 수 있습니다. Html.Encode() HTML 도우미와 같은 특수 문자를 인코딩합니다 &lt; 고 &gt; 안전한 웹 페이지에 표시할 문자에 있습니다. 사용자가 웹 사이트에 제출 하는 콘텐츠를 렌더링할 때마다 JavaScript 주입 공격을 방지 하기 위해 콘텐츠를 인코딩해야 합니다.
 
-(만들었기 때문에 메시지를 직접 여 ProductController에서, 우리가 인할 실제로 메시지를 인코딩하는 데 필요 합니다. 그러나는 것이 뷰 내에서 데이터 보기에서에서 검색 콘텐츠를 표시 하는 경우 항상 Html.Encode() 메서드를 호출 하는 좋은 습관입니다.)
+(만들었으므로 ProductController에서 직접 실제로 필요가 메시지를 인코딩하는 메시지입니다. 그러나는 것이 뷰 내에서 데이터 보기에서에서 검색 콘텐츠를 표시 하는 경우 항상 Html.Encode() 메서드를 호출 하는 좋은 습관입니다.)
 
 7 목록 보기 컨트롤러에서 단순 문자열 메시지를 전달 하는 뷰 데이터를 활용을 했습니다. 다른 유형의 데이터베이스 레코드 보기 컨트롤러에서 컬렉션과 같은 데이터를 전달할 데이터 보기를 사용할 수도 있습니다. 예를 들어 데이터베이스의 컬렉션을 전달 하는 제품 데이터베이스 테이블의 내용을 보기에 표시 하려는 경우 보기에 데이터 기록 합니다.
 

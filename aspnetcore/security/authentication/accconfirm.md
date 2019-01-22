@@ -5,12 +5,12 @@ description: 전자 메일 확인 및 암호 재설정을 사용 하 여 ASP.NET
 ms.author: riande
 ms.date: 7/11/2018
 uid: security/authentication/accconfirm
-ms.openlocfilehash: 4c2e62335bc7dd004829dbc2a8c1f62ea91f334f
-ms.sourcegitcommit: 4a6bbe84db24c2f3dd2de065de418fde952c8d40
+ms.openlocfilehash: 0dc9907f9f54c8a0daf2e05a3769897e5145935f
+ms.sourcegitcommit: 728f4e47be91e1c87bb7c0041734191b5f5c6da3
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50253041"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54444144"
 ---
 # <a name="account-confirmation-and-password-recovery-in-aspnet-core"></a>계정 확인 및 ASP.NET Core에서 암호 복구
 

@@ -1,34 +1,43 @@
 ---
 uid: mvc/overview/getting-started/getting-started-with-ef-using-mvc/implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application
-title: ASP.NET MVC 5 응용 프로그램 (11 12)에서 Entity Framework 6 사용한 상속 구현 | Microsoft Docs
+title: '템플릿: ASP.NET MVC 5 앱에서 EF 사용 하 여 상속을 구현 합니다.'
+description: 이 자습서에서는 데이터 모델에서 상속을 구현하는 방법을 보여 줍니다.
 author: tdykstra
-description: Contoso University 샘플 웹 응용 프로그램에는 Entity Framework 6 Code First 및 Visual Studio를 사용 하 여 ASP.NET MVC 5 응용 프로그램을 만드는 방법을 보여 줍니다...
 ms.author: riande
-ms.date: 11/07/2014
+ms.date: 01/21/2019
+ms.topic: tutorial
 ms.assetid: 08834147-77ec-454a-bb7a-d931d2a40dab
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 613494d58d7652f69a52241bcd3a7e896bc5407c
-ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
+ms.openlocfilehash: df8715e4416ce3ccdf1d9e380addcded553d85f8
+ms.sourcegitcommit: 728f4e47be91e1c87bb7c0041734191b5f5c6da3
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48912711"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54444287"
 ---
-<a name="implementing-inheritance-with-the-entity-framework-6-in-an-aspnet-mvc-5-application-11-of-12"></a>ASP.NET MVC 5 응용 프로그램 (11 12)에서 Entity Framework 6 사용한 상속 구현
-====================
-[Tom Dykstra](https://github.com/tdykstra)
-
-[완료 된 프로젝트 다운로드](http://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8)
-
-> Contoso University 샘플 웹 응용 프로그램에는 Entity Framework 6 Code First 및 Visual Studio를 사용 하 여 ASP.NET MVC 5 응용 프로그램을 만드는 방법을 보여 줍니다. 자습서 시리즈에 대한 정보는 [시리즈의 첫 번째 자습서](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)를 참조하세요.
-
+# <a name="template-implement-inheritance-with-ef-in-an-aspnet-mvc-5-app"></a>템플릿: ASP.NET MVC 5 앱에서 EF 사용 하 여 상속을 구현 합니다.
 
 이전 자습서에서 동시성 예외를 처리 합니다. 이 자습서에서는 데이터 모델에서 상속을 구현하는 방법을 보여 줍니다.
 
 개체 지향 프로그래밍에서 사용할 수 있습니다 [상속](http://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming)) 용이 하 게 [코드 재사용](http://en.wikipedia.org/wiki/Code_reuse)합니다. 이 자습서에서는 강사와 학생 모두에게 공통적인 속성(예: `LastName`)이 포함된 `Person` 기본 클래스에서 클래스가 파생되도록 `Instructor` 및 `Student` 클래스를 변경합니다. 웹 페이지를 추가하거나 변경하지는 않지만 일부 코드를 변경하고 이러한 변경 내용이 데이터베이스에 자동으로 반영됩니다.
 
-## <a name="options-for-mapping-inheritance-to-database-tables"></a>상속을 데이터베이스 테이블에 매핑하기 위한 옵션
+이 자습서에서는 다음을 수행했습니다.
+
+> [!div class="checklist"]
+> * 데이터베이스에 상속 매핑 방법
+> * Person 클래스 만들기
+> * 업데이트 Instructor 및 Student
+> * 모델에 사용자 추가
+> * 만들고 마이그레이션 업데이트
+> * 구현을 테스트합니다
+> * Azure에 배포
+
+## <a name="prerequisites"></a>전제 조건
+
+* [상속 구현](handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application.md)
+
+## <a name="map-inheritance-to-database"></a>데이터베이스에 상속 매핑
 
 `Instructor` 및 `Student` 의 클래스는 `School` 데이터 모델은 일부의 속성이 동일 합니다.
 
@@ -62,7 +71,9 @@ TPC 및 TPH 상속 패턴 일반적으로 더 나은 성능을 제공 TPT 상속
 
 [!code-csharp[Main](implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample1.cs)]
 
-## <a name="make-student-and-instructor-classes-inherit-from-person"></a>Person 클래스로부터 상속되는 Student 및 Instructor 클래스 만들기
+## <a name="update-instructor-and-student"></a>업데이트 Instructor 및 Student
+
+이제 업데이트를 *Instructor.cs* 하 고 *Sudent.cs* 값에서 상속 하는 *Person.sc*.
 
 *Instructor.cs*를 파생 합니다 `Instructor` 에서 클래스를 `Person` 클래스 및 키 및 이름 필드를 제거 합니다. 해당 코드는 다음 예제와 같이 나타납니다.
 
@@ -72,7 +83,7 @@ TPC 및 TPH 상속 패턴 일반적으로 더 나은 성능을 제공 TPT 상속
 
 [!code-csharp[Main](implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample3.cs)]
 
-## <a name="add-the-person-entity-type-to-the-model"></a>Person 엔터티 형식을 모델에 추가
+## <a name="add-person-to-the-model"></a>모델에 사용자 추가
 
 *SchoolContext.cs*, 추가 `DbSet` 에 대 한 속성을 `Person` 엔터티 형식:
 
@@ -80,7 +91,7 @@ TPC 및 TPH 상속 패턴 일반적으로 더 나은 성능을 제공 TPT 상속
 
 계층당 하나의 테이블 상속을 구성하기 위해 Entity Framework에 필요한 모든 작업입니다. 더 알 수 있듯이, 데이터베이스가 업데이트 되는 경우는 `Person` 대신 테이블을 `Student` 및 `Instructor` 테이블입니다.
 
-## <a name="create-and-update-a-migrations-file"></a>마이그레이션 파일 만들기 및 업데이트
+## <a name="create-and-update-migrations"></a>만들고 마이그레이션 업데이트
 
 관리자 콘솔 (PMC (패키지)을 다음 명령을 입력 합니다.
 
@@ -121,18 +132,13 @@ TPC 및 TPH 상속 패턴 일반적으로 더 나은 성능을 제공 TPT 상속
 >
 > 새 데이터베이스에 데이터가 없습니다. 마이그레이션할 및 `update-database` 명령은 오류 없이 완료 될 가능성이 훨씬 더 높습니다. 데이터베이스를 삭제 하는 방법에 지침은 [Visual Studio 2012에서 데이터베이스를 삭제 하는 방법](http://romiller.com/2013/05/17/how-to-drop-a-database-from-visual-studio-2012/)합니다. 이 자습서를 계속 하려면이 방법을 사용 하는 경우이 자습서의 끝에서 배포 단계를 건너뛸 또는 새 사이트 및 데이터베이스를 배포 합니다. 있습니다 했으므로 된 배포에 이미 동일한 사이트에 대 한 업데이트를 배포 하는 경우 자동 마이그레이션을 실행 하는 경우 EF가 동일한 오류가 받습니다. 마이그레이션 오류 문제를 해결 하려는 경우 가장 좋은 리소스는 Entity Framework 포럼 또는 StackOverflow.com 중입니다.
 
-
-## <a name="testing"></a>테스트
+## <a name="test-the-implementation"></a>구현을 테스트합니다
 
 사이트를 실행 하 고 다양 한 페이지를 시도 하세요. 모든 항목이 이전과 같이 작동합니다.
 
 **서버 탐색기** 확장 **데이터 Connections\SchoolContext** 차례로 **테이블**를 표시 하 고는 **학생** 및 **강사** 테이블 바뀌었습니다를 **Person** 테이블입니다. 확장 합니다 **Person** 테이블 표시 이어야 하는 데 사용 하는 열 모두에 **학생** 및 **강사** 테이블.
 
-![Server_Explorer_showing_Person_table](implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image5.png)
-
 Person 테이블을 마우스 오른쪽 단추로 클릭한 후 **테이블 데이터 표시**를 클릭하여 판별자 열을 표시합니다.
-
-![](implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image6.png)
 
 다음 다이어그램에서는 새 School 데이터베이스의 구조를 보여 줍니다.
 
@@ -144,22 +150,37 @@ Person 테이블을 마우스 오른쪽 단추로 클릭한 후 **테이블 데�
 
 1. Visual studio에서에서 프로젝트를 마우스 오른쪽 단추로 **솔루션 탐색기** 선택한 **게시** 상황에 맞는 메뉴입니다.
 
-    ![프로젝트 상황에 맞는 메뉴에서 게시](implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image8.png)
 2. **게시**를 클릭합니다.
 
-    ![게시](implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image9.png)
+    웹 앱이 기본 브라우저에서 열립니다.
 
-   웹 앱에 기본 브라우저에서 열립니다.
 3. 확인을 위해 응용 프로그램을 테스트 작동 합니다.
 
     실행 하는 페이지는 처음에는 데이터베이스에 액세스, Entity Framework를 실행 하 여 마이그레이션의 모든 `Up` 데이터베이스를 현재 데이터 모델을 사용 하 여 최신 상태로 만드는 데 필요한 메서드.
 
-## <a name="summary"></a>요약
+## <a name="get-the-code"></a>코드 가져오기
 
-`Person`, `Student` 및 `Instructor` 클래스에 대해 계층당 하나의 테이블 상속을 구현했습니다. 이 및 다른 상속 구조에 대 한 자세한 내용은 참조 하세요. [TPT 상속 패턴](https://msdn.microsoft.com/data/jj618293) 하 고 [TPH 상속 패턴](https://msdn.microsoft.com/data/jj618292) MSDN에서. 다음 자습서에서는 다양한 고급 Entity Framework 시나리오를 처리하는 방법을 살펴봅니다.
+[완료 된 프로젝트 다운로드](http://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8)
+
+## <a name="additional-resources"></a>추가 자료
 
 다른 Entity Framework 리소스에 대 한 링크에서 찾을 수 있습니다 합니다 [ASP.NET 데이터 액세스-권장 리소스](../../../../whitepapers/aspnet-data-access-content-map.md)합니다.
 
-> [!div class="step-by-step"]
-> [이전](handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application.md)
-> [다음](advanced-entity-framework-scenarios-for-an-mvc-web-application.md)
+이 및 다른 상속 구조에 대 한 자세한 내용은 참조 하세요. [TPT 상속 패턴](https://msdn.microsoft.com/data/jj618293) 하 고 [TPH 상속 패턴](https://msdn.microsoft.com/data/jj618292) MSDN에서. 다음 자습서에서는 다양한 고급 Entity Framework 시나리오를 처리하는 방법을 살펴봅니다.
+
+## <a name="next-steps"></a>다음 단계
+
+이 자습서에서는 다음을 수행했습니다.
+
+> [!div class="checklist"]
+> * 데이터베이스에 상속을 매핑할 학습
+> * Person 클래스를 생성합니다.
+> * 업데이트 된 강사 및 학생
+> * 모델에 추가 된 사용자
+> * 만들고 마이그레이션 업데이트
+> * 구현 테스트
+> * Azure에 배포
+
+Entity Framework Code First를 사용 하는 ASP.NET 웹 응용 프로그램 개발의 기본 개념을 넘어 때 알아야 할 유용한 항목에 대해 자세히 알아보려면 다음 문서로 이동 합니다.
+> [!div class="nextstepaction"]
+> [고급 Entity Framework 시나리오](advanced-entity-framework-scenarios-for-an-mvc-web-application.md)

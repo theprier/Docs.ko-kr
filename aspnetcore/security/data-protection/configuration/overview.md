@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 11/13/2018
 uid: security/data-protection/configuration/overview
-ms.openlocfilehash: 3be220df4b14ed8dbbd1fab70f46578e9408aa26
-ms.sourcegitcommit: f202864efca81a72ea7120c0692940c40d9d0630
+ms.openlocfilehash: 0aef2680f48b7923579f90943846f22734f61b50
+ms.sourcegitcommit: 728f4e47be91e1c87bb7c0041734191b5f5c6da3
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51635318"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54444274"
 ---
 # <a name="configure-aspnet-core-data-protection"></a>ASP.NET Core 데이터 보호를 구성 합니다.
 
@@ -42,7 +42,7 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-키 링 저장소 위치를 설정 (예를 들어 [PersistKeysToAzureBlobStorage](/dotnet/api/microsoft.aspnetcore.dataprotection.azuredataprotectionbuilderextensions.persistkeystoazureblobstorage)). 호출 하기 때문에 위치를 설정 해야 합니다 `ProtectKeysWithAzureKeyVault` 를 구현 하는 [IXmlEncryptor](/dotnet/api/microsoft.aspnetcore.dataprotection.xmlencryption.ixmlencryptor) 키 링 저장소 위치를 포함 하 여 자동으로 데이터 보호 설정을 사용 하지 않도록 설정 하는 합니다. 키 링을 유지 하기 위해 Azure Blob Storage를 사용 하는 앞의 예제입니다. 자세한 내용은 [키 저장소 공급자: Azure 및 Redis](xref:security/data-protection/implementation/key-storage-providers#azure-and-redis)합니다. 키 링을 사용 하 여 로컬로 유지할 수도 있습니다 [PersistKeysToFileSystem](xref:security/data-protection/implementation/key-storage-providers#file-system)합니다.
+키 링 저장소 위치를 설정 (예를 들어 [PersistKeysToAzureBlobStorage](/dotnet/api/microsoft.aspnetcore.dataprotection.azuredataprotectionbuilderextensions.persistkeystoazureblobstorage)). 호출 하기 때문에 위치를 설정 해야 합니다 `ProtectKeysWithAzureKeyVault` 를 구현 하는 [IXmlEncryptor](/dotnet/api/microsoft.aspnetcore.dataprotection.xmlencryption.ixmlencryptor) 키 링 저장소 위치를 포함 하 여 자동으로 데이터 보호 설정을 사용 하지 않도록 설정 하는 합니다. 키 링을 유지 하기 위해 Azure Blob Storage를 사용 하는 앞의 예제입니다. 자세한 내용은 참조 하세요. [키 저장소 공급자: Azure 및 Redis](xref:security/data-protection/implementation/key-storage-providers#azure-and-redis)합니다. 키 링을 사용 하 여 로컬로 유지할 수도 있습니다 [PersistKeysToFileSystem](xref:security/data-protection/implementation/key-storage-providers#file-system)합니다.
 
 합니다 `keyIdentifier` 는 키 암호화에 사용 되는 키 자격 증명 모음 키 식별자 (예를 들어 `https://contosokeyvault.vault.azure.net/keys/dataprotection/`).
 
@@ -135,7 +135,7 @@ public void ConfigureServices(IServiceCollection services)
 
 ## <a name="setapplicationname"></a>SetApplicationName
 
-데이터 보호 시스템은 기본적으로 앱들이 동일한 물리적 키 저장소를 공유하는 경우에도 앱들을 서로 격리합니다. 따라서 앱들은 서로 다른 앱이 보호한 페이로드를 이해할 수 없습니다.
+기본적으로 데이터 보호 시스템 같은 물리적 키 저장소를 공유 하는 경우에 앱을 기반으로 콘텐츠 루트 경로 서로 격리 합니다. 따라서 앱들은 서로 다른 앱이 보호한 페이로드를 이해할 수 없습니다.
 
 앱 간 페이로드 보호 되는 공유:
 

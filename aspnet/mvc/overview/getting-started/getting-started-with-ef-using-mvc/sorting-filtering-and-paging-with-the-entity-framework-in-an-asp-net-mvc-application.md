@@ -1,35 +1,42 @@
 ---
 uid: mvc/overview/getting-started/getting-started-with-ef-using-mvc/sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application
-title: 정렬, 필터링 및 ASP.NET MVC 응용 프로그램에서 Entity Framework를 사용 하 여 페이징 | Microsoft Docs
+title: '자습서: 정렬, 필터링 및 ASP.NET MVC 응용 프로그램에서 Entity Framework를 사용 하 여 페이징 추가 | Microsoft Docs'
 author: tdykstra
-description: Contoso University 샘플 웹 응용 프로그램에는 Entity Framework 6 Code First 및 Visual Studio를 사용 하 여 ASP.NET MVC 5 응용 프로그램을 만드는 방법을 보여 줍니다...
+description: 이 자습서에서는 추가 정렬, 필터링 및 페이징 기능을 합니다 **학생** 인덱스 페이지입니다. 단순 그룹화 페이지를 만들 수도 있습니다.
 ms.author: riande
-ms.date: 10/08/2018
+ms.date: 01/14/2019
 ms.assetid: d5723e46-41fe-4d09-850a-e03b9e285bfa
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 9fabb5a90af715d4e96ff79b43bfff5a4600ac08
-ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
+ms.topic: tutorial
+ms.openlocfilehash: 1f18a15d39d58ffb4ac48cfccee6519d33294e85
+ms.sourcegitcommit: 728f4e47be91e1c87bb7c0041734191b5f5c6da3
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48912776"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54444197"
 ---
-# <a name="sorting-filtering-and-paging-with-the-entity-framework-in-an-aspnet-mvc-application"></a>정렬, 필터링 및 ASP.NET MVC 응용 프로그램에서 Entity Framework를 사용 하 여 페이징
+# <a name="tutorial-add-sorting-filtering-and-paging-with-the-entity-framework-in-an-aspnet-mvc-application"></a>자습서: 정렬, 필터링 및 ASP.NET MVC 응용 프로그램에서 Entity Framework를 사용 하 여 페이징 추가
 
-[Tom Dykstra](https://github.com/tdykstra)
+에 [이전 자습서](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)에 대 한 기본적인 CRUD 작업에 대 한 웹 페이지 집합을 구현 `Student` 엔터티. 이 자습서에서는 추가 정렬, 필터링 및 페이징 기능을 합니다 **학생** 인덱스 페이지입니다. 단순 그룹화 페이지를 만들 수도 있습니다.
 
-[완료 된 프로젝트 다운로드](http://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8)
-
-> Contoso University 샘플 웹 응용 프로그램에는 Entity Framework 6 Code First 및 Visual Studio를 사용 하 여 ASP.NET MVC 5 응용 프로그램을 만드는 방법을 보여 줍니다. 자습서 시리즈에 대한 정보는 [시리즈의 첫 번째 자습서](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)를 참조하세요.
-
-이전 자습서에 대 한 기본적인 CRUD 작업에 대 한 웹 페이지의 집합을 구현 했습니다 `Student` 엔터티. 이 자습서에서는 추가 정렬, 필터링 및 페이징 기능을 합니다 **학생** 인덱스 페이지입니다. 단순 그룹화를 수행하는 페이지도 만듭니다.
-
-다음 그림에서는 작업이 완료되었을 때 페이지 모양을 보여 줍니다. 열 제목은 해당 열로 정렬하기 위해 사용자가 클릭할 수 있는 링크입니다. 열 제목을 반복해서 클릭하면 오름차순 및 내림차순으로 정렬 순서가 토글됩니다.
+다음 이미지는 페이지 모양을 완료 되 면 표시 합니다. 열 제목은 해당 열로 정렬하기 위해 사용자가 클릭할 수 있는 링크입니다. 열 제목을 반복해서 클릭하면 오름차순 및 내림차순으로 정렬 순서가 토글됩니다.
 
 ![Students_Index_page_with_paging](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image1.png)
 
-## <a name="add-column-sort-links-to-the-students-index-page"></a>학생 인덱스 페이지에 열 정렬 링크 추가
+이 자습서에서는 다음을 수행했습니다.
+
+> [!div class="checklist"]
+> * 열 정렬 링크 추가
+> * 검색 상자 추가
+> * 페이징 추가
+> * 정보 페이지 만들기
+
+## <a name="prerequisites"></a>전제 조건
+
+* [기본 CRUD 기능 구현](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application.md)
+
+## <a name="add-column-sort-links"></a>열 정렬 링크 추가
 
 학생 인덱스 페이지에 정렬를 추가 하려면 변경 합니다 `Index` 메서드의 `Student` 컨트롤러 코드를 추가 하는 `Student` 인덱스 뷰.
 
@@ -70,13 +77,9 @@ ms.locfileid: "48912776"
 
 2. 페이지를 실행 하 고 클릭 합니다 **성을** 및 **등록 날짜** 정렬 되는지 확인 하려면 열 머리글 작동 합니다.
 
-   ![Students_Index_page_with_sort_hyperlinks](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image2.png)
-
    클릭 한 후 합니다 **Last Name** 제목 학생 내림차순 마지막 이름 순서로 표시 됩니다.
 
-   ![웹 브라우저에서 학생 인덱스 뷰에](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image3.png)
-
-## <a name="add-a-search-box-to-the-students-index-page"></a>학생 인덱스 페이지에 검색 상자 추가
+## <a name="add-a-search-box"></a>검색 상자 추가
 
 학생 인덱스 페이지에 필터링을 추가 하려면 뷰에 텍스트 상자와 제출 단추를 추가 및 해당 변경 됩니다는 `Index` 메서드. 텍스트 상자에는 첫 번째 이름과 마지막 이름 필드에서 검색할 문자열을 입력할 수 있습니다.
 
@@ -103,15 +106,11 @@ ms.locfileid: "48912776"
 
 2. 페이지를 실행 하 고, 검색 문자열을 입력, 클릭 **검색** 필터링이 작동 하는지 확인 합니다.
 
-   ![Students_Index_page_with_search_box](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image4.png)
-
    알림 URL "an" 검색 문자열, 즉,이 페이지에 책갈피 받지 않는 필터링된 된 목록 책갈피를 사용 하는 경우를 포함 하지 않습니다. 이 적용 됩니다도 열 정렬 링크에는 전체 목록이 정렬 됩니다. 변경 된 **검색** 자습서의 뒷부분에 나오는 필터 조건에 대 한 쿼리 문자열을 사용 하는 단추입니다.
 
-## <a name="add-paging-to-the-students-index-page"></a>학생 인덱스 페이지에 페이징을 추가합니다
+## <a name="add-paging"></a>페이징 추가
 
-학생 인덱스 페이지에 페이징을 추가 하려면 먼저 설치 합니다 **PagedList.Mvc** NuGet 패키지. 다음의 추가 변경 합니다 `Index` 메서드 페이징 링크를 추가 하 고는 `Index` 보기. **PagedList.Mvc** 많은 좋은 페이징 및 ASP.NET MVC에 대 한 패키지를 정렬 중 하나 이며 여기서 사용 예를 들어, 다른 옵션과 비교에 대 한 권장 사항 아니라로 제공 됩니다. 다음 그림에서는 페이징 링크를 보여 줍니다.
-
-![Students_index_page_with_paging](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image5.png)
+학생 인덱스 페이지에 페이징을 추가 하려면 먼저 설치 합니다 **PagedList.Mvc** NuGet 패키지. 다음의 추가 변경 합니다 `Index` 메서드 페이징 링크를 추가 하 고는 `Index` 보기. **PagedList.Mvc** 많은 좋은 페이징 및 ASP.NET MVC에 대 한 패키지를 정렬 중 하나 이며 여기서 사용 예를 들어, 다른 옵션과 비교에 대 한 권장 사항 아니라로 제공 됩니다.
 
 ### <a name="install-the-pagedlistmvc-nuget-package"></a>PagedList.MVC NuGet 패키지를 설치 합니다.
 
@@ -124,8 +123,6 @@ NuGet **PagedList.Mvc** 패키지를 자동으로 설치 합니다 **PagedList**
    ```text
    Install-Package PagedList.Mvc
    ```
-
-   ![PagedList.Mvc 설치](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image6.png)
 
 3. 프로젝트를 빌드합니다.
 
@@ -197,13 +194,9 @@ NuGet **PagedList.Mvc** 패키지를 자동으로 설치 합니다 **PagedList**
 
 2. 페이지를 실행 합니다.
 
-   ![페이징 사용 하 여 학생 인덱스 페이지](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image7.png)
-
    다른 정렬 순서의 페이징 링크를 클릭하여 페이징이 작동하는지 확인합니다. 그런 다음, 검색 문자열을 입력하고 페이징을 다시 시도하여 정렬 및 필터링을 통해 페이징이 제대로 작동하는지 확인합니다.
 
-   ![검색 필터 텍스트가 있는 학생 인덱스 페이지](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image8.png)
-
-## <a name="create-an-about-page-that-shows-student-statistics"></a>학생 통계를 보여 주는 [정보] 페이지 만들기
+## <a name="create-an-about-page"></a>정보 페이지 만들기
 
 Contoso University 웹 사이트의 페이지에 대 한 각 등록 날짜에 대해 등록 한 학생 수가 표시 됩니다. 여기에는 그룹화와 그룹에 대한 간단한 계산이 필요합니다. 이 작업을 수행하기 위해 다음을 수행합니다.
 
@@ -249,14 +242,24 @@ Contoso University 웹 사이트의 페이지에 대 한 각 등록 날짜에 �
 
    ![About_page](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image9.png)
 
-## <a name="summary"></a>요약
+## <a name="get-the-code"></a>코드 가져오기
 
-이 자습서에서는 데이터 모델을 만들고 기본 CRUD, 정렬, 필터링, 페이징 및 그룹화 기능을 구현 하는 방법을 살펴보았습니다. 다음 자습서에서는 데이터 모델을 확장하여 더 많은 고급 항목을 살펴봅니다.
+[완료 된 프로젝트 다운로드](http://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8)
 
-이 자습서를 연결 하는 방법을 개선할 수 것에 의견을 남겨 주세요.
+## <a name="additional-resources"></a>추가 자료
 
 다른 Entity Framework 리소스에 대 한 링크에서 찾을 수 있습니다 [ASP.NET 데이터 액세스-권장 리소스](../../../../whitepapers/aspnet-data-access-content-map.md)합니다.
 
-> [!div class="step-by-step"]
-> [이전](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application.md)
-> [다음](connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application.md)
+## <a name="next-steps"></a>다음 단계
+
+이 자습서에서는 다음을 수행했습니다.
+
+> [!div class="checklist"]
+> * 열 정렬 링크 추가
+> * 검색 상자 추가
+> * 페이징 추가
+> * 정보 페이지 만들기
+
+연결 복원 력 및 명령 인터 셉 션을 사용 하는 방법을 알아보려면 다음 문서로 계속 진행 하세요.
+> [!div class="nextstepaction"]
+> [연결 복원 력 및 명령 인터 셉 션](connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application.md)

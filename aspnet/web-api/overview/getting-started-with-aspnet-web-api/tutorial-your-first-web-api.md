@@ -7,12 +7,12 @@ ms.author: riande
 ms.date: 11/28/2017
 msc.legacyurl: /web-api/overview/getting-started-with-aspnet-web-api/tutorial-your-first-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 62e99a41ba935470c39476c9aea8ee4193543425
-ms.sourcegitcommit: 7890dfb5a8f8c07d813f166d3ab0c263f893d0c6
+ms.openlocfilehash: 7bec95af4532535f0d620bfe6862958907466874
+ms.sourcegitcommit: 728f4e47be91e1c87bb7c0041734191b5f5c6da3
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48795295"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54444261"
 ---
 <a name="get-started-with-aspnet-web-api-2-c"></a>ASP.NET Web API 2 (C#)를 사용 하 여 시작
 ====================
@@ -53,7 +53,7 @@ Visual Studio를 시작 하 고 선택 **새 프로젝트** 에서 합니다 **�
 
 ## <a name="adding-a-model"></a>모델 추가
 
-*모델*은 응용 프로그램에서 데이터를 나타내는 개체입니다. ASP.NET Web API는 자동으로 JSON, XML 또는 다른 형식으로 모델을 직렬화 하 고 HTTP 응답 메시지의 본문으로 serialize 된 데이터를 쓸 수 있습니다. 클라이언트는 serialization 형식을 읽을 수 있습니다,으로 개체를 deserialize 할 수 있습니다. 대부분의 클라이언트에는 XML 또는 JSON 구문 분석할 수 있습니다. 또한 클라이언트는 HTTP 요청 메시지의 Accept 헤더를 설정 하 여 하려고 하는 형식을 나타낼 수 있습니다.
+*모델*은 애플리케이션에서 데이터를 나타내는 개체입니다. ASP.NET Web API는 자동으로 JSON, XML 또는 다른 형식으로 모델을 직렬화 하 고 HTTP 응답 메시지의 본문으로 serialize 된 데이터를 쓸 수 있습니다. 클라이언트는 serialization 형식을 읽을 수 있습니다,으로 개체를 deserialize 할 수 있습니다. 대부분의 클라이언트에는 XML 또는 JSON 구문 분석할 수 있습니다. 또한 클라이언트는 HTTP 요청 메시지의 Accept 헤더를 설정 하 여 하려고 하는 형식을 나타낼 수 있습니다.
 
 제품을 나타내는 간단한 모델을 만들어 보겠습니다.
 
@@ -178,7 +178,7 @@ HTTP 서비스를 사용 하 여 작업 하는 경우 HTTP 요청 및 요청 메
 
 라이브 웹 앱으로 실행 하는 완성 된 사이트를 참조 하 시겠습니까? 다음 단추를 클릭 하 여 Azure 계정에 앱의 전체 버전을 배포할 수 있습니다.
 
-[![](http://azuredeploy.net/deploybutton.png)](https://deploy.azure.com/?WT.mc_id=deploy_azure_aspnet&repository=https://github.com/tfitzmac/WebAPI-ProductsApp#/form/setup)
+[![](https://azuredeploy.net/deploybutton.png)](https://deploy.azure.com/?WT.mc_id=deploy_azure_aspnet&repository=https://github.com/tfitzmac/WebAPI-ProductsApp#/form/setup)
 
 이 솔루션을 Azure에 배포 하려면 Azure 계정이 필요 합니다. 계정이 아직 없는 경우 다음 옵션:
 

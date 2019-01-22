@@ -4,14 +4,14 @@ author: mjrousos
 description: ASP.NET Core 앱에서 사용자 지정 IAuthorizationPolicyProvider를 사용 하 여 동적으로 권한 부여 정책을 생성 하는 방법에 알아봅니다.
 ms.author: riande
 ms.custom: mvc
-ms.date: 05/02/2018
+ms.date: 01/21/2019
 uid: security/authorization/iauthorizationpolicyprovider
-ms.openlocfilehash: ef3e81da6fb9e2e332b553607be35fcd79e9362d
-ms.sourcegitcommit: ec71fd5a988f927ae301813aae5ff764feb3bb6a
+ms.openlocfilehash: ca57a9fd8e3c11f15fe14bbe4538bc748c4c84b6
+ms.sourcegitcommit: 728f4e47be91e1c87bb7c0041734191b5f5c6da3
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/12/2019
-ms.locfileid: "54249375"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54444157"
 ---
 # <a name="custom-authorization-policy-providers-using-iauthorizationpolicyprovider-in-aspnet-core"></a>ASP.NET Core에서 IAuthorizationPolicyProvider를 사용 하 여 사용자 지정 권한 부여 정책 공급자 
 
@@ -25,8 +25,7 @@ ms.locfileid: "54249375"
 * (다른 방 번호 또는 예를 들어 연령대)에 광범위 한 정책 사용 하므로 것은 의미가 없습니다 사용 하 여 각 개별 권한 부여 정책을 추가 하는 `AuthorizationOptions.AddPolicy` 호출 합니다.
 * 외부 데이터 원본 (예: 데이터베이스)에 대 한 정보를 기반으로 하는 런타임 시 정책 만들기 또는 다른 메커니즘을 통해 권한 부여 요구 사항을 동적으로 결정 합니다.
 
-[샘플 코드 보기 또는 다운로드](https://github.com/aspnet/AspNetCore/tree/release/2.2/src/AuthSamples/) 에서 합니다 [AspNetCore GitHub 리포지토리](https://github.com/aspnet/AspNetCore)합니다. Aspnet/AuthSamples 리포지토리 ZIP 파일을 다운로드 합니다.
-압축을 풉니다 합니다 *AuthSamples master.zip* 파일입니다. 로 이동 합니다 *샘플/CustomPolicyProvider* 프로젝트 폴더입니다.
+[샘플 코드 보기 또는 다운로드](https://github.com/aspnet/AspNetCore/tree/release/2.2/src/Security/samples/CustomPolicyProvider) 에서 합니다 [AspNetCore GitHub 리포지토리](https://github.com/aspnet/AspNetCore)합니다. Aspnet/AspNetCore 리포지토리 ZIP 파일을 다운로드 합니다. 파일을 압축을 풉니다. 로 이동 합니다 *src/Security/샘플/CustomPolicyProvider* 프로젝트 폴더입니다.
 
 ## <a name="customize-policy-retrieval"></a>정책 검색을 사용자 지정
 
@@ -154,4 +153,4 @@ public Task<AuthorizationPolicy> GetDefaultPolicyAsync() =>
 services.AddSingleton<IAuthorizationPolicyProvider, MinimumAgePolicyProvider>();
 ```
 
-전체 사용자 지정 `IAuthorizationPolicyProvider` 샘플에서 사용할 수는 [aspnet/AuthSamples GitHub 리포지토리](https://github.com/aspnet/AuthSamples/tree/master/samples/CustomPolicyProvider)합니다.
+전체 사용자 지정 `IAuthorizationPolicyProvider` 샘플에서 사용할 수는 [aspnet/AuthSamples GitHub 리포지토리](https://github.com/aspnet/AspNetCore/tree/release/2.2/src/Security/samples/CustomPolicyProvider)합니다.
