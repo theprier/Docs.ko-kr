@@ -1,11 +1,3 @@
----
-ms.openlocfilehash: a3ac1ac389892681e8c122d569e6325353ed6e88
-ms.sourcegitcommit: 42a8164b8aba21f322ffefacb92301bdfb4d3c2d
-ms.translationtype: HT
-ms.contentlocale: ko-KR
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54341682"
----
 # [ASP.NET Core 설명서](/aspnet/#pivot=core)
 
 # 개요
@@ -25,6 +17,8 @@ ms.locfileid: "54341682"
 ## Web API 앱
 ### [Web API 만들기](xref:tutorials/first-web-api)
 ### [MongoDB를 사용하는 Web API](xref:tutorials/first-mongo-app)
+### [모바일 백 엔드](xref:mobile/native-mobile-backend)
+
 ## 웹앱
 ### [Razor 페이지](xref:tutorials/razor-pages/index)
 ### [MVC](xref:tutorials/first-mvc-app/index)
@@ -32,7 +26,6 @@ ms.locfileid: "54341682"
 ## 실시간 웹앱
 ### [JavaScript를 사용한 SignalR](xref:tutorials/signalr)
 ### [TypeScript를 사용한 SignalR](xref:tutorials/signalr-typescript-webpack)
-## [네이티브 모바일 앱에 대한 백 엔드 서비스 만들기](xref:mobile/native-mobile-backend)
 
 ## 데이터 액세스
 ### [Razor Pages를 사용한 EF Core](xref:data/ef-rp/index)
@@ -50,16 +43,13 @@ ms.locfileid: "54341682"
 ## [옵션](xref:fundamentals/configuration/options)
 ## [로깅](xref:fundamentals/logging/index)
 ## [오류 처리](xref:fundamentals/error-handling)
-## 미들웨어
-### [개요](xref:fundamentals/middleware/index)
-### [팩터리 기반 미들웨어](xref:fundamentals/middleware/extensibility)
-### [타사 컨테이너를 사용하는 팩터리 기반 미들웨어](xref:fundamentals/middleware/extensibility-third-party-container)
+## [미들웨어](xref:fundamentals/middleware/index)
 ## 호스트
 ### [개요](xref:fundamentals/host/index)
 ### [웹 호스트](xref:fundamentals/host/web-host)
 ### [일반 호스트](xref:fundamentals/host/generic-host)
 ## [서버](xref:fundamentals/servers/index)
-## [HTTP 요청 시작](xref:fundamentals/http-requests)
+## [HTTP 요청 만들기](xref:fundamentals/http-requests)
 
 # 웹앱
 ## Razor 페이지
@@ -286,6 +276,7 @@ ms.locfileid: "54341682"
 ### [Docker 이미지 빌드](/dotnet/articles/core/docker/building-net-docker-images)
 ### [Visual Studio Tools](xref:host-and-deploy/docker/visual-studio-tools-for-docker)
 ### [Docker 이미지에 게시](/azure/vs-azure-tools-docker-hosting-web-apps-in-docker)
+### [샘플 Docker 이미지](https://github.com/dotnet/dotnet-docker/blob/master/samples/aspnetapp/README.md)
 ## [프록시 및 부하 분산 장치 구성](xref:host-and-deploy/proxy-load-balancer)
 ## [웹 팜에서 호스트](xref:host-and-deploy/web-farm)
 ## [Visual Studio 게시 프로필](xref:host-and-deploy/visual-studio-publish-profiles)
@@ -373,7 +364,7 @@ ms.locfileid: "54341682"
 #### [삭제되는 데이터 보호 공급자](xref:security/data-protection/implementation/key-storage-ephemeral)
 ### 호환성
 #### [개요](xref:security/data-protection/compatibility/index)
-#### [ASP.NET에서 <machineKey> 바꾸기](xref:security/data-protection/compatibility/replacing-machinekey)
+#### [ASP.NET에서 machineKey 교체](xref:security/data-protection/compatibility/replacing-machinekey)
 ## [개발에서 비밀 보호](xref:security/app-secrets)
 ## [HTTPS 적용](xref:security/enforcing-ssl)
 ## [EU GDPR(일반 데이터 보호 규정) 지원](xref:security/gdpr)
@@ -396,12 +387,14 @@ ms.locfileid: "54341682"
 ## [진단 도구](xref:performance/diagnostic-tools)
 ## [로드 및 스트레스 테스트](xref:test/loadtests)
 
-# 다른 항목
-## [전역화 및 지역화](xref:fundamentals/localization)
-## [Orchard Core를 사용하여 이식 가능 개체 지역화](xref:fundamentals/portable-object-localization)
+# 전역화 및 지역화
+## [개요](xref:fundamentals/localization)
+## [이식 가능 개체 지역화](xref:fundamentals/portable-object-localization)
+
+# 고급
 ## [URL 재작성](xref:fundamentals/url-rewriting)
 ## [파일 공급자](xref:fundamentals/file-providers)
-## [요청 기능](xref:fundamentals/request-features)
+## [요청-기능 인터페이스](xref:fundamentals/request-features)
 ## [HttpContext에 액세스](xref:fundamentals/httpcontext)
 ## [토큰 변경](xref:fundamentals/change-tokens)
 ## [OWIN(Open Web Interface for .NET)](xref:fundamentals/owin)
@@ -411,6 +404,8 @@ ms.locfileid: "54341682"
 ## [Microsoft.AspNetCore.All 메타패키지](xref:fundamentals/metapackage)
 ## [LoggerMessage를 사용하여 로깅](xref:fundamentals/logging/loggermessage)
 ## [파일 감시자 사용](xref:tutorials/dotnet-watch)
+### [팩터리 기반 미들웨어](xref:fundamentals/middleware/extensibility)
+### [타사 컨테이너를 사용하는 팩터리 기반 미들웨어](xref:fundamentals/middleware/extensibility-third-party-container)
 
 # 마이그레이션
 ## [2.2-3.0](xref:migration/22-to-30)
