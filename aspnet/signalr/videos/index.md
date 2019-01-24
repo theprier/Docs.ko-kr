@@ -1,22 +1,22 @@
 ---
 uid: signalr/videos/index
 title: ASP.NET SignalR 비디오 | Microsoft Docs
-author: rick-anderson
+author: bradygaster
 description: ''
-ms.author: riande
+ms.author: bradyg
 ms.date: 12/12/2012
 ms.assetid: c0ea52a3-7497-4204-88c6-91591ac1a6b2
 msc.legacyurl: /signalr/videos
 msc.type: book
-ms.openlocfilehash: 41722eb0c46836942f8b0042e14ddadbbff73c2f
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: a66889696c762bb74dddb97165eab3b6b46dd0c3
+ms.sourcegitcommit: ebf4e5a7ca301af8494edf64f85d4a8deb61d641
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "48255098"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54837184"
 ---
-<a name="aspnet-signalr-videos"></a><span data-ttu-id="27fb4-102">ASP.NET SignalR 비디오</span><span class="sxs-lookup"><span data-stu-id="27fb4-102">ASP.NET SignalR Videos</span></span>
+<a name="aspnet-signalr-videos"></a><span data-ttu-id="f1ec2-102">ASP.NET SignalR 비디오</span><span class="sxs-lookup"><span data-stu-id="f1ec2-102">ASP.NET SignalR Videos</span></span>
 ====================
-- [<span data-ttu-id="27fb4-103">ASP.NET SignalR 비디오</span><span class="sxs-lookup"><span data-stu-id="27fb4-103">ASP.NET SignalR Videos</span></span>](getting-started/index.md)
+- [<span data-ttu-id="f1ec2-103">ASP.NET SignalR 비디오</span><span class="sxs-lookup"><span data-stu-id="f1ec2-103">ASP.NET SignalR Videos</span></span>](getting-started/index.md)
 
-    - [<span data-ttu-id="27fb4-104">SignalR 및 웹 소켓</span><span class="sxs-lookup"><span data-stu-id="27fb4-104">SignalR and Web Sockets</span></span>](getting-started/signalr-and-web-sockets.md)
+    - [<span data-ttu-id="f1ec2-104">SignalR 및 웹 소켓</span><span class="sxs-lookup"><span data-stu-id="f1ec2-104">SignalR and Web Sockets</span></span>](getting-started/signalr-and-web-sockets.md)
