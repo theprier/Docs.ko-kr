@@ -4,17 +4,17 @@ title: '자습서: ASP.NET MVC에서 Entity Framework 사용 하 여 CRUD 기능
 description: 검토 및 만들기를 사용자 지정, 읽기, 업데이트, MVC 스 캐 폴딩 컨트롤러 및 보기에서 자동으로 만드는 (CRUD) 코드를 삭제 합니다.
 author: tdykstra
 ms.author: riande
-ms.date: 01/11/2019
+ms.date: 01/22/2019
 ms.topic: tutorial
 ms.assetid: a2f70ba4-83d1-4002-9255-24732726c4f2
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 9c6f8f3a2ffc0a9c5e15111ae47c331dab24ff43
-ms.sourcegitcommit: 42a8164b8aba21f322ffefacb92301bdfb4d3c2d
+ms.openlocfilehash: 42971b4e15c4aaf85d0ea50bf63934ba4a78ed91
+ms.sourcegitcommit: ebf4e5a7ca301af8494edf64f85d4a8deb61d641
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54341726"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54836236"
 ---
 # <a name="tutorial-implement-crud-functionality-with-the-entity-framework-in-aspnet-mvc"></a>자습서: ASP.NET MVC에서 Entity Framework 사용 하 여 CRUD 기능 구현
 
@@ -245,6 +245,10 @@ Url에 의해 만들어집니다 `ActionLink` Razor 보기의 문입니다. 다�
 ## <a name="handle-transactions"></a>트랜잭션 처리
 
 기본적으로 Entity Framework는 트랜잭션을 암시적으로 구현합니다. 여러 행 또는 테이블을 변경 하 고 호출 하는 시나리오에서 `SaveChanges`, Entity Framework 했는지를 자동으로 변경 내용을 모두 성공 하거나 모두 실패 합니다. 일부 변경 내용이 먼저 완료된 다음, 오류가 발생하는 경우 해당 변경 내용이 자동으로 롤백됩니다. 더 제어 해야 하는 시나리오에 대 한&mdash;예를 들어 트랜잭션의 Entity Framework 밖에 서 수행한 작업을 포함할&mdash;참조 [트랜잭션과 작업](/ef/ef6/saving/transactions)합니다.
+
+## <a name="get-the-code"></a>코드 가져오기
+
+[완료 된 프로젝트 다운로드](http://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8)
 
 ## <a name="additional-resources"></a>추가 자료
 

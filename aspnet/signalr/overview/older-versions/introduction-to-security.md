@@ -1,19 +1,19 @@
 ---
 uid: signalr/overview/older-versions/introduction-to-security
 title: SignalR 보안 소개 (SignalR 1.x) | Microsoft Docs
-author: pfletcher
+author: bradygaster
 description: SignalR 응용 프로그램을 개발할 때 고려해 야 할 보안 문제를 설명 합니다.
-ms.author: riande
+ms.author: bradyg
 ms.date: 10/17/2013
 ms.assetid: 715a4059-d307-4631-abbb-c789c95d6eb4
 msc.legacyurl: /signalr/overview/older-versions/introduction-to-security
 msc.type: authoredcontent
-ms.openlocfilehash: 662ce8d5581d16709ea79de39e078bfa36b02b5c
-ms.sourcegitcommit: 74e3be25ea37b5fc8b4b433b0b872547b4b99186
+ms.openlocfilehash: 94a4598595d025267c69933a03be2c164066cc98
+ms.sourcegitcommit: ebf4e5a7ca301af8494edf64f85d4a8deb61d641
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53287652"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54837808"
 ---
 <a name="introduction-to-signalr-security-signalr-1x"></a>SignalR 보안 소개 (SignalR 1.x)
 ====================

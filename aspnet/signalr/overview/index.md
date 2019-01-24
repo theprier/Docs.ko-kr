@@ -1,19 +1,19 @@
 ---
 uid: signalr/overview/index
 title: SignalR 지침 | Microsoft Docs
-author: rick-anderson
+author: bradygaster
 description: ''
-ms.author: riande
+ms.author: bradyg
 ms.date: 10/24/2012
 ms.assetid: e57da75a-1d98-4e3c-8787-f1d7e1eb2d86
 msc.legacyurl: /signalr/overview
 msc.type: book
-ms.openlocfilehash: d22f9e561d8d22c2562bc2f723beb2189592fdda
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 2ab5094e863c5762c0c4c70a15f4da1088bc52e7
+ms.sourcegitcommit: ebf4e5a7ca301af8494edf64f85d4a8deb61d641
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "48256163"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54837574"
 ---
 <a name="signalr-guidance"></a>SignalR 지침
 ====================
@@ -23,9 +23,9 @@ ms.locfileid: "48256163"
     - [지원되는 플랫폼](getting-started/supported-platforms.md)
     - [자습서: SignalR 2 시작](getting-started/tutorial-getting-started-with-signalr.md)
     - [자습서: SignalR 2 및 MVC 5 시작](getting-started/tutorial-getting-started-with-signalr-and-mvc.md)
-    - [자습서: SignalR 2를 사용하는 고주파수 실시간](getting-started/tutorial-high-frequency-realtime-with-signalr.md)
-    - [자습서: SignalR 2를 사용하여 서버 브로드캐스트](getting-started/tutorial-server-broadcast-with-signalr.md)
-    - [실습: SignalR을 사용하는 실시간 웹 응용 프로그램](getting-started/real-time-web-applications-with-signalr.md)
+    - [자습서: 고주파수 SignalR 2 사용 하 여](getting-started/tutorial-high-frequency-realtime-with-signalr.md)
+    - [자습서: SignalR 2 사용 하 여 서버 브로드캐스트](getting-started/tutorial-server-broadcast-with-signalr.md)
+    - [실습: SignalR 사용 하 여 실시간 웹 응용 프로그램](getting-started/real-time-web-applications-with-signalr.md)
 - [API 가이드](guide-to-the-api/index.md)
 
     - [허브 API 가이드 - 서버(C#)](guide-to-the-api/hubs-api-guide-server.md)
@@ -65,10 +65,10 @@ ms.locfileid: "48256163"
     - [SignalR 1.x 프로젝트를 버전 2로 업그레이드](releases/upgrading-signalr-1x-projects-to-20.md)
 - [이전 버전](older-versions/index.md)
 
-    - [자습서: SignalR 1.x 시작](older-versions/tutorial-getting-started-with-signalr.md)
-    - [자습서: SignalR 1.x 및 MVC 4 시작](older-versions/tutorial-getting-started-with-signalr-and-mvc-4.md)
+    - [자습서: Getting Started with SignalR 1.x](older-versions/tutorial-getting-started-with-signalr.md)
+    - [자습서: Getting Started with SignalR 1.x 및 MVC 4](older-versions/tutorial-getting-started-with-signalr-and-mvc-4.md)
     - [자습서: SignalR 1.x를 사용하는 고주파수 실시간](older-versions/tutorial-high-frequency-realtime-with-signalr.md)
-    - [자습서: ASP.NET SignalR 1.x를 사용하여 서버 브로드캐스트](older-versions/tutorial-server-broadcast-with-aspnet-signalr.md)
+    - [자습서: ASP.NET SignalR을 사용 하 여 서버 브로드캐스트 1.x](older-versions/tutorial-server-broadcast-with-aspnet-signalr.md)
     - [허브 API 가이드 - 서버](older-versions/signalr-1x-hubs-api-guide-server.md)
     - [SignalR 1.x 허브 API 가이드 - JavaScript 클라이언트](older-versions/signalr-1x-hubs-api-guide-javascript-client.md)
     - [허브 API 가이드 - .NET 클라이언트](older-versions/signalr-1x-hubs-api-guide-net-client.md)

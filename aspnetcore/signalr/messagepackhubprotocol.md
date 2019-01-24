@@ -1,18 +1,18 @@
 ---
 title: ASP.NET Core SignalR에서 MessagePack 허브 프로토콜 사용
-author: tdykstra
+author: bradygaster
 description: ASP.NET Core SignalR에 MessagePack 허브 프로토콜을 추가합니다.
 monikerRange: '>= aspnetcore-2.1'
-ms.author: tdykstra
+ms.author: bradyg
 ms.custom: mvc
 ms.date: 06/04/2018
 uid: signalr/messagepackhubprotocol
-ms.openlocfilehash: 0874afc5493eca5d43dfde30bb28aedc1f193744
-ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
+ms.openlocfilehash: 2852ca93c62e706e9a5203625822c2fb954fd2b8
+ms.sourcegitcommit: ebf4e5a7ca301af8494edf64f85d4a8deb61d641
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49325583"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54835611"
 ---
 # <a name="use-messagepack-hub-protocol-in-signalr-for-aspnet-core"></a>ASP.NET Core SignalR에서 MessagePack 허브 프로토콜 사용
 
@@ -76,7 +76,7 @@ Javascript 클라이언트에 대한 MessagePack 지원은 `@aspnet/signalr-prot
 npm install @aspnet/signalr-protocol-msgpack
 ```
 
-npm 패키지를 설치한 뒤에 모듈을 JavaScript 모듈 로더를 통해서 직접 사용할 수도 있고 *node_modules\\@aspnet\signalr-protocol-msgpack\dist\browser\signalr-protocol-msgpack.js* 파일을 참조해서 브라우저로 가져올 수도 있습니다. 브라우저에서 `msgpack5` 라이브러리도 참조해야 합니다. 참조를 만들려면 `<script>` 태그를 사용합니다. 이 라이브러리는 *node_modules\msgpack5\dist\msgpack5.js*에서 찾을 수 있습니다.
+npm 패키지를 설치한 뒤에 모듈을 JavaScript 모듈 로더를 통해서 직접 사용할 수도 있고 *node_modules\\@aspnet\signalr-protocol-msgpack\dist\browser\signalr-protocol-msgpack.js* 파일을 참조해서 브라우저로 가져올 수도 있습니다. 브라우저에서 `msgpack5` 라이브러리도 참조해야 합니다. 사용 된 `<script>` 대 한 참조를 만듭니다. 이 라이브러리는 *node_modules\msgpack5\dist\msgpack5.js*에서 찾을 수 있습니다.
 
 > [!NOTE]
 > `<script>` 요소를 사용할 때 순서가 중요합니다. *msgpack5.js*보다 *signalr-protocol-msgpack.js*를 먼저 참조하면 MessagePack을 이용해서 연결하려고 시도할 때 오류가 발생합니다. *signalr.js*도 *signalr-protocol-msgpack.js*보다 먼저 참조해야 합니다.

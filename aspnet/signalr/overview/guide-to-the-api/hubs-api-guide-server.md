@@ -1,19 +1,19 @@
 ---
 uid: signalr/overview/guide-to-the-api/hubs-api-guide-server
 title: ASP.NET SignalR 허브 API 가이드-서버 (C#) | Microsoft Docs
-author: pfletcher
+author: bradygaster
 description: 이 문서에서는 보여 주는 코드 예제를 사용 하 여 버전 2, SignalR에 대 한 ASP.NET SignalR 허브 API의 서버 쪽 프로그래밍에 대해 소개 하는 중...
-ms.author: riande
+ms.author: bradyg
 ms.date: 06/10/2014
 ms.assetid: b19913e5-cd8a-4e4b-a872-5ac7a858a934
 msc.legacyurl: /signalr/overview/guide-to-the-api/hubs-api-guide-server
 msc.type: authoredcontent
-ms.openlocfilehash: 4730c4d9f601f561cfc884e0a9c2c2d12785ae0f
-ms.sourcegitcommit: 74e3be25ea37b5fc8b4b433b0b872547b4b99186
+ms.openlocfilehash: a28663c8d5c679f85e863e7d0b4523a6f4dd4a1f
+ms.sourcegitcommit: ebf4e5a7ca301af8494edf64f85d4a8deb61d641
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53288107"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54837457"
 ---
 <a name="aspnet-signalr-hubs-api-guide---server-c"></a>ASP.NET SignalR 허브 API 가이드-서버 (C#)
 ====================
@@ -104,7 +104,7 @@ SignalR 2에 대 한 서버 구성 요소에만.NET 4.5에 제공 됩니다. .NE
 
 [!code-csharp[Main](hubs-api-guide-server/samples/sample1.cs)]
 
-ASP.NET MVC 응용 프로그램에 SignalR 기능을 추가 하는 경우에 SignalR 경로의 다른 경로 보다 먼저 추가 되었는지 확인 합니다. 자세한 내용은 참조 하세요. [자습서: SignalR 2 및 MVC 5 시작](../getting-started/tutorial-getting-started-with-signalr-and-mvc.md)합니다.
+ASP.NET MVC 응용 프로그램에 SignalR 기능을 추가 하는 경우에 SignalR 경로의 다른 경로 보다 먼저 추가 되었는지 확인 합니다. 자세한 내용은 [자습서: SignalR 2 및 MVC 5 시작](../getting-started/tutorial-getting-started-with-signalr-and-mvc.md)합니다.
 
 <a id="signalrurl"></a>
 

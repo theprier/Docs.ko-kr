@@ -1,26 +1,26 @@
 ---
 uid: signalr/overview/getting-started/tutorial-getting-started-with-signalr-and-mvc
 title: '자습서: SignalR 2 및 MVC 5를 사용 하 여 실시간 채팅 | Microsoft Docs'
-author: pfletcher
+author: bradygaster
 description: 이 자습서에는 ASP.NET SignalR 2를 사용 하 여 실시간 채팅 응용 프로그램을 만드는 방법을 보여 줍니다. MVC 5 응용 프로그램에 SignalR을 추가합니다.
-ms.author: riande
-ms.date: 01/02/2019
+ms.author: bradyg
+ms.date: 01/22/2019
 ms.assetid: 80bfe5fb-bdfc-41fe-ac43-2132e5d69fac
 msc.legacyurl: /signalr/overview/getting-started/tutorial-getting-started-with-signalr-and-mvc
 msc.type: authoredcontent
 ms.topic: tutorial
-ms.openlocfilehash: eb4b7e1403f4070d65702b756bf98c5294c7fb17
-ms.sourcegitcommit: 97d7a00bd39c83a8f6bccb9daa44130a509f75ce
+ms.openlocfilehash: 1b02aecc68a93dbd6373ca5304530e76c9d0b6b5
+ms.sourcegitcommit: ebf4e5a7ca301af8494edf64f85d4a8deb61d641
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54098606"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54837003"
 ---
 # <a name="tutorial-real-time-chat-with-signalr-2-and-mvc-5"></a>자습서: SignalR 2 및 MVC 5를 사용 하 여 실시간 채팅
 
 이 자습서에는 ASP.NET SignalR 2를 사용 하 여 실시간 채팅 응용 프로그램을 만드는 방법을 보여 줍니다. SignalR MVC 5 응용 프로그램에 추가 하 고이 정보를 보내고 메시지를 표시 하는 채팅 보기를 만듭니다.
 
-이 자습서에서는 있습니다.
+이 자습서에서는 다음을 수행했습니다.
 
 > [!div class="checklist"]
 > * 프로젝트 설정
@@ -176,6 +176,10 @@ SignalR 채팅 응용 프로그램에서는 두 가지 기본 SignalR 개발 작
 
 코드는 연결을 시작 하 고 다음에 클릭 이벤트를 처리 하는 함수 전달 합니다 **보낼** 채팅 페이지에서 단추.
 
+## <a name="get-the-code"></a>코드 가져오기
+
+[완료 된 프로젝트 다운로드](http://code.msdn.microsoft.com/Getting-Started-with-c366b2f3)
+
 ## <a name="additional-resources"></a>추가 자료
 
 SignalR에 대 한 자세한 내용은 다음 리소스를 참조 하세요.
@@ -188,7 +192,7 @@ SignalR에 대 한 자세한 내용은 다음 리소스를 참조 하세요.
 
 ## <a name="next-steps"></a>다음 단계
 
-이 자습서에서는 있습니다.
+이 자습서에서는 다음을 수행했습니다.
 
 > [!div class="checklist"]
 > * 프로젝트 설정

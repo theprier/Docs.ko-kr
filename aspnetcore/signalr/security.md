@@ -1,18 +1,18 @@
 ---
 title: ASP.NET Core SignalR의 보안 고려 사항
-author: tdykstra
+author: bradygaster
 description: ASP.NET Core SignalR에서 인증 및 권한 부여를 사용하는 방법을 알아봅니다.
 monikerRange: '>= aspnetcore-2.1'
 ms.author: anurse
 ms.custom: mvc
 ms.date: 11/06/2018
 uid: signalr/security
-ms.openlocfilehash: f646d319cf3030fd4d769e882514da14b230bbdd
-ms.sourcegitcommit: c3fa5aded0bf76a7414047d50b8a2311d27ee1ef
+ms.openlocfilehash: 52cfac6be8e61572acdf0b19dab574b607314d97
+ms.sourcegitcommit: ebf4e5a7ca301af8494edf64f85d4a8deb61d641
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51276147"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54836066"
 ---
 # <a name="security-considerations-in-aspnet-core-signalr"></a>ASP.NET Core SignalR의 보안 고려 사항
 

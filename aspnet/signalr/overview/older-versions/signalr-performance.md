@@ -1,19 +1,19 @@
 ---
 uid: signalr/overview/older-versions/signalr-performance
 title: SignalR 성능 (SignalR 1.x) | Microsoft Docs
-author: pfletcher
+author: bradygaster
 description: SignalR 성능
-ms.author: riande
+ms.author: bradyg
 ms.date: 07/03/2013
 ms.assetid: 9594d644-66b6-4223-acdd-23e29a6e4c46
 msc.legacyurl: /signalr/overview/older-versions/signalr-performance
 msc.type: authoredcontent
-ms.openlocfilehash: ea2d3908544ac8b3ea17ceceaf1d2905c5c6f322
-ms.sourcegitcommit: 74e3be25ea37b5fc8b4b433b0b872547b4b99186
+ms.openlocfilehash: 4158cb055088f3da752020e577007ffe80856b60
+ms.sourcegitcommit: ebf4e5a7ca301af8494edf64f85d4a8deb61d641
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53287580"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54837730"
 ---
 <a name="signalr-performance-signalr-1x"></a>SignalR 성능 (SignalR 1.x)
 ====================
@@ -186,7 +186,7 @@ SignalR 성능 카운터를 제거 하려면 다음 매개 변수를 사용 하 
 - **오류: 허브 호출 합계**
 - **오류: 초당 허브 호출**
 - **오류: 전송 합계**
-- **오류: 전송 수/초**
+- **오류: Transport/Sec**
 
 **확장 메트릭**
 
@@ -198,7 +198,7 @@ SignalR 성능 카운터를 제거 하려면 다음 매개 변수를 사용 하 
 - **Scaleout 스트림 버퍼링**
 - **총 확장 오류 수**
 - **초당 확장 오류**
-- **확장 송신 큐 길이**
+- **Scaleout Send Queue Length**
 
 이러한 카운터는 측정 되는 항목에 대 한 자세한 내용은 참조 하세요. [Azure Service Bus로 SignalR 규모 확장](scaleout-with-windows-azure-service-bus.md)합니다.
 

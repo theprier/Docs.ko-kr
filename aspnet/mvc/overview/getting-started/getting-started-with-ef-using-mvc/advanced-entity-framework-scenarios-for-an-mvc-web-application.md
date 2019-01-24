@@ -1,56 +1,51 @@
 ---
 uid: mvc/overview/getting-started/getting-started-with-ef-using-mvc/advanced-entity-framework-scenarios-for-an-mvc-web-application
-title: Entity Framework 6 시나리오 (12는 12) MVC 5 웹 응용 프로그램에 대 한 고급 | Microsoft Docs
+title: '자습서: MVC 5 웹 앱에 대 한 고급 EF 시나리오에 대해 알아봅니다'
+description: 이 자습서는 Entity Framework Code First를 사용 하는 ASP.NET 웹 응용 프로그램 개발의 기본 개념을 넘어 때 알아야 할 유용한 몇 가지 항목을 소개 합니다.
 author: tdykstra
-description: Contoso University 샘플 웹 응용 프로그램에는 Entity Framework 6 Code First 및 Visual Studio를 사용 하 여 ASP.NET MVC 5 응용 프로그램을 만드는 방법을 보여 줍니다...
 ms.author: riande
-ms.date: 12/08/2014
+ms.date: 01/22/2019
+ms.topic: tutorial
 ms.assetid: f35a9b0c-49ef-4cde-b06d-19d1543feb0b
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/advanced-entity-framework-scenarios-for-an-mvc-web-application
 msc.type: authoredcontent
-ms.openlocfilehash: 0aa440e700c9bfb02aa5d55ebf481850a730febe
-ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
+ms.openlocfilehash: ff480f7e8c2801fcb6a64c37d95e7e15467acde6
+ms.sourcegitcommit: ebf4e5a7ca301af8494edf64f85d4a8deb61d641
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48912685"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54837496"
 ---
-<a name="advanced-entity-framework-6-scenarios-for-an-mvc-5-web-application-12-of-12"></a>MVC 5 웹 응용 프로그램 (12는 12)에 대 한 고급 Entity Framework 6 시나리오
-====================
-[Tom Dykstra](https://github.com/tdykstra)
+# <a name="tutorial-learn-about-advanced-ef-scenarios-for-an-mvc-5-web-app"></a>자습서: MVC 5 웹 앱에 대 한 고급 EF 시나리오에 대해 알아봅니다
 
-[완료 된 프로젝트 다운로드](http://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8)
-
-> Contoso University 샘플 웹 응용 프로그램에는 Entity Framework 6 Code First 및 Visual Studio를 사용 하 여 ASP.NET MVC 5 응용 프로그램을 만드는 방법을 보여 줍니다. 자습서 시리즈에 대한 정보는 [시리즈의 첫 번째 자습서](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)를 참조하세요.
-
-이전 자습서에서 계층당 하나의 테이블 상속을 구현 했습니다. 이 자습서는 Entity Framework Code First를 사용 하는 ASP.NET 웹 응용 프로그램 개발의 기본 개념을 넘어 때 알아야 할 유용한 몇 가지 항목을 소개 합니다. 단계별 지침 안내는 코드 및 Visual Studio를 사용 하 여 다음 항목에 대 한 합니다.
-
-- [원시 SQL 쿼리를 수행합니다.](#rawsql)
-- [비 추적 쿼리를 수행합니다.](#notracking)
-- [데이터베이스에 보내는 SQL 검사](#sql)
-
-자습서 링크 뒤에 자세한 내용을 관한 리소스에 대 한 간략 한 소개를 사용 하 여 여러 항목을 제공 합니다.
-
-- [리포지토리 및 작업 패턴 단위](#repo)
-- [프록시 클래스](#proxies)
-- [자동 변경 내용 검색](#changedetection)
-- [자동 유효성 검사](#validation)
-- [Visual Studio 용 EF 도구](#tools)
-- [Entity Framework 소스 코드](#source)
-
-이 자습서에는 다음 섹션도 포함 됩니다.
-
-- [요약](#summary)
-- [승인](#acknowledgments)
-- [VB에 대 한 메모](#vb)
-- [일반적인 오류 해결 방법 또는에](#errors)
+이전 자습서에서 계층당 하나의 테이블 상속을 구현 했습니다. 이 자습서는 Entity Framework Code First를 사용 하는 ASP.NET 웹 응용 프로그램 개발의 기본 개념을 넘어 때 알아야 할 유용한 몇 가지 항목을 소개 합니다. 첫 번째 몇 가지 섹션을 설정 하는 코드를 단계별로 안내 하는 단계별 지침이 및 링크 뒤에 자세한 내용을 관한 리소스에 대 한 간략 한 소개를 사용 하 여 여러 항목을 소개 이어지는 작업을 완료 하려면 Visual Studio를 사용 하 여 합니다.
 
 대부분의 이러한 항목에 대해 이미 만든 페이지를 사용 하 여 작업할 수 있습니다. 원시 SQL 대량 업데이트 수행을 사용 하는 데이터베이스의 모든 과정의 학점 수를 업데이트 하는 새 페이지를 만듭니다.
 
 ![Update_Course_Credits_initial_page](advanced-entity-framework-scenarios-for-an-mvc-web-application/_static/image1.png)
 
-<a id="rawsql"></a>
-## <a name="performing-raw-sql-queries"></a>원시 SQL 쿼리 수행
+이 자습서에서는 다음을 수행했습니다.
+
+> [!div class="checklist"]
+> * 원시 SQL 쿼리를 수행 합니다.
+> * 비 추적 쿼리를 수행 합니다.
+> * 검사 SQL 데이터베이스에 전송 하는 쿼리
+
+또한에 대해 알아봅니다.
+
+> [!div class="checklist"]
+> * 추상화 계층 만들기
+> * 프록시 클래스
+> * 자동 변경 내용 검색
+> * 자동 유효성 검사
+> * Entity Framework 파워 도구
+> * Entity Framework 소스 코드
+
+## <a name="prerequisite"></a>필수 조건
+
+* [상속 구현](implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application.md)
+
+## <a name="perform-raw-sql-queries"></a>원시 SQL 쿼리를 수행 합니다.
 
 Entity Framework Code First API는 SQL 명령을 데이터베이스에 직접 전달할 수 있도록 하는 메서드를 포함 합니다. 다음과 같은 옵션을 선택할 수 있습니다.
 
@@ -60,7 +55,7 @@ Entity Framework Code First API는 SQL 명령을 데이터베이스에 직접 �
 
 Entity Framework를 사용할 때 장점 중 하나는 코드가 데이터를 저장하는 특정 메서드에 너무 얽매이지 않아도 된다는 점입니다. 이것은 사용자를 위한 SQL 쿼리와 명령이 생성되므로 가능하며 사용자는 코드를 직접 작성할 필요가 없습니다. 하지만 예외적인 시나리오 수동으로 만든 특정 SQL 쿼리를 실행 해야 할 때 되며 이러한 메서드 수 있도록 이러한 예외를 처리할 수 있습니다.
 
-웹 응용 프로그램에서 SQL 명령을 실행할 때 항상 그렇듯이 SQL 삽입 공격으로부터 사이트를 보호하기 위한 예방 조치를 취해야 합니다. 이를 수행하는 한 가지 방법은 매개 변수가 있는 쿼리를 사용하여 웹 페이지에서 제출한 문자열을 SQL 명령으로 해석할 수 없도록 하는 것입니다. 이 자습서에서는 사용자 입력을 쿼리에 통합할 때 매개 변수가 있는 쿼리를 사용합니다.
+웹 애플리케이션에서 SQL 명령을 실행할 때 항상 그렇듯이 SQL 삽입 공격으로부터 사이트를 보호하기 위한 예방 조치를 취해야 합니다. 이를 수행하는 한 가지 방법은 매개 변수가 있는 쿼리를 사용하여 웹 페이지에서 제출한 문자열을 SQL 명령으로 해석할 수 없도록 하는 것입니다. 이 자습서에서는 사용자 입력을 쿼리에 통합할 때 매개 변수가 있는 쿼리를 사용합니다.
 
 ### <a name="calling-a-query-that-returns-entities"></a>엔터티를 반환 하는 쿼리 호출
 
@@ -70,9 +65,7 @@ Entity Framework를 사용할 때 장점 중 하나는 코드가 데이터를 �
 
 [!code-csharp[Main](advanced-entity-framework-scenarios-for-an-mvc-web-application/samples/sample1.cs?highlight=8-14)]
 
-새 코드가 올바르게 작동하는지 확인하려면 **부서** 탭을 선택한 후 부서 중 하나에 대해 **세부 정보**를 선택합니다.
-
-![부서 세부 정보](advanced-entity-framework-scenarios-for-an-mvc-web-application/_static/image2.png)
+새 코드가 올바르게 작동하는지 확인하려면 **부서** 탭을 선택한 후 부서 중 하나에 대해 **세부 정보**를 선택합니다. 예상 대로 표시 하는 모든 데이터가 있는지 확인 합니다.
 
 ### <a name="calling-a-query-that-returns-other-types-of-objects"></a>다른 형식의 개체를 반환 하는 쿼리를 호출
 
@@ -86,29 +79,21 @@ LINQ를 사용 하는 것이 아니라 SQL에서 직접이 데이터를 검색 �
 
 [!code-csharp[Main](advanced-entity-framework-scenarios-for-an-mvc-web-application/samples/sample3.cs?highlight=3-18)]
 
-정보 페이지를 실행 합니다. 이전과 동일한 데이터가 표시됩니다.
-
-![About_page](advanced-entity-framework-scenarios-for-an-mvc-web-application/_static/image3.png)
+정보 페이지를 실행 합니다. 이전과 동일한 데이터를 표시 하는지 확인 합니다.
 
 ### <a name="calling-an-update-query"></a>업데이트 쿼리 호출
 
-Contoso University 관리자 대량 변경 내용이 모든 강좌에 대 한 학점 수를 변경 하는 등 데이터베이스에서 수행할 수 있으려면 가정 합니다. 대학에 과목이 많은 경우 엔터티로 모두 검색하여 개별적으로 변경하는 것은 비효율적입니다. 이 섹션의 모든 강좌에 대 한 학점 수를 변경 하는 비율을 지정 하려면 사용자를 사용 하도록 설정 하는 웹 페이지를 구현 하 고 SQL을 실행 하 여 변경 해야 `UPDATE` 문입니다. 그러면 웹 페이지가 다음 그림과 같이 표시됩니다.
-
-![Update_Course_Credits_initial_page](advanced-entity-framework-scenarios-for-an-mvc-web-application/_static/image4.png)
+Contoso University 관리자 대량 변경 내용이 모든 강좌에 대 한 학점 수를 변경 하는 등 데이터베이스에서 수행할 수 있으려면 가정 합니다. 대학에 과목이 많은 경우 엔터티로 모두 검색하여 개별적으로 변경하는 것은 비효율적입니다. 이 섹션의 모든 강좌에 대 한 학점 수를 변경 하는 비율을 지정 하려면 사용자를 사용 하도록 설정 하는 웹 페이지를 구현 하 고 SQL을 실행 하 여 변경 해야 `UPDATE` 문입니다. 
 
 *CourseContoller.cs*에 추가 `UpdateCourseCredits` 메서드를 `HttpGet` 고 `HttpPost`:
 
 [!code-csharp[Main](advanced-entity-framework-scenarios-for-an-mvc-web-application/samples/sample4.cs)]
 
-컨트롤러를 처리 하는 경우는 `HttpGet` 요청에 아무 것도 반환에 `ViewBag.RowsAffected` 변수와 보기 표시를 빈 텍스트 상자와 제출 단추 앞의 그림에 표시 된 대로 합니다.
+컨트롤러를 처리 하는 경우는 `HttpGet` 요청에 아무 것도 반환에 `ViewBag.RowsAffected` 변수와 뷰에 빈 텍스트 상자와 제출 단추가 표시 됩니다.
 
-경우는 **업데이트** 단추를 클릭 합니다 `HttpPost` 메서드를 호출 및 `multiplier` 텍스트 상자에 입력 된 값에 합니다. 코드에는 다음 과정을 업데이트 하 고 보기에 영향을 받는 행 수를 반환 하는 SQL 실행을 `ViewBag.RowsAffected` 변수입니다. 뷰는 값을 가져올 때 변수, 텍스트 상자 대신 업데이트 된 행의 수를 표시 하 고 다음 그림에 나와 있는 것 처럼 전송 단추를:
+경우는 **업데이트** 단추를 클릭 합니다 `HttpPost` 메서드를 호출 및 `multiplier` 텍스트 상자에 입력 된 값에 합니다. 코드에는 다음 과정을 업데이트 하 고 보기에 영향을 받는 행 수를 반환 하는 SQL 실행을 `ViewBag.RowsAffected` 변수입니다. 뷰는 해당 변수에 값을 가져옵니다, 텍스트 상자 대신 업데이트 된 행의 수를 표시 하 고 제출 단추.
 
-![Update_Course_Credits_rows_affected_page](advanced-entity-framework-scenarios-for-an-mvc-web-application/_static/image5.png)
-
-*CourseController.cs*, 중 하나를 마우스 오른쪽 단추로 클릭 합니다 `UpdateCourseCredits` 메서드 및 클릭 **뷰 추가**합니다.
-
-![Add_View_dialog_box_for_Update_Course_Credits](advanced-entity-framework-scenarios-for-an-mvc-web-application/_static/image6.png)
+*CourseController.cs*, 중 하나를 마우스 오른쪽 단추로 클릭 합니다 `UpdateCourseCredits` 메서드 및 클릭 **뷰 추가**합니다. 합니다 **뷰 추가** 대화 상자가 나타납니다. 기본값은 그대로 두고 선택 **추가**합니다.
 
 *Views\Course\UpdateCourseCredits.cshtml*, 템플릿 코드를 다음 코드로 바꿉니다.
 
@@ -116,22 +101,17 @@ Contoso University 관리자 대량 변경 내용이 모든 강좌에 대 한 �
 
 **Courses(과정)** 탭을 선택하여 `UpdateCourseCredits` 메서드를 실행한 후 브라우저의 주소 표시줄에서 URL 끝에 "/UpdateCourseCredits"를 추가합니다(예: `http://localhost:50205/Course/UpdateCourseCredits`). 텍스트 상자에 숫자를 입력합니다.
 
-![Update_Course_Credits_initial_page_with_2_entered](advanced-entity-framework-scenarios-for-an-mvc-web-application/_static/image7.png)
+![Update_Course_Credits_initial_page_with_2_entered](advanced-entity-framework-scenarios-for-an-mvc-web-application/_static/image1.png)
 
-**업데이트**를 클릭합니다. 영향을 받은 행 수가 표시됩니다.
-
-![Update_Course_Credits_rows_affected_page](advanced-entity-framework-scenarios-for-an-mvc-web-application/_static/image8.png)
+**업데이트**를 클릭합니다. 영향을 받는 행 수가 표시 됩니다.
 
 학점 수가 수정된 과정 목록을 보려면 **목록으로 돌아가기**를 클릭합니다.
 
-![Courses_Index_page_showing_revised_credits](advanced-entity-framework-scenarios-for-an-mvc-web-application/_static/image9.png)
-
 원시 SQL 쿼리에 대 한 자세한 내용은 참조 하십시오 [원시 SQL 쿼리](https://msdn.microsoft.com/data/jj592907) MSDN에 있습니다.
 
-<a id="notracking"></a>
 ## <a name="no-tracking-queries"></a>비 추적 쿼리
 
-데이터베이스 컨텍스트가 테이블 행을 검색하고 해당 내용을 나타내는 엔터티 개체를 만드는 경우 기본적으로 메모리의 엔터티가 데이터베이스의 해당 내용과 동기화 상태인지 여부의 추적을 유지합니다. 메모리의 데이터는 캐시의 역할을 하고 엔터티를 업데이트할 때 사용됩니다. 컨텍스트 인스턴스는 일반적으로 수명이 짧으며(각 요청에 대해 새 것이 만들어지고 삭제됨) 엔터티를 읽는 컨텍스트는 일반적으로 해당 엔터티가 다시 사용되기 전에 삭제되므로 이 캐싱은 웹 응용 프로그램에 종종 필요하지 않습니다.
+데이터베이스 컨텍스트가 테이블 행을 검색하고 해당 내용을 나타내는 엔터티 개체를 만드는 경우 기본적으로 메모리의 엔터티가 데이터베이스의 해당 내용과 동기화 상태인지 여부의 추적을 유지합니다. 메모리의 데이터는 캐시의 역할을 하고 엔터티를 업데이트할 때 사용됩니다. 컨텍스트 인스턴스는 일반적으로 수명이 짧으며(각 요청에 대해 새 것이 만들어지고 삭제됨) 엔터티를 읽는 컨텍스트는 일반적으로 해당 엔터티가 다시 사용되기 전에 삭제되므로 이 캐싱은 웹 애플리케이션에 종종 필요하지 않습니다.
 
 사용 하 여 메모리에서 엔터티 개체의 추적을 해제할 수는 [AsNoTracking](https://msdn.microsoft.com/library/gg679352(v=vs.103).aspx) 메서드. 이러한 작업을 수행할 수 있는 일반적인 시나리오는 다음을 포함합니다.
 
@@ -140,8 +120,7 @@ Contoso University 관리자 대량 변경 내용이 모든 강좌에 대 한 �
 
 사용 하는 방법을 보여 주는 예는 [AsNoTracking](https://msdn.microsoft.com/library/gg679352(v=vs.103).aspx) 메서드를 참조 하십시오 [이 자습서의 이전 버전](../../older-versions/getting-started-with-ef-5-using-mvc-4/advanced-entity-framework-scenarios-for-an-mvc-web-application.md)합니다. 필요 하지 않습니다 자습서의이 버전 편집 메서드에서 모델 바인더를 만들 엔터티의 수정 된 플래그를 설정 하지 `AsNoTracking`합니다.
 
-<a id="sql"></a>
-## <a name="examining-sql-sent-to-the-database"></a>데이터베이스에 보내는 SQL 검사
+## <a name="examine-sql-sent-to-database"></a>데이터베이스에 전송 된 SQL 검사
 
 때로는 데이터베이스로 전송된 실제 SQL 쿼리를 볼 수 있는 것이 도움이 됩니다. 이전 자습서에서 인터셉터 코드에서 작업을 수행 하는 방법을 살펴보았습니다. 이제 인터셉터 코드를 작성 하지 않고도 작업을 수행 하는 몇 가지 방법을 볼 수 있습니다. 이 사용 하려면 간단한 쿼리를 확인 하 고 이러한 즉시 로드, 필터링 및 정렬 옵션을 추가 하면를 어떻게 확인 하겠습니다 합니다.
 
@@ -175,9 +154,7 @@ Contoso University 관리자 대량 변경 내용이 모든 강좌에 대 한 �
 
 [!code-cshtml[Main](advanced-entity-framework-scenarios-for-an-mvc-web-application/samples/sample9.cshtml)]
 
-중단점을 사용 하 여 설정 여전히 과정 인덱스 페이지를 실행 합니다. 브라우저에서 페이지 표시 되도록 코드 중단점을 적중 하는 첫 번째 시간을 계속 진행 합니다. 드롭다운 목록에서 부서를 선택 하 고 클릭 **필터**:
-
-![Course_Index_page_with_department_selected](advanced-entity-framework-scenarios-for-an-mvc-web-application/_static/image11.png)
+중단점을 사용 하 여 설정 여전히 과정 인덱스 페이지를 실행 합니다. 브라우저에서 페이지 표시 되도록 코드 중단점을 적중 하는 첫 번째 시간을 계속 진행 합니다. 드롭다운 목록에서 부서를 선택 하 고 클릭 **필터**합니다.
 
 이 시간 드롭다운 목록에 대 한 부서 쿼리에 대 한 첫 번째 중단점이 됩니다. 건너뛰고 보기는 `query` 변수 다음에 코드 중단점에 도달 어떻게 표시 하기 위해는 `Course` 같습니다 쿼리 합니다. 다음과 유사한 출력이 표시 됩니다.
 
@@ -187,11 +164,9 @@ Contoso University 관리자 대량 변경 내용이 모든 강좌에 대 한 �
 
 제거 된 `var sql = courses.ToString()` 줄.
 
-<a id="repo"></a>
+## <a name="create-an-abstraction-layer"></a>추상화 계층을 만들려면
 
-## <a name="repository-and-unit-of-work-patterns"></a>리포지토리 및 작업 패턴 단위
-
-대부분의 개발자는 리포지토리 및 작업 패턴 단위를 구현하기 위한 코드를 Entity Framework에서 작동하는 코드를 둘러싼 래퍼로 작성합니다. 이러한 패턴은 응용 프로그램의 데이터 액세스 계층 및 비즈니스 논리 계층 간에 추상화 계층을 만드는 데 사용됩니다. 이러한 패턴을 구현하면 데이터 저장소의 변경 내용으로부터 응용 프로그램을 격리할 수 있으며 자동화된 단위 테스트 또는 TDD(테스트 중심 개발)를 용이하게 수행할 수 있습니다. 그러나 이러한 패턴을 구현 하는 추가 코드를 작성 아닙니다 항상 여러 가지 이유로 EF를 사용 하는 응용 프로그램에 적합 합니다.
+대부분의 개발자는 리포지토리 및 작업 패턴 단위를 구현하기 위한 코드를 Entity Framework에서 작동하는 코드를 둘러싼 래퍼로 작성합니다. 이러한 패턴은 애플리케이션의 데이터 액세스 계층 및 비즈니스 논리 계층 간에 추상화 계층을 만드는 데 사용됩니다. 이러한 패턴을 구현하면 데이터 저장소의 변경 내용으로부터 애플리케이션을 격리할 수 있으며 자동화된 단위 테스트 또는 TDD(테스트 중심 개발)를 용이하게 수행할 수 있습니다. 그러나 이러한 패턴을 구현 하는 추가 코드를 작성 아닙니다 항상 여러 가지 이유로 EF를 사용 하는 응용 프로그램에 적합 합니다.
 
 - EF 컨텍스트 클래스 자체에서 데이터 저장소별 코드로부터 사용자 코드를 격리합니다.
 - EF 컨텍스트 클래스는 EF를 사용하여 수행하는 데이터베이스 업데이트에 대해 작업 단위 클래스로 사용될 수 있습니다.
@@ -204,6 +179,7 @@ Contoso University 관리자 대량 변경 내용이 모든 강좌에 대 한 �
 - [사용자 고유의 test double을 사용 하 여 테스트](https://msdn.microsoft.com/data/dn314431)
 
 <a id="proxies"></a>
+
 ## <a name="proxy-classes"></a>프록시 클래스
 
 Entity Framework (예: 쿼리를 실행 하는 경우) 엔터티 인스턴스를 만들 때 종종 생성할 엔터티에 대 한 프록시로 작동 하는 동적으로 생성 된 파생된 형식 인스턴스로. 예를 들어, 다음 두 가지 디버거 이미지를 참조 하세요. 첫 번째 이미지에는 `student` 변수가 필요한 `Student` 엔터티를 인스턴스화한 후에 즉시를 입력 합니다. 두 번째 이미지에서는 EF 데이터베이스에서 학생 엔터티를 읽는 데 사용 된 프록시 클래스를 표시 됩니다.
@@ -222,7 +198,6 @@ Entity Framework (예: 쿼리를 실행 하는 경우) 엔터티 인스턴스를
 
 자세한 내용은 [프록시를 사용 하 여 작업](https://msdn.microsoft.com/data/JJ592886.aspx) MSDN에서.
 
-<a id="changedetection"></a>
 ## <a name="automatic-change-detection"></a>자동 변경 내용 검색
 
 Entity Framework는 엔터티의 현재 값을 원래 값과 비교하여 엔터티가 변경된 방법(즉, 데이터베이스에 전송해야 하는 업데이트)을 결정합니다. 원래 값은 엔터티가 쿼리 또는 연결될 때 저장됩니다. 자동 변경 내용 검색을 발생시키는 일부 메서드는 다음과 같습니다.
@@ -239,50 +214,29 @@ Entity Framework는 엔터티의 현재 값을 원래 값과 비교하여 엔터
 
 많은 수의 엔터티를 추적 하는 경우 루프에서 여러 번 다음이 방법 중 하나 호출 하면 성능이 크게 향상 된 기능을 사용 하 여 변경 내용을 자동 검색을 일시적으로 해제 하 여 발생할 수 있습니다는 [AutoDetectChangesEnabled](https://msdn.microsoft.com/library/system.data.entity.infrastructure.dbcontextconfiguration.autodetectchangesenabled.aspx) 속성입니다. 자세한 내용은 [자동으로 검색 되는 변경 내용을](https://msdn.microsoft.com/data/jj556205) MSDN에서.
 
-<a id="validation"></a>
 ## <a name="automatic-validation"></a>자동 유효성 검사
 
 호출 하는 경우는 `SaveChanges` 메서드를 기본적으로 Entity Framework의 유효성을 검사 모든 변경 된 엔터티의 모든 속성의 데이터를 데이터베이스를 업데이트 하기 전에 합니다. 많은 수의 엔터티를 업데이트 하 고 이미 확인 했으면 데이터에이 작업이 필요 하지 않습니다. 저장 하는 프로세스를 만들 수 있습니다 변경 내용을 시간이 덜 유효성 검사를 일시적으로 해제 하 여 합니다. 사용 하 여 수행할 수 있습니다 합니다 [ValidateOnSaveEnabled](https://msdn.microsoft.com/library/system.data.entity.infrastructure.dbcontextconfiguration.validateonsaveenabled.aspx) 속성입니다. 자세한 내용은 [유효성 검사](https://msdn.microsoft.com/data/gg193959) MSDN에 있습니다.
 
-<a id="tools"></a>
 ## <a name="entity-framework-power-tools"></a>Entity Framework 파워 도구
 
-[Entity Framework 파워 도구가](https://visualstudiogallery.msdn.microsoft.com/72a60b14-1581-4b9b-89f2-846072eff19d) 되는 Visual Studio 추가 기능으로 데이터 모델 다이어그램을 만드는 데 사용 된이 자습서에서 표시 합니다. 도구는 엔터티 클래스를 생성 하는 같은 테이블을 기반으로 기존 데이터베이스에서 Code First를 사용 하 여 데이터베이스를 사용할 수 있도록 하는 다른 함수를 수행할 수도 있습니다. 도구를 설치한 후에 몇 가지 추가 옵션이 상황에 맞는 메뉴에 나타납니다. 컨텍스트 클래스의 마우스 예를 들어 **솔루션 탐색기**, 다이어그램을 생성 하는 옵션을 표시 합니다. Code First를 사용할 때 데이터 모델 다이어그램을 변경할 수 없지만 쉽게 이해할 수 있도록 항목을 이동할 수 있습니다.
-
-![EF에서 상황에 맞는 메뉴](advanced-entity-framework-scenarios-for-an-mvc-web-application/_static/image14.png)
+[Entity Framework 파워 도구가](https://marketplace.visualstudio.com/items?itemName=ErikEJ.EntityFramework6PowerToolsCommunityEdition) 되는 Visual Studio 추가 기능으로 데이터 모델 다이어그램을 만드는 데 사용 된이 자습서에서 표시 합니다. 도구는 엔터티 클래스를 생성 하는 같은 테이블을 기반으로 기존 데이터베이스에서 Code First를 사용 하 여 데이터베이스를 사용할 수 있도록 하는 다른 함수를 수행할 수도 있습니다. 도구를 설치한 후에 몇 가지 추가 옵션이 상황에 맞는 메뉴에 나타납니다. 컨텍스트 클래스의 마우스 예를 들어 **솔루션 탐색기**를 표시 하 고 **Entity Framework** 옵션입니다. 이 다이어그램을 생성 하는 기능을 제공 합니다. Code First를 사용할 때 데이터 모델 다이어그램을 변경할 수 없지만 쉽게 이해할 수 있도록 항목을 이동할 수 있습니다.
 
 ![EF 다이어그램](advanced-entity-framework-scenarios-for-an-mvc-web-application/_static/image15.png)
 
-<a id="source"></a>
 ## <a name="entity-framework-source-code"></a>Entity Framework 소스 코드
 
 Entity Framework 6에 대 한 소스 코드에서 제공 됩니다 [GitHub](https://github.com/aspnet/EntityFramework6)합니다. 버그를 제출할 수 있습니다 하 고 EF 소스 코드에 고유한 향상 된 기능에 기여할 수 있습니다.
 
 소스 코드가 오픈 소스 이기는 하지만 Entity Framework는 Microsoft 제품으로 완전히 지원 됩니다. Microsoft Entity Framework 팀이 어떤 참가자를 수락할지 관리하고 각 릴리스의 품질을 보장하기 위해 모든 코드 변경 내용을 테스트합니다.
 
-<a id="summary"></a>
-## <a name="summary"></a>요약
-
-이 자습서 시리즈를의 Entity Framework를 사용 하 여 ASP.NET MVC 응용 프로그램에서 완료 되었습니다. Entity Framework를 사용 하 여 데이터를 사용 하는 방법에 대 한 자세한 내용은 참조는 [MSDN의 설명서 페이지를 EF](https://msdn.microsoft.com/data/ee712907) 및 [ASP.NET 데이터 액세스-권장 리소스](../../../../whitepapers/aspnet-data-access-content-map.md)합니다.
-
-이 작성 한 후 웹 응용 프로그램을 배포 하는 방법에 대 한 자세한 내용은 참조 하세요. [ASP.NET 웹 배포-권장 리소스](../../../../whitepapers/aspnet-web-deployment-content-map.md) MSDN 라이브러리에서.
-
-인증 및 권한 부여와 같은 MVC와 관련 된 기타 항목에 대 한 정보에 대 한 참조를 [ASP.NET MVC-권장 리소스](../recommended-resources-for-mvc.md)합니다.
-
-<a id="acknowledgments"></a>
 ## <a name="acknowledgments"></a>감사의 글
 
 - Tom Dykstra이이 자습서의 원래 버전을 작성 하 고, EF 5 업데이트 공동 작성, EF 6 업데이트를 작성 했습니다. Tom은 Microsoft 웹 플랫폼 및 도구 콘텐츠 팀에서 선임 프로그래밍 작가입니다.
 - [Rick Anderson](https://blogs.msdn.com/b/rickandy/) (twitter [ @RickAndMSFT ](http://twitter.com/RickAndMSFT)) 대부분의 자습서 5 EF 및 MVC 4에 대 한 업데이트 작업이 고 EF 6 업데이트를 공동 저술 했습니다. Rick은 Microsoft Azure 및 MVC에 집중 프로그래밍 수석 테크니컬 합니다.
 - [Rowan Miller](http://www.romiller.com) 코드 검토를 사용 하 여 지원 되는 Entity Framework 팀의 다른 멤버 및 EF 5 및 EF 6에 대 한 자습서를 업데이트 한다면 우리가 하는 동안 발생 하는 마이그레이션 사용 하 여 다양 한 문제를 디버그 합니다.
 
-<a id="vb"></a>
-## <a name="vb"></a>VB
-
-자습서 EF 4.1에 대 한 원래 생성 되었지만 완료 된 다운로드 프로젝트의 C# 및 VB 버전을 제공 했습니다. 시간 제한 및 다른 우선 순위 인해에서는 수행 하지 않은이 버전에 대 한 합니다. 이러한 자습서를 사용 하 여 VB 프로젝트를 작성 하 고 다른 사용자와 공유 해 주시기를 기꺼이 했습니다.
-
-<a id="errors"></a>
-## <a name="common-errors-and-solutions-or-workarounds-for-them"></a>일반적인 오류 해결 방법 또는에
+## <a name="troubleshoot-common-errors"></a>일반적인 오류 해결
 
 ### <a name="cannot-createshadow-copy"></a>복사본을 만드는 섀도 수 없습니다.
 
@@ -298,7 +252,7 @@ Entity Framework 6에 대 한 소스 코드에서 제공 됩니다 [GitHub](http
 
 오류 메시지 (에서 `Update-Database` PMC 명령을):
 
-> ' Update-database ' 용어는 cmdlet, 함수, 스크립트 파일 또는 실행 프로그램의 이름으로 인식 되지 않습니다. 이름의 철자를 확인 하거나 경로 포함 하는 경우 경로가 올바른지 확인 하 고 다시 시도 합니다.
+> ' Update-database ' 용어는 cmdlet, 함수, 스크립트 파일 또는 실행 프로그램의 이름으로 인식 되지 않습니다. 경로가 올바른지 확인한 다음 다시 시도하세요.
 
 솔루션
 
@@ -328,11 +282,43 @@ Visual Studio를 끝냅니다. 프로젝트를 열어야 하 고 다시 시도 �
 
 오류 메시지:
 
-> SQL Server에 연결하는 중에 네트워크 관련 오류 또는 인스턴스별 오류가 발생했습니다. 서버를 찾을 수 없거나 액세스할 수 없습니다. 인스턴스 이름이 올바르고 SQL Server가 원격 연결을 허용하도록 구성되어 있는지 확인합니다. (공급자: SQL 네트워크 인터페이스, 오류: 26-지정된 서버/인스턴스를 찾는 동안 오류가 발생했습니다)
+> SQL Server에 연결하는 중에 네트워크 관련 오류 또는 인스턴스별 오류가 발생했습니다. 서버를 찾을 수 없거나 액세스할 수 없습니다. 인스턴스 이름이 올바르고 SQL Server가 원격 연결을 허용하도록 구성되어 있는지 확인합니다. (공급자: SQL 네트워크 인터페이스, 오류: 26 - 지정된 서버/인스턴스 찾기 오류)
 
 솔루션
 
 연결 문자열을 확인합니다. 데이터베이스를 수동으로 삭제 하는 경우 생성 문자열에서 데이터베이스의 이름을 변경 합니다.
 
-> [!div class="step-by-step"]
-> [이전](implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application.md)
+## <a name="get-the-code"></a>코드 가져오기
+
+[완료 된 프로젝트 다운로드](http://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8)
+
+## <a name="additional-resources"></a>추가 자료
+
+ Entity Framework를 사용 하 여 데이터를 사용 하는 방법에 대 한 자세한 내용은 참조는 [MSDN의 설명서 페이지를 EF](https://msdn.microsoft.com/data/ee712907) 및 [ASP.NET 데이터 액세스-권장 리소스](../../../../whitepapers/aspnet-data-access-content-map.md)합니다.
+
+이 작성 한 후 웹 응용 프로그램을 배포 하는 방법에 대 한 자세한 내용은 참조 하세요. [ASP.NET 웹 배포-권장 리소스](../../../../whitepapers/aspnet-web-deployment-content-map.md) MSDN 라이브러리에서.
+
+인증 및 권한 부여와 같은 MVC와 관련 된 기타 항목에 대 한 정보에 대 한 참조를 [ASP.NET MVC-권장 리소스](../recommended-resources-for-mvc.md)합니다.
+
+## <a name="next-steps"></a>다음 단계
+
+이 자습서에서는 다음을 수행했습니다.
+
+> [!div class="checklist"]
+> * 원시 SQL 쿼리를 수행합니다.
+> * 비 추적 쿼리를 수행합니다.
+> * 데이터베이스에 전송 하는 검사 SQL 쿼리
+
+또한에 대해 알아보았습니다.
+
+> [!div class="checklist"]
+> * 추상화 계층 만들기
+> * 프록시 클래스
+> * 자동 변경 내용 검색
+> * 자동 유효성 검사
+> * Entity Framework 파워 도구
+> * Entity Framework 소스 코드
+
+이 자습서 시리즈를의 Entity Framework를 사용 하 여 ASP.NET MVC 응용 프로그램에서 완료 되었습니다. EF Database First에 대해 자세히 알아보려면 DB 첫 번째 자습서 시리즈를 참조 하세요.
+> [!div class="nextstepaction"]
+> [Entity Framework Database First](../database-first-development/setting-up-database.md)

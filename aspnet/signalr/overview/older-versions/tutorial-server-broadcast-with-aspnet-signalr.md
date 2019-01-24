@@ -1,19 +1,19 @@
 ---
 uid: signalr/overview/older-versions/tutorial-server-broadcast-with-aspnet-signalr
 title: '자습서: ASP.NET SignalR을 사용 하 여 서버 브로드캐스트 1.x | Microsoft Docs'
-author: pfletcher
+author: bradygaster
 description: 이 자습서에는 ASP.NET SignalR을 사용 하 여 서버 브로드캐스트 기능을 제공 하는 웹 응용 프로그램을 만드는 방법을 보여 줍니다. 서버 브로드캐스트는 communic 의미 하는 중...
-ms.author: riande
+ms.author: bradyg
 ms.date: 04/10/2013
 ms.assetid: ab7b2554-956a-4f6d-b2a0-4ae0c62e8580
 msc.legacyurl: /signalr/overview/older-versions/tutorial-server-broadcast-with-aspnet-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: d5c09f6493c4dedb4fc2ecbf9055dd014ede71f2
-ms.sourcegitcommit: 74e3be25ea37b5fc8b4b433b0b872547b4b99186
+ms.openlocfilehash: 258a55bf72c4b3425d001f478620fa9651952b3f
+ms.sourcegitcommit: ebf4e5a7ca301af8494edf64f85d4a8deb61d641
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53288055"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54837470"
 ---
 <a name="tutorial-server-broadcast-with-aspnet-signalr-1x"></a>자습서: ASP.NET SignalR을 사용 하 여 서버 브로드캐스트 1.x
 ====================
@@ -253,7 +253,7 @@ Singleton StockTicker 인스턴스에 대 한 참조를 각 StockTickerHub 인�
 
 <a id="test"></a>
 
-## <a name="test-the-application"></a>응용 프로그램 테스트
+## <a name="test-the-application"></a>애플리케이션 테스트
 
 1. F5 키를 눌러 디버그 모드에서 응용 프로그램을 실행 합니다.
 
@@ -332,9 +332,9 @@ StockTicker 응용 프로그램으로 설치 되는 [Microsoft.AspNet.SignalR.Sa
     > [!NOTE]
     > SignalR.Sample NuGet 설치 패키지 변경 될 수 있습니다에 있는 jQuery 버전은 프로그램 *스크립트* 폴더입니다. 새 *StockTicker.html* 패키지에서 설치 하는 파일을 *SignalR.Sample* 폴더 하지만 원래 실행하려는경우패키지를설치하는jQuery버전을사용하여동기화됩니다*StockTicker.html* 다시 파일, 스크립트 태그에서 jQuery 참조를 먼저 업데이트 해야 할 수 있습니다.
 
-### <a name="run-the-application"></a>응용 프로그램 실행
+### <a name="run-the-application"></a>애플리케이션 실행
 
-1. F5 키를 눌러 응용 프로그램을 실행합니다.
+1. F5 키를 눌러 애플리케이션을 실행합니다.
 
     앞서 살펴본는 그리드 외에도 전체 주식 시세 응용 프로그램에 동일한 주식 데이터를 표시 하는 가로 스크롤 창을 보여 줍니다. 처음으로 응용 프로그램을 실행 하면 "시장"는 "closed" 및 정적 표 및 되지 스크롤 하는 주식 종목 창을 표시 합니다.
 

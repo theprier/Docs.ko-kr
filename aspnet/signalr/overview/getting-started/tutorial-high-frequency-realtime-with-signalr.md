@@ -1,20 +1,20 @@
 ---
 uid: signalr/overview/getting-started/tutorial-high-frequency-realtime-with-signalr
 title: '자습서: SignalR 2를 사용 하 여 자주 실시간 앱 만들기 | Microsoft Docs'
-author: pfletcher
+author: bradygaster
 description: 이 자습서에는 빈도가 높은 메시징 기능을 제공 하는 데 ASP.NET SignalR을 사용 하는 웹 응용 프로그램을 만드는 방법을 보여 줍니다.
-ms.author: riande
-ms.date: 01/02/2019
+ms.author: bradyg
+ms.date: 01/22/2019
 ms.assetid: 9f969dda-78ea-4329-b1e3-e51c02210a2b
 msc.legacyurl: /signalr/overview/getting-started/tutorial-high-frequency-realtime-with-signalr
 msc.type: authoredcontent
 ms.topic: tutorial
-ms.openlocfilehash: 85503db0b41be6f87136627667d6dd71f0d4f609
-ms.sourcegitcommit: 97d7a00bd39c83a8f6bccb9daa44130a509f75ce
+ms.openlocfilehash: 44aaa2b0c059de310e963f642fa56c2f00a7e443
+ms.sourcegitcommit: ebf4e5a7ca301af8494edf64f85d4a8deb61d641
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54098592"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54836729"
 ---
 # <a name="tutorial-create-high-frequency-real-time-app-with-signalr-2"></a>자습서: SignalR 2를 사용 하 여 자주 실시간 앱 만들기
 
@@ -24,7 +24,7 @@ ms.locfileid: "54098592"
 
 이 자습서에 도입 된 개념 실시간 게임에서 응용 프로그램 및 다른 시뮬레이션 응용 프로그램을 갖습니다.
 
-이 자습서에서는 있습니다.
+이 자습서에서는 다음을 수행했습니다.
 
 > [!div class="checklist"]
 > * 프로젝트 설정
@@ -224,6 +224,10 @@ Javascript를 사용 하 여 `setInterval` 고정된 요금으로 서버에 새 
 
 이 코드의 이전 위치에서 새 셰이프를 이동합니다. 애니메이션 간격에 걸쳐 모양의 위치를 제공 하는 서버입니다. 이 경우에은 100 밀리초입니다. 앱을 새 애니메이션을 시작 하기 전에 셰이프를 실행 하는 모든 이전 애니메이션을 지웁니다.
 
+## <a name="get-the-code"></a>코드 가져오기
+
+[완료 된 프로젝트 다운로드](http://code.msdn.microsoft.com/SignalR-20-MoveShape-Demo-6285b83a)
+
 ## <a name="additional-resources"></a>추가 자료
 
 방금 알아본 통신 패러다임은 온라인 게임 및 다른 시뮬레이션 같은 개발 하기 위한 유용한 [SignalR을 사용 하 여 만든 ShootR 게임](https://shootr.azurewebsites.net/)합니다.
@@ -238,7 +242,7 @@ SignalR에 대 한 자세한 내용은 다음 리소스를 참조 하세요.
 
 ## <a name="next-steps"></a>다음 단계
 
-이 자습서에서는 있습니다.
+이 자습서에서는 다음을 수행했습니다.
 
 > [!div class="checklist"]
 > * 프로젝트 설정

@@ -1,19 +1,19 @@
 ---
 uid: signalr/overview/guide-to-the-api/hubs-api-guide-net-client
 title: ASP.NET SignalR 허브 API 가이드-.NET 클라이언트 (C#) | Microsoft Docs
-author: pfletcher
+author: bradygaster
 description: 이 문서에서는 허브 API를 사용 하 여 버전 2 (WinRT) Windows 스토어, WPF, Silverlight 및 단점 같은.NET 클라이언트에서 SignalR에 대 한 소개를 제공 하는 중...
-ms.author: riande
+ms.author: bradyg
 ms.date: 01/15/2019
 ms.assetid: 6d02d9f7-94e5-4140-9f51-5a6040f274f6
 msc.legacyurl: /signalr/overview/guide-to-the-api/hubs-api-guide-net-client
 msc.type: authoredcontent
-ms.openlocfilehash: 9981b8b91be3395b1a3aa7e0cabb1b7f455d47be
-ms.sourcegitcommit: 184ba5b44d1c393076015510ac842b77bc9d4d93
+ms.openlocfilehash: df12193b6ba3cc8b080047276ed7174583e7ff8a
+ms.sourcegitcommit: ebf4e5a7ca301af8494edf64f85d4a8deb61d641
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/18/2019
-ms.locfileid: "54396183"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54837600"
 ---
 <a name="aspnet-signalr-hubs-api-guide---net-client-c"></a>ASP.NET SignalR 허브 API 가이드-.NET 클라이언트 (C#)
 ====================

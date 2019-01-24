@@ -1,19 +1,19 @@
 ---
 uid: signalr/overview/performance/signalr-connection-density-testing-with-crank
 title: SignalR 연결 밀도 크랭크를 사용 하 여 테스트 | Microsoft Docs
-author: Rick-Anderson
+author: bradygaster
 description: SignalR 연결 밀도 크랭크를 사용 하 여 테스트
-ms.author: riande
+ms.author: bradyg
 ms.date: 02/22/2015
 ms.assetid: 148d9ca7-1af1-44b6-a9fb-91e261b9b463
 msc.legacyurl: /signalr/overview/performance/signalr-connection-density-testing-with-crank
 msc.type: authoredcontent
-ms.openlocfilehash: 308fed51953b085506488c5e0dda1ced9f4d09fb
-ms.sourcegitcommit: 74e3be25ea37b5fc8b4b433b0b872547b4b99186
+ms.openlocfilehash: 40c9764f0c47b83df8300553b4b290429937345c
+ms.sourcegitcommit: ebf4e5a7ca301af8494edf64f85d4a8deb61d641
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53287584"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54836547"
 ---
 <a name="signalr-connection-density-testing-with-crank"></a>SignalR 연결 밀도 크랭크를 사용 하 여 테스트
 ====================
@@ -46,20 +46,20 @@ ms.locfileid: "53287584"
 
 크랭크 도구에 대 한 사용 가능한 옵션은 다음과 같습니다.
 
-- **/?** : 도움말 화면을 보여 줍니다. 경우에 사용 가능한 옵션이 표시 됩니다는 **Url** 매개 변수를 생략 합니다.
-- **/ Url**: SignalR 연결에 대 한 URL입니다. 이 매개 변수는 필수적 요소입니다. 기본 매핑을 사용 하 여 SignalR 응용 프로그램에 대 한 경로에 종료 됩니다 "/ signalr"입니다.
-- **/ 전송**: 사용 되는 전송의 이름입니다. 기본값은 `auto`, 어떤 가장 사용 가능한 프로토콜 선택 됩니다. 옵션에 포함 됩니다 `WebSockets`, `ServerSentEvents`, 및 `LongPolling` (`ForeverFrame` 불가능 한 크랭크에 대 한.NET 클라이언트부터 Internet Explorer 사용 하는 것이 아니라). SignalR 전송을 선택 하는 방법에 대 한 자세한 내용은 참조 하세요. [전송과 대체](../getting-started/introduction-to-signalr.md#transports)합니다.
-- **/ BatchSize**: 각 일괄 처리에 추가 하는 클라이언트의 수입니다. 기본값은 50입니다.
-- **/ ConnectInterval**: 연결을 추가 하는 간격 (밀리초) 간격입니다. 기본값은 500입니다.
+- **/?**: 도움말 화면을 보여 줍니다. 경우에 사용 가능한 옵션이 표시 됩니다는 **Url** 매개 변수를 생략 합니다.
+- **/Url**: SignalR 연결에 대 한 URL입니다. 이 매개 변수는 필수적 요소입니다. 기본 매핑을 사용 하 여 SignalR 응용 프로그램에 대 한 경로에 종료 됩니다 "/ signalr"입니다.
+- **/Transport**: 사용 되는 전송의 이름입니다. 기본값은 `auto`, 어떤 가장 사용 가능한 프로토콜 선택 됩니다. 옵션에 포함 됩니다 `WebSockets`, `ServerSentEvents`, 및 `LongPolling` (`ForeverFrame` 불가능 한 크랭크에 대 한.NET 클라이언트부터 Internet Explorer 사용 하는 것이 아니라). SignalR 전송을 선택 하는 방법에 대 한 자세한 내용은 참조 하세요. [전송과 대체](../getting-started/introduction-to-signalr.md#transports)합니다.
+- **/BatchSize**: 각 일괄 처리에 추가 하는 클라이언트의 수입니다. 기본값은 50입니다.
+- **/ConnectInterval**: 연결을 추가 하는 간격 (밀리초) 간격입니다. 기본값은 500입니다.
 - **/ 연결**: 부하 테스트 응용 프로그램에 사용 되는 연결의 수입니다. 기본값은 100,000입니다.
-- **/ ConnectTimeout**: 테스트를 중단 하기 전 시간 (초)의 제한 시간입니다. 기본값은 300입니다.
+- **/ConnectTimeout**: 테스트를 중단 하기 전 시간 (초)의 제한 시간입니다. 기본값은 300입니다.
 - **MinServerMBytes**: 연결할 최소 서버 메가바이트입니다. 기본값은 500입니다.
 - **SendBytes**: 크기 (바이트)에서 서버에 전송 된 페이로드입니다. 기본값은 0입니다.
 - **SendInterval**: 서버로 메시지를 밀리초 단위로 지연입니다. 기본값은 500입니다.
 - **SendTimeout**: 서버에는 메시지에 대 한 밀리초 단위의 제한 시간입니다. 기본값은 300입니다.
 - **ControllerUrl**: 클라이언트 컨트롤러 허브를 호스트 하는 Url입니다. 기본값은 null (컨트롤러 허브 없음). 크랭크 세션이 시작 되 면 컨트롤러 허브 시작 더 이상 크랭크 고 컨트롤러 hub 간의 연결이 됩니다.
 - **NumClients**: 시뮬레이션 된 클라이언트 응용 프로그램에 연결할 수 있습니다. 기본값은 1입니다.
-- **로그 파일**: 테스트 실행에 대 한 로그 파일에 대 한 파일 이름입니다. 기본값은 `crank.csv`입니다.
+- **Logfile**: 테스트 실행에 대 한 로그 파일에 대 한 파일 이름입니다. 기본값은 `crank.csv`입니다.
 - **SampleInterval**: 성능 카운터 샘플 간격 (밀리초) 시간입니다. 기본값은 1000입니다.
 - **SignalRInstance**: 서버에서 성능 카운터에 대 한 인스턴스 이름입니다. 기본은 클라이언트 연결 상태를 사용 하는 것입니다.
 

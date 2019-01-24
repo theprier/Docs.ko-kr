@@ -4,17 +4,17 @@ title: '자습서: ASP.NET MVC 앱에서 EF 사용 하 여 관련된 데이터 �
 description: 이 자습서에서는 읽기 및 관련된 데이터 표시 됩니다-즉, Entity Framework는 탐색 속성으로 로드 하는 데이터입니다.
 author: tdykstra
 ms.author: riande
-ms.date: 01/17/2019
+ms.date: 01/22/2019
 ms.topic: tutorial
 ms.assetid: 18cdd896-8ed9-4547-b143-114711e3eafb
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 8660a75655b801364cce7c4b59847c5c00562a27
-ms.sourcegitcommit: 184ba5b44d1c393076015510ac842b77bc9d4d93
+ms.openlocfilehash: 5f45820cd7abd60e69c19368cee50e91e31a75a0
+ms.sourcegitcommit: ebf4e5a7ca301af8494edf64f85d4a8deb61d641
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/18/2019
-ms.locfileid: "54396209"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54836833"
 ---
 # <a name="tutorial-read-related-data-with-ef-in-an-aspnet-mvc-app"></a>자습서: ASP.NET MVC 앱에서 EF 사용 하 여 관련된 데이터 읽기
 
@@ -243,6 +243,10 @@ Department 열에 대 한 스 캐 폴드 된 코드를 표시 하는 `Name` 의 
 사용 하는 `Collection` 컬렉션 속성을 로드 하는 방법 엔터티 하나만 포함 하는 속성을 사용 하지만 `Reference` 메서드.
 
 강사 인덱스 페이지를 이제 실행 하 고 데이터를 검색 하는 방법을 변경 했더라도 페이지에 표시 되는 항목의 차이가 표시 됩니다.
+
+## <a name="get-the-code"></a>코드 가져오기
+
+[완료 된 프로젝트 다운로드](http://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8)
 
 ## <a name="additional-resources"></a>추가 자료
 

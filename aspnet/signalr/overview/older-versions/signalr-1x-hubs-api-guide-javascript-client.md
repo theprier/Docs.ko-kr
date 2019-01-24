@@ -1,19 +1,19 @@
 ---
 uid: signalr/overview/older-versions/signalr-1x-hubs-api-guide-javascript-client
 title: SignalR 1.x 허브 API 가이드-JavaScript 클라이언트 | Microsoft Docs
-author: pfletcher
+author: bradygaster
 description: 이 문서에서는 허브 API를 사용 하 여 SignalR 브라우저 등 Windows 스토어 (WinJS) 합 JavaScript 클라이언트의 버전 1.1에 대 한 소개를 제공 하는 중...
-ms.author: riande
+ms.author: bradyg
 ms.date: 04/17/2013
 ms.assetid: dcd4593b-1118-418a-af71-d12ff33fb36d
 msc.legacyurl: /signalr/overview/older-versions/signalr-1x-hubs-api-guide-javascript-client
 msc.type: authoredcontent
-ms.openlocfilehash: 2d50a92cff96be5c5c60105bba6682d38f9666b6
-ms.sourcegitcommit: 74e3be25ea37b5fc8b4b433b0b872547b4b99186
+ms.openlocfilehash: eb40648ca06adcceaa613ba86abfcf7459369c7e
+ms.sourcegitcommit: ebf4e5a7ca301af8494edf64f85d4a8deb61d641
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53288094"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54836755"
 ---
 <a name="signalr-1x-hubs-api-guide---javascript-client"></a>SignalR 1.x 허브 API 가이드-JavaScript 클라이언트
 ====================

@@ -1,26 +1,26 @@
 ---
 uid: signalr/overview/getting-started/tutorial-getting-started-with-signalr
 title: '자습서: SignalR 2를 사용 하 여 실시간 채팅 | Microsoft Docs'
-author: pfletcher
+author: bradygaster
 description: 이 자습서에는 SignalR을 사용하여 실시간 채팅 애플리케이션을 만드는 방법을 보여 줍니다. 빈 ASP.NET 웹 응용 프로그램에 SignalR을 추가합니다.
-ms.author: riande
-ms.date: 01/02/2019
+ms.author: bradyg
+ms.date: 01/22/2019
 ms.assetid: a8b3b778-f009-4369-85c7-e90f9878d8b4
 msc.legacyurl: /signalr/overview/getting-started/tutorial-getting-started-with-signalr
 msc.type: authoredcontent
 ms.topic: tutorial
-ms.openlocfilehash: aa015abc47bb2450e04e167c0404aaa1d119ba2c
-ms.sourcegitcommit: 97d7a00bd39c83a8f6bccb9daa44130a509f75ce
+ms.openlocfilehash: 90f2c03fbda522e3a46200bc0132cc74100ce70f
+ms.sourcegitcommit: ebf4e5a7ca301af8494edf64f85d4a8deb61d641
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54098626"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54836794"
 ---
 # <a name="tutorial-real-time-chat-with-signalr-2"></a>자습서: SignalR 2를 사용 하 여 실시간 채팅
 
 이 자습서에서는 실시간 채팅 응용 프로그램을 만드는 SignalR을 사용 하는 방법을 보여 줍니다. SignalR 빈 ASP.NET 웹 응용 프로그램에 추가 하 고이 정보를 보내고 메시지를 표시 하는 HTML 페이지를 만듭니다.
 
-이 자습서에서는 있습니다.
+이 자습서에서는 다음을 수행했습니다.
 
 > [!div class="checklist"]
 > * 프로젝트 설정
@@ -161,6 +161,10 @@ SignalRChat 응용 프로그램에서는 두 가지 기본 SignalR 개발 작업
 > 이 방법을 사용 하면 이벤트 처리기 실행 되기 전에 코드는 연결을 설정 합니다.
 
 코드는 연결을 시작 하 고 다음에 클릭 이벤트를 처리 하는 함수 전달 합니다 **보낼** HTML 페이지에 단추.
+
+## <a name="get-the-code"></a>코드 가져오기
+
+[완료 된 프로젝트 다운로드](http://code.msdn.microsoft.com/SignalR-Getting-Started-b9d18aa9)
 
 ## <a name="additional-resources"></a>추가 자료
 

@@ -1,18 +1,18 @@
 ---
 title: SignalR에서 사용자 및 그룹 관리
-author: tdykstra
+author: bradygaster
 description: ASP.NET Core SignalR의 사용자 및 그룹 관리에 대한 개요입니다.
 monikerRange: '>= aspnetcore-2.1'
-ms.author: tdykstra
+ms.author: bradyg
 ms.custom: mvc
 ms.date: 06/04/2018
 uid: signalr/groups
-ms.openlocfilehash: 02db46f090c487a03171de244ff7ad0d5e9de0fa
-ms.sourcegitcommit: fc2486ddbeb15ab4969168d99b3fe0fbe91e8661
+ms.openlocfilehash: 0a4836cfa3cf79136b56da1ff05ce8533b4df16c
+ms.sourcegitcommit: ebf4e5a7ca301af8494edf64f85d4a8deb61d641
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "50758169"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54837886"
 ---
 # <a name="manage-users-and-groups-in-signalr"></a>SignalR에서 사용자 및 그룹 관리
 
@@ -64,4 +64,4 @@ public Task SendPrivateMessage(string user, string message)
 
 * [시작](xref:tutorials/signalr)
 * [허브](xref:signalr/hubs)
-* [Azure에 게시](xref:signalr/publish-to-azure-web-app)
+* [Azure에 게시하기](xref:signalr/publish-to-azure-web-app)

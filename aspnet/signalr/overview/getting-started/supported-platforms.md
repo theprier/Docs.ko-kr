@@ -1,19 +1,19 @@
 ---
 uid: signalr/overview/getting-started/supported-platforms
 title: 지원 되는 플랫폼 | Microsoft Docs
-author: pfletcher
+author: bradygaster
 description: 이 문서에서는 어떤 클라이언트 및 서버에 SignalR 지 설명 합니다.
-ms.author: riande
+ms.author: bradyg
 ms.date: 04/18/2018
 ms.assetid: eac31beb-0f46-4afa-9def-e80904dea4f0
 msc.legacyurl: /signalr/overview/getting-started/supported-platforms
 msc.type: authoredcontent
-ms.openlocfilehash: e270f9a328f36854fdfb3e23b78e0b40cdda6411
-ms.sourcegitcommit: 74e3be25ea37b5fc8b4b433b0b872547b4b99186
+ms.openlocfilehash: 60fa74b54797efbe14ba525160b2f750a4f5a451
+ms.sourcegitcommit: ebf4e5a7ca301af8494edf64f85d4a8deb61d641
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53287377"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54836053"
 ---
 <a name="supported-platforms"></a>지원되는 플랫폼
 ====================
@@ -87,10 +87,10 @@ SignalR을 다양 한 웹 브라우저에서에서 사용할 수 있지만 일�
 
 | 전송 | Internet Explorer | Chrome (Windows 또는 iOS) | Firefox | Safari (OSX 또는 iOS) | Android |
 | --- | --- | --- | --- | --- | --- |
-| WebSocket | 10+ | 1-현재 | 1-현재 | 1-현재 | N/A |
-| 서버에서 전송 이벤트 | N/A | 1-현재 | 1-현재 | 1-현재 | N/A |
-| ForeverFrame | 8+ | N/A | N/A | N/A | 4.1 |
-| 긴 폴링 | 8+ | 1-현재 | 1-현재 | 1-현재 | 4.1 |
+| WebSocket | 10+ | current - 1 | current - 1 | current - 1 | N/A |
+| 서버에서 전송 이벤트 | N/A | current - 1 | current - 1 | current - 1 | N/A |
+| ForeverFrame | 8+ | N/A | 해당 없음 | N/A | 4.1 |
+| 긴 폴링 | 8+ | current - 1 | current - 1 | current - 1 | 4.1 |
 
 \*: 6 + 전체 기능에 필요 합니다.
 
@@ -124,12 +124,12 @@ Windows 스토어 응용 프로그램 및 Windows Phone 8 응용 프로그램에
 
 **Windows 스토어 및 Windows Phone 전송 요구 사항**
 
-| 전송 | Windows 스토어 /.NET | Windows 스토어 / JavaScript | Windows Phone / IE | Windows Phone /.NET |
+| 전송 | Windows 스토어 /.NET | Windows 스토어 / JavaScript | Windows Phone/ IE | Windows Phone/ .NET |
 | --- | --- | --- | --- | --- |
-| WebSocket | N/A | Win8 + | 8+ | N/A |
-| 영원히 프레임 | N/A | Win8 + | 7.5+ | N/A |
-| 서버에서 전송 이벤트 | Win8 + | N/A | N/A | 8+ |
-| 긴 폴링 | Win8 + | Win8 + | 7.5+ | 8+ |
+| WebSocket | N/A | Win8+ | 8+ | N/A |
+| 영원히 프레임 | N/A | Win8+ | 7.5+ | N/A |
+| 서버에서 전송 이벤트 | Win8+ | N/A | N/A | 8+ |
+| 긴 폴링 | Win8+ | Win8+ | 7.5+ | 8+ |
 
 <a id="updates"></a>
 

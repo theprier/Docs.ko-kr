@@ -4,17 +4,17 @@ title: '자습서: Entity Framework 6 Code First MVC 5를 사용 하 여 시작 
 description: 이 시리즈의 자습서에서 데이터 액세스용 Entity Framework 6을 사용 하는 ASP.NET MVC 5 응용 프로그램을 빌드하는 방법을 알아봅니다.
 author: tdykstra
 ms.author: riande
-ms.date: 01/10/2019
+ms.date: 01/22/2019
 ms.topic: tutorial
 ms.assetid: 00bc8b51-32ed-4fd3-9745-be4c2a9c1eaf
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 5d524c981af2d9d8f44254c61631937e6f049cdb
-ms.sourcegitcommit: 42a8164b8aba21f322ffefacb92301bdfb4d3c2d
+ms.openlocfilehash: b72a4ae1a89fd47d9c6ff63ccd45b26324508a63
+ms.sourcegitcommit: ebf4e5a7ca301af8494edf64f85d4a8deb61d641
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54341708"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54836183"
 ---
 # <a name="tutorial-get-started-with-entity-framework-6-code-first-using-mvc-5"></a>자습서: Entity Framework 6 Code First MVC 5를 사용 하 여 시작
 
@@ -286,6 +286,11 @@ Entity Framework는 명명 된 LocalDB 데이터베이스를 사용 하 여 추�
 - 라고 하는 경우 외래 키 속성으로는 속성을 해석 *&lt;탐색 속성 이름을&gt;&lt;기본 키 속성 이름&gt;* (예를 들어 `StudentID` 합니다 에대한`Student` 이후의 탐색 속성을 `Student` 엔터티의 기본 키가 `ID`). 외래 키 속성 수도 같은 이름 단순히 &lt;기본 키 속성 이름&gt; (예를 들어 `EnrollmentID` 되므로 합니다 `Enrollment` 엔터티의 기본 키가 `EnrollmentID`).
 
 규칙을 재정의할 수 있음을 확인 했습니다. 예를 들어 지정한 테이블 이름을 복수화 하지 않아야, 나중에 볼 수 명시적으로 외래 키 속성으로 속성을 표시 하는 방법입니다.
+
+## <a name="get-the-code"></a>코드 가져오기
+
+[완료 된 프로젝트 다운로드](http://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8)
+
 ## <a name="additional-resources"></a>추가 자료
 
 EF 6 대 한 자세한 내용은 다음이 문서를 참조 합니다.

@@ -1,19 +1,19 @@
 ---
 uid: signalr/overview/performance/scaleout-in-signalr
 title: SignalR의 규모 확장 소개 | Microsoft Docs
-author: MikeWasson
+author: bradygaster
 description: 이전 버전의에 대 한 내용은이 항목의 버전 2 이전 버전을이 항목에서는 Visual Studio 2013.NET 4.5 SignalR에서 사용 하는 소프트웨어 버전...
-ms.author: riande
+ms.author: bradyg
 ms.date: 06/10/2014
 ms.assetid: 7e781fc1-1c1f-45a8-bc1d-338e96dbe9c9
 msc.legacyurl: /signalr/overview/performance/scaleout-in-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: 50f9e5bc2713af7fe41473339e360099a92d4c5d
-ms.sourcegitcommit: 74e3be25ea37b5fc8b4b433b0b872547b4b99186
+ms.openlocfilehash: 60ae0353745284796eb7e0ddb6397ecb48eceaf0
+ms.sourcegitcommit: ebf4e5a7ca301af8494edf64f85d4a8deb61d641
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53286989"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54836207"
 ---
 <a name="introduction-to-scaleout-in-signalr"></a>SignalR의 규모 확장 소개
 ====================
@@ -54,9 +54,9 @@ ms.locfileid: "53286989"
 
 SignalR에는 현재 세 가지 백플레인을 제공합니다.
 
-- **Azure Service Bus**합니다. Service Bus는 메시징 인프라를 통해 느슨하게 결합 된 방식으로 메시지를 보내도록 구성 요소입니다.
+- **Azure Service Bus**. Service Bus는 메시징 인프라를 통해 느슨하게 결합 된 방식으로 메시지를 보내도록 구성 요소입니다.
 - **Redis**합니다. Redis는 메모리 내 키-값 저장소입니다. Redis는 메시지를 보내기 위한 ("pub/sub") 게시/구독 패턴을 지원 합니다.
-- **SQL Server**합니다. SQL Server 백플레인에서 SQL 테이블에 메시지를 씁니다. 백플레인에서 효율적인 메시징에 대 한 Service Broker를 사용합니다. 그러나 해당 Service Broker를 사용 하지 않는 경우에 작동 합니다.
+- **SQL Server**. SQL Server 백플레인에서 SQL 테이블에 메시지를 씁니다. 백플레인에서 효율적인 메시징에 대 한 Service Broker를 사용합니다. 그러나 해당 Service Broker를 사용 하지 않는 경우에 작동 합니다.
 
 Azure에서 응용 프로그램을 배포 하는 경우 Redis 백플레인으로 사용 하 여 고려해 야 [Azure Redis Cache](https://azure.microsoft.com/services/cache/)합니다. 사용자 고유의 서버 팜에 배포 하는 경우 SQL Server 또는 Redis 백플레인 것이 좋습니다.
 

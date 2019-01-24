@@ -4,17 +4,17 @@ title: '자습서: ASP.NET MVC 앱에 대 한 더 복잡 한 데이터 모델 �
 author: tdykstra
 description: 이 자습서에서는 더 많은 엔터티 및 관계를 추가 합니다 및 서식 지정, 유효성 검사 및 데이터베이스 매핑 규칙을 지정 하 여 데이터 모델을 사용자 지정할 수 있습니다.
 ms.author: riande
-ms.date: 01/16/2019
+ms.date: 01/22/2019
 ms.topic: tutorial
 ms.assetid: 46f7f3c9-274f-4649-811d-92222a9b27e2
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-a-more-complex-data-model-for-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 50cbc184983b3e37c34332dad52bc0d70ade18c2
-ms.sourcegitcommit: 184ba5b44d1c393076015510ac842b77bc9d4d93
+ms.openlocfilehash: 5d05d456315c019c545a91b527bb05510126c06b
+ms.sourcegitcommit: ebf4e5a7ca301af8494edf64f85d4a8deb61d641
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/18/2019
-ms.locfileid: "54396300"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54836628"
 ---
 # <a name="tutorial-create-a-more-complex-data-model-for-an-aspnet-mvc-app"></a>자습서: ASP.NET MVC 앱에 대 한 더 복잡 한 데이터 모델 만들기
 
@@ -397,6 +397,10 @@ PMC에서 다음을 입력 합니다 `add-migration` 명령 (사용 하지는 `u
 마우스 오른쪽 단추로 클릭 합니다 `CourseInstructor` 선택한 테이블 **테이블 데이터 표시** 의 결과로 데이터가 있는지 확인 하는 `Instructor` 에 추가 된 엔터티는 `Course.Instructors` 탐색 속성.
 
 ![Table_data_in_CourseInstructor_table](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/_static/image17.png)
+
+## <a name="get-the-code"></a>코드 가져오기
+
+[완료 된 프로젝트 다운로드](http://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8)
 
 ## <a name="additional-resources"></a>추가 자료
 

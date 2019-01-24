@@ -1,19 +1,19 @@
 ---
 uid: signalr/overview/deployment/tutorial-signalr-self-host
 title: '자습서: SignalR 자체 호스팅 | Microsoft Docs'
-author: pfletcher
+author: bradygaster
 description: 이 자습서에는 SignalR 2 자체 호스팅된 서버를 만드는 방법과 JavaScript 클라이언트에 연결 하는 방법을 보여 줍니다. 소프트웨어 버전 V 자습서에서 사용 하는 중...
-ms.author: riande
+ms.author: bradyg
 ms.date: 06/10/2014
 ms.assetid: 400db427-27af-4f2f-abf0-5486d5e024b5
 msc.legacyurl: /signalr/overview/deployment/tutorial-signalr-self-host
 msc.type: authoredcontent
-ms.openlocfilehash: 48cb3d4d71c33ac3382b2b35b5a19fa1c4958874
-ms.sourcegitcommit: 74e3be25ea37b5fc8b4b433b0b872547b4b99186
+ms.openlocfilehash: 6a6359d59a4b715e13fe2bbcef57da6d6d6294b5
+ms.sourcegitcommit: ebf4e5a7ca301af8494edf64f85d4a8deb61d641
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53287405"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54835754"
 ---
 <a name="tutorial-signalr-self-host"></a>자습서: SignalR 자체 호스팅
 ====================
@@ -93,10 +93,10 @@ IIS에서 호스트 하지 이유는 다음과 같습니다.
 
     위의 코드는 세 가지 클래스가 포함 되어 있습니다.
 
-    - **프로그램**등의 **Main** 주 실행 경로 정의 하는 메서드. 이 방법에서는 웹 응용 프로그램 유형의 **시작** 지정된 된 URL에서 시작 됩니다 (`http://localhost:8080`). 끝점에서 보안에 필요한 경우에 SSL은 구현할 수 있습니다. 참조 [방법: SSL 인증서로 포트 구성](https://msdn.microsoft.com/library/ms733791.aspx) 자세한 내용은 합니다.
+    - **프로그램**등의 **Main** 주 실행 경로 정의 하는 메서드. 이 방법에서는 웹 응용 프로그램 유형의 **시작** 지정된 된 URL에서 시작 됩니다 (`http://localhost:8080`). 끝점에서 보안에 필요한 경우에 SSL은 구현할 수 있습니다. [방법: SSL 인증서로 포트 구성](https://msdn.microsoft.com/library/ms733791.aspx) 자세한 내용은 합니다.
     - **시작**, SignalR server에 대 한 구성을 포함 하는 클래스 (이 자습서에서는 구성 하는 데 `UseCors`), 및에 대 한 호출 `MapSignalR`, 프로젝트의 모든 허브 개체에 대 한 경로 만드는.
     - **MyHub**, 응용 프로그램 클라이언트에 제공 하는 SignalR 허브 클래스입니다. 이 클래스는 단일 메서드 **보낼**, 클라이언트는 다른 모든 연결 된 클라이언트에 메시지를 브로드캐스팅하 호출 합니다.
-6. 응용 프로그램을 컴파일하고 실행합니다. 주소는 서버에서 실행 하는 콘솔 창에 표시 됩니다.
+6. 애플리케이션을 컴파일하고 실행합니다. 주소는 서버에서 실행 하는 콘솔 창에 표시 됩니다.
 
     ![](tutorial-signalr-self-host/_static/image2.png)
 7. 예외를 사용 하 여 실행이 실패 하면 `System.Reflection.TargetInvocationException was unhandled`, 관리자 권한으로 Visual Studio를 다시 시작 해야 합니다.
@@ -133,5 +133,5 @@ IIS에서 호스트 하지 이유는 다음과 같습니다.
 
     ![](tutorial-signalr-self-host/_static/image6.png)
 7. "Default.html"를 마우스 오른쪽 단추로 클릭 하 고 선택 **시작 페이지로 설정**합니다.
-8. 응용 프로그램을 실행합니다. 서버 및 페이지 시작 됩니다. 웹 페이지를 다시 로드 해야 할 수 있습니다 (누르거나 **계속** 디버거에서) 서버를 시작 하기 전에 페이지가 로드 되 면 합니다.
+8. 애플리케이션을 실행합니다. 서버 및 페이지 시작 됩니다. 웹 페이지를 다시 로드 해야 할 수 있습니다 (누르거나 **계속** 디버거에서) 서버를 시작 하기 전에 페이지가 로드 되 면 합니다.
 9. 브라우저에서 메시지가 표시 되 면 사용자 이름을 제공 합니다. 다른 브라우저 탭 또는 창에 페이지의 URL을 복사 하 고 다른 사용자 이름을 제공 합니다. 시작 자습서와 같이 다른 브라우저 창에서 메시지를 보낼 수 없게 됩니다.

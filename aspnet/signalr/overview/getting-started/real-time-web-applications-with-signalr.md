@@ -1,19 +1,19 @@
 ---
 uid: signalr/overview/getting-started/real-time-web-applications-with-signalr
 title: '실습: SignalR 사용 하 여 실시간 웹 응용 프로그램 | Microsoft Docs'
-author: rick-anderson
+author: bradygaster
 description: 실시간 웹 응용 프로그램 기능을 실시간으로 발생 하는 대로 연결 된 클라이언트에 콘텐츠 서버 쪽을 푸시할 수 있습니다. ASP.NET 개발자에 게 ASP...
-ms.author: riande
+ms.author: bradyg
 ms.date: 07/16/2014
 ms.assetid: ba07958c-42e1-4da0-81db-ba6925ed6db0
 msc.legacyurl: /signalr/overview/getting-started/real-time-web-applications-with-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: de2f2349fc284e167bd8227ae55da79b9f1f4549
-ms.sourcegitcommit: 74e3be25ea37b5fc8b4b433b0b872547b4b99186
+ms.openlocfilehash: d4998c8b739b4b1a06699a17464a7399a87a8595
+ms.sourcegitcommit: ebf4e5a7ca301af8494edf64f85d4a8deb61d641
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53288011"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54837509"
 ---
 <a name="hands-on-lab-real-time-web-applications-with-signalr"></a>실습: SignalR 사용 하 여 실시간 웹 응용 프로그램
 ====================
@@ -260,7 +260,7 @@ SignalR을 지 원하는 **서버 푸시** 또는 **브로드캐스팅** 기능 
 현재 세 가지 유형의 SignalR에 대 한 백플레인
 
 - **Windows Azure Service Bus**합니다. Service Bus는 메시징 인프라를 통해 느슨하게 결합 된 메시지를 보내도록 구성 요소입니다.
-- **SQL Server**합니다. SQL Server 백플레인에서 SQL 테이블에 메시지를 씁니다. 백플레인에서 효율적인 메시징에 대 한 Service Broker를 사용합니다. 그러나 해당 Service Broker를 사용 하지 않는 경우에 작동 합니다.
+- **SQL Server**. SQL Server 백플레인에서 SQL 테이블에 메시지를 씁니다. 백플레인에서 효율적인 메시징에 대 한 Service Broker를 사용합니다. 그러나 해당 Service Broker를 사용 하지 않는 경우에 작동 합니다.
 - **Redis**합니다. Redis는 메모리 내 키-값 저장소입니다. Redis는 메시지를 보내기 위한 ("pub/sub") 게시/구독 패턴을 지원 합니다.
 
 모든 메시지가 메시지 버스를 통해 전송 됩니다. 메시지 버스 구현 된 [IMessageBus](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.messaging.imessagebus(v=vs.100).aspx) 게시/구독 추상화를 제공 하는 인터페이스입니다. 기본 대체 하 여 작업의 백플레인 **IMessageBus** 해당 백플레인 위한 버스를 사용 하 여 합니다.

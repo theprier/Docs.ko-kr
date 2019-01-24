@@ -1,18 +1,18 @@
 ---
 title: ASP.NET Core SignalR 프로덕션 호스팅 및 크기 조정
-author: tdykstra
+author: bradygaster
 description: 성능 및 ASP.NET Core SignalR을 사용 하는 앱의 확장 문제를 방지 하는 방법에 알아봅니다.
 monikerRange: '>= aspnetcore-2.1'
-ms.author: tdykstra
+ms.author: bradyg
 ms.custom: mvc
 ms.date: 11/28/2018
 uid: signalr/scale
-ms.openlocfilehash: 94791ffb73b58a9026942d632bce59773e3fda5b
-ms.sourcegitcommit: e9b99854b0a8021dafabee0db5e1338067f250a9
+ms.openlocfilehash: 4ac4509acc89d0091a3757c7cfbc9981614f29ad
+ms.sourcegitcommit: ebf4e5a7ca301af8494edf64f85d4a8deb61d641
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52452979"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54836924"
 ---
 # <a name="aspnet-core-signalr-hosting-and-scaling"></a>ASP.NET Core SignalR 호스팅 및 크기 조정
 
@@ -28,7 +28,7 @@ ms.locfileid: "52452979"
 
 SignalR에서 연결 관련 리소스를 많이 사용 된 동일한 서버에서 호스트 되는 다른 웹 앱에 영향을 줄 수 있습니다. SignalR을 열고 마지막으로 사용 가능한 TCP 연결을 보유를 동일한 서버의 다른 웹 앱에 사용 가능한 연결이 더 이상가입니다.
 
-서버 연결을 부족 하면 임의 소켓 오류가 표시 됩니다 및 연결 오류를 다시 설정 합니다. 예:
+서버 연결을 부족 하면 임의 소켓 오류가 표시 됩니다 및 연결 오류를 다시 설정 합니다. 예를 들어:
 
 ```
 An attempt was made to access a socket in a way forbidden by its access permissions...

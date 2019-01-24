@@ -8,18 +8,18 @@ ms.date: 03/14/2014
 ms.assetid: 58b583cd-c4ab-47a3-8527-8c92c298c91f
 msc.legacyurl: /whitepapers/aspnet-web-deployment-content-map
 msc.type: content
-ms.openlocfilehash: c970d929c4e6b581bedd2947982926ac448facfa
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 6df0c9d2f38ad1d39abd62787c600ef80da8e8e0
+ms.sourcegitcommit: ebf4e5a7ca301af8494edf64f85d4a8deb61d641
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41836125"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54836223"
 ---
 <a name="aspnet-web-deployment---recommended-resources"></a>ASP.NET 웹 배포-권장 리소스
 ====================
 > 이 항목에서는 설명서의 링크를 배포 하는 방법에 대 한 리소스 (게시) ASP.NET 웹 응용 프로그램을 Visual Studio 2010, Visual Web Developer 2010 이상 버전을 사용 하 여 IIS 합니다.
 > 
-> 훌륭한 블로그 게시물을 알고 있는 경우 [stackoverflow](http://stackoverflow.com) 스레드나 다른 것이 유용한 링크 [메일을 보내세요](mailto:aspnetue@microsoft.com?subject=Deployment Content Map) 링크를 사용 하 여 합니다.
+> 훌륭한 블로그 게시물을 알고 있는 경우 [stackoverflow](http://stackoverflow.com) 스레드나 다른 것이 유용한 링크 [메일을 보내세요](mailto:aspnetue@microsoft.com?subject=Deployment%20Content%20Map) 링크를 사용 하 여 합니다.
 > 
 > > [!NOTE] 
 > > 
@@ -100,7 +100,7 @@ ms.locfileid: "41836125"
 - [연속 통합 및 지속적인 업데이트 (실제 클라우드 앱 빌드 Windows Azure 사용 하 여).](../aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/continuous-integration-and-continuous-delivery.md) 연속 통합 및 지속적인 업데이트를 소개 하는 전자책 장입니다.
 - [Windows Azure 웹 사이트를 배포 하는 방법을](https://docs.microsoft.com/azure/app-service-web/web-sites-deploy)합니다. Windows Azure 웹 사이트에 웹 프로젝트를 배포 하기 위한 리소스 옵션 및 링크를 설명 합니다. 소스 제어에서 배포를 자동화 하는 방법에 대 한 섹션을 포함 합니다.
 - [엔터프라이즈 시나리오에서 웹 응용 프로그램 배포](../web-forms/overview/deployment/deploying-web-applications-in-enterprise-scenarios/deploying-web-applications-in-enterprise-scenarios.md)합니다. 40 부분으로 이루어진 자습서 시리즈에서는 Visual Studio 2010 및 Team Foundation Server 2010을 사용 하는 CI 프로세스에서 배포를 자동화 하는 방법을 보여 줍니다.
-- [Microsoft 빌드 엔진 내: MSBuild 및 Team Foundation Build Sayed Hashimi William Bartholomew를 사용 하 여](http://msbuildbook.com)입니다. 책, 웹 리소스 이지만 필수 지침을 연속 통합 시나리오에 대 한 MSBuild를 구성 하는 방법입니다.
+- [Microsoft Build Engine 내부: MSBuild 및 Team Foundation Build Sayed Hashimi William Bartholomew를 사용 하 여](http://msbuildbook.com)입니다. 책, 웹 리소스 이지만 필수 지침을 연속 통합 시나리오에 대 한 MSBuild를 구성 하는 방법입니다.
 - [MSBuild 확장 팩](https://github.com/mikefourie/MSBuildExtensionPack)합니다. 배포 작업이 포함 됩니다.
 - [Team Foundation 빌드 사용자 지정 가이드](https://aka.ms/vsarsolutions)합니다. Team Foundation Server 설정에서 ALM Rangers에서 제공 하는 설명서는 웹 배포를 설명 하 고 자습서 및 비디오를 포함 합니다.
 - [CI 서버에서 SlowCheetah XML 변환](http://sedodream.com/2011/12/12/SlowCheetahXMLTransformsFromACIServer.aspx) (Sayed Hashimi의 블로그). Visual Studio 추가 기능에서 app.config 및 다른 XML 파일을 변환 하기 위한 SlowCheetah를 사용 하는 방법에 설명 합니다.
@@ -116,10 +116,10 @@ ms.locfileid: "41836125"
 - [Web.config 파일 변환](../web-forms/overview/deployment/visual-studio-web-deployment/web-config-transformations.md)합니다.
 - [Visual Studio를 사용 하 여 웹 프로젝트 배포를 위한 Web.config 변환 구문](https://msdn.microsoft.com/library/dd465326.aspx) (MSDN).
 - [웹 도구 2012.2-web.config 변환](https://www.youtube.com/watch?v=HdPK8mxpKEI) (Sayed Hashimi YouTube 비디오). Web.config 변환 미리 보기를 설정 하는 방법을 보여 줍니다.
-- [Web.config 변환 사용 하지 않도록 하는 방법](https://msdn.microsoft.com/library/ee942158.aspx#disable_web_config_transformation) (MSDN)입니다.
-- [Web.config 변환 하는 대신 웹 배포 매개 변수는 언제 사용 해야 하나요?](https://msdn.microsoft.com/library/ee942158.aspx#web_deploy_parameters) (MSDN)입니다.
+- [Web.config 변환 사용 하지 않도록 하는 방법](https://msdn.microsoft.com/library/ee942158.aspx#disable_web_config_transformation) (MSDN).
+- [Web.config 변환 하는 대신 웹 배포 매개 변수는 언제 사용 해야 하나요?](https://msdn.microsoft.com/library/ee942158.aspx#web_deploy_parameters) (MSDN).
 - [XDT (XML 문서 변환) codeplex.com 출시](https://blogs.msdn.com/b/webdev/archive/2013/04/23/xdt-xml-document-transform-released-on-codeplex-com.aspx) (.NET 웹 개발 및 도구 블로그). Web.config 파일 변환 엔진에 대 한 소스 코드의 공급 소식을 발표 하 고 사용 하는 몇 가지 도구를 나열 합니다.
-- [Windows Azure 웹 사이트: 어떻게 응용 프로그램 문자열 및 연결 문자열 작동 방식](https://blogs.msdn.com/b/windowsazure/archive/2013/07/17/windows-azure-web-sites-how-application-strings-and-connection-strings-work.aspx) (Microsoft Azure 블로그). 대상 환경은 Windows Azure 웹 사이트 및 변환 하려는 경우 대신 Web.config 변환 `appSettings` 또는 `connectionStrings`합니다.
+- [Windows Azure 웹 사이트: 응용 프로그램 문자열 및 연결 문자열 작동 방식](https://blogs.msdn.com/b/windowsazure/archive/2013/07/17/windows-azure-web-sites-how-application-strings-and-connection-strings-work.aspx) (Microsoft Azure 블로그). 대상 환경은 Windows Azure 웹 사이트 및 변환 하려는 경우 대신 Web.config 변환 `appSettings` 또는 `connectionStrings`합니다.
 
 
 <a id="webdeployparms"></a>
@@ -128,11 +128,11 @@ ms.locfileid: "41836125"
 ## <a name="using-web-deploy-parameters-to-change-settings-in-the-destination-web-application-during-deployment"></a>웹 배포 매개 변수를 사용 하 여 배포 하는 동안 대상 웹 응용 프로그램의 설정을 변경 하려면
 
 - [방법: 사용 하 여 웹 배포 매개 변수는 웹 배포 패키지에](https://msdn.microsoft.com/library/ff398068.aspx) (MSDN).
-- [MSDeploy: 게시 프로필에서 게시에 대 한 앱 설정을 업데이트 하는 방법을 따라](http://sedodream.com/2013/03/02/MSDeployHowToUpdateAppSettingsOnPublishBasedOnThePublishProfile.aspx) (Sayed Hashimi의 블로그). Visual Studio로 웹 배포 매개 변수를 통합 하는 방법을 보여 줍니다 게시 프로필.
+- [MSDeploy: 게시 프로필을 기반으로 하는 게시에 대 한 앱 설정을 업데이트 하는 방법을](http://sedodream.com/2013/03/02/MSDeployHowToUpdateAppSettingsOnPublishBasedOnThePublishProfile.aspx) (Sayed Hashimi의 블로그). Visual Studio로 웹 배포 매개 변수를 통합 하는 방법을 보여 줍니다 게시 프로필.
 - [웹 배포 매개 변수화](https://www.iis.net/learn/publish/using-web-deploy/web-deploy-parameterization) (IIS.NET 웹 사이트).
 - [웹 작업에서 매개 변수화 배포](http://vishaljoshi.blogspot.com/2010/07/web-deploy-parameterization-in-action.html) (인 Vishal Joshi의 블로그).
 - [웹 배포 매개 변수화 vs입니다. Web.config 변환](http://vishaljoshi.blogspot.com/2010/06/parameterization-vs-webconfig.html) (인 Vishal Joshi의 블로그).
-- [Windows Azure 웹 사이트: 어떻게 응용 프로그램 문자열 및 연결 문자열 작동 방식](https://blogs.msdn.com/b/windowsazure/archive/2013/07/17/windows-azure-web-sites-how-application-strings-and-connection-strings-work.aspx) (Microsoft Azure 블로그). 대상 환경은 Windows Azure 웹 사이트 및 매개 변수화 하려는 경우 배포 매개 변수를 웹에 대안 `appSettings` 또는 `connectionStrings`합니다.
+- [Windows Azure 웹 사이트: 응용 프로그램 문자열 및 연결 문자열 작동 방식](https://blogs.msdn.com/b/windowsazure/archive/2013/07/17/windows-azure-web-sites-how-application-strings-and-connection-strings-work.aspx) (Microsoft Azure 블로그). 대상 환경은 Windows Azure 웹 사이트 및 매개 변수화 하려는 경우 배포 매개 변수를 웹에 대안 `appSettings` 또는 `connectionStrings`합니다.
 
 
 <a id="appoffline"></a>
@@ -211,7 +211,7 @@ ms.locfileid: "41836125"
 
 ## <a name="automating-common-deployment-tasks-that-are-not-automated-out-of-the-box"></a>기본적으로 자동화 되지 않은 일반 배포 작업을 자동화
 
-- [Visual Studio를 사용 하 여 ASP.NET 웹 배포: 배포 Extra Files](../web-forms/overview/deployment/visual-studio-web-deployment/deploying-extra-files.md)합니다.
+- [Visual Studio를 사용 하 여 ASP.NET 웹 배포: 추가 파일 배포](../web-forms/overview/deployment/visual-studio-web-deployment/deploying-extra-files.md)합니다.
 - [웹 게시에 폴더 권한 설정](http://sedodream.com/2011/11/08/SettingFolderPermissionsOnWebPublish.aspx) (Sayed Hashimi의 블로그).
 - [웹 프로젝트 패키지에 대 한 레지스트리 설정을 포함 하도록 대상 파일을 확장 하는 방법을](https://blogs.msdn.com/webdevtools/archive/2010/02/09/how-to-extend-target-file-to-include-registry-settings-for-web-project-package.aspx) (웹 개발 도구 블로그).
 - [확장 XML (Web.config) 변환을](http://sedodream.com/2010/09/09/ExtendingXMLWebconfigConfigTransformation.aspx) (Sayed Hashimi의 블로그). XDT 변환 사용자 지정 만들기 방법을 보여 줍니다.

@@ -1,24 +1,24 @@
 ---
 title: ASP.NET Core SignalR 구성
-author: tdykstra
+author: bradygaster
 description: ASP.NET Core SignalR 앱을 구성하는 방법을 알아봅니다.
 monikerRange: '>= aspnetcore-2.1'
-ms.author: tdykstra
+ms.author: bradyg
 ms.custom: mvc
 ms.date: 09/06/2018
 uid: signalr/configuration
-ms.openlocfilehash: 855446003ae9d994854d4d8bb7d0f542a22734e4
-ms.sourcegitcommit: f43f430a166a7ec137fcad12ded0372747227498
+ms.openlocfilehash: bb18ba242584afa7181dcc19a5295f86996aeaa3
+ms.sourcegitcommit: ebf4e5a7ca301af8494edf64f85d4a8deb61d641
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49391104"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54837522"
 ---
 # <a name="aspnet-core-signalr-configuration"></a>ASP.NET Core SignalR 구성
 
 ## <a name="jsonmessagepack-serialization-options"></a>JSON/MessagePack 직렬화 옵션
 
-ASP.NET Core SignalR은 메시지 인코딩에 대해 [JSON](https://www.json.org/)과 [MessagePack](https://msgpack.org/index.html)의 두 가지 프로토콜을 지원합니다. 각 프로토콜에는 직렬화 구성 옵션이 있습니다. 각 프로토콜에 serialization 구성 옵션이 있습니다.
+ASP.NET Core SignalR 메시지 인코딩에 대 한 두 가지 프로토콜을 지원 합니다. [JSON](https://www.json.org/) 하 고 [MessagePack](https://msgpack.org/index.html)합니다. 각 프로토콜에 serialization 구성 옵션이 있습니다.
 
 JSON serialization을 사용 하 여 서버에 구성할 수 있습니다 합니다 [AddJsonProtocol](/dotnet/api/microsoft.extensions.dependencyinjection.jsonprotocoldependencyinjectionextensions.addjsonprotocol) 후 추가할 수 있는 확장 메서드 [AddSignalR](/dotnet/api/microsoft.extensions.dependencyinjection.signalrdependencyinjectionextensions.addsignalr) 에서 프로그램 `Startup.ConfigureServices` 메서드. `AddJsonProtocol` 메서드는 `options` 개체를 전달받는 대리자를 받습니다. 이 개체의 [PayloadSerializerSettings](/dotnet/api/microsoft.aspnetcore.signalr.jsonhubprotocoloptions.payloadserializersettings) 속성은 JSON.NET의 `JsonSerializerSettings` 개체로, 인수 및 반환 값의 직렬화를 구성하는 데 사용할 수 있습니다. 더 자세한 내용은 [JSON.NET 설명서](https://www.newtonsoft.com/json/help/html/Introduction.htm)를 참고하시기 바랍니다.
 
@@ -235,7 +235,7 @@ let connection = new signalR.HubConnectionBuilder()
 | `Credentials` | 구성할 수 없음 * | 빈 값 | 모든 HTTP 요청과 함께 전송할 자격 증명입니다. |
 | `CloseTimeout` | 구성할 수 없음 * | 5초 | Websocket에만 해당됩니다. 클라이언트가 서버를 닫은 후 닫기 요청을 확인하기 위해 대기하는 최대 시간입니다. 서버가 이 시간 내에 종료를 승인하지 않으면 클라이언트가 연결을 끊습니다. |
 | `Headers` | 구성할 수 없음 * | 빈 값 | 모든 HTTP 요청과 함께 전송할 추가 HTTP 헤더의 사전입니다. |
-| `HttpMessageHandlerFactory` | 구성할 수 없음 * | `null` | HTTP 요청을 전송하기 위해 사용되는 `HttpMessageHandler`를 구성하거나 대체하는 데 사용할 수 있는 대리자입니다. WebSocket 연결에는 사용되지 않습니다. 이 대리자는 null이 아닌 값을 반환해야 하며 매개 변수로 기본값을 받습니다. 이 기본값의 설정을 수정하여 반환하거나 새로운 `HttpMessageHandler` 인스턴스를 반환합니다. **핸들러를 대체할 경우 제공된 핸들러에서 보관하고자 하는 설정을 복사해야 하며, 그렇지 않으면 구성된 옵션(예: 쿠키 및 헤더)이 새 핸들러에 적용되지 않습니다.** |
+| `HttpMessageHandlerFactory` | 구성할 수 없음 * | `null` | HTTP 요청을 전송하기 위해 사용되는 `HttpMessageHandler`를 구성하거나 대체하는 데 사용할 수 있는 대리자입니다. WebSocket 연결에는 사용되지 않습니다. 이 대리자는 null이 아닌 값을 반환해야 하며 매개 변수로 기본값을 받습니다. 이 기본값의 설정을 수정하여 반환하거나 새로운 `HttpMessageHandler` 인스턴스를 반환합니다. **그렇지 않은 경우 처리기를 교체 해야 제공된 된 처리기에서 유지 하려는 설정을 복사, 구성된 옵션 (예: 쿠키 및 헤더) 새 처리기에 적용 되지 않습니다.** |
 | `Proxy` | 구성할 수 없음 * | `null` | HTTP 요청을 전송할 때 사용할 HTTP 프록시입니다. |
 | `UseDefaultCredentials` | 구성할 수 없음 * | `false` | HTTP 및 WebSockets 요청에 대한 기본 자격 증명을 전송하려면 이 부울 값을 설정합니다. 그러면 Windows 인증을 사용할 수 있습니다. |
 | `WebSocketConfiguration` | 구성할 수 없음 * | `null` | 추가적인 WebSocket 옵션을 구성할 수 있는 대리자입니다. 옵션을 구성에 사용할 수 있는 [ClientWebSocketOptions](/dotnet/api/system.net.websockets.clientwebsocketoptions)의 인스턴스를 전달받습니다. |

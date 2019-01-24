@@ -1,19 +1,19 @@
 ---
 uid: signalr/overview/older-versions/scaleout-with-redis
 title: Redis로 SignalR 규모 확장 (SignalR 1.x) | Microsoft Docs
-author: MikeWasson
+author: bradygaster
 description: ''
-ms.author: riande
+ms.author: bradyg
 ms.date: 05/01/2013
 ms.assetid: 6abecf80-8ffa-41ba-b0d9-1d9edbe7687b
 msc.legacyurl: /signalr/overview/older-versions/scaleout-with-redis
 msc.type: authoredcontent
-ms.openlocfilehash: 3f70536a4bda90a0298f6bb4f7ef47b8a257175b
-ms.sourcegitcommit: 74e3be25ea37b5fc8b4b433b0b872547b4b99186
+ms.openlocfilehash: 74294bd04d5649f2ec54e58adb744f5e30525162
+ms.sourcegitcommit: ebf4e5a7ca301af8494edf64f85d4a8deb61d641
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53287548"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54836417"
 ---
 <a name="signalr-scaleout-with-redis-signalr-1x"></a>Redis로 SignalR 규모 확장 (SignalR 1.x)
 ====================
@@ -109,7 +109,7 @@ Redis 이진이 빌드는 `src` 디렉터리입니다.
 - "password"는 redis.conf 파일에 정의 된 암호가입니다.
 - "AppName"는 문자열입니다. SignalR이이 이름을 가진 Redis pub/sub 채널을 만듭니다.
 
-예를 들면 다음과 같습니다.
+예를 들어:
 
 [!code-csharp[Main](scaleout-with-redis/samples/sample7.cs)]
 

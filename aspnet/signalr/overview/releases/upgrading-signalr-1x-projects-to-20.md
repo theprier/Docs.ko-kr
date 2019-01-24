@@ -1,19 +1,19 @@
 ---
 uid: signalr/overview/releases/upgrading-signalr-1x-projects-to-20
 title: SignalR 1.x 프로젝트를 버전 2로 업그레이드 | Microsoft Docs
-author: pfletcher
+author: bradygaster
 description: 이 항목에서는 signalr 기존 SignalR 1.x 프로젝트를 업그레이드 하는 방법에 설명 합니다 2.x 및 업그레이드 프로세스 중 발생할 수 있는 문제를 해결 하는 방법...
-ms.author: riande
+ms.author: bradyg
 ms.date: 06/10/2014
 ms.assetid: adcfef99-9bc5-489d-a91b-9b7c2bc35e04
 msc.legacyurl: /signalr/overview/releases/upgrading-signalr-1x-projects-to-20
 msc.type: authoredcontent
-ms.openlocfilehash: 23ea23585b15395cf86bdad13885af32d1b64e79
-ms.sourcegitcommit: 74e3be25ea37b5fc8b4b433b0b872547b4b99186
+ms.openlocfilehash: a1cb4903f3cdeef70ffd0f624a3a2170f641a395
+ms.sourcegitcommit: ebf4e5a7ca301af8494edf64f85d4a8deb61d641
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53286846"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54837340"
 ---
 <a name="upgrading-signalr-1x-projects-to-version-2"></a>SignalR 1.x 프로젝트를 버전 2로 업그레이드
 ====================
@@ -58,7 +58,7 @@ SignalR 2로 응용 프로그램을 업그레이드 하는 것이 좋습니다, 
 
 다음 섹션에서는 발생할 수 있는 문제를 해결 하는 방법과 SignalR 프로젝트 업그레이드와 관련 된 태스크를 설명 합니다.
 
-- [예: SignalR 2로 업그레이드 하는 시작 자습서](#example)
+- [예제: SignalR 2로 업그레이드 하는 시작 자습서](#example)
 - [업그레이드 하는 동안 발생 한 오류 문제 해결](#troubleshooting)
 
 <a id="example"></a>

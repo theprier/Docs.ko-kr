@@ -1,17 +1,17 @@
 ---
 title: SignalR과 ASP.NET Core SignalR의 차이점
-author: tdykstra
+author: bradygaster
 description: SignalR과 ASP.NET Core SignalR의 차이점
 monikerRange: '>= aspnetcore-2.1'
-ms.author: tdykstra
+ms.author: bradyg
 ms.date: 11/14/2018
 uid: signalr/version-differences
-ms.openlocfilehash: fb10d6e62ff28128e6e9e5dcef55e44f25de8ad0
-ms.sourcegitcommit: 6548c19f345850ee22b50f7ef9fca732895d9e08
+ms.openlocfilehash: 091fc44fccf820a394e7c6f775700c85bebc9101
+ms.sourcegitcommit: ebf4e5a7ca301af8494edf64f85d4a8deb61d641
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53425122"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54836664"
 ---
 # <a name="differences-between-aspnet-signalr-and-aspnet-core-signalr"></a>ASP.NET SignalR과 ASP.NET Core SignalR의 차이점
 
@@ -24,7 +24,7 @@ ASP.NET Core SignalR은 ASP.NET SignalR용 클라이언트 또는 서버와 호�
 | Server NuGet 패키지 | [Microsoft.AspNet.SignalR](https://www.nuget.org/packages/Microsoft.AspNet.SignalR/) | [Microsoft.AspNetCore.App](https://www.nuget.org/packages/Microsoft.AspNetCore.App/) (.NET Core)<br>[Microsoft.AspNetCore.SignalR](https://www.nuget.org/packages/Microsoft.AspNetCore.SignalR/) (.NET Framework) |
 | 클라이언트 NuGet 패키지 | [Microsoft.AspNet.SignalR.Client](https://www.nuget.org/packages/Microsoft.AspNet.SignalR.Client/)<br>[Microsoft.AspNet.SignalR.JS](https://www.nuget.org/packages/Microsoft.AspNet.SignalR.JS/) | [Microsoft.AspNetCore.SignalR.Client](https://www.nuget.org/packages/Microsoft.AspNetCore.SignalR.Client/) |
 | 클라이언트 npm 패키지 | [signalr](https://www.npmjs.com/package/signalr) | [@aspnet/signalr](https://www.npmjs.com/package/@aspnet/signalr) |
-| Java 클라이언트 | [GitHub 리포지토리](https://github.com/SignalR/java-client) (사용 되지 않음)  | Maven 패키지 [com.microsoft.signalr](https://search.maven.org/artifact/com.microsoft.signalr/signalr) |
+| Java 클라이언트 | [GitHub 리포지토리](https://github.com/SignalR/java-client) (사용 되지 않음)  | Maven package [com.microsoft.signalr](https://search.maven.org/artifact/com.microsoft.signalr/signalr) |
 | 서버 앱 유형 | ASP.NET (System.Web) 또는 OWIN 자체 호스트 | ASP.NET Core |
 | 지원되는 서버 플랫폼 | .NET framework 4.5 이상 | .NET Framework 4.6.1 이상<br>.NET core 2.1 이상 |
 

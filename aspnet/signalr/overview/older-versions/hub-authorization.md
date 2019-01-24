@@ -1,19 +1,19 @@
 ---
 uid: signalr/overview/older-versions/hub-authorization
 title: SignalR 허브 프로그램용 인증과 권한 부여 (SignalR 1.x) | Microsoft Docs
-author: pfletcher
+author: bradygaster
 description: 이 항목에서는 어떤 사용자 또는 역할에는 허브 메서드에 액세스할 수를 제한 하는 방법을 설명 합니다.
-ms.author: riande
+ms.author: bradyg
 ms.date: 10/17/2013
 ms.assetid: 3d2dfc0e-eac2-4076-a468-325d3d01cc7b
 msc.legacyurl: /signalr/overview/older-versions/hub-authorization
 msc.type: authoredcontent
-ms.openlocfilehash: 1bd61b8faff22db3337e9d9c1ed2532d3e64440d
-ms.sourcegitcommit: 74e3be25ea37b5fc8b4b433b0b872547b4b99186
+ms.openlocfilehash: 7f4a76109111f19dc4381ad01e642afdabade336
+ms.sourcegitcommit: ebf4e5a7ca301af8494edf64f85d4a8deb61d641
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53287470"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54836901"
 ---
 <a name="authentication-and-authorization-for-signalr-hubs-signalr-1x"></a>SignalR 허브 프로그램용 인증과 권한 부여 (SignalR 1.x)
 ====================

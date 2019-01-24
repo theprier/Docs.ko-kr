@@ -3,18 +3,18 @@ uid: signalr/overview/getting-started/tutorial-server-broadcast-with-signalr
 title: '자습서: SignalR 2를 사용 하 여 서버 브로드캐스트 | Microsoft Docs'
 author: tdykstra
 description: 이 자습서에는 ASP.NET SignalR 2를 사용 하 여 서버 브로드캐스트 기능을 제공 하는 웹 응용 프로그램을 만드는 방법을 보여 줍니다.
-ms.author: riande
+ms.author: bradyg
 ms.date: 01/02/2019
 ms.topic: tutorial
 ms.assetid: 1568247f-60b5-4eca-96e0-e661fbb2b273
 msc.legacyurl: /signalr/overview/getting-started/tutorial-server-broadcast-with-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: a6014e604613492db91b2dc6f846c3c73d938d99
-ms.sourcegitcommit: 97d7a00bd39c83a8f6bccb9daa44130a509f75ce
+ms.openlocfilehash: a243c78c7d552f1c82a88c6083871fcd16538618
+ms.sourcegitcommit: ebf4e5a7ca301af8494edf64f85d4a8deb61d641
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54099301"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54837431"
 ---
 # <a name="tutorial-server-broadcast-with-signalr-2"></a>자습서: SignalR 2를 사용 하 여 브로드캐스트 서버
 
@@ -26,7 +26,7 @@ ms.locfileid: "54099301"
 
 ![웹 만들기](tutorial-server-broadcast-with-signalr/_static/image1.png)
 
-이 자습서에서는 있습니다.
+이 자습서에서는 다음을 수행했습니다.
 
 > [!div class="checklist"]
 > * 프로젝트를 만듭니다.
@@ -321,7 +321,7 @@ SignalR 문제 해결에 도움이 되는 클라이언트에서 사용할 수 �
 
     [!code-javascript[Main](tutorial-server-broadcast-with-signalr/samples/sample19.js?highlight=2)]
 
-1. 키를 눌러 **F5** 프로젝트를 실행 합니다.
+1. **F5** 키를 눌러 프로젝트를 실행합니다.
 
 1. 브라우저의 개발자 도구 창을 열고 로그를 확인 하려면 콘솔을 선택 합니다. 새 연결 전송 방법을 협상 SignalR의 로그를 보려면 페이지를 새로 고침 해야 합니다.
 
@@ -487,7 +487,7 @@ SignalR에 대 한 자세한 내용은 다음 리소스를 참조 하세요.
 
 ## <a name="next-steps"></a>다음 단계
 
-이 자습서에서는 있습니다.
+이 자습서에서는 다음을 수행했습니다.
 
 > [!div class="checklist"]
 > * 프로젝트를 생성합니다.

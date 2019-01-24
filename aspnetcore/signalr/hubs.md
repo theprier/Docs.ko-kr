@@ -1,18 +1,18 @@
 ---
 title: ASP.NET Core SignalR에서 허브 사용하기
-author: tdykstra
+author: bradygaster
 description: ASP.NET Core SignalR에서 허브를 사용하는 방법을 알아봅니다.
 monikerRange: '>= aspnetcore-2.1'
-ms.author: tdykstra
+ms.author: bradyg
 ms.custom: mvc
 ms.date: 11/20/2018
 uid: signalr/hubs
-ms.openlocfilehash: 91f92e9d6b776457cd319965d548ee401ddc5e0e
-ms.sourcegitcommit: 4225e2c49a0081e6ac15acff673587201f54b4aa
+ms.openlocfilehash: 9bc74079235338c75c47e06bde2b78dc1c466bd6
+ms.sourcegitcommit: ebf4e5a7ca301af8494edf64f85d4a8deb61d641
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "52282144"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54836690"
 ---
 # <a name="use-hubs-in-signalr-for-aspnet-core"></a>ASP.NET Core SignalR에서 허브 사용하기
 
@@ -174,7 +174,7 @@ Microsoft.AspNetCore.SignalR.HubException: An unexpected error occurred invoking
 > [!NOTE]
 > SignalR 보냅니다는 `Message` 클라이언트로 예외의 속성입니다. 스택 추적 및 예외의 다른 속성을 클라이언트에 사용할 수 없습니다.
 
-## <a name="related-resources"></a>관련 자료
+## <a name="related-resources"></a>관련 참고 자료
 
 * [ASP.NET Core SignalR 소개](xref:signalr/introduction)
 * [JavaScript 클라이언트](xref:signalr/javascript-client)

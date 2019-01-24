@@ -1,19 +1,19 @@
 ---
 uid: signalr/overview/testing-and-debugging/troubleshooting
 title: SignalR 문제 해결 | Microsoft Docs
-author: pfletcher
+author: bradygaster
 description: 이 문서는 SignalR 응용 프로그램을 개발 하는 일반적인 문제를 설명 합니다.
-ms.author: riande
+ms.author: bradyg
 ms.date: 06/10/2014
 ms.assetid: 4b559e6c-4fb0-4a04-9812-45cf08ae5779
 msc.legacyurl: /signalr/overview/testing-and-debugging/troubleshooting
 msc.type: authoredcontent
-ms.openlocfilehash: e41061f0310c021b10dc6667a5c3297788213b0a
-ms.sourcegitcommit: 74e3be25ea37b5fc8b4b433b0b872547b4b99186
+ms.openlocfilehash: 38802814fbb748513274f1fd8a33521fafd48ed3
+ms.sourcegitcommit: ebf4e5a7ca301af8494edf64f85d4a8deb61d641
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53287956"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54837210"
 ---
 <a name="signalr-troubleshooting"></a>SignalR 문제 해결
 ====================
@@ -137,7 +137,7 @@ SignalR은 자동으로 JSON을 사용 메서드를 serialize 할 매개 변수-
 
 이 동작은 설계 시 의도된 것입니다. 사용자 활성 SignalR 연결을 사용 하 여 페이지 외부로 이동할 때 SignalR 클라이언트는 클라이언트 연결이 중지 되는 서버에 알리기 위해 시도 하는 최상의 노력을 확인 합니다. SignalR 클라이언트의 최상의 노력을 다 하는 경우 서버에 도달 하도록 시도가 실패 하면, 서버는 구성 가능한 후 연결을 삭제 `DisconnectTimeout` 이때 나중의 `OnDisconnected` 이벤트가 발생 합니다. SignalR 클라이언트의 최상의 시도가 성공한 경우에 `OnDisconnected` 이벤트는 즉시 발생 합니다.
 
-설정에 대 한 정보에 대 한 합니다 `DisconnectTimeout` 참조 설정, [연결 수명 이벤트를 처리 합니다. DisconnectTimeout](../guide-to-the-api/handling-connection-lifetime-events.md#disconnecttimeout)합니다.
+설정에 대 한 정보에 대 한 합니다 `DisconnectTimeout` 참조 설정, [연결 수명 이벤트를 처리 합니다. DisconnectTimeout](../guide-to-the-api/handling-connection-lifetime-events.md#disconnecttimeout).
 
 ### <a name="connection-limit-reached"></a>연결 제한에 도달 함
 
@@ -202,7 +202,7 @@ SignalR 서버 클라이언트 인지 배달 못 한 편지 및 즉 연결 실�
 
 이 오류는 일반적으로 방화벽 또는 프록시를 제대로 구성 되지 않았습니다, 다시 작성 요청 헤더를 유발 하는 경우에 표시 됩니다. 솔루션 포트 80에서 방화벽 또는 프록시 활성화 되어 있는지 확인 하는 것입니다.
 
-### <a name="unexpected-response-code-500"></a>"예기치 않은 응답 코드: 500 "
+### <a name="unexpected-response-code-500"></a>"예기치 않은 응답 코드: 500"
 
 응용 프로그램에 사용 되는.NET framework의 버전 Web.Config에 지정 된 버전과 일치 하지 않으면이 오류가 발생할 수 있습니다. 솔루션은.NET 4.5 응용 프로그램 설정 및 Web.Config 파일에서 사용 되 고 있는지 확인 하는 것입니다.
 
