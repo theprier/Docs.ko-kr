@@ -1,0 +1,814 @@
+items:
+- name: ASP.NET Core 설명서
+  href: /aspnet/#pivot=core
+- name: 개요
+  items:
+  - uid: index
+    name: ASP.NET Core 정보
+  - uid: fundamentals/choose-between-aspnet-and-aspnetcore
+    name: ASP.NET Core와 ASP.NET 비교
+  - name: .NET Core와 .NET Framework 비교
+    href: /dotnet/standard/choosing-core-framework-server
+- uid: getting-started
+  name: 시작
+- name: 새로운 기능
+  items:
+  - uid: aspnetcore-2.2
+    name: 2.2의 새로운 기능
+  - uid: aspnetcore-2.1
+    name: 2.1의 새로운 기능
+  - uid: aspnetcore-2.0
+    name: 2.0의 새로운 기능
+  - uid: aspnetcore-1.1
+    name: 1.1의 새로운 기능
+- name: 자습서
+  items:
+  - name: Web API 앱
+    items:
+    - uid: tutorials/first-web-api
+      name: Web API 만들기
+    - uid: tutorials/first-mongo-app
+      name: MongoDB를 사용하는 Web API
+    - uid: mobile/native-mobile-backend
+      name: 모바일 백 엔드
+  - name: 웹앱
+    items:
+    - uid: tutorials/razor-pages/index
+      name: Razor 페이지
+    - uid: tutorials/first-mvc-app/index
+      name: MVC
+  - name: 실시간 웹앱
+    items:
+    - uid: tutorials/signalr
+      name: JavaScript를 사용한 SignalR
+    - uid: tutorials/signalr-typescript-webpack
+      name: TypeScript를 사용한 SignalR
+  - name: 데이터 액세스
+    items:
+    - uid: data/ef-rp/index
+      name: Razor Pages를 사용한 EF Core
+    - name: MVC, 기존 DB를 사용한 EF Core
+      href: /ef/core/get-started/aspnetcore/existing-db
+    - name: MVC, 새 DB를 사용한 EF Core
+      href: /ef/core/get-started/aspnetcore/new-db
+    - uid: data/ef-mvc/index
+      name: MVC, 긴 자습서를 사용한 EF Core
+- name: 기본 사항
+  items:
+  - uid: fundamentals/index
+    name: 개요
+  - uid: fundamentals/startup
+    name: 앱 시작
+  - uid: fundamentals/dependency-injection
+    name: 종속성 주입(서비스)
+  - uid: fundamentals/routing
+    name: 라우팅
+  - uid: fundamentals/environments
+    name: 환경(개발, 스테이지, 프로덕션)
+  - uid: fundamentals/configuration/index
+    name: 구성
+  - uid: fundamentals/configuration/options
+    name: 옵션
+  - uid: fundamentals/logging/index
+    name: 로깅
+  - uid: fundamentals/error-handling
+    name: 오류 처리
+  - uid: fundamentals/middleware/index
+    name: 미들웨어
+  - name: 호스트
+    items:
+    - uid: fundamentals/host/index
+      name: 개요
+    - uid: fundamentals/host/web-host
+      name: 웹 호스트
+    - uid: fundamentals/host/generic-host
+      name: 일반 호스트
+  - uid: fundamentals/servers/index
+    name: 서버
+  - uid: fundamentals/http-requests
+    name: HTTP 요청 만들기
+- name: 웹앱
+  items:
+  - name: Razor 페이지
+    items:
+    - uid: razor-pages/index
+      name: 개요
+    - uid: tutorials/razor-pages/index
+      name: 자습서
+      items:
+      - uid: tutorials/razor-pages/razor-pages-start
+        name: 시작
+      - uid: tutorials/razor-pages/model
+        name: 모델 추가
+      - uid: tutorials/razor-pages/page
+        name: 스캐폴딩
+      - uid: tutorials/razor-pages/sql
+        name: DB 작업
+      - uid: tutorials/razor-pages/da1
+        name: 페이지 업데이트
+      - uid: tutorials/razor-pages/search
+        name: 검색 추가
+      - uid: tutorials/razor-pages/new-field
+        name: 새 필드 추가
+      - uid: tutorials/razor-pages/validation
+        name: 유효성 검사 추가
+    - uid: razor-pages/filter
+      name: 필터
+    - uid: razor-pages/ui-class
+      name: Razor 클래스 라이브러리
+    - uid: razor-pages/razor-pages-conventions
+      name: 경로 및 앱 규칙
+    - uid: razor-pages/upload-files
+      name: 파일 업로드
+    - uid: razor-pages/sdk
+      name: Razor SDK
+  - name: MVC
+    items:
+    - uid: mvc/overview
+      name: 개요
+    - uid: tutorials/first-mvc-app/index
+      name: 자습서
+      items:
+      - uid: tutorials/first-mvc-app/start-mvc
+        name: 시작
+      - uid: tutorials/first-mvc-app/adding-controller
+        name: 컨트롤러 추가
+      - uid: tutorials/first-mvc-app/adding-view
+        name: 보기 추가
+      - uid: tutorials/first-mvc-app/adding-model
+        name: 모델 추가
+      - uid: tutorials/first-mvc-app/working-with-sql
+        name: DB 작업
+      - uid: tutorials/first-mvc-app/controller-methods-views
+        name: 컨트롤러 작업 및 보기
+      - uid: tutorials/first-mvc-app/search
+        name: 검색 추가
+      - uid: tutorials/first-mvc-app/new-field
+        name: 새 필드 추가
+      - uid: tutorials/first-mvc-app/validation
+        name: 유효성 검사 추가
+      - uid: tutorials/first-mvc-app/details
+        name: 세부 정보 및 삭제 메서드 검사
+    - uid: mvc/views/overview
+      name: 보기
+    - uid: mvc/views/partial
+      name: 부분 뷰
+    - uid: mvc/controllers/actions
+      name: 컨트롤러
+    - uid: mvc/controllers/routing
+      name: 라우팅
+    - uid: mvc/models/file-uploads
+      name: 파일 업로드
+    - uid: mvc/controllers/dependency-injection
+      name: 종속성 주입 - 컨트롤러
+    - uid: mvc/views/dependency-injection
+      name: 종속성 주입 - 보기
+    - uid: mvc/controllers/testing
+      name: 단위 테스트
+  - uid: fundamentals/app-state
+    name: 세션 및 앱 상태
+  - name: 태그 도우미
+    items:
+    - uid: mvc/views/tag-helpers/intro
+      name: 개요
+    - uid: mvc/views/tag-helpers/authoring
+      name: 태그 도우미 만들기
+    - uid: mvc/views/working-with-forms
+      name: 양식에서 태그 도우미 사용
+    - uid: mvc/views/tag-helpers/th-components
+      name: 태그 도우미 구성 요소
+    - name: 기본 제공 태그 도우미
+      items:
+      - uid: mvc/views/tag-helpers/builtin-th/anchor-tag-helper
+        name: 앵커
+      - uid: mvc/views/tag-helpers/builtin-th/cache-tag-helper
+        name: 캐시
+      - uid: mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper
+        name: 분산 캐시
+      - uid: mvc/views/tag-helpers/builtin-th/environment-tag-helper
+        name: 환경
+      - name: Form
+        href: mvc/views/working-with-forms.md#the-form-tag-helper
+      - uid: mvc/views/tag-helpers/builtin-th/image-tag-helper
+        name: 이미지
+      - name: 입력
+        href: mvc/views/working-with-forms.md#the-input-tag-helper
+      - name: 레이블
+        href: mvc/views/working-with-forms.md#the-label-tag-helper
+      - uid: mvc/views/tag-helpers/builtin-th/partial-tag-helper
+        name: Partial
+      - name: 선택
+        href: mvc/views/working-with-forms.md#the-select-tag-helper
+      - name: 텍스트 영역
+        href: mvc/views/working-with-forms.md#the-textarea-tag-helper
+      - name: 유효성 검사 메시지
+        href: mvc/views/working-with-forms.md#the-validation-message-tag-helper
+      - name: 유효성 검사 요약
+        href: mvc/views/working-with-forms.md#the-validation-summary-tag-helper
+  - uid: mvc/views/layout
+    name: 레이아웃
+  - uid: fundamentals/static-files
+    name: 정적 파일
+  - uid: mvc/models/model-binding
+    name: 모델 바인딩
+  - uid: mvc/models/validation
+    name: 모델 유효성 검사
+  - uid: mvc/views/razor
+    name: Razor 구문
+  - name: 고급
+    items:
+    - uid: mvc/views/view-components
+      name: 뷰 구성 요소
+    - uid: mvc/views/view-compilation
+      name: 뷰 컴파일
+    - uid: mvc/controllers/application-model
+      name: 앱 모델
+    - uid: mvc/controllers/filters
+      name: 필터
+    - uid: mvc/controllers/areas
+      name: 영역
+    - uid: mvc/extensibility/app-parts
+      name: 앱 파트
+    - uid: mvc/advanced/custom-model-binding
+      name: 사용자 지정 모델 바인딩
+    - uid: mvc/compatibility-version
+      name: 호환성 버전
+- name: Web API 앱
+  items:
+  - uid: web-api/index
+    name: 개요
+  - name: 자습서
+    items:
+    - uid: tutorials/first-web-api
+      name: Web API 만들기
+    - uid: tutorials/first-mongo-app
+      name: MongoDB를 사용하는 Web API
+  - name: Swagger/OpenAPI
+    items:
+    - uid: tutorials/web-api-help-pages-using-swagger
+      name: 개요
+    - uid: tutorials/get-started-with-swashbuckle
+      name: Swashbuckle 시작
+    - uid: tutorials/get-started-with-nswag
+      name: NSwag 시작
+  - uid: web-api/action-return-types
+    name: 작업 반환 형식
+  - uid: web-api/advanced/formatting
+    name: 응답 데이터 서식 지정
+  - uid: web-api/advanced/custom-formatters
+    name: 사용자 지정 포맷터
+  - uid: web-api/advanced/analyzers
+    name: 분석기
+  - uid: web-api/advanced/conventions
+    name: 규칙
+- name: 실시간 앱
+  items:
+  - uid: signalr/introduction
+    name: SignalR 개요
+  - uid: signalr/supported-platforms
+    name: 지원되는 플랫폼
+  - name: 자습서
+    items:
+    - uid: tutorials/signalr
+      name: JavaScript를 사용한 SignalR
+    - uid: tutorials/signalr-typescript-webpack
+      name: TypeScript를 사용한 SignalR
+  - name: 샘플
+    href: https://github.com/aspnet/SignalR-samples
+  - name: 서버 개념
+    items:
+    - uid: signalr/hubs
+      name: 허브
+    - uid: signalr/hubcontext
+      name: 허브 외부에서 보내기
+    - uid: signalr/groups
+      name: 사용자 및 그룹
+    - uid: signalr/publish-to-azure-web-app
+      name: Azure에 게시
+    - uid: signalr/api-design
+      name: API 디자인 고려 사항
+  - name: 클라이언트
+    items:
+    - uid: signalr/dotnet-client
+      name: .NET 클라이언트
+    - name: .NET API 참조
+      href: /dotnet/api/microsoft.aspnetcore.signalr.client
+    - uid: signalr/java-client
+      name: Java 클라이언트
+    - name: Java API 참조
+      href: /java/api/com.microsoft.signalr?view=aspnet-signalr-java
+    - uid: signalr/javascript-client
+      name: JavaScript 클라이언트
+    - name: JavaScript API 참조
+      href: /javascript/api/?view=signalr-js-latest
+  - name: 호스팅 및 크기 조정
+    items:
+    - uid: signalr/scale
+      name: 개요
+    - name: Azure SignalR Service
+      href: /azure/azure-signalr/signalr-overview
+    - uid: signalr/redis-backplane
+      name: Redis 백플레인
+  - uid: signalr/configuration
+    name: 구성
+  - uid: signalr/authn-and-authz
+    name: 인증 및 권한 부여
+  - uid: signalr/security
+    name: 보안 고려 사항
+  - uid: signalr/messagepackhubprotocol
+    name: MessagePack 허브 프로토콜
+  - uid: signalr/streaming
+    name: 스트리밍
+  - uid: signalr/version-differences
+    name: SignalR과 SignalR Core 비교
+  - uid: fundamentals/websockets
+    name: SignalR을 사용하지 않는 WebSockets
+- name: 테스트, 디버깅 및 문제 해결
+  items:
+  - name: 유닛 테스트
+    href: /dotnet/core/testing/unit-testing-with-dotnet-test
+  - uid: test/razor-pages-tests
+    name: Razor 페이지 단위 테스트
+  - uid: mvc/controllers/testing
+    name: 테스트 컨트롤러
+  - name: 원격 디버깅
+    href: /visualstudio/debugger/remote-debugging-azure
+  - name: 스냅숏 디버깅
+    href: /azure/application-insights/app-insights-snapshot-debugger
+  - name: Visual Studio에서 스냅숏 디버깅
+    href: /visualstudio/debugger/debug-live-azure-applications
+  - uid: test/integration-tests
+    name: 통합 테스트
+  - uid: test/loadtests
+    name: 로드 및 스트레스 테스트
+  - uid: test/troubleshoot
+    name: 문제 해결
+  - uid: fundamentals/logging/index
+    name: 로깅
+- name: 데이터 액세스
+  items:
+  - name: 자습서
+    items:
+    - name: Razor Pages를 사용한 EF Core
+      items:
+      - uid: data/ef-rp/index
+        name: 개요
+      - uid: data/ef-rp/intro
+        name: 시작
+      - uid: data/ef-rp/crud
+        name: 만들기, 읽기, 업데이트 및 삭제
+      - uid: data/ef-rp/sort-filter-page
+        name: 정렬, 필터, 페이징 및 그룹
+      - uid: data/ef-rp/migrations
+        name: 마이그레이션
+      - uid: data/ef-rp/complex-data-model
+        name: 복합 데이터 모델 만들기
+      - uid: data/ef-rp/read-related-data
+        name: 관련 데이터 읽기
+      - uid: data/ef-rp/update-related-data
+        name: 관련 데이터 업데이트
+      - uid: data/ef-rp/concurrency
+        name: 동시성 충돌 처리
+    - name: MVC, 새 DB를 사용한 EF Core
+      href: /ef/core/get-started/aspnetcore/new-db
+    - name: MVC, 기존 DB를 사용한 EF Core
+      href: /ef/core/get-started/aspnetcore/existing-db
+    - name: MVC, 긴 자습서를 사용한 EF Core
+      items:
+      - uid: data/ef-mvc/index
+        name: 개요
+      - uid: data/ef-mvc/intro
+        name: 시작
+      - uid: data/ef-mvc/crud
+        name: 만들기, 읽기, 업데이트 및 삭제
+      - uid: data/ef-mvc/sort-filter-page
+        name: 정렬, 필터, 페이징 및 그룹
+      - uid: data/ef-mvc/migrations
+        name: 마이그레이션
+      - uid: data/ef-mvc/complex-data-model
+        name: 복합 데이터 모델 만들기
+      - uid: data/ef-mvc/read-related-data
+        name: 관련 데이터 읽기
+      - uid: data/ef-mvc/update-related-data
+        name: 관련 데이터 업데이트
+      - uid: data/ef-mvc/concurrency
+        name: 동시성 충돌 처리
+      - uid: data/ef-mvc/inheritance
+        name: 상속
+      - uid: data/ef-mvc/advanced
+        name: 고급 항목
+  - uid: data/entity-framework-6
+    name: ASP.NET Core를 사용한 EF 6
+  - name: Visual Studio를 사용한 Azure Storage
+    items:
+    - name: 연결된 서비스
+      href: /azure/vs-azure-tools-connected-services-storage
+    - name: Blob Storage
+      href: /azure/vs-storage-aspnet5-getting-started-blobs/
+    - name: Queue Storage
+      href: /azure/vs-storage-aspnet5-getting-started-queues/
+    - name: Table Storage
+      href: /azure/vs-storage-aspnet5-getting-started-tables/
+- name: 클라이언트 쪽 개발
+  items:
+  - uid: client-side/index
+    name: 개요
+  - uid: client-side/using-gulp
+    name: Gulp
+  - uid: client-side/using-grunt
+    name: Grunt
+  - name: LibMan
+    items:
+    - uid: client-side/libman/index
+      name: 개요
+    - uid: client-side/libman/libman-cli
+      name: CLI
+    - uid: client-side/libman/libman-vs
+      name: Visual Studio
+  - uid: client-side/bower
+    name: Bower
+  - uid: client-side/less-sass-fa
+    name: LESS, Sass 및 Font Awesome
+  - uid: client-side/bundling-and-minification
+    name: 번들 및 축소
+  - uid: client-side/using-browserlink
+    name: 브라우저 링크
+  - name: 단일 페이지 앱
+    items:
+    - uid: spa/index
+      name: 개요
+    - uid: spa/angular
+      name: Angular
+    - uid: spa/react
+      name: React
+    - uid: spa/react-with-redux
+      name: Redux를 사용한 React
+    - uid: client-side/spa-services
+      name: JavaScriptServices
+- name: 호스팅 및 배포
+  items:
+  - uid: host-and-deploy/index
+    name: 개요
+  - name: Azure App Service에서 호스트
+    items:
+    - uid: host-and-deploy/azure-apps/index
+      name: 개요
+    - uid: tutorials/publish-to-azure-webapp-using-vs
+      name: Visual Studio를 사용하여 게시
+    - name: CLI 도구를 사용하여 게시
+      href: /azure/app-service/app-service-web-tutorial-dotnetcore-sqldb
+    - uid: host-and-deploy/azure-apps/azure-continuous-deployment
+      name: Visual Studio 및 Git를 사용하여 게시
+    - name: Azure Pipelines를 사용하여 지속적인 배포
+      href: /azure/devops/pipelines/get-started-yaml
+    - uid: host-and-deploy/aspnet-core-module
+      name: ASP.NET Core 모듈
+    - uid: host-and-deploy/azure-apps/troubleshoot
+      name: 문제 해결
+    - uid: host-and-deploy/azure-iis-errors-reference
+      name: 오류 참조
+  - name: DevOps
+    items:
+    - uid: azure/devops/index
+      name: 개요
+    - uid: azure/devops/tools-and-downloads
+      name: 도구 및 다운로드
+    - uid: azure/devops/deploy-to-app-service
+      name: App Service에 배포
+    - uid: azure/devops/cicd
+      name: 연속 통합 및 배포
+    - uid: azure/devops/monitor
+      name: 모니터링 및 문제 해결
+    - uid: azure/devops/next-steps
+      name: 다음 단계
+  - name: IIS를 사용하여 Windows에서 호스트
+    items:
+    - uid: host-and-deploy/iis/index
+      name: 개요
+    - uid: host-and-deploy/aspnet-core-module
+      name: ASP.NET Core 모듈
+    - uid: host-and-deploy/iis/development-time-iis-support
+      name: Visual Studio의 IIS 지원
+    - uid: host-and-deploy/iis/modules
+      name: IIS 모듈
+    - uid: host-and-deploy/iis/troubleshoot
+      name: 문제 해결
+    - uid: host-and-deploy/azure-iis-errors-reference
+      name: 오류 참조
+  - uid: fundamentals/servers/kestrel
+    name: Kestrel
+  - uid: fundamentals/servers/httpsys
+    name: HTTP.sys
+  - uid: host-and-deploy/windows-service
+    name: Windows 서비스에서 호스트
+  - uid: host-and-deploy/linux-nginx
+    name: Nginx를 사용하여 Linux에서 호스트
+  - uid: host-and-deploy/linux-apache
+    name: Apache를 사용하여 Linux에서 호스트
+  - name: Docker에서 호스트
+    items:
+    - uid: host-and-deploy/docker/index
+      name: 개요
+    - name: Docker 이미지 빌드
+      href: /dotnet/core/docker/building-net-docker-images
+    - uid: host-and-deploy/docker/visual-studio-tools-for-docker
+      name: Visual Studio Tools
+    - name: Docker 이미지에 게시
+      href: /azure/vs-azure-tools-docker-hosting-web-apps-in-docker
+    - name: 샘플 Docker 이미지
+      href: https://github.com/dotnet/dotnet-docker/blob/master/samples/aspnetapp/README.md
+  - uid: host-and-deploy/proxy-load-balancer
+    name: 프록시 및 부하 분산 장치 구성
+  - uid: host-and-deploy/web-farm
+    name: 웹 팜에서 호스트
+  - uid: host-and-deploy/visual-studio-publish-profiles
+    name: Visual Studio 게시 프로필
+  - uid: host-and-deploy/directory-structure
+    name: 디렉터리 구조
+  - uid: host-and-deploy/health-checks
+    name: 상태 확인
+- name: 보안 및 ID
+  items:
+  - uid: security/index
+    name: 개요
+  - name: Authentication
+    items:
+    - uid: security/authentication/identity
+      name: ID 소개
+    - uid: security/authentication/scaffold-identity
+      name: 스캐폴드 ID
+    - uid: security/authentication/add-user-data
+      name: 사용자 지정 사용자 데이터를 ID에 추가
+    - uid: security/authentication/customize_identity_model
+      name: ID 사용자 지정
+    - uid: security/authentication/community
+      name: 커뮤니티 OSS 인증 옵션
+    - uid: security/authentication/identity-configuration
+      name: ID 구성
+    - uid: security/authentication/windowsauth
+      name: Windows 인증 구성
+    - uid: security/authentication/identity-custom-storage-providers
+      name: ID에 대한 사용자 지정 스토리지 공급자
+    - name: Google, Facebook ...
+      items:
+      - uid: security/authentication/social/index
+        name: 개요
+      - uid: security/authentication/google-logins
+        name: Google 인증
+      - uid: security/authentication/facebook-logins
+        name: Facebook 인증
+      - uid: security/authentication/microsoft-logins
+        name: Microsoft 인증
+      - uid: security/authentication/twitter-logins
+        name: Twitter 인증
+      - uid: security/authentication/otherlogins
+        name: 기타 공급자
+      - uid: security/authentication/social/additional-claims
+        name: 추가 클레임
+    - uid: security/authentication/ws-federation
+      name: WS-Federation 인증
+    - uid: security/authentication/accconfirm
+      name: 계정 확인 및 암호 복구
+    - uid: security/authentication/identity-enable-qrcodes
+      name: ID에서 QR 코드 생성 사용
+    - uid: security/authentication/2fa
+      name: SMS를 사용한 2단계 인증
+    - uid: security/authentication/cookie
+      name: ID 없이 쿠키 인증 사용
+    - name: Azure Active Directory
+      items:
+      - uid: security/authentication/azure-active-directory/index
+        name: 개요
+      - name: 웹앱에 Azure AD 통합
+        href: https://azure.microsoft.com/documentation/samples/active-directory-dotnet-webapp-openidconnect-aspnetcore/
+      - uid: security/authentication/azure-ad-b2c
+        name: 웹앱에 Azure AD B2C 통합
+      - uid: security/authentication/azure-ad-b2c-webapi
+        name: 웹 API에 Azure AD B2C 통합
+      - name: WPF에서 웹 API 호출
+        href: https://azure.microsoft.com/documentation/samples/active-directory-dotnet-native-aspnetcore/
+      - name: Azure AD를 사용하여 웹앱에서 웹 API 호출
+        href: https://azure.microsoft.com/documentation/samples/active-directory-dotnet-webapp-webapi-openidconnect-aspnetcore/
+    - name: IdentityServer4를 사용하여 ASP.NET Core 앱 보호
+      href: https://identityserver4.readthedocs.io/
+    - name: Azure App Service 인증(간편 인증)을 사용하여 ASP.NET Core 앱 보호
+      href: /azure/app-service/app-service-authentication-overview
+    - uid: security/authentication/individual
+      name: 개별 사용자 계정
+  - name: 권한 부여
+    items:
+    - uid: security/authorization/introduction
+      name: 개요
+    - uid: security/authorization/secure-data
+      name: 권한 부여를 사용하여 웹앱 만들기
+    - uid: security/authorization/razor-pages-authorization
+      name: Razor 페이지 권한 부여 규칙
+    - uid: security/authorization/simple
+      name: 단순 권한 부여
+    - uid: security/authorization/roles
+      name: 역할 기반 권한 부여
+    - uid: security/authorization/claims
+      name: 클레임 기반 권한 부여
+    - uid: security/authorization/policies
+      name: 정책 기반 권한 부여
+    - uid: security/authorization/iauthorizationpolicyprovider
+      name: 인증 정책 공급자
+    - uid: security/authorization/dependencyinjection
+      name: 요구 사항 처리기의 종속성 주입
+    - uid: security/authorization/resourcebased
+      name: 리소스 기반 권한 부여
+    - uid: security/authorization/views
+      name: 보기 기반 권한 부여
+    - uid: security/authorization/limitingidentitybyscheme
+      name: 구성표로 ID 제한
+  - name: 데이터 보호
+    items:
+    - uid: security/data-protection/introduction
+      name: 개요
+    - uid: security/data-protection/using-data-protection
+      name: 데이터 보호 API
+    - name: 소비자 API
+      items:
+      - uid: security/data-protection/consumer-apis/overview
+        name: 개요
+      - uid: security/data-protection/consumer-apis/purpose-strings
+        name: 용도 문자열
+      - uid: security/data-protection/consumer-apis/purpose-strings-multitenancy
+        name: 용도 계층 구조 및 다중 테넌트
+      - uid: security/data-protection/consumer-apis/password-hashing
+        name: 해시 암호
+      - uid: security/data-protection/consumer-apis/limited-lifetime-payloads
+        name: 보호된 페이로드의 수명 제한
+      - uid: security/data-protection/consumer-apis/dangerous-unprotect
+        name: 호출된 키가 속한 페이로드 보호 해제
+    - name: 구성
+      items:
+      - uid: security/data-protection/configuration/index
+        name: 개요
+      - uid: security/data-protection/configuration/overview
+        name: 데이터 보호 구성
+      - uid: security/data-protection/configuration/default-settings
+        name: 기본 설정
+      - uid: security/data-protection/configuration/machine-wide-policy
+        name: 머신 수준의 정책
+      - uid: security/data-protection/configuration/non-di-scenarios
+        name: 비 DI 인식 시나리오
+    - name: 확장성 API
+      items:
+      - uid: security/data-protection/extensibility/index
+        name: 개요
+      - uid: security/data-protection/extensibility/core-crypto
+        name: Core 암호화 확장성
+      - uid: security/data-protection/extensibility/key-management
+        name: 키 관리 확장성
+      - uid: security/data-protection/extensibility/misc-apis
+        name: 기타 API
+    - name: 구현
+      items:
+      - uid: security/data-protection/implementation/index
+        name: 개요
+      - uid: security/data-protection/implementation/authenticated-encryption-details
+        name: 인증된 암호화 세부 정보
+      - uid: security/data-protection/implementation/subkeyderivation
+        name: 하위 키 파생 및 인증된 암호화
+      - uid: security/data-protection/implementation/context-headers
+        name: 컨텍스트 헤더
+      - uid: security/data-protection/implementation/key-management
+        name: 키 관리
+      - uid: security/data-protection/implementation/key-storage-providers
+        name: 키 스토리지 공급자
+      - uid: security/data-protection/implementation/key-encryption-at-rest
+        name: 미사용 키 암호화
+      - uid: security/data-protection/implementation/key-immutability
+        name: 키 불변성 및 설정
+      - uid: security/data-protection/implementation/key-storage-format
+        name: 키 스토리지 형식
+      - uid: security/data-protection/implementation/key-storage-ephemeral
+        name: 삭제되는 데이터 보호 공급자
+    - name: 호환성
+      items:
+      - uid: security/data-protection/compatibility/index
+        name: 개요
+      - uid: security/data-protection/compatibility/replacing-machinekey
+        name: ASP.NET에서 machineKey 교체
+  - uid: security/app-secrets
+    name: 개발에서 비밀 보호
+  - uid: security/enforcing-ssl
+    name: HTTPS 적용
+  - uid: security/gdpr
+    name: EU GDPR(일반 데이터 보호 규정) 지원
+  - uid: security/key-vault-configuration
+    name: Azure Key Vault 구성 공급자
+  - uid: security/anti-request-forgery
+    name: 요청 위조 방지
+  - uid: security/preventing-open-redirects
+    name: 오픈 리디렉션 공격 방지
+  - uid: security/cross-site-scripting
+    name: 사이트 간 스크립팅 방지
+  - uid: security/cors
+    name: 원본 간 요청(CORS) 사용
+  - uid: security/cookie-sharing
+    name: 앱 간 쿠키 공유
+  - uid: security/ip-safelist
+    name: IP 수신 허용 목록
+- name: 성능
+  items:
+  - uid: performance/performance-best-practices
+    name: 개요
+  - name: 응답 캐싱
+    items:
+    - uid: performance/caching/response
+      name: 개요
+    - uid: performance/caching/memory
+      name: 메모리 내 캐시
+    - uid: performance/caching/distributed
+      name: 분산 캐싱
+    - uid: performance/caching/middleware
+      name: 응답 캐싱 미들웨어
+  - uid: performance/response-compression
+    name: 응답 압축
+  - uid: performance/diagnostic-tools
+    name: 진단 도구
+  - uid: test/loadtests
+    name: 로드 및 스트레스 테스트
+- name: 전역화 및 지역화
+  items:
+  - uid: fundamentals/localization
+    name: 개요
+  - uid: fundamentals/portable-object-localization
+    name: 이식 가능 개체 지역화
+- name: 고급
+  items:
+  - uid: fundamentals/url-rewriting
+    name: URL 재작성
+  - uid: fundamentals/file-providers
+    name: 파일 공급자
+  - uid: fundamentals/request-features
+    name: 요청-기능 인터페이스
+  - uid: fundamentals/httpcontext
+    name: HttpContext에 액세스
+  - uid: fundamentals/change-tokens
+    name: 토큰 변경
+  - uid: fundamentals/owin
+    name: OWIN(Open Web Interface for .NET)
+  - uid: fundamentals/host/hosted-services
+    name: 호스티드 서비스를 사용하는 백그라운드 작업
+  - uid: fundamentals/configuration/platform-specific-configuration
+    name: 호스팅 시작 어셈블리
+  - uid: fundamentals/metapackage-app
+    name: Microsoft.AspNetCore.App 메타패키지
+  - uid: fundamentals/metapackage
+    name: Microsoft.AspNetCore.All 메타패키지
+  - uid: fundamentals/logging/loggermessage
+    name: LoggerMessage를 사용하여 로깅
+  - uid: tutorials/dotnet-watch
+    name: 파일 감시자 사용
+    items:
+    - uid: fundamentals/middleware/extensibility
+      name: 팩터리 기반 미들웨어
+    - uid: fundamentals/middleware/extensibility-third-party-container
+      name: 타사 컨테이너를 사용하는 팩터리 기반 미들웨어
+- name: 마이그레이션
+  items:
+  - uid: migration/22-to-30
+    name: 2.2-3.0
+  - uid: migration/21-to-22
+    name: 2.1-2.2
+  - uid: migration/20_21
+    name: 2.0-2.1
+  - name: 1.x-2.0
+    items:
+    - uid: migration/1x-to-2x/index
+      name: 개요
+    - uid: migration/1x-to-2x/identity-2x
+      name: 인증 및 ID
+  - name: ASP.NET에서 ASP.NET Core로
+    items:
+    - uid: migration/proper-to-2x/index
+      name: 개요
+    - uid: migration/mvc
+      name: MVC
+    - uid: migration/webapi
+      name: Web API
+    - uid: migration/configuration
+      name: 구성
+    - uid: migration/identity
+      name: 인증 및 ID
+    - uid: migration/claimsprincipal-current
+      name: ClaimsPrincipal.Current
+    - uid: migration/proper-to-2x/membership-to-core-identity
+      name: 멤버 자격에서 ID로
+    - uid: migration/http-modules
+      name: HTTP 모듈을 미들웨어로
+  - uid: migration/logging-nonaspnetcore
+    name: 로깅(ASP.NET Core 아님)
+- name: API 참조
+  href: /dotnet/api/?view=aspnetcore-2.1
+- name: 참가
+  href: https://github.com/aspnet/Docs/blob/master/CONTRIBUTING.md
+ms.openlocfilehash: 4f8ccb592b7f95794cad01edd1e0f514bd9943c1
+ms.sourcegitcommit: d5223cf6a2cf80b4f5dc54169b0e376d493d2d3a
+ms.translationtype: HT
+ms.contentlocale: ko-KR
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54892996"
