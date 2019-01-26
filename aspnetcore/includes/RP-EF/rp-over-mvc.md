@@ -5,6 +5,3 @@
 * 더 효율적인 쿼리를 사용합니다.
 * 최신 API가 탑재되어 최신 상태입니다.
 * 더 많은 기능을 다룹니다.
-* 새 응용 프로그램 개발을 위해 선호되는 방법입니다.
-
-[Razor 페이지](xref:data/ef-rp/intro) 버전에 대한 이 자습서를 선택하시는 경우 [이 GitHub 문제](https://github.com/aspnet/Docs/issues/6146)에서 선택 이유를 알려주세요.
