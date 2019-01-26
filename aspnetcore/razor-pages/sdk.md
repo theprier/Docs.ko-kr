@@ -7,12 +7,12 @@ ms.author: riande
 ms.custom: mvc, seodec18
 ms.date: 10/25/2018
 uid: razor-pages/sdk
-ms.openlocfilehash: 2df7dc4234207d3dbac8a4ff47751adc8fc6a192
-ms.sourcegitcommit: b34b25da2ab68e6495b2460ff570468f16a9bf0d
+ms.openlocfilehash: 0e6cfeb1863ed14ffe670cf082e99f28b26718dd
+ms.sourcegitcommit: ca5f03210bedc61c6639a734ae5674bfe095dee8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53284451"
+ms.lasthandoff: 01/26/2019
+ms.locfileid: "55073103"
 ---
 # <a name="aspnet-core-razor-sdk"></a>ASP.NET Core Razor SDK
 
@@ -80,7 +80,7 @@ Razor SDK를 사용하여 Razor 보기 또는 Razor 페이지를 포함하는 �
 | `RazorTargetName` | Razor에서 생성한 어셈블리의 파일 이름(확장명 제외). | 
 | `RazorOutputPath` | Razor 출력 디렉터리. |
 | `RazorCompileToolset` | Razor 어셈블리를 빌드하는 데 사용되는 도구 집합을 결정하는 데 사용됩니다. 유효한 값은 `Implicit`, `RazorSDK` 및 `PrecompilationTool`입니다. |
-| `EnableDefaultContentItems` | `true`인 경우, *.cshtml* 파일과 같은 특정 파일 형식이 프로젝트의 콘텐츠로 포함됩니다. 통해 참조 될 때 `Microsoft.NET.Sdk.Web`, 아래에 있는 파일 *wwwroot* 및 구성 파일도 포함 됩니다. |
+| [EnableDefaultContentItems](https://github.com/aspnet/websdk/blob/rel-2.0.0/src/ProjectSystem/Microsoft.NET.Sdk.Web.ProjectSystem.Targets/netstandard1.0/Microsoft.NET.Sdk.Web.ProjectSystem.targets#L21) | 기본값은 `true`입니다. 때 `true`를 포함 *web.config*, *.json*, 및 *.cshtml* 프로젝트의 내용으로는 파일입니다. 통해 참조 될 때 `Microsoft.NET.Sdk.Web`, 아래에 있는 파일 *wwwroot* 및 구성 파일도 포함 됩니다. |
 | `EnableDefaultRazorGenerateItems` | `true`인 경우, `RazorGenerate` 항목의 `Content` 항목에서 *.cshtml* 파일을 포함합니다. |
 | `GenerateRazorTargetAssemblyInfo` | 때 `true`, 생성을 *.cs* 로 지정 된 특성을 포함 하는 파일 `RazorAssemblyAttribute` 컴파일 출력에 파일을 포함 합니다. |
 | `EnableDefaultRazorTargetAssemblyInfoAttributes` | `true`인 경우, `RazorAssemblyAttribute`에 어셈블리 특성의 기본 집합을 추가합니다. |
@@ -89,6 +89,8 @@ Razor SDK를 사용하여 Razor 보기 또는 Razor 페이지를 포함하는 �
 | `IncludeRazorContentInPack` | 때 `true`, 모든 Razor 콘텐츠 항목 (*.cshtml* 파일) 생성된 된 NuGet 패키지에 포함 되도록 표시 됩니다. 기본값은 `false`입니다. |
 | `EmbedRazorGenerateSources` | `true`인 경우, 생성된 Razor 어셈블리에 포함된 파일로 RazorGenerate(*.cshtml*) 항목을 추가합니다. 기본값은 `false`입니다. |
 | `UseRazorBuildServer` | `true`인 경우, 영구적 빌드 서버 프로세스를 사용하여 코드 생성 작업을 오프로드합니다. 기본값은 `UseSharedCompilation`입니다. |
+
+속성에 대한 자세한 내용은 [MSBuild 속성](/visualstudio/msbuild/msbuild-properties)을 참조하세요.
 
 ### <a name="targets"></a>대상
 
@@ -99,6 +101,6 @@ Razor SDK는 두 기본 대상을 정의합니다.
 
 ### <a name="runtime-compilation-of-razor-views"></a>Razor 뷰의 런타임 컴파일
 
-* 기본적으로 Razor SDK는 런타임 컴파일을 수행하는 데 필요한 참조 어셈블리를 게시하지 않습니다. 이로 인해 응용 프로그램 모델이 런타임 컴파일을 사용하는 경우 컴파일 오류가 발생합니다&mdash;(예: 앱이 게시된 후에 앱에서는 포함된 보기 또는 변경 내용 보기를 사용함). `CopyRefAssembliesToPublishDirectory`를 `true`로 설정하여 계속 참조 어셈블리를 게시합니다.
+* 기본적으로 Razor SDK는 런타임 컴파일을 수행하는 데 필요한 참조 어셈블리를 게시하지 않습니다. 이로 인해 애플리케이션 모델이 런타임 컴파일을 사용하는 경우 컴파일 오류가 발생합니다&mdash;(예: 앱이 게시된 후에 앱에서는 포함된 보기 또는 변경 내용 보기를 사용함). `CopyRefAssembliesToPublishDirectory`를 `true`로 설정하여 계속 참조 어셈블리를 게시합니다.
 
 * 웹 앱에 대 한 앱을 대상으로 확인 된 `Microsoft.NET.Sdk.Web` SDK.

@@ -5,12 +5,12 @@ description: ASP.NET Core 2 단계 인증을 사용 하는 TOTP authenticator �
 ms.author: riande
 ms.date: 08/14/2018
 uid: security/authentication/identity-enable-qrcodes
-ms.openlocfilehash: 437f354f71128a98bae9abdced291e04efc9f48e
-ms.sourcegitcommit: fc7eb4243188950ae1f1b52669edc007e9d0798d
+ms.openlocfilehash: cf99cc21a7a1bb4d01c7cc092106d23375a1a76f
+ms.sourcegitcommit: ca5f03210bedc61c6639a734ae5674bfe095dee8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51225384"
+ms.lasthandoff: 01/26/2019
+ms.locfileid: "55073129"
 ---
 # <a name="enable-qr-code-generation-for-totp-authenticator-apps-in-aspnet-core"></a>ASP.NET Core에서 TOTP authenticator 앱에 대 한 QR 코드 생성 사용
 
@@ -25,6 +25,8 @@ QR 코드는 ASP.NET Core 2.0 이상이 필요합니다.
 ASP.NET Core 개별 인증을 위한 authenticator 응용 프로그램에 대 한 지원을 제공합니다. 두 단계 인증 (2FA) authenticator 앱의 경우는 시간 기반 일회용 암호 알고리즘 (TOTP)를 사용 하 여 권장 접근법 2FA 위한 업계 됩니다. 2FA TOTP를 사용 하 여는 SMS 2FA 하는 것이 좋습니다. Authenticator 앱에는 사용자가 자신의 사용자 이름과 암호를 확인 한 후 입력 해야 하는 6 to 8 자리 코드를 제공 합니다. 일반적으로 authenticator 앱은 스마트 폰에 설치 됩니다.
 
 ASP.NET Core 웹 앱 템플릿을 인증자를 지원 하지만 QRCode 생성에 대 한 지원을 제공 하지 않습니다. QRCode 생성기 2FA 설치 하는 간소화할 수 있습니다. 이 문서는 과정을 안내 추가 [QR 코드](https://wikipedia.org/wiki/QR_code) 2FA 구성 페이지를 생성 합니다.
+
+2 단계 인증에 같은 외부 인증 공급자를 사용 하 여 발생 하지 않습니다 [Google](xref:security/authentication/google-logins) 하거나 [Facebook](xref:security/authentication/facebook-logins)합니다. 외부 로그인 보호는 어떤 메커니즘을 통해 외부 로그인 공급자를 제공 합니다. 예를 들어, 합니다 [Microsoft](xref:security/authentication/microsoft-logins) 하드웨어 키 또는 2FA는 다른 방법은 인증 공급자가 필요 합니다. 기본 템플릿 "local" 2FA를 적용 하는 경우 사용자는 두 가지 경우에 자주 사용된 되지 않는 2FA 방법을 충족 하기 위해 필요는 합니다.
 
 ## <a name="adding-qr-codes-to-the-2fa-configuration-page"></a>2FA 구성 페이지에 QR 코드를 추가합니다.
 
