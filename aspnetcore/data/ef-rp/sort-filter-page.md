@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/24/2018
 uid: data/ef-rp/sort-filter-page
-ms.openlocfilehash: 19fe24e0f901c50e8425db7665b5b2257b608146
-ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
+ms.openlocfilehash: 350243fb94b4798293a5a61b580c3b3b4d8c6d4a
+ms.sourcegitcommit: 728f4e47be91e1c87bb7c0041734191b5f5c6da3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50090886"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54444300"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---sort-filter-paging---3-of-8"></a>ASP.NET Core에서 EF Core를 사용한 Razor 페이지 - 정렬, 필터, 페이징 - 3/8
 
@@ -85,7 +85,7 @@ ms.locfileid: "50090886"
 
 [!code-html[](intro/samples/cu21/Pages/Students/Index2.cshtml?highlight=17-19,25-27)]
 
-위의 코드:
+위의 코드는:
 
 * 하이퍼링크를 `LastName` 및 `EnrollmentDate` 열 머리글에 추가합니다.
 * `NameSort` 및 `DateSort`의 정보를 사용하여 현재 정렬 순서 값으로 하이퍼링크를 설정합니다.
@@ -117,7 +117,7 @@ ms.locfileid: "50090886"
 
 [!code-csharp[](intro/samples/cu21/Pages/Students/Index.cshtml.cs?name=snippet_SortFilter&highlight=1,5,9-13)]
 
-위의 코드:
+위의 코드는:
 
 * `searchString` 매개 변수를 `OnGetAsync` 메서드에 추가합니다. 다음 섹션에서 추가되는 텍스트 상자에서 검색 문자열 값이 수신됩니다.
 * LINQ 문 및 `Where` 절을 추가했습니다. `Where` 절은 이름 또는 성에 검색 문자열이 포함된 학생만 선택합니다. LINQ 문은 검색할 값이 있는 경우에만 실행됩니다.
@@ -131,7 +131,7 @@ ms.locfileid: "50090886"
 위의 코드는 코드가 `IEnumerable`을 사용하도록 변경된 경우 결과가 대/소문자를 구분하지 않는지 확인합니다. `Contains`가 `IEnumerable` 컬렉션에서 호출된 경우 .NET Core 구현이 사용됩니다. `Contains`가 `IQueryable` 개체에서 호출된 경우 데이터베이스 구현이 사용됩니다. 리포지토리에서 `IEnumerable`을 반환하면 상당한 성능 저하가 발생할 수 있습니다.
 
 1. 모든 행이 DB 서버에서 반환됩니다.
-1. 필터는 응용 프로그램에서 반환된 모든 행에 적용됩니다.
+1. 필터는 애플리케이션에서 반환된 모든 행에 적용됩니다.
 
 `ToUpper` 호출에 대한 성능 저하가 발생합니다. `ToUpper` 코드는 TSQL SELECT 문의 WHERE 절에 함수를 추가합니다. 추가된 함수는 최적화 프로그램이 인덱스를 사용하지 않도록 합니다. SQL은 대/소문자를 구분하지 않도록 설치되어 있으므로 필요하지 않은 경우 `ToUpper` 호출을 피하는 것이 가장 좋습니다.
 
@@ -258,6 +258,8 @@ http://localhost:5000/Students?SearchString=an
 [!code-csharp[](intro/samples/cu21/Models/SchoolViewModels/EnrollmentDateGroup.cs)]
 
 ### <a name="update-the-about-page-model"></a>페이지 모델 정보 업데이트
+
+ASP.NET Core 2.2의 웹 템플릿에는 정보 페이지가 포함되지 않습니다. ASP.NET Core 2.2를 사용하는 경우 Razor 정보 페이지를 만드세요.
 
 *Pages/About.cshtml.cs* 파일을 다음 코드로 업데이트합니다.
 

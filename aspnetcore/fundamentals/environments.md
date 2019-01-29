@@ -3,14 +3,14 @@ title: ASP.NET Core에서 여러 환경 사용
 author: rick-anderson
 description: ASP.NET Core 앱의 여러 환경에서 앱 동작을 제어하는 방법에 대해 알아봅니다.
 ms.author: riande
-ms.date: 07/03/2018
+ms.date: 01/22/2019
 uid: fundamentals/environments
-ms.openlocfilehash: 642af9e8f9e322e3624dad46bb1463f6525f5c9e
-ms.sourcegitcommit: 42a8164b8aba21f322ffefacb92301bdfb4d3c2d
+ms.openlocfilehash: 39e1b48481832a6d76de605b37410fe2e16dcd88
+ms.sourcegitcommit: ebf4e5a7ca301af8494edf64f85d4a8deb61d641
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54341669"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54836742"
 ---
 # <a name="use-multiple-environments-in-aspnet-core"></a>ASP.NET Core에서 여러 환경 사용
 
@@ -237,6 +237,20 @@ Windows에서 전역적으로 값을 설정하려면 다음 방법 중 하나를
 **web.config**
 
 *web.config*를 사용하여 `ASPNETCORE_ENVIRONMENT`환경 변수를 설정하려면 <xref:host-and-deploy/aspnet-core-module#setting-environment-variables>의 *환경 변수 설정* 섹션을 참조하세요. `ASPNETCORE_ENVIRONMENT` 환경 변수를 *web.config*로 설정하면 해당 값이 시스템 수준의 설정을 재정의합니다.
+
+::: moniker range=">= aspnetcore-2.2"
+
+**프로젝트 파일 또는 게시 프로필**
+
+**Windows IIS 배포의 경우:** `<EnvironmentName>` 속성을 게시 프로필(*.pubxml*) 또는 프로젝트 파일에 포함합니다. 이 방법은 프로젝트가 게시될 때 *web.config*에 환경을 설정합니다.
+
+```xml
+<PropertyGroup>
+  <EnvironmentName>Development</EnvironmentName>
+</PropertyGroup>
+```
+
+::: moniker-end
 
 **IIS 애플리케이션 풀마다**
 

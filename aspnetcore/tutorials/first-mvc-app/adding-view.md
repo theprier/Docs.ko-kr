@@ -5,12 +5,12 @@ description: 간단한 ASP.NET Core MVC 앱에 보기 추가
 ms.author: riande
 ms.date: 03/04/2017
 uid: tutorials/first-mvc-app/adding-view
-ms.openlocfilehash: 321ffd6b0168d4befc950a58035d19561e879491
-ms.sourcegitcommit: ec71fd5a988f927ae301813aae5ff764feb3bb6a
+ms.openlocfilehash: f241a19c8821019f327fb160f01fe01eca53c5d0
+ms.sourcegitcommit: ebf4e5a7ca301af8494edf64f85d4a8deb61d641
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/12/2019
-ms.locfileid: "54249453"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54836907"
 ---
 # <a name="add-a-view-to-an-aspnet-core-mvc-app"></a>ASP.NET Core MVC 앱에 보기 추가
 
@@ -104,7 +104,7 @@ Razor를 사용하여 뷰 템플릿 파일을 만듭니다. Razor 기반 뷰 템
 
 **참고**: `Movies` 컨트롤러가 구현되지 않았습니다. 이 시점에서 `Movie App` 링크는 작동하지 않습니다.
 
-변경 내용을 저장하고 **개인 정보** 링크를 선택합니다. 브라우저 탭의 제목에서 **개인 정보 - Mvc 동영상** 대신 **개인 정보 - 동영상 앱**을 표시하는 방법을 확인합니다.
+변경 내용을 저장하고 **개인 정보** 링크를 선택합니다. 브라우저 탭의 제목에서 **개인정보처리방침 - Mvc 동영상** 대신 **개인정보처리방침 - 동영상 앱**을 표시하는 방법을 확인합니다.
 
 ![개인 정보 탭](~/tutorials/first-mvc-app/adding-view/_static/about2.png)
 

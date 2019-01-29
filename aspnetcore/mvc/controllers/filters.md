@@ -4,23 +4,20 @@ author: ardalis
 description: 필터 작동 방법 및 ASP.NET Core MVC에서 사용하는 방법을 자세히 알아봅니다.
 ms.author: riande
 ms.custom: mvc
-ms.date: 10/15/2018
+ms.date: 1/15/2019
 uid: mvc/controllers/filters
-ms.openlocfilehash: d4fe49a9225b9980a956ef9c773ad631beb557ae
-ms.sourcegitcommit: cec77d5ad8a0cedb1ecbec32834111492afd0cd2
+ms.openlocfilehash: fe3082481b51c968fd361dbcc9553c4e35a36f2a
+ms.sourcegitcommit: 728f4e47be91e1c87bb7c0041734191b5f5c6da3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54207462"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54444352"
 ---
 # <a name="filters-in-aspnet-core"></a>ASP.NET Core에서 필터링
 
 작성자: [Rick Anderson](https://twitter.com/RickAndMSFT), [Tom Dykstra](https://github.com/tdykstra/) 및 [Steve Smith](https://ardalis.com/)
 
 ASP.NET Core MVC에서 *필터*를 사용하면 요청 처리 파이프라인의 특정 단계 전후에 코드를 실행할 수 있습니다.
-
-> [!IMPORTANT]
-> 이 항목은 Razor 페이지에 적용되지 **않습니다**. ASP.NET Core 2.1 이상에서는 Razor 페이지에 대해 [IPageFilter](/dotnet/api/microsoft.aspnetcore.mvc.filters.ipagefilter?view=aspnetcore-2.0) 및 [IAsyncPageFilter](/dotnet/api/microsoft.aspnetcore.mvc.filters.iasyncpagefilter?view=aspnetcore-2.0)를 지원합니다. 자세한 내용은 [Razor 페이지에 대한 필터 메서드](xref:razor-pages/filter)를 참조하세요.
 
  기본 제공 필터는 다음과 같은 작업을 처리합니다.
 
@@ -32,7 +29,7 @@ ASP.NET Core MVC에서 *필터*를 사용하면 요청 처리 파이프라인의
 
 [GitHub에서 샘플 보기 또는 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/controllers/filters/sample)
 
-## <a name="how-do-filters-work"></a>필터 작동 방법
+## <a name="how-filters-work"></a>필터 작동 방법
 
 필터는 *필터 파이프라인*이라고도 하는 *MVC 동작 호출 파이프라인*내에서 실행됩니다.  필터 파이프라인은 MVC가 실행할 작업을 선택한 후에 실행됩니다.
 
@@ -46,7 +43,7 @@ ASP.NET Core MVC에서 *필터*를 사용하면 요청 처리 파이프라인의
 
 * [리소스 필터](#resource-filters)는 권한 부여 이후 먼저 요청을 처리합니다.  필터 파이프라인의 나머지 이전 및 파이프라인의 나머지가 완료된 후에 코드를 실행할 수 있습니다. 캐싱을 구현하거나 그렇지 않은 경우 성능상의 이유로 필터 파이프라인을 단락(short-circuit) 처리하는 경우에 유용합니다. 모델 바인딩 전에 실행하므로 모델 바인딩에 영향을 줄 수 있습니다.
 
-* [작업 필터](#action-filters)는 개별 작업 메서드가 호출된 전후에 즉시 코드를 실행할 수 있습니다. 작업에 전달된 인수 및 작업에서 반환된 결과를 조작하는 데 사용할 수 있습니다.
+* [작업 필터](#action-filters)는 개별 작업 메서드가 호출된 전후에 즉시 코드를 실행할 수 있습니다. 작업에 전달된 인수 및 작업에서 반환된 결과를 조작하는 데 사용할 수 있습니다. Razor Pages에서는 작업 필터가 지원되지 않습니다.
 
 * [예외 필터](#exception-filters)는 응답 본문에 무언가 쓰여지기 전에 발생한 처리되지 않은 예외에 전역 정책을 적용하는 데 사용됩니다.
 
@@ -68,14 +65,13 @@ ASP.NET Core MVC에서 *필터*를 사용하면 요청 처리 파이프라인의
 
 [!code-csharp[](./filters/sample/src/FiltersSample/Filters/SampleAsyncActionFilter.cs?highlight=6,8-10,13)]
 
-단일 클래스에서 여러 필터 단계에 대한 인터페이스를 구현할 수 있습니다. 예를 들어 [ActionFilterAttribute](/dotnet/api/microsoft.aspnetcore.mvc.filters.actionfilterattribute?view=aspnetcore-2.0) 클래스는 `IActionFilter`, `IResultFilter` 및 해당 비동기 값을 구현합니다.
+단일 클래스에서 여러 필터 단계에 대한 인터페이스를 구현할 수 있습니다. 예를 들어 <xref:Microsoft.AspNetCore.Mvc.Filters.ActionFilterAttribute> 클래스는 `IActionFilter`, `IResultFilter` 및 해당 비동기 값을 구현합니다.
 
 > [!NOTE]
-> 필터 인터페이스의 동기 또는 비동기 버전 중 **하나**를 구현합니다. 프레임워크는 먼저 필터가 비동기 인터페이스를 구현하는지를 확인하고 그렇다면 이를 호출합니다. 그렇지 않으면 동기 인터페이스의 메서드를 호출합니다. 하나의 클래스에 두 인터페이스를 모두 구현하는 경우 비동기 메서드만이 호출됩니다. [ActionFilterAttribute](/dotnet/api/microsoft.aspnetcore.mvc.filters.actionfilterattribute?view=aspnetcore-2.0)와 같은 추상 클래스를 사용하는 경우 각 필터 형식에 대한 동기 메서드 또는 비동기 메서드만을 재정의합니다.
+> 필터 인터페이스의 동기 또는 비동기 버전 중 **하나**를 구현합니다. 프레임워크는 먼저 필터가 비동기 인터페이스를 구현하는지를 확인하고 그렇다면 이를 호출합니다. 그렇지 않으면 동기 인터페이스의 메서드를 호출합니다. 하나의 클래스에 두 인터페이스를 모두 구현하는 경우 비동기 메서드만이 호출됩니다. <xref:Microsoft.AspNetCore.Mvc.Filters.ActionFilterAttribute>와 같은 추상 클래스를 사용하는 경우 각 필터 형식에 대한 동기 메서드 또는 비동기 메서드만을 재정의합니다.
 
 ### <a name="ifilterfactory"></a>IFilterFactory
-
-[IFilterFactory](/dotnet/api/microsoft.aspnetcore.mvc.filters.ifilterfactory)는 [IFilterMetadata](/dotnet/api/microsoft.aspnetcore.mvc.filters.ifiltermetadata)를 구현합니다. 따라서 `IFilterFactory` 인스턴스를 필터 파이프라인에서 `IFilterMetadata` 인스턴스로 사용할 수 있습니다. 프레임워크가 필터를 호출하려고 준비하는 경우 `IFilterFactory`으로 캐스팅을 시도합니다. 해당 캐스트에 성공하면 [CreateInstance](/dotnet/api/microsoft.aspnetcore.mvc.filters.ifilterfactory.createinstance) 메서드를 호출하여 호출되는 `IFilterMetadata` 인스턴스를 만듭니다. 앱이 시작될 때 정확한 필터 파이프라인을 명시적으로 설정할 필요가 없으므로 유연한 디자인을 제공합니다.
+[IFilterFactory](/dotnet/api/microsoft.aspnetcore.mvc.filters.ifilterfactory)는 <xref:Microsoft.AspNetCore.Mvc.Filters.IFilterMetadata>를 구현합니다. 따라서 `IFilterFactory` 인스턴스를 필터 파이프라인에서 `IFilterMetadata` 인스턴스로 사용할 수 있습니다. 프레임워크가 필터를 호출하려고 준비하는 경우 `IFilterFactory`으로 캐스팅을 시도합니다. 해당 캐스트에 성공하면 [CreateInstance](/dotnet/api/microsoft.aspnetcore.mvc.filters.ifilterfactory.createinstance) 메서드를 호출하여 호출되는 `IFilterMetadata` 인스턴스를 만듭니다. 앱이 시작될 때 정확한 필터 파이프라인을 명시적으로 설정할 필요가 없으므로 유연한 디자인을 제공합니다.
 
 필터를 만드는 다른 방법으로 고유한 특성 구현에서 `IFilterFactory`를 구현할 수 있습니다.
 
@@ -280,6 +276,9 @@ System.InvalidOperationException: No service for type
 
 ## <a name="action-filters"></a>작업 필터
 
+> [!IMPORTANT]
+> 작업 필터는 Razor Pages에 **적용되지 않습니다**. Razor Pages는 <xref:Microsoft.AspNetCore.Mvc.Filters.IPageFilter> 및 <xref:Microsoft.AspNetCore.Mvc.Filters.IAsyncPageFilter>를 지원합니다. 자세한 내용은 [Razor 페이지에 대한 필터 메서드](xref:razor-pages/filter)를 참조하세요.
+
 *작업 필터*:
 
 * `IActionFilter` 또는 `IAsyncActionFilter` 인터페이스 중 하나를 구현합니다.
@@ -289,13 +288,13 @@ System.InvalidOperationException: No service for type
 
 [!code-csharp[](./filters/sample/src/FiltersSample/Filters/SampleActionFilter.cs?name=snippet_ActionFilter)]
 
-[ActionExecutingContext](/dotnet/api/microsoft.aspnetcore.mvc.filters.actionexecutingcontext)는 다음과 같은 속성을 제공합니다.
+<xref:Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext>는 다음과 같은 속성을 제공합니다.
 
 * `ActionArguments` - 작업에 대한 입력을 조작할 수 있습니다.
 * `Controller` - 컨트롤러 인스턴스를 조작할 수 있습니다. 
 * `Result` - 작업 메서드 및 후속 작업 필터의 단락(short-circuit) 실행을 설정합니다. 또한 예외를 throw하면 작업 메서드 및 후속 필터의 실행을 방지하지만 성공적인 결과가 아닌 실패로 처리됩니다.
 
-[ActionExecutedContext](/dotnet/api/microsoft.aspnetcore.mvc.filters.actionexecutedcontext)는 `Controller`과 `Result` 및 다음과 같은 속성을 제공합니다.
+<xref:Microsoft.AspNetCore.Mvc.Filters.ActionExecutedContext>는 다음과 같은 속성과 함께 `Controller` 및 `Result`를 제공합니다.
 
 * `Canceled` - 작업 실행이 다른 필터에 의해 단락(short-circuit) 처리된 경우 true입니다.
 * `Exception` - 작업 또는 후속 작업 필터에서 예외가 throw된 경우 null이 아닙니다. 이 속성을 효과적으로 null로 설정하면 예외를 '처리'하고 `Result`이 정상적으로 작업 메서드에서 반환된 것처럼 실행됩니다.
@@ -391,4 +390,5 @@ ASP.NET Core 1.1에서 필터 파이프라인에 미들웨어를 사용할 수 �
 
 ## <a name="next-actions"></a>다음 작업
 
-필터를 실험하려면 [샘플을 다운로드하고, 테스트하고, 수정](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/controllers/filters/sample)합니다.
+* [Razor Pages에 대한 필터 메서드](xref:razor-pages/filter) 참조
+* 필터를 실험하려면 [Github 샘플을 다운로드하고, 테스트하고, 수정](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/controllers/filters/sample)합니다.

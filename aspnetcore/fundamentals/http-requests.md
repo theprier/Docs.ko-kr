@@ -5,27 +5,27 @@ description: IHttpClientFactory 인터페이스를 사용하여 ASP.NET Core에�
 monikerRange: '>= aspnetcore-2.1'
 ms.author: scaddie
 ms.custom: mvc
-ms.date: 08/07/2018
+ms.date: 01/25/2019
 uid: fundamentals/http-requests
-ms.openlocfilehash: 693e9d64f47704400cbfa9e46b866f39278d82f6
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: 4fc4e602b809563ea78b6a3af5e5eb5c0ebeddea
+ms.sourcegitcommit: c6db8b14521814f1f7e528d7aa06e474e4c04a1f
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50207643"
+ms.lasthandoff: 01/25/2019
+ms.locfileid: "55065037"
 ---
 # <a name="initiate-http-requests"></a>HTTP 요청 시작
 
 작성자: [Glenn Condron](https://github.com/glennc), [Ryan Nowak](https://github.com/rynowak) 및 [Steve Gordon](https://github.com/stevejgordon)
 
-[IHttpClientFactory](/dotnet/api/system.net.http.ihttpclientfactory)를 등록하여 앱에서 [HttpClient](/dotnet/api/system.net.http.httpclient) 인스턴스를 구성하고 생성하는 데 사용할 수 있습니다. 다음과 같은 이점을 제공합니다.
+앱에서 <xref:System.Net.Http.HttpClient> 인스턴스를 만들고 구성하려면 <xref:System.Net.Http.IHttpClientFactory>를 등록하고 사용할 수 있습니다. 다음과 같은 이점을 제공합니다.
 
 * 논리적 `HttpClient` 인스턴스를 구성하고 이름을 지정하기 위해 중앙 위치를 제공합니다. 예를 들어, *github* 클라이언트는 GitHub에 액세스하도록 등록 및 구성할 수 있습니다. 다른 용도로 기본 클라이언트를 등록할 수 있습니다.
 * `HttpClient`에서 처리기 위임을 통해 나가는 미들웨어의 개념을 체계화하고 Polly 기반 미들웨어에 대한 확장을 제공하여 이를 활용합니다.
 * 풀링 및 기본의 수명을 관리 수동으로 `HttpClient` 수명을 관리하는 경우 발생하는 일반적인 DNS 문제를 방지하려면 기본 `HttpClientMessageHandler` 인스턴스의 수명 및 풀링을 관리합니다.
 * 팩터리에서 만든 클라이언트를 통해 전송된 모든 요청에 대해 구성 가능한 로깅 환경(`ILogger`을 통해)을 추가합니다.
 
-[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/http-requests/samples)([다운로드 방법](xref:index#how-to-download-a-sample))
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/http-requests/samples) ([다운로드 방법](xref:index#how-to-download-a-sample))
 
 ## <a name="prerequisites"></a>전제 조건
 
@@ -48,11 +48,11 @@ ms.locfileid: "50207643"
 
 [!code-csharp[](http-requests/samples/2.x/HttpClientFactorySample/Startup.cs?name=snippet1)]
 
-일단 등록하면 코드는 서비스가 [종속성 주입](xref:fundamentals/dependency-injection)(DI)을 사용하여 주입할 수 있는 어느 곳에서나 `IHttpClientFactory`을 수락할 수 있습니다. `IHttpClientFactory`은 `HttpClient` 인스턴스를 만드는 데 사용할 수 있습니다.
+일단 등록하면 코드는 서비스가 [DI(종속성 주입)](xref:fundamentals/dependency-injection)를 사용하여 주입할 수 있는 어느 곳에서나 `IHttpClientFactory`를 수락할 수 있습니다. `IHttpClientFactory`은 `HttpClient` 인스턴스를 만드는 데 사용할 수 있습니다.
 
 [!code-csharp[](http-requests/samples/2.x/HttpClientFactorySample/Pages/BasicUsage.cshtml.cs?name=snippet1&highlight=9-12,21)]
 
-이러한 방식으로 `IHttpClientFactory`을 사용하는 것은 기존 앱을 래팩터링할 수 있는 좋은 방법입니다. `HttpClient`이 사용되는 방식에 아무 영향도 없습니다. 현재 `HttpClient` 인스턴스를 만드는 위치에서 이러한 발생을 [CreateClient](/dotnet/api/system.net.http.ihttpclientfactory.createclient)에 대한 호출로 바꿉니다.
+이러한 방식으로 `IHttpClientFactory`를 사용하는 것은 기존 앱을 리팩터링할 수 있는 좋은 방법입니다. `HttpClient`이 사용되는 방식에 아무 영향도 없습니다. 현재 `HttpClient` 인스턴스를 만드는 위치에서 이러한 발생을 <xref:System.Net.Http.IHttpClientFactory.CreateClient*>에 대한 호출로 바꿉니다.
 
 ### <a name="named-clients"></a>명명된 클라이언트
 
@@ -80,7 +80,7 @@ ms.locfileid: "50207643"
 
 위의 코드에서 구성은 형식화된 클라이언트로 이동합니다. `HttpClient` 개체는 공용 속성으로 공개됩니다. `HttpClient` 기능을 공개하는 API 관련 메서드를 정의할 수 있습니다. `GetAspNetDocsIssues` 메서드는 GitHub 리포지토리에서 공개된 최신 문제를 구문 분석하고 쿼리하는 데 필요한 코드를 캡슐화합니다.
 
-형식화된 클라이언트를 등록하려면 `AddHttpClient` 확장 메서드는 형식화된 클라이언트 클래스를 지정하면서 `Startup.ConfigureServices` 내에서 사용할 수 있습니다.
+형식화된 클라이언트를 등록하려면 <xref:Microsoft.Extensions.DependencyInjection.HttpClientFactoryServiceCollectionExtensions.AddHttpClient*> 확장 메서드는 형식화된 클라이언트 클래스를 지정하면서 `Startup.ConfigureServices` 내에서 사용할 수 있습니다.
 
 [!code-csharp[](http-requests/samples/2.x/HttpClientFactorySample/Startup.cs?name=snippet3)]
 
@@ -157,21 +157,41 @@ public class ValuesController : ControllerBase
 
 `HttpClient`에는 나가는 HTTP 요청을 위해 함께 연결될 수 있는 처리기 위임이라는 개념이 이미 있습니다. `IHttpClientFactory`은 각 명명된 클라이언트에 적용할 처리기를 쉽게 정의할 수 있습니다. 나가는 요청 미들웨어 파이프라인을 빌드하려면 여러 처리기의 연결 및 등록을 지원합니다. 이러한 처리기 각각은 나가는 요청 전후 작업을 수행할 수 있습니다. 이 패턴은 ASP.NET Core에서 인바운드 미들웨어 파이프라인과 비슷합니다. 패턴은 캐싱, 오류 처리, serialization 및 로깅을 포함하여 HTTP 요청을 둘러싼 교차 편집 문제를 관리할 메커니즘을 제공합니다.
 
-처리기를 만들려면 `DelegatingHandler`에서 파생되는 클래스를 정의합니다. 파이프라인의 다음 처리기로 요청을 전달하기 전에 코드를 실행하려면 `SendAsync` 메서드를 재정의합니다.
+처리기를 만들려면 <xref:System.Net.Http.DelegatingHandler>에서 파생되는 클래스를 정의합니다. 파이프라인의 다음 처리기로 요청을 전달하기 전에 코드를 실행하려면 `SendAsync` 메서드를 재정의합니다.
 
 [!code-csharp[Main](http-requests/samples/2.x/HttpClientFactorySample/Handlers/ValidateHeaderHandler.cs?name=snippet1)]
 
 위의 코드에서는 기본 처리기를 정의합니다. `X-API-KEY` 헤더가 요청에 포함되었는지 확인합니다. 헤더가 누락된 경우 HTTP 호출을 방지하고 적합한 응답을 반환할 수 있습니다.
 
-등록 동안 하나 이상의 처리기가 `HttpClient`에 대한 구성에 추가될 수 있습니다. 이 작업은 [IHttpClientBuilder](/dotnet/api/microsoft.extensions.dependencyinjection.ihttpclientbuilder)에 대한 확장 메서드를 통해 수행됩니다.
+등록 동안 하나 이상의 처리기가 `HttpClient`에 대한 구성에 추가될 수 있습니다. 이 작업은 <xref:Microsoft.Extensions.DependencyInjection.IHttpClientBuilder>에 대한 확장 메서드를 통해 수행합니다.
 
 [!code-csharp[](http-requests/samples/2.x/HttpClientFactorySample/Startup.cs?name=snippet5)]
 
-위의 코드에서 `ValidateHeaderHandler`은 DI에 등록됩니다. 처리기는 임시로 DI에 등록**되어야** 합니다. 등록되면 [AddHttpMessageHandler](/dotnet/api/microsoft.extensions.dependencyinjection.httpclientbuilderextensions.addhttpmessagehandler)를 호출하여 처리기에 대한 형식으로 전달할 수 있습니다.
+::: moniker range=">= aspnetcore-2.2"
+
+위의 코드에서 `ValidateHeaderHandler`은 DI에 등록됩니다. `IHttpClientFactory`는 각 처리기에 대해 별도의 DI 범위를 만듭니다. 처리기는 모든 범위의 서비스에서 사용할 수 있습니다. 처리기가 삭제되면 처리기에서 사용하는 서비스가 삭제됩니다.
+
+일단 등록되면 처리기에 대한 형식으로 전달하면서 <xref:Microsoft.Extensions.DependencyInjection.HttpClientBuilderExtensions.AddHttpMessageHandler*>을 호출할 수 있습니다.
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.2"
+
+위의 코드에서 `ValidateHeaderHandler`은 DI에 등록됩니다. 처리기는 범위가 지정되지 않은, 임시 서비스로 DI에 등록**되어야** 합니다. 처리기가 범위가 지정된 서비스로 등록되고 처리기에서 사용하는 서비스가 삭제 가능한 경우, 처리기가 범위를 벗어나기 전에 처리기의 서비스가 삭제될 수 있으며 그러면 처리기에서 오류가 발생합니다.
+
+일단 등록되면 처리기 형식으로 전달하여 <xref:Microsoft.Extensions.DependencyInjection.HttpClientBuilderExtensions.AddHttpMessageHandler*>를 호출할 수 있습니다.
+
+::: moniker-end
 
 여러 처리기를 실행해야 하는 순서에 따라 등록할 수 있습니다. 각 처리기는 최종 `HttpClientHandler`가 요청을 실행할 때까지 다음 처리기를 래핑합니다.
 
 [!code-csharp[](http-requests/samples/2.x/HttpClientFactorySample/Startup.cs?name=snippet6)]
+
+다음 방법 중 하나를 사용하여 메시지 처리기와 요청별 상태를 공유하세요.
+
+* `HttpRequestMessage.Properties`를 사용하여 데이터를 처리기로 전달합니다.
+* `IHttpContextAccessor`를 사용하여 현재 요청에 액세스합니다.
+* 사용자 지정 `AsyncLocal` 스토리지 개체를 만들어 데이터를 전달합니다.
 
 ## <a name="use-polly-based-handlers"></a>Polly 기반 처리기 사용
 
@@ -221,15 +241,17 @@ Polly 기반 처리기를 추가하는 데 사용될 수 있는 추가 확장 �
 
 ## <a name="httpclient-and-lifetime-management"></a>HttpClient 및 수명 관리
 
-`CreateClient`가 `IHttpClientFactory`에서 호출될 때마다 새 `HttpClient` 인스턴스가 반환됩니다. 명명된 클라이언트마다 [HttpMessageHandler](/dotnet/api/system.net.http.httpmessagehandler)가 있습니다. `IHttpClientFactory`는 리소스 사용을 줄이기 위해 팩터리에서 만든 `HttpMessageHandler` 인스턴스를 풀링합니다. 새 `HttpClient` 인스턴스의 수명이 만료되지 않은 경우 해당 인스턴스를 만들 때 `HttpMessageHandler` 인스턴스를 풀에서 다시 사용할 수 있습니다.
+`CreateClient`가 `IHttpClientFactory`에서 호출될 때마다 새 `HttpClient` 인스턴스가 반환됩니다. 명명된 클라이언트마다 <xref:System.Net.Http.HttpMessageHandler>가 있습니다. 팩터리는 `HttpMessageHandler` 인스턴스의 수명을 관리합니다.
+
+`IHttpClientFactory`는 리소스 사용을 줄이기 위해 팩터리에서 만든 `HttpMessageHandler` 인스턴스를 풀링합니다. 새 `HttpClient` 인스턴스의 수명이 만료되지 않은 경우 해당 인스턴스를 만들 때 `HttpMessageHandler` 인스턴스를 풀에서 다시 사용할 수 있습니다.
 
 일반적으로 각 처리기가 자체 기본 HTTP 연결을 관리하므로 처리기의 풀링이 적합합니다. 필요한 것보다 많은 처리기를 만들면 연결 지연이 발생할 수 있습니다. 또한 일부 처리기는 무한정으로 연결을 열어 놓아 처리기가 DNS 변경에 대응하는 것을 방지할 수 있습니다.
 
-기본 처리기 수명은 2분입니다. 명명된 클라이언트별 기준으로 기본값을 재정의할 수 있습니다. 재정의하려면 클라이언트를 만들 때 반환되는 `IHttpClientBuilder`에서 [SetHandlerLifetime](/dotnet/api/microsoft.extensions.dependencyinjection.httpclientbuilderextensions.sethandlerlifetime)을 호출합니다.
+기본 처리기 수명은 2분입니다. 명명된 클라이언트별 기준으로 기본값을 재정의할 수 있습니다. 재정의하려면 클라이언트를 만들 때 반환되는 `IHttpClientBuilder`에서 <xref:Microsoft.Extensions.DependencyInjection.HttpClientBuilderExtensions.SetHandlerLifetime*>을 호출합니다.
 
 [!code-csharp[Main](http-requests/samples/2.x/HttpClientFactorySample/Startup.cs?name=snippet11)]
 
-클라이언트의 삭제는 필요하지 않습니다. 삭제는 나가는 요청을 취소하고 [Dispose](/dotnet/api/system.idisposable.dispose#System_IDisposable_Dispose)를 호출한 후에는 지정된 `HttpClient` 인스턴스가 사용될 수 없도록 보장합니다. `IHttpClientFactory`는 `HttpClient` 인스턴스에서 사용되는 리소스를 추적하고 삭제합니다. `HttpClient` 인스턴스는 일반적으로 삭제가 필요하지 않은 .NET 개체로 처리될 수 있습니다.
+클라이언트의 삭제는 필요하지 않습니다. 삭제는 나가는 요청을 취소하고 <xref:System.IDisposable.Dispose*>를 호출한 후에는 지정된 `HttpClient` 인스턴스가 사용될 수 없도록 보장합니다. `IHttpClientFactory`는 `HttpClient` 인스턴스에서 사용되는 리소스를 추적하고 삭제합니다. `HttpClient` 인스턴스는 일반적으로 삭제가 필요하지 않은 .NET 개체로 처리될 수 있습니다.
 
 긴 기간 동안 단일 `HttpClient` 인스턴스를 활성 상태로 유지하는 것은 `IHttpClientFactory`의 시작 전에 사용되던 일반적인 패턴입니다. 이 패턴은 `IHttpClientFactory`로 마이그레이션한 후에는 필요하지 않습니다.
 
@@ -249,6 +271,6 @@ Polly 기반 처리기를 추가하는 데 사용될 수 있는 추가 확장 �
 
 클라이언트에서 사용한 내부 `HttpMessageHandler`의 구성을 제어하는 것이 필요할 수 있습니다.
 
-`IHttpClientBuilder`은 명명된 또는 형식화된 클라이언트를 추가할 때 반환됩니다. [ConfigurePrimaryHttpMessageHandler](/dotnet/api/microsoft.extensions.dependencyinjection.httpclientbuilderextensions.configureprimaryhttpmessagehandler) 확장 메서드는 대리자를 정의하는 데 사용할 수 있습니다. 대리자는 해당 클라이언트가 사용한 기본 `HttpMessageHandler`을 만들고 구성하는 데 사용됩니다.
+`IHttpClientBuilder`은 명명된 또는 형식화된 클라이언트를 추가할 때 반환됩니다. <xref:Microsoft.Extensions.DependencyInjection.HttpClientBuilderExtensions.ConfigurePrimaryHttpMessageHandler*> 확장 메서드는 대리자를 정의하는 데 사용될 수 있습니다. 대리자는 해당 클라이언트가 사용한 기본 `HttpMessageHandler`을 만들고 구성하는 데 사용됩니다.
 
 [!code-csharp[Main](http-requests/samples/2.x/HttpClientFactorySample/Startup.cs?name=snippet12)]

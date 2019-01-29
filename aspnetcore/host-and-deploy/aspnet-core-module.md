@@ -4,14 +4,14 @@ author: guardrex
 description: ASP.NET Core 앱을 호스팅하기 위해 ASP.NET Core 모듈을 구성하는 방법을 알아봅니다.
 ms.author: riande
 ms.custom: mvc
-ms.date: 01/11/2019
+ms.date: 01/22/2019
 uid: host-and-deploy/aspnet-core-module
-ms.openlocfilehash: 192e4bf8e970083cc05babcd7fb3cf52985e35bf
-ms.sourcegitcommit: 184ba5b44d1c393076015510ac842b77bc9d4d93
+ms.openlocfilehash: 4eea360d08c79b889db00132109cf49492f84de6
+ms.sourcegitcommit: ebf4e5a7ca301af8494edf64f85d4a8deb61d641
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/18/2019
-ms.locfileid: "54396326"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54837782"
 ---
 # <a name="aspnet-core-module"></a>ASP.NET Core 모듈
 
@@ -286,7 +286,20 @@ IIS 하위 애플리케이션 구성에 대한 자세한 내용은 <xref:host-an
 
 ### <a name="setting-environment-variables"></a>환경 변수 설정
 
-`processPath` 특성에서 프로세스에 대한 환경 변수를 지정할 수 있습니다. `environmentVariables` 컬렉션 요소의 `environmentVariable` 자식 요소를 사용하여 환경 변수를 지정합니다. 이 섹션에 설정된 환경 변수가 시스템 환경 변수보다 우선 적용됩니다.
+::: moniker range=">= aspnetcore-3.0"
+
+`processPath` 특성에서 프로세스에 대한 환경 변수를 지정할 수 있습니다. `<environmentVariables>` 컬렉션 요소의 `<environmentVariable>` 자식 요소를 사용하여 환경 변수를 지정합니다. 이 섹션에 설정된 환경 변수가 시스템 환경 변수보다 우선 적용됩니다.
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-3.0"
+
+`processPath` 특성에서 프로세스에 대한 환경 변수를 지정할 수 있습니다. `<environmentVariables>` 컬렉션 요소의 `<environmentVariable>` 자식 요소를 사용하여 환경 변수를 지정합니다.
+
+> [!WARNING]
+> 이 섹션에 설정된 환경 변수가 동일한 이름으로 설정된 시스템 환경 변수와 충돌합니다. 환경 변수가 *web.config* 파일과 Windows의 시스템 수준에 모두 설정된 경우 *web.config* 파일의 값은 시스템 환경 변수 값(예: `ASPNETCORE_ENVIRONMENT: Development;Development`)에 추가되어 앱이 시작되지 않습니다.
+
+::: moniker-end
 
 다음 예제에서는 두 개의 환경 변수를 설정합니다. `ASPNETCORE_ENVIRONMENT`는 앱의 환경을 `Development`로 구성합니다. 앱 예외를 디버그할 때 [개발자 예외 페이지](xref:fundamentals/error-handling)를 강제로 로드하기 위해 개발자가 *web.config* 파일에서 이 값을 일시적으로 설정할 수 있습니다. `CONFIG_DIR`은 개발자가 앱 구성 파일을 로드할 경로를 생성하기 위해 시작 시 값을 읽는 코드를 작성한 사용자 정의 환경 변수의 예입니다.
 
@@ -320,6 +333,19 @@ IIS 하위 애플리케이션 구성에 대한 자세한 내용은 <xref:host-an
   </environmentVariables>
 </aspNetCore>
 ```
+
+::: moniker-end
+
+::: moniker range=">= aspnetcore-2.2"
+
+> [!NOTE]
+> *web.config*에서 환경을 직접 설정하는 대안으로 게시 프로필(*.pubxml*) 또는 프로젝트 파일에 `<EnvironmentName>` 속성을 포함합니다. 이 방법은 프로젝트가 게시될 때 *web.config*에 환경을 설정합니다.
+>
+> ```xml
+> <PropertyGroup>
+>   <EnvironmentName>Development</EnvironmentName>
+> </PropertyGroup>
+> ```
 
 ::: moniker-end
 
@@ -409,7 +435,7 @@ stdout 로그는 앱 시작 문제를 해결하는 경우에만 사용하는 것
 
 ## <a name="enhanced-diagnostic-logs"></a>개선된 진단 로그
 
-ASP.NET Core 모듈 제공은 개선된 진단 로그를 제공하도록 구성할 수 있습니다. *web.config*의 `<aspNetCore>` 요소에 `<handlerSettings>` 요소를 추가합니다. `debugLevel`을 `TRACE`으로 설정하면 진단 정보의 충실도가 높아집니다.
+ASP.NET Core 모듈은 개선된 진단 로그를 제공하도록 구성할 수 있습니다. *web.config*의 `<aspNetCore>` 요소에 `<handlerSettings>` 요소를 추가합니다. `debugLevel`을 `TRACE`으로 설정하면 진단 정보의 충실도가 높아집니다.
 
 ```xml
 <aspNetCore processPath="dotnet"

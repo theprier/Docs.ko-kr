@@ -5,12 +5,12 @@ description: ASP.NET Core에서 보기 구성 요소가 사용되는 방법 및 
 ms.author: riande
 ms.date: 12/03/2018
 uid: mvc/views/view-components
-ms.openlocfilehash: 5812abad80cd906d6b9a7175bd7cdefd03a99eb3
-ms.sourcegitcommit: 9bb58d7c8dad4bbd03419bcc183d027667fefa20
+ms.openlocfilehash: 156db610d99eaf8a8042a4c7c85267d521a20fd4
+ms.sourcegitcommit: ebf4e5a7ca301af8494edf64f85d4a8deb61d641
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52861331"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54836703"
 ---
 # <a name="view-components-in-aspnet-core"></a>ASP.NET Core의 보기 구성 요소
 
@@ -20,7 +20,7 @@ ms.locfileid: "52861331"
 
 ## <a name="view-components"></a>뷰 구성 요소
 
-뷰 구성 요소는 부분 보기와 유사하지만 훨씬 강력합니다. 뷰 구성 요소는 모델 바인딩을 사용하지 않으며 호출할 때 제공되는 데이터에만 의존합니다. 이 아티클은 ASP.NET Core MVC를 사용하여 작성되었지만 뷰 구성 요소는 Razor 페이지로 작업합니다.
+뷰 구성 요소는 부분 보기와 유사하지만 훨씬 강력합니다. 뷰 구성 요소는 모델 바인딩을 사용하지 않으며 호출할 때 제공되는 데이터에만 의존합니다. 이 아티클은 컨트롤러와 뷰를 사용하여 작성되었지만, 뷰 구성 요소는 Razor Pages로도 작업합니다.
 
 뷰 구성 요소:
 

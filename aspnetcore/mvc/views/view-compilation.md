@@ -5,14 +5,14 @@ description: Razor 파일을 미리 컴파일할 경우의 이점과 ASP.NET Cor
 monikerRange: '>= aspnetcore-1.1'
 ms.author: riande
 ms.custom: mvc
-ms.date: 05/17/2018
+ms.date: 01/23/2019
 uid: mvc/views/view-compilation
-ms.openlocfilehash: f5888cf43d8d8192acedaa33b3fa0f313737fc9b
-ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
+ms.openlocfilehash: 2720708f8e58fdc55b82bfb56665005170e79934
+ms.sourcegitcommit: d5223cf6a2cf80b4f5dc54169b0e376d493d2d3a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46011289"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54889758"
 ---
 # <a name="razor-file-compilation-in-aspnet-core"></a>ASP.NET Core의 Razor 파일 컴파일
 
@@ -95,6 +95,25 @@ dotnet publish -c Release
 ![DLL 내에서 Razor 뷰](view-compilation/_static/razor-views-in-dll.png)
 
 ::: moniker-end
+
+## <a name="recompile-razor-files-on-change"></a>변경 시 Razor 파일 다시 컴파일
+
+<xref:Microsoft.AspNetCore.Mvc.Razor.RazorViewEngineOptions> `AllowRecompilingViewsOnFileChange`는 디스크의 파일이 변경되면 Razor 파일(Razor 뷰 및 Razor Pages)이 컴파일되고 업데이트되는지 여부를 결정하는 값을 가져오거나 설정합니다.
+
+`true`로 설정하면 [IFileProvider.Watch](xref:Microsoft.Extensions.FileProviders.IFileProvider.Watch*)는 구성된 <xref:Microsoft.Extensions.FileProviders.IFileProvider> 인스턴스에서 Razor 파일의 변경 내용을 감시합니다.
+
+다음의 경우 기본값은 `true`입니다.
+
+* ASP.NET Core 2.1 또는 이전 버전의 앱.
+* 개발 환경의 ASP.NET Core 2.2 이상의 앱.
+
+`AllowRecompilingViewsOnFileChange`는 호환성 스위치와 연결되어 있으며 앱에 대해 구성된 호환성 버전에 따라 다른 동작을 제공할 수 있습니다. `AllowRecompilingViewsOnFileChange`를 설정하여 앱을 구성하면 앱의 호환성 버전에 의해 암시된 값보다 우선 순위가 높습니다.
+
+앱의 호환성 버전이 <xref:Microsoft.AspNetCore.Mvc.CompatibilityVersion.Version_2_1> 또는 이전 버전으로 설정된 경우 명시적으로 구성하지 않는 한 `AllowRecompilingViewsOnFileChange`는 `true`로 설정됩니다.
+
+앱의 호환성 버전이 `CompatibilityVersion.Version_2_2` 이상으로 설정된 경우 환경이 개발이 아니거나 값이 명시적으로 구성되지 않은 경우 `AllowRecompilingViewsOnFileChange`가 `false`로 설정됩니다.
+
+앱의 호환성 버전 설정에 대한 지침과 예는 <xref:mvc/compatibility-version>을 참조하세요.
 
 ## <a name="additional-resources"></a>추가 자료
 

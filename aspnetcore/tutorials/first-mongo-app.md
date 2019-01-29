@@ -4,14 +4,14 @@ author: prkhandelwal
 description: 이 자습서에서는 MongoDB NoSQL 데이터베이스를 사용하여 ASP.NET Core 웹 API를 빌드하는 방법을 보여 줍니다.
 ms.author: scaddie
 ms.custom: mvc, seodec18
-ms.date: 11/29/2018
+ms.date: 01/23/2019
 uid: tutorials/first-mongo-app
-ms.openlocfilehash: bd9a36c5eb06542c820e71e937b8da10f735a0f8
-ms.sourcegitcommit: 68a3081dd175d6518d1bfa31b4712bd8a2dd3864
+ms.openlocfilehash: 6375ae618816671bd9c64f038603747c64cdce56
+ms.sourcegitcommit: ebf4e5a7ca301af8494edf64f85d4a8deb61d641
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/18/2018
-ms.locfileid: "53577840"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54835598"
 ---
 # <a name="create-a-web-api-with-aspnet-core-and-mongodb"></a>ASP.NET Core 및 MongoDB를 사용하여 웹 API 만들기
 
@@ -54,11 +54,11 @@ ms.locfileid: "53577840"
 
 ## <a name="configure-mongodb"></a>MongoDB 구성
 
-Windows를 사용하는 경우 MongoDB는 기본적으로 *C:\Program Files\MongoDB*에 설치됩니다. *C:\Program Files\MongoDB\Server\<version_number>\bin*을 `Path` 환경 변수에 추가합니다. 이렇게 변경하면 개발 머신의 어디에서나 MongoDB에 액세스할 수 있습니다.
+Windows를 사용하는 경우 MongoDB는 기본적으로*C:\\Program Files\\MongoDB*에 설치됩니다. *C:\\Program Files\\MongoDB\\Server\\\<version_number>\\bin*을 `Path` 환경 변수에 추가합니다. 이렇게 변경하면 개발 머신의 어디에서나 MongoDB에 액세스할 수 있습니다.
 
 다음 단계에서 mongo 셸을 사용하여 데이터베이스 및 컬렉션을 만들고 문서를 저장합니다. mongo 셸 명령에 대한 자세한 내용은 [mongo 셸 작업](https://docs.mongodb.com/manual/mongo/#working-with-the-mongo-shell)을 참조하세요.
 
-1. 개발 머신에서 데이터를 저장할 디렉터리를 선택합니다. 예를 들어 Windows의 경우 *C:\BooksData* 등을 선택합니다. 디렉터리가 없을 경우 새로 만듭니다. mongo 셸은 새 디렉터리를 만들지 않습니다.
+1. 개발 머신에서 데이터를 저장할 디렉터리를 선택합니다. 예를 들어 Windows의 경우 *C:\\BooksData*를 선택합니다. 디렉터리가 없을 경우 새로 만듭니다. mongo 셸은 새 디렉터리를 만들지 않습니다.
 1. 명령 셸을 엽니다. 다음 명령을 실행하여 기본 포트 27017에서 MongoDB에 연결합니다. `<data_directory_path>`를 이전 단계에서 선택한 디렉터리로 바꿔야 합니다.
 
     ```console
@@ -188,7 +188,13 @@ Windows를 사용하는 경우 MongoDB는 기본적으로 *C:\Program Files\Mong
 
     [!code-csharp[](first-mongo-app/sample/BooksApi/Models/Book.cs)]
 
-앞의 클래스에서 `Id` 속성은 CLR(공용 언어 런타임) 개체를 MongoDB 컬렉션에 매핑하는 데 필요합니다. 클래스의 기타 속성은 `[BsonElement]` 특성으로 데코레이팅됩니다. 특성 값은 MongoDB 컬렉션의 속성 이름을 나타냅니다.
+앞의 클래스에서 `Id` 속성은
+
+* CLR(공용 언어 런타임) 개체를 MongoDB 컬렉션에 매핑하는 데 필요합니다.
+* 이 속성을 문서의 기본 키로 지정하려면 `[BsonId]`로 주석이 추가됩니다.
+* `ObjectId` 대신 `string` 형식으로 매개 변수를 전달할 수 있도록 `[BsonRepresentation(BsonType.ObjectId)]`로 주석이 추가됩니다. Mongo는 `string`에서 `ObjectId`로 변환을 처리합니다.
+
+클래스의 기타 속성은 `[BsonElement]` 특성으로 주석이 추가됩니다. 특성 값은 MongoDB 컬렉션의 속성 이름을 나타냅니다.
 
 ## <a name="add-a-crud-operations-class"></a>CRUD 작업 클래스 추가
 

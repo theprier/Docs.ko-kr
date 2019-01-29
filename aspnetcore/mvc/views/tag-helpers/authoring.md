@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/24/2018
 uid: mvc/views/tag-helpers/authoring
-ms.openlocfilehash: 16f3a435af267a5a17a24ee9fbda2b1c7c8818fd
-ms.sourcegitcommit: 49faca2644590fc081d86db46ea5e29edfc28b7b
+ms.openlocfilehash: c21decd39b7855cf2eefb2bb482e5e91b9487863
+ms.sourcegitcommit: d5223cf6a2cf80b4f5dc54169b0e376d493d2d3a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/09/2018
-ms.locfileid: "53121624"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54889940"
 ---
 # <a name="author-tag-helpers-in-aspnet-core"></a>ASP.NET Core의 작성자 태그 도우미
 
@@ -96,7 +96,7 @@ FQN을 사용하여 뷰에 태그 도우미를 추가하려면 먼저 FQN(`Autho
 
 [!code-csharp[](authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/TagHelpers/EmailTagHelperMailTo.cs?range=6-22)]
 
-* 태그 도우미에 대한 파스칼식 클래스 및 속성 이름이 [kebab 소문자](https://stackoverflow.com/questions/11273282/whats-the-name-for-dash-separated-case/12273101)로 번역됩니다. 따라서 `MailTo` 특성을 사용하려면 `<email mail-to="value"/>`를 사용하는 것과 동일합니다.
+* 태그 도우미에 대한 파스칼식 클래스 및 속성 이름이 [kebab case](https://stackoverflow.com/questions/11273282/whats-the-name-for-dash-separated-case/12273101)로 변환됩니다. 따라서 `MailTo` 특성을 사용하려면 `<email mail-to="value"/>`를 사용하는 것과 동일합니다.
 
 * 마지막 줄은 최소로 작동하는 태그 도우미에 대한 완성된 콘텐츠를 설정합니다.
 
@@ -189,7 +189,7 @@ FQN을 사용하여 뷰에 태그 도우미를 추가하려면 먼저 FQN(`Autho
 
    [!code-csharp[](authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/TagHelpers/WebsiteInformationTagHelper.cs)]
 
-   * 앞에서 언급했듯이, 태그 도우미는 파스칼식 C# 클래스 이름과 태그 도우미 속성을 [kebab 소문자](http://wiki.c2.com/?KebabCase)로 변환합니다. 따라서 Razor에서 `WebsiteInformationTagHelper`를 사용하려면 `<website-information />`을 작성합니다.
+   * 앞에서 언급했듯이, 태그 도우미는 파스칼식 C# 클래스 이름과 태그 도우미 속성을 [kebab case](http://wiki.c2.com/?KebabCase)로 변환합니다. 따라서 Razor에서 `WebsiteInformationTagHelper`를 사용하려면 `<website-information />`을 작성합니다.
 
    * `[HtmlTargetElement]` 특성을 사용하여 대상 요소를 명시적으로 식별하지 않으므로 `website-information`의 기본값이 대상으로 지정됩니다. 다음 특성을 적용한 경우(kebab 대/소문자는 아니지만 클래스 이름 일치):
 
@@ -197,7 +197,7 @@ FQN을 사용하여 뷰에 태그 도우미를 추가하려면 먼저 FQN(`Autho
    [HtmlTargetElement("WebsiteInformation")]
    ```
 
-   kebab 소문자 태그 `<website-information />`은 일치하지 않습니다. `[HtmlTargetElement]` 특성을 사용하려는 경우 아래와 같이 kebab 대/소문자를 사용합니다.
+   kebab case 태그 `<website-information />`은 일치하지 않습니다. `[HtmlTargetElement]` 특성을 사용하려는 경우 아래와 같이 kebab 대/소문자를 사용합니다.
 
    ```csharp
    [HtmlTargetElement("Website-Information")]

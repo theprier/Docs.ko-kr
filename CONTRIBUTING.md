@@ -124,22 +124,20 @@ DocFX 요구 사항:
 
 ### <a name="mono-instructions"></a>Mono 지침
 
-* Homebrew를 통해 Mono 설치: `brew install mono`.
+* Homebrew를 통해 Mono 설치:
+
+  ```
+  brew install mono
+  ```
 * [최신 버전의 DocFX](https://github.com/dotnet/docfx/releases)를 다운로드합니다.
-* `\bin\docfx`로 추출합니다.
-* **docfx**의 별칭 만들기:
+* *$HOME/bin/docfx*에 보관 파일을 추출합니다.
+* bash 셸에서 **docfx**의 별칭 쌍을 만듭니다. 첫 번째 별칭은 문서를 작성하는 데 사용됩니다. 두 번째 별칭은 문서를 작성하고 서비스를 제공하는 데 사용됩니다.
 
   ```
-  function docfx {
-    mono $HOME/bin/docfx/docfx.exe
-  }
-    
-  function docfx-serve {
-    mono $HOME/bin/docfx/docfx.exe serve _site
-  }
+  alias docfx='mono $HOME/bin/docfx/docfx.exe'
+  alias docfx-serve='mono $HOME/bin/docfx/docfx.exe --serve'
   ```
-
-* 사이트를 빌드할 *Docs\aspnet* 또는 *Docs\aspnetcore* 디렉터리에서 `docfx`를 실행합니다. `docfx-serve`를 실행하여 `http://localhost:8080`에서 사이트를 봅니다.
+* 리포지토리의 루트에서 `docfx`를 실행하여 사이트를 빌드합니다. `docfx-serve`를 실행하여 `http://localhost:8080`에서 사이트를 봅니다.
 
 ## <a name="voice-and-tone"></a>어투 및 어조
 
