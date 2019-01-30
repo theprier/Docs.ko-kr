@@ -1,26 +1,26 @@
 ---
 uid: mvc/overview/getting-started/database-first-development/generating-views
 title: '자습서: ASP.NET MVC 앱을 사용 하 여 EF Database First에 대 한 뷰를 생성'
-description: 이 문서는 컨트롤러 및 뷰를 생성 하려면 ASP.NET 스 캐 폴딩을 사용에 중점을 둡니다.
+description: 이 자습서는 컨트롤러 및 뷰를 생성 하려면 ASP.NET 스 캐 폴딩을 사용에 중점을 둡니다.
 author: Rick-Anderson
 ms.author: riande
-ms.date: 01/23/2019
+ms.date: 01/28/2019
 ms.topic: tutorial
 ms.assetid: 669367cf-8e30-4eb6-821d-10a7d9bb906c
 msc.legacyurl: /mvc/overview/getting-started/database-first-development/generating-views
 msc.type: authoredcontent
-ms.openlocfilehash: e1f6646cdf10d293268b92f44b018709e70c0f86
-ms.sourcegitcommit: d5223cf6a2cf80b4f5dc54169b0e376d493d2d3a
+ms.openlocfilehash: 7a56c0f9197a99427bcde6103ebc69d245e8ce63
+ms.sourcegitcommit: c47d7c131eebbcd8811e31edda210d64cf4b9d6b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54889784"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55236421"
 ---
 # <a name="tutorial-generate-views-for-ef-database-first-with-aspnet-mvc-app"></a>자습서: ASP.NET MVC 앱을 사용 하 여 EF Database First에 대 한 뷰를 생성
 
 MVC, Entity Framework 및 ASP.NET 스 캐 폴딩을 사용 하 여, 기존 데이터베이스에 대 한 인터페이스를 제공 하는 웹 응용 프로그램을 만들 수 있습니다. 이 자습서 시리즈에서는 자동으로 표시, 편집, 만들기, 사용자를 사용 하는 코드를 생성 하 고 데이터베이스 테이블에 있는 데이터를 삭제 하는 방법을 보여 줍니다. 생성된 된 코드는 데이터베이스 테이블의 열에 해당합니다.
 
-이 문서는 컨트롤러 및 뷰를 생성 하려면 ASP.NET 스 캐 폴딩을 사용에 중점을 둡니다.
+이 자습서는 컨트롤러 및 뷰를 생성 하려면 ASP.NET 스 캐 폴딩을 사용에 중점을 둡니다.
 
 이 자습서에서는 다음을 수행했습니다.
 
@@ -101,6 +101,6 @@ ActionLink 메서드에 대 한 첫 번째 매개 변수 링크에 표시할 텍
 > * 표시 된 학생 뷰
 > * 표시 된 등록 보기
 
-데이터베이스를 변경 하는 방법을 알아보려면 다음 문서로 이동 합니다.
+데이터베이스를 변경 하는 방법을 알아보려면 다음 자습서로 이동 합니다.
 > [!div class="nextstepaction"]
 > [데이터베이스 변경](changing-the-database.md)

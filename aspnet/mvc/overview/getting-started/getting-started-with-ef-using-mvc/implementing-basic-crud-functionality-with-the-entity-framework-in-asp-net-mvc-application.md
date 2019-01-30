@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.assetid: a2f70ba4-83d1-4002-9255-24732726c4f2
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: da94329cc2e6dbe01cf6af8b5851b4c30a508975
-ms.sourcegitcommit: d5223cf6a2cf80b4f5dc54169b0e376d493d2d3a
+ms.openlocfilehash: 9ed388543dd54d209ff2a0b92df4f7659962582c
+ms.sourcegitcommit: c47d7c131eebbcd8811e31edda210d64cf4b9d6b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54889892"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55236473"
 ---
 # <a name="tutorial-implement-crud-functionality-with-the-entity-framework-in-aspnet-mvc"></a>자습서: ASP.NET MVC에서 Entity Framework 사용 하 여 CRUD 기능 구현
 
@@ -135,7 +135,7 @@ Url에 의해 만들어집니다 `ActionLink` Razor 보기의 문입니다. 다�
 
     [!code-cshtml[Main](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application/samples/sample9.cshtml)]
 
-    *Create.chstml* 도 포함 되어 있습니다 `@Html.AntiForgeryToken()`에서 작동 하는 합니다 `ValidateAntiForgeryToken` 방지 하는 컨트롤러 특성 [교차 사이트 요청 위조](../../security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages.md) 공격입니다.
+    *Create.cshtml* 도 포함 되어 있습니다 `@Html.AntiForgeryToken()`에서 작동 하는 합니다 `ValidateAntiForgeryToken` 방지 하는 컨트롤러 특성 [교차 사이트 요청 위조](../../security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages.md) 공격입니다.
 
     변경할 필요가 *Create.cshtml*합니다.
 

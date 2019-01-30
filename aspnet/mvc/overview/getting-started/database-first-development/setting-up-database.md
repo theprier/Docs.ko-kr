@@ -1,26 +1,26 @@
 ---
 uid: mvc/overview/getting-started/database-first-development/setting-up-database
 title: '자습서: EF Database first MVC 5를 사용 하 여 시작'
-description: 이 문서에서는 기존 데이터베이스 및 신속 하 게 데이터와 상호 작용할 수 있도록 하는 웹 응용 프로그램을 만들기 시작 하는 방법을 보여 줍니다.
+description: 이 자습서에는 기존 데이터베이스 및 신속 하 게 데이터와 상호 작용할 수 있도록 하는 웹 응용 프로그램을 만들기 시작 하는 방법을 보여 줍니다.
 author: Rick-Anderson
 ms.author: riande
-ms.date: 01/23/2019
+ms.date: 01/28/2019
 ms.topic: tutorial
 ms.assetid: 095abad4-3bfe-4f06-b092-ae6a735b7e49
 msc.legacyurl: /mvc/overview/getting-started/database-first-development/setting-up-database
 msc.type: authoredcontent
-ms.openlocfilehash: 8b094b7c334eaad510c46b55a99ec727b9c381c2
-ms.sourcegitcommit: d5223cf6a2cf80b4f5dc54169b0e376d493d2d3a
+ms.openlocfilehash: a503e3db63c873249178fd4783d322f4067c3208
+ms.sourcegitcommit: c47d7c131eebbcd8811e31edda210d64cf4b9d6b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54889927"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55236382"
 ---
 # <a name="tutorial-get-started-with-ef-database-first-using-mvc-5"></a>자습서: EF Database first MVC 5를 사용 하 여 시작
 
 MVC, Entity Framework 및 ASP.NET 스 캐 폴딩을 사용 하 여, 기존 데이터베이스에 대 한 인터페이스를 제공 하는 웹 응용 프로그램을 만들 수 있습니다. 이 자습서 시리즈에서는 자동으로 표시, 편집, 만들기, 사용자를 사용 하는 코드를 생성 하 고 데이터베이스 테이블에 있는 데이터를 삭제 하는 방법을 보여 줍니다. 생성된 된 코드는 데이터베이스 테이블의 열에 해당합니다. 시리즈의 마지막 부분에서는 사이트 및 데이터베이스를 Azure에 배포 됩니다.
 
-이 문서에서는 기존 데이터베이스 및 신속 하 게 데이터와 상호 작용할 수 있도록 하는 웹 응용 프로그램을 만들기 시작 하는 방법을 보여 줍니다. 사용 하 여 Entity Framework 6 및 MVC 5 웹 응용 프로그램을 빌드합니다. ASP.NET 스 캐 폴딩 기능을 사용 하면 자동으로 표시, 업데이트, 만들기, 데이터 삭제에 대 한 코드를 생성할 수 있습니다. Visual Studio 내에서 게시 도구를 사용 하 여 쉽게 배포할 수 있습니다 사이트 및 데이터베이스를 Azure로 합니다.
+이 자습서에는 기존 데이터베이스 및 신속 하 게 데이터와 상호 작용할 수 있도록 하는 웹 응용 프로그램을 만들기 시작 하는 방법을 보여 줍니다. 사용 하 여 Entity Framework 6 및 MVC 5 웹 응용 프로그램을 빌드합니다. ASP.NET 스 캐 폴딩 기능을 사용 하면 자동으로 표시, 업데이트, 만들기, 데이터 삭제에 대 한 코드를 생성할 수 있습니다. Visual Studio 내에서 게시 도구를 사용 하 여 쉽게 배포할 수 있습니다 사이트 및 데이터베이스를 Azure로 합니다.
 
 시리즈의이 부분 데이터베이스를 만들고 데이터로 채우는에 중점을 둡니다.
 
@@ -37,7 +37,7 @@ MVC, Entity Framework 및 ASP.NET 스 캐 폴딩을 사용 하 여, 기존 데�
 
 ## <a name="introduction"></a>소개
 
-이 문서에서는 데이터베이스 및 해당 데이터베이스의 필드를 기반으로 하는 웹 응용 프로그램에 대 한 코드를 생성 하려면 상황을 다룹니다. 이 방법은 Database First 개발을 라고 합니다. 기존 데이터베이스를 아직 없는 경우 데이터 클래스를 정의 하 고 클래스 속성에서 데이터베이스 생성을 포함 하는 Code First 개발을 호출 하는 방법 대신 사용할 수 있습니다.
+이 자습서는 데이터베이스 및 해당 데이터베이스의 필드를 기반으로 하는 웹 응용 프로그램에 대 한 코드를 생성 하려면 상황을 해결 합니다. 이 방법은 Database First 개발을 라고 합니다. 기존 데이터베이스를 아직 없는 경우 데이터 클래스를 정의 하 고 클래스 속성에서 데이터베이스 생성을 포함 하는 Code First 개발을 호출 하는 방법 대신 사용할 수 있습니다.
 
 ## <a name="set-up-the-database"></a>데이터베이스 설정
 
@@ -102,6 +102,6 @@ Entity Framework 접근 방식을 사용할 것인지를 선택 하는 지침을
 > [!div class="checklist"]
 > * 데이터베이스 설정
 
-웹 응용 프로그램 및 데이터 모델을 만드는 방법에 알아보려면 다음 문서로 계속 진행 하세요.
+웹 응용 프로그램 및 데이터 모델을 만드는 방법에 알아보려면 다음 자습서로 이동 합니다.
 > [!div class="nextstepaction"]
 > [웹 응용 프로그램 및 데이터 모델 만들기](creating-the-web-application.md)

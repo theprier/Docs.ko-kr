@@ -8,12 +8,12 @@ ms.date: 08/15/2012
 ms.assetid: c7e4e1ab-4932-4614-9f53-aaf7c706d498
 msc.legacyurl: /mvc/overview/views/using-page-inspector-in-aspnet-mvc
 msc.type: authoredcontent
-ms.openlocfilehash: c465b0bac9af90a892d6e62a327ba36977d08d4a
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 0dea8b077878139a3f513cb51447b86a93fe55b8
+ms.sourcegitcommit: c47d7c131eebbcd8811e31edda210d64cf4b9d6b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41829890"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55236538"
 ---
 <a name="using-page-inspector-in-aspnet-mvc"></a>ASP.NET MVC에서 페이지 검사기 사용
 ====================
@@ -34,7 +34,7 @@ Tim Ammann 여
 > - [페이지 검사기를 사용 하 여 태그를 변경 하려면](#_5_using_page)
 > - [HTML 창과 검사 모드](#_6_inspection_mode)
 > - [스타일 창에서 CSS 변경 내용 미리 보기](#_7_previewing_css)
-> - [CSS 자동 동기화](#css_auto_sync)
+> - [CSS Auto Sync](#css_auto_sync)
 > - [CSS 색 선택을 사용 하 여](#css_color_picker)
 > - [동적 페이지 요소를 JavaScript에 매핑](#map_dynamic_elements)
 
@@ -81,7 +81,7 @@ Visual Studio 2012에서 단추로 보기에서 프로젝트를 선택 **페이�
 
 ![페이지 검사기에서 보기 Index.cshtml](using-page-inspector-in-aspnet-mvc/_static/image8.png)
 
-기본적으로 Visual Studio 환경의 왼쪽에서 페이지 검사기 창으로 도킹 됩니다. 원하는 경우 다른 곳에서 도킹 하거나 창의 도킹을 해제 수 있습니다. 참조 [방법: 정렬 및 도킹 Windows](https://msdn.microsoft.com/library/z4y0hsax.aspx)합니다.
+기본적으로 Visual Studio 환경의 왼쪽에서 페이지 검사기 창으로 도킹 됩니다. 원하는 경우 다른 곳에서 도킹 하거나 창의 도킹을 해제 수 있습니다. [방법: 창 정렬 및 고정](https://msdn.microsoft.com/library/z4y0hsax.aspx)을 참조하세요.
 
 페이지 검사기 창 상단의 브라우저 창에서 현재 페이지를 보여 줍니다. 아래쪽 창의 페이지의 다양 한 측면을 검사할 수 있도록 탭도 함께 HTML 태그에서 페이지를 보여 줍니다. 아래쪽 창은 비슷합니다는 [F12 개발자 도구](https://msdn.microsoft.com/ie/aa740478) Internet Explorer에서.
 
@@ -174,7 +174,7 @@ Div.content 래퍼 섹션 내에서 한 번 클릭 하 고 다음으로 마우�
 합니다 **스타일** 스타일으로 변경 내용을 커밋하기 전에 변경 하는 쉽게 테스트 하 고 CSS를 미리 보기 창을 사용 하면 자체 시트입니다.
 
 <a id="css_auto_sync"></a>
-## <a name="css-auto-sync"></a>CSS 자동 동기화
+## <a name="css-auto-sync"></a>CSS Auto Sync
 
 > [!NOTE]
 > 이 기능은 페이지 검사기의 버전 1.3을 필요합니다.

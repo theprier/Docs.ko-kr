@@ -1,26 +1,26 @@
 ---
 uid: mvc/overview/getting-started/database-first-development/creating-the-web-application
 title: '자습서: 만들기는 웹 응용 프로그램 및 데이터 모델 EF에 대 한 ASP.NET MVC를 사용 하 여 첫 번째 데이터베이스'
-description: 이 문서에서는 웹 응용 프로그램을 만들고 데이터베이스 테이블 기반 데이터 모델 생성에 중점을 둡니다.
+description: 이 자습서는 웹 응용 프로그램을 만들고 데이터베이스 테이블 기반 데이터 모델 생성에 중점을 둡니다.
 author: Rick-Anderson
 ms.author: riande
-ms.date: 01/23/2019
+ms.date: 01/28/2019
 ms.topic: tutorial
 ms.assetid: bc8f2bd5-ff57-4dcd-8418-a5bd517d8953
 msc.legacyurl: /mvc/overview/getting-started/database-first-development/creating-the-web-application
 msc.type: authoredcontent
-ms.openlocfilehash: 095d355866c9ab8fba3759f3e05e2a521992f3d6
-ms.sourcegitcommit: d5223cf6a2cf80b4f5dc54169b0e376d493d2d3a
+ms.openlocfilehash: dced55386c3f810e406c5c2b3f0071b45e3b2dbd
+ms.sourcegitcommit: c47d7c131eebbcd8811e31edda210d64cf4b9d6b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54889771"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55236369"
 ---
 # <a name="tutorial-create-the-the-web-application-and-data-models-for-ef-database-first-with-aspnet-mvc"></a>자습서: 만들기는 웹 응용 프로그램 및 데이터 모델 EF에 대 한 ASP.NET MVC를 사용 하 여 첫 번째 데이터베이스
 
  MVC, Entity Framework 및 ASP.NET 스 캐 폴딩을 사용 하 여, 기존 데이터베이스에 대 한 인터페이스를 제공 하는 웹 응용 프로그램을 만들 수 있습니다. 이 자습서 시리즈에서는 자동으로 표시, 편집, 만들기, 사용자를 사용 하는 코드를 생성 하 고 데이터베이스 테이블에 있는 데이터를 삭제 하는 방법을 보여 줍니다. 생성된 된 코드는 데이터베이스 테이블의 열에 해당합니다.
 
-이 문서에서는 웹 응용 프로그램을 만들고 데이터베이스 테이블 기반 데이터 모델 생성에 중점을 둡니다.
+이 자습서는 웹 응용 프로그램을 만들고 데이터베이스 테이블 기반 데이터 모델 생성에 중점을 둡니다.
 
 이 자습서에서는 다음을 수행했습니다.
 
@@ -102,6 +102,6 @@ Models 폴더에는 이제 데이터베이스에서 생성 된 모델에 관련 
 > * ASP.NET 웹 앱을 생성합니다.
 > * 모델 생성
 
-만드는 방법에 알아보려면 다음 문서는 고급 데이터 모델을 기반으로 하는 코드를 생성 합니다.
+데이터 모델을 기반으로 하는 코드를 생성 하는 만드는 방법에 알아보려면 다음 자습서로 이동 합니다.
 > [!div class="nextstepaction"]
 > [뷰 생성](generating-views.md)
