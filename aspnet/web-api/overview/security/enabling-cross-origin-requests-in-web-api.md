@@ -4,16 +4,16 @@ title: ASP.NET Web API 2에서에서 크로스-원본 요청을 사용 하도록
 author: MikeWasson
 description: ASP.NET Web API에서 크로스-원본 자원 공유 (CORS)를 지 원하는 방법을 보여 줍니다.
 ms.author: riande
-ms.date: 10/10/2018
+ms.date: 01/29/2019
 ms.assetid: 9b265a5a-6a70-4a82-adce-2d7c56ae8bdd
 msc.legacyurl: /web-api/overview/security/enabling-cross-origin-requests-in-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 118b779c89edb874f7f928315d1094738be5f097
-ms.sourcegitcommit: 6e6002de467cd135a69e5518d4ba9422d693132a
+ms.openlocfilehash: 97a0027194b019b09e220493dcb593e682027fe3
+ms.sourcegitcommit: d22b3c23c45a076c4f394a70b1c8df2fbcdf656d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49348522"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55428449"
 ---
 <a name="enable-cross-origin-requests-in-aspnet-web-api-2"></a>ASP.NET Web API 2에서 크로스-원본 요청을 사용 하도록 설정
 ====================
@@ -90,7 +90,7 @@ ms.locfileid: "49348522"
 ![브라우저에서 오류 '평가판 사용해 보기'](enabling-cross-origin-requests-in-web-api/_static/image7.png)
 
 > [!NOTE]
-> 와 같은 도구에서 HTTP 트래픽을 시청 하는 경우 [Fiddler](http://www.telerik.com/fiddler), 브라우저는 GET 요청을 보내지 및 요청이 성공 하면 있지만 AJAX 호출이 오류를 반환 합니다. 확인할 수 있습니다. 동일 원본 정책에서 브라우저 해도 알아야 할 것 *보내는* 요청 합니다. 대신 보지 못하도록 응용 프로그램을 방지 합니다 *응답*합니다.
+> 와 같은 도구에서 HTTP 트래픽을 시청 하는 경우 [Fiddler](https://www.telerik.com/fiddler), 브라우저는 GET 요청을 보내지 및 요청이 성공 하면 있지만 AJAX 호출이 오류를 반환 합니다. 확인할 수 있습니다. 동일 원본 정책에서 브라우저 해도 알아야 할 것 *보내는* 요청 합니다. 대신 보지 못하도록 응용 프로그램을 방지 합니다 *응답*합니다.
 
 ![웹 요청을 보여 주는 fiddler 웹 디버거](enabling-cross-origin-requests-in-web-api/_static/image8.png)
 
@@ -157,13 +157,29 @@ CORS 명세에서는 교차 원본 요청을 활성화시키기 위한 용도로
 HTTP OPTIONS 메서드를 사용 하는 사전 요청 합니다. 두 가지 특수 헤더를 포함합니다.
 
 - 액세스-컨트롤-요청-방법: 실제 요청에 사용 될 HTTP 메서드.
-- 요청 헤더 목록은 컨트롤-요청-헤더에 액세스 합니다:는 *응용 프로그램* 실제 요청을 설정 합니다. (마찬가지로이 브라우저 설정 하는 헤더)
+- Access-Control-Request-Headers: 요청 헤더의 목록을 하는 *응용 프로그램* 실제 요청을 설정 합니다. (마찬가지로이 브라우저 설정 하는 헤더)
 
 예제 응답, 서버 요청을 허용 하는 다음과 같습니다.
 
 [!code-console[Main](enabling-cross-origin-requests-in-web-api/samples/sample9.cmd?highlight=6-7)]
 
 허용 된 메서드를 나열 하는 액세스-컨트롤-허용-메서드 헤더 및 필요에 따라 허용 되는 헤더를 나열 하는 액세스 제어-허용-헤더 헤더를 응답에 포함 됩니다. 실행 전 요청이 성공 하면 브라우저 앞에서 설명한 대로 실제 요청을 보냅니다.
+
+실행 전 OPTIONS 요청을 사용 하 여 끝점을 테스트 하려면 일반적으로 사용 되는 도구 (예를 들어 [Fiddler](https://www.telerik.com/fiddler) 하 고 [Postman](https://www.getpostman.com/)) 기본적으로 필수 옵션 헤더를 보내지 않습니다. 있는지 확인 합니다 `Access-Control-Request-Method` 및 `Access-Control-Request-Headers` 헤더 요청과 함께 전송 되 고 옵션 헤더 IIS 통해 앱에 도달 하는 합니다.
+
+ASP.NET 앱을 받고 옵션 요청을 처리 하도록 IIS를 구성 하려면 앱의 다음 구성을 추가 *web.config* 파일을 `<system.webServer><handlers>` 섹션:
+
+```xml
+<system.webServer>
+  <handlers>
+    <remove name="ExtensionlessUrlHandler-Integrated-4.0" />
+    <remove name="OPTIONSVerbHandler" />
+    <add name="ExtensionlessUrlHandler-Integrated-4.0" path="*." verb="*" type="System.Web.Handlers.TransferRequestHandler" preCondition="integratedMode,runtimeVersionv4.0" />
+  </handlers>
+</system.webServer>
+```
+
+제거 `OPTIONSVerbHandler` IIS OPTIONS 요청을 처리 하는 것을 금지 합니다. 대체 `ExtensionlessUrlHandler-Integrated-4.0` OPTIONS 요청 기본 모듈 등록 확장명 없는 Url 사용 하 여 GET, HEAD, POST 및 디버그 요청만 허용 하기 때문에 앱을 연결할 수 있습니다.
 
 ## <a name="scope-rules-for-enablecors"></a>[EnableCors]에 대 한 범위 규칙
 
@@ -225,7 +241,7 @@ CORS를 사용 하도록 응용 프로그램에서 모든 Web API 컨트롤러�
 
 기본적으로 브라우저 노출 하지 않습니다 모든 응용 프로그램에 대 한 응답 헤더입니다. 기본적으로 사용 가능한 응답 헤더들은 다음과 같습니다.
 
-- 캐시 제어
+- Cache-Control
 - 콘텐츠 언어
 - 콘텐츠 형식
 - Expires
