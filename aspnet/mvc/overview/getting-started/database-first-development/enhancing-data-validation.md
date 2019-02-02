@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.assetid: 0ed5e67a-34c0-4b57-84a6-802b0fb3cd00
 msc.legacyurl: /mvc/overview/getting-started/database-first-development/enhancing-data-validation
 msc.type: authoredcontent
-ms.openlocfilehash: 85299d70c6cba52c1d40a42edfd429c96318134a
-ms.sourcegitcommit: c47d7c131eebbcd8811e31edda210d64cf4b9d6b
+ms.openlocfilehash: 897cd7c6a40445e2a4abede50d81e101372d3233
+ms.sourcegitcommit: ed76cc752966c604a795fbc56d5a71d16ded0b58
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55236486"
+ms.lasthandoff: 02/02/2019
+ms.locfileid: "55667624"
 ---
 # <a name="tutorial-enhance-data-validation-for-ef-database-first-with-aspnet-mvc-app"></a>자습서: ASP.NET MVC 앱을 사용 하 여 EF Database First에 대 한 데이터 유효성 검사 향상
 
@@ -84,6 +84,14 @@ MVC, Entity Framework 및 ASP.NET 스 캐 폴딩을 사용 하 여, 기존 데�
 
 열기는 *Student.cs* 파일 또는 *Enrollment.cs* 파일 및 이전에 적용 된 데이터 유효성 검사 특성은 파일에 더 이상입니다. 그러나 응용 프로그램을 실행 하 고 데이터를 입력할 때 유효성 검사 규칙이 계속 적용 됩니다 확인 합니다.
 
+## <a name="conclusion"></a>결론
+
+이 시리즈 사용자가 편집, 업데이트, 만들기 및 데이터를 삭제할 수 있는 기존 데이터베이스에서 코드를 생성 하는 방법의 간단한 예제를 제공 합니다. ASP.NET MVC 5, Entity Framework 및 ASP.NET 스 캐 폴딩 프로젝트를 만들려면 사용 합니다. 
+
+Code First 개발을 소개 하는 예제를 보려면 [ASP.NET MVC 5 시작](../introduction/getting-started.md)합니다. 
+
+고급 예제를 보려면 [ASP.NET MVC 4 응용 프로그램에 대 한 Entity Framework 데이터 모델을 만드는](../getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)합니다. Database First에서 데이터로 작업에 사용 하는 DbContext API는 동일 Code First에서 데이터로 작업 하기 위한 사용 API로 note 합니다. Database First 사용 하려는 경우에 코드 첫 번째 자습서 등에서 동시성 충돌 처리 관련된 데이터 읽기 및 업데이트와 같은 더 복잡 한 시나리오를 처리 하는 방법을 알아볼 수 있습니다. 유일한 차이점은 데이터베이스, 상황에 맞는 클래스 및 엔터티 클래스를 생성 하는 방법
+
 ## <a name="additional-resources"></a>추가 자료
 
 속성 및 클래스에 적용할 수는 데이터 유효성 검사 주석의 전체 목록을 참조 하세요 [System.ComponentModel.DataAnnotations](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.aspx)합니다.
@@ -96,6 +104,6 @@ MVC, Entity Framework 및 ASP.NET 스 캐 폴딩을 사용 하 여, 기존 데�
 > * 추가 데이터 주석
 > * 추가 메타 데이터 클래스
 
-웹 앱 및 데이터베이스를 Azure에 게시 하는 방법을 알아보려면 다음 자습서로 이동 합니다.
+Azure App Service 웹 앱 및 SQL database를 배포 하는 방법에 알아보려면이 자습서를 참조 하세요.
 > [!div class="nextstepaction"]
-> [Azure에 게시하기](publish-to-azure.md)
+> [Azure App Service에.NET 앱 배포](/azure/app-service/app-service-web-tutorial-dotnet-sqldatabase/)

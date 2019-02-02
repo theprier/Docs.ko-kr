@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/11/2018
 uid: security/anti-request-forgery
-ms.openlocfilehash: 3c1ea8f41eb6ed847bf24141ef0ae0c7e03d8a79
-ms.sourcegitcommit: 97d7a00bd39c83a8f6bccb9daa44130a509f75ce
+ms.openlocfilehash: 6e140717834b901e12ef7863fd07b983b0c55107
+ms.sourcegitcommit: ed76cc752966c604a795fbc56d5a71d16ded0b58
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54099223"
+ms.lasthandoff: 02/02/2019
+ms.locfileid: "55667663"
 ---
 # <a name="prevent-cross-site-request-forgery-xsrfcsrf-attacks-in-aspnet-core"></a>ASP.NET Core에서 방지 교차 사이트 요청 위조 (XSRF/CSRF) 공격
 
@@ -412,15 +412,40 @@ xhttp.send(JSON.stringify({ "newPassword": "ReallySecurePassword999$$$" }));
 
 ### <a name="angularjs"></a>AngularJS
 
-AngularJS는 CSRF 주소로 규칙을 사용 합니다. 서버 이름의 쿠키를 보내면 `XSRF-TOKEN`, AngularJS `$http` 서비스 요청을 서버로 보낼 때 헤더에 쿠키 값을 추가 합니다. 이 프로세스는 자동입니다. 헤더를 명시적으로 설정할 필요가 없습니다. 헤더 이름은 `X-XSRF-TOKEN`합니다. 서버는이 헤더를 검색 하 고 해당 내용의 유효성을 검사 해야 합니다.
+AngularJS는 CSRF 주소로 규칙을 사용 합니다. 서버 이름의 쿠키를 보내면 `XSRF-TOKEN`, AngularJS `$http` 서비스 요청을 서버로 보낼 때 헤더에 쿠키 값을 추가 합니다. 이 프로세스는 자동입니다. 헤더를 클라이언트에서 명시적으로 설정할 필요가 없습니다. 헤더 이름은 `X-XSRF-TOKEN`합니다. 서버는이 헤더를 검색 하 고 해당 내용의 유효성을 검사 해야 합니다.
 
-ASP.NET Core API에 대 한이 규칙을 사용 하 여 작동 합니다.
+응용 프로그램 시작에이 규칙을 사용 하 여 작업을 ASP.NET Core api:
 
 * 앱을 구성 하 라는 쿠키에서 토큰을 제공할 `XSRF-TOKEN`합니다.
 * 라는 헤더에 대 한 검색할 위조 방지 서비스 구성 `X-XSRF-TOKEN`합니다.
 
 ```csharp
-services.AddAntiforgery(options => options.HeaderName = "X-XSRF-TOKEN");
+public void Configure(IApplicationBuilder app, IAntiforgery antiforgery)
+{
+    app.Use(next => context =>
+    {
+        string path = context.Request.Path.Value;
+
+        if (
+            string.Equals(path, "/", StringComparison.OrdinalIgnoreCase) ||
+            string.Equals(path, "/index.html", StringComparison.OrdinalIgnoreCase))
+        {
+            // The request token can be sent as a JavaScript-readable cookie, 
+            // and Angular uses it by default.
+            var tokens = antiforgery.GetAndStoreTokens(context);
+            context.Response.Cookies.Append("XSRF-TOKEN", tokens.RequestToken, 
+                new CookieOptions() { HttpOnly = false });
+        }
+
+        return next(context);
+    });
+}
+
+public void ConfigureServices(IServiceCollection services)
+{
+    // Angular's default header name for sending the XSRF token.
+    services.AddAntiforgery(options => options.HeaderName = "X-XSRF-TOKEN");
+}
 ```
 
 [예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/anti-request-forgery/sample/AngularSample) ([다운로드 방법](xref:index#how-to-download-a-sample))

@@ -4,20 +4,18 @@ title: OWIN OAuth 2.0 권한 부여 서버 | Microsoft Docs
 author: hongyes
 description: 이 자습서에서 OAuth OWIN 미들웨어를 사용 하 여 OAuth 2.0 권한 부여 서버를 구현 하는 방법을 안내 합니다. 이 고급 자습서는 해당만 outlin 됩니다...
 ms.author: riande
-ms.date: 03/20/2014
+ms.date: 01/28/2019
 ms.assetid: 20acee16-c70c-41e9-b38f-92bfcf9a4c1c
 msc.legacyurl: /aspnet/overview/owin-and-katana/owin-oauth-20-authorization-server
 msc.type: authoredcontent
-ms.openlocfilehash: 095dad49a8e9f963d941a84398afe9da0f46ce0b
-ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
+ms.openlocfilehash: b8451d2d9e346bd5e2f51ba45e48030a5221b549
+ms.sourcegitcommit: ed76cc752966c604a795fbc56d5a71d16ded0b58
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48912269"
+ms.lasthandoff: 02/02/2019
+ms.locfileid: "55667650"
 ---
-<a name="owin-oauth-20-authorization-server"></a>OWIN OAuth 2.0 권한 부여 서버
-====================
-하 여 [Hongye Sun](https://github.com/hongyes)하십시오 [Praburaj Thiagarajan](https://github.com/Praburaj), [Rick Anderson]((https://twitter.com/RickAndMSFT))
+# <a name="owin-oauth-20-authorization-server"></a>OWIN OAuth 2.0 권한 부여 서버
 
 > 이 자습서에서 OAuth OWIN 미들웨어를 사용 하 여 OAuth 2.0 권한 부여 서버를 구현 하는 방법을 안내 합니다. 만 OWIN OAuth 2.0 권한 부여 서버를 만드는 단계를 간략하게 설명 하는 고급 자습서입니다. 이것이 단계별 자습서입니다. [샘플 코드 다운로드](https://code.msdn.microsoft.com/OWIN-OAuth-20-Authorization-ba2b8783/file/114932/1/AuthorizationServer.zip)합니다.
 >
@@ -29,9 +27,9 @@ ms.locfileid: "48912269"
 >
 > | **자습서에 표시** | **역시** |
 > | --- | --- |
-> | Windows 8.1 | Windows 8, Windows 7 |
-> | [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013) | [Visual Studio 2013 Express for Desktop](https://my.visualstudio.com/Downloads?q=visual%20studio%202013#d-2013-express)합니다. 최신 업데이트를 사용 하 여 visual Studio 2012에는 작동 하지만 자습서를 사용 하 여 테스트 되지 않았습니다 하 고 일부 메뉴 선택 및 대화 상자는 다릅니다. |
-> | .NET 4.5 |  |
+> | Windows 8.1 | Windows 10, Windows 8, Windows 7 |
+> | [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/)
+> | .NET 4.7.2 |  |
 >
 > ## <a name="questions-and-comments"></a>질문이 나 의견이 있으면
 >
@@ -53,7 +51,7 @@ ms.locfileid: "48912269"
 <a id="prerequisites"></a>
 ## <a name="prerequisites"></a>전제 조건
 
-- [Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/downloads#d-2013-editions) 또는 무료 [Visual Studio Express 2013](https://www.microsoft.com/visualstudio/eng/downloads#d-2013-express)에 표시 된 대로 **소프트웨어 버전** 페이지의 맨 위에 있는 합니다.
+- [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/) 에 표시 된 대로 **소프트웨어 버전** 페이지의 맨 위에 있는 합니다.
 - OWIN 익숙해야 합니다. 참조 [Katana 프로젝트를 시작 하기](https://msdn.microsoft.com/magazine/dn451439.aspx) 하 고 [OWIN 및 Katana의 새로운 기능](index.md)합니다.
 - 사용 경험 [OAuth](http://tools.ietf.org/html/rfc6749) 용어를 포함 하 여 [역할](http://tools.ietf.org/html/rfc6749#section-1.1)를 [프로토콜 흐름](http://tools.ietf.org/html/rfc6749#section-1.2), 및 [권한 부여](http://tools.ietf.org/html/rfc6749#section-1.3)합니다. [OAuth 2.0 소개](http://tools.ietf.org/html/rfc6749#section-1) 잘 소개 합니다.
 
@@ -81,15 +79,15 @@ ms.locfileid: "48912269"
 
 - `AuthorizeEndpointPath`: 요청 경로 클라이언트 응용 프로그램 사용자를 가져오기 위해 사용자-에이전트를 리디렉션하는 동의 코드 또는 토큰을 발급 하는 것입니다. 예를 들어 선행 슬래시로 시작 해야 합니다 "`/Authorize`"입니다.
 - `TokenEndpointPath`: 요청 경로 클라이언트 응용 프로그램이 액세스 토큰을 가져오려면 직접 통신 합니다. "/Token" 처럼 선행 슬래시로 시작 해야 합니다. 클라이언트는 발급 된 경우는 [클라이언트\_비밀](http://tools.ietf.org/html/rfc6749#appendix-A.2),이 끝점에 제공 되어야 합니다.
-- `ApplicationCanDisplayErrors`:로 설정 합니다. `true` 웹 응용 프로그램에서 클라이언트 유효성 검사 오류에 대 한 사용자 지정 오류 페이지를 생성 하려는 경우 `/Authorize` 끝점입니다. 예를 들어 클라이언트 응용 프로그램에 다시 브라우저 리디렉션되지 않습니다 하는 경우에만 필요 경우 합니다 `client_id` 또는 `redirect_uri` 올바르지 않습니다. `/Authorize` 끝점 "oauth 볼 수 있어야 합니다. 오류 ","oauth입니다. ErrorDescription"및"oauth입니다. ErrorUri"속성은 OWIN 환경에 추가 됩니다.
+- `ApplicationCanDisplayErrors`: 로 `true` 웹 응용 프로그램에서 클라이언트 유효성 검사 오류에 대 한 사용자 지정 오류 페이지를 생성 하려는 경우 `/Authorize` 끝점입니다. 예를 들어 클라이언트 응용 프로그램에 다시 브라우저 리디렉션되지 않습니다 하는 경우에만 필요 경우 합니다 `client_id` 또는 `redirect_uri` 올바르지 않습니다. `/Authorize` 끝점 "oauth 볼 수 있어야 합니다. 오류 ","oauth입니다. ErrorDescription"및"oauth입니다. ErrorUri"속성은 OWIN 환경에 추가 됩니다.
 
     > [!NOTE]
     > 그렇지 않은 경우 true, 권한 부여 서버가 반환 하는 오류 세부 정보를 사용 하 여 기본 오류 페이지입니다.
-- `AllowInsecureHttp`: 권한 부여 및 토큰 요청이 HTTP URI 주소에 도착 하 고 들어오는 수 있도록 허용 True를 `redirect_uri` 요청 매개 변수를 HTTP URI 주소에 권한을 부여 합니다.
+- `AllowInsecureHttp`: 권한 부여 및 토큰 요청이 HTTP URI 주소에 도착 하 고 들어오는 수 있도록 허용 하려면 true `redirect_uri` 요청 매개 변수를 HTTP URI 주소에 권한을 부여 합니다.
 
     > [!WARNING]
     > 개발 용도로 이것이 보안-입니다.
-- `Provider`Authorization Server 미들웨어에서 발생 하는 프로세스 이벤트를 응용 프로그램을 제공한: 개체입니다. 응용 프로그램 인터페이스를 완전히 구현 하거나의 인스턴스를 만들 수 있습니다 `OAuthAuthorizationServerProvider` 이 서버는 지원 된 OAuth 흐름에 대 한 필요한 대리자를 할당 합니다.
+- `Provider`: Authorization Server 미들웨어에 의해 발생 된 이벤트 처리 응용 프로그램에서 제공 되는 개체입니다. 응용 프로그램 인터페이스를 완전히 구현 하거나의 인스턴스를 만들 수 있습니다 `OAuthAuthorizationServerProvider` 이 서버는 지원 된 OAuth 흐름에 대 한 필요한 대리자를 할당 합니다.
 - `AuthorizationCodeProvider`: 클라이언트 응용 프로그램에 반환할 단일 사용 권한 부여 코드를 생성 합니다. OAuth 서버의 수에 대 한 응용 프로그램을 보호할 **해야 합니다** 에 대 한 인스턴스를 제공 `AuthorizationCodeProvider` 하 여 토큰을 생성 하는 위치를 `OnCreate/OnCreateAsync` 이벤트는 한 번만 호출에 대 한 유효한 것으로 간주 `OnReceive/OnReceiveAsync`합니다.
 - `RefreshTokenProvider`: 필요한 경우 새 액세스 토큰을 생성 하기 위해 사용할 수 있는 새로 고침 토큰을 생성 합니다. 제공 되지 권한 부여 서버는 반환 하지 않습니다에서 새로 고침 토큰을 `/Token` 끝점입니다.
 

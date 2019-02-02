@@ -1,18 +1,18 @@
 ---
 title: ASP.NET Core에 React 프로젝트 템플릿 사용
 author: SteveSandersonMS
-description: React 및 create-react-app에 대한 ASP.NET Core SPA(단일 페이지 응용 프로그램) 프로젝트 템플릿을 시작하는 방법을 알아봅니다.
+description: React 및 create-react-app에 대한 ASP.NET Core SPA(단일 페이지 애플리케이션) 프로젝트 템플릿을 시작하는 방법을 알아봅니다.
 monikerRange: '>= aspnetcore-2.0'
 ms.author: scaddie
 ms.custom: mvc
 ms.date: 02/21/2018
 uid: spa/react
-ms.openlocfilehash: c83b119e81d7d0abfd727cb8c72abb09763d9448
-ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
+ms.openlocfilehash: d83bff8abcd5b59d8bc4a51a101510755394f0c4
+ms.sourcegitcommit: ed76cc752966c604a795fbc56d5a71d16ded0b58
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46011431"
+ms.lasthandoff: 02/02/2019
+ms.locfileid: "55667689"
 ---
 # <a name="use-the-react-project-template-with-aspnet-core"></a>ASP.NET Core에 React 프로젝트 템플릿 사용
 
@@ -97,14 +97,22 @@ npm install --save <package_name>
 
 이 기본 설정에는 단점이 있습니다. C# 코드를 수정하고 ASP.NET Core 앱을 다시 시작해야 할 때마다 CRA 서버가 다시 시작됩니다. 백업을 시작하려면 몇 초 정도가 필요합니다. C# 코드를 자주 편집하고 있고 CRA 서버가 다시 시작될 때까지 기다리지 않으려면 ASP.NET Core 프로세스와는 별도로 CRA 서버를 외부에서 실행합니다. 이를 수행하려면:
 
-1. 명령 프롬프트에서 *ClientApp* 하위 디렉터리로 전환하고 CRA 개발 서버를 시작합니다.
+1. 추가 된 *.env* 파일을 합니다 *ClientApp* 다음 설정 사용 하 여 하위 디렉터리:
+
+    ```
+    BROWSER=none
+    ```
+    
+    이렇게 하면 웹 브라우저에서에서 CRA 서버 외부에서 시작 하는 경우.
+
+2. 명령 프롬프트에서 *ClientApp* 하위 디렉터리로 전환하고 CRA 개발 서버를 시작합니다.
 
     ```console
     cd ClientApp
     npm start
     ```
 
-2. 자체 인스턴스 중 하나를 시작하지 않고 외부 CRA 서버 인스턴스를 사용하도록 ASP.NET Core 앱을 수정합니다. *Startup* 클래스에서 `spa.UseReactDevelopmentServer` 호출을 다음으로 바꿉니다.
+3. 자체 인스턴스 중 하나를 시작하지 않고 외부 CRA 서버 인스턴스를 사용하도록 ASP.NET Core 앱을 수정합니다. *Startup* 클래스에서 `spa.UseReactDevelopmentServer` 호출을 다음으로 바꿉니다.
 
     ```csharp
     spa.UseProxyToSpaDevelopmentServer("http://localhost:3000");

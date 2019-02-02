@@ -3,16 +3,16 @@ title: ASP.NET Core SignalR의 인증 및 권한 부여
 author: bradygaster
 description: ASP.NET Core SignalR에서 인증 및 권한 부여를 사용하는 방법을 알아봅니다.
 monikerRange: '>= aspnetcore-2.1'
-ms.author: anurse
+ms.author: bradyg
 ms.custom: mvc
-ms.date: 06/29/2018
+ms.date: 01/31/2019
 uid: signalr/authn-and-authz
-ms.openlocfilehash: c807b65e0047fe6cedff08aef9f758653fab6a0d
-ms.sourcegitcommit: ebf4e5a7ca301af8494edf64f85d4a8deb61d641
+ms.openlocfilehash: 5d4574775606b4354ec099b6b32e05294d9f0e45
+ms.sourcegitcommit: ed76cc752966c604a795fbc56d5a71d16ded0b58
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54835819"
+ms.lasthandoff: 02/02/2019
+ms.locfileid: "55667312"
 ---
 # <a name="authentication-and-authorization-in-aspnet-core-signalr"></a>ASP.NET Core SignalR의 인증 및 권한 부여
 
@@ -68,22 +68,14 @@ var connection = new HubConnectionBuilder()
 
 `IUserIdProvider`를 구현하는 새 클래스를 추가하고 사용자로부터 식별자로 사용할 클레임 중 하나를 가져옵니다. 예를 들어, "Name" 클레임(`[Domain]\[Username]` 형태의 Windows 사용자 이름)을 사용하려면 다음과 같은 클래스를 생성합니다.
 
-```csharp
-public class NameUserIdProvider : IUserIdProvider
-{
-    public string GetUserId(HubConnectionContext connection)
-    {
-        return connection.User?.FindFirst(ClaimTypes.Name)?.Value;
-    }
-}
-```
+[!code-csharp[Name based provider](authn-and-authz/sample/nameuseridprovider.cs?name=NameUserIdProvider)]
 
 `ClaimTypes.Name` 대신 `User`의 다른 모든 값(예: Windows SID 식별자 등)을 사용할 수 있습니다.
 
 > [!NOTE]
 > 선택한 값은 시스템의 모든 사용자 간에 고유해야 합니다. 그렇지 않으면 특정 사용자를 대상으로 한 메시지가 다른 사용자에게 전달될 수 있습니다.
 
-`Startup.ConfigureServices` 메서드에서 `.AddSignalR`을 호출한 **후에** 이 구성 요소를 등록합니다.
+이 구성 요소를 등록 하면 `Startup.ConfigureServices` 메서드.
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
@@ -107,6 +99,27 @@ var connection = new HubConnectionBuilder()
 ```
 
 Windows 인증은 Microsoft Internet Explorer 또는 Microsoft Edge를 사용하는 경우에만 브라우저 클라이언트에서 지원됩니다.
+
+### <a name="use-claims-to-customize-identity-handling"></a>사용 하 여 클레임 id 처리를 사용자 지정 하려면
+
+앱 사용자를 인증 하는 사용자 클레임에서 SignalR 사용자 Id를 파생할 수 있습니다. SignalR 사용자 Id를 생성 하는 방법을 사용 하지 않으려면 구현 `IUserIdProvider` 구현을 등록 합니다.
+
+샘플 코드를 사용 하는 클레임을 사용 하는 식별 속성으로 사용자의 전자 메일 주소를 선택 하는 방법을 보여 줍니다. 
+
+> [!NOTE]
+> 선택한 값은 시스템의 모든 사용자 간에 고유해야 합니다. 그렇지 않으면 특정 사용자를 대상으로 한 메시지가 다른 사용자에게 전달될 수 있습니다.
+
+[!code-csharp[Email provider](authn-and-authz/sample/EmailBasedUserIdProvider.cs?name=EmailBasedUserIdProvider)]
+
+형식 사용 하 여 클레임을 추가 하는 계정 등록 `ClaimsTypes.Email` ASP.NET identity 데이터베이스에 있습니다.
+
+[!code-csharp[Adding the email to the ASP.NET identity claims](authn-and-authz/sample/pages/account/Register.cshtml.cs?name=AddEmailClaim)]
+
+이 구성 요소를 등록 하면 `Startup.ConfigureServices`합니다.
+
+```csharp
+services.AddSingleton<IUserIdProvider, EmailBasedUserIdProvider>();
+```
 
 ## <a name="authorize-users-to-access-hubs-and-hub-methods"></a>허브 및 허브 메서드 접근에 대한 사용자 권한 부여
 

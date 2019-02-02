@@ -4,26 +4,25 @@ title: OWIN 시작 클래스 검색 | Microsoft Docs
 author: Praburaj
 description: 이 자습서에는 OWIN 시작 클래스는 로드를 구성 하는 방법을 보여 줍니다. OWIN에 대 한 자세한 내용은 참조는 프로젝트 Katana 개요. 이 자습서를 하는 중...
 ms.author: riande
-ms.date: 10/17/2013
+ms.date: 01/28/2019
 ms.assetid: 08257f55-36f4-4e39-9c88-2a5602838c79
 msc.legacyurl: /aspnet/overview/owin-and-katana/owin-startup-class-detection
 msc.type: authoredcontent
-ms.openlocfilehash: 4e753187f1caae646402712c2abc28856ae71a79
-ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
+ms.openlocfilehash: 0b34cca8b48383dbb028106651758dff889ed614
+ms.sourcegitcommit: ed76cc752966c604a795fbc56d5a71d16ded0b58
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48910709"
+ms.lasthandoff: 02/02/2019
+ms.locfileid: "55667299"
 ---
 <a name="owin-startup-class-detection"></a>OWIN 시작 클래스 검색
 ====================
-하 여 [Praburaj Thiagarajan](https://github.com/Praburaj), [Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 > 이 자습서에는 OWIN 시작 클래스는 로드를 구성 하는 방법을 보여 줍니다. OWIN에 대 한 자세한 내용은 참조 하세요. [는 프로젝트 Katana 개요](an-overview-of-project-katana.md)합니다. Rick anderson이 자습서가 작성 ( [ @RickAndMSFT ](https://twitter.com/#!/RickAndMSFT) ), Praburaj Thiagarajan 및 Howard Dierking ( [ @howard \_dierking](https://twitter.com/howard_dierking) ).
 >
 > ## <a name="prerequisites"></a>전제 조건
 >
-> [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
+> [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/)
 
 
 ## <a name="owin-startup-class-detection"></a>OWIN 시작 클래스 검색
@@ -31,12 +30,12 @@ ms.locfileid: "48910709"
  모든 OWIN 응용 프로그램에 시작 클래스가 응용 프로그램 파이프라인에 대 한 구성 요소를 지정 하는 위치입니다. 여러 가지 방법으로 런타임에 startup 클래스를 연결할 수 있습니다, 호스팅 모델에 따라 있습니다 (OwinHost, IIS 및 IIS Express)을 선택 합니다. 이 자습서에 나와 있는 시작 클래스는 모든 호스팅 응용 프로그램에서 사용할 수 있습니다. 호스팅 런타임을 사용 하 여 다음 중 하나에 도달 startup 클래스를 연결 합니다.
 
 1. **명명 규칙**: Katana 라는 클래스를 찾고 `Startup` 어셈블리 이름 또는 전역 네임 스페이스를 일치 하는 네임 스페이스에 있습니다.
-2. **OwinStartup 특성**:이 모드는 대부분의 개발자 startup 클래스를 지정 하는 데 걸리는 방법입니다. 다음 특성은으로 startup 클래스를 설정 합니다 `TestStartup` 클래스는 `StartupDemo` 네임 스페이스입니다.
+2. **OwinStartup 특성**: 이 방법은 대부분의 개발자 startup 클래스를 지정 하는 데 걸리는 합니다. 다음 특성은으로 startup 클래스를 설정 합니다 `TestStartup` 클래스는 `StartupDemo` 네임 스페이스입니다.
 
     [!code-csharp[Main](owin-startup-class-detection/samples/sample1.cs)]
 
    `OwinStartup` 특성 명명 규칙을 재정의 합니다. 이 특성을 사용 하 여 이름을 지정할 수도 있습니다, 있지만 이름을 사용 하도 사용 해야는 `appSetting` 구성 파일의 요소입니다.
-3. **구성 파일에서 appSetting 요소**: 합니다 `appSetting` 재정의 `OwinStartup` 특성 및 명명 규칙. 여러 시작 클래스를 할 수 있습니다 (사용 하 여 각는 `OwinStartup` 특성) 및 startup 클래스는 다음과 유사한 태그를 사용 하 여 구성 파일에서 로드할 구성:
+3. **구성 파일에서 appSetting 요소**: 합니다 `appSetting` 재정의 `OwinStartup` 특성 및 명명 규칙입니다. 여러 시작 클래스를 할 수 있습니다 (사용 하 여 각는 `OwinStartup` 특성) 및 startup 클래스는 다음과 유사한 태그를 사용 하 여 구성 파일에서 로드할 구성:
 
     [!code-xml[Main](owin-startup-class-detection/samples/sample2.xml)]
 
@@ -60,7 +59,7 @@ ms.locfileid: "48910709"
 1. 빈 Asp.Net 웹 응용 프로그램을 만들고 이름을 **StartupDemo**합니다. -설치 `Microsoft.Owin.Host.SystemWeb` NuGet 패키지 관리자를 사용 하 여 합니다. **도구** 메뉴에서 **NuGet 패키지 관리자**를 차례로 **패키지 관리자 콘솔**합니다. 다음 명령을 입력합니다.
 
     [!code-powershell[Main](owin-startup-class-detection/samples/sample7.ps1)]
-2. OWIN 시작 클래스를 추가 합니다. 선택한 Visual Studio 2013에서 프로젝트를 클릭 마우스 오른쪽 단추로 **클래스 추가**합니다.-합니다 **새 항목 추가** 대화 상자에 입력 *OWIN* 검색 필드에 이름 Startup.cs로 변경 클릭 하 고 **추가**합니다.
+2. OWIN 시작 클래스를 추가 합니다. Visual Studio 2017에서 프로젝트를 마우스 오른쪽 단추로 클릭 하 고 선택 **클래스 추가**합니다.-합니다 **새 항목 추가** 대화 상자에 입력 *OWIN* 변경 Startup.cs 이름 확인 하 고 검색 필드 선택한 후 **추가**합니다.
 
      ![](owin-startup-class-detection/_static/image1.png)
 
@@ -68,7 +67,7 @@ ms.locfileid: "48910709"
 
      ![](owin-startup-class-detection/_static/image2.png)
 
-   또는 프로젝트를 마우스 오른쪽 단추로 클릭 수를 선택 **추가**을 선택한 후 **새 항목**를 선택한 후는 **Owin Startup 클래스**합니다.
+   프로젝트를 마우스 오른쪽 단추로 클릭 하 고 선택할 수 또는 **추가**을 선택한 후 **새 항목**를 선택한 후는 **Owin Startup 클래스**합니다.
 
      ![](owin-startup-class-detection/_static/image3.png)
 
@@ -80,7 +79,7 @@ ms.locfileid: "48910709"
      > [!NOTE]
      > 위의 코드에서 우리는 주석으로 처리를 `OwinStartup` 특성과 것 이라는 클래스를 실행 하는 규칙에 의존 하는 `Startup` 합니다.-키를 눌러 ***F5*** 응용 프로그램을 실행 합니다. 몇 번 새로 고침을 누릅니다.
 
-    ![](owin-startup-class-detection/_static/image4.png) 이 자습서에서는 이미지에 표시 된 숫자 참고: 참조 수가 일치 하지 않습니다. 밀리초 문자열 페이지를 새로 고칠 때 새 응답이 표시 됩니다.
+    ![](owin-startup-class-detection/_static/image4.png) 참고: 이 자습서에서는 이미지에 표시 된 숫자 표시 하는 것을 일치 하지 않습니다. 밀리초 문자열 페이지를 새로 고칠 때 새 응답이 표시 됩니다.
   추적 정보를 볼 수는 **출력** 창입니다.
 
     ![](owin-startup-class-detection/_static/image5.png)
@@ -158,6 +157,7 @@ ms.locfileid: "48910709"
 
    프로덕션 시작 클래스 로드 됩니다.
     ![](owin-startup-class-detection/_static/image9.png)
+
    응용 프로그램에 여러 시작 클래스 및이 예제에서는 시작 로드할 클래스를 런타임 시까지 지연 합니다.
 8. 다음 런타임 시작 옵션을 테스트 합니다.
 

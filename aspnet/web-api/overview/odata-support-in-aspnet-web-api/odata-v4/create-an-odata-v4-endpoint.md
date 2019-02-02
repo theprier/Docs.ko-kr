@@ -4,20 +4,18 @@ title: ASP.NET Web API 2.2 사용 하 여 OData v4 엔드포인트 만들기 | M
 author: MikeWasson
 description: Open Data Protocol (OData)는 웹에 대 한 데이터 액세스 프로토콜. OData 쿼리 및 CRUD 작업을 통해 데이터 집합을 조작할 일관 된 방식으로 제공 하는 중...
 ms.author: riande
-ms.date: 06/24/2014
+ms.date: 01/23/2019
 ms.assetid: 1e1927c0-ded1-4752-80fd-a146628d2f09
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v4/create-an-odata-v4-endpoint
 msc.type: authoredcontent
-ms.openlocfilehash: 48c1a78c96cb0ebfa0b053dfef84e76433112650
-ms.sourcegitcommit: 7890dfb5a8f8c07d813f166d3ab0c263f893d0c6
+ms.openlocfilehash: c6a4aa4eb563fd77d5afd9248175d5f5b7984d19
+ms.sourcegitcommit: ed76cc752966c604a795fbc56d5a71d16ded0b58
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48795420"
+ms.lasthandoff: 02/02/2019
+ms.locfileid: "55667572"
 ---
-<a name="create-an-odata-v4-endpoint-using-aspnet-web-api-22"></a>ASP.NET Web API 2.2 사용 하 여 OData v4 엔드포인트 만들기
-====================
-[Mike Wasson](https://github.com/MikeWasson)
+# <a name="create-an-odata-v4-endpoint-using-aspnet-web-api"></a>ASP.NET Web API를 사용 하 여 OData v4 엔드포인트 만들기 
 
 > Open Data Protocol (OData)는 웹에 대 한 데이터 액세스 프로토콜. OData 쿼리 및 CRUD 작업을 통해 데이터 집합을 조작할 일관 된 방식으로 제공 (만들기, 읽기, 업데이트 및 삭제).
 >
@@ -27,11 +25,11 @@ ms.locfileid: "48795420"
 >
 > ## <a name="software-versions-used-in-the-tutorial"></a>이 자습서에 사용 되는 소프트웨어 버전
 >
-> - Web API 2.2
+> - Web API 5.2
 > - OData v4
-> - Visual Studio 2013 (Visual Studio 2017 다운로드 [여기](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017))
+> - Visual Studio 2017 (Visual Studio 2017 다운로드 [여기](https://visualstudio.microsoft.com/downloads/))
 > - Entity Framework 6
-> - .NET 4.5
+> - .NET 4.7.2
 >
 > ## <a name="tutorial-versions"></a>자습서 버전
 >
@@ -41,13 +39,17 @@ ms.locfileid: "48795420"
 
 Visual Studio에서에서 합니다 **파일** 메뉴에서 **새로 만들기** &gt; **프로젝트**합니다.
 
-확장 **설치 됨** &gt; **템플릿** &gt; **Visual C#** &gt; **웹**를 선택 합니다  **ASP.NET 웹 응용 프로그램** 템플릿. 프로젝트 이름을 &quot;ProductService&quot;합니다.
+확장 **설치 됨** &gt; **Visual C#**  &gt; **웹**를 선택 합니다 **ASP.NET 웹 응용 프로그램 (.NET Framework)**  템플릿. 프로젝트 이름을 &quot;ProductService&quot;합니다.
 
-[![](create-an-odata-v4-endpoint/_static/image2.png)](create-an-odata-v4-endpoint/_static/image1.png)
+[![](create-an-odata-v4-endpoint/_static/image7.png)](create-an-odata-v4-endpoint/_static/image7.png)
 
-에 **새 프로젝트** 대화 상자에서 선택 합니다 **빈** 템플릿. 아래 &quot;폴더를 추가 하 고 핵심 참조 하는 중... &quot;, 클릭 **Web API**합니다. **확인**을 클릭합니다.
+**확인**을 선택합니다.
 
-[![](create-an-odata-v4-endpoint/_static/image4.png)](create-an-odata-v4-endpoint/_static/image3.png)
+
+
+[![](create-an-odata-v4-endpoint/_static/image8.png)](create-an-odata-v4-endpoint/_static/image8.png)
+
+선택 된 **빈** 템플릿. 아래 **폴더를 추가 하 고 핵심에 대 한 참조:** 를 선택 **Web API**합니다. **확인**을 선택합니다.
 
 ## <a name="install-the-odata-packages"></a>OData 패키지 설치
 
@@ -138,7 +140,7 @@ A *컨트롤러* 는 HTTP 요청을 처리 하는 클래스입니다. OData 서�
 
 컨트롤러에 대 한 시작 지점입니다. 다음으로, 모든 CRUD 작업에 대 한 메서드를 추가 하겠습니다.
 
-## <a name="querying-the-entity-set"></a>엔터티 집합 쿼리
+## <a name="query-the-entity-set"></a>엔터티 집합 쿼리
 
 다음 메서드를 추가 `ProductsController`합니다.
 
@@ -148,13 +150,13 @@ A *컨트롤러* 는 HTTP 요청을 처리 하는 클래스입니다. OData 서�
 
 합니다 **[EnableQuery]** 특성 $filter와 $sort, $page 쿼리 옵션을 사용 하 여 쿼리를 수정 하는 클라이언트를 사용 하도록 설정 합니다. 자세한 내용은 [OData 쿼리 옵션 지원](../supporting-odata-query-options.md)합니다.
 
-## <a name="adding-an-entity-to-the-entity-set"></a>엔터티 집합에 엔터티 추가
+## <a name="add-an-entity-to-the-entity-set"></a>엔터티 집합에 엔터티 추가
 
 데이터베이스에 새 제품을 추가 하려면 클라이언트를 사용 하려면 다음 메서드를 추가 `ProductsController`합니다.
 
 [!code-csharp[Main](create-an-odata-v4-endpoint/samples/sample10.cs)]
 
-## <a name="updating-an-entity"></a>엔터티 업데이트
+## <a name="update-an-entity"></a>엔터티 업데이트
 
 OData는 엔터티, PATCH 및 PUT 업데이트를 위해 두 개의 서로 다른 의미 체계를 지원 합니다.
 
@@ -169,7 +171,7 @@ PUT의 단점은 클라이언트 변경 하지 않는 하는 값을 포함 하 �
 
 PATCH의 경우 컨트롤러를 사용 하는 **델타&lt;T&gt;**  변경 내용을 추적 하는 형식입니다.
 
-## <a name="deleting-an-entity"></a>엔터티 삭제
+## <a name="delete-an-entity"></a>엔터티 삭제
 
 데이터베이스에서 제품을 삭제 하도록 클라이언트를 사용 하려면 다음 메서드를 추가 `ProductsController`합니다.
 

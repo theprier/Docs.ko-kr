@@ -1,36 +1,34 @@
 ---
 uid: web-api/overview/testing-and-debugging/troubleshooting-http-405-errors-after-publishing-web-api-applications
-title: 해결 HTTP 405 오류 게시 후 Web API 2 응용 프로그램 | Microsoft Docs
+title: 405 오류 게시 후 웹 HTTP 문제 해결 API 응용 프로그램 | Microsoft Docs
 author: rmcmurray
 description: 이 자습서에는 프로덕션 웹 서버에 Web API 응용 프로그램을 게시 한 후 HTTP 405 오류를 해결 하는 방법을 설명 합니다.
 ms.author: riande
-ms.date: 05/01/2014
+ms.date: 01/23/2019
 ms.assetid: 07ec7d37-023f-43ea-b471-60b08ce338f7
 msc.legacyurl: /web-api/overview/testing-and-debugging/troubleshooting-http-405-errors-after-publishing-web-api-applications
 msc.type: authoredcontent
-ms.openlocfilehash: 735b8ceeafa63e0546529ef17f103070dc760794
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: ce5b617cc1032d190cc2450aa554b462ea6f6156
+ms.sourcegitcommit: ed76cc752966c604a795fbc56d5a71d16ded0b58
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41836553"
+ms.lasthandoff: 02/02/2019
+ms.locfileid: "55667416"
 ---
-<a name="troubleshooting-http-405-errors-after-publishing-web-api-2-applications"></a>해결 HTTP 405 오류 게시 후 Web API 2 응용 프로그램
-====================
-[Robert McMurray](https://github.com/rmcmurray)
+# <a name="troubleshooting-http-405-errors-after-publishing-web-api-applications"></a>Web API 응용 프로그램을 게시 한 후 HTTP 405 오류 문제 해결
 
 > 이 자습서에는 프로덕션 웹 서버에 Web API 응용 프로그램을 게시 한 후 HTTP 405 오류를 해결 하는 방법을 설명 합니다.
 > 
-> ## <a name="software-versions-used-in-the-tutorial"></a>이 자습서에 사용 되는 소프트웨어 버전
+> ## <a name="software-used-in-this-tutorial"></a>이 자습서에서 사용 되는 소프트웨어
 > 
 > 
 > - [인터넷 정보 서비스 (IIS)](https://www.iis.net/) (버전 7 이상)
-> - [웹 API](../../index.md) (버전 1 또는 2)
+> - [Web API](../../index.md) 
 
 
-Web API 응용 프로그램은 일반적으로 몇 가지 일반적인 HTTP 동사 사용: GET, POST, PUT, DELETE 및 경우에 따라 패치 합니다. 즉, 개발자가 발생할 경우 이러한 동사 또는 Visual Studio 개발 서버에서 제대로 작동 하는 Web API 컨트롤러를 반환 하는 경우에는 해당 프로덕션 서버의 다른 IIS 모듈에 의해 구현 되는 위치는 HTTP 405 프로덕션 서버에 배포 하는 동안 오류가 발생 했습니다. 다행히이 문제는 쉽게 해결 하지만 문제가 발생 하는 이유와 설명은 보장 하는 확인 합니다.
+웹 API 응용 프로그램은 일반적으로 몇 가지 일반적인 HTTP 동사를 사용합니다. GET, POST, PUT, DELETE 및 경우에 따라 패치 합니다. 즉, 개발자가 발생할 경우 이러한 동사 또는 Visual Studio 개발 서버에서 제대로 작동 하는 Web API 컨트롤러를 반환 하는 경우에는 해당 프로덕션 서버의 다른 IIS 모듈에 의해 구현 되는 위치는 HTTP 405 프로덕션 서버에 배포 하는 동안 오류가 발생 했습니다. 다행히이 문제는 쉽게 해결 하지만 문제가 발생 하는 이유와 설명은 보장 하는 확인 합니다.
 
-## <a name="what-causes-http-405-errors"></a>어떤 원인 HTTP 405 오류
+## <a name="what-causes-http-405-errors"></a>HTTP 405 오류 원인
 
 HTTP 405 오류 문제 하는 방법을 배우는 첫 번째 단계에서 HTTP 405 오류 실제로 의미를 이해 하는 것입니다. HTTP에 대 한 문서 주 제어 [RFC 2616](http://www.ietf.org/rfc/rfc2616.txt)와 HTTP 405 상태 코드를 정의 하는 ***메서드를 사용할 수 없습니다***, 상황으로이 상태 코드를 자세히 설명 하 고 있는 &quot;메서드 에 지정 된 요청 줄 요청 URI로 식별 되는 리소스에 허용 되지 않습니다.&quot; 즉, HTTP 동사는 HTTP 클라이언트 요청에 특정 URL에 허용 되지 않습니다.
 
@@ -39,8 +37,8 @@ HTTP 405 오류 문제 하는 방법을 배우는 첫 번째 단계에서 HTTP 4
 | HTTP 메서드 | 설명 |
 | --- | --- |
 | **GET** | 이 메서드는 데이터를 검색할 URI에서 아마도 가장 사용 되는 HTTP 메서드가 사용 됩니다. |
-| **헤드** | 이 메서드는 요청 URI에서에서 데이터를 실제로 검색 하지 해당-HTTP 상태를 간단히 검색 한다는 점을 제외 하면 GET 메서드의 경우와 비슷하게 합니다. |
-| **올리기** | 이 메서드는 일반적으로 데 URI;에 새 데이터를 전송 합니다. POST는 양식 데이터를 전송할 자주 사용 됩니다. |
+| **HEAD** | 이 메서드는 요청 URI에서에서 데이터를 실제로 검색 하지 해당-HTTP 상태를 간단히 검색 한다는 점을 제외 하면 GET 메서드의 경우와 비슷하게 합니다. |
+| **POST** | 이 메서드는 일반적으로 데 URI;에 새 데이터를 전송 합니다. POST는 양식 데이터를 전송할 자주 사용 됩니다. |
 | **PUT** | 이 메서드는 일반적으로 데; URI에서 원시 데이터 보내기 PUT는 Web API 응용 프로그램에 JSON 또는 XML 데이터를 전송할 자주 사용 됩니다. |
 | **DELETE** | 이 메서드는 URI에서 데이터를 제거 하려면 사용 됩니다. |
 | **옵션** | 이 메서드는 URI에 대해 지원 되는 HTTP 메서드 목록을 검색 하려면 일반적으로 사용 됩니다. |
@@ -48,7 +46,7 @@ HTTP 405 오류 문제 하는 방법을 배우는 첫 번째 단계에서 HTTP 4
 | **MKCOL** | WebDAV를 사용 하 여이 메서드를 사용 하 고 지정된 된 URI의 컬렉션 (예: 디렉터리)를 만드는 데 사용 됩니다. |
 | **PROPFIND PROPPATCH** | WebDAV를 사용 하 여 이러한 두 메서드는 사용 및 사용 되는 쿼리 또는 URI에 대 한 속성을 설정 합니다. |
 | **잠금을 해제** | WebDAV를 사용 하 여 이러한 두 메서드가 사용 됩니다 하 고 작성 하는 경우 요청 URI에 의해 식별 되는 리소스 잠금/잠금 해제 하는 데 사용 됩니다. |
-| **패치** | 이 메서드는 기존 HTTP 리소스를 수정 하려면 사용 됩니다. |
+| **PATCH** | 이 메서드는 기존 HTTP 리소스를 수정 하려면 사용 됩니다. |
 
 HTTP 메서드 중 하나는 서버에서 사용 하기 위해 구성 되 면 서버가 HTTP 상태 및 요청에 대 한 적절 한 기타 데이터를 사용 하 여 응답 합니다. (예를 들어 GET 메서드는 HTTP 200 나타날 ***확인*** 응답 및 PUT 메서드를 HTTP 201 나타날 ***Created*** 응답 합니다.)
 
@@ -56,7 +54,7 @@ HTTP 메서드 중 하나는 서버에서 사용 하기 위해 구성 되 면 �
 
 그러나 HTTP 메서드를 서버에서 사용 하도록 구성 된 지정한 URI에 대 한 비활성화 된 경우 서버는 응답을 보냅니다는 HTTP 405 ***메서드를 사용할 수 없습니다*** 오류입니다.
 
-## <a name="example-http-405-error"></a>예제 HTTP 405 오류
+## <a name="example-http-405-error"></a>예제에서는 HTTP 405 오류
 
 다음 예제에서는 HTTP 요청 및 응답 있는 웹 서버에서 Web API 응용 프로그램에 값을 배치 하기 위해 시도 하는 HTTP 클라이언트 및 서버 상태 PUT 메서드를 사용할 수 있는 HTTP 오류를 반환 합니다. 상황을 보여 줍니다.
 
@@ -75,7 +73,7 @@ HTTP 응답:
 
 이 예제에서는 HTTP 클라이언트는 유효한 JSON 요청 웹 서버에 있는 Web API 응용 프로그램에 대 한 URL을 보냈지만 서버 URL에 대 한 PUT 메서드를 허용 되지 않음을 나타내는 HTTP 405 오류 메시지를 반환 합니다. 반면, 요청 URI는 Web API 응용 프로그램에 대 한 경로 일치 하지 않은 서버 반환을 HTTP 404 ***찾지*** 오류입니다.
 
-## <a name="resolving-http-405-errors"></a>확인할 HTTP 405 오류
+## <a name="resolve-http-405-errors"></a>HTTP 405 오류 해결
 
 이유는 특정 HTTP 동사를 사용할 수 없는, 하지만 IIS에서이 오류의 주요 원인입니다. 한 가지 주요 시나리오는 여러 가지가 있습니다: 동일한 동사/메서드에 대 한 처리기를 여러 개 정의 되어 있고에서 예상 되는 처리기를 차단 하는 처리기 중 하나 요청을 처리 합니다. 통해 IIS에서 마지막으로 항목을 기준으로 순서 처리기 경로, 동사, 리소스 등의 첫 번째 일치 하는 조합을 사용 하는 요청을 처리 하는 위치 applicationHost.config 및 web.config 파일에서 첫 번째 처리기를 처리 합니다.
 
@@ -93,7 +91,7 @@ HTTP 응답:
 
 [!code-xml[Main](troubleshooting-http-405-errors-after-publishing-web-api-applications/samples/sample5.xml)]
 
-이 시나리오는 응용 프로그램은 개발 환경에서 프로덕션 환경에 게시 된 후 처리기/모듈 목록을 개발 환경과 프로덕션 환경이 다르기 때문에 이런에 종종 발생 합니다. 예를 들어, Visual Studio 2012 또는 2013을 사용 하 여 Web API 응용 프로그램을 개발 하는, 하는 경우 IIS Express 8 테스트에 대 한 기본 웹 서버입니다. 이 개발 웹 서버는 서버 제품에서 제공 되는 모든 IIS 기능을 축소 된 버전 및이 개발 웹 서버에는 개발 시나리오에 대 한 추가 된 몇 가지 변경 내용이 포함 되어 있습니다. 예를 들어, WebDAV 모듈 실제 사용에서 되지 않을 수 있습니다 하지만 자주 IIS의 전체 버전을 실행 하는 프로덕션 웹 서버에 설치 됩니다. 개발 버전의 IIS (IIS Express), WebDAV 모듈을 설치 하지만 WebDAV 모듈에 대 한 항목은 의도적으로 주석으로 WebDAV 모듈은 특히 IIS Express 구성을 변경 하지 않는 경우 IIS Express에서 로드 되지 않습니다 있도록 IIS Express 설치를 사용 하 여 WebDAV 기능을 추가 하려면 설정입니다. 결과적으로, 웹 응용 프로그램 개발 컴퓨터에 제대로 작동 않을 수 있지만 프로덕션 웹 서버에 Web API 응용 프로그램을 게시할 때 HTTP 405 오류를 발생할 수 있습니다.
+이 시나리오는 응용 프로그램은 개발 환경에서 프로덕션 환경에 게시 된 후 처리기/모듈 목록을 개발 환경과 프로덕션 환경이 다르기 때문에 이런에 종종 발생 합니다. 예를 들어, Visual Studio 2012를 사용 하는 경우 또는 Web API 응용 프로그램을 개발 하려면 나중에 IIS Express는 테스트에 대 한 기본 웹 서버. 이 개발 웹 서버는 서버 제품에서 제공 되는 모든 IIS 기능을 축소 된 버전 및이 개발 웹 서버에는 개발 시나리오에 대 한 추가 된 몇 가지 변경 내용이 포함 되어 있습니다. 예를 들어, WebDAV 모듈 실제 사용에서 되지 않을 수 있습니다 하지만 자주 IIS의 전체 버전을 실행 하는 프로덕션 웹 서버에 설치 됩니다. 개발 버전의 IIS (IIS Express), WebDAV 모듈을 설치 하지만 WebDAV 모듈에 대 한 항목은 의도적으로 주석으로 WebDAV 모듈은 특히 IIS Express 구성을 변경 하지 않는 경우 IIS Express에서 로드 되지 않습니다 있도록 IIS Express 설치를 사용 하 여 WebDAV 기능을 추가 하려면 설정입니다. 결과적으로, 웹 응용 프로그램 개발 컴퓨터에 제대로 작동 않을 수 있지만 프로덕션 웹 서버에 Web API 응용 프로그램을 게시할 때 HTTP 405 오류를 발생할 수 있습니다.
 
 ## <a name="summary"></a>요약
 

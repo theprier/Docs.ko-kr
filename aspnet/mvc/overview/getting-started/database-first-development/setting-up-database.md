@@ -9,16 +9,16 @@ ms.topic: tutorial
 ms.assetid: 095abad4-3bfe-4f06-b092-ae6a735b7e49
 msc.legacyurl: /mvc/overview/getting-started/database-first-development/setting-up-database
 msc.type: authoredcontent
-ms.openlocfilehash: a503e3db63c873249178fd4783d322f4067c3208
-ms.sourcegitcommit: c47d7c131eebbcd8811e31edda210d64cf4b9d6b
+ms.openlocfilehash: dfc6c7a7083524a1e7049fdc879fe679f951084d
+ms.sourcegitcommit: ed76cc752966c604a795fbc56d5a71d16ded0b58
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55236382"
+ms.lasthandoff: 02/02/2019
+ms.locfileid: "55667741"
 ---
 # <a name="tutorial-get-started-with-ef-database-first-using-mvc-5"></a>자습서: EF Database first MVC 5를 사용 하 여 시작
 
-MVC, Entity Framework 및 ASP.NET 스 캐 폴딩을 사용 하 여, 기존 데이터베이스에 대 한 인터페이스를 제공 하는 웹 응용 프로그램을 만들 수 있습니다. 이 자습서 시리즈에서는 자동으로 표시, 편집, 만들기, 사용자를 사용 하는 코드를 생성 하 고 데이터베이스 테이블에 있는 데이터를 삭제 하는 방법을 보여 줍니다. 생성된 된 코드는 데이터베이스 테이블의 열에 해당합니다. 시리즈의 마지막 부분에서는 사이트 및 데이터베이스를 Azure에 배포 됩니다.
+MVC, Entity Framework 및 ASP.NET 스 캐 폴딩을 사용 하 여, 기존 데이터베이스에 대 한 인터페이스를 제공 하는 웹 응용 프로그램을 만들 수 있습니다. 이 자습서 시리즈에서는 자동으로 표시, 편집, 만들기, 사용자를 사용 하는 코드를 생성 하 고 데이터베이스 테이블에 있는 데이터를 삭제 하는 방법을 보여 줍니다. 생성된 된 코드는 데이터베이스 테이블의 열에 해당합니다. 배웁니다 시리즈의 마지막 부분에서는 데이터 주석 유효성 검사 요구 사항을 지정 하 여 서식 지정을 표시 하는 데이터 모델에 추가 하려면 어떻게 합니다. 완료 되 면 Azure App Service에.NET 앱 및 SQL database를 배포 하는 방법을 알아보려면 Azure 문서에 이동할 수 있습니다.
 
 이 자습서에는 기존 데이터베이스 및 신속 하 게 데이터와 상호 작용할 수 있도록 하는 웹 응용 프로그램을 만들기 시작 하는 방법을 보여 줍니다. 사용 하 여 Entity Framework 6 및 MVC 5 웹 응용 프로그램을 빌드합니다. ASP.NET 스 캐 폴딩 기능을 사용 하면 자동으로 표시, 업데이트, 만들기, 데이터 삭제에 대 한 코드를 생성할 수 있습니다. Visual Studio 내에서 게시 도구를 사용 하 여 쉽게 배포할 수 있습니다 사이트 및 데이터베이스를 Azure로 합니다.
 
@@ -51,7 +51,7 @@ Visual Studio를 시작 하 고 만듭니다는 **SQL Server 데이터베이스 
 
 ![데이터베이스 프로젝트 만들기](setting-up-database/_static/image1.png)
 
-이제 빈 데이터베이스 프로젝트가 있습니다. 프로젝트의 대상 플랫폼으로 Azure SQL Database를 설정 해야 하므로이 자습서의 뒷부분에서 Azure에이 데이터베이스를 배포 합니다. 대상 플랫폼을 설정 실제로 배포 되지는 않습니다 데이터베이스 데이터베이스 프로젝트 데이터베이스 디자인 대상 플랫폼과 호환 되는지 확인 합니다만 의미 합니다. 대상 플랫폼을 설정 하려면 엽니다는 **속성** 선택한 프로젝트에 대 한 **Microsoft Azure SQL Database** 대상 플랫폼에 대 한 합니다.
+이제 빈 데이터베이스 프로젝트가 있습니다. 이 데이터베이스를 Azure에 배포할 수 있습니다 있는지, 프로젝트에 대 한 대상 플랫폼으로 Azure SQL Database를 설정 합니다. 대상 플랫폼을 설정 실제로 배포 되지는 않습니다 데이터베이스 데이터베이스 프로젝트 데이터베이스 디자인 대상 플랫폼과 호환 되는지 확인 합니다만 의미 합니다. 대상 플랫폼을 설정 하려면 엽니다는 **속성** 선택한 프로젝트에 대 한 **Microsoft Azure SQL Database** 대상 플랫폼에 대 한 합니다.
 
 테이블을 정의 하는 SQL 스크립트를 추가 하 여이 자습서에 필요한 테이블을 만들 수 있습니다. 프로젝트를 마우스 오른쪽 단추로 클릭 하 고 새 항목을 추가 합니다. 선택 **테이블 및 뷰** > **테이블** 하 고 이름을 *학생*합니다.
 

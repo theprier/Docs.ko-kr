@@ -8,12 +8,12 @@ ms.date: 08/31/2011
 ms.assetid: d916dbe0-1895-491b-8bb6-93f4594ce757
 msc.legacyurl: /mvc/overview/getting-started
 msc.type: chapter
-ms.openlocfilehash: c815a98c536159df44b775fd5130029446e1ad73
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: a2b96388cb7408d3c5fa548d0f43cfb2287661bf
+ms.sourcegitcommit: ed76cc752966c604a795fbc56d5a71d16ded0b58
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "48254297"
+ms.lasthandoff: 02/02/2019
+ms.locfileid: "55667286"
 ---
 <a name="aspnet-mvc-getting-started"></a>ASP.NET MVC 시작
 ====================
@@ -50,12 +50,11 @@ ms.locfileid: "48254297"
 - [ASP.NET MVC를 사용하는 EF Database First](database-first-development/index.md)
 
     - [MVC 5를 사용하여 Entity Framework 6 Database First 시작](database-first-development/setting-up-database.md)
-    - [웹 응용 프로그램 및 데이터 모델 만들기](database-first-development/creating-the-web-application.md)
+    - [웹 애플리케이션 및 데이터 모델 만들기](database-first-development/creating-the-web-application.md)
     - [뷰 생성](database-first-development/generating-views.md)
     - [데이터베이스 변경](database-first-development/changing-the-database.md)
     - [보기 사용자 지정](database-first-development/customizing-a-view.md)
     - [데이터 유효성 검사 향상](database-first-development/enhancing-data-validation.md)
-    - [Azure에 게시](database-first-development/publish-to-azure.md)
-- [ASP.NET MVC 5 응용 프로그램의 수명 주기](lifecycle-of-an-aspnet-mvc-5-application.md)
+- [ASP.NET MVC 5 애플리케이션의 수명 주기](lifecycle-of-an-aspnet-mvc-5-application.md)
 - [MVC 권장 리소스](recommended-resources-for-mvc.md)
 - [MVC 권장 자습서 및 문서](mvc-learning-sequence.md)

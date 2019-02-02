@@ -4,20 +4,18 @@ title: 배포 게시용 웹에 대 한 웹 서버 구성 (웹 배포 처리기) 
 author: jrjlee
 description: 이 항목에서는 웹 게시 및 IIS 웹 배포 Han를 사용 하 여 배포를 지원 하기 위해 인터넷 정보 서비스 (IIS) 웹 서버를 구성 하는 방법을 설명 하는 중...
 ms.author: riande
-ms.date: 05/04/2012
+ms.date: 01/29/2017
 ms.assetid: 90ebf911-1c46-4470-b876-1335bd0f590f
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/configuring-a-web-server-for-web-deploy-publishing-web-deploy-handler
 msc.type: authoredcontent
-ms.openlocfilehash: 13e4fdf77daf26abe837a90db9c11ecbe1957823
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: cf18a8860d34daa23f61e3dde13c2c79c6c0d4a5
+ms.sourcegitcommit: ed76cc752966c604a795fbc56d5a71d16ded0b58
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41838725"
+ms.lasthandoff: 02/02/2019
+ms.locfileid: "55667325"
 ---
-<a name="configuring-a-web-server-for-web-deploy-publishing-web-deploy-handler"></a>배포 게시용 웹에 대 한 웹 서버 구성 (웹 배포 처리기)
-====================
-[Jason lee 공저](https://github.com/jrjlee)
+# <a name="configuring-a-web-server-for-web-deploy-publishing-web-deploy-handler"></a>웹 배포 게시용 웹 서버 구성(웹 배포 처리기)
 
 [PDF 다운로드](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
 
@@ -57,9 +55,9 @@ ContactManager 샘플 솔루션, 특히 호스트도 해야 합니다.
 - .NET Framework 4.0을 설치 합니다.
 - ASP.NET MVC 3을 설치 합니다.
 
-이 항목에서는 이러한 각 절차를 수행 하는 방법을 보여줍니다. 작업은이 항목의 연습에서는 Windows Server 2008 R2를 실행 하는 새로운 서버 빌드를 사용 하 여 시작 하 고 있음을 가정 합니다. 계속 하기 전에 확인 합니다.
+이 항목에서는 이러한 각 절차를 수행 하는 방법을 보여줍니다. 작업은이 항목의 연습에서는 Windows Server 2016을 실행 하는 새로운 서버 빌드를 사용 하 여 시작 하 고 있음을 가정 합니다. 계속 하기 전에 확인 합니다.
 
-- Windows Server 2008 R2 서비스 팩 1 및 모든 사용 가능한 업데이트가 설치 됩니다.
+- Windows Server 2016
 - 서버가는 도메인에 가입 된입니다.
 - 서버에 고정 IP가 있습니다.
 
@@ -78,10 +76,10 @@ ContactManager 샘플 솔루션, 특히 호스트도 해야 합니다.
 - **IIS: 기본 인증**합니다. IIS 기본 인증 모듈을 설치합니다. 이 그러면 웹 관리 서비스 (WMSvc) 제공한 자격 증명을 인증 합니다.
 - **웹 배포 도구 2.1 이상**합니다. 서버에 웹 배포 (및 해당 기본 실행 파일, MSDeploy.exe)를 설치합니다. 이 프로세스의 일환으로, 웹 배포 처리기를 설치 하 고 웹 관리 서비스와 통합 합니다.
 - **.NET Framework 4.0**. 이 버전의.NET Framework에서 빌드된 응용 프로그램을 실행 해야 합니다.
-- **ASP.NET MVC 3**합니다. MVC 3 응용 프로그램을 실행 해야 하는 어셈블리를 설치 합니다.
+- **ASP.NET MVC 3**. MVC 3 응용 프로그램을 실행 해야 하는 어셈블리를 설치 합니다.
 
 > [!NOTE]
-> 이 연습에서는 웹 플랫폼 설치 관리자를 설치 하 여 다양 한 구성 요소 사용을 설명 합니다. 웹 플랫폼 설치 관리자를 사용 하 여 필요가 있지만 자동으로 종속성을 검색 하 고 제품을 최신 버전 항상 얻을 수를 확인 하 여 설치 프로세스를 간소화 합니다. 자세한 내용은 [Microsoft 웹 플랫폼 설치 관리자 3.0](https://go.microsoft.com/?linkid=9805118)합니다.
+> 이 연습에서는 웹 플랫폼 설치 관리자를 설치 하 여 다양 한 구성 요소 사용을 설명 합니다. 웹 플랫폼 설치 관리자를 사용 하 여 필요가 있지만 자동으로 종속성을 검색 하 고 제품을 최신 버전 항상 얻을 수를 확인 하 여 설치 프로세스를 간소화 합니다. 자세한 내용은 [Microsoft Web Platform Installer](https://go.microsoft.com/?linkid=9805118)합니다.
 
 
 **필요한 제품 및 구성 요소를 설치 하려면**
@@ -91,7 +89,7 @@ ContactManager 샘플 솔루션, 특히 호스트도 해야 합니다.
 
     > [!NOTE]
     > 웹 플랫폼 설치 관리자에서 언제 든 지 시작할 수 있습니다 합니다 **시작** 메뉴. 이 작업을 수행 하는 **시작** 메뉴에서 클릭 **모든 프로그램**를 클릭 하 고 **Microsoft Web Platform Installer**합니다.
-3. 맨 위에 있는 합니다 **웹 플랫폼 설치 관리자 3.0** 창에서 클릭 **제품**합니다.
+3. 맨 위에 있는 합니다 **웹 플랫폼 설치 관리자** 창에서 클릭 **제품**합니다.
 4. 왼쪽 탐색 창에서 창에서 클릭 **프레임 워크**합니다.
 5. 에 **Microsoft.NET Framework 4** 행을.NET Framework가 이미 설치 되어 있지 않으면 클릭 **추가**합니다.
 
@@ -109,7 +107,7 @@ ContactManager 샘플 솔루션, 특히 호스트도 해야 합니다.
 
     ![](configuring-a-web-server-for-web-deploy-publishing-web-deploy-handler/_static/image2.png)
 13. 사용 조건을 검토 하 고 사용자가 약관에 동의 하면 클릭 **동의**합니다.
-14. 설치가 완료 되 면 클릭 **완료**를 닫은 다음 합니다 **웹 플랫폼 설치 관리자 3.0** 창입니다.
+14. 설치가 완료 되 면 클릭 **완료**를 닫은 다음 합니다 **웹 플랫폼 설치 관리자** 창입니다.
 
 실행 해야 IIS를 설치 하기 전에.NET Framework 4.0을 설치한 경우 합니다 [ASP.NET IIS Registration Tool](https://msdn.microsoft.com/library/k6h9cz8h(v=VS.100).aspx) (aspnet\_regiis.exe) IIS를 사용 하 여 최신 버전의 ASP.NET 등록 합니다. 이렇게 하지 않으면, 문제 없이 IIS 정적 콘텐츠 (예: HTML 파일)에서 처리를 찾을 수 있지만 반환 **찾을 수 없음 HTTP 오류 404.0 –** ASP.NET 콘텐츠를 검색 하려고 할 때입니다. ASP.NET 4.0이 등록 되었는지 확인 하려면 다음 절차를 사용할 수 있습니다.
 
@@ -145,7 +143,7 @@ ContactManager 샘플 솔루션, 특히 호스트도 해야 합니다.
     ![](configuring-a-web-server-for-web-deploy-publishing-web-deploy-handler/_static/image3.png)
 3. 가운데 창에서 아래 **IIS**를 두 번 클릭 **인증**합니다.
 
-    ![](configuring-a-web-server-for-web-deploy-publishing-web-deploy-handler/_static/image4.png)
+    ![](configuring-a-web-server-for-web-deploy-publishing-web-deploy-handler/_static/image20.png)
 4. 마우스 오른쪽 단추로 클릭 **기본 인증**를 클릭 하 고 **사용**합니다.
 
     ![](configuring-a-web-server-for-web-deploy-publishing-web-deploy-handler/_static/image5.png)
@@ -207,7 +205,7 @@ ContactManager 샘플 솔루션, 특히 호스트도 해야 합니다.
     ![](configuring-a-web-server-for-web-deploy-publishing-web-deploy-handler/_static/image11.png)
 
     > [!NOTE]
-    > 프로덕션 환경에서는 포트 80에서 웹 사이트를 호스트 하 고 일치 하는 DNS 레코드와 함께 호스트 헤더를 구성 하 해야 가능성이 높습니다. IIS 7에서 호스트 헤더를 구성 하는 방법에 대 한 자세한 내용은 참조 하세요. [웹 사이트 (IIS 7)에 대 한 호스트 헤더 구성](https://technet.microsoft.com/library/cc753195(WS.10).aspx)합니다. Windows Server 2008 R2에서 DNS 서버 역할에 대 한 자세한 내용은 참조 하세요. [DNS 서버 개요](https://technet.microsoft.com/en-gb/library/cc770392.aspx) 하 고 [DNS 서버](https://technet.microsoft.com/windowsserver/dd448607)합니다.
+    > 프로덕션 환경에서는 포트 80에서 웹 사이트를 호스트 하 고 일치 하는 DNS 레코드와 함께 호스트 헤더를 구성 하 해야 가능성이 높습니다. IIS 7에서 호스트 헤더를 구성 하는 방법에 대 한 자세한 내용은 참조 하세요. [웹 사이트 (IIS 7)에 대 한 호스트 헤더 구성](https://technet.microsoft.com/library/cc753195(WS.10).aspx)합니다. Windows Server에서 DNS 서버 역할에 대 한 자세한 내용은 참조 하세요. [DNS 서버 개요](https://technet.microsoft.com/en-gb/library/cc770392.aspx) 하 고 [DNS 서버](https://technet.microsoft.com/windowsserver/dd448607)합니다.
 9. **작업** 창의 **사이트 편집**에서 **바인딩**을 클릭합니다.
 10. 에 **사이트 바인딩을** 대화 상자, 클릭 **추가**합니다.
 
@@ -222,9 +220,9 @@ ContactManager 샘플 솔루션, 특히 호스트도 해야 합니다.
 13. 에 **사이트 바인딩을** 대화 상자, 클릭 **닫기**합니다.
 14. 에 **연결** 창 클릭 **응용 프로그램 풀**합니다.
 15. 에 **응용 프로그램 풀** 창에 응용 프로그램 풀의 이름을 마우스 오른쪽 단추로 클릭 **기본 설정**합니다. 기본적으로 응용 프로그램 풀의 이름에는 웹 사이트의 이름과 일치 합니다 (예를 들어 **DemoSite**).
-16. 에 **.NET Framework 버전** 목록에서 **.NET Framework v4.0.30319**를 클릭 하 고 **확인**합니다.
+16. 에 **.NET CLR 버전** 목록에서 **.NET CLR v4.0.30319**를 클릭 하 고 **확인**합니다.
 
-    ![](configuring-a-web-server-for-web-deploy-publishing-web-deploy-handler/_static/image14.png)
+    ![](configuring-a-web-server-for-web-deploy-publishing-web-deploy-handler/_static/image21.png)
 
     > [!NOTE]
     > 샘플 솔루션에는.NET Framework 4.0에 필요합니다. 이 요구 사항은 아닙니다 웹 배포에 대 한 일반적입니다.
@@ -282,7 +280,7 @@ ContactManager 샘플 솔루션, 특히 호스트도 해야 합니다.
 | 방향 | 포트에서 | 포트 | 포트 유형 |
 | --- | --- | --- | --- |
 | 인바운드 | 임의의 값 | 8172 | TCP |
-| 아웃 바운드 | 8172 | 임의의 값 | TCP |
+| 아웃바운드 | 8172 | 임의의 값 | TCP |
   
 
 Windows 방화벽에서 규칙 구성에 대 한 자세한 내용은 참조 하세요. [방화벽 규칙 구성](https://technet.microsoft.com/library/dd448559(WS.10).aspx)합니다. 타사 방화벽 제품 설명서를 참조 하십시오.

@@ -8,12 +8,12 @@ ms.date: 08/29/2011
 ms.assetid: c23d27f7-b0cf-44f2-8445-fb69e045c674
 msc.legacyurl: /mvc/overview/older-versions/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-1
 msc.type: authoredcontent
-ms.openlocfilehash: a4cd6e9adfcd85503b9843232903a243bc07c959
-ms.sourcegitcommit: 392a36ed269b88899d6bb652aa7f4dfb72e43e7f
+ms.openlocfilehash: 3e700d2db4f86fe6734e2f08b01c9f8a8a69b6c3
+ms.sourcegitcommit: ed76cc752966c604a795fbc56d5a71d16ded0b58
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50220663"
+ms.lasthandoff: 02/02/2019
+ms.locfileid: "55667793"
 ---
 <a name="using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc---part-1"></a>ASP.NET MVC-파트 1에서 HTML5 및 jQuery UI Datepicker 팝업 일정 사용
 ====================
@@ -24,7 +24,7 @@ ms.locfileid: "50220663"
 
 이 자습서는 편집기 템플릿, 표시 템플릿 및 jQuery를 사용 하는 방법의 기본 사항을 설명 [UI datepicker 팝업 일정](http://plugins.jquery.com/project/datepicker) ASP.NET MVC 웹 응용 프로그램에서 합니다. 이 자습서에서는 Microsoft Visual Web Developer 2010 Express 서비스 팩 1을 사용할 수 있습니다 (&quot;Visual Web Developer&quot;), Microsoft Visual Studio의 무료 버전 또는 이미 있는 경우에 Visual Studio 2010 SP1을 사용할 수 있습니다.
 
-시작 하기 전에 아래에 나열 된 필수 구성 요소를 설치한 다음 있는지 확인 합니다. 다음 링크를 클릭 하 여 이들 모두를 설치할 수 있습니다: [웹 플랫폼 설치 관리자](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack)합니다. 또는 다음 링크를 사용 하 여 필수 소프트웨어를 개별적으로 설치할 수 있습니다.
+시작 하기 전에 아래에 나열 된 필수 구성 요소를 설치한 다음 있는지 확인 합니다. 다음 링크를 클릭 하 여 이들 모두를 설치할 수 있습니다. [웹 플랫폼 설치 관리자](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack)합니다. 또는 다음 링크를 사용 하 여 필수 소프트웨어를 개별적으로 설치할 수 있습니다.
 
 - [Visual Studio Web Developer Express SP1 필수 구성 요소](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack)
 - [ASP.NET MVC 3 도구 업데이트](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=MVC3)
@@ -36,7 +36,7 @@ Visual Studio 2010 대신 Visual Web Developer를 사용 하는 경우 다음 �
 
 이 자습서에서 C# 코드를 보여 줍니다. 그러나 합니다 [시작 프로젝트](https://archive.msdn.microsoft.com/Project/Download/FileDownload.aspx?ProjectName=aspnetmvcsamples&amp;DownloadId=15800) 완성 된 프로젝트는 Visual Basic에서 사용할 수 있습니다.
 
-C# 및 Visual Basic 소스 코드를 사용 하 여 Visual Studio 프로젝트는 다음이 항목과 함께 사용할 수 있습니다: [다운로드](https://archive.msdn.microsoft.com/Project/Download/FileDownload.aspx?ProjectName=aspnetmvcsamples&amp;DownloadId=15800)합니다.
+Visual Studio 프로젝트를 사용 하 여 C# 이며 Visual Basic 소스 코드를 다음이 항목과 함께 사용할 수 있습니다. [다운로드](https://archive.msdn.microsoft.com/Project/Download/FileDownload.aspx?ProjectName=aspnetmvcsamples&amp;DownloadId=15800)합니다.
 
 ### <a name="what-youll-build"></a>만들 내용
 
@@ -54,7 +54,11 @@ C# 및 Visual Basic 소스 코드를 사용 하 여 Visual Studio 프로젝트�
 
 ### <a name="getting-started"></a>시작
 
-다음 링크를 사용 하 여 시작 프로젝트에서 영화 목록 응용 프로그램에 아직 없는 경우 다운로드 합니다. [다운로드](https://code.msdn.microsoft.com/Introduction-to-MVC-3-10d1b098)합니다. 그런 다음 Windows 탐색기에서 마우스 오른쪽 단추로 클릭 합니다 *MvcMovie.zip* 파일을 선택 **속성**합니다. 에 **MvcMovie.zip 속성** 대화 상자에서 **차단 해제**합니다. (사용 하려고 할 때 발생 하는 보안 경고를 방지 차단 해제 된 *.zip* 웹에서 다운로드 한 파일입니다.)
+시작 프로젝트에서 영화 목록 응용 프로그램에 아직 없는 경우 다운로드 합니다. 
+
+* [다운로드](https://code.msdn.microsoft.com/Introduction-to-MVC-3-10d1b098)합니다.
+* Windows 탐색기에서 마우스 오른쪽 단추로 클릭 합니다 *MvcMovie.zip* 파일을 선택 **속성**합니다. 
+* 에 **MvcMovie.zip 속성** 대화 상자에서 **차단 해제**합니다. (사용 하려고 할 때 발생 하는 보안 경고를 방지 차단 해제 된 *.zip* 웹에서 다운로드 한 파일입니다.)
 
 ![](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-1/_static/image2.png)
 
@@ -80,7 +84,7 @@ CTRL + f5 키를 눌러 다시 응용 프로그램을 실행 하 고 선택 합�
 
 [!code-csharp[Main](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-1/samples/sample2.cs)]
 
-응용 프로그램을 실행합니다. 이제 릴리스 날짜 및 가격 속성은 형식이 올바르게 지정 (사용 하 여 적절 한 날짜 및 통화 형식). 합니다 [DataType](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx) 특성 형식 메타 데이터 기본 제공 ASP.NET MVC에 대 한 템플릿을 제공 필드를 올바른 형식으로 렌더링 되도록 합니다. 사용 하 여는 `DataType` 특성은 사용 하는 것이 좋습니다는 `DisplayFormat` 특성 때문에 코드에서 원래의 `DataType` 특성 깔끔하고 국제화 등의 목적에 대 한 유연한 모델을 사용 하면 합니다.
+애플리케이션을 실행합니다. 이제 릴리스 날짜 및 가격 속성은 형식이 올바르게 지정 (사용 하 여 적절 한 날짜 및 통화 형식). 합니다 [DataType](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx) 특성 형식 메타 데이터 기본 제공 ASP.NET MVC에 대 한 템플릿을 제공 필드를 올바른 형식으로 렌더링 되도록 합니다. 사용 하 여는 `DataType` 특성은 사용 하는 것이 좋습니다는 `DisplayFormat` 특성 때문에 코드에서 원래의 `DataType` 특성 깔끔하고 국제화 등의 목적에 대 한 유연한 모델을 사용 하면 합니다.
 
 다음 섹션에서 사용자 지정 템플릿을 날짜 필드를 표시 하는 방법을 배웁니다.
 
