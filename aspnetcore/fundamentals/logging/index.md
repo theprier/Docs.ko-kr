@@ -6,12 +6,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 01/14/2019
 uid: fundamentals/logging/index
-ms.openlocfilehash: 0908cc6eeaaba4006a0029ef86d3e47dcf3f9a28
-ms.sourcegitcommit: 42a8164b8aba21f322ffefacb92301bdfb4d3c2d
+ms.openlocfilehash: 81620f0c844f3dbb1a2da0e9f1c319f87d9790b6
+ms.sourcegitcommit: ed76cc752966c604a795fbc56d5a71d16ded0b58
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54341747"
+ms.lasthandoff: 02/02/2019
+ms.locfileid: "55667702"
 ---
 # <a name="logging-in-aspnet-core"></a>ASP.NET Core에 로그인
 
@@ -542,7 +542,7 @@ System.Exception: Item not found exception.
 
 다음은 ASP.NET Core 및 Entity Framework Core에서 사용되는 몇 가지 범주로, 예상되는 로그에 대한 참고 사항입니다.
 
-| 범주                            | 노트 |
+| 범주                            | 참고 사항 |
 | ----------------------------------- | ----- |
 | Microsoft.AspNetCore                | 일반 ASP.NET Core 진단. |
 | Microsoft.AspNetCore.DataProtection | 고려되고, 발견되고, 사용된 키. |
@@ -863,7 +863,7 @@ Application Insights SDK는 ASP.NET Core 로깅 인프라에 생성된 로그를
 
 * [Application Insights 개요](/azure/application-insights/app-insights-overview)
 * [ASP.NET Core용 Application Insights](/azure/application-insights/app-insights-asp-net-core)
-* [Microsoft/ApplicationInsights-aspnetcore Wiki: Logging](https://github.com/Microsoft/ApplicationInsights-aspnetcore/wiki/Logging)(Microsoft/ApplicationInsights-aspnetcore Wiki: 로깅)
+* [Application Insights 로깅 어댑터](https://github.com/Microsoft/ApplicationInsights-dotnet-logging/blob/develop/README.md).
 
 ::: moniker-end
 

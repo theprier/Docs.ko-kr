@@ -6,16 +6,20 @@ monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 09/08/2017
 uid: tutorials/razor-pages/index
-ms.openlocfilehash: 981460e63be611f8b9b5ceda73c2d6b8f2e4962e
-ms.sourcegitcommit: 6548c19f345850ee22b50f7ef9fca732895d9e08
+ms.openlocfilehash: db0dab630f986b6f60e24b7a39e20c7a4607f931
+ms.sourcegitcommit: ed76cc752966c604a795fbc56d5a71d16ded0b58
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53425070"
+ms.lasthandoff: 02/02/2019
+ms.locfileid: "55667377"
 ---
 # <a name="tutorial-create-a-razor-pages-web-app-with-aspnet-core"></a>자습서: ASP.NET Core를 사용하여 Razor 페이지 웹앱 만들기
 
-이 시리즈의 자습서는 Razor Pages 웹앱을 빌드하는 작업의 기본 사항을 설명합니다. 이 시리즈에는 다음 자습서가 포함됩니다.
+이 시리즈의 자습서는 Razor Pages 웹앱을 빌드하는 작업의 기본 사항을 설명합니다. 
+
+[!INCLUDE[](~/includes/advancedRP.md)]
+
+이 시리즈에는 다음 자습서가 포함됩니다.
 
 1. [Razor 페이지 웹앱 만들기](xref:tutorials/razor-pages/razor-pages-start)
 1. [Razor 페이지 앱에 모델 추가](xref:tutorials/razor-pages/model)
