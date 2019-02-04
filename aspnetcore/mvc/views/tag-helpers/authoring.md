@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/24/2018
 uid: mvc/views/tag-helpers/authoring
-ms.openlocfilehash: c21decd39b7855cf2eefb2bb482e5e91b9487863
-ms.sourcegitcommit: d5223cf6a2cf80b4f5dc54169b0e376d493d2d3a
+ms.openlocfilehash: dbfb63bb7406ee8e20ae25b366162702ac87942c
+ms.sourcegitcommit: c47d7c131eebbcd8811e31edda210d64cf4b9d6b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54889940"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55236460"
 ---
 # <a name="author-tag-helpers-in-aspnet-core"></a>ASP.NET Core의 작성자 태그 도우미
 
@@ -213,12 +213,12 @@ FQN을 사용하여 뷰에 태그 도우미를 추가하려면 먼저 FQN(`Autho
 
 1. 다음 태그를 *About.cshtml* 뷰에 추가합니다. 강조 표시된 태그는 웹 사이트 정보를 표시합니다.
 
-   [!code-html[](authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/Home/About.cshtml?highlight=1,12-999)]
+   [!code-html[](authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/Home/About.cshtml?highlight=1,4-8, 18-999)]
 
    > [!NOTE]
    > 아래에 표시된 Razor 태그에서:
    >
-   > [!code-html[](authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/Home/About.cshtml?range=13-17)]
+   > [!code-html[](authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/Home/About.cshtml?range=18-18)]
    >
    > Razor는 `info` 특성이 문자열이 아니라 클래스임을 알고 있으며 C# 코드를 작성하려고 합니다. 모든 문자열이 아닌 태그 도우미 특성이 `@` 문자 없이 작성됩니다.
 

@@ -5,18 +5,22 @@ description: 이 자습서 시리즈는 ASP.NET Core에서 Razor Pages를 사용
 ms.author: riande
 ms.date: 12/5/2018
 uid: tutorials/razor-pages/razor-pages-start
-ms.openlocfilehash: 929bc72b16e302a5018038bc449704b7078dd33a
-ms.sourcegitcommit: 6548c19f345850ee22b50f7ef9fca732895d9e08
+ms.openlocfilehash: bec5838c2efaffb933828260eaf1a840ff202140
+ms.sourcegitcommit: ed76cc752966c604a795fbc56d5a71d16ded0b58
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53425083"
+ms.lasthandoff: 02/02/2019
+ms.locfileid: "55667767"
 ---
 # <a name="tutorial-get-started-with-razor-pages-in-aspnet-core"></a>자습서: ASP.NET Core에서 Razor 페이지 시작
 
 작성자: [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-이 시리즈의 첫 번째 자습서입니다. [시리즈](xref:tutorials/razor-pages/index)에서는 ASP.NET Core Razor Pages 웹앱을 빌드하는 작업의 기본 사항을 설명합니다. 시리즈가 끝나면 영화의 데이터베이스를 관리하는 앱이 생성됩니다.  
+이 시리즈의 첫 번째 자습서입니다. [시리즈](xref:tutorials/razor-pages/index)에서는 ASP.NET Core Razor Pages 웹앱을 빌드하는 작업의 기본 사항을 설명합니다.
+
+[!INCLUDE[](~/includes/advancedRP.md)]
+
+시리즈가 끝나면 영화의 데이터베이스를 관리하는 앱이 생성됩니다.  
 
 [!INCLUDE[View or download sample code](~/includes/rp/download.md)]
 
@@ -29,7 +33,7 @@ ms.locfileid: "53425083"
 
 이 자습서가 끝나면 나중에 자습서에서 빌드할 Razor Pages 웹앱을 사용할 수 있습니다.
 
-[홈 또는 인덱스 페이지](razor-pages-start/_static/home2.2.png)
+![홈 또는 인덱스 페이지](razor-pages-start/_static/home2.2.png)
 
 [!INCLUDE[](~/includes/net-core-prereqs-all-2.2.md)]
 

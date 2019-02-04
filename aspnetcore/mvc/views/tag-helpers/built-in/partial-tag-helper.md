@@ -7,12 +7,12 @@ ms.author: scaddie
 ms.custom: mvc
 ms.date: 07/25/2018
 uid: mvc/views/tag-helpers/builtin-th/partial-tag-helper
-ms.openlocfilehash: bcaeb3ba286feb55c0755c5baee4b7608710e647
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: d56df549d845b1f83ec4a5ec97ce6b44438f725a
+ms.sourcegitcommit: d22b3c23c45a076c4f394a70b1c8df2fbcdf656d
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50207786"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55428436"
 ---
 # <a name="partial-tag-helper-in-aspnet-core"></a>ASP.NET Core의 부분 태그 도우미
 
@@ -20,7 +20,7 @@ ms.locfileid: "50207786"
 
 태그 도우미에 대한 개요는 <xref:mvc/views/tag-helpers/intro>를 참조하세요.
 
-[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/views/tag-helpers/built-in/samples)([다운로드 방법](xref:index#how-to-download-a-sample))
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/views/tag-helpers/built-in/samples) ([다운로드 방법](xref:index#how-to-download-a-sample))
 
 ## <a name="overview"></a>개요
 
@@ -53,7 +53,7 @@ ms.locfileid: "50207786"
 
 ## <a name="for"></a>for
 
-`for` 특성은 현재 모델과 비교 평가할 [ModelExpression](/dotnet/api/microsoft.aspnetcore.mvc.viewfeatures.modelexpression)을 할당합니다. `ModelExpression`은 `@Model.` 구문을 추론합니다. 예를 들어 `for="@Model.Product"` 대신 `for="Product"`를 사용할 수 있습니다. 이 기본 추론 동작은 인라인 식을 정의하는 `@` 기호를 사용하여 재정의됩니다. `for` 특성은 [model](#model) 특성과 함께 사용할 수 없습니다.
+`for` 특성은 현재 모델과 비교 평가할 [ModelExpression](/dotnet/api/microsoft.aspnetcore.mvc.viewfeatures.modelexpression)을 할당합니다. `ModelExpression`은 `@Model.` 구문을 추론합니다. 예를 들어 `for="@Model.Product"` 대신 `for="Product"`를 사용할 수 있습니다. 이 기본 추론 동작은 인라인 식을 정의하는 `@` 기호를 사용하여 재정의됩니다.
 
 다음 태그는 *_ProductPartial.cshtml*을 로드합니다.
 

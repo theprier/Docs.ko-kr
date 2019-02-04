@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 07/27/2018
 uid: fundamentals/httpcontext
-ms.openlocfilehash: ee185cd30af51fa6ee9a4d23ea60a56ec1b76c8d
-ms.sourcegitcommit: 506a199274e9fe5fb4070b273ba94f29f14cb619
+ms.openlocfilehash: babc637cdec8590ac14f7924c17e862e5b2f6a81
+ms.sourcegitcommit: d22b3c23c45a076c4f394a70b1c8df2fbcdf656d
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2018
-ms.locfileid: "39332290"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55428488"
 ---
 # <a name="access-httpcontext-in-aspnet-core"></a>ASP.NET Core에서 HttpContext에 액세스
 
@@ -109,7 +109,7 @@ public void ConfigureServices(IServiceCollection services)
 
 ::: moniker-end
 
-앞의 예제에서:
+다음 예제에서는
 
 * `UserRepository`는 `IHttpContextAccessor`에 대한 종속성을 선언합니다.
 * 종속성 주입이 종속성 체인을 확인하고 `UserRepository` 인스턴스를 만들 경우 종속성이 제공됩니다.

@@ -5,12 +5,12 @@ description: 간단한 ASP.NET Core MVC 앱에 보기 추가
 ms.author: riande
 ms.date: 03/04/2017
 uid: tutorials/first-mvc-app/adding-view
-ms.openlocfilehash: f241a19c8821019f327fb160f01fe01eca53c5d0
-ms.sourcegitcommit: ebf4e5a7ca301af8494edf64f85d4a8deb61d641
+ms.openlocfilehash: 32eddb233a8a6b9b8f480926673d15d568ce6ede
+ms.sourcegitcommit: c47d7c131eebbcd8811e31edda210d64cf4b9d6b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54836907"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55236434"
 ---
 # <a name="add-a-view-to-an-aspnet-core-mvc-app"></a>ASP.NET Core MVC 앱에 보기 추가
 
@@ -93,7 +93,7 @@ Razor를 사용하여 뷰 템플릿 파일을 만듭니다. Razor 기반 뷰 템
 
 다음 태그는 강조 표시된 변경 내용을 표시합니다.
 
-[!code-html[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie22/Views/Shared/_Layout.cshtml?highlight=6,24)]
+[!code-html[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie22/Views/Shared/_Layout.cshtml?highlight=6,24,51)]
 
 위의 태그에서 이 앱이 [Areas](xref:mvc/controllers/areas)를 사용하지 않기 때문에 `asp-area` [앵커 태그 도우미 특성](xref:mvc/views/tag-helpers/builtin-th/anchor-tag-helper)이 생략되었습니다.
 
