@@ -92,10 +92,11 @@ items:
   - name: Razor 페이지
     items:
     - uid: razor-pages/index
-      name: 개요
-    - uid: tutorials/razor-pages/index
-      name: 자습서
+      name: 소개
+    - name: 자습서
       items:
+      - uid: tutorials/razor-pages/index
+        name: 개요
       - uid: tutorials/razor-pages/razor-pages-start
         name: 시작
       - uid: tutorials/razor-pages/model
@@ -165,6 +166,8 @@ items:
       name: 종속성 주입 - 보기
     - uid: mvc/controllers/testing
       name: 단위 테스트
+  - uid: razor-components/index
+    name: Razor 구성 요소
   - uid: fundamentals/app-state
     name: 세션 및 앱 상태
   - name: 태그 도우미
@@ -433,6 +436,38 @@ items:
     name: 번들 및 축소
   - uid: client-side/using-browserlink
     name: 브라우저 링크
+  - name: Razor 구성 요소
+    items:
+    - uid: razor-components/index
+      name: 개요
+    - uid: razor-components/faq
+      name: FAQ
+    - uid: razor-components/get-started
+      name: 시작
+    - uid: tutorials/first-blazor-app
+      name: 첫 번째 앱 빌드
+    - uid: razor-components/components
+      name: 구성 요소
+    - uid: razor-components/class-libraries
+      name: 구성 요소 라이브러리
+    - uid: razor-components/layouts
+      name: 레이아웃
+    - uid: razor-components/dependency-injection
+      name: 종속성 주입
+    - uid: razor-components/routing
+      name: 라우팅
+    - uid: razor-components/javascript-interop
+      name: JavaScript interop
+    - uid: razor-components/debug
+      name: 디버그
+    - uid: razor-components/hosting-models
+      name: 호스팅 모델
+    - name: 호스트 및 배포
+      items:
+      - uid: host-and-deploy/razor-components/index
+        name: 개요
+      - uid: host-and-deploy/razor-components/configure-linker
+        name: 링커 구성
   - name: 단일 페이지 앱
     items:
     - uid: spa/index
@@ -531,6 +566,12 @@ items:
     name: 디렉터리 구조
   - uid: host-and-deploy/health-checks
     name: 상태 확인
+  - name: Razor 구성 요소
+    items:
+    - uid: host-and-deploy/razor-components/index
+      name: 개요
+    - uid: host-and-deploy/razor-components/configure-linker
+      name: 링커 구성
 - name: 보안 및 ID
   items:
   - uid: security/index
@@ -812,9 +853,9 @@ items:
   href: /dotnet/api/?view=aspnetcore-2.1
 - name: 참가
   href: https://github.com/aspnet/Docs/blob/master/CONTRIBUTING.md
-ms.openlocfilehash: a6169489db7d7365e254c8f1213de348a4429c49
-ms.sourcegitcommit: e7276930515216338a33c4a03c0d7a87fc718ffe
+ms.openlocfilehash: 75c0220d1dac2fa2a51efd075e05cfd1e5070c8c
+ms.sourcegitcommit: ed76cc752966c604a795fbc56d5a71d16ded0b58
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55293520"
+ms.lasthandoff: 02/02/2019
+ms.locfileid: "55667806"
