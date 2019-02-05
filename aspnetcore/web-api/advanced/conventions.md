@@ -7,12 +7,12 @@ ms.author: scaddie
 ms.custom: mvc
 ms.date: 12/13/2018
 uid: web-api/advanced/conventions
-ms.openlocfilehash: 892fb8898c78a1645c766544715a8256462207c6
-ms.sourcegitcommit: ec71fd5a988f927ae301813aae5ff764feb3bb6a
+ms.openlocfilehash: 5ae96b213a19464045e1d0b1a76f8eb81089dc5b
+ms.sourcegitcommit: c47d7c131eebbcd8811e31edda210d64cf4b9d6b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/12/2019
-ms.locfileid: "54249388"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55236343"
 ---
 # <a name="use-web-api-conventions"></a>웹 API 규칙 사용
 
@@ -58,7 +58,7 @@ ASP.NET Core MVC 2.2 이상에는 `Microsoft.AspNetCore.Mvc.DefaultApiConvention
 
     [!code-csharp[](conventions/sample/Controllers/ContactsConventionController.cs?name=snippet_ApiConventionTypeAttribute&highlight=2)]
 
-1. &mdash; 어셈블리에 적용된 `Microsoft.AspNetCore.Mvc.ApiConventionTypeAttribute`는 현재 어셈블리의 모든 컨트롤러에 지정된 규칙 유형을 적용합니다. 권장 사항으로 어셈블리 수준 특성을 `Startup` 클래스에 적용합니다.
+1. &mdash; 어셈블리에 적용된 `Microsoft.AspNetCore.Mvc.ApiConventionTypeAttribute`는 현재 어셈블리의 모든 컨트롤러에 지정된 규칙 유형을 적용합니다. 권장 사항으로 어셈블리 수준 특성을 *Startup.cs* 파일에 적용합니다.
 
     다음 예제에서는 기본 규칙 집합이 어셈블리의 모든 컨트롤러에 적용됩니다.
 

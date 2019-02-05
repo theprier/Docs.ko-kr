@@ -114,30 +114,34 @@ DocFX 요구 사항:
 
 * [DocFX 릴리스](https://github.com/dotnet/docfx/releases)에서 *docfx.zip*을 다운로드하고 압축을 풉니다.
 * PATH에 DocFX를 추가합니다.
-* 명령줄 창에서 *docfx.json* 파일(ASP.NET 콘텐츠용 *aspnet* 또는 ASP.NET Core 콘텐츠용 *aspnetcore*)이 포함된 적절한 폴더로 이동합니다.
+* 명령 셸에서 *docfx.json* 파일(ASP.NET 콘텐츠용 *aspnet* 또는 ASP.NET Core 콘텐츠용 *aspnetcore*)이 포함된 폴더로 이동하여 다음 명령을 실행합니다.
 
-  ```
+  ```console
   docfx --serve
   ```
-    
-* 브라우저에서 `http://localhost:8080`로 이동합니다.
+* 브라우저에서 `http://localhost:8080/group1-dest/`로 이동합니다.
 
 ### <a name="mono-instructions"></a>Mono 지침
 
 * Homebrew를 통해 Mono 설치:
 
-  ```
+  ```console
   brew install mono
   ```
 * [최신 버전의 DocFX](https://github.com/dotnet/docfx/releases)를 다운로드합니다.
 * *$HOME/bin/docfx*에 보관 파일을 추출합니다.
 * bash 셸에서 **docfx**의 별칭 쌍을 만듭니다. 첫 번째 별칭은 문서를 작성하는 데 사용됩니다. 두 번째 별칭은 문서를 작성하고 서비스를 제공하는 데 사용됩니다.
 
-  ```
+  ```console
   alias docfx='mono $HOME/bin/docfx/docfx.exe'
   alias docfx-serve='mono $HOME/bin/docfx/docfx.exe --serve'
   ```
-* 리포지토리의 루트에서 `docfx`를 실행하여 사이트를 빌드합니다. `docfx-serve`를 실행하여 `http://localhost:8080`에서 사이트를 봅니다.
+* 명령 셸에서 *docfx.json* 파일(ASP.NET 콘텐츠용 *aspnet* 또는 ASP.NET Core 콘텐츠용 *aspnetcore*)이 포함된 폴더로 이동하고 다음 명령을 실행하여 해당 별칭을 통해 문서를 빌드하고 제공합니다.
+
+  ```console
+  docfx-serve
+  ```
+* 브라우저에서 `http://localhost:8080/group1-dest/`로 이동합니다.
 
 ## <a name="voice-and-tone"></a>어투 및 어조
 
