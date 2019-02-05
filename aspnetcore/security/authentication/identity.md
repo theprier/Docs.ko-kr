@@ -5,12 +5,12 @@ description: ASP.NET Core 앱을 사용 하 여 Id를 사용 합니다. 암호 �
 ms.author: riande
 ms.date: 08/08/2018
 uid: security/authentication/identity
-ms.openlocfilehash: 03f89114b516a37ee1d06934f2e549b4d56ff099
-ms.sourcegitcommit: 97d7a00bd39c83a8f6bccb9daa44130a509f75ce
+ms.openlocfilehash: 1a4e7fb3ac6a767ca17127dd58a9b9e65ed9a00b
+ms.sourcegitcommit: e418cb9cddeb3de06fa0cb4fdb5529da03ff6d63
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54098771"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "55739685"
 ---
 # <a name="introduction-to-identity-on-aspnet-core"></a>ASP.NET Core Identity 소개
 
@@ -47,7 +47,7 @@ ASP.NET Core Id는 ASP.NET Core 앱에 로그인 기능을 추가 하는 멤버 
 
 * **파일** > **새로 만들기** > **프로젝트**를 선택합니다.
 * **새 ASP.NET Core 웹 응용 프로그램**을 선택합니다. 프로젝트 이름을 **WebApp1** 프로젝트 다운로드와 같은 네임 스페이스에 있어야 합니다. **확인**을 클릭합니다.
-* ASP.NET Core를 선택 **웹 응용 프로그램** ASP.NET Core 2.1에 대 한 선택한 **인증 변경**합니다.
+* ASP.NET Core를 선택 **웹 응용 프로그램**을 선택한 후 **인증 변경**합니다.
 * 선택 **개별 사용자 계정** 누릅니다 **확인**합니다.
 
 # <a name="net-core-clitabnetcore-cli"></a>[.NET Core CLI](#tab/netcore-cli)
@@ -58,30 +58,32 @@ dotnet new webapp --auth Individual -o WebApp1
 
 ---
 
-생성된 된 프로젝트를 제공 [ASP.NET Core Id](xref:security/authentication/identity) 으로 [Razor 클래스 라이브러리](xref:razor-pages/ui-class)합니다.
+생성된 된 프로젝트를 제공 [ASP.NET Core Id](xref:security/authentication/identity) 으로 [Razor 클래스 라이브러리](xref:razor-pages/ui-class)합니다. 사용 하 여 끝점을 노출 하는 Identity Razor 클래스 라이브러리는 `Identity` 영역입니다. 예를 들어:
+
+* /Identity/Account/Login
+* /Identity/Account/Logout
+* /Identity/Account/Manage
 
 ### <a name="test-register-and-login"></a>테스트 등록 및 로그인
 
 앱을 실행 하 고 사용자를 등록 합니다. 화면 크기에 따라 탐색 설정/해제 단추를 선택 해야 합니다 **등록** 하 고 **로그인** 링크 합니다.
-
-![탐색 모음 설정/해제 단추](identity/_static/navToggle.png)
 
 [!INCLUDE[](~/includes/view-identity-db.md)]
 
 <a name="pw"></a>
 ### <a name="configure-identity-services"></a>Id 서비스를 구성 합니다.
 
-서비스에 추가 된 `ConfigureServices`합니다. 일반적인 패턴은 모든 `Add{Service}` 메서드를 호출한 후 모든 `services.Configure{Service}` 메서드를 호출하는 것입니다. 다음 코드는 생성 된 템플릿을 포함 되지 않습니다 `CookiePolicyOptions`:
+서비스에 추가 된 `ConfigureServices`합니다. 일반적인 패턴은 모든 `Add{Service}` 메서드를 호출한 후 모든 `services.Configure{Service}` 메서드를 호출하는 것입니다.
 
 ::: moniker range=">= aspnetcore-2.1"
 
-   [!code-csharp[](identity/sample/src/ASPNETv2.1-IdentityDemo/Startup.cs?name=snippet_configureservices)]
+[!code-csharp[](identity/sample/WebApp1/Startup.cs?name=snippet_configureservices)]
 
 위의 코드는 기본 옵션 값을 사용 하 여 Identity를 구성합니다. 서비스를 통해 앱에 제공 됩니다 [종속성 주입](xref:fundamentals/dependency-injection)합니다.
 
    호출 하 여 id를 활성화 [UseAuthentication](/dotnet/api/microsoft.aspnetcore.builder.authappbuilderextensions.useauthentication#Microsoft_AspNetCore_Builder_AuthAppBuilderExtensions_UseAuthentication_Microsoft_AspNetCore_Builder_IApplicationBuilder_)합니다. `UseAuthentication`은 요청 파이프라인에 인증 [미들웨어](xref:fundamentals/middleware/index)를 추가합니다.
 
-   [!code-csharp[](identity/sample/src/ASPNETv2.1-IdentityDemo/Startup.cs?name=snippet_configure&highlight=18)]
+   [!code-csharp[](identity/sample/WebApp1/Startup.cs?name=snippet_configure&highlight=18)]
 
 ::: moniker-end
 
@@ -124,6 +126,7 @@ dotnet new webapp --auth Individual -o WebApp1
 이름으로 프로젝트를 만든 경우 **WebApp1**, 다음 명령을 실행 합니다. 그렇지 않은 경우에 대 한 올바른 네임 스페이스를 사용 합니다 `ApplicationDbContext`:
 
 ```cli
+dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design
 dotnet aspnet-codegenerator identity -dc WebApp1.Data.ApplicationDbContext --files "Account.Register;Account.Login;Account.Logout"
 ```
 
@@ -137,7 +140,7 @@ PowerShell 명령 구분 기호로 세미콜론을 사용합니다. PowerShell�
 
    클릭할 때 합니다 **등록** 링크를 `RegisterModel.OnPostAsync` 동작이 호출 합니다. 사용자가 만든 [CreateAsync](/dotnet/api/microsoft.aspnetcore.identity.usermanager-1.createasync#Microsoft_AspNetCore_Identity_UserManager_1_CreateAsync__0_System_String_) 에 `_userManager` 개체입니다. `_userManager` 가 제공한 종속성 주입):
 
-   [!code-csharp[](identity/sample/src/ASPNETv2.1-IdentityDemo/Register.cshtml.cs?name=snippet&highlight=7,22)]
+   [!code-csharp[](identity/sample/WebApp1/Areas/Identity/Pages/Account/Register.cshtml.cs?name=snippet&highlight=7,22)]
 
 ::: moniker-end
 
@@ -164,7 +167,7 @@ PowerShell 명령 구분 기호로 세미콜론을 사용합니다. PowerShell�
 
 로그인 페이지의 양식을 제출 되 면는 `OnPostAsync` 작업 이라고 합니다. `PasswordSignInAsync` 라고 하는 `_signInManager` 개체 (종속성 주입으로 제공 됨).
 
-   [!code-csharp[](identity/sample/src/ASPNETv2.1-IdentityDemo/Login.cshtml.cs?name=snippet&highlight=10-11)]
+   [!code-csharp[](identity/sample/WebApp1/Areas/Identity/Pages/Account/Login.cshtml.cs?name=snippet&highlight=10-11)]
 
    기본 `Controller` 클래스는 컨트롤러의 메서드에서 접근할 수 있는 `User` 속성을 제공합니다. 예를 들어, 열거할 수 있습니다 `User.Claims` 을 권한 부여 결정을 내립니다. 자세한 내용은 <xref:security/authorization/introduction>을 참조하세요.
 
@@ -188,13 +191,13 @@ PowerShell 명령 구분 기호로 세미콜론을 사용합니다. PowerShell�
 
 합니다 **로그 아웃** 링크를 호출 하는 `LogoutModel.OnPost` 동작 합니다. 
 
-[!code-csharp[](identity/sample/src/ASPNETv2.1-IdentityDemo/Logout.cshtml.cs)]
+[!code-csharp[](identity/sample/WebApp1/Areas/Identity/Pages/Account/Logout.cshtml.cs)]
 
 [SignOutAsync](/dotnet/api/microsoft.aspnetcore.identity.signinmanager-1.signoutasync#Microsoft_AspNetCore_Identity_SignInManager_1_SignOutAsync) 쿠키에 저장 하는 사용자의 클레임을 지웁니다. 호출 후 리디렉션 하지 `SignOutAsync` 또는 사용자에 게 **하지** 로그 아웃 합니다.
 
 게시물에 지정 된 *Pages/Shared/_LoginPartial.cshtml*:
 
-[!code-csharp[](identity/sample/src/ASPNETv2.1-IdentityDemo/_LoginPartial.cshtml?highlight=10)]
+[!code-csharp[](identity/sample/WebApp1/Pages/Shared/_LoginPartial.cshtml?highlight=16)]
 
 ::: moniker-end
 
@@ -210,11 +213,11 @@ PowerShell 명령 구분 기호로 세미콜론을 사용합니다. PowerShell�
 
 ## <a name="test-identity"></a>테스트 Id
 
-기본 웹 프로젝트 템플릿 홈 페이지에 대 한 익명 액세스를 허용 합니다. Id를 테스트 하려면 추가 [ `[Authorize]` ](/dotnet/api/microsoft.aspnetcore.authorization.authorizeattribute) 정보 페이지에 있습니다.
+기본 웹 프로젝트 템플릿 홈 페이지에 대 한 익명 액세스를 허용 합니다. Id를 테스트 하려면 추가 [ `[Authorize]` ](/dotnet/api/microsoft.aspnetcore.authorization.authorizeattribute) 개인 정보 페이지에 있습니다.
 
-[!code-csharp[](identity/sample/src/ASPNETv2.1-IdentityDemo/About.cshtml.cs)]
+[!code-csharp[](identity/sample/WebApp1/Pages/Privacy.cshtml.cs?highlight=6)]
 
-에 로그인 하는 경우 로그 아웃 합니다. 앱을 실행 하 고 선택 합니다 **에 대 한** 링크 합니다. 로그인 페이지로 리디렉션됩니다.
+에 로그인 하는 경우 로그 아웃 합니다. 앱을 실행 하 고 선택 합니다 **개인 정보 보호** 링크 합니다. 로그인 페이지로 리디렉션됩니다.
 
 ::: moniker range=">= aspnetcore-2.1"
 
