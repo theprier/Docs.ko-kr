@@ -217,7 +217,7 @@ IIS 웹 사이트 **기본 설정**과 실제 앱 폴더를 확인합니다. 앱
 
 * **애플리케이션 로그:** hostfxr를 호출하여 inprocess 요청 처리기를 찾는 데 실패했으며 네이티브 종속성을 찾지 못했습니다. 이는 앱이 잘못 구성되었음을 의미할 가능성이 높으며, 앱이 대상으로 하고 머신에 설치되어 있는 Microsoft.NetCore.App 및 Microsoft.AspNetCore.App 버전을 확인하세요. inprocess 요청 처리기를 찾을 수 없습니다. hostfxr 호출에서 캡처된 출력: dotnet SDK 명령을 실행하시겠습니까? 다음 위치에서 dotnet SDK를 설치하세요. https://go.microsoft.com/fwlink/?LinkID=798306&clcid=0x409 애플리케이션 '/LM/W3SVC/3/ROOT'를 시작하지 못했습니다. 오류 코드 '0x8000ffff'.
 
-* **ASP.NET Core 모듈 stdout 로그:** dotnet SDK 명령을 실행하시겠습니까? https://go.microsoft.com/fwlink/?LinkID=798306&clcid=0x409 에서 dotnet SDK를 설치하세요.
+* **ASP.NET Core 모듈 stdout 로그:** dotnet SDK 명령을 실행하시겠습니까? [https://go.microsoft.com/fwlink/?LinkID=798306&amp;clcid=0x409](https://go.microsoft.com/fwlink/?LinkID=798306&clcid=0x409) 에서 dotnet SDK를 설치하세요.
 
 * **ASP.NET Core 모듈 디버그 로그:** hostfxr를 호출하여 inprocess 요청 처리기를 찾는 데 실패했으며 네이티브 종속성을 찾지 못했습니다. 이는 앱이 잘못 구성되었음을 의미할 가능성이 높으며, 앱이 대상으로 하고 머신에 설치되어 있는 Microsoft.NetCore.App 및 Microsoft.AspNetCore.App 버전을 확인하세요. 실패한 HRESULT가 반환되었습니다. 0x8000ffff inprocess 요청 처리기를 찾을 수 없습니다. hostfxr 호출에서 캡처된 출력: dotnet SDK 명령을 실행하시겠습니까? 다음 위치에서 dotnet SDK를 설치하세요. https://go.microsoft.com/fwlink/?LinkID=798306&clcid=0x409 실패한 HRESULT가 반환되었습니다. 0x8000ffff
 
