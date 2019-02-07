@@ -7,12 +7,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 01/28/2019
 uid: security/key-vault-configuration
-ms.openlocfilehash: 8e40c8308a692731e71fb8ebebfc64e606874290
-ms.sourcegitcommit: 98e9c7187772d4ddefe6d8e85d0d206749dbd2ef
+ms.openlocfilehash: d255321f6083747ce9b452e1efd4da5bc015bf64
+ms.sourcegitcommit: 3c2ba9a0d833d2a096d9d800ba67a1a7f9491af0
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55737657"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55854434"
 ---
 # <a name="azure-key-vault-configuration-provider-in-aspnet-core"></a>ASP.NET Core에서 azure Key Vault 구성 공급자
 
@@ -31,7 +31,7 @@ ms.locfileid: "55737657"
 
 Azure 키 자격 증명 모음 구성 공급자를 사용 하려면 패키지 참조를 추가 합니다 [Microsoft.Extensions.Configuration.AzureKeyVault](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.AzureKeyVault/) 패키지 있습니다.
 
-Azure 관리 서비스 Id 시나리오에 적용할에 대 한 패키지 참조를 추가 합니다 [Microsoft.Azure.Services.AppAuthentication](https://www.nuget.org/packages/Microsoft.Azure.Services.AppAuthentication/) 패키지 있습니다.
+채택 하는 [Azure 리소스에 대 한 id 관리](/azure/active-directory/managed-identities-azure-resources/overview) 시나리오에 대 한 패키지 참조를 추가 합니다 [Microsoft.Azure.Services.AppAuthentication](https://www.nuget.org/packages/Microsoft.Azure.Services.AppAuthentication/) 패키지.
 
 > [!NOTE]
 > 안정적인 최신 릴리스를 작성할 당시 `Microsoft.Azure.Services.AppAuthentication`, 버전 `1.0.3`에 대 한 지원을 제공 [identities 관리 되는 시스템 할당](/azure/active-directory/managed-identities-azure-resources/overview#how-does-the-managed-identities-for-azure-resources-worka-namehow-does-it-worka)합니다. 에 대 한 지원 *identities 관리 되는 사용자 할당* 에서 사용할 수는 `1.0.2-preview` 패키지 있습니다. 이 항목에서는 시스템 관리 id 사용을 보여 줍니다. 및 버전을 사용 하 여 제공된 된 샘플 앱 `1.0.3` 의 `Microsoft.Azure.Services.AppAuthentication` 패키지 있습니다.
@@ -40,8 +40,8 @@ Azure 관리 서비스 Id 시나리오에 적용할에 대 한 패키지 참조�
 
 샘플 앱에 의해 결정 되는 두 가지 모드 중 하나에서 실행 되는 `#define` 맨 위에 있는 문을 합니다 *Program.cs* 파일:
 
-* `Basic` &ndash; Key vault에 저장 된 비밀에 액세스 하려면 Azure Key Vault 응용 프로그램 ID 및 암호 (클라이언트 암호)를 사용 방법을 보여 줍니다. 배포는 `Basic` 버전의 ASP.NET Core 앱을 처리할 수 있는 모든 호스트 샘플입니다.
-* `Managed` &ndash; Azure를 사용 하는 방법을 보여 줍니다 [Managed Service Identity (MSI)](/azure/active-directory/managed-identities-azure-resources/overview) 앱의 코드 또는 구성에 저장 된 자격 증명 없이 Azure AD 인증을 사용 하 여 Azure Key Vault에 앱을 인증할 수 있습니다. MSI를 사용 하 여 인증을 하는 경우 Azure AD 응용 프로그램 ID 및 암호 (클라이언트 암호)를 사용할 필요가 없습니다. `Managed` 버전 샘플의 Azure에 배포 되어야 합니다.
+* `Basic` &ndash; Key vault에 저장 된 비밀에 액세스 하려면 Azure Key Vault 응용 프로그램 ID 및 암호 (클라이언트 암호)를 사용 방법을 보여 줍니다. 배포는 `Basic` 버전의 ASP.NET Core 앱을 처리할 수 있는 모든 호스트 샘플입니다. 지침에 따라 합니다 [사용 하 여 응용 프로그램 ID 및 Azure 호스트 되는 앱에 대 한 클라이언트 암호](#use-application-id-and-client-secret-for-non-azure-hosted-apps) 섹션입니다.
+* `Managed` &ndash; 사용 하는 방법을 보여 줍니다 [Azure 리소스에 대 한 id 관리](/azure/active-directory/managed-identities-azure-resources/overview) 앱의 코드 또는 구성에 저장 된 자격 증명 없이 Azure AD 인증을 사용 하 여 Azure Key Vault에 앱을 인증할 수 있습니다. 관리 되는 id를 사용 하 여 인증을 하는 경우 Azure AD 응용 프로그램 ID 및 암호 (클라이언트 암호)를 사용할 필요가 없습니다. `Managed` 버전 샘플의 Azure에 배포 되어야 합니다. 지침에 따라 합니다 [관리 되는 id를 사용 하 여 Azure 리소스에 대 한](#use-managed-identities-for-azure-resources) 섹션입니다.
 
 전처리기 지시문을 사용 하 여 샘플 앱을 구성 하는 방법에 대 한 자세한 내용은 (`#define`)를 참조 하세요 <xref:index#preprocessor-directives-in-sample-code>합니다.
 
@@ -111,12 +111,12 @@ dotnet user-secrets set "Section:SecretName" "secret_value_2_dev"
    az keyvault secret set --vault-name "{KEY VAULT NAME}" --name "Section--SecretName" --value "secret_value_2_prod"
    ```
 
-## <a name="use-application-id-and-client-secret"></a>응용 프로그램 ID 및 클라이언트 암호를 사용 합니다.
+## <a name="use-application-id-and-client-secret-for-non-azure-hosted-apps"></a>응용 프로그램 ID 및 클라이언트 암호를 사용 하 여 Azure 호스트 되는 앱에 대 한
 
-Azure AD를 구성 합니다. 앱은 Azure 외부에서 호스트 되는 경우 key vault에 인증 하는 응용 프로그램 ID 및 암호 (클라이언트 암호)를 사용 하는 Azure Key Vault 및 앱.
+Azure AD를 구성 합니다. key vault에 인증 하는 응용 프로그램 ID 및 암호 (클라이언트 암호)을 사용 하는 Azure Key Vault 및 앱 **앱 Azure 외부에서 호스트 되는 경우**합니다.
 
 > [!NOTE]
-> 응용 프로그램 ID 및 암호 (클라이언트 암호)를 사용 하는 Azure에서 호스트 되는 앱에 대 한 지원 되지만 사용 하는 것이 좋습니다 합니다 [Managed Service Identity (MSI) 공급자](#use-the-managed-service-identity-msi-provider) Azure에서 앱을 호스팅하는 경우. MSI 앱 또는 해당 구성에서 자격 증명을 저장 하므로 일반적으로 더 안전한 방법으로 간주 됩니다 필요 하지 않습니다.
+> 응용 프로그램 ID 및 암호 (클라이언트 암호)를 사용 하는 Azure에서 호스트 되는 앱에 대 한 지원 되지만 사용 하는 것이 좋습니다 [Azure 리소스에 대 한 id 관리](#use-managed-identities-for-azure-resources) Azure에서 앱을 호스팅하는 경우. 관리 되는 id는 일반적으로 더 안전한 방법으로 간주 됩니다 있도록 앱 또는 해당 구성에서 자격 증명을 저장 해야 합니다.
 
 샘플 앱은 응용 프로그램 ID 및 암호 (클라이언트 암호)를 사용 하면 합니다 `#define` 맨 위에 있는 문을 합니다 *Program.cs* 파일을 설정 `Basic`.
 
@@ -155,11 +155,11 @@ Azure AD를 구성 합니다. 앱은 Azure 외부에서 호스트 되는 경우 
 
 앱을 실행 하는 경우 웹 페이지 로드 비밀 값을 보여 줍니다. 개발 환경에서 사용 하 여 비밀 값 로드는 `_dev` 접미사. 프로덕션 환경에서 값을 사용 하 여 로드 된 `_prod` 접미사.
 
-## <a name="use-the-managed-service-identity-msi-provider"></a>관리 서비스 Id (MSI) 공급자를 사용 합니다.
+## <a name="use-managed-identities-for-azure-resources"></a>Azure 리소스에 대 한 관리 되는 id를 사용 합니다.
 
-Azure에 배포 된 앱의 MSI 관리 서비스 Id (), 앱에서 저장 한 자격 증명 (응용 프로그램 ID 및 클라이언트 암호/암호) 없이 Azure AD 인증을 사용 하 여 Azure Key Vault를 사용 하 여 인증 하도록 앱을 허용 하는 장점은 걸릴 수 있습니다.
+**Azure에 배포 된 앱** 활용할 수 있습니다 [Azure 리소스에 대 한 id 관리](/azure/active-directory/managed-identities-azure-resources/overview), Azure Key Vault를 사용 하 여 인증 하도록 앱을 설정 하는 자격 증명 없이 Azure AD 인증을 사용 하 여이 있어 (응용 프로그램 ID 및 Password/Client 비밀) 앱에 저장 합니다.
 
-샘플 앱에서는 MSI 때를 `#define` 맨 위에 있는 문을 합니다 *Program.cs* 파일을 설정 `Managed`합니다.
+Azure 리소스에 대 한 관리 되는 id를 사용 하는 샘플 앱 경우는 `#define` 맨 위에 있는 문을 합니다 *Program.cs* 파일을 설정 `Managed`.
 
 앱의 자격 증명 모음 이름 입력 *appsettings.json* 파일입니다. 샘플 앱은 응용 프로그램 ID 및 암호 (클라이언트 암호)로 설정 된 경우 필요 하지 않습니다는 `Managed` 버전이 없으므로 해당 구성 항목을 무시할 수 있습니다. 앱이 azure에 배포 하 고 Azure 인증 앱이 Azure Key Vault에 저장 된 자격 증명 모음 이름을 통해서만 액세스할 수 합니다 *appsettings.json* 파일입니다.
 
@@ -177,7 +177,7 @@ az keyvault set-policy --name '{KEY VAULT NAME}' --object-id {OBJECT ID} --secre
 
 샘플 앱:
 
-* 인스턴스를 만듭니다는 `AzureServiceTokenProvider` 연결 문자열이 없는 클래스입니다. 연결 문자열을 제공 하지 않으면 공급자는 MSI에서 액세스 토큰을 가져올 하려고 합니다.
+* 인스턴스를 만듭니다는 `AzureServiceTokenProvider` 연결 문자열이 없는 클래스입니다. 연결 문자열을 제공 하지 않으면 공급자는 Azure 리소스에 대 한 관리 되는 id에서 액세스 토큰을 가져올 하려고 합니다.
 * 새 `KeyVaultClient` 만들어집니다는 `AzureServiceTokenProvider` 인스턴스 토큰 콜백 합니다.
 * 합니다 `KeyVaultClient` 인스턴스의 기본 구현이 사용 됩니다 `IKeyVaultSecretManager` 모든 비밀 값을 로드 하 고 이중 대시를 대체 하는 (`--`) 콜론을 사용 하 여 (`:`) 키 이름에서입니다.
 

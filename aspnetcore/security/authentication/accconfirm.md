@@ -6,10 +6,10 @@ ms.author: riande
 ms.date: 7/11/2018
 uid: security/authentication/accconfirm
 ms.openlocfilehash: 0dc9907f9f54c8a0daf2e05a3769897e5145935f
-ms.sourcegitcommit: 728f4e47be91e1c87bb7c0041734191b5f5c6da3
+ms.sourcegitcommit: e418cb9cddeb3de06fa0cb4fdb5529da03ff6d63
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/22/2019
+ms.lasthandoff: 02/07/2019
 ms.locfileid: "54444144"
 ---
 # <a name="account-confirmation-and-password-recovery-in-aspnet-core"></a>계정 확인 및 ASP.NET Core에서 암호 복구
@@ -41,7 +41,7 @@ ms.locfileid: "54444144"
 # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio) 
 
 * Visual Studio에서 만드는 새 **웹 응용 프로그램** 라는 프로젝트가 **WebPWrecover**합니다.
-* 선택 **ASP.NET Core 2.1**합니다.
+* **ASP.NET Core 2.1**을 선택합니다.
 * 기본값을 유지 **Authentication** 로 설정 **인증 안 함**합니다. 다음 단계에 인증 추가 됩니다.
 
 다음 단계:

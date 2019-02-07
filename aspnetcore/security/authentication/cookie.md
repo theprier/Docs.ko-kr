@@ -5,16 +5,16 @@ description: ASP.NET Core Id 없이 쿠키 인증을 사용 하 여 설명
 ms.author: riande
 ms.date: 10/11/2017
 uid: security/authentication/cookie
-ms.openlocfilehash: f55b36cf3fc3b60e9d592348625f58ebaba90da7
-ms.sourcegitcommit: 408921a932448f66cb46fd53c307a864f5323fe5
+ms.openlocfilehash: f05e5b83359ec1739115293e092eaed0c811c046
+ms.sourcegitcommit: 3c2ba9a0d833d2a096d9d800ba67a1a7f9491af0
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51570115"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55854382"
 ---
 # <a name="use-cookie-authentication-without-aspnet-core-identity"></a>ASP.NET Core Id 없이 쿠키 인증 사용
 
-하 여 [Rick Anderson](https://twitter.com/RickAndMSFT) 고 [Luke Latham](https://github.com/guardrex)
+작성자: [Rick Anderson](https://twitter.com/RickAndMSFT) 및 [Luke Latham](https://github.com/guardrex)
 
 이전 인증 항목에서는 지금까지 살펴보았듯이 [ASP.NET Core Id](xref:security/authentication/identity) 만들기 및 로그인을 유지 관리를 완전 하 고 모든 기능을 갖춘 인증 공급자입니다. 그러나 다음 쿠키 기반 인증에 사용 하 여 사용자 고유의 사용자 지정 인증 논리를 사용 하는 것이 좋습니다. ASP.NET Core Id 없이 독립 실행형 인증 공급자로 쿠키 기반 인증을 사용할 수 있습니다.
 
@@ -26,7 +26,7 @@ ASP.NET Core에서 마이그레이션 쿠키 기반 인증에 대 한 내용은 
 
 ASP.NET Core Id를 사용 하려면 참조는 [Id 소개](xref:security/authentication/identity) 항목입니다.
 
-## <a name="configuration"></a>구성
+## <a name="configuration"></a>구성하기
 
 ::: moniker range=">= aspnetcore-2.0"
 
@@ -53,7 +53,6 @@ ASP.NET Core Id를 사용 하려면 참조는 [Id 소개](xref:security/authenti
 | [AccessDeniedPath](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions.accessdeniedpath?view=aspnetcore-2.0) | 302 있음 (URL 리디렉션) 제공에 대 한 경로 제공 하 여 트리거되면 `HttpContext.ForbidAsync`합니다. 기본값은 `/Account/AccessDenied`입니다. |
 | [ClaimsIssuer](/dotnet/api/microsoft.aspnetcore.authentication.authenticationschemeoptions.claimsissuer?view=aspnetcore-2.0) | 에 사용할 발급자 합니다 [발급자](/dotnet/api/system.security.claims.claim.issuer) 쿠키 인증 서비스에 의해 만들어진 모든 클레임의 속성입니다. |
 | [Cookie.Domain](/dotnet/api/microsoft.aspnetcore.http.cookiebuilder.domain?view=aspnetcore-2.0) | 쿠키를 제공 하는 도메인 이름입니다. 기본적으로 요청 호스트 이름입니다. 브라우저 요청에서 쿠키를 일치 하는 호스트 이름에만 보냅니다. 이 도메인의 모든 호스트에 사용할 수 있는 쿠키를 조정 하고자 할 수 있습니다. 예를 들어 쿠키 도메인 설정을 `.contoso.com` 사용할 수 있도록 `contoso.com`를 `www.contoso.com`, 및 `staging.www.contoso.com`합니다. |
-| [Cookie.Expiration](/dotnet/api/microsoft.aspnetcore.http.cookiebuilder.expiration?view=aspnetcore-2.0) | 쿠키의 수명을 가져오거나 설정 합니다. 현재이 옵션은 작동 하지 않습니다 및 ASP.NET Core 2.1 이상에서 사용 되지 않는 됩니다. 사용 된 `ExpireTimeSpan` 쿠키 만료를 설정 하는 옵션입니다. 자세한 내용은 [CookieAuthenticationOptions.Cookie.Expiration의 동작을 명시](https://github.com/aspnet/Security/issues/1293)합니다. |
 | [Cookie.HttpOnly](/dotnet/api/microsoft.aspnetcore.http.cookiebuilder.httponly?view=aspnetcore-2.0) | 쿠키를 서버에만 액세스할 수 있어야 하는 경우를 나타내는 플래그입니다. 이 값을 변경 `false` 쿠키에 액세스 하는 클라이언트 쪽 스크립트를 허용 하 고 앱 있어야 앱 쿠키 도용을 열 수 있습니다를 [교차 사이트 스크립팅 (XSS)](xref:security/cross-site-scripting) 취약점으로 인 한 합니다. 기본값은 `true`입니다. |
 | [Cookie.Name](/dotnet/api/microsoft.aspnetcore.http.cookiebuilder.name?view=aspnetcore-2.0) | 쿠키의 이름을 설정합니다. |
 | [Cookie.Path](/dotnet/api/microsoft.aspnetcore.http.cookiebuilder.path?view=aspnetcore-2.0) | 동일한 호스트 이름에서 실행 중인 앱을 격리 하는 데 사용 합니다. 실행 되는 앱이 있는 경우 `/app1` 및 해당 앱에 대 한 쿠키를 제한 하려면 설정 합니다 `CookiePath` 속성을 `/app1`입니다. 이 작업을 수행 하면 쿠키 에서만 사용 가능 대 한 요청에 `/app1` 및 그 아래에 있는 모든 앱. |
