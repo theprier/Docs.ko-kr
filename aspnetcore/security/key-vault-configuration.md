@@ -5,14 +5,14 @@ description: Azure 키 자격 증명 모음 구성 공급자를 사용 하 여 �
 monikerRange: '>= aspnetcore-2.1'
 ms.author: riande
 ms.custom: mvc
-ms.date: 01/28/2019
+ms.date: 02/08/2019
 uid: security/key-vault-configuration
-ms.openlocfilehash: d255321f6083747ce9b452e1efd4da5bc015bf64
-ms.sourcegitcommit: 3c2ba9a0d833d2a096d9d800ba67a1a7f9491af0
+ms.openlocfilehash: f70389c86420d81e284ecc863ac8386f726ed2cf
+ms.sourcegitcommit: 5e3797a02ff3c48bb8cb9ad4320bfd169ebe8aba
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55854434"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56103113"
 ---
 # <a name="azure-key-vault-configuration-provider-in-aspnet-core"></a>ASP.NET Core에서 azure Key Vault 구성 공급자
 
@@ -271,8 +271,8 @@ var cert = store.Certificates
         config["CertificateThumbprint"], false);
 
 config.AddAzureKeyVault(
-    builtConfig["Vault"],
-    builtConfig["ClientId"],
+    builtConfig["KeyVaultName"],
+    builtConfig["AzureADApplicationId"],
     cert.OfType<X509Certificate2>().Single(),
     new EnvironmentSecretManager(context.HostingEnvironment.ApplicationName));
 
@@ -342,8 +342,8 @@ Configuration.Reload();
 * 앱은 key vault 액세스 권한이 없는 합니다.
 * 액세스 정책에 포함 되지 않습니다 `Get` 고 `List` 권한.
 * 키 자격 증명 모음에 구성 데이터 (이름-값 쌍)가 이름이, 누락, 비활성화 되었거나 만료 되었습니다.
-* 앱에 잘못 된 키 자격 증명 모음 이름 (`Vault`)를 Azure AD 앱 Id (`ClientId`), 또는 Azure AD 키 (`ClientSecret`).
-* Azure AD Key (`ClientSecret`) 만료 되었습니다.
+* 앱에 잘못 된 키 자격 증명 모음 이름 (`KeyVaultName`)를 Azure AD 응용 프로그램 Id (`AzureADApplicationId`), 또는 Azure AD 암호 (클라이언트 암호) (`AzureADPassword`).
+* Azure AD 암호 (클라이언트 암호) (`AzureADPassword`) 만료 되었습니다.
 * 구성 키 (이름)를 로드 하려고 하는 값에 대 한 앱에서 올바르지 않습니다.
 
 ## <a name="additional-resources"></a>추가 자료

@@ -4,14 +4,14 @@ author: rick-anderson
 description: ASP.NET Core에서 데이터를 메모리에 캐시하는 방법을 알아봅니다.
 ms.author: riande
 ms.custom: mvc
-ms.date: 09/15/2018
+ms.date: 02/11/2019
 uid: performance/caching/memory
-ms.openlocfilehash: 54b4029362c6b26254cb08397ef2e9131f6291d4
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: 9a7727ad41a05f39d74877af3c8f2e3f7a620c7d
+ms.sourcegitcommit: 5e3797a02ff3c48bb8cb9ad4320bfd169ebe8aba
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50207253"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56103074"
 ---
 # <a name="cache-in-memory-in-aspnet-core"></a>ASP.NET Core의 메모리 내 캐시
 
@@ -33,7 +33,7 @@ ASP.NET Core는 몇 가지 다른 종류의 캐시를 지원합니다. 가장 �
 
 ::: moniker-end
 
-메모리 내 캐시는 모든 개체를 저장할 수 있는 반면, 분산 캐시 인터페이스는 `byte[]`만 저장할 수 있습니다.
+메모리 내 캐시는 모든 개체를 저장할 수 있는 반면, 분산 캐시 인터페이스는 `byte[]`만 저장할 수 있습니다. 키-값 쌍으로 메모리 내 및 분산 캐시 저장소 캐시 항목입니다.
 
 ## <a name="systemruntimecachingmemorycache"></a>System.Runtime.Caching/MemoryCache
 
@@ -97,7 +97,7 @@ ASP.NET Core는 몇 가지 다른 종류의 캐시를 지원합니다. 가장 �
 
 ![두 개의 서로 다른 시간을 표시하는 Index 뷰](memory/_static/time.png)
 
-다음 코드는 [GetOrCreate](/dotnet/api/microsoft.extensions.caching.memory.cacheextensions#Microsoft_Extensions_Caching_Memory_CacheExtensions_GetOrCreate__1_Microsoft_Extensions_Caching_Memory_IMemoryCache_System_Object_System_Func_Microsoft_Extensions_Caching_Memory_ICacheEntry___0__) 및 [GetOrCreateAsync](/dotnet/api/microsoft.extensions.caching.memory.cacheextensions#Microsoft_Extensions_Caching_Memory_CacheExtensions_GetOrCreateAsync__1_Microsoft_Extensions_Caching_Memory_IMemoryCache_System_Object_System_Func_Microsoft_Extensions_Caching_Memory_ICacheEntry_System_Threading_Tasks_Task___0___) 를 이용해서 데이터를 캐시합니다. 
+다음 코드는 [GetOrCreate](/dotnet/api/microsoft.extensions.caching.memory.cacheextensions#Microsoft_Extensions_Caching_Memory_CacheExtensions_GetOrCreate__1_Microsoft_Extensions_Caching_Memory_IMemoryCache_System_Object_System_Func_Microsoft_Extensions_Caching_Memory_ICacheEntry___0__) 및 [GetOrCreateAsync](/dotnet/api/microsoft.extensions.caching.memory.cacheextensions#Microsoft_Extensions_Caching_Memory_CacheExtensions_GetOrCreateAsync__1_Microsoft_Extensions_Caching_Memory_IMemoryCache_System_Object_System_Func_Microsoft_Extensions_Caching_Memory_ICacheEntry_System_Threading_Tasks_Task___0___) 를 이용해서 데이터를 캐시합니다.
 
 [!code-csharp[](memory/sample/WebCache/Controllers/HomeController.cs?name=snippet2&highlight=3-7,14-19)]
 
@@ -105,7 +105,7 @@ ASP.NET Core는 몇 가지 다른 종류의 캐시를 지원합니다. 가장 �
 
 [!code-csharp[](memory/sample/WebCache/Controllers/HomeController.cs?name=snippet_gct)]
 
-캐시 메서드에 대한 설명은 [IMemoryCache 메서드](/dotnet/api/microsoft.extensions.caching.memory.imemorycache) 및 [CacheExtensions 메서드](/dotnet/api/microsoft.extensions.caching.memory.cacheextensions)를 참고하시기 바랍니다.
+<xref:Microsoft.Extensions.Caching.Memory.CacheExtensions.GetOrCreate*> <xref:Microsoft.Extensions.Caching.Memory.CacheExtensions.GetOrCreateAsync*>, 및 [가져올](/dotnet/api/microsoft.extensions.caching.memory.cacheextensions.get#Microsoft_Extensions_Caching_Memory_CacheExtensions_Get__1_Microsoft_Extensions_Caching_Memory_IMemoryCache_System_Object_) 일부인 확장 메서드를 [CacheExtensions](/dotnet/api/microsoft.extensions.caching.memory.cacheextensions) 기능을 확장 하는 클래스 <xref:Microsoft.Extensions.Caching.Memory.IMemoryCache>합니다. 참조 [IMemoryCache 메서드](/dotnet/api/microsoft.extensions.caching.memory.imemorycache) 하 고 [CacheExtensions 메서드](/dotnet/api/microsoft.extensions.caching.memory.cacheextensions) 다른 캐시 방법에 대 한 합니다.
 
 ## <a name="memorycacheentryoptions"></a>MemoryCacheEntryOptions
 
