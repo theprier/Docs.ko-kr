@@ -3,14 +3,14 @@ title: 계정 확인 및 ASP.NET Core에서 암호 복구
 author: rick-anderson
 description: 전자 메일 확인 및 암호 재설정을 사용 하 여 ASP.NET Core 앱을 빌드하는 방법에 알아봅니다.
 ms.author: riande
-ms.date: 7/11/2018
+ms.date: 2/11/2019
 uid: security/authentication/accconfirm
-ms.openlocfilehash: 0dc9907f9f54c8a0daf2e05a3769897e5145935f
-ms.sourcegitcommit: e418cb9cddeb3de06fa0cb4fdb5529da03ff6d63
+ms.openlocfilehash: 77d7b209d57f9ee44f158798ff780ce85c87aaf2
+ms.sourcegitcommit: af8a6eb5375ef547a52ffae22465e265837aa82b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "54444144"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56159410"
 ---
 # <a name="account-confirmation-and-password-recovery-in-aspnet-core"></a>계정 확인 및 ASP.NET Core에서 암호 복구
 
@@ -166,7 +166,7 @@ dotnet add package SendGrid
 
 다음 코드를 추가 합니다 `ConfigureServices` 의 메서드를 *Startup.cs* 파일:
 
-* 추가 `EmailSender` singleton 서비스입니다.
+* 추가 `EmailSender` 일시적인 서비스로 합니다.
 * 등록 된 `AuthMessageSenderOptions` 구성 인스턴스.
 
 [!code-csharp[](accconfirm/sample/WebPWrecover21/Startup.cs?name=snippet2&highlight=12-99)]
@@ -196,7 +196,7 @@ await _signInManager.SignInAsync(user, isPersistent: false);
 * 계정 확인 링크에 대 한 전자 메일을 확인 합니다. 참조 [전자 메일을 디버그](#debug) 전자 메일을 얻지 못한 경우.
 * 전자 메일 확인 하기 위한 링크를 클릭 합니다.
 * 전자 메일 및 암호를 로그인 합니다.
-* 로그 오프 합니다.
+* 로그 아웃 합니다.
 
 ### <a name="view-the-manage-page"></a>관리 페이지 보기
 
@@ -213,7 +213,7 @@ await _signInManager.SignInAsync(user, isPersistent: false);
 * 에 로그인 하는 경우 선택 **로그 아웃**합니다.
 * 선택 합니다 **에 로그인** 연결 하 고 선택 합니다 **암호를 잊으셨나요?** 링크.
 * 계정을 등록 하는 데 전자 메일을 입력 합니다.
-* 암호 재설정에 대 한 링크가 포함 된 전자 메일이 전송 됩니다. 전자 메일을 확인 하 고 암호 재설정에 대 한 링크를 클릭 합니다. 암호가 성공적으로 다시 설정, 메일 및 새 암호를 사용 하 여 기록할 수 있습니다.
+* 암호 재설정에 대 한 링크가 포함 된 전자 메일이 전송 됩니다. 전자 메일을 확인 하 고 암호 재설정에 대 한 링크를 클릭 합니다. 암호가 성공적으로 다시 설정, 메일 및 새 암호를 사용 하 여 서명할 수 있습니다.
 
 <a name="debug"></a>
 
@@ -246,7 +246,7 @@ await _signInManager.SignInAsync(user, isPersistent: false);
 
 ![Facebook을 목록 외부 로그인 보기를 관리 합니다.](accconfirm/_static/fb.png)
 
-두 개의 계정은 결합 되었습니다. 두 계정으로 로그온 할 수 있습니다. 사용자가 자신의 소셜 로그인 인증 서비스가 다운 된 또는 가능성이 소셜 계정에 대 한 액세스를 손실 했습니다 되는 경우 로컬 계정을 추가 수 있습니다.
+두 개의 계정은 결합 되었습니다. 계정이 나 로그인 수 있습니다. 사용자가 자신의 소셜 로그인 인증 서비스가 다운 된 또는 가능성이 소셜 계정에 대 한 액세스를 손실 했습니다 되는 경우 로컬 계정을 추가 수 있습니다.
 
 ## <a name="enable-account-confirmation-after-a-site-has-users"></a>사이트 사용자 후 계정 확인을 사용 하도록 설정
 
