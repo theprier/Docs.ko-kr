@@ -3,14 +3,14 @@ title: ASP.NET Core Id를 구성 합니다.
 author: AdrienTorris
 description: ASP.NET Core Id 기본 값을 이해 하 고 사용자 지정 값을 사용 하도록 Id 속성을 구성 하는 방법을 알아봅니다.
 ms.author: riande
-ms.date: 08/14/2018
+ms.date: 02/11/2019
 uid: security/authentication/identity-configuration
-ms.openlocfilehash: 02441cd28c2a99eda7b50ed54f4437d4b52ca5d9
-ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
+ms.openlocfilehash: 3213f669cbfccdcda7cc7c0142b8101e696678e6
+ms.sourcegitcommit: af8a6eb5375ef547a52ffae22465e265837aa82b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48911948"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56159515"
 ---
 # <a name="configure-aspnet-core-identity"></a>ASP.NET Core Id를 구성 합니다.
 
@@ -52,7 +52,7 @@ ASP.NET Core Id는 암호 정책, 잠금 쿠키 구성과 같은 설정에 대 �
 | 속성 | 설명 | 기본 |
 | -------- | ----------- | :-----: |
 | [AllowedForNewUsers](/dotnet/api/microsoft.aspnetcore.identity.lockoutoptions.allowedfornewusers) | 하는 경우 새 사용자를 잠글 수를 결정 합니다. | `true` |
-| [DefaultLockoutTimeSpan](/dotnet/api/microsoft.aspnetcore.identity.lockoutoptions.defaultlockouttimespan) | 시간을 사용자가 잠겨 잠금 발생 하는 경우. | 5 분 |
+| [DefaultLockoutTimeSpan](/dotnet/api/microsoft.aspnetcore.identity.lockoutoptions.defaultlockouttimespan) | 시간을 사용자가 잠겨 잠금 발생 하는 경우. | 5분 |
 | [MaxFailedAccessAttempts](/dotnet/api/microsoft.aspnetcore.identity.lockoutoptions.maxfailedaccessattempts) | 잠금이 설정 된 경우, 사용자가 차단 될 때까지 실패 한 액세스 시도 횟수입니다. | 5 |
 
 ### <a name="password"></a>암호
@@ -175,3 +175,23 @@ ASP.NET Core Id는 암호 정책, 잠금 쿠키 구성과 같은 설정에 대 �
 ::: moniker-end
 
 자세한 내용은 [CookieAuthenticationOptions](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions)합니다.
+
+## <a name="password-hasher-options"></a>암호 Hasher 옵션
+
+<xref:Microsoft.AspNetCore.Identity.PasswordHasherOptions> 가져오고 암호 해시에 대 한 옵션을 설정 합니다.
+
+| 옵션 | 설명 |
+| ------ | ----------- |
+| <xref:Microsoft.AspNetCore.Identity.PasswordHasherOptions.CompatibilityMode> | 새 암호를 해시 하는 경우에 사용 되는 호환성 모드입니다. 기본값은 <xref:Microsoft.AspNetCore.Identity.PasswordHasherCompatibilityMode.IdentityV3>입니다. 호출 하는 해시 된 암호의 첫 번째 바이트는 *형식으로 표식*, 암호를 해시 하는 데 해시 알고리즘의 버전을 지정 합니다. 해시에 대 한 암호를 확인 하는 경우는 <xref:Microsoft.AspNetCore.Identity.PasswordHasher`1.VerifyHashedPassword*> 메서드 첫 번째 바이트에 따라 올바른 알고리즘을 선택 합니다. 클라이언트는는 알고리즘의 버전 사용 된 암호를 해시 하 든 상관 없이 인증할 수 있습니다. 해시에 영향을 줍니다 호환성 모드를 설정 *새 암호*합니다. |
+| <xref:Microsoft.AspNetCore.Identity.PasswordHasherOptions.IterationCount> | PBKDF2를 사용 하 여 암호를 해시 하는 경우 사용 되는 반복 횟수입니다. 이 값은 경우에만 사용된 합니다 <xref:Microsoft.AspNetCore.Identity.PasswordHasherOptions.CompatibilityMode> 로 설정 된 <xref:Microsoft.AspNetCore.Identity.PasswordHasherCompatibilityMode.IdentityV3>합니다. 값은 양의 정수 이며 기본값은 해야 `10000`합니다. |
+
+다음 예제에서는 <xref:Microsoft.AspNetCore.Identity.PasswordHasherOptions.IterationCount> 로 설정 된 `12000` 에서 `Startup.ConfigureServices`:
+
+```csharp
+// using Microsoft.AspNetCore.Identity;
+
+services.Configure<PasswordHasherOptions>(option =>
+{
+    option.IterationCount = 12000;
+});
+```
