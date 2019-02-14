@@ -5,12 +5,12 @@ description: ASP.NET Core의 데이터 보호 키 관리 및 수명에 관해서
 ms.author: riande
 ms.date: 10/14/2016
 uid: security/data-protection/configuration/default-settings
-ms.openlocfilehash: beff17dd81143db02a0cbc79fa7cb3a6a4deeda6
-ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
+ms.openlocfilehash: 2f022a4c7519485fe629ce47c27d214c8c27d5bc
+ms.sourcegitcommit: af8a6eb5375ef547a52ffae22465e265837aa82b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39095101"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56159213"
 ---
 # <a name="data-protection-key-management-and-lifetime-in-aspnet-core"></a>ASP.NET Core의 데이터 보호 키 관리 및 수명
 
@@ -26,6 +26,13 @@ ms.locfileid: "39095101"
    * 준비 및 프로덕션과 같은 별도의 배포 슬롯은 키 링을 공유하지 않습니다. 예를 들어 스테이징 및 프로덕션을 교환 또는 A를 사용 하 여 배포 슬롯 간에 교환할 때 / B 테스트, 데이터 보호를 사용 하 여 모든 앱은 이전 슬롯 내 키 링을 사용 하 여 저장 된 데이터를 해독할 수 없습니다. 이렇게 하면 사용자 데이터 보호를 사용 하 여 쿠키를 보호 하기 위해 표준 Asp.net 쿠키 인증을 사용 하는 앱에서 기록 합니다. 슬롯에 관계 없는 키 링을 설치 하려는 경우 Azure Blob Storage, Azure Key Vault를 SQL 저장소 등의 외부 키 링 공급자를 사용 하거나 Redis 캐시 합니다.
 
 1. 사용자 프로필이 사용 가능한 경우에는 *%LOCALAPPDATA%\ASP.NET\DataProtection-Keys* 폴더에 키가 저장됩니다. 운영 체제가 Windows DPAPI를 사용 하 여 미사용 키 암호화 됩니다.
+
+   응용 프로그램 풀 [setProfileEnvironment 특성](/iis/configuration/system.applicationhost/applicationpools/add/processmodel#configuration) 도 사용할 수 있어야 합니다. `setProfileEnvironment` 의 기본값은 `true`입니다. 일부 시나리오 (예: Windows OS)에서 `setProfileEnvironment` 로 설정 된 `false`합니다. 키가 사용자 프로필 디렉터리에 저장 되지 않습니다 필요 합니다.
+
+   1. 로 이동 합니다 *%windir%/system32/inetsrv/config* 폴더입니다.
+   1. 엽니다는 *applicationHost.config* 파일입니다.
+   1. `<system.applicationHost><applicationPools><applicationPoolDefaults><processModel>` 요소를 찾습니다.
+   1. 있는지 확인 합니다 `setProfileEnvironment` 특성 값은 기본값이, 존재 하지 하 `true`, 특성의 값을 명시적으로 설정 또는 `true`.
 
 1. 응용 프로그램이 IIS에서 호스트되는 경우에는 작업자 프로세스 계정에만 ACL로 허용된 HKLM 레지스트리 하위의 특수한 레지스트리 키에 키가 저장됩니다. 저장된 비활성 키는 DPAPI를 통해서 암호화됩니다.
 
