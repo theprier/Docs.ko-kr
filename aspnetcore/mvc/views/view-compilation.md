@@ -5,14 +5,14 @@ description: Razor 파일을 미리 컴파일할 경우의 이점과 ASP.NET Cor
 monikerRange: '>= aspnetcore-1.1'
 ms.author: riande
 ms.custom: mvc
-ms.date: 01/23/2019
+ms.date: 02/13/2019
 uid: mvc/views/view-compilation
-ms.openlocfilehash: 2720708f8e58fdc55b82bfb56665005170e79934
-ms.sourcegitcommit: d5223cf6a2cf80b4f5dc54169b0e376d493d2d3a
+ms.openlocfilehash: c4e8f722fdf3d3f64807cc35ff9f349af7f32abd
+ms.sourcegitcommit: 6ba5fb1fd0b7f9a6a79085b0ef56206e462094b7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54889758"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56248188"
 ---
 # <a name="razor-file-compilation-in-aspnet-core"></a>ASP.NET Core의 Razor 파일 컴파일
 
@@ -98,7 +98,7 @@ dotnet publish -c Release
 
 ## <a name="recompile-razor-files-on-change"></a>변경 시 Razor 파일 다시 컴파일
 
-<xref:Microsoft.AspNetCore.Mvc.Razor.RazorViewEngineOptions> `AllowRecompilingViewsOnFileChange`는 디스크의 파일이 변경되면 Razor 파일(Razor 뷰 및 Razor Pages)이 컴파일되고 업데이트되는지 여부를 결정하는 값을 가져오거나 설정합니다.
+<xref:Microsoft.AspNetCore.Mvc.Razor.RazorViewEngineOptions> <xref:Microsoft.AspNetCore.Mvc.Razor.RazorViewEngineOptions.AllowRecompilingViewsOnFileChange>는 디스크의 파일이 변경되면 Razor 파일(Razor 뷰 및 Razor Pages)이 컴파일되고 업데이트되는지 여부를 결정하는 값을 가져오거나 설정합니다.
 
 `true`로 설정하면 [IFileProvider.Watch](xref:Microsoft.Extensions.FileProviders.IFileProvider.Watch*)는 구성된 <xref:Microsoft.Extensions.FileProviders.IFileProvider> 인스턴스에서 Razor 파일의 변경 내용을 감시합니다.
 
@@ -107,11 +107,11 @@ dotnet publish -c Release
 * ASP.NET Core 2.1 또는 이전 버전의 앱.
 * 개발 환경의 ASP.NET Core 2.2 이상의 앱.
 
-`AllowRecompilingViewsOnFileChange`는 호환성 스위치와 연결되어 있으며 앱에 대해 구성된 호환성 버전에 따라 다른 동작을 제공할 수 있습니다. `AllowRecompilingViewsOnFileChange`를 설정하여 앱을 구성하면 앱의 호환성 버전에 의해 암시된 값보다 우선 순위가 높습니다.
+<xref:Microsoft.AspNetCore.Mvc.Razor.RazorViewEngineOptions.AllowRecompilingViewsOnFileChange>는 호환성 스위치와 연결되어 있으며 앱에 대해 구성된 호환성 버전에 따라 다른 동작을 제공할 수 있습니다. <xref:Microsoft.AspNetCore.Mvc.Razor.RazorViewEngineOptions.AllowRecompilingViewsOnFileChange>를 설정하여 앱을 구성하면 앱의 호환성 버전에 의해 암시된 값보다 우선 순위가 높습니다.
 
-앱의 호환성 버전이 <xref:Microsoft.AspNetCore.Mvc.CompatibilityVersion.Version_2_1> 또는 이전 버전으로 설정된 경우 명시적으로 구성하지 않는 한 `AllowRecompilingViewsOnFileChange`는 `true`로 설정됩니다.
+앱의 호환성 버전이 <xref:Microsoft.AspNetCore.Mvc.CompatibilityVersion.Version_2_1> 또는 이전 버전으로 설정된 경우 명시적으로 구성하지 않는 한 <xref:Microsoft.AspNetCore.Mvc.Razor.RazorViewEngineOptions.AllowRecompilingViewsOnFileChange>는 `true`로 설정됩니다.
 
-앱의 호환성 버전이 `CompatibilityVersion.Version_2_2` 이상으로 설정된 경우 환경이 개발이 아니거나 값이 명시적으로 구성되지 않은 경우 `AllowRecompilingViewsOnFileChange`가 `false`로 설정됩니다.
+앱의 호환성 버전이 <xref:Microsoft.AspNetCore.Mvc.CompatibilityVersion.Version_2_2> 이상으로 설정된 경우 환경이 개발이 아니거나 값이 명시적으로 구성되지 않은 경우 <xref:Microsoft.AspNetCore.Mvc.Razor.RazorViewEngineOptions.AllowRecompilingViewsOnFileChange>가 `false`로 설정됩니다.
 
 앱의 호환성 버전 설정에 대한 지침과 예는 <xref:mvc/compatibility-version>을 참조하세요.
 

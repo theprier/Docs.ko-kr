@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 01/29/2019
 uid: host-and-deploy/iis/index
-ms.openlocfilehash: 9392da14e589736b24790676c1c07c9964882737
-ms.sourcegitcommit: d22b3c23c45a076c4f394a70b1c8df2fbcdf656d
+ms.openlocfilehash: 9f7fc5571f8d1a6e5e2d84779082abb02d2fb292
+ms.sourcegitcommit: af8a6eb5375ef547a52ffae22465e265837aa82b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55428462"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56159397"
 ---
 # <a name="host-aspnet-core-on-windows-with-iis"></a>IIS가 있는 Windows에서 ASP.NET Core 호스팅
 
@@ -313,7 +313,7 @@ Windows 호스팅 번들 설치 관리자는 설치를 완료하기 위해 IIS�
 
 1. 호스팅 시스템에서 앱의 게시된 폴더 및 파일을 포함할 폴더를 만듭니다. 앱의 배포 레이아웃은 [디렉터리 구조](xref:host-and-deploy/directory-structure) 항목에서 설명합니다.
 
-1. **IIS 관리자**의 **연결** 패널에서 서버 노드를 엽니다. **사이트** 폴더를 마우스 오른쪽 단추로 클릭합니다. 상황에 맞는 메뉴에서 **웹 사이트 추가**를 선택합니다.
+1. IIS 관리자의 **연결** 패널에서 서버 노드를 엽니다. **사이트** 폴더를 마우스 오른쪽 단추로 클릭합니다. 상황에 맞는 메뉴에서 **웹 사이트 추가**를 선택합니다.
 
 1. **사이트 이름**을 제공하고 **실제 경로**를 앱의 배포 폴더로 설정합니다. **바인딩** 구성을 제공하고 **확인**을 선택하여 웹 사이트를 만듭니다.
 
@@ -410,7 +410,14 @@ IIS에서 키 링을 저장하도록 데이터 보호를 구성하려면 다음 
 
 * **사용자 프로필을 로드하도록 IIS 애플리케이션 풀 구성**
 
-  이 설정은 앱 풀에 대한 **고급 설정** 아래의 **프로세스 모델** 섹션에 있습니다. 사용자 프로필 로드를 `True`로 설정합니다. 이렇게 하면 사용자 프로필 디렉터리 아래에 키가 저장되고, 앱 풀에서 사용되는 사용자 계정과 관련된 키로 DPAPI를 사용하여 키가 보호됩니다.
+  이 설정은 앱 풀에 대한 **고급 설정** 아래의 **프로세스 모델** 섹션에 있습니다. **사용자 프로필**을 `True`로 설정합니다. `True`로 설정하면 키가 사용자 프로필 디렉터리에 저장되고, 사용자 계정에 관련된 키가 있는 DPAPI를 사용하여 보호됩니다. 키는 *%LOCALAPPDATA%/ASP.NET/DataProtection-Keys* 폴더에 저장됩니다.
+
+  앱 풀의 [setProfileEnvironment 특성](/iis/configuration/system.applicationhost/applicationpools/add/processmodel#configuration)도 사용하도록 설정해야 합니다. `setProfileEnvironment` 의 기본값은 `true`입니다. Windows OS와 같은 일부 시나리오에서는 `setProfileEnvironment`가 `false`로 설정됩니다. 키가 예상대로 사용자 프로필 디렉터리에 저장되지 않는 경우 다음을 수행합니다.
+
+  1. *%windir%/system32/inetsrv/config* 폴더로 이동합니다.
+  1. *applicationHost.config* 파일을 엽니다.
+  1. `<system.applicationHost><applicationPools><applicationPoolDefaults><processModel>` 요소를 찾습니다.
+  1. `setProfileEnvironment` 특성이 존재하지 않는지 확인합니다. 존재하지 않을 경우 기본값이 `true`로 설정됩니다. 또는 특성 값을 명시적으로 `true`로 설정합니다.
 
 * **파일 시스템을 키 링 저장소로 사용**
 

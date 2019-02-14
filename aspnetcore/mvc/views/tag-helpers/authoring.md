@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/24/2018
 uid: mvc/views/tag-helpers/authoring
-ms.openlocfilehash: dbfb63bb7406ee8e20ae25b366162702ac87942c
-ms.sourcegitcommit: c47d7c131eebbcd8811e31edda210d64cf4b9d6b
+ms.openlocfilehash: 3e266bc435ff7e4a15655276c581ac171f0de47c
+ms.sourcegitcommit: a91e8dd2f4b788114c8bc834507277f4b5e8d6c5
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55236460"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "55712278"
 ---
 # <a name="author-tag-helpers-in-aspnet-core"></a>ASP.NET Core의 작성자 태그 도우미
 
@@ -227,7 +227,7 @@ FQN을 사용하여 뷰에 태그 도우미를 추가하려면 먼저 FQN(`Autho
    > [!NOTE]
    > 닫는 태그로 다음 태그를 사용하고 태그 도우미에서 `TagMode.StartTagAndEndTag`로 해당 줄을 제거할 수 있습니다.
    >
-   > [!code-html[](authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/Home/AboutNotSelfClosing.cshtml?range=13-18)]
+   > [!code-html[](authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/Home/AboutNotSelfClosing.cshtml?range=20-21)]
 
 ## <a name="condition-tag-helper"></a>조건 태그 도우미
 
