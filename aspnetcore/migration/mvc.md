@@ -3,14 +3,14 @@ title: ASP.NET MVC에서 ASP.NET Core MVC로 마이그레이션
 author: ardalis
 description: ASP.NET MVC 프로젝트를 ASP.NET Core MVC로 시작 하는 방법에 알아봅니다.
 ms.author: riande
-ms.date: 03/07/2017
+ms.date: 02/13/2019
 uid: migration/mvc
-ms.openlocfilehash: 7c9d927bbd06f96f130d53e946a2963b5804960b
-ms.sourcegitcommit: edb9d2d78c9a4d68b397e74ae2aff088b325a143
+ms.openlocfilehash: 2ca51a145243444722ad8081fd8cdbb65d72b53a
+ms.sourcegitcommit: 6ba5fb1fd0b7f9a6a79085b0ef56206e462094b7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "51505741"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56248045"
 ---
 # <a name="migrate-from-aspnet-mvc-to-aspnet-core-mvc"></a>ASP.NET MVC에서 ASP.NET Core MVC로 마이그레이션
 
@@ -29,7 +29,7 @@ ms.locfileid: "51505741"
 
 ![새 웹 응용 프로그램 대화 상자: ASP.NET 템플릿 창에서 선택한 MVC 프로젝트 템플릿](mvc/_static/new-project-select-mvc-template.png)
 
-*선택 사항:* 에서 솔루션의 이름을 변경할 *WebApp1* 하려면 *Mvc5*합니다. Visual Studio에 새 솔루션 이름이 표시 됩니다 (*Mvc5*), 다음 프로젝트에서이 프로젝트에 하기가 쉽습니다.
+*선택 사항:* 솔루션의 이름을 변경할 *WebApp1* 하 *Mvc5*합니다. Visual Studio에 새 솔루션 이름이 표시 됩니다 (*Mvc5*), 다음 프로젝트에서이 프로젝트에 하기가 쉽습니다.
 
 ## <a name="create-the-aspnet-core-project"></a>ASP.NET Core 프로젝트를 만들려면
 
@@ -39,7 +39,7 @@ ms.locfileid: "51505741"
 
 ![새 ASP.NET 웹 응용 프로그램 대화 상자: ASP.NET Core 템플릿 창에서 선택한 빈 프로젝트 템플릿](mvc/_static/new-project-select-empty-aspnet5-template.png)
 
-* *선택 사항:* 사용 하 여 새 ASP.NET Core 앱 만들기를 *웹 응용 프로그램* 프로젝트 템플릿. 프로젝트 이름을 *WebApp1*의 인증 옵션을 선택 하 고 **개별 사용자 계정**합니다. 이 앱을 이름 바꾸기 *FullAspNetCore*합니다. 변환에서이 프로젝트 시간을 절약할 수를 만드는 중입니다. 최종 결과를 보려면 하거나 변환 프로젝트에 코드를 복사 하는 템플릿에서 생성 된 코드를 살펴볼 수 있습니다. 또한 템플릿에서 생성 된 프로젝트를 사용 하 여 비교 하는 변환 단계에서 멈출 때에 도움이 됩니다.
+* *선택 사항:* 사용 하 여 새 ASP.NET Core 앱을 *웹 응용 프로그램* 프로젝트 템플릿. 프로젝트 이름을 *WebApp1*의 인증 옵션을 선택 하 고 **개별 사용자 계정**합니다. 이 앱을 이름 바꾸기 *FullAspNetCore*합니다. 변환에서이 프로젝트 시간을 절약할 수를 만드는 중입니다. 최종 결과를 보려면 하거나 변환 프로젝트에 코드를 복사 하는 템플릿에서 생성 된 코드를 살펴볼 수 있습니다. 또한 템플릿에서 생성 된 프로젝트를 사용 하 여 비교 하는 변환 단계에서 멈출 때에 도움이 됩니다.
 
 ## <a name="configure-the-site-to-use-mvc"></a>MVC를 사용 하도록 사이트 구성
 
@@ -149,7 +149,7 @@ ASP.NET MVC의 이전 버전에서는 정적 콘텐츠 웹 프로젝트의 루�
 
 * 만들기는 *Views/Shared* 폴더입니다.
 
-* *선택 사항:* 복사본 *_ViewImports.cshtml* 에서 합니다 *FullAspNetCore* MVC 프로젝트 *뷰* ASP.NET Core 프로젝트의 폴더  *뷰* 폴더입니다. 모든 네임 스페이스 선언을 제거 합니다 *_ViewImports.cshtml* 파일입니다. 합니다 *_ViewImports.cshtml* 파일 모든 보기 파일에 대 한 네임 스페이스를 제공 하 고는 [태그 도우미](xref:mvc/views/tag-helpers/intro)합니다. 태그 도우미는 새 레이아웃 파일에서 사용 됩니다. 합니다 *_ViewImports.cshtml* 파일은 ASP.NET Core의 새로운 기능입니다.
+* *선택 사항:* 복사본 *_ViewImports.cshtml* 에서 합니다 *FullAspNetCore* MVC 프로젝트 *뷰* ASP.NET Core 프로젝트의 폴더 *뷰* 폴더입니다. 모든 네임 스페이스 선언을 제거 합니다 *_ViewImports.cshtml* 파일입니다. 합니다 *_ViewImports.cshtml* 파일 모든 보기 파일에 대 한 네임 스페이스를 제공 하 고는 [태그 도우미](xref:mvc/views/tag-helpers/intro)합니다. 태그 도우미는 새 레이아웃 파일에서 사용 됩니다. 합니다 *_ViewImports.cshtml* 파일은 ASP.NET Core의 새로운 기능입니다.
 
 * 복사 합니다 *_Layout.cshtml* 이전 ASP.NET MVC 프로젝트에서 파일 *Views/Shared* ASP.NET Core 프로젝트의 폴더 *Views/Shared* 폴더입니다.
 
@@ -188,9 +188,9 @@ JQuery 및 부트스트랩 JavaScript 포함에 대 한 대체 태그:
 
 브라우저에서 사이트를 확인 합니다. 현재 위치에서 예상된 스타일을 사용 하 여는 올바르게 로드 이제 해야 합니다.
 
-* *선택 사항:* 새 레이아웃 파일을 사용 하는 것이 좋습니다. 이 프로젝트에 대 한 레이아웃 파일을 복사할 수는 있지만 합니다 *FullAspNetCore* 프로젝트입니다. 새 레이아웃 파일을 사용 하 여 [태그 도우미](xref:mvc/views/tag-helpers/intro) 있고 다른 향상 된 기능입니다.
+* *선택 사항:* 새 레이아웃 파일을 사용해이 좋습니다. 이 프로젝트에 대 한 레이아웃 파일을 복사할 수는 있지만 합니다 *FullAspNetCore* 프로젝트입니다. 새 레이아웃 파일을 사용 하 여 [태그 도우미](xref:mvc/views/tag-helpers/intro) 있고 다른 향상 된 기능입니다.
 
-## <a name="configure-bundling-and-minification"></a>묶음 및 축소 구성
+## <a name="configure-bundling-and-minification"></a>번들링 및 축소 구성하기
 
 묶음 및 축소를 구성 하는 방법에 대 한 정보를 참조 하세요 [묶음 및 축소](../client-side/bundling-and-minification.md)합니다.
 
@@ -204,5 +204,5 @@ ASP.NET Core 웹 앱에서 처리 되지 않은 예외를 HTTP 500 오류 응답
 
 ## <a name="additional-resources"></a>추가 자료
 
-* [클라이언트 쪽 개발](xref:client-side/index)
-* [태그 도우미](xref:mvc/views/tag-helpers/intro)
+* <xref:razor-components/index>
+* <xref:mvc/views/tag-helpers/intro>

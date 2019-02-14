@@ -4,26 +4,36 @@ title: 검색 | Microsoft Docs
 author: Rick-Anderson
 description: ''
 ms.author: riande
-ms.date: 05/22/2015
+ms.date: 01/17/2019
 ms.assetid: df001954-18bf-4550-b03d-43911a0ea186
 msc.legacyurl: /mvc/overview/getting-started/introduction/adding-search
 msc.type: authoredcontent
-ms.openlocfilehash: 31fd35ac63f3eb31d824e1710833ad83a0852ac9
-ms.sourcegitcommit: a91e8dd2f4b788114c8bc834507277f4b5e8d6c5
+ms.openlocfilehash: ada125c917656f3a83524ff39e53b4cfc041a497
+ms.sourcegitcommit: 6ba5fb1fd0b7f9a6a79085b0ef56206e462094b7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "55712265"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56248383"
 ---
 <a name="search"></a>검색
 ====================
-[Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 [!INCLUDE [Tutorial Note](sample/code-location.md)]
 
 ## <a name="adding-a-search-method-and-search-view"></a>검색 방법 및 검색 뷰를 추가합니다.
 
 이 섹션에서는 검색 기능을 추가 합니다 `Index` 작업 메서드를 사용 하면 영화 장르 또는 이름으로 검색 합니다.
+
+## <a name="prerequisites"></a>전제 조건
+
+이 섹션의 스크린이 샷을 일치 하려면 f5 키를 눌러 응용 프로그램을 실행 하 고 데이터베이스에 다음 영화를 추가 해야 합니다.
+
+| 제목 | 릴리스 날짜 | 장르 | 가격 |
+| ----- | ------------ | ----- | ----- |
+| Ghostbusters | 6/8/1984 | 코미디 | 6.99 |
+| Ghostbusters II | 6/16/1989 | 코미디 | 6.99 |
+| 전시관이 네의 전 세계 | 3/27/1986 | 작업 | 5.99 |
+
 
 ## <a name="updating-the-index-form"></a>인덱스 형식 업데이트
 
@@ -68,7 +78,7 @@ ms.locfileid: "55712265"
 
 ![](adding-search/_static/image2.png)
 
-그러나 사용자가 영화를 검색하려고 할 때마다 URL을 수정하지는 않습니다. UI를 추가할 수 있습니다 이제 영화를 필터링 합니다. 시그니처를 변경 하는 경우는 `Index` 경로 바인딩 ID 매개 변수를 전달 하는 방법을 테스트 하는 방법 변경는 하 `Index` 라는 문자열 매개 변수를 사용 하는 메서드 `searchString`:
+그러나 사용자가 영화를 검색하려고 할 때마다 URL을 수정하지는 않습니다. 따라서 이제 영화를 필터링하는 데 도움이 되는 UI를 추가합니다. 시그니처를 변경 하는 경우는 `Index` 경로 바인딩 ID 매개 변수를 전달 하는 방법을 테스트 하는 방법 변경는 하 `Index` 라는 문자열 매개 변수를 사용 하는 메서드 `searchString`:
 
 [!code-csharp[Main](adding-search/samples/sample7.cs)]
 
@@ -120,7 +130,7 @@ Visual Studio 2013이 표시 하 고 보기 파일을 편집 하는 경우 유�
 
 [!code-csharp[Main](adding-search/samples/sample12.cs)]
 
-코드를 사용 하는 `AddRange` 제네릭 메서드의 `List` 목록에는 모든 고유 장르를 추가할 컬렉션입니다. (없이 `Distinct` 한정자를 중복 장르가 추가-코미디 샘플에서 두 번 추가할 수는 예를 들어). 코드에는 장르 목록을 저장 된 `ViewBag.MovieGenre` 개체입니다. 범주 데이터 (이러한 영화 장르의)으로 저장을 [SelectList](https://msdn.microsoft.cus/library/system.web.mvc.selectlist(v=vs.108).aspx) 개체는 `ViewBag`, MVC 응용 프로그램에 대 한 일반적인 방식은 드롭다운 목록 상자에서 범주 데이터에 액세스 한 다음.
+코드를 사용 하는 `AddRange` 제네릭 메서드의 `List` 목록에는 모든 고유 장르를 추가할 컬렉션입니다. (없이 `Distinct` 한정자를 중복 장르가 추가-코미디 샘플에서 두 번 추가할 수는 예를 들어). 코드에는 장르 목록을 저장 된 `ViewBag.MovieGenre` 개체입니다. 범주 데이터 (이러한는 영화 장르)으로 저장을 [SelectList](https://msdn.microsoft.cus/library/system.web.mvc.selectlist(v=vs.108).aspx) 개체는 `ViewBag`, MVC 응용 프로그램에 대 한 일반적인 방식은 드롭다운 목록 상자에서 범주 데이터에 액세스 한 다음.
 
 다음 코드를 확인 하는 방법을 보여 줍니다는 `movieGenre` 매개 변수입니다. 비어 있지 않으면 코드를 추가로 지정된 장르에 선택한 영화를 제한 하려면 영화 쿼리를 제한 합니다.
 

@@ -4,17 +4,17 @@ title: '자습서: EF Database first MVC 5를 사용 하 여 시작'
 description: 이 자습서에는 기존 데이터베이스 및 신속 하 게 데이터와 상호 작용할 수 있도록 하는 웹 응용 프로그램을 만들기 시작 하는 방법을 보여 줍니다.
 author: Rick-Anderson
 ms.author: riande
-ms.date: 01/28/2019
+ms.date: 01/15/2019
 ms.topic: tutorial
 ms.assetid: 095abad4-3bfe-4f06-b092-ae6a735b7e49
 msc.legacyurl: /mvc/overview/getting-started/database-first-development/setting-up-database
 msc.type: authoredcontent
-ms.openlocfilehash: dfc6c7a7083524a1e7049fdc879fe679f951084d
-ms.sourcegitcommit: ed76cc752966c604a795fbc56d5a71d16ded0b58
+ms.openlocfilehash: d99fdb5382037038d4428ff1946f39aee380fb75
+ms.sourcegitcommit: 6ba5fb1fd0b7f9a6a79085b0ef56206e462094b7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/02/2019
-ms.locfileid: "55667741"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56248227"
 ---
 # <a name="tutorial-get-started-with-ef-database-first-using-mvc-5"></a>자습서: EF Database first MVC 5를 사용 하 여 시작
 
@@ -33,17 +33,16 @@ MVC, Entity Framework 및 ASP.NET 스 캐 폴딩을 사용 하 여, 기존 데�
 
 ## <a name="prerequisites"></a>전제 조건
 
-* [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017)
+[Visual Studio 2017](https://visualstudio.microsoft.com/downloads/)
 
-## <a name="introduction"></a>소개
-
-이 자습서는 데이터베이스 및 해당 데이터베이스의 필드를 기반으로 하는 웹 응용 프로그램에 대 한 코드를 생성 하려면 상황을 해결 합니다. 이 방법은 Database First 개발을 라고 합니다. 기존 데이터베이스를 아직 없는 경우 데이터 클래스를 정의 하 고 클래스 속성에서 데이터베이스 생성을 포함 하는 Code First 개발을 호출 하는 방법 대신 사용할 수 있습니다.
 
 ## <a name="set-up-the-database"></a>데이터베이스 설정
 
 기존 데이터베이스의 환경, 모방 하기 위해 먼저 데이터베이스 일부 미리 채워진 데이터로 만들고 데이터베이스에 연결 하는 웹 응용 프로그램을 만듭니다.
 
-이 자습서는 LocalDB를 사용 하 여 개발 되었습니다. 기존 데이터베이스 서버를 사용 하 여 LocalDB 대신 있지만 버전, Visual Studio 및 데이터베이스의 사용자 형식에 따라 모든 데이터 도구가 Visual Studio에서 지원 되지 않는 경우. 도구를 데이터베이스에 대해 사용할 수 없는 경우에 데이터베이스에 대 한 일부 관리 도구 모음 내에서 데이터베이스 관련 단계를 수행 하는 것이 해야 합니다.
+
+이 자습서는 Visual Studio 2017을 사용 하 여 LocalDB를 사용 하 여 개발 되었습니다. 기존 데이터베이스 서버를 사용 하 여 LocalDB 대신 있지만 버전, Visual Studio 및 데이터베이스의 사용자 형식에 따라 모든 데이터 도구가 Visual Studio에서 지원 되지 않는 경우. 도구를 데이터베이스에 대해 사용할 수 없는 경우에 데이터베이스에 대 한 일부 관리 도구 모음 내에서 데이터베이스 관련 단계를 수행 하는 것이 해야 합니다.
+
 
 Visual Studio 버전에서 데이터베이스 도구를 사용 하 여 문제가 있는 경우 최신 버전의 데이터베이스 도구를 설치 했는지 확인 합니다. 업데이트 또는 데이터베이스 도구를 설치 하는 방법에 대 한 내용은 [Microsoft SQL Server Data Tools](https://msdn.microsoft.com/data/hh297027)합니다.
 

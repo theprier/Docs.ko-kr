@@ -9,13 +9,17 @@ ms.topic: tutorial
 ms.assetid: 18cdd896-8ed9-4547-b143-114711e3eafb
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: e4f23dbdb604dd513e42b7b8ff7b727245b9b637
-ms.sourcegitcommit: d5223cf6a2cf80b4f5dc54169b0e376d493d2d3a
+ms.openlocfilehash: 61bd7cd9be2fbf83f72382c8e94505222295bdbb
+ms.sourcegitcommit: 6ba5fb1fd0b7f9a6a79085b0ef56206e462094b7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54889966"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56248292"
 ---
+[완료 된 프로젝트 다운로드](http://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8)
+
+> Contoso University 샘플 웹 응용 프로그램에는 Entity Framework 6 Code First 및 Visual Studio를 사용 하 여 ASP.NET MVC 5 응용 프로그램을 만드는 방법을 보여 줍니다. 자습서 시리즈에 대한 정보는 [시리즈의 첫 번째 자습서](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)를 참조하세요.
+
 # <a name="tutorial-read-related-data-with-ef-in-an-aspnet-mvc-app"></a>자습서: ASP.NET MVC 앱에서 EF 사용 하 여 관련된 데이터 읽기
 
 이전 자습서에서 School 데이터 모델을 완료 했습니다. 이 자습서에서는 읽기 및 관련된 데이터 표시 됩니다-즉, Entity Framework는 탐색 속성으로 로드 하는 데이터입니다.

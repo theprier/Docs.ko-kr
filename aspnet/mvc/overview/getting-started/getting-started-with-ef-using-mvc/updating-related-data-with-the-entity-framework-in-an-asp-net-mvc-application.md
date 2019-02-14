@@ -4,18 +4,22 @@ title: '자습서: ASP.NET MVC 앱에서 EF를 사용 하 여 관련된 데이�
 description: 이 자습서에서는 관련된 데이터를 업데이트 합니다. 대부분의 관계에 대 한 외래 키 필드 또는 탐색 속성을 업데이트 하 여 수행할 수 있습니다.
 author: tdykstra
 ms.author: riande
-ms.date: 01/17/2019
+ms.date: 01/19/2019
 ms.topic: tutorial
 ms.assetid: 7ba88418-5d0a-437d-b6dc-7c3816d4ec07
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: daefbcea39dc341c6fc72eb344b05eb2dbf0c3ba
-ms.sourcegitcommit: d5223cf6a2cf80b4f5dc54169b0e376d493d2d3a
+ms.openlocfilehash: 1ef4242ff3bd1dd86f4d58bd04ba08e8b90fdaa4
+ms.sourcegitcommit: 6ba5fb1fd0b7f9a6a79085b0ef56206e462094b7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54889849"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56248279"
 ---
+<a name="updating-related-data-with-the-entity-framework-in-an-aspnet-mvc-application"></a>ASP.NET MVC 응용 프로그램에서 Entity Framework를 사용 하 여 관련된 데이터 업데이트
+====================
+
+
 # <a name="tutorial-update-related-data-with-ef-in-an-aspnet-mvc-app"></a>자습서: ASP.NET MVC 앱에서 EF를 사용 하 여 관련된 데이터 업데이트
 
 이전 자습서에서 관련된 데이터를 표시 합니다. 이 자습서에서는 관련된 데이터를 업데이트 합니다. 대부분의 관계에 대 한 외래 키 필드 또는 탐색 속성을 업데이트 하 여 수행할 수 있습니다. 다 대 다 관계에 대 한 Entity Framework 노출 하지 조인 테이블을 직접 추가 하 고 해당 탐색 속성에서 엔터티를 제거할 수 있도록 합니다.
@@ -124,9 +128,12 @@ ms.locfileid: "54889849"
 
 [!code-csharp[Main](updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample11.cs)]
 
-에 대 한 참조가 `RetryLimitExceededException` 필요를 `using` 문입니다. 마우스로를 추가 하려면 `RetryLimitExceededException`합니다. 문제 설명에 표시 됩니다. 선택 **잠재적 수정 사항 표시** 을 클릭 한 다음 **System.Data.Entity.Infrastructure;를 사용 하 여**입니다.
+에 대 한 참조가 `RetryLimitExceededException` 필요를 `using` 추가-위로 마우스를 가져가서 문과 `RetryLimitExceededException`합니다. 다음 메시지가 나타납니다. ![ 예외 메시지를 다시 시도](updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image13.png)
 
-![다시 시도 예외 해결](updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image7.png)
+
+선택 **potentital 수정 사항 표시**, 다음 **System.Data.Entity.Infrastructure를 사용 하 여**
+
+![다시 시도 예외 해결](updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image14.png)
 
 코드는 다음을 수행합니다.
 

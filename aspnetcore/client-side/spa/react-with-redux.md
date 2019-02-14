@@ -2,26 +2,19 @@
 title: ASP.NET Core와 함께 React-with-Redux 프로젝트 템플릿 사용
 author: SteveSandersonMS
 description: React with Redux 및 create-react-app에 대한 ASP.NET Core SPA(단일 페이지 애플리케이션) 프로젝트 템플릿을 시작하는 방법을 알아봅니다.
-monikerRange: '>= aspnetcore-2.0'
+monikerRange: '>= aspnetcore-2.1'
 ms.author: scaddie
 ms.custom: mvc
-ms.date: 02/21/2018
+ms.date: 02/13/2019
 uid: spa/react-with-redux
-ms.openlocfilehash: c1aedcf1e14a9e7b339b60dd02c4267cd5945a49
-ms.sourcegitcommit: 42a8164b8aba21f322ffefacb92301bdfb4d3c2d
+ms.openlocfilehash: ed2e9aea449ddb09fef049a391f40f57452786a8
+ms.sourcegitcommit: 6ba5fb1fd0b7f9a6a79085b0ef56206e462094b7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54341622"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56248084"
 ---
 # <a name="use-the-react-with-redux-project-template-with-aspnet-core"></a>ASP.NET Core와 함께 React-with-Redux 프로젝트 템플릿 사용
-
-::: moniker range="= aspnetcore-2.0"
-
-> [!NOTE]
-> 이 설명서 ASP.NET Core 2.0에 포함 된 React와 Redux 프로젝트 템플릿 관련 되지 않습니다. 수동으로 업데이트할 수 있는 최신 React와 Redux 템플릿을 관련이 있습니다. 파일은 ASP.NET Core 2.1에서 사용할 수 있는 이상입니다.
-
-::: moniker-end
 
 업데이트된 React-with-Redux 프로젝트 템플릿은 React, Redux 및 CRA([create-react-app](https://github.com/facebookincubator/create-react-app)) 규칙을 사용하여 풍부한 클라이언트 쪽 UI(사용자 인터페이스)를 구현하는 ASP.NET Core 앱에 대한 편리한 시작점을 제공합니다.
 

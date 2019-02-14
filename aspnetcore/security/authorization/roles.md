@@ -5,12 +5,12 @@ description: Authorize 특성에 역할을 전달하여 ASP.NET Core의 컨트�
 ms.author: riande
 ms.date: 10/14/2016
 uid: security/authorization/roles
-ms.openlocfilehash: 59753b90d3196b0bc16d4963f45b995f5108bc8b
-ms.sourcegitcommit: d99a8554c91f626cf5e466911cf504dcbff0e02e
+ms.openlocfilehash: 0467ea82831bffe6882e584930c2fa1212a244c7
+ms.sourcegitcommit: 6ba5fb1fd0b7f9a6a79085b0ef56206e462094b7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39356677"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56248097"
 ---
 # <a name="role-based-authorization-in-aspnet-core"></a>ASP.NET Core의 역할 기반 권한 부여
 
@@ -108,7 +108,8 @@ public void ConfigureServices(IServiceCollection services)
 
     services.AddAuthorization(options =>
     {
-        options.AddPolicy("RequireAdministratorRole", policy => policy.RequireRole("Administrator"));
+        options.AddPolicy("RequireAdministratorRole",
+             policy => policy.RequireRole("Administrator"));
     });
 }
 ```
@@ -131,3 +132,9 @@ options.AddPolicy("ElevatedRights", policy =>
 ```
 
 이 예제는 `Administrator`, `PowerUser` 또는 `BackupAdministrator` 역할에 속한 사용자에게 권한을 부여합니다.
+
+### <a name="add-role-services-to-identity"></a>Id에 역할 서비스 추가
+
+추가 [역할](/dotnet/api/microsoft.aspnetcore.identity.identitybuilder.addroles#Microsoft_AspNetCore_Identity_IdentityBuilder_AddRoles__1) 역할 서비스를 추가 하려면:
+
+[!code-csharp[](roles/samples/Startup.cs?name=snippet&highlight=7)]

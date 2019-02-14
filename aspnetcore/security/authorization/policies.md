@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 11/21/2017
 uid: security/authorization/policies
-ms.openlocfilehash: 4e8a9ac6c0594f9bab67214aaa8cab9199cca29d
-ms.sourcegitcommit: cec77d5ad8a0cedb1ecbec32834111492afd0cd2
+ms.openlocfilehash: 937c73c26cd3935c5069d4735e754d1a567f41f4
+ms.sourcegitcommit: 6ba5fb1fd0b7f9a6a79085b0ef56206e462094b7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54207397"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56248110"
 ---
 # <a name="policy-based-authorization-in-aspnet-core"></a>ASP.NET Core의 정책 기반 권한 부여
 
@@ -32,6 +32,8 @@ ms.locfileid: "54207397"
 권한 부여 요구 사항은 현재 사용자 보안 주체를 평가 하는 정책을 사용할 수 있는 데이터 매개 변수의 컬렉션입니다. 요구 사항인 단일 매개 변수는 "AtLeast21" 정책에서&mdash;최소 보존 기간입니다. 요구 사항 구현 [IAuthorizationRequirement](/dotnet/api/microsoft.aspnetcore.authorization.iauthorizationrequirement), 빈 표식을 인터페이스인 합니다. 매개 변수가 있는 최소 보존 기간 요구 사항이 다음과 같이 구현할 수 있습니다.
 
 [!code-csharp[](policies/samples/PoliciesAuthApp1/Services/Requirements/MinimumAgeRequirement.cs?name=snippet_MinimumAgeRequirementClass)]
+
+권한 부여 정책에 여러 권한 부여 요구 사항이 있으면 모든 요구 사항을 정책 평가가 성공 하기 위해 전달 해야 합니다. 에 단일 권한 부여 정책에 추가 하는 여러 권한 부여 요구 사항을 처리 되는 즉, 한 **AND** 단위로 합니다.
 
 > [!NOTE]
 > 요구 사항이 데이터나 속성을 가져야 할 필요는 없습니다.

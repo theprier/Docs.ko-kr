@@ -1,27 +1,20 @@
 ---
 title: ASP.NET Core에서 Angular 프로젝트 템플릿 사용
 author: SteveSandersonMS
-description: Angular 및 Angular CLI에 대한 ASP.NET Core SPA(단일 페이지 응용 프로그램) 프로젝트 템플릿을 시작하는 방법을 알아봅니다.
-monikerRange: '>= aspnetcore-2.0'
-ms.author: scaddie
+description: Angular 및 Angular CLI에 대한 ASP.NET Core SPA(단일 페이지 애플리케이션) 프로젝트 템플릿을 시작하는 방법을 알아봅니다.
+monikerRange: '>= aspnetcore-2.1'
+ms.author: stevesa
 ms.custom: mvc
-ms.date: 02/21/2018
+ms.date: 02/13/2019
 uid: spa/angular
-ms.openlocfilehash: 8283fe9e96acb57942040dd4c90fabd204a19663
-ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
+ms.openlocfilehash: 35a839e31369e8dbf00f5dbfb3751a2985335755
+ms.sourcegitcommit: 6ba5fb1fd0b7f9a6a79085b0ef56206e462094b7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49326045"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56248123"
 ---
 # <a name="use-the-angular-project-template-with-aspnet-core"></a>ASP.NET Core에서 Angular 프로젝트 템플릿 사용
-
-::: moniker range="= aspnetcore-2.0"
-
-> [!NOTE]
-> 이 문서는 ASP.NET Core 2.0에 포함된 Angular 프로젝트 템플릿에 대한 내용이 아닙니다. 수동으로 업데이트할 수 있는 최신 Angular 템플릿에 대한 내용입니다. 템플릿은 ASP.NET Core 2.1에 기본적으로 포함됩니다.
-
-::: moniker-end
 
 업데이트된 Angular 프로젝트 템플릿은 Angular 및 Angular CLI를 사용하여 풍부한 클라이언트 쪽 UI(사용자 인터페이스)를 구현하는 ASP.NET Core 앱에 대한 편리한 시작점을 제공합니다.
 
@@ -29,17 +22,7 @@ ms.locfileid: "49326045"
 
 ## <a name="create-a-new-app"></a>새 앱 만들기
 
-::: moniker range="= aspnetcore-2.0"
-
-ASP.NET Core 2.0을 사용하는 경우 [업데이트된 Angular 프로젝트 템플릿을 설치](xref:spa/index#installation)했는지 확인합니다.
-
-::: moniker-end
-
-::: moniker range=">= aspnetcore-2.1"
-
 ASP.NET Core 2.1이 설치되어 있는 경우 Angular 프로젝트 템플릿을 설치할 필요가 없습니다.
-
-::: moniker-end
 
 빈 디렉터리에 `dotnet new angular` 명령을 사용하여 명령 프롬프트에서 새 프로젝트를 만듭니다. 예를 들어 다음 명령은 *my-new-app* 디렉터리에 앱을 만들고 해당 디렉터리로 전환합니다.
 
@@ -70,7 +53,7 @@ Now listening on: http://localhost:<port>
 
 브라우저에서 이 URL로 이동합니다.
 
-앱이 백그라운드에서 Angular CLI 서버의 인스턴스를 시작합니다. 다음과 유사한 메시지가 기록됩니다. *NG Live Development Server는 localhost:&lt;otherport&gt;에서 수신 대기 중이고, http://localhost:&lt;otherport&gt;/에서 브라우저를 엽니다*. 이 메시지 무시&mdash;결합된 ASP.NET Core 및 Angular CLI 앱의 URL이 **아닙니다**.
+앱이 백그라운드에서 Angular CLI 서버의 인스턴스를 시작합니다. 다음과 유사한 메시지가 기록됩니다. *NG 라이브 개발 서버는 localhost에서 수신 합니다.&lt;otherport&gt;에서 브라우저를 열고 http://localhost:&lt; otherport&gt;/* 합니다. 이 메시지 무시&mdash;결합된 ASP.NET Core 및 Angular CLI 앱의 URL이 **아닙니다**.
 
 ---
 

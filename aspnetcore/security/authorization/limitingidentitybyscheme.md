@@ -5,12 +5,12 @@ description: 이 문서에는 여러 인증 방법을 사용 하는 경우 id는
 ms.author: riande
 ms.date: 10/22/2018
 uid: security/authorization/limitingidentitybyscheme
-ms.openlocfilehash: fbe9f32e01a214f41b5a6e9f43e8fdee5fc612df
-ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
+ms.openlocfilehash: 778bb61f472ab2e76f85da5999d3c79238188f19
+ms.sourcegitcommit: 6ba5fb1fd0b7f9a6a79085b0ef56206e462094b7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50089398"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56248201"
 ---
 # <a name="authorize-with-a-specific-scheme-in-aspnet-core"></a>ASP.NET Core에서 특정 구성표로 권한 부여
 
@@ -201,6 +201,6 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-간단한을 사용할 수는 기본 권한 부여 정책 재정의 `[Authorize]` 컨트롤러의 특성입니다. 컨트롤러는 다음 첫 번째 또는 두 번째 발급자가 발급 한 JWT를 사용 하 여 요청을 수락 합니다.
+기본 권한 부여 정책이 재정의 되는지 때 사용할 수는 `[Authorize]` 컨트롤러의 특성입니다. 컨트롤러는 다음 첫 번째 또는 두 번째 발급자가 발급 한 JWT를 사용 하 여 요청을 수락 합니다.
 
 ::: moniker-end

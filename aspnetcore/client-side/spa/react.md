@@ -2,26 +2,19 @@
 title: ASP.NET Core에 React 프로젝트 템플릿 사용
 author: SteveSandersonMS
 description: React 및 create-react-app에 대한 ASP.NET Core SPA(단일 페이지 애플리케이션) 프로젝트 템플릿을 시작하는 방법을 알아봅니다.
-monikerRange: '>= aspnetcore-2.0'
+monikerRange: '>= aspnetcore-2.1'
 ms.author: scaddie
 ms.custom: mvc
-ms.date: 02/21/2018
+ms.date: 02/13/2019
 uid: spa/react
-ms.openlocfilehash: d83bff8abcd5b59d8bc4a51a101510755394f0c4
-ms.sourcegitcommit: ed76cc752966c604a795fbc56d5a71d16ded0b58
+ms.openlocfilehash: aa08a9d8d06d8b52be564fabf904d4923684d4e4
+ms.sourcegitcommit: 6ba5fb1fd0b7f9a6a79085b0ef56206e462094b7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/02/2019
-ms.locfileid: "55667689"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56248032"
 ---
 # <a name="use-the-react-project-template-with-aspnet-core"></a>ASP.NET Core에 React 프로젝트 템플릿 사용
-
-::: moniker range="= aspnetcore-2.0"
-
-> [!NOTE]
-> 이 문서는 ASP.NET Core 2.0에 포함된 React 프로젝트 템플릿에 대한 내용이 아닙니다. 수동으로 업데이트할 수 있는 최신 React 템플릿에 대한 내용입니다. 템플릿은 ASP.NET Core 2.1에 기본적으로 포함됩니다.
-
-::: moniker-end
 
 업데이트된 React 프로젝트 템플릿은 React 및 CRA([create-react-app](https://github.com/facebookincubator/create-react-app)) 규칙을 사용하여 풍부한 클라이언트 쪽 UI(사용자 인터페이스)를 구현하는 ASP.NET Core 앱에 대한 편리한 시작점을 제공합니다.
 
@@ -29,17 +22,7 @@ ms.locfileid: "55667689"
 
 ## <a name="create-a-new-app"></a>새 앱 만들기
 
-::: moniker range="= aspnetcore-2.0"
-
-ASP.NET Core 2.0을 사용하는 경우 [업데이트된 React 프로젝트 템플릿을 설치](xref:spa/index#installation)했는지 확인합니다.
-
-::: moniker-end
-
-::: moniker range=">= aspnetcore-2.1"
-
 ASP.NET Core 2.1이 설치되어 있는 경우 React 프로젝트 템플릿을 설치할 필요가 없습니다.
-
-::: moniker-end
 
 빈 디렉터리에 `dotnet new react` 명령을 사용하여 명령 프롬프트에서 새 프로젝트를 만듭니다. 예를 들어 다음 명령은 *my-new-app* 디렉터리에 앱을 만들고 해당 디렉터리로 전환합니다.
 

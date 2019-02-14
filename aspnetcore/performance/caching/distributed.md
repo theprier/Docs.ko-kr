@@ -4,14 +4,14 @@ author: guardrex
 description: 앱 성능 및 확장성, 클라우드 또는 서버 팜 환경에서 특히 개선 하기 위해 캐시를 분산 하는 ASP.NET Core를 사용 하는 방법에 알아봅니다.
 ms.author: riande
 ms.custom: mvc
-ms.date: 10/19/2018
+ms.date: 02/13/2019
 uid: performance/caching/distributed
-ms.openlocfilehash: d80cde372535aa04604ce0cd5a731a1448515093
-ms.sourcegitcommit: 4a6bbe84db24c2f3dd2de065de418fde952c8d40
+ms.openlocfilehash: a157eb075874d2118e3e34b51410b539a1ec37df
+ms.sourcegitcommit: 6ba5fb1fd0b7f9a6a79085b0ef56206e462094b7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50253010"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56248590"
 ---
 # <a name="distributed-caching-in-aspnet-core"></a>ASP.NET Core의 캐싱 분산
 
@@ -29,7 +29,7 @@ ms.locfileid: "50253010"
 
 분산된 캐시 구성은 특정 구현 합니다. 이 문서에서는 SQL Server를 구성 하 고 Redis cache를 배포 하는 방법을 설명 합니다. 제 3 자 구현도 같은 사용할 수 있습니다 [NCache](http://www.alachisoft.com/ncache/aspnet-core-idistributedcache-ncache.html) ([github NCache](https://github.com/Alachisoft/NCache)). 어떤 구현의 선택 하는 것에 관계 없이 앱을 사용 하 여 캐시 상호 작용을 <xref:Microsoft.Extensions.Caching.Distributed.IDistributedCache> 인터페이스입니다.
 
-[샘플 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/performance/caching/distributed/samples/)([다운로드 방법](xref:index#how-to-download-a-sample))
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/performance/caching/distributed/samples/) ([다운로드 방법](xref:index#how-to-download-a-sample))
 
 ## <a name="prerequisites"></a>전제 조건
 
@@ -76,7 +76,7 @@ SQL Server를 사용 하 여 분산 캐시, 패키지 참조를 추가 합니다
 
 ### <a name="distributed-memory-cache"></a>분산된 메모리 내 캐시
 
-메모리 내 분산 캐시 (<xref:Microsoft.Extensions.DependencyInjection.MemoryCacheServiceCollectionExtensions.AddDistributedMemoryCache*>)의 프레임 워크에서 제공한 구현인 `IDistributedCache` 메모리에 항목을 저장 하는 합니다. 분산 메모리 내 캐시는 실제 분산된 캐시 되지 않습니다. 캐시 된 항목은 앱이 실행 하는 서버에서 앱 인스턴스에 의해 저장 됩니다.
+메모리 내 분산 캐시 (<xref:Microsoft.Extensions.DependencyInjection.MemoryCacheServiceCollectionExtensions.AddDistributedMemoryCache*>)의 프레임 워크에서 제공한 구현인 <xref:Microsoft.Extensions.Caching.Distributed.IDistributedCache> 메모리에 항목을 저장 하는 합니다. 분산 메모리 내 캐시는 실제 분산된 캐시 되지 않습니다. 캐시 된 항목은 앱이 실행 하는 서버에서 앱 인스턴스에 의해 저장 됩니다.
 
 메모리 내 분산 캐시는 유용한 구현 합니다.
 
@@ -149,13 +149,13 @@ services.AddDistributedRedisCache(options =>
 
 ## <a name="use-the-distributed-cache"></a>분산된 캐시 사용
 
-사용 하 여 <xref:Microsoft.Extensions.Caching.Distributed.IDistributedCache> 인터페이스의 인스턴스를 요청 하십시오 `IDistributedCache` 앱에서 모든 생성자에서. 제공 하는 인스턴스 [종속성 주입 (DI)](xref:fundamentals/dependency-injection)합니다.
+사용 하 여 <xref:Microsoft.Extensions.Caching.Distributed.IDistributedCache> 인터페이스의 인스턴스를 요청 하십시오 <xref:Microsoft.Extensions.Caching.Distributed.IDistributedCache> 앱에서 모든 생성자에서. 제공 하는 인스턴스 [종속성 주입 (DI)](xref:fundamentals/dependency-injection)합니다.
 
-앱을 시작 하는 경우 `IDistributedCache` 삽입 되어 `Startup.Configure`입니다. 현재 사용 하 여 캐시 됩니다 <xref:Microsoft.AspNetCore.Hosting.IApplicationLifetime> (자세한 내용은 참조 하십시오 [웹 호스트: IApplicationLifetime 인터페이스](xref:fundamentals/host/web-host#iapplicationlifetime-interface)):
+앱을 시작 하는 경우 <xref:Microsoft.Extensions.Caching.Distributed.IDistributedCache> 삽입 되어 `Startup.Configure`입니다. 현재 사용 하 여 캐시 됩니다 <xref:Microsoft.AspNetCore.Hosting.IApplicationLifetime> (자세한 내용은 참조 하세요. [웹 호스트: IApplicationLifetime 인터페이스](xref:fundamentals/host/web-host#iapplicationlifetime-interface)):
 
 [!code-csharp[](distributed/samples/2.x/DistCacheSample/Startup.cs?name=snippet_Configure&highlight=10)]
 
-샘플 앱 삽입 `IDistributedCache` 에 `IndexModel` 인덱스 페이지를 사용 합니다.
+샘플 앱 삽입 <xref:Microsoft.Extensions.Caching.Distributed.IDistributedCache> 에 `IndexModel` 인덱스 페이지를 사용 합니다.
 
 인덱스 페이지가 로드 될 때마다 캐시에서 캐시 된 시간에 대 한 확인란이 `OnGetAsync`합니다. 캐시 된 시간 만료 되지 않았으면, 시간이 표시 됩니다. 20 초에 마지막으로 캐시 된 시간 (이 페이지를 로드 하는 마지막 시간) 액세스 된 이후 경과 된 경우 페이지에 표시 됩니다 *캐시 된 시간이 만료*합니다.
 
@@ -164,13 +164,13 @@ services.AddDistributedRedisCache(options =>
 [!code-csharp[](distributed/samples/2.x/DistCacheSample/Pages/Index.cshtml.cs?name=snippet_IndexModel&highlight=7,14-20,25-29)]
 
 > [!NOTE]
-> `IDistributedCache` 인스턴스를 Singleton이나 Scoped 수명으로 사용할 필요는 없습니다(적어도 기본 구현일 경우).
+> <xref:Microsoft.Extensions.Caching.Distributed.IDistributedCache> 인스턴스를 Singleton이나 Scoped 수명으로 사용할 필요는 없습니다(적어도 기본 구현일 경우).
 >
-> 만들 수도 있습니다는 `IDistributedCache` DI를 사용 하는 대신 해야 할 수 있습니다 하지만 코드에서 인스턴스를 만드는 코드를 만들 수 테스트 하기가 때마다 인스턴스를 위반 합니다 [명시적 종속성 원칙](/dotnet/standard/modern-web-apps-azure-architecture/architectural-principles#explicit-dependencies)합니다.
+> 만들 수도 있습니다는 <xref:Microsoft.Extensions.Caching.Distributed.IDistributedCache> DI를 사용 하는 대신 해야 할 수 있습니다 하지만 코드에서 인스턴스를 만드는 코드를 만들 수 테스트 하기가 때마다 인스턴스를 위반 합니다 [명시적 종속성 원칙](/dotnet/standard/modern-web-apps-azure-architecture/architectural-principles#explicit-dependencies)합니다.
 
 ## <a name="recommendations"></a>권장 사항
 
-구현의 결정할 때 `IDistributedCache` 앱에 가장 적합 한 다음 사항을 고려 합니다.
+구현의 결정할 때 <xref:Microsoft.Extensions.Caching.Distributed.IDistributedCache> 앱에 가장 적합 한 다음 사항을 고려 합니다.
 
 * 기존 인프라
 * 성능 요구 사항

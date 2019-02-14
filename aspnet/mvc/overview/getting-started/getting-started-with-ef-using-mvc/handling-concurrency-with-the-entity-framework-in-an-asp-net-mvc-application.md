@@ -4,18 +4,21 @@ title: '자습서: ASP.NET MVC 5 앱에서 EF 사용 하 여 동시성을 처리
 description: 이 자습서에는 여러 사용자가 동시에 동일한 엔터티를 업데이트 하는 경우 충돌을 처리 하려면 낙관적 동시성을 사용 하는 방법을 보여 줍니다.
 author: tdykstra
 ms.author: riande
-ms.date: 01/21/2019
 ms.topic: tutorial
+ms.date: 01/15/2019
 ms.assetid: be0c098a-1fb2-457e-b815-ddca601afc65
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 2b41b51de5fd6d87b9905ba2bb3ddf7cedb47e69
-ms.sourcegitcommit: d5223cf6a2cf80b4f5dc54169b0e376d493d2d3a
+ms.openlocfilehash: b513d7d86d382068bc1a8f1bcc61289ee946d38b
+ms.sourcegitcommit: 6ba5fb1fd0b7f9a6a79085b0ef56206e462094b7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54889836"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56248305"
 ---
+<a name="handling-concurrency-with-the-entity-framework-6-in-an-aspnet-mvc-5-application-10-of-12"></a>ASP.NET MVC 5 응용 프로그램 (10 / 12)에서 Entity Framework 6 사용 하 여 동시성 처리
+====================
+
 # <a name="tutorial-handle-concurrency-with-ef-in-an-aspnet-mvc-5-app"></a>자습서: ASP.NET MVC 5 앱에서 EF 사용 하 여 동시성을 처리 합니다.
 
 이전 자습서에서 데이터를 업데이트 하는 방법을 알아보았습니다. 이 자습서에는 여러 사용자가 동시에 동일한 엔터티를 업데이트 하는 경우 충돌을 처리 하려면 낙관적 동시성을 사용 하는 방법을 보여 줍니다. 작동 하는 웹 페이지를 변경 합니다 `Department` 엔터티 동시성 오류를 처리할 수 있도록 합니다. 다음 그림은 동시성 충돌이 발생하는 경우 표시되는 일부 메시지를 포함하여 편집 및 삭제 페이지를 보여 줍니다.
@@ -26,12 +29,14 @@ ms.locfileid: "54889836"
 
 이 자습서에서는 다음을 수행했습니다.
 
+
 > [!div class="checklist"]
 > * 동시성 충돌에 알아봅니다
 > * 낙관적 동시성을 추가 합니다.
 > * 부서 컨트롤러 수정
 > * 테스트 동시성 처리
 > * 삭제 페이지 업데이트
+
 
 ## <a name="prerequisites"></a>전제 조건
 

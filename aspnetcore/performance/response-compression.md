@@ -5,14 +5,14 @@ description: ASP.NET Core 앱에서 응답 압축 미들웨어를 사용하는 �
 monikerRange: '>= aspnetcore-1.1'
 ms.author: riande
 ms.custom: mvc
-ms.date: 12/18/2018
+ms.date: 02/13/2019
 uid: performance/response-compression
-ms.openlocfilehash: a9f72a6816298b11e7b7d30b2b4bd44083baab3a
-ms.sourcegitcommit: 97d7a00bd39c83a8f6bccb9daa44130a509f75ce
+ms.openlocfilehash: e87480ebb81791ed233f3e2308e35e21e081824f
+ms.sourcegitcommit: 6ba5fb1fd0b7f9a6a79085b0ef56206e462094b7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54099041"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56248370"
 ---
 # <a name="response-compression-in-aspnet-core"></a>ASP.NET Core에서 응답 압축
 
@@ -74,7 +74,7 @@ IIS, Apache 또는 Nginx에서 서버 기반 응답 압축 기술을 사용 합�
 
 미들웨어를 사용 하면 사용자 지정에 대 한 추가 압축 공급자를 추가 하려면 `Accept-Encoding` 헤더 값입니다. 자세한 내용은 [사용자 지정 공급자](#custom-providers) 아래.
 
-미들웨어 품질 값에 응답할 수 (qvalue, `q`) 가중치를 보내면 클라이언트에서 압축 체계를 우선 순위를 지정 합니다. 자세한 내용은 참조 하세요. [RFC 7231: 허용 인코딩](https://tools.ietf.org/html/rfc7231#section-5.3.4)합니다.
+미들웨어 품질 값에 응답할 수 (qvalue, `q`) 가중치를 보내면 클라이언트에서 압축 체계를 우선 순위를 지정 합니다. 자세한 내용은 참조 하세요. [RFC 7231: Accept-Encoding](https://tools.ietf.org/html/rfc7231#section-5.3.4).
 
 압축 알고리즘은 압축 속도 압축의 효율성 간의 균형을 유지 될 수 있습니다. *효율성* 이 컨텍스트에서 참조 출력의 크기를 압축 합니다. 최소 크기를 가장 하 여 이루어집니다 *최적의* 압축 합니다.
 
@@ -143,7 +143,7 @@ public class Startup
 }
 ```
 
-메모: 
+메모:
 
 * `app.UseResponseCompression` 먼저 호출 해야 `app.UseMvc`합니다.
 * 와 같은 도구를 사용 [Fiddler](http://www.telerik.com/fiddler)를 [Firebug](http://getfirebug.com/), 또는 [Postman](https://www.getpostman.com/) 설정 하는 `Accept-Encoding` 요청 헤더 및 응답 헤더, 크기 및 본문을 연구 합니다.
@@ -174,7 +174,7 @@ public class Startup
 
 ### <a name="brotli-compression-provider"></a>Brotli 압축 공급자
 
-사용 합니다 `BrotliCompressionProvider` 사용 하 여 응답을 압축 하는 [Brotli 압축 된 데이터 형식](https://tools.ietf.org/html/rfc7932)합니다.
+사용 합니다 <xref:Microsoft.AspNetCore.ResponseCompression.BrotliCompressionProvider> 사용 하 여 응답을 압축 하는 [Brotli 압축 된 데이터 형식](https://tools.ietf.org/html/rfc7932)합니다.
 
 압축 공급자가 없습니다에 명시적으로 추가 되는 <xref:Microsoft.AspNetCore.ResponseCompression.CompressionProviderCollection>:
 
@@ -190,22 +190,9 @@ public void ConfigureServices(IServiceCollection services)
 
 모든 압축 공급자 명시적으로 추가 되 면 Brotoli 압축 공급자를 추가 해야 합니다.
 
-```csharp
-public void ConfigureServices(IServiceCollection services)
-{
-    services.AddResponseCompression(options =>
-    {
-        options.Providers.Add<BrotliCompressionProvider>();
-        options.Providers.Add<GzipCompressionProvider>();
-        options.Providers.Add<CustomCompressionProvider>();
-        options.MimeTypes = 
-            ResponseCompressionDefaults.MimeTypes.Concat(
-                new[] { "image/svg+xml" });
-    });
-}
-```
+[!code-csharp[](response-compression/samples/2.x/Startup.cs?name=snippet1&highlight=5)]
 
-압축을 사용 하 여 수준 설정 `BrotliCompressionProviderOptions`합니다. 가장 빠른 압축 수준을 Brotli 압축 공급자 기본값 ([CompressionLevel.Fastest](xref:System.IO.Compression.CompressionLevel))에 가장 효율적인 압축을 생성 하지 않을 수 있습니다. 가장 효율적인 압축을 원하는 경우 최적의 압축에 대 한 미들웨어를 구성 합니다.
+압축을 사용 하 여 수준 설정 <xref:Microsoft.AspNetCore.ResponseCompression.BrotliCompressionProviderOptions>합니다. 가장 빠른 압축 수준을 Brotli 압축 공급자 기본값 ([CompressionLevel.Fastest](xref:System.IO.Compression.CompressionLevel))에 가장 효율적인 압축을 생성 하지 않을 수 있습니다. 가장 효율적인 압축을 원하는 경우 최적의 압축에 대 한 미들웨어를 구성 합니다.
 
 | 압축 수준 | 설명 |
 | ----------------- | ----------- |
@@ -258,30 +245,11 @@ Gzip 압축 공급자는 모든 압축 공급자 명시적으로 추가 되 면 
 
 ::: moniker range=">= aspnetcore-2.2"
 
-```csharp
-public void ConfigureServices(IServiceCollection services)
-{
-    services.AddResponseCompression(options =>
-    {
-        options.Providers.Add<BrotliCompressionProvider>();
-        options.Providers.Add<GzipCompressionProvider>();
-        options.Providers.Add<CustomCompressionProvider>();
-        options.MimeTypes = 
-            ResponseCompressionDefaults.MimeTypes.Concat(
-                new[] { "image/svg+xml" });
-    });
-}
-```
+[!code-csharp[](response-compression/samples/2.x/Startup.cs?name=snippet1&highlight=6)]
 
 ::: moniker-end
 
-::: moniker range="= aspnetcore-2.0 || aspnetcore-2.1"
-
-[!code-csharp[](response-compression/samples/2.x/Startup.cs?name=snippet1&highlight=5)]
-
-::: moniker-end
-
-::: moniker range="< aspnetcore-2.0"
+::: moniker range="< aspnetcore-2.2"
 
 [!code-csharp[](response-compression/samples/1.x/Startup.cs?name=snippet2&highlight=5)]
 
@@ -315,48 +283,15 @@ public void ConfigureServices(IServiceCollection services)
 
 ::: moniker range=">= aspnetcore-2.2"
 
-```csharp
-public void ConfigureServices(IServiceCollection services)
-{
-    services.AddResponseCompression(options =>
-    {
-        options.Providers.Add<BrotliCompressionProvider>();
-        options.Providers.Add<GzipCompressionProvider>();
-        options.Providers.Add<CustomCompressionProvider>();
-        options.MimeTypes = 
-            ResponseCompressionDefaults.MimeTypes.Concat(
-                new[] { "image/svg+xml" });
-    });
-}
-```
-
-```csharp
-public class CustomCompressionProvider : ICompressionProvider
-{
-    public string EncodingName => "mycustomcompression";
-    public bool SupportsFlush => true;
-
-    public Stream CreateStream(Stream outputStream)
-    {
-        // Create a custom compression stream wrapper here
-        return outputStream;
-    }
-}
-```
-
-::: moniker-end
-
-::: moniker range="= aspnetcore-2.0 || aspnetcore-2.1"
-
-[!code-csharp[](response-compression/samples/2.x/Startup.cs?name=snippet1&highlight=6,12-15)]
+[!code-csharp[](response-compression/samples/2.x/Startup.cs?name=snippet1&highlight=7)]
 
 [!code-csharp[](response-compression/samples/2.x/CustomCompressionProvider.cs?name=snippet1)]
 
 ::: moniker-end
 
-::: moniker range="< aspnetcore-2.0"
+::: moniker range="< aspnetcore-2.2"
 
-[!code-csharp[](response-compression/samples/1.x/Startup.cs?name=snippet2&highlight=6,12-15)]
+[!code-csharp[](response-compression/samples/1.x/Startup.cs?name=snippet2&highlight=6)]
 
 [!code-csharp[](response-compression/samples/1.x/CustomCompressionProvider.cs?name=snippet1)]
 
@@ -383,30 +318,11 @@ public class CustomCompressionProvider : ICompressionProvider
 
 ::: moniker range=">= aspnetcore-2.2"
 
-```csharp
-public void ConfigureServices(IServiceCollection services)
-{
-    services.AddResponseCompression(options =>
-    {
-        options.Providers.Add<BrotliCompressionProvider>();
-        options.Providers.Add<GzipCompressionProvider>();
-        options.Providers.Add<CustomCompressionProvider>();
-        options.MimeTypes = 
-            ResponseCompressionDefaults.MimeTypes.Concat(
-                new[] { "image/svg+xml" });
-    });
-}
-```
+[!code-csharp[](response-compression/samples/2.x/Startup.cs?name=snippet1&highlight=8-10)]
 
 ::: moniker-end
 
-::: moniker range="= aspnetcore-2.0 || aspnetcore-2.1"
-
-[!code-csharp[](response-compression/samples/2.x/Startup.cs?name=snippet1&highlight=7-9)]
-
-::: moniker-end
-
-::: moniker range="< aspnetcore-2.0"
+::: moniker range="< aspnetcore-2.2"
 
 [!code-csharp[](response-compression/samples/1.x/Startup.cs?name=snippet2&highlight=7-9)]
 
@@ -466,7 +382,7 @@ Nginx에서 프록시를 요청 하는 경우는 `Accept-Encoding` 헤더를 제
 
 * <xref:fundamentals/startup>
 * <xref:fundamentals/middleware/index>
-* [Mozilla Developer Network: 허용 인코딩](https://developer.mozilla.org/docs/Web/HTTP/Headers/Accept-Encoding)
+* [Mozilla Developer Network: Accept-Encoding](https://developer.mozilla.org/docs/Web/HTTP/Headers/Accept-Encoding)
 * [RFC 7231 섹션 3.1.2.1: 콘텐츠 구분을 사용 합니다.](https://tools.ietf.org/html/rfc7231#section-3.1.2.1)
 * [RFC 7230 섹션 4.2.3: Gzip 코딩](https://tools.ietf.org/html/rfc7230#section-4.2.3)
 * [GZIP 파일 형식 사양 버전 4.3](http://www.ietf.org/rfc/rfc1952.txt)
