@@ -416,28 +416,6 @@ items:
       href: /azure/vs-storage-aspnet5-getting-started-tables/
 - name: 클라이언트 쪽 개발
   items:
-  - uid: client-side/index
-    name: 개요
-  - uid: client-side/using-gulp
-    name: Gulp
-  - uid: client-side/using-grunt
-    name: Grunt
-  - name: LibMan
-    items:
-    - uid: client-side/libman/index
-      name: 개요
-    - uid: client-side/libman/libman-cli
-      name: CLI
-    - uid: client-side/libman/libman-vs
-      name: Visual Studio
-  - uid: client-side/bower
-    name: Bower
-  - uid: client-side/less-sass-fa
-    name: LESS, Sass 및 Font Awesome
-  - uid: client-side/bundling-and-minification
-    name: 번들 및 축소
-  - uid: client-side/using-browserlink
-    name: 브라우저 링크
   - name: Razor 구성 요소
     items:
     - uid: razor-components/index
@@ -470,8 +448,36 @@ items:
         name: 링커 구성
   - name: 단일 페이지 앱
     items:
-    - uid: spa/index
-      name: 개요
+    - name: Blazor
+      items:
+      - uid: spa/blazor/index
+        name: 개요
+      - uid: spa/blazor/get-started
+        name: 시작
+      - uid: tutorials/first-razor-components-app
+        name: 첫 번째 앱 빌드
+      - uid: razor-components/components
+        name: 구성 요소
+      - uid: razor-components/class-libraries
+        name: 구성 요소 라이브러리
+      - uid: razor-components/layouts
+        name: 레이아웃
+      - uid: razor-components/dependency-injection
+        name: 종속성 주입
+      - uid: razor-components/routing
+        name: 라우팅
+      - uid: razor-components/javascript-interop
+        name: JavaScript interop
+      - uid: razor-components/debug
+        name: 디버그
+      - uid: razor-components/hosting-models
+        name: 호스팅 모델
+      - name: 호스트 및 배포
+        items:
+        - uid: host-and-deploy/razor-components/index
+          name: 개요
+        - uid: host-and-deploy/razor-components/configure-linker
+          name: 링커 구성
     - uid: spa/angular
       name: Angular
     - uid: spa/react
@@ -480,6 +486,26 @@ items:
       name: Redux를 사용한 React
     - uid: client-side/spa-services
       name: JavaScriptServices
+  - name: LibMan
+    items:
+    - uid: client-side/libman/index
+      name: 개요
+    - uid: client-side/libman/libman-cli
+      name: CLI
+    - uid: client-side/libman/libman-vs
+      name: Visual Studio
+  - uid: client-side/using-gulp
+    name: Gulp
+  - uid: client-side/using-grunt
+    name: Grunt
+  - uid: client-side/bower
+    name: Bower
+  - uid: client-side/less-sass-fa
+    name: LESS, Sass 및 Font Awesome
+  - uid: client-side/bundling-and-minification
+    name: 번들 및 축소
+  - uid: client-side/using-browserlink
+    name: 브라우저 링크
 - name: 호스팅 및 배포
   items:
   - uid: host-and-deploy/index
@@ -852,9 +878,9 @@ items:
   href: /dotnet/api/?view=aspnetcore-2.2
 - name: 참가
   href: https://github.com/aspnet/Docs/blob/master/CONTRIBUTING.md
-ms.openlocfilehash: 202bb46df6692e84e8abcefbd333abf3a3fafb7f
-ms.sourcegitcommit: 5e3797a02ff3c48bb8cb9ad4320bfd169ebe8aba
+ms.openlocfilehash: 7c9baf2a9e3a800ff9abfcb757ffde039d49a9a4
+ms.sourcegitcommit: af8a6eb5375ef547a52ffae22465e265837aa82b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 02/12/2019
-ms.locfileid: "56103139"
+ms.locfileid: "56159544"
