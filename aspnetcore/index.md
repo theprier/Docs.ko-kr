@@ -4,14 +4,14 @@ author: rick-anderson
 description: 클라우드 기반 인터넷에 연결된 최신 애플리케이션을 빌드하기 위한 플랫폼 간 고성능 오픈 소스 프레임워크인 ASP.NET Core에 대한 소개를 가져옵니다.
 ms.author: riande
 ms.custom: mvc
-ms.date: 01/15/2019
+ms.date: 02/13/2019
 uid: index
-ms.openlocfilehash: e7c81ff82e5206a5aca217417f6cb1c339d72e89
-ms.sourcegitcommit: 42a8164b8aba21f322ffefacb92301bdfb4d3c2d
+ms.openlocfilehash: c3f07814bfab19a0f070e0b48b0d2ef6cfc1594e
+ms.sourcegitcommit: 6ba5fb1fd0b7f9a6a79085b0ef56206e462094b7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54341409"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56248162"
 ---
 # <a name="introduction-to-aspnet-core"></a>ASP.NET Core 소개
 
@@ -44,7 +44,7 @@ ASP.NET Core MVC에서는 [Web API](xref:tutorials/first-web-api) 및 [웹앱](x
 
 ## <a name="client-side-development"></a>클라이언트 쪽 개발
 
-ASP.NET Core는 [Angular](xref:spa/angular), [React](xref:spa/react), [부트스트랩](https://getbootstrap.com/) 등 유명한 클라이언트 쪽 프레임워크 및 라이브러리와 원활하게 통합합니다. 자세한 내용은 [클라이언트 쪽 개발](xref:client-side/index)을 참조하세요.
+ASP.NET Core는 [Razor Components](xref:razor-components/index), [Angular](xref:spa/angular), [React](xref:spa/react) 및 [부트스트랩](https://getbootstrap.com/) 등 유명한 클라이언트 쪽 프레임워크 및 라이브러리와 원활하게 통합합니다. 자세한 내용은 [Razor 구성 요소](xref:razor-components/index) 및 *클라이언트 쪽 개발*의 관련 항목을 참조하세요.
 
 <a name="target-framework"></a>
 

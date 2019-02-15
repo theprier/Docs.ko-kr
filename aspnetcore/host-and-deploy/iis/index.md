@@ -4,14 +4,14 @@ author: guardrex
 description: Windows Server IIS(인터넷 정보 서비스)에서 ASP.NET Core 앱을 호스팅하는 방법을 알아봅니다.
 ms.author: riande
 ms.custom: mvc
-ms.date: 01/29/2019
+ms.date: 02/13/2019
 uid: host-and-deploy/iis/index
-ms.openlocfilehash: 9f7fc5571f8d1a6e5e2d84779082abb02d2fb292
-ms.sourcegitcommit: af8a6eb5375ef547a52ffae22465e265837aa82b
+ms.openlocfilehash: 5d6ba8b7ee6f09a7d00aa0285802cf0aad267a1d
+ms.sourcegitcommit: 6ba5fb1fd0b7f9a6a79085b0ef56206e462094b7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56159397"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56248422"
 ---
 # <a name="host-aspnet-core-on-windows-with-iis"></a>IIS가 있는 Windows에서 ASP.NET Core 호스팅
 
@@ -94,7 +94,7 @@ In-process 및 out-of-process 호스팅 모델에 대한 자세한 내용은 [AS
 
 `CreateDefaultBuilder`는 [Kestrel](xref:fundamentals/servers/kestrel) 서버를 웹 서버로 구성하고 [ASP.NET Core 모듈](xref:host-and-deploy/aspnet-core-module)의 기본 경로 및 포트를 구성하여 IIS 통합을 구현합니다.
 
-ASP.NET Core 모듈은 동적 포트를 생성하여 백 엔드 프로세스에 할당합니다. `CreateDefaultBuilder`는 [UseIISIntegration](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderiisextensions.useiisintegration) 메서드를 호출합니다. `UseIISIntegration`은 localhost IP 주소(`127.0.0.1`)의 동적 포트에서 수신 대기하도록 Kestrel을 구성합니다. 동적 포트가 1234인 경우 Kestrel은 `127.0.0.1:1234`에서 수신 대기합니다. 이 구성은 다음에서 제공된 다른 URL 구성을 바꿉니다.
+ASP.NET Core 모듈은 동적 포트를 생성하여 백 엔드 프로세스에 할당합니다. `CreateDefaultBuilder`는 <xref:Microsoft.AspNetCore.Hosting.WebHostBuilderIISExtensions.UseIISIntegration*> 메서드를 호출합니다. `UseIISIntegration`은 localhost IP 주소(`127.0.0.1`)의 동적 포트에서 수신 대기하도록 Kestrel을 구성합니다. 동적 포트가 1234인 경우 Kestrel은 `127.0.0.1:1234`에서 수신 대기합니다. 이 구성은 다음에서 제공된 다른 URL 구성을 바꿉니다.
 
 * `UseUrls`
 * [Kestrel의 수신 대기 API](xref:fundamentals/servers/kestrel#endpoint-configuration)
@@ -108,7 +108,7 @@ ASP.NET Core 모듈은 동적 포트를 생성하여 백 엔드 프로세스에 
 
 `CreateDefaultBuilder`는 [Kestrel](xref:fundamentals/servers/kestrel) 서버를 웹 서버로 구성하고 [ASP.NET Core 모듈](xref:host-and-deploy/aspnet-core-module)의 기본 경로 및 포트를 구성하여 IIS 통합을 구현합니다.
 
-ASP.NET Core 모듈은 동적 포트를 생성하여 백 엔드 프로세스에 할당합니다. `CreateDefaultBuilder`는 [UseIISIntegration](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderiisextensions.useiisintegration) 메서드를 호출합니다. `UseIISIntegration`은 localhost IP 주소(`localhost`)의 동적 포트에서 수신 대기하도록 Kestrel을 구성합니다. 동적 포트가 1234인 경우 Kestrel은 `localhost:1234`에서 수신 대기합니다. 이 구성은 다음에서 제공된 다른 URL 구성을 바꿉니다.
+ASP.NET Core 모듈은 동적 포트를 생성하여 백 엔드 프로세스에 할당합니다. `CreateDefaultBuilder`는 <xref:Microsoft.AspNetCore.Hosting.WebHostBuilderIISExtensions.UseIISIntegration*> 메서드를 호출합니다. `UseIISIntegration`은 localhost IP 주소(`localhost`)의 동적 포트에서 수신 대기하도록 Kestrel을 구성합니다. 동적 포트가 1234인 경우 Kestrel은 `localhost:1234`에서 수신 대기합니다. 이 구성은 다음에서 제공된 다른 URL 구성을 바꿉니다.
 
 * `UseUrls`
 * [Kestrel의 수신 대기 API](xref:fundamentals/servers/kestrel#endpoint-configuration)
@@ -120,7 +120,7 @@ ASP.NET Core 모듈은 동적 포트를 생성하여 백 엔드 프로세스에 
 
 ::: moniker range="< aspnetcore-2.0"
 
-[Microsoft.AspNetCore.Server.IISIntegration](https://www.nuget.org/packages/Microsoft.AspNetCore.Server.IISIntegration/) 패키지에 대한 종속성을 앱의 종속성에 포함합니다. [UseIISIntegration](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderiisextensions.useiisintegration) 확장 메서드를 [WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder)에 추가하여 IIS 통합 미들웨어를 사용합니다.
+[Microsoft.AspNetCore.Server.IISIntegration](https://www.nuget.org/packages/Microsoft.AspNetCore.Server.IISIntegration/) 패키지에 대한 종속성을 앱의 종속성에 포함합니다. <xref:Microsoft.AspNetCore.Hosting.WebHostBuilderIISExtensions.UseIISIntegration*> 확장 메서드를 <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder>에 추가하여 IIS 통합 미들웨어를 사용합니다.
 
 ```csharp
 var host = new WebHostBuilder()
@@ -129,7 +129,7 @@ var host = new WebHostBuilder()
     ...
 ```
 
-[UseKestrel](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderkestrelextensions.usekestrel) 및 [UseIISIntegration](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderiisextensions.useiisintegration)이 둘 다 필요합니다. `UseIISIntegration`을 호출하는 코드는 코드 이식성에 영향을 주지 않습니다. 앱이 IIS 배후에서 실행되지 않는 경우(예를 들어 앱이 Kestrel에서 바로 실행되는 경우)에는 `UseIISIntegration`이 작동하지 않습니다.
+<xref:Microsoft.AspNetCore.Hosting.WebHostBuilderKestrelExtensions.UseKestrel*> 및 <xref:Microsoft.AspNetCore.Hosting.WebHostBuilderIISExtensions.UseIISIntegration*>이 둘 다 필요합니다. `UseIISIntegration`을 호출하는 코드는 코드 이식성에 영향을 주지 않습니다. 앱이 IIS 배후에서 실행되지 않는 경우(예를 들어 앱이 Kestrel에서 바로 실행되는 경우)에는 `UseIISIntegration`이 작동하지 않습니다.
 
 ASP.NET Core 모듈은 동적 포트를 생성하여 백 엔드 프로세스에 할당합니다. `UseIISIntegration`은 localhost IP 주소(`localhost`)의 동적 포트에서 수신 대기하도록 Kestrel을 구성합니다. 동적 포트가 1234인 경우 Kestrel은 `localhost:1234`에서 수신 대기합니다. 이 구성은 다음에서 제공된 다른 URL 구성을 바꿉니다.
 
@@ -150,7 +150,7 @@ ASP.NET Core 모듈은 동적 포트를 생성하여 백 엔드 프로세스에 
 
 **In-process 호스팅 모델**
 
-IIS 서버 옵션을 구성하려면 [ConfigureServices](/dotnet/api/microsoft.aspnetcore.hosting.istartup.configureservices)에 [IISServerOptions](/dotnet/api/microsoft.aspnetcore.builder.iisserveroptions)에 대한 서비스 구성을 포함합니다. 다음 예제에서는 AutomaticAuthentication을 사용하지 않도록 설정합니다.
+IIS 서버 옵션을 구성하려면 <xref:Microsoft.AspNetCore.Builder.IISServerOptions>에 대한 서비스 구성을 <xref:Microsoft.AspNetCore.Hosting.IStartup.ConfigureServices*>에 포함합니다. 다음 예제에서는 AutomaticAuthentication을 사용하지 않도록 설정합니다.
 
 ```csharp
 services.Configure<IISServerOptions>(options => 
@@ -168,7 +168,7 @@ services.Configure<IISServerOptions>(options =>
 
 ::: moniker-end
 
-IIS 옵션을 구성하려면 [ConfigureServices](/dotnet/api/microsoft.aspnetcore.hosting.istartup.configureservices)에 [IISOptions](/dotnet/api/microsoft.aspnetcore.builder.iisoptions)에 대한 서비스 구성을 포함합니다. 다음 예에서는 앱이 `HttpContext.Connection.ClientCertificate`를 채우는 것을 방지합니다.
+IIS 옵션을 구성하려면 <xref:Microsoft.AspNetCore.Builder.IISOptions>에 대한 서비스 구성을 <xref:Microsoft.AspNetCore.Hosting.IStartup.ConfigureServices*>에 포함합니다. 다음 예에서는 앱이 `HttpContext.Connection.ClientCertificate`를 채우는 것을 방지합니다.
 
 ```csharp
 services.Configure<IISOptions>(options => 
@@ -218,6 +218,10 @@ services.Configure<IISOptions>(options =>
 중요한 파일은 *\<assembly>.runtimeconfig.json*, *\<assembly>.xml*(XML 문서 주석) 및 *\<assembly>.deps.json*과 같은 앱의 실제 경로에 있습니다. *web.config* 파일이 있고 사이트가 정상적으로 시작되면 IIS는 이러한 중요한 파일이 요청되어도 제공하지 않습니다. *web.config* 파일이 없거나, 이름이 잘못 지정되었거나, 정상적으로 시작되도록 사이트를 구성할 수 없는 경우 IIS에서 중요한 파일을 공개적으로 제공할 수도 있습니다.
 
 ***web.config* 파일이 항상 배포에 있어야 하며, 올바르게 이름이 지정되고, 정상적으로 시작되도록 사이트를 구성할 수 있어야 합니다. 프로덕션 배포에서 *web.config* 파일을 제거하지 마세요.**
+
+### <a name="transform-webconfig"></a>web.config 변환
+
+게시할 때 *web.config*를 변환해야 하는 경우(예: 구성, 프로필 또는 환경을 기반으로 환경 변수 설정) <xref:host-and-deploy/iis/transform-webconfig>를 참조하세요.
 
 ## <a name="iis-configuration"></a>IIS 구성
 
@@ -641,3 +645,4 @@ IIS에서 ASP.NET Core 앱을 호스팅할 때 일반적인 오류를 구분합�
 * [공식 Microsoft IIS 사이트](https://www.iis.net/)
 * [Windows Server 기술 콘텐츠 라이브러리](/windows-server/windows-server)
 * [IIS의 HTTP/2](/iis/get-started/whats-new-in-iis-10/http2-on-iis)
+* <xref:host-and-deploy/iis/transform-webconfig>

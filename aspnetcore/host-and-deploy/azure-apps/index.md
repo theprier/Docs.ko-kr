@@ -7,12 +7,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 12/18/2018
 uid: host-and-deploy/azure-apps/index
-ms.openlocfilehash: c70363c9cff94a682553745aba7fd4e396721f4e
-ms.sourcegitcommit: 816f39e852a8f453e8682081871a31bc66db153a
+ms.openlocfilehash: 4c7f2348b13207fb6f2ff830bbf67ffa30e5489c
+ms.sourcegitcommit: 6ba5fb1fd0b7f9a6a79085b0ef56206e462094b7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53637679"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56248240"
 ---
 # <a name="deploy-aspnet-core-apps-to-azure-app-service"></a>Azure App Service에 ASP.NET Core 앱 배포
 
@@ -215,6 +215,10 @@ ARM 템플릿을 사용하여 앱을 만들고 배포하는 경우 `siteextensio
 
 보안 프로토콜 바인딩을 사용하면 HTTPS를 통한 요청에 응답할 때 사용할 인증서를 지정할 수 있습니다. 바인딩을 위해서는 특정 호스트 이름에 대해 발행된 유효한 개인 인증서(*.pfx*)가 필요합니다. 자세한 내용은 [자습서: 기존 사용자 지정 SSL 인증서를 Azure Web Apps에 바인딩](/azure/app-service/app-service-web-tutorial-custom-ssl)을 참조하세요.
 
+## <a name="transform-webconfig"></a>web.config 변환
+
+게시할 때 *web.config*를 변환해야 하는 경우(예: 구성, 프로필 또는 환경을 기반으로 환경 변수 설정) <xref:host-and-deploy/iis/transform-webconfig>를 참조하세요.
+
 ## <a name="additional-resources"></a>추가 자료
 
 * [Web Apps 개요(5분 개요 비디오)](/azure/app-service/app-service-web-overview)
@@ -226,7 +230,6 @@ ARM 템플릿을 사용하여 앱을 만들고 배포하는 경우 `siteextensio
 Windows Server의 Azure App Service는 [IIS(인터넷 정보 서비스)](https://www.iis.net/)를 사용합니다. 다음 항목은 기본 IIS 기술과 관련이 있습니다.
 
 * <xref:host-and-deploy/iis/index>
-* <xref:host-and-deploy/aspnet-core-module>
 * <xref:host-and-deploy/aspnet-core-module>
 * <xref:host-and-deploy/iis/modules>
 * [Microsoft TechNet 라이브러리: Windows Server](/windows-server/windows-server-versions)
