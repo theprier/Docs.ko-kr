@@ -4,14 +4,14 @@ author: isaac2004
 description: ASP.NET Core 2.1의 새로운 기능에 대해 알아봅니다.
 ms.author: riande
 ms.custom: mvc
-ms.date: 05/30/2018
+ms.date: 02/13/2019
 uid: aspnetcore-2.1
-ms.openlocfilehash: e16bb874f317b922f3900b540596f6ff38debb2f
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: 8299af819f86d3d2371650ce3d87deb817f0feb8
+ms.sourcegitcommit: 6ba5fb1fd0b7f9a6a79085b0ef56206e462094b7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50206837"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56248175"
 ---
 # <a name="whats-new-in-aspnet-core-21"></a>ASP.NET Core 2.1의 새로운 기능
 
@@ -19,7 +19,7 @@ ms.locfileid: "50206837"
 
 ## <a name="signalr"></a>SignalR
 
-SignalR은 ASP.NET Core 2.1에서 다시 작성되었습니다. ASP.NET Core SignalR에는 여러 가지 향상된 기능이 포함됩니다.
+SignalR은 ASP.NET Core 2.1에서 다시 작성되었습니다. ASP.NET Core SignalR에는 여러 향상된 기능이 포함됩니다.
 
 * 간소화된 스케일 아웃 모델
 * JQuery에 종속되지 않는 새 JavaScript 클라이언트
@@ -35,7 +35,7 @@ SignalR은 ASP.NET Core 2.1에서 다시 작성되었습니다. ASP.NET Core Sig
 ASP.NET Core 2.1을 통해 Razor 기반 UI를 빌드하고 라이브러리에 포함하고 여러 프로젝트 간에 공유합니다. 새로운 Razor SDK를 사용하면 NuGet 패키지에 포함될 수 있는 클래스 라이브러리 프로젝트에 Razor 파일을 빌드할 수 있습니다. 라이브러리의 보기 및 페이지는 자동으로 검색되고 앱에서 재정의할 수 있습니다. Razor 컴파일을 빌드에 통합하여 다음을 수행합니다.
 
 * 앱 시작 시간이 훨씬 더 빠릅니다.
-* 런타임 시 Razor 뷰 및 페이지에 대한 빠른 업데이트는 반복적인 개발 워크플로의 일부분으로 사용할 수 있습니다.
+* 런타임 시 Razor 보기 및 페이지에 대한 빠른 업데이트는 반복적인 개발 워크플로의 일부분으로사용할 수 있습니다.
 
 자세한 내용은 [Razor 클래스 라이브러리 프로젝트를 사용하여 재사용 가능한 UI 만들기](xref:razor-pages/ui-class)를 참조하세요.
 
@@ -82,7 +82,7 @@ ASP.NET Core에서는 [EU GDPR(일반 데이터 보호 규정)](https://www.eugd
 테스트 생성 및 실행을 간소화하는 새 패키지가 도입되었습니다. [Microsoft.AspNetCore.Mvc.Testing](https://www.nuget.org/packages/Microsoft.AspNetCore.Mvc.Testing/) 패키지는 다음과 같은 작업을 처리합니다.
 
 * 종속성 파일(*\*.deps*)을 테스트된 앱에서 테스트 프로젝트의 *bin* 폴더로 복사합니다.
-* 테스트를 실행하면 고정 파일 및 페이지/뷰를 찾을 수 있도록 루트 콘텐츠를 테스트된 앱의 프로젝트 루트로 설정합니다.
+* 테스트를 실행하면 고정 파일 및 페이지/보기를 찾을 수 있도록 루트 콘텐츠를 테스트된 앱의 프로젝트 루트로 설정합니다.
 * [TestServer](/dotnet/api/microsoft.aspnetcore.testhost.testserver)를 사용하여 테스트된 앱의 부트스트랩을 간소화하기 위해 [WebApplicationFactory](/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1) 클래스를 제공합니다.
 
 다음 테스트는 [xUnit](https://xunit.github.io/)를 사용하여 성공 상태 코드 및 올바른 콘텐츠 형식 헤더의 인덱스 페이지가 로드되는지 확인합니다.
@@ -141,10 +141,15 @@ ASP.NET Core 2.1 릴리스에서 Kestrel의 기본 전송은 더 이상 Libuv에
 
 ## <a name="updated-spa-templates"></a>업데이트된 SPA 템플릿
 
-표준 프로젝트 구조를 사용하고 각 프레임워크에 대한 시스템을 빌드하도록 Angular, React 및 React with Redux에 대한 단일 페이지 응용 프로그램 템플릿을 업데이트합니다.
+표준 프로젝트 구조를 사용하고 각 프레임워크에 대한 시스템을 빌드하도록 Angular, React 및 React with Redux에 대한 단일 페이지 애플리케이션 템플릿을 업데이트합니다.
 
 Angular 템플릿은 Angular CLI에 기반하고 React 템플릿은 create-react-app에 기반합니다.
-자세한 내용은 [ASP.NET Core에서 단일 페이지 응용 프로그램 템플릿 사용](xref:spa/index)을 참조하세요.
+
+자세한 내용은 다음을 참조하세요.
+
+* <xref:spa/angular>
+* <xref:spa/react>
+* <xref:spa/react-with-redux>
 
 ## <a name="razor-pages-search-for-razor-assets"></a>Razor 자산에 대한 Razor Pages 검색
 

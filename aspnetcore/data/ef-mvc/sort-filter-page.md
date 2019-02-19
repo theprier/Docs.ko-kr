@@ -1,26 +1,19 @@
 ---
-title: ASP.NET Core MVC 및 EF Core - 정렬, 필터, 페이징 - 3/10
+title: '자습서: 정렬, 필터링 및 페이징 추가 - ASP.NET MVC 및 EF Core 사용'
+description: 이 자습서에서는 학생 인덱스 페이지에 정렬, 필터링 및 페이징 기능을 추가합니다. 단순 그룹화를 수행하는 페이지도 만듭니다.
 author: rick-anderson
-description: 이 자습서에서는 ASP.NET Core 및 Entity Framework Core를 사용하여 페이지에 정렬, 필터링 및 페이징 기능을 추가합니다.
 ms.author: tdykstra
-ms.date: 03/15/2017
+ms.date: 02/04/2019
+ms.topic: tutorial
 uid: data/ef-mvc/sort-filter-page
-ms.openlocfilehash: 1f80faf0e36332c28e8337ddc331cc8b4c4970d7
-ms.sourcegitcommit: b8a2f14bf8dd346d7592977642b610bbcb0b0757
+ms.openlocfilehash: 51b6b08d2410652f93427371aec299eb4c8789f1
+ms.sourcegitcommit: 5e3797a02ff3c48bb8cb9ad4320bfd169ebe8aba
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38193951"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56103061"
 ---
-# <a name="aspnet-core-mvc-with-ef-core---sort-filter-paging---3-of-10"></a>ASP.NET Core MVC 및 EF Core - 정렬, 필터, 페이징 - 3/10
-
-[!INCLUDE [RP better than MVC](~/includes/RP-EF/rp-over-mvc-21.md)]
-
-::: moniker range="= aspnetcore-2.0"
-
-작성자: [Tom Dykstra](https://github.com/tdykstra) 및 [Rick Anderson](https://twitter.com/RickAndMSFT)
-
-Contoso University 웹 응용 프로그램 예제는 Entity Framework Core 및 Visual Studio를 사용하여 ASP.NET Core MVC 웹 응용 프로그램을 만드는 방법을 보여 줍니다. 자습서 시리즈에 대한 정보는 [시리즈의 첫 번째 자습서](intro.md)를 참조하세요.
+# <a name="tutorial-add-sorting-filtering-and-paging---aspnet-mvc-with-ef-core"></a>자습서: 정렬, 필터링 및 페이징 추가 - ASP.NET MVC 및 EF Core 사용
 
 이전 자습서에서는 학생 엔터티에 대한 기본적인 CRUD 작업을 위한 일련의 웹 페이지를 구현했습니다. 이 자습서에서는 학생 인덱스 페이지에 정렬, 필터링 및 페이징 기능을 추가합니다. 단순 그룹화를 수행하는 페이지도 만듭니다.
 
@@ -28,7 +21,21 @@ Contoso University 웹 응용 프로그램 예제는 Entity Framework Core 및 V
 
 ![학생 인덱스 페이지](sort-filter-page/_static/paging.png)
 
-## <a name="add-column-sort-links-to-the-students-index-page"></a>학생 인덱스 페이지에 열 정렬 링크 추가
+이 자습서에서는 다음을 수행했습니다.
+
+> [!div class="checklist"]
+> * 열 정렬 링크 추가
+> * 검색 상자 추가
+> * 학생 인덱스에 페이징 추가
+> * Index 메서드에 페이징 추가
+> * 페이징 링크 추가
+> * 정보 페이지 만들기
+
+## <a name="prerequisites"></a>전제 조건
+
+* [ASP.NET Core MVC 웹앱에서 EF Core를 사용하여 CRUD 기능 구현](crud.md)
+
+## <a name="add-column-sort-links"></a>열 정렬 링크 추가
 
 Student 인덱스 페이지에 정렬을 추가하려면 Students 컨트롤러의 `Index` 메서드를 변경하고 Student 인덱스 뷰에 코드를 추가합니다.
 
@@ -71,7 +78,7 @@ Student 인덱스 페이지에 정렬을 추가하려면 Students 컨트롤러�
 
 ![이름 순서로 된 학생 인덱스 페이지](sort-filter-page/_static/name-order.png)
 
-## <a name="add-a-search-box-to-the-students-index-page"></a>학생 인덱스 페이지에 검색 상자 추가
+## <a name="add-a-search-box"></a>검색 상자 추가
 
 학생 인덱스 페이지에 필터링을 추가하려면 뷰에 텍스트 상자와 [제출] 단추를 추가하고 `Index` 메서드에 해당 변경 내용을 적용합니다. 텍스트 상자를 통해 이름 및 성 필드에서 검색할 문자열을 입력할 수 있습니다.
 
@@ -86,7 +93,7 @@ Student 인덱스 페이지에 정렬을 추가하려면 Students 컨트롤러�
 > [!NOTE]
 > 여기에서는 `IQueryable` 개체에서 `Where` 메서드를 호출하고 있으며 필터는 서버에서 처리됩니다. 일부 시나리오에서는 메모리 내 컬렉션에서 확장 메서드로 `Where` 메서드를 호출할 수 있습니다. (예를 들어, EF `DbSet` 대신에 `IEnumerable` 컬렉션을 반환하는 리포지토리 메서드를 참조하도록 `_context.Students`로 참조를 변경한다고 가정해 보겠습니다.) 결과는 일반적으로 동일하지만 경우에 따라 다를 수 있습니다.
 >
->예를 들어 `Contains` 메서드의 .NET Framework 구현은 기본적으로 대/소문자 구분 비교를 수행하지만 SQL Server에서는 SQL Server 인스턴스의 데이터 정렬 설정에 따라 결정됩니다. 이 설정은 기본적으로 대/소문자를 구분하지 않습니다. 테스트에서 대/소문자를 구분하지 않도록 명시적으로 지정하려면 `ToUpper` 메서드를 호출하면 됩니다. *Where(s => s.LastName.ToUpper().Contains(searchString.ToUpper())*. 이렇게 하면 `IQueryable` 개체 대신 `IEnumerable` 컬렉션을 반환하는 리포지토리를 사용하도록 코드를 나중에 변경할 경우 결과가 동일하게 유지됩니다. (`IEnumerable` 컬렉션에서 `Contains` 메서드를 호출하면 .NET Framework 구현을 가져오고 `IQueryable` 개체에서 호출하면 데이터베이스 공급자 구현을 가져옵니다.) 그러나 이 솔루션에서는 성능 저하가 발생합니다. `ToUpper` 코드는 TSQL SELECT 문의 WHERE 절에 함수를 배치합니다. 그러면 최적화 프로그램이 인덱스를 사용할 수 없게 됩니다. SQL은 대부분 대/소문자를 구분하지 않도록 설치된다는 것을 고려하면 대/소문자 구분 데이터 저장소로 마이그레이션할 때까지 `ToUpper` 코드를 사용하지 않는 것이 좋습니다.
+>예를 들어 `Contains` 메서드의 .NET Framework 구현은 기본적으로 대/소문자 구분 비교를 수행하지만 SQL Server에서는 SQL Server 인스턴스의 데이터 정렬 설정에 따라 결정됩니다. 이 설정은 기본적으로 대/소문자를 구분하지 않습니다. `ToUpper` 메서드를 호출하여 테스트가 명시적으로 대/소문자를 구분하지 않도록 설정할 수 있습니다.  *Where(s => s.LastName.ToUpper().Contains(searchString.ToUpper())*. 이렇게 하면 `IQueryable` 개체 대신 `IEnumerable` 컬렉션을 반환하는 리포지토리를 사용하도록 코드를 나중에 변경할 경우 결과가 동일하게 유지됩니다. (`IEnumerable` 컬렉션에서 `Contains` 메서드를 호출하면 .NET Framework 구현을 가져오고 `IQueryable` 개체에서 호출하면 데이터베이스 공급자 구현을 가져옵니다.) 그러나 이 솔루션에서는 성능 저하가 발생합니다. `ToUpper` 코드는 TSQL SELECT 문의 WHERE 절에 함수를 배치합니다. 그러면 최적화 프로그램이 인덱스를 사용할 수 없게 됩니다. SQL은 대부분 대/소문자를 구분하지 않도록 설치된다는 것을 고려하면 대/소문자 구분 데이터 저장소로 마이그레이션할 때까지 `ToUpper` 코드를 사용하지 않는 것이 좋습니다.
 
 ### <a name="add-a-search-box-to-the-student-index-view"></a>Students 인덱스 뷰에 검색 상자 추가
 
@@ -110,7 +117,7 @@ http://localhost:5813/Students?SearchString=an
 
 이 단계에서 열 제목 정렬 링크를 클릭하면 **검색** 상자에 입력한 필터 값이 손실됩니다. 다음 섹션에서 이 문제를 해결합니다.
 
-## <a name="add-paging-functionality-to-the-students-index-page"></a>학생 인덱스 페이지에 페이징 기능 추가
+## <a name="add-paging-to-students-index"></a>학생 인덱스에 페이징 추가
 
 학생 인덱스 페이지에 페이징을 추가하려면 `Skip` 및 `Take` 문을 사용하는 `PaginatedList` 클래스를 만들어 항상 테이블의 모든 행을 검색하는 대신, 서버에서 데이터를 필터링합니다. 그런 다음, `Index` 메서드를 추가로 변경하고 `Index` 뷰에 페이징 단추를 추가합니다. 다음 그림에는 페이징 단추가 나와 있습니다.
 
@@ -124,7 +131,7 @@ http://localhost:5813/Students?SearchString=an
 
 생성자가 비동기 코드를 실행할 수 없으므로 `CreateAsync` 메서드가 생성자 대신 `PaginatedList<T>` 개체를 만드는 데 사용됩니다.
 
-## <a name="add-paging-functionality-to-the-index-method"></a>Index 메서드에 페이징 기능 추가
+## <a name="add-paging-to-index-method"></a>Index 메서드에 페이징 추가
 
 *StudentsController.cs*에서 `Index` 메서드를 다음 코드로 바꿉니다.
 
@@ -167,7 +174,7 @@ return View(await PaginatedList<Student>.CreateAsync(students.AsNoTracking(), pa
 
 `PaginatedList.CreateAsync` 메서드는 페이지 번호를 사용합니다. 두 개의 물음표는 Null 병합 연산자를 나타냅니다. Null 병합 연산자는 nullable 형식의 기본값을 정의합니다. `(page ?? 1)` 식은 값이 있는 경우 `page` 값을 반환하고 `page`가 Null이면 1일 반환합니다.
 
-## <a name="add-paging-links-to-the-student-index-view"></a>Student 인덱스 뷰에 페이징 링크 추가
+## <a name="add-paging-links"></a>페이징 링크 추가
 
 *Views/Students/Index.cshtml*에서 기존 코드를 다음 코드로 바꿉니다. 변경 내용은 강조 표시되어 있습니다.
 
@@ -199,7 +206,7 @@ return View(await PaginatedList<Student>.CreateAsync(students.AsNoTracking(), pa
 
 다른 정렬 순서의 페이징 링크를 클릭하여 페이징이 작동하는지 확인합니다. 그런 다음, 검색 문자열을 입력하고 페이징을 다시 시도하여 정렬 및 필터링을 통해 페이징이 제대로 작동하는지 확인합니다.
 
-## <a name="create-an-about-page-that-shows-student-statistics"></a>학생 통계를 보여 주는 [정보] 페이지 만들기
+## <a name="create-an-about-page"></a>정보 페이지 만들기
 
 Contoso University 웹 사이트의 **정보** 페이지에는 각 등록 날짜에 등록된 학생 수가 표시됩니다. 여기에는 그룹화와 그룹에 대한 간단한 계산이 필요합니다. 이 작업을 수행하기 위해 다음을 수행합니다.
 
@@ -227,7 +234,8 @@ Contoso University 웹 사이트의 **정보** 페이지에는 각 등록 날짜
 
 [!code-csharp[](intro/samples/cu/Controllers/HomeController.cs?name=snippet_AddContext&highlight=3,5,7)]
 
-`About` 메서드를 다음 코드로 바꿉니다.
+
+  `About` 메서드를 다음 코드로 바꿉니다.
 
 [!code-csharp[](intro/samples/cu/Controllers/HomeController.cs?name=snippet_UseDbSet)]
 
@@ -243,14 +251,22 @@ LINQ 문은 등록 날짜별로 학생 엔터티를 그룹화하고 각 그룹�
 
 앱을 실행하고 [정보] 페이지로 이동합니다. 각 등록 날짜에 대한 학생 수가 테이블에 표시됩니다.
 
-![정보 페이지](sort-filter-page/_static/about.png)
+## <a name="get-the-code"></a>코드 가져오기
 
-## <a name="summary"></a>요약
+[완성된 애플리케이션을 다운로드하거나 확인합니다.](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-mvc/intro/samples/cu-final)
 
-이 자습서에서는 정렬, 필터링, 페이징 및 그룹화를 수행하는 방법을 살펴보았습니다. 다음 자습서에서 마이그레이션을 사용하여 데이터 모델 변경 내용을 처리하는 방법에 대해 알아봅니다.
+## <a name="next-steps"></a>다음 단계
 
-::: moniker-end
+이 자습서에서는 다음을 수행했습니다.
 
-> [!div class="step-by-step"]
-> [이전](crud.md)
-> [다음](migrations.md)
+> [!div class="checklist"]
+> * 열 정렬 링크 추가
+> * 검색 상자 추가
+> * 학생 인덱스에 페이징 추가
+> * Index 메서드에 페이징 추가
+> * 페이징 링크 추가
+> * 정보 페이지 만들기
+
+마이그레이션을 사용하여 데이터 모델 변경 내용을 처리하는 방법을 알아보려면 다음 문서로 진행합니다.
+> [!div class="nextstepaction"]
+> [데이터 모델 변경 처리](migrations.md)

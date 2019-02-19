@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 01/22/2019
 uid: host-and-deploy/visual-studio-publish-profiles
-ms.openlocfilehash: 03acaa73fc2ebdc62522a1e081ca6ed72515483f
-ms.sourcegitcommit: ebf4e5a7ca301af8494edf64f85d4a8deb61d641
+ms.openlocfilehash: e1e8f99be18d6f395a146bda805f71c46cd0346d
+ms.sourcegitcommit: 6ba5fb1fd0b7f9a6a79085b0ef56206e462094b7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54836492"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56248357"
 ---
 # <a name="visual-studio-publish-profiles-for-aspnet-core-app-deployment"></a>ASP.NET Core 앱 배포용 Visual Studio 게시 프로필
 
@@ -347,6 +347,8 @@ dotnet msbuild "AzureWebApp.csproj"
 </PropertyGroup>
 ```
 
+*web.config* 변환(예: 구성, 프로필 또는 환경에 따라 환경 변수 설정)이 필요한 경우 <xref:host-and-deploy/iis/transform-webconfig>을 참조하세요.
+
 ## <a name="exclude-files"></a>파일 제외
 
 ASP.NET Core 웹앱을 게시할 경우 *wwwroot* 폴더의 빌드 아티팩트 및 콘텐츠가 포함됩니다. `msbuild`는 [와일드카드 사용 패턴](https://gruntjs.com/configuring-tasks#globbing-patterns)을 지원합니다. 예를 들어 다음 `<Content>` 요소는 *wwwroot/content* 폴더와 모든 하위 폴더에서 모든 텍스트(*.txt*) 파일을 제외합니다.
@@ -521,3 +523,4 @@ Azure App Service 웹앱 배포에 있는 파일을 보려면 [Kudu 서비스](h
 * [웹 배포](https://www.iis.net/downloads/microsoft/web-deploy)(MSDeploy)는 IIS 서버에 대한 웹앱 및 웹 사이트 배포를 간소화합니다.
 * [https://github.com/aspnet/websdk](https://github.com/aspnet/websdk/issues): 배포에 대한 파일 문제 및 요청 기능.
 * [Visual Studio에서 Azure VM에 ASP.NET 웹앱 게시](/azure/virtual-machines/windows/publish-web-app-from-visual-studio)
+* <xref:host-and-deploy/iis/transform-webconfig>

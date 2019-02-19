@@ -4,14 +4,14 @@ author: guardrex
 description: ASP.NET Core 앱을 호스팅하기 위해 ASP.NET Core 모듈을 구성하는 방법을 알아봅니다.
 ms.author: riande
 ms.custom: mvc
-ms.date: 01/22/2019
+ms.date: 02/08/2019
 uid: host-and-deploy/aspnet-core-module
-ms.openlocfilehash: 4eea360d08c79b889db00132109cf49492f84de6
-ms.sourcegitcommit: ebf4e5a7ca301af8494edf64f85d4a8deb61d641
+ms.openlocfilehash: 9270d7b462bbac1ae0ad896c0937ea6dd909b2cd
+ms.sourcegitcommit: af8a6eb5375ef547a52ffae22465e265837aa82b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54837782"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56159557"
 ---
 # <a name="aspnet-core-module"></a>ASP.NET Core 모듈
 
@@ -51,7 +51,11 @@ In-process 호스팅 모델은 .NET Framework를 대상으로 하는 ASP.NET Cor
 
 다음 특성은 In-Process로 호스팅할 때 적용됩니다.
 
-* IIS HTTP 서버(`IISHttpServer`)는 [Kestrel](xref:fundamentals/servers/kestrel) 서버 대신 사용됩니다.
+* IIS HTTP 서버(`IISHttpServer`)는 [Kestrel](xref:fundamentals/servers/kestrel) 서버 대신 사용됩니다. In Process의 경우 [CreateDefaultBuilder](xref:fundamentals/host/web-host#set-up-a-host)는 <xref:Microsoft.AspNetCore.Hosting.WebHostBuilderIISExtensions.UseIIS*>를 호출하여 다음을 수행합니다.
+
+  * `IISHttpServer`를 등록합니다.
+  * ASP.NET Core 모듈 뒤에서 실행될 때 서버가 수신 대기해야 하는 포트 및 기본 경로를 구성합니다.
+  * 시작 오류를 캡처하도록 호스트를 구성합니다.
 
 * [requestTimeout 특성](#attributes-of-the-aspnetcore-element)이 In-Process 호스팅에 적용되지 않습니다.
 
@@ -83,6 +87,11 @@ Out of Process 호스팅을 위한 앱을 구성하려면 프로젝트 파일에
 ```
 
 [Kestrel](xref:fundamentals/servers/kestrel) 서버는 IIS HTTP 서버(`IISHttpServer`) 대신 사용됩니다.
+
+Out of Process의 경우 [CreateDefaultBuilder](xref:fundamentals/host/web-host#set-up-a-host)는 <xref:Microsoft.AspNetCore.Hosting.WebHostBuilderIISExtensions.UseIISIntegration*>를 호출하여 다음을 수행합니다.
+
+* ASP.NET Core 모듈 뒤에서 실행될 때 서버가 수신 대기해야 하는 포트 및 기본 경로를 구성합니다.
+* 시작 오류를 캡처하도록 호스트를 구성합니다.
 
 ### <a name="hosting-model-changes"></a>호스팅 모델 변경
 
@@ -497,6 +506,32 @@ ASP.NET Core 모듈 설치 관리자는 **SYSTEM** 계정의 권한으로 실행
 1. 설치 관리자를 실행합니다.
 1. 업데이트된 *applicationHost.config* 파일을 공유로 내보냅니다.
 1. IIS 공유 구성을 다시 사용하도록 설정합니다.
+
+::: moniker range=">= aspnetcore-2.2"
+
+## <a name="application-initialization"></a>애플리케이션 초기화
+
+[IIS 애플리케이션 초기화](/iis/get-started/whats-new-in-iis-8/iis-80-application-initialization)는 앱 풀이 시작되거나 재활용될 때 HTTP 요청을 앱으로 보내는 IIS 기능입니다. 요청은 앱이 시작되도록 트리거합니다. 애플리케이션 초기화는 [In Process 호스팅 모델](xref:fundamentals/servers/index#in-process-hosting-model) 및 [Out of Process 호스팅 모델](xref:fundamentals/servers/index#out-of-process-hosting-model)에서 ASP.NET Core 모듈 버전 2와 함께 사용할 수 있습니다.
+
+애플리케이션 초기화를 사용하도록 설정하려면 다음을 수행합니다.
+
+1. IIS 애플리케이션 초기화 역할 기능이 사용하도록 설정되었는지 확인합니다.
+   * Windows 7 이상: **제어판** > **프로그램** > **프로그램 및 기능** > **Windows 기능 Windows 기능 사용/사용 안 함**(화면 왼쪽)으로 차례로 이동합니다. **인터넷 정보 서비스** > **World Wide Web 서비스** > **애플리케이션 개발 기능**을 엽니다. **애플리케이션 초기화** 확인란을 선택합니다.
+   * Windows Server 2008 R2 이상에서는 **역할 및 기능 추가 마법사**를 엽니다. **역할 서비스 선택** 패널에 도달하면 **애플리케이션 개발** 노드를 열고 **애플리케이션 초기화** 확인란을 선택합니다.
+1. IIS 관리자의 **연결** 패널에서 **애플리케이션 풀**을 선택합니다.
+1. 목록에서 앱의 앱 풀을 선택합니다.
+1. **작업** 패널의 **애플리케이션 풀 편집**에서 **고급 설정**을 선택합니다.
+1. **시작 모드**를 **AlwaysRunning**으로 설정합니다.
+1. **연결** 패널에서 **사이트** 노드를 엽니다.
+1. 앱을 선택합니다.
+1. **작업** 패널의 **웹 사이트 관리**에서 **고급 설정**을 선택합니다.
+1. **미리 로드 사용**을 **True**로 설정합니다.
+
+자세한 내용은 [IIS 8.0 애플리케이션 초기화](/iis/get-started/whats-new-in-iis-8/iis-80-application-initialization)를 참조하세요.
+
+[Out of Process 호스팅 모델](xref:fundamentals/servers/index#out-of-process-hosting-model)을 사용하는 앱은 외부 서비스를 사용하여 앱을 계속 실행하기 위해 앱을 주기적으로 ping해야 합니다.
+
+::: moniker-end
 
 ## <a name="module-version-and-hosting-bundle-installer-logs"></a>모듈 버전 및 호스팅 번들 설치 관리자 로그
 

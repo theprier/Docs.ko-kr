@@ -1,42 +1,38 @@
 ---
-title: ASP.NET Core MVC 및 EF Core - CRUD - 2/10
+title: '자습서: CRUD 기능 구현 - ASP.NET MVC 및 EF Core 사용'
+description: 이 자습서에서는 MVC 스캐폴딩이 컨트롤러 및 보기에서 자동으로 만드는 CRUD(만들기, 읽기, 업데이트, 삭제) 코드를 검토하고 사용자 지정합니다.
 author: rick-anderson
-description: ''
 ms.author: tdykstra
 ms.custom: mvc
-ms.date: 10/24/2018
+ms.date: 02/04/2019
+ms.topic: tutorial
 uid: data/ef-mvc/crud
-ms.openlocfilehash: 34927415beadaa3f5c9035a9101e3c99f7cbc395
-ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
+ms.openlocfilehash: 368b1774ba977ec8020a02d48705200fd54c3bbd
+ms.sourcegitcommit: 5e3797a02ff3c48bb8cb9ad4320bfd169ebe8aba
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50090825"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56102983"
 ---
-# <a name="aspnet-core-mvc-with-ef-core---crud---2-of-10"></a>ASP.NET Core MVC 및 EF Core - CRUD - 2/10
+# <a name="tutorial-implement-crud-functionality---aspnet-mvc-with-ef-core"></a>자습서: CRUD 기능 구현 - ASP.NET MVC 및 EF Core 사용
 
-[!INCLUDE [RP better than MVC](~/includes/RP-EF/rp-over-mvc-21.md)]
-
-::: moniker range="= aspnetcore-2.0"
-
-작성자: [Tom Dykstra](https://github.com/tdykstra) 및 [Rick Anderson](https://twitter.com/RickAndMSFT)
-
-Contoso University 웹 응용 프로그램 예제는 Entity Framework Core 및 Visual Studio를 사용하여 ASP.NET Core MVC 웹 응용 프로그램을 만드는 방법을 보여 줍니다. 자습서 시리즈에 대한 정보는 [시리즈의 첫 번째 자습서](intro.md)를 참조하세요.
-
-이전 자습서에서 Entity Framework 및 SQL Server LocalDB를 사용하여 데이터를 저장하고 표시하는 MVC 응용 프로그램을 만들었습니다. 이 자습서에서는 MVC 스캐폴딩이 컨트롤러 및 보기에서 자동으로 만드는 CRUD(만들기, 읽기, 업데이트, 삭제) 코드를 검토하고 사용자 지정합니다.
+이전 자습서에서 Entity Framework 및 SQL Server LocalDB를 사용하여 데이터를 저장하고 표시하는 MVC 애플리케이션을 만들었습니다. 이 자습서에서는 MVC 스캐폴딩이 컨트롤러 및 보기에서 자동으로 만드는 CRUD(만들기, 읽기, 업데이트, 삭제) 코드를 검토하고 사용자 지정합니다.
 
 > [!NOTE]
 > 컨트롤러와 데이터 액세스 계층 간에 추상화 계층을 만들기 위해 리포지토리 패턴을 구현하는 일반적인 사례입니다. 이러한 자습서를 간단하고 Entity Framework 자체를 사용하는 방법을 가르치는 데 초점을 두도록 유지하기 위해 리포지토리를 사용하지 않습니다. EF를 사용하는 리포지토리에 대한 자세한 내용은 [이 시리즈의 마지막 자습서](advanced.md)를 참조하세요.
 
-이 자습서에서는 다음 웹 페이지를 사용합니다.
+이 자습서에서는 다음을 수행했습니다.
 
-![학생 세부 정보 페이지](crud/_static/student-details.png)
+> [!div class="checklist"]
+> * 세부 정보 사용자 지정 페이지
+> * 만들기 페이지 업데이트
+> * 편집 페이지 업데이트
+> * 삭제 페이지 업데이트
+> * 데이터베이스 연결 닫기
 
-![학생 만들기 페이지](crud/_static/student-create.png)
+## <a name="prerequisites"></a>전제 조건
 
-![학생 편집 페이지](crud/_static/student-edit.png)
-
-![학생 삭제 페이지](crud/_static/student-delete.png)
+* [ASP.NET Core MVC 웹앱에서 EF Core 시작](intro.md)
 
 ## <a name="customize-the-details-page"></a>세부 정보 사용자 지정 페이지
 
@@ -122,7 +118,7 @@ http://localhost:1230/Instructor/Index?id=1&CourseID=2021
 
 ID는 행이 삽입될 때 SQL 서버가 자동으로 설정하는 기본 키 값이므로 `Bind` 특성에서 `ID`를 제거했습니다. 사용자의 입력은 ID 값을 설정하지 않습니다.
 
-`Bind` 특성 이외에 try-catch 블록은 스캐폴드 코드에 대해 만든 유일한 변경 내용입니다. `DbUpdateException`에서 파생되는 예외가 변경 내용이 저장되는 동안 발견되는 경우 일반 오류 메시지가 표시됩니다. `DbUpdateException` 예외는 경우에 따라 프로그래밍 오류가 아니라 응용 프로그램에 대한 외부적인 문제로 발생하므로 사용자는 다시 시도하는 것이 좋습니다. 이 샘플에서 구현되지 않지만 프로덕션 품질 응용 프로그램은 예외를 기록합니다. 자세한 내용은 [모니터링 및 원격 분석(Azure로 실제 클라우드 앱 빌드)](/aspnet/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/monitoring-and-telemetry)에서 **정보에 대한 로그** 섹션을 참조하세요.
+`Bind` 특성 이외에 try-catch 블록은 스캐폴드 코드에 대해 만든 유일한 변경 내용입니다. `DbUpdateException`에서 파생되는 예외가 변경 내용이 저장되는 동안 발견되는 경우 일반 오류 메시지가 표시됩니다. `DbUpdateException` 예외는 경우에 따라 프로그래밍 오류가 아니라 애플리케이션에 대한 외부적인 문제로 발생하므로 사용자는 다시 시도하는 것이 좋습니다. 이 샘플에서 구현되지 않지만 프로덕션 품질 애플리케이션은 예외를 기록합니다. 자세한 내용은 [모니터링 및 원격 분석(Azure로 실제 클라우드 앱 빌드)](/aspnet/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/monitoring-and-telemetry)에서 **정보에 대한 로그** 섹션을 참조하세요.
 
 `ValidateAntiForgeryToken` 특성은 CSRF(사이트 간 요청 위조) 공격을 방지하도록 돕습니다. 토큰은 [FormTagHelper](xref:mvc/views/working-with-forms#the-form-tag-helper)에 의한 보기로 자동으로 주입되며 사용자에 의해 양식이 제출될 때 포함됩니다. 토큰은 `ValidateAntiForgeryToken` 특성으로 유효성이 검사됩니다. CSRF에 대한 자세한 내용은 [위조 방지 요청](../../security/anti-request-forgery.md)을 참조하세요.
 
@@ -172,7 +168,7 @@ public class Student
 
 *StudentController.cs*에서 HttpGet `Edit` 메서드(`HttpPost` 특성이 없는 것)는 `SingleOrDefaultAsync` 메서드를 사용하여 `Details` 메서드에서 본 것처럼 선택한 학생 엔터티를 검색합니다. 이 메서드를 변경할 필요가 없습니다.
 
-### <a name="recommended-httppost-edit-code-read-and-update"></a>권장 HttpPost 편집 코드: 읽기 및 업데이트
+### <a name="recommended-httppost-edit-code-read-and-update"></a>권장되는 HttpPost 편집 코드: 읽기 및 업데이트
 
 HttpPost 편집 작업 메서드를 다음 코드로 바꿉니다.
 
@@ -212,7 +208,7 @@ HttpPost 편집 작업 메서드를 다음 코드로 바꿉니다.
 
 * `Detached`. 엔터티가 데이터베이스 컨텍스트에 의해 추적되지 않습니다.
 
-데스크톱 응용 프로그램에서는 일반적으로 상태 변경 내용이 자동으로 설정됩니다. 엔터티를 읽고 해당 속성 값의 일부를 변경합니다. 이렇게 하면 해당 엔터티 상태가 자동으로 `Modified`로 변경됩니다. 그런 다음, `SaveChanges`를 호출하면 Entity Framework는 변경한 실제 속성만 업데이트하는 SQL UPDATE 문을 생성합니다.
+데스크톱 애플리케이션에서는 일반적으로 상태 변경 내용이 자동으로 설정됩니다. 엔터티를 읽고 해당 속성 값의 일부를 변경합니다. 이렇게 하면 해당 엔터티 상태가 자동으로 `Modified`로 변경됩니다. 그런 다음, `SaveChanges`를 호출하면 Entity Framework는 변경한 실제 속성만 업데이트하는 SQL UPDATE 문을 생성합니다.
 
 웹앱에서는 페이지가 렌더링된 후 처음에 엔터티를 읽고 편집될 해당 데이터를 표시하는 `DbContext`가 삭제됩니다. HttpPost `Edit` 작업 메스드가 호출되면 새 웹 요청이 만들어지고 `DbContext`의 새 인스턴스를 갖습니다. 새로운 컨텍스트의 엔터티를 다시 읽는 경우 데스크톱 처리를 시뮬레이트합니다.
 
@@ -252,7 +248,7 @@ HttpPost `Delete` 작업 메서드(`DeleteConfirmed`라는)를 실제 삭제 작
 
 ### <a name="the-create-and-attach-approach-to-httppost-delete"></a>HttpPost Delete에 대한 만들기 및 연결 방법
 
-대규모 응용 프로그램의 성능 향상이 우선 순위인 경우 기본 키 값만을 사용하여 학생 엔터티를 인스턴스화한 다음, 엔터티 상태를 `Deleted`로 설정하여 불필요한 SQL 쿼리를 피할 수 있습니다. Entity Framework에서 엔터티를 삭제하기 위해 필요한 모든 것입니다. (프로젝트에 이 코드를 배치하지 마십시오. 대안을 설명하기 위한 것입니다.)
+대규모 애플리케이션의 성능 향상이 우선 순위인 경우 기본 키 값만을 사용하여 학생 엔터티를 인스턴스화한 다음, 엔터티 상태를 `Deleted`로 설정하여 불필요한 SQL 쿼리를 피할 수 있습니다. Entity Framework에서 엔터티를 삭제하기 위해 필요한 모든 것입니다. (프로젝트에 이 코드를 배치하지 마십시오. 대안을 설명하기 위한 것입니다.)
 
 [!code-csharp[](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_DeleteWithoutReadFirst&highlight=7-8)]
 
@@ -270,19 +266,19 @@ HttpPost `Delete` 작업 메서드(`DeleteConfirmed`라는)를 실제 삭제 작
 
 **삭제**를 클릭합니다. 삭제된 학생 없이 인덱스 페이지가 표시됩니다. (동시성 자습서의 작업에서 오류 처리 코드의 예를 볼 수 있습니다.)
 
-## <a name="closing-database-connections"></a>데이터베이스 연결 닫기
+## <a name="close-database-connections"></a>데이터베이스 연결 닫기
 
 데이터베이스 연결이 유지하는 리소스를 해제하려면 컨텍스트 인스턴스는 작업을 완료했을 때 가능한 빨리 삭제되어야 합니다. ASP.NET Core 기본 제공 [종속성 주입](../../fundamentals/dependency-injection.md)은 해당 작업을 담당합니다.
 
 *Startup.cs*에서 [AddDbContext 확장 메서드](https://github.com/aspnet/EntityFrameworkCore/blob/03bcb5122e3f577a84498545fcf130ba79a3d987/src/Microsoft.EntityFrameworkCore/EntityFrameworkServiceCollectionExtensions.cs)를 호출하여 ASP.NET Core DI 컨테이너에서 `DbContext` 클래스를 프로비전합니다. 해당 메서드는 서비스 수명을 기본적으로 `Scoped`로 설정합니다. `Scoped`는 웹 요청 수명과 일치하는 컨텍스트 개체 수명을 의미하며, `Dispose` 메서드는 웹 요청이 끝날 때 자동으로 호출됩니다.
 
-## <a name="handling-transactions"></a>트랜잭션 처리
+## <a name="handle-transactions"></a>트랜잭션 처리
 
 기본적으로 Entity Framework는 트랜잭션을 암시적으로 구현합니다. 여러 행 또는 테이블을 변경한 다음, `SaveChanges`를 호출하는 시나리오에서 Entity Framework는 모든 변경 내용이 성공했는지 또는 모두 실패했는지를 자동으로 확인합니다. 일부 변경 내용이 먼저 완료된 다음, 오류가 발생하는 경우 해당 변경 내용이 자동으로 롤백됩니다. 더 많은 컨트롤이 필요한 시나리오의 경우, 예를 들어 트랜잭션의 Entity Framework 밖에서 수행한 작업을 포함하려는 경우 [트랜잭션](/ef/core/saving/transactions)을 참조하세요.
 
 ## <a name="no-tracking-queries"></a>비 추적 쿼리
 
-데이터베이스 컨텍스트가 테이블 행을 검색하고 해당 내용을 나타내는 엔터티 개체를 만드는 경우 기본적으로 메모리의 엔터티가 데이터베이스의 해당 내용과 동기화 상태인지 여부의 추적을 유지합니다. 메모리의 데이터는 캐시의 역할을 하고 엔터티를 업데이트할 때 사용됩니다. 컨텍스트 인스턴스는 일반적으로 수명이 짧으며(각 요청에 대해 새 것이 만들어지고 삭제됨) 엔터티를 읽는 컨텍스트는 일반적으로 해당 엔터티가 다시 사용되기 전에 삭제되므로 이 캐싱은 웹 응용 프로그램에 종종 필요하지 않습니다.
+데이터베이스 컨텍스트가 테이블 행을 검색하고 해당 내용을 나타내는 엔터티 개체를 만드는 경우 기본적으로 메모리의 엔터티가 데이터베이스의 해당 내용과 동기화 상태인지 여부의 추적을 유지합니다. 메모리의 데이터는 캐시의 역할을 하고 엔터티를 업데이트할 때 사용됩니다. 컨텍스트 인스턴스는 일반적으로 수명이 짧으며(각 요청에 대해 새 것이 만들어지고 삭제됨) 엔터티를 읽는 컨텍스트는 일반적으로 해당 엔터티가 다시 사용되기 전에 삭제되므로 이 캐싱은 웹 애플리케이션에 종종 필요하지 않습니다.
 
 `AsNoTracking` 메서드를 호출하여 메모리에서 엔터티 개체의 추적을 해제할 수 있습니다. 이러한 작업을 수행할 수 있는 일반적인 시나리오는 다음을 포함합니다.
 
@@ -294,12 +290,21 @@ HttpPost `Delete` 작업 메서드(`DeleteConfirmed`라는)를 실제 삭제 작
 
 자세한 내용은 [추적과 비추적 비교](/ef/core/querying/tracking)를 참조하세요.
 
-## <a name="summary"></a>요약
+## <a name="get-the-code"></a>코드 가져오기
 
-이제 학생 엔터티에 대한 간단한 CRUD 작업을 수행하는 페이지의 집합을 완료했습니다. 다음 자습서에서는 정렬, 필터링 및 페이징을 추가하여 **인덱스** 페이지의 기능을 확장합니다.
+[완성된 애플리케이션을 다운로드하거나 확인합니다.](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-mvc/intro/samples/cu-final)
 
-::: moniker-end
+## <a name="next-steps"></a>다음 단계
 
-> [!div class="step-by-step"]
-> [이전](intro.md)
-> [다음](sort-filter-page.md)
+이 자습서에서는 다음을 수행했습니다.
+
+> [!div class="checklist"]
+> * 세부 정보 페이지 사용자 지정
+> * 만들기 페이지 업데이트
+> * 편집 페이지 업데이트
+> * 삭제 페이지 업데이트
+> * 데이터베이스 연결 닫기
+
+정렬, 필터링 및 페이징을 추가하여 **인덱스** 페이지의 기능을 확장하는 방법을 알아보려면 다음 문서로 진행합니다.
+> [!div class="nextstepaction"]
+> [정렬, 필터링 및 페이징](sort-filter-page.md)

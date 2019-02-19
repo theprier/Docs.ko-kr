@@ -1,27 +1,20 @@
 ---
-title: ASP.NET Core MVC 및 EF Core - 동시성 - 8/10
-author: rick-anderson
+title: '자습서: 동시성 처리 - ASP.NET MVC 및 EF Core 사용'
 description: 이 자습서에는 여러 사용자가 동시에 같은 엔터티를 업데이트하는 경우 충돌을 처리하는 방법을 보여 줍니다.
+author: rick-anderson
 ms.author: tdykstra
 ms.custom: mvc
-ms.date: 10/24/2018
+ms.date: 02/05/2019
+ms.topic: tutorial
 uid: data/ef-mvc/concurrency
-ms.openlocfilehash: 0ae566a76a2ef656843452ed537b8fdfbddaed22
-ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
+ms.openlocfilehash: 7b18927d5d528ec2951087502e26b2b30214f389
+ms.sourcegitcommit: 5e3797a02ff3c48bb8cb9ad4320bfd169ebe8aba
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50090903"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56103022"
 ---
-# <a name="aspnet-core-mvc-with-ef-core---concurrency---8-of-10"></a>ASP.NET Core MVC 및 EF Core - 동시성 - 8/10
-
-[!INCLUDE [RP better than MVC](~/includes/RP-EF/rp-over-mvc-21.md)]
-
-::: moniker range="= aspnetcore-2.0"
-
-작성자: [Tom Dykstra](https://github.com/tdykstra) 및 [Rick Anderson](https://twitter.com/RickAndMSFT)
-
-Contoso University 웹 응용 프로그램 예제는 Entity Framework Core 및 Visual Studio를 사용하여 ASP.NET Core MVC 웹 응용 프로그램을 만드는 방법을 보여 줍니다. 자습서 시리즈에 대한 정보는 [시리즈의 첫 번째 자습서](intro.md)를 참조하세요.
+# <a name="tutorial-handle-concurrency---aspnet-mvc-with-ef-core"></a>자습서: 동시성 처리 - ASP.NET MVC 및 EF Core 사용
 
 이전 자습서에서 데이터를 업데이트하는 방법을 배웠습니다. 이 자습서에는 여러 사용자가 동시에 같은 엔터티를 업데이트하는 경우 충돌을 처리하는 방법을 보여 줍니다.
 
@@ -31,15 +24,32 @@ Contoso University 웹 응용 프로그램 예제는 Entity Framework Core 및 V
 
 ![부서 삭제 페이지](concurrency/_static/delete-error.png)
 
+이 자습서에서는 다음을 수행했습니다.
+
+> [!div class="checklist"]
+> * 동시성 충돌에 대해 알아보기
+> * 추적 속성 추가
+> * 부서 컨트롤러 및 뷰 만들기
+> * 인덱스 뷰 업데이트
+> * Edit 메서드 업데이트
+> * 편집 뷰 업데이트
+> * 동시성 충돌 테스트
+> * 삭제 페이지 업데이트
+> * 세부 정보 및 만들기 보기 업데이트
+
+## <a name="prerequisites"></a>전제 조건
+
+* [ASP.NET Core MVC 웹앱에서 EF Core를 사용하여 관련 데이터 업데이트](update-related-data.md)
+
 ## <a name="concurrency-conflicts"></a>동시성 충돌
 
-한 명의 사용자가 편집하기 위해 엔터티의 데이터를 표시한 다음, 다른 사용자가 첫 번째 사용자의 변경 내용이 데이터베이스에 기록되기 전에 동일한 엔터티의 데이터를 업데이트하는 경우 동시성 충돌이 발생합니다. 이러한 충돌의 감지를 활성화하지 않는 경우 누구든지 데이터베이스를 마지막으로 업데이트하면 다른 사용자의 변경 내용을 덮어씁니다. 많은 응용 프로그램에서 이 위험은 허용 가능합니다. 적은 수의 사용자 또는 적은 업데이트가 있거나 일부 변경 내용이 덮어쓰여지는지 여부가 실제로 중요하지 않은 경우 동시성에 대한 프로그래밍의 비용은 이점보다 클 수 있습니다. 이 경우 동시성 충돌을 처리하도록 응용 프로그램을 구성할 필요가 없습니다.
+한 명의 사용자가 편집하기 위해 엔터티의 데이터를 표시한 다음, 다른 사용자가 첫 번째 사용자의 변경 내용이 데이터베이스에 기록되기 전에 동일한 엔터티의 데이터를 업데이트하는 경우 동시성 충돌이 발생합니다. 이러한 충돌의 감지를 활성화하지 않는 경우 누구든지 데이터베이스를 마지막으로 업데이트하면 다른 사용자의 변경 내용을 덮어씁니다. 많은 애플리케이션에서 이 위험은 허용 가능합니다. 적은 수의 사용자 또는 적은 업데이트가 있거나 일부 변경 내용이 덮어쓰여지는지 여부가 실제로 중요하지 않은 경우 동시성에 대한 프로그래밍의 비용은 이점보다 클 수 있습니다. 이 경우 동시성 충돌을 처리하도록 애플리케이션을 구성할 필요가 없습니다.
 
 ### <a name="pessimistic-concurrency-locking"></a>비관적 동시성(잠금)
 
-응용 프로그램에서 동시성 시나리오에서 실수로 인한 데이터 손실을 방지할 필요가 있는 경우 해당 작업을 수행하는 한 가지 방법은 데이터베이스 잠금을 사용하는 것입니다. 이를 비관적 동시성이라고 합니다. 예를 들어 데이터베이스에서 행을 읽기 전에 읽기 전용 또는 업데이트 액세스에 대한 잠금을 요청합니다. 업데이트 액세스에 대한 행을 잠그는 경우 변경 중인 데이터의 복사본을 가져오기 때문에 다른 사용자는 읽기 전용 또는 업데이트 액세스에 대한 행을 잠그도록 허용되지 않습니다. 읽기 전용 액세스에 대한 행을 잠그는 경우 다른 사용자도 읽기 전용에 대해 잠글 수 있지만 업데이트에 대해서는 잠글 수 없습니다.
+애플리케이션에서 동시성 시나리오에서 실수로 인한 데이터 손실을 방지할 필요가 있는 경우 해당 작업을 수행하는 한 가지 방법은 데이터베이스 잠금을 사용하는 것입니다. 이를 비관적 동시성이라고 합니다. 예를 들어 데이터베이스에서 행을 읽기 전에 읽기 전용 또는 업데이트 액세스에 대한 잠금을 요청합니다. 업데이트 액세스에 대한 행을 잠그는 경우 변경 중인 데이터의 복사본을 가져오기 때문에 다른 사용자는 읽기 전용 또는 업데이트 액세스에 대한 행을 잠그도록 허용되지 않습니다. 읽기 전용 액세스에 대한 행을 잠그는 경우 다른 사용자도 읽기 전용에 대해 잠글 수 있지만 업데이트에 대해서는 잠글 수 없습니다.
 
-잠금 관리에는 단점이 있습니다. 프로그램을 설정하는 데 복잡할 수 있습니다. 상당한 데이터베이스 관리 리소스가 필요하며 응용 프로그램의 사용자 수가 증가할 수록 성능 문제가 발생할 수 있습니다. 이러한 이유로 모든 데이터베이스 관리 시스템은 비관적 동시성을 지원하지 않습니다. Entity Framework Core는 이에 대한 기본 제공 지원을 제공하지 않으며 이 자습서에서는 구현하는 방법을 보여 주지 않습니다.
+잠금 관리에는 단점이 있습니다. 프로그램을 설정하는 데 복잡할 수 있습니다. 상당한 데이터베이스 관리 리소스가 필요하며 애플리케이션의 사용자 수가 증가할 수록 성능 문제가 발생할 수 있습니다. 이러한 이유로 모든 데이터베이스 관리 시스템은 비관적 동시성을 지원하지 않습니다. Entity Framework Core는 이에 대한 기본 제공 지원을 제공하지 않으며 이 자습서에서는 구현하는 방법을 보여 주지 않습니다.
 
 ### <a name="optimistic-concurrency"></a>낙관적 동시성
 
@@ -61,7 +71,7 @@ Jane이 먼저 **저장**을 클릭하여 브라우저가 인덱스 페이지로
 
 * 사용자가 수정한 속성의 추적을 유지하고 데이터베이스에서 해당하는 열만 업데이트할 수 있습니다.
 
-     예제 시나리오에서 서로 다른 속성이 두 사용자에 의해 업데이트되었기 때문에 데이터가 손실되지 않습니다. 다음에 누군가가 영어 부서를 찾아볼 때는 Jane과 John의 변경 내용을 모두 볼 수 있습니다. - 2013년 9월 1일의 시작 날짜 및 0달러의 예산 이 업데이트의 메서드는 데이터 손실이 발생할 수 있는 충돌 수를 줄일 수 있지만 경쟁하는 변경 내용이 동일한 엔터티의 속성에 만들어지는 경우 데이터 손실을 방지할 수 없습니다. Entity Framework가 이 방식으로 작동하는지 여부는 업데이트 코드를 구현하는 방법에 따라 달라집니다. 엔터티에 대한 모든 기존 속성 값 뿐만 아니라 새 값의 추적을 유지하기 위해 많은 양의 상태를 유지 관리해야 하므로 웹 응용 프로그램에서는 종종 실용적이지 않습니다. 서버 리소스가 필요하거나 웹 페이지 자체(예: 숨겨진 필드에) 또는 쿠키에 포함되어야 하기 때문에 많은 양의 상태를 유지 관리하는 것은 응용 프로그램 성능에 영향을 줄 수 있습니다.
+     예제 시나리오에서 서로 다른 속성이 두 사용자에 의해 업데이트되었기 때문에 데이터가 손실되지 않습니다. 다음에 누군가가 영어 부서를 찾아볼 때는 Jane과 John의 변경 내용을 모두 볼 수 있습니다. - 2013년 9월 1일의 시작 날짜 및 0달러의 예산 이 업데이트의 메서드는 데이터 손실이 발생할 수 있는 충돌 수를 줄일 수 있지만 경쟁하는 변경 내용이 동일한 엔터티의 속성에 만들어지는 경우 데이터 손실을 방지할 수 없습니다. Entity Framework가 이 방식으로 작동하는지 여부는 업데이트 코드를 구현하는 방법에 따라 달라집니다. 엔터티에 대한 모든 기존 속성 값 뿐만 아니라 새 값의 추적을 유지하기 위해 많은 양의 상태를 유지 관리해야 하므로 웹 애플리케이션에서는 종종 실용적이지 않습니다. 서버 리소스가 필요하거나 웹 페이지 자체(예: 숨겨진 필드에) 또는 쿠키에 포함되어야 하기 때문에 많은 양의 상태를 유지 관리하는 것은 애플리케이션 성능에 영향을 줄 수 있습니다.
 
 * Jane의 변경 사항을 John의 변경 사항으로 덮어쓸 수 있습니다.
 
@@ -81,13 +91,13 @@ Entity Framework에서 throw하는 `DbConcurrencyException` 예외를 처리하�
 
 * Update 및 Delete 명령의 Where 절에서 테이블의 모든 열의 원래 값을 포함하도록 Entity Framework를 구성합니다.
 
-     첫 번째 옵션에서 행이 먼저 읽혔기 때문에 행의 일부가 변경된 경우 Where 절은 업데이트할 열을 반환하지 않습니다. Entity Framework는 동시성 충돌로 해석합니다. 많은 열이 있는 데이터베이스 테이블의 경우 이 방법으로 많은 Where 절이 발생할 수 있으며 많은 양의 상태를 유지 관리해야 할 수 있습니다. 앞에서 설명한 것처럼 많은 양의 상태를 유지 관리하는 것은 응용 프로그램 성능에 영향을 미칠 수 있습니다. 따라서 이 방법은 일반적으로 권장되지 않으며 이 자습서에서 사용되는 방법이 아닙니다.
+     첫 번째 옵션에서 행이 먼저 읽혔기 때문에 행의 일부가 변경된 경우 Where 절은 업데이트할 열을 반환하지 않습니다. Entity Framework는 동시성 충돌로 해석합니다. 많은 열이 있는 데이터베이스 테이블의 경우 이 방법으로 많은 Where 절이 발생할 수 있으며 많은 양의 상태를 유지 관리해야 할 수 있습니다. 앞에서 설명한 것처럼 많은 양의 상태를 유지 관리하는 것은 애플리케이션 성능에 영향을 미칠 수 있습니다. 따라서 이 방법은 일반적으로 권장되지 않으며 이 자습서에서 사용되는 방법이 아닙니다.
 
      동시성에 대해 이 방법을 구현하려는 경우 `ConcurrencyCheck` 특성을 추가하여 동시성을 추적하려는 엔터티의 모든 비 기본 키 속성을 표시해야 합니다. 해당 변경 내용을 통해 Entity Framework는 Update 및 Delete 문의 SQL Where 절에 모든 열을 포함할 수 있습니다.
 
 이 자습서의 나머지 부분에서는 부서 엔터티에 `rowversion` 추적 속성을 추가하고, 컨트롤러와 보기를 만들고, 모든 항목이 올바르게 작동하는지 확인하도록 테스트합니다.
 
-## <a name="add-a-tracking-property-to-the-department-entity"></a>추적 속성을 부서 엔터티에 추가
+## <a name="add-a-tracking-property"></a>추적 속성 추가
 
 *Models/Department.cs*에서 RowVersion으로 명명된 추적 속성을 추가합니다.
 
@@ -114,7 +124,7 @@ dotnet ef migrations add RowVersion
 dotnet ef database update
 ```
 
-## <a name="create-a-departments-controller-and-views"></a>부서 컨트롤러 및 보기 만들기
+## <a name="create-departments-controller-and-views"></a>부서 컨트롤러 및 뷰 만들기
 
 학생, 강좌 및 강사에 대해 이전에 수행한 것처럼 부서 컨트롤러와 보기를 스캐폴드합니다.
 
@@ -124,7 +134,7 @@ dotnet ef database update
 
 [!code-csharp[](intro/samples/cu/Controllers/DepartmentsController.cs?name=snippet_Dropdown)]
 
-## <a name="update-the-departments-index-view"></a>부서 인덱스 보기 업데이트
+## <a name="update-index-view"></a>인덱스 뷰 업데이트
 
 스캐폴딩 엔진은 인덱스 보기에 RowVersion 열을 만들었지만 해당 필드는 표시되지 않아야 합니다.
 
@@ -134,7 +144,7 @@ dotnet ef database update
 
 이는 제목을 "부서"로 변경하고, RowVersion 열을 삭제하고, 관리자의 이름 대신 전체 이름을 표시합니다.
 
-## <a name="update-the-edit-methods-in-the-departments-controller"></a>부서 컨트롤러의 Edit 메서드 업데이트
+## <a name="update-edit-methods"></a>Edit 메서드 업데이트
 
 HttpGet `Edit` 메서드 및 `Details` 메서드 모두에 `AsNoTracking`을 추가합니다. HttpGet `Edit` 메서드에서 관리자에 대해 즉시 로드를 추가합니다.
 
@@ -172,7 +182,7 @@ _context.Entry(departmentToUpdate).Property("RowVersion").OriginalValue = rowVer
 
 `ModelState`에 이전 `RowVersion` 값이 있으므로 `ModelState.Remove` 문이 필요합니다. 보기에서 필드에 대한 `ModelState` 값은 모델 속성 값에 우선합니다(둘 다 있는 경우).
 
-## <a name="update-the-department-edit-view"></a>부서 편집 보기 업데이트
+## <a name="update-edit-view"></a>편집 뷰 업데이트
 
 *Views/Departments/Edit.cshtml*에서 다음과 같이 변경합니다.
 
@@ -182,7 +192,7 @@ _context.Entry(departmentToUpdate).Property("RowVersion").OriginalValue = rowVer
 
 [!code-html[](intro/samples/cu/Views/Departments/Edit.cshtml?highlight=16,34-36)]
 
-## <a name="test-concurrency-conflicts-in-the-edit-page"></a>편집 페이지에서 동시성 충돌 테스트
+## <a name="test-concurrency-conflicts"></a>동시성 충돌 테스트
 
 앱을 실행하고 부서 인덱스 페이지로 이동합니다. 영어 부서에 대한 **편집** 하이퍼링크를 마우스 오른쪽 단추로 클릭하고 **새 탭에서 열기**를 선택한 다음, 영어 부서에 대한 **편집** 하이퍼링크를 클릭합니다. 이제 두 개의 브라우저 탭에 동일한 정보가 표시됩니다.
 
@@ -232,7 +242,7 @@ public async Task<IActionResult> Delete(Department department)
 
 또한 `DeleteConfirmed`에서 `Delete`로 작업 메서드 이름을 변경했습니다. 스캐폴드된 코드는 HttpPost 메서드에 고유한 서명을 제공하기 위해 이름 `DeleteConfirmed`를 사용했습니다. (CLR은 다른 메서드 매개 변수를 갖기 위해 오버로드된 메서드가 필요합니다.) 이제 서명이 고유하므로 MVC 규칙을 유지하고 HttpPost 및 HttpGet delete 메서드에 대해 동일한 이름을 사용할 수 있습니다.
 
-부서가 이미 삭제된 경우 `AnyAsync` 메서드에서 false를 반환하고 응용 프로그램은 인덱스 메서드로 다시 이동합니다.
+부서가 이미 삭제된 경우 `AnyAsync` 메서드에서 false를 반환하고 애플리케이션은 인덱스 메서드로 다시 이동합니다.
 
 동시성 오류가 catch되는 경우 코드는 삭제 확인 페이지를 다시 표시하고 동시성 오류 메시지를 표시해야 함을 나타내는 플래그를 제공합니다.
 
@@ -276,12 +286,29 @@ public async Task<IActionResult> Delete(Department department)
 
 [!code-html[](intro/samples/cu/Views/Departments/Create.cshtml?highlight=32-34)]
 
-## <a name="summary"></a>요약
+## <a name="get-the-code"></a>코드 가져오기
 
-동시성 충돌 처리에 대한 소개를 완료합니다. EF Core에서 동시성을 처리하는 방법에 대한 자세한 내용은 [동시성 충돌](/ef/core/saving/concurrency)을 참조하세요. 다음 자습서에서는 강사 및 학생 엔터티에 대한 계층당 테이블 상속을 구현하는 방법을 보여 줍니다.
+[완성된 애플리케이션을 다운로드하거나 확인합니다.](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-mvc/intro/samples/cu-final)
 
-::: moniker-end
+## <a name="additional-resources"></a>추가 자료
 
-> [!div class="step-by-step"]
-> [이전](update-related-data.md)
-> [다음](inheritance.md)
+ EF Core에서 동시성을 처리하는 방법에 대한 자세한 내용은 [동시성 충돌](/ef/core/saving/concurrency)을 참조하세요.
+
+## <a name="next-steps"></a>다음 단계
+
+이 자습서에서는 다음을 수행했습니다.
+
+> [!div class="checklist"]
+> * 동시성 충돌에 대해 알아보기
+> * 추적 속성 추가
+> * 부서 컨트롤러 및 뷰 만들기
+> * 인덱스 뷰 업데이트
+> * Edit 메서드 업데이트
+> * 편집 뷰 업데이트
+> * 동시성 충돌 테스트
+> * 삭제 페이지 업데이트
+> * 세부 정보 및 만들기 뷰 업데이트
+
+강사 및 학생 엔터티에 대한 계층당 테이블 상속을 구현하는 방법을 알아보려면 다음 문서로 진행합니다.
+> [!div class="nextstepaction"]
+> [계층당 하나의 테이블 상속 구현](inheritance.md)

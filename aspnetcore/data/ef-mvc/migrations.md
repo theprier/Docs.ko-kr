@@ -1,37 +1,46 @@
 ---
-title: ASP.NET Core MVC 및 EF Core - 마이그레이션 - 4/10
+title: '자습서: 마이그레이션 기능 사용 - ASP.NET MVC 및 EF Core 사용'
+description: 이 자습서에서는 ASP.NET Core MVC 애플리케이션에서 데이터 모델 변경 관리를 위해 EF Core 마이그레이션 기능을 사용하는 것을 시작합니다.
 author: rick-anderson
-description: 이 자습서에서는 ASP.NET Core MVC 응용 프로그램에서 데이터 모델 변경 관리를 위해 EF Core 마이그레이션 기능을 사용하는 것을 시작합니다.
 ms.author: tdykstra
 ms.custom: mvc
-ms.date: 10/24/2018
+ms.date: 02/04/2019
+ms.topic: tutorial
 uid: data/ef-mvc/migrations
-ms.openlocfilehash: 21ef3a675579d8a6671343d84cbe4f4b62979679
-ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
+ms.openlocfilehash: ac924e7d6bee2f02ab11281a5c27f2c94a7183b3
+ms.sourcegitcommit: 5e3797a02ff3c48bb8cb9ad4320bfd169ebe8aba
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50090812"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56102996"
 ---
-# <a name="aspnet-core-mvc-with-ef-core---migrations---4-of-10"></a>ASP.NET Core MVC 및 EF Core - 마이그레이션 - 4/10
-
-[!INCLUDE [RP better than MVC](~/includes/RP-EF/rp-over-mvc-21.md)]
-
-::: moniker range="= aspnetcore-2.0"
-
-작성자: [Tom Dykstra](https://github.com/tdykstra) 및 [Rick Anderson](https://twitter.com/RickAndMSFT)
-
-Contoso University 웹 응용 프로그램 예제는 Entity Framework Core 및 Visual Studio를 사용하여 ASP.NET Core MVC 웹 응용 프로그램을 만드는 방법을 보여 줍니다. 자습서 시리즈에 대한 정보는 [시리즈의 첫 번째 자습서](intro.md)를 참조하세요.
+# <a name="tutorial-using-the-migrations-feature---aspnet-mvc-with-ef-core"></a>자습서: 마이그레이션 기능 사용 - ASP.NET MVC 및 EF Core 사용
 
 이 자습서에서는 데이터 모델 변경을 관리하기 위해 EF Core 마이그레이션 기능을 사용하기 시작합니다. 이후의 자습서에서는 데이터 모델을 변경하면서 더 많은 마이그레이션을 추가하게 됩니다.
 
-## <a name="introduction-to-migrations"></a>마이그레이션 소개
+이 자습서에서는 다음을 수행했습니다.
 
-새 응용 프로그램을 개발하는 경우 데이터 모델은 자주 변경되며 모델이 변경될 때마다 데이터베이스와 동기화를 가져옵니다. 데이터베이스가 존재하지 않는 경우 Entity Framework를 구성하여 만들면서 이러한 자습서를 시작하였습니다. 그런 다음, 엔터티 클래스를 추가, 제거 또는 변경하거나 DbContext 클래스를 변경하면서 데이터 모델을 변경할 때마다 데이터베이스를 삭제할 수 있습니다. 또한 EF는 모델에 일치하는 새로운 항목을 만들고 테스트 데이터로 시드합니다.
+> [!div class="checklist"]
+> * 마이그레이션에 대해 알아보기
+> * NuGet 마이그레이션 패키지에 대해 알아보기
+> * 연결 문자열 변경
+> * 초기 마이그레이션 만들기
+> * Up 및 Down 메서드 검사
+> * 데이터 모델 스냅숏에 대해 알아보기
+> * 마이그레이션 적용
 
-데이터베이스를 데이터 모델과 동기화된 상태로 유지하는 이 메서드는 응용 프로그램을 프로덕션 환경에 배포할 때까지 잘 작동합니다. 응용 프로그램이 프로덕션 환경에서 실행 중인 경우, 일반적으로 새 열을 추가하는 것처럼 사용자가 변경할 때마다 유지하려는 데이터 및 손실하지 않으려는 데이터를 저장합니다. EF Core 마이그레이션 기능은 EF가 새 데이터베이스를 만드는 대신 데이터베이스 스키마를 업데이트하도록 설정하여 이 문제를 해결합니다.
 
-## <a name="entity-framework-core-nuget-packages-for-migrations"></a>마이그레이션을 위한 Entity Framework Core NuGet 패키지
+## <a name="prerequisites"></a>전제 조건
+
+* [ASP.NET Core MVC 앱에서 EF Core를 사용하여 정렬, 필터링 및 페이징 추가](sort-filter-page.md)
+
+## <a name="about-migrations"></a>마이그레이션 정보
+
+새 애플리케이션을 개발하는 경우 데이터 모델은 자주 변경되며 모델이 변경될 때마다 데이터베이스와 동기화를 가져옵니다. 데이터베이스가 존재하지 않는 경우 Entity Framework를 구성하여 만들면서 이러한 자습서를 시작하였습니다. 그런 다음, 엔터티 클래스를 추가, 제거 또는 변경하거나 DbContext 클래스를 변경하면서 데이터 모델을 변경할 때마다 데이터베이스를 삭제할 수 있습니다. 또한 EF는 모델에 일치하는 새로운 항목을 만들고 테스트 데이터로 시드합니다.
+
+데이터베이스를 데이터 모델과 동기화된 상태로 유지하는 이 메서드는 애플리케이션을 프로덕션 환경에 배포할 때까지 잘 작동합니다. 애플리케이션이 프로덕션 환경에서 실행 중인 경우, 일반적으로 새 열을 추가하는 것처럼 사용자가 변경할 때마다 유지하려는 데이터 및 손실하지 않으려는 데이터를 저장합니다. EF Core 마이그레이션 기능은 EF가 새 데이터베이스를 만드는 대신 데이터베이스 스키마를 업데이트하도록 설정하여 이 문제를 해결합니다.
+
+## <a name="about-nuget-migration-packages"></a>NuGet 마이그레이션 패키지 정보
 
 마이그레이션을 수행하기 위해 **PMC(패키지 관리자 콘솔)** 또는 CLI(명령줄 인터페이스)를 사용할 수 있습니다.  이러한 자습서에는 CLI 명령을 사용하는 방법을 보여 줍니다. PMC에 대한 정보는 [이 자습서의 마지막](#pmc)에 나와 있습니다.
 
@@ -60,7 +69,7 @@ CLI(명령줄 인터페이스)용 EF 도구는 [Microsoft.EntityFrameworkCore.To
 
 변경 내용을 저장하고 프로젝트를 빌드합니다. 그런 다음, 명령 창을 열고 프로젝트 폴더로 이동합니다. 작업을 수행하는 빠른 방법은 다음과 같습니다.
 
-* **솔루션 탐색기**에서 프로젝트를 마우스 오른쪽 단추로 클릭하고 바로 가기 메뉴에서 **파일 탐색기에서 열기**를 선택합니다.
+* **솔루션 탐색기**에서 프로젝트를 마우스 오른쪽 단추로 클릭하고 상황에 맞는 메뉴에서 **파일 탐색기에서 폴더 열기**를 선택합니다.
 
   ![파일 탐색기에서 열기 메뉴 항목](migrations/_static/open-in-file-explorer.png)
 
@@ -89,7 +98,7 @@ Done. To undo this action, use 'ef migrations remove'
 
 “*cannot access the file ... ContosoUniversity.dll because it is being used by another process.*(다른 프로세스에서 사용 중이므로 ContosoUniversity.dll 파일에 액세스할 수 없음.)” 오류 메시지가 표시되면 Windows 시스템 트레이에서 IIS Express 아이콘을 찾아 마우스 오른쪽 단추로 클릭한 다음, **ContosoUniversity > 사이트 중단**을 클릭합니다.
 
-## <a name="examine-the-up-and-down-methods"></a>Up 및 Down 메서드 검사
+## <a name="examine-up-and-down-methods"></a>Up 및 Down 메서드 검사
 
 `migrations add` 명령을 실행하면 EF는 데이터베이스를 처음부터 만드는 코드를 생성했습니다. 이 코드는 *\<timestamp>_InitialCreate.cs*라는 파일의 *Migrations* 폴더에 있습니다. 다음 예제와 같이 `InitialCreate` 클래스의 `Up` 메서드는 데이터 모델 엔터티 집합에 해당하는 데이터베이스 테이블을 만들고 `Down` 메서드는 이를 삭제합니다.
 
@@ -109,7 +118,7 @@ Done. To undo this action, use 'ef migrations remove'
 
 스냅숏 파일을 사용하는 방법에 대한 자세한 내용은 [팀 환경의 EF Core 마이그레이션](/ef/core/managing-schemas/migrations/teams)을 참조하세요.
 
-## <a name="apply-the-migration-to-the-database"></a>새 마이그레이션을 데이터베이스에 적용
+## <a name="apply-the-migration"></a>마이그레이션 적용
 
 명령 창에서 다음 명령을 입력하여 데이터베이스 및 테이블을 만듭니다.
 
@@ -146,12 +155,13 @@ Done.
 
 **SQL Server 개체 탐색기**를 사용하여 첫 번째 자습서에서와 같이 데이터베이스를 검사합니다.  데이터베이스에 어떤 마이그레이션이 적용되는지를 추적하는 \_\_EFMigrationsHistory 테이블이 추가된 것을 확인할 수 있습니다. 해당 테이블의 데이터를 보면 첫 번째 마이그레이션에 대해 한 행이 표시됩니다. (앞의 CLI 출력 예제의 마지막 로그는 이 행을 만드는 INSERT 문을 보여 줍니다.)
 
-응용 프로그램을 실행하여 모든 항목이 여전히 이전과 동일하게 작동하는지 확인합니다.
+애플리케이션을 실행하여 모든 항목이 여전히 이전과 동일하게 작동하는지 확인합니다.
 
 ![학생 인덱스 페이지](migrations/_static/students-index.png)
 
 <a id="pmc"></a>
-## <a name="command-line-interface-cli-vs-package-manager-console-pmc"></a>CLI(명령줄 인터페이스) 대 PMC(패키지 관리자 콘솔)
+
+## <a name="compare-cli-and-pmc"></a>CLI 및 PMC 비교
 
 마이그레이션 관리를 위한 EF 도구는 Visual Studio **PMC(패키지 관리자 콘솔)** 에서 PowerShell cmdlet 또는 .NET Core CLI 명령에서 사용할 수 있습니다. 이 자습서에는 CLI를 사용하는 방법이 나와 있지만 원하는 경우에 PMC를 사용할 수 있습니다.
 
@@ -163,12 +173,23 @@ CLI 명령에 대한 자세한 내용은 [.NET Core CLI](/ef/core/miscellaneous/
 
 PMC 명령에 대한 자세한 내용은 [패키지 관리자 콘솔(Visual Studio)](/ef/core/miscellaneous/cli/powershell)을 참조하세요.
 
-## <a name="summary"></a>요약
+## <a name="get-the-code"></a>코드 가져오기
 
-이 자습서에서는 첫 번째 마이그레이션을 만들고 적용하는 방법을 살펴보았습니다. 다음 자습서에서는 데이터 모델을 확장하여 더 많은 고급 항목을 살펴봅니다. 방식에 따라 추가 마이그레이션을 만들고 적용하게 됩니다.
+[완성된 애플리케이션을 다운로드하거나 확인합니다.](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-mvc/intro/samples/cu-final)
 
-::: moniker-end
+## <a name="next-step"></a>다음 단계
 
-> [!div class="step-by-step"]
-> [이전](sort-filter-page.md)
-> [다음](complex-data-model.md)
+이 자습서에서는 다음을 수행했습니다.
+
+> [!div class="checklist"]
+> * 마이그레이션에 대해 알아보기
+> * NuGet 마이그레이션 패키지에 대해 알아보기
+> * 연결 문자열 변경
+> * 초기 마이그레이션 만들기
+> * Up 및 Down 메서드 검사
+> * 데이터 모델 스냅숏에 대해 알아보기
+> * 마이그레이션 적용
+
+데이터 모델 확장에 관한 더 많은 고급 항목을 살펴보려면 다음 문서로 진행합니다. 방식에 따라 추가 마이그레이션을 만들고 적용하게 됩니다.
+> [!div class="nextstepaction"]
+> [추가 마이그레이션 만들기 및 적용](complex-data-model.md)

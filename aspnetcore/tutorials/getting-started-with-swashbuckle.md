@@ -4,14 +4,14 @@ author: zuckerthoben
 description: ASP.NET Core Web API 프로젝트에 Swashbuckle을 추가하여 Swagger UI를 통합하는 방법을 알아봅니다.
 ms.author: scaddie
 ms.custom: mvc
-ms.date: 12/18/2018
+ms.date: 02/06/2019
 uid: tutorials/get-started-with-swashbuckle
-ms.openlocfilehash: a8c3d999cfddb4d3d888455d7cc0b899a71e427e
-ms.sourcegitcommit: ea215df889e89db44037a6ac2f01baede0450da9
+ms.openlocfilehash: 9239a46889691135dce5c99f8fc9b8c7b38ab457
+ms.sourcegitcommit: 3c2ba9a0d833d2a096d9d800ba67a1a7f9491af0
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53595349"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55854421"
 ---
 # <a name="get-started-with-swashbuckle-and-aspnet-core"></a>Swashbuckle 및 ASP.NET Core 시작
 
@@ -204,7 +204,7 @@ XML 주석을 사용하면 문서화되지 않은 public 형식과 멤버에 대
 warning CS1591: Missing XML comment for publicly visible type or member 'TodoController.GetAll()'
 ```
 
-프로젝트 전반에서 경고를 표시하지 않으려면 프로젝트 파일에서 무시할 경고 코드의 세미콜론으로 구분된 목록을 정의합니다. `$(NoWarn);`에 경고 코드를 추가하는 작업은 C# 기본 값을 적용합니다.
+프로젝트 전반에서 경고를 표시하지 않으려면 프로젝트 파일에서 무시할 경고 코드의 세미콜론으로 구분된 목록을 정의합니다. `$(NoWarn);`에 경고 코드를 추가하면 [C# 기본값](https://github.com/dotnet/sdk/blob/2eb6c546931b5bcb92cd3128b93932a980553ea1/src/Tasks/Microsoft.NET.Build.Tasks/targets/Microsoft.NET.Sdk.CSharp.props#L16)도 적용됩니다.
 
 ::: moniker range=">= aspnetcore-2.0"
 

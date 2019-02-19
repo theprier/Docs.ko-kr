@@ -1,33 +1,40 @@
 ---
-title: ASP.NET Core MVC 및 EF Core - 상속 - 9/10
+title: '자습서: 상속 구현 - ASP.NET MVC 및 EF Core 사용'
+description: 이 자습서에서는 ASP.NET Core 애플리케이션에서 Entity Framework Core를 사용하여 데이터 모델에서 상속을 구현하는 방법을 보여 줍니다.
 author: rick-anderson
-description: 이 자습서에서는 ASP.NET Core 응용 프로그램에서 Entity Framework Core를 사용하여 데이터 모델에서 상속을 구현하는 방법을 보여 줍니다.
 ms.author: tdykstra
 ms.custom: mvc
-ms.date: 10/24/2018
+ms.date: 02/05/2019
+ms.topic: tutorial
 uid: data/ef-mvc/inheritance
-ms.openlocfilehash: 60417040dd296311e1aecff8f224aadf8da82779
-ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
+ms.openlocfilehash: 0a5eb1aba43bc2adf746202772c7f98eff49b4ff
+ms.sourcegitcommit: 5e3797a02ff3c48bb8cb9ad4320bfd169ebe8aba
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50090760"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56103009"
 ---
-# <a name="aspnet-core-mvc-with-ef-core---inheritance---9-of-10"></a>ASP.NET Core MVC 및 EF Core - 상속 - 9/10
-
-[!INCLUDE [RP better than MVC](~/includes/RP-EF/rp-over-mvc-21.md)]
-
-::: moniker range="= aspnetcore-2.0"
-
-작성자: [Tom Dykstra](https://github.com/tdykstra) 및 [Rick Anderson](https://twitter.com/RickAndMSFT)
-
-Contoso University 웹 응용 프로그램 예제는 Entity Framework Core 및 Visual Studio를 사용하여 ASP.NET Core MVC 웹 응용 프로그램을 만드는 방법을 보여 줍니다. 자습서 시리즈에 대한 정보는 [시리즈의 첫 번째 자습서](intro.md)를 참조하세요.
+# <a name="tutorial-implement-inheritance---aspnet-mvc-with-ef-core"></a>자습서: 상속 구현 - ASP.NET MVC 및 EF Core 사용
 
 이전 자습서에서는 동시성 예외를 처리했습니다. 이 자습서에서는 데이터 모델에서 상속을 구현하는 방법을 보여 줍니다.
 
 개체 지향 프로그래밍에서는 쉽게 코드를 재사용하기 위해 상속을 사용할 수 있습니다. 이 자습서에서는 강사와 학생 모두에게 공통적인 속성(예: `LastName`)이 포함된 `Person` 기본 클래스에서 클래스가 파생되도록 `Instructor` 및 `Student` 클래스를 변경합니다. 웹 페이지를 추가하거나 변경하지는 않지만 일부 코드를 변경하고 이러한 변경 내용이 데이터베이스에 자동으로 반영됩니다.
 
-## <a name="options-for-mapping-inheritance-to-database-tables"></a>상속을 데이터베이스 테이블에 매핑하기 위한 옵션
+이 자습서에서는 다음을 수행했습니다.
+
+> [!div class="checklist"]
+> * 데이터베이스에 상속 매핑
+> * Person 클래스 만들기
+> * 강사 및 학생 업데이트
+> * 모델에 개인 추가
+> * 마이그레이션 만들기 및 업데이트
+> * 구현 테스트
+
+## <a name="prerequisites"></a>전제 조건
+
+* [ASP.NET Core MVC 웹앱에서 EF Core를 사용하여 동시성 처리](concurrency.md)
+
+## <a name="map-inheritance-to-database"></a>데이터베이스에 상속 매핑
 
 School 데이터 모델의 `Instructor` 및 `Student` 클래스는 동일한 여러 속성을 가지고 있습니다.
 
@@ -64,7 +71,7 @@ Models 폴더에서 Person.cs 만들고 템플릿 코드를 다음 코드로 바
 
 [!code-csharp[](intro/samples/cu/Models/Person.cs)]
 
-## <a name="make-student-and-instructor-classes-inherit-from-person"></a>Person 클래스로부터 상속되는 Student 및 Instructor 클래스 만들기
+## <a name="update-instructor-and-student"></a>강사 및 학생 업데이트
 
 *Instructor.cs*에서 Person 클래스에서 Instructor 클래스를 파생시키고 키 및 이름 필드를 제거합니다. 해당 코드는 다음 예제와 같이 나타납니다.
 
@@ -74,7 +81,7 @@ Models 폴더에서 Person.cs 만들고 템플릿 코드를 다음 코드로 바
 
 [!code-csharp[](intro/samples/cu/Models/Student.cs?name=snippet_AfterInheritance&highlight=8)]
 
-## <a name="add-the-person-entity-type-to-the-data-model"></a>Person 엔터티 형식을 데이터 모델에 추가
+## <a name="add-person-to-the-model"></a>모델에 개인 추가
 
 Person 엔터티 형식을 *SchoolContext.cs*에 추가합니다. 새 줄이 강조 표시됩니다.
 
@@ -82,7 +89,7 @@ Person 엔터티 형식을 *SchoolContext.cs*에 추가합니다. 새 줄이 강
 
 계층당 하나의 테이블 상속을 구성하기 위해 Entity Framework에 필요한 모든 작업입니다. 보다시피, 데이터베이스가 업데이트되면 Student 테이블과 Instructor 테이블 대신 Person 테이블이 생깁니다.
 
-## <a name="create-and-customize-migration-code"></a>마이그레이션 코드 만들기 및 사용자 지정
+## <a name="create-and-update-migrations"></a>마이그레이션 만들기 및 업데이트
 
 변경 내용을 저장하고 프로젝트를 빌드합니다. 그런 다음, 프로젝트 폴더에서 명령 창을 열고 다음 명령을 입력합니다.
 
@@ -129,7 +136,7 @@ dotnet ef database update
 > [!NOTE]
 > 기존 데이터가 있는 데이터베이스에서 스키마를 변경할 때 다른 오류가 발생할 수 있습니다. 해결할 수 없는 마이그레이션 오류가 발생하면 연결 문자열에서 데이터베이스 이름을 변경하거나 데이터베이스를 삭제할 수 있습니다. 새 데이터베이스에는 마이그레이션할 데이터가 없으므로 update-database 명령은 오류없이 완료될 가능성이 큽니다. 데이터베이스를 삭제하려면 SSOX를 사용하거나 `database drop` CLI 명령을 실행합니다.
 
-## <a name="test-with-inheritance-implemented"></a>구현된 상속 테스트
+## <a name="test-the-implementation"></a>구현 테스트
 
 앱을 실행하고 다양한 페이지를 시도해 봅니다. 모든 항목이 이전과 같이 작동합니다.
 
@@ -141,12 +148,26 @@ Person 테이블을 마우스 오른쪽 단추로 클릭한 후 **테이블 데�
 
 ![SSOX에서 Person 테이블 - 테이블 데이터](inheritance/_static/ssox-person-data.png)
 
-## <a name="summary"></a>요약
+## <a name="get-the-code"></a>코드 가져오기
 
-`Person`, `Student` 및 `Instructor` 클래스에 대해 계층당 하나의 테이블 상속을 구현했습니다. Entity Framework Core의 상속에 대한 자세한 내용은 [상속](/ef/core/modeling/inheritance)을 참조하세요. 다음 자습서에서는 다양한 고급 Entity Framework 시나리오를 처리하는 방법을 살펴봅니다.
+[완성된 애플리케이션을 다운로드하거나 확인합니다.](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-mvc/intro/samples/cu-final)
 
-::: moniker-end
+## <a name="additional-resources"></a>추가 자료
 
-> [!div class="step-by-step"]
-> [이전](concurrency.md)
-> [다음](advanced.md)
+Entity Framework Core의 상속에 대한 자세한 내용은 [상속](/ef/core/modeling/inheritance)을 참조하세요.
+
+## <a name="next-steps"></a>다음 단계
+
+이 자습서에서는 다음을 수행했습니다.
+
+> [!div class="checklist"]
+> * 데이터베이스에 상속 매핑
+> * Person 클래스 만들기
+> * 강사 및 학생 업데이트
+> * 모델에 개인 추가
+> * 마이그레이션 만들기 및 업데이트
+> * 구현 테스트
+
+다양한 고급 Entity Framework 시나리오를 처리하는 방법을 알아보려면 다음 문서로 진행합니다.
+> [!div class="nextstepaction"]
+> [고급 항목](advanced.md)

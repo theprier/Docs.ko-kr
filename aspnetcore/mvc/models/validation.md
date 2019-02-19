@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 01/14/2019
 uid: mvc/models/validation
-ms.openlocfilehash: 7c8255097dfc72480794930ebe4d6cb568edbd7c
-ms.sourcegitcommit: 184ba5b44d1c393076015510ac842b77bc9d4d93
+ms.openlocfilehash: ca7ee54b8e6b6ae5091b0cb133e448ad9c04da8f
+ms.sourcegitcommit: 6ba5fb1fd0b7f9a6a79085b0ef56206e462094b7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/18/2019
-ms.locfileid: "54396196"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56248521"
 ---
 # <a name="model-validation-in-aspnet-core-mvc"></a>ASP.NET Core MVC의 모델 유효성 검사
 
@@ -151,9 +151,9 @@ MVC는 최대 오류 수(기본적으로 200개)에 도달할 때까지 필드�
 
 사용자가 `Genre` 필드를 수정하고 형식을 제출하는 경우 `ClassicMovieAttribute`의 `IsValid` 메서드는 영화가 클래식인지 확인합니다. 기본 제공 특성과 마찬가지로 `ClassicMovieAttribute`을 `ReleaseDate`와 같은 속성에 적용하여 앞의 코드 샘플에 표시된 대로 유효성 검사를 진행합니다. 이 예제가 `Movie` 형식에서만 작동하므로 더 나은 옵션은 다음 단락에 표시된 대로 `IValidatableObject`를 사용하는 것입니다.
 
-또는 `IValidatableObject` 인터페이스에서 `Validate` 메서드를 구현하여 모델에서 이 동일한 코드를 배치할 수 있습니다. 사용자 지정 유효성 검사 특성이 개별 속성 유효성 검사에서 잘 작동하는 반면 `IValidatableObject`를 구현하는 작업은 다음과 같이 클래스 수준 유효성 검사를 구현하는 데 사용될 수 있습니다.
+또는 `IValidatableObject` 인터페이스에서 `Validate` 메서드를 구현하여 모델에서 이 동일한 코드를 배치할 수 있습니다. 사용자 지정 유효성 검사 특성이 개별 속성 유효성 검사에서 잘 작동하는 반면 `IValidatableObject`를 구현하는 작업은 클래스 수준 유효성 검사를 구현하는 데 사용될 수 있습니다.
 
-[!code-csharp[](validation/sample/MovieIValidatable.cs?name=snippet_Validate)]
+[!code-csharp[](validation/sample/MovieIValidatable.cs?name=snippet&highlight=1,26-34)]
 
 ## <a name="client-side-validation"></a>클라이언트 쪽 유효성 검사
 

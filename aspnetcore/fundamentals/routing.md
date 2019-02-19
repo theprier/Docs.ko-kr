@@ -4,14 +4,14 @@ author: rick-anderson
 description: ASP.NET Core 라우팅에서 요청 URI를 엔드포인트 선택기에 매핑하고, 들어오는 요청을 엔드포인트로 디스패치하는 방법을 알아봅니다.
 ms.author: riande
 ms.custom: mvc
-ms.date: 01/14/2019
+ms.date: 02/13/2019
 uid: fundamentals/routing
-ms.openlocfilehash: c5303ad418660fa31fe9094f0e61ee31f5d988f7
-ms.sourcegitcommit: d5223cf6a2cf80b4f5dc54169b0e376d493d2d3a
+ms.openlocfilehash: 3dbb2d358ec9e3dcdd96c3771576911d906d796f
+ms.sourcegitcommit: 6ba5fb1fd0b7f9a6a79085b0ef56206e462094b7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54890018"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56248435"
 ---
 # <a name="routing-in-aspnet-core"></a>ASP.NET Core에서 라우팅
 
@@ -38,7 +38,7 @@ services.AddMvc()
     .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 ```
 
-`EnableEndpointRouting` 옵션은 라우팅에서 내부적으로 엔드포인트 기반 논리를 사용해야 하는지, 아니면 ASP.NET Core 2.1 이하의 <xref:Microsoft.AspNetCore.Routing.IRouter> 기반 논리를 사용해야 하는지의 여부를 결정합니다. 호환성 버전이 2.2 이상으로 설정된 경우 기본값은 `true`입니다. 이전 라우팅 논리를 사용하려면 값을 `false`으로 설정합니다.
+<xref:Microsoft.AspNetCore.Mvc.MvcOptions.EnableEndpointRouting> 옵션은 라우팅에서 내부적으로 엔드포인트 기반 논리를 사용해야 하는지, 아니면 ASP.NET Core 2.1 이하의 <xref:Microsoft.AspNetCore.Routing.IRouter> 기반 논리를 사용해야 하는지의 여부를 결정합니다. 호환성 버전이 2.2 이상으로 설정된 경우 기본값은 `true`입니다. 이전 라우팅 논리를 사용하려면 값을 `false`으로 설정합니다.
 
 ```csharp
 // Use the routing logic of ASP.NET Core 2.1 or earlier:
@@ -97,7 +97,7 @@ URL 생성 지원을 사용하면 URL을 하드 코드하지 않고 앱을 개�
 
 * 경로 템플릿 구문은 토큰화된 경로 매개 변수를 사용하여 경로를 정의하는 데 사용됩니다.
 * 기존 스타일 및 특성 스타일 엔드포인트 구성이 허용됩니다.
-* `IRouteConstraint`는 URL 매개 변수에 지정된 엔드포인트 제약 조건에 대한 유효한 값이 포함되어 있는지 결정하는 데 사용됩니다.
+* <xref:Microsoft.AspNetCore.Routing.IRouteConstraint>는 URL 매개 변수에 지정된 엔드포인트 제약 조건에 대한 유효한 값이 포함되어 있는지 결정하는 데 사용됩니다.
 * MVC/Razor Pages와 같은 앱 모델은 라우팅 시나리오의 예측 가능한 구현이 있는 모든 엔드포인트를 등록합니다.
 * 라우팅 구현은 미들웨어 파이프라인에서 필요한 곳이라면 어디서든지 라우팅 결정을 내립니다.
 * 라우팅 미들웨어 뒤에 나타나는 미들웨어는 지정된 요청 URI에 대한 라우팅 미들웨어의 엔드포인트 결정 결과를 검사할 수 있습니다.
@@ -105,8 +105,8 @@ URL 생성 지원을 사용하면 URL을 하드 코드하지 않고 앱을 개�
 * 앱은 라우팅을 사용하여 엔드포인트 정보에 따라 URL(예: 리디렉션 또는 링크)을 생성하므로 하드 코드된 URL을 방지하여 유지 관리에 도움이 됩니다.
 * URL 생성은 임의의 확장성을 지원하는 주소를 기반으로 합니다.
 
-  * 링크 생성기 API(`LinkGenerator`)는 [DI(종속성 주입)](xref:fundamentals/dependency-injection)를 사용하여 URL을 생성할 수 있는 곳이면 어디서나 확인할 수 있습니다.
-  * DI를 통해 링크 생성기 API를 사용할 수 없는 경우 `IUrlHelper`에서 URL을 작성하는 메서드를 제공합니다.
+  * 링크 생성기 API(<xref:Microsoft.AspNetCore.Routing.LinkGenerator>)는 [DI(종속성 주입)](xref:fundamentals/dependency-injection)를 사용하여 URL을 생성할 수 있는 곳이면 어디서나 확인할 수 있습니다.
+  * DI를 통해 링크 생성기 API를 사용할 수 없는 경우 <xref:Microsoft.AspNetCore.Mvc.IUrlHelper>에서 URL을 작성하는 메서드를 제공합니다.
 
 > [!NOTE]
 > ASP.NET Core 2.2의 엔드포인트 라우팅이 릴리스되면서 엔드포인트 연결이 MVC/Razor Pages 작업 및 페이지로 제한됩니다. 이후 릴리스에서는 엔드포인트 연결 기능이 확장될 예정입니다.
@@ -126,10 +126,10 @@ URL 생성 지원을 사용하면 URL을 하드 코드하지 않고 앱을 개�
 
 * 경로 템플릿 구문은 토큰화된 경로 매개 변수를 사용하여 경로를 정의하는 데 사용됩니다.
 * 기존 스타일 및 특성 스타일 엔드포인트 구성이 허용됩니다.
-* `IRouteConstraint`는 URL 매개 변수에 지정된 엔드포인트 제약 조건에 대한 유효한 값이 포함되어 있는지 결정하는 데 사용됩니다.
+* <xref:Microsoft.AspNetCore.Routing.IRouteConstraint>는 URL 매개 변수에 지정된 엔드포인트 제약 조건에 대한 유효한 값이 포함되어 있는지 결정하는 데 사용됩니다.
 * MVC/Razor Pages와 같은 앱 모델은 라우팅 시나리오의 예측 가능한 구현이 있는 모든 경로를 등록합니다.
 * 응답은 라우팅을 사용하여 경로 정보에 따라 URL(예: 리디렉션 또는 링크)을 생성하므로 하드 코드된 URL을 방지하여 유지 관리에 도움이 됩니다.
-* URL 생성은 임의의 확장성을 지원하는 경로를 기반으로 합니다. `IUrlHelper`는 URL을 작성하는 메서드를 제공합니다.
+* URL 생성은 임의의 확장성을 지원하는 경로를 기반으로 합니다. <xref:Microsoft.AspNetCore.Mvc.IUrlHelper>는 URL을 작성하는 메서드를 제공합니다.
 
 ::: moniker-end
 
@@ -143,7 +143,7 @@ URL 일치는 라우팅에서 들어오는 요청을 *엔드포인트*로 디스
 
 엔드포인트 라우팅의 라우팅 시스템은 모든 디스패치를 결정합니다. 미들웨어에서 선택한 엔드포인트에 기반한 정책을 적용하므로 보안 정책의 디스패치 또는 적용에 영향을 미칠 수 있는 모든 결정은 라우팅 시스템 내에서 이루어져야 합니다.
 
-엔드포인트 대리자가 실행되면 `RouteContext.RouteData`의 속성이 지금까지 수행된 요청 처리에 따라 적절한 값으로 설정됩니다.
+엔드포인트 대리자가 실행되면 [RouteContext.RouteData](xref:Microsoft.AspNetCore.Routing.RouteContext.RouteData)의 속성이 지금까지 수행된 요청 처리에 따라 적절한 값으로 설정됩니다.
 
 ::: moniker-end
 
@@ -151,19 +151,19 @@ URL 일치는 라우팅에서 들어오는 요청을 *엔드포인트*로 디스
 
 URL 일치는 라우팅에서 들어오는 요청을 *처리기*로 디스패치하는 프로세스입니다. 이 프로세스는 URL 경로의 데이터를 기반으로 하지만 요청에 있는 모든 데이터를 고려하도록 확장될 수 있습니다. 요청을 별도의 처리기로 디스패치하는 기능은 앱의 크기와 복잡성을 확장하는 핵심입니다.
 
-들어오는 요청은 시퀀스의 각 경로에서 <xref:Microsoft.AspNetCore.Routing.IRouter.RouteAsync*> 메서드를 호출하는 `RouterMiddleware`를 입력합니다. <xref:Microsoft.AspNetCore.Routing.IRouter> 인스턴스는 [RouteContext.Handler](xref:Microsoft.AspNetCore.Routing.RouteContext.Handler*)를 null이 아닌 <xref:Microsoft.AspNetCore.Http.RequestDelegate>로 설정하여 요청을 *처리*할지 여부를 선택합니다. 경로가 요청에 대한 처리기를 설정하는 경우 경로 처리가 중지되고 처리기가 요청을 처리하도록 호출됩니다. 요청을 처리하는 경로 처리기가 없는 경우 미들웨어는 요청을 요청 파이프라인의 다음 미들웨어에 전달합니다.
+들어오는 요청은 시퀀스의 각 경로에서 <xref:Microsoft.AspNetCore.Routing.IRouter.RouteAsync*> 메서드를 호출하는 <xref:Microsoft.AspNetCore.Builder.RouterMiddleware>를 입력합니다. <xref:Microsoft.AspNetCore.Routing.IRouter> 인스턴스는 [RouteContext.Handler](xref:Microsoft.AspNetCore.Routing.RouteContext.Handler*)를 null이 아닌 <xref:Microsoft.AspNetCore.Http.RequestDelegate>로 설정하여 요청을 *처리*할지 여부를 선택합니다. 경로가 요청에 대한 처리기를 설정하는 경우 경로 처리가 중지되고 처리기가 요청을 처리하도록 호출됩니다. 요청을 처리하는 경로 처리기가 없는 경우 미들웨어는 요청을 요청 파이프라인의 다음 미들웨어에 전달합니다.
 
-`RouteAsync`에 대한 기본 입력은 현재 요청과 연결된 [RouteContext.HttpContext](xref:Microsoft.AspNetCore.Routing.RouteContext.HttpContext*)입니다. `RouteContext.Handler` 및 [RouteContext.RouteData](xref:Microsoft.AspNetCore.Routing.RouteContext.RouteData*)는 경로가 일치된 후에 설정된 출력입니다.
+<xref:Microsoft.AspNetCore.Routing.IRouter.RouteAsync*>에 대한 기본 입력은 현재 요청과 연결된 [RouteContext.HttpContext](xref:Microsoft.AspNetCore.Routing.RouteContext.HttpContext*)입니다. [RouteContext.Handler](xref:Microsoft.AspNetCore.Routing.RouteContext.Handler) 및 [RouteContext.RouteData](xref:Microsoft.AspNetCore.Routing.RouteContext.RouteData*)는 경로가 일치된 후에 설정된 출력입니다.
 
-또한 `RouteAsync`를 호출하는 일치는 `RouteContext.RouteData`의 속성을 지금까지 수행된 요청 처리에 따라 적절한 값으로 설정합니다.
+또한 <xref:Microsoft.AspNetCore.Routing.IRouter.RouteAsync*>를 호출하는 일치는 [RouteContext.RouteData](xref:Microsoft.AspNetCore.Routing.RouteContext.RouteData)의 속성을 지금까지 수행된 요청 처리에 따라 적절한 값으로 설정합니다.
 
 ::: moniker-end
 
 [RouteData.Values](xref:Microsoft.AspNetCore.Routing.RouteData.Values*)는 경로에서 생성된 *경로 값*의 사전입니다. 이러한 값은 일반적으로 URL을 토큰화하여 결정되고, 사용자 입력을 수락하거나 앱 내부의 추가 디스패치 결정을 내리는 데 사용될 수 있습니다.
 
-[RouteData.DataTokens](xref:Microsoft.AspNetCore.Routing.RouteData.DataTokens*)는 일치하는 경로와 관련된 추가 데이터의 속성 모음입니다. `DataTokens`는 앱에서 일치된 경로에 따라 결정할 수 있도록 각 경로와 상태 데이터의 연결을 지원하기 위해 제공됩니다. 이러한 값은 개발자 정의되고 어떤 방식으로든 라우팅의 동작에 영향을 주지 **않습니다**. 또한 `RouteData.DataTokens`에 안전하게 배치되는(stashed) 값은 `RouteData.Values`와 달리 문자열 간에 변환될 수 있어야 하는 모든 형식일 수 있습니다.
+[RouteData.DataTokens](xref:Microsoft.AspNetCore.Routing.RouteData.DataTokens*)는 일치하는 경로와 관련된 추가 데이터의 속성 모음입니다. <xref:Microsoft.AspNetCore.Routing.RouteData.DataTokens*>는 앱에서 일치된 경로에 따라 결정할 수 있도록 각 경로와 상태 데이터의 연결을 지원하기 위해 제공됩니다. 이러한 값은 개발자 정의되고 어떤 방식으로든 라우팅의 동작에 영향을 주지 **않습니다**. 또한 [RouteData.DataTokens](xref:Microsoft.AspNetCore.Routing.RouteData.DataTokens*)에 안전하게 배치되는(stashed) 값은 [RouteData.Values](xref:Microsoft.AspNetCore.Routing.RouteData.Values)와 달리 문자열 간에 변환될 수 있어야 하는 모든 형식일 수 있습니다.
 
-[RouteData.Routers](xref:Microsoft.AspNetCore.Routing.RouteData.Routers*)는 성공적으로 요청 일치에 참여한 경로의 목록입니다. 경로는 서로 중첩될 수 있습니다. `Routers` 속성은 결과적으로 일치한 경로의 논리 트리를 통해 경로를 반영합니다. 일반적으로 `Routers`의 첫 번째 항목은 경로 컬렉션이며 URL 생성을 위해 사용되어야 합니다. `Routers`의 마지막 항목은 일치한 경로 처리기입니다.
+[RouteData.Routers](xref:Microsoft.AspNetCore.Routing.RouteData.Routers)는 성공적으로 요청 일치에 참여한 경로의 목록입니다. 경로는 서로 중첩될 수 있습니다. <xref:Microsoft.AspNetCore.Routing.RouteData.Routers> 속성은 결과적으로 일치한 경로의 논리 트리를 통해 경로를 반영합니다. 일반적으로 <xref:Microsoft.AspNetCore.Routing.RouteData.Routers>의 첫 번째 항목은 경로 컬렉션이며 URL 생성을 위해 사용되어야 합니다. <xref:Microsoft.AspNetCore.Routing.RouteData.Routers>의 마지막 항목은 일치한 경로 처리기입니다.
 
 ### <a name="url-generation"></a>URL 생성
 
@@ -171,45 +171,45 @@ URL 일치는 라우팅에서 들어오는 요청을 *처리기*로 디스패치
 
 URL 생성은 라우팅이 경로 값의 집합을 기반으로 하는 URL 경로를 만들 수 있는 프로세스입니다. 이렇게 하면 엔드포인트와 이에 액세스하는 URL 간에 논리적으로 구분할 수 있습니다.
 
-엔드포인트 라우팅에는 링크 생성기 API(`LinkGenerator`)가 포함됩니다. `LinkGenerator`는 DI에서 검색할 수 있는 싱글톤 서비스입니다. API는 실행 중인 요청의 컨텍스트 외부에서 사용할 수 있습니다. MVC의 `IUrlHelper` 및 `IUrlHelper`를 사용하는 시나리오(예: [태그 도우미](xref:mvc/views/tag-helpers/intro), HTML 도우미 및 [작업 결과](xref:mvc/controllers/actions))는 링크 생성기를 사용하여 링크 생성 기능을 제공합니다.
+엔드포인트 라우팅에는 링크 생성기 API(<xref:Microsoft.AspNetCore.Routing.LinkGenerator>)가 포함됩니다. <xref:Microsoft.AspNetCore.Routing.LinkGenerator>는 DI에서 검색할 수 있는 싱글톤 서비스입니다. API는 실행 중인 요청의 컨텍스트 외부에서 사용할 수 있습니다. MVC의 <xref:Microsoft.AspNetCore.Mvc.IUrlHelper> 및 <xref:Microsoft.AspNetCore.Mvc.IUrlHelper>를 사용하는 시나리오(예: [태그 도우미](xref:mvc/views/tag-helpers/intro), HTML 도우미 및 [작업 결과](xref:mvc/controllers/actions))는 링크 생성기를 사용하여 링크 생성 기능을 제공합니다.
 
 링크 생성기는 *주소* 및 *주소 체계*의 개념으로 지원됩니다. 주소 체계는 링크 생성을 위해 고려해야 할 엔드포인트를 결정하는 방법입니다. 예를 들어 많은 사용자가 MVC/Razor Pages에서 친숙한 경로 이름 및 경로 값 시나리오는 주소 체계로 구현됩니다.
 
 링크 생성기는 다음 확장 메서드를 통해 MVC/Razor Pages 작업 및 페이지에 연결할 수 있습니다.
 
-* `GetPathByAction`
-* `GetUriByAction`
-* `GetPathByPage`
-* `GetUriByPage`
+* <xref:Microsoft.AspNetCore.Routing.ControllerLinkGeneratorExtensions.GetPathByAction*>
+* <xref:Microsoft.AspNetCore.Routing.ControllerLinkGeneratorExtensions.GetUriByAction*>
+* <xref:Microsoft.AspNetCore.Routing.PageLinkGeneratorExtensions.GetPathByPage*>
+* <xref:Microsoft.AspNetCore.Routing.PageLinkGeneratorExtensions.GetUriByPage*>
 
 이러한 메서드의 오버로드에는 `HttpContext`를 포함한 인수가 허용됩니다. 이러한 메서드는 기능적으로 `Url.Action` 및 `Url.Page`와 동일하지만, 추가적인 유연성과 옵션을 제공합니다.
 
 `GetPath*` 메서드는 절대 경로가 포함된 URI를 생성한다는 점에서 `Url.Action` 및 `Url.Page`와 가장 비슷합니다. `GetUri*` 메서드는 항상 체계와 호스트를 포함한 절대 URI를 생성합니다. `HttpContext`를 허용하는 메서드는 실행 중인 요청의 컨텍스트에서 URI를 생성합니다. 재정의되지 않는 한 실행 중인 요청의 앰비언트 경로 값, URL 기본 경로, 체계 및 호스트가 사용됩니다.
 
-`LinkGenerator`는 주소를 사용하여 호출됩니다. URI 생성은 다음 두 단계로 수행됩니다.
+<xref:Microsoft.AspNetCore.Routing.LinkGenerator>는 주소를 사용하여 호출됩니다. URI 생성은 다음 두 단계로 수행됩니다.
 
 1. 주소는 해당 주소와 일치하는 엔드포인트 목록에 바인딩됩니다.
 1. 제공된 값과 일치하는 경로 패턴을 찾을 때까지 각 엔드포인트의 `RoutePattern`이 평가됩니다. 결과 출력은 링크 생성기에 제공된 다른 URI 부분과 결합되어 반환됩니다.
 
-`LinkGenerator`에서 제공하는 메서드는 모든 유형의 주소에 대해 표준 링크 생성 기능을 지원합니다. 링크 생성기를 사용하는 가장 편리한 방법은 특정 주소 유형에 대한 작업을 수행하는 확장 메서드를 사용하는 것입니다.
+<xref:Microsoft.AspNetCore.Routing.LinkGenerator>에서 제공하는 메서드는 모든 유형의 주소에 대해 표준 링크 생성 기능을 지원합니다. 링크 생성기를 사용하는 가장 편리한 방법은 특정 주소 유형에 대한 작업을 수행하는 확장 메서드를 사용하는 것입니다.
 
-| 확장명 메서드   | 설명                                                         |
+| 확장 메서드   | 설명                                                         |
 | ------------------ | ------------------------------------------------------------------- |
-| `GetPathByAddress` | 제공된 값에 기반한 절대 경로가 있는 URI를 생성합니다. |
-| `GetUriByAddress`  | 제공된 값에 기반한 절대 URI를 생성합니다.             |
+| <xref:Microsoft.AspNetCore.Routing.LinkGenerator.GetPathByAddress*> | 제공된 값에 기반한 절대 경로가 있는 URI를 생성합니다. |
+| <xref:Microsoft.AspNetCore.Routing.LinkGenerator.GetUriByAddress*> | 제공된 값에 기반한 절대 URI를 생성합니다.             |
 
 > [!WARNING]
-> `LinkGenerator` 메서드 호출에 대한 다음과 같은 의미에 주의하세요.
+> <xref:Microsoft.AspNetCore.Routing.LinkGenerator> 메서드 호출에 대한 다음과 같은 의미에 주의하세요.
 >
 > * `GetUri*` 확장 메서드는 들어오는 요청의 `Host` 헤더에 대한 유효성을 검사하지 않는 앱 구성에서 신중하게 사용합니다. 들어오는 요청의 `Host` 헤더에 대한 유효성을 검사하지 않으면 신뢰할 수 없는 요청 입력을 보기/페이지에 있는 URI의 클라이언트에 다시 보낼 수 있습니다. 모든 프로덕션 앱에서 알려진 유효한 값에 대해 `Host` 헤더의 유효성을 검사하도록 자체의 서버를 구성하는 것이 좋습니다.
 >
-> * `LinkGenerator`는 미들웨어에서 `Map` 또는 `MapWhen`과 함께 신중하게 사용합니다. `Map*`는 실행 중인 요청의 기본 경로를 변경하여 링크 생성의 출력에 영향을 줍니다. 기본 경로는 모든 `LinkGenerator` API를 사용하여 지정할 수 있습니다. 링크 생성에 대한 `Map*`의 영향을 취소하려면 항상 빈 기본 경로를 지정합니다.
+> * <xref:Microsoft.AspNetCore.Routing.LinkGenerator>는 미들웨어에서 `Map` 또는 `MapWhen`과 함께 신중하게 사용합니다. `Map*`는 실행 중인 요청의 기본 경로를 변경하여 링크 생성의 출력에 영향을 줍니다. 기본 경로는 모든 <xref:Microsoft.AspNetCore.Routing.LinkGenerator> API를 사용하여 지정할 수 있습니다. 링크 생성에 대한 `Map*`의 영향을 취소하려면 항상 빈 기본 경로를 지정합니다.
 
 ## <a name="differences-from-earlier-versions-of-routing"></a>이전 버전의 라우팅과의 차이점
 
 ASP.NET Core 2.2 이상의 엔드포인트 라우팅과 ASP.NET Core 이전 버전의 라우팅 간에는 다음과 같은 몇 가지 차이점이 있습니다.
 
-* 엔드포인트 라우팅 시스템은 `Route`에서 상속하는 것을 포함하여 `IRouter` 기반 확장성을 지원하지 않습니다.
+* 엔드포인트 라우팅 시스템은 <xref:Microsoft.AspNetCore.Routing.Route>에서 상속하는 것을 포함하여 <xref:Microsoft.AspNetCore.Routing.IRouter> 기반 확장성을 지원하지 않습니다.
 
 * 엔드포인트 라우팅은 [WebApiCompatShim](https://www.nuget.org/packages/Microsoft.AspNetCore.Mvc.WebApiCompatShim)을 지원하지 않습니다. 호환성 shim을 계속 사용하려면 2.1 [호환성 버전](xref:mvc/compatibility-version)(`.SetCompatibilityVersion(CompatibilityVersion.Version_2_1)`)을 사용하세요.
 
@@ -230,7 +230,7 @@ ASP.NET Core 2.2 이상의 엔드포인트 라우팅과 ASP.NET Core 이전 버�
   var link = Url.Action("ReadPost", "blog", new { id = 17, });
   ```
 
-  `IRouter` 기반 라우팅을 사용하는 경우 이 코드는 제공된 경로 값의 대/소문자 표기를 고려한 `/blog/ReadPost/17`이라는 URI를 생성합니다. ASP.NET Core 2.2 이상의 엔드포인트 라우팅에서는 `/Blog/ReadPost/17`("Blog"의 첫 글자가 대문자로 지정됨)을 생성합니다. 엔드포인트 라우팅은 이 동작을 글로벌로 사용자 지정하거나 URL 매핑에 대해 다른 규칙을 적용하는 데 사용할 수 있는 `IOutboundParameterTransformer` 인터페이스를 제공합니다.
+  <xref:Microsoft.AspNetCore.Routing.IRouter> 기반 라우팅을 사용하는 경우 이 코드는 제공된 경로 값의 대/소문자 표기를 고려한 `/blog/ReadPost/17`이라는 URI를 생성합니다. ASP.NET Core 2.2 이상의 엔드포인트 라우팅에서는 `/Blog/ReadPost/17`("Blog"의 첫 글자가 대문자로 지정됨)을 생성합니다. 엔드포인트 라우팅은 이 동작을 글로벌로 사용자 지정하거나 URL 매핑에 대해 다른 규칙을 적용하는 데 사용할 수 있는 `IOutboundParameterTransformer` 인터페이스를 제공합니다.
 
   자세한 내용은 [매개 변수 변환기 참조](#parameter-transformer-reference) 섹션을 참조하세요.
 
@@ -289,7 +289,7 @@ ASP.NET Core 2.2 이상의 엔드포인트 라우팅과 ASP.NET Core 이전 버�
 
 ### <a name="middleware-example"></a>미들웨어 예제
 
-다음 예제에서는 미들웨어에서 `LinkGenerator` API를 사용하여 저장소 제품을 나열하는 작업 메서드에 대한 링크를 만듭니다. 링크 생성기를 클래스에 주입하고 `GenerateLink`를 호출하여 앱의 모든 클래스에서 해당 링크 생성기를 사용할 수 있습니다.
+다음 예제에서는 미들웨어에서 <xref:Microsoft.AspNetCore.Routing.LinkGenerator> API를 사용하여 저장소 제품을 나열하는 작업 메서드에 대한 링크를 만듭니다. 링크 생성기를 클래스에 주입하고 `GenerateLink`를 호출하여 앱의 모든 클래스에서 해당 링크 생성기를 사용할 수 있습니다.
 
 ```csharp
 using Microsoft.AspNetCore.Routing;
@@ -320,20 +320,20 @@ public class ProductsLinkMiddleware
 
 URL 생성은 라우팅이 경로 값의 집합을 기반으로 하는 URL 경로를 만들 수 있는 프로세스입니다. 이렇게 하면 경로 처리기와 이에 액세스하는 URL 간에 논리적으로 구분할 수 있습니다.
 
-URL 생성은 비슷한 반복적인 프로세스를 따르지만 경로 컬렉션의 <xref:Microsoft.AspNetCore.Routing.IRouter.GetVirtualPath*> 메서드로 호출하는 사용자 또는 프레임워크 코드로 시작합니다. 각 *경로*에는 null이 아닌 <xref:Microsoft.AspNetCore.Routing.VirtualPathData>가 반환될 때까지 시퀀스에서 호출되는 해당 `GetVirtualPath` 메서드가 있습니다.
+URL 생성은 비슷한 반복적인 프로세스를 따르지만 경로 컬렉션의 <xref:Microsoft.AspNetCore.Routing.IRouter.GetVirtualPath*> 메서드로 호출하는 사용자 또는 프레임워크 코드로 시작합니다. 각 *경로*에는 null이 아닌 <xref:Microsoft.AspNetCore.Routing.VirtualPathData>가 반환될 때까지 시퀀스에서 호출되는 해당 <xref:Microsoft.AspNetCore.Routing.IRouter.GetVirtualPath*> 메서드가 있습니다.
 
-`GetVirtualPath`에 대한 기본 입력은 다음과 같습니다.
+<xref:Microsoft.AspNetCore.Routing.IRouter.GetVirtualPath*>에 대한 기본 입력은 다음과 같습니다.
 
-* [VirtualPathContext.HttpContext](xref:Microsoft.AspNetCore.Routing.VirtualPathContext.HttpContext*)
-* [VirtualPathContext.Values](xref:Microsoft.AspNetCore.Routing.VirtualPathContext.Values*)
-* [VirtualPathContext.AmbientValues](xref:Microsoft.AspNetCore.Routing.VirtualPathContext.AmbientValues*)
+* [VirtualPathContext.HttpContext](xref:Microsoft.AspNetCore.Routing.VirtualPathContext.HttpContext)
+* [VirtualPathContext.Values](xref:Microsoft.AspNetCore.Routing.VirtualPathContext.Values)
+* [VirtualPathContext.AmbientValues](xref:Microsoft.AspNetCore.Routing.VirtualPathContext.AmbientValues)
 
-경로는 주로 `Values` 및 `AmbientValues`에서 제공하는 경로 값을 사용하여 URL을 생성할 수 있는지 여부와 포함할 값을 결정합니다. `AmbientValues`는 현재 요청과 일치하여 생성된 경로 값의 세트입니다. 반면, `Values`는 현재 작업에 대한 원하는 URL을 생성하는 방법을 지정하는 경로 값입니다. `HttpContext`는 경로가 서비스 또는 현재 컨텍스트와 연결된 추가 데이터를 가져와야 하는 경우에 제공됩니다.
+경로는 주로 <xref:Microsoft.AspNetCore.Routing.VirtualPathContext.Values> 및 <xref:Microsoft.AspNetCore.Routing.VirtualPathContext.AmbientValues>에서 제공하는 경로 값을 사용하여 URL을 생성할 수 있는지 여부와 포함할 값을 결정합니다. <xref:Microsoft.AspNetCore.Routing.VirtualPathContext.AmbientValues>는 현재 요청과 일치하여 생성된 경로 값의 세트입니다. 반면, <xref:Microsoft.AspNetCore.Routing.VirtualPathContext.Values>는 현재 작업에 대한 원하는 URL을 생성하는 방법을 지정하는 경로 값입니다. <xref:Microsoft.AspNetCore.Routing.VirtualPathContext.HttpContext>는 경로가 서비스 또는 현재 컨텍스트와 연결된 추가 데이터를 가져와야 하는 경우에 제공됩니다.
 
 > [!TIP]
 > [VirtualPathContext.Values](xref:Microsoft.AspNetCore.Routing.VirtualPathContext.Values*)를 [VirtualPathContext.AmbientValues](xref:Microsoft.AspNetCore.Routing.VirtualPathContext.AmbientValues*)에 대한 재정의 세트로 간주하세요. URL 생성은 동일한 경로 또는 경로 값을 사용하는 링크에 대한 URL을 생성하기 위해 현재 요청의 경로 값을 다시 사용하려고 시도합니다.
 
-`GetVirtualPath`의 출력은 `VirtualPathData`입니다. `VirtualPathData`는 `RouteData`의 병렬입니다. `VirtualPathData`는 출력 URL 및 경로에 의해 설정되어야 하는 몇 가지 추가 속성에 대한 `VirtualPath`를 포함합니다.
+<xref:Microsoft.AspNetCore.Routing.IRouter.GetVirtualPath*>의 출력은 <xref:Microsoft.AspNetCore.Routing.VirtualPathData>입니다. <xref:Microsoft.AspNetCore.Routing.VirtualPathData>는 <xref:Microsoft.AspNetCore.Routing.RouteData>의 병렬입니다. <xref:Microsoft.AspNetCore.Routing.VirtualPathData>는 출력 URL 및 경로에 의해 설정되어야 하는 몇 가지 추가 속성에 대한 <xref:Microsoft.AspNetCore.Routing.VirtualPathData.VirtualPath>를 포함합니다.
 
 [VirtualPathData.VirtualPath](xref:Microsoft.AspNetCore.Routing.VirtualPathData.VirtualPath*) 속성은 경로에 의해 생성된 *가상 경로*를 포함합니다. 필요에 따라 경로를 추가로 처리해야 합니다. HTML에서 생성된 URL을 렌더링하려는 경우 앱의 기본 경로를 추가합니다.
 
@@ -347,25 +347,25 @@ URL 생성은 비슷한 반복적인 프로세스를 따르지만 경로 컬렉�
 
 ::: moniker range="< aspnetcore-2.2"
 
-라우팅은 <xref:Microsoft.AspNetCore.Routing.IRouter>의 표준 구현으로 <xref:Microsoft.AspNetCore.Routing.Route> 클래스를 제공합니다. `Route`는 *경로 템플릿* 구문을 사용하여 <xref:Microsoft.AspNetCore.Routing.IRouter.RouteAsync*>가 호출될 때 URL 경로와 일치하는 패턴을 정의합니다. `Route`는 동일한 경로 템플릿을 사용하여 `GetVirtualPath`가 호출되었을 때 URL을 생성합니다.
+라우팅은 <xref:Microsoft.AspNetCore.Routing.IRouter>의 표준 구현으로 <xref:Microsoft.AspNetCore.Routing.Route> 클래스를 제공합니다. <xref:Microsoft.AspNetCore.Routing.Route>는 *경로 템플릿* 구문을 사용하여 <xref:Microsoft.AspNetCore.Routing.IRouter.RouteAsync*>가 호출될 때 URL 경로와 일치하는 패턴을 정의합니다. <xref:Microsoft.AspNetCore.Routing.Route>는 동일한 경로 템플릿을 사용하여 <xref:Microsoft.AspNetCore.Routing.IRouter.GetVirtualPath*>가 호출되었을 때 URL을 생성합니다.
 
 ::: moniker-end
 
-대부분의 앱은 <xref:Microsoft.AspNetCore.Builder.MapRouteRouteBuilderExtensions.MapRoute*> 또는 <xref:Microsoft.AspNetCore.Routing.IRouteBuilder>에 정의된 유사한 확장 메서드 중 하나를 호출하여 경로를 만듭니다. `IRouteBuilder` 확장 메서드 중 하나에서 <xref:Microsoft.AspNetCore.Routing.Route>의 인스턴스를 만들고, 경로 컬렉션에 이를 추가합니다.
+대부분의 앱은 <xref:Microsoft.AspNetCore.Builder.MapRouteRouteBuilderExtensions.MapRoute*> 또는 <xref:Microsoft.AspNetCore.Routing.IRouteBuilder>에 정의된 유사한 확장 메서드 중 하나를 호출하여 경로를 만듭니다. <xref:Microsoft.AspNetCore.Routing.IRouteBuilder> 확장 메서드 중 하나에서 <xref:Microsoft.AspNetCore.Routing.Route>의 인스턴스를 만들고, 경로 컬렉션에 이를 추가합니다.
 
 ::: moniker range=">= aspnetcore-2.2"
 
-`MapRoute`는 경로 처리기 매개 변수를 허용하지 않습니다. `MapRoute`는 <xref:Microsoft.AspNetCore.Routing.RouteBuilder.DefaultHandler*>에 의해 처리되는 경로만 추가합니다. MVC의 라우팅에 대해 자세히 알아보려면 <xref:mvc/controllers/routing>을 참조하세요.
+<xref:Microsoft.AspNetCore.Builder.MapRouteRouteBuilderExtensions.MapRoute*>는 경로 처리기 매개 변수를 허용하지 않습니다. <xref:Microsoft.AspNetCore.Builder.MapRouteRouteBuilderExtensions.MapRoute*>는 <xref:Microsoft.AspNetCore.Routing.RouteBuilder.DefaultHandler*>에 의해 처리되는 경로만 추가합니다. MVC의 라우팅에 대해 자세히 알아보려면 <xref:mvc/controllers/routing>을 참조하세요.
 
 ::: moniker-end
 
 ::: moniker range="< aspnetcore-2.2"
 
-`MapRoute`는 경로 처리기 매개 변수를 허용하지 않습니다. `MapRoute`는 <xref:Microsoft.AspNetCore.Routing.RouteBuilder.DefaultHandler*>에 의해 처리되는 경로만 추가합니다. 기본 처리기는 `IRouter`이며, 처리기에서 요청을 처리하지 못할 수 있습니다. 예를 들어 ASP.NET Core MVC는 일반적으로 사용 가능한 컨트롤러 및 작업과 일치하는 요청만 처리하는 기본 처리기로 구성됩니다. MVC의 라우팅에 대해 자세히 알아보려면 <xref:mvc/controllers/routing>을 참조하세요.
+<xref:Microsoft.AspNetCore.Builder.MapRouteRouteBuilderExtensions.MapRoute*>는 경로 처리기 매개 변수를 허용하지 않습니다. <xref:Microsoft.AspNetCore.Builder.MapRouteRouteBuilderExtensions.MapRoute*>는 <xref:Microsoft.AspNetCore.Routing.RouteBuilder.DefaultHandler*>에 의해 처리되는 경로만 추가합니다. 기본 처리기는 `IRouter`이며, 처리기에서 요청을 처리하지 못할 수 있습니다. 예를 들어 ASP.NET Core MVC는 일반적으로 사용 가능한 컨트롤러 및 작업과 일치하는 요청만 처리하는 기본 처리기로 구성됩니다. MVC의 라우팅에 대해 자세히 알아보려면 <xref:mvc/controllers/routing>을 참조하세요.
 
 ::: moniker-end
 
-다음 코드 예제는 일반적인 ASP.NET Core MVC 경로 정의에서 사용되는 `MapRoute` 호출의 예제입니다.
+다음 코드 예제는 일반적인 ASP.NET Core MVC 경로 정의에서 사용되는 <xref:Microsoft.AspNetCore.Builder.MapRouteRouteBuilderExtensions.MapRoute*> 호출의 예제입니다.
 
 ```csharp
 routes.MapRoute(
@@ -391,9 +391,9 @@ routes.MapRoute(
 
 이 템플릿은 `/Products/Details/Apples`가 아닌 `/Products/Details/17`과 같이 URL 경로와 일치시킵니다. 경로 제약 조건은 <xref:Microsoft.AspNetCore.Routing.IRouteConstraint>를 구현하고 경로 값을 검사하여 확인합니다. 이 예제에서 경로 값 `id`는 정수로 변환할 수 있어야 합니다. 프레임워크에서 제공하는 경로 제약 조건에 대한 설명은 [경로 제약 조건 참조](#route-constraint-reference)를 참조하세요.
 
-`MapRoute`의 추가 오버로드는 `constraints`, `dataTokens` 및 `defaults`에 대한 값을 허용합니다. 이러한 매개 변수의 일반적인 사용법은 익명 형식의 속성 이름이 경로 매개 변수 이름과 일치하는 익명으로 형식화된 개체를 전달하는 것입니다.
+<xref:Microsoft.AspNetCore.Builder.MapRouteRouteBuilderExtensions.MapRoute*>의 추가 오버로드는 `constraints`, `dataTokens` 및 `defaults`에 대한 값을 허용합니다. 이러한 매개 변수의 일반적인 사용법은 익명 형식의 속성 이름이 경로 매개 변수 이름과 일치하는 익명으로 형식화된 개체를 전달하는 것입니다.
 
-다음 `MapRoute` 예제에서는 동등한 경로를 만듭니다.
+다음 <xref:Microsoft.AspNetCore.Builder.MapRouteRouteBuilderExtensions.MapRoute*> 예제에서는 동등한 경로를 만듭니다.
 
 ```csharp
 routes.MapRoute(
@@ -454,10 +454,10 @@ routes.MapRoute(
 
 ### <a name="route-class-url-generation"></a>경로 클래스 URL 생성
 
-`Route` 클래스는 경로 값의 집합을 해당 경로 템플릿과 결합하여 URL 생성을 수행할 수도 있습니다. 이는 논리적으로 URL 경로와 일치시키는 역방향 프로세스입니다.
+<xref:Microsoft.AspNetCore.Routing.Route> 클래스는 경로 값의 집합을 해당 경로 템플릿과 결합하여 URL 생성을 수행할 수도 있습니다. 이는 논리적으로 URL 경로와 일치시키는 역방향 프로세스입니다.
 
 > [!TIP]
-> URL 생성을 보다 잘 이해하려면 생성하려는 URL을 가정한 다음, 경로 템플릿을 해당 URL과 일치시키는 방법을 생각합니다. 어떤 값이 생성되나요? 이는 URL 생성이 `Route` 클래스에서 작동하는 방식과 대략적으로 동일합니다.
+> URL 생성을 보다 잘 이해하려면 생성하려는 URL을 가정한 다음, 경로 템플릿을 해당 URL과 일치시키는 방법을 생각합니다. 어떤 값이 생성되나요? 이는 URL 생성이 <xref:Microsoft.AspNetCore.Routing.Route> 클래스에서 작동하는 방식과 대략적으로 동일합니다.
 
 다음 예제에서는 일반 ASP.NET Core MVC 기본 경로를 사용합니다.
 
@@ -514,22 +514,22 @@ URL 생성에 대한 자세한 내용은 [URL 생성 참조](#url-generation-ref
 
 프레임워크는 경로를 만드는 확장 메서드 세트(<xref:Microsoft.AspNetCore.Routing.RequestDelegateRouteBuilderExtensions>)를 제공합니다.
 
-* `MapDelete`
-* `MapGet`
-* `MapMiddlewareDelete`
-* `MapMiddlewareGet`
-* `MapMiddlewarePost`
-* `MapMiddlewarePut`
-* `MapMiddlewareRoute`
-* `MapMiddlewareVerb`
-* `MapPost`
-* `MapPut`
-* `MapRoute`
-* `MapVerb`
+* <xref:Microsoft.AspNetCore.Routing.RequestDelegateRouteBuilderExtensions.MapDelete*>
+* <xref:Microsoft.AspNetCore.Routing.RequestDelegateRouteBuilderExtensions.MapGet*>
+* <xref:Microsoft.AspNetCore.Routing.RequestDelegateRouteBuilderExtensions.MapMiddlewareDelete*>
+* <xref:Microsoft.AspNetCore.Routing.RequestDelegateRouteBuilderExtensions.MapMiddlewareGet*>
+* <xref:Microsoft.AspNetCore.Routing.RequestDelegateRouteBuilderExtensions.MapMiddlewarePost*>
+* <xref:Microsoft.AspNetCore.Routing.RequestDelegateRouteBuilderExtensions.MapMiddlewarePut*>
+* <xref:Microsoft.AspNetCore.Routing.RequestDelegateRouteBuilderExtensions.MapMiddlewareRoute*>
+* <xref:Microsoft.AspNetCore.Routing.RequestDelegateRouteBuilderExtensions.MapMiddlewareVerb*>
+* <xref:Microsoft.AspNetCore.Routing.RequestDelegateRouteBuilderExtensions.MapPost*>
+* <xref:Microsoft.AspNetCore.Routing.RequestDelegateRouteBuilderExtensions.MapPut*>
+* <xref:Microsoft.AspNetCore.Routing.RequestDelegateRouteBuilderExtensions.MapRoute*>
+* <xref:Microsoft.AspNetCore.Routing.RequestDelegateRouteBuilderExtensions.MapVerb*>
 
 ::: moniker range="< aspnetcore-2.2"
 
-`MapGet`과 같은 나열된 메서드 중 일부에는 `RequestDelegate`가 필요합니다. `RequestDelegate`는 경로가 일치하는 경우 *경로 처리기*로 사용됩니다. 이 제품군의 다른 메서드는 경로 처리기로 사용할 미들웨어 파이프라인 구성을 허용합니다. `Map*` 메서드에서 `MapRoute`와 같은 처리기를 허용하지 않는 경우 <xref:Microsoft.AspNetCore.Routing.RouteBuilder.DefaultHandler*>를 사용합니다.
+<xref:Microsoft.AspNetCore.Routing.RequestDelegateRouteBuilderExtensions.MapGet*>과 같은 나열된 메서드 중 일부에는 <xref:Microsoft.AspNetCore.Http.RequestDelegate>가 필요합니다. <xref:Microsoft.AspNetCore.Http.RequestDelegate>는 경로가 일치하는 경우 *경로 처리기*로 사용됩니다. 이 제품군의 다른 메서드는 경로 처리기로 사용할 미들웨어 파이프라인 구성을 허용합니다. `Map*` 메서드에서 <xref:Microsoft.AspNetCore.Routing.RequestDelegateRouteBuilderExtensions.MapRoute*>와 같은 처리기를 허용하지 않는 경우 <xref:Microsoft.AspNetCore.Routing.RouteBuilder.DefaultHandler*>를 사용합니다.
 
 ::: moniker-end
 
@@ -588,7 +588,7 @@ catch-all 매개 변수는 경로 구분 기호(`/`) 문자를 포함하여 URL�
 템플릿 사용은 일반적으로 라우팅에 대한 가장 간단한 방식입니다. 제약 조건 및 기본값을 경로 템플릿 외부에서 지정할 수도 있습니다.
 
 > [!TIP]
-> [로깅](xref:fundamentals/logging/index)을 사용하도록 설정하여 `Route`와 같은 기본 제공 라우팅 구현에서 요청과 일치시키는 방법을 확인하세요.
+> [로깅](xref:fundamentals/logging/index)을 사용하도록 설정하여 <xref:Microsoft.AspNetCore.Routing.Route>와 같은 기본 제공 라우팅 구현에서 요청과 일치시키는 방법을 확인하세요.
 
 ## <a name="reserved-routing-names"></a>예약된 라우팅 이름
 
@@ -609,7 +609,7 @@ catch-all 매개 변수는 경로 구분 기호(`/`) 문자를 포함하여 URL�
 
 다음 표에서는 경로 제약 조건 예제 및 예상되는 해당 동작을 보여 줍니다.
 
-| 제약 조건 | 예제 | 일치하는 예제 | 노트 |
+| 제약 조건 | 예 | 일치하는 예제 | 참고 사항 |
 | ---------- | ------- | --------------- | ----- |
 | `int` | `{id:int}` | `123456789`, `-123456789` | 임의의 정수와 일치 |
 | `bool` | `{active:bool}` | `true`, `FALSE` | `true` 또는 `false` 일치(대/소문자 구분하지 않음) |
@@ -655,10 +655,10 @@ ASP.NET Core 프레임워크는 정규식 생성자에 `RegexOptions.IgnoreCase 
 
 | 식   | 문자열    | 일치 | 주석               |
 | ------------ | --------- | :---: |  -------------------- |
-| `[a-z]{2}`   | hello     | 예   | 부분 문자열 일치     |
-| `[a-z]{2}`   | 123abc456 | 예   | 부분 문자열 일치     |
-| `[a-z]{2}`   | mz        | 예   | 식 일치    |
-| `[a-z]{2}`   | MZ        | 예   | 대/소문자 구분하지 않음    |
+| `[a-z]{2}`   | hello     | 적용   | 부분 문자열 일치     |
+| `[a-z]{2}`   | 123abc456 | 적용   | 부분 문자열 일치     |
+| `[a-z]{2}`   | mz        | 적용   | 식 일치    |
+| `[a-z]{2}`   | MZ        | 적용   | 대/소문자 구분하지 않음    |
 | `^[a-z]{2}$` | hello     | 아니요    | 위의 `^` 및 `$` 참조 |
 | `^[a-z]{2}$` | 123abc456 | 아니요    | 위의 `^` 및 `$` 참조 |
 
@@ -668,9 +668,9 @@ ASP.NET Core 프레임워크는 정규식 생성자에 `RegexOptions.IgnoreCase 
 
 ## <a name="custom-route-constraints"></a>사용자 지정 경로 제약 조건
 
-기본 제공 경로 제약 조건 외에도 <xref:Microsoft.AspNetCore.Routing.IRouteConstraint> 인터페이스를 구현하여 사용자 지정 경로 제약 조건을 만들 수 있습니다. `IRouteConstraint` 인터페이스에는 제약 조건이 충족되는 경우 `true`를 반환하고 그렇지 않은 경우 `false`를 반환하는 `Match` 단일 메서드가 포함됩니다.
+기본 제공 경로 제약 조건 외에도 <xref:Microsoft.AspNetCore.Routing.IRouteConstraint> 인터페이스를 구현하여 사용자 지정 경로 제약 조건을 만들 수 있습니다. <xref:Microsoft.AspNetCore.Routing.IRouteConstraint> 인터페이스에는 제약 조건이 충족되는 경우 `true`를 반환하고 그렇지 않은 경우 `false`를 반환하는 `Match` 단일 메서드가 포함됩니다.
 
-사용자 지정 `IRouteConstraint`를 사용하려면 앱의 서비스 컨테이너에 있는 앱의 `RouteOptions.ConstraintMap`에 경로 제약 조건 형식을 등록해야 합니다. <xref:Microsoft.AspNetCore.Routing.RouteOptions.ConstraintMap>은 경로 제약 조건 키를 해당 제약 조건의 유효성을 검사하는 `IRouteConstraint` 구현으로 매핑하는 사전입니다. `Startup.ConfigureServices`에서 `services.AddRouting` 호출의 일부로 또는 `services.Configure<RouteOptions>`를 사용하여 직접 `RouteOptions`를 구성하여 앱의 `RouteOptions.ConstraintMap`을 업데이트할 수 있습니다. 예:
+사용자 지정 <xref:Microsoft.AspNetCore.Routing.IRouteConstraint>를 사용하려면 앱의 서비스 컨테이너에 있는 앱의 <xref:Microsoft.AspNetCore.Routing.RouteOptions.ConstraintMap>에 경로 제약 조건 형식을 등록해야 합니다. <xref:Microsoft.AspNetCore.Routing.RouteOptions.ConstraintMap>은 경로 제약 조건 키를 해당 제약 조건의 유효성을 검사하는 <xref:Microsoft.AspNetCore.Routing.IRouteConstraint> 구현으로 매핑하는 사전입니다. `Startup.ConfigureServices`에서 [services.AddRouting](xref:Microsoft.Extensions.DependencyInjection.RoutingServiceCollectionExtensions.AddRouting*) 호출의 일부로 또는 `services.Configure<RouteOptions>`를 사용하여 직접 <xref:Microsoft.AspNetCore.Routing.RouteOptions>를 구성하여 앱의 <xref:Microsoft.AspNetCore.Routing.RouteOptions.ConstraintMap>을 업데이트할 수 있습니다. 예:
 
 ```csharp
 services.AddRouting(options =>
@@ -692,7 +692,7 @@ public ActionResult<string> Get(string id)
 
 매개 변수 변환기:
 
-* `Route`에 대한 링크를 생성할 때 실행합니다.
+* <xref:Microsoft.AspNetCore.Routing.Route>에 대한 링크를 생성할 때 실행합니다.
 * `Microsoft.AspNetCore.Routing.IOutboundParameterTransformer`를 구현해야 합니다.
 * <xref:Microsoft.AspNetCore.Routing.RouteOptions.ConstraintMap>을 사용하여 구성됩니다.
 * 매개 변수의 경로 값을 가져와서 새 문자열 값으로 변환합니다.
@@ -734,9 +734,9 @@ ASP.NET Core는 생성된 경로가 있는 매개 변수 변환기를 사용하�
 
 [!code-csharp[](routing/samples/2.x/RoutingSample/Startup.cs?name=snippet_Dictionary)]
 
-위의 샘플 끝부분에서 생성된 `VirtualPath`는 `/package/create/123`입니다. 사전은 "추적 패키지 경로" 템플릿, `package/{operation}/{id}`의 `operation` 및 `id` 경로 값을 제공합니다. 자세한 내용은 [라우팅 미들웨어 사용](#use-routing-middleware) 섹션의 샘플 코드 또는 [샘플 앱](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/routing/samples)을 참조하세요.
+위의 샘플 끝부분에서 생성된 <xref:Microsoft.AspNetCore.Routing.VirtualPathData.VirtualPath>는 `/package/create/123`입니다. 사전은 "추적 패키지 경로" 템플릿, `package/{operation}/{id}`의 `operation` 및 `id` 경로 값을 제공합니다. 자세한 내용은 [라우팅 미들웨어 사용](#use-routing-middleware) 섹션의 샘플 코드 또는 [샘플 앱](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/routing/samples)을 참조하세요.
 
-`VirtualPathContext` 생성자에 대한 두 번째 매개 변수는 *앰비언트 값*의 컬렉션입니다. 개발자가 요청 컨텍스트 내에서 지정해야 하는 값의 수를 제한하므로 앰비언트 값은 사용하기 편리합니다. 현재 요청의 현재 경로 값은 링크 생성에 대한 앰비언트 값으로 간주됩니다. ASP.NET Core MVC 앱의 `HomeController`에 대한 `About` 작업에서는 `Index` 작업에 연결하기 위해 컨트롤러 경로 값을 지정할 필요가 없으며, `Home`이라는 앰비언트 값이 사용됩니다.
+<xref:Microsoft.AspNetCore.Routing.VirtualPathContext> 생성자에 대한 두 번째 매개 변수는 *앰비언트 값*의 컬렉션입니다. 개발자가 요청 컨텍스트 내에서 지정해야 하는 값의 수를 제한하므로 앰비언트 값은 사용하기 편리합니다. 현재 요청의 현재 경로 값은 링크 생성에 대한 앰비언트 값으로 간주됩니다. ASP.NET Core MVC 앱의 `HomeController`에 대한 `About` 작업에서는 `Index` 작업에 연결하기 위해 컨트롤러 경로 값을 지정할 필요가 없으며, `Home`이라는 앰비언트 값이 사용됩니다.
 
 매개 변수와 일치하지 않는 앰비언트 값은 무시됩니다. 명시적으로 제공된 값이 앰비언트 값을 재정의하는 경우에도 앰비언트 값이 무시됩니다. URL에서 일치는 왼쪽에서 오른쪽으로 수행됩니다.
 

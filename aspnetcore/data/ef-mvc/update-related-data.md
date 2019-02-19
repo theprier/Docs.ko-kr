@@ -1,27 +1,20 @@
 ---
-title: ASP.NET Core MVC 및 EF Core - 관련 데이터 업데이트 - 7/10
-author: rick-anderson
+title: '자습서: 관련 데이터 업데이트 - ASP.NET MVC 및 EF Core 사용'
 description: 이 자습서에서는 외래 키 필드 및 탐색 속성을 업데이트하여 관련된 데이터를 업데이트합니다.
+author: rick-anderson
 ms.author: tdykstra
 ms.custom: mvc
-ms.date: 10/24/2018
+ms.date: 02/05/2019
+ms.topic: tutorial
 uid: data/ef-mvc/update-related-data
-ms.openlocfilehash: 37985c945f2e4b15cfcefb0c126c3209e0bdeac4
-ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
+ms.openlocfilehash: ac94f2e2876c2d8d571a451e4641787ffe37b3d2
+ms.sourcegitcommit: 5e3797a02ff3c48bb8cb9ad4320bfd169ebe8aba
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50090735"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56103035"
 ---
-# <a name="aspnet-core-mvc-with-ef-core---update-related-data---7-of-10"></a>ASP.NET Core MVC 및 EF Core - 관련 데이터 업데이트 - 7/10
-
-[!INCLUDE [RP better than MVC](~/includes/RP-EF/rp-over-mvc-21.md)]
-
-::: moniker range="= aspnetcore-2.0"
-
-작성자: [Tom Dykstra](https://github.com/tdykstra) 및 [Rick Anderson](https://twitter.com/RickAndMSFT)
-
-Contoso University 웹 응용 프로그램 예제는 Entity Framework Core 및 Visual Studio를 사용하여 ASP.NET Core MVC 웹 응용 프로그램을 만드는 방법을 보여 줍니다. 자습서 시리즈에 대한 정보는 [시리즈의 첫 번째 자습서](intro.md)를 참조하세요.
+# <a name="tutorial-update-related-data---aspnet-mvc-with-ef-core"></a>자습서: 관련 데이터 업데이트 - ASP.NET MVC 및 EF Core 사용
 
 이전 자습서에서는 관련 데이터를 표시했습니다. 이 자습서에서는 외래 키 필드 및 탐색 속성을 업데이트하여 관련된 데이터를 업데이트합니다.
 
@@ -31,7 +24,20 @@ Contoso University 웹 응용 프로그램 예제는 Entity Framework Core 및 V
 
 ![강사 편집 페이지](update-related-data/_static/instructor-edit-courses.png)
 
-## <a name="customize-the-create-and-edit-pages-for-courses"></a>강좌에 대한 만들기 및 편집 페이지 사용자 지정
+이 자습서에서는 다음을 수행했습니다.
+
+> [!div class="checklist"]
+> * 강좌 페이지 사용자 지정
+> * 강사 편집 페이지 추가
+> * 편집 페이지에 강좌 추가
+> * 삭제 페이지 업데이트
+> * 만들기 페이지에 사무실 위치 및 강좌 추가
+
+## <a name="prerequisites"></a>전제 조건
+
+* [ASP.NET Core MVC 웹앱용 EF Core를 사용하여 관련 데이터 읽기](read-related-data.md)
+
+## <a name="customize-courses-pages"></a>강좌 페이지 사용자 지정
 
 새 강좌 엔터티가 만들어질 때 기존 부서에 대한 관계가 있어야 합니다. 이를 수행하기 위해 스캐폴드 코드는 컨트롤러 메서드 및 부서를 선택하기 위한 드롭다운 목록을 포함하는 만들기 및 편집 보기를 포함합니다. 드롭다운 목록은 `Course.DepartmentID` 외래 키 속성을 설정하고, 이는 적절한 부서 엔터티로 `Department` 탐색 속성을 로드하기 위해 필요한 모든 Entity Framework입니다. 스캐폴드 코드를 사용하지만 오류 처리를 추가하고 드롭다운 목록을 정렬하도록 약간 변경합니다.
 
@@ -103,7 +109,7 @@ HttpGet `Edit` 메서드는 편집 중인 강좌에 이미 할당되어 있는 �
 
 페이지에서 데이터를 변경하고 **저장**을 클릭합니다. 강좌 인덱스 페이지가 업데이트된 강좌 데이터로 표시됩니다.
 
-## <a name="add-an-edit-page-for-instructors"></a>강사에 대한 편집 페이지 추가
+## <a name="add-instructors-edit-page"></a>강사 편집 페이지 추가
 
 강사 레코드를 편집할 때 강사의 사무실 할당을 업데이트할 수 있습니다. 강사 엔터티에는 OfficeAssignment 엔터티와 일대영 또는 일 관계가 있으며 코드가 다음과 같은 경우를 처리해야 함을 의미합니다.
 
@@ -163,7 +169,7 @@ HttpPost `Edit` 메서드를 다음 코드로 바꿔 사무실 할당 업데이�
 
 ![강사 편집 페이지](update-related-data/_static/instructor-edit-office.png)
 
-## <a name="add-course-assignments-to-the-instructor-edit-page"></a>강사 편집 페이지에 강좌 할당 추가
+## <a name="add-courses-to-edit-page"></a>편집 페이지에 강좌 추가
 
 강사는 강좌 수에 관계 없이 가르칠 수 있습니다. 이제 다음 스크린샷에 표시된 것처럼 확인란 그룹을 사용하여 강좌 할당을 변경하는 기능을 추가하여 강사 편집 페이지를 향상시킵니다.
 
@@ -236,7 +242,7 @@ HttpPost `Edit` 메서드를 다음 코드로 바꿔 사무실 할당 업데이�
 > [!NOTE]
 > 강사 강좌 데이터를 편집하기 위해 여기에 적용되는 방법은 제한된 수의 강좌가 있는 경우에 잘 작동합니다. 훨씬 큰 컬렉션의 경우 다른 UI 및 다른 업데이트 메서드가 필요합니다.
 
-## <a name="update-the-delete-page"></a>삭제 페이지 업데이트
+## <a name="update-delete-page"></a>삭제 페이지 업데이트
 
 *InstructorsController.cs*에서 `DeleteConfirmed` 메서드를 삭제하고 해당 위치에 다음 코드를 삽입합니다.
 
@@ -248,7 +254,7 @@ HttpPost `Edit` 메서드를 다음 코드로 바꿔 사무실 할당 업데이�
 
 * 삭제될 강사가 부서의 관리자로 할당된 경우 해당 부서에서 강사 할당을 제거합니다.
 
-## <a name="add-office-location-and-courses-to-the-create-page"></a>만들기 페이지에 사무실 위치 및 강좌 추가
+## <a name="add-office-location-and-courses-to-create-page"></a>만들기 페이지에 사무실 위치 및 강좌 추가
 
 *InstructorsController.cs*에서 HttpGet 및 HttpPost `Create` 메서드를 삭제한 다음, 해당 위치에 다음 코드를 추가합니다.
 
@@ -293,12 +299,21 @@ public ICollection<CourseAssignment> CourseAssignments
 
 [CRUD 자습서](crud.md)에 설명된 대로 Entity Framework는 트랜잭션을 암시적으로 구현합니다. 더 많은 컨트롤이 필요한 시나리오의 경우, 예를 들어 트랜잭션의 Entity Framework 밖에서 수행한 작업을 포함하려는 경우 [트랜잭션](/ef/core/saving/transactions)을 참조하세요.
 
-## <a name="summary"></a>요약
+## <a name="get-the-code"></a>코드 가져오기
 
-이제 관련된 데이터 사용에 대한 소개를 완료했습니다. 다음 자습서에서는 동시성 충돌을 처리하는 방법을 확인합니다.
+[완성된 애플리케이션을 다운로드하거나 확인합니다.](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-mvc/intro/samples/cu-final)
 
-::: moniker-end
+## <a name="next-steps"></a>다음 단계
 
-> [!div class="step-by-step"]
-> [이전](read-related-data.md)
-> [다음](concurrency.md)
+이 자습서에서는 다음을 수행했습니다.
+
+> [!div class="checklist"]
+> * 강좌 페이지 사용자 지정
+> * 강사 편집 페이지 추가
+> * 편집 페이지에 강좌 추가
+> * 삭제 페이지 업데이트
+> * 만들기 페이지에 사무실 위치 및 강좌 추가
+
+동시성 충돌을 처리하는 방법을 알아보려면 다음 문서로 진행합니다.
+> [!div class="nextstepaction"]
+> [동시성 충돌 처리](concurrency.md)

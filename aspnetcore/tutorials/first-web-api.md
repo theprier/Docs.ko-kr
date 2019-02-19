@@ -4,14 +4,14 @@ author: rick-anderson
 description: ASP.NET Core MVC를 사용하여 웹 API 빌드
 ms.author: riande
 ms.custom: mvc
-ms.date: 01/24/2019
+ms.date: 02/4/2019
 uid: tutorials/first-web-api
-ms.openlocfilehash: 65af70be2cec68d30dd712b80312ebcd40ea0624
-ms.sourcegitcommit: c6db8b14521814f1f7e528d7aa06e474e4c04a1f
+ms.openlocfilehash: 5d72cb214a3d5565452b3b95f364818a71be44b7
+ms.sourcegitcommit: 98e9c7187772d4ddefe6d8e85d0d206749dbd2ef
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/25/2019
-ms.locfileid: "55065050"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "55737644"
 ---
 # <a name="tutorial-create-a-web-api-with-aspnet-core-mvc"></a>자습서: ASP.NET Core MVC를 사용하여 웹 API 만들기
 
@@ -351,6 +351,8 @@ ASP.NET Core에서는 DB 컨텍스트와 같은 서비스를 [DI(종속성 주�
 HTTP PUT을 사용하는 것을 제외하고 `PutTodoItem`는 `PostTodoItem`와 비슷합니다. 응답은 [204(콘텐츠 없음)](https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html)입니다. HTTP 사양에 따라 PUT 요청의 경우 클라이언트는 변경 내용만이 아니라 전체 업데이트된 엔터티를 보내야 합니다. 부분 업데이트를 지원하려면 [HTTP PATCH](xref:Microsoft.AspNetCore.Mvc.HttpPatchAttribute)를 사용합니다.
 
 ### <a name="test-the-puttodoitem-method"></a>PutTodoItem 메서드 테스트
+
+이 샘플은 앱이 시작될 때마다 초기화되어야 하는 메모리 내 데이터베이스를 사용합니다. PUT 호출을 실행하기 전에 데이터베이스에 항목이 있어야 합니다. GET을 호출하여 PUT 호출을 실행하기 전에 데이터베이스에 항목이 있는지 확인합니다.
 
 ID = 1인 할 일 항목을 업데이트하고 해당 이름을 "feed fish"로 설정합니다.
 

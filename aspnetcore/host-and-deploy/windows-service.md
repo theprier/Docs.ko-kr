@@ -5,14 +5,14 @@ description: Windows 서비스에서 ASP.NET Core 앱을 호스트하는 방법�
 monikerRange: '>= aspnetcore-2.1'
 ms.author: tdykstra
 ms.custom: mvc
-ms.date: 01/22/2019
+ms.date: 02/13/2019
 uid: host-and-deploy/windows-service
-ms.openlocfilehash: eedaf64710506f2a2aac65c178a9888d2ab33d38
-ms.sourcegitcommit: ebf4e5a7ca301af8494edf64f85d4a8deb61d641
+ms.openlocfilehash: 081a631c9c3e74c01e15f4b0b272d650c162bd20
+ms.sourcegitcommit: 6ba5fb1fd0b7f9a6a79085b0ef56206e462094b7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54837483"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56248253"
 ---
 # <a name="host-aspnet-core-in-a-windows-service"></a>Windows 서비스에서 ASP.NET Core 호스트
 
@@ -112,7 +112,7 @@ Windows 이벤트 로그 로깅을 사용하도록 설정하려면 [Microsoft.Ex
 
   두 조건이 모두 false이면(앱이 서비스로 실행됨) 다음을 수행합니다.
 
-  * <xref:System.IO.Directory.SetCurrentDirectory*>를 호출하고 앱의 게시 위치에 대한 경로를 사용합니다. `GetCurrentDirectory`를 호출하는 경우 Windows 서비스 앱이 *C:\\WINDOWS\\system32* 폴더를 반환하므로 경로를 얻기 위해 <xref:System.IO.Directory.GetCurrentDirectory*>를 호출하지는 마세요. 자세한 내용은 [현재 디렉터리 및 콘텐츠 루트](#current-directory-and-content-root) 섹션을 참조하세요.
+  * <xref:System.IO.Directory.SetCurrentDirectory*>를 호출하고 앱의 게시 위치에 대한 경로를 사용합니다. <xref:System.IO.Directory.GetCurrentDirectory*>를 호출하는 경우 Windows 서비스 앱이 *C:\\WINDOWS\\system32* 폴더를 반환하므로 경로를 얻기 위해 <xref:System.IO.Directory.GetCurrentDirectory*>를 호출하지는 마세요. 자세한 내용은 [현재 디렉터리 및 콘텐츠 루트](#current-directory-and-content-root) 섹션을 참조하세요.
   * <xref:Microsoft.AspNetCore.Hosting.WindowsServices.WebHostWindowsServiceExtensions.RunAsService*>를 호출하여 앱을 서비스로 실행합니다.
 
   [명령줄 구성 공급자](xref:fundamentals/configuration/index#command-line-configuration-provider)에는 명령줄 인수에 대한 이름-값 쌍이 필요하므로 <xref:Microsoft.AspNetCore.WebHost.CreateDefaultBuilder*>가 수신하기 전에 `--console` 스위치가 인수에서 제거됩니다.
@@ -147,11 +147,13 @@ dotnet publish --configuration Release --runtime win7-x64 --output c:\svc
 
 ### <a name="create-a-user-account"></a>사용자 계정 만들기
 
-`net user` 명령을 사용하여 서비스에 대한 사용자 계정을 만듭니다.
+관리 명령 셸에서 `net user` 명령을 사용하여 서비스에 대한 사용자 계정을 만듭니다.
 
 ```console
 net user {USER ACCOUNT} {PASSWORD} /add
 ```
+
+기본 암호 만료는 6주입니다.
 
 샘플 앱의 경우, 이름이 `ServiceUser`인 사용자 계정과 암호를 만듭니다. 다음 명령에서 `{PASSWORD}`를 [강력한 암호](/windows/security/threat-protection/security-policy-settings/password-must-meet-complexity-requirements)로 바꿉니다.
 
@@ -167,9 +169,13 @@ net localgroup {GROUP} {USER ACCOUNT} /add
 
 자세한 내용은 [서비스 사용자 계정](/windows/desktop/services/service-user-accounts)을 참조하세요.
 
+Active Directory를 사용할 때 사용자를 관리하는 대체 방법은 관리 서비스 계정을 사용하는 것입니다. 자세한 내용은 [그룹 관리 서비스 계정 개요](/windows-server/security/group-managed-service-accounts/group-managed-service-accounts-overview)를 참조하세요.
+
 ### <a name="set-permissions"></a>권한 설정
 
-[icacls](/windows-server/administration/windows-commands/icacls) 명령을 사용하여 앱의 폴더에 쓰기/읽기/실행 액세스 권한을 부여합니다.
+#### <a name="access-to-the-app-folder"></a>앱 폴더 액세스
+
+관리 명령 셸에서 [icacls](/windows-server/administration/windows-commands/icacls) 명령을 사용하여 앱 폴더에 대한 쓰기/읽기/실행 액세스 권한을 부여합니다.
 
 ```console
 icacls "{PATH}" /grant {USER ACCOUNT}:(OI)(CI){PERMISSION FLAGS} /t
@@ -195,11 +201,23 @@ icacls "c:\svc" /grant ServiceUser:(OI)(CI)WRX /t
 
 자세한 내용은 [icacls](/windows-server/administration/windows-commands/icacls)를 참조하세요.
 
+#### <a name="log-on-as-a-service"></a>서비스로 로그온
+
+사용자 계정에 [서비스로 로그온](/windows/security/threat-protection/security-policy-settings/log-on-as-a-service) 권한을 부여하려면 다음을 수행합니다.
+
+1. 로컬 보안 정책 콘솔 또는 로컬 그룹 정책 편집기 콘솔에서 **사용자 권한 할당** 정책을 찾습니다. 자세한 지침은 다음을 참조하십시오. [보안 정책 설정을 구성](/windows/security/threat-protection/security-policy-settings/how-to-configure-security-policy-settings)합니다.
+1. `Log on as a service` 정책을 찾습니다. 정책을 두 번 클릭하여 엽니다.
+1. **사용자 또는 그룹 추가**를 선택합니다.
+1. **고급**을 선택하고 **지금 찾기**를 선택합니다.
+1. 이전에 [사용자 계정 만들기](#create-a-user-account) 섹션에서 만든 사용자 계정을 선택합니다. **확인**을 선택하여 선택을 적용합니다.
+1. 개체 이름이 올바른지 확인한 후 **확인**을 선택합니다.
+1. **적용**을 선택합니다. **확인**을 선택하여 정책 창을 닫습니다.
+
 ## <a name="manage-the-service"></a>서비스 관리
 
 ### <a name="create-the-service"></a>서비스 만들기
 
-[sc.exe](https://technet.microsoft.com/library/bb490995) 명령줄 도구를 사용하여 서비스를 만듭니다. `binPath` 값은 실행 파일 이름을 포함하는 앱의 실행 파일 경로입니다. **각 매개 변수의 등호 및 인용 문자 값 사이에 공백이 필요합니다.**
+[sc.exe](https://technet.microsoft.com/library/bb490995) 명령줄 도구를 사용하여 관리 명령줄 셸에서 서비스를 만듭니다. `binPath` 값은 실행 파일 이름을 포함하는 앱의 실행 파일 경로입니다. **각 매개 변수의 등호 및 인용 문자 값 사이에 공백이 필요합니다.**
 
 ```console
 sc create {SERVICE NAME} binPath= "{PATH}" obj= "{DOMAIN}\{USER ACCOUNT}" password= "{PASSWORD}"
@@ -207,7 +225,7 @@ sc create {SERVICE NAME} binPath= "{PATH}" obj= "{DOMAIN}\{USER ACCOUNT}" passwo
 
 * `{SERVICE NAME}` &ndash; [서비스 제어 관리자](/windows/desktop/services/service-control-manager)의 서비스에 할당하는 이름입니다.
 * `{PATH}` &ndash; 서비스 실행 파일의 경로입니다.
-* `{DOMAIN}` &ndash; 도메인 가입 머신의 도메인입니다. 도메인에 가입되지 않은 머신의 경우 로컬 머신 이름입니다.
+* `{DOMAIN}` &ndash; 도메인 가입 머신의 도메인입니다. 도메인에 가입되지 않은 머신의 경우 로컬 머신 이름을 사용합니다.
 * `{USER ACCOUNT}` &ndash; 서비스 실행에 사용되는 사용자 계정입니다.
 * `{PASSWORD}` &ndash; 사용자 계정 암호입니다.
 

@@ -4,14 +4,14 @@ author: ardalis
 description: 필터 작동 방법 및 ASP.NET Core MVC에서 사용하는 방법을 자세히 알아봅니다.
 ms.author: riande
 ms.custom: mvc
-ms.date: 1/15/2019
+ms.date: 02/08/2019
 uid: mvc/controllers/filters
-ms.openlocfilehash: fe3082481b51c968fd361dbcc9553c4e35a36f2a
-ms.sourcegitcommit: 728f4e47be91e1c87bb7c0041734191b5f5c6da3
+ms.openlocfilehash: 3cd576b389a2a4384c0ba90b5740ac42140533cc
+ms.sourcegitcommit: af8a6eb5375ef547a52ffae22465e265837aa82b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54444352"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56159316"
 ---
 # <a name="filters-in-aspnet-core"></a>ASP.NET Core에서 필터링
 
@@ -71,6 +71,7 @@ ASP.NET Core MVC에서 *필터*를 사용하면 요청 처리 파이프라인의
 > 필터 인터페이스의 동기 또는 비동기 버전 중 **하나**를 구현합니다. 프레임워크는 먼저 필터가 비동기 인터페이스를 구현하는지를 확인하고 그렇다면 이를 호출합니다. 그렇지 않으면 동기 인터페이스의 메서드를 호출합니다. 하나의 클래스에 두 인터페이스를 모두 구현하는 경우 비동기 메서드만이 호출됩니다. <xref:Microsoft.AspNetCore.Mvc.Filters.ActionFilterAttribute>와 같은 추상 클래스를 사용하는 경우 각 필터 형식에 대한 동기 메서드 또는 비동기 메서드만을 재정의합니다.
 
 ### <a name="ifilterfactory"></a>IFilterFactory
+
 [IFilterFactory](/dotnet/api/microsoft.aspnetcore.mvc.filters.ifilterfactory)는 <xref:Microsoft.AspNetCore.Mvc.Filters.IFilterMetadata>를 구현합니다. 따라서 `IFilterFactory` 인스턴스를 필터 파이프라인에서 `IFilterMetadata` 인스턴스로 사용할 수 있습니다. 프레임워크가 필터를 호출하려고 준비하는 경우 `IFilterFactory`으로 캐스팅을 시도합니다. 해당 캐스트에 성공하면 [CreateInstance](/dotnet/api/microsoft.aspnetcore.mvc.filters.ifilterfactory.createinstance) 메서드를 호출하여 호출되는 `IFilterMetadata` 인스턴스를 만듭니다. 앱이 시작될 때 정확한 필터 파이프라인을 명시적으로 설정할 필요가 없으므로 유연한 디자인을 제공합니다.
 
 필터를 만드는 다른 방법으로 고유한 특성 구현에서 `IFilterFactory`를 구현할 수 있습니다.
@@ -348,8 +349,12 @@ System.InvalidOperationException: No service for type
 
 ## <a name="result-filters"></a>결과 필터
 
-* `IResultFilter` 또는 `IAsyncResultFilter` 인터페이스 중 하나를 구현합니다.
+* 인터페이스 구현:
+  * `IResultFilter` 또는 `IAsyncResultFilter`
+  * `IAlwaysRunResultFilter` 또는 `IAsyncAlwaysRunResultFilter`
 * 해당 실행은 작업 결과의 실행을 둘러쌉니다. 
+
+### <a name="iresultfilter-and-iasyncresultfilter"></a>IResultFilter 및 IAsyncResultFilter
 
 HTTP 헤더를 추가하는 결과 필터의 예는 다음과 같습니다.
 
@@ -371,6 +376,35 @@ HTTP 헤더를 추가하는 결과 필터의 예는 다음과 같습니다.
 `IAsyncResultFilter`의 경우 `ResultExecutionDelegate`에서 `await next`에 대한 호출은 후속 결과 필터 및 작업 결과를 실행합니다. 단락(short-circuit) 처리하려면 `ResultExecutingContext.Cancel`를 true로 설정하고 `ResultExectionDelegate`를 호출하지 않습니다.
 
 프레임워크는 하위 클래스를 지정할 수 있는 추상 `ResultFilterAttribute`을 제공합니다. 앞에 표시된 [AddHeaderAttribute](#add-header-attribute) 클래스는 결과 필터 특성의 예제입니다.
+
+### <a name="ialwaysrunresultfilter-and-iasyncalwaysrunresultfilter"></a>IAlwaysRunResultFilter 및 IAsyncAlwaysRunResultFilter
+
+<xref:Microsoft.AspNetCore.Mvc.Filters.IAlwaysRunResultFilter> 및 <xref:Microsoft.AspNetCore.Mvc.Filters.IAsyncAlwaysRunResultFilter> 인터페이스는 작업 결과에 대해 실행되는 <xref:Microsoft.AspNetCore.Mvc.Filters.IResultFilter> 구현을 선언합니다. <xref:Microsoft.AspNetCore.Mvc.Filters.IExceptionFilter> 또는 <xref:Microsoft.AspNetCore.Mvc.Filters.IAuthorizationFilter>가 적용되고 응답을 단락하지 않는 한 작업 결과에 필터가 적용됩니다.
+
+즉, 이 “항상 실행” 필터는 예외 또는 권한 부여 필터에 의해 단락되는 경우를 제외하고 항상 실행합니다. `IExceptionFilter` 및 `IAuthorizationFilter` 이외의 필터는 해당 필터를 단락하지 않습니다.
+
+예를 들어 다음 필터는 항상 작업 결과(콘텐츠 협상이 실패할 경우 *422 Unprocessable Entity* 상태 코드가 포함된 <xref:Microsoft.AspNetCore.Mvc.ObjectResult>)를 실행 및 설정합니다.
+
+```csharp
+public class UnprocessableResultFilter : Attribute, IAlwaysRunResultFilter
+{
+    public void OnResultExecuting(ResultExecutingContext context)
+    {
+        if (context.Result is StatusCodeResult statusCodeResult &&
+            statusCodeResult.StatusCode == 415)
+        {
+            context.Result = new ObjectResult("Can't process this!")
+            {
+                StatusCode = 422,
+            };
+        }
+    }
+
+    public void OnResultExecuted(ResultExecutedContext context)
+    {
+    }
+}
+```
 
 ## <a name="using-middleware-in-the-filter-pipeline"></a>필터 파이프라인에서 미들웨어 사용
 

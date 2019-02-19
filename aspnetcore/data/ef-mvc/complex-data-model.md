@@ -1,27 +1,20 @@
 ---
-title: ASP.NET Core MVC 및 EF Core - 데이터 모델 - 5/10
-author: rick-anderson
+title: '자습서: 복잡한 데이터 모델 만들기 - ASP.NET MVC 및 EF Core 사용'
 description: 이 자습서에서는 더 많은 엔터티 및 관계를 추가하고, 서식 지정, 유효성 검사 및 매핑 규칙을 지정하여 데이터 모델을 사용자 지정합니다.
+author: rick-anderson
 ms.author: tdykstra
 ms.custom: mvc
-ms.date: 10/24/2018
+ms.date: 02/05/2019
+ms.topic: tutorial
 uid: data/ef-mvc/complex-data-model
-ms.openlocfilehash: 87212edbfe34af6de938cf95314501e56e64a8be
-ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
+ms.openlocfilehash: c08fd6ff7c19c63161135b4c87609f6edd3edb80
+ms.sourcegitcommit: 5e3797a02ff3c48bb8cb9ad4320bfd169ebe8aba
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50091043"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56103126"
 ---
-# <a name="aspnet-core-mvc-with-ef-core---data-model---5-of-10"></a>ASP.NET Core MVC 및 EF Core - 데이터 모델 - 5/10
-
-[!INCLUDE [RP better than MVC](~/includes/RP-EF/rp-over-mvc-21.md)]
-
-::: moniker range="= aspnetcore-2.0"
-
-작성자: [Tom Dykstra](https://github.com/tdykstra) 및 [Rick Anderson](https://twitter.com/RickAndMSFT)
-
-Contoso University 웹 응용 프로그램 예제는 Entity Framework Core 및 Visual Studio를 사용하여 ASP.NET Core MVC 웹 응용 프로그램을 만드는 방법을 보여 줍니다. 자습서 시리즈에 대한 정보는 [시리즈의 첫 번째 자습서](intro.md)를 참조하세요.
+# <a name="tutorial-create-a-complex-data-model---aspnet-mvc-with-ef-core"></a>자습서: 복잡한 데이터 모델 만들기 - ASP.NET MVC 및 EF Core 사용
 
 이전 자습서에서는 세 가지 엔터티로 구성된 간단한 데이터 모델을 사용했습니다. 이 자습서에서는 더 많은 엔터티 및 관계를 추가하고, 서식 지정, 유효성 검사 및 데이터베이스 매핑 규칙을 지정하여 데이터 모델을 사용자 지정합니다.
 
@@ -29,7 +22,27 @@ Contoso University 웹 응용 프로그램 예제는 Entity Framework Core 및 V
 
 ![엔터티 다이어그램](complex-data-model/_static/diagram.png)
 
-## <a name="customize-the-data-model-by-using-attributes"></a>특성을 사용하여 데이터 모델 사용자 지정
+이 자습서에서는 다음을 수행했습니다.
+
+> [!div class="checklist"]
+> * 데이터 모델 사용자 지정
+> * Student 엔터티 변경
+> * Instructor 엔터티 만들기
+> * OfficeAssignment 엔터티 만들기
+> * Course 엔터티 수정
+> * Department 엔터티 만들기
+> * Enrollment 엔터티 수정
+> * 데이터베이스 컨텍스트 업데이트
+> * 테스트 데이터로 데이터베이스 시드
+> * 마이그레이션 추가
+> * 연결 문자열 변경
+> * 데이터베이스 업데이트
+
+## <a name="prerequisites"></a>전제 조건
+
+* [MVC 웹앱에서 ASP.NET Core용 EF Core 마이그레이션 기능 사용](migrations.md)
+
+## <a name="customize-the-data-model"></a>데이터 모델 사용자 지정
 
 이 섹션에서는 서식 지정, 유효성 검사 및 데이터베이스 매핑 규칙을 지정하는 특성을 사용하여 데이터 모델을 사용자 지정하는 방법을 배웁니다. 그런 다음, 이어지는 몇 개 섹션에서는 특성을 이미 만든 클래스에 추가하고, 모델에 나머지 엔터티 형식에 대한 새 클래스를 만들어 완벽한 학교 데이터 모델을 만듭니다.
 
@@ -41,7 +54,7 @@ Contoso University 웹 응용 프로그램 예제는 Entity Framework Core 및 V
 
 [!code-csharp[](intro/samples/cu/Models/Student.cs?name=snippet_DataType&highlight=3,12-13)]
 
-`DataType` 특성은 데이터베이스 내장 형식보다 구체적인 데이터 형식을 지정하는 데 사용됩니다. 이 경우에는 날짜 및 시간이 아닌 날짜만 추적하고자 합니다. `DataType` 열거형은 날짜, 시간, 전화 번호, 통화, 이메일 주소 등과 같은 다양한 데이터 형식을 제공합니다. `DataType` 특성을 통해 응용 프로그램에서 자동으로 유형별 기능을 제공하도록 설정할 수도 있습니다. 예를 들어, `DataType.EmailAddress`에 대해 `mailto:` 링크를 만들고 HTML5를 지원하는 브라우저에서 `DataType.Date`에 대해 날짜 선택기를 제공할 수 있습니다. `DataType` 특성은 HTML 5 브라우저가 인식할 수 있는 HTML 5 `data-`(데이터 대시로 발음) 특성을 내보냅니다. `DataType` 특성은 유효성 검사를 제공하지 않습니다.
+`DataType` 특성은 데이터베이스 내장 형식보다 구체적인 데이터 형식을 지정하는 데 사용됩니다. 이 경우에는 날짜 및 시간이 아닌 날짜만 추적하고자 합니다. `DataType` 열거형은 날짜, 시간, 전화 번호, 통화, 이메일 주소 등과 같은 다양한 데이터 형식을 제공합니다. `DataType` 특성을 통해 애플리케이션에서 자동으로 유형별 기능을 제공하도록 설정할 수도 있습니다. 예를 들어, `DataType.EmailAddress`에 대해 `mailto:` 링크를 만들고 HTML5를 지원하는 브라우저에서 `DataType.Date`에 대해 날짜 선택기를 제공할 수 있습니다. `DataType` 특성은 HTML 5 브라우저가 인식할 수 있는 HTML 5 `data-`(데이터 대시로 발음) 특성을 내보냅니다. `DataType` 특성은 유효성 검사를 제공하지 않습니다.
 
 `DataType.Date`는 표시되는 날짜의 서식을 지정하지 않습니다. 기본적으로 데이터 필드는 서버의 CultureInfo의 기본 형식에 따라 표시됩니다.
 
@@ -81,7 +94,7 @@ Contoso University 웹 응용 프로그램 예제는 Entity Framework Core 및 V
 
 `MaxLength` 특성은 `StringLength` 특성과 비슷한 기능을 제공하지만, 클라이언트 쪽 유효성 검사는 제공하지 않습니다.
 
-이제 데이터베이스 스키마에서 변경이 필요한 방식으로 데이터베이스 모델이 변경되었습니다. 응용 프로그램 UI를 사용하여 데이터베이스에 추가했을 수도 있는 데이터 손실 없이 마이그레이션을 사용하여 스키마를 업데이트합니다.
+이제 데이터베이스 스키마에서 변경이 필요한 방식으로 데이터베이스 모델이 변경되었습니다. 애플리케이션 UI를 사용하여 데이터베이스에 추가했을 수도 있는 데이터 손실 없이 마이그레이션을 사용하여 스키마를 업데이트합니다.
 
 변경 내용을 저장하고 프로젝트를 빌드합니다. 그런 다음, 프로젝트 폴더에서 명령 창을 열고 다음 명령을 입력합니다.
 
@@ -97,9 +110,7 @@ dotnet ef database update
 
 timestamp가 접두사로 사용된 마이그레이션 파일 이름이 마이그레이션을 요청하는 Entity Framework에서 사용됩니다. update-database 명령을 실행하기 전에 여러 마이그레이션을 만들 수 있습니다. 그런 다음, 모든 마이그레이션이 생성된 순서 대로 적용됩니다.
 
-앱을 실행하고, **학생** 탭을 선택하고, **새로 만들기**를 클릭한 다음, 50자보다 긴 이름을 입력합니다. **만들기**를 클릭하면, 클라이언트 쪽 유효성 검사가 오류 메시지를 표시합니다.
-
-![문자열 길이 오류를 보여주는 학생 인덱스 페이지](complex-data-model/_static/string-length-errors.png)
+앱을 실행하고, **학생** 탭을 선택하고, **새로 만들기**를 클릭한 다음, 50자보다 긴 이름을 입력해 봅니다. 애플리케이션에서 이 작업을 수행하지 못하게 합니다. 
 
 ### <a name="the-column-attribute"></a>열 특성
 
@@ -132,7 +143,7 @@ dotnet ef database update
 > [!Note]
 > 다음 섹션의 모든 엔터티 클래스 만들기를 완료하기 전에 컴파일을 시도하는 경우 컴파일러 오류가 발생할 수 있습니다.
 
-## <a name="final-changes-to-the-student-entity"></a>학생 엔터티에 대한 마지막 변경 내용
+## <a name="changes-to-student-entity"></a>Student 엔터티 변경
 
 ![학생 엔터티](complex-data-model/_static/student-entity.png)
 
@@ -160,7 +171,7 @@ public string LastName { get; set; }
 
 `FullName`은 다른 두 개의 속성을 연결하여 생성되는 값을 반환하는 계산된 속성입니다. 따라서 get 접근자만 있으며 `FullName` 열은 데이터베이스에 생성되지 않습니다.
 
-## <a name="create-the-instructor-entity"></a>강사 엔터티 만들기
+## <a name="create-instructor-entity"></a>Instructor 엔터티 만들기
 
 ![강사 엔터티](complex-data-model/_static/instructor-entity.png)
 
@@ -196,7 +207,7 @@ Contoso University 비즈니스 규칙에 따르면 강사는 최대 하나의 �
 public OfficeAssignment OfficeAssignment { get; set; }
 ```
 
-## <a name="create-the-officeassignment-entity"></a>OfficeAssignment 엔터티 만들기
+## <a name="create-officeassignment-entity"></a>OfficeAssignment 엔터티 만들기
 
 ![OfficeAssignment 엔터티](complex-data-model/_static/officeassignment-entity.png)
 
@@ -223,7 +234,7 @@ public int InstructorID { get; set; }
 
 강사 탐색 속성에 `[Required]` 특성을 배치하여 관련된 강사가 반드시 있도록 지정할 수도 있지만, `InstructorID` 외래 키(이 테이블에 대한 키이기도 함)가 null을 허용하지 않으므로 이를 수행하지 않아도 됩니다.
 
-## <a name="modify-the-course-entity"></a>강좌 엔터티 수정
+## <a name="modify-course-entity"></a>Course 엔터티 수정
 
 ![강좌 엔터티](complex-data-model/_static/course-entity.png)
 
@@ -272,7 +283,7 @@ public ICollection<Enrollment> Enrollments { get; set; }
 public ICollection<CourseAssignment> CourseAssignments { get; set; }
 ```
 
-## <a name="create-the-department-entity"></a>부서 엔터티 만들기
+## <a name="create-department-entity"></a>Department 엔터티 만들기
 
 ![부서 엔터티](complex-data-model/_static/department-entity.png)
 
@@ -318,7 +329,7 @@ public ICollection<Course> Courses { get; set; }
 >    .OnDelete(DeleteBehavior.Restrict)
 > ```
 
-## <a name="modify-the-enrollment-entity"></a>등록 엔터티 수정
+## <a name="modify-enrollment-entity"></a>Enrollment 엔터티 수정
 
 ![등록 엔터티](complex-data-model/_static/enrollment-entity.png)
 
@@ -344,7 +355,7 @@ public int StudentID { get; set; }
 public Student Student { get; set; }
 ```
 
-## <a name="many-to-many-relationships"></a>다대다 관계
+## <a name="many-to-many-relationships"></a>다 대 다 관계
 
 학생과 강좌 엔터티 간의 다대다 관계가 있으며, 등록 엔터티는 데이터베이스에서 *페이로드가 있는* 다대다 조인 테이블로 작동합니다. “페이로드가 있다”는 것은 등록 테이블에 조인된 테이블에 대한 외래 키 외에 추가 데이터가 포함되어 있다는 것을 의미합니다(이 경우 기본 키 및 Grade 속성).
 
@@ -384,7 +395,7 @@ public Student Student { get; set; }
 
 이 코드는 새 엔터티를 추가하고 CourseAssignment 엔터티의 복합 기본 키를 구성합니다.
 
-## <a name="fluent-api-alternative-to-attributes"></a>특성에 대한 흐름 API 대안
+## <a name="about-a-fluent-api-alternative"></a>흐름 API 대안 정보
 
 `DbContext` 클래스에서 `OnModelCreating` 메서드의 코드는 *흐름 API*를 사용하여 EF 동작을 구성합니다. API는 종종 [EF Core 설명서](/ef/core/modeling/#methods-of-configuration)의 이 예제와 같이 일련의 메서드 호출을 단일 명령문으로 연결하여 사용되기 때문에 “흐름”이라고 부릅니다.
 
@@ -411,7 +422,7 @@ protected override void OnModelCreating(ModelBuilder modelBuilder)
 
 여기에서 일대다 관계 줄 외에도(1 ~ \*), 강사 및 OfficeAssignment 엔터티 간 일대영 또는 일 관계 줄(1 ~ 0..1)과 강사 및 부서 간 영 또는 일대다 관계 줄(0..1 ~ *)을 확인할 수 있습니다.
 
-## <a name="seed-the-database-with-test-data"></a>테스트 데이터로 데이터베이스 시드
+## <a name="seed-database-with-test-data"></a>테스트 데이터로 데이터베이스 시드
 
 만든 새 엔터티에 대한 시드 데이터를 제공하기 위해 *Data/DbInitializer.cs* 파일의 코드를 다음 코드로 바꿉니다.
 
@@ -438,7 +449,7 @@ Done. To undo this action, use 'ef migrations remove'
 
 > ALTER TABLE 문이 FOREIGN KEY 제약 조건 “FK_dbo.Course_dbo.Department_DepartmentID”와 충돌했습니다. 데이터베이스 “ContosoUniversity”, 테이블 “dbo.Department”, 열 ‘DepartmentID’에서 충돌이 발생합니다.
 
-종종 기존 데이터와 마이그레이션을 실행하는 경우 외래 키 제약 조건을 만족하도록 데이터베이스에 스텁 데이터를 삽입해야 합니다. `Up` 메서드의 생성된 코드는 null 비허용 DepartmentID 외래 키를 강좌 테이블에 추가합니다. 코드를 실행할 때 강좌 테이블에 이미 행이 있는 경우 SQL Server에서 null일 수 없는 열에 배치하는 값을 알지 못하므로 `AddColumn` 작업이 실패합니다. 이 자습서의 경우 새 데이터베이스에서 마이그레이션을 실행하지만, 프로덕션 응용 프로그램에서는 마이그레이션이 기존 데이터를 처리하도록 해야 합니다. 따라서 다음 지침에는 수행 방법의 예가 나와 있습니다.
+종종 기존 데이터와 마이그레이션을 실행하는 경우 외래 키 제약 조건을 만족하도록 데이터베이스에 스텁 데이터를 삽입해야 합니다. `Up` 메서드의 생성된 코드는 null 비허용 DepartmentID 외래 키를 강좌 테이블에 추가합니다. 코드를 실행할 때 강좌 테이블에 이미 행이 있는 경우 SQL Server에서 null일 수 없는 열에 배치하는 값을 알지 못하므로 `AddColumn` 작업이 실패합니다. 이 자습서의 경우 새 데이터베이스에서 마이그레이션을 실행하지만, 프로덕션 애플리케이션에서는 마이그레이션이 기존 데이터를 처리하도록 해야 합니다. 따라서 다음 지침에는 수행 방법의 예가 나와 있습니다.
 
 기존 데이터로 이 마이그레이션을 수행하려면 새 열에 기본 값을 제공하도록 코드를 변경하고 “Temp”라는 이름의 스텁 부서를 만들어 기본 부서로 작동하도록 합니다. 결과적으로, `Up` 메서드를 실행한 후에 기존 강좌 행은 모두 “Temp” 부서에 연결됩니다.
 
@@ -452,11 +463,11 @@ Done. To undo this action, use 'ef migrations remove'
 
   [!code-csharp[](intro/samples/cu/Migrations/20170215234014_ComplexDataModel.cs?name=snippet_CreateDefaultValue&highlight=22-32)]
 
-프로덕션 응용 프로그램에서 코드 또는 스크립트를 작성하여 부서 행을 추가하고 강좌 행을 새 부서 행에 연결합니다. 그런 다음, “Temp” 부서 또는 기본 값은 Course.DepartmentID 열에 필요하지 않습니다.
+프로덕션 애플리케이션에서 코드 또는 스크립트를 작성하여 부서 행을 추가하고 강좌 행을 새 부서 행에 연결합니다. 그런 다음, “Temp” 부서 또는 기본 값은 Course.DepartmentID 열에 필요하지 않습니다.
 
 변경 내용을 저장하고 프로젝트를 빌드합니다.
 
-## <a name="change-the-connection-string-and-update-the-database"></a>연결 문자열을 변경하고 데이터베이스를 업데이트합니다.
+## <a name="change-the-connection-string"></a>연결 문자열 변경
 
 이제 새 엔터티에 대한 시드 데이터를 빈 데이터베이스에 추가하는 새 코드가 `DbInitializer` 클래스에 있습니다. EF가 비어 있는 새 데이터베이스를 만들도록 하려면 *appsettings.json*의 연결 문자열에서 데이터베이스의 이름을 ContosoUniversity3 또는 사용 중인 컴퓨터에서 사용한 적 없는 다른 이름으로 변경합니다.
 
@@ -474,6 +485,8 @@ Done. To undo this action, use 'ef migrations remove'
 > ```console
 > dotnet ef database drop
 > ```
+
+## <a name="update-the-database"></a>데이터베이스 업데이트
 
 데이터베이스 이름을 변경했거나 데이터베이스를 삭제한 후 명령 창에서 `database update` 명령을 실행하여 마이그레이션을 수행합니다.
 
@@ -493,12 +506,28 @@ dotnet ef database update
 
 ![SSOX의 CourseAssignment 데이터](complex-data-model/_static/ssox-ci-data.png)
 
-## <a name="summary"></a>요약
+## <a name="get-the-code"></a>코드 가져오기
 
-이제 더 복잡한 데이터 모델 및 해당 데이터베이스가 만들어졌습니다. 다음 자습서에서는 관련된 데이터에 액세스하는 방법에 대해 자세히 설명합니다.
+[완성된 애플리케이션을 다운로드하거나 확인합니다.](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-mvc/intro/samples/cu-final)
 
-::: moniker-end
+## <a name="next-steps"></a>다음 단계
 
-> [!div class="step-by-step"]
-> [이전](migrations.md)
-> [다음](read-related-data.md)
+이 자습서에서는 다음을 수행했습니다.
+
+> [!div class="checklist"]
+> * 데이터 모델 사용자 지정
+> * Student 엔터티 변경
+> * Instructor 엔터티 만들기
+> * OfficeAssignment 엔터티 만들기
+> * Course 엔터티 수정
+> * Department 엔터티 만들기
+> * Enrollment 엔터티 수정
+> * 데이터베이스 컨텍스트 업데이트
+> * 테스트 데이터로 데이터베이스 시드
+> * 마이그레이션 추가
+> * 연결 문자열 변경
+> * 데이터베이스 업데이트
+
+관련 데이터에 액세스하는 방법을 자세히 알아보려면 다음 문서로 진행합니다.
+> [!div class="nextstepaction"]
+> [관련 데이터 액세스](read-related-data.md)

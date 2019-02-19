@@ -1,26 +1,19 @@
 ---
-title: ASP.NET Core MVC 및 EF Core - 관련 데이터 읽기 - 6/10
-author: rick-anderson
+title: '자습서: 관련 데이터 읽기 - ASP.NET MVC 및 EF Core 사용'
 description: 이 자습서에서는 관련 데이터 즉, Entity Framework에서 탐색 속성으로 로드하는 데이터를 읽고 표시합니다.
+author: rick-anderson
 ms.author: tdykstra
-ms.date: 03/15/2017
+ms.date: 02/05/2019
+ms.topic: tutorial
 uid: data/ef-mvc/read-related-data
-ms.openlocfilehash: a310c9e4b9cec6e2ab2477461f395c9bbd3fa364
-ms.sourcegitcommit: e12f45ddcbe99102a74d4077df27d6c0ebba49c1
+ms.openlocfilehash: 73e225c2cd6d9f88079c54115cccad48f43d7d0c
+ms.sourcegitcommit: 5e3797a02ff3c48bb8cb9ad4320bfd169ebe8aba
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/15/2018
-ms.locfileid: "39063288"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56103048"
 ---
-# <a name="aspnet-core-mvc-with-ef-core---read-related-data---6-of-10"></a>ASP.NET Core MVC 및 EF Core - 관련 데이터 읽기 - 6/10
-
-[!INCLUDE [RP better than MVC](~/includes/RP-EF/rp-over-mvc-21.md)]
-
-::: moniker range="= aspnetcore-2.0"
-
-작성자: [Tom Dykstra](https://github.com/tdykstra) 및 [Rick Anderson](https://twitter.com/RickAndMSFT)
-
-Contoso University 웹 응용 프로그램 예제는 Entity Framework Core 및 Visual Studio를 사용하여 ASP.NET Core MVC 웹 응용 프로그램을 만드는 방법을 보여 줍니다. 자습서 시리즈에 대한 정보는 [시리즈의 첫 번째 자습서](intro.md)를 참조하세요.
+# <a name="tutorial-read-related-data---aspnet-mvc-with-ef-core"></a>자습서: 관련 데이터 읽기 - ASP.NET MVC 및 EF Core 사용
 
 이전 자습서에서 School 데이터 모델을 완료했습니다. 이 자습서에서는 관련 데이터 즉, Entity Framework에서 탐색 속성으로 로드하는 데이터를 읽고 표시합니다.
 
@@ -30,7 +23,19 @@ Contoso University 웹 응용 프로그램 예제는 Entity Framework Core 및 V
 
 ![강사 인덱스 페이지](read-related-data/_static/instructors-index.png)
 
-## <a name="eager-explicit-and-lazy-loading-of-related-data"></a>관련된 데이터의 즉시, 명시적 및 지연 로드
+이 자습서에서는 다음을 수행했습니다.
+
+> [!div class="checklist"]
+> * 관련 데이터를 로드하는 방법 알아보기
+> * 강좌 페이지 만들기
+> * 강사 페이지 만들기
+> * 명시적 로드에 대해 알아보기
+
+## <a name="prerequisites"></a>전제 조건
+
+* [ASP.NET Core MVC 웹앱용 EF Core를 사용하여 더 복잡한 데이터 모델 만들기](complex-data-model.md)
+
+## <a name="learn-how-to-load-related-data"></a>관련 데이터를 로드하는 방법 알아보기
 
 Entity Framework와 같은 ORM(개체-관계형 매핑) 소프트웨어에서 관련된 데이터를 엔터티의 탐색 속성으로 로드할 수 있는 여러 가지 방법이 있습니다.
 
@@ -54,7 +59,7 @@ Entity Framework와 같은 ORM(개체-관계형 매핑) 소프트웨어에서 �
 
 반면에 일부 시나리오에서 별도 쿼리는 더 효율적입니다. 하나의 쿼리에서 관련된 모든 데이터의 즉시 로드로 인해 SQL Server에서 효율적으로 처리할 수 없는 매우 복잡한 조인이 생성될 수 있습니다. 또는 처리하는 엔터티 집합의 하위 집합에 대해서만 엔터티의 탐색 속성에 액세스해야 하는 경우 별도 쿼리는 이전의 모든 즉시 로드에서 필요한 것보다 더 많은 데이터를 검색하므로 더 잘 수행할 수 있습니다. 성능이 중요한 경우 최상의 선택을 위해 두 가지 방식으로 성능을 테스트하는 것이 가장 좋습니다.
 
-## <a name="create-a-courses-page-that-displays-department-name"></a>부서 이름을 표시하는 강좌 페이지 만들기
+## <a name="create-a-courses-page"></a>강좌 페이지 만들기
 
 강좌 엔터티는 강좌에 할당된 부서의 부서 엔터티를 포함하는 탐색 속성을 포함합니다. 강좌의 목록에 할당된 부서의 이름을 표시하려면 `Course.Department` 탐색 속성에 있는 부서 엔터티에서 이름 속성을 가져와야 합니다.
 
@@ -86,9 +91,9 @@ Entity Framework와 같은 ORM(개체-관계형 매핑) 소프트웨어에서 �
 
 앱을 실행하고 **강좌** 탭을 선택하여 부서 이름이 있는 목록을 봅니다.
 
-![강좌 인덱스 페이지](read-related-data/_static/courses-index.png)
+![과정 인덱스 페이지](read-related-data/_static/courses-index.png)
 
-## <a name="create-an-instructors-page-that-shows-courses-and-enrollments"></a>강좌 및 등록을 보여 주는 강사 페이지 만들기
+## <a name="create-an-instructors-page"></a>강사 페이지 만들기
 
 이 섹션에서는 강사 페이지를 표시하기 위해 강사 엔터티에 대한 컨트롤러 및 보기를 만듭니다.
 
@@ -226,7 +231,7 @@ Entity Framework와 같은 ORM(개체-관계형 매핑) 소프트웨어에서 �
 
 ![강사 및 과정이 선택된 강사 인덱스 페이지](read-related-data/_static/instructors-index.png)
 
-## <a name="explicit-loading"></a>명시적 로드
+## <a name="about-explicit-loading"></a>명시적 로드 정보
 
 *InstructorsController.cs*에서 강사 목록을 검색한 경우 `CourseAssignments` 탐색 속성에 대한 즉시 로드를 지정했습니다.
 
@@ -238,12 +243,20 @@ Entity Framework와 같은 ORM(개체-관계형 매핑) 소프트웨어에서 �
 
 앱을 실행하고, 강사 인덱스 페이지로 이동하면 데이터가 검색되는 방법을 변경했더라도 페이지에 표시되는 내용에 차이가 없습니다.
 
-## <a name="summary"></a>요약
+## <a name="get-the-code"></a>코드 가져오기
 
-이제 관련된 데이터를 탐색 속성으로 읽도록 하나의 쿼리와 여러 쿼리에 즉시 로드를 사용했습니다. 다음 자습서에서는 관련된 데이터를 업데이트하는 방법을 설명합니다.
+[완성된 애플리케이션을 다운로드하거나 확인합니다.](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-mvc/intro/samples/cu-final)
 
-::: moniker-end
+## <a name="next-steps"></a>다음 단계
 
->[!div class="step-by-step"]
->[이전](complex-data-model.md)
->[다음](update-related-data.md)
+이 자습서에서는 다음을 수행했습니다.
+
+> [!div class="checklist"]
+> * 관련 데이터를 로드하는 방법 알아보기
+> * 강좌 페이지 만들기
+> * 강사 페이지 만들기
+> * 명시적 로드에 대해 알아보기
+
+관련 데이터를 업데이트하는 방법을 알아보려면 다음 문서로 진행합니다.
+> [!div class="nextstepaction"]
+> [관련 데이터 업데이트](update-related-data.md)

@@ -6,12 +6,12 @@ monikerRange: '>= aspnetcore-2.1'
 ms.author: riande
 ms.date: 12/4/2018
 uid: tutorials/razor-pages/page
-ms.openlocfilehash: c902e9e258b4f436e2f19e2940246b80549238b8
-ms.sourcegitcommit: ca5f03210bedc61c6639a734ae5674bfe095dee8
+ms.openlocfilehash: f97930c9e09dbf46acc9e91aff9469db8970fa77
+ms.sourcegitcommit: a91e8dd2f4b788114c8bc834507277f4b5e8d6c5
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/26/2019
-ms.locfileid: "55073116"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "55712291"
 ---
 # <a name="scaffolded-razor-pages-in-aspnet-core"></a>ASP.NET Core의 스캐폴드된 Razor 페이지
 
@@ -52,7 +52,8 @@ Razor는 HTML에서 C# 또는 Razor 관련 태그로 전환될 수 있습니다.
 `DisplayNameFor` HTML 도우미는 람다 식에서 참조되는 `Title` 속성을 검사하여 표시 이름을 확인합니다. 람다 식은 계산되는 것이 아니라 검사됩니다. 즉, `model`, `model.Movie` 또는 `model.Movie[0]`가 `null`이거나 비어 있을 경우 액세스 위반이 없습니다. 람다 식이 계산될 경우(예: `@Html.DisplayFor(modelItem => item.Title)` 사용) 모델의 속성 값이 계산됩니다.
 
 <a name="md"></a>
-### <a name="the-model-directive"></a>@model 지시문
+### <a name="the-model-directive"></a>
+  @model 지시문
 
 [!code-cshtml[](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Index.cshtml?range=1-2&highlight=2)]
 
