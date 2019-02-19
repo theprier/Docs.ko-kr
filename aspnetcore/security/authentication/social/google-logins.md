@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc, seodec18
 ms.date: 1/11/2019
 uid: security/authentication/google-logins
-ms.openlocfilehash: 98857a84238124e75d695242c8d421b9a29f02e7
-ms.sourcegitcommit: 184ba5b44d1c393076015510ac842b77bc9d4d93
+ms.openlocfilehash: 5b6bfaafba68eaf15a60b7c512a9e7406e3112ee
+ms.sourcegitcommit: 6d8c362a3cb4c634e64cbb3d28069c36bc973581
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/18/2019
-ms.locfileid: "54396097"
+ms.lasthandoff: 02/19/2019
+ms.locfileid: "56418668"
 ---
 # <a name="google-external-login-setup-in-aspnet-core"></a>ASP.NET Core에서 Google 외부 로그인 설정
 
@@ -56,7 +56,7 @@ Google 서비스를 추가할 `Startup.ConfigureServices`합니다.
 
 [!INCLUDE[](includes/chain-auth-providers.md)]
 
-참조 된 [GoogleOptions](/dotnet/api/microsoft.aspnetcore.builder.googleoptions) Google 인증에서 지 원하는 구성 옵션에 대 한 자세한 내용은 API 참조. 이 사용 하 여 사용자에 대 한 다른 정보를 요청할 수 수 있습니다.
+참조 된 [GoogleOptions](/dotnet/api/microsoft.aspnetcore.authentication.google.googleoptions) Google 인증에서 지 원하는 구성 옵션에 대 한 자세한 내용은 API 참조. 이 사용 하 여 사용자에 대 한 다른 정보를 요청할 수 수 있습니다.
 
 ## <a name="change-the-default-callback-uri"></a>기본 콜백 URI를 변경 합니다.
 
