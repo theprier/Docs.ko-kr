@@ -7,16 +7,16 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 02/12/2019
 uid: spa/blazor/get-started
-ms.openlocfilehash: 8c984bab8a13b4fc2d87fd1a7e0b285dfa25ba09
-ms.sourcegitcommit: af8a6eb5375ef547a52ffae22465e265837aa82b
+ms.openlocfilehash: 26336f73f6c8976ed5de819cebc3c5c50274ab03
+ms.sourcegitcommit: d75d8eb26c2cce19876c8d5b65ac8a4b21f625ef
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56159606"
+ms.lasthandoff: 02/19/2019
+ms.locfileid: "56410010"
 ---
 # <a name="get-started-with-blazor"></a>Blazor 시작
 
-하 여 [Daniel Roth](https://github.com/danroth27) 고 [Luke Latham](https://github.com/guardrex)
+작성자: [Daniel Roth](https://github.com/danroth27) 및 [Luke Latham](https://github.com/guardrex)
 
 [!INCLUDE[](~/includes/razor-components-preview-notice.md)]
 
@@ -32,7 +32,7 @@ Visual Studio에서 첫 번째 Blazor 프로젝트를 만들려면:
 1. 명령 셸에서 다음 명령을 실행 하 여.NET Core CLI와 함께 사용할 Blazor 템플릿을 확인:
 
    ```console
-   dotnet new -i Microsoft.AspNetCore.Blazor.Templates
+   dotnet new -i Microsoft.AspNetCore.Blazor.Templates::0.8.0-preview-19104-04
    ```
 
 1. 선택 **파일** > **새 프로젝트** > **Web** > **ASP.NET Core 웹 응용 프로그램**합니다.
@@ -97,7 +97,7 @@ Congratulations! You just ran your first Blazor app!
 1. 명령 셸에서 다음 명령을 실행 하 여 Blazor 템플릿을 추가 합니다.
 
    ```console
-   dotnet new -i Microsoft.AspNetCore.Blazor.Templates
+   dotnet new -i Microsoft.AspNetCore.Blazor.Templates::0.8.0-preview-19104-04
    ```
 
 1. 명령 셸에서 첫 번째 Blazor 프로젝트를 만듭니다.
@@ -122,7 +122,7 @@ Congratulations! You just ran your first Blazor app!
 * 카운터
 * 데이터 가져오기
 
-카운터 페이지에서 선택 합니다 **Click me** 페이지 새로 고침 없이 카운터를 증가 하는 단추입니다. 일반적으로 웹 페이지에서 카운터를 증가 하려면 JavaScript를 작성 해야 하지만 Blazor 사용 하 여 더 나은 접근 방식을 제공 C#입니다.
+카운터 페이지에서 **Click me** 단추를 선택하여 페이지 새로 고침 없이 카운터를 증분합니다. 일반적으로 웹 페이지에서 카운터를 증가 하려면 JavaScript를 작성 해야 하지만 Blazor 사용 하 여 더 나은 접근 방식을 제공 C#입니다.
 
 *Pages/Counter.cshtml*:
 
@@ -150,13 +150,13 @@ HTML과 유사한 구문을 사용 하는 다른 구성 요소는 구성 요소�
 매개 변수를 카운터 구성 요소를 추가 하려면 구성 요소의 업데이트 `@functions` 블록:
 
 * 에 대 한 속성을 추가 `IncrementAmount` 데코 레이트 된 `[Parameter]` 특성입니다.
-* 변경 된 `IncrementCount` 메서드를 사용 하 여 합니다 `IncrementAmount` 의 값을 증가 하는 경우 `currentCount`합니다.
+* `currentCount` 값을 늘릴 때 `IncrementAmount`를 사용하도록 `IncrementCount` 메서드를 변경합니다.
 
 *Pages/Counter.cshtml*:
 
 [!code-cshtml[](get-started/samples_snapshot/3.x/Counter2.cshtml?highlight=4,8)]
 
-지정 된 `IncrementAmount` 홈 구성 요소에서 매개 변수 `<Counter>` 특성을 사용 하 여 요소.
+특성을 사용하여 Home 구성 요소의 `<Counter>` 요소에 `IncrementAmount` 매개 변수를 지정합니다.
 
 *Pages/Index.cshtml*:
 

@@ -8,12 +8,12 @@ ms.date: 10/11/2018
 ms.assetid: f79fbf7f-59e5-4279-a832-c1a0294630f4
 msc.legacyurl: /mvc/mvc5
 msc.type: content
-ms.openlocfilehash: c958d39c7eff0d581de6b05890b8e6df8bdb5207
-ms.sourcegitcommit: 6e6002de467cd135a69e5518d4ba9422d693132a
+ms.openlocfilehash: 14fcf863a4ef5f6c9180cdf9e7b632ccdb1ebcb0
+ms.sourcegitcommit: d75d8eb26c2cce19876c8d5b65ac8a4b21f625ef
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49348262"
+ms.lasthandoff: 02/19/2019
+ms.locfileid: "56410471"
 ---
 <a name="aspnet-mvc-5"></a>ASP.NET MVC 5
 ====================
@@ -43,7 +43,7 @@ MVC 프로젝트 템플릿을 사용 하도록 업데이트 되었습니다 [부
 
 ### <a name="attribute-routing"></a>특성 라우팅
 
-ASP.NET MVC에서 지 원하는 [특성 라우팅은](https://blogs.msdn.com/b/webdev/archive/2013/10/17/attribute-routing-in-asp-net-mvc-5.aspx), Tim McCall, 작성자에 의해 작성 글 덕분 [ http://attributerouting.net ](http://attributerouting.net)합니다. 특성 라우팅을 사용 하 여 작업 및 컨트롤러에 주석을 추가 하 여 경로 지정할 수 있습니다.
+ASP.NET MVC에서 지 원하는 [특성 라우팅은](https://blogs.msdn.com/b/webdev/archive/2013/10/17/attribute-routing-in-asp-net-mvc-5.aspx), Tim McCall, 작성자에 의해 작성 글 덕분 [AttributeRouting](https://github.com/mccalltd/AttributeRouting)합니다. 특성 라우팅을 사용 하 여 작업 및 컨트롤러에 주석을 추가 하 여 경로 지정할 수 있습니다.
 
 ## <a name="new-web-project-experience"></a>새 웹 프로젝트 환경
 
