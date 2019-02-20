@@ -7,12 +7,6 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 02/11/2019
 uid: spa/blazor/index
-ms.openlocfilehash: 0d22365701a4fc1857582c13459280e50d59c858
-ms.sourcegitcommit: af8a6eb5375ef547a52ffae22465e265837aa82b
-ms.translationtype: HT
-ms.contentlocale: ko-KR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56159598"
 ---
 # <a name="introduction-to-blazor"></a>Blazor 소개
 
@@ -27,7 +21,7 @@ Blazor는 .NET을 사용하여 대화형 클라이언트 쪽 웹앱을 빌드하
 * **C# 언어**: JavaScript 대신 C#으로 코드를 작성합니다.
 * **.NET 에코시스템**: .NET 라이브러리의 기존 에코시스템을 활용합니다.
 * **전체 스택 개발**: 서버 및 클라이언트 쪽 논리를 공유합니다.
-* **속도 및 확장성**: NET은 성능, 안정성 및 보안을 위해 빌드되었습니다.
+* **속도 및 확장성**: .NET은 성능, 안정성 및 보안을 위해 빌드되었습니다.
 * **업계 최고의 도구**: Windows, Linux 및 macOS에서 Visual Studio를 사용하여 생산성을 유지합니다.
 * **안정성 및 일관성**:  안정적이고, 기능이 풍부하고, 간편한 일반적인 언어, 프레임워크 및 도구를 기반으로 빌드합니다.
 
