@@ -5,12 +5,12 @@ description: ASP.NET Core에서 컨트롤러 메서드, 보기 및 DataAnnotatio
 ms.author: riande
 ms.date: 12/13/2018
 uid: tutorials/first-mvc-app/controller-methods-views
-ms.openlocfilehash: cd1b0f2ccffaa660f137b8d739933e56018f2702
-ms.sourcegitcommit: ec71fd5a988f927ae301813aae5ff764feb3bb6a
+ms.openlocfilehash: 36c8141ba5827366572dabcfd0fdf9600c745706
+ms.sourcegitcommit: d75d8eb26c2cce19876c8d5b65ac8a4b21f625ef
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/12/2019
-ms.locfileid: "54249414"
+ms.lasthandoff: 02/19/2019
+ms.locfileid: "56410523"
 ---
 # <a name="controller-methods-and-views-in-aspnet-core"></a>ASP.NET Core의 컨트롤러 메서드 및 보기
 
@@ -100,7 +100,7 @@ ASP.NET Core는 `https://localhost:5001/Movies/Edit/4`를 매개 변수 `Id`가 
 
 [Form 태그 도우미](xref:mvc/views/working-with-forms)는 동영상 컨트롤러의`Edit` 메서드에서 생성된 `[ValidateAntiForgeryToken]` 위조 방지 토큰과 일치하는 숨겨진 위조 방지 토큰을 생성합니다. 자세한 내용은 [위조 방지 요청](xref:security/anti-request-forgery)을 참조하세요.
 
-`HttpGet Edit` 메서드는 동영상 `ID` 매개 변수를 취하며, Entity Framework `SingleOrDefaultAsync` 메서드를 사용하여 동영상을 검색하고, 선택된 동영상을 편집 보기에 반환합니다. 동영상을 찾을 수 없는 경우 `NotFound`(HTTP 404)를 반환합니다.
+`HttpGet Edit` 메서드는 동영상 `ID` 매개 변수를 취하며, Entity Framework `FindAsync` 메서드를 사용하여 동영상을 검색하고, 선택된 동영상을 편집 보기에 반환합니다. 동영상을 찾을 수 없는 경우 `NotFound`(HTTP 404)를 반환합니다.
 
 [!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie21/Controllers/MC1.cs?name=snippet_edit1)]
 

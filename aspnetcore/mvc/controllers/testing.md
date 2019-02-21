@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 08/23/2018
 uid: mvc/controllers/testing
-ms.openlocfilehash: 7e27f30e35c2c6e9062c8321b8b8544a38a69605
-ms.sourcegitcommit: 85f2939af7a167b9694e1d2093277ffc9a741b23
+ms.openlocfilehash: c8a374f3e3ecfdef1a02e685aecc4e2fcbfcbf48
+ms.sourcegitcommit: d75d8eb26c2cce19876c8d5b65ac8a4b21f625ef
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "50758143"
+ms.lasthandoff: 02/19/2019
+ms.locfileid: "56410364"
 ---
 # <a name="test-controller-logic-in-aspnet-core"></a>ASP.NET Core에서 컨트롤러 논리 테스트
 
@@ -19,7 +19,7 @@ ms.locfileid: "50758143"
 
 [컨트롤러](xref:mvc/controllers/actions)는 임의의 ASP.NET Core MVC 앱에서 중심적인 역할을 수행합니다. 따라서 컨트롤러가 의도한 대로 동작한다고 확신할 수 있어야 합니다. 자동화된 테스트는 앱이 프로덕션 환경에 배포되기 전에 오류를 발견할 수 있습니다.
 
-[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/controllers/testing/sample)([다운로드 방법](xref:index#how-to-download-a-sample))
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/controllers/testing/sample) ([다운로드 방법](xref:index#how-to-download-a-sample))
 
 ## <a name="unit-tests-of-controller-logic"></a>컨트롤러 논리의 단위 테스트
 
@@ -184,4 +184,3 @@ ASP.NET Core 2.1 이상에서 [ActionResult&lt;T&gt;](xref:web-api/action-return
 
 * <xref:test/integration-tests>
 * [Visual Studio를 사용하여 단위 테스트를 만들고 실행](/visualstudio/test/unit-test-your-code)
-* [명시적 종속성 원칙](https://deviq.com/explicit-dependencies-principle/)
