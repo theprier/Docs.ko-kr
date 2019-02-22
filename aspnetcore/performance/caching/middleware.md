@@ -5,14 +5,14 @@ description: ASP.NET Core에서 응답 캐싱 미들웨어를 구성하고 사�
 monikerRange: '>= aspnetcore-1.1'
 ms.author: riande
 ms.custom: mvc
-ms.date: 02/16/2019
+ms.date: 02/20/2019
 uid: performance/caching/middleware
-ms.openlocfilehash: bb265d04022ec2f8fdb3f2f3bc42f6b3f0b2b338
-ms.sourcegitcommit: d75d8eb26c2cce19876c8d5b65ac8a4b21f625ef
+ms.openlocfilehash: c7c3dbd0c9cf029fa6921d77450e780768c8aa6e
+ms.sourcegitcommit: 0945078a09c372f17e9b003758ed87e99c2449f4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/19/2019
-ms.locfileid: "56410325"
+ms.lasthandoff: 02/21/2019
+ms.locfileid: "56647917"
 ---
 # <a name="response-caching-middleware-in-aspnet-core"></a>ASP.NET Core의 응답 캐싱 미들웨어
 
@@ -138,7 +138,7 @@ if (responseCachingFeature != null)
 
 * 요청의 결과로 200(OK) 상태 코드가 설정된 서버 응답을 받아야 합니다.
 * 요청 메서드가 GET 또는 HEAD여야 합니다.
-* 터미널 미들웨어 응답 캐싱 미들웨어 전에 응답을 처리 하지 해야 합니다.
+* `Startup.Configure`, 응답 캐싱 미들웨어 압축이 필요한 미들웨어 전에 배치 되어야 합니다. 자세한 내용은 <xref:fundamentals/middleware/index>을 참조하세요.
 * `Authorization` 헤더가 없어야 합니다.
 * `Cache-Control` 헤더의 매개 변수가 유효해야 하고 응답이 `public`으로 표시되어야 하며 `private`로 표시되지 않아야 합니다.
 * `Pragma: no-cache`가 있으면 `Cache-Control` 헤더가 `Pragma` 헤더를 덮어쓰므로 `Cache-Control` 헤더가 없는 경우 no-cache header가 없어야 합니다.
