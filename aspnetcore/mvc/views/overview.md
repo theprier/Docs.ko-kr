@@ -5,18 +5,18 @@ description: ASP.NET Core MVC에서 뷰가 앱의 데이터 프레젠테이션�
 ms.author: riande
 ms.date: 12/12/2017
 uid: mvc/views/overview
-ms.openlocfilehash: 276540a5d77b1d65119d1b2104508d77f45d5588
-ms.sourcegitcommit: 8f8924ce4eb9effeaf489f177fb01b66867da16f
+ms.openlocfilehash: 6c5b4d7b89ac07a85b5aad626e37855de98064eb
+ms.sourcegitcommit: d75d8eb26c2cce19876c8d5b65ac8a4b21f625ef
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/24/2018
-ms.locfileid: "39219370"
+ms.lasthandoff: 02/19/2019
+ms.locfileid: "56410441"
 ---
 # <a name="views-in-aspnet-core-mvc"></a>ASP.NET Core MVC에서 뷰
 
 작성자: [Steve Smith](https://ardalis.com/) 및 [Luke Latham](https://github.com/guardrex)
 
-이 문서에서는 ASP.NET Core MVC 응용 프로그램에서 사용된 뷰에 대해 설명합니다. Razor 페이지에 대한 자세한 내용은 [Razor 페이지 소개](xref:razor-pages/index)를 참조하세요.
+이 문서에서는 ASP.NET Core MVC 애플리케이션에서 사용된 뷰에 대해 설명합니다. Razor 페이지에 대한 자세한 내용은 [Razor 페이지 소개](xref:razor-pages/index)를 참조하세요.
 
 MVC(Model-View-Controller) 패턴에서 *보기*는 앱의 데이터 프레젠테이션과 사용자 상호 작용을 처리합니다. 뷰는 [Razor 태그](xref:mvc/views/razor)가 포함된 HTML 템플릿입니다. Razor 태그는 클라이언트에 전송된 웹 페이지를 생성하기 위해 HTML과 상호 작용하는 코드입니다.
 
@@ -34,7 +34,7 @@ ASP.NET Core MVC에서 뷰는 Razor 태그에서 [C# 프로그래밍 언어](/do
 
 ## <a name="benefits-of-using-views"></a>뷰 사용 시 이점
 
-보기를 통해 사용자 인터페이스 태그를 앱의 다른 부분과 구분하여 MVC 앱 내에서 SoC([Separation of Concerns) 디자인](http://deviq.com/separation-of-concerns/)을 설정할 수 있습니다. SoC 디자인을 따르면 앱을 모듈화할 수 있으며 다음과 같은 여러 이점이 제공됩니다.
+뷰를 통해 사용자 인터페이스 태그를 앱의 다른 부분과 구분하여 MVC 앱 내에서 [문제의 분리](/dotnet/standard/modern-web-apps-azure-architecture/architectural-principles#separation-of-concerns)를 설정할 수 있습니다. SoC 디자인을 따르면 앱을 모듈화할 수 있으며 다음과 같은 여러 이점이 제공됩니다.
 
 * 앱이 더 잘 구성되어 있기 때문에 유지 관리가 더 쉽습니다. 뷰는 일반적으로 앱 기능별로 그룹화됩니다. 이렇게 하면 기능을 사용할 때 관련 뷰를 보다 쉽게 찾을 수 있습니다.
 * 앱의 일부는 느슨하게 결합되어 있습니다. 비즈니스 논리 및 데이터 액세스 구성 요소와 별도로 앱의 뷰를 작성하고 업데이트할 수 있습니다. 앱의 다른 부분을 업데이트하지 않고도 앱의 뷰를 수정할 수 있습니다.
@@ -276,7 +276,7 @@ public class HomeController : Controller
 <h1>@Model.Title</h1>
 ```
 
-레이아웃에서 제목은 ViewData 사전에서 읽습니다.
+레이아웃에서는 ViewData 사전으로부터 이 제목을 읽습니다.
 
 ```cshtml
 <!DOCTYPE html>

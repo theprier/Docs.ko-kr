@@ -2,16 +2,15 @@
 title: 데이터베이스 및 ASP.NET Core 작업
 author: rick-anderson
 description: 데이터베이스 및 ASP.NET Core 작업을 설명합니다.
-monikerRange: '>= aspnetcore-2.2'
 ms.author: riande
 ms.date: 12/07/2017
 uid: tutorials/razor-pages/sql
-ms.openlocfilehash: 817102a7b89ef4f078d7d0a0bf03ba7cb2745a5d
-ms.sourcegitcommit: 9bb58d7c8dad4bbd03419bcc183d027667fefa20
+ms.openlocfilehash: 3e05f5dbc73c35f1f938346b2eaab8c0fa7d8ab9
+ms.sourcegitcommit: d75d8eb26c2cce19876c8d5b65ac8a4b21f625ef
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52861279"
+ms.lasthandoff: 02/19/2019
+ms.locfileid: "56410299"
 ---
 # <a name="work-with-a-database-and-aspnet-core"></a>데이터베이스 및 ASP.NET Core 작업
 
@@ -133,7 +132,7 @@ if (context.Movie.Any())
 
 프로덕션 앱은 `Database.Migrate`를 호출하지 않습니다. `Update-Database`가 실행되지 않는 경우 다음 예외를 방지하기 위해 위의 코드에 추가됩니다.
 
-SqlException: 로그인에서 요청한 "RazorPagesMovieContext-21" 데이터베이스를 열 수 없습니다. 로그인에 실패했습니다.
+SqlException: 로그인에서 요청한 “RazorPagesMovieContext-21” 데이터베이스를 열 수 없습니다. 로그인에 실패했습니다.
 'user name' 사용자에 대한 로그인에 실패했습니다.
 
 ### <a name="test-the-app"></a>앱 테스트
@@ -174,10 +173,10 @@ DB의 모든 레코드 삭제(시드 메서드 실행을 위해). 앱을 중지 
    
 앱에서 시드된 데이터를 보여 줍니다.
 
-![동영상 데이터를 표시하는 크롬에서 열린 동영상 응용 프로그램](sql/_static/m55.png)
+![동영상 데이터를 표시하는 크롬에서 열린 동영상 애플리케이션](sql/_static/m55.png)
 
 다음 자습서는 데이터의 표현을 정리합니다.
 
 > [!div class="step-by-step"]
-> [이전: 스캐폴드된 Razor 페이지](xref:tutorials/razor-pages/page)
+> [이전: 스캐폴드된 Razor Pages](xref:tutorials/razor-pages/page)
 > [다음: 페이지 업데이트](xref:tutorials/razor-pages/da1)

@@ -5,12 +5,12 @@ description: ASP.NET Core에서 보기 구성 요소가 사용되는 방법 및 
 ms.author: riande
 ms.date: 1/30/2019
 uid: mvc/views/view-components
-ms.openlocfilehash: d0e528fcf9e20afee98e74fbc09c67b81e123e95
-ms.sourcegitcommit: d22b3c23c45a076c4f394a70b1c8df2fbcdf656d
+ms.openlocfilehash: d979c9480f7bffff993f0ea526bdc231b940baa2
+ms.sourcegitcommit: d75d8eb26c2cce19876c8d5b65ac8a4b21f625ef
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55428397"
+ms.lasthandoff: 02/19/2019
+ms.locfileid: "56410484"
 ---
 # <a name="view-components-in-aspnet-core"></a>ASP.NET Core의 보기 구성 요소
 
@@ -240,7 +240,7 @@ PVC 뷰가 렌더링되지 않는 경우 우선 순위가 4 이상인 뷰 구성
 
 ![공유 구성 요소 뷰가 있는 ToDo 출력](view-components/_static/shared.png)
 
-### <a name="avoiding-magic-strings"></a>매직 문자열 방지
+### <a name="avoiding-hard-coded-strings"></a>하드 코드된 문자열 방지
 
 컴파일 시간 안전성을 원하는 경우 하드 코드된 뷰 구성 요소 이름을 클래스 이름으로 바꿀 수 있습니다. "ViewComponent" 접미사 없이 뷰 구성 요소를 만듭니다.
 

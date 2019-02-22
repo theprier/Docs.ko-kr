@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/24/2018
 uid: fundamentals/dependency-injection
-ms.openlocfilehash: 3626ce834b904db64c1976aefc77dc60a7bfdf1c
-ms.sourcegitcommit: 4a6bbe84db24c2f3dd2de065de418fde952c8d40
+ms.openlocfilehash: 5e5b9746da9bbc13a147b807aabfd3d9ab90a0ca
+ms.sourcegitcommit: d75d8eb26c2cce19876c8d5b65ac8a4b21f625ef
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50253171"
+ms.lasthandoff: 02/19/2019
+ms.locfileid: "56410510"
 ---
 # <a name="dependency-injection-in-aspnet-core"></a>ASP.NET Core에서 종속성 주입
 
@@ -21,7 +21,7 @@ ASP.NET Core는 클래스와 해당 종속성 간의 [IoC(Inversion of Control)]
 
 MVC 컨트롤러 내의 종속성 주입에 대한 자세한 내용은 <xref:mvc/controllers/dependency-injection>을 참조하세요.
 
-[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/dependency-injection/samples)([다운로드 방법](xref:index#how-to-download-a-sample))
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/dependency-injection/samples) ([다운로드 방법](xref:index#how-to-download-a-sample))
 
 ## <a name="overview-of-dependency-injection"></a>종속성 주입 개요
 
@@ -437,10 +437,9 @@ public static void Main(string[] args)
 모범 사례는 다음과 같습니다.
 
 * 종속성 주입을 사용하여 종속성을 가져오도록 서비스를 디자인합니다.
-* 상태 저장 정적 메서드 호출([static cling](https://deviq.com/static-cling/)이라는 방법)을 사용하지 마세요.
+* 상태 저장 정적 메서드 호출을 사용하지 마세요.
 * 서비스 내의 종속 클래스를 직접 인스턴스화하지 마세요. 직접 인스턴스화는 코드를 특정 구현에 결합합니다.
-
-[개체 지향 디자인의 SOLID 원칙](https://deviq.com/solid/)에 따라 앱 클래스는 당연히 작고 잘 구성되며 쉽게 테스트되는 편입니다.
+* 앱 클래스를 작고 잘 구성되고 쉽게 테스트할 수 있도록 만듭니다.
 
 클래스에 주입된 종속성이 너무 많아 보이면 일반적으로 클래스에 역할이 너무 많고 [SRP(단일 책임 원칙)](/dotnet/standard/modern-web-apps-azure-architecture/architectural-principles#single-responsibility)를 위반하는 것일 수 있습니다. 해당 책임 몇 가지를 새로운 클래스로 이동하여 클래스를 리팩터링해 보세요. Razor 페이지의 페이지 모델 클래스 및 MVC 컨트롤러 클래스는 UI 고려 사항에 집중해야 합니다. 비즈니스 규칙 및 데이터 액세스 구현 세부 정보는 이러한 [별도의 문제](/dotnet/standard/modern-web-apps-azure-architecture/architectural-principles#separation-of-concerns)에 적합한 클래스에 유지되어야 합니다.
 
@@ -488,7 +487,7 @@ public void ConfigureServices(IServiceCollection services)
 * 사용자 지정 수명 관리
 * 초기화 지연에 대한 `Func<T>` 지원
 
-어댑터를 지원하는 일부 컨테이너의 목록은 [종속성 주입 readme.md 파일](https://github.com/aspnet/DependencyInjection#using-other-containers-with-microsoftextensionsdependencyinjection)을 참조하세요.
+어댑터를 지원하는 일부 컨테이너의 목록은 [종속성 주입 readme.md 파일](https://github.com/aspnet/Extensions/tree/master/src/DependencyInjection)을 참조하세요.
 
 다음 샘플은 기본 제공 컨테이너를 [Autofac](https://autofac.org/)로 대체합니다.
 
@@ -560,8 +559,7 @@ DI는 정적/전역 개체 액세스 패턴의 ‘대안’입니다. 고정 개
 * <xref:fundamentals/startup>
 * <xref:fundamentals/middleware/extensibility>
 * [종속성 주입으로 ASP.NET Core에 정리 코드 작성(MSDN)](https://msdn.microsoft.com/magazine/mt703433.aspx)
-* [컨테이너 관리 응용 프로그램 디자인, 서막: 컨테이너는 어디에 속합니까?](https://blogs.msdn.microsoft.com/nblumhardt/2008/12/26/container-managed-application-design-prelude-where-does-the-container-belong/)
+* [Container-Managed Application Design, Prelude: Where does the Container Belong?](https://blogs.msdn.microsoft.com/nblumhardt/2008/12/26/container-managed-application-design-prelude-where-does-the-container-belong/)(컨테이너 관리형 애플리케이션 디자인, 서막: 컨테이너는 어디에 속하는가?)
 * [명시적 종속성 원칙](/dotnet/standard/modern-web-apps-azure-architecture/architectural-principles#explicit-dependencies)
 * [Inversion of Control 컨테이너 및 종속성 주입 패턴(Martin Fowler)](https://www.martinfowler.com/articles/injection.html)
-* [New is Glue ("gluing" code to a particular implementation)](https://ardalis.com/new-is-glue)(최신 붙이기 방법(특정 구현에 코드 “붙이기”))
 * [How to register a service with multiple interfaces in ASP.NET Core DI](https://andrewlock.net/how-to-register-a-service-with-multiple-interfaces-for-in-asp-net-core-di/)(ASP.NET Core DI의 여러 인터페이스를 사용하여 서비스를 등록하는 방법)

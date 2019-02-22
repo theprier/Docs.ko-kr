@@ -5,12 +5,12 @@ description: ''
 ms.author: riande
 ms.date: 07/03/2017
 uid: mvc/controllers/actions
-ms.openlocfilehash: 3f3f565021d484b69401a3e03a2a966c92764a49
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 8289424b3cd3678bea18a25c7850e409795d1577
+ms.sourcegitcommit: d75d8eb26c2cce19876c8d5b65ac8a4b21f625ef
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36275661"
+ms.lasthandoff: 02/19/2019
+ms.locfileid: "56410440"
 ---
 # <a name="handle-requests-with-controllers-in-aspnet-core-mvc"></a>ASP.NET Core MVC에서 컨트롤러를 사용한 요청 처리
 
@@ -31,9 +31,9 @@ ms.locfileid: "36275661"
 * 클래스가 이름에 접미사 “Controller”가 붙는 클래스에서 상속
 * 클래스가 `[Controller]` 특성으로 데코레이트됨
 
-컨트롤러 클래스에는 연결된 `[NonController]` 특성이 없어야 합니다.
+컨트롤러 클래스에는 연결된 `[NonController]` 특성이 있어야 합니다.
 
-컨트롤러는 [명시적 종속성 원칙](http://deviq.com/explicit-dependencies-principle/)을 따라야 합니다. 이 원칙을 구현하는 방법에는 몇 가지가 있습니다. 여러 컨트롤러 작업에서 동일한 서비스가 필요한 경우 해당 종속성을 요청하는 데 [생성자 주입](xref:mvc/controllers/dependency-injection#constructor-injection)을 사용하는 것을 고려합니다. 서비스가 단일 작업 메서드에 필요한 경우에는 종속성을 요청하는 데 [작업 주입](xref:mvc/controllers/dependency-injection#action-injection-with-fromservices)을 사용하는 것을 고려합니다.
+컨트롤러는 [명시적 종속성 원칙](/dotnet/standard/modern-web-apps-azure-architecture/architectural-principles#explicit-dependencies)을 따라야 합니다. 이 원칙을 구현하는 방법에는 몇 가지가 있습니다. 여러 컨트롤러 작업에서 동일한 서비스가 필요한 경우 해당 종속성을 요청하는 데 [생성자 주입](xref:mvc/controllers/dependency-injection#constructor-injection)을 사용하는 것을 고려합니다. 서비스가 단일 작업 메서드에 필요한 경우에는 종속성을 요청하는 데 [작업 주입](xref:mvc/controllers/dependency-injection#action-injection-with-fromservices)을 사용하는 것을 고려합니다.
 
 **M**odel-**V**iew-**C**ontroller(모델 뷰 컨트롤러) 패턴 내에서 컨트롤러는 초기 요청 처리 및 모델의 인스턴스화를 담당합니다. 일반적으로 비즈니스 의사 결정은 모델 내에서 수행되어야 합니다.
 
@@ -45,7 +45,7 @@ ms.locfileid: "36275661"
 
 컨트롤러의 공용 메서드는 `[NonAction]` 특성으로 데코레이트된 경우 이외에는, 작업입니다. 작업에서의 매개 변수는 요청 데이터에 바인딩되며 [모델 바인딩](xref:mvc/models/model-binding)을 사용하여 유효성 검사가 수행됩니다. 모델 유효성 검사는 모델 바인딩되는 모든 작업에 대해 발생합니다. `ModelState.IsValid` 속성 값은 모델 바인딩 및 유효성 검사의 성공 여부를 나타냅니다.
 
-작업 메서드는 비즈니스 문제에 요청을 매핑하는 것에 대한 논리를 포함해야 합니다. 비즈니스 문제는 일반적으로 컨트롤러가 [종속성 주입](xref:mvc/controllers/dependency-injection)을 통해 액세스하는 서비스로 표시되어야 합니다. 그런 다음 작업은 비즈니스 작업의 결과를 응용 프로그램 상태에 매핑합니다.
+작업 메서드는 비즈니스 문제에 요청을 매핑하는 것에 대한 논리를 포함해야 합니다. 비즈니스 문제는 일반적으로 컨트롤러가 [종속성 주입](xref:mvc/controllers/dependency-injection)을 통해 액세스하는 서비스로 표시되어야 합니다. 그런 다음 작업은 비즈니스 작업의 결과를 애플리케이션 상태에 매핑합니다.
 
 작업은 모든 항목을 반환할 수 있지만, 응답을 생성하는 `IActionResult`(또는 비동기 메서드에 대한 `Task<IActionResult>`)의 인스턴스를 자주 반환합니다. 작업 메서드는 *응답의 종류*를 선택합니다. 작업 결과는 *응답을 수행*합니다.
 
@@ -57,7 +57,7 @@ ms.locfileid: "36275661"
 
 응답 본문에 설명할 콘텐츠가 없으므로 `Content-Type` HTTP 응답 헤더가 포함되지 않습니다.
 
-이 범주 내에는 리디렉션 및 HTTP 상태 코드의 두 가지 결과 형식이 있습니다.
+이 범주 내의 두 가지 결과 형식은 리디렉션과 HTTP 상태 코드입니다.
 
 * **HTTP 상태 코드**
 
@@ -73,7 +73,7 @@ ms.locfileid: "36275661"
 
 이 범주의 도우미 메서드 대부분은 `ContentType` 속성을 포함하므로 응답 본문을 설명하도록 `Content-Type` 응답 헤더를 설정할 수 있습니다.
 
-이 범주 내의 결과 형식은 [보기](xref:mvc/views/overview) 및 [서식 있는 응답](xref:web-api/advanced/formatting)의 두 가지가 있습니다.
+이 범주 내의 두 가지 결과 형식은 [보기](xref:mvc/views/overview)와 [서식 있는 응답](xref:web-api/advanced/formatting)입니다.
 
 * **보기**
 
@@ -83,7 +83,7 @@ ms.locfileid: "36275661"
 
     이 형식은 JSON 또는 비슷한 데이터 교환 형식을 반환하여 개체를 지정된 방식으로 표시합니다. 예를 들어 `return Json(customer);`은 JSON 형식에 제공된 개체를 직렬화합니다.
     
-    이 형식의 다른 일반적인 방법에는 `File`, `PhysicalFile` 및 `VirtualFile`이 포함됩니다. 예를 들어 `return PhysicalFile(customerFilePath, "text/xml");`은 “text/xml”의 `Content-Type` 응답 헤더 값으로 설명되는 XML 파일을 반환합니다.
+    이 형식의 다른 일반적인 방법에는 `File` 및 `PhysicalFile`이 포함됩니다. 예를 들어 `return PhysicalFile(customerFilePath, "text/xml");`은 [PhysicalFileResult](/dotnet/api/microsoft.aspnetcore.mvc.physicalfileresult)를 반환합니다.
 
 #### <a name="3-methods-resulting-in-a-non-empty-response-body-formatted-in-a-content-type-negotiated-with-the-client"></a>3. 클라이언트와 협상된 콘텐츠 형식으로 서식이 지정된 비어 있지 않은 응답 본문으로 이어지는 메서드
 
@@ -93,7 +93,7 @@ ms.locfileid: "36275661"
 
 ### <a name="cross-cutting-concerns"></a>교차 편집 문제
 
-응용 프로그램은 일반적으로 해당 워크플로의 일부를 공유합니다. 예를 들어 쇼핑 카트 액세스를 위해 인증이 필요한 앱이나 일부 페이지에서 데이터를 캐시하는 앱이 있습니다. 작업 메서드 전후로 논리를 수행하려면 *필터*를 사용합니다. 교차 편집 문제에서 [필터](xref:mvc/controllers/filters)를 사용하면 중복을 줄일 수 있으므로 [DRY(반복 금지) 원칙](http://deviq.com/don-t-repeat-yourself/)을 따르도록 할 수 있습니다.
+애플리케이션은 일반적으로 해당 워크플로의 일부를 공유합니다. 예를 들어 쇼핑 카트 액세스를 위해 인증이 필요한 앱이나 일부 페이지에서 데이터를 캐시하는 앱이 있습니다. 작업 메서드 전후로 논리를 수행하려면 *필터*를 사용합니다. 교차 편집 문제에서 [필터](xref:mvc/controllers/filters)를 사용하면 중복을 줄일 수 있습니다.
 
 `[Authorize]`와 같은 대부분의 필터 특성은 원하는 세분성 수준에 따라 컨트롤러 또는 작업 수준에 적용할 수 있습니다.
 

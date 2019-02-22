@@ -5,12 +5,12 @@ description: ASP.NET Core 앱에서 뷰를 렌더링하기 전에 일반적인 �
 ms.author: riande
 ms.date: 10/18/2018
 uid: mvc/views/layout
-ms.openlocfilehash: b23fd4e0b1d91a4dd5aae548aa2b2081aa37a561
-ms.sourcegitcommit: f43f430a166a7ec137fcad12ded0372747227498
+ms.openlocfilehash: 1bd225c804b333efea834a46b7d9ba46b1bb69d8
+ms.sourcegitcommit: d75d8eb26c2cce19876c8d5b65ac8a4b21f625ef
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49391299"
+ms.lasthandoff: 02/19/2019
+ms.locfileid: "56410575"
 ---
 # <a name="layout-in-aspnet-core"></a>ASP.NET Core의 레이아웃
 
@@ -22,7 +22,7 @@ ms.locfileid: "49391299"
 * 지시문 공유.
 * 페이지 또는 보기를 렌더링하기 전에 일반적인 코드 실행.
 
-이 문서에서는 ASP.NET Core MVC: Razor Pages 및 보기가 있는 컨트롤러에 대한 두 가지 방식의 레이아웃을 설명합니다. 이 항목에서는 차이점이 최소화되어 있습니다.
+이 문서에서는 ASP.NET Core MVC: Razor Pages 및 보기를 사용하는 컨트롤러에 대한 두 가지 방식의 레이아웃을 설명합니다. 이 항목에서는 차이점이 최소화되어 있습니다.
 
 * Razor Pages는 *Pages* 폴더에 있습니다.
 * 보기를 사용하는 컨트롤러는 *Views* 폴더의 보기를 사용합니다.
@@ -33,7 +33,7 @@ ms.locfileid: "49391299"
 
 ![페이지 레이아웃 예제](layout/_static/page-layout.png)
 
-스크립트 및 스타일시트와 같은 공통 HTML 구조는 앱 내에서 여러 페이지에서도 자주 사용됩니다. 이러한 모든 공유 요소를 *레이아웃* 파일에 정의한 후 앱 내에 사용된 모든 뷰에서 참조할 수 있습니다. 레이아웃은 뷰에서 중복 코드를 줄여 [DRY(반복 금지) 원칙](http://deviq.com/don-t-repeat-yourself/)을 따르도록 도와줍니다.
+스크립트 및 스타일시트와 같은 공통 HTML 구조는 앱 내에서 여러 페이지에서도 자주 사용됩니다. 이러한 모든 공유 요소를 *레이아웃* 파일에 정의한 후 앱 내에 사용된 모든 뷰에서 참조할 수 있습니다. 레이아웃은 보기에서 중복 코드를 줄입니다.
 
 규칙에 따라, ASP.NET Core 앱의 기본 레이아웃 이름을 *_Layout.cshtml*로 지정합니다. 템플릿을 사용하여 생성된 새로운 ASP.NET Core 프로젝트의 레이아웃 파일:
 

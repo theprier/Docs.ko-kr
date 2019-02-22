@@ -6,12 +6,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 12/18/2018
 uid: aspnetcore-2.2
-ms.openlocfilehash: b8279588e674e3ada486f61bac2c216f1359e86d
-ms.sourcegitcommit: 728f4e47be91e1c87bb7c0041734191b5f5c6da3
+ms.openlocfilehash: 6dcdf71ec5271690718dd1fe750a9a74d498a0f8
+ms.sourcegitcommit: d75d8eb26c2cce19876c8d5b65ac8a4b21f625ef
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54444391"
+ms.lasthandoff: 02/19/2019
+ms.locfileid: "56410338"
 ---
 # <a name="whats-new-in-aspnet-core-22"></a>ASP.NET Core 2.2의 새로운 기능
 
@@ -29,7 +29,7 @@ ms.locfileid: "54444391"
 
 ## <a name="problem-details-support"></a>문제 세부 정보 지원
 
-ASP.NET Core 2.1은 HTTP 응답과 관련된 오류 세부 정보를 포함하는 RFC 7807 사양에 따라 `ProblemDetails`를 도입했습니다. 2.2에서 `ProblemDetails`는 `ApiControllerAttribute`로 인한 컨트롤러의 클라이언트 오류 코드의 표준 응답입니다. 클라이언트 오류 상태 코드(4xx)를 반환하는 `IActionResult`는 이제 `ProblemDetails` 본문을 반환합니다. 결과에는 요청 로그를 사용하여 오류를 상관시키는 데 사용할 수 있는 상관 관계 ID도 포함됩니다. 클라이언트 오류의 경우 `ProducesResponseType`은 응답 유형으로 `ProblemDetails` 사용을 기본으로 합니다. 이는 NSwag 또는 Swashbuckle.AspNetCore를 사용하여 생성된 공개 API/Swagger 출력에 설명되어 있습니다.
+ASP.NET Core 2.1은 HTTP 응답과 관련된 오류 세부 정보를 포함하는 [RFC 7807](https://tools.ietf.org/html/rfc7807) 사양에 따라 `ProblemDetails`를 도입했습니다. 2.2에서 `ProblemDetails`는 `ApiControllerAttribute`로 인한 컨트롤러의 클라이언트 오류 코드의 표준 응답입니다. 클라이언트 오류 상태 코드(4xx)를 반환하는 `IActionResult`는 이제 `ProblemDetails` 본문을 반환합니다. 결과에는 요청 로그를 사용하여 오류를 상관시키는 데 사용할 수 있는 상관 관계 ID도 포함됩니다. 클라이언트 오류의 경우 `ProducesResponseType`은 응답 유형으로 `ProblemDetails` 사용을 기본으로 합니다. 이는 NSwag 또는 Swashbuckle.AspNetCore를 사용하여 생성된 공개 API/Swagger 출력에 설명되어 있습니다.
 
 ## <a name="endpoint-routing"></a>엔드포인트 라우팅
 
