@@ -7,12 +7,12 @@ ms.author: anurse
 ms.custom: mvc
 ms.date: 11/06/2018
 uid: signalr/security
-ms.openlocfilehash: 52cfac6be8e61572acdf0b19dab574b607314d97
-ms.sourcegitcommit: ebf4e5a7ca301af8494edf64f85d4a8deb61d641
+ms.openlocfilehash: 6e9f849ed856cf1cbf989b8b16cab5209c465471
+ms.sourcegitcommit: b3894b65e313570e97a2ab78b8addd22f427cac8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54836066"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56743789"
 ---
 # <a name="security-considerations-in-aspnet-core-signalr"></a>ASP.NET Core SignalR의 보안 고려 사항
 
@@ -77,7 +77,7 @@ info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
       Request starting HTTP/1.1 GET http://localhost:5000/myhub?access_token=1234
 ```
 
-서버 로그를 사용 하 여이 데이터를 로깅에 대 한 질문이 있으면 완전히 구성 하 여이 로깅을 비활성화할 수 있습니다는 `Microsoft.AspNetCore.Hosting` 로거가 합니다 `Warning` 수준 이상 (이러한 메시지에 기록 됩니다 `Info` 수준). 설명서를 참조 [로그 필터링](xref:fundamentals/logging/index#log-filtering) 자세한 내용은 합니다. 특정 요청 정보를 기록 하려는 경우 [미들웨어를 작성](xref:fundamentals/middleware/index#write-middleware) 필요 하 고 필터링 된 데이터를 기록 하는 `access_token` 쿼리 문자열 값 (있는 경우).
+서버 로그를 사용 하 여이 데이터를 로깅에 대 한 질문이 있으면 완전히 구성 하 여이 로깅을 비활성화할 수 있습니다는 `Microsoft.AspNetCore.Hosting` 로거가 합니다 `Warning` 수준 이상 (이러한 메시지에 기록 됩니다 `Info` 수준). 설명서를 참조 [로그 필터링](xref:fundamentals/logging/index#log-filtering) 자세한 내용은 합니다. 특정 요청 정보를 기록 하려는 경우 [미들웨어를 작성](xref:fundamentals/middleware/write) 필요 하 고 필터링 된 데이터를 기록 하는 `access_token` 쿼리 문자열 값 (있는 경우).
 
 ## <a name="exceptions"></a>예외
 

@@ -5,12 +5,12 @@ description: ''
 ms.author: tdykstra
 ms.date: 12/07/2016
 uid: migration/http-modules
-ms.openlocfilehash: 9dd28b86966912cce87166feb37e65adf3dd6dcb
-ms.sourcegitcommit: 5a2456cbf429069dc48aaa2823cde14100e4c438
+ms.openlocfilehash: 601b93fb12ab5b37b7d8ad8fd9825accc6e314cd
+ms.sourcegitcommit: b3894b65e313570e97a2ab78b8addd22f427cac8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "41902673"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56743857"
 ---
 # <a name="migrate-http-handlers-and-modules-to-aspnet-core-middleware"></a>HTTP 처리기 및 모듈을 ASP.NET Core 미들웨어로 마이그레이션
 
@@ -46,7 +46,7 @@ ASP.NET Core 미들웨어를 계속 하기 전에 먼저 요약해 보면 HTTP �
 
 **모듈에는 들어오는 요청을 처리 하는 순서는 의해 결정 됩니다.**
 
-   1. 합니다 [응용 프로그램 수명 주기](https://msdn.microsoft.com/library/ms227673.aspx), ASP.NET에 의해 발생 하는 시리즈 이벤트는: [BeginRequest](/dotnet/api/system.web.httpapplication.beginrequest)에 [AuthenticateRequest](/dotnet/api/system.web.httpapplication.authenticaterequest)등입니다. 각 모듈에는 하나 이상의 이벤트 처리기를 만들 수 있습니다.
+   1. 합니다 [응용 프로그램 수명 주기](https://msdn.microsoft.com/library/ms227673.aspx), ASP.NET에 의해 발생 하는 시리즈 이벤트는: [BeginRequest](/dotnet/api/system.web.httpapplication.beginrequest), [AuthenticateRequest](/dotnet/api/system.web.httpapplication.authenticaterequest), etc. 각 모듈에는 하나 이상의 이벤트 처리기를 만들 수 있습니다.
 
    2. 동일한 이벤트에서 구성 하는 순서에 대 한 *Web.config*합니다.
 
@@ -96,7 +96,7 @@ ASP.NET Core 미들웨어를 계속 하기 전에 먼저 요약해 보면 HTTP �
 
 [!code-csharp[](../migration/http-modules/sample/Asp.Net.Core/Middleware/MyMiddleware.cs?highlight=9,13,20,24,28,30,32)]
 
-이전 미들웨어 템플릿 섹션에서 수행한 [미들웨어를 작성](xref:fundamentals/middleware/index#write-middleware)합니다.
+이전 미들웨어 템플릿 섹션에서 수행한 [미들웨어를 작성](xref:fundamentals/middleware/write)합니다.
 
 합니다 *MyMiddlewareExtensions* 도우미 클래스를 사용 하면에서 미들웨어를 구성 하기 더 쉬울 프로그램 `Startup` 클래스입니다. `UseMyMiddleware` 메서드 요청 파이프라인에 미들웨어 클래스를 추가 합니다. 미들웨어에서 필요한 서비스는 미들웨어의 생성자에 지정 된 가져오기.
 
@@ -379,5 +379,5 @@ public async Task Invoke(HttpContext httpContext)
 
 * [HTTP 처리기 및 HTTP 모듈 개요](/iis/configuration/system.webserver/)
 * [구성](xref:fundamentals/configuration/index)
-* [응용 프로그램 시작](xref:fundamentals/startup)
+* [애플리케이션 시작](xref:fundamentals/startup)
 * [미들웨어](xref:fundamentals/middleware/index)

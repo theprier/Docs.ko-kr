@@ -5,14 +5,14 @@ description: Azure 키 자격 증명 모음 구성 공급자를 사용 하 여 �
 monikerRange: '>= aspnetcore-2.1'
 ms.author: riande
 ms.custom: mvc
-ms.date: 02/08/2019
+ms.date: 02/22/2019
 uid: security/key-vault-configuration
-ms.openlocfilehash: f70389c86420d81e284ecc863ac8386f726ed2cf
-ms.sourcegitcommit: 5e3797a02ff3c48bb8cb9ad4320bfd169ebe8aba
+ms.openlocfilehash: 2188929d6f380327465e8ce0fd8ad659188416d3
+ms.sourcegitcommit: b3894b65e313570e97a2ab78b8addd22f427cac8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56103113"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56743987"
 ---
 # <a name="azure-key-vault-configuration-provider-in-aspnet-core"></a>ASP.NET Core에서 azure Key Vault 구성 공급자
 
@@ -116,7 +116,7 @@ dotnet user-secrets set "Section:SecretName" "secret_value_2_dev"
 Azure AD를 구성 합니다. key vault에 인증 하는 응용 프로그램 ID 및 암호 (클라이언트 암호)을 사용 하는 Azure Key Vault 및 앱 **앱 Azure 외부에서 호스트 되는 경우**합니다.
 
 > [!NOTE]
-> 응용 프로그램 ID 및 암호 (클라이언트 암호)를 사용 하는 Azure에서 호스트 되는 앱에 대 한 지원 되지만 사용 하는 것이 좋습니다 [Azure 리소스에 대 한 id 관리](#use-managed-identities-for-azure-resources) Azure에서 앱을 호스팅하는 경우. 관리 되는 id는 일반적으로 더 안전한 방법으로 간주 됩니다 있도록 앱 또는 해당 구성에서 자격 증명을 저장 해야 합니다.
+> 응용 프로그램 ID 및 암호 (클라이언트 암호)를 사용 하는 Azure에서 호스트 되는 앱에 대 한 지원 되지만 사용 하는 것이 좋습니다 [Azure 리소스에 대 한 id 관리](#use-managed-identities-for-azure-resources) Azure에서 앱을 호스팅하는 경우. 관리 되는 id는 일반적으로 더 안전한 방법으로 간주 됩니다 있도록 앱 또는 해당 구성에서 자격 증명을 저장 필요 하지 않습니다.
 
 샘플 앱은 응용 프로그램 ID 및 암호 (클라이언트 암호)를 사용 하면 합니다 `#define` 맨 위에 있는 문을 합니다 *Program.cs* 파일을 설정 `Basic`.
 

@@ -5,12 +5,12 @@ description: 개별 사용자 계정을 사용 하 여 만든 ASP.NET Core 프�
 ms.author: riande
 ms.date: 11/30/2017
 uid: security/authentication/individual
-ms.openlocfilehash: ac843342ffc73632fbf9f6359c6c1a5878dcef0d
-ms.sourcegitcommit: c12ebdab65853f27fbb418204646baf6ce69515e
+ms.openlocfilehash: c73365eafaf2c38ef02c3c83ccf5ced4264f7dc0
+ms.sourcegitcommit: b3894b65e313570e97a2ab78b8addd22f427cac8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "46523066"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56743776"
 ---
 # <a name="articles-based-on-aspnet-core-projects-created-with-individual-user-accounts"></a>개별 사용자 계정을 사용 하 여 만든 ASP.NET Core 프로젝트를 기반으로 하는 문서
 
@@ -22,7 +22,6 @@ ASP.NET Core Id는 "개별 사용자 계정" 옵션을 사용 하 여 Visual Stu
 
 ```console
 dotnet new mvc -au Individual
-dotnet new webapi -au Individual
 dotnet new webapp -au Individual
 ```
 
@@ -32,11 +31,12 @@ dotnet new webapp -au Individual
 
 ```console
 dotnet new mvc -au Individual
-dotnet new webapi -au Individual
 dotnet new razor -au Individual
 ```
 
 ::: moniker-end
+
+참조 [이 GitHub 문제](https://github.com/aspnet/AspNetCore/issues/5833) web API 인증에 대 한 합니다.
 
 <a name="no"></a>
 ## <a name="no-authentication"></a>인증 안 함

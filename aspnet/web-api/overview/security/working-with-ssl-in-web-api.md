@@ -4,16 +4,16 @@ title: Web API에서에서 SSL 사용 | Microsoft Docs
 author: MikeWasson
 description: SSL 클라이언트 인증서를 사용 하 여 ASP.NET Web API를 사용 하 여 SSL을 사용 하는 방법을 보여 줍니다.
 ms.author: riande
-ms.date: 12/12/2012
+ms.date: 02/22/2019
 ms.assetid: 97f6164f-59cf-45c0-b820-e4aa29b45396
 msc.legacyurl: /web-api/overview/security/working-with-ssl-in-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: b11b35f58a1f033423f5e6ea5f5373df0d1fcb5f
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 69c0d217f605096d968435c062ee9931f8dff75f
+ms.sourcegitcommit: b3894b65e313570e97a2ab78b8addd22f427cac8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41830256"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56744107"
 ---
 <a name="working-with-ssl-in-web-api"></a>Web API에서에서 SSL 사용
 ====================
@@ -58,7 +58,7 @@ SSL은 인증서 공개 키 인프라를 사용 하 여 인증을 제공 합니�
 2. 두 번 클릭 합니다 **SSL 설정** 가운데 창에서 기능입니다.
 3. 아래 **클라이언트 인증서**, 이러한 옵션 중 하나를 선택 합니다. 
 
-    - **수락**: IIS에서 클라이언트 인증서를 허용 되지만 필요 하지 않습니다.
+    - **수락**: IIS는 인증서 클라이언트에서 허용 되지만 필요 하지 않습니다.
     - **필요한**: 클라이언트 인증서가 필요 합니다. (이 옵션을 사용 하려면 선택 해야 "SSL 필요)
 
 또한 ApplicationHost.config 파일에서 이러한 옵션을 설정할 수 있습니다.
@@ -69,7 +69,7 @@ SSL은 인증서 공개 키 인프라를 사용 하 여 인증을 제공 합니�
 
 ### <a name="creating-a-client-certificate-for-testing"></a>테스트에 대 한 클라이언트 인증서 만들기
 
-테스트 목적으로 사용할 수 있습니다 [MakeCert.exe](https://msdn.microsoft.com/library/bfsktky3.aspx) 클라이언트 인증서를 만듭니다. 테스트 루트 인증 기관을 먼저 만듭니다.
+테스트 목적으로 사용할 수 있습니다 [MakeCert.exe](/windows/desktop/SecCrypto/makecert) 클라이언트 인증서를 만듭니다. 테스트 루트 인증 기관을 먼저 만듭니다.
 
 [!code-console[Main](working-with-ssl-in-web-api/samples/sample4.cmd)]
 
