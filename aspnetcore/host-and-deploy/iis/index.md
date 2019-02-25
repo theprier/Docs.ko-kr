@@ -4,14 +4,8 @@ author: guardrex
 description: Windows Server IIS(인터넷 정보 서비스)에서 ASP.NET Core 앱을 호스팅하는 방법을 알아봅니다.
 ms.author: riande
 ms.custom: mvc
-ms.date: 02/13/2019
+ms.date: 02/19/2019
 uid: host-and-deploy/iis/index
-ms.openlocfilehash: 5d6ba8b7ee6f09a7d00aa0285802cf0aad267a1d
-ms.sourcegitcommit: 6ba5fb1fd0b7f9a6a79085b0ef56206e462094b7
-ms.translationtype: HT
-ms.contentlocale: ko-KR
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56248422"
 ---
 # <a name="host-aspnet-core-on-windows-with-iis"></a>IIS가 있는 Windows에서 ASP.NET Core 호스팅
 
@@ -296,13 +290,14 @@ services.Configure<IISOptions>(options =>
 
 ### <a name="install-the-hosting-bundle"></a>호스팅 번들 설치
 
-1. 서버에서 설치 관리자를 실행합니다. 관리자 명령 프롬프트에서 설치 관리자를 실행할 때 다음 스위치를 사용할 수 있습니다.
+1. 서버에서 설치 관리자를 실행합니다. 관리자 명령 셸에서 설치 관리자를 실행할 때 다음 매개 변수를 사용할 수 있습니다.
 
    * `OPT_NO_ANCM=1` &ndash; ASP.NET Core 모듈 설치를 건너뜁니다.
    * `OPT_NO_RUNTIME=1` &ndash; .NET Core 런타임 설치를 건너뜁니다.
    * `OPT_NO_SHAREDFX=1` &ndash; ASP.NET 공유 프레임워크(ASP.NET 런타임) 설치를 건너뜁니다.
-   * `OPT_NO_X86=1` &ndash; x86 런타임 설치를 건너뜁니다. 32비트 앱을 호스팅하지 않음을 아는 경우 이 스위치를 사용합니다. 향후 32비트와 64비트 앱을 모두 호스트할 수 있는 기회가 있는 경우 이 스위치를 사용하지 않고 두 런타임을 모두 설치합니다.
-1. 시스템을 다시 시작하거나 명령 프롬프트에서 **net stop was /y**, **net start w3svc**를 차례로 실행합니다. IIS를 다시 시작하면 설치 관리자에서 변경된 시스템 PATH(환경 변수)의 내용이 수집됩니다.
+   * `OPT_NO_X86=1` &ndash; x86 런타임 설치를 건너뜁니다. 32비트 앱을 호스팅하지 않음을 아는 경우 이 매개 변수를 사용합니다. 향후 32비트와 64비트 앱을 모두 호스트할 수 있는 기회가 있는 경우 이 매개 변수를 사용하지 않고 두 런타임을 모두 설치합니다.
+   * `OPT_NO_SHARED_CONFIG_CHECK=1` &ndash; 공유 구성(*applicationHost.config*)이 IIS 설치와 동일한 머신에 있는 경우 IIS 공유 구성 사용 선택을 해제합니다. *ASP.NET Core 2.2 이상 호스팅 번들러 설치 관리자에 대해서만 사용할 수 있습니다.* 자세한 내용은 <xref:host-and-deploy/aspnet-core-module#aspnet-core-module-with-an-iis-shared-configuration>을 참조하세요.
+1. 시스템을 다시 시작하거나 명령 셸에서 **net stop was /y**, **net start w3svc**를 차례로 실행합니다. IIS를 다시 시작하면 설치 관리자에서 변경된 시스템 PATH(환경 변수)의 내용이 수집됩니다.
 
 Windows 호스팅 번들 설치 관리자는 설치를 완료하기 위해 IIS를 다시 설정해야 함을 발견하면 IIS를 다시 설정합니다. 설치 관리자가 IIS 다시 설정을 트리거하면 모든 IIS 앱 풀 및 웹 사이트가 다시 시작됩니다.
 

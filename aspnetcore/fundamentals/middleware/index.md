@@ -4,14 +4,8 @@ author: rick-anderson
 description: ASP.NET Core 미들웨어 및 요청 파이프라인에 대해 알아봅니다.
 ms.author: riande
 ms.custom: mvc
-ms.date: 10/10/2018
+ms.date: 02/17/2019
 uid: fundamentals/middleware/index
-ms.openlocfilehash: c55dbd5a9ac31f55daf1cb3146fb18b91b016919
-ms.sourcegitcommit: 42a8164b8aba21f322ffefacb92301bdfb4d3c2d
-ms.translationtype: HT
-ms.contentlocale: ko-KR
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54341591"
 ---
 # <a name="aspnet-core-middleware"></a>ASP.NET Core 미들웨어
 
@@ -24,7 +18,7 @@ ms.locfileid: "54341591"
 
 요청 대리자는 요청 파이프라인을 빌드하는 데 사용됩니다. 요청 대리자는 각 HTTP 요청을 처리합니다.
 
-요청 대리자는 <xref:Microsoft.AspNetCore.Builder.RunExtensions.Run*>, <xref:Microsoft.AspNetCore.Builder.MapExtensions.Map*> 및 <xref:Microsoft.AspNetCore.Builder.UseExtensions.Use*> 확장 메서드를 사용하여 구성됩니다. 개별 요청 대리자는 무명 메서드(인라인 미들웨어라고 함)로 인라인에서 지정되거나 다시 사용할 수 있는 클래스에서 정의될 수 있습니다. 이러한 다시 사용할 수 있는 클래스 및 인라인 무명 메서드는 *미들웨어*이며, *미들웨어 구성 요소*라고도 합니다. 요청 파이프라인의 각 미들웨어 구성 요소는 파이프라인의 그 다음 구성 요소를 호출하거나 파이프라인을 단락(short-circuiting)하는 역할을 담당합니다.
+요청 대리자는 <xref:Microsoft.AspNetCore.Builder.RunExtensions.Run*>, <xref:Microsoft.AspNetCore.Builder.MapExtensions.Map*> 및 <xref:Microsoft.AspNetCore.Builder.UseExtensions.Use*> 확장 메서드를 사용하여 구성됩니다. 개별 요청 대리자는 무명 메서드(인라인 미들웨어라고 함)로 인라인에서 지정되거나 다시 사용할 수 있는 클래스에서 정의될 수 있습니다. 이러한 다시 사용할 수 있는 클래스 및 인라인 무명 메서드는 *미들웨어*이며, *미들웨어 구성 요소*라고도 합니다. 요청 파이프라인의 각 미들웨어 구성 요소는 파이프라인의 그 다음 구성 요소를 호출하거나 파이프라인을 단락(short-circuiting)하는 역할을 담당합니다. 미들웨어가 단락(short-circuit)되는 경우 미들웨어에서 더는 요청을 처리하지 못하도록 하기 때문에 이를 *터미널 미들웨어*라고 합니다.
 
 <xref:migration/http-modules>은 ASP.NET Core와 ASP.NET 4.x의 요청 파이프라인 간의 차이점을 설명하고 더 많은 미들웨어 샘플을 제공합니다.
 
@@ -34,7 +28,7 @@ ASP.NET Core 요청 파이프라인은 하나씩 차례로 호출되는 요청 �
 
 ![요청이 도착하고, 세 가지 미들웨어를 처리하고, 응답이 앱에서 나가는 것을 보여주는 요청 처리 패턴입니다. 각 미들웨어는 해당 논리를 실행하고 next() 문에서 다음 미들웨어에 대한 요청을 전달합니다. 세 번째 미들웨어가 요청을 처리한 후 요청은 클라이언트에 대한 응답으로 앱을 떠나기 전에 해당 다음() 문 후에 추가 처리에 대한 반대 순서로 이전의 두 개의 미들웨어를 통해 다시 전달합니다.](index/_static/request-delegate-pipeline.png)
 
-각 대리자는 다음 대리자 전과 후에 작업을 수행할 수 있습니다. 또한 대리자는 다음 대리자에 요청을 전달하지 않도록 결정할 수 있습니다. 이를 *요청 파이프라인을 단락(short-circuiting)* 한다고 합니다. 단락(short-circuiting)은 불필요한 작업을 방지하기 때문에 보통 바람직합니다. 예를 들어 정적 파일 미들웨어는 정적 파일에 대한 요청을 반환하고 나머지 파이프라인을 단락(short-circuit)할 수 있습니다. 예외 처리 대리자는 파이프라인의 이후 단계에서 발생하는 예외를 catch할 수 있도록 파이프라인의 초기에 호출됩니다.
+각 대리자는 다음 대리자 전과 후에 작업을 수행할 수 있습니다. 예외 처리 대리자는 파이프라인의 이후 단계에서 발생하는 예외를 catch할 수 있도록 파이프라인의 초기에 호출되어야 합니다.
 
 가장 간단한 가능한 ASP.NET Core 앱은 모든 요청을 처리하는 단일 요청 대리자를 설정합니다. 이 경우 실제 요청 파이프라인은 포함하지 않습니다. 대신, 단일 익명 함수가 모든 HTTP 요청에 대한 응답에 호출됩니다.
 
@@ -45,6 +39,8 @@ ASP.NET Core 요청 파이프라인은 하나씩 차례로 호출되는 요청 �
 <xref:Microsoft.AspNetCore.Builder.UseExtensions.Use*>를 사용하여 여러 요청 대리자를 연결합니다. `next` 매개 변수는 파이프라인의 다음 대리자를 나타냅니다. *next* 매개 변수를 호출하지 *않고* 파이프라인을 단락(short-circuit)할 수 있습니다. 다음 예제의 설명처럼, 일반적으로 다음 대리자 전과 후 모두에서 작업을 수행할 수 있습니다.
 
 [!code-csharp[](index/snapshot/Chain/Startup.cs?name=snippet1)]
+
+대리자가 다음 대리자에 요청을 전달하지 않을 때 이를*요청 파이프라인을 단락(short-circuiting)* 한다고 합니다. 단락(short-circuiting)은 불필요한 작업을 방지하기 때문에 보통 바람직합니다. 예를 들어 [정적 파일 미들웨어](xref:fundamentals/static-files)는 정적 파일에 대한 요청을 처리하고 나머지 파이프라인을 단락(short-circuit)하여 *터미널 미들웨어*로 작동할 수 있습니다. 추가 처리를 종료하는 미들웨어 앞의 파이프라인에 추가되는 미들웨어는 `next.Invoke` 문 뒤의 코드를 계속 처리합니다. 그러나 이미 전송된 응답에 쓰려고 하는 것에 대한 다음 경고를 참조하세요.
 
 > [!WARNING]
 > 클라이언트에 응답을 전송한 후에 `next.Invoke`를 호출하지 마십시오. 응답이 시작된 후 <xref:Microsoft.AspNetCore.Http.HttpResponse>로 변경하면 예외를 throw합니다. 예를 들어 헤더 및 상태 코드를 설정하는 변경 작업은 예외를 throw합니다. `next`를 호출한 후 응답 본문에 작성하기:
@@ -228,7 +224,7 @@ app.Map("/level1", level1App => {
 
 ## <a name="built-in-middleware"></a>기본 제공 미들웨어
 
-ASP.NET Core는 다음과 같은 미들웨어 구성 요소가 함께 제공됩니다. *순서* 열은 요청 파이프라인에서 미들웨어의 배치, 미들웨어가 요청을 종료하고 다른 미들웨어가 요청을 처리하지 못하게 차단하는 조건에 대한 정보를 제공합니다.
+ASP.NET Core는 다음과 같은 미들웨어 구성 요소가 함께 제공됩니다. *순서* 열은 요청 처리 파이프라인에서 미들웨어의 배치, 미들웨어가 요청 처리를 종료할 수 있는 조건에 대한 정보를 제공합니다. 미들웨어가 요청 처리 파이프라인을 단락(short-circuit)하고 다운스트림 미들웨어가 더는 요청을 처리하지 못하도록 하는 경우 이를 *터미널 미들웨어*라고 합니다. 단락(short-circuiting)에 대한 자세한 내용은 [IApplicationBuilder로 미들웨어 파이프라인 만들기](#create-a-middleware-pipeline-with-iapplicationbuilder) 섹션을 참조하세요.
 
 | 미들웨어 | 설명 | 순서 |
 | ---------- | ----------- | ----- |
@@ -252,63 +248,9 @@ ASP.NET Core는 다음과 같은 미들웨어 구성 요소가 함께 제공됩�
 | [URL 재작성](xref:fundamentals/url-rewriting) | URL 재작성 및 요청 리디렉션에 대한 지원을 제공합니다. | URL을 사용하는 구성 요소 이전. |
 | [WebSockets](xref:fundamentals/websockets) | WebSocket 프로토콜을 활성화합니다. | WebSocket 요청을 수락하는 데 필요한 구성 요소 이전. |
 
-## <a name="write-middleware"></a>쓰기 미들웨어
-
-미들웨어는 일반적으로 클래스에서 캡슐화되고 확장 메서드로 노출됩니다. 쿼리 문자열에서 현재 요청에 대한 문화권을 설정하는 다음 미들웨어를 고려합니다.
-
-[!code-csharp[](index/snapshot/Culture/StartupCulture.cs?name=snippet1)]
-
-위의 샘플 코드는 미들웨어 구성 요소를 만드는 방법을 보여주는 데 사용됩니다. ASP.NET Core의 기본 제공 지역화 지원은 <xref:fundamentals/localization>을 참조하세요.
-
-문화권을 전달하여 미들웨어를 테스트할 수 있습니다(예: `http://localhost:7997/?culture=no`).
-
-다음 코드는 미들웨어 대리자를 클래스로 이동합니다.
-
-[!code-csharp[](index/snapshot/Culture/RequestCultureMiddleware.cs)]
-
-::: moniker range="< aspnetcore-2.0"
-
-미들웨어 `Task` 메서드의 이름은 `Invoke`여야 합니다. ASP.NET 코어 2.0 이상에서는 이름이 `Invoke` 또는 `InvokeAsync`일 수 있습니다.
-
-::: moniker-end
-
-다음 확장 메서드는 <xref:Microsoft.AspNetCore.Builder.IApplicationBuilder>를 통해 미들웨어를 공개합니다.
-
-[!code-csharp[](index/snapshot/Culture/RequestCultureMiddlewareExtensions.cs)]
-
-다음 코드는 `Startup.Configure`에서 미들웨어를 호출합니다.
-
-[!code-csharp[](index/snapshot/Culture/Startup.cs?name=snippet1&highlight=5)]
-
-미들웨어는 해당 생성자에서 해당 종속성을 노출하여 [명시적 종속성 원칙](/dotnet/standard/modern-web-apps-azure-architecture/architectural-principles#explicit-dependencies)을 따라야 합니다. 미들웨어는 *애플리케이션 수명*당 한 번 생성됩니다. 요청 내에서 서비스를 미들웨어와 공유해야 하는 경우 [요청당 종속성](#per-request-dependencies) 섹션을 참조하세요.
-
-미들웨어 구성 요소는 생성자 매개 변수를 통해 [DI(종속성 주입)](xref:fundamentals/dependency-injection)에서 해당 종속성을 확인할 수 있습니다. [UseMiddleware&lt;T&gt;](/dotnet/api/microsoft.aspnetcore.builder.usemiddlewareextensions.usemiddleware#Microsoft_AspNetCore_Builder_UseMiddlewareExtensions_UseMiddleware_Microsoft_AspNetCore_Builder_IApplicationBuilder_System_Type_System_Object___)는 추가 매개 변수를 직접 수락할 수도 있습니다.
-
-### <a name="per-request-dependencies"></a>요청당 종속성
-
-미들웨어는 요청당이 아닌 앱 시작 시 생성되므로 미들웨어 생성자에 의해 사용되는 *범위가 지정된* 수명 서비스는 각 요청 중에 다른 종속성 주입된 형식과 공유되지 않습니다. *범위가 지정된* 서비스를 미들웨어와 다른 형식 간에 공유해야 하는 경우 이러한 서비스를 `Invoke` 메서드의 서명에 추가합니다. `Invoke` 메서드는 DI로 채워지는 추가 매개 변수를 수락할 수 있습니다.
-
-```csharp
-public class CustomMiddleware
-{
-    private readonly RequestDelegate _next;
-
-    public CustomMiddleware(RequestDelegate next)
-    {
-        _next = next;
-    }
-
-    // IMyScopedService is injected into Invoke
-    public async Task Invoke(HttpContext httpContext, IMyScopedService svc)
-    {
-        svc.MyProperty = 1000;
-        await _next(httpContext);
-    }
-}
-```
-
 ## <a name="additional-resources"></a>추가 자료
 
+* <xref:fundamentals/middleware/write>
 * <xref:migration/http-modules>
 * <xref:fundamentals/startup>
 * <xref:fundamentals/request-features>
