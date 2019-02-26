@@ -4,14 +4,8 @@ author: rick-anderson
 description: 클라우드 기반 인터넷에 연결된 최신 애플리케이션을 빌드하기 위한 플랫폼 간 고성능 오픈 소스 프레임워크인 ASP.NET Core에 대한 소개를 가져옵니다.
 ms.author: riande
 ms.custom: mvc
-ms.date: 02/13/2019
+ms.date: 02/14/2019
 uid: index
-ms.openlocfilehash: c3f07814bfab19a0f070e0b48b0d2ef6cfc1594e
-ms.sourcegitcommit: 6ba5fb1fd0b7f9a6a79085b0ef56206e462094b7
-ms.translationtype: HT
-ms.contentlocale: ko-KR
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56248162"
 ---
 # <a name="introduction-to-aspnet-core"></a>ASP.NET Core 소개
 
@@ -68,6 +62,34 @@ ASP.NET Core 3.0 이상은 .NET Core에서만 실행됩니다. 이 변경 사항
 * 소스 열기
 
 .NET Framework에서 .NET Core 사이의 API 차이를 줄이기 위해 최선을 다하고 있습니다. [Windows 호환 팩](/dotnet/core/porting/windows-compat-pack)을 통해 수천 개의 Windows 전용 API를 .NET Core에서 사용할 수 있습니다. 이러한 API는 .NET Core 1.x에서 사용할 수 없습니다.
+
+## <a name="recommended-learning-path"></a>권장되는 학습 경로
+
+ASP.NET Core 앱 개발을 소개하는 자습서 및 문서는 다음 순서대로 사용하는 것이 좋습니다.
+
+1. 개발하거나 유지 관리하려는 앱 형식에 대한 자습서를 수행하세요.
+
+   |앱 형식  |시나리오  |자습서  |
+   |----------|----------|----------|
+   |웹앱       | 새로운 개발의 경우        |[Razor 페이지 시작](xref:tutorials/razor-pages/razor-pages-start) |
+   |웹앱       | MVC 앱을 유지 관리하는 경우 |[MVC 시작](xref:tutorials/first-mvc-app/start-mvc)|
+   |Web API       |                            |[웹 API 만들기](xref:tutorials/first-web-api)\*  |
+   |실시간 앱 |                            |[SignalR 시작](xref:tutorials/signalr) |
+
+1. 기본 데이터 액세스를 수행하는 방법을 보여주는 자습서를 수행하세요.
+
+   |시나리오  |자습서  |
+   |----------|----------|
+   | 새로운 개발의 경우        |[Entity Framework Core를 사용한 Razor Pages](xref:data/ef-rp/intro) |
+   | MVC 앱을 유지 관리하는 경우 |[Entity Framework Core를 사용한 MVC](xref:data/ef-mvc/intro)
+
+1. 모든 앱 형식에 적용되는 ASP.NET Core 기능의 개요를 참고하세요.
+
+   * [기본 사항](xref:fundamentals/index)
+
+1. 관심 있는 다른 항목은 목차를 찾아보세요.
+
+\* 브라우저에서 [수행할 새로운 웹 API 자습서](https://docs.microsoft.com/learn/modules/build-web-api-net-core)가 있으며 로컬 IDE를 설치할 필요가 없습니다.  해당 코드는 [Azure Cloud Shell](https://azure.microsoft.com/features/cloud-shell/)에서 실행되고, [curl](https://curl.haxx.se/)은 테스트에 사용됩니다.
 
 ## <a name="how-to-download-a-sample"></a>샘플 다운로드 방법
 
@@ -126,7 +148,7 @@ WebHost.CreateDefaultBuilder(args)
 
 자세한 내용은 다음 리소스를 참조하세요.
 
-* [Razor 페이지 시작](xref:tutorials/razor-pages/razor-pages-start)
+* <xref:getting-started>
 * <xref:tutorials/publish-to-azure-webapp-using-vs>
 * [ASP.NET Core 기본 사항](xref:fundamentals/index)
 * [매주 ASP.NET 커뮤니티 스탠드업](https://live.asp.net/)은 팀의 진행률 및 계획을 다루고 새 블로그 및 타사 소프트웨어를 설명합니다.

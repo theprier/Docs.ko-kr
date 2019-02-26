@@ -6,12 +6,6 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 01/15/2019
 uid: getting-started
-ms.openlocfilehash: eee927f4306fa7757f3f361e6c6f367658512897
-ms.sourcegitcommit: 42a8164b8aba21f322ffefacb92301bdfb4d3c2d
-ms.translationtype: HT
-ms.contentlocale: ko-KR
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54341812"
 ---
 # <a name="tutorial-get-started-with-aspnet-core"></a>자습서: ASP.NET Core 시작
 
@@ -107,7 +101,7 @@ dotnet run
 > * 프로젝트를 실행합니다.
 > * 페이지를 수정합니다.
 
-ASP.NET Core에 대한 자세한 내용은 다음을 참조하세요.
+ASP.NET Core에 대해 자세히 알아보려면 소개에서 권장되는 학습 경로를 참조하세요.
 
 > [!div class="nextstepaction"]
-> <xref:index>
+> <xref:index#recommended-learning-path>

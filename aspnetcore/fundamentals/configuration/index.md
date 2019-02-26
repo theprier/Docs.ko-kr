@@ -6,12 +6,6 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 01/25/2019
 uid: fundamentals/configuration/index
-ms.openlocfilehash: 2465570e469020ae2855508bd1bfc8528e188ebb
-ms.sourcegitcommit: ca5f03210bedc61c6639a734ae5674bfe095dee8
-ms.translationtype: HT
-ms.contentlocale: ko-KR
-ms.lasthandoff: 01/26/2019
-ms.locfileid: "55073168"
 ---
 # <a name="configuration-in-aspnet-core"></a>ASP.NET Core의 구성
 
@@ -70,7 +64,7 @@ ASP.NET Core의 앱 구성은 ‘구성 공급자’가 설정한 키-값 쌍을
 
 ## <a name="host-vs-app-configuration"></a>호스트 및 앱 구성
 
-앱을 구성하고 시작하기 전에 *호스트*를 구성하고 시작합니다. 호스트는 앱 시작 및 수명 관리를 담당합니다. 앱과 호스트 모두 이 항목에서 설명하는 구성 관리자를 사용하여 구성합니다. 호스트 구성 키-값 쌍은 앱의 전역 구성에 포함됩니다. 호스트를 빌드할 때 구성 공급자를 사용하는 방법과 구성 소스가 호스트 구성에 미치는 영향에 대한 자세한 내용은 <xref:fundamentals/host/index>를 참조하세요.
+앱을 구성하고 시작하기 전에 *호스트*를 구성하고 시작합니다. 호스트는 앱 시작 및 수명 관리를 담당합니다. 앱과 호스트 모두 이 항목에서 설명하는 구성 관리자를 사용하여 구성합니다. 호스트 구성 키-값 쌍은 앱의 전역 구성에 포함됩니다. 호스트를 빌드할 때 구성 공급 기업을 사용하는 방법과 구성 원본이 호스트 구성에 미치는 영향에 대한 자세한 내용은 [호스트](xref:fundamentals/index#host)를 참조하세요.
 
 ## <a name="default-configuration"></a>기본 구성
 
@@ -392,7 +386,7 @@ var host = new WebHostBuilder()
 
 값은 등호(`=`) 다음에 와야 합니다. 또는 값이 공백 다음에 오는 경우 키에 접두사(`--` 또는 `/`)가 있어야 합니다. 등호를 사용하는 경우 값이 null일 수 있습니다(예: `CommandLineKey=`).
 
-| 키 접두사               | 예제                                                |
+| 키 접두사               | 예                                                |
 | ------------------------ | ------------------------------------------------------ |
 | 접두사 없음                | `CommandLineKey1=value1`                               |
 | 대시 2개(`--`)        | `--CommandLineKey2=value2`, `--CommandLineKey2 value2` |
@@ -1765,7 +1759,8 @@ JSON 구성 공급자는 구성 데이터를 다음 키-값 쌍으로 읽습니�
 
 ::: moniker-end
 
-<xref:Microsoft.Extensions.Configuration.IConfigurationSource>를 구현하는 클래스를 만듭니다.
+
+  <xref:Microsoft.Extensions.Configuration.IConfigurationSource>를 구현하는 클래스를 만듭니다.
 
 *EFConfigurationProvider/EFConfigurationSource.cs*:
 
