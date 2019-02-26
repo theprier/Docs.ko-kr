@@ -4,152 +4,158 @@ author: rick-anderson
 description: ASP.NET Core 앱을 구축하기 위한 기본적인 개념을 알아봅니다.
 ms.author: riande
 ms.custom: mvc
-ms.date: 01/06/2019
+ms.date: 02/14/2019
 uid: fundamentals/index
-ms.openlocfilehash: a56beebd796448705c7b84f47699e9739f451419
-ms.sourcegitcommit: 97d7a00bd39c83a8f6bccb9daa44130a509f75ce
-ms.translationtype: HT
-ms.contentlocale: ko-KR
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54099236"
 ---
-# <a name="aspnet-core-fundamentals"></a><span data-ttu-id="28479-103">ASP.NET Core 기본 사항</span><span class="sxs-lookup"><span data-stu-id="28479-103">ASP.NET Core fundamentals</span></span>
+# <a name="aspnet-core-fundamentals"></a><span data-ttu-id="f06ba-103">ASP.NET Core 기본 사항</span><span class="sxs-lookup"><span data-stu-id="f06ba-103">ASP.NET Core fundamentals</span></span>
 
-<span data-ttu-id="28479-104">ASP.NET Core 앱은 `Program.Main` 메서드에서 웹 서버를 생성하는 콘솔 앱입니다.</span><span class="sxs-lookup"><span data-stu-id="28479-104">An ASP.NET Core app is a console app that creates a web server in its `Program.Main` method.</span></span> <span data-ttu-id="28479-105">`Main` 메서드는 앱의 *관리 진입점*입니다.</span><span class="sxs-lookup"><span data-stu-id="28479-105">The `Main` method is the app's *managed entry point*:</span></span>
+<span data-ttu-id="f06ba-104">이 문서는 ASP.NET Core 앱을 개발하는 방법을 이해하기 위한 주요 항목의 개요입니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-104">This article is an overview of key topics for understanding how to develop ASP.NET Core apps.</span></span>
 
-::: moniker range=">= aspnetcore-2.0"
+## <a name="the-startup-class"></a><span data-ttu-id="f06ba-105">Startup 클래스</span><span class="sxs-lookup"><span data-stu-id="f06ba-105">The Startup class</span></span>
 
-[!code-csharp[](index/snapshots/2.x/Program.cs)]
+<span data-ttu-id="f06ba-106">`Startup` 클래스에서는 다음을 수행합니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-106">The `Startup` class is where:</span></span>
 
-<span data-ttu-id="28479-106">.NET Core 호스트:</span><span class="sxs-lookup"><span data-stu-id="28479-106">The .NET Core Host:</span></span>
+* <span data-ttu-id="f06ba-107">앱에서 요구하는 서비스가 구성됩니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-107">Any services required by the app are configured.</span></span>
+* <span data-ttu-id="f06ba-108">요청 처리 파이프라인이 정의됩니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-108">The request handling pipeline is defined.</span></span>
 
-* <span data-ttu-id="28479-107">[.NET Core 런타임](https://github.com/dotnet/coreclr)을 로드합니다.</span><span class="sxs-lookup"><span data-stu-id="28479-107">Loads the [.NET Core runtime](https://github.com/dotnet/coreclr).</span></span>
-* <span data-ttu-id="28479-108">첫 번째 명령줄 인수를 진입점(`Main`)을 포함하는 관리되는 이진 경로로 사용하고 코드 실행을 시작합니다.</span><span class="sxs-lookup"><span data-stu-id="28479-108">Uses the first command-line argument as the path to the managed binary that contains the entry point (`Main`) and begins code execution.</span></span>
-
-<span data-ttu-id="28479-109">`Main` 메서드는 [빌드 패턴](https://wikipedia.org/wiki/Builder_pattern)에 따라 웹 응용 프로그램 호스트를 생성하는 [WebHost.CreateDefaultBuilder](xref:Microsoft.AspNetCore.WebHost.CreateDefaultBuilder*)를 호출합니다.</span><span class="sxs-lookup"><span data-stu-id="28479-109">The `Main` method invokes [WebHost.CreateDefaultBuilder](xref:Microsoft.AspNetCore.WebHost.CreateDefaultBuilder*), which follows the [builder pattern](https://wikipedia.org/wiki/Builder_pattern) to create a web host.</span></span> <span data-ttu-id="28479-110">이 빌더는 웹 서버를 정의하거나(예: <xref:Microsoft.AspNetCore.Hosting.WebHostBuilderKestrelExtensions.UseKestrel*>) 시작 클래스를 정의하는(<xref:Microsoft.AspNetCore.Hosting.WebHostBuilderExtensions.UseStartup*>) 여러 메서드를 제공합니다.</span><span class="sxs-lookup"><span data-stu-id="28479-110">The builder has methods that define a web server (for example, <xref:Microsoft.AspNetCore.Hosting.WebHostBuilderKestrelExtensions.UseKestrel*>) and the startup class (<xref:Microsoft.AspNetCore.Hosting.WebHostBuilderExtensions.UseStartup*>).</span></span> <span data-ttu-id="28479-111">위의 예제에서는 기본적으로 [Kestrel](xref:fundamentals/servers/kestrel) 웹 서버가 할당되며.</span><span class="sxs-lookup"><span data-stu-id="28479-111">In the preceding example, the [Kestrel](xref:fundamentals/servers/kestrel) web server is automatically allocated.</span></span> <span data-ttu-id="28479-112">가능한 경우 ASP.NET Core의 웹 호스트는 [IIS(인터넷 정보 서비스)](https://www.iis.net/)에서 실행하려고 시도합니다.</span><span class="sxs-lookup"><span data-stu-id="28479-112">ASP.NET Core's web host attempts to run on [Internet Information Services (IIS)](https://www.iis.net/), if available.</span></span> <span data-ttu-id="28479-113">그러나 적절한 확장 메서드를 호출해서 [HTTP.sys](xref:fundamentals/servers/httpsys) 같은 다른 웹 서버를 사용할 수도 있습니다.</span><span class="sxs-lookup"><span data-stu-id="28479-113">Other web servers, such as [HTTP.sys](xref:fundamentals/servers/httpsys), can be used by invoking the appropriate extension method.</span></span> <span data-ttu-id="28479-114">`UseStartup`에 관해서는 [Startup](#startup) 섹션에서 자세히 살펴봅니다.</span><span class="sxs-lookup"><span data-stu-id="28479-114">`UseStartup` is explained further in the [Startup](#startup) section.</span></span>
-
-<span data-ttu-id="28479-115">`WebHost.CreateDefaultBuilder` 호출로부터 반환되는 <xref:Microsoft.AspNetCore.Hosting.IWebHostBuilder>형식은 다양한 선택적 메서드를 제공합니다.</span><span class="sxs-lookup"><span data-stu-id="28479-115"><xref:Microsoft.AspNetCore.Hosting.IWebHostBuilder>, the return type of the `WebHost.CreateDefaultBuilder` invocation, provides many optional methods.</span></span> <span data-ttu-id="28479-116">이 메서드들 중에는 HTTP.sys에서 앱을 호스트하기 위한 `UseHttpSys` 및 루트 콘텐츠 디렉터리를 지정하기 위한 <xref:Microsoft.Extensions.Hosting.HostingHostBuilderExtensions.UseContentRoot*>도 포함되어 있습니다.</span><span class="sxs-lookup"><span data-stu-id="28479-116">Some of these methods include `UseHttpSys` for hosting the app in HTTP.sys and <xref:Microsoft.Extensions.Hosting.HostingHostBuilderExtensions.UseContentRoot*> for specifying the root content directory.</span></span> <span data-ttu-id="28479-117"><xref:Microsoft.AspNetCore.Hosting.IWebHostBuilder.Build*> 및 <xref:Microsoft.AspNetCore.Hosting.WebHostExtensions.Run*> 메서드는 앱을 호스트하고 HTTP 요청의 수신 대기를 시작하는 <xref:Microsoft.AspNetCore.Hosting.IWebHost> 개체를 빌드합니다.</span><span class="sxs-lookup"><span data-stu-id="28479-117">The <xref:Microsoft.AspNetCore.Hosting.IWebHostBuilder.Build*> and <xref:Microsoft.AspNetCore.Hosting.WebHostExtensions.Run*> methods build the <xref:Microsoft.AspNetCore.Hosting.IWebHost> object that hosts the app and begins listening for HTTP requests.</span></span>
-
-::: moniker-end
-
-::: moniker range="< aspnetcore-2.0"
-
-[!code-csharp[](index/snapshots/1.x/Program.cs)]
-
-<span data-ttu-id="28479-118">.NET Core 호스트:</span><span class="sxs-lookup"><span data-stu-id="28479-118">The .NET Core Host:</span></span>
-
-* <span data-ttu-id="28479-119">[.NET Core 런타임](https://github.com/dotnet/coreclr)을 로드합니다.</span><span class="sxs-lookup"><span data-stu-id="28479-119">Loads the [.NET Core runtime](https://github.com/dotnet/coreclr).</span></span>
-* <span data-ttu-id="28479-120">첫 번째 명령줄 인수를 진입점(`Main`)을 포함하는 관리되는 이진 경로로 사용하고 코드 실행을 시작합니다.</span><span class="sxs-lookup"><span data-stu-id="28479-120">Uses the first command-line argument as the path to the managed binary that contains the entry point (`Main`) and begins code execution.</span></span>
-
-<span data-ttu-id="28479-121">`Main` 메서드는 [빌드 패턴](https://wikipedia.org/wiki/Builder_pattern)에 따라 웹앱 호스트를 만드는 <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder>를 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="28479-121">The `Main` method uses <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder>, which follows the [builder pattern](https://wikipedia.org/wiki/Builder_pattern) to create a web app host.</span></span> <span data-ttu-id="28479-122">이 빌더는 웹 서버를 정의하거나 (예: <xref:Microsoft.AspNetCore.Hosting.WebHostBuilderKestrelExtensions.UseKestrel*>) 시작 클래스를 정의하는 (<xref:Microsoft.AspNetCore.Hosting.WebHostBuilderExtensions.UseStartup*>) 메서드들을 제공합니다.</span><span class="sxs-lookup"><span data-stu-id="28479-122">The builder has methods that define the web server (for example, <xref:Microsoft.AspNetCore.Hosting.WebHostBuilderKestrelExtensions.UseKestrel*>) and the startup class (<xref:Microsoft.AspNetCore.Hosting.WebHostBuilderExtensions.UseStartup*>).</span></span> <span data-ttu-id="28479-123">위의 예제에서는 [Kestrel](xref:fundamentals/servers/kestrel) 웹 서버를 사용하고 있습니다.</span><span class="sxs-lookup"><span data-stu-id="28479-123">In the preceding example, the [Kestrel](xref:fundamentals/servers/kestrel) web server is used.</span></span> <span data-ttu-id="28479-124">그러나 적절한 확장 메서드를 호출해서 [HTTP.sys](xref:fundamentals/servers/httpsys) 같은 다른 웹 서버를 사용할 수도 있습니다.</span><span class="sxs-lookup"><span data-stu-id="28479-124">Other web servers, such as [HTTP.sys](xref:fundamentals/servers/httpsys), can be used by invoking the appropriate extension method.</span></span> <span data-ttu-id="28479-125">`UseStartup`에 관해서는 [Startup](#startup) 섹션에서 자세히 살펴봅니다.</span><span class="sxs-lookup"><span data-stu-id="28479-125">`UseStartup` is explained further in the [Startup](#startup) section.</span></span>
-
-<span data-ttu-id="28479-126">`WebHostBuilder`는 IIS 및 IIS Express에서 호스팅하기 위한 <xref:Microsoft.AspNetCore.Hosting.WebHostBuilderIISExtensions.UseIISIntegration*> 확장 메서드 및 루트 콘텐츠 디렉터리를 지정하기 위한 <xref:Microsoft.Extensions.Hosting.HostingHostBuilderExtensions.UseContentRoot*>확장 메서드를 비롯한 다양한 선택적 메서드를 제공합니다.</span><span class="sxs-lookup"><span data-stu-id="28479-126">`WebHostBuilder` provides many optional methods, including <xref:Microsoft.AspNetCore.Hosting.WebHostBuilderIISExtensions.UseIISIntegration*> for hosting in IIS and IIS Express and <xref:Microsoft.Extensions.Hosting.HostingHostBuilderExtensions.UseContentRoot*> for specifying the root content directory.</span></span> <span data-ttu-id="28479-127"><xref:Microsoft.AspNetCore.Hosting.IWebHostBuilder.Build*> 및 <xref:Microsoft.AspNetCore.Hosting.WebHostExtensions.Run*> 메서드는 앱을 호스트하고 HTTP 요청의 수신 대기를 시작하는 <xref:Microsoft.AspNetCore.Hosting.IWebHost> 개체를 빌드합니다.</span><span class="sxs-lookup"><span data-stu-id="28479-127">The <xref:Microsoft.AspNetCore.Hosting.IWebHostBuilder.Build*> and <xref:Microsoft.AspNetCore.Hosting.WebHostExtensions.Run*> methods build the <xref:Microsoft.AspNetCore.Hosting.IWebHost> object that hosts the app and begins listening for HTTP requests.</span></span>
-
-::: moniker-end
-
-## <a name="startup"></a><span data-ttu-id="28479-128">Startup 클래스</span><span class="sxs-lookup"><span data-stu-id="28479-128">Startup</span></span>
-
-<span data-ttu-id="28479-129">`WebHostBuilder`의 `UseStartup` 메서드는 앱의 `Startup` 클래스를 지정합니다.</span><span class="sxs-lookup"><span data-stu-id="28479-129">The `UseStartup` method on `WebHostBuilder` specifies the `Startup` class for your app:</span></span>
+* <span data-ttu-id="f06ba-109">서비스를 구성(또는 *등록*)하는 코드는 `Startup.ConfigureServices` 메서드에 추가됩니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-109">Code to configure (or *register*) services is added to the `Startup.ConfigureServices` method.</span></span> <span data-ttu-id="f06ba-110">*서비스*는 앱에서 사용되는 구성 요소입니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-110">*Services* are components that are used by the app.</span></span> <span data-ttu-id="f06ba-111">예를 들어, Entity Framework Core 컨텍스트 개체는 서비스입니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-111">For example, an Entity Framework Core context object is a service.</span></span>
+* <span data-ttu-id="f06ba-112">요청 처리 파이프라인을 구성하는 코드는 `Startup.Configure` 메서드에 추가됩니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-112">Code to configure the request handling pipeline is added to the `Startup.Configure` method.</span></span> <span data-ttu-id="f06ba-113">해당 파이프라인은 일련의 *미들웨어* 구성 요소로 구성됩니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-113">The pipeline is composed as a series of *middleware* components.</span></span> <span data-ttu-id="f06ba-114">예를 들어 미들웨어는 정적 파일에 대한 요청을 처리하거나 HTTP 요청을 HTTPS로 리디렉션할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-114">For example, a middleware might handle requests for static files or redirect HTTP requests to HTTPS.</span></span> <span data-ttu-id="f06ba-115">각 미들웨어는 `HttpContext` 상에서 비동기 작업을 수행한 다음, 파이프라인의 다음 미들웨어를 호출하거나 요청을 종료합니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-115">Each middleware performs asynchronous operations on an `HttpContext` and then either invokes the next middleware in the pipeline or terminates the request.</span></span>
 
 ::: moniker range=">= aspnetcore-2.0"
 
-[!code-csharp[](index/snapshots/2.x/Program.cs?highlight=10)]
+<span data-ttu-id="f06ba-116">샘플 `Startup` 클래스는 다음과 같습니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-116">Here's a sample `Startup` class:</span></span>
+
+[!code-csharp[](index/snapshots/2.x/Startup1.cs?highlight=3,12)]
 
 ::: moniker-end
 
-::: moniker range="< aspnetcore-2.0"
+<span data-ttu-id="f06ba-117">자세한 내용은 [앱 시작](xref:fundamentals/startup)을 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="f06ba-117">For more information, see [App startup](xref:fundamentals/startup).</span></span>
 
-[!code-csharp[](index/snapshots/1.x/Program.cs?highlight=7)]
+## <a name="dependency-injection-services"></a><span data-ttu-id="f06ba-118">종속성 주입(서비스)</span><span class="sxs-lookup"><span data-stu-id="f06ba-118">Dependency injection (services)</span></span>
 
-::: moniker-end
-
-<span data-ttu-id="28479-130">`Startup` 클래스는 앱에 필요한 모든 서비스를 구성하고 요청 처리 파이프라인을 정의하는 곳입니다.</span><span class="sxs-lookup"><span data-stu-id="28479-130">The `Startup` class is where any services required by the app are configured and the request handling pipeline is defined.</span></span> <span data-ttu-id="28479-131">`Startup` 클래스는 public으로 지정해야 하며 일반적으로 다음 메서드를 포함해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="28479-131">The `Startup` class must be public and usually contains the following methods.</span></span> <span data-ttu-id="28479-132">`Startup.ConfigureServices`는 선택적 요소입니다.</span><span class="sxs-lookup"><span data-stu-id="28479-132">`Startup.ConfigureServices` is optional.</span></span>
+<span data-ttu-id="f06ba-119">ASP.NET Core에는 구성된 서비스를 앱의 클래스에 사용할 수 있도록 만드는 기본 제공 DI(종속성 주입) 프레임워크가 포함됩니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-119">ASP.NET Core has a built-in dependency injection (DI) framework that makes configured services available to an app's classes.</span></span> <span data-ttu-id="f06ba-120">클래스에서 서비스의 인스턴스를 가져오는 한 가지 방법은 필수 형식의 매개 변수를 사용하여 생성자를 만드는 것입니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-120">One way to get an instance of a service in a class is to create a constructor with a parameter of the required type.</span></span> <span data-ttu-id="f06ba-121">해당 매개 변수는 서비스 형식 또는 인터페이스일 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-121">The parameter can be the service type or an interface.</span></span> <span data-ttu-id="f06ba-122">DI 시스템에서는 런타임 시 서비스를 제공합니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-122">The DI system provides the service at runtime.</span></span>
 
 ::: moniker range=">= aspnetcore-2.0"
 
-[!code-csharp[](index/snapshots/2.x/Startup.cs)]
+<span data-ttu-id="f06ba-123">Entity Framework Core 컨텍스트 개체를 가져오는 데 DI를 사용하는 클래스는 다음과 같습니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-123">Here's a class that uses DI to get an Entity Framework Core context object.</span></span> <span data-ttu-id="f06ba-124">강조 표시된 줄은 생성자 주입의 예제입니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-124">The highlighted line is an example of constructor injection:</span></span>
+
+[!code-csharp[](index/snapshots/2.x/Index.cshtml.cs?highlight=5)]
 
 ::: moniker-end
 
-::: moniker range="< aspnetcore-2.0"
+<span data-ttu-id="f06ba-125">DI가 기본 제공되면 원하는 경우 타사 IoC(Inversion of Control) 컨테이너에 플러그 인할 수 있도록 설계되었습니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-125">While DI is built in, it's designed to let you plug in a third-party Inversion of Control (IoC) container if you prefer.</span></span>
 
-[!code-csharp[](index/snapshots/1.x/Startup.cs)]
+<span data-ttu-id="f06ba-126">자세한 내용은 [종속성 주입](xref:fundamentals/dependency-injection)을 참고하시기 바랍니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-126">For more information, see [Dependency injection](xref:fundamentals/dependency-injection).</span></span>
 
-::: moniker-end
+## <a name="middleware"></a><span data-ttu-id="f06ba-127">미들웨어</span><span class="sxs-lookup"><span data-stu-id="f06ba-127">Middleware</span></span>
 
-<span data-ttu-id="28479-133"><xref:Microsoft.AspNetCore.Hosting.IStartup.ConfigureServices*>는 앱에서 사용되는 [서비스](#dependency-injection-services)를 정의합니다 (예, ASP.NET MVC Core MVC, Entity Framework Core, Identity).</span><span class="sxs-lookup"><span data-stu-id="28479-133"><xref:Microsoft.AspNetCore.Hosting.IStartup.ConfigureServices*> defines the [Services](#dependency-injection-services) used by your app (for example, ASP.NET Core MVC, Entity Framework Core, Identity).</span></span> <span data-ttu-id="28479-134"><xref:Microsoft.AspNetCore.Hosting.IStartup.Configure*>는 요청 파이프라인에서 호출되는 [미들웨어](xref:fundamentals/middleware/index)를 정의합니다.</span><span class="sxs-lookup"><span data-stu-id="28479-134"><xref:Microsoft.AspNetCore.Hosting.IStartup.Configure*> defines the [middleware](xref:fundamentals/middleware/index) called in the request pipeline.</span></span>
+<span data-ttu-id="f06ba-128">요청 처리 파이프라인은 일련의 미들웨어 구성 요소로 구성됩니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-128">The request handling pipeline is composed as a series of middleware components.</span></span> <span data-ttu-id="f06ba-129">각 구성 요소는 `HttpContext` 상에서 비동기 작업을 수행한 다음, 파이프라인의 다음 미들웨어를 호출하거나 요청을 종료합니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-129">Each component performs asynchronous operations on an `HttpContext` and then either invokes the next middleware in the pipeline or terminates the request.</span></span>
 
-<span data-ttu-id="28479-135">자세한 내용은 <xref:fundamentals/startup>을 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="28479-135">For more information, see <xref:fundamentals/startup>.</span></span>
+<span data-ttu-id="f06ba-130">규칙에 따라 미들웨어 구성 요소는 `Startup.Configure` 메서드에서 `Use...` 확장 메서드를 호출하여 파이프라인에 추가됩니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-130">By convention, a middleware component is added to the pipeline by invoking its `Use...` extension method in the `Startup.Configure` method.</span></span> <span data-ttu-id="f06ba-131">예를 들어 정적 파일을 렌더링하도록 설정하려면 `UseStaticFiles`를 호출합니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-131">For example, to enable rendering of static files, call `UseStaticFiles`.</span></span>
 
-## <a name="content-root"></a><span data-ttu-id="28479-136">콘텐츠 루트</span><span class="sxs-lookup"><span data-stu-id="28479-136">Content root</span></span>
+::: moniker range=">= aspnetcore-2.0"
 
-<span data-ttu-id="28479-137">콘텐츠 루트는 앱에서 사용되는 [Razor Pages](xref:razor-pages/index), MVC 보기, 정적 자산 같은 콘텐츠의 기본 경로입니다.</span><span class="sxs-lookup"><span data-stu-id="28479-137">The content root is the base path to any content used by the app, such as [Razor Pages](xref:razor-pages/index), MVC views, and static assets.</span></span> <span data-ttu-id="28479-138">기본적으로 콘텐츠 루트는 앱을 호스팅하는 실행 파일의 앱 기본 경로와 동일한 위치입니다. </span><span class="sxs-lookup"><span data-stu-id="28479-138">By default, the content root is the same location as the app base path for the executable hosting the app.</span></span>
+<span data-ttu-id="f06ba-132">다음 예제에서 강조 표시된 코드는 요청 처리 파이프라인을 구성합니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-132">The highlighted code in the following example configures the request handling pipeline:</span></span>
 
-## <a name="web-root-webroot"></a><span data-ttu-id="28479-139">웹 루트(webroot)</span><span class="sxs-lookup"><span data-stu-id="28479-139">Web root (webroot)</span></span>
-
-<span data-ttu-id="28479-140">앱의 웹 루트는 CSS, JavaScript 및 이미지 파일과 같은 공용, 정적 리소스를 포함하는 프로젝트의 디렉터리입니다.</span><span class="sxs-lookup"><span data-stu-id="28479-140">The webroot of an app is the directory in the project containing public, static resources, such as CSS, JavaScript, and image files.</span></span> <span data-ttu-id="28479-141">기본적으로 *wwwroot*는 웹 루트입니다.</span><span class="sxs-lookup"><span data-stu-id="28479-141">By default, *wwwroot* is the webroot.</span></span>
-
-<span data-ttu-id="28479-142">Razor(*.cshtml*) 파일의 경우 물결표 슬래시 `~/`가 웹 루트를 가리킵니다.</span><span class="sxs-lookup"><span data-stu-id="28479-142">For Razor (*.cshtml*) files, the tilde-slash  `~/` points to the webroot.</span></span> <span data-ttu-id="28479-143">`~/`에서 시작하는 경로를 가상 경로라고 합니다.</span><span class="sxs-lookup"><span data-stu-id="28479-143">Paths beginning with `~/` are referred to as virtual paths.</span></span>
-
-## <a name="dependency-injection-services"></a><span data-ttu-id="28479-144">종속성 주입(서비스)</span><span class="sxs-lookup"><span data-stu-id="28479-144">Dependency injection (services)</span></span>
-
-<span data-ttu-id="28479-145">*서비스*는 앱에서 공통으로 사용하기 위한 구성 요소입니다.</span><span class="sxs-lookup"><span data-stu-id="28479-145">A *service* is a component that's intended for common consumption in an app.</span></span> <span data-ttu-id="28479-146">서비스는 DI([종속성 주입](xref:fundamentals/dependency-injection))를 통해서 사용됩니다.</span><span class="sxs-lookup"><span data-stu-id="28479-146">Services are made available through [dependency injection (DI)](xref:fundamentals/dependency-injection).</span></span> <span data-ttu-id="28479-147">ASP.NET Core에는 기본적으로 [생성자 주입](xref:mvc/controllers/dependency-injection#constructor-injection)을 지원하는 네이티브 IoC(Inversion of Control) 컨테이너가 포함되어 있습니다.</span><span class="sxs-lookup"><span data-stu-id="28479-147">ASP.NET Core includes a native Inversion of Control (IoC) container that supports [constructor injection](xref:mvc/controllers/dependency-injection#constructor-injection) by default.</span></span> <span data-ttu-id="28479-148">만약 원한다면 기본 컨테이너를 교체할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="28479-148">You can replace the default container if you wish.</span></span> <span data-ttu-id="28479-149">DI를 사용하면 [느슨한 결합의 이점](/dotnet/standard/modern-web-apps-azure-architecture/architectural-principles#encapsulation)을 얻을 수 있을 뿐만 아니라, 앱 전체에서 [로깅](xref:fundamentals/logging/index) 같은 서비스를 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="28479-149">In addition to its [loose coupling benefit](/dotnet/standard/modern-web-apps-azure-architecture/architectural-principles#encapsulation), DI makes services, such as [logging](xref:fundamentals/logging/index), available throughout your app.</span></span>
-
-<span data-ttu-id="28479-150">자세한 내용은 <xref:fundamentals/dependency-injection>을 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="28479-150">For more information, see <xref:fundamentals/dependency-injection>.</span></span>
-
-## <a name="middleware"></a><span data-ttu-id="28479-151">미들웨어</span><span class="sxs-lookup"><span data-stu-id="28479-151">Middleware</span></span>
-
-<span data-ttu-id="28479-152">ASP.NET Core는 [미들웨어](xref:fundamentals/middleware/index)를 사용해서 요청 파이프라인을 구성합니다.</span><span class="sxs-lookup"><span data-stu-id="28479-152">In ASP.NET Core, you compose your request pipeline using [middleware](xref:fundamentals/middleware/index).</span></span> <span data-ttu-id="28479-153">ASP.NET Core 미들웨어는 `HttpContext` 상에서 비동기 작업을 수행한 다음, 파이프라인의 다음 미들웨어를 호출하거나 요청을 종료합니다.</span><span class="sxs-lookup"><span data-stu-id="28479-153">ASP.NET Core middleware performs asynchronous operations on an `HttpContext` and then either invokes the next middleware in the pipeline or terminates the request.</span></span>
-
-<span data-ttu-id="28479-154">규칙에 따라, "XYZ"라는 미들웨어 구성 요소는 `Configure` 메서드에서 `UseXYZ` 확장 메서드를 호출하여 파이프라인에 추가됩니다.</span><span class="sxs-lookup"><span data-stu-id="28479-154">By convention, a middleware component called "XYZ" is added to the pipeline by invoking a `UseXYZ` extension method in the `Configure` method.</span></span>
-
-<span data-ttu-id="28479-155">ASP.NET Core는 풍부한 기본 미들웨어 집합을 포함하고 있으며, 자신만의 사용자 지정 미들웨어를 작성할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="28479-155">ASP.NET Core includes a rich set of built-in middleware, and you can write your own custom middleware.</span></span> <span data-ttu-id="28479-156">웹 서버에서 웹앱을 분리할 수 있게 해주는 [OWIN(Open Web Interface for .NET)](xref:fundamentals/owin)은 ASP.NET Core 앱에서 지원됩니다.</span><span class="sxs-lookup"><span data-stu-id="28479-156">[Open Web Interface for .NET (OWIN)](xref:fundamentals/owin), which allows web apps to be decoupled from web servers, is supported in ASP.NET Core apps.</span></span>
-
-<span data-ttu-id="28479-157">자세한 내용은 <xref:fundamentals/middleware/index> 및 <xref:fundamentals/owin>를 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="28479-157">For more information, see <xref:fundamentals/middleware/index> and <xref:fundamentals/owin>.</span></span>
-
-::: moniker range=">= aspnetcore-2.1"
-
-## <a name="initiate-http-requests"></a><span data-ttu-id="28479-158">HTTP 요청 시작</span><span class="sxs-lookup"><span data-stu-id="28479-158">Initiate HTTP requests</span></span>
-
-<span data-ttu-id="28479-159"><xref:System.Net.Http.IHttpClientFactory>를 사용하여 HTTP 요청을 만드는 <xref:System.Net.Http.HttpClient> 인스턴스에 액세스할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="28479-159"><xref:System.Net.Http.IHttpClientFactory> is available to access <xref:System.Net.Http.HttpClient> instances to make HTTP requests.</span></span>
-
-<span data-ttu-id="28479-160">자세한 내용은 <xref:fundamentals/http-requests>을 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="28479-160">For more information, see <xref:fundamentals/http-requests>.</span></span>
+[!code-csharp[](index/snapshots/2.x/Startup1.cs?highlight=14-16)]
 
 ::: moniker-end
 
-## <a name="environments"></a><span data-ttu-id="28479-161">환경</span><span class="sxs-lookup"><span data-stu-id="28479-161">Environments</span></span>
+<span data-ttu-id="f06ba-133">ASP.NET Core는 풍부한 일련의 기본 제공 미들웨어를 포함하고 있으며, 사용자 지정 미들웨어를 작성할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-133">ASP.NET Core includes a rich set of built-in middleware, and you can write custom middleware.</span></span>
 
-<span data-ttu-id="28479-162">*개발* 및 *프로덕션* 같은 환경은 ASP.NET Core의 일급 개념이며 환경 변수, 설정 파일, 명령줄 인수를 사용하여 설정할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="28479-162">Environments, such as *Development* and *Production*, are a first-class notion in ASP.NET Core and can be set using an environment variable, settings file, and command-line argument.</span></span>
+<span data-ttu-id="f06ba-134">자세한 내용은 [미들웨어](xref:fundamentals/middleware/index)를 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="f06ba-134">For more information, see [Middleware](xref:fundamentals/middleware/index).</span></span>
 
-<span data-ttu-id="28479-163">자세한 내용은 <xref:fundamentals/environments>을 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="28479-163">For more information, see <xref:fundamentals/environments>.</span></span>
+<a id="host"/>
 
-## <a name="hosting"></a><span data-ttu-id="28479-164">호스팅</span><span class="sxs-lookup"><span data-stu-id="28479-164">Hosting</span></span>
+## <a name="the-host"></a><span data-ttu-id="f06ba-135">호스트</span><span class="sxs-lookup"><span data-stu-id="f06ba-135">The host</span></span>
 
-<span data-ttu-id="28479-165">ASP.NET Core 앱은 앱의 시작과 수명 관리를 담당하는 *호스트*를 구성하고 실행합니다.</span><span class="sxs-lookup"><span data-stu-id="28479-165">ASP.NET Core apps configure and launch a *host*, which is responsible for app startup and lifetime management.</span></span>
+<span data-ttu-id="f06ba-136">ASP.NET Core 앱은 시작 시 *호스트*를 빌드합니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-136">An ASP.NET Core app builds a *host* on startup.</span></span> <span data-ttu-id="f06ba-137">호스트는 다음과 같은 앱의 리소스를 모두 캡슐화하는 개체입니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-137">The host is an object that encapsulates all of the the app's resources, such as:</span></span>
 
-<span data-ttu-id="28479-166">자세한 내용은 <xref:fundamentals/host/index>을 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="28479-166">For more information, see <xref:fundamentals/host/index>.</span></span>
+* <span data-ttu-id="f06ba-138">HTTP 서버 구현</span><span class="sxs-lookup"><span data-stu-id="f06ba-138">An HTTP server implementation</span></span>
+* <span data-ttu-id="f06ba-139">미들웨어 구성 요소</span><span class="sxs-lookup"><span data-stu-id="f06ba-139">Middleware components</span></span>
+* <span data-ttu-id="f06ba-140">로깅</span><span class="sxs-lookup"><span data-stu-id="f06ba-140">Logging</span></span>
+* <span data-ttu-id="f06ba-141">DI</span><span class="sxs-lookup"><span data-stu-id="f06ba-141">DI</span></span>
+* <span data-ttu-id="f06ba-142">구성</span><span class="sxs-lookup"><span data-stu-id="f06ba-142">Configuration</span></span>
 
-## <a name="servers"></a><span data-ttu-id="28479-167">서버</span><span class="sxs-lookup"><span data-stu-id="28479-167">Servers</span></span>
+<span data-ttu-id="f06ba-143">하나의 개체에 앱의 모든 상호 종속적 리소스를 포함하는 주요 원인은 수명 관리 즉, 앱 시작 및 종료에 대한 제어 때문입니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-143">The main reason for including all of the app's interdependent resources in one object is lifetime management: control over app startup and graceful shutdown.</span></span>
 
-<span data-ttu-id="28479-168">ASP.NET Core의 호스팅 모델은 요청을 직접 수신하지 않습니다. </span><span class="sxs-lookup"><span data-stu-id="28479-168">The ASP.NET Core hosting model doesn't directly listen for requests.</span></span> <span data-ttu-id="28479-169">대신 호스팅 모델은 HTTP 서버 구현에 의존해서 요청을 앱에 전달합니다.</span><span class="sxs-lookup"><span data-stu-id="28479-169">The hosting model relies on an HTTP server implementation to forward the request to the app.</span></span>
+<span data-ttu-id="f06ba-144">호스트를 만드는 코드는 `Program.Main`에 포함되고 [작성기 패턴](https://wikipedia.org/wiki/Builder_pattern)을 따릅니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-144">The code to create a host is in `Program.Main` and follows the [builder pattern](https://wikipedia.org/wiki/Builder_pattern).</span></span> <span data-ttu-id="f06ba-145">호스트의 일부인 각 리소스를 구성하는 메서드가 호출됩니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-145">Methods are called to configure each resource that is part of the host.</span></span> <span data-ttu-id="f06ba-146">호스트 개체를 모두 풀링하여 인스턴스화하는 작성기 메서드가 호출됩니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-146">A builder method is called to pull it all together and instantiate the host object.</span></span>
+
+::: moniker range="<= aspnetcore-2.2"
+
+<span data-ttu-id="f06ba-147">ASP.NET Core 2.x는 웹앱에서 웹 호스트(`WebHost` 클래스)를 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-147">ASP.NET Core 2.x uses Web Host (the `WebHost` class) for web apps.</span></span> <span data-ttu-id="f06ba-148">프레임워크는 다음과 같은 옵션을 일반적으로 사용하여 호스트를 설정하는 `CreateDefaultBuilder` 확장 메서드를 제공합니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-148">The framework provides `CreateDefaultBuilder` extension methods that set up a host with commonly used options, such as the following:</span></span>
+
+* <span data-ttu-id="f06ba-149">[Kestrel](#servers)을 웹 서버로 사용하고 IIS 통합을 설정합니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-149">Use [Kestrel](#servers) as the web server and enable IIS integration.</span></span>
+* <span data-ttu-id="f06ba-150">*appsettings.json*, 환경 변수, 명령줄 인수 및 기타 원본의 구성을 로드합니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-150">Load configuration from *appsettings.json*, environment variables, command line arguments, and other sources.</span></span>
+* <span data-ttu-id="f06ba-151">콘솔 및 디버그 공급 기업에 로깅 출력을 보냅니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-151">Send logging output to the console and debug providers.</span></span>
+
+::: moniker-end
+
+::: moniker range=">= aspnetcore-2.0 <= aspnetcore-2.2"
+
+<span data-ttu-id="f06ba-152">호스트를 빌드하는 샘플 코드는 다음과 같습니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-152">Here's sample code that builds a host:</span></span>
+
+[!code-csharp[](index/snapshots/2.x/Program1.cs?highlight=9)]
+
+<span data-ttu-id="f06ba-153">자세한 내용은 [웹 호스트](xref:fundamentals/host/web-host)를 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="f06ba-153">For more information, see [Web Host](xref:fundamentals/host/web-host).</span></span>
+
+::: moniker-end
+
+::: moniker range="> aspnetcore-2.2"
+
+<span data-ttu-id="f06ba-154">ASP.NET Core 3.0의 웹앱에서 웹 호스트(`WebHost` 클래스) 또는 제네릭 호스트(`Host` 클래스)를 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-154">In ASP.NET Core 3.0, Web Host (`WebHost` class) or Generic Host (`Host` class) can be used in a web app.</span></span> <span data-ttu-id="f06ba-155">제네릭 호스트를 사용하는 것이 좋고, 웹 호스트를 이전 버전과 호환 가능합니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-155">Generic Host is recommended, and Web Host is available for backwards compatibility.</span></span>
+
+<span data-ttu-id="f06ba-156">프레임워크는 다음과 같은 옵션을 일반적으로 사용하여 호스트를 설정하는 `CreateDefaultBuilder` 및 `ConfigureWebHostDefaults` 확장 메서드를 제공합니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-156">The framework provides `CreateDefaultBuilder` and `ConfigureWebHostDefaults` extension methods that set up a host with commonly used options, such as the following:</span></span>
+
+* <span data-ttu-id="f06ba-157">[Kestrel](#servers)을 웹 서버로 사용하고 IIS 통합을 설정합니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-157">Use [Kestrel](#servers) as the web server and enable IIS integration.</span></span>
+* <span data-ttu-id="f06ba-158">*appsettings.json*, *appsettings.[EnvironmentName].json*, 환경 변수 및 명령줄 인수의 구성을 로드합니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-158">Load configuration from *appsettings.json*, *appsettings.[EnvironmentName].json*, environment variables, and command line arguments.</span></span>
+* <span data-ttu-id="f06ba-159">콘솔 및 디버그 공급 기업에 로깅 출력을 보냅니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-159">Send logging output to the console and debug providers.</span></span>
+
+<span data-ttu-id="f06ba-160">호스트를 빌드하는 샘플 코드는 다음과 같습니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-160">Here's sample code that builds a host.</span></span> <span data-ttu-id="f06ba-161">일반적으로 사용되는 옵션을 사용하여 호스트를 설정하는 확장 메서드가 강조 표시됩니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-161">The extension methods that set up the host with commonly used options are highlighted.</span></span>
+
+[!code-csharp[](index/snapshots/3.x/Program1.cs?highlight=9-10)]
+
+<span data-ttu-id="f06ba-162">자세한 내용은 [제네릭 호스트](xref:fundamentals/host/generic-host) 및 [웹 호스트](xref:fundamentals/host/web-host)를 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="f06ba-162">For more information, see [Generic Host](xref:fundamentals/host/generic-host) and [Web Host](xref:fundamentals/host/web-host)</span></span>
+
+::: moniker-end
+
+### <a name="advanced-host-scenarios"></a><span data-ttu-id="f06ba-163">고급 호스트 시나리오</span><span class="sxs-lookup"><span data-stu-id="f06ba-163">Advanced host scenarios</span></span>
+
+::: moniker range=">= aspnetcore-2.1 <= aspnetcore-2.2"
+
+<span data-ttu-id="f06ba-164">웹 호스트는 HTTP 서버 구현을 포함하도록 설계되었으며 다른 종류의 .NET 앱에 필요하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-164">Web Host is designed to include an HTTP server implementation, which isn't needed for other kinds of .NET apps.</span></span> <span data-ttu-id="f06ba-165">2.1 버전에서부터 제네릭 호스트(`Host` 클래스)는 ASP.NET Core 앱&mdash;뿐만 아니라 모든 .NET Core 앱에 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-165">Starting in 2.1, Generic Host (`Host` class) is available for any .NET Core app to use&mdash;not just ASP.NET Core apps.</span></span> <span data-ttu-id="f06ba-166">제네릭 호스트를 통해 다른 형식의 앱에서 로깅, DI, 구성 및 앱 수명 관리와 같은 교차 편집 기능을 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-166">Generic Host lets you use cross-cutting features such as logging, DI, configuration, and app lifetime management in other types of apps.</span></span> <span data-ttu-id="f06ba-167">자세한 내용은 [제네릭 호스트](xref:fundamentals/host/generic-host)를 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="f06ba-167">For more information, see [Generic Host](xref:fundamentals/host/generic-host).</span></span>
+
+::: moniker-end
+
+::: moniker range="> aspnetcore-2.2"
+
+<span data-ttu-id="f06ba-168">제네릭 호스트는 ASP.NET Core 앱&mdash;뿐만 아니라 모든 .NET Core 앱에 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-168">Generic Host is available for any .NET Core app to use&mdash;not just ASP.NET Core apps.</span></span> <span data-ttu-id="f06ba-169">제네릭 호스트를 통해 다른 형식의 앱에서 로깅, DI, 구성 및 앱 수명 관리와 같은 교차 편집 기능을 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-169">Generic Host lets you use cross-cutting features such as logging, DI, configuration, and app lifetime management in other types of apps.</span></span> <span data-ttu-id="f06ba-170">자세한 내용은 [제네릭 호스트](xref:fundamentals/host/generic-host)를 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="f06ba-170">For more information, see [Generic Host](xref:fundamentals/host/generic-host).</span></span>
+
+::: moniker-end
+
+<span data-ttu-id="f06ba-171">호스트를 사용하여 백그라운드 작업을 실행할 수도 있습니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-171">You can also use the host to run background tasks.</span></span> <span data-ttu-id="f06ba-172">자세한 내용은 [백그라운드 작업](xref:fundamentals/host/hosted-services)을 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="f06ba-172">For more information, see [Background tasks](xref:fundamentals/host/hosted-services).</span></span>
+
+## <a name="servers"></a><span data-ttu-id="f06ba-173">서버</span><span class="sxs-lookup"><span data-stu-id="f06ba-173">Servers</span></span>
+
+<span data-ttu-id="f06ba-174">ASP.NET Core 앱은 HTTP 요청을 수신하기 위해 HTTP 서버 구현을 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-174">An ASP.NET Core app uses an HTTP server implementation to listen for HTTP requests.</span></span> <span data-ttu-id="f06ba-175">해당 서버는 `HttpContext`에 구성된 일련의 [요청 기능](xref:fundamentals/request-features)으로 앱에 대한 요청을 표시합니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-175">The server surfaces requests to the app as a set of [request features](xref:fundamentals/request-features) composed into an `HttpContext`.</span></span>
 
 ::: moniker range=">= aspnetcore-2.2"
 
-# <a name="windowstabwindows"></a>[<span data-ttu-id="28479-170">Windows</span><span class="sxs-lookup"><span data-stu-id="28479-170">Windows</span></span>](#tab/windows)
+# <a name="windowstabwindows"></a>[<span data-ttu-id="f06ba-176">Windows</span><span class="sxs-lookup"><span data-stu-id="f06ba-176">Windows</span></span>](#tab/windows)
 
-<span data-ttu-id="28479-171">ASP.NET Core는 다음과 같은 서버 구현을 제공합니다.</span><span class="sxs-lookup"><span data-stu-id="28479-171">ASP.NET Core provides the following server implementations:</span></span>
+<span data-ttu-id="f06ba-177">ASP.NET Core는 다음과 같은 서버 구현을 제공합니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-177">ASP.NET Core provides the following server implementations:</span></span>
 
-* <span data-ttu-id="28479-172">[Kestrel](xref:fundamentals/servers/kestrel) 서버는 관리형 플랫폼 간 웹 서버입니다.</span><span class="sxs-lookup"><span data-stu-id="28479-172">[Kestrel](xref:fundamentals/servers/kestrel) server is a managed, cross-platform web server.</span></span> <span data-ttu-id="28479-173">Kestrel은 보통 [IIS](https://www.iis.net/)를 사용하여 역방향 프록시 구성에서 실행됩니다.</span><span class="sxs-lookup"><span data-stu-id="28479-173">Kestrel is often run in a reverse proxy configuration using [IIS](https://www.iis.net/).</span></span> <span data-ttu-id="28479-174">kestrel은 ASP.NET Core 2.0 이상에서 인터넷에 직접 공개되는 공용 에지 서버로 실행할 수도 있습니다.</span><span class="sxs-lookup"><span data-stu-id="28479-174">Kestrel can also be run as a public-facing edge server exposed directly to the Internet in ASP.NET Core 2.0 or later.</span></span>
-* <span data-ttu-id="28479-175">IIS HTTP 서버(`IISHttpServer`)는 IIS의 [In-process 서버](xref:fundamentals/servers/index#in-process-hosting-model)입니다.</span><span class="sxs-lookup"><span data-stu-id="28479-175">IIS HTTP Server (`IISHttpServer`) is an [in-process server](xref:fundamentals/servers/index#in-process-hosting-model) for IIS.</span></span>
-* <span data-ttu-id="28479-176">[HTTP.sys](xref:fundamentals/servers/httpsys) 서버는 Windows의 ASP.NET Core용 웹 서버입니다.</span><span class="sxs-lookup"><span data-stu-id="28479-176">[HTTP.sys](xref:fundamentals/servers/httpsys) server is a web server for ASP.NET Core on Windows.</span></span>
+* <span data-ttu-id="f06ba-178">*Kestrel*은 플랫폼 간 웹 서버입니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-178">*Kestrel* is a cross-platform web server.</span></span> <span data-ttu-id="f06ba-179">Kestrel은 보통 [IIS](https://www.iis.net/)를 사용하여 역방향 프록시 구성에서 실행됩니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-179">Kestrel is often run in a reverse proxy configuration using [IIS](https://www.iis.net/).</span></span> <span data-ttu-id="f06ba-180">Kestrel은 ASP.NET Core 2.0 이상에서 인터넷에 직접 공개되는 공용 연결 에지 서버로 실행할 수도 있습니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-180">In ASP.NET Core 2.0 or later, Kestrel can be run as a public-facing edge server exposed directly to the Internet.</span></span>
+* <span data-ttu-id="f06ba-181">*IIS HTTP 서버*는 IIS를 사용하는 Windows용 서버입니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-181">*IIS HTTP Server* is a server for windows that uses IIS.</span></span> <span data-ttu-id="f06ba-182">이 서버를 사용하면 ASP.NET Core 앱 및 IIS는 동일한 프로세스에서 실행됩니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-182">With this server, the ASP.NET Core app and IIS run in the same process.</span></span>
+* <span data-ttu-id="f06ba-183">*HTTP.sys*는 IIS에서 사용되지 않는 Windows용 서버입니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-183">*HTTP.sys* is a server for Windows that isn't used with IIS.</span></span>
 
-# <a name="macostabmacos"></a>[<span data-ttu-id="28479-177">macOS</span><span class="sxs-lookup"><span data-stu-id="28479-177">macOS</span></span>](#tab/macos)
+# <a name="macostabmacos"></a>[<span data-ttu-id="f06ba-184">macOS</span><span class="sxs-lookup"><span data-stu-id="f06ba-184">macOS</span></span>](#tab/macos)
 
-<span data-ttu-id="28479-178">ASP.NET Core는 [Kestrel](xref:fundamentals/servers/kestrel) 서버 구현을 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="28479-178">ASP.NET Core uses the [Kestrel](xref:fundamentals/servers/kestrel) server implementation.</span></span> <span data-ttu-id="28479-179">Kestrel은 관리형 플랫폼 간 웹 서버입니다.</span><span class="sxs-lookup"><span data-stu-id="28479-179">Kestrel is a managed, cross-platform web server.</span></span> <span data-ttu-id="28479-180">kestrel은 ASP.NET Core 2.0 이상에서 인터넷에 직접 공개되는 공용 에지 서버로 실행할 수도 있습니다.</span><span class="sxs-lookup"><span data-stu-id="28479-180">Kestrel can also be run as a public-facing edge server exposed directly to the Internet in ASP.NET Core 2.0 or later.</span></span>
+<span data-ttu-id="f06ba-185">ASP.NET Core는 *Kestrel* 플랫폼 간 서버 구현을 제공합니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-185">ASP.NET Core provides the *Kestrel* cross-platform server implementation.</span></span> <span data-ttu-id="f06ba-186">Kestrel은 ASP.NET Core 2.0 이상에서 인터넷에 직접 공개되는 공용 연결 에지 서버로 실행할 수도 있습니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-186">In ASP.NET Core 2.0 or later, Kestrel can be run as a public-facing edge server exposed directly to the Internet.</span></span> <span data-ttu-id="f06ba-187">Kestrel은 보통 [Nginx](https://nginx.org) 또는 [Apache](https://httpd.apache.org/)를 사용하여 역방향 프록시 구성에서 실행됩니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-187">Kestrel is often run in a reverse proxy configuration with [Nginx](https://nginx.org) or [Apache](https://httpd.apache.org/).</span></span>
 
-# <a name="linuxtablinux"></a>[<span data-ttu-id="28479-181">Linux</span><span class="sxs-lookup"><span data-stu-id="28479-181">Linux</span></span>](#tab/linux)
+# <a name="linuxtablinux"></a>[<span data-ttu-id="f06ba-188">Linux</span><span class="sxs-lookup"><span data-stu-id="f06ba-188">Linux</span></span>](#tab/linux)
 
-<span data-ttu-id="28479-182">ASP.NET Core는 [Kestrel](xref:fundamentals/servers/kestrel) 서버 구현을 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="28479-182">ASP.NET Core uses the [Kestrel](xref:fundamentals/servers/kestrel) server implementation.</span></span> <span data-ttu-id="28479-183">Kestrel은 관리형 플랫폼 간 웹 서버입니다.</span><span class="sxs-lookup"><span data-stu-id="28479-183">Kestrel is a managed, cross-platform web server.</span></span> <span data-ttu-id="28479-184">Kestrel은 보통 [Nginx](http://nginx.org) 또는 [Apache](https://httpd.apache.org/)를 사용하여 역방향 프록시 구성에서 실행됩니다.</span><span class="sxs-lookup"><span data-stu-id="28479-184">Kestrel is often run in a reverse proxy configuration with [Nginx](http://nginx.org) or [Apache](https://httpd.apache.org/).</span></span> <span data-ttu-id="28479-185">kestrel은 ASP.NET Core 2.0 이상에서 인터넷에 직접 공개되는 공용 에지 서버로 실행할 수도 있습니다.</span><span class="sxs-lookup"><span data-stu-id="28479-185">Kestrel can also be run as a public-facing edge server exposed directly to the Internet in ASP.NET Core 2.0 or later.</span></span>
+<span data-ttu-id="f06ba-189">ASP.NET Core는 *Kestrel* 플랫폼 간 서버 구현을 제공합니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-189">ASP.NET Core provides the *Kestrel* cross-platform server implementation.</span></span> <span data-ttu-id="f06ba-190">Kestrel은 ASP.NET Core 2.0 이상에서 인터넷에 직접 공개되는 공용 연결 에지 서버로 실행할 수도 있습니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-190">In ASP.NET Core 2.0 or later, Kestrel can be run as a public-facing edge server exposed directly to the Internet.</span></span> <span data-ttu-id="f06ba-191">Kestrel은 보통 [Nginx](https://nginx.org) 또는 [Apache](https://httpd.apache.org/)를 사용하여 역방향 프록시 구성에서 실행됩니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-191">Kestrel is often run in a reverse proxy configuration with [Nginx](https://nginx.org) or [Apache](https://httpd.apache.org/).</span></span>
 
 ---
 
@@ -157,59 +163,147 @@ ms.locfileid: "54099236"
 
 ::: moniker range="< aspnetcore-2.2"
 
-# <a name="windowstabwindows"></a>[<span data-ttu-id="28479-186">Windows</span><span class="sxs-lookup"><span data-stu-id="28479-186">Windows</span></span>](#tab/windows)
+# <a name="windowstabwindows"></a>[<span data-ttu-id="f06ba-192">Windows</span><span class="sxs-lookup"><span data-stu-id="f06ba-192">Windows</span></span>](#tab/windows)
 
-<span data-ttu-id="28479-187">ASP.NET Core는 다음과 같은 서버 구현을 제공합니다.</span><span class="sxs-lookup"><span data-stu-id="28479-187">ASP.NET Core provides the following server implementations:</span></span>
+<span data-ttu-id="f06ba-193">ASP.NET Core는 다음과 같은 서버 구현을 제공합니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-193">ASP.NET Core provides the following server implementations:</span></span>
 
-* <span data-ttu-id="28479-188">[Kestrel](xref:fundamentals/servers/kestrel) 서버는 관리형 플랫폼 간 웹 서버입니다.</span><span class="sxs-lookup"><span data-stu-id="28479-188">[Kestrel](xref:fundamentals/servers/kestrel) server is a managed, cross-platform web server.</span></span> <span data-ttu-id="28479-189">Kestrel은 보통 [IIS](https://www.iis.net/)를 사용하여 역방향 프록시 구성에서 실행됩니다.</span><span class="sxs-lookup"><span data-stu-id="28479-189">Kestrel is often run in a reverse proxy configuration using [IIS](https://www.iis.net/).</span></span> <span data-ttu-id="28479-190">kestrel은 ASP.NET Core 2.0 이상에서 인터넷에 직접 공개되는 공용 에지 서버로 실행할 수도 있습니다.</span><span class="sxs-lookup"><span data-stu-id="28479-190">Kestrel can also be run as a public-facing edge server exposed directly to the Internet in ASP.NET Core 2.0 or later.</span></span>
-* <span data-ttu-id="28479-191">[HTTP.sys](xref:fundamentals/servers/httpsys) 서버는 Windows의 ASP.NET Core용 웹 서버입니다.</span><span class="sxs-lookup"><span data-stu-id="28479-191">[HTTP.sys](xref:fundamentals/servers/httpsys) server is a web server for ASP.NET Core on Windows.</span></span>
+* <span data-ttu-id="f06ba-194">*Kestrel*은 플랫폼 간 웹 서버입니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-194">*Kestrel* is a cross-platform web server.</span></span> <span data-ttu-id="f06ba-195">Kestrel은 보통 [IIS](https://www.iis.net/)를 사용하여 역방향 프록시 구성에서 실행됩니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-195">Kestrel is often run in a reverse proxy configuration using [IIS](https://www.iis.net/).</span></span> <span data-ttu-id="f06ba-196">Kestrel은 ASP.NET Core 2.0 이상에서 인터넷에 직접 공개되는 공용 연결 에지 서버로 실행할 수도 있습니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-196">In ASP.NET Core 2.0 or later, Kestrel can be run as a public-facing edge server exposed directly to the Internet.</span></span>
+* <span data-ttu-id="f06ba-197">*HTTP.sys*는 IIS에서 사용되지 않는 Windows용 서버입니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-197">*HTTP.sys* is a server for Windows that isn't used with IIS.</span></span>
 
-# <a name="macostabmacos"></a>[<span data-ttu-id="28479-192">macOS</span><span class="sxs-lookup"><span data-stu-id="28479-192">macOS</span></span>](#tab/macos)
+# <a name="macostabmacos"></a>[<span data-ttu-id="f06ba-198">macOS</span><span class="sxs-lookup"><span data-stu-id="f06ba-198">macOS</span></span>](#tab/macos)
 
-<span data-ttu-id="28479-193">ASP.NET Core는 [Kestrel](xref:fundamentals/servers/kestrel) 서버 구현을 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="28479-193">ASP.NET Core uses the [Kestrel](xref:fundamentals/servers/kestrel) server implementation.</span></span> <span data-ttu-id="28479-194">Kestrel은 관리형 플랫폼 간 웹 서버입니다.</span><span class="sxs-lookup"><span data-stu-id="28479-194">Kestrel is a managed, cross-platform web server.</span></span> <span data-ttu-id="28479-195">kestrel은 ASP.NET Core 2.0 이상에서 인터넷에 직접 공개되는 공용 에지 서버로 실행할 수도 있습니다.</span><span class="sxs-lookup"><span data-stu-id="28479-195">Kestrel can also be run as a public-facing edge server exposed directly to the Internet in ASP.NET Core 2.0 or later.</span></span>
+<span data-ttu-id="f06ba-199">ASP.NET Core는 *Kestrel* 플랫폼 간 서버 구현을 제공합니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-199">ASP.NET Core provides the *Kestrel* cross-platform server implementation.</span></span> <span data-ttu-id="f06ba-200">Kestrel은 ASP.NET Core 2.0 이상에서 인터넷에 직접 공개되는 공용 연결 에지 서버로 실행할 수도 있습니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-200">In ASP.NET Core 2.0 or later, Kestrel can be run as a public-facing edge server exposed directly to the Internet.</span></span> <span data-ttu-id="f06ba-201">Kestrel은 보통 [Nginx](https://nginx.org) 또는 [Apache](https://httpd.apache.org/)를 사용하여 역방향 프록시 구성에서 실행됩니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-201">Kestrel is often run in a reverse proxy configuration with [Nginx](https://nginx.org) or [Apache](https://httpd.apache.org/).</span></span>
 
-# <a name="linuxtablinux"></a>[<span data-ttu-id="28479-196">Linux</span><span class="sxs-lookup"><span data-stu-id="28479-196">Linux</span></span>](#tab/linux)
+# <a name="linuxtablinux"></a>[<span data-ttu-id="f06ba-202">Linux</span><span class="sxs-lookup"><span data-stu-id="f06ba-202">Linux</span></span>](#tab/linux)
 
-<span data-ttu-id="28479-197">ASP.NET Core는 [Kestrel](xref:fundamentals/servers/kestrel) 서버 구현을 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="28479-197">ASP.NET Core uses the [Kestrel](xref:fundamentals/servers/kestrel) server implementation.</span></span> <span data-ttu-id="28479-198">Kestrel은 관리형 플랫폼 간 웹 서버입니다.</span><span class="sxs-lookup"><span data-stu-id="28479-198">Kestrel is a managed, cross-platform web server.</span></span> <span data-ttu-id="28479-199">Kestrel은 보통 [Nginx](http://nginx.org) 또는 [Apache](https://httpd.apache.org/)를 사용하여 역방향 프록시 구성에서 실행됩니다.</span><span class="sxs-lookup"><span data-stu-id="28479-199">Kestrel is often run in a reverse proxy configuration with [Nginx](http://nginx.org) or [Apache](https://httpd.apache.org/).</span></span> <span data-ttu-id="28479-200">kestrel은 ASP.NET Core 2.0 이상에서 인터넷에 직접 공개되는 공용 에지 서버로 실행할 수도 있습니다.</span><span class="sxs-lookup"><span data-stu-id="28479-200">Kestrel can also be run as a public-facing edge server exposed directly to the Internet in ASP.NET Core 2.0 or later.</span></span>
+<span data-ttu-id="f06ba-203">ASP.NET Core는 *Kestrel* 플랫폼 간 서버 구현을 제공합니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-203">ASP.NET Core provides the *Kestrel* cross-platform server implementation.</span></span> <span data-ttu-id="f06ba-204">Kestrel은 ASP.NET Core 2.0 이상에서 인터넷에 직접 공개되는 공용 연결 에지 서버로 실행할 수도 있습니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-204">In ASP.NET Core 2.0 or later, Kestrel can be run as a public-facing edge server exposed directly to the Internet.</span></span> <span data-ttu-id="f06ba-205">Kestrel은 보통 [Nginx](http://nginx.org) 또는 [Apache](https://httpd.apache.org/)를 사용하여 역방향 프록시 구성에서 실행됩니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-205">Kestrel is often run in a reverse proxy configuration with [Nginx](http://nginx.org) or [Apache](https://httpd.apache.org/).</span></span>
 
 ---
 
 ::: moniker-end
 
-<span data-ttu-id="28479-201">자세한 내용은 <xref:fundamentals/servers/index>을 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="28479-201">For more information, see <xref:fundamentals/servers/index>.</span></span>
+<span data-ttu-id="f06ba-206">자세한 내용은 [서버](xref:fundamentals/servers/index)를 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="f06ba-206">For more information, see [Servers](xref:fundamentals/servers/index).</span></span>
 
-## <a name="configuration"></a><span data-ttu-id="28479-202">구성</span><span class="sxs-lookup"><span data-stu-id="28479-202">Configuration</span></span>
+## <a name="configuration"></a><span data-ttu-id="f06ba-207">구성</span><span class="sxs-lookup"><span data-stu-id="f06ba-207">Configuration</span></span>
 
-<span data-ttu-id="28479-203">ASP.NET Core는 이름 값 쌍에 기반을 둔 구성 모델을 사용합니다. </span><span class="sxs-lookup"><span data-stu-id="28479-203">ASP.NET Core uses a configuration model based on name-value pairs.</span></span> <span data-ttu-id="28479-204">이 구성 모델은 <xref:System.Configuration> 이나 *web.config*를 기반으로 하지 않습니다. 구성은 정렬된 구성 공급자 집합에서 설정을 가져옵니다.</span><span class="sxs-lookup"><span data-stu-id="28479-204">The configuration model isn't based on <xref:System.Configuration> or *web.config*. Configuration obtains settings from an ordered set of configuration providers.</span></span> <span data-ttu-id="28479-205">기본적으로 제공되는 구성 공급자는 다양한 파일 형식(XML, JSON, INI), 환경 변수 및 명령줄 인수를 지원합니다.</span><span class="sxs-lookup"><span data-stu-id="28479-205">The built-in configuration providers support a variety of file formats (XML, JSON, INI), environment variables, and command-line arguments.</span></span> <span data-ttu-id="28479-206">또는 직접 자신의 사용자 지정 구성 공급자를 작성할 수도 있습니다.</span><span class="sxs-lookup"><span data-stu-id="28479-206">You can also write your own custom configuration providers.</span></span>
+<span data-ttu-id="f06ba-208">ASP.NET Core는 정렬된 일련의 구성 공급 기업에서 이름-값 쌍으로 설정을 가져오는 구성 프레임워크를 제공합니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-208">ASP.NET Core provides a configuration framework that gets settings as name-value pairs from an ordered set of configuration providers.</span></span> <span data-ttu-id="f06ba-209">*.json* 파일, *.xml* 파일, 환경 변수 및 명령줄 인수와 같은 다양한 원본의 기본 제공 구성 공급 기업이 있습니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-209">There are built-in configuration providers for a variety of sources, such as *.json* files, *.xml* files, environment variables, and command-line arguments.</span></span> <span data-ttu-id="f06ba-210">또는 사용자 지정 구성 공급 기업을 작성할 수도 있습니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-210">You can also write custom configuration providers.</span></span>
 
-<span data-ttu-id="28479-207">자세한 내용은 <xref:fundamentals/configuration/index>을 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="28479-207">For more information, see <xref:fundamentals/configuration/index>.</span></span>
+<span data-ttu-id="f06ba-211">예를 들어 구성이 *appsettings.json* 및 환경 변수에서 제공되도록 지정할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-211">For example, you could specify that configuration comes from *appsettings.json* and environment variables.</span></span> <span data-ttu-id="f06ba-212">그런 다음, *ConnectionString* 값이 요청되면 프레임워크는 먼저 *appsettings.json* 파일을 찾습니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-212">Then when the value of *ConnectionString* is requested, the framework looks first in the *appsettings.json* file.</span></span> <span data-ttu-id="f06ba-213">거기에서 값을 찾을 수 없을 뿐만 아니라 환경 변수에서도 찾을 수 없으면 환경 변수의 값이 우선 적용됩니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-213">If the value is found there but also in an environment variable, the value from the environment variable would take precedence.</span></span>
 
-## <a name="logging"></a><span data-ttu-id="28479-208">로깅</span><span class="sxs-lookup"><span data-stu-id="28479-208">Logging</span></span>
+<span data-ttu-id="f06ba-214">ASP.NET Core는 암호와 같은 기밀 구성 데이터를 관리하기 위해 [비밀 관리자 도구](xref:security/app-secrets)를 제공합니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-214">For managing confidential configuration data such as passwords, ASP.NET Core provides a [Secret Manager tool](xref:security/app-secrets).</span></span> <span data-ttu-id="f06ba-215">프로덕션 비밀의 경우 [Azure Key Vault](/aspnet/core/security/key-vault-configuration)를 사용하는 것이 좋습니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-215">For production secrets, we recommend [Azure Key Vault](/aspnet/core/security/key-vault-configuration).</span></span>
 
-<span data-ttu-id="28479-209">ASP.NET Core는 다양한 로깅 공급자를 사용하는 로깅 API를 지원합니다.</span><span class="sxs-lookup"><span data-stu-id="28479-209">ASP.NET Core supports a Logging API that works with a variety of logging providers.</span></span> <span data-ttu-id="28479-210">기본으로 제공되는 공급자는 하나 이상의 대상에 로그를 전송할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="28479-210">Built-in providers support sending logs to one or more destinations.</span></span> <span data-ttu-id="28479-211">타사의 로깅 프레임워크를 사용할 수도 있습니다.</span><span class="sxs-lookup"><span data-stu-id="28479-211">Third-party logging frameworks can be used.</span></span>
+<span data-ttu-id="f06ba-216">자세한 내용은 [구성](xref:fundamentals/configuration/index)을 참고하시기 바랍니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-216">For more information, see [Configuration](xref:fundamentals/configuration/index).</span></span>
 
-<span data-ttu-id="28479-212">자세한 내용은 <xref:fundamentals/logging/index>을 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="28479-212">For more information, see <xref:fundamentals/logging/index>.</span></span>
+## <a name="options"></a><span data-ttu-id="f06ba-217">옵션</span><span class="sxs-lookup"><span data-stu-id="f06ba-217">Options</span></span>
 
-## <a name="error-handling"></a><span data-ttu-id="28479-213">오류 처리</span><span class="sxs-lookup"><span data-stu-id="28479-213">Error handling</span></span>
+<span data-ttu-id="f06ba-218">가능할 경우 ASP.NET Core는 구성 값을 저장하고 검색하기 위해 *옵션 패턴*을 따릅니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-218">Where possible, ASP.NET Core follows the *options pattern* for storing and retrieving configuration values.</span></span> <span data-ttu-id="f06ba-219">옵션 패턴은 클래스를 사용하여 관련 설정 그룹을 나타냅니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-219">The options pattern uses classes to represent groups of related settings.</span></span>
 
-<span data-ttu-id="28479-214">ASP.NET Core는 앱에서 오류를 처리하기 위한 개발자 예외 페이지, 사용자 지정 오류 페이지, 정적 상태 코드 페이지 및 시작 예외 처리 등의 기본 시나리오를 제공합니다.</span><span class="sxs-lookup"><span data-stu-id="28479-214">ASP.NET Core has built-in scenarios for handling errors in apps, including a developer exception page, custom error pages, static status code pages, and startup exception handling.</span></span>
+<span data-ttu-id="f06ba-220">예를 들어 다음 코드에서는 WebSockets 옵션을 설정합니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-220">For example, the following code sets WebSockets options:</span></span>
 
-<span data-ttu-id="28479-215">자세한 내용은 <xref:fundamentals/error-handling>을 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="28479-215">For more information, see <xref:fundamentals/error-handling>.</span></span>
+```csharp
+var options = new WebSocketOptions  
+{  
+   KeepAliveInterval = TimeSpan.FromSeconds(120),  
+   ReceiveBufferSize = 4096
+};  
+app.UseWebSockets(options);
+```
 
-## <a name="routing"></a><span data-ttu-id="28479-216">라우팅</span><span class="sxs-lookup"><span data-stu-id="28479-216">Routing</span></span>
+<span data-ttu-id="f06ba-221">자세한 내용은 [옵션](xref:fundamentals/configuration/options)을 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="f06ba-221">For more information, see [Options](xref:fundamentals/configuration/options).</span></span>
 
-<span data-ttu-id="28479-217">ASP.NET Core는 응용 프로그램 요청을 경로 처리기로 라우팅하는 시나리오를 제공합니다.</span><span class="sxs-lookup"><span data-stu-id="28479-217">ASP.NET Core offers scenarios for routing of app requests to route handlers.</span></span>
+## <a name="environments"></a><span data-ttu-id="f06ba-222">환경</span><span class="sxs-lookup"><span data-stu-id="f06ba-222">Environments</span></span>
 
-<span data-ttu-id="28479-218">자세한 내용은 <xref:fundamentals/routing>을 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="28479-218">For more information, see <xref:fundamentals/routing>.</span></span>
+<span data-ttu-id="f06ba-223">*개발*, *준비* 및 *프로덕션*과 같은 실행 환경은 ASP.NET Core의 일급 개념입니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-223">Execution environments, such as *Development*, *Staging*, and *Production*, are a first-class notion in ASP.NET Core.</span></span> <span data-ttu-id="f06ba-224">`ASPNETCORE_ENVIRONMENT` 환경 변수를 설정하여 앱을 실행 중인 환경을 지정할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-224">You can specify the environment an app is running in by setting the `ASPNETCORE_ENVIRONMENT` environment variable.</span></span> <span data-ttu-id="f06ba-225">ASP.NET Core는 앱 시작 시 해당 환경 변수를 읽고 `IHostingEnvironment` 구현에서 값을 저장합니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-225">ASP.NET Core reads that environment variable at app startup and stores the value in an `IHostingEnvironment` implementation.</span></span> <span data-ttu-id="f06ba-226">환경 개체는 DI를 통해 앱에서 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-226">The environment object is available anywhere in the app via DI.</span></span>
 
-## <a name="background-tasks"></a><span data-ttu-id="28479-219">백그라운드 작업</span><span class="sxs-lookup"><span data-stu-id="28479-219">Background tasks</span></span>
+::: moniker range=">= aspnetcore-2.0"
 
-<span data-ttu-id="28479-220">백그라운드 작업은 *호스티드 서비스*로 구현됩니다.</span><span class="sxs-lookup"><span data-stu-id="28479-220">Background tasks are implemented as *hosted services*.</span></span> <span data-ttu-id="28479-221">호스티드 서비스는 <xref:Microsoft.Extensions.Hosting.IHostedService> 인터페이스를 구현하는 백그라운드 작업 논리가 있는 클래스입니다.</span><span class="sxs-lookup"><span data-stu-id="28479-221">A hosted service is a class with background task logic that implements the <xref:Microsoft.Extensions.Hosting.IHostedService> interface.</span></span>
+<span data-ttu-id="f06ba-227">`Startup` 클래스의 다음 샘플 코드는 개발 중에 실행할 때만 자세한 오류 정보를 제공하도록 앱을 구성합니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-227">The following sample code from the `Startup` class configures the app to provide detailed error information only when it runs in development:</span></span>
 
-<span data-ttu-id="28479-222">자세한 내용은 <xref:fundamentals/host/hosted-services>을 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="28479-222">For more information, see <xref:fundamentals/host/hosted-services>.</span></span>
+[!code-csharp[](index/snapshots/2.x/Startup2.cs?highlight=3-6)]
 
-## <a name="access-httpcontext"></a><span data-ttu-id="28479-223">HttpContext에 액세스</span><span class="sxs-lookup"><span data-stu-id="28479-223">Access HttpContext</span></span>
+::: moniker-end
 
-<span data-ttu-id="28479-224">`HttpContext`는 Razor Pages 및 MVC를 사용하여 요청을 처리할 때 자동으로 제공됩니다.</span><span class="sxs-lookup"><span data-stu-id="28479-224">`HttpContext` is automatically available when processing requests with Razor Pages and MVC.</span></span> <span data-ttu-id="28479-225">`HttpContext`를 즉시 사용할 수 없는 경우에는 <xref:Microsoft.AspNetCore.Http.IHttpContextAccessor> 인터페이스 및 기본 구현 <xref:Microsoft.AspNetCore.Http.HttpContextAccessor>를 통해 `HttpContext`에 액세스할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="28479-225">In circumstances where `HttpContext` isn't readily available, you can access the `HttpContext` through the <xref:Microsoft.AspNetCore.Http.IHttpContextAccessor> interface and its default implementation, <xref:Microsoft.AspNetCore.Http.HttpContextAccessor>.</span></span>
+<span data-ttu-id="f06ba-228">자세한 내용은 [환경](xref:fundamentals/environments)을 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="f06ba-228">For more information, see [Environments](xref:fundamentals/environments).</span></span>
 
-<span data-ttu-id="28479-226">자세한 내용은 <xref:fundamentals/httpcontext>을 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="28479-226">For more information, see <xref:fundamentals/httpcontext>.</span></span>
+## <a name="logging"></a><span data-ttu-id="f06ba-229">로깅</span><span class="sxs-lookup"><span data-stu-id="f06ba-229">Logging</span></span>
+
+<span data-ttu-id="f06ba-230">ASP.NET Core는 다양한 기본 제공 및 타사 로깅 공급자와 함께 작동하는 로깅 API를 지원합니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-230">ASP.NET Core supports a logging API that works with a variety of built-in and third-party logging providers.</span></span> <span data-ttu-id="f06ba-231">지원되는 공급 기업에는 다음이 포함됩니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-231">Available providers include the following:</span></span>
+
+* <span data-ttu-id="f06ba-232">콘솔</span><span class="sxs-lookup"><span data-stu-id="f06ba-232">Console</span></span>
+* <span data-ttu-id="f06ba-233">디버그</span><span class="sxs-lookup"><span data-stu-id="f06ba-233">Debug</span></span>
+* <span data-ttu-id="f06ba-234">Windows 이벤트 추적</span><span class="sxs-lookup"><span data-stu-id="f06ba-234">Event Tracing on Windows</span></span>
+* <span data-ttu-id="f06ba-235">Windows 이벤트 로그</span><span class="sxs-lookup"><span data-stu-id="f06ba-235">Windows Event Log</span></span>
+* <span data-ttu-id="f06ba-236">TraceSource</span><span class="sxs-lookup"><span data-stu-id="f06ba-236">TraceSource</span></span>
+* <span data-ttu-id="f06ba-237">Azure App Service</span><span class="sxs-lookup"><span data-stu-id="f06ba-237">Azure App Service</span></span>
+* <span data-ttu-id="f06ba-238">Azure Application Insights</span><span class="sxs-lookup"><span data-stu-id="f06ba-238">Azure Application Insights</span></span>
+
+<span data-ttu-id="f06ba-239">DI에서 `ILogger` 개체를 가져오고 로그 메서드를 호출하여 앱 코드 어디서나 로그를 작성합니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-239">Write logs from anywhere in an app's code by getting an `ILogger` object from DI and calling log methods.</span></span>
+
+::: moniker range=">= aspnetcore-2.0"
+
+<span data-ttu-id="f06ba-240">생성자 주입 및 로깅 메서드 호출을 강조 표시하고 `ILogger` 개체를 사용하는 샘플 코드는 다음과 같습니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-240">Here's sample code that uses an `ILogger` object, with constructor injection and the logging method calls highlighted.</span></span>
+
+[!code-csharp[](index/snapshots/2.x/TodoController.cs?highlight=5,13,17)]
+
+::: moniker-end
+
+<span data-ttu-id="f06ba-241">`ILogger` 인터페이스를 통해 필드 개수에 관계 없이 로그 공급 기업에 전달할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-241">The `ILogger` interface lets you pass any number of fields to the logging provider.</span></span> <span data-ttu-id="f06ba-242">필드는 일반적으로 메시지 문자열을 생성하는 데 사용되지만 공급 기업은 이를 별도 필드로 데이터 저장소에 보낼 수도 있습니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-242">The fields are commonly used to construct a message string, but the provider can also send them as separate fields to a data store.</span></span> <span data-ttu-id="f06ba-243">이 기능을 사용하면 로그 공급 기업이 [구조적 로깅이라고도 하는 의미 체계 로깅](https://softwareengineering.stackexchange.com/questions/312197/benefits-of-structured-logging-vs-basic-logging)을 구현할 수 있게 됩니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-243">This feature makes it possible for logging providers to implement [semantic logging, also known as structured logging](https://softwareengineering.stackexchange.com/questions/312197/benefits-of-structured-logging-vs-basic-logging).</span></span>
+
+<span data-ttu-id="f06ba-244">자세한 내용은 [로깅](xref:fundamentals/logging/index)을 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="f06ba-244">For more information, see [Logging](xref:fundamentals/logging/index).</span></span>
+
+## <a name="routing"></a><span data-ttu-id="f06ba-245">라우팅</span><span class="sxs-lookup"><span data-stu-id="f06ba-245">Routing</span></span>
+
+<span data-ttu-id="f06ba-246">*경로*는 처리기에 매핑되는 URL 패턴입니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-246">A *route* is a URL pattern that is mapped to a handler.</span></span> <span data-ttu-id="f06ba-247">처리기는 일반적으로 Razor 페이지, MVC 컨트롤러의 작업 메서드 또는 미들웨어와 같습니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-247">The handler is typically a Razor page, an action method in an MVC controller, or a middleware.</span></span> <span data-ttu-id="f06ba-248">ASP.NET Core 라우팅을 사용하면 앱에서 사용되는 URL을 제어할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-248">ASP.NET Core routing gives you control over the URLs used by your app.</span></span>
+
+<span data-ttu-id="f06ba-249">자세한 내용은 [라우팅](xref:fundamentals/routing)을 참고하시기 바랍니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-249">For more information, see [Routing](xref:fundamentals/routing).</span></span>
+
+## <a name="error-handling"></a><span data-ttu-id="f06ba-250">오류 처리</span><span class="sxs-lookup"><span data-stu-id="f06ba-250">Error handling</span></span>
+
+<span data-ttu-id="f06ba-251">ASP.NET Core에는 다음과 같은 오류를 처리하기 위한 기본 제공 기능이 포함됩니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-251">ASP.NET Core has built-in features for handling errors, such as:</span></span>
+
+* <span data-ttu-id="f06ba-252">개발자 예외 페이지</span><span class="sxs-lookup"><span data-stu-id="f06ba-252">A developer exception page</span></span>
+* <span data-ttu-id="f06ba-253">사용자 지정 오류 페이지</span><span class="sxs-lookup"><span data-stu-id="f06ba-253">Custom error pages</span></span>
+* <span data-ttu-id="f06ba-254">정적 상태 코드 페이지</span><span class="sxs-lookup"><span data-stu-id="f06ba-254">Static status code pages</span></span>
+* <span data-ttu-id="f06ba-255">시작 예외 처리</span><span class="sxs-lookup"><span data-stu-id="f06ba-255">Startup exception handling</span></span>
+
+<span data-ttu-id="f06ba-256">자세한 내용은 [오류 처리](xref:fundamentals/error-handling)를 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="f06ba-256">For more information, see [Error handling](xref:fundamentals/error-handling).</span></span>
+
+::: moniker range=">= aspnetcore-2.1"
+
+## <a name="make-http-requests"></a><span data-ttu-id="f06ba-257">HTTP 요청 만들기</span><span class="sxs-lookup"><span data-stu-id="f06ba-257">Make HTTP requests</span></span>
+
+<span data-ttu-id="f06ba-258">`HttpClient` 인스턴스를 만들기 위해 `IHttpClientFactory`를 구현할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-258">An implementation of `IHttpClientFactory` is available for creating `HttpClient` instances.</span></span> <span data-ttu-id="f06ba-259">팩터리는 다음과 같습니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-259">The factory:</span></span>
+
+* <span data-ttu-id="f06ba-260">논리적 `HttpClient` 인스턴스를 구성하고 이름을 지정하기 위해 중앙 위치를 제공합니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-260">Provides a central location for naming and configuring logical `HttpClient` instances.</span></span> <span data-ttu-id="f06ba-261">예를 들어, *github* 클라이언트는 GitHub에 액세스하도록 등록 및 구성할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-261">For example, a *github* client can be registered and configured to access GitHub.</span></span> <span data-ttu-id="f06ba-262">다른 용도로 기본 클라이언트를 등록할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-262">A default client can be registered for other purposes.</span></span>
+* <span data-ttu-id="f06ba-263">나가는 요청 미들웨어 파이프라인을 빌드하기 위해 여러 위임 처리기를 연결하고 등록하도록 지원합니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-263">Supports registration and chaining of multiple delegating handlers to build an outgoing request middleware pipeline.</span></span> <span data-ttu-id="f06ba-264">이 패턴은 ASP.NET Core에서 인바운드 미들웨어 파이프라인과 비슷합니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-264">This pattern is similar to the inbound middleware pipeline in ASP.NET Core.</span></span> <span data-ttu-id="f06ba-265">패턴은 캐싱, 오류 처리, serialization 및 로깅을 포함하여 HTTP 요청을 둘러싼 교차 편집 문제를 관리할 메커니즘을 제공합니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-265">The pattern provides a mechanism to manage cross-cutting concerns around HTTP requests, including caching, error handling, serialization, and logging.</span></span>
+* <span data-ttu-id="f06ba-266">일시적인 오류를 처리하기 위해 널리 사용되는 타사 라이브러리인 *Polly*와 통합합니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-266">Integrates with *Polly*, a popular third-party library for transient fault handling.</span></span>
+* <span data-ttu-id="f06ba-267">풀링 및 기본의 수명을 관리 수동으로 `HttpClient` 수명을 관리하는 경우 발생하는 일반적인 DNS 문제를 방지하려면 기본 `HttpClientMessageHandler` 인스턴스의 수명 및 풀링을 관리합니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-267">Manages the pooling and lifetime of underlying `HttpClientMessageHandler` instances to avoid common DNS problems that occur when manually managing `HttpClient` lifetimes.</span></span>
+* <span data-ttu-id="f06ba-268">팩터리에서 만든 클라이언트를 통해 전송된 모든 요청에 대해 구성 가능한 로깅 환경(*ILogger*를 통해)을 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-268">Adds a configurable logging experience (via *ILogger*) for all requests sent through clients created by the factory.</span></span>
+
+<span data-ttu-id="f06ba-269">자세한 내용은 [HTTP 요청 만들기](xref:fundamentals/http-requests)를 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="f06ba-269">For more information, see [Make HTTP requests](xref:fundamentals/http-requests).</span></span>
+
+::: moniker-end
+
+## <a name="content-root"></a><span data-ttu-id="f06ba-270">콘텐츠 루트</span><span class="sxs-lookup"><span data-stu-id="f06ba-270">Content root</span></span>
+
+<span data-ttu-id="f06ba-271">콘텐츠 루트는 앱에서 사용되는 비공개 콘텐츠(예: Razor 파일)의 기본 경로입니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-271">The content root is the base path to any private content used by the app, such as its Razor files.</span></span> <span data-ttu-id="f06ba-272">기본적으로 콘텐츠 루트는 앱을 호스트하는 실행 파일의 기본 경로입니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-272">By default, the content root is the base path for the executable hosting the app.</span></span> <span data-ttu-id="f06ba-273">대체 위치는 [호스트를 빌드](#host)할 때 지정될 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-273">An alternative location can be specified when [building the host](#host).</span></span>
+
+::: moniker range="<= aspnetcore-2.2"
+
+<span data-ttu-id="f06ba-274">자세한 내용은 [콘텐츠 루트](xref:fundamentals/host/web-host#content-root)를 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="f06ba-274">For more information, see [Content root](xref:fundamentals/host/web-host#content-root).</span></span>
+
+::: moniker-end
+
+::: moniker range="> aspnetcore-2.2"
+
+<span data-ttu-id="f06ba-275">자세한 내용은 [콘텐츠 루트](xref:fundamentals/host/generic-host#content-root)를 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="f06ba-275">For more information, see [Content root](xref:fundamentals/host/generic-host#content-root).</span></span>
+
+::: moniker-end
+
+## <a name="web-root"></a><span data-ttu-id="f06ba-276">웹 루트</span><span class="sxs-lookup"><span data-stu-id="f06ba-276">Web root</span></span>
+
+<span data-ttu-id="f06ba-277">웹 루트(*webroot*라고도 함)는 CSS, JavaScript 및 이미지 파일과 같은 공용 정적 리소스의 기본 경로입니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-277">The web root (also known as *webroot*) is the base path to public, static resources, such as CSS, JavaScript, and image files.</span></span> <span data-ttu-id="f06ba-278">기본적으로 정적 파일 미들웨어는 웹 루트 디렉터리(및 하위 디렉터리)에 있는 파일만 제공합니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-278">The static files middleware will only serve files from the web root directory (and sub-directories) by default.</span></span> <span data-ttu-id="f06ba-279">웹 루트 경로는 *\<content root>/wwwroot*를 기본값으로 지정하지만 [호스트를 빌드](#host)할 때 다른 위치를 지정할 수도 있습니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-279">The web root path defaults to *\<content root>/wwwroot*, but a different location can be specified when [building the host](#host).</span></span>
+
+<span data-ttu-id="f06ba-280">Razor(*.cshtml*) 파일에서 물결표 슬래시 `~/`가 웹 루트를 가리킵니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-280">In Razor (*.cshtml*) files, the tilde-slash `~/` points to the web root.</span></span> <span data-ttu-id="f06ba-281">`~/`에서 시작하는 경로를 가상 경로라고 합니다.</span><span class="sxs-lookup"><span data-stu-id="f06ba-281">Paths beginning with `~/` are referred to as virtual paths.</span></span>
+
+<span data-ttu-id="f06ba-282">자세한 내용은 [정적 파일](xref:fundamentals/static-files)을 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="f06ba-282">For more information, see [Static files](xref:fundamentals/static-files).</span></span>
