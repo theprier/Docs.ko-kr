@@ -7,12 +7,12 @@ ms.author: bradyg
 ms.custom: mvc
 ms.date: 11/14/2018
 uid: signalr/javascript-client
-ms.openlocfilehash: dd40a64d3c8405e92337ac640ad5cbe913cd849f
-ms.sourcegitcommit: ebf4e5a7ca301af8494edf64f85d4a8deb61d641
+ms.openlocfilehash: db9a8bbc8f111728f0827e3639e40785149bf79e
+ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54835572"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "56899218"
 ---
 # <a name="aspnet-core-signalr-javascript-client"></a>ASP.NET Core SignalR JavaScript 클라이언트
 
@@ -45,7 +45,7 @@ SignalR JavaScript 클라이언트 라이브러리는 [npm](https://www.npmjs.co
 
 다음 코드는 연결을 만들고 시작합니다. 허브의 이름은 대소문자를 구분하지 않습니다.
 
-[!code-javascript[Call hub methods](javascript-client/sample/wwwroot/js/chat.js?range=9-12)]
+[!code-javascript[Call hub methods](javascript-client/sample/wwwroot/js/chat.js?range=9-13,43-45)]
 
 ### <a name="cross-origin-connections"></a>원본 간 연결
 
@@ -86,7 +86,7 @@ SignalR은 `SendAsync`와 `connection.on`에 정의된 메서드 이름과 인�
 
 클라이언트 쪽 오류를 처리하려면 `start` 메서드의 끝에 `catch` 메서드를 연결합니다. 브라우저의 콘솔에 오류를 출력하려면 `console.error`를 사용합니다.
 
-[!code-javascript[Error handling](javascript-client/sample/wwwroot/js/chat.js?range=43-45)]
+[!code-javascript[Error handling](javascript-client/sample/wwwroot/js/chat.js?range=49-51)]
 
 연결이 만들어지면 로거와 기록할 이벤트 유형을 전달하여 클라이언트 쪽 로그 추적을 설정합니다. 지정한 로그 수준 이상의 메시지가 기록됩니다. 사용 가능한 로그 수준은 다음과 같습니다.
 

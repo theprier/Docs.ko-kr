@@ -4,14 +4,14 @@ author: guardrex
 description: 앱 성능 및 확장성, 클라우드 또는 서버 팜 환경에서 특히 개선 하기 위해 캐시를 분산 하는 ASP.NET Core를 사용 하는 방법에 알아봅니다.
 ms.author: riande
 ms.custom: mvc
-ms.date: 02/13/2019
+ms.date: 02/26/2019
 uid: performance/caching/distributed
-ms.openlocfilehash: a157eb075874d2118e3e34b51410b539a1ec37df
-ms.sourcegitcommit: 6ba5fb1fd0b7f9a6a79085b0ef56206e462094b7
+ms.openlocfilehash: 7337ee3b823064c942832d8a44e4d4289bc4fd0e
+ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56248590"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "56899426"
 ---
 # <a name="distributed-caching-in-aspnet-core"></a>ASP.NET Core의 캐싱 분산
 
@@ -33,7 +33,15 @@ ms.locfileid: "56248590"
 
 ## <a name="prerequisites"></a>전제 조건
 
-::: moniker range=">= aspnetcore-2.1"
+::: moniker range=">= aspnetcore-2.2"
+
+SQL Server를 사용 하 여 분산 캐시에 대 한 참조를 [Microsoft.AspNetCore.App 메타 패키지](xref:fundamentals/metapackage-app) 에 대 한 패키지 참조를 추가 또는 합니다 [Microsoft.Extensions.Caching.SqlServer](https://www.nuget.org/packages/Microsoft.Extensions.Caching.SqlServer) 패키지 합니다.
+
+Redis를 사용 하 여 분산 캐시에 대 한 참조를 [Microsoft.AspNetCore.App 메타 패키지](xref:fundamentals/metapackage-app) 에 대 한 패키지 참조를 추가 하 고는 [Microsoft.Extensions.Caching.StackExchangeRedis](https://www.nuget.org/packages/Microsoft.Extensions.Caching.StackExchangeRedis) 패키지 합니다. Redis 패키지에 포함 되어 있지는 `Microsoft.AspNetCore.App` 패키지를 프로젝트 파일의 Redis 패키지를 개별적으로 참조 해야 하므로 합니다.
+
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.1"
 
 SQL Server를 사용 하 여 분산 캐시에 대 한 참조를 [Microsoft.AspNetCore.App 메타 패키지](xref:fundamentals/metapackage-app) 에 대 한 패키지 참조를 추가 또는 합니다 [Microsoft.Extensions.Caching.SqlServer](https://www.nuget.org/packages/Microsoft.Extensions.Caching.SqlServer) 패키지 합니다.
 

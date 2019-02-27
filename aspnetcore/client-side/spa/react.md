@@ -7,12 +7,12 @@ ms.author: scaddie
 ms.custom: mvc
 ms.date: 02/13/2019
 uid: spa/react
-ms.openlocfilehash: aa08a9d8d06d8b52be564fabf904d4923684d4e4
-ms.sourcegitcommit: 6ba5fb1fd0b7f9a6a79085b0ef56206e462094b7
+ms.openlocfilehash: 3b2b2e67b5d577872bafefef5624a13ca1a22449
+ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56248032"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "56899179"
 ---
 # <a name="use-the-react-project-template-with-aspnet-core"></a>ASP.NET Core에 React 프로젝트 템플릿 사용
 
@@ -102,3 +102,6 @@ npm install --save <package_name>
     ```
 
 ASP.NET Core 앱을 시작할 때 CRA 서버는 시작되지 않습니다. 수동으로 시작한 인스턴스가 대신 사용됩니다. 이를 통해 더 빠르게 시작하고 다시 시작할 수 있습니다. 더 이상 React 앱이 매번 다시 빌드할 때까지 기다리지 않습니다.
+
+> [!IMPORTANT]
+> "서버 쪽 렌더링"이 서식이 파일의 지원 되는 기능이 아닙니다. 이 템플릿 사용 하 여 목표는 "-react-앱 만들기"를 사용 하 여 패리티를 충족 합니다. 따라서 시나리오 및 기능 (예: SSR) "-react-앱 만들기" 프로젝트에 포함 되어 있지는 지원 되지 않습니다 및 사용자에 대 한 연습 그대로 유지 됩니다.

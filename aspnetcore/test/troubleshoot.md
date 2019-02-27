@@ -4,14 +4,14 @@ author: Rick-Anderson
 description: ASP.NET Core 프로젝트를 사용하여 경고 및 오류를 이해하고 문제를 해결합니다.
 ms.author: riande
 ms.custom: mvc
-ms.date: 11/26/2018
+ms.date: 02/26/2019
 uid: test/troubleshoot
-ms.openlocfilehash: 7a3361970bde2b8761c76884fc1905957d075c5c
-ms.sourcegitcommit: e9b99854b0a8021dafabee0db5e1338067f250a9
+ms.openlocfilehash: c8b34f51fd329eb9a7c34f7be93bd7f2aa054283
+ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52450777"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "56899293"
 ---
 # <a name="troubleshoot-aspnet-core-projects"></a>ASP.NET Core 프로젝트 문제 해결
 
@@ -22,8 +22,8 @@ ms.locfileid: "52450777"
 * <xref:host-and-deploy/azure-apps/troubleshoot>
 * <xref:host-and-deploy/iis/troubleshoot>
 * <xref:host-and-deploy/azure-iis-errors-reference>
-* [ASP.NET Core 응용 프로그램에서 문제를 진단 하는 NDC 회의 (런던, 2018):](https://www.youtube.com/watch?v=RYI0DHoIVaA)
-* [ASP.NET Core 성능 문제를 해결 하는 ASP.NET 블로그:](https://blogs.msdn.microsoft.com/webdev/2018/05/23/asp-net-core-performance-improvements/)
+* [NDC 회의 (런던, 2018): ASP.NET Core 응용 프로그램에서 문제 진단](https://www.youtube.com/watch?v=RYI0DHoIVaA)
+* [ASP.NET 블로그: ASP.NET Core 성능 문제 해결](https://blogs.msdn.microsoft.com/webdev/2018/05/23/asp-net-core-performance-improvements/)
 
 ## <a name="net-core-sdk-warnings"></a>.NET core SDK 경고
 
@@ -63,12 +63,12 @@ ms.locfileid: "52450777"
 
 ![경고 메시지를 보여 주는 OneASP.NET 대화 상자의 스크린샷](troubleshoot/_static/NoNetCore.png)
 
-이 경고를 표시 하는 경우 환경 변수 `PATH` 컴퓨터에서 모든.NET Core Sdk를 가리키지 않습니다. 이 문제를 해결 하려면
+이 경고를 표시 하는 경우 환경 변수 `PATH` 컴퓨터에서 모든.NET Core Sdk를 가리키지 않습니다. (예를 들어 `C:\Program Files\dotnet\` 고 `C:\Program Files (x86)\dotnet\`). 이 문제를 해결 하려면
 
-* 설치 또는.NET Core SDK 설치 되었는지 확인 합니다.
-* 확인 된 `PATH` 환경 변수는 SDK가 설치 하는 위치를 가리킵니다. 설치 관리자가 일반적으로 설정 된 `PATH`합니다.
+* 설치 또는.NET Core SDK 설치 되었는지 확인 합니다. 최신 설치 관리자를 가져옵니다 [.NET 다운로드](https://dotnet.microsoft.com/download)합니다. 
+* 확인을 `PATH` 환경 변수는 SDK를 설치할 위치를 가리킵니다. 설치 관리자가 일반적으로 설정 된 `PATH`합니다.
 
-## <a name="obtain-data-from-an-app"></a>앱에서 데이터 가져오기
+## <a name="obtain-data-from-an-app"></a>앱에서 데이터 얻기
 
 앱 요청에 응답할 수 인 경우에 미들웨어를 사용 하 여 앱에서 다음 데이터를 가져올 수 있습니다.
 

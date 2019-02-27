@@ -7,12 +7,12 @@ ms.author: stevesa
 ms.custom: mvc
 ms.date: 02/13/2019
 uid: spa/angular
-ms.openlocfilehash: 35a839e31369e8dbf00f5dbfb3751a2985335755
-ms.sourcegitcommit: 6ba5fb1fd0b7f9a6a79085b0ef56206e462094b7
+ms.openlocfilehash: f33f4b96faf71440c3e8878c0480f2908ace70d1
+ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56248123"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "56899257"
 ---
 # <a name="use-the-angular-project-template-with-aspnet-core"></a>ASP.NET Core에서 Angular 프로젝트 템플릿 사용
 
@@ -117,51 +117,6 @@ npm install --save <package_name>
     ```
 
 ASP.NET Core 앱을 시작할 때 Angular CLI 서버는 시작되지 않습니다. 수동으로 시작한 인스턴스가 대신 사용됩니다. 이를 통해 더 빠르게 시작하고 다시 시작할 수 있습니다. 더 이상 Angular CLI가 매번 클라이언트 앱을 다시 빌드할 때까지 기다리지 않습니다.
-
-## <a name="server-side-rendering"></a>서버 쪽 렌더링
-
-성능 기능으로 Angular 앱을 클라이언트에서 실행할 뿐 아니라 서버에서 미리 렌더링하도록 선택할 수 있습니다. 즉, 브라우저는 앱의 초기 UI를 나타내는 HTML 태그를 수신하므로 JavaScript 번들을 다운로드하고 실행하기 전에 이 태그를 표시합니다. 이것에 대한 대부분의 구현은 [Angular Universal](https://universal.angular.io/)이라는 Angular 기능에서 제공됩니다.
-
-> [!TIP]
-> SSR(서버 쪽 렌더링)을 사용하면 개발 및 배포 중에 몇 가지 문제점이 생깁니다. [SSR의 단점](#drawbacks-of-ssr)을 참조하여 SSR이 요구 사항에 적합한지 확인합니다.
-
-SSR을 사용하려면 프로젝트에 여러 항목을 추가해야 합니다.
-
-*Startup* 클래스에서 `spa.Options.SourcePath`를 구성하는 줄 ‘뒤’ 및 `UseAngularCliServer` 또는 `UseProxyToSpaDevelopmentServer`에 대한 호출 ‘앞’에 다음을 추가합니다.
-
-[!code-csharp[](sample/AngularServerSideRendering/Startup.cs?name=snippet_Call_UseSpa&highlight=5-12)]
-
-개발 모드에서 이 코드는 *ClientApp\package.json*에 정의된 `build:ssr` 스크립트를 실행하여 SSR 번들을 빌드하려고 시도합니다. 이 빌드는 아직 정의되지 않은 `ssr`이라는 Angular 앱을 빌드합니다.
-
-*ClientApp/.angular-cli.json*에 있는 `apps` 배열의 끝에서 이름이 `ssr`인 추가 앱을 정의합니다. 다음 옵션을 사용합니다.
-
-[!code-json[](sample/AngularServerSideRendering/ClientApp/.angular-cli.json?range=24-41)]
-
-이 새 SSR 사용 가능 앱 구성에는 두 개의 추가 파일(*tsconfig.server.json* 및 *main.server.ts*)이 필요합니다. *tsconfig.server.json* 파일은 TypeScript 컴파일 옵션을 지정합니다. *main.server.ts* 파일은 SSR 중에 코드 진입점으로 사용됩니다.
-
-기존 *tsconfig.app.json*과 함께 *ClientApp/src* 내부에서 다음을 포함하는 *tsconfig.server.json* 파일을 추가합니다.
-
-[!code-json[](sample/AngularServerSideRendering/ClientApp/src/tsconfig.server.json)]
-
-이 파일은 `app.server.module` 모듈을 검색하도록 Angular의 AoT 컴파일러를 구성합니다. 기존 *app.module.ts*와 함께 *ClientApp/src/app/app.server.module.ts*에서 다음을 포함하는 새 파일을 만들어 이 모듈을 추가합니다.
-
-[!code-typescript[](sample/AngularServerSideRendering/ClientApp/src/app/app.server.module.ts)]
-
-이 모듈은 클라이언트 쪽 `app.module`에서 상속하고 SSR 중에 사용 가능한 추가 Angular 모듈을 정의합니다.
-
-*.angular-cli.json*의 새 `ssr` 항목은 *main.server.ts*라는 진입점 파일을 참조했습니다. 아직 해당 파일을 추가하지 않았으므로 지금 추가합니다. 기존 *main.ts*와 함께 *ClientApp/src/main.server.ts*에서 다음을 포함하는 새 파일을 만듭니다.
-
-[!code-typescript[](sample/AngularServerSideRendering/ClientApp/src/main.server.ts)]
-
-이 파일의 코드는 *Startup* 클래스에 추가한 `UseSpaPrerendering` 미들웨어를 실행할 때 ASP.NET Core에서 각 요청에 대해 실행하는 코드입니다. 이 코드는 .NET 코드(예: 요청되는 URL)의 `params` 수신을 처리하고 Angular SSR API를 호출하여 결과 HTML을 가져옵니다.
-
-엄밀히 말하면 개발 모드에서 SSR을 사용하려면 이 코드로 충분합니다. 앱이 게시될 때 제대로 작동하도록 한 번의 최종 변경을 수행해야 합니다. 앱의 기본 *.csproj* 파일에서 `BuildServerSideRenderer` 속성 값을 `true`로 설정합니다.
-
-[!code-xml[](sample/AngularServerSideRendering/AngularServerSideRendering.csproj?name=snippet_EnableBuildServerSideRenderer)]
-
-이렇게 하면 SSR 파일을 서버에 게시 및 배포하는 동안 `build:ssr`을 실행하도록 빌드 프로세스가 구성됩니다. 이 기능을 사용하지 않으면 SSR이 프로덕션에서 실패합니다.
-
-앱이 개발 또는 프로덕션 모드에서 실행되는 경우 Angular 코드는 서버에서 HTML로 미리 렌더링됩니다. 클라이언트 쪽 코드는 정상적으로 실행됩니다.
 
 ### <a name="pass-data-from-net-code-into-typescript-code"></a>.NET 코드의 데이터를 TypeScript 코드로 전달
 

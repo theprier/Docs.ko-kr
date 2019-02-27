@@ -5,27 +5,20 @@ description: Authorize 특성에 역할을 전달하여 ASP.NET Core의 컨트�
 ms.author: riande
 ms.date: 10/14/2016
 uid: security/authorization/roles
-ms.openlocfilehash: 0467ea82831bffe6882e584930c2fa1212a244c7
-ms.sourcegitcommit: 6ba5fb1fd0b7f9a6a79085b0ef56206e462094b7
+ms.openlocfilehash: c38e7144166ce7741eee6e3acb4d1c952ad4f024
+ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56248097"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "56899166"
 ---
 # <a name="role-based-authorization-in-aspnet-core"></a>ASP.NET Core의 역할 기반 권한 부여
 
 <a name="security-authorization-role-based"></a>
 
-신원(Identity)이 생성될 때 해당 신원은 하나 이상의 역할에 속할 수 있습니다. 예를 들어 Tracy는 Administrator 및 User 역할에 모두 속하지만 Scott은 User 역할에만 속할 수 있습니다. 이런 역할이 생성되고 관리되는 방식은 권한 부여 프로세스에 사용되는 백업 저장소에 따라서 달라집니다. 개발자는 [ClaimsPrincipal](/dotnet/api/system.security.principal.genericprincipal.isinrole) 클래스의 [IsInRole](/dotnet/api/system.security.claims.claimsprincipal) 메서드를 이용하여 역할에 접근할 수 있습니다.
+신원(Identity)이 생성될 때 해당 신원은 하나 이상의 역할에 속할 수 있습니다. 예를 들어 Tracy는 Administrator 및 User 역할에 모두 속하지만 Scott은 User 역할에만 속할 수 있습니다. 이런 역할이 생성되고 관리되는 방식은 권한 부여 프로세스에 사용되는 백업 저장소에 따라서 달라집니다. 개발자는 [ClaimsPrincipal](/dotnet/api/system.security.claims.claimsprincipal) 클래스의 [IsInRole](/dotnet/api/system.security.principal.genericprincipal.isinrole) 메서드를 이용해서 역할에 접근할 수 있습니다.
 
-::: moniker range=">= aspnetcore-2.0"
-
-> [!IMPORTANT]
-> 이 항목은 Razor 페이지에는 적용되지 **않습니다**. Razor 페이지는 [IPageFilter](/dotnet/api/microsoft.aspnetcore.mvc.filters.ipagefilter) 및 [IAsyncPageFilter](/dotnet/api/microsoft.aspnetcore.mvc.filters.iasyncpagefilter)를 지원합니다. 자세한 내용은 [Razor 페이지 필터의 메서드](xref:razor-pages/filter)를 참고하시기 바랍니다.
-
-::: moniker-end
-
-## <a name="adding-role-checks"></a>역할 검사 추가하기
+## <a name="adding-role-checks"></a>추가 역할 검사
 
 역할 기반 권한 부여의 검사는 선언적으로 구성됩니다 &mdash;. 개발자는 컨트롤러나 컨트롤러 내의 개별 액션에 대해 현재 사용자가 요청한 리소스에 접근하기 위해 반드시 속해 있어야만 하는 역할을 지정해서 이를 코드 내부에 포함시킵니다.
 
@@ -94,6 +87,28 @@ public class ControlPanelController : Controller
     }
 }
 ```
+
+::: moniker range=">= aspnetcore-2.0"
+
+Razor 페이지에는 `AuthorizeAttribute` 으로 적용할 수 있습니다.
+
+* 사용 하는 [규칙](xref:razor-pages/razor-pages-conventions#page-model-action-conventions), 또는
+* 적용 된 `AuthorizeAttribute` 에 `PageModel` 인스턴스:
+
+```csharp
+[Authorize(Policy = "RequireAdministratorRole")]
+public class UpdateModel : PageModel
+{
+    public ActionResult OnPost()
+    {
+    }
+}
+```
+
+> [!IMPORTANT]
+> 필터 특성을 포함 하 여 `AuthorizeAttribute`PageModel에만 적용할 수 있습니다 하 고 특정 페이지 처리기 메서드를 적용할 수 없습니다.
+::: moniker-end
+
 
 <a name="security-authorization-role-policy"></a>
 
