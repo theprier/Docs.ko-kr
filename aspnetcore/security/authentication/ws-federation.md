@@ -6,12 +6,12 @@ ms.author: scaddie
 ms.custom: mvc
 ms.date: 01/16/2019
 uid: security/authentication/ws-federation
-ms.openlocfilehash: 6b568928aaf6c958d66279af9fef80ac0c968c8b
-ms.sourcegitcommit: 184ba5b44d1c393076015510ac842b77bc9d4d93
+ms.openlocfilehash: 7967410686da0e59742b721c0154e143bf19ba01
+ms.sourcegitcommit: 2c7ffe349eabdccf2ed748dd303ffd0ba6e1cfe3
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/18/2019
-ms.locfileid: "54396157"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56833542"
 ---
 # <a name="authenticate-users-with-ws-federation-in-aspnet-core"></a>ASP.NET Core에서 Ws-federation을 사용 하 여 사용자 인증
 
@@ -86,7 +86,7 @@ ASP.NET Core 2.0 앱 WS-페더레이션이 지원 기능을 제공 [Microsoft.As
 * Ws-federation을 추가 `Startup.ConfigureServices`:
 
     ```csharp
-    services.AddIdentity<ApplicationUser, IdentityRole>()
+    services.AddIdentity<IdentityUser, IdentityRole>()
         .AddEntityFrameworkStores<ApplicationDbContext>()
         .AddDefaultTokenProviders();
 
@@ -122,7 +122,7 @@ ASP.NET Core 2.0 앱 WS-페더레이션이 지원 기능을 제공 [Microsoft.As
 
 ## <a name="use-ws-federation-without-aspnet-core-identity"></a>ASP.NET Core Id 없이 사용 하 여 Ws-federation
 
-Id 없이 Ws-federation 미들웨어를 사용할 수 있습니다. 예를 들어:
+Id 없이 Ws-federation 미들웨어를 사용할 수 있습니다. 예를 들면,
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)

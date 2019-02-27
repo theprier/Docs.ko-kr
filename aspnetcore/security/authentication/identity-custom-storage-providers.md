@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/24/2018
 uid: security/authentication/identity-custom-storage-providers
-ms.openlocfilehash: b10731261ca0c748548fcba94a229ba055d46eb5
-ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
+ms.openlocfilehash: ccd56d0c15639e1ad29094e947f8055702ee2264
+ms.sourcegitcommit: 2c7ffe349eabdccf2ed748dd303ffd0ba6e1cfe3
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50090838"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56833672"
 ---
 # <a name="custom-storage-providers-for-aspnet-core-identity"></a>ASP.NET Core Id에 대 한 사용자 지정 저장소 공급자
 
@@ -23,7 +23,7 @@ ASP.NET Core Id는 확장 가능한 시스템 사용자 지정 저장소 공급�
 
 ## <a name="introduction"></a>소개
 
-ASP.NET Core Id 시스템을 기본적으로 Entity Framework Core를 사용 하 여 SQL Server 데이터베이스에 사용자 정보를 저장 합니다. 대부분의 앱에 대 한이 방법은 잘 작동합니다. 그러나 다음 다른 지 속성 메커니즘 또는 데이터 스키마를 사용 하는 것이 좋습니다. 예를 들어:
+ASP.NET Core Id 시스템을 기본적으로 Entity Framework Core를 사용 하 여 SQL Server 데이터베이스에 사용자 정보를 저장 합니다. 대부분의 앱에 대 한이 방법은 잘 작동합니다. 그러나 다음 다른 지 속성 메커니즘 또는 데이터 스키마를 사용 하는 것이 좋습니다. 예를 들면,
 
 * 사용할 [Azure Table Storage](/azure/storage/) 또는 다른 데이터 저장소입니다.
 * 데이터베이스 테이블 구조가 서로 합니다. 
@@ -58,7 +58,7 @@ ASP.NET Core Id 관리자 및 저장소를 호출 하는 클래스로 구성 됩
 
 [ASP.NET Core Id](https://github.com/aspnet/identity) 데이터 형식은 다음 섹션에서 자세히 설명 합니다.
 
-### <a name="users"></a>사용자
+### <a name="users"></a>Users
 
 웹 사이트의 사용자를 등록된 합니다. 합니다 [IdentityUser](/dotnet/api/microsoft.aspnet.identity.corecompat.identityuser) 형식은 확장 하거나 사용자 고유의 사용자 지정 형식에 대 한 예제로 사용 될 수 있습니다. 사용자 고유의 사용자 지정 id 저장소 솔루션을 구현 하는 특정 형식에서 상속할 필요가 없습니다.
 
@@ -106,7 +106,7 @@ ASP.NET Core Id 관리자 및 저장소를 호출 하는 클래스로 구성 됩
 
 저장 하 고는 사용자에 게 할당 된 역할을 검색 합니다. [예제](/dotnet/api/microsoft.aspnet.identity.corecompat.userstore-1)
 
-**팁:** 만 앱에서 사용 하려는 클래스를 구현 합니다.
+**TIP:** 만 앱에서 사용 하려는 클래스를 구현 합니다.
 
 데이터 액세스 클래스에서 지 속성 메커니즘에 대 한 데이터 작업을 수행 하는 코드를 제공 합니다. 예를 들어, 사용자 지정 공급자를 내 해야에서 새 사용자를 만들려면 다음 코드를 *저장할* 클래스:
 
@@ -133,7 +133,7 @@ ASP.NET Core Id 관리자 및 저장소를 호출 하는 클래스로 구성 됩
 * [IUserPasswordStore](/dotnet/api/microsoft.aspnetcore.identity.iuserpasswordstore-1)
 * [IUserSecurityStampStore](/dotnet/api/microsoft.aspnetcore.identity.iusersecuritystampstore-1)
 * [IUserEmailStore](/dotnet/api/microsoft.aspnetcore.identity.iuseremailstore-1)
-* [IPhoneNumberStore](/dotnet/api/microsoft.aspnetcore.identity.iphonenumberstore-1)
+* [IUserPhoneNumberStore](/dotnet/api/microsoft.aspnetcore.identity.iuserphonenumberstore-1)
 * [IQueryableUserStore](/dotnet/api/microsoft.aspnetcore.identity.iqueryableuserstore-1)
 * [IUserLoginStore](/dotnet/api/microsoft.aspnetcore.identity.iuserloginstore-1)
 * [IUserTwoFactorStore](/dotnet/api/microsoft.aspnetcore.identity.iusertwofactorstore-1)

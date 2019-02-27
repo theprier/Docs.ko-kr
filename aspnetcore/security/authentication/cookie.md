@@ -3,14 +3,14 @@ title: ASP.NET Core Id 없이 쿠키 인증 사용
 author: rick-anderson
 description: ASP.NET Core Id 없이 쿠키 인증을 사용 하 여 설명
 ms.author: riande
-ms.date: 10/11/2017
+ms.date: 02/25/2019
 uid: security/authentication/cookie
-ms.openlocfilehash: f05e5b83359ec1739115293e092eaed0c811c046
-ms.sourcegitcommit: 3c2ba9a0d833d2a096d9d800ba67a1a7f9491af0
-ms.translationtype: MT
+ms.openlocfilehash: 7e975da3a276ffb6a3de7ee02f7cc5be67cbbebe
+ms.sourcegitcommit: 2c7ffe349eabdccf2ed748dd303ffd0ba6e1cfe3
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55854382"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56833620"
 ---
 # <a name="use-cookie-authentication-without-aspnet-core-identity"></a>ASP.NET Core Id 없이 쿠키 인증 사용
 
@@ -39,6 +39,8 @@ ASP.NET Core Id를 사용 하려면 참조는 [Id 소개](xref:security/authenti
 `AuthenticationScheme` 전달할 `AddAuthentication` 앱에 대 한 기본 인증 체계를 설정 합니다. `AuthenticationScheme` 쿠키 인증의 인스턴스가 여러 개 있고 하려는 경우에 유용 [특정 구성표로 권한 부여](xref:security/authorization/limitingidentitybyscheme)합니다. 설정 된 `AuthenticationScheme` 에 `CookieAuthenticationDefaults.AuthenticationScheme` 체계를 "쿠키"의 값을 제공 합니다. 스키마를 구분 하는 임의의 문자열 값을 제공할 수 있습니다.
 
 앱의 인증 체계는 앱의 쿠키 인증 체계와 다릅니다. 쿠키 인증 체계에 제공 되지 않는 경우 <xref:Microsoft.Extensions.DependencyInjection.CookieExtensions.AddCookie*>를 사용 하 여 [CookieAuthenticationDefaults.AuthenticationScheme](xref:Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationDefaults.AuthenticationScheme) ("쿠키").
+
+인증 쿠키가 <xref:Microsoft.AspNetCore.Http.CookieBuilder.IsEssential> 속성이 `true` 기본적으로 합니다. 인증 쿠키는 사이트 방문자가 데이터 수집에 동의 하지 않은 경우에 허용 됩니다. 자세한 내용은 <xref:security/gdpr#essential-cookies>을 참조하세요.
 
 에 `Configure` 메서드를 사용 하 여는 `UseAuthentication` 설정 하는 인증 미들웨어를 호출 하는 방법의 `HttpContext.User` 속성. 호출 된 `UseAuthentication` 메서드를 호출 하기 전에 `UseMvcWithDefaultRoute` 또는 `UseMvc`:
 
