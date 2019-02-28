@@ -47,7 +47,7 @@ dotnet dev-certs https --trust
 
 이전 명령으로 인해 다음 대화 상자가 표시됩니다.
 
-![보안 경고 대화 상자](_static/cert.png)
+![보안 경고 대화 상자](~/getting-started/_static/cert.png)
 
 개발 인증서를 신뢰하는 데 동의하는 경우 **예**를 선택합니다.
 
@@ -59,18 +59,17 @@ dotnet dev-certs https --trust
 
 이전 명령으로 인해 다음 메시지가 표시됩니다.
 
-*HTTPS 개발 인증서를 신뢰해야 합니다. 인증서를 신뢰할 수 없는 경우*  `'sudo security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain <<certificate>>'` 명령을 실행합니다.  
-*이 명령은 시스템 키 집합에 인증서를 설치하기 위해 암호를 묻는 메시지를 표시할 수 있습니다.
-
-암호:*
-
-개발 인증서를 신뢰하는 데 동의하는 경우 암호를 입력합니다.
+*HTTPS 개발 인증서를 신뢰해야 합니다. 인증서를 신뢰할 수 없는 경우*  `'sudo security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain <<certificate>>'` 명령을 실행합니다.
+ 
+이 명령은 시스템 키 집합에 인증서를 설치하기 위해 암호를 묻는 메시지를 표시할 수 있습니다. 개발 인증서를 신뢰하는 데 동의하는 경우 암호를 입력합니다.
 
 # <a name="linuxtablinux"></a>[Linux](#tab/linux)
 
 HTTPS 개발 인증서를 신뢰하는 방법은 Linux 배포에 대한 설명서를 참조하세요.
 
 ---
+
+자세한 내용은 [ASP.NET Core HTTPS 개발 인증서 신뢰](xref:security/enforcing-ssl#trust-the-aspnet-core-https-development-certificate-on-windows-and-macos)를 참조하세요.
 
 ## <a name="run-the-app"></a>앱 실행
 

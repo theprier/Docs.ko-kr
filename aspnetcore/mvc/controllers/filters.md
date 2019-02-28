@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 02/08/2019
 uid: mvc/controllers/filters
-ms.openlocfilehash: 3cd576b389a2a4384c0ba90b5740ac42140533cc
-ms.sourcegitcommit: af8a6eb5375ef547a52ffae22465e265837aa82b
+ms.openlocfilehash: a9081a9938d56b7612bba13937eba384ff02455b
+ms.sourcegitcommit: 2c7ffe349eabdccf2ed748dd303ffd0ba6e1cfe3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56159316"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56833737"
 ---
 # <a name="filters-in-aspnet-core"></a>ASP.NET Core에서 필터링
 
@@ -316,7 +316,7 @@ System.InvalidOperationException: No service for type
 `OnActionExecuted` 메서드는 작업 메서드 이후에 실행되고 `ActionExecutedContext.Result` 속성을 통해 작업의 결과를 확인하고 조작할 수 있습니다. `ActionExecutedContext.Canceled`는 작업 실행이 다른 필터에 의해 단락(short-circuit) 처리된 경우 true로 설정됩니다. `ActionExecutedContext.Exception`은 작업 또는 후속 작업 필터에서 예외가 throw된 경우 null이 아닌 값으로 설정됩니다. `ActionExecutedContext.Exception`을 Null로 설정:
 
 * 예외를 효과적으로 ‘처리’합니다.
-* `ActionExectedContext.Result`은 작업 메서드에서 정상적으로 반환되는 것처럼 실행됩니다.
+* `ActionExecutedContext.Result`은 작업 메서드에서 정상적으로 반환되는 것처럼 실행됩니다.
 
 ## <a name="exception-filters"></a>예외 필터
 

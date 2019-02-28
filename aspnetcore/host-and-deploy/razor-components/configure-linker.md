@@ -5,14 +5,14 @@ description: Blazor 앱을 빌드할 때 IL(Intermediate Language) 링커를 제
 monikerRange: '>= aspnetcore-3.0'
 ms.author: riande
 ms.custom: mvc
-ms.date: 01/29/2019
+ms.date: 02/20/2019
 uid: host-and-deploy/razor-components/configure-linker
-ms.openlocfilehash: c3c38ec2509344cc02f3895d5d0c2d35059d1d8e
-ms.sourcegitcommit: ed76cc752966c604a795fbc56d5a71d16ded0b58
+ms.openlocfilehash: 7c53e7912ec3b0ae471ea38777f874f55a32487d
+ms.sourcegitcommit: 0945078a09c372f17e9b003758ed87e99c2449f4
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/02/2019
-ms.locfileid: "55668066"
+ms.lasthandoff: 02/21/2019
+ms.locfileid: "56647943"
 ---
 # <a name="configure-the-linker-for-blazor"></a>Blazor용 링커 구성
 
@@ -73,7 +73,7 @@ Blazor는 각 릴리스 모드 빌드 중에 [IL(Intermediate Language)](/dotnet
 </linker>
 ```
 
-구성 파일의 파일 형식에 대한 자세한 내용은 [IL 링커: Xml 설명자 구문](https://github.com/mono/linker/blob/master/linker/README.md#syntax-of-xml-descriptor)을 참조하세요.
+구성 파일의 파일 형식에 대한 자세한 내용은 [IL 링커: Xml 설명자 구문](https://github.com/mono/linker/blob/master/src/linker/README.md#syntax-of-xml-descriptor)을 참조하세요.
 
 `BlazorLinkerDescriptor` 항목을 사용하여 프로젝트 파일에서 구성 파일을 지정합니다.
 

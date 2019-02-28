@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 12/18/2018
 uid: fundamentals/static-files
-ms.openlocfilehash: 4c08d65cc1f658ef08a9b4b362ac7f8a3a243557
-ms.sourcegitcommit: 816f39e852a8f453e8682081871a31bc66db153a
+ms.openlocfilehash: e6bda5dd60c62c7bdbfa81f34c14cfcd07e8d700
+ms.sourcegitcommit: b3894b65e313570e97a2ab78b8addd22f427cac8
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53637783"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56744055"
 ---
 # <a name="static-files-in-aspnet-core"></a>ASP.NET Core의 고정 파일
 
@@ -23,7 +23,7 @@ HTML, CSS, 이미지 및 JavaScript와 같은 정적 파일은 ASP.NET Core 앱�
 
 ## <a name="serve-static-files"></a>정적 파일 제공
 
-정적 파일은 프로젝트의 웹 루트 디렉터리 내에 저장됩니다. 기본 디렉터리는 *\<content_root>/wwwroot*이지만, [UseWebRoot](/dotnet/api/microsoft.aspnetcore.hosting.hostingabstractionswebhostbuilderextensions.usewebroot#Microsoft_AspNetCore_Hosting_HostingAbstractionsWebHostBuilderExtensions_UseWebRoot_Microsoft_AspNetCore_Hosting_IWebHostBuilder_System_String_) 메서드를 통해 변경할 수 있습니다. 자세한 정보는 [콘텐츠 루트](xref:fundamentals/index#content-root) 및 [웹 루트](xref:fundamentals/index#web-root-webroot)를 참조하세요.
+정적 파일은 프로젝트의 웹 루트 디렉터리 내에 저장됩니다. 기본 디렉터리는 *\<content_root>/wwwroot*이지만, [UseWebRoot](/dotnet/api/microsoft.aspnetcore.hosting.hostingabstractionswebhostbuilderextensions.usewebroot#Microsoft_AspNetCore_Hosting_HostingAbstractionsWebHostBuilderExtensions_UseWebRoot_Microsoft_AspNetCore_Hosting_IWebHostBuilder_System_String_) 메서드를 통해 변경할 수 있습니다. 자세한 정보는 [콘텐츠 루트](xref:fundamentals/index#content-root) 및 [웹 루트](xref:fundamentals/index#web-root)를 참조하세요.
 
 앱의 웹 호스트에서 콘텐츠 루트 디렉터리를 인식하도록 해야 합니다.
 
@@ -82,7 +82,7 @@ HTML, CSS, 이미지 및 JavaScript와 같은 정적 파일은 ASP.NET Core 앱�
 
 [!code-cshtml[](static-files/samples/1x/Views/Home/Index.cshtml?name=snippet_static_file_wwwroot)]
 
-위의 코드에서 물결표 문자 `~/`는 webroot를 가리킵니다. 자세한 내용은 [웹 루트](xref:fundamentals/index#web-root-webroot)를 참조하세요.
+위의 코드에서 물결표 문자 `~/`는 webroot를 가리킵니다. 자세한 내용은 [웹 루트](xref:fundamentals/index#web-root)를 참조하세요.
 
 ### <a name="serve-files-outside-of-web-root"></a>웹 루트 외부에 있는 파일을 제공합니다
 
