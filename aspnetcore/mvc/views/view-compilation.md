@@ -1,18 +1,18 @@
 ---
-title: ASP.NET Core에서 Razor 파일 컴파일 및 미리 컴파일
+title: ASP.NET Core의 Razor 파일 컴파일
 author: rick-anderson
-description: Razor 파일을 미리 컴파일할 경우의 이점과 ASP.NET Core 앱에서 Razor 파일 미리 컴파일을 구현하는 방법에 대해 알아보세요.
+description: Razor 파일의 컴파일이 ASP.NET Core 앱에서 발생하는 방법을 알아봅니다.
 monikerRange: '>= aspnetcore-1.1'
 ms.author: riande
 ms.custom: mvc
 ms.date: 02/13/2019
 uid: mvc/views/view-compilation
-ms.openlocfilehash: c4e8f722fdf3d3f64807cc35ff9f349af7f32abd
-ms.sourcegitcommit: 6ba5fb1fd0b7f9a6a79085b0ef56206e462094b7
+ms.openlocfilehash: 0b6173a7860f5f1d9d11219fbf3f57f76d703031
+ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56248188"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "56899270"
 ---
 # <a name="razor-file-compilation-in-aspnet-core"></a>ASP.NET Core의 Razor 파일 컴파일
 
@@ -30,28 +30,31 @@ Razor 파일은 런타임 시 관련 Razor 페이지 또는 MVC 뷰가 호출되
 
 ::: moniker-end
 
-::: moniker range=">= aspnetcore-2.1"
+::: moniker range=">= aspnetcore-2.1 <= aspnetcore-2.2"
 
 Razor 파일은 런타임 시 관련 Razor 페이지 또는 MVC 뷰가 호출되면 컴파일됩니다. Razor 파일은 [Razor SDK](xref:razor-pages/sdk)를 사용하여 빌드 및 게시 시 컴파일됩니다.
 
 ::: moniker-end
 
-## <a name="precompilation-considerations"></a>미리 컴파일 고려 사항
+::: moniker range=">= aspnetcore-3.0"
 
-다음은 Razor 파일을 미리 컴파일할 경우의 부작용입니다.
+Razor 파일은 [Razor SDK](xref:razor-pages/sdk)를 사용하여 빌드 및 게시 시 컴파일됩니다. 애플리케이션을 구성하여 런타임 컴파일을 선택적으로 활성화할 수 있습니다.
 
-* 더 작게 게시되는 번들
-* 더 빠른 시작 시간
-* 게시된 번들에 연관 콘텐츠가 없기 때문에 Razor 파일을 편집할 수 없습니다.
+::: moniker-end
 
-## <a name="deploy-precompiled-files"></a>미리 컴파일된 파일 배포
+## <a name="razor-compilation"></a>Razor 컴파일
 
-::: moniker range=">= aspnetcore-2.1"
+::: moniker range=">= aspnetcore-3.0"
+Razor 파일의 빌드 및 게시 시점 컴파일은 Razor SDK에서 기본적으로 사용하도록 설정됩니다. 런타임 컴파일이 활성화되면 Razor 파일이 편집될 경우 업데이트될 수 있도록 빌드 타임 컴파일을 보완합니다.
 
-Razor 파일의 빌드 및 게시 시점 컴파일은 Razor SDK에서 기본적으로 사용하도록 설정됩니다. 업데이트된 후에 Razor 파일을 편집하는 작업은 빌드 시 지원됩니다. 기본적으로 컴파일된 *Views.dll*만이 앱과 함께 배포되고 *cshtml* 파일은 배포되지 않습니다.
+::: moniker-end
+
+::: moniker range=">= aspnetcore-2.1 <= aspnetcore-2.2"
+
+Razor 파일의 빌드 및 게시 시점 컴파일은 Razor SDK에서 기본적으로 사용하도록 설정됩니다. 업데이트된 후에 Razor 파일을 편집하는 작업은 빌드 시 지원됩니다. 기본적으로 Razor 파일을 컴파일하는 데 필요한 컴파일된 *Views.dll*(*.cshtml* 파일 없음) 또는 참조 어셈블리만 앱과 함께 배포됩니다.
 
 > [!IMPORTANT]
-> 미리 컴파일 도구는 ASP.NET Core 3.0에서 제거됩니다. [Razor Sdk](xref:razor-pages/sdk)로 마이그레이션하는 것이 좋습니다.
+> 사전 컴파일 도구는 더 이상 사용되지 않으며 ASP.NET Core 3.0에서 제거됩니다. [Razor Sdk](xref:razor-pages/sdk)로 마이그레이션하는 것이 좋습니다.
 >
 > Razor SDK는 미리 컴파일 특정 속성이 프로젝트 파일에서 설정되지 않은 경우에만 유효합니다. 예를 들어 *.csproj* 파일의 `MvcRazorCompileOnPublish` 속성을 `true`로 설정하면 Razor SDK가 비활성화됩니다.
 
@@ -68,7 +71,7 @@ Razor 파일의 빌드 및 게시 시점 컴파일은 Razor SDK에서 기본적�
 ASP.NET Core 2.x 프로젝트 템플릿은 기본적으로 `MvcRazorCompileOnPublish` 속성을 암시적으로 `true`로 설정합니다. 다라서 이 요소는 *.csproj* 파일에서 안전하게 제거할 수 있습니다.
 
 > [!IMPORTANT]
-> 미리 컴파일 도구는 ASP.NET Core 3.0에서 제거됩니다. [Razor Sdk](xref:razor-pages/sdk)로 마이그레이션하는 것이 좋습니다.
+> 사전 컴파일 도구는 더 이상 사용되지 않으며 ASP.NET Core 3.0에서 제거됩니다. [Razor Sdk](xref:razor-pages/sdk)로 마이그레이션하는 것이 좋습니다.
 >
 > ASP.NET Core 2.0에서 [SCD(자체 포함 배포)](/dotnet/core/deploying/#self-contained-deployments-scd)를 수행하는 경우 Razor 파일 미리 컴파일은 사용 불가능합니다.
 
@@ -96,24 +99,44 @@ dotnet publish -c Release
 
 ::: moniker-end
 
-## <a name="recompile-razor-files-on-change"></a>변경 시 Razor 파일 다시 컴파일
+## <a name="runtime-compilation"></a>런타임 컴파일
 
-<xref:Microsoft.AspNetCore.Mvc.Razor.RazorViewEngineOptions> <xref:Microsoft.AspNetCore.Mvc.Razor.RazorViewEngineOptions.AllowRecompilingViewsOnFileChange>는 디스크의 파일이 변경되면 Razor 파일(Razor 뷰 및 Razor Pages)이 컴파일되고 업데이트되는지 여부를 결정하는 값을 가져오거나 설정합니다.
+::: moniker range="= aspnetcore-2.1"
 
-`true`로 설정하면 [IFileProvider.Watch](xref:Microsoft.Extensions.FileProviders.IFileProvider.Watch*)는 구성된 <xref:Microsoft.Extensions.FileProviders.IFileProvider> 인스턴스에서 Razor 파일의 변경 내용을 감시합니다.
+빌드 타임 컴파일은 Razor 파일의 런타임 컴파일로 보완됩니다. *.cshtml* 파일의 내용이 변경되면 ASP.NET Core MVC는 Razor 파일을 다시 컴파일합니다.
+
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.2"
+
+빌드 타임 컴파일은 Razor 파일의 런타임 컴파일로 보완됩니다. <xref:Microsoft.AspNetCore.Mvc.Razor.RazorViewEngineOptions> <xref:Microsoft.AspNetCore.Mvc.Razor.RazorViewEngineOptions.AllowRecompilingViewsOnFileChange>는 디스크의 파일이 변경되면 Razor 파일(Razor 뷰 및 Razor Pages)이 컴파일되고 업데이트되는지 여부를 결정하는 값을 가져오거나 설정합니다.
 
 다음의 경우 기본값은 `true`입니다.
 
-* ASP.NET Core 2.1 또는 이전 버전의 앱.
-* 개발 환경의 ASP.NET Core 2.2 이상의 앱.
-
-<xref:Microsoft.AspNetCore.Mvc.Razor.RazorViewEngineOptions.AllowRecompilingViewsOnFileChange>는 호환성 스위치와 연결되어 있으며 앱에 대해 구성된 호환성 버전에 따라 다른 동작을 제공할 수 있습니다. <xref:Microsoft.AspNetCore.Mvc.Razor.RazorViewEngineOptions.AllowRecompilingViewsOnFileChange>를 설정하여 앱을 구성하면 앱의 호환성 버전에 의해 암시된 값보다 우선 순위가 높습니다.
-
-앱의 호환성 버전이 <xref:Microsoft.AspNetCore.Mvc.CompatibilityVersion.Version_2_1> 또는 이전 버전으로 설정된 경우 명시적으로 구성하지 않는 한 <xref:Microsoft.AspNetCore.Mvc.Razor.RazorViewEngineOptions.AllowRecompilingViewsOnFileChange>는 `true`로 설정됩니다.
-
-앱의 호환성 버전이 <xref:Microsoft.AspNetCore.Mvc.CompatibilityVersion.Version_2_2> 이상으로 설정된 경우 환경이 개발이 아니거나 값이 명시적으로 구성되지 않은 경우 <xref:Microsoft.AspNetCore.Mvc.Razor.RazorViewEngineOptions.AllowRecompilingViewsOnFileChange>가 `false`로 설정됩니다.
+* 앱의 호환성 버전이 <xref:Microsoft.AspNetCore.Mvc.CompatibilityVersion.Version_2_1> 이하로 설정된 경우
+* 앱의 호환성 버전이 <xref:Microsoft.AspNetCore.Mvc.CompatibilityVersion.Version_2_2> 이상으로 설정되고 앱이 개발 환경 <xref:Microsoft.AspNetCore.Hosting.HostingEnvironmentExtensions.IsDevelopment*>에 있는 경우 즉, Razor 파일은 <xref:Microsoft.AspNetCore.Mvc.Razor.RazorViewEngineOptions.AllowRecompilingViewsOnFileChange>가 명시적으로 설정되지 않는 한 비개발 환경에서 다시 컴파일되지 않습니다.
 
 앱의 호환성 버전 설정에 대한 지침과 예는 <xref:mvc/compatibility-version>을 참조하세요.
+
+::: moniker-end
+
+::: moniker range=">= aspnetcore-3.0"
+
+런타임 컴파일은 `Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation` 패키지를 사용하여 활성화됩니다. 런타임 컴파일을 활성화하려면 앱에
+
+* [Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation](https://www.nuget.org/packages/Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation/) NuGet 패키지를 설치해야 합니다.
+* 애플리케이션의 `ConfigureServices`를 업데이트하여 `AddMvcRazorRuntimeCompilation`에 대한 호출을 포함시킵니다.
+
+```csharp
+services
+    .AddMvc()
+    .AddMvcRazorRuntimeCompilation()
+```
+
+배포 시 런타임 컴파일이 작동하려면 앱에서 프로젝트 파일을 추가로 수정하여 `PreserveCompilationReferences`를 `true`로 설정해야 합니다.
+[!code-xml[](view-compilation/sample/RuntimeCompilation.csproj?highlight=3)]
+
+::: moniker-end
 
 ## <a name="additional-resources"></a>추가 자료
 

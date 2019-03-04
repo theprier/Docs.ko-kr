@@ -5,14 +5,14 @@ description: Windows의 ASP.NET Core에 대한 웹 서버인 HTTP.sys에 대해 
 monikerRange: '>= aspnetcore-2.0'
 ms.author: tdykstra
 ms.custom: mvc
-ms.date: 02/13/2019
+ms.date: 02/21/2019
 uid: fundamentals/servers/httpsys
-ms.openlocfilehash: 859e3daeba125ab1a9392c1bdbf2733de2f79a34
-ms.sourcegitcommit: 6ba5fb1fd0b7f9a6a79085b0ef56206e462094b7
+ms.openlocfilehash: abb426b1a41226e52d9b9b5c00c41ff816890d36
+ms.sourcegitcommit: b3894b65e313570e97a2ab78b8addd22f427cac8
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56248344"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56744133"
 ---
 # <a name="httpsys-web-server-implementation-in-aspnet-core"></a>ASP.NET Core에서 HTTP.sys 웹 서버 구현
 
@@ -135,7 +135,9 @@ HTTP.sys는 Kerberos 인증 프로토콜을 사용하여 커널 모드 인증에
 
 ### <a name="configure-windows-server"></a>Windows Server 구성
 
-1. 앱용으로 열 포트를 결정하고 Windows 방화벽 또는 [PowerShell cmdlet](https://technet.microsoft.com/library/jj554906)을 통해 방화벽 포트를 열어 HTTP.sys에 도달하는 트래픽을 허용합니다. Azure VM에 배포할 경우 [네트워크 보안 그룹](/azure/virtual-network/security-overview)에서 포트를 엽니다. 다음 명령 및 앱 구성에서는 포트 443이 사용됩니다.
+1. 앱용으로 열 포트를 결정하고 [Windows 방화벽](/windows/security/threat-protection/windows-firewall/create-an-inbound-port-rule) 또는 [New-NetFirewallRule](/powershell/module/netsecurity/new-netfirewallrule) PowerShell cmdlet을 통해 방화벽 포트를 열어 HTTP.sys에 도달하는 트래픽을 허용합니다. 다음 명령 및 앱 구성에서는 포트 443이 사용됩니다.
+
+1. Azure VM에 배포할 경우 [네트워크 보안 그룹](/azure/virtual-machines/windows/nsg-quickstart-portal)에서 포트를 엽니다. 다음 명령 및 앱 구성에서는 포트 443이 사용됩니다.
 
 1. 필요한 경우 X.509 인증서를 구하여 설치합니다.
 
@@ -272,5 +274,5 @@ HTTP.sys는 Kerberos 인증 프로토콜을 사용하여 커널 모드 인증에
 * [HTTP.sys에서 Windows 인증 사용](xref:security/authentication/windowsauth#enable-windows-authentication-with-httpsys)
 * [HTTP Server API](https://msdn.microsoft.com/library/windows/desktop/aa364510.aspx)(HTTP 서버 API)
 * [aspnet/HttpSysServer GitHub 리포지토리(소스 코드)](https://github.com/aspnet/HttpSysServer/)
-* <xref:fundamentals/host/index>
+* [호스트](xref:fundamentals/index#host)
 * <xref:test/troubleshoot>

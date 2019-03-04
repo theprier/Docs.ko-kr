@@ -4,14 +4,14 @@ author: guardrex
 description: ASP.NET Core에서 종속성 주입을 구현하는 방법 및 사용 방법에 알아봅니다.
 ms.author: riande
 ms.custom: mvc
-ms.date: 10/24/2018
+ms.date: 02/25/2019
 uid: fundamentals/dependency-injection
-ms.openlocfilehash: 5e5b9746da9bbc13a147b807aabfd3d9ab90a0ca
-ms.sourcegitcommit: d75d8eb26c2cce19876c8d5b65ac8a4b21f625ef
+ms.openlocfilehash: 5e1522e0819d989a7029c2928c1c33624c1774c7
+ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/19/2019
-ms.locfileid: "56410510"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "56899361"
 ---
 # <a name="dependency-injection-in-aspnet-core"></a>ASP.NET Core에서 종속성 주입
 
@@ -179,7 +179,7 @@ public class MyDependency : IMyDependency
 
 ## <a name="framework-provided-services"></a>프레임워크에서 제공한 서비스
 
-`Startup.ConfigureServices` 메서드는 Entity Framework Core 및 ASP.NET Core MVC와 같은 플랫폼 기능을 비롯해 앱이 사용하는 서비스를 정의합니다. 처음에 `ConfigureServices`에 제공된 `IServiceCollection`에는 정의된 다음과 같은 서비스가 있습니다([호스트 구성 방법](xref:fundamentals/host/index)에 따라).
+`Startup.ConfigureServices` 메서드는 Entity Framework Core 및 ASP.NET Core MVC와 같은 플랫폼 기능을 비롯해 앱이 사용하는 서비스를 정의합니다. 처음에 `ConfigureServices`에 제공된 `IServiceCollection`에는 정의된 다음과 같은 서비스가 있습니다([호스트 구성 방법](xref:fundamentals/index#host)에 따라).
 
 | 서비스 종류 | 수명 |
 | ------------ | -------- |
@@ -253,7 +253,7 @@ Singleton 수명 서비스는 처음 요청할 때(또는 `ConfigureServices`를
 
 ## <a name="entity-framework-contexts"></a>Entity Framework 컨텍스트
 
-Entity Framework 컨텍스트는 범위가 지정된 수명을 사용하여 서비스 컨테이너에 추가해야 합니다. 이 작업은 데이터베이스 컨텍스트를 등록할 때 [AddDbContext](/dotnet/api/microsoft.extensions.dependencyinjection.entityframeworkservicecollectionextensions.adddbcontext) 메서드를 호출하여 자동으로 처리됩니다. 데이터베이스 컨텍스트를 사용하는 서비스도 범위가 지정된 수명을 사용해야 합니다.
+Entity Framework 컨텍스트는 일반적으로 [범위가 지정된 수명](#service-lifetimes)을 사용하여 서비스 컨테이너에 추가됩니다. 이는 웹앱 데이터베이스 작업이 일반적으로 요청에 따라 범위가 지정되기 때문입니다. 데이터베이스 컨텍스트를 등록할 때 <xref:Microsoft.Extensions.DependencyInjection.EntityFrameworkServiceCollectionExtensions.AddDbContext*> 오버로드로 수명이 지정되지 않으면 기본 수명이 범위가 지정됩니다. 지정된 수명의 서비스는 서비스보다 수명이 짧은 데이터베이스 컨텍스트를 사용해서는 안됩니다.
 
 ## <a name="lifetime-and-registration-options"></a>수명 및 등록 옵션
 

@@ -1,28 +1,51 @@
 ---
 title: .NET 일반 호스트
 author: guardrex
-description: 앱 시작 및 수명 관리를 담당하는 .NET의 일반 호스트에 대해 알아봅니다.
+description: 앱 시작 및 수명 관리를 담당하는 ASP.NET Core의 일반 호스트에 대해 알아봅니다.
 monikerRange: '>= aspnetcore-2.1'
 ms.author: riande
 ms.custom: mvc
 ms.date: 11/28/2018
 uid: fundamentals/host/generic-host
-ms.openlocfilehash: 4d435984d8169b558ab026ef8541c90f7a2a96b9
-ms.sourcegitcommit: 0fc89b80bb1952852ecbcf3c5c156459b02a6ceb
+ms.openlocfilehash: a128b7c19d544d1dd28ab16f7a208ceef680ce81
+ms.sourcegitcommit: b3894b65e313570e97a2ab78b8addd22f427cac8
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "52618157"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56743844"
 ---
 # <a name="net-generic-host"></a>.NET 일반 호스트
 
 [Luke Latham](https://github.com/guardrex)으로
 
-.NET Core 앱은 *호스트*를 구성 및 실행합니다. 호스트는 앱 시작 및 수명 관리를 담당합니다. 이 항목에서는 HTTP 요청을 처리하지 않는 앱을 호스팅하는 데 유용한 ASP.NET Core 일반 호스트(<xref:Microsoft.Extensions.Hosting.HostBuilder>)를 다룹니다. 웹 호스트(<xref:Microsoft.AspNetCore.Hosting.WebHostBuilder>)의 적용 범위는 <xref:fundamentals/host/web-host>를 참조하세요.
+::: moniker range="<= aspnetcore-2.2"
 
-일반 호스트의 목표는 웹 호스트 API에서 HTTP 파이프라인을 분리하여 호스트 시나리오의 더 광범위한 배열을 구현하는 것입니다. 일반 호스트에 기반을 둔 메시징, 백그라운드 작업 및 기타 HTTP 이외 워크로드는 구성, 종속성 주입(DI) 및 로깅과 같은 교차 편집 기능에서 이점을 얻습니다.
+ASP.NET Core 앱은 호스트를 구성 및 실행합니다. 호스트는 앱 시작 및 수명 관리를 담당합니다.
 
-일반 호스트는 ASP.NET Core 2.1의 새로운 기능이며 웹 호스팅 시나리오에 적합하지 않습니다. 웹 호스팅 시나리오의 경우 [웹 호스트](xref:fundamentals/host/web-host)를 사용하세요. 일반 호스트는 향후 릴리스에서 웹 호스트를 대체하기 위해 개발 중이며, HTTP 및 HTTP 이외 시나리오에서 기본 호스트 API 역할을 합니다.
+이 문서에서는 HTTP 요청을 처리하지 않는 앱에 사용되는 ASP.NET Core 일반 호스트(<xref:Microsoft.Extensions.Hosting.HostBuilder>)를 다룹니다.
+
+일반 호스트의 목적은 웹 호스트 API에서 HTTP 파이프라인을 분리하여 호스트 시나리오의 더 광범위한 배열을 구현하는 것입니다. 일반 호스트에 기반을 둔 메시징, 백그라운드 작업 및 기타 HTTP 이외 워크로드는 구성, DI(종속성 주입) 및 로깅과 같은 교차 편집 기능에서 이점을 얻습니다.
+
+일반 호스트는 ASP.NET Core 2.1의 새로운 기능이며 웹 호스팅 시나리오에 적합하지 않습니다. 웹 호스팅 시나리오의 경우 [웹 호스트](xref:fundamentals/host/web-host)를 사용하세요. 일반 호스트는 향후 릴리스에서 웹 호스트를 대체하고 HTTP 및 HTTP 이외 시나리오에서 기본 호스트 API 역할을 합니다.
+
+::: moniker-end
+
+::: moniker range="> aspnetcore-2.2"
+
+ASP.NET Core 앱은 호스트를 구성 및 실행합니다. 호스트는 앱 시작 및 수명 관리를 담당합니다.
+
+이 문서에서는 .NET Core 일반 호스트(<xref:Microsoft.Extensions.Hosting.HostBuilder>)를 다룹니다.
+
+일반 호스트는 웹 호스트 API에서 HTTP 파이프라인을 분리하여 호스트 시나리오의 더 광범위한 배열을 구현할 수 있다는 점에서 웹 호스트와 다릅니다. 메시징, 백그라운드 작업 및 기타 HTTP 이외 워크로드는 일반 호스트를 사용할 수 있으며 구성, DI(종속성 주입) 및 로깅과 같은 교차 편집 기능에서 이점을 얻을 수 있습니다.
+
+ASP.NET Core 3.0부터 일반 호스트는 HTTP 및 HTTP가 아닌 워크로드 모두에 권장됩니다. HTTP 서버 구현(포함된 경우)은 <xref:Microsoft.Extensions.Hosting.IHostedService> 구현으로 실행됩니다. `IHostedService`는 다른 워크로드에도 사용할 수 있는 인터페이스입니다.
+
+웹 호스트는 더 이상 웹앱용으로 권장되지 않지만 이전 버전과의 호환성을 위해 계속 사용할 수 있습니다.
+
+> [!NOTE]
+> 이 문서의 나머지 부분은 아직 3.0용으로 업데이트되지 않았습니다.
+
+::: moniker-end
 
 [예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/host/generic-host/samples/) ([다운로드 방법](xref:index#how-to-download-a-sample))
 
@@ -119,7 +142,7 @@ var host = new HostBuilder()
 
 **키**: environment  
 **형식**: *string*  
-**기본값**: Production  
+**기본값**: 프로덕션  
 **설정 방법**: `UseEnvironment`  
 **환경 변수**: `<PREFIX_>ENVIRONMENT`(`<PREFIX_>`는 [선택적이고 사용자 정의됨](#configurehostconfiguration))
 

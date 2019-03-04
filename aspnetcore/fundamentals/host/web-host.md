@@ -1,21 +1,23 @@
 ---
 title: ASP.NET Core 웹 호스트
 author: guardrex
-description: 앱 시작 및 수명 관리를 담당하는 ASP.NET Core에서의 웹 호스트에 대해 알아봅니다.
+description: 앱 시작 및 수명 관리를 담당하는 ASP.NET Core의 웹 호스트에 대해 알아봅니다.
 ms.author: riande
 ms.custom: mvc
 ms.date: 12/18/2018
 uid: fundamentals/host/web-host
-ms.openlocfilehash: 7215027a083c0ed0bc3b15196e390a31c5dcfc14
-ms.sourcegitcommit: 816f39e852a8f453e8682081871a31bc66db153a
+ms.openlocfilehash: 878fbaa1a61946dadf23ba8fefbf22021e547cc2
+ms.sourcegitcommit: b3894b65e313570e97a2ab78b8addd22f427cac8
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53637848"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56744094"
 ---
 # <a name="aspnet-core-web-host"></a>ASP.NET Core 웹 호스트
 
 [Luke Latham](https://github.com/guardrex)으로
+
+ASP.NET Core 앱은 *호스트*를 구성 및 실행합니다. 호스트는 앱 시작 및 수명 관리를 담당합니다. 최소한으로 호스트는 서버 및 요청 처리 파이프라인을 구성합니다. 호스트는 로깅, 종속성 주입 및 구성을 설정할 수도 있습니다.
 
 ::: moniker range="<= aspnetcore-1.1"
 
@@ -23,7 +25,17 @@ ms.locfileid: "53637848"
 
 ::: moniker-end
 
-ASP.NET Core 앱은 *호스트*를 구성 및 실행합니다. 호스트는 앱 시작 및 수명 관리를 담당합니다. 최소한으로 호스트는 서버 및 요청 처리 파이프라인을 구성합니다. 이 항목에서는 웹 호스팅에 유용한 ASP.NET Core 웹 호스트([IWebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.iwebhostbuilder))를 다룹니다. .NET 일반 호스트([IHostBuilder](/dotnet/api/microsoft.extensions.hosting.ihostbuilder))에 대한 자세한 내용은 <xref:fundamentals/host/generic-host>을 참조하세요.
+::: moniker range=">= aspnetcore-2.1 <= aspnetcore-2.2"
+
+이 문서에서는 웹앱 호스팅을 위한 ASP.NET Core 웹 호스트(<xref:Microsoft.AspNetCore.Hosting.IWebHostBuilder>)를 다룹니다. .NET 일반 호스트([IHostBuilder](/dotnet/api/microsoft.extensions.hosting.ihostbuilder))에 대한 자세한 내용은 <xref:fundamentals/host/generic-host>를 참조하세요.
+
+::: moniker-end
+
+::: moniker range="> aspnetcore-2.2"
+
+이 문서에서는 ASP.NET Core 웹 호스트([IWebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.iwebhostbuilder))를 다룹니다. ASP.NET Core 3.0에서는 일반 호스트가 웹 호스트를 대체합니다. 자세한 내용은 [호스트](xref:fundamentals/index#host)를 참조하세요.
+
+::: moniker-end
 
 ## <a name="set-up-a-host"></a>호스트 설정
 
@@ -669,7 +681,7 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 }
 ```
 
-사용자 지정 [미들웨어](xref:fundamentals/middleware/index#write-middleware)를 만들 때 `IHostingEnvironment`를 `Invoke` 메서드에 주입할 수 있습니다.
+사용자 지정 [미들웨어](xref:fundamentals/middleware/write)를 만들 때 `IHostingEnvironment`를 `Invoke` 메서드에 주입할 수 있습니다.
 
 ```csharp
 public async Task Invoke(HttpContext context, IHostingEnvironment env)

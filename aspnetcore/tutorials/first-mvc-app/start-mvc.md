@@ -5,20 +5,18 @@ description: ASP.NET Core MVC를 시작하는 방법을 알아봅니다.
 ms.author: riande
 ms.date: 12/12/2018
 uid: tutorials/first-mvc-app/start-mvc
-ms.openlocfilehash: f0c2351de017de7f4c62021b8f9478603055e9bc
-ms.sourcegitcommit: d75d8eb26c2cce19876c8d5b65ac8a4b21f625ef
+ms.openlocfilehash: c09c06f55c4179e9e2174f0063ab7387b7e4c31b
+ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/19/2019
-ms.locfileid: "56410549"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "56899231"
 ---
 # <a name="get-started-with-aspnet-core-mvc"></a>ASP.NET Core MVC 시작
 
 작성자: [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 [!INCLUDE [consider RP](~/includes/razor.md)]
-
-https://docs.microsoft.com/en-us/visualstudio/ide/visual-studio-ide?view=vs-2017
 
 이 자습서에서는 ASP.NET Core MVC 웹앱을 빌드하는 작업의 기본 사항을 설명합니다.
 
@@ -33,9 +31,6 @@ https://docs.microsoft.com/en-us/visualstudio/ide/visual-studio-ide?view=vs-2017
 마지막으로 동영상 데이터를 관리하고 표시할 수 있는 앱이 있습니다.
 
 [!INCLUDE[](~/includes/mvc-intro/download.md)]
-
-> [!NOTE]
-> ASP.NET Core 목차에 대해 제안된 새 구조의 유용성을 테스트합니다.  몇 분 동안 현재 또는 제안된 목차에서 다른 7개의 항목을 찾는 연습을 수행하는 경우 [여기를 클릭하여 연구에 참여하세요](https://dpk4xbh5.optimalworkshop.com/treejack/aa11wn82).
 
 [!INCLUDE[](~/includes/net-core-prereqs-all-2.2.md)]
 
@@ -67,18 +62,6 @@ Visual Studio에서 **파일 > 새로 만들기 > 프로젝트**를 선택합니
 
 Visual Studio에서는 방금 만든 MVC 프로젝트에 대한 기본 템플릿을 사용했습니다. 프로젝트 이름을 입력하고 몇 가지 옵션을 선택하면 바로 앱이 작동합니다. 다음은 기본 시작 프로젝트이며 여기서 시작하는 것이 좋습니다.
 
-**Ctrl-F5**를 선택하여 비디버그 모드에서 앱을 실행합니다.
-
-* Visual Studio가 [IIS Express](/iis/extensions/introduction-to-iis-express/iis-express-overview)를 시작하고 앱을 실행합니다. 주소 표시줄에 `localhost:port#`이 표시되고 `example.com` 등은 표시되지 않음을 알 수 있습니다. 그 이유는 `localhost`가 로컬 컴퓨터의 표준 이름이기 때문입니다. Visual Studio에서 웹 프로젝트를 만들 경우 웹 서버에는 임의 포트가 사용됩니다. 위 이미지에서 포트 번호는 5000입니다. 브라우저의 URL에는 `localhost:5000`이 표시됩니다. 앱을 실행할 경우 다른 포트 번호가 표시됩니다.
-* **Ctrl+F5**(디버그 이외 모드)를 사용하여 앱을 시작하면 코드를 변경하고, 파일을 저장하고, 브라우저를 새로 고치고, 코드 변경 내용을 확인할 수 있습니다. 대부분의 개발자는 앱을 빠르게 시작하고 변경 내용을 확인하기 위해 디버그 이외 모드를 사용하려고 합니다.
-* **디버그** 메뉴 항목에서 앱을 디버그 또는 디버그 이외 모드로 시작할 수 있습니다.
-
-![디버그 메뉴](start-mvc/_static/debug_menu.png)
-
-* **IIS Express** 단추를 선택하여 앱을 디버그할 수 있습니다.
-
-![IIS Express](start-mvc/_static/iis_express.png)
-
 <!-- Code -------------------------->
 # <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code)
 
@@ -98,14 +81,6 @@ Visual Studio에서는 방금 만든 MVC 프로젝트에 대한 기본 템플릿
   * `dotnet new mvc -o MvcMovie`: *MvcMovie* 폴더에 새 ASP.NET Core MVC 포로젝트를 만듭니다.
   * `code -r MvcMovie`: Visual Studio Code에서 *MvcMovie.csproj* 프로젝트 파일을 로드합니다.
 
-### <a name="launch-the-app"></a>앱 시작
-
-* **Ctrl-F5** 키를 눌러서 디버거 없이 실행합니다.
-
-  Visual Studio Code가 [Kestrel](xref:fundamentals/servers/kestrel)을 시작하고, 브라우저를 시작하고, `http://localhost:5001`로 이동합니다. 주소 표시줄에 `localhost:port:5001`이 표시되고 `example.com` 등은 표시되지 않습니다. 그 이유는 `localhost`가 로컬 컴퓨터의 표준 이름이기 때문입니다. Localhost는 로컬 컴퓨터의 웹 요청만 지원합니다.
-
-  **Ctrl+F5**(디버그 이외 모드)를 사용하여 앱을 시작하면 코드를 변경하고, 파일을 저장하고, 브라우저를 새로 고치고, 코드 변경 내용을 확인할 수 있습니다. 대부분의 개발자는 페이지 및 보기 변경 내용을 새로 고치기 위해 디버그 이외 모드를 사용하려고 합니다.
-
 <!-- Mac -------------------------->
 # <a name="visual-studio-for-mactabvisual-studio-mac"></a>[Visual Studio for Mac](#tab/visual-studio-mac)
 
@@ -121,15 +96,47 @@ Visual Studio에서는 방금 만든 MVC 프로젝트에 대한 기본 템플릿
 
 * 프로젝트 이름을 **MvcMovie**로 지정하고 **만들기**를 선택합니다.
 
-### <a name="launch-the-app"></a>앱 시작
+---  
+<!-- End of VS tabs -->
+
+### <a name="run-the-app"></a>앱 실행
+
+# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio) 
+
+**Ctrl-F5**를 선택하여 비디버그 모드에서 앱을 실행합니다.
+
+[!INCLUDE[](~/includes/trustCertVS.md)]
+
+* Visual Studio가 [IIS Express](/iis/extensions/introduction-to-iis-express/iis-express-overview)를 시작하고 앱을 실행합니다. 주소 표시줄에 `localhost:port#`이 표시되고 `example.com` 등은 표시되지 않음을 알 수 있습니다. 그 이유는 `localhost`가 로컬 컴퓨터의 표준 이름이기 때문입니다. Visual Studio에서 웹 프로젝트를 만들 경우 웹 서버에는 임의 포트가 사용됩니다.
+* Ctrl+F5(디버그 이외 모드)를 사용하여 앱을 시작하면 코드를 변경하고, 파일을 저장하고, 브라우저를 새로 고치고, 코드 변경 내용을 확인할 수 있습니다. 대부분의 개발자는 앱을 빠르게 시작하고 변경 내용을 확인하기 위해 디버그 이외 모드를 사용하려고 합니다.
+* **디버그** 메뉴 항목에서 앱을 디버그 또는 디버그 이외 모드로 시작할 수 있습니다.
+
+  ![디버그 메뉴](start-mvc/_static/debug_menu.png)
+
+* **IIS Express** 단추를 선택하여 앱을 디버그할 수 있습니다.
+
+  ![IIS Express](start-mvc/_static/iis_express.png)
+
+# <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code) 
+
+Ctrl+F5를 눌러 디버거 없이 실행합니다.
+
+[!INCLUDE[](~/includes/trustCertVSC.md)]
+
+  Visual Studio Code가 [Kestrel](xref:fundamentals/servers/kestrel)을 시작하고, 브라우저를 시작하고, `https://localhost:5001`로 이동합니다. 주소 표시줄에 `localhost:port:5001`이 표시되고 `example.com` 등은 표시되지 않습니다. 그 이유는 `localhost`가 로컬 컴퓨터의 표준 이름이기 때문입니다. Localhost는 로컬 컴퓨터의 웹 요청만 지원합니다.
+
+  Ctrl+F5(디버그 이외 모드)를 사용하여 앱을 시작하면 코드를 변경하고, 파일을 저장하고, 브라우저를 새로 고치고, 코드 변경 내용을 확인할 수 있습니다. 대부분의 개발자는 페이지 및 보기 변경 내용을 새로 고치기 위해 디버그 이외 모드를 사용하려고 합니다.
+
+# <a name="visual-studio-for-mactabvisual-studio-mac"></a>[Visual Studio for Mac](#tab/visual-studio-mac)
 
 **실행** > **디버깅하지 않고 시작**을 선택하여 앱을 시작합니다. Mac용 Visual Studio에서 [Kestrel](xref:fundamentals/servers/index#kestrel) 서버를 시작하고, 브라우저를 실행하며, `http://localhost:port`로 이동합니다. 여기서 *port*는 임의로 선택된 포트 번호입니다.
+
+[!INCLUDE[](~/includes/trustCertMac.md)]
 
 * 주소 표시줄에 `localhost:port#`이 표시되고 `example.com` 등은 표시되지 않습니다. 그 이유는 `localhost`가 로컬 컴퓨터의 표준 이름이기 때문입니다. Visual Studio에서 웹 프로젝트를 만들 경우 웹 서버에는 임의 포트가 사용됩니다. 앱을 실행할 경우 다른 포트 번호가 표시됩니다.
 * **실행** 메뉴 항목에서 앱을 디버그 또는 디버그 이외 모드로 시작할 수 있습니다.
 
----  
-<!-- End of VS tabs -->
+------
 
 * **승인**을 선택하여 추적에 동의합니다. 이 앱은 개인 정보를 추적하지 않습니다. 템플릿 생성 코드는 [GDPR(일반 데이터 보호 규정)](xref:security/gdpr)을 충족할 수 있도록 자산을 포함합니다.
 

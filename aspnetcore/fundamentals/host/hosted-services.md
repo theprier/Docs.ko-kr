@@ -5,14 +5,14 @@ description: ASP.NET Core에서 호스팅되는 서비스를 사용하는 백그
 monikerRange: '>= aspnetcore-2.1'
 ms.author: riande
 ms.custom: mvc
-ms.date: 11/28/2018
+ms.date: 02/25/2019
 uid: fundamentals/host/hosted-services
-ms.openlocfilehash: de419357d4d96a6e348a77055e67c0fcd190ae42
-ms.sourcegitcommit: 0fc89b80bb1952852ecbcf3c5c156459b02a6ceb
+ms.openlocfilehash: d10a335429752c1a52c1b3619adecc41725a819a
+ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "52618144"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "56899309"
 ---
 # <a name="background-tasks-with-hosted-services-in-aspnet-core"></a>ASP.NET Core에서 호스팅되는 서비스를 사용하는 백그라운드 작업
 
@@ -21,7 +21,7 @@ ms.locfileid: "52618144"
 ASP.NET Core에서 백그라운드 작업은 *호스팅되는 서비스*로 구현될 수 있습니다. 호스티드 서비스는 <xref:Microsoft.Extensions.Hosting.IHostedService> 인터페이스를 구현하는 백그라운드 작업 논리가 있는 클래스입니다. 이 토픽에서는 세 가지 호스팅되는 서비스 예제를 제공합니다.
 
 * 타이머에서 실행되는 백그라운드 작업.
-* 범위가 지정된 서비스를 활성화하는 호스팅되는 서비스. 범위가 지정된 서비스는 종속성 주입을 사용할 수 있습니다.
+* [범위가 지정된 서비스](xref:fundamentals/dependency-injection#service-lifetimes)를 활성화하는 호스팅되는 서비스. 범위가 지정된 서비스는 종속성 주입을 사용할 수 있습니다.
 * 순차적으로 실행되는 대기 중인 백그라운드 작업.
 
 [예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/host/hosted-services/samples/) ([다운로드 방법](xref:index#how-to-download-a-sample))
@@ -54,7 +54,7 @@ ASP.NET Core에서 백그라운드 작업은 *호스팅되는 서비스*로 구�
 
   기본 5초 시스템 종료 시간 제한을 연장하려면 다음을 설정합니다.
 
-  * 일반 호스트를 사용하는 경우 <xref:Microsoft.Extensions.Hosting.HostOptions.ShutdownTimeout*>. 자세한 내용은 <xref:fundamentals/host/generic-host#shutdown-timeout>을 참조하세요.
+  * <xref:Microsoft.Extensions.Hosting.HostOptions.ShutdownTimeout*> 일반 호스트를 사용하는 경우 자세한 내용은 <xref:fundamentals/host/generic-host#shutdown-timeout>을 참조하세요.
   * 웹 호스트를 사용하는 경우 시스템 종료 시간 제한 호스트 구성 설정. 자세한 내용은 <xref:fundamentals/host/web-host#shutdown-timeout>을 참조하세요.
 
 호스팅되는 서비스는 앱 시작 시 한 번 활성화되고 앱 종료 시 정상적으로 종료됩니다. 백그라운드 작업을 실행하는 동안 오류가 발생하면 `StopAsync`가 호출되지 않아도 `Dispose`를 호출해야 합니다.
@@ -71,7 +71,7 @@ ASP.NET Core에서 백그라운드 작업은 *호스팅되는 서비스*로 구�
 
 ## <a name="consuming-a-scoped-service-in-a-background-task"></a>백그라운드 작업에서 범위가 지정된 서비스 사용
 
-`IHostedService` 내에서 범위가 지정된 서비스를 사용하려면 범위를 만듭니다. 기본적으로 호스팅되는 서비스에 대한 범위는 생성되지 않습니다.
+`IHostedService` 내에서 [범위가 지정된 서비스](xref:fundamentals/dependency-injection#service-lifetimes)를 사용하려면 범위를 만듭니다. 기본적으로 호스팅되는 서비스에 대한 범위는 생성되지 않습니다.
 
 범위가 지정된 백그라운드 작업 서비스에는 백그라운드 작업의 논리가 포함됩니다. 다음 예제에서는 <xref:Microsoft.Extensions.Logging.ILogger>가 서비스에 삽입됩니다.
 
@@ -99,7 +99,10 @@ ASP.NET Core에서 백그라운드 작업은 *호스팅되는 서비스*로 구�
 
 [!code-csharp[](hosted-services/samples/2.x/BackgroundTasksSample-WebHost/Startup.cs?name=snippet3)]
 
-인덱스 페이지 모델 클래스에서 `IBackgroundTaskQueue`가 생성자로 삽입되고 `Queue`에 할당됩니다.
+인덱스 페이지 모델 클래스에서:
+
+* `IBackgroundTaskQueue`는 생성자에 삽입되고 `Queue`에 할당됩니다.
+* <xref:Microsoft.Extensions.DependencyInjection.IServiceScopeFactory>가 삽입되어 `_serviceScopeFactory`에 할당됩니다. 팩터리는 범위 내에서 서비스를 만드는 데 사용되는 <xref:Microsoft.Extensions.DependencyInjection.IServiceScope>의 인스턴스를 만드는 데 사용됩니다. 앱의 `AppDbContext`([범위가 지정된 서비스](xref:fundamentals/dependency-injection#service-lifetimes))를 사용하여 `IBackgroundTaskQueue`(싱글톤 서비스)에 데이터베이스 레코드를 작성하는 범위가 생성됩니다.
 
 [!code-csharp[](hosted-services/samples/2.x/BackgroundTasksSample-WebHost/Pages/Index.cshtml.cs?name=snippet1)]
 
@@ -110,4 +113,4 @@ ASP.NET Core에서 백그라운드 작업은 *호스팅되는 서비스*로 구�
 ## <a name="additional-resources"></a>추가 자료
 
 * [IHostedService 및 BackgroundService 클래스를 사용하여 마이크로 서비스에서 백그라운드 작업 구현](/dotnet/standard/microservices-architecture/multi-container-microservice-net-applications/background-tasks-with-ihostedservice)
-* [System.Threading.Timer](xref:System.Threading.Timer)
+* <xref:System.Threading.Timer>

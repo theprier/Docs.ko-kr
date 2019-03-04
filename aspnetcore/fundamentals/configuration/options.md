@@ -4,14 +4,14 @@ author: guardrex
 description: 옵션 패턴을 사용하여 ASP.NET Core 앱에서 관련된 설정 그룹을 나타내는 방법을 알아봅니다.
 ms.author: riande
 ms.custom: mvc
-ms.date: 12/29/2018
+ms.date: 02/26/2019
 uid: fundamentals/configuration/options
-ms.openlocfilehash: 20365a078327d76693a40fa79a4a594e29e0901c
-ms.sourcegitcommit: 97d7a00bd39c83a8f6bccb9daa44130a509f75ce
+ms.openlocfilehash: 9566ed75375bdfaa9d6d8bf898b9fb2054356017
+ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54099249"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "56899322"
 ---
 # <a name="options-pattern-in-aspnet-core"></a>ASP.NET Core의 옵션 패턴
 
@@ -274,18 +274,22 @@ services.AddOptions<MyOptions>("optionalName")
     .Configure(o => o.Property = "named");
 ```
 
-## <a name="configurelttoptions-tdep1--tdep4gt-method"></a>&lt;TOptions, TDep1, ... TDep4&gt; 메서드 구성
+## <a name="use-di-services-to-configure-options"></a>DI 서비스를 사용하여 옵션 구성
 
-DI의 서비스를 사용하여 `IConfigure[Named]Options`를 상용구 방식으로 구현하여 옵션을 구성하는 것은 세부 사항입니다. `OptionsBuilder<TOptions>`에서 `ConfigureOptions`에 대한 오버로드로 옵션을 구성하는 데 최대 5개의 서비스를 사용할 수 있습니다.
+다음과 같은 두 가지 방법으로 옵션을 구성하는 동안 종속성 주입을 통해 다른 서비스에 액세스할 수 있습니다.
 
-```csharp
-services.AddOptions<MyOptions>("optionalName")
-    .Configure<Service1, Service2, Service3, Service4, Service5>(
-        (o, s, s2, s3, s4, s5) => 
-            o.Property = DoSomethingWith(s, s2, s3, s4, s5));
-```
+* [OptionsBuilder\<TOptions>](xref:Microsoft.Extensions.Options.OptionsBuilder`1)에서 구성 대리자를 [구성](xref:Microsoft.Extensions.Options.OptionsBuilder`1.Configure*)에 전달합니다. [OptionsBuilder\<TOptions>](xref:Microsoft.Extensions.Options.OptionsBuilder`1)는 최대 5개의 서비스를 사용하여 옵션을 구성할 수 있는 [구성](xref:Microsoft.Extensions.Options.OptionsBuilder`1.Configure*)의 오버로드를 제공합니다.
 
-오버 로드는 지정된 일반 서비스 유형을 허용하는 생성자가 있는 일시적인 제네릭 <xref:Microsoft.Extensions.Options.IConfigureNamedOptions`1>를 등록합니다. 
+  ```csharp
+  services.AddOptions<MyOptions>("optionalName")
+      .Configure<Service1, Service2, Service3, Service4, Service5>(
+          (o, s, s2, s3, s4, s5) => 
+              o.Property = DoSomethingWith(s, s2, s3, s4, s5));
+  ```
+
+* <xref:Microsoft.Extensions.Options.IConfigureOptions`1> 또는 <xref:Microsoft.Extensions.Options.IConfigureNamedOptions`1>를 구현하는 고유의 형식을 만들고 형식을 서비스로 등록합니다.
+
+서비스를 만드는 것이 더 복잡하기 때문에 구성 대리자를 [구성](xref:Microsoft.Extensions.Options.OptionsBuilder`1.Configure*)에 전달하는 것이 좋습니다. 고유의 형식을 만드는 것은 [구성](xref:Microsoft.Extensions.Options.OptionsBuilder`1.Configure*)을 사용할 때 프레임워크가 수행하는 것과 동일합니다. [구성](xref:Microsoft.Extensions.Options.OptionsBuilder`1.Configure*)을 호출하면 지정된 일반 서비스 유형을 허용하는 생성자가 있는 일시적인 제네릭 <xref:Microsoft.Extensions.Options.IConfigureNamedOptions`1>가 등록됩니다. 
 
 ::: moniker range=">= aspnetcore-2.2"
 

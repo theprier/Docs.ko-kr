@@ -1,5 +1,5 @@
 ---
-title: HTTP 요청 시작
+title: ASP.NET Core에서 IHttpClientFactory를 사용하여 HTTP 요청 만들기
 author: stevejgordon
 description: IHttpClientFactory 인터페이스를 사용하여 ASP.NET Core에서 논리적 HttpClient 인스턴스를 관리하는 방법에 대해 알아봅니다.
 monikerRange: '>= aspnetcore-2.1'
@@ -7,14 +7,14 @@ ms.author: scaddie
 ms.custom: mvc
 ms.date: 01/25/2019
 uid: fundamentals/http-requests
-ms.openlocfilehash: 4fc4e602b809563ea78b6a3af5e5eb5c0ebeddea
-ms.sourcegitcommit: c6db8b14521814f1f7e528d7aa06e474e4c04a1f
+ms.openlocfilehash: a4026addaa55d463c41aadd0a7a39606c88fcb84
+ms.sourcegitcommit: b3894b65e313570e97a2ab78b8addd22f427cac8
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/25/2019
-ms.locfileid: "55065037"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56744211"
 ---
-# <a name="initiate-http-requests"></a>HTTP 요청 시작
+# <a name="make-http-requests-using-ihttpclientfactory-in-aspnet-core"></a>ASP.NET Core에서 IHttpClientFactory를 사용하여 HTTP 요청 만들기
 
 작성자: [Glenn Condron](https://github.com/glennc), [Ryan Nowak](https://github.com/rynowak) 및 [Steve Gordon](https://github.com/stevejgordon)
 
@@ -274,3 +274,9 @@ Polly 기반 처리기를 추가하는 데 사용될 수 있는 추가 확장 �
 `IHttpClientBuilder`은 명명된 또는 형식화된 클라이언트를 추가할 때 반환됩니다. <xref:Microsoft.Extensions.DependencyInjection.HttpClientBuilderExtensions.ConfigurePrimaryHttpMessageHandler*> 확장 메서드는 대리자를 정의하는 데 사용될 수 있습니다. 대리자는 해당 클라이언트가 사용한 기본 `HttpMessageHandler`을 만들고 구성하는 데 사용됩니다.
 
 [!code-csharp[Main](http-requests/samples/2.x/HttpClientFactorySample/Startup.cs?name=snippet12)]
+
+## <a name="additional-resources"></a>추가 자료
+
+* [HttpClientFactory를 사용하여 복원력 있는 HTTP 요청 구현](/dotnet/standard/microservices-architecture/implement-resilient-applications/use-httpclientfactory-to-implement-resilient-http-requests)
+* [HttpClientFactory 및 Polly 정책을 통해 지수 백오프를 사용하여 HTTP 호출 다시 시도 구현](/dotnet/standard/microservices-architecture/implement-resilient-applications/implement-http-call-retries-exponential-backoff-polly)
+* [회로 차단기 패턴 구현](/dotnet/standard/microservices-architecture/implement-resilient-applications/implement-circuit-breaker-pattern)
