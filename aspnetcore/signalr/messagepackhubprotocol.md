@@ -5,14 +5,14 @@ description: ASP.NET Core SignalR에 MessagePack 허브 프로토콜을 추가�
 monikerRange: '>= aspnetcore-2.1'
 ms.author: bradyg
 ms.custom: mvc
-ms.date: 06/04/2018
+ms.date: 02/27/2019
 uid: signalr/messagepackhubprotocol
-ms.openlocfilehash: da6eeeb51f5d0fc2ad69978688ad1c4ca4d63dab
-ms.sourcegitcommit: 3c2ba9a0d833d2a096d9d800ba67a1a7f9491af0
+ms.openlocfilehash: 7742f6f8bb53fb3c299ff98ae52a0da519ff396c
+ms.sourcegitcommit: 6ddd8a7675c1c1d997c8ab2d4498538e44954cac
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55854343"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57400673"
 ---
 # <a name="use-messagepack-hub-protocol-in-signalr-for-aspnet-core"></a>ASP.NET Core SignalR에서 MessagePack 허브 프로토콜 사용
 
@@ -99,7 +99,75 @@ const connection = new signalR.HubConnectionBuilder()
 > [!NOTE]
 > 현재 JavaScript 클라이언트에는 MessagePack 프로토콜에 대한 구성 옵션이 존재하지 않습니다.
 
-## <a name="related-resources"></a>관련 자료
+## <a name="messagepack-quirks"></a>MessagePack 쿼크
+
+MessagePack Hub 프로토콜을 사용 하는 경우 알아야 할 몇 가지 문제가 있습니다.
+
+### <a name="messagepack-is-case-sensitive"></a>MessagePack는 대/소문자 구분
+
+MessagePack 프로토콜은 대/소문자 구분입니다. 예를 들어 다음 C# 클래스:
+
+```csharp
+public class ChatMessage
+{
+    public string Sender { get; }
+    public string Message { get; }
+}
+```
+
+JavaScript 클라이언트에서 전송 하는 경우에 사용 해야 `PascalCased` 속성 이름은 대/소문자와 일치 해야 합니다는 C# 클래스를 정확 하 게 합니다. 예를 들면,
+
+```javascript
+connection.invoke("SomeMethod", { Sender: "Sally", Message: "Hello!" });
+```
+
+사용 하 여 `camelCased` 이름을 않습니다 바인딩할 합니다 C# 클래스입니다. 사용 하 여이 문제를 해결 해도 `Key` MessagePack 속성에 대해 다른 이름을 지정 하는 특성입니다. 자세한 내용은 [MessagePack CSharp 설명서](https://github.com/neuecc/MessagePack-CSharp#object-serialization)합니다.
+
+### <a name="datetimekind-is-not-preserved-when-serializingdeserializing"></a>직렬화/역직렬화 DateTime.Kind 유지 되지 않습니다.
+
+MessagePack 프로토콜을 인코딩하는 방법을 제공 하지 않습니다 합니다 `Kind` 의 값을 `DateTime`입니다. 결과적으로 날짜를 역직렬화 하는 동안, MessagePack 허브 프로토콜 들어오는 날짜가 UTC 형식으로 가정 합니다. 사용 하는 경우 `DateTime` 현지 시간 값을 권장 보내기 전에 UTC로 변환 합니다. 변환할 UTC에서 현지 시간을 받을 때마다 합니다.
+
+이 제한에 대 한 자세한 내용은 GitHub을 참조 하세요. 문제가 [aspnet/SignalR #2632](https://github.com/aspnet/SignalR/issues/2632)합니다.
+
+### <a name="datetimeminvalue-is-not-supported-by-messagepack-in-javascript"></a>DateTime.MinValue는 MessagePack javascript에서에서 지원 되지 않습니다.
+
+합니다 [msgpack5](https://github.com/mcollina/msgpack5) SignalR JavaScript 클라이언트에서 사용 되는 라이브러리를 지원 하지 않습니다는 `timestamp96` MessagePack의 형식입니다. 이 형식은 매우 큰 날짜 값 (또는 과거의 초기에 나중에 매우 많이)를 인코딩하는 데 사용 됩니다. 변수의 `DateTime.MinValue` 됩니다 `January 1, 0001` 는 인코딩해야는 `timestamp96` 값입니다. 이 전송으로 인해 `DateTime.MinValue` 클라이언트 JavaScript에 지원 되지 않습니다. 때 `DateTime.MinValue` 수신, JavaScript 클라이언트에서 다음 오류가 throw 됩니다.
+
+```
+Uncaught Error: unable to find ext type 255 at decoder.js:427
+```
+
+일반적으로 `DateTime.MinValue` 인코딩하는 데 사용 되는 "missing" 또는 `null` 값입니다. MessagePack에서 해당 값을 인코드 해야 할 경우 사용 하 여 null을 허용 `DateTime` 값 (`DateTime?`) 또는 별도 인코딩 `bool` 날짜 있는지를 나타내는 값입니다.
+
+이 제한에 대 한 자세한 내용은 GitHub을 참조 하세요. 문제가 [aspnet/SignalR #2228](https://github.com/aspnet/SignalR/issues/2228)합니다.
+
+### <a name="messagepack-support-in-ahead-of-time-compilation-environment"></a>"미리-" 컴파일 환경에서 MessagePack 지원
+
+합니다 [MessagePack CSharp](https://github.com/neuecc/MessagePack-CSharp) 라이브러리.NET 클라이언트 및 서버에서 사용 하는 serialization을 최적화 하기 위해 코드 생성을 사용 합니다. 결과적으로, "미리-" 컴파일 (예: Xamarin iOS 또는 Unity)를 사용 하는 환경에서 기본적으로 지원 되지 않습니다. "미리 코드를 생성할" serializer/deserializer에서 MessagePack 이러한 환경에서 사용 하는 것이 가능 합니다. 자세한 내용은 [MessagePack CSharp 설명서](https://github.com/neuecc/MessagePack-CSharp#pre-code-generationunityxamarin-supports)합니다. 직렬 변환기를 미리 생성 한 후에 전달 된 구성 대리자를 사용 하 여 등록할 수 있습니다 `AddMessagePackProtocol`:
+
+```csharp
+services.AddSignalR()
+    .AddMessagePackProtocol(options =>
+    {
+        options.FormatterResolvers = new List<MessagePack.IFormatterResolver>()
+        {
+            MessagePack.Resolvers.GeneratedResolver.Instance,
+            MessagePack.Resolvers.StandardResolver.Instance
+        };
+    });
+```
+
+### <a name="type-checks-are-more-strict-in-messagepack"></a>형식 검사는 더 엄격 하 게 MessagePack
+
+JSON Hub 프로토콜을 역직렬화 하는 동안 형식 변환을 수행 합니다. 예를 들어 들어오는 개체 속성 값이 있는 숫자 인지 (`{ foo: 42 }`) 형식의.NET 클래스의 속성 이지만 `string`, 값 변환 됩니다. 그러나 MessagePack이이 변환을 수행 하지 않습니다 하 고 서버 쪽 로그 (및 콘솔)에서 볼 수 있는 예외를 throw 합니다.
+
+```
+InvalidDataException: Error binding arguments. Make sure that the types of the provided values match the types of the hub method being invoked.
+```
+
+이 제한에 대 한 자세한 내용은 GitHub을 참조 하세요. 문제가 [aspnet/SignalR #2937](https://github.com/aspnet/SignalR/issues/2937)합니다.
+
+## <a name="related-resources"></a>관련 참고 자료
 
 * [시작](xref:tutorials/signalr)
 * [.NET 클라이언트](xref:signalr/dotnet-client)

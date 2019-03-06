@@ -5,14 +5,14 @@ description: Angular 및 Angular CLI에 대한 ASP.NET Core SPA(단일 페이지
 monikerRange: '>= aspnetcore-2.1'
 ms.author: stevesa
 ms.custom: mvc
-ms.date: 02/13/2019
+ms.date: 02/27/2019
 uid: spa/angular
-ms.openlocfilehash: f33f4b96faf71440c3e8878c0480f2908ace70d1
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 41990be4910ad35cdc2826f268fcbb659be9de75
+ms.sourcegitcommit: 036d4b03fd86ca5bb378198e29ecf2704257f7b2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "56899257"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57345722"
 ---
 # <a name="use-the-angular-project-template-with-aspnet-core"></a>ASP.NET Core에서 Angular 프로젝트 템플릿 사용
 
@@ -90,7 +90,7 @@ npm install --save <package_name>
 
 개발 시에 앱은 개발자 편의를 위해 최적화된 모드로 실행됩니다. 예를 들어 디버그할 때 원래 TypeScript 코드를 볼 수 있도록 JavaScript 번들에 소스 맵이 포함됩니다. 앱은 디스크에서 TypeScript, HTML 및 CSS 파일 변경 내용을 감시하고 해당 파일의 변경을 확인하면 자동으로 다시 컴파일하고 다시 로드합니다.
 
-프로덕션 시에는 성능에 최적화된 앱의 버전을 제공합니다. 이는 자동으로 수행하도록 구성됩니다. 게시할 때 빌드 구성은 클라이언트 쪽 코드의 축소된 AOT(Ahead-Of-Time) 컴파일된 빌드를 내보냅니다. 개발 빌드와 달리 프로덕션 빌드에는 [서버 쪽 사전 렌더링](#server-side-rendering)을 사용하지 않는 한 서버에 Node.js를 설치할 필요가 없습니다.
+프로덕션 시에는 성능에 최적화된 앱의 버전을 제공합니다. 이는 자동으로 수행하도록 구성됩니다. 게시할 때 빌드 구성은 클라이언트 쪽 코드의 축소된 AOT(Ahead-Of-Time) 컴파일된 빌드를 내보냅니다. 개발 빌드 달리 프로덕션 빌드에는 Node.js (활성화 하지 않은 경우 서버 쪽 렌더링 (SSR)) 서버에 설치할 필요 하지 않습니다.
 
 표준 [ASP.NET Core 호스팅 및 배포 방법](xref:host-and-deploy/index)을 사용할 수 있습니다.
 

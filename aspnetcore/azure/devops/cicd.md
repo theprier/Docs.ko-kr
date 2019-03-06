@@ -6,12 +6,12 @@ ms.author: scaddie
 ms.date: 10/24/2018
 ms.custom: seodec18
 uid: azure/devops/cicd
-ms.openlocfilehash: e5bddde41291c9573f58d749bbf830de9ea9319d
-ms.sourcegitcommit: 49faca2644590fc081d86db46ea5e29edfc28b7b
+ms.openlocfilehash: 906aae3fd4b4abd0becc8847b0f54c372bda300a
+ms.sourcegitcommit: 036d4b03fd86ca5bb378198e29ecf2704257f7b2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/09/2018
-ms.locfileid: "53121597"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57346309"
 ---
 # <a name="continuous-integration-and-deployment"></a>지속적인 통합 및 배포
 
@@ -60,9 +60,9 @@ ms.locfileid: "53121597"
 
     ![스테이징 웹 앱 검색 용어](media/cicd/portal-search-box.png)
 
-1. 클릭 **배포 옵션**합니다. 새 패널이 표시 됩니다. 클릭 **연결 끊기** 이전 장에서 추가 된 로컬 Git 소스 제어 구성 제거 합니다. 클릭 하 여 제거 작업을 확인 합니다 **예** 단추입니다.
+1. 클릭 **배포 센터**합니다. 새 패널이 표시 됩니다. 클릭 **연결 끊기** 이전 장에서 추가 된 로컬 Git 소스 제어 구성 제거 합니다. 클릭 하 여 제거 작업을 확인 합니다 **예** 단추입니다.
 1. 로 이동 합니다 *mywebapp < unique_number >* App Service입니다. 참고로, 포털의 검색 상자 빨리 App Service를 찾는 데 사용할 수 있습니다.
-1. 클릭 **배포 옵션**합니다. 새 패널이 표시 됩니다. 클릭 **연결 끊기** 이전 장에서 추가 된 로컬 Git 소스 제어 구성 제거 합니다. 클릭 하 여 제거 작업을 확인 합니다 **예** 단추입니다.
+1. 클릭 **배포 센터**합니다. 새 패널이 표시 됩니다. 클릭 **연결 끊기** 이전 장에서 추가 된 로컬 Git 소스 제어 구성 제거 합니다. 클릭 하 여 제거 작업을 확인 합니다 **예** 단추입니다.
 
 ## <a name="create-an-azure-devops-organization"></a>Azure DevOps 조직 만들기
 
@@ -262,7 +262,7 @@ ms.locfileid: "53121597"
 
 ![릴리스 파이프라인 작업을 보여 주는 스크린샷](media/cicd/release-definition-tasks.png)
 
-릴리스 파이프라인 두 작업으로 구성 됩니다. *Azure App Service 슬롯에 배포* 및 *슬롯 전환-관리 Azure App Service를*입니다. 첫 번째 작업을 클릭 하면 다음 작업 구성을 표시 됩니다.
+릴리스 파이프라인의 두 가지 작업으로 구성 됩니다. *Azure App Service 슬롯에 배포* 하 고 *Azure App Service-Slot Swap 관리*. 첫 번째 작업을 클릭 하면 다음 작업 구성을 표시 됩니다.
 
 ![스크린 샷 보여 주는 릴리스 파이프라인 배포 작업](media/cicd/release-definition-task1.png)
 

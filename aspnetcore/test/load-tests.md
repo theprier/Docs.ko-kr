@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 01/04/2019
 uid: test/loadtests
-ms.openlocfilehash: d989bc841a372bed7ebf2c84c6abe1a57762ad04
-ms.sourcegitcommit: cec77d5ad8a0cedb1ecbec32834111492afd0cd2
+ms.openlocfilehash: 587df6e216943d3eeec779df4d0554dd0fc2fda0
+ms.sourcegitcommit: 036d4b03fd86ca5bb378198e29ecf2704257f7b2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54207358"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57345430"
 ---
 # <a name="load-and-stress-testing-aspnet-core"></a>부하 및 스트레스 테스트 ASP.NET Core
 
@@ -25,6 +25,10 @@ ms.locfileid: "54207358"
 * 컴퓨팅 리소스를 제한 합니다.  
 
 스트레스 상태에서 응용 프로그램 오류 로부터 복구를 정상적으로 예상 되는 동작을 반환? 앱은 부하가 *되지* 정상 조건에서 실행 합니다.
+
+Visual Studio 2019는 부하 테스트 기능이 있는 Visual Studio의 최종 버전이 됩니다. 부하 테스트 도구가 필요한 고객의 경우 Apache JMeter, Akamai CloudTest, Blazemeter와 같은 대체 부하 테스트 도구를 사용하는 것이 좋습니다. 자세한 내용은 참조는 [Visual Studio 2019 미리 보기 릴리스 정보](/visualstudio/releases/2019/release-notes-preview#test-tools)합니다.
+
+부하 테스트 서비스의 Azure DevOps 2020에 종료 될 예정입니다. 자세한 내용은 참조 [클라우드 기반 부하 테스트 서비스 수명 끝](https://devblogs.microsoft.com/devops/cloud-based-load-testing-service-eol/)합니다.
 
 ## <a name="visual-studio-tools"></a>Visual Studio Tools
 

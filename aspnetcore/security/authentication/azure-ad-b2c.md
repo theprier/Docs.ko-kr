@@ -2,15 +2,15 @@
 title: ASP.NET Core에서 Azure Active Directory B2C를 사용 하 여 클라우드 인증
 author: camsoper
 description: ASP.NET Core를 사용 하 여 Azure Active Directory B2C 인증을 설정 하는 방법을 알아봅니다.
-ms.date: 01/25/2018
+ms.date: 02/27/2019
 ms.custom: mvc
 uid: security/authentication/azure-ad-b2c
-ms.openlocfilehash: 2c544475ccd3eb76f2737fec1cf269ac86add372
-ms.sourcegitcommit: 97d7a00bd39c83a8f6bccb9daa44130a509f75ce
+ms.openlocfilehash: 86be999e02cfe34193bd594dcf89e8872590cca5
+ms.sourcegitcommit: 036d4b03fd86ca5bb378198e29ecf2704257f7b2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54098989"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57346504"
 ---
 # <a name="cloud-authentication-with-azure-active-directory-b2c-in-aspnet-core"></a>ASP.NET Core에서 Azure Active Directory B2C를 사용 하 여 클라우드 인증
 
@@ -104,6 +104,30 @@ Azure AD B2C 설명서의 단계를 사용 [등록 또는 로그인 정책 만�
 
 > [!WARNING]
 > 정책 이름이 해당 정책에서 사용 된 설명서에 설명 된 대로 정확 하 게 되어 확인 합니다 **인증 변경** Visual Studio에서 대화 합니다. 정책 이름을 확인할 수 있습니다 *appsettings.json*합니다.
+
+## <a name="configure-the-underlying-openidconnectoptionsjwtbearercookie-options"></a>기본 쿠키/JwtBearer/OpenIdConnectOptions 옵션 구성
+
+기본 옵션을 직접 구성 하려면에서 적절 한 체계 상수를 사용 하 여 `Startup.ConfigureServices`:
+
+```csharp
+services.Configure<OpenIdConnectOptions>(
+    AzureAD[B2C]Defaults.OpenIdScheme, options => 
+    {
+        // Omitted for brevity
+    });
+
+services.Configure<CookieAuthenticationOptions>(
+    AzureAD[B2C]Defaults.CookieScheme, options => 
+    {
+        // Omitted for brevity
+    });
+
+services.Configure<JwtBearerOptions>(
+    AzureAD[B2C]Defaults.JwtBearerAuthenticationScheme, options => 
+    {
+        // Omitted for brevity
+    });
+```
 
 ## <a name="run-the-app"></a>앱 실행
 

@@ -4,14 +4,14 @@ author: rick-anderson
 description: 에 대해 알아봅니다 어떻게 CORS 허용 하거나 거부 하는 ASP.NET Core 앱에서 크로스-원본 요청에 대 한 표준으로 합니다.
 ms.author: riande
 ms.custom: mvc
-ms.date: 02/08/2019
+ms.date: 02/27/2019
 uid: security/cors
-ms.openlocfilehash: bc3a0883043a4d6fa33c1ff76fcb7be457b6b840
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: eb8dd3b1c96d9060b0164dcd4d0fbe004ed4af84
+ms.sourcegitcommit: 036d4b03fd86ca5bb378198e29ecf2704257f7b2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "56899348"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57346374"
 ---
 # <a name="enable-cross-origin-requests-cors-in-aspnet-core"></a>ASP.NET Core에서 원본 간 요청 (CORS)를 사용 하도록 설정
 
@@ -56,7 +56,7 @@ CORS 미들웨어는 크로스-원본 요청을 처리합니다. 다음 코드�
 
 위의 코드는:
 
-* "_MyAllowSpecificOrigins"는 정책 이름을 설정합니다. 정책 이름은 임의로 지정 됩니다.
+* 정책 이름 설정 "\_myAllowSpecificOrigins"입니다. 정책 이름은 임의로 지정 됩니다.
 * 호출 된 <xref:Microsoft.AspNetCore.Builder.CorsMiddlewareExtensions.UseCors*> 코어 수 있도록 하는 확장 메서드.
 * 호출 <xref:Microsoft.Extensions.DependencyInjection.CorsServiceCollectionExtensions.AddCors*> 사용 하 여는 [람다 식](/dotnet/csharp/programming-guide/statements-expressions-operators/lambda-expressions)합니다. 람다는 <xref:Microsoft.AspNetCore.Cors.Infrastructure.CorsPolicyBuilder> 개체를 전달받습니다. [구성 옵션](#cors-policy-options)와 같은 `WithOrigins`,이 문서의 뒷부분에 설명 되어 있습니다.
 
@@ -70,9 +70,26 @@ CORS 미들웨어는 크로스-원본 요청을 처리합니다. 다음 코드�
 
 [!code-csharp[](cors/sample/Cors/WebAPI/Startup2.cs?name=snippet2)]
 
-다음 강조 표시 된 코드를 통해 모든 앱 끝점을 적용할 CORS 정책을 [CORS 미들웨어](#enable-cors-with-cors-middleware):
+다음 강조 표시 된 코드에는 CORS 미들웨어를 통해 모든 앱 끝점에 CORS 정책 적용 됩니다.
 
-[!code-csharp[](cors/sample/Cors/WebAPI/Startup.cs?name=snippet3&highlight=12)]
+```csharp
+public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+{
+    if (env.IsDevelopment())
+    {
+        app.UseDeveloperExceptionPage();
+    }
+    else
+    {
+        app.UseHsts();
+    }
+
+    app.UseCors(); 
+
+    app.UseHttpsRedirection();
+    app.UseMvc();
+}
+```
 
 참조 [Razor 페이지, 컨트롤러 및 작업 메서드에서 CORS를 사용 하도록 설정](#ecors) 페이지/컨트롤러/작업 수준에서 CORS 정책을 적용 합니다.
 
@@ -409,7 +426,7 @@ Test message
 CORS 테스트:
 
 1. [API 프로젝트를 만들고](xref:tutorials/first-web-api)합니다. 또는 수 있습니다 [샘플을 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/cors/sample/Cors)합니다.
-1. 이 문서의 방법 중 하나를 사용 하 여 CORS를 사용 하도록 설정 합니다. 예를 들면,
+1. 이 문서의 방법 중 하나를 사용 하 여 CORS를 사용 하도록 설정 합니다. 예를 들어:
 
   [!code-csharp[](cors/sample/Cors/WebAPI/StartupTest.cs?name=snippet2&highlight=13-18)]
   

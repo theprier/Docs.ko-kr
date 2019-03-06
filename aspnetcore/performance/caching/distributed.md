@@ -2,20 +2,21 @@
 title: ASP.NET Core의 캐싱 분산
 author: guardrex
 description: 앱 성능 및 확장성, 클라우드 또는 서버 팜 환경에서 특히 개선 하기 위해 캐시를 분산 하는 ASP.NET Core를 사용 하는 방법에 알아봅니다.
+monikerRange: '>= aspnetcore-2.1'
 ms.author: riande
 ms.custom: mvc
-ms.date: 02/26/2019
+ms.date: 03/02/2019
 uid: performance/caching/distributed
-ms.openlocfilehash: 7337ee3b823064c942832d8a44e4d4289bc4fd0e
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: a7850e317dfa3b54f1980902b3dcd6b096effa15
+ms.sourcegitcommit: 036d4b03fd86ca5bb378198e29ecf2704257f7b2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "56899426"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57346121"
 ---
 # <a name="distributed-caching-in-aspnet-core"></a>ASP.NET Core의 캐싱 분산
 
-작성자: [Steve Smith](https://ardalis.com/) 및 [Luke Latham](https://github.com/guardrex)
+하 여 [Luke Latham](https://github.com/guardrex) 고 [Steve Smith](https://ardalis.com/)
 
 분산된 캐시에 액세스 하는 응용 프로그램 서버 외부 서비스로 일반적으로 유지 관리 하는 여러 앱 서버에서 공유 캐시가입니다. 앱은 클라우드 서비스 또는 서버 팜을 호스팅하는 경우에 특히 분산된 캐시는 성능 및 ASP.NET Core 앱의 확장성을 개선할 수 있습니다.
 
@@ -41,27 +42,11 @@ Redis를 사용 하 여 분산 캐시에 대 한 참조를 [Microsoft.AspNetCore
 
 ::: moniker-end
 
-::: moniker range="= aspnetcore-2.1"
+::: moniker range="< aspnetcore-2.2"
 
 SQL Server를 사용 하 여 분산 캐시에 대 한 참조를 [Microsoft.AspNetCore.App 메타 패키지](xref:fundamentals/metapackage-app) 에 대 한 패키지 참조를 추가 또는 합니다 [Microsoft.Extensions.Caching.SqlServer](https://www.nuget.org/packages/Microsoft.Extensions.Caching.SqlServer) 패키지 합니다.
 
 Redis를 사용 하 여 분산 캐시에 대 한 참조를 [Microsoft.AspNetCore.App 메타 패키지](xref:fundamentals/metapackage-app) 에 대 한 패키지 참조를 추가 하 고는 [Microsoft.Extensions.Caching.Redis](https://www.nuget.org/packages/Microsoft.Extensions.Caching.Redis) 패키지 합니다. Redis 패키지에 포함 되어 있지는 `Microsoft.AspNetCore.App` 패키지를 프로젝트 파일의 Redis 패키지를 개별적으로 참조 해야 하므로 합니다.
-
-::: moniker-end
-
-::: moniker range="= aspnetcore-2.0"
-
-SQL Server를 사용 하 여 분산 캐시에 대 한 참조를 [Microsoft.AspNetCore.All 메타 패키지](xref:fundamentals/metapackage) 에 대 한 패키지 참조를 추가 또는 합니다 [Microsoft.Extensions.Caching.SqlServer](https://www.nuget.org/packages/Microsoft.Extensions.Caching.SqlServer) 패키지 합니다.
-
-Redis를 사용 하 여 분산 캐시에 대 한 참조를 [Microsoft.AspNetCore.All 메타 패키지](xref:fundamentals/metapackage) 패키지 참조를 추가 하거나 합니다 [Microsoft.Extensions.Caching.Redis](https://www.nuget.org/packages/Microsoft.Extensions.Caching.Redis) 패키지 합니다. Redis 패키지에 포함 됩니다 `Microsoft.AspNetCore.All` 패키지를 프로젝트 파일에서 별도로 Redis 패키지를 참조할 필요가 없습니다.
-
-::: moniker-end
-
-::: moniker range="< aspnetcore-2.0"
-
-SQL Server를 사용 하 여 분산 캐시, 패키지 참조를 추가 합니다 [Microsoft.Extensions.Caching.SqlServer](https://www.nuget.org/packages/Microsoft.Extensions.Caching.SqlServer) 패키지 있습니다.
-
-분산 캐시는 Redis를 사용 하도록, 패키지 참조를 추가 합니다 [Microsoft.Extensions.Caching.Redis](https://www.nuget.org/packages/Microsoft.Extensions.Caching.Redis) 패키지 있습니다.
 
 ::: moniker-end
 
@@ -91,26 +76,13 @@ SQL Server를 사용 하 여 분산 캐시, 패키지 참조를 추가 합니다
 * 개발 및 테스트 시나리오입니다.
 * 프로덕션 및 메모리 사용량에서 단일 서버를 사용할 경우 문제가 되지 않습니다. 데이터 저장소를 캐시 메모리 캐시 Distributed 요약을 구현 합니다. 허용을 구현 하기 위한 진정한 여러 노드 또는 내결함성 제공 해야 할 경우에 나중에 캐싱 솔루션 배포 합니다.
 
-샘플 앱을 사용 하면 앱 개발 환경에서 실행 될 때 메모리 내 분산 캐시 사용:
+샘플 앱은 앱의 개발 환경에서 실행 될 때 메모리 내 분산 캐시 사용 `Startup.ConfigureServices`:
 
-[!code-csharp[](distributed/samples/2.x/DistCacheSample/Startup.cs?name=snippet_ConfigureServices&highlight=5)]
+[!code-csharp[](distributed/samples/2.x/DistCacheSample/Startup.cs?name=snippet_AddDistributedMemoryCache)]
 
 ### <a name="distributed-sql-server-cache"></a>분산 된 SQL 서버 캐시
 
 분산 된 SQL Server 캐시 구현 (<xref:Microsoft.Extensions.DependencyInjection.SqlServerCachingServicesExtensions.AddDistributedSqlServerCache*>) SQL Server 데이터베이스를 백업 저장소로 사용 하 여 분산된 캐시를 허용 합니다. 테이블을 만들려면 SQL Server 캐시 된 항목의 SQL Server 인스턴스를 사용할 수는 `sql-cache` 도구입니다. 도구 이름 및 지정 된 스키마를 사용 하 여 테이블을 만듭니다.
-
-::: moniker range="< aspnetcore-2.1"
-
-추가 `SqlConfig.Tools` 에 `<ItemGroup>` 프로젝트 파일과 실행 요소의 `dotnet restore`합니다.
-
-```xml
-<ItemGroup>
-  <DotNetCliToolReference Include="Microsoft.Extensions.Caching.SqlConfig.Tools"
-                          Version="2.0.2" />
-</ItemGroup>
-```
-
-::: moniker-end
 
 SQL Server에서 실행 하 여 테이블을 만들기는 `sql-cache create` 명령입니다. SQL Server 인스턴스를 제공 (`Data Source`), 데이터베이스 (`Initial Catalog`), 스키마 (예를 들어 `dbo`)을 및 테이블 이름 (예를 들어 `TestCache`):
 
@@ -131,16 +103,28 @@ Table and index were created successfully.
 > [!NOTE]
 > 앱의 인스턴스를 사용 하 여 캐시 값을 조작 해야 <xref:Microsoft.Extensions.Caching.Distributed.IDistributedCache>이 아니라는 <xref:Microsoft.Extensions.Caching.SqlServer.SqlServerCache>합니다.
 
-샘플 앱을 구현 하는 <xref:Microsoft.Extensions.Caching.SqlServer.SqlServerCache> 비 개발 환경에서:
+샘플 앱 구현 <xref:Microsoft.Extensions.Caching.SqlServer.SqlServerCache> 비 개발 환경에서 `Startup.ConfigureServices`:
 
-[!code-csharp[](distributed/samples/2.x/DistCacheSample/Startup.cs?name=snippet_ConfigureServices&highlight=9-15)]
+[!code-csharp[](distributed/samples/2.x/DistCacheSample/Startup.cs?name=snippet_AddDistributedSqlServerCache)]
 
 > [!NOTE]
-> A <xref:Microsoft.Extensions.Caching.SqlServer.SqlServerCacheOptions.ConnectionString*> (및 필요에 따라 <xref:Microsoft.Extensions.Caching.SqlServer.SqlServerCacheOptions.SchemaName*> 및 <xref:Microsoft.Extensions.Caching.SqlServer.SqlServerCacheOptions.TableName*>)는 일반적으로 소스 제어 외부 저장 (에서 예를 들어 저장 합니다 [암호 관리자](xref:security/app-secrets) 또는 *appsettings.json* / *appsettings 합니다. {Environment}.json* 파일). 연결 문자열을 소스 제어 시스템에서 유지 해야 하는 자격 증명을 포함할 수 있습니다.
+> A <xref:Microsoft.Extensions.Caching.SqlServer.SqlServerCacheOptions.ConnectionString*> (및 필요에 따라 <xref:Microsoft.Extensions.Caching.SqlServer.SqlServerCacheOptions.SchemaName*> 및 <xref:Microsoft.Extensions.Caching.SqlServer.SqlServerCacheOptions.TableName*>)는 일반적으로 소스 제어 외부 저장 (에서 예를 들어 저장 합니다 [암호 관리자](xref:security/app-secrets) 또는 *appsettings.json* / *appsettings 합니다. {ENVIRONMENT}.json* 파일). 연결 문자열을 소스 제어 시스템에서 유지 해야 하는 자격 증명을 포함할 수 있습니다.
 
 ### <a name="distributed-redis-cache"></a>분산된 Redis Cache
 
-[Redis](https://redis.io/)는 분산 캐시로 흔히 사용되는 오픈 소스 메모리 내 데이터 저장소입니다. Redis를 로컬로 사용할 수 있습니다 하 고 구성할 수 있습니다는 [Azure Redis Cache](https://azure.microsoft.com/services/cache/) Azure에서 호스팅되는 ASP.NET Core 앱에 대 한 합니다. 앱 구성 사용 하 여 캐시 구현 된 <xref:Microsoft.Extensions.Caching.Redis.RedisCache> 인스턴스 (<xref:Microsoft.Extensions.DependencyInjection.RedisCacheServiceCollectionExtensions.AddDistributedRedisCache*>):
+[Redis](https://redis.io/)는 분산 캐시로 흔히 사용되는 오픈 소스 메모리 내 데이터 저장소입니다. Redis를 로컬로 사용할 수 있습니다 하 고 구성할 수 있습니다는 [Azure Redis Cache](https://azure.microsoft.com/services/cache/) Azure에서 호스팅되는 ASP.NET Core 앱에 대 한 합니다.
+
+::: moniker range=">= aspnetcore-2.2"
+
+앱 구성 사용 하 여 캐시 구현 된 `RedisCache` 인스턴스 (`AddStackExchangeRedisCache`) 비 개발 환경에서 `Startup.ConfigureServices`:
+
+[!code-csharp[](distributed/samples/2.x/DistCacheSample/Startup.cs?name=snippet_AddStackExchangeRedisCache)]
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.2"
+
+앱 구성 사용 하 여 캐시 구현 된 <xref:Microsoft.Extensions.Caching.Redis.RedisCache> 인스턴스 (<xref:Microsoft.Extensions.DependencyInjection.RedisCacheServiceCollectionExtensions.AddDistributedRedisCache*>):
 
 ```csharp
 services.AddDistributedRedisCache(options =>
@@ -149,6 +133,8 @@ services.AddDistributedRedisCache(options =>
     options.InstanceName = "SampleInstance";
 });
 ```
+
+::: moniker-end
 
 로컬 컴퓨터에 Redis를 설치 합니다.
 
@@ -193,8 +179,8 @@ services.AddDistributedRedisCache(options =>
 
 ## <a name="additional-resources"></a>추가 자료
 
-* [Azure Redis Cache](https://azure.microsoft.com/documentation/services/redis-cache/)
-* [Azure SQL Database](https://azure.microsoft.com/documentation/services/sql-database/)
+* [Azure Redis Cache](/azure/azure-cache-for-redis/)
+* [Azure SQL Database](/azure/sql-database/)
 * [ASP.NET Core 웹 팜에서 NCache 공급자 IDistributedCache](http://www.alachisoft.com/ncache/aspnet-core-idistributedcache-ncache.html) ([github NCache](https://github.com/Alachisoft/NCache))
 * <xref:performance/caching/memory>
 * <xref:fundamentals/change-tokens>

@@ -7,12 +7,12 @@ ms.author: bradyg
 ms.custom: mvc
 ms.date: 02/07/2019
 uid: signalr/configuration
-ms.openlocfilehash: f5449a15743c1f38c550fe30945bdc19f069e3f5
-ms.sourcegitcommit: b72bbc9ae91e4bd37c9ea9b2d09ebf47afb25dd7
+ms.openlocfilehash: c5921db895a732c9663c9d962195a2c0635f5aa0
+ms.sourcegitcommit: 6ddd8a7675c1c1d997c8ab2d4498538e44954cac
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55958117"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57400660"
 ---
 # <a name="aspnet-core-signalr-configuration"></a>ASP.NET Core SignalR 구성
 
@@ -138,7 +138,7 @@ WebSocket 전송에는 `WebSockets` 속성을 이용해서 구성할 수 있는 
 
 ## <a name="configure-client-options"></a>클라이언트 옵션 구성
 
-클라이언트 옵션은 `HubConnection` 자체뿐 아니라 (.NET 및 JavaScript 클라이언트에서 모두 사용 가능한) `HubConnectionBuilder` 유형에서 구성할 수 없습니다.
+클라이언트 옵션에서 구성할 수 있습니다는 `HubConnectionBuilder` 형식 (.NET 및 JavaScript 클라이언트에서 사용 가능). Java 클라이언트에서 사용할 수 있는 것도 있지만 `HttpHubConnectionBuilder` 하위 클래스는 작성기 구성 옵션을 on으로 포함 무엇을 `HubConnection` 자체입니다.
 
 ### <a name="configure-logging"></a>로깅 구성
 
@@ -171,17 +171,23 @@ let connection = new signalR.HubConnectionBuilder()
 > [!NOTE]
 > 로깅을 완전히 비활성화시키려면 `configureLogging` 메서드에서 `signalR.LogLevel.None`을 지정하십시오.
 
-JavaScript 클라이언트에서 사용 가능한 로그 수준은 다음과 같습니다. 로그 수준을 이 값들 중 하나로 설정하면 해당 수준 **이상**의 메시지 로깅이 활성화됩니다.
+로깅에 대 한 자세한 내용은 참조는 [SignalR 진단 설명서](xref:signalr/diagnostics)합니다.
 
-| 수준 | 설명 |
-| ----- | ----------- |
-| `None` | 메시지가 기록되지 않습니다. |
-| `Critical` | 전체 앱에서 발생한 오류를 나타내는 메시지입니다. |
-| `Error` | 현재 작업에서 발생한 오류를 나타내는 메시지입니다. |
-| `Warning` | 치명적이지 않은 문제를 나타내는 메시지입니다. |
-| `Information` | 정보 메시지입니다. |
-| `Debug` | 디버깅에 유용한 진단 메시지입니다. |
-| `Trace` | 특정 문제를 진단하기 위해 의도된 매우 자세한 진단 메시지입니다. |
+SignalR Java 클라이언트를 사용 하 여 [SLF4J](https://www.slf4j.org/) 로깅에 대 한 라이브러리입니다. 라이브러리의 사용자가 자신의 특정 로깅 구현을 특정 로깅 종속성에서 전환 하 여 선택한 수 있는 높은 수준의 로깅 API입니다. 다음 코드 조각을 사용 하는 방법을 보여 줍니다 `java.util.logging` SignalR Java 클라이언트를 사용 하 여 합니다.
+
+```gradle
+implementation 'org.slf4j:slf4j-jdk14:1.7.25'
+```
+
+종속성에 대 한 로깅을 구성 하지 않으면, SLF4J 다음 경고 메시지를 사용 하 여 기본 작업 없음로 거를 로드 합니다.
+
+```
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+```
+
+이 안전 하 게 무시할 수 있습니다.
 
 ### <a name="configure-allowed-transports"></a>허용되는 전송 구성
 
@@ -202,6 +208,26 @@ let connection = new signalR.HubConnectionBuilder()
     .withUrl("/myhub", { transport: signalR.HttpTransportType.WebSockets | signalR.HttpTransportType.LongPolling })
     .build();
 ```
+
+::: moniker range=">= aspnetcore-2.2"
+
+이 버전의 Java 클라이언트 websocket은만 사용할 수 있는 전송 합니다.
+
+::: moniker-end
+
+::: moniker range="= aspnetcore-3.0"
+
+Java 클라이언트에서 전송 선택 되어 있는 경우는 `withTransport` 메서드는 `HttpHubConnectionBuilder`합니다. Java 클라이언트 Websocket 전송을 사용 하 여 기본값으로 사용 됩니다.
+
+```java
+HubConnection hubConnection = HubConnectionBuilder.create("https://example.com/myhub")
+    .withTransport(TransportEnum.WEBSOCKETS)
+    .build();
+```
+> [!NOTE]
+> SignalR Java 클라이언트는 아직 전송 대체 (fallback)를 지원 하지 않습니다.
+
+::: moniker-end
 
 ### <a name="configure-bearer-authentication"></a>전달자 인증 구성
 
@@ -233,36 +259,79 @@ let connection = new signalR.HubConnectionBuilder()
     .build();
 ```
 
+
+SignalR Java 클라이언트에서 전달자 토큰에 대 한 액세스 토큰 팩터리를 제공 하 여 인증에 사용 하도록 구성할 수 있습니다 합니다 [HttpHubConnectionBuilder](/java/api/com.microsoft.signalr._http_hub_connection_builder?view=aspnet-signalr-java)합니다. 사용 하 여 [withAccessTokenFactory](/java/api/com.microsoft.signalr._http_hub_connection_builder.withaccesstokenprovider?view=aspnet-signalr-java#com_microsoft_signalr__http_hub_connection_builder_withAccessTokenProvider_Single_String__) 제공 하는 [RxJava](https://github.com/ReactiveX/RxJava) [Single<String>](http://reactivex.io/documentation/single.html)합니다. 호출 하 여 [Single.defer](http://reactivex.io/RxJava/javadoc/io/reactivex/Single.html#defer-java.util.concurrent.Callable-)를 클라이언트에 대 한 액세스 토큰을 생성 하는 논리를 작성할 수 있습니다.
+
+```java
+HubConnection hubConnection = HubConnectionBuilder.create("https://example.com/myhub")
+    .withAccessTokenProvider(Single.defer(() -> {
+        // Your logic here.
+        return Single.just("An Access Token");
+    })).build();
+```
+
 ### <a name="configure-timeout-and-keep-alive-options"></a>시간 제한 및 연결 유지 옵션 구성
 
 시간 제한 및 연결 유지 동작을 구성하기 위한 추가 옵션은 `HubConnection` 개체 자체에서 사용할 수 있습니다.
 
-| .NET 옵션 | JavaScript 옵션 | 기본값 | 설명 |
-| ----------- | ----------------- | ------------- | ----------- |
-| `ServerTimeout` | `serverTimeoutInMilliseconds` | 30초(30000밀리초) | 서버 활동 시간 제한입니다. 서버가 이 시간 제한 내에 메시지를 전송하지 않으면 클라이언트는 서버 연결이 끊어졌다고 간주하고 `Closed` 이벤트(JavaScript에서는 `onclose` 이벤트)를  트리거합니다. 이 값이 충분히 커야만 ping 메시지가 서버에서 전송**되고** 시간 제한 내에 클라이언트에 의해 수신될 수 있습니다. 권장되는 값은 ping이 도착할 시간을 확보하기 위해 최소한 서버의 `KeepAliveInterval` 값의 두 배가 되는 숫자여야 합니다. |
-| `HandshakeTimeout` | 구성할 수 없음 | 15초 | 초기 서버 핸드셰이크에 대한 시간 제한입니다. 서버가 이 시간 제한 내에 핸드셰이크 응답을 전송하지 않으면 클라이언트는 핸드셰이크를 취소하고 `Closed` 이벤트(JavaScript에서는 `onclose` 이벤트)를 트리거합니다. 이 설정은 심각한 네트워크 지연으로 인해 핸드셰이크 시간 제한 오류가 발생하는 경우에만 수정해야 하는 고급 설정입니다. 핸드셰이크 프로세스에 대한 자세한 내용은 [SignalR 허브 프로토콜 사양](https://github.com/aspnet/SignalR/blob/master/specs/HubProtocol.md)을 참고하시기 바랍니다. |
+# <a name="nettabdotnet"></a>[.NET](#tab/dotnet)
 
-.NET 클라이언트에서 시간 제한 값은 `TimeSpan` 값으로 지정됩니다. JavaScript 클라이언트에서 시간 제한 값은 기간을 나타내는 밀리초 단위의 숫자로 지정됩니다.
+| 옵션 | 기본값 | 설명 |
+| ------ | ------------- | ----------- |
+| `ServerTimeout` | 30초(30000밀리초) | 서버 활동 시간 제한입니다. 서버가 이 시간 제한 내에 메시지를 전송하지 않으면 클라이언트는 서버 연결이 끊어졌다고 간주하고 `Closed` 이벤트(JavaScript에서는 `onclose` 이벤트)를  트리거합니다. 이 값이 충분히 커야만 ping 메시지가 서버에서 전송**되고** 시간 제한 내에 클라이언트에 의해 수신될 수 있습니다. 권장되는 값은 ping이 도착할 시간을 확보하기 위해 최소한 서버의 `KeepAliveInterval` 값의 두 배가 되는 숫자여야 합니다. |
+| `HandshakeTimeout` | 15초 | 초기 서버 핸드셰이크에 대한 시간 제한입니다. 서버가 이 시간 제한 내에 핸드셰이크 응답을 전송하지 않으면 클라이언트는 핸드셰이크를 취소하고 `Closed` 이벤트(JavaScript에서는 `onclose` 이벤트)를 트리거합니다. 이 설정은 심각한 네트워크 지연으로 인해 핸드셰이크 시간 제한 오류가 발생하는 경우에만 수정해야 하는 고급 설정입니다. 핸드셰이크 프로세스에 대한 자세한 내용은 [SignalR 허브 프로토콜 사양](https://github.com/aspnet/SignalR/blob/master/specs/HubProtocol.md)을 참고하시기 바랍니다. |
+
+.NET 클라이언트에서 시간 제한 값은 `TimeSpan` 값으로 지정됩니다.
+
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+
+| 옵션 | 기본값 | 설명 |
+| ------ | ------------- | ----------- |
+| `serverTimeoutInMilliseconds` | 30초(30000밀리초) | 서버 활동 시간 제한입니다. 클라이언트 연결이 끊어진 서버 및 트리거 고려 서버는이 간격에 메시지를 전송 되지 않은, 경우를 `onclose` 이벤트입니다. 이 값이 충분히 커야만 ping 메시지가 서버에서 전송**되고** 시간 제한 내에 클라이언트에 의해 수신될 수 있습니다. 권장되는 값은 ping이 도착할 시간을 확보하기 위해 최소한 서버의 `KeepAliveInterval` 값의 두 배가 되는 숫자여야 합니다. |
+
+# <a name="javatabjava"></a>[Java](#tab/java)
+
+| 옵션 | 기본값 | 설명 |
+| ----------- | ------------- | ----------- |
+|`getServerTimeout` `setServerTimeout` | 30초(30000밀리초) | 서버 활동 시간 제한입니다. 클라이언트 연결이 끊어진 서버 및 트리거 고려 서버는이 간격에 메시지를 전송 되지 않은, 경우를 `onClose` 이벤트입니다. 이 값이 충분히 커야만 ping 메시지가 서버에서 전송**되고** 시간 제한 내에 클라이언트에 의해 수신될 수 있습니다. 권장되는 값은 ping이 도착할 시간을 확보하기 위해 최소한 서버의 `KeepAliveInterval` 값의 두 배가 되는 숫자여야 합니다. |
+| `withHandshakeResponseTimeout` | 15초 | 초기 서버 핸드셰이크에 대한 시간 제한입니다. 서버는이 간격의 핸드셰이크 응답을 보내지 않습니다, 클라이언트 취소 핸드셰이크 및 트리거는 `onClose` 이벤트입니다. 이 설정은 심각한 네트워크 지연으로 인해 핸드셰이크 시간 제한 오류가 발생하는 경우에만 수정해야 하는 고급 설정입니다. 핸드셰이크 프로세스에 대한 자세한 내용은 [SignalR 허브 프로토콜 사양](https://github.com/aspnet/SignalR/blob/master/specs/HubProtocol.md)을 참고하시기 바랍니다. |
+
+---
 
 ### <a name="configure-additional-options"></a>추가 옵션 구성
 
-추가 옵션은 `HubConnectionBuilder`의 `WithUrl` 메서드(JavaScript에서는 `withUrl`)에서 구성할 수 있습니다.
+추가 옵션에서 구성할 수 있습니다는 `WithUrl` (`withUrl` javascript에서) 메서드 `HubConnectionBuilder` 또는 다양 한 구성 Api에는 `HttpHubConnectionBuilder` Java 클라이언트에서:
 
-| .NET 옵션 | JavaScript 옵션 | 기본값 | 설명 |
-| ----------- | ----------------- | ------------- | ----------- |
-| `AccessTokenProvider` | `accessTokenFactory` | `null` | HTTP 요청에서 전달자 인증 토큰으로 제공된 문자열을 반환하는 함수입니다. |
-| `SkipNegotiation` | `skipNegotiation` | `false` | 이 값을 `true`로 설정하면 협상 단계를 건너뜁니다. **WebSockets 전송이 유일하게 활성화된 전송인 경우에만 지원됩니다.** Azure SignalR Service를 사용하는 경우에는 이 설정을 사용할 수 없습니다. |
-| `ClientCertificates` | 구성할 수 없음 * | 빈 값 | 요청을 인증하기 위해 전송할 TLS 인증서의 컬렉션입니다. |
-| `Cookies` | 구성할 수 없음 * | 빈 값 | 모든 HTTP 요청과 함께 전송할 HTTP 쿠키의 컬렉션입니다. |
-| `Credentials` | 구성할 수 없음 * | 빈 값 | 모든 HTTP 요청과 함께 전송할 자격 증명입니다. |
-| `CloseTimeout` | 구성할 수 없음 * | 5초 | Websocket에만 해당됩니다. 클라이언트가 서버를 닫은 후 닫기 요청을 확인하기 위해 대기하는 최대 시간입니다. 서버가 이 시간 내에 종료를 승인하지 않으면 클라이언트가 연결을 끊습니다. |
-| `Headers` | 구성할 수 없음 * | 빈 값 | 모든 HTTP 요청과 함께 전송할 추가 HTTP 헤더의 사전입니다. |
-| `HttpMessageHandlerFactory` | 구성할 수 없음 * | `null` | HTTP 요청을 전송하기 위해 사용되는 `HttpMessageHandler`를 구성하거나 대체하는 데 사용할 수 있는 대리자입니다. WebSocket 연결에는 사용되지 않습니다. 이 대리자는 null이 아닌 값을 반환해야 하며 매개 변수로 기본값을 받습니다. 이 기본값의 설정을 수정하여 반환하거나 새로운 `HttpMessageHandler` 인스턴스를 반환합니다. **그렇지 않은 경우 처리기를 교체 해야 제공된 된 처리기에서 유지 하려는 설정을 복사, 구성된 옵션 (예: 쿠키 및 헤더) 새 처리기에 적용 되지 않습니다.** |
-| `Proxy` | 구성할 수 없음 * | `null` | HTTP 요청을 전송할 때 사용할 HTTP 프록시입니다. |
-| `UseDefaultCredentials` | 구성할 수 없음 * | `false` | HTTP 및 WebSockets 요청에 대한 기본 자격 증명을 전송하려면 이 부울 값을 설정합니다. 그러면 Windows 인증을 사용할 수 있습니다. |
-| `WebSocketConfiguration` | 구성할 수 없음 * | `null` | 추가적인 WebSocket 옵션을 구성할 수 있는 대리자입니다. 옵션을 구성에 사용할 수 있는 [ClientWebSocketOptions](/dotnet/api/system.net.websockets.clientwebsocketoptions)의 인스턴스를 전달받습니다. |
+# <a name="nettabdotnet"></a>[.NET](#tab/dotnet)
 
-별표(*) 표시된 옵션은 브라우저 API의 제한으로 인해 JavaScript 클라이언트에서는 구성할 수 없습니다.
+| .NET 옵션 |  기본값 | 설명 |
+| ----------- | -------------- | ----------- |
+| `AccessTokenProvider` | `null` | HTTP 요청에서 전달자 인증 토큰으로 제공된 문자열을 반환하는 함수입니다. |
+| `SkipNegotiation` | `false` | 이 값을 `true`로 설정하면 협상 단계를 건너뜁니다. **WebSockets 전송이 유일하게 활성화된 전송인 경우에만 지원됩니다.** Azure SignalR Service를 사용하는 경우에는 이 설정을 사용할 수 없습니다. |
+| `ClientCertificates` | Empty | 요청을 인증하기 위해 전송할 TLS 인증서의 컬렉션입니다. |
+| `Cookies` | Empty | 모든 HTTP 요청과 함께 전송할 HTTP 쿠키의 컬렉션입니다. |
+| `Credentials` | Empty | 모든 HTTP 요청과 함께 전송할 자격 증명입니다. |
+| `CloseTimeout` | 5초 | Websocket에만 해당됩니다. 클라이언트가 서버를 닫은 후 닫기 요청을 확인하기 위해 대기하는 최대 시간입니다. 서버가 이 시간 내에 종료를 승인하지 않으면 클라이언트가 연결을 끊습니다. |
+| `Headers` | Empty | 추가 HTTP 헤더의 모든 HTTP 요청과 함께 보낼 맵. |
+| `HttpMessageHandlerFactory` | `null` | HTTP 요청을 전송하기 위해 사용되는 `HttpMessageHandler`를 구성하거나 대체하는 데 사용할 수 있는 대리자입니다. WebSocket 연결에는 사용되지 않습니다. 이 대리자는 null이 아닌 값을 반환해야 하며 매개 변수로 기본값을 받습니다. 이 기본값의 설정을 수정하여 반환하거나 새로운 `HttpMessageHandler` 인스턴스를 반환합니다. **그렇지 않은 경우 처리기를 교체 해야 제공된 된 처리기에서 유지 하려는 설정을 복사, 구성된 옵션 (예: 쿠키 및 헤더) 새 처리기에 적용 되지 않습니다.** |
+| `Proxy` | `null` | HTTP 요청을 전송할 때 사용할 HTTP 프록시입니다. |
+| `UseDefaultCredentials` | `false` | HTTP 및 WebSockets 요청에 대한 기본 자격 증명을 전송하려면 이 부울 값을 설정합니다. 그러면 Windows 인증을 사용할 수 있습니다. |
+| `WebSocketConfiguration` | `null` | 추가적인 WebSocket 옵션을 구성할 수 있는 대리자입니다. 옵션을 구성에 사용할 수 있는 [ClientWebSocketOptions](/dotnet/api/system.net.websockets.clientwebsocketoptions)의 인스턴스를 전달받습니다. |
+
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+| JavaScript 옵션 | 기본값 | 설명 |
+| ----------------- | ------------- | ----------- |
+| `accessTokenFactory` | `null` | HTTP 요청에서 전달자 인증 토큰으로 제공된 문자열을 반환하는 함수입니다. |
+| `skipNegotiation` | `false` | 이 값을 `true`로 설정하면 협상 단계를 건너뜁니다. **WebSockets 전송이 유일하게 활성화된 전송인 경우에만 지원됩니다.** Azure SignalR Service를 사용하는 경우에는 이 설정을 사용할 수 없습니다. |
+
+# <a name="javatabjava"></a>[Java](#tab/java)
+| Java 옵션 | 기본값 | 설명 |
+| ----------- | ------------- | ----------- |
+| `withAccessTokenProvider` | `null` | HTTP 요청에서 전달자 인증 토큰으로 제공된 문자열을 반환하는 함수입니다. |
+| `shouldSkipNegotiate` | `false` | 이 값을 `true`로 설정하면 협상 단계를 건너뜁니다. **WebSockets 전송이 유일하게 활성화된 전송인 경우에만 지원됩니다.** Azure SignalR Service를 사용하는 경우에는 이 설정을 사용할 수 없습니다. |
+| `withHeader` `withHeaders` | Empty | 추가 HTTP 헤더의 모든 HTTP 요청과 함께 보낼 맵. |
+
+---
 
 .NET 클라이언트에서 이 옵션들은 `WithUrl`에 제공되는 옵션 대리자를 이용해서 수정할 수 있습니다.
 
@@ -285,6 +354,17 @@ let connection = new signalR.HubConnectionBuilder()
         transport: signalR.HttpTransportType.WebSockets
     })
     .build();
+```
+
+Java 클라이언트에서 이러한 옵션에서 구성할 수 있습니다 메서드를 사용 하 여는 `HttpHubConnectionBuilder` 에서 반환 되는 `HubConnectionBuilder.create("HUB URL")`
+
+
+```java
+HubConnection hubConnection = HubConnectionBuilder.create("https://example.com/myhub")
+        .withHeader("Foo", "Bar")
+        .shouldSkipNegotiate(true)
+        .withHandshakeResponseTimeout(30*1000)
+        .build();
 ```
 
 ## <a name="additional-resources"></a>추가 자료
