@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 02/13/2019
 uid: fundamentals/routing
-ms.openlocfilehash: 3dbb2d358ec9e3dcdd96c3771576911d906d796f
-ms.sourcegitcommit: 6ba5fb1fd0b7f9a6a79085b0ef56206e462094b7
+ms.openlocfilehash: 622f28f3b4348820c8781e0ba14ae5137136e797
+ms.sourcegitcommit: 036d4b03fd86ca5bb378198e29ecf2704257f7b2
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56248435"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57346569"
 ---
 # <a name="routing-in-aspnet-core"></a>ASP.NET Core에서 라우팅
 
@@ -583,7 +583,7 @@ catch-all 매개 변수는 경로 구분 기호(`/`) 문자를 포함하여 URL�
 | `{Page=Home}`                            | `/Contact`              | 일치하고, `Page`를 `Contact`로 설정합니다.                                      |
 | `{controller}/{action}/{id?}`            | `/Products/List`        | `Products` 컨트롤러 및 `List` 작업에 매핑합니다.                       |
 | `{controller}/{action}/{id?}`            | `/Products/Details/123` | `Products` 컨트롤러 및 `Details` 작업에 매핑합니다(`id`가 123으로 설정됨). |
-| `{controller=Home}/{action=Index}/{id?`} | `/`                     | `Home` 컨트롤러 및 `Index` 메서드에 매핑합니다(`id`가 무시됨).        |
+| `{controller=Home}/{action=Index}/{id?}` | `/`                     | `Home` 컨트롤러 및 `Index` 메서드에 매핑합니다(`id`가 무시됨).        |
 
 템플릿 사용은 일반적으로 라우팅에 대한 가장 간단한 방식입니다. 제약 조건 및 기본값을 경로 템플릿 외부에서 지정할 수도 있습니다.
 
@@ -609,7 +609,7 @@ catch-all 매개 변수는 경로 구분 기호(`/`) 문자를 포함하여 URL�
 
 다음 표에서는 경로 제약 조건 예제 및 예상되는 해당 동작을 보여 줍니다.
 
-| 제약 조건 | 예 | 일치하는 예제 | 참고 사항 |
+| 제약 조건 | 예제 | 일치하는 예제 | 참고 사항 |
 | ---------- | ------- | --------------- | ----- |
 | `int` | `{id:int}` | `123456789`, `-123456789` | 임의의 정수와 일치 |
 | `bool` | `{active:bool}` | `true`, `FALSE` | `true` 또는 `false` 일치(대/소문자 구분하지 않음) |
@@ -655,10 +655,10 @@ ASP.NET Core 프레임워크는 정규식 생성자에 `RegexOptions.IgnoreCase 
 
 | 식   | 문자열    | 일치 | 주석               |
 | ------------ | --------- | :---: |  -------------------- |
-| `[a-z]{2}`   | hello     | 적용   | 부분 문자열 일치     |
-| `[a-z]{2}`   | 123abc456 | 적용   | 부분 문자열 일치     |
-| `[a-z]{2}`   | mz        | 적용   | 식 일치    |
-| `[a-z]{2}`   | MZ        | 적용   | 대/소문자 구분하지 않음    |
+| `[a-z]{2}`   | hello     | 예   | 부분 문자열 일치     |
+| `[a-z]{2}`   | 123abc456 | 예   | 부분 문자열 일치     |
+| `[a-z]{2}`   | mz        | 예   | 식 일치    |
+| `[a-z]{2}`   | MZ        | 예   | 대/소문자 구분하지 않음    |
 | `^[a-z]{2}$` | hello     | 아니요    | 위의 `^` 및 `$` 참조 |
 | `^[a-z]{2}$` | 123abc456 | 아니요    | 위의 `^` 및 `$` 참조 |
 

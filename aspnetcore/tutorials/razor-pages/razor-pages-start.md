@@ -5,12 +5,12 @@ description: 이 자습서 시리즈는 ASP.NET Core에서 Razor Pages를 사용
 ms.author: riande
 ms.date: 12/5/2018
 uid: tutorials/razor-pages/razor-pages-start
-ms.openlocfilehash: 81a2a76fc1cecc78b69226fe714d7c9272b04bf7
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 29d9369cfa6a4c76f015b5a819a27dfa280d4075
+ms.sourcegitcommit: 036d4b03fd86ca5bb378198e29ecf2704257f7b2
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "56899200"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57346413"
 ---
 # <a name="tutorial-get-started-with-razor-pages-in-aspnet-core"></a>자습서: ASP.NET Core에서 Razor 페이지 시작
 
@@ -163,6 +163,10 @@ HTML 파일, JavaScript 파일 및 CSS 파일과 같은 정적 파일을 포함�
 ### <a name="startupcs"></a>Startup.cs
 
 쿠키에 대한 동의 필요 여부 등 앱 동작을 구성하는 코드를 포함합니다. 자세한 내용은 <xref:fundamentals/startup>을 참조하세요.
+
+## <a name="additional-resources"></a>추가 자료
+
+* [이 자습서의 YouTube 버전](https://www.youtube.com/watch?v=F0SP7Ry4flQ&feature=youtu.be)
 
 ## <a name="next-steps"></a>다음 단계
 
