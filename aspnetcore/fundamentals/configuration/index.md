@@ -4,7 +4,7 @@ author: guardrex
 description: 구성 API를 사용하여 ASP.NET Core 앱을 구성하는 방법을 알아봅니다.
 ms.author: riande
 ms.custom: mvc
-ms.date: 01/25/2019
+ms.date: 03/04/2019
 uid: fundamentals/configuration/index
 ---
 # <a name="configuration-in-aspnet-core"></a>ASP.NET Core의 구성
@@ -128,7 +128,26 @@ ASP.NET Core의 앱 구성은 ‘구성 공급자’가 설정한 키-값 쌍을
 
 파일 구성 공급자는 앱 시작 후 기본 설정 파일이 변경되면 구성을 다시 로드할 수 있습니다. 파일 구성 공급자에 대해서는 이 항목의 뒷부분에서 설명합니다.
 
-<xref:Microsoft.Extensions.Configuration.IConfiguration>은 앱의 [DI(종속성 주입)](xref:fundamentals/dependency-injection) 컨테이너에서 사용할 수 있습니다. 구성 공급자는 호스트에서 설정될 때 DI가 제공되지 않으므로 DI를 활용할 수 없습니다.
+<xref:Microsoft.Extensions.Configuration.IConfiguration>은 앱의 [DI(종속성 주입)](xref:fundamentals/dependency-injection) 컨테이너에서 사용할 수 있습니다. <xref:Microsoft.Extensions.Configuration.IConfiguration>을 Razor Pages <xref:Microsoft.AspNetCore.Mvc.RazorPages.PageModel>에 삽입하여 클래스에 대한 구성을 가져올 수 있습니다.
+
+```csharp
+// using Microsoft.Extensions.Configuration;
+
+public class IndexModel : PageModel
+{
+    private readonly IConfiguration _config;
+
+    public IndexModel(IConfiguration config)
+    {
+        _config = config;
+    }
+        
+    // The _config local variable is used to obtain configuration 
+    // throughout the class.
+}
+```
+
+구성 공급자는 호스트에서 설정될 때 DI가 제공되지 않으므로 DI를 활용할 수 없습니다.
 
 구성키는 다음 규칙을 따릅니다.
 
@@ -256,6 +275,8 @@ public void ConfigureServices(IServiceCollection services)
 [!code-csharp[](index/samples/2.x/ConfigurationSample/Program.cs?name=snippet_Program&highlight=19)]
 
 ::: moniker-end
+
+`Startup.ConfigureServices`를 포함하여 <xref:Microsoft.Extensions.Hosting.HostBuilder.ConfigureAppConfiguration*>에서 앱에 제공되는 구성은 앱을 시작하는 동안 사용할 수 있습니다. 자세한 내용은 [시작하는 동안 구성에 액세스](#access-configuration-during-startup) 섹션을 참조하세요.
 
 ## <a name="command-line-configuration-provider"></a>명령줄 구성 공급자
 
@@ -386,7 +407,7 @@ var host = new WebHostBuilder()
 
 값은 등호(`=`) 다음에 와야 합니다. 또는 값이 공백 다음에 오는 경우 키에 접두사(`--` 또는 `/`)가 있어야 합니다. 등호를 사용하는 경우 값이 null일 수 있습니다(예: `CommandLineKey=`).
 
-| 키 접두사               | 예                                                |
+| 키 접두사               | 예제                                                |
 | ------------------------ | ------------------------------------------------------ |
 | 접두사 없음                | `CommandLineKey1=value1`                               |
 | 대시 2개(`--`)        | `--CommandLineKey2=value2`, `--CommandLineKey2 value2` |
@@ -513,7 +534,7 @@ public static void Main(string[] args)
 
 생성된 스위치 매핑 사전은 다음 표의 데이터를 포함합니다.
 
-| Key       | 값             |
+| 키       | 값             |
 | --------- | ----------------- |
 | `-CLKey1` | `CommandLineKey1` |
 | `-CLKey2` | `CommandLineKey2` |
@@ -526,7 +547,7 @@ dotnet run -CLKey1=value1 -CLKey2=value2
 
 앞의 명령을 실행한 후 구성에는 다음 표에 표시된 값이 포함됩니다.
 
-| Key               | 값    |
+| 키               | 값    |
 | ----------------- | -------- |
 | `CommandLineKey1` | `value1` |
 | `CommandLineKey2` | `value2` |
@@ -982,11 +1003,11 @@ var host = new WebHostBuilder()
 1. 샘플 앱을 실행합니다. 브라우저를 열어 `http://localhost:5000`의 앱으로 이동합니다.
 1. 표에 표시된 대로 환경에 따라 다른 구성에 대한 키-값 쌍이 출력에 포함되어 있는지 확인합니다. 로깅 구성 키는 콜론(`:`)을 계층 구분 기호로 사용합니다.
 
-| Key                        | 개발 값 | 프로덕션 값 |
+| 키                        | 개발 값 | 프로덕션 값 |
 | -------------------------- | :---------------: | :--------------: |
 | Logging:LogLevel:System    | 정보       | 정보      |
 | Logging:LogLevel:Microsoft | 정보       | 정보      |
-| Logging:LogLevel:Default   | 디버그             | Error            |
+| Logging:LogLevel:Default   | 디버그             | 오류            |
 | AllowedHosts               | *                 | *                |
 
 ### <a name="xml-configuration-provider"></a>XML 구성 공급자
@@ -1305,10 +1326,29 @@ var host = new WebHostBuilder()
 
 [ConfigurationBinder.GetValue&lt;T&gt;](xref:Microsoft.Extensions.Configuration.ConfigurationBinder.GetValue*)는 지정된 키를 사용하여 구성에서 값을 추출하고 이 값을 지정된 형식으로 변환합니다. 오버로드를 사용하면 키를 찾을 수 없는 경우 기본값을 제공할 수 있습니다.
 
-다음 예제에서는 `NumberKey` 키를 사용하여 구성에서 문자열 값을 추출하고, 값을 `int`로 입력하고, 값을 `intValue` 변수에 저장합니다. 구성 키에서 `NumberKey`을 찾을 수 없으면 `intValue`는 기본값 `99`를 받습니다.
+다음 예제가 하는 일:
+
+* `NumberKey` 키를 사용하여 구성에서 문자열 값을 추출합니다. 구성 키에서 `NumberKey`를 찾을 수 없으면 `99`의 기본값이 사용됩니다.
+* 값을 `int` 형식으로 입력합니다.
+* 페이지에 사용할 값을 `NumberConfig` 속성에 저장합니다.
 
 ```csharp
-var intValue = config.GetValue<int>("NumberKey", 99);
+// using Microsoft.Extensions.Configuration;
+
+public class IndexModel : PageModel
+{
+    public IndexModel(IConfiguration config)
+    {
+        _config = config;
+    }
+    
+    public int NumberConfig { get; private set; }
+        
+    public void OnGet()
+    {
+        NumberConfig = _config.GetValue<int>("NumberKey", 99);
+    }
+}
 ```
 
 ## <a name="getsection-getchildren-and-exists"></a>GetSection, GetChildren 및 Exists
@@ -1434,7 +1474,7 @@ var sectionExists = _config.GetSection("section2:subsection2").Exists();
 
 다음 구성 키-값 쌍이 생성됩니다.
 
-| Key                   | 값                                             |
+| 키                   | 값                                             |
 | --------------------- | ------------------------------------------------- |
 | starship:name         | USS Enterprise                                    |
 | starship:registry     | NCC-1701                                          |
@@ -1546,7 +1586,7 @@ viewModel.TvShow = tvShow;
 
 다음 표에 표시된 구성 키 및 값을 사용하세요.
 
-| Key             | 값  |
+| 키             | 값  |
 | :-------------: | :----: |
 | array:entries:0 | value0 |
 | array:entries:1 | value1 |
@@ -1655,7 +1695,7 @@ config.AddJsonFile("missing_value.json", optional: false, reloadOnChange: false)
 
 표에 표시된 키-값 쌍이 구성으로 로드됩니다.
 
-| Key             | 값  |
+| 키             | 값  |
 | :-------------: | :----: |
 | array:entries:3 | value3 |
 
@@ -1688,7 +1728,7 @@ JSON 파일에 배열이 포함된 경우 0부터 시작하는 섹션 인덱스�
 
 JSON 구성 공급자는 구성 데이터를 다음 키-값 쌍으로 읽습니다.
 
-| Key                     | 값  |
+| 키                     | 값  |
 | ----------------------- | :----: |
 | json_array:key          | valueA |
 | json_array:subsection:0 | valueB |

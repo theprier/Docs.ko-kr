@@ -4,14 +4,8 @@ author: tdykstra
 description: ASP.NET Core의 로깅 프레임워크에 대해 알아봅니다. 기본 제공 로깅 공급자를 살펴보고 인기 있는 타사 공급자에 대해 알아봅니다.
 ms.author: tdykstra
 ms.custom: mvc
-ms.date: 01/14/2019
+ms.date: 03/02/2019
 uid: fundamentals/logging/index
-ms.openlocfilehash: 81620f0c844f3dbb1a2da0e9f1c319f87d9790b6
-ms.sourcegitcommit: ed76cc752966c604a795fbc56d5a71d16ded0b58
-ms.translationtype: HT
-ms.contentlocale: ko-KR
-ms.lasthandoff: 02/02/2019
-ms.locfileid: "55667702"
 ---
 # <a name="logging-in-aspnet-core"></a>ASP.NET Core에 로그인
 
@@ -31,7 +25,7 @@ ASP.NET Core는 다양한 기본 제공 및 타사 로깅 공급자와 함께 �
 
 [!code-csharp[](index/samples/2.x/TodoApiSample/Program.cs?name=snippet_ExpandDefault&highlight=17-19)]
 
-기본 프로젝트 템플릿은 <xref:Microsoft.AspNetCore.WebHost.CreateDefaultBuilder%2A> 확장 메서드를 호출하여 다음 로깅 공급자를 추가합니다.
+기본 프로젝트 템플릿은 <xref:Microsoft.AspNetCore.WebHost.CreateDefaultBuilder%2A>를 호출하여 다음과 같은 로깅 공급자를 추가합니다.
 
 * 콘솔
 * 디버그
@@ -98,7 +92,7 @@ DI에서 <xref:Microsoft.Extensions.Logging.ILogger`1> 개체를 가져옵니다
 
 `Startup` 클래스에 로그를 작성하려면 생성자 시그니처에 `ILogger` 매개 변수를 포함시킵니다.
 
-[!code-csharp[](index/samples/2.x/TodoApiSample/Startup.cs?name=snippet_Startup&highlight=3,5,8,19,26)]
+[!code-csharp[](index/samples/2.x/TodoApiSample/Startup.cs?name=snippet_Startup&highlight=3,5,8,20,27)]
 
 ### <a name="create-logs-in-program"></a>프로그램에 로그 만들기
 
@@ -469,7 +463,7 @@ System.Exception: Item not found exception.
 | 1      | 디버그         | 모든 범주                          | 정보       |
 | 2      | 콘솔       | Microsoft.AspNetCore.Mvc.Razor.Internal | 경고           |
 | 3      | 콘솔       | Microsoft.AspNetCore.Mvc.Razor.Razor    | 디버그             |
-| 4      | 콘솔       | Microsoft.AspNetCore.Mvc.Razor          | Error             |
+| 4      | 콘솔       | Microsoft.AspNetCore.Mvc.Razor          | 오류             |
 | 5      | 콘솔       | 모든 범주                          | 정보       |
 | 6      | 모든 공급자 | 모든 범주                          | 디버그             |
 | 7      | 모든 공급자 | 시스템                                  | 디버그             |
@@ -806,7 +800,7 @@ Azure에서 로깅에 대한 자세한 내용은 다음 섹션을 참조하세�
 
 * 명시적으로 <xref:Microsoft.Extensions.Logging.AzureAppServicesLoggerFactoryExtensions.AddAzureWebAppDiagnostics*>를 호출하지 마세요. Azure App Service에 앱을 배포하면 공급자가 자동으로 앱에 제공됩니다.
 
-.NET Framework를 대상으로 지정하거나 `Microsoft.AspNetCore.App` 메타패키지를 참조하는 경우 패키지 공급자를 프로젝트에 추가합니다. <xref:Microsoft.Extensions.Logging.ILoggerFactory> 인스턴스에서 `AddAzureWebAppDiagnostics` 호출:
+.NET Framework를 대상으로 지정하거나 `Microsoft.AspNetCore.App` 메타패키지를 참조하는 경우 패키지 공급자를 프로젝트에 추가합니다. `AddAzureWebAppDiagnostics` 호출:
 
 ```csharp
 logging.AddAzureWebAppDiagnostics();
@@ -822,19 +816,27 @@ loggerFactory.AddAzureWebAppDiagnostics();
 
 ::: moniker-end
 
-::: moniker range=">= aspnetcore-1.1"
+::: moniker range="<= aspnetcore-2.1"
 
 <xref:Microsoft.Extensions.Logging.AzureAppServicesLoggerFactoryExtensions.AddAzureWebAppDiagnostics*> 오버로드로 <xref:Microsoft.Extensions.Logging.AzureAppServices.AzureAppServicesDiagnosticsSettings>를 전달할 수 있습니다. 설정 개체는 로깅 출력 템플릿, BLOB 이름, 파일 크기 제한과 같은 기본 설정을 재정의할 수 있습니다. (*출력 템플릿*은 `ILogger` 메서드를 호출과 함께 제공되는 것 이외에 모든 로그에 적용되는 메시지 템플릿입니다.)
+
+::: moniker-end
+
+::: moniker range=">= aspnetcore-2.2"
+
+공급자 설정을 구성하려면 다음 예제와 같이 <xref:Microsoft.Extensions.Logging.AzureAppServices.AzureFileLoggerOptions> 및 <xref:Microsoft.Extensions.Logging.AzureAppServices.AzureBlobLoggerOptions>를 사용합니다.
+
+[!code-csharp[](index/samples/2.x/TodoApiSample/Program.cs?name=snippet_AzLogOptions&highlight=19-27)]
+
+::: moniker-end
 
 App Service 앱에 배포할 때 애플리케이션은 Azure Portal **App Service** 페이지의 [진단 로그](/azure/app-service/web-sites-enable-diagnostic-log/#enablediag) 섹션에 있는 설정을 따릅니다. 이러한 설정을 업데이트하는 경우 앱을 다시 시작하거나 재배포하지 않아도 변경 내용은 즉시 적용됩니다.
 
 ![Azure 로깅 설정](index/_static/azure-logging-settings.png)
 
-로그 파일의 기본 위치는 *D:\\home\\LogFiles\\Application* 폴더이며, 기본 파일 이름은 *diagnostics-yyyymmdd.txt*입니다. 기본 파일 크기 제한은 10MB이고, 보존되는 기본 최대 파일 수는 2입니다. 기본 BLOB 이름은 *{app-name}{timestamp}/yyyy/mm/dd/hh/{guid}-applicationLog.txt*입니다. 기본 동작에 대한 자세한 내용은 <xref:Microsoft.Extensions.Logging.AzureAppServices.AzureAppServicesDiagnosticsSettings>를 참조하세요.
+로그 파일의 기본 위치는 *D:\\home\\LogFiles\\Application* 폴더이며, 기본 파일 이름은 *diagnostics-yyyymmdd.txt*입니다. 기본 파일 크기 제한은 10MB이고, 보존되는 기본 최대 파일 수는 2입니다. 기본 BLOB 이름은 *{app-name}{timestamp}/yyyy/mm/dd/hh/{guid}-applicationLog.txt*입니다.
 
 공급자는 프로젝트가 Azure 환경에서 실행되는 경우에만 작동합니다. 프로젝트를 로컬로 실행하는 경우에는 아무 영향도 없습니다&mdash;Blob에 대한 로컬 파일 또는 로컬 개발 스토리지에 기록하지 않습니다.
-
-::: moniker-end
 
 ### <a name="azure-log-streaming"></a>Azure 로그 스트리밍
 

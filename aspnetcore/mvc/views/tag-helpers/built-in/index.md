@@ -6,18 +6,13 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/10/2018
 uid: mvc/views/tag-helpers/builtin-th/Index
-ms.openlocfilehash: 58840d6ecd09bd2ae7f96c046a0cb93c018f9645
-ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
-ms.translationtype: HT
-ms.contentlocale: ko-KR
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49325486"
 ---
+
 # <a name="aspnet-core-built-in-tag-helpers"></a>기본 제공 ASP.NET Core 태그 도우미
 
 작성자: [Peter Kellner](http://peterkellner.net)
 
-태그 도우미에 대한 개요는 <xref:mvc/views/tag-helpers/intro>을 참조하세요.
+태그 도우미에 대한 개요는 <xref:mvc/views/tag-helpers/intro>를 참조하세요.
 
 > [!NOTE]
 > 문서에서 설명하지 않는 기본 제공된 태그 도우미가 있습니다. 이러한 태그 도우미는 [Razor](xref:mvc/views/razor) 뷰 엔진에서 내부적으로 사용됩니다. 여기에는 웹 사이트의 루트 경로로 확장되는 `~`(물결표) 문자의 태그 도우미가 포함됩니다.
@@ -35,6 +30,8 @@ ms.locfileid: "49325486"
 [comment]: **[FormActionTagHelper](xref:mvc/views/tag-helpers/builtin-th/form-action-tag-helper)**
 
 **[폼 태그 도우미](xref:mvc/views/working-with-forms#the-form-tag-helper)**
+
+**[양식 작업 태그 도우미](xref:mvc/views/working-with-forms#the-form-action-tag-helper)**
 
 **[이미지 태그 도우미](xref:mvc/views/tag-helpers/builtin-th/image-tag-helper)**
 

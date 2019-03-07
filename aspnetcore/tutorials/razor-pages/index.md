@@ -1,16 +1,10 @@
 ---
 title: '자습서: ASP.NET Core를 사용하여 Razor 페이지 웹앱 만들기'
 author: rick-anderson
-description: Windows에서 Visual Studio, ASP.NET Core 및 EF Core를 사용하여 Razor 페이지 웹앱을 만듭니다.
+description: 'Windows에서 Visual Studio, ASP.NET Core 및 EF Core를 사용하여 Razor 페이지 웹앱을 만듭니다.'
 ms.author: riande
 ms.date: 09/08/2017
 uid: tutorials/razor-pages/index
-ms.openlocfilehash: c543e86b58b37a120df22331043944757beeca3a
-ms.sourcegitcommit: d75d8eb26c2cce19876c8d5b65ac8a4b21f625ef
-ms.translationtype: HT
-ms.contentlocale: ko-KR
-ms.lasthandoff: 02/19/2019
-ms.locfileid: "56410062"
 ---
 # <a name="tutorial-create-a-razor-pages-web-app-with-aspnet-core"></a>자습서: ASP.NET Core를 사용하여 Razor 페이지 웹앱 만들기
 
@@ -32,3 +26,7 @@ ms.locfileid: "56410062"
 끝에서 영화의 데이터베이스를 표시하고 관리할 수 있는 앱이 생성됩니다.
 
 ![샘플 앱의 샘플 페이지](index/_static/sample-page.png)
+
+## <a name="additional-resources"></a>추가 자료
+
+* [이 자습서의 YouTube 버전](https://www.youtube.com/watch?v=F0SP7Ry4flQ&feature=youtu.be)
