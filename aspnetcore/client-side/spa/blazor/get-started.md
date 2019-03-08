@@ -7,40 +7,40 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 02/12/2019
 uid: spa/blazor/get-started
-ms.openlocfilehash: 26336f73f6c8976ed5de819cebc3c5c50274ab03
-ms.sourcegitcommit: d75d8eb26c2cce19876c8d5b65ac8a4b21f625ef
+ms.openlocfilehash: 667c57d536450fa2f8ae1cabc7c5a76a16d38a55
+ms.sourcegitcommit: 191d21c1e37b56f0df0187e795d9a56388bbf4c7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/19/2019
-ms.locfileid: "56410010"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57665589"
 ---
-# <a name="get-started-with-blazor"></a><span data-ttu-id="6bc06-103">Blazor 시작</span><span class="sxs-lookup"><span data-stu-id="6bc06-103">Get started with Blazor</span></span>
+# <a name="get-started-with-blazor"></a><span data-ttu-id="aae3e-103">Blazor 시작</span><span class="sxs-lookup"><span data-stu-id="aae3e-103">Get started with Blazor</span></span>
 
-<span data-ttu-id="6bc06-104">작성자: [Daniel Roth](https://github.com/danroth27) 및 [Luke Latham](https://github.com/guardrex)</span><span class="sxs-lookup"><span data-stu-id="6bc06-104">By [Daniel Roth](https://github.com/danroth27) and [Luke Latham](https://github.com/guardrex)</span></span>
+<span data-ttu-id="aae3e-104">작성자: [Daniel Roth](https://github.com/danroth27) 및 [Luke Latham](https://github.com/guardrex)</span><span class="sxs-lookup"><span data-stu-id="aae3e-104">By [Daniel Roth](https://github.com/danroth27) and [Luke Latham](https://github.com/guardrex)</span></span>
 
 [!INCLUDE[](~/includes/razor-components-preview-notice.md)]
 
-# <a name="visual-studiotabvisual-studio"></a>[<span data-ttu-id="6bc06-105">Visual Studio</span><span class="sxs-lookup"><span data-stu-id="6bc06-105">Visual Studio</span></span>](#tab/visual-studio)
+# <a name="visual-studiotabvisual-studio"></a>[<span data-ttu-id="aae3e-105">Visual Studio</span><span class="sxs-lookup"><span data-stu-id="aae3e-105">Visual Studio</span></span>](#tab/visual-studio)
 
-<span data-ttu-id="6bc06-106">필수 구성 요소:</span><span class="sxs-lookup"><span data-stu-id="6bc06-106">Prerequisites:</span></span>
+<span data-ttu-id="aae3e-106">필수 구성 요소:</span><span class="sxs-lookup"><span data-stu-id="aae3e-106">Prerequisites:</span></span>
 
 [!INCLUDE[](~/includes/net-core-prereqs-vs-3.0.md)]
 
-<span data-ttu-id="6bc06-107">Visual Studio에서 첫 번째 Blazor 프로젝트를 만들려면:</span><span class="sxs-lookup"><span data-stu-id="6bc06-107">To create your first Blazor project in Visual Studio:</span></span>
+<span data-ttu-id="aae3e-107">Visual Studio에서 첫 번째 Blazor 프로젝트를 만들려면:</span><span class="sxs-lookup"><span data-stu-id="aae3e-107">To create your first Blazor project in Visual Studio:</span></span>
 
-1. <span data-ttu-id="6bc06-108">최신 설치 [Blazor 언어 서비스 확장](https://go.microsoft.com/fwlink/?linkid=870389) Visual Studio Marketplace에서.</span><span class="sxs-lookup"><span data-stu-id="6bc06-108">Install the latest [Blazor Language Services extension](https://go.microsoft.com/fwlink/?linkid=870389) from the Visual Studio Marketplace.</span></span> <span data-ttu-id="6bc06-109">이 단계에 게 Blazor 템플릿을 사용할 수 있는 Visual Studio입니다.</span><span class="sxs-lookup"><span data-stu-id="6bc06-109">This step makes Blazor templates available to Visual Studio.</span></span>
-1. <span data-ttu-id="6bc06-110">명령 셸에서 다음 명령을 실행 하 여.NET Core CLI와 함께 사용할 Blazor 템플릿을 확인:</span><span class="sxs-lookup"><span data-stu-id="6bc06-110">Make the Blazor templates available for use with the .NET Core CLI by running the following command in a command shell:</span></span>
+1. <span data-ttu-id="aae3e-108">최신 설치 [Blazor 언어 서비스 확장](https://go.microsoft.com/fwlink/?linkid=870389) Visual Studio Marketplace에서.</span><span class="sxs-lookup"><span data-stu-id="aae3e-108">Install the latest [Blazor Language Services extension](https://go.microsoft.com/fwlink/?linkid=870389) from the Visual Studio Marketplace.</span></span> <span data-ttu-id="aae3e-109">이 단계에 게 Blazor 템플릿을 사용할 수 있는 Visual Studio입니다.</span><span class="sxs-lookup"><span data-stu-id="aae3e-109">This step makes Blazor templates available to Visual Studio.</span></span>
+1. <span data-ttu-id="aae3e-110">명령 셸에서 다음 명령을 실행 하 여.NET Core CLI와 함께 사용할 Blazor 템플릿을 확인:</span><span class="sxs-lookup"><span data-stu-id="aae3e-110">Make the Blazor templates available for use with the .NET Core CLI by running the following command in a command shell:</span></span>
 
    ```console
-   dotnet new -i Microsoft.AspNetCore.Blazor.Templates::0.8.0-preview-19104-04
+   dotnet new -i Microsoft.AspNetCore.Blazor.Templates::0.9.0-preview3-19154-02
    ```
 
-1. <span data-ttu-id="6bc06-111">선택 **파일** > **새 프로젝트** > **Web** > **ASP.NET Core 웹 응용 프로그램**합니다.</span><span class="sxs-lookup"><span data-stu-id="6bc06-111">Select **File** > **New Project** > **Web** > **ASP.NET Core Web Application**.</span></span>
-1. <span data-ttu-id="6bc06-112">했는지 **.NET Core** 하 고 **ASP.NET Core 3.0** 맨 위에 있는 선택 됩니다.</span><span class="sxs-lookup"><span data-stu-id="6bc06-112">Make sure **.NET Core** and **ASP.NET Core 3.0** are selected at the top.</span></span>
-1. <span data-ttu-id="6bc06-113">**Blazor** 템플릿을 선택하고 **확인**을 선택합니다.</span><span class="sxs-lookup"><span data-stu-id="6bc06-113">Choose the **Blazor** template and select **OK**.</span></span>
-1. <span data-ttu-id="6bc06-114">**F5** 키를 눌러 앱을 실행합니다.</span><span class="sxs-lookup"><span data-stu-id="6bc06-114">Press **F5** to run the app.</span></span>
+1. <span data-ttu-id="aae3e-111">선택 **파일** > **새 프로젝트** > **Web** > **ASP.NET Core 웹 응용 프로그램**합니다.</span><span class="sxs-lookup"><span data-stu-id="aae3e-111">Select **File** > **New Project** > **Web** > **ASP.NET Core Web Application**.</span></span>
+1. <span data-ttu-id="aae3e-112">했는지 **.NET Core** 하 고 **ASP.NET Core 3.0** 맨 위에 있는 선택 됩니다.</span><span class="sxs-lookup"><span data-stu-id="aae3e-112">Make sure **.NET Core** and **ASP.NET Core 3.0** are selected at the top.</span></span>
+1. <span data-ttu-id="aae3e-113">**Blazor** 템플릿을 선택하고 **확인**을 선택합니다.</span><span class="sxs-lookup"><span data-stu-id="aae3e-113">Choose the **Blazor** template and select **OK**.</span></span>
+1. <span data-ttu-id="aae3e-114">**F5** 키를 눌러 앱을 실행합니다.</span><span class="sxs-lookup"><span data-stu-id="aae3e-114">Press **F5** to run the app.</span></span>
 
-<span data-ttu-id="6bc06-115">지금까지</span><span class="sxs-lookup"><span data-stu-id="6bc06-115">Congratulations!</span></span> <span data-ttu-id="6bc06-116">지금까지 첫 번째 Blazor 앱을 실행 했습니다!</span><span class="sxs-lookup"><span data-stu-id="6bc06-116">You just ran your first Blazor app!</span></span>
+<span data-ttu-id="aae3e-115">지금까지</span><span class="sxs-lookup"><span data-stu-id="aae3e-115">Congratulations!</span></span> <span data-ttu-id="aae3e-116">지금까지 첫 번째 Blazor 앱을 실행 했습니다!</span><span class="sxs-lookup"><span data-stu-id="aae3e-116">You just ran your first Blazor app!</span></span>
 
 <!--
 
@@ -88,19 +88,19 @@ To create your first project Blazor project in Visual Studio for Mac:
 Congratulations! You just ran your first Blazor app!
 -->
 
-# <a name="net-core-clitabnetcore-cli"></a>[<span data-ttu-id="6bc06-117">.NET Core CLI</span><span class="sxs-lookup"><span data-stu-id="6bc06-117">.NET Core CLI</span></span>](#tab/netcore-cli/)
+# <a name="net-core-clitabnetcore-cli"></a>[<span data-ttu-id="aae3e-117">.NET Core CLI</span><span class="sxs-lookup"><span data-stu-id="aae3e-117">.NET Core CLI</span></span>](#tab/netcore-cli/)
 
-<span data-ttu-id="6bc06-118">필수 구성 요소:</span><span class="sxs-lookup"><span data-stu-id="6bc06-118">Prerequisites:</span></span>
+<span data-ttu-id="aae3e-118">필수 구성 요소:</span><span class="sxs-lookup"><span data-stu-id="aae3e-118">Prerequisites:</span></span>
 
-* [<span data-ttu-id="6bc06-119">.NET core SDK 3.0 미리 보기</span><span class="sxs-lookup"><span data-stu-id="6bc06-119">.NET Core SDK 3.0 Preview</span></span>](https://dotnet.microsoft.com/download/dotnet-core/3.0)
+* [<span data-ttu-id="aae3e-119">.NET core SDK 3.0 미리 보기</span><span class="sxs-lookup"><span data-stu-id="aae3e-119">.NET Core SDK 3.0 Preview</span></span>](https://dotnet.microsoft.com/download/dotnet-core/3.0)
 
-1. <span data-ttu-id="6bc06-120">명령 셸에서 다음 명령을 실행 하 여 Blazor 템플릿을 추가 합니다.</span><span class="sxs-lookup"><span data-stu-id="6bc06-120">Add the Blazor templates by running the following command in a command shell:</span></span>
+1. <span data-ttu-id="aae3e-120">명령 셸에서 다음 명령을 실행 하 여 Blazor 템플릿을 추가 합니다.</span><span class="sxs-lookup"><span data-stu-id="aae3e-120">Add the Blazor templates by running the following command in a command shell:</span></span>
 
    ```console
-   dotnet new -i Microsoft.AspNetCore.Blazor.Templates::0.8.0-preview-19104-04
+   dotnet new -i Microsoft.AspNetCore.Blazor.Templates::0.9.0-preview3-19154-02
    ```
 
-1. <span data-ttu-id="6bc06-121">명령 셸에서 첫 번째 Blazor 프로젝트를 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="6bc06-121">Create your first Blazor project in a command shell:</span></span>
+1. <span data-ttu-id="aae3e-121">명령 셸에서 첫 번째 Blazor 프로젝트를 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="aae3e-121">Create your first Blazor project in a command shell:</span></span>
 
    ```console
    dotnet new blazor -o WebApplication1
@@ -108,62 +108,62 @@ Congratulations! You just ran your first Blazor app!
    dotnet run
    ```
 
-1. <span data-ttu-id="6bc06-122">브라우저에서 `https://localhost:5001`로 이동합니다.</span><span class="sxs-lookup"><span data-stu-id="6bc06-122">In a browser, navigate to `https://localhost:5001`.</span></span>
+1. <span data-ttu-id="aae3e-122">브라우저에서 `https://localhost:5001`로 이동합니다.</span><span class="sxs-lookup"><span data-stu-id="aae3e-122">In a browser, navigate to `https://localhost:5001`.</span></span>
 
-<span data-ttu-id="6bc06-123">지금까지</span><span class="sxs-lookup"><span data-stu-id="6bc06-123">Congratulations!</span></span> <span data-ttu-id="6bc06-124">지금까지 첫 번째 Blazor 앱을 실행 했습니다!</span><span class="sxs-lookup"><span data-stu-id="6bc06-124">You just ran your first Blazor app!</span></span>
+<span data-ttu-id="aae3e-123">지금까지</span><span class="sxs-lookup"><span data-stu-id="aae3e-123">Congratulations!</span></span> <span data-ttu-id="aae3e-124">지금까지 첫 번째 Blazor 앱을 실행 했습니다!</span><span class="sxs-lookup"><span data-stu-id="aae3e-124">You just ran your first Blazor app!</span></span>
 
 ---
 
-## <a name="blazor-project"></a><span data-ttu-id="6bc06-125">Blazor 프로젝트</span><span class="sxs-lookup"><span data-stu-id="6bc06-125">Blazor project</span></span>
+## <a name="blazor-project"></a><span data-ttu-id="aae3e-125">Blazor 프로젝트</span><span class="sxs-lookup"><span data-stu-id="aae3e-125">Blazor project</span></span>
 
-<span data-ttu-id="6bc06-126">앱을 실행 하는 경우 여러 페이지 세로 막대의 탭에서 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="6bc06-126">When the app is run, multiple pages are available from tabs in the sidebar:</span></span>
+<span data-ttu-id="aae3e-126">앱을 실행 하는 경우 여러 페이지 세로 막대의 탭에서 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="aae3e-126">When the app is run, multiple pages are available from tabs in the sidebar:</span></span>
 
-* <span data-ttu-id="6bc06-127">홈</span><span class="sxs-lookup"><span data-stu-id="6bc06-127">Home</span></span>
-* <span data-ttu-id="6bc06-128">카운터</span><span class="sxs-lookup"><span data-stu-id="6bc06-128">Counter</span></span>
-* <span data-ttu-id="6bc06-129">데이터 가져오기</span><span class="sxs-lookup"><span data-stu-id="6bc06-129">Fetch data</span></span>
+* <span data-ttu-id="aae3e-127">홈</span><span class="sxs-lookup"><span data-stu-id="aae3e-127">Home</span></span>
+* <span data-ttu-id="aae3e-128">카운터</span><span class="sxs-lookup"><span data-stu-id="aae3e-128">Counter</span></span>
+* <span data-ttu-id="aae3e-129">데이터 가져오기</span><span class="sxs-lookup"><span data-stu-id="aae3e-129">Fetch data</span></span>
 
-<span data-ttu-id="6bc06-130">카운터 페이지에서 **Click me** 단추를 선택하여 페이지 새로 고침 없이 카운터를 증분합니다.</span><span class="sxs-lookup"><span data-stu-id="6bc06-130">On the Counter page, select the **Click me** button to increment the counter without a page refresh.</span></span> <span data-ttu-id="6bc06-131">일반적으로 웹 페이지에서 카운터를 증가 하려면 JavaScript를 작성 해야 하지만 Blazor 사용 하 여 더 나은 접근 방식을 제공 C#입니다.</span><span class="sxs-lookup"><span data-stu-id="6bc06-131">Incrementing a counter in a webpage normally requires writing JavaScript, but Blazor provides a better approach using C#.</span></span>
+<span data-ttu-id="aae3e-130">카운터 페이지에서 **Click me** 단추를 선택하여 페이지 새로 고침 없이 카운터를 증분합니다.</span><span class="sxs-lookup"><span data-stu-id="aae3e-130">On the Counter page, select the **Click me** button to increment the counter without a page refresh.</span></span> <span data-ttu-id="aae3e-131">일반적으로 웹 페이지에서 카운터를 증가 하려면 JavaScript를 작성 해야 하지만 Blazor 사용 하 여 더 나은 접근 방식을 제공 C#입니다.</span><span class="sxs-lookup"><span data-stu-id="aae3e-131">Incrementing a counter in a webpage normally requires writing JavaScript, but Blazor provides a better approach using C#.</span></span>
 
-<span data-ttu-id="6bc06-132">*Pages/Counter.cshtml*:</span><span class="sxs-lookup"><span data-stu-id="6bc06-132">*Pages/Counter.cshtml*:</span></span>
+<span data-ttu-id="aae3e-132">*Pages/Counter.cshtml*:</span><span class="sxs-lookup"><span data-stu-id="aae3e-132">*Pages/Counter.cshtml*:</span></span>
 
 [!code-cshtml[](get-started/samples_snapshot/3.x/Counter1.cshtml)]
 
-<span data-ttu-id="6bc06-133">에 대 한 요청 `/counter` 에 지정 된 대로 브라우저에서을 `@page` 맨 위에 있는 지시문 하면 카운터 구성 요소를 해당 콘텐츠를 렌더링 합니다.</span><span class="sxs-lookup"><span data-stu-id="6bc06-133">A request for `/counter` in the browser, as specified by the `@page` directive at the top, causes the Counter component to render its content.</span></span> <span data-ttu-id="6bc06-134">구성 요소는 메모리 내 표현을 유연 하 고 효율적인 방식으로 UI를 업데이트 하는 데 사용할 수 있는 렌더링 트리를 렌더링 합니다.</span><span class="sxs-lookup"><span data-stu-id="6bc06-134">Components render into an in-memory representation of the render tree that can then be used to update the UI in a flexible and efficient way.</span></span>
+<span data-ttu-id="aae3e-133">에 대 한 요청 `/counter` 에 지정 된 대로 브라우저에서을 `@page` 맨 위에 있는 지시문 하면 카운터 구성 요소를 해당 콘텐츠를 렌더링 합니다.</span><span class="sxs-lookup"><span data-stu-id="aae3e-133">A request for `/counter` in the browser, as specified by the `@page` directive at the top, causes the Counter component to render its content.</span></span> <span data-ttu-id="aae3e-134">구성 요소는 메모리 내 표현을 유연 하 고 효율적인 방식으로 UI를 업데이트 하는 데 사용할 수 있는 렌더링 트리를 렌더링 합니다.</span><span class="sxs-lookup"><span data-stu-id="aae3e-134">Components render into an in-memory representation of the render tree that can then be used to update the UI in a flexible and efficient way.</span></span>
 
-<span data-ttu-id="6bc06-135">각 시간 합니다 **Click me** 단추를 선택 합니다.</span><span class="sxs-lookup"><span data-stu-id="6bc06-135">Each time the **Click me** button is selected:</span></span>
+<span data-ttu-id="aae3e-135">각 시간 합니다 **Click me** 단추를 선택 합니다.</span><span class="sxs-lookup"><span data-stu-id="aae3e-135">Each time the **Click me** button is selected:</span></span>
 
-* <span data-ttu-id="6bc06-136">`onclick` 이벤트가 발생 합니다.</span><span class="sxs-lookup"><span data-stu-id="6bc06-136">The `onclick` event is fired.</span></span>
-* <span data-ttu-id="6bc06-137">`IncrementCount` 메서드가 호출됩니다.</span><span class="sxs-lookup"><span data-stu-id="6bc06-137">The `IncrementCount` method is called.</span></span>
-* <span data-ttu-id="6bc06-138">`currentCount` 증분됩니다.</span><span class="sxs-lookup"><span data-stu-id="6bc06-138">The `currentCount` is incremented.</span></span>
-* <span data-ttu-id="6bc06-139">구성 요소를 다시 렌더링 됩니다.</span><span class="sxs-lookup"><span data-stu-id="6bc06-139">The component is rendered again.</span></span>
+* <span data-ttu-id="aae3e-136">`onclick` 이벤트가 발생 합니다.</span><span class="sxs-lookup"><span data-stu-id="aae3e-136">The `onclick` event is fired.</span></span>
+* <span data-ttu-id="aae3e-137">`IncrementCount` 메서드가 호출됩니다.</span><span class="sxs-lookup"><span data-stu-id="aae3e-137">The `IncrementCount` method is called.</span></span>
+* <span data-ttu-id="aae3e-138">`currentCount` 증분됩니다.</span><span class="sxs-lookup"><span data-stu-id="aae3e-138">The `currentCount` is incremented.</span></span>
+* <span data-ttu-id="aae3e-139">구성 요소를 다시 렌더링 됩니다.</span><span class="sxs-lookup"><span data-stu-id="aae3e-139">The component is rendered again.</span></span>
 
-<span data-ttu-id="6bc06-140">런타임에 이전 내용으로 새 콘텐츠를 비교 하 여 변경 된 내용이만 문서 개체 모델 (DOM)에 적용 됩니다.</span><span class="sxs-lookup"><span data-stu-id="6bc06-140">The runtime compares the new content to the previous content and only applies the changed content to the Document Object Model (DOM).</span></span>
+<span data-ttu-id="aae3e-140">런타임에 이전 내용으로 새 콘텐츠를 비교 하 여 변경 된 내용이만 문서 개체 모델 (DOM)에 적용 됩니다.</span><span class="sxs-lookup"><span data-stu-id="aae3e-140">The runtime compares the new content to the previous content and only applies the changed content to the Document Object Model (DOM).</span></span>
 
-<span data-ttu-id="6bc06-141">HTML과 유사한 구문을 사용 하는 다른 구성 요소는 구성 요소를 추가 합니다.</span><span class="sxs-lookup"><span data-stu-id="6bc06-141">Add a component to another component using an HTML-like syntax.</span></span> <span data-ttu-id="6bc06-142">구성 요소 매개 변수는 특성 또는 자식 콘텐츠를 사용 하 여 지정 됩니다.</span><span class="sxs-lookup"><span data-stu-id="6bc06-142">Component parameters are specified using attributes or child content.</span></span> <span data-ttu-id="6bc06-143">예를 들어, 카운터 구성 요소 수에 추가할 앱의 홈 페이지를 추가 하 여를 `<Counter />` 요소 인덱스 구성 요소입니다.</span><span class="sxs-lookup"><span data-stu-id="6bc06-143">For example, a Counter component can be added to the app's homepage by adding a `<Counter />` element to the Index component.</span></span>
+<span data-ttu-id="aae3e-141">HTML과 유사한 구문을 사용 하는 다른 구성 요소는 구성 요소를 추가 합니다.</span><span class="sxs-lookup"><span data-stu-id="aae3e-141">Add a component to another component using an HTML-like syntax.</span></span> <span data-ttu-id="aae3e-142">구성 요소 매개 변수는 특성 또는 자식 콘텐츠를 사용 하 여 지정 됩니다.</span><span class="sxs-lookup"><span data-stu-id="aae3e-142">Component parameters are specified using attributes or child content.</span></span> <span data-ttu-id="aae3e-143">예를 들어, 카운터 구성 요소 수에 추가할 앱의 홈 페이지를 추가 하 여를 `<Counter />` 요소 인덱스 구성 요소입니다.</span><span class="sxs-lookup"><span data-stu-id="aae3e-143">For example, a Counter component can be added to the app's homepage by adding a `<Counter />` element to the Index component.</span></span>
 
-<span data-ttu-id="6bc06-144">*pages/Index.cshtml*, 카운터 구성 요소를 사용 하 여 설문 조사 프롬프트 구성 요소를 교체 합니다.</span><span class="sxs-lookup"><span data-stu-id="6bc06-144">In *Pages/Index.cshtml*, replace the Survey Prompt component with a Counter component:</span></span>
+<span data-ttu-id="aae3e-144">*pages/Index.cshtml*, 카운터 구성 요소를 사용 하 여 설문 조사 프롬프트 구성 요소를 교체 합니다.</span><span class="sxs-lookup"><span data-stu-id="aae3e-144">In *Pages/Index.cshtml*, replace the Survey Prompt component with a Counter component:</span></span>
 
 [!code-cshtml[](get-started/samples_snapshot/3.x/Index1.cshtml?highlight=7)]
 
-<span data-ttu-id="6bc06-145">앱을 실행합니다.</span><span class="sxs-lookup"><span data-stu-id="6bc06-145">Run the app.</span></span> <span data-ttu-id="6bc06-146">홈 페이지에는 자체 카운터가 있습니다.</span><span class="sxs-lookup"><span data-stu-id="6bc06-146">The homepage has its own counter.</span></span>
+<span data-ttu-id="aae3e-145">앱을 실행합니다.</span><span class="sxs-lookup"><span data-stu-id="aae3e-145">Run the app.</span></span> <span data-ttu-id="aae3e-146">홈 페이지에는 자체 카운터가 있습니다.</span><span class="sxs-lookup"><span data-stu-id="aae3e-146">The homepage has its own counter.</span></span>
 
-<span data-ttu-id="6bc06-147">매개 변수를 카운터 구성 요소를 추가 하려면 구성 요소의 업데이트 `@functions` 블록:</span><span class="sxs-lookup"><span data-stu-id="6bc06-147">To add a parameter to the Counter component, update the component's `@functions` block:</span></span>
+<span data-ttu-id="aae3e-147">매개 변수를 카운터 구성 요소를 추가 하려면 구성 요소의 업데이트 `@functions` 블록:</span><span class="sxs-lookup"><span data-stu-id="aae3e-147">To add a parameter to the Counter component, update the component's `@functions` block:</span></span>
 
-* <span data-ttu-id="6bc06-148">에 대 한 속성을 추가 `IncrementAmount` 데코 레이트 된 `[Parameter]` 특성입니다.</span><span class="sxs-lookup"><span data-stu-id="6bc06-148">Add a property for `IncrementAmount` decorated with the `[Parameter]` attribute.</span></span>
-* <span data-ttu-id="6bc06-149">`currentCount` 값을 늘릴 때 `IncrementAmount`를 사용하도록 `IncrementCount` 메서드를 변경합니다.</span><span class="sxs-lookup"><span data-stu-id="6bc06-149">Change the `IncrementCount` method to use the `IncrementAmount` when increasing the value of `currentCount`.</span></span>
+* <span data-ttu-id="aae3e-148">에 대 한 속성을 추가 `IncrementAmount` 데코 레이트 된 `[Parameter]` 특성입니다.</span><span class="sxs-lookup"><span data-stu-id="aae3e-148">Add a property for `IncrementAmount` decorated with the `[Parameter]` attribute.</span></span>
+* <span data-ttu-id="aae3e-149">`currentCount` 값을 늘릴 때 `IncrementAmount`를 사용하도록 `IncrementCount` 메서드를 변경합니다.</span><span class="sxs-lookup"><span data-stu-id="aae3e-149">Change the `IncrementCount` method to use the `IncrementAmount` when increasing the value of `currentCount`.</span></span>
 
-<span data-ttu-id="6bc06-150">*Pages/Counter.cshtml*:</span><span class="sxs-lookup"><span data-stu-id="6bc06-150">*Pages/Counter.cshtml*:</span></span>
+<span data-ttu-id="aae3e-150">*Pages/Counter.cshtml*:</span><span class="sxs-lookup"><span data-stu-id="aae3e-150">*Pages/Counter.cshtml*:</span></span>
 
 [!code-cshtml[](get-started/samples_snapshot/3.x/Counter2.cshtml?highlight=4,8)]
 
-<span data-ttu-id="6bc06-151">특성을 사용하여 Home 구성 요소의 `<Counter>` 요소에 `IncrementAmount` 매개 변수를 지정합니다.</span><span class="sxs-lookup"><span data-stu-id="6bc06-151">Specify an `IncrementAmount` parameter in the Home component's `<Counter>` element using an attribute.</span></span>
+<span data-ttu-id="aae3e-151">특성을 사용하여 Home 구성 요소의 `<Counter>` 요소에 `IncrementAmount` 매개 변수를 지정합니다.</span><span class="sxs-lookup"><span data-stu-id="aae3e-151">Specify an `IncrementAmount` parameter in the Home component's `<Counter>` element using an attribute.</span></span>
 
-<span data-ttu-id="6bc06-152">*Pages/Index.cshtml*:</span><span class="sxs-lookup"><span data-stu-id="6bc06-152">*Pages/Index.cshtml*:</span></span>
+<span data-ttu-id="aae3e-152">*Pages/Index.cshtml*:</span><span class="sxs-lookup"><span data-stu-id="aae3e-152">*Pages/Index.cshtml*:</span></span>
 
 [!code-cshtml[](get-started/samples_snapshot/3.x/Index2.cshtml)]
 
-<span data-ttu-id="6bc06-153">앱을 실행합니다.</span><span class="sxs-lookup"><span data-stu-id="6bc06-153">Run the app.</span></span> <span data-ttu-id="6bc06-154">홈 페이지에는 각 시간을 10 씩 증가 하는 자체 카운터가 합니다 **Click me** 단추를 선택 합니다.</span><span class="sxs-lookup"><span data-stu-id="6bc06-154">The homepage has its own counter that increments by ten each time the **Click me** button is selected.</span></span>
+<span data-ttu-id="aae3e-153">앱을 실행합니다.</span><span class="sxs-lookup"><span data-stu-id="aae3e-153">Run the app.</span></span> <span data-ttu-id="aae3e-154">홈 페이지에는 각 시간을 10 씩 증가 하는 자체 카운터가 합니다 **Click me** 단추를 선택 합니다.</span><span class="sxs-lookup"><span data-stu-id="aae3e-154">The homepage has its own counter that increments by ten each time the **Click me** button is selected.</span></span>
 
-## <a name="next-steps"></a><span data-ttu-id="6bc06-155">다음 단계</span><span class="sxs-lookup"><span data-stu-id="6bc06-155">Next steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="aae3e-155">다음 단계</span><span class="sxs-lookup"><span data-stu-id="aae3e-155">Next steps</span></span>
 
 <xref:tutorials/first-razor-components-app>
