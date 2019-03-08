@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: H1Hack27Feb2017
 ms.date: 10/04/2018
 uid: client-side/using-gulp
-ms.openlocfilehash: e280eabecbd427f3e1418b3d7a60e0ea3df46a5a
-ms.sourcegitcommit: e9b99854b0a8021dafabee0db5e1338067f250a9
+ms.openlocfilehash: 43277dc5910971374187f49031e74769c9e29e1f
+ms.sourcegitcommit: 191d21c1e37b56f0df0187e795d9a56388bbf4c7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52450608"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57665628"
 ---
 # <a name="use-gulp-in-aspnet-core"></a>ASP.NET Core에서 Gulp 사용하기
 
@@ -24,7 +24,7 @@ ms.locfileid: "52450608"
 * LESS 또는 SASS 파일을 CSS로 컴파일합니다.
 * CoffeeScript 또는 TypeScript 파일을 JavaScript로 컴파일합니다.
 
-*작업 러너*는 이러한 일상적인 개발 작업 등을 자동화하는 도구입니다. Visual Studio는 두 가지 인기 있는 JavaScript 기반의 작업 러너인 [Gulp](https://gulpjs.com/)와 [Grunt](using-grunt.md)에 대한 기본 지원을 제공합니다.
+*작업 러너*는 이러한 일상적인 개발 작업 등을 자동화하는 도구입니다. Visual Studio에는 두 가지 인기 있는 JavaScript 기반 작업 실행 기에 대 한 기본 제공 지원을 제공합니다. [Gulp](https://gulpjs.com/) 하 고 [Grunt](using-grunt.md)합니다.
 
 ## <a name="gulp"></a>Gulp
 
@@ -58,11 +58,11 @@ paths.concatCssDest = paths.webroot + "css/site.min.css";
 
 | 모듈 이름 | 설명 |
 | ----------- | ----------- |
-| Gulp        | Gulp 스트리밍 빌드 시스템입니다. 자세한 내용은 [gulp](https://www.npmjs.com/package/gulp)를 참고하시기 바랍니다. |
+| gulp        | Gulp 스트리밍 빌드 시스템입니다. 자세한 내용은 [gulp](https://www.npmjs.com/package/gulp)를 참고하시기 바랍니다. |
 | rimraf      | Node 삭제 모듈입니다. 자세한 내용은 [rimraf](https://www.npmjs.com/package/rimraf)를 참고하시기 바랍니다. |
-| gulp concat | 운영 체제의 줄 바꿈 문자를 기반으로 파일을 연결하는 모듈입니다. 자세한 내용은 [gulp concat](https://www.npmjs.com/package/gulp-concat)를 참고하시기 바랍니다. |
-| gulp cssmin | CSS 파일을 축소하는 모듈입니다. 자세한 내용은 [gulp cssmin](https://www.npmjs.com/package/gulp-cssmin)을 참고하시기 바랍니다. |
-| gulp uglify | *.js* 파일을 축소하는 모듈입니다. 자세한 내용은 [gulp uglify](https://www.npmjs.com/package/gulp-uglify)를 참고하시기 바랍니다. |
+| gulp-concat | 운영 체제의 줄 바꿈 문자를 기반으로 파일을 연결하는 모듈입니다. 자세한 내용은 [gulp concat](https://www.npmjs.com/package/gulp-concat)를 참고하시기 바랍니다. |
+| gulp-cssmin | CSS 파일을 축소하는 모듈입니다. 자세한 내용은 [gulp cssmin](https://www.npmjs.com/package/gulp-cssmin)을 참고하시기 바랍니다. |
+| gulp-uglify | *.js* 파일을 축소하는 모듈입니다. 자세한 내용은 [gulp uglify](https://www.npmjs.com/package/gulp-uglify)를 참고하시기 바랍니다. |
 
 필요한 모듈을 가져왔으면 이제 작업을 지정할 수 있습니다. 다음과 같은 코드로 표시되는 등록된 여섯 가지 작업이 존재합니다.
 
@@ -337,7 +337,7 @@ Gulp 작업은 함수 이름으로 등록됩니다. 다른 작업을 현재 작�
 |src   |`gulp.src(globs[, options]) { }`|`src` 함수는 glob 값과 일치하는 파일을 제공합니다. `glob` 매개 변수는 읽을 파일을 결정하는 `string` 또는 `array`입니다. `options` 매개 변수는 추가적인 파일 옵션을 제공합니다.|
 |dest  |`gulp.dest(path[, options]) { }`|`dest` 함수는 파일을 쓸 수 있는 위치를 정의합니다. `path` 매개 변수는 대상 폴더를 결정하는 문자열 또는 함수입니다. `options` 매개 변수는 출력 폴더 옵션을 지정하는 개체입니다.|
 
-추가적인 Gulp API 참조 정보는 [Gulp Docs API](https://github.com/gulpjs/gulp/blob/master/docs/API.md)를 참고하시기 바랍니다.
+추가적인 Gulp API 참조 정보는 [Gulp Docs API](https://gulpjs.org/API.html)를 참고하시기 바랍니다.
 
 ## <a name="gulp-recipes"></a>Gulp 레시피
 

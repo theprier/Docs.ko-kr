@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 11/21/2017
 uid: security/authorization/policies
-ms.openlocfilehash: be4812487c92a16c44e3983b234bc9e31be65190
-ms.sourcegitcommit: d75d8eb26c2cce19876c8d5b65ac8a4b21f625ef
+ms.openlocfilehash: c2bc626b2dd341dda878a151def6b405884357d7
+ms.sourcegitcommit: 191d21c1e37b56f0df0187e795d9a56388bbf4c7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/19/2019
-ms.locfileid: "56410391"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57665404"
 ---
 # <a name="policy-based-authorization-in-aspnet-core"></a>ASP.NET Core의 정책 기반 권한 부여
 
@@ -68,11 +68,11 @@ ms.locfileid: "56410391"
 
 ### <a name="handler-registration"></a>처리기 등록하기
 
-처리기는 구성 과정 중 서비스 컬렉션에 등록됩니다. 예를 들어 다음과 같습니다.
+처리기는 구성 과정 중 서비스 컬렉션에 등록됩니다. 예를 들어:
 
 [!code-csharp[](policies/samples/PoliciesAuthApp1/Startup.cs?range=40-41,50-55,63-65,72)]
 
-각 처리기는 `services.AddSingleton<IAuthorizationHandler, YourHandlerClass>();` 호출을 통해서 서비스 컬렉션에 추가됩니다.
+앞의 코드를 등록 `MinimumAgeHandler` 를 호출 하 여 단일 항목으로 `services.AddSingleton<IAuthorizationHandler, MinimumAgeHandler>();`입니다. 기본 제공 중 하나를 사용 하 여 처리기를 등록할 수 있습니다 [수명 서비스](xref:fundamentals/dependency-injection#service-lifetimes)합니다.
 
 ## <a name="what-should-a-handler-return"></a>처리기가 반환해야 하는 결과는?
 

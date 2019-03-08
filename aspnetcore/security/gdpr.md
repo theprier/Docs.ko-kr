@@ -7,12 +7,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 05/29/2018
 uid: security/gdpr
-ms.openlocfilehash: 5f5ed96354b0b71961c122506602e60b95b809fa
-ms.sourcegitcommit: d5223cf6a2cf80b4f5dc54169b0e376d493d2d3a
+ms.openlocfilehash: bbb3b8e091b5a0be8e852d70ba1a5d7100782ba3
+ms.sourcegitcommit: 191d21c1e37b56f0df0187e795d9a56388bbf4c7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54889745"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57665378"
 ---
 # <a name="eu-general-data-protection-regulation-gdpr-support-in-aspnet-core"></a>ASP.NET Core에서 EU 데이터 보호 규정 GDPR (일반) 지원
 
@@ -75,7 +75,9 @@ Razor 페이지 및 MVC 프로젝트 템플릿을 사용 하 여 만든 프로�
 
 [!code-csharp[Main](gdpr/sample/RP/Startup.cs?name=snippet1)]
 
-[세션 상태](xref:fundamentals/app-state) 쿠키 필수 요소는 아닙니다. 추적을 사용할 수 없습니다. 세션 상태를 작동 하지 않습니다.
+[세션 상태](xref:fundamentals/app-state) 쿠키 필수 요소는 아닙니다. 추적을 사용할 수 없습니다. 세션 상태를 작동 하지 않습니다. 다음 코드는 필수 세션 쿠키를 사용 하면:
+
+[!code-csharp[](gdpr/sample/RP/Startup.cs?name=snippet2)]
 
 <a name="pd"></a>
 

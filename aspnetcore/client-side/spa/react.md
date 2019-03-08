@@ -5,14 +5,14 @@ description: React 및 create-react-app에 대한 ASP.NET Core SPA(단일 페이
 monikerRange: '>= aspnetcore-2.1'
 ms.author: scaddie
 ms.custom: mvc
-ms.date: 02/13/2019
+ms.date: 03/07/2019
 uid: spa/react
-ms.openlocfilehash: 3b2b2e67b5d577872bafefef5624a13ca1a22449
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 7b07f696ae071531c88c9f8cf528fc6f0bf97b46
+ms.sourcegitcommit: 191d21c1e37b56f0df0187e795d9a56388bbf4c7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "56899179"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57665563"
 ---
 # <a name="use-the-react-project-template-with-aspnet-core"></a>ASP.NET Core에 React 프로젝트 템플릿 사용
 
@@ -105,3 +105,7 @@ ASP.NET Core 앱을 시작할 때 CRA 서버는 시작되지 않습니다. 수�
 
 > [!IMPORTANT]
 > "서버 쪽 렌더링"이 서식이 파일의 지원 되는 기능이 아닙니다. 이 템플릿 사용 하 여 목표는 "-react-앱 만들기"를 사용 하 여 패리티를 충족 합니다. 따라서 시나리오 및 기능 (예: SSR) "-react-앱 만들기" 프로젝트에 포함 되어 있지는 지원 되지 않습니다 및 사용자에 대 한 연습 그대로 유지 됩니다.
+
+## <a name="additional-resources"></a>추가 자료
+
+* <xref:security/authentication/identity/spa>

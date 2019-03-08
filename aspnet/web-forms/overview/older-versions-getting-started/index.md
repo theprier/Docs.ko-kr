@@ -2,34 +2,28 @@
 uid: web-forms/overview/older-versions-getting-started/index
 title: 이전 버전-시작 하는 Web Forms | Microsoft Docs
 author: rick-anderson
-description: ASP.NET Web Forms 4 및 이전 버전의 설명서입니다.
+description: ASP.NET Web Forms 4 및 이전 버전에 대 한 자습서입니다.
 ms.author: riande
 ms.date: 10/18/2014
 ms.assetid: e03585c2-80bf-4083-99ba-9fcbc883ccd8
 msc.legacyurl: /web-forms/overview/older-versions-getting-started
 msc.type: chapter
-ms.openlocfilehash: 93eed9c2560b8e5106b224114eb1109d3da95daf
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
-ms.translationtype: MT
-ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "48255898"
 ---
 <a name="older-versions---web-forms-getting-started"></a>이전 버전의 경우 Web Forms 시작
 ====================
-> ASP.NET Web Forms 4 및 이전 버전의 설명서입니다.
+> ASP.NET Web Forms 4 및 이전 버전에 대 한 자습서입니다.
 
 
 - [ASP.NET 4 - Tailspin Spyworks](tailspin-spyworks/index.md)
 
     - [1부: 파일-> 새 프로젝트](tailspin-spyworks/tailspin-spyworks-part-1.md)
-    - [2부: 데이터 액세스 레이어](tailspin-spyworks/tailspin-spyworks-part-2.md)
-    - [3부: 레이아웃 및 범주 메뉴](tailspin-spyworks/tailspin-spyworks-part-3.md)
-    - [4부: 제품 나열](tailspin-spyworks/tailspin-spyworks-part-4.md)
-    - [5부: 비즈니스 논리](tailspin-spyworks/tailspin-spyworks-part-5.md)
-    - [6부: ASP.NET 멤버 자격](tailspin-spyworks/tailspin-spyworks-part-6.md)
-    - [7부: 기능 추가](tailspin-spyworks/tailspin-spyworks-part-7.md)
-    - [8부: 최종 페이지, 예외 처리 및 결론](tailspin-spyworks/tailspin-spyworks-part-8.md)
+    - [2부: 데이터 액세스 계층](tailspin-spyworks/tailspin-spyworks-part-2.md)
+    - [3 부: 레이아웃 및 범주 메뉴](tailspin-spyworks/tailspin-spyworks-part-3.md)
+    - [4 부: 제품 목록](tailspin-spyworks/tailspin-spyworks-part-4.md)
+    - [5 부: 비즈니스 논리](tailspin-spyworks/tailspin-spyworks-part-5.md)
+    - [6 부: ASP.NET 멤버 자격](tailspin-spyworks/tailspin-spyworks-part-6.md)
+    - [7 부: 추가 기능](tailspin-spyworks/tailspin-spyworks-part-7.md)
+    - [8 부: 최종 페이지, 예외 처리 및 결론](tailspin-spyworks/tailspin-spyworks-part-8.md)
 - [ASP.NET 4 - Entity Framework 4 및 Web Forms 시작](getting-started-with-ef/index.md)
 
     - [Entity Framework 4.0 Database First 시작](getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-1.md)
@@ -42,9 +36,9 @@ ms.locfileid: "48255898"
     - [Entity Framework 4.0 Database First 시작 - 8부](getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-8.md)
 - [ASP.NET 4 - Entity Framework 4 및 Web Forms 계속](continuing-with-ef/index.md)
 
-    - [Entity Framework 4.0 및 ObjectDataSource 컨트롤, 1부: 시작](continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started.md)
-    - [Entity Framework 4.0 및 the ObjectDataSource 컨트롤, 2부: 비즈니스 논리 레이어 및 단위 테스트 추가](continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests.md)
-    - [Entity Framework 4.0 및 ObjectDataSource 컨트롤, 3부: 정렬 및 필터링](continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering.md)
+    - [Entity Framework 4.0 및 ObjectDataSource 컨트롤, 1 부: 시작](continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started.md)
+    - [Entity Framework 4.0 및 ObjectDataSource 컨트롤, 2 부: 비즈니스 논리 레이어 및 단위 테스트 추가](continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests.md)
+    - [Entity Framework 4.0 및 ObjectDataSource 컨트롤, 3 부: 정렬 및 필터링](continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering.md)
     - [ASP.NET 4에서 Entity Framework 4.0으로 동시성 처리](continuing-with-ef/handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application.md)
     - [ASP.NET 4에서 Entity Framework 4.0으로 성능 극대화](continuing-with-ef/maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application.md)
     - [Entity Framework 4.0의 새로운 기능](continuing-with-ef/what-s-new-in-the-entity-framework-4.md)
@@ -66,7 +60,7 @@ ms.locfileid: "48255898"
 
     - [ASP.NET AJAX를 사용한 부분 페이지 업데이트 이해](aspnet-ajax/understanding-partial-page-updates-with-asp-net-ajax.md)
     - [ASP.NET AJAX UpdatePanel 트리거 이해](aspnet-ajax/understanding-asp-net-ajax-updatepanel-triggers.md)
-    - [ASP.NET AJAX 인증 및 프로필 응용 프로그램 서비스 이해](aspnet-ajax/understanding-asp-net-ajax-authentication-and-profile-application-services.md)
+    - [ASP.NET AJAX 인증 및 프로필 애플리케이션 서비스 이해](aspnet-ajax/understanding-asp-net-ajax-authentication-and-profile-application-services.md)
     - [ASP.NET AJAX 지역화 이해](aspnet-ajax/understanding-asp-net-ajax-localization.md)
     - [ASP.NET AJAX 웹 서비스 이해](aspnet-ajax/understanding-asp-net-ajax-web-services.md)
     - [ASP.NET AJAX 디버깅 기능 이해](aspnet-ajax/understanding-asp-net-ajax-debugging-capabilities.md)
@@ -101,8 +95,8 @@ ms.locfileid: "48255898"
     - [개발 환경과 프로덕션 환경의 일반적인 구성 차이(C#)](deploying-web-site-projects/common-configuration-differences-between-development-and-production-cs.md)
     - [IIS와 ASP.NET 개발 서버의 결정적 차이(C#)](deploying-web-site-projects/core-differences-between-iis-and-the-asp-net-development-server-cs.md)
     - [데이터베이스 배포(C#)](deploying-web-site-projects/deploying-a-database-cs.md)
-    - [프로덕션 데이터베이스를 사용하도록 프로덕션 웹 응용 프로그램 구성(C#)](deploying-web-site-projects/configuring-the-production-web-application-to-use-the-production-database-cs.md)
-    - [응용 프로그램 서비스를 사용하는 웹 사이트 구성(C#)](deploying-web-site-projects/configuring-a-website-that-uses-application-services-cs.md)
+    - [프로덕션 데이터베이스를 사용하도록 프로덕션 웹 애플리케이션 구성(C#)](deploying-web-site-projects/configuring-the-production-web-application-to-use-the-production-database-cs.md)
+    - [애플리케이션 서비스를 사용하는 웹 사이트 구성(C#)](deploying-web-site-projects/configuring-a-website-that-uses-application-services-cs.md)
     - [데이터베이스 개발 및 배포 전략(C#)](deploying-web-site-projects/strategies-for-database-development-and-deployment-cs.md)
     - [사용자 지정 오류 페이지 표시(C#)](deploying-web-site-projects/displaying-a-custom-error-page-cs.md)
     - [처리되지 않은 예외 처리(C#)](deploying-web-site-projects/processing-unhandled-exceptions-cs.md)
@@ -117,8 +111,8 @@ ms.locfileid: "48255898"
     - [개발 환경과 프로덕션 환경의 일반적인 구성 차이(VB)](deploying-web-site-projects/common-configuration-differences-between-development-and-production-vb.md)
     - [IIS와 ASP.NET 개발 서버의 결정적 차이(VB)](deploying-web-site-projects/core-differences-between-iis-and-the-asp-net-development-server-vb.md)
     - [데이터베이스 배포(VB)](deploying-web-site-projects/deploying-a-database-vb.md)
-    - [프로덕션 데이터베이스를 사용하도록 프로덕션 웹 응용 프로그램 구성(VB)](deploying-web-site-projects/configuring-the-production-web-application-to-use-the-production-database-vb.md)
-    - [응용 프로그램 서비스를 사용하는 웹 사이트 구성(VB)](deploying-web-site-projects/configuring-a-website-that-uses-application-services-vb.md)
+    - [프로덕션 데이터베이스를 사용하도록 프로덕션 웹 애플리케이션 구성(VB)](deploying-web-site-projects/configuring-the-production-web-application-to-use-the-production-database-vb.md)
+    - [애플리케이션 서비스를 사용하는 웹 사이트 구성(VB)](deploying-web-site-projects/configuring-a-website-that-uses-application-services-vb.md)
     - [데이터베이스 개발 및 배포 전략(VB)](deploying-web-site-projects/strategies-for-database-development-and-deployment-vb.md)
     - [사용자 지정 오류 페이지 표시(VB)](deploying-web-site-projects/displaying-a-custom-error-page-vb.md)
     - [처리되지 않은 예외 처리(VB)](deploying-web-site-projects/processing-unhandled-exceptions-vb.md)

@@ -7,12 +7,12 @@ ms.author: bradyg
 ms.custom: mvc
 ms.date: 02/07/2019
 uid: signalr/configuration
-ms.openlocfilehash: c5921db895a732c9663c9d962195a2c0635f5aa0
-ms.sourcegitcommit: 6ddd8a7675c1c1d997c8ab2d4498538e44954cac
+ms.openlocfilehash: 070d6fed26b6d14c4b8a35d0f7d94abafb08993b
+ms.sourcegitcommit: 191d21c1e37b56f0df0187e795d9a56388bbf4c7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57400660"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57665417"
 ---
 # <a name="aspnet-core-signalr-configuration"></a>ASP.NET Core SignalR 구성
 
@@ -82,7 +82,7 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-단일 허브에 대한 옵션은 `AddSignalR`에 제공된 전역 옵션을 재정의하며 [AddHubOptions\<T>](/dotnet/api/microsoft.extensions.dependencyinjection.huboptionsdependencyinjectionextensions.addhuboptions)를 사용해서 구성할 수 있습니다.
+단일 허브에 대 한 옵션에서 제공 하는 전역 옵션을 재정의 `AddSignalR` 를 사용 하 여 구성할 수 있습니다 및 <xref:Microsoft.Extensions.DependencyInjection.SignalRDependencyInjectionExtensions.AddHubOptions*>:
 
 ```csharp
 services.AddSignalR().AddHubOptions<MyHub>(options =>
