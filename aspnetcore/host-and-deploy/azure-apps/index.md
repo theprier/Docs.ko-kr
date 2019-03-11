@@ -120,7 +120,7 @@ Azure App Service/IIS에서 호스트하는 앱의 일반적인 배포 구성 �
 
 ### <a name="install-the-preview-site-extension"></a>미리 보기 사이트 확장 설치
 
-미리 보기 사이트 확장을 사용하는 데 문제가 발생하는 경우 [GitHub](https://github.com/aspnet/azureintegration/issues/new)에서 문제를 엽니다.
+미리 보기 사이트 확장을 사용하는 데 문제가 발생하는 경우 [aspnet/AspNetCore 문제](https://github.com/aspnet/AspNetCore/issues)를 엽니다.
 
 1. Azure Portal에서 App Service로 이동합니다.
 1. 웹앱을 선택합니다.

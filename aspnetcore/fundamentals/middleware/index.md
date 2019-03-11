@@ -63,7 +63,7 @@ ASP.NET Core 요청 파이프라인은 하나씩 차례로 호출되는 요청 �
 1. HTTPS 리디렉션
 1. 정적 파일 서버
 1. 쿠키 정책 적용
-1. Authentication
+1. 인증
 1. 세션
 1. MVC
 
@@ -117,7 +117,7 @@ public void Configure(IApplicationBuilder app)
 
 1. 예외/오류 처리
 1. 정적 파일
-1. Authentication
+1. 인증
 1. 세션
 1. MVC
 
@@ -231,7 +231,7 @@ ASP.NET Core는 다음과 같은 미들웨어 구성 요소가 함께 제공됩�
 | [인증](xref:security/authentication/identity) | 인증 지원을 제공합니다. | `HttpContext.User`가 필요하기 전에. OAuth 콜백에 대한 터미널. |
 | [쿠키 정책](xref:security/gdpr) | 개인 정보 저장과 관련한 사용자의 동의를 추적하고 쿠키 필드(예: `secure` 및 `SameSite`)에 대해 최소한의 표준을 적용합니다. | 쿠키를 발행하는 미들웨어 전에. 예를 들면 다음과 같습니다. 인증, 세션, MVC(TempData). |
 | [CORS](xref:security/cors) | 원본 간 리소스 공유를 구성합니다. | CORS를 사용하는 구성 요소 이전. |
-| [진단](xref:fundamentals/error-handling) | 진단을 구성합니다. | 오류를 생성하는 구성 요소 이전. |
+| [예외 처리](xref:fundamentals/error-handling) | 예외를 처리합니다. | 오류를 생성하는 구성 요소 이전. |
 | [전달된 헤더](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersextensions) | 프록시된 헤더를 현재 요청에 전달합니다. | 업데이트된 필드를 사용하는 구성 요소 전에. 예: 체계, 호스트, 클라이언트 IP, 메서드. |
 | [상태 검사](xref:host-and-deploy/health-checks) | ASP.NET Core 앱 및 그 종속성(데이터베이스 가용성 등)의 상태를 검사합니다. | 요청이 상태 검사 엔드포인트와 일치하는 경우 마지막입니다. |
 | [HTTP 메서드 재정의](/dotnet/api/microsoft.aspnetcore.builder.httpmethodoverrideextensions) | 들어오는 POST 요청이 메서드를 재정의하도록 허용합니다. | 업데이트된 메서드를 사용하는 구성 요소 앞입니다. |

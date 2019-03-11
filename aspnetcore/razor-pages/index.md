@@ -6,12 +6,6 @@ monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 05/12/2018
 uid: razor-pages/index
-ms.openlocfilehash: cc881ff42d57ab1654f492a70006a995939e4844
-ms.sourcegitcommit: 816f39e852a8f453e8682081871a31bc66db153a
-ms.translationtype: HT
-ms.contentlocale: ko-KR
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53709562"
 ---
 # <a name="introduction-to-razor-pages-in-aspnet-core"></a>ASP.NET Core의 Razor 페이지 소개
 
@@ -147,7 +141,7 @@ db 컨텍스트는 다음과 같습니다.
 유효성 검사 오류를 확인합니다.
 
 *  오류가 없는 경우 데이터를 저장하고 리디렉션합니다.
-*  오류가 있을 경우 유효성 검사 메시지가 포함된 페이지를 다시 표시합니다. 클라이언트 측 유효성 검사는 기존의 ASP.NET Core MVC 응용 프로그램과 동일합니다. 대부분의 경우 유효성 검사 오류는 클라이언트에서 감지되어 서버에는 제출되지 않습니다.
+*  오류가 있을 경우 유효성 검사 메시지가 포함된 페이지를 다시 표시합니다. 클라이언트 측 유효성 검사는 기존의 ASP.NET Core MVC 애플리케이션과 동일합니다. 대부분의 경우 유효성 검사 오류는 클라이언트에서 감지되어 서버에는 제출되지 않습니다.
 
 데이터가 성공적으로 입력되면 `OnPostAsync` 처리기 메서드가 `RedirectToPage` 도우미 메서드를 호출하여 `RedirectToPageResult`의 인스턴스를 반환합니다. `RedirectToPage`는 `RedirectToAction`이나 `RedirectToRoute`와 비슷하지만 페이지에 맞춰진 새로운 액션 결과입니다. 위의 예제에서 이 메서드는 루트 인덱스 페이지(`/Index`)로 리디렉션합니다. `RedirectToPage`는 [페이지에 대한 URL 생성](#url_gen) 섹션에서 자세히 설명합니다.
 
@@ -173,7 +167,7 @@ Razor 페이지는 기본적으로 비 GET 동사에 대해서만 속성을 바�
 
 [!code-cshtml[](index/sample/RazorPagesContacts/Pages/Index.cshtml?range=21)]
 
-이 [앵커 태그 도우미](xref:mvc/views/tag-helpers/builtin-th/anchor-tag-helper)는 Edit 페이지에 대한 링크를 생성하기 위해 `asp-route-{value}` 특성을 사용합니다. 링크에는 연락처 ID와 함께 경로 데이터가 포함됩니다. 예를 들어 `http://localhost:5000/Edit/1`과 같은 형식입니다.
+이 [앵커 태그 도우미](xref:mvc/views/tag-helpers/builtin-th/anchor-tag-helper)는 Edit 페이지에 대한 링크를 생성하기 위해 `asp-route-{value}` 특성을 사용합니다. 링크에는 연락처 ID와 함께 경로 데이터가 포함됩니다. 예를 들어, `http://localhost:5000/Edit/1`을 입력합니다. `asp-area` 특성을 사용하여 영역을 지정하세요. 자세한 내용은 <xref:mvc/controllers/areas>을 참조하세요.
 
 *Pages/Edit.cshtml* 파일은 다음과 같습니다.
 
@@ -401,6 +395,14 @@ Razor 페이지의 뷰 검색에는 *Pages* 폴더가 포함됩니다. MVC 컨�
 
 ::: moniker range=">= aspnetcore-2.1"
 
+다른 [영역](xref:mvc/controllers/areas)에서 페이지로 리디렉션하려면 영역을 지정하세요.
+
+```csharp
+RedirectToPage("/Index", new { area = "Services" });
+```
+
+자세한 내용은 <xref:mvc/controllers/areas>을 참조하세요.
+
 ## <a name="viewdata-attribute"></a>ViewData 특성
 
 [ViewDataAttribute](/dotnet/api/microsoft.aspnetcore.mvc.viewdataattribute)를 사용하여 데이터를 페이지에 전달할 수 있습니다. `[ViewData]`가 지정된 컨트롤러나 Razor 페이지 모델의 속성은 [ViewDataDictionary](/dotnet/api/microsoft.aspnetcore.mvc.viewfeatures.viewdatadictionary)에 값이 저장되고 로드됩니다.
@@ -509,7 +511,7 @@ URL에서 쿼리 문자열 `?handler=JoinList`를 사용하지 않으려면 경�
 
 [!code-cs[](index/sample/RazorPagesContacts/StartupAdvanced.cs?name=snippet_1)]
 
-현재는 `RazorPagesOptions`를 사용해서 페이지의 루트 디렉터리를 설정하거나 페이지에 대한 응용 프로그램 모델 규약을 추가할 수 있습니다. 앞으로 이 방식으로 더 많은 확장성을 지원할 예정입니다.
+현재 `RazorPagesOptions`를 사용하여 페이지의 루트 디렉터리를 설정하거나 페이지에 대한 애플리케이션 모델 규칙을 추가할 수 있습니다. 앞으로 이 방식으로 더 많은 확장성을 지원할 예정입니다.
 
 뷰를 미리 컴파일하려면 [Razor 뷰 컴파일](xref:mvc/views/view-compilation)을 참고하시기 바랍니다.
 
@@ -547,6 +549,7 @@ services.AddMvc()
 
 * <xref:index>
 * <xref:mvc/views/razor>
+* <xref:mvc/controllers/areas>
 * <xref:tutorials/razor-pages/razor-pages-start>
 * <xref:security/authorization/razor-pages-authorization>
 * <xref:razor-pages/razor-pages-conventions>

@@ -286,7 +286,7 @@ services.Configure<IISOptions>(options =>
 1. **런타임 및 호스팅 번들** 링크를 사용하여 설치 관리자를 다운로드합니다.
 
 > [!WARNING]
-> 일부 설치 관리자는 EOL(수명 종료)에 도달한 릴리스 버전을 포함하고 Microsoft에서 더 이상 지원되지 않습니다. 자세한 내용은 [지원 정책](https://www.microsoft.com/net/download/dotnet-core/2.0)을 참조하세요.
+> 일부 설치 관리자는 EOL(수명 종료)에 도달한 릴리스 버전을 포함하고 Microsoft에서 더 이상 지원되지 않습니다. 자세한 내용은 [지원 정책](https://dotnet.microsoft.com/platform/support/policy/dotnet-core)을 참조하세요.
 
 ### <a name="install-the-hosting-bundle"></a>호스팅 번들 설치
 
