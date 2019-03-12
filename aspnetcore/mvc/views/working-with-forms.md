@@ -4,18 +4,18 @@ author: rick-anderson
 description: 형식과 함께 사용되는 기본 제공 태그 도우미를 설명합니다.
 ms.author: riande
 ms.custom: mvc
-ms.date: 1/11/2019
+ms.date: 02/27/2019
 uid: mvc/views/working-with-forms
-ms.openlocfilehash: cd15c641fbf702071bd57510a1d51737f6ab8e19
-ms.sourcegitcommit: 97d7a00bd39c83a8f6bccb9daa44130a509f75ce
+ms.openlocfilehash: a0fbeac51bd1bfbc50c4d369a479ce5f3091358b
+ms.sourcegitcommit: 036d4b03fd86ca5bb378198e29ecf2704257f7b2
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54099015"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57346257"
 ---
 # <a name="tag-helpers-in-forms-in-aspnet-core"></a>ASP.NET Core 형식의 태그 도우미
 
-작성자 [Rick Anderson](https://twitter.com/RickAndMSFT), [Dave Paquette](https://twitter.com/Dave_Paquette) 및 [Jerrie Pelser](https://github.com/jerriep)
+작성자 [Rick Anderson](https://twitter.com/RickAndMSFT), [N. Taylor Mullen](https://github.com/NTaylorMullen), [Dave Paquette](https://twitter.com/Dave_Paquette) 및 [Jerrie Pelser](https://github.com/jerriep)
 
 이 문서에서는 형식 및 형식에서 일반적으로 사용되는 HTML 요소 작업을 보여줍니다. HTML [형식](https://www.w3.org/TR/html401/interact/forms.html) 요소는 서버에 데이터를 다시 게시하는 기본 메커니즘 웹앱을 사용하도록 제공합니다. 이 문서에서는 대부분 [태그 도우미](tag-helpers/intro.md) 및 강력한 HTML 형식을 생산적으로 만들 수 있는 방법을 설명합니다. 이 문서를 읽기 전에 [태그 도우미 소개](tag-helpers/intro.md)를 참조하세요.
 
@@ -66,6 +66,98 @@ MVC 런타임은 형식 태그 도우미 특성 `asp-controller` 및 `asp-action
 
 >[!NOTE]
 >기본 제공된 템플릿을 사용하면 권한이 부여된 리소스에 액세스하려고 하지만 인증되거나 권한이 없는 경우에만 `returnUrl`이 자동으로 채워집니다. 권한이 없는 액세스를 시도하는 경우 보안 미들웨어는 사용자를 `returnUrl` 설정이 포함된 로그인 페이지에 리디렉션합니다.
+
+## <a name="the-form-action-tag-helper"></a>양식 작업 태그 도우미
+
+양식 작업 태그 도우미는 생성된 `<button ...>` 또는 `<input type="image" ...>` 태그의 `formaction` 특성을 생성합니다. `formaction` 특성은 양식이 해당 데이터를 제출하는 위치를 제어합니다. `image` 형식의 [\<input>](https://www.w3.org/wiki/HTML/Elements/input) 요소 및 [\<button>](https://www.w3.org/wiki/HTML/Elements/button) 에 바인딩됩니다. 양식 작업 태그 도우미를 통해 여러 개의 [AnchorTagHelper](xref:mvc/views/tag-helpers/builtin-th/anchor-tag-helper) `asp-` 특성을 사용하여 해당 요소에 대해 생성되는 `formaction` 링크를 제어할 수 있습니다.
+
+`formaction`의 값을 제어하기 위해 지원되는 [AnchorTagHelper](xref:mvc/views/tag-helpers/builtin-th/anchor-tag-helper) 특성:
+
+|특성|설명|
+|---|---|
+|[asp-controller](xref:mvc/views/tag-helpers/builtin-th/anchor-tag-helper#asp-controller)|컨트롤러의 이름입니다.|
+|[asp-action](xref:mvc/views/tag-helpers/builtin-th/anchor-tag-helper#asp-action)|작업 메서드의 이름입니다.|
+|[asp-area](xref:mvc/views/tag-helpers/builtin-th/anchor-tag-helper#asp-area)|영역의 이름입니다.|
+|[asp-page](xref:mvc/views/tag-helpers/builtin-th/anchor-tag-helper#asp-page)|Razor 페이지의 이름입니다.|
+|[asp-page-handler](xref:mvc/views/tag-helpers/builtin-th/anchor-tag-helper#asp-page-handler)|Razor 페이지 처리기의 이름입니다.|
+|[asp-route](xref:mvc/views/tag-helpers/builtin-th/anchor-tag-helper#asp-route)|경로의 이름입니다.|
+|[asp-route-{value}](xref:mvc/views/tag-helpers/builtin-th/anchor-tag-helper#asp-route-value)|단일 URL 경로 값입니다. 예를 들어, `asp-route-id="1234"`을 입력합니다.|
+|[asp-all-route-data](xref:mvc/views/tag-helpers/builtin-th/anchor-tag-helper#asp-all-route-data)|모든 경로 값입니다.|
+|[asp-fragment](xref:mvc/views/tag-helpers/builtin-th/anchor-tag-helper#asp-fragment)|URL 조각입니다.|
+
+### <a name="submit-to-controller-example"></a>컨트롤러에 제출 예제
+
+다음 태그는 입력 또는 단추가 선택될 때 `HomeController`의 `Index` 작업에 양식을 제출합니다.
+
+```cshtml
+<form method="post">
+    <button asp-controller="Home" asp-action="Index">Click Me</button>
+    <input type="image" src="..." alt="Or Click Me" asp-controller="Home" 
+                                asp-action="Index" />
+</form>
+```
+
+위의 태그는 다음 HTML을 생성합니다.
+
+```html
+<form method="post">
+    <button formaction="/Home">Click Me</button>
+    <input type="image" src="..." alt="Or Click Me" formaction="/Home" />
+</form>
+```
+
+### <a name="submit-to-page-example"></a>페이지에 제출 예제
+
+다음 태그는 `About` Razor 페이지에 양식을 제출합니다.
+
+```cshtml
+<form method="post">
+    <button asp-page="About">Click Me</button>
+    <input type="image" src="..." alt="Or Click Me" asp-page="About" />
+</form>
+```
+
+위의 태그는 다음 HTML을 생성합니다.
+
+```html
+<form method="post">
+    <button formaction="/About">Click Me</button>
+    <input type="image" src="..." alt="Or Click Me" formaction="/About" />
+</form>
+```
+
+### <a name="submit-to-route-example"></a>경로에 제출 예제
+
+`/Home/Test` 엔드포인트를 살펴보겠습니다.
+
+```csharp
+public class HomeController : Controller
+{
+    [Route("/Home/Test", Name = "Custom")]
+    public string Test()
+    {
+        return "This is the test page";
+    }
+}
+```
+
+다음 태그는 `/Home/Test` 엔드포인트에 양식을 제출합니다.
+
+```cshtml
+<form method="post">
+    <button asp-route="Custom">Click Me</button>
+    <input type="image" src="..." alt="Or Click Me" asp-route="Custom" />
+</form>
+```
+
+위의 태그는 다음 HTML을 생성합니다.
+
+```html
+<form method="post">
+    <button formaction="/Home/Test">Click Me</button>
+    <input type="image" src="..." alt="Or Click Me" formaction="/Home/Test" />
+</form>
+```
 
 ## <a name="the-input-tag-helper"></a>입력 태그 도우미
 

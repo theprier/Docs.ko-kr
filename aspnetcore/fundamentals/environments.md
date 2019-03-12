@@ -5,12 +5,12 @@ description: ASP.NET Core 앱의 여러 환경에서 앱 동작을 제어하는 
 ms.author: riande
 ms.date: 01/22/2019
 uid: fundamentals/environments
-ms.openlocfilehash: 39e1b48481832a6d76de605b37410fe2e16dcd88
-ms.sourcegitcommit: ebf4e5a7ca301af8494edf64f85d4a8deb61d641
+ms.openlocfilehash: 4120453c36d1fc2a2303c2175df30ef9777bc54f
+ms.sourcegitcommit: 036d4b03fd86ca5bb378198e29ecf2704257f7b2
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54836742"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57345953"
 ---
 # <a name="use-multiple-environments-in-aspnet-core"></a>ASP.NET Core에서 여러 환경 사용
 
@@ -43,7 +43,7 @@ Windows와 macOS에서 환경 변수 및 값은 대/소문자를 구분하지 �
 
 ### <a name="development"></a>개발
 
-개발 환경은 프로덕션에서 노출해서는 안 되는 기능을 활성화할 수 있습니다. 예를 들어 ASP.NET Core 템플릿은 개발 환경에서 [개발자 예외 페이지](xref:fundamentals/error-handling#the-developer-exception-page)를 활성화합니다.
+개발 환경은 프로덕션에서 노출해서는 안 되는 기능을 활성화할 수 있습니다. 예를 들어 ASP.NET Core 템플릿은 개발 환경에서 [개발자 예외 페이지](xref:fundamentals/error-handling#developer-exception-page)를 활성화합니다.
 
 로컬 컴퓨터 개발을 위한 환경은 프로젝트의 *Properties\launchSettings.json* 파일에서 설정할 수 있습니다. *launchSettings.json*의 환경 값은 시스템 환경에서 설정된 값을 재정의합니다.
 

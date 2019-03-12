@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 02/4/2019
 uid: tutorials/first-web-api
-ms.openlocfilehash: 686397cd25248ce7b37e505c7129a3b56d4ada1b
-ms.sourcegitcommit: 2c7ffe349eabdccf2ed748dd303ffd0ba6e1cfe3
+ms.openlocfilehash: 24c87f2ad0446aef51f9d648fd20c181cbeaed2e
+ms.sourcegitcommit: 036d4b03fd86ca5bb378198e29ecf2704257f7b2
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56833763"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57346474"
 ---
 # <a name="tutorial-create-a-web-api-with-aspnet-core-mvc"></a>자습서: ASP.NET Core MVC를 사용하여 웹 API 만들기
 
@@ -287,7 +287,7 @@ ASP.NET Core에서는 DB 컨텍스트와 같은 서비스를 [DI(종속성 주�
 
 * 새 요청을 만듭니다.
   * HTTP 메서드를 **GET**으로 설정합니다.
-  * 요청 URL을 `https://localhost:<port>/api/todo`로 설정합니다. 예를 들어 `https://localhost:5001/api/todo`과 같은 형식입니다.
+  * 요청 URL을 `https://localhost:<port>/api/todo`로 설정합니다. 예를 들어, `https://localhost:5001/api/todo`을 입력합니다.
 * Postman에서 **두 개의 창 보기**를 설정합니다.
 * **보내기**를 선택합니다.
 
@@ -454,6 +454,7 @@ jQuery [ajax](https://api.jquery.com/jquery.ajax/) 함수는 할 일 항목의 �
 * <xref:web-api/action-return-types>
 * <xref:host-and-deploy/azure-apps/index>
 * <xref:host-and-deploy/index>
+* [이 자습서의 YouTube 버전](https://www.youtube.com/watch?v=TTkhEyGBfAk)
 
 ## <a name="next-steps"></a>다음 단계
 

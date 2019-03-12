@@ -5,12 +5,12 @@ description: ASP.NET Core 앱에서 생성된 페이지를 업데이트하는 �
 ms.author: riande
 ms.date: 12/20/2018
 uid: tutorials/razor-pages/da1
-ms.openlocfilehash: 62385f33dc86609726305728fbc19dd9ff27dc87
-ms.sourcegitcommit: d75d8eb26c2cce19876c8d5b65ac8a4b21f625ef
+ms.openlocfilehash: 19f54e04e748f5cf0469c2b5428800694d2c9344
+ms.sourcegitcommit: 036d4b03fd86ca5bb378198e29ecf2704257f7b2
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/19/2019
-ms.locfileid: "56410196"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57346108"
 ---
 # <a name="update-the-generated-pages-in-an-aspnet-core-app"></a>ASP.NET Core 앱에서 생성된 페이지 업데이트
 
@@ -130,6 +130,10 @@ ms.locfileid: "56410196"
 인덱스, 만들기 및 삭제 Razor 페이지의 HTTP GET 메서드는 유사한 패턴을 따릅니다. 만들기 Razor 페이지에서 HTTP POST `OnPostAsync` 메서드는 편집 Razor 페이지의 `OnPostAsync` 메서드와 유사한 패턴을 따릅니다.
 
 검색은 다음 자습서에 추가됩니다.
+
+## <a name="additional-resources"></a>추가 자료
+
+* [이 자습서의 YouTube 버전](https://youtu.be/yLnnleREMtQ)
 
 > [!div class="step-by-step"]
 > [이전: 데이터베이스 작업](xref:tutorials/razor-pages/sql)

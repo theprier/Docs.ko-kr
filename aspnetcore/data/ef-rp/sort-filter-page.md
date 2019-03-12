@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/24/2018
 uid: data/ef-rp/sort-filter-page
-ms.openlocfilehash: 350243fb94b4798293a5a61b580c3b3b4d8c6d4a
-ms.sourcegitcommit: 728f4e47be91e1c87bb7c0041734191b5f5c6da3
+ms.openlocfilehash: 4616e93e0cfc25f3ad66721856a4e48910f2fcf5
+ms.sourcegitcommit: 036d4b03fd86ca5bb378198e29ecf2704257f7b2
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54444300"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57345964"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---sort-filter-paging---3-of-8"></a>ASP.NET Core에서 EF Core를 사용한 Razor 페이지 - 정렬, 필터, 페이징 - 3/8
 
@@ -282,6 +282,7 @@ LINQ 문은 등록 날짜별로 학생 엔터티를 그룹화하고 각 그룹�
 ## <a name="additional-resources"></a>추가 자료
 
 * [ASP.NET Core 2.x 소스 디버깅](https://github.com/aspnet/Docs/issues/4155)
+* [이 자습서의 YouTube 버전](https://www.youtube.com/watch?v=MDs7PFpoMqI)
 
 다음 자습서에서는 앱은 마이그레이션을 사용하여 데이터 모델을 업데이트합니다.
 

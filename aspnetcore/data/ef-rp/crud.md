@@ -5,12 +5,12 @@ description: EF Core를 사용한 만들기, 읽기, 업데이트, 삭제 방법
 ms.author: riande
 ms.date: 6/31/2017
 uid: data/ef-rp/crud
-ms.openlocfilehash: 4af16bdf3928609214c1255cdd411312c8b7d3f3
-ms.sourcegitcommit: f5d403004f3550e8c46585fdbb16c49e75f495f3
+ms.openlocfilehash: adb281277599456356251c6ee30772a25f14ac58
+ms.sourcegitcommit: 036d4b03fd86ca5bb378198e29ecf2704257f7b2
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "49477438"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57346056"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---crud---2-of-8"></a>ASP.NET Core에서 EF Core를 사용한 Razor 페이지 - CRUD - 2/8
 
@@ -72,7 +72,7 @@ ms.locfileid: "49477438"
 
 `"{id:int}"` 경로 템플릿을 사용하도록 편집, 세부 정보 및 삭제 Razor 페이지를 업데이트합니다. 이러한 각 페이지에 대한 page 지시문을 `@page`에서 `@page "{id:int}"`로 변경합니다.
 
-정수 경로 값을 포함하지 **않는** “{id:int}” 경로 템플릿이 있는 페이지에 대한 요청은 HTTP 404(찾을 수 없음) 오류를 반환합니다. 예를 들어 `http://localhost:5000/Students/Details`는 404 오류를 반환합니다. ID를 옵션으로 설정하려면 경로 제약 조건에 `?`를 추가합니다.
+정수 경로 값을 포함하지 **않는** “{id:int}” 경로 템플릿이 있는 페이지에 대한 요청은 HTTP 404(찾을 수 없음) 오류를 반환합니다. 예를 들어 `http://localhost:5000/Students/Details`는 404 오류를 반환합니다. ID를 옵션으로 설정하려면 경로 제약 조건에 `?`를 추가하면 됩니다.
 
  ```cshtml
 @page "{id:int?}"
@@ -149,7 +149,7 @@ ms.locfileid: "49477438"
 
 ### <a name="view-model"></a>뷰 모델
 
-뷰 모델은 일반적으로 응용 프로그램에서 사용되는 모델에 포함된 속성의 하위 집합을 포함합니다. 응용 프로그램 모델은 흔히 도메인 모델이라고 합니다. 도메인 모델은 일반적으로 DB의 해당 엔터티에 필요한 모든 속성을 포함합니다. 뷰 모델은 UI 계층에 필요한 속성만 포함합니다(예: 만들기 페이지). 뷰 모델 외에도 일부 앱은 바인딩 모델 또는 입력 모델을 사용하여 Razor 페이지 페이지 모델 클래스와 브라우저 간에 데이터를 전달합니다. 다음 `Student` 뷰 모델을 살펴보세요.
+뷰 모델은 일반적으로 애플리케이션에서 사용되는 모델에 포함된 속성의 하위 집합을 포함합니다. 애플리케이션 모델은 흔히 도메인 모델이라고 합니다. 도메인 모델은 일반적으로 DB의 해당 엔터티에 필요한 모든 속성을 포함합니다. 뷰 모델은 UI 계층에 필요한 속성만 포함합니다(예: 만들기 페이지). 뷰 모델 외에도 일부 앱은 바인딩 모델 또는 입력 모델을 사용하여 Razor 페이지 페이지 모델 클래스와 브라우저 간에 데이터를 전달합니다. 다음 `Student` 뷰 모델을 살펴보세요.
 
 [!code-csharp[](intro/samples/cu21/Models/StudentVM.cs)]
 
@@ -187,15 +187,15 @@ DB 컨텍스트는 메모리의 엔터티가 해당하는 DB의 행과 동기화
 
 엔터티는 [다음 상태](/dotnet/api/microsoft.entityframeworkcore.entitystate) 중 하나일 수 있습니다.
 
-* `Added`: 엔터티가 아직 DB에 존재하지 않습니다. `SaveChanges` 메서드가 INSERT 문을 발급합니다.
+* `Added`: 엔터티가 아직 DB에 없습니다. `SaveChanges` 메서드가 INSERT 문을 발급합니다.
 
-* `Unchanged`: 이 엔터티로 저장할 변경 사항이 없습니다. 엔터티는 DB에서 읽을 때 이 상태입니다.
+* `Unchanged`: 이 엔터티에 저장해야 하는 변경 내용이 없습니다. 엔터티는 DB에서 읽을 때 이 상태입니다.
 
 * `Modified`: 일부 또는 모든 엔터티의 속성 값이 수정되었습니다. `SaveChanges` 메서드는 UPDATE 문을 발급합니다.
 
 * `Deleted`: 엔터티가 삭제되도록 표시되었습니다. `SaveChanges` 메서드는 DELETE 문을 발급합니다.
 
-* `Detached`: 엔터티가 DB 컨텍스트에 의해 추적되지 않습니다.
+* `Detached`: 엔터티가 DB 컨텍스트에서 추적되지 않습니다.
 
 데스크톱 앱에서는 일반적으로 상태 변경 내용이 자동으로 설정됩니다. 엔터티를 읽고 변경이 수행되면, 엔터티 상태가 자동으로 `Modified`로 바뀝니다. `SaveChanges`를 호출하면 변경된 속성만 업데이트하는 SQL UPDATE 문이 생성됩니다.
 
@@ -207,7 +207,8 @@ DB 컨텍스트는 메모리의 엔터티가 해당하는 DB의 행과 동기화
 
 [!code-csharp[](intro/samples/cu21/Pages/Students/Delete.cshtml.cs?name=snippet1&highlight=12)]
 
-`OnGetAsync` 메서드를 다음 코드로 바꿉니다.
+
+  `OnGetAsync` 메서드를 다음 코드로 바꿉니다.
 
 [!code-csharp[](intro/samples/cu21/Pages/Students/Delete.cshtml.cs?name=snippet_OnGetAsync&highlight=1,9,17-20)]
 
@@ -247,6 +248,10 @@ Razor 페이지에 올바른 `@page` 지시문이 포함되어 있는지 확인�
 각 Razor 페이지는 `@page` 지시문을 포함해야 합니다.
 
 ::: moniker-end
+
+## <a name="additional-resources"></a>추가 자료
+
+* [이 자습서의 YouTube 버전](https://www.youtube.com/watch?v=F0SP7Ry4flQ&list=PLnVvOWNfuhGV45HnNgd0vuIIkoQ1UaVBf)
 
 > [!div class="step-by-step"]
 > [이전](xref:data/ef-rp/intro)

@@ -5,14 +5,14 @@ description: Razor 파일의 컴파일이 ASP.NET Core 앱에서 발생하는 �
 monikerRange: '>= aspnetcore-1.1'
 ms.author: riande
 ms.custom: mvc
-ms.date: 02/13/2019
+ms.date: 03/02/2019
 uid: mvc/views/view-compilation
-ms.openlocfilehash: 0b6173a7860f5f1d9d11219fbf3f57f76d703031
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 0b3aea584de63cb8032e4ca112d2441349bdfbb3
+ms.sourcegitcommit: 036d4b03fd86ca5bb378198e29ecf2704257f7b2
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "56899270"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57345491"
 ---
 # <a name="razor-file-compilation-in-aspnet-core"></a>ASP.NET Core의 Razor 파일 컴파일
 
@@ -93,7 +93,7 @@ ASP.NET Core 2.x 프로젝트 템플릿은 기본적으로 `MvcRazorCompileOnPub
 dotnet publish -c Release
 ```
 
-미리 컴파일에 성공하면 컴파일된 Razor 파일이 포함된 *<project_name>.PrecompiledViews.dll* 파일이 생성됩니다. 예를 들어 아래 스크린샷은 *WebApplication1.PrecompiledViews.dll* 내부에서 *Index.cshtml*의 내용을 보여 줍니다.
+미리 컴파일에 성공하면 컴파일된 Razor 파일이 포함된 *\<project_name>.PrecompiledViews.dll* 파일이 생성됩니다. 예를 들어 아래 스크린샷은 *WebApplication1.PrecompiledViews.dll* 내부에서 *Index.cshtml*의 내용을 보여 줍니다.
 
 ![DLL 내에서 Razor 뷰](view-compilation/_static/razor-views-in-dll.png)
 
@@ -122,18 +122,19 @@ dotnet publish -c Release
 
 ::: moniker range=">= aspnetcore-3.0"
 
-런타임 컴파일은 `Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation` 패키지를 사용하여 활성화됩니다. 런타임 컴파일을 활성화하려면 앱에
+런타임 컴파일은 `Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation` 패키지를 사용하여 활성화됩니다. 런타임 컴파일을 사용하려면 앱에서
 
 * [Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation](https://www.nuget.org/packages/Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation/) NuGet 패키지를 설치해야 합니다.
 * 애플리케이션의 `ConfigureServices`를 업데이트하여 `AddMvcRazorRuntimeCompilation`에 대한 호출을 포함시킵니다.
 
-```csharp
-services
-    .AddMvc()
-    .AddMvcRazorRuntimeCompilation()
-```
+  ```csharp
+  services
+      .AddMvc()
+      .AddMvcRazorRuntimeCompilation()
+  ```
 
 배포 시 런타임 컴파일이 작동하려면 앱에서 프로젝트 파일을 추가로 수정하여 `PreserveCompilationReferences`를 `true`로 설정해야 합니다.
+
 [!code-xml[](view-compilation/sample/RuntimeCompilation.csproj?highlight=3)]
 
 ::: moniker-end

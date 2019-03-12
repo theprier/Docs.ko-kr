@@ -5,12 +5,12 @@ description: 이 자습서에서는 외래 키 필드 및 탐색 속성을 업�
 ms.author: riande
 ms.date: 11/15/2017
 uid: data/ef-rp/update-related-data
-ms.openlocfilehash: 4306118240c052585a5c2eeb2053ce03534b547c
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: c3dbfe57a832ba63c5da2f89c0d29e443a1277a7
+ms.sourcegitcommit: 036d4b03fd86ca5bb378198e29ecf2704257f7b2
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50207545"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57345764"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---update-related-data---7-of-8"></a>ASP.NET Core에서 EF Core를 사용한 Razor 페이지 - 관련 데이터 업데이트 - 7/8
 
@@ -47,7 +47,7 @@ ms.locfileid: "50207545"
 
 [!code-csharp[](intro/samples/cu/Pages/Courses/Create.cshtml.cs?highlight=7,18,32-999)]
 
-위의 코드:
+위의 코드는:
 
 * `DepartmentNamePageModel`에서 파생됩니다.
 * [초과 게시](xref:data/ef-rp/crud#overposting)를 방지하도록 `TryUpdateModelAsync`를 사용합니다.
@@ -134,7 +134,7 @@ Razor 페이지는 [Select 태그 도우미](xref:mvc/views/working-with-forms#t
 
 [!code-csharp[](intro/samples/cu/Pages/Instructors/Edit1.cshtml.cs?name=snippet&highlight=20-23,32,39-999)]
 
-위의 코드:
+위의 코드는:
 
 - `OfficeAssignment` 탐색 속성에 대한 즉시 로드를 사용하여 데이터베이스에서 현재 `Instructor` 엔터티를 가져옵니다.
 - 모델 바인더의 값으로 검색된 `Instructor` 엔터티를 업데이트합니다. `TryUpdateModel`은 [초과 게시](xref:data/ef-rp/crud#overposting)를 방지합니다.
@@ -224,6 +224,11 @@ Razor 페이지는 [Select 태그 도우미](xref:mvc/views/working-with-forms#t
 * `CourseAssignments` 탐색 속성에 대해 즉시 로드를 사용합니다. `CourseAssignments`는 포함되어야 합니다. 또는 강사가 삭제될 때 삭제되지 않습니다. 읽을 필요가 없도록 하려면 데이터베이스에 계단식 삭제를 구성합니다.
 
 * 삭제될 강사가 부서의 관리자로 할당된 경우 해당 부서에서 강사 할당을 제거합니다.
+
+## <a name="additional-resources"></a>추가 자료
+
+* [이 자습서의 YouTube 버전(1부)](https://www.youtube.com/watch?v=Csh6gkmwc9E)
+* [이 자습서의 YouTube 버전(2부)](https://www.youtube.com/watch?v=mOAankB_Zgc)
 
 > [!div class="step-by-step"]
 > [이전](xref:data/ef-rp/read-related-data)

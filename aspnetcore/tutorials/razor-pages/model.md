@@ -5,12 +5,12 @@ description: Entity Framework Core(EF Core)를 사용하여 데이터베이스�
 ms.author: riande
 ms.date: 02/12/2019
 uid: tutorials/razor-pages/model
-ms.openlocfilehash: c7341430e8e2ace7eb04faa308020095139d5b94
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 0ba00750dee1ccbef5d91d8c66f2de0db401c5c1
+ms.sourcegitcommit: 036d4b03fd86ca5bb378198e29ecf2704257f7b2
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "56410234"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57346361"
 ---
 # <a name="add-a-model-to-a-razor-pages-app-in-aspnet-core"></a>ASP.NET Core에서 Razor 페이지 앱에 모델 추가
 
@@ -147,10 +147,6 @@ ms.locfileid: "56410234"
 
 ---
 
-이전 명령은 다음 경고를 생성합니다. "엔터티 형식 'Movie'에서 10진수 열 'Price'의 형식이 지정되지 않았습니다. 그러면 값이 기본 전체 자릿수 및 소수 자릿수에 적합하지 않은 경우 자동으로 잘립니다. 'HasColumnType()'를 사용하여 모든 값을 수용할 수 있는 SQL Server 열 형식을 명시적으로 지정합니다."
-
-해당 경고를 무시할 수 있지만 자습서의 뒷부분에서 수정될 예정입니다.
-
 스캐폴드 프로세스는 다음 파일을 생성하고 업데이트합니다.
 
 ### <a name="files-created"></a>생성된 파일
@@ -204,6 +200,10 @@ Update-Database
 
 ---  
 <!-- End of VS tabs -->
+
+이전 명령은 다음 경고를 생성합니다. "엔터티 형식 'Movie'에서 10진수 열 'Price'의 형식이 지정되지 않았습니다. 그러면 값이 기본 전체 자릿수 및 소수 자릿수에 적합하지 않은 경우 자동으로 잘립니다. 'HasColumnType()'를 사용하여 모든 값을 수용할 수 있는 SQL Server 열 형식을 명시적으로 지정합니다."
+
+해당 경고를 무시할 수 있지만 자습서의 뒷부분에서 수정될 예정입니다.
 
 `ef migrations add InitialCreate` 명령은 초기 데이터베이스 스키마를 만드는 코드를 생성합니다. 스키마는 `DbContext`에 지정된 모델을 기반으로 합니다(*RazorPagesMovieContext.cs* 파일). `InitialCreate` 인수는 마이그레이션 이름을 지정하는 데 사용됩니다. 모든 이름을 사용할 수 있지만 규칙에 따라 마이그레이션을 설명하는 이름을 선택합니다.
 
@@ -271,6 +271,10 @@ Login failed for user 'User-name'.
 * **편집**, **세부 정보** 및 **삭제** 링크를 테스트합니다.
 
 다음 자습서에서는 스캐폴딩을 통해 만들어진 파일을 설명합니다.
+
+## <a name="additional-resources"></a>추가 자료
+
+* [이 자습서의 YouTube 버전](https://www.youtube.com/watch?v=sFVIsdR_RcM)
 
 > [!div class="step-by-step"]
 > [이전: 시작하기](xref:tutorials/razor-pages/razor-pages-start)

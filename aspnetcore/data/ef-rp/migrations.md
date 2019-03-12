@@ -5,12 +5,12 @@ description: 이 자습서에서는 ASP.NET Core MVC 앱에서 데이터 모델 
 ms.author: riande
 ms.date: 6/31/2017
 uid: data/ef-rp/migrations
-ms.openlocfilehash: 2051f55bfa7a9582486df78ec91315f0b03cb1e8
-ms.sourcegitcommit: 661d30492d5ef7bbca4f7e709f40d8f3309d2dac
+ms.openlocfilehash: ef79aca700068aadf9b5b2b689213b6e78a5d729
+ms.sourcegitcommit: 036d4b03fd86ca5bb378198e29ecf2704257f7b2
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37938380"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57346439"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---migrations---4-of-8"></a>ASP.NET Core에서 EF Core를 사용한 Razor 페이지 - 마이그레이션 - 4/8
 
@@ -149,7 +149,7 @@ context.Database.EnsureCreated();
 
 ## <a name="applying-migrations-in-production"></a>프로덕션 환경에서 마이그레이션 적용
 
-프로덕션 앱은 응용 프로그램 시작 시 [Database.Migrate](/dotnet/api/microsoft.entityframeworkcore.relationaldatabasefacadeextensions.migrate?view=efcore-2.0#Microsoft_EntityFrameworkCore_RelationalDatabaseFacadeExtensions_Migrate_Microsoft_EntityFrameworkCore_Infrastructure_DatabaseFacade_)를 호출하지 **않는 것이** 좋습니다. 서버 팜의 앱에서 `Migrate`를 호출하면 안됩니다. 예를 들어, 앱이 스케일 아웃으로 클라우드에 배포된 경우(앱의 여러 인스턴스가 실행 중임)
+프로덕션 앱은 애플리케이션 시작 시 [Database.Migrate](/dotnet/api/microsoft.entityframeworkcore.relationaldatabasefacadeextensions.migrate?view=efcore-2.0#Microsoft_EntityFrameworkCore_RelationalDatabaseFacadeExtensions_Migrate_Microsoft_EntityFrameworkCore_Infrastructure_DatabaseFacade_)를 호출하지 **않는 것이** 좋습니다. 서버 팜의 앱에서 `Migrate`를 호출하면 안됩니다. 예를 들어, 앱이 스케일 아웃으로 클라우드에 배포된 경우(앱의 여러 인스턴스가 실행 중임)
 
 데이터베이스 마이그레이션은 배포의 일부로 제어된 방식으로 수행되어야 합니다. 프로덕션 데이터베이스 마이그레이션 방법은 다음과 같습니다.
 
@@ -171,10 +171,11 @@ The login failed.
 Login failed for user 'user name'.
 ```
 
-해결 방법: `dotnet ef database update`를 실행합니다.
+해결책: `dotnet ef database update` 실행
 
 ### <a name="additional-resources"></a>추가 자료
 
+* [이 자습서의 YouTube 버전](https://www.youtube.com/watch?v=OWSUuMLKTJo)
 * [.NET Core CLI](/ef/core/miscellaneous/cli/dotnet)
 * [패키지 관리자 콘솔(Visual Studio)](/ef/core/miscellaneous/cli/powershell)
 

@@ -5,12 +5,12 @@ description: ASP.NET Core Razor 페이지에 검색을 추가하는 방법을 �
 ms.author: riande
 ms.date: 12/3/2018
 uid: tutorials/razor-pages/search
-ms.openlocfilehash: 3900b33f31fef79327d01b0579208355b0bce90c
-ms.sourcegitcommit: d75d8eb26c2cce19876c8d5b65ac8a4b21f625ef
+ms.openlocfilehash: 8a8e51632a75efd6411bae46b9a7f9e4f16b480f
+ms.sourcegitcommit: 036d4b03fd86ca5bb378198e29ecf2704257f7b2
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/19/2019
-ms.locfileid: "56410221"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57346202"
 ---
 # <a name="add-search-to-aspnet-core-razor-pages"></a>ASP.NET Core Razor 페이지에 검색 추가
 
@@ -105,6 +105,11 @@ HTML `<form>` 태그는 다음과 같은 [태그 도우미](xref:mvc/views/tag-h
 [!code-cshtml[](razor-pages-start/sample/RazorPagesMovie22/Pages/Movies/IndexFormGenreNoRating.cshtml?highlight=16-18&range=1-26)]
 
 장르별, 동영상 제목별 및 둘 다로 검색하여 앱을 테스트합니다.
+
+## <a name="additional-resources"></a>추가 자료
+
+* [이 자습서의 YouTube 버전](https://youtu.be/4B6pHtdyo08)
+
 
 > [!div class="step-by-step"]
 > [이전: 페이지 업데이트](xref:tutorials/razor-pages/da1)

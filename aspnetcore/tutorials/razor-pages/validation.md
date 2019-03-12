@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 12/5/2018
 uid: tutorials/razor-pages/validation
-ms.openlocfilehash: 93303b76561a8a800432ee707997f240f15e29c7
-ms.sourcegitcommit: d75d8eb26c2cce19876c8d5b65ac8a4b21f625ef
+ms.openlocfilehash: 961b41a63a5dd066a51468239bd855b7f723a3ae
+ms.sourcegitcommit: 036d4b03fd86ca5bb378198e29ecf2704257f7b2
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/19/2019
-ms.locfileid: "56410458"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57346044"
 ---
 # <a name="add-validation-to-an-aspnet-core-razor-page"></a>ASP.NET Core Razor 페이지에 유효성 검사 추가
 
@@ -21,7 +21,7 @@ ms.locfileid: "56410458"
 
 ## <a name="validation"></a>유효성 검사
 
-소프트웨어 개발의 주요 개념은 [반복 금지](https://wikipedia.org/wiki/Don%27t_repeat_yourself)라고 합니다************. Razor 페이지는 기능이 한번 정의된 곳의 개발을 원활하게 하고 앱 전체에서 반영됩니다. DRY는 다음 작업에 도움이 됩니다.
+소프트웨어 개발의 주요 개념은 [반복 금지](https://wikipedia.org/wiki/Don%27t_repeat_yourself)라고 합니다. Razor 페이지는 기능이 한번 정의된 곳의 개발을 원활하게 하고 앱 전체에서 반영됩니다. DRY는 다음 작업에 도움이 됩니다.
 
 * 앱에서 코드의 양 감소
 * 코드에 오류 감소 및 쉽게 테스트 및 유지 관리
@@ -149,6 +149,7 @@ Razor 페이지에 대한 이 소개를 완료해 주셔서 감사합니다. [Ra
 * <xref:fundamentals/localization>
 * <xref:mvc/views/tag-helpers/intro>
 * <xref:mvc/views/tag-helpers/authoring>
+* [이 자습서의 YouTube 버전](https://youtu.be/b63m66eu7us)
 
 > [!div class="step-by-step"]
 > [이전: 새 필드 추가](xref:tutorials/razor-pages/new-field)

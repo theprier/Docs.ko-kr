@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: seodec18
 ms.date: 11/22/2018
 uid: data/ef-rp/intro
-ms.openlocfilehash: 0c12aa983f01285e27c10bba4e622b2d2ae0a1f2
-ms.sourcegitcommit: 3c2ba9a0d833d2a096d9d800ba67a1a7f9491af0
+ms.openlocfilehash: ac9bb9163cb1d5da1017ec204c37f3ac82aaae97
+ms.sourcegitcommit: 036d4b03fd86ca5bb378198e29ecf2704257f7b2
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55854447"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57346270"
 ---
 # <a name="razor-pages-with-entity-framework-core-in-aspnet-core---tutorial-1-of-8"></a>ASP.NET Core에서 Entity Framework Core를 사용한 Razor 페이지 - 자습서 1/8
 
@@ -315,6 +315,10 @@ EF Core를 사용하는 비동기 코드를 작성할 때 고려해야 할 몇 �
 다음 자습서에서는 기본 CRUD(만들기, 읽기, 업데이트, 삭제) 작업을 검사합니다.
 
 ::: moniker-end
+
+## <a name="additional-resources"></a>추가 자료
+
+* [이 자습서의 YouTube 버전](https://www.youtube.com/watch?v=P7iTtQnkrNs)
 
 > [!div class="step-by-step"]
 > [다음](xref:data/ef-rp/crud)

@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/24/2018
 uid: data/ef-rp/read-related-data
-ms.openlocfilehash: cf8733e1e806c4be0c4b217fc45c7a338a03a3ce
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: 140f482e136acf4daba1248fecc87e06db6866f3
+ms.sourcegitcommit: 036d4b03fd86ca5bb378198e29ecf2704257f7b2
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50207558"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57345896"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---read-related-data---6-of-8"></a>ASP.NET Core에서 EF Core를 사용한 Razor 페이지 - 관련 데이터 읽기 - 6/8
 
@@ -42,7 +42,7 @@ ms.locfileid: "50207558"
   * 주 쿼리에 대해 한 개 쿼리 
   * 로드 트리에서 각 컬렉션 "에지"에 대해 한 개 쿼리
 
-* `Load`로 쿼리 구분: 별도의 쿼리로 데이터를 검색할 수 있으며 EF Core는 탐색 속성을 "수정"합니다. "수정"한다는 것은 EF Core가 탐색 속성을 자동으로 채운다는 것을 의미합니다. `Load`로 쿼리를 구분하는 것은 즉시 로드보다 더 명시적인 로드입니다.
+* `Load`를 사용한 별도 쿼리: 별도 쿼리로 데이터를 검색할 수 있으며, EF Core에서 탐색 속성을 “수정”합니다. "수정"한다는 것은 EF Core가 탐색 속성을 자동으로 채운다는 것을 의미합니다. `Load`로 쿼리를 구분하는 것은 즉시 로드보다 더 명시적인 로드입니다.
 
   ![별도 쿼리 예제](read-related-data/_static/separate-queries.png)
 
@@ -330,6 +330,11 @@ ms.locfileid: "50207558"
 앱을 테스트합니다. 사용자 관점에서 앱은 이전 버전과 동일하게 동작합니다.
 
 다음 자습서에서는 관련된 데이터를 업데이트하는 방법을 보여 줍니다.
+
+## <a name="additional-resources"></a>추가 자료
+
+* [이 자습서의 YouTube 버전(1부)](https://www.youtube.com/watch?v=PzKimUDmrvE)
+* [이 자습서의 YouTube 버전(2부)](https://www.youtube.com/watch?v=xvDDrIHv5ko)
 
 >[!div class="step-by-step"]
 >[이전](xref:data/ef-rp/complex-data-model)

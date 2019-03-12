@@ -5,12 +5,12 @@ description: 데이터베이스 및 ASP.NET Core 작업을 설명합니다.
 ms.author: riande
 ms.date: 12/07/2017
 uid: tutorials/razor-pages/sql
-ms.openlocfilehash: 3e05f5dbc73c35f1f938346b2eaab8c0fa7d8ab9
-ms.sourcegitcommit: d75d8eb26c2cce19876c8d5b65ac8a4b21f625ef
+ms.openlocfilehash: 9f01f5c9fcf9c423ccc2af8ae6ca55c2f427c9c1
+ms.sourcegitcommit: 036d4b03fd86ca5bb378198e29ecf2704257f7b2
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/19/2019
-ms.locfileid: "56410299"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57346030"
 ---
 # <a name="work-with-a-database-and-aspnet-core"></a>데이터베이스 및 ASP.NET Core 작업
 
@@ -176,6 +176,10 @@ DB의 모든 레코드 삭제(시드 메서드 실행을 위해). 앱을 중지 
 ![동영상 데이터를 표시하는 크롬에서 열린 동영상 애플리케이션](sql/_static/m55.png)
 
 다음 자습서는 데이터의 표현을 정리합니다.
+
+## <a name="additional-resources"></a>추가 자료
+
+* [이 자습서의 YouTube 버전](https://youtu.be/A_5ff11sDHY)
 
 > [!div class="step-by-step"]
 > [이전: 스캐폴드된 Razor Pages](xref:tutorials/razor-pages/page)

@@ -7,12 +7,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 01/17/2019
 uid: fundamentals/startup
-ms.openlocfilehash: cfd0a57d5d0b60862b017a170b6d5cbddf56f15a
-ms.sourcegitcommit: b3894b65e313570e97a2ab78b8addd22f427cac8
+ms.openlocfilehash: d629c2f02f9021454d8f8539018f3e2ca4703a00
+ms.sourcegitcommit: 036d4b03fd86ca5bb378198e29ecf2704257f7b2
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56744185"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57346400"
 ---
 # <a name="app-startup-in-aspnet-core"></a>ASP.NET Core에서 앱 시작
 
@@ -40,7 +40,7 @@ ASP.NET Core 앱은 규칙에 따라 `Startup`으로 이름이 지정된 `Startu
 `Startup` 클래스에 대한 [종속성 주입](xref:fundamentals/dependency-injection)의 일반적인 용도는 다음을 삽입하는 것입니다.
 
 * 환경별로 서비스를 구성하는 <xref:Microsoft.AspNetCore.Hosting.IHostingEnvironment>.
-* 구성을 읽는 <xref:Microsoft.Extensions.Configuration.IConfigurationBuilder>.
+* 구성을 읽는 <xref:Microsoft.Extensions.Configuration.IConfiguration>.
 * `Startup.ConfigureServices`의 로거를 만드는 <xref:Microsoft.Extensions.Logging.ILoggerFactory>.
 
 [!code-csharp[](startup/sample_snapshot/Startup2.cs?highlight=7-8)]
@@ -73,7 +73,7 @@ ASP.NET Core 앱은 규칙에 따라 `Startup`으로 이름이 지정된 `Startu
 
 [ASP.NET Core 템플릿](/dotnet/core/tools/dotnet-new)은 다음을 지원하는 파이프라인을 구성합니다.
 
-* [개발자 예외 페이지](xref:fundamentals/error-handling#the-developer-exception-page)
+* [개발자 예외 페이지](xref:fundamentals/error-handling#developer-exception-page)
 * [예외 처리기](xref:fundamentals/error-handling#configure-a-custom-exception-handling-page)
 * [HSTS(HTTP 엄격한 전송 보안)](xref:security/enforcing-ssl#http-strict-transport-security-protocol-hsts)
 * [HTTPS 리디렉션](xref:security/enforcing-ssl)

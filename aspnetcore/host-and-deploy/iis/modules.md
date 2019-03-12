@@ -4,14 +4,14 @@ author: guardrex
 description: ASP.NET Core 앱용 활성 및 비활성 IIS 모듈과 IIS 모듈을 관리하는 방법을 살펴봅니다.
 ms.author: riande
 ms.custom: mvc
-ms.date: 01/17/2019
+ms.date: 02/28/2019
 uid: host-and-deploy/iis/modules
-ms.openlocfilehash: 8c32a668b3945f0da0194162e19e965b4aed3934
-ms.sourcegitcommit: 184ba5b44d1c393076015510ac842b77bc9d4d93
+ms.openlocfilehash: e5bb1a86453bb945789cc1f4b56616551e316615
+ms.sourcegitcommit: 6ddd8a7675c1c1d997c8ab2d4498538e44954cac
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/18/2019
-ms.locfileid: "54396274"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57400686"
 ---
 # <a name="iis-modules-with-aspnet-core"></a>IIS 모듈 및 ASP.NET Core
 
@@ -36,11 +36,12 @@ ms.locfileid: "54396274"
 | **다이제스트 인증**<br>`DigestAuthenticationModule`                                        | 예 | |
 | **디렉터리 검색**<br>`DirectoryListingModule`                                               | 아니요  | [디렉터리 검색 미들웨어](xref:fundamentals/static-files#enable-directory-browsing) |
 | **동적 압축**<br>`DynamicCompressionModule`                                            | 예 | [응답 압축 미들웨어](xref:performance/response-compression) |
-| **추적**<br>`FailedRequestsTracingModule`                                                     | 예 | [ASP.NET Core 로깅](xref:fundamentals/logging/index#tracesource-provider) |
+| **실패한 요청 추적**<br>`FailedRequestsTracingModule`                                     | 예 | [ASP.NET Core 로깅](xref:fundamentals/logging/index#tracesource-provider) |
 | **파일 캐싱**<br>`FileCacheModule`                                                            | 아니요  | [응답 캐싱 미들웨어](xref:performance/caching/middleware) |
 | **HTTP 캐싱**<br>`HttpCacheModule`                                                            | 아니요  | [응답 캐싱 미들웨어](xref:performance/caching/middleware) |
 | **HTTP 로깅**<br>`HttpLoggingModule`                                                          | 예 | [ASP.NET Core 로깅](xref:fundamentals/logging/index) |
 | **HTTP 리디렉션**<br>`HttpRedirectionModule`                                                  | 예 | [URL 재작성 미들웨어](xref:fundamentals/url-rewriting) |
+| **HTTP 추적**<br>`TracingModule`                                                              | 예 | |
 | **IIS 클라이언트 인증서 매핑 인증**<br>`IISCertificateMappingAuthenticationModule` | 예 | |
 | **IP 및 도메인 제한**<br>`IpRestrictionModule`                                          | 예 | |
 | **ISAPI 필터**<br>`IsapiFilterModule`                                                         | 예 | [미들웨어](xref:fundamentals/middleware/index) |

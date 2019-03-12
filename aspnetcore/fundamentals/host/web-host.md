@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 12/18/2018
 uid: fundamentals/host/web-host
-ms.openlocfilehash: 878fbaa1a61946dadf23ba8fefbf22021e547cc2
-ms.sourcegitcommit: b3894b65e313570e97a2ab78b8addd22f427cac8
+ms.openlocfilehash: 94d7e3436b52646166733e9e7334ac533c72b7b8
+ms.sourcegitcommit: 036d4b03fd86ca5bb378198e29ecf2704257f7b2
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56744094"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57346473"
 ---
 # <a name="aspnet-core-web-host"></a>ASP.NET Core 웹 호스트
 
@@ -137,7 +137,7 @@ public class Program
 
 [WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder)는 호스트 구성 값을 설정하기 위해 다음 방법을 사용합니다.
 
-* `ASPNETCORE_{configurationKey}` 형식의 환경 변수를 포함하는 호스트 빌더 구성. 예를 들어 `ASPNETCORE_ENVIRONMENT`과 같은 형식입니다.
+* `ASPNETCORE_{configurationKey}` 형식의 환경 변수를 포함하는 호스트 빌더 구성. 예를 들어, `ASPNETCORE_ENVIRONMENT`을 입력합니다.
 * [UseContentRoot](/dotnet/api/microsoft.aspnetcore.hosting.hostingabstractionswebhostbuilderextensions.usecontentroot) 및 [UseConfiguration](/dotnet/api/microsoft.aspnetcore.hosting.hostingabstractionswebhostbuilderextensions.useconfiguration) 같은 확장입니다([구성 재정의](#override-configuration) 섹션 참조).
 * [UseSetting](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder.usesetting) 및 연결된 키. `UseSetting`을 사용하여 값을 설정할 때 값은 형식에 관계 없이 문자열로 설정됩니다.
 
@@ -314,7 +314,7 @@ WebHost.CreateDefaultBuilder(args)
 **설정 방법**: `UseUrls`  
 **환경 변수**: `ASPNETCORE_URLS`
 
-서버가 응답해야 하는 세미콜론으로 구분된(;) URL 접두사의 목록으로 설정합니다. 예를 들어 `http://localhost:123`과 같은 형식입니다. “\*”를 사용하여 서버가 지정된 포트 및 프로토콜을 사용하는 IP 주소 또는 호스트 이름에서 요청을 수신해야 함을 나타냅니다(예: `http://*:5000`). 프로토콜(`http://` 또는 `https://`)은 각 URL에 포함되어 있어야 합니다. 지원되는 형식은 서버마다 다릅니다.
+서버가 응답해야 하는 세미콜론으로 구분된(;) URL 접두사의 목록으로 설정합니다. 예를 들어, `http://localhost:123`을 입력합니다. “\*”를 사용하여 서버가 지정된 포트 및 프로토콜을 사용하는 IP 주소 또는 호스트 이름에서 요청을 수신해야 함을 나타냅니다(예: `http://*:5000`). 프로토콜(`http://` 또는 `https://`)은 각 URL에 포함되어 있어야 합니다. 지원되는 형식은 서버마다 다릅니다.
 
 ```csharp
 WebHost.CreateDefaultBuilder(args)
@@ -668,7 +668,7 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 {
     if (env.IsDevelopment())
     {
-        // In Development, use the developer exception page
+        // In Development, use the Developer Exception Page
         app.UseDeveloperExceptionPage();
     }
     else

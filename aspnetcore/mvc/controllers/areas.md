@@ -5,12 +5,12 @@ description: 관련 기능을 별도의 네임스페이스(라우팅용) 및 폴
 ms.author: riande
 ms.date: 02/14/2019
 uid: mvc/controllers/areas
-ms.openlocfilehash: c21eed04ea68512515da262b6b6895dc1a821039
-ms.sourcegitcommit: 2c7ffe349eabdccf2ed748dd303ffd0ba6e1cfe3
+ms.openlocfilehash: 8904d217a18fff65113ae3469efe60258d20d5f0
+ms.sourcegitcommit: 6ddd8a7675c1c1d997c8ab2d4498538e44954cac
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56833529"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57400647"
 ---
 # <a name="areas-in-aspnet-core"></a>ASP.NET Core의 영역
 
@@ -27,6 +27,8 @@ ms.locfileid: "56833529"
 
 [예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/controllers/areas/samples) ([다운로드 방법](xref:index#how-to-download-a-sample)) 다운로드 샘플은 테스트 영역에 대한 기본 앱을 제공합니다.
 
+Razor Pages를 사용하는 경우 이 문서에서 [Razor Pages가 있는 영역](#areas-with-razor-pages)을 참조하세요.
+
 ## <a name="areas-for-controllers-with-views"></a>보기가 있는 컨트롤러 영역
 
 영역, 컨트롤러 및 보기를 사용하는 일반적인 ASP.NET Core 웹앱에는 다음이 포함됩니다.
@@ -35,7 +37,7 @@ ms.locfileid: "56833529"
 * 컨트롤러를 [&lbrack;영역&rbrack;](#attribute) 특성으로 데코레이트하여 해당 영역([!code-csharp[](areas/samples/MVCareas/Areas/Products/Controllers/ManageController.cs?name=snippet2)])과 연결합니다.
 * [시작 시 영역 경로 추가](#add-area-route): [!code-csharp[](areas/samples/MVCareas/Startup.cs?name=snippet2&highlight=3-6)]
 
-## <a name="area-folder-structure"></a>영역 폴더 구조
+### <a name="area-folder-structure"></a>영역 폴더 구조
 *제품* 및 *서비스*의 두 논리 그룹이 있는 앱을 고려합니다. 영역을 사용하면 폴더 구조는 다음과 유사합니다.
 
 * 프로젝트 이름
@@ -68,11 +70,6 @@ ms.locfileid: "56833529"
 
 *컨트롤러* 및 *모델*과 같은 보기가 아닌 폴더의 위치는 중요하지 **않습니다**. 예를 들어 *컨트롤러* 및 *모델* 폴더는 필요하지 않습니다. *컨트롤러* 및 *모델*의 내용은 .dll로 컴파일되는 코드입니다. *보기*의 내용은 해당 보기에 대한 요청이 있을 때까지 컴파일되지 않습니다.
 
-<!-- TODO review:
-The content of the *Views* isn't compiled until a request to that view has been made.
-
-What about precompiled views? 
- -->
 <a name="attribute"></a>
 
 ### <a name="associate-the-controller-with-an-area"></a>컨트롤러를 영역과 연결
@@ -99,7 +96,7 @@ ASP.NET Core 2.2와 함께 `MapAreaRoute`를 사용하는 경우 [이 GitHub 문
 
 자세한 내용은 [영역 라우팅](xref:mvc/controllers/routing#areas)을 참조하세요.
 
-### <a name="link-generation-with-areas"></a>영역과 링크 생성
+### <a name="link-generation-with-mvc-areas"></a>MVC 영역과 링크 생성
 
 [샘플 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/controllers/areas/samples)의 다음 코드는 지정된 영역과 링크 생성을 보여줍니다.
 
@@ -107,7 +104,7 @@ ASP.NET Core 2.2와 함께 `MapAreaRoute`를 사용하는 경우 [이 GitHub 문
 
 앞의 코드로 생성된 링크는 앱의 어느 위치에서나 유효합니다.
 
-샘플 다운로드에는 영역을 지정하지 않고 위의 링크 및 동일한 링크를 포함하는 [부분 뷰](xref:mvc/views/partial)가 포함되어 있습니다. 부분 뷰는 [레이아웃 파일]()에서 참조되므로, 앱의 모든 페이지에 생성된 링크가 표시됩니다. 영역을 지정하지 않고 생성된 링크는 동일한 영역 및 컨트롤러 페이지에서 참조할 때만 유효합니다.
+샘플 다운로드에는 영역을 지정하지 않고 위의 링크 및 동일한 링크를 포함하는 [부분 뷰](xref:mvc/views/partial)가 포함되어 있습니다. 부분 뷰는 [레이아웃 파일](xref:mvc/views/layout)에서 참조되므로, 앱의 모든 페이지에 생성된 링크가 표시됩니다. 영역을 지정하지 않고 생성된 링크는 동일한 영역 및 컨트롤러 페이지에서 참조할 때만 유효합니다.
 
 영역 또는 컨트롤러를 지정하지 않으면 라우팅은 *앰비언트* 값에 따라 달라집니다. 현재 요청의 현재 경로 값은 링크 생성에 대한 앰비언트 값으로 간주됩니다. 샘플 앱의 대부분의 경우 앰비언트 값을 사용하면 잘못된 링크가 생성됩니다.
 
@@ -117,11 +114,6 @@ ASP.NET Core 2.2와 함께 `MapAreaRoute`를 사용하는 경우 [이 GitHub 문
 
 전체 앱의 일반적인 레이아웃을 공유하려면 *_ViewStart.cshtml*을 애플리케이션 루트 폴더로 이동합니다.
 
-<!-- This section will be completed after https://github.com/aspnet/Docs/pull/10978 is merged.
-<a name="arp"></a>
-
-## Areas for Razor Pages
--->
 <a name="rename"></a>
 
 ### <a name="change-default-area-folder-where-views-are-stored"></a>보기가 저장된 기본 영역 폴더 변경
@@ -130,7 +122,72 @@ ASP.NET Core 2.2와 함께 `MapAreaRoute`를 사용하는 경우 [이 GitHub 문
 
 [!code-csharp[](areas/samples/MVCareas/Startup2.cs?name=snippet)]
 
-<!-- TODO review - can we delete this. Areas doesn't change publishing - right? -->
+<a name="arp"></a>
+
+## <a name="areas-with-razor-pages"></a>Razor Pages가 있는 영역
+
+Razor Pages가 있는 영역은 앱 루트에 *Areas/&lt;area name&gt;/Pages* 폴더가 있어야 합니다. [샘플 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/controllers/areas/samples)에서는 다음 폴더 구조가 사용됩니다.
+
+* 프로젝트 이름
+  * 영역
+    * 제품
+      * Pages
+        * _ViewImports
+        * 정보
+        * 인덱스
+    * 서비스
+      * Pages
+        * 관리
+          * 정보
+          * 인덱스
+
+### <a name="link-generation-with-razor-pages-and-areas"></a>Razor Pages 및 영역과 링크 생성
+
+[샘플 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/controllers/areas/samples/RPareas)의 다음 코드는 지정된 영역(예: `asp-area="Products"`)과 링크 생성을 보여 줍니다.
+
+[!code-cshtml[](areas/samples/RPareas/Pages/Shared/_testLinksPartial.cshtml?name=snippet)]
+
+앞의 코드로 생성된 링크는 앱의 어느 위치에서나 유효합니다.
+
+샘플 다운로드에는 영역을 지정하지 않고 위의 링크 및 동일한 링크를 포함하는 [부분 뷰](xref:mvc/views/partial)가 포함되어 있습니다. 부분 뷰는 [레이아웃 파일](xref:mvc/views/layout)에서 참조되므로, 앱의 모든 페이지에 생성된 링크가 표시됩니다. 영역을 지정하지 않고 생성된 링크는 동일한 영역의 페이지에서 참조할 때만 유효합니다.
+
+영역을 지정하지 않으면 ‘앰비언트’ 값에 따라 라우팅이 달라집니다. 현재 요청의 현재 경로 값은 링크 생성에 대한 앰비언트 값으로 간주됩니다. 샘플 앱의 대부분의 경우 앰비언트 값을 사용하면 잘못된 링크가 생성됩니다. 예를 들어 다음 코드에서 생성된 링크를 살펴보겠습니다.
+
+[!code-cshtml[](areas/samples/RPareas/Pages/Shared/_testLinksPartial.cshtml?name=snippet2)]
+
+위의 코드에서
+
+* `<a asp-page="/Manage/About">`에서 생성된 링크는 `Services` 영역의 페이지를 마지막으로 요청한 경우에만 유효합니다. 예를 들어 `/Services/Manage/`, `/Services/Manage/Index` 또는 `/Services/Manage/About`입니다.
+* `<a asp-page="/About">`에서 생성된 링크는 `/Home`의 페이지를 마지막으로 요청한 경우에만 유효합니다.
+* 코드는 [샘플 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/controllers/areas/samples/RPareas)에서 가져온 것입니다.
+
+### <a name="import-namespace-and-tag-helpers-with-viewimports-file"></a>_ViewImports 파일을 사용하여 네임스페이스 및 태그 도우미 가져오기
+
+각 영역의 *Pages* 폴더에 *_ViewImports* 파일을 추가하여 네임스페이스 및 태그 도우미를 폴더의 각 Razor 페이지로 가져올 수 있습니다.
+
+*_ViewImports* 파일이 없는 샘플 코드의 *Services* 영역을 살펴보겠습니다. 다음 태그는 */Services/Manage/About* Razor 페이지를 보여 줍니다.
+
+[!code-cshtml[](areas/samples/RPareas/Areas/Services/Pages/Manage/About.cshtml)]
+
+위의 태그에서
+
+* 모델(`@model RPareas.Areas.Services.Pages.Manage.AboutModel`)을 지정하려면 정규화된 도메인 이름을 사용해야 합니다.
+* [태그 도우미]()는 `@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers`를 통해 사용할 수 있습니다.
+
+샘플 다운로드에서 Products 영역에는 다음과 같은 *_ViewImports* 파일이 있습니다.
+
+[!code-cshtml[](areas/samples/RPareas/Areas/Products/Pages/_ViewImports.cshtml)]
+
+다음 태그는 */Products/About* Razor 페이지를 보여 줍니다. [!code-cshtml[](areas/samples/RPareas/Areas/Products/Pages/About.cshtml)]
+
+위의 파일에서 네임스페이스와 `@addTagHelper` 지시문은 *Areas/Products/Pages/_ViewImports.cshtml* 파일을 통해 파일로 가져온 것입니다.
+
+자세한 내용은 [태그 도우미 범위 관리](xref:mvc/views/tag-helpers/intro?view=aspnetcore-2.2#managing-tag-helper-scope) 및 [공유 지시문 가져오기](xref:mvc/views/layout#importing-shared-directives)를 참조하세요.
+
+### <a name="shared-layout-for-razor-pages-areas"></a>Razor Pages 영역에 대한 공유 레이아웃
+
+전체 앱의 일반적인 레이아웃을 공유하려면 *_ViewStart.cshtml*을 애플리케이션 루트 폴더로 이동합니다.
+
 ### <a name="publishing-areas"></a>영역 게시
 
-`<Project Sdk="Microsoft.NET.Sdk.Web">`이 *.csproj* 파일에 포함되면 모든 `*.cshtml` 및 `wwwroot/**` 파일이 출력으로 게시됩니다.
+.csproj* 파일에 `<Project Sdk="Microsoft.NET.Sdk.Web">`을 포함하면 모든 `*.cshtml` 및 `wwwroot/**` 파일이 출력에 게시됩니다.

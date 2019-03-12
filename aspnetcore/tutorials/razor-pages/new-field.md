@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 12/5/2018
 uid: tutorials/razor-pages/new-field
-ms.openlocfilehash: 98de39c63c992dce7d60563df316d848339b811a
-ms.sourcegitcommit: d75d8eb26c2cce19876c8d5b65ac8a4b21f625ef
+ms.openlocfilehash: f8661a48ddd6fc616c141435edc603117b4925fb
+ms.sourcegitcommit: 036d4b03fd86ca5bb378198e29ecf2704257f7b2
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/19/2019
-ms.locfileid: "56410377"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57345895"
 ---
 # <a name="add-a-new-field-to-a-razor-page-in-aspnet-core"></a>ASP.NET Core의 Razor 페이지에 새 필드 추가
 
@@ -152,6 +152,10 @@ dotnet ef database update
 <!-- End of VS tabs -->
 
 앱을 실행하고 `Rating` 필드를 사용하여 동영상을 만들고/편집/표시할 수 있는지 확인합니다. 데이터베이스가 시드되지 않은 경우 `SeedData.Initialize` 메서드에서 중단점을 설정합니다.
+
+## <a name="additional-resources"></a>추가 자료
+
+* [이 자습서의 YouTube 버전](https://youtu.be/3i7uMxiGGR8)
 
 > [!div class="step-by-step"]
 > [이전: 검색 추가](xref:tutorials/razor-pages/search)

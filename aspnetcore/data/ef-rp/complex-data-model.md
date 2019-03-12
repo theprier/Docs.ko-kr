@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/24/2018
 uid: data/ef-rp/complex-data-model
-ms.openlocfilehash: 1dc9f1278e502cd5040e82c18d99e2da6f139568
-ms.sourcegitcommit: d75d8eb26c2cce19876c8d5b65ac8a4b21f625ef
+ms.openlocfilehash: 56c2d783e8c75aad7487aa03309bb962f4354567
+ms.sourcegitcommit: 036d4b03fd86ca5bb378198e29ecf2704257f7b2
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/19/2019
-ms.locfileid: "56410588"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57346530"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---data-model---5-of-8"></a>ASP.NET Core에서 EF Core를 사용한 Razor 페이지 - 데이터 모델 - 5/8
 
@@ -666,6 +666,11 @@ SSOX에서 DB를 엽니다.
 * `Course.DepartmentID`에 대해 "Temp" 부서 또는 기본값을 사용하지 않습니다.
 
 다음 자습서에서는 관련된 데이터를 설명합니다.
+
+## <a name="additional-resources"></a>추가 자료
+
+* [이 자습서의 YouTube 버전(1부)](https://www.youtube.com/watch?v=0n2f0ObgCoA)
+* [이 자습서의 YouTube 버전(2부)](https://www.youtube.com/watch?v=Je0Z5K1TNmY)
 
 ::: moniker-end
 
