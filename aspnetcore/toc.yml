@@ -8,7 +8,7 @@ items:
   - uid: fundamentals/choose-between-aspnet-and-aspnetcore
     name: ASP.NET Core와 ASP.NET 비교
   - name: .NET Core와 .NET Framework 비교
-    href: /dotnet/standard/choosing-core-framework-server
+    href: /dotnet/standard/choosing-core-framework-server?toc=/aspnet/core/toc.json&bc=/aspnet/core/breadcrumb/toc.json
 - uid: getting-started
   name: 시작
 - name: 새로운 기능
@@ -36,12 +36,52 @@ items:
       displayName: tutorial
   - name: 웹앱
     items:
-    - uid: tutorials/razor-pages/index
-      name: Razor 페이지
+    - name: Razor 페이지
       displayName: tutorial
-    - uid: tutorials/first-mvc-app/index
-      name: MVC
+      items:
+      - uid: tutorials/razor-pages/index
+        name: 개요
+      - uid: tutorials/razor-pages/razor-pages-start
+        name: 시작
+      - uid: tutorials/razor-pages/model
+        name: 모델 추가
+      - uid: tutorials/razor-pages/page
+        name: 스캐폴딩
+      - uid: tutorials/razor-pages/sql
+        name: 데이터베이스 작업
+      - uid: tutorials/razor-pages/da1
+        name: 페이지 업데이트
+      - uid: tutorials/razor-pages/search
+        name: 검색 추가
+      - uid: tutorials/razor-pages/new-field
+        name: 새 필드 추가
+      - uid: tutorials/razor-pages/validation
+        name: 유효성 검사 추가
+    - name: MVC
       displayName: tutorial
+      items:
+      - uid: tutorials/first-mvc-app/index
+        name: 개요
+      - uid: tutorials/first-mvc-app/start-mvc
+        name: 시작
+      - uid: tutorials/first-mvc-app/adding-controller
+        name: 컨트롤러 추가
+      - uid: tutorials/first-mvc-app/adding-view
+        name: 보기 추가
+      - uid: tutorials/first-mvc-app/adding-model
+        name: 모델 추가
+      - uid: tutorials/first-mvc-app/working-with-sql
+        name: 데이터베이스 작업
+      - uid: tutorials/first-mvc-app/controller-methods-views
+        name: 컨트롤러 작업 및 보기
+      - uid: tutorials/first-mvc-app/search
+        name: 검색 추가
+      - uid: tutorials/first-mvc-app/new-field
+        name: 새 필드 추가
+      - uid: tutorials/first-mvc-app/validation
+        name: 유효성 검사 추가
+      - uid: tutorials/first-mvc-app/details
+        name: 세부 정보 및 삭제 메서드 검사
   - name: 실시간 웹앱
     items:
     - uid: tutorials/signalr
@@ -52,17 +92,57 @@ items:
       displayName: tutorial
   - name: 데이터 액세스
     items:
-    - uid: data/ef-rp/index
-      name: Razor Pages를 사용한 EF Core
+    - name: Razor Pages를 사용한 EF Core
       displayName: tutorial
-    - name: MVC, 기존 DB를 사용한 EF Core
+      items:
+      - uid: data/ef-rp/index
+        name: 개요
+      - uid: data/ef-rp/intro
+        name: 시작
+      - uid: data/ef-rp/crud
+        name: 만들기, 읽기, 업데이트 및 삭제
+      - uid: data/ef-rp/sort-filter-page
+        name: 정렬, 필터, 페이징 및 그룹
+      - uid: data/ef-rp/migrations
+        name: 마이그레이션
+      - uid: data/ef-rp/complex-data-model
+        name: 복합 데이터 모델 만들기
+      - uid: data/ef-rp/read-related-data
+        name: 관련 데이터 읽기
+      - uid: data/ef-rp/update-related-data
+        name: 관련 데이터 업데이트
+      - uid: data/ef-rp/concurrency
+        name: 동시성 충돌 처리
+    - name: MVC, 기존 데이터베이스를 사용한 EF Core
       displayName: tutorial
-      href: /ef/core/get-started/aspnetcore/existing-db
-    - name: MVC, 새 DB를 사용한 EF Core
+      href: /ef/core/get-started/aspnetcore/existing-db?toc=/aspnet/core/toc.json&bc=/aspnet/core/breadcrumb/toc.json
+    - name: MVC, 새 데이터베이스를 사용한 EF Core
       displayName: tutorial
-      href: /ef/core/get-started/aspnetcore/new-db
-    - uid: data/ef-mvc/index
-      name: MVC, 긴 자습서를 사용한 EF Core
+      href: /ef/core/get-started/aspnetcore/new-db?toc=/aspnet/core/toc.json&bc=/aspnet/core/breadcrumb/toc.json
+    - name: MVC, 10개 자습서를 사용한 EF Core
+      items:
+      - uid: data/ef-mvc/index
+        name: 개요
+      - uid: data/ef-mvc/intro
+        name: 시작
+      - uid: data/ef-mvc/crud
+        name: 만들기, 읽기, 업데이트 및 삭제
+      - uid: data/ef-mvc/sort-filter-page
+        name: 정렬, 필터, 페이징 및 그룹
+      - uid: data/ef-mvc/migrations
+        name: 마이그레이션
+      - uid: data/ef-mvc/complex-data-model
+        name: 복합 데이터 모델 만들기
+      - uid: data/ef-mvc/read-related-data
+        name: 관련 데이터 읽기
+      - uid: data/ef-mvc/update-related-data
+        name: 관련 데이터 업데이트
+      - uid: data/ef-mvc/concurrency
+        name: 동시성 충돌 처리
+      - uid: data/ef-mvc/inheritance
+        name: 상속
+      - uid: data/ef-mvc/advanced
+        name: 고급 항목
 - name: 기본 사항
   items:
   - uid: fundamentals/index
@@ -115,7 +195,7 @@ items:
       - uid: tutorials/razor-pages/page
         name: 스캐폴딩
       - uid: tutorials/razor-pages/sql
-        name: DB 작업
+        name: 데이터베이스 작업
       - uid: tutorials/razor-pages/da1
         name: 페이지 업데이트
       - uid: tutorials/razor-pages/search
@@ -150,7 +230,7 @@ items:
       - uid: tutorials/first-mvc-app/adding-model
         name: 모델 추가
       - uid: tutorials/first-mvc-app/working-with-sql
-        name: DB 작업
+        name: 데이터베이스 작업
       - uid: tutorials/first-mvc-app/controller-methods-views
         name: 컨트롤러 작업 및 보기
       - uid: tutorials/first-mvc-app/search
@@ -337,7 +417,7 @@ items:
       displayName: signalr
     - name: Azure SignalR Service
       displayName: signalr
-      href: /azure/azure-signalr/signalr-overview
+      href: /azure/azure-signalr/signalr-overview?toc=/aspnet/core/toc.json&bc=/aspnet/core/breadcrumb/toc.json
     - uid: signalr/redis-backplane
       name: Redis 백플레인
       displayName: signalr
@@ -370,7 +450,7 @@ items:
 - name: 테스트, 디버깅 및 문제 해결
   items:
   - name: 단위 테스트
-    href: /dotnet/core/testing/unit-testing-with-dotnet-test
+    href: /dotnet/core/testing/unit-testing-with-dotnet-test?toc=/aspnet/core/toc.json&bc=/aspnet/core/breadcrumb/toc.json
   - uid: test/razor-pages-tests
     name: Razor 페이지 단위 테스트
   - uid: mvc/controllers/testing
@@ -378,7 +458,7 @@ items:
   - name: 원격 디버깅
     href: /visualstudio/debugger/remote-debugging-azure
   - name: 스냅숏 디버깅
-    href: /azure/application-insights/app-insights-snapshot-debugger
+    href: /azure/azure-monitor/app/snapshot-debugger?toc=/aspnet/core/toc.json&bc=/aspnet/core/breadcrumb/toc.json
   - name: Visual Studio에서 스냅숏 디버깅
     href: /visualstudio/debugger/debug-live-azure-applications
   - uid: test/integration-tests
@@ -413,11 +493,11 @@ items:
         name: 관련 데이터 업데이트
       - uid: data/ef-rp/concurrency
         name: 동시성 충돌 처리
-    - name: MVC, 새 DB를 사용한 EF Core
-      href: /ef/core/get-started/aspnetcore/new-db
-    - name: MVC, 기존 DB를 사용한 EF Core
-      href: /ef/core/get-started/aspnetcore/existing-db
-    - name: MVC, 긴 자습서를 사용한 EF Core
+    - name: MVC, 새 데이터베이스를 사용한 EF Core
+      href: /ef/core/get-started/aspnetcore/new-db?toc=/aspnet/core/toc.json&bc=/aspnet/core/breadcrumb/toc.json
+    - name: MVC, 기존 데이터베이스를 사용한 EF Core
+      href: /ef/core/get-started/aspnetcore/existing-db?toc=/aspnet/core/toc.json&bc=/aspnet/core/breadcrumb/toc.json
+    - name: MVC, 10개 자습서를 사용한 EF Core
       items:
       - uid: data/ef-mvc/index
         name: 개요
@@ -446,13 +526,13 @@ items:
   - name: Visual Studio를 사용한 Azure Storage
     items:
     - name: 연결된 서비스
-      href: /azure/vs-azure-tools-connected-services-storage
+      href: /visualstudio/azure/vs-azure-tools-connected-services-storage
     - name: Blob Storage
-      href: /azure/vs-storage-aspnet5-getting-started-blobs/
+      href: /azure/visual-studio/vs-storage-aspnet5-getting-started-blobs?toc=/aspnet/core/toc.json&bc=/aspnet/core/breadcrumb/toc.json
     - name: Queue Storage
-      href: /azure/vs-storage-aspnet5-getting-started-queues/
+      href: /azure/visual-studio/vs-storage-aspnet5-getting-started-queues?toc=/aspnet/core/toc.json&bc=/aspnet/core/breadcrumb/toc.json
     - name: Table Storage
-      href: /azure/vs-storage-aspnet5-getting-started-tables/
+      href: /azure/visual-studio/vs-storage-aspnet5-getting-started-tables?toc=/aspnet/core/toc.json&bc=/aspnet/core/breadcrumb/toc.json
 - name: 클라이언트 쪽 개발
   items:
   - name: Razor 구성 요소
@@ -562,10 +642,10 @@ items:
       displayName: azure, deploy, publish
     - name: Mac용 Visual Studio를 사용하여 게시
       displayName: azure, deploy, publish
-      href: /visualstudio/mac/publish-app-svc
+      href: /visualstudio/mac/publish-app-svc?toc=/aspnet/core/toc.json&bc=/aspnet/core/breadcrumb/toc.json
     - name: CLI 도구를 사용하여 게시
       displayName: azure, deploy, publish
-      href: /azure/app-service/app-service-web-tutorial-dotnetcore-sqldb
+      href: /azure/app-service/app-service-web-tutorial-dotnetcore-sqldb?toc=/aspnet/core/toc.json&bc=/aspnet/core/breadcrumb/toc.json
     - uid: host-and-deploy/azure-apps/azure-continuous-deployment
       name: Visual Studio 및 Git를 사용하여 게시
       displayName: azure, deploy, publish
@@ -654,7 +734,7 @@ items:
       displayName: deploy, publish, docker
     - name: Docker 이미지에 게시
       displayName: deploy, publish, docker
-      href: /azure/vs-azure-tools-docker-hosting-web-apps-in-docker
+      href: /visualstudio/containers/vs-azure-tools-docker-hosting-web-apps-in-docker
     - name: 샘플 Docker 이미지
       displayName: deploy, publish, docker
       href: https://github.com/dotnet/dotnet-docker/blob/master/samples/aspnetapp/README.md
@@ -669,7 +749,7 @@ items:
     displayName: deploy, publish
   - name: 폴더에 Mac용 Visual Studio 게시
     displayName: deploy, publish
-    href: /visualstudio/mac/publish-folder
+    href: /visualstudio/mac/publish-folder?toc=/aspnet/core/toc.json&bc=/aspnet/core/breadcrumb/toc.json
   - uid: host-and-deploy/directory-structure
     name: 디렉터리 구조
     displayName: deploy, publish
@@ -754,7 +834,7 @@ items:
     - name: IdentityServer4를 사용하여 ASP.NET Core 앱 보호
       href: https://identityserver4.readthedocs.io/
     - name: Azure App Service 인증(간편 인증)을 사용하여 ASP.NET Core 앱 보호
-      href: /azure/app-service/app-service-authentication-overview
+      href: /azure/app-service/overview-authentication-authorization?toc=/aspnet/core/toc.json&bc=/aspnet/core/breadcrumb/toc.json
     - uid: security/authentication/individual
       name: 개별 사용자 계정
   - name: 권한 부여
@@ -980,9 +1060,9 @@ items:
   href: /dotnet/api/?view=aspnetcore-2.2
 - name: 참가
   href: https://github.com/aspnet/Docs/blob/master/CONTRIBUTING.md
-ms.openlocfilehash: 755ddaf4262956deb285b48c6c1d0205c25f4ced
-ms.sourcegitcommit: 191d21c1e37b56f0df0187e795d9a56388bbf4c7
+ms.openlocfilehash: 1430ab85bd40bb3090b5e6a2e313a690bc280f1e
+ms.sourcegitcommit: 32bc00435767189fa3ae5fb8a91a307bf889de9d
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57665472"
+ms.lasthandoff: 03/11/2019
+ms.locfileid: "57733522"

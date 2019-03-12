@@ -866,6 +866,7 @@ Application Insights SDK는 ASP.NET Core 로깅 인프라에 생성된 로그를
 * [Application Insights 개요](/azure/application-insights/app-insights-overview)
 * [ASP.NET Core용 Application Insights](/azure/application-insights/app-insights-asp-net-core)
 * [Application Insights 로깅 어댑터](https://github.com/Microsoft/ApplicationInsights-dotnet-logging/blob/develop/README.md).
+* [Application Insights ILogger 구현 샘플](/azure/azure-monitor/app/ilogger)
 
 ::: moniker-end
 
