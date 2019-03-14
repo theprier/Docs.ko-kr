@@ -5,12 +5,12 @@ description: ASP.NET Core 앱에 유효성 검사를 추가하는 방법.
 ms.author: riande
 ms.date: 04/13/2017
 uid: tutorials/first-mvc-app/validation
-ms.openlocfilehash: 431715e7c584d3ee381cbafb42171a7c01dddb3a
-ms.sourcegitcommit: 4e87712029de2aceb1cf2c52e9e3dda8195a5b8e
+ms.openlocfilehash: 49db8d7c1d3e54f416c66685c19b3a2e3b14251c
+ms.sourcegitcommit: 191d21c1e37b56f0df0187e795d9a56388bbf4c7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53382058"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57665446"
 ---
 # <a name="add-validation-to-an-aspnet-core-mvc-app"></a>ASP.NET Core MVC 앱에 유효성 검사 추가
 
@@ -59,7 +59,7 @@ ASP.NET Core에 의해 자동으로 적용되는 유효성 검사 규칙을 사�
 
 가장 큰 이점은 이 유효성 검사 UI를 사용하기 위해 `MoviesController` 클래스 또는 *Create.cshtml*의 코드를 한 줄도 변경할 필요가 없다는 점입니다. 이 자습서의 앞 부분에서 만든 컨트롤러와 보기에서는 `Movie` 모델 클래스의 속성의 유효성 검사 특성을 사용하여 유효성 검사 규칙을 자동으로 선택했습니다. `Edit` 작업 메서드로 유효성 검사를 테스트하며 동일한 유효성 검사가 적용됩니다.
 
-양식 데이터는 클라이언트 쪽 유효성 검사 오류가 없을 때까지 서버에 전송되지 않습니다. [Fiddler 도구](http://www.telerik.com/fiddler) 또는 [F12 개발자 도구](https://developer.microsoft.com/microsoft-edge/platform/documentation/f12-devtools-guide/)를 사용하거나 `HTTP Post` 메서드에 중단점을 넣어 이를 확인할 수 있습니다.
+양식 데이터는 클라이언트 쪽 유효성 검사 오류가 없을 때까지 서버에 전송되지 않습니다. [Fiddler 도구](http://www.telerik.com/fiddler) 또는 [F12 개발자 도구](/microsoft-edge/devtools-guide)를 사용하거나 `HTTP Post` 메서드에 중단점을 넣어 이를 확인할 수 있습니다.
 
 ## <a name="how-validation-works"></a>유효성 검사 작동 방식
 
