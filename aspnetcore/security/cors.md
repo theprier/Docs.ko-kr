@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 02/27/2019
 uid: security/cors
-ms.openlocfilehash: eb8dd3b1c96d9060b0164dcd4d0fbe004ed4af84
-ms.sourcegitcommit: 036d4b03fd86ca5bb378198e29ecf2704257f7b2
+ms.openlocfilehash: 6be8b4da1642a9eff021371c229a17071d6e9bfb
+ms.sourcegitcommit: d913bca90373c07f89b1d1df01af5fc01fc908ef
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57346374"
+ms.lasthandoff: 03/14/2019
+ms.locfileid: "57978473"
 ---
 # <a name="enable-cross-origin-requests-cors-in-aspnet-core"></a>ASP.NET Core에서 원본 간 요청 (CORS)를 사용 하도록 설정
 
@@ -446,11 +446,11 @@ CORS 테스트:
 
   * Microsoft Edge를 사용합니다.
 
-    **SEC7120: [CORS] 원본 'https://localhost:44375'찾을 수 없습니다'https://localhost:44375'에서 크로스-원본 리소스에 대 한 액세스 제어-허용-원본 응답 헤더'https://webapi.azurewebsites.net/api/values/1'.**
+    **SEC7120: [CORS] 원점 `https://localhost:44375` 찾지 `https://localhost:44375` 에서 크로스-원본 자원에 대 한 액세스 제어-허용-원본 응답 헤더 `https://webapi.azurewebsites.net/api/values/1`**
 
   * Chrome을 사용합니다.
 
-    **XMLHttpRequest에 대 한 액세스 'https://webapi.azurewebsites.net/api/values/1'에서 원본'https://localhost:44375' CORS 정책에 의해 차단 되었습니다. 요청된 된 리소스에을 ' 액세스 제어-허용-원본 ' 헤더가 없습니다.**
+    **XMLHttpRequest에 대 한 액세스 `https://webapi.azurewebsites.net/api/values/1` 원본의 `https://localhost:44375` CORS 정책에 의해 차단 되었습니다. 요청된 된 리소스에을 ' 액세스 제어-허용-원본 ' 헤더가 없습니다.**
 
 ## <a name="additional-resources"></a>추가 자료
 

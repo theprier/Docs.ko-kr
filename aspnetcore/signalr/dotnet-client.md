@@ -5,14 +5,14 @@ description: ASP.NET Core SignalR .NET 클라이언트에 대한 정보
 monikerRange: '>= aspnetcore-2.1'
 ms.author: bradyg
 ms.custom: mvc
-ms.date: 09/10/2018
+ms.date: 03/14/2019
 uid: signalr/dotnet-client
-ms.openlocfilehash: 25b618f7a424b217c0fb55417754ea358280b95a
-ms.sourcegitcommit: ebf4e5a7ca301af8494edf64f85d4a8deb61d641
+ms.openlocfilehash: a03abef53aa44f0a1016b8f72d8e3a7af2f9bed1
+ms.sourcegitcommit: d913bca90373c07f89b1d1df01af5fc01fc908ef
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54836308"
+ms.lasthandoff: 03/14/2019
+ms.locfileid: "57978306"
 ---
 # <a name="aspnet-core-signalr-net-client"></a>ASP.NET Core SignalR .NET 클라이언트
 
@@ -64,6 +64,9 @@ connection.Closed += (error) => {
 
 [!code-csharp[InvokeAsync method](dotnet-client/sample/signalrchatclient/MainWindow.xaml.cs?name=snippet_InvokeAsync)]
 
+> [!NOTE]
+> Azure SignalR Service를 사용 하는 경우 *서버 리스 모드*, 클라이언트에서 허브 메서드를 호출할 수 없습니다. 자세한 내용은 참조는 [SignalR Service 설명서](/azure/azure-signalr/signalr-concept-serverless-development-config)합니다.
+
 ## <a name="call-client-methods-from-hub"></a>허브에서 클라이언트 메서드 호출하기
 
 연결을 만든 다음, 그러나 연결을 시작하기 전에 `connection.On`을 이용해서 허브가 호출할 메서드를 정의합니다.
@@ -84,4 +87,5 @@ try-catch 문을 이용해서 오류를 처리합니다. `Exception` 개체를 �
 
 * [허브](xref:signalr/hubs)
 * [JavaScript 클라이언트](xref:signalr/javascript-client)
-* [Azure에 게시](xref:signalr/publish-to-azure-web-app)
+* [Azure에 게시하기](xref:signalr/publish-to-azure-web-app)
+* [Azure SignalR Service 서버 리스 설명서](/azure/azure-signalr/signalr-concept-serverless-development-config)
