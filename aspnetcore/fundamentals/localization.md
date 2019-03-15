@@ -5,16 +5,16 @@ description: ASP.NET Core에서 다른 언어와 문화권으로의 콘텐츠 �
 ms.author: riande
 ms.date: 01/14/2017
 uid: fundamentals/localization
-ms.openlocfilehash: af11906f86fe4ea91ed520584daedc094ab2dc0b
-ms.sourcegitcommit: edb9d2d78c9a4d68b397e74ae2aff088b325a143
+ms.openlocfilehash: 70de86f2e8c4a5577b8a4b50c53d66eb3b205c09
+ms.sourcegitcommit: 191d21c1e37b56f0df0187e795d9a56388bbf4c7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "51505832"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57665543"
 ---
 # <a name="globalization-and-localization-in-aspnet-core"></a>ASP.NET Core에서 세계화 및 지역화
 
-작성자: [Rick Anderson](https://twitter.com/RickAndMSFT), [Damien Bowden](https://twitter.com/damien_bod), [Bart Calixto](https://twitter.com/bartmax), [Nadeem Afana](https://twitter.com/NadeemAfana) 및 [Hisham Bin Ateya](https://twitter.com/hishambinateya)
+작성자: [Rick Anderson](https://twitter.com/RickAndMSFT), [Damien Bowden](https://twitter.com/damien_bod), [Bart Calixto](https://twitter.com/bartmax), [Nadeem Afana](https://afana.me/) 및 [Hisham Bin Ateya](https://twitter.com/hishambinateya)
 
 ASP.NET Core를 사용하여 다국어 웹 사이트를 만들면 더 광범위한 사용자가 사이트를 사용할 수 있습니다. ASP.NET Core는 다른 언어 및 문화권의 지역화를 위한 서비스 및 미들웨어를 제공합니다.
 
@@ -74,7 +74,7 @@ HTML을 포함하는 리소스에 대해 `IHtmlLocalizer<T>` 구현을 사용합
 
 프랑스어 리소스 파일은 다음을 포함할 수 있습니다.
 
-| Key | 값 |
+| 키 | 값 |
 | ----- | ------ |
 | `<i>Hello</i> <b>{0}!</b>` | `<i>Bonjour</i> <b>{0} !</b> ` |
 
@@ -150,7 +150,7 @@ ASP.NET Core를 사용하면 두 문화권 값 `SupportedCultures` 및 `Supporte
 | 리소스 이름 | 점 또는 경로 명명 |
 | ------------   | ------------- |
 | Resources/Controllers.HomeController.fr.resx | 점  |
-| Resources/Controllers/HomeController.fr.resx  | Path |
+| Resources/Controllers/HomeController.fr.resx  | 경로 |
 |    |     |
 
 Razor 보기에서 `@inject IViewLocalizer`를 사용하는 리소스 파일은 유사한 패턴을 따릅니다. 보기에 대한 리소스 파일은 점 이름 지정 또는 경로 이름 지정을 사용하여 이름이 지정될 수 있습니다. Razor 보기 리소스 파일은 연결된 보기 파일의 경로를 모방합니다. `ResourcesPath`를 "리소스"로 설정했다고 가정하면, *Views/Home/About.cshtml* 보기와 연결된 프랑스어 리소스 파일은 다음 중 하나가 될 수 있습니다.
@@ -332,7 +332,7 @@ services.Configure<RequestLocalizationOptions>(options =>
 
 * 세계화(G11N): 앱이 다른 언어 및 지역을 지원하도록 만드는 프로세스입니다.
 * 지역화(L10N): 지정된 언어 및 지역에 대해 앱을 사용자 지정하는 프로세스입니다.
-* 국제화(I18N): 세계화 및 지역화 모두를 설명합니다.
+* 국제화(I18N): 세계화와 지역화를 모두 설명합니다.
 * 문화권: 언어이며 경우에 따라 지역입니다.
 * 중립 문화권: 지정한 언어가 있지만 지정된 지역이 없는 문화권입니다. (예: "en", "es")
 * 특정 문화권: 지정된 언어 및 지역이 있는 문화권입니다. (예: "en-US", "en-GB", "es-CL")
@@ -344,6 +344,6 @@ services.Configure<RequestLocalizationOptions>(options =>
 ## <a name="additional-resources"></a>추가 자료
 
 * [Localization.StarterWeb 프로젝트](https://github.com/aspnet/Entropy/tree/master/samples/Localization.StarterWeb)는 문서에서 사용됩니다.
-* [.NET 응용 프로그램 전역화 및 지역화](/dotnet/standard/globalization-localization/index)
+* [.NET 애플리케이션 전역화 및 지역화](/dotnet/standard/globalization-localization/index)
 * [.resx 파일의 리소스](/dotnet/framework/resources/working-with-resx-files-programmatically)
 * [Microsoft 다국어 앱 도구 키트](https://marketplace.visualstudio.com/items?itemName=MultilingualAppToolkit.MultilingualAppToolkit-18308)

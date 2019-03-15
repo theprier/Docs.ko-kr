@@ -5,14 +5,14 @@ description: Windows 서비스에서 ASP.NET Core 앱을 호스트하는 방법�
 monikerRange: '>= aspnetcore-2.1'
 ms.author: tdykstra
 ms.custom: mvc
-ms.date: 02/13/2019
+ms.date: 03/08/2019
 uid: host-and-deploy/windows-service
-ms.openlocfilehash: 081a631c9c3e74c01e15f4b0b272d650c162bd20
-ms.sourcegitcommit: 6ba5fb1fd0b7f9a6a79085b0ef56206e462094b7
+ms.openlocfilehash: ecc7f3a8cd813c2803d03294e38d726905eeb1b8
+ms.sourcegitcommit: 34bf9fc6ea814c039401fca174642f0acb14be3c
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56248253"
+ms.lasthandoff: 03/14/2019
+ms.locfileid: "57841425"
 ---
 # <a name="host-aspnet-core-in-a-windows-service"></a>Windows 서비스에서 ASP.NET Core 호스트
 
@@ -21,6 +21,10 @@ ms.locfileid: "56248253"
 IIS를 사용하지 않고 Windows에서 ASP.NET Core 앱을 [Windows 서비스](/dotnet/framework/windows-services/introduction-to-windows-service-applications)로 호스트할 수 있습니다. Windows Service로 호스팅되는 앱은 재부팅 후 자동으로 시작됩니다.
 
 [예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/host-and-deploy/windows-service/samples) ([다운로드 방법](xref:index#how-to-download-a-sample))
+
+## <a name="prerequisites"></a>전제 조건
+
+* [PowerShell 6](https://github.com/PowerShell/PowerShell)
 
 ## <a name="deployment-type"></a>배포 유형
 
@@ -121,13 +125,13 @@ Windows 이벤트 로그 로깅을 사용하도록 설정하려면 [Microsoft.Ex
 
 [!code-csharp[](windows-service/samples/2.x/AspNetCoreService/Program.cs?name=snippet_Program)]
 
-### <a name="publish-the-app"></a>앱 게시
+## <a name="publish-the-app"></a>앱 게시
 
 [dotnet publish](/dotnet/articles/core/tools/dotnet-publish), [Visual Studio 게시 프로필](xref:host-and-deploy/visual-studio-publish-profiles) 또는 Visual Studio Code를 사용하여 앱을 게시합니다. Visual Studio를 사용하는 경우 **FolderProfile**을 선택하고 **대상 위치**를 구성한 후 **게시** 단추를 선택합니다.
 
 CLI(명령줄 인터페이스) 도구를 사용하여 샘플 앱을 게시하려면 [-c|--configuration](/dotnet/core/tools/dotnet-publish#options) 옵션에 릴리스 구성을 전달하여 프로젝트 폴더의 명령 프롬프트에서 [dotnet publish](/dotnet/core/tools/dotnet-publish) 명령을 실행합니다. 앱 외부 폴더에 게시하려면 [-o|--output](/dotnet/core/tools/dotnet-publish#options) 옵션에 경로를 사용합니다.
 
-#### <a name="publish-a-framework-dependent-deployment-fdd"></a>FDD(프레임워크 종속 배포) 게시
+### <a name="publish-a-framework-dependent-deployment-fdd"></a>FDD(프레임워크 종속 배포) 게시
 
 다음 예제에서는 앱이 *c:\\svc* 폴더에 게시됩니다.
 
@@ -135,7 +139,7 @@ CLI(명령줄 인터페이스) 도구를 사용하여 샘플 앱을 게시하려
 dotnet publish --configuration Release --output c:\svc
 ```
 
-#### <a name="publish-a-self-contained-deployment-scd"></a>SCD(자체 포함 배포) 게시
+### <a name="publish-a-self-contained-deployment-scd"></a>SCD(자체 포함 배포) 게시
 
 프로젝트 파일의 `<RuntimeIdenfifier>`(또는 `<RuntimeIdentifiers>`) 속성에 RID를 지정해야 합니다. `dotnet publish` 명령의 [-r|--runtime](/dotnet/core/tools/dotnet-publish#options) 옵션에 런타임을 제공합니다.
 
@@ -145,11 +149,11 @@ dotnet publish --configuration Release --output c:\svc
 dotnet publish --configuration Release --runtime win7-x64 --output c:\svc
 ```
 
-### <a name="create-a-user-account"></a>사용자 계정 만들기
+## <a name="create-a-user-account"></a>사용자 계정 만들기
 
-관리 명령 셸에서 `net user` 명령을 사용하여 서비스에 대한 사용자 계정을 만듭니다.
+관리 PowerShell 6 명령 셸에서 `net user` 명령을 사용하여 서비스에 대한 사용자 계정을 만듭니다.
 
-```console
+```powershell
 net user {USER ACCOUNT} {PASSWORD} /add
 ```
 
@@ -157,13 +161,13 @@ net user {USER ACCOUNT} {PASSWORD} /add
 
 샘플 앱의 경우, 이름이 `ServiceUser`인 사용자 계정과 암호를 만듭니다. 다음 명령에서 `{PASSWORD}`를 [강력한 암호](/windows/security/threat-protection/security-policy-settings/password-must-meet-complexity-requirements)로 바꿉니다.
 
-```console
+```powershell
 net user ServiceUser {PASSWORD} /add
 ```
 
 그룹에 사용자를 추가해야 하는 경우 `net localgroup` 명령을 사용합니다. 여기서 `{GROUP}`은 그룹의 이름입니다.
 
-```console
+```powershell
 net localgroup {GROUP} {USER ACCOUNT} /add
 ```
 
@@ -171,13 +175,11 @@ net localgroup {GROUP} {USER ACCOUNT} /add
 
 Active Directory를 사용할 때 사용자를 관리하는 대체 방법은 관리 서비스 계정을 사용하는 것입니다. 자세한 내용은 [그룹 관리 서비스 계정 개요](/windows-server/security/group-managed-service-accounts/group-managed-service-accounts-overview)를 참조하세요.
 
-### <a name="set-permissions"></a>권한 설정
+## <a name="set-permission-log-on-as-a-service"></a>사용 권한 설정: 서비스로 로그온
 
-#### <a name="access-to-the-app-folder"></a>앱 폴더 액세스
+[icacls](/windows-server/administration/windows-commands/icacls) 명령을 사용하여 앱의 폴더에 쓰기/읽기/실행 액세스 권한을 부여합니다.
 
-관리 명령 셸에서 [icacls](/windows-server/administration/windows-commands/icacls) 명령을 사용하여 앱 폴더에 대한 쓰기/읽기/실행 액세스 권한을 부여합니다.
-
-```console
+```powershell
 icacls "{PATH}" /grant {USER ACCOUNT}:(OI)(CI){PERMISSION FLAGS} /t
 ```
 
@@ -195,82 +197,69 @@ icacls "{PATH}" /grant {USER ACCOUNT}:(OI)(CI){PERMISSION FLAGS} /t
 
 *c:\\svc* 폴더에 게시된 샘플 앱과 쓰기/읽기/실행 권한이 있는 `ServiceUser` 계정의 경우 다음 명령을 사용합니다.
 
-```console
+```powershell
 icacls "c:\svc" /grant ServiceUser:(OI)(CI)WRX /t
 ```
 
 자세한 내용은 [icacls](/windows-server/administration/windows-commands/icacls)를 참조하세요.
 
-#### <a name="log-on-as-a-service"></a>서비스로 로그온
+## <a name="create-the-service"></a>서비스 만들기
 
-사용자 계정에 [서비스로 로그온](/windows/security/threat-protection/security-policy-settings/log-on-as-a-service) 권한을 부여하려면 다음을 수행합니다.
+[RegisterService.ps1](https://github.com/aspnet/Docs/tree/master/aspnetcore/host-and-deploy/windows-service/scripts) PowerShell 스크립트를 사용하여 서비스를 등록합니다. 관리 PowerShell 6 명령 프롬프트에서 다음 명령을 실행합니다.
 
-1. 로컬 보안 정책 콘솔 또는 로컬 그룹 정책 편집기 콘솔에서 **사용자 권한 할당** 정책을 찾습니다. 자세한 지침은 다음을 참조하십시오. [보안 정책 설정을 구성](/windows/security/threat-protection/security-policy-settings/how-to-configure-security-policy-settings)합니다.
-1. `Log on as a service` 정책을 찾습니다. 정책을 두 번 클릭하여 엽니다.
-1. **사용자 또는 그룹 추가**를 선택합니다.
-1. **고급**을 선택하고 **지금 찾기**를 선택합니다.
-1. 이전에 [사용자 계정 만들기](#create-a-user-account) 섹션에서 만든 사용자 계정을 선택합니다. **확인**을 선택하여 선택을 적용합니다.
-1. 개체 이름이 올바른지 확인한 후 **확인**을 선택합니다.
-1. **적용**을 선택합니다. **확인**을 선택하여 정책 창을 닫습니다.
-
-## <a name="manage-the-service"></a>서비스 관리
-
-### <a name="create-the-service"></a>서비스 만들기
-
-[sc.exe](https://technet.microsoft.com/library/bb490995) 명령줄 도구를 사용하여 관리 명령줄 셸에서 서비스를 만듭니다. `binPath` 값은 실행 파일 이름을 포함하는 앱의 실행 파일 경로입니다. **각 매개 변수의 등호 및 인용 문자 값 사이에 공백이 필요합니다.**
-
-```console
-sc create {SERVICE NAME} binPath= "{PATH}" obj= "{DOMAIN}\{USER ACCOUNT}" password= "{PASSWORD}"
+```powershell
+.\RegisterService.ps1 
+    -Name {NAME} 
+    -DisplayName "{DISPLAY NAME}" 
+    -Description "{DESCRIPTION}" 
+    -Path "{PATH}" 
+    -Exe {ASSEMBLY}.exe 
+    -User {DOMAIN\USER}
 ```
-
-* `{SERVICE NAME}` &ndash; [서비스 제어 관리자](/windows/desktop/services/service-control-manager)의 서비스에 할당하는 이름입니다.
-* `{PATH}` &ndash; 서비스 실행 파일의 경로입니다.
-* `{DOMAIN}` &ndash; 도메인 가입 머신의 도메인입니다. 도메인에 가입되지 않은 머신의 경우 로컬 머신 이름을 사용합니다.
-* `{USER ACCOUNT}` &ndash; 서비스 실행에 사용되는 사용자 계정입니다.
-* `{PASSWORD}` &ndash; 사용자 계정 암호입니다.
-
-> [!WARNING]
-> `obj` 매개 변수를 생략하지 **마세요**. `obj`의 기본값은 [LocalSystem 계정](/windows/desktop/services/localsystem-account) 계정입니다. `LocalSystem` 계정으로 서비스를 실행하면 상당한 보안 위험이 발생합니다. 항상 제한된 권한을 가진 사용자 계정으로 서비스를 실행하세요.
 
 샘플 앱에 대한 예제는 다음과 같습니다.
 
 * 서비스의 이름은 **MyService**입니다.
-* 게시된 서비스는 *c:\\svc* 폴더에 있습니다. 앱 실행 파일의 이름은 *SampleApp.exe*입니다. `binPath` 값을 큰따옴표(")로 묶습니다.
-* 서비스는 `ServiceUser` 계정으로 실행됩니다. `{DOMAIN}`을 사용자 계정의 도메인 또는 로컬 머신 이름으로 바꿉니다. `obj` 값을 큰따옴표(")로 묶습니다. 예제: 호스팅 시스템이 `MairaPC`라는 로컬 머신인 경우 `obj`를 `"MairaPC\ServiceUser"`로 설정합니다.
-* `{PASSWORD}`를 사용자 계정의 암호로 바꿉니다. `password` 값을 큰따옴표(")로 묶습니다.
+* 게시된 서비스는 *c:\\svc* 폴더에 있습니다. 앱 실행 파일의 이름은 *SampleApp.exe*입니다.
+* 서비스는 `ServiceUser` 계정으로 실행됩니다. 다음 예제에서 로컬 머신 이름은 `Desktop-PC`입니다.
 
-```console
-sc create MyService binPath= "c:\svc\sampleapp.exe" obj= "{DOMAIN}\ServiceUser" password= "{PASSWORD}"
+```powershell
+.\RegisterService.ps1 
+    -Name MyService 
+    -DisplayName "My Cool Service" 
+    -Description "This is the Sample App service." 
+    -Path "c:\svc" 
+    -Exe SampleApp.exe 
+    -User Desktop-PC\ServiceUser
 ```
 
-> [!IMPORTANT]
-> 매개 변수의 등호와 매개 변수의 값 사이에 공백이 있는지 확인합니다.
+## <a name="manage-the-service"></a>서비스 관리
 
 ### <a name="start-the-service"></a>서비스 시작
 
-`sc start {SERVICE NAME}` 명령을 사용하여 서비스를 시작합니다.
+`Start-Service -Name {NAME}` PowerShell 6 명령을 사용하여 서비스를 시작합니다.
 
 샘플 앱 서비스를 시작하려면 다음 명령을 사용합니다.
 
-```console
-sc start MyService
+```powershell
+Start-Service -Name MyService
 ```
 
 명령은 서비스를 시작하는 데 몇 초 정도 걸립니다.
 
 ### <a name="determine-the-service-status"></a>서비스 상태 확인
 
-서비스 상태를 확인하려면 `sc query {SERVICE NAME}` 명령을 사용합니다. 상태는 다음 값 중 하나로 보고됩니다.
+서비스 상태를 확인하려면 `Get-Service -Name {NAME}` PowerShell 6 명령을 사용합니다. 상태는 다음 값 중 하나로 보고됩니다.
 
-* `START_PENDING`
-* `RUNNING`
-* `STOP_PENDING`
-* `STOPPED`
+* `Starting`
+* `Running`
+* `Stopping`
+* `Stopped`
 
 다음 명령을 사용하여 샘플 앱 서비스의 상태를 확인합니다.
 
-```console
-sc query MyService
+```powershell
+Get-Service -Name MyService
 ```
 
 ### <a name="browse-a-web-app-service"></a>웹앱 서비스 찾아보기
@@ -281,28 +270,22 @@ sc query MyService
 
 ### <a name="stop-the-service"></a>서비스를 중지하여
 
-`sc stop {SERVICE NAME}` 명령을 사용하여 서비스를 중지합니다.
+`Stop-Service -Name {NAME}` Powershell 6 명령을 사용하여 서비스를 중지합니다.
 
 다음 명령은 샘플 앱 서비스를 중지합니다.
 
-```console
-sc stop MyService
+```powershell
+Stop-Service -Name MyService
 ```
 
-### <a name="delete-the-service"></a>서비스 삭제
+### <a name="remove-the-service"></a>서비스 제거
 
-서비스를 중지하는 짧은 지연 후에 `sc delete {SERVICE NAME}` 명령을 사용하여 서비스를 제거합니다.
+서비스를 중지하는 짧은 지연 후에 `Remove-Service -Name {NAME}` Powershell 6 명령을 사용하여 서비스를 제거합니다.
 
 샘플 앱 서비스의 상태를 확인합니다.
 
-```console
-sc query MyService
-```
-
-이 샘플 앱 서비스가 `STOPPED` 상태인 경우 다음 명령을 사용하여 샘플 앱 서비스를 제거합니다.
-
-```console
-sc delete MyService
+```powershell
+Remove-Service -Name MyService
 ```
 
 ## <a name="handle-starting-and-stopping-events"></a>시작 및 중지 이벤트 처리

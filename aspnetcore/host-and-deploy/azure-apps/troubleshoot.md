@@ -4,14 +4,14 @@ author: guardrex
 description: ASP.NET Core Azure App Service 배포에 대한 문제 진단 방법을 알아봅니다.
 ms.author: riande
 ms.custom: mvc
-ms.date: 01/11/2019
+ms.date: 03/05/2019
 uid: host-and-deploy/azure-apps/troubleshoot
-ms.openlocfilehash: 65a5e355bc15db6de9060331395c441160c8b62d
-ms.sourcegitcommit: 42a8164b8aba21f322ffefacb92301bdfb4d3c2d
+ms.openlocfilehash: c3732bfab362ec034248eb3912d4b1337c94216e
+ms.sourcegitcommit: 191d21c1e37b56f0df0187e795d9a56388bbf4c7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54341643"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57665430"
 ---
 # <a name="troubleshoot-aspnet-core-on-azure-app-service"></a>Azure App Service에서 ASP.NET Core 문제 해결
 
@@ -71,11 +71,56 @@ ASP.NET Core 모듈은 기본 *startupTimeLimit*이 120초로 구성됩니다. �
 
 1. **개발 도구** 영역에서 **고급 도구**를 엽니다. **이동&rarr;** 단추를 선택합니다. 새 브라우저 탭 또는 창에서 Kudu 콘솔이 열립니다.
 1. 페이지 위쪽의 탐색 모음을 사용하여 **디버그 콘솔**을 열고 **CMD**를 선택합니다.
-1. 폴더를 **site** >  **wwwroot** 경로로 엽니다.
-1. 콘솔에서 앱의 어셈블리를 실행하여 앱을 실행합니다.
-   * 앱이 [프레임워크 종속 배포](/dotnet/core/deploying/#framework-dependent-deployments-fdd)인 경우 *dotnet.exe*를 사용하여 앱의 어셈블리를 실행합니다. `dotnet .\<assembly_name>.dll` 명령에서 `<assembly_name>`을 앱 어셈블리의 이름으로 대체합니다.
-   * 앱이 [자체 포함 배포](/dotnet/core/deploying/#self-contained-deployments-scd)인 경우 앱의 실행 파일을 실행합니다. `<assembly_name>.exe` 명령에서 `<assembly_name>`을 앱 어셈블리의 이름으로 대체합니다.
-1. 오류를 표시하는 앱의 콘솔 출력이 Kudu 콘솔에 파이프됩니다.
+
+#### <a name="test-a-32-bit-x86-app"></a>32비트(x86) 앱 테스트
+
+##### <a name="current-release"></a>현재 릴리스
+
+1. `cd d:\home\site\wwwroot`
+1. 앱을 실행합니다.
+   * 앱이 [프레임워크 종속 배포](/dotnet/core/deploying/#framework-dependent-deployments-fdd)인 경우:
+
+     ```console
+     dotnet .\{ASSEMBLY NAME}.dll
+     ```
+   * 앱이 [자체 포함 배포](/dotnet/core/deploying/#self-contained-deployments-scd)인 경우:
+
+     ```console
+     {ASSEMBLY NAME}.exe
+     ```
+   
+오류를 표시하는 앱의 콘솔 출력이 Kudu 콘솔에 파이프됩니다.
+   
+##### <a name="framework-depdendent-deployment-running-on-a-preview-release"></a>미리 보기 릴리스에서 실행되는 프레임워크 종속 배포
+
+ASP.NET Core {VERSION}(x86) 런타임 사이트 확장을 설치해야 합니다.
+
+1. `cd D:\home\SiteExtensions\AspNetCoreRuntime.{X.Y}.x32`(`{X.Y}`는 런타임 버전임)
+1. 앱 실행: `dotnet \home\site\wwwroot\{ASSEMBLY NAME}.dll`
+
+오류를 표시하는 앱의 콘솔 출력이 Kudu 콘솔에 파이프됩니다.
+
+#### <a name="test-a-64-bit-x64-app"></a>64비트(x64) 앱 테스트
+
+##### <a name="current-release"></a>현재 릴리스
+
+* 앱이 64비트(x64) [프레임워크 종속 배포](/dotnet/core/deploying/#framework-dependent-deployments-fdd)인 경우:
+  1. `cd D:\Program Files\dotnet`
+  1. 앱 실행: `dotnet \home\site\wwwroot\{ASSEMBLY NAME}.dll`
+* 앱이 [자체 포함 배포](/dotnet/core/deploying/#self-contained-deployments-scd)인 경우:
+  1. `cd D:\home\site\wwwroot`
+  1. 앱 실행: `{ASSEMBLY NAME}.exe`
+
+오류를 표시하는 앱의 콘솔 출력이 Kudu 콘솔에 파이프됩니다.
+
+##### <a name="framework-depdendent-deployment-running-on-a-preview-release"></a>미리 보기 릴리스에서 실행되는 프레임워크 종속 배포
+
+ASP.NET Core {VERSION}(x64) 런타임 사이트 확장을 설치해야 합니다.
+
+1. `cd D:\home\SiteExtensions\AspNetCoreRuntime.{X.Y}.x64`(`{X.Y}`는 런타임 버전임)
+1. 앱 실행: `dotnet \home\site\wwwroot\{ASSEMBLY NAME}.dll`
+
+오류를 표시하는 앱의 콘솔 출력이 Kudu 콘솔에 파이프됩니다.
 
 ### <a name="aspnet-core-module-stdout-log"></a>ASP.NET Core 모듈 stdout 로그
 

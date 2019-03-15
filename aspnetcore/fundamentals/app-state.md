@@ -2,16 +2,17 @@
 title: ASP.NET Core에서 세션 및 앱 상태
 author: rick-anderson
 description: 요청 간 세션 및 앱 상태를 유지하는 방법을 검색합니다.
+monikerRange: '>= aspnetcore-2.1'
 ms.author: riande
 ms.custom: mvc
-ms.date: 03/04/2019
+ms.date: 03/12/2019
 uid: fundamentals/app-state
-ms.openlocfilehash: 2e3591ac1d6b1670b27b1ed9e42f59ba2b956b37
-ms.sourcegitcommit: 6ddd8a7675c1c1d997c8ab2d4498538e44954cac
+ms.openlocfilehash: 7de57d4923beaf32c0cb9aec49ea3e570fec6170
+ms.sourcegitcommit: 34bf9fc6ea814c039401fca174642f0acb14be3c
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57400712"
+ms.lasthandoff: 03/14/2019
+ms.locfileid: "57841581"
 ---
 # <a name="session-and-app-state-in-aspnet-core"></a>ASP.NET Core에서 세션 및 앱 상태
 
@@ -64,7 +65,7 @@ ASP.NET Core는 각 요청과 함께 앱으로 전송되는 세션 ID를 포함�
 * 앱은 마지막 요청 이후 제한된 시간 동안 세션을 유지합니다. 앱은 세션 시간 제한을 설정하거나 20분의 기본값을 사용합니다. 세션 상태는 특정 세션과 관련된 사용자 데이터를 저장하되, 데이터가 세션 간에 영구 스토리지를 요구하지 않는 경우에 적합합니다.
 * 세션 데이터는 [ISession.Clear](/dotnet/api/microsoft.aspnetcore.http.isession.clear) 구현이 호출되거나 세션이 만료될 때 삭제됩니다.
 * 클라이언트 브라우저가 닫혔거나 세션 쿠키가 삭제 또는 클라이언트에서 만료되었을 때 앱 코드에 이를 알려주는 기본 메커니즘은 없습니다.
-ASP.NET Core MVC 및 Razor Pages 템플릿에는 GDPR(일반 데이터 보호 규정) 지원이 포함되어 있습니다. 세션 상태 쿠키는 기본적으로 필수로 표시되지 않으므로 사이트 방문자가 추적을 허용하지 않는 한 세션 상태가 작동하지 않습니다. 자세한 내용은 <xref:security/gdpr#tempdata-provider-and-session-state-cookies-are-not-essential>을 참조하세요.
+* ASP.NET Core MVC 및 Razor Pages 템플릿에는 GDPR(일반 데이터 보호 규정) 지원이 포함되어 있습니다. 세션 상태 쿠키는 기본적으로 필수로 표시되지 않으므로 사이트 방문자가 추적을 허용하지 않는 한 세션 상태가 작동하지 않습니다. 자세한 내용은 <xref:security/gdpr#tempdata-provider-and-session-state-cookies-are-not-essential>을 참조하세요.
 
 > [!WARNING]
 > 중요한 데이터를 세션 상태에 저장하지 마세요. 사용자는 브라우저를 닫지 않고 세션 쿠키를 지울 수 있습니다. 일부 브라우저는 브라우저 창이 닫혀도 유효한 세션 쿠키를 유지 관리합니다. 세션은 단일 사용자로 제한될 수 없으므로 다음 사용자는 동일한 세션 쿠키로 앱을 계속 검색할 수 있습니다.
@@ -76,17 +77,7 @@ ASP.NET Core MVC 및 Razor Pages 템플릿에는 GDPR(일반 데이터 보호 �
 
 ### <a name="configure-session-state"></a>세션 상태 구성
 
-::: moniker range=">= aspnetcore-2.0"
-
 [Microsoft.AspNetCore.App 메타패키지](xref:fundamentals/metapackage-app)에 포함된 [Microsoft.AspNetCore.Session](https://www.nuget.org/packages/Microsoft.AspNetCore.Session/) 패키지는 세션 상태 관리용 미들웨어를 제공합니다. 세션 미들웨어를 활성화하려면 `Startup`은 다음을 포함해야 합니다.
-
-::: moniker-end
-
-::: moniker range="< aspnetcore-2.0"
-
-[Microsoft.AspNetCore.Session](https://www.nuget.org/packages/Microsoft.AspNetCore.Session/) 패키지는 세션 상태 관리용 미들웨어를 제공합니다. 세션 미들웨어를 활성화하려면 `Startup`은 다음을 포함해야 합니다.
-
-::: moniker-end
 
 * [IDistributedCache](/dotnet/api/microsoft.extensions.caching.distributed.idistributedcache) 메모리 캐시 중 하나 `IDistributedCache` 구현은 세션에 대한 백업 저장소로 사용됩니다. 자세한 내용은 <xref:performance/caching/distributed>을 참조하세요.
 * `ConfigureServices`의 [AddSession](/dotnet/api/microsoft.extensions.dependencyinjection.sessionservicecollectionextensions.addsession)에 대한 호출.
@@ -94,17 +85,7 @@ ASP.NET Core MVC 및 Razor Pages 템플릿에는 GDPR(일반 데이터 보호 �
 
 다음 코드에서는 `IDistributedCache`의 기본 메모리 내 구현을 사용하여 메모리 내 세션 공급자를 설정하는 방법을 보여 줍니다.
 
-::: moniker range=">= aspnetcore-2.0"
-
-[!code-csharp[](app-state/samples/2.x/SessionSample/Startup.cs?name=snippet1&highlight=11,13-18,39)]
-
-::: moniker-end
-
-::: moniker range="< aspnetcore-2.0"
-
-[!code-csharp[](app-state/samples/1.x/SessionSample/Startup.cs?name=snippet1&highlight=5,7-12,19)]
-
-::: moniker-end
+[!code-csharp[](app-state/samples/2.x/SessionSample/Startup.cs?name=snippet1&highlight=5-14,34)]
 
 미들웨어의 순서가 중요합니다. 앞의 예에서 `UseMvc` 이후에 `UseSession`이 호출되면 `InvalidOperationException` 예외가 발생합니다. 자세한 내용은 [미들웨어 순서 지정](xref:fundamentals/middleware/index#order)을 참조하세요.
 
@@ -124,8 +105,6 @@ ASP.NET Core에서 기본 세션 공급자는 [ISession.LoadAsync](/dotnet/api/m
 
 세션 기본값을 재정의하려면 [SessionOptions](/dotnet/api/microsoft.aspnetcore.builder.sessionoptions)를 사용합니다.
 
-::: moniker range=">= aspnetcore-2.0"
-
 | 옵션 | 설명 |
 | ------ | ----------- |
 | [쿠키](/dotnet/api/microsoft.aspnetcore.builder.sessionoptions.cookie) | 쿠키를 만드는 데 사용되는 설정을 결정합니다. [Name](/dotnet/api/microsoft.aspnetcore.http.cookiebuilder.name)의 기본값은 [SessionDefaults.CookieName](/dotnet/api/microsoft.aspnetcore.session.sessiondefaults.cookiename)(`.AspNetCore.Session`)입니다. [Path](/dotnet/api/microsoft.aspnetcore.http.cookiebuilder.path)의 기본값은 [SessionDefaults.CookiePath](/dotnet/api/microsoft.aspnetcore.session.sessiondefaults.cookiepath)(`/`)입니다. [SameSite](/dotnet/api/microsoft.aspnetcore.http.cookiebuilder.samesite)의 기본값은 [SameSiteMode.Lax](/dotnet/api/microsoft.aspnetcore.http.samesitemode)(`1`)입니다. [HttpOnly](/dotnet/api/microsoft.aspnetcore.http.cookiebuilder.httponly)의 기본값은 `true`입니다. [IsEssential](/dotnet/api/microsoft.aspnetcore.http.cookiebuilder.isessential)의 기본값은 `false`입니다. |
@@ -134,36 +113,9 @@ ASP.NET Core에서 기본 세션 공급자는 [ISession.LoadAsync](/dotnet/api/m
 
 세션은 쿠키를 사용하여 단일 브라우저에서 요청을 추적하고 식별합니다. 기본적으로 이 쿠키는 `.AspNetCore.Session`이라고 하며 `/`의 경로를 사용합니다. 쿠키 기본값은 도메인을 지정하지 않으므로([HttpOnly](/dotnet/api/microsoft.aspnetcore.http.cookiebuilder.httponly) 기본값이 `true`임으로) 페이지의 클라이언트 쪽 스크립트에 사용할 수 없습니다.
 
-::: moniker-end
-
-::: moniker range="< aspnetcore-2.0"
-
-| 옵션 | 설명 |
-| ------ | ----------- |
-| [CookieDomain](/dotnet/api/microsoft.aspnetcore.builder.sessionoptions.cookiedomain) | 쿠키를 만드는 데 사용되는 도메인을 결정합니다. `CookieDomain`은 기본적으로 설정되지 않습니다. |
-| [CookieHttpOnly](/dotnet/api/microsoft.aspnetcore.builder.sessionoptions.cookiehttponly) | 브라우저가 클라이언트 쪽 JavaScript의 쿠키 액세스를 허용할지 결정합니다. 기본값은 `true`이며, 이는 쿠키가 HTTP 요청에만 전달되고 페이지의 스크립트에는 제공되지 않음을 의미합니다. |
-| [CookieName](/dotnet/api/microsoft.aspnetcore.builder.sessionoptions.cookiename) | 세션 ID를 유지하는 데 사용되는 쿠키 이름을 결정합니다 기본값은 [SessionDefaults.CookieName](/dotnet/api/microsoft.aspnetcore.session.sessiondefaults.cookiename)(`.AspNetCore.Session`)입니다. |
-| [CookiePath](/dotnet/api/microsoft.aspnetcore.builder.sessionoptions.cookiepath) | 쿠키를 만드는 데 사용되는 경로를 결정합니다. 기본값은 [SessionDefaults.CookiePath](/dotnet/api/microsoft.aspnetcore.session.sessiondefaults.cookiepath)(`/`)입니다. |
-| [CookieSecure](/dotnet/api/microsoft.aspnetcore.builder.sessionoptions.cookiesecure) | 쿠키를 HTTPS 요청에서만 전송할지를 결정합니다. 기본값은 [CookieSecurePolicy.None](/dotnet/api/microsoft.aspnetcore.http.cookiesecurepolicy)(`2`)입니다. |
-| [IdleTimeout](/dotnet/api/microsoft.aspnetcore.builder.sessionoptions.idletimeout) | `IdleTimeout`은 콘텐츠가 삭제되기 전까지 세션이 유휴 상태일 수 있는 시간을 나타냅니다. 각 세션 액세스는 시간 제한을 다시 설정합니다. 이는 쿠키가 아닌 세션의 콘텐츠에만 적용됩니다. 기본값은 20분입니다. |
-
-세션은 쿠키를 사용하여 단일 브라우저에서 요청을 추적하고 식별합니다. 기본적으로 이 쿠키는 `.AspNet.Session`이라고 하며 `/`의 경로를 사용합니다.
-
-::: moniker-end
-
 쿠키 세션 기본값을 재정의하려면 `SessionOptions`를 사용합니다.
 
-::: moniker range=">= aspnetcore-2.0"
-
-[!code-csharp[](app-state/samples_snapshot/2.x/SessionSample/Startup.cs?name=snippet1&highlight=13-18)]
-
-::: moniker-end
-
-::: moniker range="< aspnetcore-2.0"
-
-[!code-csharp[](app-state/samples_snapshot/1.x/SessionSample/Startup.cs?name=snippet1&highlight=5-9)]
-
-::: moniker-end
+[!code-csharp[](app-state/samples_snapshot/2.x/SessionSample/Startup.cs?name=snippet1&highlight=14-19)]
 
 앱은 [IdleTimeout](/dotnet/api/microsoft.aspnetcore.builder.sessionoptions.idletimeout) 속성을 사용하여 서버 캐시의 콘텐츠가 중단되기 전에 유휴 상태일 수 있는 세션의 기간을 결정합니다. 이 속성은 쿠키 만료와 무관합니다. [세션 미들웨어](/dotnet/api/microsoft.aspnetcore.session.sessionmiddleware)를 통해 전달되는 각 요청은 시간 제한을 다시 설정합니다.
 
@@ -173,17 +125,7 @@ ASP.NET Core에서 기본 세션 공급자는 [ISession.LoadAsync](/dotnet/api/m
 
 세션 상태는 [HttpContext.Session](/dotnet/api/microsoft.aspnetcore.http.httpcontext.session)이 포함된 Razor Pages [PageModel](/dotnet/api/microsoft.aspnetcore.mvc.razorpages.pagemodel) 클래스 또는 MVC [Controller](/dotnet/api/microsoft.aspnetcore.mvc.controller) 클래스에서 액세스됩니다. 이 속성은 [ISession](/dotnet/api/microsoft.aspnetcore.http.isession) 구현입니다.
 
-::: moniker range=">= aspnetcore-2.0"
-
 `ISession` 구현은 정수 및 문자열 값을 설정 및 검색하는 몇 가지 확장 메서드를 제공합니다. 확장 메서드는 [Microsoft.AspNetCore.Http.Extensions](https://www.nuget.org/packages/Microsoft.AspNetCore.Http.Extensions/) 패키지가 프로젝트에서 참조될 때, [Microsoft.AspNetCore.Http](/dotnet/api/microsoft.aspnetcore.http) 네임스페이스에 있습니다(확장 메서드에 액세스하려면 `using Microsoft.AspNetCore.Http;` 문 추가). 두 패키지 모두 [Microsoft.AspNetCore.App 메타패키지](xref:fundamentals/metapackage-app)에 포함되어 있습니다.
-
-::: moniker-end
-
-::: moniker range="< aspnetcore-2.0"
-
-`ISession` 구현은 정수 및 문자열 값을 설정 및 검색하는 몇 가지 확장 메서드를 제공합니다. 확장 메서드는 [Microsoft.AspNetCore.Http.Extensions](https://www.nuget.org/packages/Microsoft.AspNetCore.Http.Extensions/) 패키지가 프로젝트에서 참조될 때, [Microsoft.AspNetCore.Http](/dotnet/api/microsoft.aspnetcore.http) 네임스페이스에 있습니다(확장 메서드에 액세스하려면 `using Microsoft.AspNetCore.Http;` 문 추가).
-
-::: moniker-end
 
 `ISession` 확장명 메서드:
 
@@ -207,47 +149,17 @@ Name: @HttpContext.Session.GetString(IndexModel.SessionKeyName)
 
 다음 예제에서는 정수와 문자열을 설정하고 가져오는 방법을 보여 줍니다.
 
-::: moniker range=">= aspnetcore-2.0"
-
 [!code-csharp[](app-state/samples/2.x/SessionSample/Pages/Index.cshtml.cs?name=snippet1&highlight=18-19,22-23)]
-
-::: moniker-end
-
-::: moniker range="< aspnetcore-2.0"
-
-[!code-csharp[](app-state/samples/1.x/SessionSample/Controllers/HomeController.cs?name=snippet1&highlight=10-11,18-19)]
-
-::: moniker-end
 
 메모리 내 캐시를 사용하는 경우에도, 분산된 캐시 시나리오를 사용하려면 모든 세션 데이터를 직렬화해야 합니다. 최소 문자열 및 숫자 직렬화가 제공됩니다([ISession](/dotnet/api/microsoft.aspnetcore.http.isession)의 메서드와 확장 메서드 참조). 복합 형식은 JSON과 같은 다른 메커니즘을 사용하여 사용자가 직렬화해야 합니다.
 
 다음 확장 메서드를 추가하여 직렬화 가능 개체를 설정하고 가져옵니다.
 
-::: moniker range=">= aspnetcore-2.0"
-
 [!code-csharp[](app-state/samples/2.x/SessionSample/Extensions/SessionExtensions.cs?name=snippet1)]
-
-::: moniker-end
-
-::: moniker range="< aspnetcore-2.0"
-
-[!code-csharp[](app-state/samples/1.x/SessionSample/Extensions/SessionExtensions.cs?name=snippet1)]
-
-::: moniker-end
 
 다음 예제에서는 확장 메서드를 사용하여 직렬화 가능 개체를 설정하고 가져오는 방법을 보여 줍니다.
 
-::: moniker range=">= aspnetcore-2.0"
-
 [!code-csharp[](app-state/samples/2.x/SessionSample/Pages/Index.cshtml.cs?name=snippet2)]
-
-::: moniker-end
-
-::: moniker range="< aspnetcore-2.0"
-
-[!code-csharp[](app-state/samples/1.x/SessionSample/Controllers/HomeController.cs?name=snippet2&highlight=4,12)]
-
-::: moniker-end
 
 ## <a name="tempdata"></a>TempData
 
@@ -255,19 +167,9 @@ ASP.NET Core는 [Razor Pages 페이지 모델의 TempData 속성](/dotnet/api/mi
 
 ### <a name="tempdata-providers"></a>TempData 공급자
 
-::: moniker range=">= aspnetcore-2.0"
-
-ASP.NET Core 2.0 이상에서 쿠키 기반 TempData 공급자는 TempData를 쿠키에 저장하는 데 기본적으로 사용됩니다.
+쿠키 기반 TempData 공급자는 TempData를 쿠키에 저장하는 데 기본적으로 사용됩니다.
 
 쿠키 데이터는 [IDataProtector](/dotnet/api/microsoft.aspnetcore.dataprotection.idataprotector)를 사용하여 암호화되고, [Base64UrlTextEncoder](/dotnet/api/microsoft.aspnetcore.webutilities.base64urltextencoder)로 인코딩된 후 청크 분할됩니다. 쿠키가 청크 분할되므로 ASP.NET Core 1.x에서 확인한 단일 쿠키 크기 제한은 적용되지 않습니다. 암호화된 데이터를 압축하는 것은 [범죄](https://wikipedia.org/wiki/CRIME_(security_exploit)) 및 [위반](https://wikipedia.org/wiki/BREACH_(security_exploit)) 공격과 같은 보안 문제를 일으킬 수 있으므로 쿠키 데이터는 압축되지 않습니다. 쿠키 기반 TempData 공급자에 대한 자세한 내용은 [CookieTempDataProvider](/dotnet/api/microsoft.aspnetcore.mvc.viewfeatures.cookietempdataprovider)를 참조하세요.
-
-::: moniker-end
-
-::: moniker range="< aspnetcore-2.0"
-
-ASP.NET Core 1.0 및 1.1에서는 세션 상태 TempData 공급자가 기본 공급자입니다.
-
-::: moniker-end
 
 ### <a name="choose-a-tempdata-provider"></a>TempData 공급자 선택
 
@@ -282,23 +184,11 @@ TempData 공급자를 선택하는 데는 다음과 같은 몇 가지 고려 사
 
 ### <a name="configure-the-tempdata-provider"></a>TempData 공급자 구성
 
-::: moniker range=">= aspnetcore-2.0"
-
 쿠키 기반 TempData 공급자는 기본적으로 활성화됩니다.
 
 세션 기반 TempData 공급자를 활성화하려면 [AddSessionStateTempDataProvider](/dotnet/api/microsoft.extensions.dependencyinjection.mvcviewfeaturesmvcbuilderextensions.addsessionstatetempdataprovider) 확장 메서드를 사용합니다.
 
 [!code-csharp[](app-state/samples_snapshot_2/2.x/SessionSample/Startup.cs?name=snippet1&highlight=11,13,32)]
-
-::: moniker-end
-
-::: moniker range="< aspnetcore-2.0"
-
-다음 `Startup` 클래스 코드는 세션 기반 TempData 공급자를 구성합니다.
-
-[!code-csharp[](app-state/samples_snapshot_2/1.x/SessionSample/Startup.cs?name=snippet1&highlight=4,9)]
-
-::: moniker-end
 
 미들웨어의 순서가 중요합니다. 앞의 예에서 `UseMvc` 이후에 `UseSession`이 호출되면 `InvalidOperationException` 예외가 발생합니다. 자세한 내용은 [미들웨어 순서 지정](xref:fundamentals/middleware/index#order)을 참조하세요.
 
@@ -341,31 +231,11 @@ app.Run(async (context) =>
 
 단일 앱에서만 사용되는 미들웨어의 경우 `string` 키가 허용됩니다. 앱 인스턴스 간에 공유되는 미들웨어는 키 충돌을 방지하기 위해 고유한 개체 키를 사용해야 합니다. 다음 예제에서는 미들웨어 클래스에 정의된 고유한 개체 키를 사용하는 방법을 보여 줍니다.
 
-::: moniker range=">= aspnetcore-2.0"
-
 [!code-csharp[](app-state/samples/2.x/SessionSample/Middleware/HttpContextItemsMiddleware.cs?name=snippet1&highlight=4,13)]
-
-::: moniker-end
-
-::: moniker range="< aspnetcore-2.0"
-
-[!code-csharp[](app-state/samples/1.x/SessionSample/Middleware/HttpContextItemsMiddleware.cs?name=snippet1&highlight=5,14)]
-
-::: moniker-end
 
 다른 코드는 미들웨어 클래스에 의해 노출된 키를 사용하여 `HttpContext.Items`에 저장된 값에 액세스할 수 있습니다.
 
-::: moniker range=">= aspnetcore-2.0"
-
 [!code-csharp[](app-state/samples/2.x/SessionSample/Pages/Index.cshtml.cs?name=snippet3)]
-
-::: moniker-end
-
-::: moniker range="< aspnetcore-2.0"
-
-[!code-csharp[](app-state/samples/1.x/SessionSample/Controllers/HomeController.cs?name=snippet3)]
-
-::: moniker-end
 
 이 방법은 또한 코드에서 키 문자열을 사용하지 않아도 된다는 이점이 있습니다.
 
@@ -401,8 +271,6 @@ app.Run(async (context) =>
 
 3. 데이터 서비스 클래스를 사용합니다.
 
-    ::: moniker range=">= aspnetcore-2.0"
-
     ```csharp
     public class IndexModel : PageModel
     {
@@ -413,23 +281,6 @@ app.Run(async (context) =>
         }
     }
     ```
-
-    ::: moniker-end
-
-    ::: moniker range="< aspnetcore-2.0"
-
-    ```csharp
-    public class HomeController : Controller
-    {
-        public HomeController(MyAppData myService)
-        {
-            // Do something with the service
-            //    Examples: Read data, store in a field or property
-        }
-    }
-    ```
-
-    ::: moniker-end
 
 ## <a name="common-errors"></a>일반적인 오류
 
