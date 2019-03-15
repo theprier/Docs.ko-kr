@@ -4,14 +4,14 @@ author: guardrex
 description: ASP.NET Core의 플랫폼 간 웹 서버인 Kestrel에 대해 알아봅니다.
 ms.author: tdykstra
 ms.custom: mvc
-ms.date: 02/13/2019
+ms.date: 03/04/2019
 uid: fundamentals/servers/kestrel
-ms.openlocfilehash: dcf027c2c495cbecd8464e43749b9154a4360e36
-ms.sourcegitcommit: 6ba5fb1fd0b7f9a6a79085b0ef56206e462094b7
+ms.openlocfilehash: 5fc6c78f3eb76fcf3dd663c8d878250f0051f153
+ms.sourcegitcommit: 191d21c1e37b56f0df0187e795d9a56388bbf4c7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56248409"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57665641"
 ---
 # <a name="kestrel-web-server-implementation-in-aspnet-core"></a>ASP.NET Core에서 Kestrel 웹 서버 구현
 
@@ -417,6 +417,17 @@ public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
 * `http://localhost:5000`
 * `https://localhost:5001` (로컬 개발 인증서가 제공되는 경우)
 
+다음을 사용하여 URL을 지정합니다.
+
+* `ASPNETCORE_URLS` 환경 변수.
+* `--urls` 명령줄 인수.
+* `urls` 호스트 구성 키.
+* `UseUrls` 확장명 메서드.
+
+이러한 접근 방식을 사용하여 제공된 값은 하나 이상의 HTTP 및 HTTPS 엔드포인트(기본 인증서가 사용 가능한 경우의 HTTPS)일 수 있습니다. 값을 세미콜론으로 구분된 목록으로 구성합니다(예를 들어, `"Urls": "http://localhost:8000;http://localhost:8001"`).
+
+이러한 접근 방식에 대한 자세한 내용은 [서버 URL](xref:fundamentals/host/web-host#server-urls) 및 [구성 재정의](xref:fundamentals/host/web-host#override-configuration)를 참조하세요.
+
 개발 인증서를 만듭니다.
 
 * [.NET Core SDK](/dotnet/core/sdk)가 설치되는 경우.
@@ -430,7 +441,7 @@ ASP.NET Core 2.1 이상 프로젝트 템플릿은 기본적으로 HTTPS에서 �
 
 `UseUrls`, `--urls` 명령줄 인수 `urls` 호스트 구성 키 및 `ASPNETCORE_URLS` 환경 변수도 작동하지만 이 섹션의 뒷부분에 명시된 제한 사항이 있습니다(HTTPS 엔드포인트 구성에 대해 기본 인증서를 사용할 수 있어야 합니다).
 
-ASP.NET Core 2.1 `KestrelServerOptions` 구성:
+ASP.NET Core 2.1 이상 `KestrelServerOptions` 구성:
 
 ### <a name="configureendpointdefaultsactionltlistenoptionsgt"></a>ConfigureEndpointDefaults(Action&lt;ListenOptions&gt;)
 
@@ -484,17 +495,6 @@ HTTPS를 사용하려면 Kestrel을 구성합니다.
 *구성 없음*
 
 Kestrel은 `http://localhost:5000` 및 `https://localhost:5001`에서 수신 대기합니다(기본 인증서가 사용 가능한 경우).
-
-다음을 사용하여 URL을 지정합니다.
-
-* `ASPNETCORE_URLS` 환경 변수.
-* `--urls` 명령줄 인수.
-* `urls` 호스트 구성 키.
-* `UseUrls` 확장명 메서드.
-
-자세한 내용은 [서버 URL](xref:fundamentals/host/web-host#server-urls) 및 [구성 재정의](xref:fundamentals/host/web-host#override-configuration)를 참조합니다.
-
-이러한 접근 방식을 사용하여 제공된 값은 하나 이상의 HTTP 및 HTTPS 엔드포인트(기본 인증서가 사용 가능한 경우의 HTTPS)일 수 있습니다. 값을 세미콜론으로 구분된 목록으로 구성합니다(예를 들어, `"Urls": "http://localhost:8000;http://localhost:8001"`).
 
 *구성에서 기본 인증서를 바꿈*
 
