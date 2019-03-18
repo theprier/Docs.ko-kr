@@ -5,14 +5,8 @@ description: ASP.NET Core 앱에서 .NET을 사용하여 대화형 클라이언�
 monikerRange: '>= aspnetcore-3.0'
 ms.author: riande
 ms.custom: mvc
-ms.date: 02/12/2019
+ms.date: 03/13/2019
 uid: razor-components/index
-ms.openlocfilehash: 04a73d33cee0deedaf3dc97395836a936b580fbd
-ms.sourcegitcommit: af8a6eb5375ef547a52ffae22465e265837aa82b
-ms.translationtype: HT
-ms.contentlocale: ko-KR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56159528"
 ---
 # <a name="introduction-to-razor-components"></a>Razor 구성 요소 소개
 
@@ -54,11 +48,11 @@ Razor 구성 요소가 브라우저와 통신하는 데 사용하는 연결은 J
 
 ‘Razor 구성 요소’는 페이지, 대화 상자 또는 데이터 입력 양식과 같은 UI의 부분입니다. 구성 요소는 사용자 이벤트를 처리하고 유연한 UI 렌더링 논리를 정의합니다. 구성 요소는 중첩 및 재사용될 수 있습니다.
 
-구성 요소는 NuGet 패키지로 공유 및 배포될 수 있는 .NET 어셈블리에 기본 제공된 .NET 클래스입니다. 클래스는 Razor 태그 페이지(*.cshtml*) 또는 C# 클래스(*.cs*) 형식으로 작성될 수 있습니다.
+구성 요소는 NuGet 패키지로 공유 및 배포될 수 있는 .NET 어셈블리에 기본 제공된 .NET 클래스입니다. 클래스는 일반적으로 *.razor* 파일 확장자를 가진 Razor 태그 페이지 형식으로 작성됩니다.
 
 [Razor](xref:mvc/views/razor)는 HTML 태그와 C# 코드를 결합하는 구문입니다. Razor는 개발자 생산성을 위해 설계되었으며, 개발자는 [IntelliSense](/visualstudio/ide/using-intellisense) 지원으로 동일한 파일에서 태그와 C# 사이를 전환할 수 있습니다. Razor Pages 및 MVC 뷰에도 Razor를 사용합니다. 요청/응답 모델을 중심으로 빌드된 Razor Pages 및 MVC 뷰와는 달리, 구성 요소는 특별히 UI 컴퍼지션을 처리하는 데 사용됩니다. Razor 구성 요소는 특별히 클라이언트 쪽 UI 논리 및 컴퍼지션에 사용될 수 있습니다.
 
-다음 태그는 Razor 파일(*DialogComponent.cshtml*)의 사용자 지정 대화 상자 구성 요소의 예입니다.
+다음 태그는 Razor 파일(*DialogComponent.razor*)의 사용자 지정 대화 상자 구성 요소의 예입니다.
 
 ```cshtml
 <div>

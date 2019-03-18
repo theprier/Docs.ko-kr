@@ -60,7 +60,7 @@ dotnet dev-certs https --trust
 이전 명령으로 인해 다음 메시지가 표시됩니다.
 
 *HTTPS 개발 인증서를 신뢰해야 합니다. 인증서를 신뢰할 수 없는 경우*  `'sudo security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain <<certificate>>'` 명령을 실행합니다.
- 
+
 이 명령은 시스템 키 집합에 인증서를 설치하기 위해 암호를 묻는 메시지를 표시할 수 있습니다. 개발 인증서를 신뢰하는 데 동의하는 경우 암호를 입력합니다.
 
 # <a name="linuxtablinux"></a>[Linux](#tab/linux)
