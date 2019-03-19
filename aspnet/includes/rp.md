@@ -1,1 +1,0 @@
-새 웹 응용 프로그램 개발에 대 한 Razor 페이지 것이 좋습니다. 자세한 내용은 [Razor 페이지 시작](/aspnet/core/tutorials/razor-pages/razor-pages-start)합니다.
