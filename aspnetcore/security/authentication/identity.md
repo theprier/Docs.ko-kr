@@ -5,12 +5,12 @@ description: ASP.NET Core 앱을 사용 하 여 Id를 사용 합니다. 암호 �
 ms.author: riande
 ms.date: 08/08/2018
 uid: security/authentication/identity
-ms.openlocfilehash: 1a4e7fb3ac6a767ca17127dd58a9b9e65ed9a00b
-ms.sourcegitcommit: af8a6eb5375ef547a52ffae22465e265837aa82b
+ms.openlocfilehash: d57ab5f2fdfabdfe3a987475d2db68b3fc1dec72
+ms.sourcegitcommit: 5f299daa7c8102d56a63b214b9a34cc4bc87bc42
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "55739685"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58209202"
 ---
 # <a name="introduction-to-identity-on-aspnet-core"></a>ASP.NET Core Identity 소개
 
@@ -115,7 +115,7 @@ dotnet new webapp --auth Individual -o WebApp1
 
 ## <a name="scaffold-register-login-and-logout"></a>스 캐 폴드 등록, 로그인 및 로그 아웃
 
-수행 합니다 [identity 권한 부여를 사용 하 여 Razor 프로젝트에 스 캐 폴드](xref:security/authentication/scaffold-identity#scaffold-identity-into-a-razor-project-with-authorization) 생성 하는 지침은이 섹션에 나와 있는 코드.
+수행 합니다 [identity 권한 부여를 사용 하 여 Razor 프로젝트에 스 캐 폴드](xref:security/authentication/scaffold-identity#scaffold-identity-into-a-razor-project-with-authorization) 이 섹션에 나와 있는 코드를 생성 하는 지침입니다.
 
 # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
 

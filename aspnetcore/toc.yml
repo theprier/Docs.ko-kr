@@ -90,6 +90,10 @@ items:
     - uid: tutorials/signalr-typescript-webpack
       name: TypeScript를 사용한 SignalR
       displayName: tutorial
+  - name: 원격 프로시저 호출 앱
+    items:
+    - uid: tutorials/grpc/grpc-start
+      name: ASP.NET Core에서 gRPC 서비스 시작
   - name: 데이터 액세스
     items:
     - name: Razor Pages를 사용한 EF Core
@@ -447,6 +451,20 @@ items:
   - uid: signalr/diagnostics
     name: 로깅 및 진단
     displayName: signalr
+- name: 원격 프로시저 호출 앱
+  items:
+  - uid: grpc/index
+    name: gRPC 서비스 소개
+  - uid: grpc/basics
+    name: C#을 사용하는 gRPC 서비스
+  - uid: grpc/aspnetcore
+    name: ASP.NET Core를 사용하는 gRPC 서비스
+  - uid: grpc/migration
+    name: C Core에서 ASP.NET Core로 gRPC 서비스 마이그레이션
+  - name: 자습서
+    items:
+    - uid: tutorials/grpc/grpc-start
+      name: ASP.NET Core에서 gRPC 서비스 시작
 - name: 테스트, 디버깅 및 문제 해결
   items:
   - name: 단위 테스트
@@ -1060,9 +1078,9 @@ items:
   href: /dotnet/api/?view=aspnetcore-2.2
 - name: 참가
   href: https://github.com/aspnet/Docs/blob/master/CONTRIBUTING.md
-ms.openlocfilehash: 1430ab85bd40bb3090b5e6a2e313a690bc280f1e
-ms.sourcegitcommit: 32bc00435767189fa3ae5fb8a91a307bf889de9d
+ms.openlocfilehash: d49acf4884da00a6409259f0d9eeca1d16d7d05f
+ms.sourcegitcommit: a467828b5e4eaae291d961ffe2279a571900de23
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/11/2019
-ms.locfileid: "57733522"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58142397"

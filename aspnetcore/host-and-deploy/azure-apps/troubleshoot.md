@@ -4,14 +4,14 @@ author: guardrex
 description: ASP.NET Core Azure App Service 배포에 대한 문제 진단 방법을 알아봅니다.
 ms.author: riande
 ms.custom: mvc
-ms.date: 03/05/2019
+ms.date: 03/06/2019
 uid: host-and-deploy/azure-apps/troubleshoot
-ms.openlocfilehash: c3732bfab362ec034248eb3912d4b1337c94216e
-ms.sourcegitcommit: 191d21c1e37b56f0df0187e795d9a56388bbf4c7
+ms.openlocfilehash: 326f66070d51c04298abbf6292d2d350414311de
+ms.sourcegitcommit: 34bf9fc6ea814c039401fca174642f0acb14be3c
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57665430"
+ms.lasthandoff: 03/14/2019
+ms.locfileid: "57841405"
 ---
 # <a name="troubleshoot-aspnet-core-on-azure-app-service"></a>Azure App Service에서 ASP.NET Core 문제 해결
 
@@ -187,7 +187,10 @@ ASP.NET Core 모듈 디버그 로그는 ASP.NET Core 모듈에서 추가로 심�
 
 ## <a name="slow-or-hanging-app"></a>앱이 느리거나 중단됨
 
-앱이 요청 시 느리게 응답하거나 중단될 경우 [Azure App Service에서 느린 웹앱 성능 문제 해결](/azure/app-service/app-service-web-troubleshoot-performance-degradation)에서 디버깅 지침을 확인하세요.
+요청 시 앱이 느리게 응답하거나 중단되면 다음 문서를 참조하세요.
+
+* [Azure App Service에서 느린 웹앱 성능 문제 해결](/azure/app-service/app-service-web-troubleshoot-performance-degradation)
+* [Crash Diagnoser 사이트 확장을 사용하여 Azure 웹앱에서 일시적인 예외 문제 또는 성능 문제에 대한 덤프 캡처](https://blogs.msdn.microsoft.com/asiatech/2015/12/28/use-crash-diagnoser-site-extension-to-capture-dump-for-intermittent-exception-issues-or-performance-issues-on-azure-web-app/)
 
 ## <a name="remote-debugging"></a>원격 디버깅
 
