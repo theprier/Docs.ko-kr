@@ -193,7 +193,6 @@ info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
 
 다음은 Visual Studio에서 샘플 앱을 실행할 때 디버그 창에 나타나는 것과 동일한 로그의 예입니다.
 
-
 ```console
 Microsoft.AspNetCore.Hosting.Internal.WebHost:Information: Request starting HTTP/1.1 GET http://localhost:53104/api/todo/0  
 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker:Information: Executing action method TodoApi.Controllers.TodoController.GetById (TodoApi) with arguments (0) - ModelState is Valid
@@ -214,7 +213,7 @@ Microsoft.AspNetCore.Hosting.Internal.WebHost:Information: Request finished in 3
 
 ## <a name="log-category"></a>로그 범주
 
-`ILogger` 개체가 생성되면 개체에 대한 *범주*가 지정됩니다. 해당 범주는 `Ilogger`의 해당 인스턴스에서 만든 각 로그 메시지에 포함됩니다. 범주는 문자열일 수 있지만 "TodoApi.Controllers.TodoController"와 같은 클래스 이름을 사용하는 것이 규칙입니다.
+`ILogger` 개체가 생성되면 개체에 대한 *범주*가 지정됩니다. 해당 범주는 `ILogger`의 해당 인스턴스에서 만든 각 로그 메시지에 포함됩니다. 범주는 문자열일 수 있지만 "TodoApi.Controllers.TodoController"와 같은 클래스 이름을 사용하는 것이 규칙입니다.
 
 `ILogger<T>`를 사용하여 `T`의 정규화된 형식 이름을 범주로 사용하는 `ILogger` 인스턴스를 가져옵니다.
 

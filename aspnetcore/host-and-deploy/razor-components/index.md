@@ -1,18 +1,12 @@
 ---
 title: Razor 구성 요소 호스트 및 배포
 author: guardrex
-description: ASP.NET Core, 콘텐츠 전송 네트워크(CDN), 파일 서버 및 GitHub 페이지를 사용하여 Razor 구성 요소 및 Blazor 앱을 호스트하고 배포하는 방법을 알아봅니다.
+description: 'ASP.NET Core, 콘텐츠 전송 네트워크(CDN), 파일 서버 및 GitHub 페이지를 사용하여 Razor 구성 요소 및 Blazor 앱을 호스트하고 배포하는 방법을 알아봅니다.'
 monikerRange: '>= aspnetcore-3.0'
 ms.author: riande
 ms.custom: mvc
 ms.date: 01/29/2019
 uid: host-and-deploy/razor-components/index
-ms.openlocfilehash: 9debd75128ceecb805fc673a8182a785fc9f7942
-ms.sourcegitcommit: ed76cc752966c604a795fbc56d5a71d16ded0b58
-ms.translationtype: HT
-ms.contentlocale: ko-KR
-ms.lasthandoff: 02/02/2019
-ms.locfileid: "55667954"
 ---
 # <a name="host-and-deploy-razor-components"></a>Razor 구성 요소 호스트 및 배포
 
@@ -274,7 +268,7 @@ Docker에서 Nginx를 사용하여 Blazor를 호스트하려면 Dockerfile을 Al
 
 다음 예제와 같이 Dockerfile에 한 줄을 추가합니다.
 
-```
+```Dockerfile
 FROM nginx:alpine
 COPY ./bin/Release/netstandard2.0/publish /usr/share/nginx/html/
 COPY nginx.conf /etc/nginx/nginx.conf

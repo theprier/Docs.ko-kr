@@ -531,8 +531,6 @@ JSON 파일 구성을 활성화하려면 <xref:Microsoft.Extensions.Configuratio
 * 파일이 변경되면 구성을 다시 로드하는지 여부
 * 파일에 액세스하는 데 사용되는 <xref:Microsoft.Extensions.FileProviders.IFileProvider>
 
-
-
 `AddJsonFile`은 <xref:Microsoft.AspNetCore.WebHost.CreateDefaultBuilder*>을 사용하여 새 <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder>를 초기화할 때 자동으로 두 번 호출됩니다. 이 메서드는 호출되면 다음에서 구성을 로드합니다.
 
 * *appsettings.json* &ndash; 이 파일을 먼저 읽습니다. 파일의 환경 버전이 *appsettings.json* 파일에서 제공한 값을 재정의할 수 있습니다.
