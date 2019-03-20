@@ -7,12 +7,12 @@ ms.author: bradyg
 ms.custom: mvc
 ms.date: 11/14/2018
 uid: signalr/streaming
-ms.openlocfilehash: fb7183f7189d62c181f69ffdb170e3da25612919
-ms.sourcegitcommit: 036d4b03fd86ca5bb378198e29ecf2704257f7b2
+ms.openlocfilehash: 7c176e3f21ffca7b97d9d3c2e8861032f22587b8
+ms.sourcegitcommit: 57792e5f594db1574742588017c708350958bdf0
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57345589"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58264301"
 ---
 # <a name="use-streaming-in-aspnet-core-signalr"></a>ASP.NET Core SignalR에서 스트리밍 사용
 
@@ -139,12 +139,14 @@ JavaScript 클라이언트는 `connection.stream`을 사용하여 허브의 스�
 ::: moniker-end
 
 ::: moniker range=">= aspnetcore-3.0"
+
 ## <a name="java-client"></a>Java 클라이언트
+
 SignalR Java 클라이언트를 사용 하 여 `stream` 스트리밍 메서드를 호출 하는 방법입니다. 3 개 이상의 인수를 허용 합니다.
 
-* 스트림 아이템의 예상된 형식 
+* 스트림 아이템의 예상된 형식
 * 허브 메서드의 이름.
-* 허브 메서드에 정의된 인수. 
+* 허브 메서드에 정의된 인수.
 
 ```java
 hubConnection.stream(String.class, "ExampleStreamingHubMethod", "Arg1")
@@ -153,6 +155,7 @@ hubConnection.stream(String.class, "ExampleStreamingHubMethod", "Arg1")
         (error) -> {/* Define your onError handler here. */},
         () -> {/* Define your onCompleted handler here. */});
 ```
+
 합니다 `stream` 메서드를 `HubConnection` 스트림 항목 형식의 관찰 가능 개체를 반환 합니다. Observable 형식 `subscribe` 메서드를 정의할 수는 프로그램 `onNext`를 `onError` 및 `onCompleted` 처리기입니다.
 
 ::: moniker-end

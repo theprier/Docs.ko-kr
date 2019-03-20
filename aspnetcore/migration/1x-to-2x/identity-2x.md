@@ -5,12 +5,12 @@ description: 이 문서에서는 ASP.NET Core 2.0으로 ASP.NET Core 1.x 인증 
 ms.author: scaddie
 ms.date: 12/18/2018
 uid: migration/1x-to-2x/identity-2x
-ms.openlocfilehash: d28b4af483c7ec9d6cff6db3e2f1693e765d4202
-ms.sourcegitcommit: 816f39e852a8f453e8682081871a31bc66db153a
+ms.openlocfilehash: d11d41c82236436096660a24df81a3df4da0fb8e
+ms.sourcegitcommit: 57792e5f594db1574742588017c708350958bdf0
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53637614"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58265351"
 ---
 # <a name="migrate-authentication-and-identity-to-aspnet-core-20"></a>ASP.NET Core 2.0으로 인증 및 Id 마이그레이션
 
@@ -21,6 +21,7 @@ ASP.NET Core 2.0에는 새 모델을 인증 하 고 [Identity](xref:security/aut
 <a name="auth-middleware"></a>
 
 ## <a name="authentication-middleware-and-services"></a>인증 미들웨어 및 서비스
+
 1.x 프로젝트에서 인증 미들웨어를 통해 구성 됩니다. 지원 하려는 각 인증 체계에 대 한 미들웨어 메서드를 호출 합니다.
 
 Id를 사용 하 여 Facebook 인증을 구성 하는 1.x 다음과 *Startup.cs*:
@@ -35,11 +36,11 @@ public void ConfigureServices(IServiceCollection services)
 public void Configure(IApplicationBuilder app, ILoggerFactory loggerfactory)
 {
     app.UseIdentity();
-    app.UseFacebookAuthentication(new FacebookOptions { 
+    app.UseFacebookAuthentication(new FacebookOptions {
         AppId = Configuration["auth:facebook:appid"],
         AppSecret = Configuration["auth:facebook:appsecret"]
     });
-} 
+}
 ```
 
 2.0 프로젝트에서 인증 서비스를 통해 구성 됩니다. 각 인증 체계에 등록 합니다 `ConfigureServices` 메서드의 *Startup.cs*합니다. 합니다 `UseIdentity` 메서드를 사용 하 여 바뀝니다 `UseAuthentication`합니다.
@@ -55,7 +56,7 @@ public void ConfigureServices(IServiceCollection services)
     // If you want to tweak Identity cookies, they're no longer part of IdentityOptions.
     services.ConfigureApplicationCookie(options => options.LoginPath = "/Account/LogIn");
     services.AddAuthentication()
-            .AddFacebook(options => 
+            .AddFacebook(options =>
             {
                 options.AppId = Configuration["auth:facebook:appid"];
                 options.AppSecret = Configuration["auth:facebook:appsecret"];
@@ -72,6 +73,7 @@ public void Configure(IApplicationBuilder app, ILoggerFactory loggerfactory) {
 다음은 각 주요 인증 체계에 대 한 마이그레이션 지침은 2.0입니다.
 
 ### <a name="cookie-based-authentication"></a>쿠키 기반 인증
+
 아래 두 옵션 중 하나를 선택 하 고에서 필요한 사항을 변경한 *Startup.cs*:
 
 1. Identity를 사용 하 여 쿠키를 사용 합니다.
@@ -88,24 +90,24 @@ public void Configure(IApplicationBuilder app, ILoggerFactory loggerfactory) {
         services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
-    
+
         services.ConfigureApplicationCookie(options => options.LoginPath = "/Account/LogIn");
         ```
 
 2. Id 없이 쿠키 사용
     - 대체는 `UseCookieAuthentication` 메서드 호출을 `Configure` 메서드를 `UseAuthentication`:
-  
+
         ```csharp
         app.UseAuthentication();
         ```
- 
+
     - 호출을 `AddAuthentication` 하 고 `AddCookie` 의 메서드는 `ConfigureServices` 메서드:
 
         ```csharp
-        // If you don't want the cookie to be automatically authenticated and assigned to HttpContext.User, 
+        // If you don't want the cookie to be automatically authenticated and assigned to HttpContext.User,
         // remove the CookieAuthenticationDefaults.AuthenticationScheme parameter passed to AddAuthentication.
         services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-                .AddCookie(options => 
+                .AddCookie(options =>
                 {
                     options.LoginPath = "/Account/LogIn";
                     options.LogoutPath = "/Account/LogOff";
@@ -113,9 +115,10 @@ public void Configure(IApplicationBuilder app, ILoggerFactory loggerfactory) {
         ```
 
 ### <a name="jwt-bearer-authentication"></a>JWT 전달자 인증
+
 다음과 같이 변경할 *Startup.cs*:
 - 대체는 `UseJwtBearerAuthentication` 메서드 호출을 `Configure` 메서드를 `UseAuthentication`:
- 
+
     ```csharp
     app.UseAuthentication();
     ```
@@ -124,7 +127,7 @@ public void Configure(IApplicationBuilder app, ILoggerFactory loggerfactory) {
 
     ```csharp
     services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-            .AddJwtBearer(options => 
+            .AddJwtBearer(options =>
             {
                 options.Audience = "http://localhost:5001/";
                 options.Authority = "http://localhost:5000/";
@@ -134,6 +137,7 @@ public void Configure(IApplicationBuilder app, ILoggerFactory loggerfactory) {
     이 코드 조각은 기본 체계를 전달 하 여 설정 해야 하므로 Id를 사용 하지 않습니다 `JwtBearerDefaults.AuthenticationScheme` 에 `AddAuthentication` 메서드.
 
 ### <a name="openid-connect-oidc-authentication"></a>OIDC (OpenID Connect) 인증
+
 다음과 같이 변경할 *Startup.cs*:
 
 - 대체는 `UseOpenIdConnectAuthentication` 메서드 호출을 `Configure` 메서드를 `UseAuthentication`:
@@ -145,32 +149,33 @@ public void Configure(IApplicationBuilder app, ILoggerFactory loggerfactory) {
 - 호출 된 `AddOpenIdConnect` 의 메서드는 `ConfigureServices` 메서드:
 
     ```csharp
-    services.AddAuthentication(options => 
+    services.AddAuthentication(options =>
     {
         options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
         options.DefaultChallengeScheme = OpenIdConnectDefaults.AuthenticationScheme;
     })
     .AddCookie()
-    .AddOpenIdConnect(options => 
+    .AddOpenIdConnect(options =>
     {
         options.Authority = Configuration["auth:oidc:authority"];
         options.ClientId = Configuration["auth:oidc:clientid"];
     });
     ```
 
-### <a name="facebook-authentication"></a>facebook 인증
+### <a name="facebook-authentication"></a>Facebook 인증
+
 다음과 같이 변경할 *Startup.cs*:
 - 대체는 `UseFacebookAuthentication` 메서드 호출을 `Configure` 메서드를 `UseAuthentication`:
- 
+
     ```csharp
     app.UseAuthentication();
     ```
 
 - 호출 된 `AddFacebook` 의 메서드는 `ConfigureServices` 메서드:
-    
+
     ```csharp
     services.AddAuthentication()
-            .AddFacebook(options => 
+            .AddFacebook(options =>
             {
                 options.AppId = Configuration["auth:facebook:appid"];
                 options.AppSecret = Configuration["auth:facebook:appsecret"];
@@ -178,9 +183,10 @@ public void Configure(IApplicationBuilder app, ILoggerFactory loggerfactory) {
     ```
 
 ### <a name="google-authentication"></a>Google 인증
+
 다음과 같이 변경할 *Startup.cs*:
 - 대체는 `UseGoogleAuthentication` 메서드 호출을 `Configure` 메서드를 `UseAuthentication`:
- 
+
     ```csharp
     app.UseAuthentication();
     ```
@@ -189,14 +195,15 @@ public void Configure(IApplicationBuilder app, ILoggerFactory loggerfactory) {
 
     ```csharp
     services.AddAuthentication()
-            .AddGoogle(options => 
+            .AddGoogle(options =>
             {
                 options.ClientId = Configuration["auth:google:clientid"];
                 options.ClientSecret = Configuration["auth:google:clientsecret"];
-            });    
+            });
     ```
 
 ### <a name="microsoft-account-authentication"></a>Microsoft 계정 인증
+
 다음과 같이 변경할 *Startup.cs*:
 - 대체는 `UseMicrosoftAccountAuthentication` 메서드 호출을 `Configure` 메서드를 `UseAuthentication`:
 
@@ -208,17 +215,18 @@ public void Configure(IApplicationBuilder app, ILoggerFactory loggerfactory) {
 
     ```csharp
     services.AddAuthentication()
-            .AddMicrosoftAccount(options => 
+            .AddMicrosoftAccount(options =>
             {
                 options.ClientId = Configuration["auth:microsoft:clientid"];
                 options.ClientSecret = Configuration["auth:microsoft:clientsecret"];
             });
-    ``` 
+    ```
 
 ### <a name="twitter-authentication"></a>Twitter 인증
+
 다음과 같이 변경할 *Startup.cs*:
 - 대체는 `UseTwitterAuthentication` 메서드 호출을 `Configure` 메서드를 `UseAuthentication`:
- 
+
     ```csharp
     app.UseAuthentication();
     ```
@@ -227,7 +235,7 @@ public void Configure(IApplicationBuilder app, ILoggerFactory loggerfactory) {
 
     ```csharp
     services.AddAuthentication()
-            .AddTwitter(options => 
+            .AddTwitter(options =>
             {
                 options.ConsumerKey = Configuration["auth:twitter:consumerkey"];
                 options.ConsumerSecret = Configuration["auth:twitter:consumersecret"];
@@ -235,6 +243,7 @@ public void Configure(IApplicationBuilder app, ILoggerFactory loggerfactory) {
     ```
 
 ### <a name="setting-default-authentication-schemes"></a>기본 인증 체계를 설정합니다.
+
 1.x의 경우에 `AutomaticAuthenticate` 및 `AutomaticChallenge` 의 속성을 [AuthenticationOptions](/dotnet/api/Microsoft.AspNetCore.Builder.AuthenticationOptions?view=aspnetcore-1.1) 기본 클래스에서 단일 인증 체계를 설정할 데 사용 된 합니다. 이 적용할 좋은 방법이 없었습니다.
 
 2.0에서는 이러한 두 속성이 제거 되었습니다. 개별 속성으로 `AuthenticationOptions` 인스턴스. 구성할 수 있습니다 합니다 `AddAuthentication` 메서드 호출을 `ConfigureServices` 메서드의 *Startup.cs*:
@@ -248,7 +257,7 @@ services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme);
 또는의 오버 로드 된 버전을 사용 합니다 `AddAuthentication` 둘 이상의 속성을 설정 하는 방법입니다. 기본 스키마로 다음 오버 로드 된 메서드 예제의 `CookieAuthenticationDefaults.AuthenticationScheme`합니다. 인증 체계 또는 개별 내에서 지정할 수 있습니다 `[Authorize]` 특성 또는 권한 부여 정책.
 
 ```csharp
-services.AddAuthentication(options => 
+services.AddAuthentication(options =>
 {
     options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
     options.DefaultChallengeScheme = OpenIdConnectDefaults.AuthenticationScheme;
@@ -264,6 +273,7 @@ services.AddAuthentication(options =>
 <a name="obsolete-interface"></a>
 
 ## <a name="use-httpcontext-authentication-extensions"></a>HttpContext 인증 확장 프로그램 사용
+
 `IAuthenticationManager` 인터페이스는 1.x 인증 시스템의 주 진입점입니다. 새 집합을 사용 하 여 바뀌었습니다 `HttpContext` 의 확장 메서드는 `Microsoft.AspNetCore.Authentication` 네임 스페이스입니다.
 
 예를 들어 1.x 프로젝트 참조는 `Authentication` 속성:
@@ -277,6 +287,7 @@ services.AddAuthentication(options =>
 <a name="windows-auth-changes"></a>
 
 ## <a name="windows-authentication-httpsys--iisintegration"></a>Windows 인증 (HTTP.sys / IISIntegration)
+
 Windows 인증의 두 가지 변형이 있습니다.
 1. 호스트에는 인증 된 사용자만 허용
 2. 호스트 허용 모두 익명 사용자를 인증 하 고
@@ -294,6 +305,7 @@ services.AddAuthentication(IISDefaults.AuthenticationScheme);
 <a name="identity-cookie-options"></a>
 
 ## <a name="identitycookieoptions-instances"></a>IdentityCookieOptions 인스턴스
+
 2.0 변경의 부작용으로 나타납니다 명명 된 쿠키 옵션 인스턴스 대신 옵션을 사용 하도록 전환 됩니다. Identity 쿠키 구성표 이름을 사용자 지정 하는 기능 제거 됩니다.
 
 1.x 프로젝트를 사용 하 여 예를 들어 [생성자 주입](xref:mvc/controllers/dependency-injection#constructor-injection) 전달 하는 `IdentityCookieOptions` 에 매개 변수 *AccountController.cs*합니다. 외부 쿠키 인증 체계는 제공 된 인스턴스에서 액세스 합니다.
@@ -311,6 +323,7 @@ services.AddAuthentication(IISDefaults.AuthenticationScheme);
 <a name="navigation-properties"></a>
 
 ## <a name="add-identityuser-poco-navigation-properties"></a>POCO IdentityUser 탐색 속성 추가
+
 자료의 Entity Framework (EF) Core 탐색 속성 `IdentityUser` POCO (Plain Old CLR Object) 제거 되었습니다. 이러한 속성을 사용 하는 1.x 프로젝트 경우 수동으로 추가 2.0 프로젝트:
 
 ```csharp
@@ -366,6 +379,7 @@ protected override void OnModelCreating(ModelBuilder builder)
 <a name="synchronous-method-removal"></a>
 
 ## <a name="replace-getexternalauthenticationschemes"></a>GetExternalAuthenticationSchemes 대체
+
 동기 메서드 `GetExternalAuthenticationSchemes` 비동기 버전을 위해 제거 되었습니다. 1.x 프로젝트 같은 코드를 가정해 *ManageController.cs*:
 
 [!code-csharp[](../1x-to-2x/samples/AspNetCoreDotNetCore1App/AspNetCoreDotNetCore1App/Controllers/ManageController.cs?name=snippet_GetExternalAuthenticationSchemes)]
@@ -385,6 +399,7 @@ protected override void OnModelCreating(ModelBuilder builder)
 <a name="property-change"></a>
 
 ## <a name="manageloginsviewmodel-property-change"></a>ManageLoginsViewModel 속성 변경
+
 A `ManageLoginsViewModel` 개체가 사용 되는 `ManageLogins` 의 동작 *ManageController.cs*합니다. 1.x 프로젝트에서 개체의 `OtherLogins` 속성이 반환 형식이 `IList<AuthenticationDescription>`합니다. 이 반환 형식은 가져오는 `Microsoft.AspNetCore.Http.Authentication`:
 
 [!code-csharp[](../1x-to-2x/samples/AspNetCoreDotNetCore1App/AspNetCoreDotNetCore1App/Models/ManageViewModels/ManageLoginsViewModel.cs?name=snippet_ManageLoginsViewModel&highlight=2,11)]
@@ -396,4 +411,5 @@ A `ManageLoginsViewModel` 개체가 사용 되는 `ManageLogins` 의 동작 *Man
 <a name="additional-resources"></a>
 
 ## <a name="additional-resources"></a>추가 자료
+
 추가 세부 정보 및 토론에 대 한 참조를 [Auth 2.0에 대 한 토론](https://github.com/aspnet/Security/issues/1338) GitHub에서 문제입니다.

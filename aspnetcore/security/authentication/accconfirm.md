@@ -5,12 +5,12 @@ description: 전자 메일 확인 및 암호 재설정을 사용 하 여 ASP.NET
 ms.author: riande
 ms.date: 3/11/2019
 uid: security/authentication/accconfirm
-ms.openlocfilehash: d102ed0a4a75f6273fcda0a8cc7e9d091ff94b50
-ms.sourcegitcommit: 5f299daa7c8102d56a63b214b9a34cc4bc87bc42
+ms.openlocfilehash: 3bfc2ce46cfbc2ee308940f9e04eb2ffeec09073
+ms.sourcegitcommit: 57792e5f594db1574742588017c708350958bdf0
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58209929"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58265494"
 ---
 # <a name="account-confirmation-and-password-recovery-in-aspnet-core"></a>계정 확인 및 ASP.NET Core에서 암호 복구
 
@@ -45,6 +45,7 @@ dotnet new webapp -au Individual -uld -o WebPWrecover
 cd WebPWrecover
 dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design
 dotnet restore
+dotnet tool install -g dotnet-aspnet-codegenerator
 dotnet aspnet-codegenerator identity -dc WebPWrecover.Data.ApplicationDbContext --files "Account.Register;Account.Login;Account.Logout;Account.ConfirmEmail"
 dotnet ef database drop -f
 dotnet ef database update
@@ -63,6 +64,7 @@ dotnet run
 앱에서 확인 전자 메일을 보낼 때 다음 단계에서는이 전자 메일에 다시 사용 하려는. 선택한 행을 마우스 오른쪽 단추로 클릭 **삭제**합니다. 전자 메일 별칭을 삭제 하면 쉽게 다음 단계에 있습니다.
 
 <a name="prevent-login-at-registration"></a>
+
 ## <a name="require-email-confirmation"></a>전자 메일 확인이 필요
 
 새 사용자 등록 전자 메일을 확인 하는 것이 좋습니다. 다른 사람이 가장 하지는 확인 하려면 확인 하면 전자 메일 (즉, 다른 사용자의 전자 메일을 사용 하 여 등록 하지 않은). 토론 포럼을 했으며 방지 하려고 한다고 가정해 보겠습니다 "yli@example.com"등록"에서nolivetto@contoso.com"입니다. 전자 메일 확인 하지 않고 "nolivetto@contoso.com" 앱에서 원치 않는 전자 메일을 받을 수 있습니다. 사용자는 실수로로 등록 되어 있다고 가정 "ylo@example.com" 및 "yli"의 오타 눈치채 합니다. 이러한 앱에 올바른 전자 메일 없기 때문에 암호 복구를 사용 하려면 없게 됩니다. 전자 메일 확인 봇을에서 제한 된 보호를 제공합니다. 전자 메일 확인 전자 메일 계정의 수를 사용 하 여 악의적인 사용자 로부터 보호를 제공 하지 않습니다.
@@ -96,13 +98,13 @@ Windows, 암호 관리자의 키/값 쌍 저장 하는 *secrets.json* 파일을 
 
 콘텐츠를 *secrets.json* 파일 암호화 되지 않습니다. 에서는 다음 태그를 *secrets.json* 파일입니다. `SendGridKey` 값이 제거 되었습니다.
 
- ```json
-  {
-    "SendGridUser": "RickAndMSFT",
-    "SendGridKey": "<key removed>"
-  }
-  ```
- 
+```json
+{
+  "SendGridUser": "RickAndMSFT",
+  "SendGridKey": "<key removed>"
+}
+```
+
 자세한 내용은 참조는 [옵션 패턴](xref:fundamentals/configuration/options) 및 [구성](xref:fundamentals/configuration/index)합니다.
 
 ### <a name="install-sendgrid"></a>SendGrid를 설치 합니다.
@@ -130,6 +132,7 @@ dotnet add package SendGrid
 ------
 
 참조 [SendGrid를 사용 하 여 시작 해 보세요](https://sendgrid.com/free/) 무료 SendGrid 계정을 등록 합니다.
+
 ### <a name="implement-iemailsender"></a>IEmailSender 구현
 
 구현 `IEmailSender`를 만듭니다 *Services/EmailSender.cs* 다음과 비슷한 코드를 사용 하 여:
@@ -213,6 +216,7 @@ await _signInManager.SignInAsync(user, isPersistent: false);
 참조 [이 GitHub 문제](https://github.com/aspnet/AspNetCore/issues/5410)합니다.
 
 <a name="debug"></a>
+
 ### <a name="debug-email"></a>전자 메일을 디버그
 
 경우 전자 메일 작업을 가져올 수 없습니다.

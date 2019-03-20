@@ -6,12 +6,12 @@ ms.author: scaddie
 ms.custom: mvc
 ms.date: 01/10/2019
 uid: migration/proper-to-2x/membership-to-core-identity
-ms.openlocfilehash: 0b7001a311eeaaa78e3d52e2ec66d33ad057c381
-ms.sourcegitcommit: cec77d5ad8a0cedb1ecbec32834111492afd0cd2
+ms.openlocfilehash: 3b708da13ff9f2887eee87ea17844312a4fe1b8d
+ms.sourcegitcommit: 57792e5f594db1574742588017c708350958bdf0
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54207410"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58264728"
 ---
 # <a name="migrate-from-aspnet-membership-authentication-to-aspnet-core-20-identity"></a>인증 ASP.NET 멤버 자격에서에서 ASP.NET Core 2.0 Id로 마이그레이션
 
@@ -54,6 +54,7 @@ ASP.NET Core 2.0 Id에 대 한 스키마를 볼 수 있는 가장 빠른 방법�
       }
     }
     ```
+
 1. 선택 **뷰** > **SQL Server 개체 탐색기**합니다. 에 지정 된 데이터베이스 이름에 해당 하는 노드를 확장 합니다 `ConnectionStrings:DefaultConnection` 속성을 *appsettings.json*합니다.
 
     `Update-Database` 앱 초기화에 필요한 모든 데이터 및 스키마를 사용 하 여 지정 된 데이터베이스 명령을 생성 합니다. 다음 이미지에서는 이전 단계를 사용 하 여 만든 테이블 구조를 보여 줍니다.
@@ -64,9 +65,9 @@ ASP.NET Core 2.0 Id에 대 한 스키마를 볼 수 있는 가장 빠른 방법�
 
 테이블 구조와 멤버 및 ASP.NET Core Id에 대 한 필드에 미묘한 차이가 있습니다. ASP.NET 및 ASP.NET Core 앱을 사용 하 여 인증/권한 부여에 대 한 패턴은 크게 변경 되었습니다. Id로도 사용 되는 키 개체는 *사용자가* 하 고 *역할*입니다. 매핑 테이블에는 다음과 같습니다 *사용자*하십시오 *역할*, 및 *UserRoles*합니다.
 
-### <a name="users"></a>사용자
+### <a name="users"></a>Users
 
-|*Identity<br>(dbo입니다. AspNetUsers)*        ||*멤버 자격<br>(dbo.aspnet_Users / dbo.aspnet_Membership)*||
+|*Identity<br>(dbo.AspNetUsers)*        ||*멤버 자격<br>(dbo.aspnet_Users / dbo.aspnet_Membership)*||
 |----------------------------------------|-----------------------------------------------------------|
 |**필드 이름**                 |**Type**|**필드 이름**                                    |**Type**|
 |`Id`                           |string  |`aspnet_Users.UserId`                             |string  |
@@ -82,7 +83,7 @@ ASP.NET Core 2.0 Id에 대 한 스키마를 볼 수 있는 가장 빠른 방법�
 
 ### <a name="roles"></a>역할
 
-|*Identity<br>(dbo입니다. AspNetRoles)*        ||*멤버 자격<br>(dbo.aspnet_Roles)*||
+|*Identity<br>(dbo.AspNetRoles)*        ||*Membership<br>(dbo.aspnet_Roles)*||
 |----------------------------------------|-----------------------------------|
 |**필드 이름**                 |**Type**|**필드 이름**   |**Type**         |
 |`Id`                           |string  |`RoleId`         | string          |
@@ -91,7 +92,7 @@ ASP.NET Core 2.0 Id에 대 한 스키마를 볼 수 있는 가장 빠른 방법�
 
 ### <a name="user-roles"></a>사용자 역할
 
-|*Identity<br>(dbo입니다. AspNetUserRoles)*||*멤버 자격<br>(dbo.aspnet_UsersInRoles)*||
+|*Identity<br>(dbo.AspNetUserRoles)*||*Membership<br>(dbo.aspnet_UsersInRoles)*||
 |------------------------------------|------------------------------------------|
 |**필드 이름**           |**Type**  |**필드 이름**|**Type**                   |
 |`RoleId`                 |string    |`RoleId`      |string                     |
@@ -127,7 +128,7 @@ SELECT aspnet_Users.UserId,
        -- Creates an empty password since passwords don't map between the 2 schemas
        '',
        /*
-        The SecurityStamp token is used to verify the state of an account and 
+        The SecurityStamp token is used to verify the state of an account and
         is subject to change at any time. It should be initialized as a new ID.
        */
        NewID(),

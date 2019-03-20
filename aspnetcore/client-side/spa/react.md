@@ -7,12 +7,12 @@ ms.author: scaddie
 ms.custom: mvc
 ms.date: 03/07/2019
 uid: spa/react
-ms.openlocfilehash: 7b07f696ae071531c88c9f8cf528fc6f0bf97b46
-ms.sourcegitcommit: 191d21c1e37b56f0df0187e795d9a56388bbf4c7
+ms.openlocfilehash: 91a71498574d6d96c2c06e896283fed801e8adb3
+ms.sourcegitcommit: 57792e5f594db1574742588017c708350958bdf0
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57665563"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58265237"
 ---
 # <a name="use-the-react-project-template-with-aspnet-core"></a>ASP.NET Core에 React 프로젝트 템플릿 사용
 
@@ -85,7 +85,7 @@ npm install --save <package_name>
     ```
     BROWSER=none
     ```
-    
+
     이렇게 하면 웹 브라우저에서에서 CRA 서버 외부에서 시작 하는 경우.
 
 2. 명령 프롬프트에서 *ClientApp* 하위 디렉터리로 전환하고 CRA 개발 서버를 시작합니다.

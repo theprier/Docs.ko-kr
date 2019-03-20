@@ -6,12 +6,12 @@ ms.author: casoper
 ms.custom: mvc, seodec18
 ms.date: 10/24/2018
 uid: azure/devops/deploy-to-app-service
-ms.openlocfilehash: 9fe17c9e210d4dda9b74818104fc52a60d4f0077
-ms.sourcegitcommit: b34b25da2ab68e6495b2460ff570468f16a9bf0d
+ms.openlocfilehash: e09d03f1d30f128b1db1588aa92b28ec3e4ae626
+ms.sourcegitcommit: 57792e5f594db1574742588017c708350958bdf0
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53284541"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58264378"
 ---
 # <a name="deploy-an-app-to-app-service"></a>App Service에 앱 배포
 
@@ -193,6 +193,7 @@ Visual Studio 빌드하고 Azure에 앱을 배포 합니다. 웹 앱 URL로 이�
     ```console
     git commit -a -m "upgraded to V3"
     ```
+
 5. 로컬 컴퓨터의 명령 셸 사용, Git 원격으로 스테이징 배포 URL을 추가 하 고 커밋된 변경 내용을 푸시하십시오.
 
     a. 로컬 Git 리포지토리를 스테이징에 대 한 원격 URL을 추가 합니다.

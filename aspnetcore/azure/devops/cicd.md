@@ -6,12 +6,12 @@ ms.author: scaddie
 ms.date: 10/24/2018
 ms.custom: seodec18
 uid: azure/devops/cicd
-ms.openlocfilehash: 906aae3fd4b4abd0becc8847b0f54c372bda300a
-ms.sourcegitcommit: 036d4b03fd86ca5bb378198e29ecf2704257f7b2
+ms.openlocfilehash: 676620b5dd151c9cd009d7cb278ed2c2b122c83f
+ms.sourcegitcommit: 57792e5f594db1574742588017c708350958bdf0
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57346309"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58264881"
 ---
 # <a name="continuous-integration-and-deployment"></a>지속적인 통합 및 배포
 
@@ -39,17 +39,23 @@ ms.locfileid: "57346309"
 1. 클릭 합니다 **리포지토리 만들기** 단추입니다.
 1. 로컬 컴퓨터의 명령 셸을 엽니다. 디렉터리를 이동 합니다 *단순 피드 판독기* Git 리포지토리에 저장 됩니다.
 1. 기존 이름 바꾸기 *원점* 원격 *업스트림*합니다. 다음 명령을 실행합니다.
+
     ```console
     git remote rename origin upstream
     ```
+
 1. 새 *원본* 원격 github 리포지토리의 사본을 가리키는 합니다. 다음 명령을 실행합니다.
+
     ```console
     git remote add origin https://github.com/<GitHub_username>/simple-feed-reader/
     ```
+
 1. 새로 만든 GitHub 리포지토리에 로컬 Git 리포지토리를 게시 합니다. 다음 명령을 실행합니다.
+
     ```console
     git push -u origin master
     ```
+
 1. 브라우저 창을 열고 이동할 `https://github.com/<GitHub_username>/simple-feed-reader/`합니다. GitHub 리포지토리에서 코드 표시 되는지 확인 합니다.
 
 ## <a name="disconnect-local-git-deployment"></a>로컬 Git 배포를 연결 끊기
@@ -192,6 +198,7 @@ ms.locfileid: "57346309"
     ```console
     git commit -a -m "upgraded to V4"
     ```
+
 1. 변경 내용을 푸시 합니다 *마스터* 분기를 *원본* GitHub 리포지토리 원격:
 
     ```console

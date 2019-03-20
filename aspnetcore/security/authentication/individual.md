@@ -5,12 +5,12 @@ description: 개별 사용자 계정을 사용 하 여 만든 ASP.NET Core 프�
 ms.author: riande
 ms.date: 11/30/2017
 uid: security/authentication/individual
-ms.openlocfilehash: c73365eafaf2c38ef02c3c83ccf5ced4264f7dc0
-ms.sourcegitcommit: b3894b65e313570e97a2ab78b8addd22f427cac8
+ms.openlocfilehash: f9c1be16386da935382275815bb5fd5c72894b1c
+ms.sourcegitcommit: 57792e5f594db1574742588017c708350958bdf0
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56743776"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58265431"
 ---
 # <a name="articles-based-on-aspnet-core-projects-created-with-individual-user-accounts"></a>개별 사용자 계정을 사용 하 여 만든 ASP.NET Core 프로젝트를 기반으로 하는 문서
 
@@ -39,6 +39,7 @@ dotnet new razor -au Individual
 참조 [이 GitHub 문제](https://github.com/aspnet/AspNetCore/issues/5833) web API 인증에 대 한 합니다.
 
 <a name="no"></a>
+
 ## <a name="no-authentication"></a>인증 안 함
 
 인증을 사용 하 여.NET Core CLI에 지정 된 `-au` 옵션입니다. Visual Studio에는 **인증 변경** 대화 상자는 새 웹 응용 프로그램에 사용할 수 있습니다. Visual Studio에서 새 웹 앱에 대 한 기본값은 **인증 없음**합니다.
@@ -49,6 +50,7 @@ dotnet new razor -au Individual
 * 인증 코드를 포함 하지 마십시오.
 
 <a name="win"></a>
+
 ## <a name="windows-authentication"></a>Windows 인증
 
 Windows 인증을 사용 하 여.NET Core CLI에서 새 웹 앱에 대 한 지정 된 `-au Windows` 옵션입니다. Visual Studio에서의 **인증 변경** 대화 상자를 사용 합니다 **Windows 인증** 옵션입니다.

@@ -6,12 +6,12 @@ monikerRange: '>= aspnetcore-2.1'
 ms.author: riande
 ms.date: 04/05/2018
 uid: razor-pages/filter
-ms.openlocfilehash: 5b233d95c9fbab09c64072377b85b40b127df7b7
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: 32613d75d966a698c6478234f3f5f9d5fc0628bc
+ms.sourcegitcommit: 57792e5f594db1574742588017c708350958bdf0
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50205940"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58264793"
 ---
 # <a name="filter-methods-for-razor-pages-in-aspnet-core"></a>ASP.NET Core에서 Razor 페이지를 위한 필터 메서드
 
@@ -35,14 +35,14 @@ Razor 페이지 필터는 전역 또는 페이지 수준에서 적용할 수 있
 
 * 동기 메서드:
 
-    * [OnPageHandlerSelected](/dotnet/api/microsoft.aspnetcore.mvc.filters.ipagefilter.onpagehandlerselected?view=aspnetcore-2.0): 처리기 메서드를 선택한 후 모델 바인딩이 발생하기 전에 호출됩니다.
-    * [OnPageHandlerExecuting](/dotnet/api/microsoft.aspnetcore.mvc.filters.ipagefilter.onpagehandlerexecuting?view=aspnetcore-2.0): 모델 바인딩이 완료된 후 처리기 메서드가 실행되기 전에 호출됩니다.
-    * [OnPageHandlerExecuted](/dotnet/api/microsoft.aspnetcore.mvc.filters.ipagefilter.onpagehandlerexecuted?view=aspnetcore-2.0): 처리기 메서드가 실행된 후 작업 결과 전에 호출됩니다.
+  * [OnPageHandlerSelected](/dotnet/api/microsoft.aspnetcore.mvc.filters.ipagefilter.onpagehandlerselected?view=aspnetcore-2.0) : 처리기 메서드를 선택 했지만 전에 모델 바인딩이 발생 후 호출 됩니다.
+  * [OnPageHandlerExecuting](/dotnet/api/microsoft.aspnetcore.mvc.filters.ipagefilter.onpagehandlerexecuting?view=aspnetcore-2.0) : 모델 바인딩이 완료 되 면 처리기 메서드가 실행 되기 전에 호출 됩니다.
+  * [OnPageHandlerExecuted](/dotnet/api/microsoft.aspnetcore.mvc.filters.ipagefilter.onpagehandlerexecuted?view=aspnetcore-2.0) : 작업 결과 하기 전에 처리기 메서드를 실행 한 후 호출 됩니다.
 
 * 비동기 메서드:
 
-    * [OnPageHandlerSelectionAsync](/dotnet/api/microsoft.aspnetcore.mvc.filters.iasyncpagefilter.onpagehandlerselectionasync?view=aspnetcore-2.0): 처리기 메서드를 선택한 후 모델 바인딩이 발생하기 전에 비동기적으로 호출됩니다.
-    * [OnPageHandlerExecutionAsync](/dotnet/api/microsoft.aspnetcore.mvc.filters.iasyncpagefilter.onpagehandlerexecutionasync?view=aspnetcore-2.0): 모델 바인딩이 완료된 후 처리기 메서드가 호출되기 전에 비동기적으로 호출됩니다.
+  * [OnPageHandlerSelectionAsync](/dotnet/api/microsoft.aspnetcore.mvc.filters.iasyncpagefilter.onpagehandlerselectionasync?view=aspnetcore-2.0) : 처리기 메서드를 선택한 후에, 하지만 모델 바인딩이 발생 하기 전에 비동기식으로 호출 됩니다.
+  * [OnPageHandlerExecutionAsync](/dotnet/api/microsoft.aspnetcore.mvc.filters.iasyncpagefilter.onpagehandlerexecutionasync?view=aspnetcore-2.0) : 모델 바인딩이 완료 되 면 처리기 메서드를 호출 하기 전에 비동기식으로 호출 됩니다.
 
 > [!NOTE]
 > 필터 인터페이스의 동기 또는 비동기 버전 중 **하나**를 구현합니다. 프레임워크는 먼저 필터가 비동기 인터페이스를 구현하는지를 확인하고 그렇다면 이를 호출합니다. 그렇지 않으면 동기 인터페이스의 메서드를 호출합니다. 두 인터페이스가 구현되는 경우 비동기 메서드만 호출됩니다. 페이지의 재정의에 동일한 규칙이 적용되며, 재정의의 동기 또는 비동기 버전 중 하나만 구현합니다.
@@ -53,7 +53,7 @@ Razor 페이지 필터는 전역 또는 페이지 수준에서 적용할 수 있
 
 [!code-csharp[Main](filter/sample/PageFilter/Filters/SampleAsyncPageFilter.cs?name=snippet1)]
 
-위의 코드에서 [ILogger](/dotnet/api/microsoft.extensions.logging.ilogger?view=aspnetcore-2.0)는 필요하지 않습니다. 이는 샘플에서 응용 프로그램에 대한 추적 정보를 제공하는 데 사용됩니다.
+위의 코드에서 [ILogger](/dotnet/api/microsoft.extensions.logging.ilogger?view=aspnetcore-2.0)는 필요하지 않습니다. 이는 샘플에서 애플리케이션에 대한 추적 정보를 제공하는 데 사용됩니다.
 
 다음 코드는 `Startup` 클래스의 `SampleAsyncPageFilter`를 활성화합니다.
 
@@ -86,6 +86,7 @@ Razor 페이지 필터는 전역 또는 페이지 수준에서 적용할 수 있
 ::: moniker-end
 
 <a name="ifa"></a>
+
 ## <a name="implement-a-filter-attribute"></a>필터 특성 구현
 
 기본 제공 특성 기반 필터 [OnResultExecutionAsync](/dotnet/api/microsoft.aspnetcore.mvc.filters.iasyncresultfilter.onresultexecutionasync?view=aspnetcore-2.0#Microsoft_AspNetCore_Mvc_Filters_IAsyncResultFilter_OnResultExecutionAsync_Microsoft_AspNetCore_Mvc_Filters_ResultExecutingContext_Microsoft_AspNetCore_Mvc_Filters_ResultExecutionDelegate_) 필터는 서브클래싱할 수 있습니다. 다음 필터는 응답에 헤더를 추가합니다.
@@ -101,6 +102,7 @@ Razor 페이지 필터는 전역 또는 페이지 수준에서 적용할 수 있
 필터에서 필터 파이프라인을 단락(short-circuit)시키는 지침은 [취소 및 단락](xref:mvc/controllers/filters#cancellation-and-short-circuiting)을 참조하세요. 
 
 <a name="auth"></a>
+
 ## <a name="authorize-filter-attribute"></a>권한 부여 필터 특성
 
 [권한 부여](/dotnet/api/microsoft.aspnetcore.authorization.authorizeattribute?view=aspnetcore-2.0) 특성은 `PageModel`에 적용될 수 있습니다.

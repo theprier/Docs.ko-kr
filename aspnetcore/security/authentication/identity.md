@@ -5,12 +5,12 @@ description: ASP.NET Core 앱을 사용 하 여 Id를 사용 합니다. 암호 �
 ms.author: riande
 ms.date: 08/08/2018
 uid: security/authentication/identity
-ms.openlocfilehash: d57ab5f2fdfabdfe3a987475d2db68b3fc1dec72
-ms.sourcegitcommit: 5f299daa7c8102d56a63b214b9a34cc4bc87bc42
+ms.openlocfilehash: 355c53e0c957944cb35c37c6b01e724af5f93f44
+ms.sourcegitcommit: 57792e5f594db1574742588017c708350958bdf0
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58209202"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58265464"
 ---
 # <a name="introduction-to-identity-on-aspnet-core"></a>ASP.NET Core Identity 소개
 
@@ -27,6 +27,7 @@ ASP.NET Core Id는 ASP.NET Core 앱에 로그인 기능을 추가 하는 멤버 
 ::: moniker range=">= aspnetcore-2.1"
 
 <a name="adi"></a>
+
 ## <a name="adddefaultidentity-and-addidentity"></a>AddDefaultIdentity 및 AddIdentity
 
 [AddDefaultIdentity](/dotnet/api/microsoft.extensions.dependencyinjection.identityservicecollectionuiextensions.adddefaultidentity?view=aspnetcore-2.1#Microsoft_Extensions_DependencyInjection_IdentityServiceCollectionUIExtensions_AddDefaultIdentity__1_Microsoft_Extensions_DependencyInjection_IServiceCollection_System_Action_Microsoft_AspNetCore_Identity_IdentityOptions__) ASP.NET Core 2.1에서 도입 되었습니다. 호출 `AddDefaultIdentity` 다음 호출 하는 것과 비슷합니다.
@@ -71,6 +72,7 @@ dotnet new webapp --auth Individual -o WebApp1
 [!INCLUDE[](~/includes/view-identity-db.md)]
 
 <a name="pw"></a>
+
 ### <a name="configure-identity-services"></a>Id 서비스를 구성 합니다.
 
 서비스에 추가 된 `ConfigureServices`합니다. 일반적인 패턴은 모든 `Add{Service}` 메서드를 호출한 후 모든 `services.Configure{Service}` 메서드를 호출하는 것입니다.

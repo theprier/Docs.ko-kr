@@ -7,12 +7,12 @@ ms.author: bradyg
 ms.custom: mvc
 ms.date: 02/07/2019
 uid: signalr/configuration
-ms.openlocfilehash: 070d6fed26b6d14c4b8a35d0f7d94abafb08993b
-ms.sourcegitcommit: 191d21c1e37b56f0df0187e795d9a56388bbf4c7
+ms.openlocfilehash: 2c1bb8d5e317813d1fdb8d474b7d7d892e6f67ec
+ms.sourcegitcommit: 57792e5f594db1574742588017c708350958bdf0
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57665417"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58264582"
 ---
 # <a name="aspnet-core-signalr-configuration"></a>ASP.NET Core SignalR 구성
 
@@ -27,7 +27,7 @@ JSON serialization을 사용 하 여 서버에 구성할 수 있습니다 합니
 ```csharp
 services.AddSignalR()
     .AddJsonProtocol(options => {
-        options.PayloadSerializerSettings.ContractResolver = 
+        options.PayloadSerializerSettings.ContractResolver =
         new DefaultContractResolver();
     });
 ```
@@ -41,7 +41,7 @@ using Microsoft.Extensions.DependencyInjection;
 // When constructing your connection:
 var connection = new HubConnectionBuilder()
     .AddJsonProtocol(options => {
-        options.PayloadSerializerSettings.ContractResolver = 
+        options.PayloadSerializerSettings.ContractResolver =
             new DefaultContractResolver();
     })
     .Build();
@@ -98,13 +98,13 @@ services.AddSignalR().AddHubOptions<MyHub>(options =>
 ```csharp
 public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 {
-    app.UseSignalR((configure) => 
+    app.UseSignalR((configure) =>
     {
-        var desiredTransports = 
+        var desiredTransports =
             HttpTransportType.WebSockets |
             HttpTransportType.LongPolling;
 
-        configure.MapHub<MyHub>("/myhub", (options) => 
+        configure.MapHub<MyHub>("/myhub", (options) =>
         {
             options.Transports = desiredTransports;
         });
@@ -224,6 +224,7 @@ HubConnection hubConnection = HubConnectionBuilder.create("https://example.com/m
     .withTransport(TransportEnum.WEBSOCKETS)
     .build();
 ```
+
 > [!NOTE]
 > SignalR Java 클라이언트는 아직 전송 대체 (fallback)를 지원 하지 않습니다.
 
@@ -259,8 +260,7 @@ let connection = new signalR.HubConnectionBuilder()
     .build();
 ```
 
-
-SignalR Java 클라이언트에서 전달자 토큰에 대 한 액세스 토큰 팩터리를 제공 하 여 인증에 사용 하도록 구성할 수 있습니다 합니다 [HttpHubConnectionBuilder](/java/api/com.microsoft.signalr._http_hub_connection_builder?view=aspnet-signalr-java)합니다. 사용 하 여 [withAccessTokenFactory](/java/api/com.microsoft.signalr._http_hub_connection_builder.withaccesstokenprovider?view=aspnet-signalr-java#com_microsoft_signalr__http_hub_connection_builder_withAccessTokenProvider_Single_String__) 제공 하는 [RxJava](https://github.com/ReactiveX/RxJava) [Single<String>](http://reactivex.io/documentation/single.html)합니다. 호출 하 여 [Single.defer](http://reactivex.io/RxJava/javadoc/io/reactivex/Single.html#defer-java.util.concurrent.Callable-)를 클라이언트에 대 한 액세스 토큰을 생성 하는 논리를 작성할 수 있습니다.
+SignalR Java 클라이언트에서 전달자 토큰에 대 한 액세스 토큰 팩터리를 제공 하 여 인증에 사용 하도록 구성할 수 있습니다 합니다 [HttpHubConnectionBuilder](/java/api/com.microsoft.signalr._http_hub_connection_builder?view=aspnet-signalr-java)합니다. 사용 하 여 [withAccessTokenFactory](/java/api/com.microsoft.signalr._http_hub_connection_builder.withaccesstokenprovider?view=aspnet-signalr-java#com_microsoft_signalr__http_hub_connection_builder_withAccessTokenProvider_Single_String__) 제공 하는 [RxJava](https://github.com/ReactiveX/RxJava) [Single\<문자열 >](http://reactivex.io/documentation/single.html)합니다. 호출 하 여 [Single.defer](http://reactivex.io/RxJava/javadoc/io/reactivex/Single.html#defer-java.util.concurrent.Callable-)를 클라이언트에 대 한 액세스 토큰을 생성 하는 논리를 작성할 수 있습니다.
 
 ```java
 HubConnection hubConnection = HubConnectionBuilder.create("https://example.com/myhub")
@@ -319,12 +319,14 @@ HubConnection hubConnection = HubConnectionBuilder.create("https://example.com/m
 | `WebSocketConfiguration` | `null` | 추가적인 WebSocket 옵션을 구성할 수 있는 대리자입니다. 옵션을 구성에 사용할 수 있는 [ClientWebSocketOptions](/dotnet/api/system.net.websockets.clientwebsocketoptions)의 인스턴스를 전달받습니다. |
 
 # <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+
 | JavaScript 옵션 | 기본값 | 설명 |
 | ----------------- | ------------- | ----------- |
 | `accessTokenFactory` | `null` | HTTP 요청에서 전달자 인증 토큰으로 제공된 문자열을 반환하는 함수입니다. |
 | `skipNegotiation` | `false` | 이 값을 `true`로 설정하면 협상 단계를 건너뜁니다. **WebSockets 전송이 유일하게 활성화된 전송인 경우에만 지원됩니다.** Azure SignalR Service를 사용하는 경우에는 이 설정을 사용할 수 없습니다. |
 
 # <a name="javatabjava"></a>[Java](#tab/java)
+
 | Java 옵션 | 기본값 | 설명 |
 | ----------- | ------------- | ----------- |
 | `withAccessTokenProvider` | `null` | HTTP 요청에서 전달자 인증 토큰으로 제공된 문자열을 반환하는 함수입니다. |
@@ -357,7 +359,6 @@ let connection = new signalR.HubConnectionBuilder()
 ```
 
 Java 클라이언트에서 이러한 옵션에서 구성할 수 있습니다 메서드를 사용 하 여는 `HttpHubConnectionBuilder` 에서 반환 되는 `HubConnectionBuilder.create("HUB URL")`
-
 
 ```java
 HubConnection hubConnection = HubConnectionBuilder.create("https://example.com/myhub")
