@@ -141,6 +141,7 @@ Azure App Service/IIS에서 호스트하는 앱의 일반적인 배포 구성 �
    ```powershell
    Test-Path D:\home\SiteExtensions\AspNetCoreRuntime.{X.Y}.{PLATFORM}\
    ```
+
    x64 미리 보기 런타임이 설치된 경우 명령이 `True`를 반환합니다.
 
 > [!NOTE]
@@ -194,11 +195,13 @@ ARM 템플릿을 사용하여 앱을 만들고 배포하는 경우 `siteextensio
      <RuntimeIdentifier>win-x86</RuntimeIdentifier>
    </PropertyGroup>
    ```
+
 1. 명령 셸에서 [dotnet publish](/dotnet/core/tools/dotnet-publish) 명령을 사용하여 호스트의 런타임에 대한 릴리스 구성에 있는 앱을 게시합니다. 다음 예제에서 앱은 `win-x86` RID에 게시됩니다. `--runtime` 옵션에 제공된 RID를 프로젝트 파일의 `<RuntimeIdentifier>`(또는 `<RuntimeIdentifiers>`) 속성에 제공해야 합니다.
 
    ```console
    dotnet publish --configuration Release --runtime win-x86
    ```
+
 1. *bin/Release/{TARGET FRAMEWORK}/{RUNTIME IDENTIFIER}/publish* 디렉터리의 콘텐츠를 App Service의 사이트로 이동합니다.
 
 ### <a name="use-docker-with-web-apps-for-containers"></a>Web Apps for Containers에서 Docker 사용

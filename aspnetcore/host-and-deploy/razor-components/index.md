@@ -109,7 +109,7 @@ dotnet publish -c Release
 * 해당 앱은 브라우저 UI 스레드에서 직접 실행됩니다. 다음 방법 중 하나 이상을 사용할 수 있습니다.
   * Blazor 앱은 ASP.NET Core 앱에서 제공됩니다. [ASP.NET Core를 사용하여 클라이언트 쪽 Blazor가 호스트하는 배포](#client-side-blazor-hosted-deployment-with-aspnet-core) 섹션을 참조하세요.
   * Blazor 앱은 정적 호스팅 웹 서버 또는 서비스에 배치되며, 이 경우 Blazor 앱을 처리하기 위해 .NET을 사용하지 않습니다. [클라이언트 쪽 Blazor 독립 실행형 배포](#client-side-blazor-standalone-deployment) 섹션을 참조하세요.
-  
+
 ### <a name="configure-the-linker"></a>링커 구성
 
 Blazor는 각 빌드에 대해 IL(중간 언어) 연결을 수행하여 출력 어셈블리에서 불필요한 IL을 제거합니다. 빌드에 대한 어셈블리 연결을 제어할 수 있습니다. 자세한 내용은 <xref:host-and-deploy/razor-components/configure-linker>을 참조하세요.
@@ -192,7 +192,8 @@ ASP.NET Core 앱 호스팅 및 배포에 대한 자세한 내용은 <xref:host-a
 
 Azure App Service에 배포에 대한 자세한 내용은 다음 토픽을 참조하세요.
 
-<xref:tutorials/publish-to-azure-webapp-using-vs>  
+<xref:tutorials/publish-to-azure-webapp-using-vs>
+
 Visual Studio를 사용하여 Azure App Service에 ASP.NET Core 앱을 게시하는 방법을 알아봅니다.
 
 ### <a name="client-side-blazor-standalone-deployment"></a>클라이언트 쪽 Blazor 독립 실행형 배포
@@ -300,5 +301,6 @@ ASP.NET Core 앱이 게시된 경우 Razor 구성 요소는 ASP.NET Core 앱 및
 
 Azure App Service에 배포에 대한 자세한 내용은 다음 토픽을 참조하세요.
 
-<xref:tutorials/publish-to-azure-webapp-using-vs>  
+<xref:tutorials/publish-to-azure-webapp-using-vs>
+
 Visual Studio를 사용하여 Azure App Service에 ASP.NET Core 앱을 게시하는 방법을 알아봅니다.
