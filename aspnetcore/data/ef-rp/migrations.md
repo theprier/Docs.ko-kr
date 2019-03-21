@@ -5,12 +5,12 @@ description: 이 자습서에서는 ASP.NET Core MVC 앱에서 데이터 모델 
 ms.author: riande
 ms.date: 6/31/2017
 uid: data/ef-rp/migrations
-ms.openlocfilehash: ef79aca700068aadf9b5b2b689213b6e78a5d729
-ms.sourcegitcommit: 036d4b03fd86ca5bb378198e29ecf2704257f7b2
+ms.openlocfilehash: 5848e5e1e45708c3ab5c2a79614111662701aa77
+ms.sourcegitcommit: 088e6744cd67a62f214f25146313a53949b17d35
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57346439"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58320162"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---migrations---4-of-8"></a>ASP.NET Core에서 EF Core를 사용한 Razor 페이지 - 마이그레이션 - 4/8
 
@@ -61,7 +61,7 @@ PMC에서 `Get-Help about_EntityFrameworkCore`를 실행하여 도움말 정보�
  dotnet ef database drop
  ```
 
-------
+---
 
 ## <a name="create-an-initial-migration-and-update-the-db"></a>초기 마이그레이션 만들기 및 DB 업데이트
 
@@ -81,7 +81,7 @@ dotnet ef migrations add InitialCreate
 dotnet ef database update
 ```
 
-------
+---
 
 ### <a name="examine-the-up-and-down-methods"></a>Up 및 Down 메서드 검사
 
@@ -120,7 +120,7 @@ dotnet ef migrations remove
 
 자세한 내용은 [dotnet ef migrations remove](/ef/core/miscellaneous/cli/dotnet#dotnet-ef-migrations-remove)를 참조하세요.
 
-------
+---
 
 마이그레이션 제거 명령은 마이그레이션을 삭제하고 스냅숏이 올바르게 다시 설정되도록 합니다.
 

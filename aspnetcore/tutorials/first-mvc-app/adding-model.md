@@ -5,12 +5,12 @@ description: 간단한 ASP.NET Core 앱에 모델을 추가합니다.
 ms.author: riande
 ms.date: 02/25/2019
 uid: tutorials/first-mvc-app/adding-model
-ms.openlocfilehash: ed83ab92c70ea87f3c805787303e24c9ecfc4e12
-ms.sourcegitcommit: 57792e5f594db1574742588017c708350958bdf0
+ms.openlocfilehash: 224b8d7622b691df65e217fc9b963c0ba64c8baf
+ms.sourcegitcommit: 088e6744cd67a62f214f25146313a53949b17d35
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58265535"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58320084"
 ---
 # <a name="add-a-model-to-an-aspnet-core-mvc-app"></a>ASP.NET Core MVC 앱에 모델 추가
 
@@ -233,7 +233,7 @@ Login failed for user 'User-name'.
 
 [!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie22/Controllers/MC1.cs?name=snippet_1)]
 
-생성자는 [종속성 주입](xref:fundamentals/dependency-injection)을 사용하여 컨트롤러에 데이터베이스 컨텍스트(`MvcMovieContext `)를 삽입할 수 있습니다. 컨트롤러의 [CRUD](https://wikipedia.org/wiki/Create,_read,_update_and_delete) 메서드 각각에서 데이터베이스 컨텍스트를 사용합니다.
+생성자는 [종속성 주입](xref:fundamentals/dependency-injection)을 사용하여 컨트롤러에 데이터베이스 컨텍스트(`MvcMovieContext`)를 삽입할 수 있습니다. 컨트롤러의 [CRUD](https://wikipedia.org/wiki/Create,_read,_update_and_delete) 메서드 각각에서 데이터베이스 컨텍스트를 사용합니다.
 
 <a name="strongly-typed-models-keyword-label"></a>
 <a name="strongly-typed-models-and-the--keyword"></a>

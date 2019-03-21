@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: seodec18
 ms.date: 11/22/2018
 uid: data/ef-rp/intro
-ms.openlocfilehash: 7b048c8543f51a158530b8c7952b5aec7b753b42
-ms.sourcegitcommit: 57792e5f594db1574742588017c708350958bdf0
+ms.openlocfilehash: 7723f7ca6c5f9a21b2628933c6e7dabde20c3af6
+ms.sourcegitcommit: 088e6744cd67a62f214f25146313a53949b17d35
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58264692"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58320201"
 ---
 # <a name="razor-pages-with-entity-framework-core-in-aspnet-core---tutorial-1-of-8"></a>ASP.NET Core에서 Entity Framework Core를 사용한 Razor 페이지 - 자습서 1/8
 
@@ -37,7 +37,7 @@ Contoso University 샘플 웹앱은 EF(Entity Framework) Core를 사용하여 AS
 
 [!INCLUDE [](~/includes/2.1-SDK.md)]
 
-------
+---
 
 [Razor 페이지](xref:razor-pages/index)에 익숙함. 신규 프로그래머는 이 시리즈를 시작하기 전에 [Razor 페이지 시작하기](xref:tutorials/razor-pages/razor-pages-start)를 완료해야 합니다.
 
@@ -76,7 +76,7 @@ cd ContosoUniversity
 dotnet run
 ```
 
-------
+---
 
 ## <a name="set-up-the-site-style"></a>사이트 스타일 설정
 
@@ -181,7 +181,7 @@ dotnet tool install --global dotnet-aspnet-codegenerator
 dotnet aspnet-codegenerator razorpage -m Student -dc ContosoUniversity.Models.SchoolContext -udl -outDir Pages/Students --referenceScriptLibraries
 ```
 
-------
+---
 
 스캐폴드 프로세스는 다음 파일을 생성하고 변경했습니다.
 

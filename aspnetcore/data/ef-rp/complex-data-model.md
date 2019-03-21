@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/24/2018
 uid: data/ef-rp/complex-data-model
-ms.openlocfilehash: fbe43e019ddab6f9acc2ea46799f0a39aa7c2e7c
-ms.sourcegitcommit: 5f299daa7c8102d56a63b214b9a34cc4bc87bc42
+ms.openlocfilehash: 311f72699b6291996a43d56247bd3d2bfab596e6
+ms.sourcegitcommit: 088e6744cd67a62f214f25146313a53949b17d35
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58208992"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58320250"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---data-model---5-of-8"></a>ASP.NET Core에서 EF Core를 사용한 Razor 페이지 - 데이터 모델 - 5/8
 
@@ -142,7 +142,7 @@ dotnet ef migrations add ColumnFirstName
 dotnet ef database update
 ```
 
-------
+---
 
 `migrations add ColumnFirstName` 명령은 다음과 같은 경고 메시지를 생성합니다.
 
@@ -555,7 +555,7 @@ Add-Migration ComplexDataModel
 dotnet ef migrations add ComplexDataModel
 ```
 
-------
+---
 
 위의 명령은 가능한 데이터 손실에 대한 경고를 표시합니다.
 
@@ -607,7 +607,7 @@ PMC에서 `Get-Help about_EntityFrameworkCore`를 실행하여 도움말 정보�
 dotnet ef database update
  ```
 
-------
+---
 
 앱을 실행합니다. 앱을 실행하면 `DbInitializer.Initialize` 메서드를 실행합니다. `DbInitializer.Initialize`는 새 DB를 채웁니다.
 
