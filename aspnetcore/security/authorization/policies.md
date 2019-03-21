@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 11/21/2017
 uid: security/authorization/policies
-ms.openlocfilehash: c2bc626b2dd341dda878a151def6b405884357d7
-ms.sourcegitcommit: 191d21c1e37b56f0df0187e795d9a56388bbf4c7
+ms.openlocfilehash: e72f15c28fb7b62c671dd6475cc323cacce42de6
+ms.sourcegitcommit: 5f299daa7c8102d56a63b214b9a34cc4bc87bc42
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57665404"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58208323"
 ---
 # <a name="policy-based-authorization-in-aspnet-core"></a>ASP.NET Core의 정책 기반 권한 부여
 
@@ -19,13 +19,25 @@ ms.locfileid: "57665404"
 
 권한 부여 정책은 하나 이상의 요구 사항으로 구성됩니다. 그리고 `Startup.ConfigureServices`에서 권한 부여 서비스 구성의 일부로 등록됩니다.
 
-[!code-csharp[](policies/samples/PoliciesAuthApp1/Startup.cs?range=40-41,50-55,63,72)]
+[!code-csharp[](policies/samples/PoliciesAuthApp1/Startup.cs?range=32-33,48-53,61,66)]
 
 위의 예제는 "AtLeast21"이라는 정책을 생성합니다. 이 정책은 요구 사항의 &mdash; 매개 변수로 제공되는, 최소 연령을 뜻하는 단일 요구 사항을 갖습니다.
 
-정책은 정책 이름이 지정된 `[Authorize]` 특성을 통해서 적용됩니다. 예를 들어 다음과 같습니다.
+## <a name="applying-policies-to-mvc-controllers"></a>MVC 컨트롤러에 정책을 적용
+
+Razor 페이지를 사용 하는 경우 참조 [Razor 페이지에 정책을 적용](#applying-policies-to-razor-pages) 이 문서의.
+
+정책을 사용 하 여 컨트롤러에 적용 되는 `[Authorize]` 정책 이름의 특성입니다. 예를 들어:
 
 [!code-csharp[](policies/samples/PoliciesAuthApp1/Controllers/AlcoholPurchaseController.cs?name=snippet_AlcoholPurchaseControllerClass&highlight=4)]
+
+## <a name="applying-policies-to-razor-pages"></a>Razor 페이지에 정책 적용
+
+정책을 사용 하 여 Razor 페이지에 적용 되는 `[Authorize]` 정책 이름의 특성입니다. 예를 들어:
+
+[!code-csharp[](policies/samples/PoliciesAuthApp2/Pages/AlcoholPurchase.cshtml.cs?name=snippet_AlcoholPurchaseModelClass&highlight=4)]
+
+정책 수를 사용 하 여도 Razor 페이지에 적용 하는 수는 [권한 부여 규칙](xref:security/authorization/razor-pages-authorization)합니다.
 
 ## <a name="requirements"></a>요구 사항
 
@@ -70,7 +82,7 @@ ms.locfileid: "57665404"
 
 처리기는 구성 과정 중 서비스 컬렉션에 등록됩니다. 예를 들어:
 
-[!code-csharp[](policies/samples/PoliciesAuthApp1/Startup.cs?range=40-41,50-55,63-65,72)]
+[!code-csharp[](policies/samples/PoliciesAuthApp1/Startup.cs?range=32-33,48-53,61,62-63,66)]
 
 앞의 코드를 등록 `MinimumAgeHandler` 를 호출 하 여 단일 항목으로 `services.AddSingleton<IAuthorizationHandler, MinimumAgeHandler>();`입니다. 기본 제공 중 하나를 사용 하 여 처리기를 등록할 수 있습니다 [수명 서비스](xref:fundamentals/dependency-injection#service-lifetimes)합니다.
 
@@ -112,7 +124,7 @@ ms.locfileid: "57665404"
 
 예를 들어 이전 `BadgeEntryHandler`를 다음과 같이 다시 작성할 수도 있습니다.
 
-[!code-csharp[](policies/samples/PoliciesAuthApp1/Startup.cs?range=52-53,57-63)]
+[!code-csharp[](policies/samples/PoliciesAuthApp1/Startup.cs?range=50-51,55-61)]
 
 ## <a name="accessing-mvc-request-context-in-handlers"></a>처리기에서 MVC 요청 컨텍스트 접근하기
 

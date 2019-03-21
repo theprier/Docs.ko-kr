@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/11/2018
 uid: security/anti-request-forgery
-ms.openlocfilehash: 6e140717834b901e12ef7863fd07b983b0c55107
-ms.sourcegitcommit: ed76cc752966c604a795fbc56d5a71d16ded0b58
+ms.openlocfilehash: 88a2d127407378b9e83df7f48b1938ed081f9bb2
+ms.sourcegitcommit: 5f299daa7c8102d56a63b214b9a34cc4bc87bc42
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/02/2019
-ms.locfileid: "55667663"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58208530"
 ---
 # <a name="prevent-cross-site-request-forgery-xsrfcsrf-attacks-in-aspnet-core"></a>ASP.NET Core에서 방지 교차 사이트 요청 위조 (XSRF/CSRF) 공격
 
@@ -102,12 +102,12 @@ ASP.NET Core 2.0 이상에서는 합니다 [FormTagHelper](xref:mvc/views/workin
 </form>
 ```
 
-마찬가지로, [IHtmlHelper.BeginForm](/dotnet/api/microsoft.aspnetcore.mvc.rendering.ihtmlhelper.beginform) 양식의 메서드가 GET 되지 않으면 기본적으로 위조 방지 토큰을 생성 합니다.
+마찬가지로 [IHtmlHelper.BeginForm](/dotnet/api/microsoft.aspnetcore.mvc.rendering.ihtmlhelper.beginform) 양식의 메서드가 GET 되지 않으면 기본적으로 위조 방지 토큰을 생성 합니다.
 
 발생 하는 HTML 폼 요소 위조 방지 토큰 자동으로 생성 때 합니다 `<form>` 태그를 포함 합니다 `method="post"` 특성 및 다음 중 하나에 해당할:
 
-  * Action 특성은 빈 (`action=""`).
-  * Action 특성을 제공 하지 않으면 (`<form method="post">`).
+* Action 특성은 빈 (`action=""`).
+* Action 특성을 제공 하지 않으면 (`<form method="post">`).
 
 HTML 폼 요소에 대 한 위조 방지 토큰 자동 생성을 비활성화할 수 있습니다.
 

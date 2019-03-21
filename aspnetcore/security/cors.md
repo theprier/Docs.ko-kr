@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 02/27/2019
 uid: security/cors
-ms.openlocfilehash: 6be8b4da1642a9eff021371c229a17071d6e9bfb
-ms.sourcegitcommit: d913bca90373c07f89b1d1df01af5fc01fc908ef
+ms.openlocfilehash: 2cad26d0f61519f63888a2bc399bb7e8a0f1ee04
+ms.sourcegitcommit: 5f299daa7c8102d56a63b214b9a34cc4bc87bc42
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57978473"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58210134"
 ---
 # <a name="enable-cross-origin-requests-cors-in-aspnet-core"></a>ASP.NET Core에서 원본 간 요청 (CORS)를 사용 하도록 설정
 
@@ -84,7 +84,7 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         app.UseHsts();
     }
 
-    app.UseCors(); 
+    app.UseCors();
 
     app.UseHttpsRedirection();
     app.UseMvc();
@@ -141,25 +141,25 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 * [교차 원본 요청의 자격 증명](#credentials-in-cross-origin-requests)
 * [예비 요청 만료 시간 설정하기](#set-the-preflight-expiration-time)
 
- <xref:Microsoft.AspNetCore.Cors.Infrastructure.CorsOptions.AddPolicy*> 라고 `Startup.ConfigureServices`합니다. 일부 옵션에 대 한 읽기 하면 도움이 될 합니다 [CORS 어떻게 작동](#how-cors) 먼저 섹션입니다.
+<xref:Microsoft.AspNetCore.Cors.Infrastructure.CorsOptions.AddPolicy*> 라고 `Startup.ConfigureServices`합니다. 일부 옵션에 대 한 읽기 하면 도움이 될 합니다 [CORS 어떻게 작동](#how-cors) 먼저 섹션입니다.
 
 ## <a name="set-the-allowed-origins"></a>허용되는 원본 설정하기
 
 <xref:Microsoft.AspNetCore.Cors.Infrastructure.CorsPolicyBuilder.AllowAnyOrigin*> &ndash; 임의의 체계를 사용 하 여 모든 원본에서 CORS 요청할 수 있습니다 (`http` 또는 `https`). `AllowAnyOrigin` 안전 하지 않은 때문에 *웹 사이트* 앱에 크로스-원본 요청을 수행할 수 있습니다.
 
-  ::: moniker range=">= aspnetcore-2.2"
+::: moniker range=">= aspnetcore-2.2"
 
-  > [!NOTE]
-  > 지정 `AllowAnyOrigin` 고 `AllowCredentials` 는 안전 하지 않은 구성 및 교차 사이트 요청 위조 될 수 있습니다. CORS 서비스 앱 모두 메서드를 사용 하 여 구성 된 경우 잘못 된 CORS 응답을 반환 합니다.
+> [!NOTE]
+> 지정 `AllowAnyOrigin` 고 `AllowCredentials` 는 안전 하지 않은 구성 및 교차 사이트 요청 위조 될 수 있습니다. CORS 서비스 앱 모두 메서드를 사용 하 여 구성 된 경우 잘못 된 CORS 응답을 반환 합니다.
 
-  ::: moniker-end
+::: moniker-end
 
-  ::: moniker range="< aspnetcore-2.2"
+::: moniker range="< aspnetcore-2.2"
 
-  > [!NOTE]
-  > 지정 `AllowAnyOrigin` 고 `AllowCredentials` 는 안전 하지 않은 구성 및 교차 사이트 요청 위조 될 수 있습니다. 보안 앱의 경우 클라이언트 자체 서버 리소스에 액세스 권한을 부여 해야 하는 경우는 정확한 원본 목록이 올바르면을 지정 합니다.
+> [!NOTE]
+> 지정 `AllowAnyOrigin` 고 `AllowCredentials` 는 안전 하지 않은 구성 및 교차 사이트 요청 위조 될 수 있습니다. 보안 앱의 경우 클라이언트 자체 서버 리소스에 액세스 권한을 부여 해야 하는 경우는 정확한 원본 목록이 올바르면을 지정 합니다.
 
-  ::: moniker-end
+::: moniker-end
 
 <!-- REVIEW required
 I changed from
@@ -167,16 +167,16 @@ Specifying `AllowAnyOrigin` and `AllowCredentials` is an insecure configuration.
 to
 **`AllowAnyOrigin`** affects preflight requests and the
 
-to remove the ambiguous **This**. 
+to remove the ambiguous **This**.
 -->
 
-  `AllowAnyOrigin` 영향을 줍니다 요청 실행 전 및 `Access-Control-Allow-Origin` 헤더입니다. 자세한 내용은 참조는 [요청을 실행 전](#preflight-requests) 섹션입니다.
+`AllowAnyOrigin` 영향을 줍니다 요청 실행 전 및 `Access-Control-Allow-Origin` 헤더입니다. 자세한 내용은 참조는 [요청을 실행 전](#preflight-requests) 섹션입니다.
 
 ::: moniker range=">= aspnetcore-2.0"
 
 <xref:Microsoft.AspNetCore.Cors.Infrastructure.CorsPolicyBuilder.SetIsOriginAllowedToAllowWildcardSubdomains*> &ndash; 집합의 <xref:Microsoft.AspNetCore.Cors.Infrastructure.CorsPolicy.IsOriginAllowed*> 원본 허용 되는 경우 평가할 때 구성 된 와일드 카드 도메인에 맞게 원본을 허용 하는 함수를 정책의 속성입니다.
 
-  [!code-csharp[](cors/sample/CorsExample4/Startup.cs?range=100-104&highlight=4)]
+[!code-csharp[](cors/sample/CorsExample4/Startup.cs?range=100-104&highlight=4)]
 
 ::: moniker-end
 
@@ -381,14 +381,14 @@ Date: Wed, 20 May 2015 06:33:22 GMT
   * 예를 들어, 악의적인 행위자가 사용할 수 [되지 않도록 사이트 간 스크립팅 (XSS)](xref:security/cross-site-scripting) 사이트에 대 한 정보를 도용 하는 사용 하도록 설정 하는 CORS 사이트로 교차 사이트 요청을 실행 하 고 있습니다.
 * API는 CORS 허용 하 여 안전 하 게 아닙니다.
   * CORS를 적용 하는 클라이언트 (브라우저)에 달려 있습니다. 서버 요청을 실행 하 고 응답을 반환 합니다, 그리고 오류가 및 블록 응답을 반환 하는 클라이언트입니다. 예를 들어 서버 응답을 표시는 다음 도구 중 하나:
-     * [Fiddler](https://www.telerik.com/fiddler)
-     * [Postman](https://www.getpostman.com/)
-     * [.NET HttpClient](/dotnet/csharp/tutorials/console-webapiclient)
-     * 주소 표시줄에 URL을 입력 하 여 웹 브라우저.
+    * [Fiddler](https://www.telerik.com/fiddler)
+    * [Postman](https://www.getpostman.com/)
+    * [.NET HttpClient](/dotnet/csharp/tutorials/console-webapiclient)
+    * 주소 표시줄에 URL을 입력 하 여 웹 브라우저.
 * 크로스-원본을 실행 하는 브라우저를 허용 하도록 서버에 대 한 방법을 것 [XHR](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) 또는 [인출 API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) 요청 금지 될 것입니다.
   * 브라우저 (CORS) 없이 크로스-원본 요청을 수행할 수 없습니다. CORS를 하기 전에 [JSONP](https://www.w3schools.com/js/js_json_jsonp.asp) 이 제한 사항을 회피할 하는 데 사용 되었습니다. JSONP XHR를 사용 하지 않는 사용 하 여는 `<script>` 태그를 응답을 수신 합니다. 스크립트는 로드 된 크로스-원본 될 수 있습니다.
 
-합니다 [CORS 사양]() 크로스-원본 요청을 사용 하도록 설정 하는 몇 가지 새로운 HTTP 헤더를 도입 합니다. 브라우저에서 CORS를 지 원하는 경우 이러한 머리글 크로스-원본 요청을 자동으로 설정 합니다. CORS를 사용 하도록 사용자 지정 JavaScript 코드 필요는 없습니다.
+합니다 [CORS 사양](https://www.w3.org/TR/cors/) 크로스-원본 요청을 사용 하도록 설정 하는 몇 가지 새로운 HTTP 헤더를 도입 합니다. 브라우저에서 CORS를 지 원하는 경우 이러한 머리글 크로스-원본 요청을 자동으로 설정 합니다. CORS를 사용 하도록 사용자 지정 JavaScript 코드 필요는 없습니다.
 
 다음은 원본 간 요청의 예입니다. `Origin` 헤더는 요청 하는 사이트의 도메인을 제공 합니다.
 
@@ -429,7 +429,7 @@ CORS 테스트:
 1. 이 문서의 방법 중 하나를 사용 하 여 CORS를 사용 하도록 설정 합니다. 예를 들어:
 
   [!code-csharp[](cors/sample/Cors/WebAPI/StartupTest.cs?name=snippet2&highlight=13-18)]
-  
+
   > [!WARNING]
   > `WithOrigins("https://localhost:<port>");` 유사한 샘플 앱을 테스트용만 사용 해야 합니다 [샘플 코드 다운로드](https://github.com/aspnet/Docs/tree/live/aspnetcore/security/cors/sample/Cors)합니다.
 
@@ -444,13 +444,13 @@ CORS 테스트:
 1. localhost 원점 제거 `WithOrigins` 및 앱을 배포 합니다. 또는 다른 포트를 사용 하 여 클라이언트 앱을 실행 합니다. 예를 들어, Visual Studio에서 실행 합니다.
 1. 클라이언트 앱을 사용 하 여 테스트 합니다. CORS 오류는 오류를 반환 하지만 오류 메시지를 JavaScript에 사용할 수 없습니다. F12 도구 콘솔 탭을 사용 하 여 오류를 참조 하세요. 브라우저에 따라 오류가 발생 (F12 도구 콘솔)에서 다음과 유사 합니다.
 
-  * Microsoft Edge를 사용합니다.
+   * Microsoft Edge를 사용합니다.
 
-    **SEC7120: [CORS] 원점 `https://localhost:44375` 찾지 `https://localhost:44375` 에서 크로스-원본 자원에 대 한 액세스 제어-허용-원본 응답 헤더 `https://webapi.azurewebsites.net/api/values/1`**
+     **SEC7120: [CORS] 원점 `https://localhost:44375` 찾지 `https://localhost:44375` 에서 크로스-원본 자원에 대 한 액세스 제어-허용-원본 응답 헤더 `https://webapi.azurewebsites.net/api/values/1`**
 
-  * Chrome을 사용합니다.
+   * Chrome을 사용합니다.
 
-    **XMLHttpRequest에 대 한 액세스 `https://webapi.azurewebsites.net/api/values/1` 원본의 `https://localhost:44375` CORS 정책에 의해 차단 되었습니다. 요청된 된 리소스에을 ' 액세스 제어-허용-원본 ' 헤더가 없습니다.**
+     **XMLHttpRequest에 대 한 액세스 `https://webapi.azurewebsites.net/api/values/1` 원본의 `https://localhost:44375` CORS 정책에 의해 차단 되었습니다. 요청된 된 리소스에을 ' 액세스 제어-허용-원본 ' 헤더가 없습니다.**
 
 ## <a name="additional-resources"></a>추가 자료
 

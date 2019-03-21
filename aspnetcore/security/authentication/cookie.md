@@ -5,12 +5,12 @@ description: ASP.NET Core Id 없이 쿠키 인증을 사용 하 여 설명
 ms.author: riande
 ms.date: 02/25/2019
 uid: security/authentication/cookie
-ms.openlocfilehash: 29370a3ff25469b34edc2a71e00601cf6ecc00ca
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: c6cba588abb003ee677d8f1753b73a1ced1414b0
+ms.sourcegitcommit: 5f299daa7c8102d56a63b214b9a34cc4bc87bc42
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "56899291"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58209377"
 ---
 # <a name="use-cookie-authentication-without-aspnet-core-identity"></a>ASP.NET Core Id 없이 쿠키 인증 사용
 
@@ -119,7 +119,7 @@ app.UseCookieAuthentication(new CookieAuthenticationOptions()
 | [CookieSecure](/dotnet/api/microsoft.aspnetcore.builder.cookieauthenticationoptions.cookiesecure?view=aspnetcore-1.1) | 만들어진 쿠키가 HTTPS로 제한 해야 하는 경우를 나타내는 플래그 (`CookieSecurePolicy.Always`), HTTP 또는 HTTPS (`CookieSecurePolicy.None`), 또는 요청과 동일한 프로토콜 (`CookieSecurePolicy.SameAsRequest`). 기본값은 `CookieSecurePolicy.SameAsRequest`입니다. |
 | [설명](/dotnet/api/microsoft.aspnetcore.builder.authenticationoptions.description?view=aspnetcore-1.1) | 앱에 사용할 수 있는 인증 유형에 대 한 추가 정보입니다. |
 | [ExpireTimeSpan](/dotnet/api/microsoft.aspnetcore.builder.cookieauthenticationoptions.expiretimespan?view=aspnetcore-1.1) | `TimeSpan` 인증 티켓이 만료 된 이후입니다. 티켓에 대 한 만료 기간을 설정 하려면 현재 시간으로 추가 됩니다. 사용 하 `ExpireTimeSpan`를 설정 해야 합니다 `IsPersistent` 에 `true` 에 `AuthenticationProperties` 전달할 `SignInAsync`합니다. 기본값은 14 일입니다. |
-| [SlidingExpiration](/dotnet/api/microsoft.aspnetcore.builder.cookieauthenticationoptions.slidingexpiration?view=aspnetcore-1.1) | 개 중 절반 쿠키 만료 날짜를 다시 설정 하는지 여부를 나타내는 플래그를 `ExpireTimeSpan` 간격이 경과 합니다. 새 exipiration 시간 앞으로 이동 하는 현재 날짜와 `ExpireTimespan`합니다. [절대 쿠키 만료 시간](xref:security/authentication/cookie#absolute-cookie-expiration) 사용 하 여 설정할 수 있습니다 합니다 `AuthenticationProperties` 클래스를 호출할 때 `SignInAsync`합니다. 절대 만료 시간을 인증 쿠키의 유효 기간을 제한 하 여 앱의 보안을 향상 시킬 수 있습니다. 기본값은 `true`입니다. |
+| [SlidingExpiration](/dotnet/api/microsoft.aspnetcore.builder.cookieauthenticationoptions.slidingexpiration?view=aspnetcore-1.1) | 개 중 절반 쿠키 만료 날짜를 다시 설정 하는지 여부를 나타내는 플래그를 `ExpireTimeSpan` 간격이 경과 합니다. 새 만료 시간 앞으로 이동 하는 현재 날짜와 `ExpireTimespan`합니다. [절대 쿠키 만료 시간](xref:security/authentication/cookie#absolute-cookie-expiration) 사용 하 여 설정할 수 있습니다 합니다 `AuthenticationProperties` 클래스를 호출할 때 `SignInAsync`합니다. 절대 만료 시간을 인증 쿠키의 유효 기간을 제한 하 여 앱의 보안을 향상 시킬 수 있습니다. 기본값은 `true`입니다. |
 
 설정할 `CookieAuthenticationOptions` 에서 쿠키 인증 미들웨어에 대 한는 `Configure` 메서드:
 

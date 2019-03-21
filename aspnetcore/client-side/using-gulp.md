@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: H1Hack27Feb2017
 ms.date: 10/04/2018
 uid: client-side/using-gulp
-ms.openlocfilehash: 43277dc5910971374187f49031e74769c9e29e1f
-ms.sourcegitcommit: 191d21c1e37b56f0df0187e795d9a56388bbf4c7
+ms.openlocfilehash: 9f6d03a1e8a81bceca15cb1e1aa664c22c31e1d3
+ms.sourcegitcommit: 5f299daa7c8102d56a63b214b9a34cc4bc87bc42
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57665628"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58209874"
 ---
 # <a name="use-gulp-in-aspnet-core"></a>ASP.NET Core에서 Gulp 사용하기
 
@@ -86,7 +86,7 @@ gulp.task("min:css", () => {
 });
 
 gulp.task("min", gulp.series(["min:js", "min:css"]));
-    
+
 // A 'default' task is required by Gulp v4
 gulp.task("default", gulp.series(["min"]));
 ```
@@ -108,7 +108,7 @@ gulp.task("default", gulp.series(["min"]));
 
 아직 새로운 웹 앱을 만들지 않았다면 Visual Studio에서 새로운 ASP.NET Core 웹 응용 프로그램 프로젝트를 만듭니다.
 
-1.  *package.json* 파일을 열고(파일이 없으면 추가) 다음 내용을 추가합니다.
+1. *package.json* 파일을 열고(파일이 없으면 추가) 다음 내용을 추가합니다.
 
     ```json
     {
@@ -122,71 +122,71 @@ gulp.task("default", gulp.series(["min"]));
     }
     ```
 
-2.  새로운 JavaScript 파일을 프로젝트에 추가하고 이름을 *gulpfile.js*로 지정한 다음, 다음 코드를 복사합니다.
+2. 새로운 JavaScript 파일을 프로젝트에 추가하고 이름을 *gulpfile.js*로 지정한 다음, 다음 코드를 복사합니다.
 
     ```javascript
     /// <binding Clean='clean' />
     "use strict";
-    
+
     const gulp = require("gulp"),
           rimraf = require("rimraf"),
           concat = require("gulp-concat"),
           cssmin = require("gulp-cssmin"),
           uglify = require("gulp-uglify");
-    
+
     const paths = {
       webroot: "./wwwroot/"
     };
-    
+
     paths.js = paths.webroot + "js/**/*.js";
     paths.minJs = paths.webroot + "js/**/*.min.js";
     paths.css = paths.webroot + "css/**/*.css";
     paths.minCss = paths.webroot + "css/**/*.min.css";
     paths.concatJsDest = paths.webroot + "js/site.min.js";
     paths.concatCssDest = paths.webroot + "css/site.min.css";
-    
+
     gulp.task("clean:js", done => rimraf(paths.concatJsDest, done));
     gulp.task("clean:css", done => rimraf(paths.concatCssDest, done));
     gulp.task("clean", gulp.series(["clean:js", "clean:css"]));
 
     gulp.task("min:js", () => {
       return gulp.src([paths.js, "!" + paths.minJs], { base: "." })
-        .pipe(concat(paths.concatJsDest))
-        .pipe(uglify())
-        .pipe(gulp.dest("."));
+      .pipe(concat(paths.concatJsDest))
+      .pipe(uglify())
+      .pipe(gulp.dest("."));
     });
 
     gulp.task("min:css", () => {
       return gulp.src([paths.css, "!" + paths.minCss])
-        .pipe(concat(paths.concatCssDest))
-        .pipe(cssmin())
-        .pipe(gulp.dest("."));
+      .pipe(concat(paths.concatCssDest))
+      .pipe(cssmin())
+      .pipe(gulp.dest("."));
     });
 
     gulp.task("min", gulp.series(["min:js", "min:css"]));
-    
+
     // A 'default' task is required by Gulp v4
     gulp.task("default", gulp.series(["min"]));
     ```
 
-3.  **솔루션 탐색기**에서 마우스 오른쪽 버튼으로 *gulpfile.js*를 클릭하고 **작업 러너 탐색기**를 선택합니다.
-    
+3. **솔루션 탐색기**에서 마우스 오른쪽 버튼으로 *gulpfile.js*를 클릭하고 **작업 러너 탐색기**를 선택합니다.
+
     ![솔루션 탐색기에서 작업 러너 탐색기 열기](using-gulp/_static/02-SolutionExplorer-TaskRunnerExplorer.png)
-    
+
     **작업 러너 탐색기**에 Gulp 작업 목록이 표시됩니다. (프로젝트 이름 좌측에 위치한 **새로 고침** 버튼을 클릭해야 할 수도 있습니다.)
-    
+
     ![작업 러너 탐색기](using-gulp/_static/03-TaskRunnerExplorer.png)
-    
+
     > [!IMPORTANT]
     > **작업 러너 탐색기** 컨텍스트 메뉴 항목은 *gulpfile.js*가 루트 프로젝트 디렉토리에 있는 경우에만 나타납니다.
 
-4.  **작업 러너 탐색기**에서 **작업** 하위의 **clean**을 마우스 오른쪽 버튼으로 클릭하고 팝업 메뉴에서 **실행**을 선택합니다.
+4. **작업 러너 탐색기**에서 **작업** 하위의 **clean**을 마우스 오른쪽 버튼으로 클릭하고 팝업 메뉴에서 **실행**을 선택합니다.
 
     ![작업 러너 탐색기 clean 작업](using-gulp/_static/04-TaskRunner-clean.png)
 
     그러면 **작업 러너 탐색기**가 **clean**이라는 새로운 탭을 열고 *gulpfile.js*에 정의된 대로 정리 작업을 실행합니다.
 
-5.  마우스 오른쪽 버튼으로 **clean** 작업을 클릭한 다음, **바인딩** > **빌드 전**을 선택합니다.
+5. 마우스 오른쪽 버튼으로 **clean** 작업을 클릭한 다음, **바인딩** > **빌드 전**을 선택합니다.
 
     ![작업 러너 탐색기 빌드 전 바인딩](using-gulp/_static/05-TaskRunner-BeforeBuild.png)
 
@@ -206,7 +206,7 @@ gulp.task("default", gulp.series(["min"]));
 
 새로운 Gulp 작업을 정의하려면 *gulpfile.js*를 수정합니다.
 
-1.  *gulpfile.js*의 끝 부분에 다음 JavaScript를 추가합니다.
+1. *gulpfile.js*의 끝 부분에 다음 JavaScript를 추가합니다.
 
     ```javascript
     gulp.task('first', done => {
@@ -217,11 +217,11 @@ gulp.task("default", gulp.series(["min"]));
 
     이 작업의 이름은 `first`로, 단순히 문자열만 출력합니다.
 
-2.  *gulpfile.js*를 저장합니다.
+2. *gulpfile.js*를 저장합니다.
 
-3.  **솔루션 탐색기**에서 마우스 오른쪽 버튼으로 *gulpfile.js*를 클릭하고 *작업 러너 탐색기*를 선택합니다.
+3. **솔루션 탐색기**에서 마우스 오른쪽 버튼으로 *gulpfile.js*를 클릭하고 *작업 러너 탐색기*를 선택합니다.
 
-4.  **작업 러너 탐색기**에서 마우스 오른쪽 버튼으로 **first**를 클릭하고 **실행**을 선택합니다.
+4. **작업 러너 탐색기**에서 마우스 오른쪽 버튼으로 **first**를 클릭하고 **실행**을 선택합니다.
 
     ![first 작업을 실행하는 작업 러너 탐색기](using-gulp/_static/06-TaskRunner-First.png)
 
@@ -231,7 +231,7 @@ gulp.task("default", gulp.series(["min"]));
 
 여러 작업을 실행할 때 작업은 기본적으로 동시에 실행됩니다. 그러나 특정 순서에 따라 작업을 실행해야 하는 경우, 각 작업이 완료되는 시점과 다른 작업의 완료에 따라 영향을 받는 작업을 지정해야 합니다.
 
-1.  순차적으로 실행되는 일련의 작업을 정의하려면 앞에서 *gulpfile.js*에 추가했던 `first` 작업을 다음으로 대체합니다.
+1. 순차적으로 실행되는 일련의 작업을 정의하려면 앞에서 *gulpfile.js*에 추가했던 `first` 작업을 다음으로 대체합니다.
 
     ```javascript
     gulp.task('series:first', done => {
@@ -240,22 +240,22 @@ gulp.task("default", gulp.series(["min"]));
     });
     gulp.task('series:second', done => {
       console.log('second task! <-----');
-      done(); // signal completion
+        done(); // signal completion
     });
 
     gulp.task('series', gulp.series(['series:first', 'series:second']), () => { });
 
     // A 'default' task is required by Gulp v4
-    gulp.task('default', gulp.series('series'));
+      gulp.task('default', gulp.series('series'));
     ```
- 
+
     이제 `series:first`, `series:second`, 및 `series`라는 세 가지 작업이 존재합니다. `series:second` 작업은 `series:second` 작업이 실행되기 전에 실행되어 완료되어야 하는 작업의 배열을 지정하는 두 번째 매개 변수를 포함하고 있습니다. 이 코드에 지정된 것처럼 `series:second` 작업을 실행하려면 `series:first` 작업만 완료되면 됩니다.
 
-2.  *gulpfile.js*를 저장합니다.
+2. *gulpfile.js*를 저장합니다.
 
-3.  **솔루션 탐색기**에서 마우스 오른쪽 버튼으로 *gulpfile.js*를 클릭하고 **작업 러너 탐색기**를 선택합니다.
+3. **솔루션 탐색기**에서 마우스 오른쪽 버튼으로 *gulpfile.js*를 클릭하고 **작업 러너 탐색기**를 선택합니다.
 
-4.  **작업 러너 탐색기**에서 마우스 오른쪽 버튼으로 **series**를 클릭하고 **실행**을 선택합니다.
+4. **작업 러너 탐색기**에서 마우스 오른쪽 버튼으로 **series**를 클릭하고 **실행**을 선택합니다.
 
     ![series 작업을 실행하는 작업 러너 탐색기](using-gulp/_static/07-TaskRunner-Series.png)
 
@@ -298,27 +298,27 @@ Gulp를 스테이징 및 프로덕션에 대한 클라이언트 쪽 파일 최�
 
 서로 다른 환경에 대한 컴파일로 전환하려면 **ASPNETCORE_ENVIRONMENT** 환경 변수의 값을 수정합니다.
 
-1.  **작업 러너 탐색기**에서 **min** 작업이 **빌드 전**으로 설정되어 있는지 확인합니다.
+1. **작업 러너 탐색기**에서 **min** 작업이 **빌드 전**으로 설정되어 있는지 확인합니다.
 
-2.  **솔루션 탐색기**에서 프로젝트 이름을 마우스 오른쪽 버튼으로 클릭하고 **속성**을 선택합니다.
+2. **솔루션 탐색기**에서 프로젝트 이름을 마우스 오른쪽 버튼으로 클릭하고 **속성**을 선택합니다.
 
     그러면 웹 앱에 대한 속성 시트가 표시됩니다.
 
-3.  **디버그** 탭을 클릭합니다.
+3. **디버그** 탭을 클릭합니다.
 
-4.  **ASPNETCORE_ENVIRONMENT** 환경 변수의 값을 `Production`으로 설정합니다.
+4. **ASPNETCORE_ENVIRONMENT** 환경 변수의 값을 `Production`으로 설정합니다.
 
-5.  **F5** 키를 눌러서 응용 프로그램을 브라우저에서 실행합니다.
+5. **F5** 키를 눌러서 응용 프로그램을 브라우저에서 실행합니다.
 
-6.  브라우저 창에서 마우스 오른쪽 버튼으로 페이지를 클릭하고 **소스 보기**를 선택하여 페이지의 HTML을 살펴봅니다.
+6. 브라우저 창에서 마우스 오른쪽 버튼으로 페이지를 클릭하고 **소스 보기**를 선택하여 페이지의 HTML을 살펴봅니다.
 
     스타일시트가 축소된 CSS 파일을 링크하고 있는지 확인합니다.
 
-7.  브라우저를 닫아서 웹 앱을 중지합니다.
+7. 브라우저를 닫아서 웹 앱을 중지합니다.
 
-8.  Visual Studio에서 다시 웹 앱에 대한 속성 시트로 되돌아가서 **ASPNETCORE_ENVIRONMENT** 환경 변수의 값을 `Development`으로 재설정합니다.
+8. Visual Studio에서 다시 웹 앱에 대한 속성 시트로 되돌아가서 **ASPNETCORE_ENVIRONMENT** 환경 변수의 값을 `Development`으로 재설정합니다.
 
-9.  **F5** 키를 눌러서 다시 응용 프로그램을 브라우저에서 실행합니다.
+9. **F5** 키를 눌러서 다시 응용 프로그램을 브라우저에서 실행합니다.
 
 10. 브라우저 창에서 마우스 오른쪽 버튼으로 페이지를 클릭하고 **소스 보기**를 선택하여 페이지의 HTML을 살펴봅니다.
 

@@ -7,12 +7,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 02/25/2019
 uid: test/integration-tests
-ms.openlocfilehash: 053713e148df70b0be6bb567b55b2381a78d6c3e
-ms.sourcegitcommit: 2c7ffe349eabdccf2ed748dd303ffd0ba6e1cfe3
+ms.openlocfilehash: 50cb6b26be187c7f36f189e77fd29b4559221f2c
+ms.sourcegitcommit: 5f299daa7c8102d56a63b214b9a34cc4bc87bc42
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56833581"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58209241"
 ---
 # <a name="integration-tests-in-aspnet-core"></a>ASP.NET Core에서 통합 테스트
 
@@ -91,7 +91,7 @@ ASP.NET Core에서 통합 테스트 하려면 다음 항목이 필요 합니다.
 합니다 [단위 테스트](/dotnet/articles/core/testing/unit-testing-with-dotnet-test) 설명서에는 테스트 프로젝트 및 테스트 러너, 테스트 및 방법에 대 한 권장 사항을 이름 테스트를 실행 하 여 클래스를 테스트 하는 방법에 자세한 지침과 함께 설정 하는 방법에 설명 합니다.
 
 > [!NOTE]
-> 앱에 대 한 테스트 프로젝트를 만들 때 다른 프로젝트에 통합 테스트에서 단위 테스트를 구분 합니다. 이렇게 하면 단위 테스트에 포함 된 테스트 구성 요소 인프라 되지 실수로. 분리 단위 및 통합 테스트에서는 실행 되는 테스트 집합을 제어 합니다.
+> 앱에 대 한 테스트 프로젝트를 만들 때 다른 프로젝트에 통합 테스트에서 단위 테스트를 구분 합니다. 이 사용이 하면 인프라 테스트 구성 요소 단위 테스트에서 실수로 포함 되지 있는지 확인 합니다. 분리 단위 및 통합 테스트에서는 실행 되는 테스트 집합을 제어 합니다.
 
 차이가 거의 없는 Razor 페이지 앱의 테스트에 대 한 구성 및 MVC 앱입니다. 유일한 차이점은 테스트의 이름을 지정 하는 방법의 경우 Razor 페이지 앱에서 페이지 끝점의 테스트는 일반적으로 명명 된 페이지 모델 클래스 (예를 들어 `IndexPageTests` 인덱스 페이지에 대 한 구성 요소 통합을 테스트). MVC 앱에서 테스트는 일반적으로 컨트롤러 클래스 별로 구성 및 테스트 컨트롤러의 이름을 딴 (예를 들어 `HomeControllerTests` 홈 컨트롤러에 대 한 구성 요소 통합을 테스트).
 
@@ -329,7 +329,7 @@ _client = _factory.CreateClient(clientOptions);
 
 합니다 [샘플 앱](https://github.com/aspnet/Docs/tree/master/aspnetcore/test/integration-tests/samples) 두 개의 앱으로 구성 됩니다.
 
-| App | 프로젝트 폴더 | 설명 |
+| 앱 | 프로젝트 폴더 | 설명 |
 | --- | -------------- | ----------- |
 | 메시지 앱 (SUT) | *src/RazorPagesProject* | 추가, 하나를 삭제, all, 삭제 및 메시지를 분석할 수 있습니다. |
 | 테스트 앱 | *tests/RazorPagesProject.Tests* | 통합 테스트는 SUT 하는 데 사용 합니다. |

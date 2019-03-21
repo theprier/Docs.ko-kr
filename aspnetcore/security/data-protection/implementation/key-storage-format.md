@@ -5,12 +5,12 @@ description: ASP.NET Core 데이터 보호 키 저장소 형식 구현 세부 �
 ms.author: riande
 ms.date: 10/14/2016
 uid: security/data-protection/implementation/key-storage-format
-ms.openlocfilehash: bca19ad001dd20b5d02ae5470f7d928082496037
-ms.sourcegitcommit: 8f8924ce4eb9effeaf489f177fb01b66867da16f
+ms.openlocfilehash: 81df124f3dd0cadf8fd895ab55f66eec6415705f
+ms.sourcegitcommit: 5f299daa7c8102d56a63b214b9a34cc4bc87bc42
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/24/2018
-ms.locfileid: "39219279"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58208020"
 ---
 # <a name="key-storage-format-in-aspnet-core"></a>ASP.NET Core에서 키 저장소 형식
 
@@ -65,7 +65,7 @@ ms.locfileid: "39219279"
 
 **&lt;encryptedSecret&gt;** 비밀 키 자료의 암호화 된 폼을 포함 하는 요소 수 있을 경우 [미사용 비밀 암호화를 사용 하](xref:security/data-protection/implementation/key-encryption-at-rest)합니다. 특성 `decryptorType` 구현 하는 형식의 어셈블리 정규화 된 이름 [IXmlDecryptor](/dotnet/api/microsoft.aspnetcore.dataprotection.xmlencryption.ixmldecryptor)합니다. 이 형식은 내부 읽기 담당 **&lt;encryptedKey&gt;** 요소 및 복구를 원래의 일반 텍스트로 암호를 해독 합니다.
 
-와 마찬가지로 \<설명자 >, 특정 형식의 <encryptedSecret> 요소에서 사용 하 여 미사용 암호화 메커니즘에 따라 달라 집니다. 위의 예제에서 주석을 마다 Windows DPAPI를 사용 하 여 마스터 키를 암호화 됩니다.
+와 마찬가지로 `<descriptor>`, 특정 형식의 `<encryptedSecret>` 요소에서 사용 하 여 미사용 암호화 메커니즘에 따라 달라 집니다. 위의 예제에서 주석을 마다 Windows DPAPI를 사용 하 여 마스터 키를 암호화 됩니다.
 
 ## <a name="the-revocation-element"></a>\<해지 > 요소
 

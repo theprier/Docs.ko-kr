@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 12/01/2018
 uid: security/enforcing-ssl
-ms.openlocfilehash: 0c3add9c8860a47932cda3a8b07c83dc774bf1f1
-ms.sourcegitcommit: 97d7a00bd39c83a8f6bccb9daa44130a509f75ce
+ms.openlocfilehash: 16cfa672fe4a81d9e8f09fc3dd1e6c036edd4c4e
+ms.sourcegitcommit: 5f299daa7c8102d56a63b214b9a34cc4bc87bc42
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54098976"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58208978"
 ---
 # <a name="enforce-https-in-aspnet-core"></a>ASP.NET Core에서 HTTPS 적용
 
@@ -30,7 +30,7 @@ API가 없습니다. 첫 번째 요청 시 중요 한 데이터를 보낸 클라
 > * HTTP에서 수신 대기할 수 없습니다.
 > * 상태 코드 400 (잘못 된 요청)를 사용 하 여 연결을 닫고 요청을 제공 하지 마십시오.
 
-## <a name="require-https"></a>HTTPS가 필요
+## <a name="require-https"></a>HTTPS 필요
 
 ::: moniker range=">= aspnetcore-2.1"
 
@@ -69,7 +69,7 @@ ASP.NET Core는 프로덕션 웹 앱 호출을 좋습니다.
 
   **키**: `https_port`  
   **형식**: *string*  
-  **기본**: 기본값 설정 되지 않았습니다.  
+  **기본값**: 기본값은 설정되지 않습니다.  
   **설정 방법**: `UseSetting`  
   **환경 변수**: `<PREFIX_>HTTPS_PORT` (접두사 `ASPNETCORE_` 사용 하는 경우는 [웹 호스트](xref:fundamentals/host/web-host).)
 
@@ -212,9 +212,10 @@ ASP.NET Core 2.1 이상을 사용 하 여 HSTS를 구현 합니다 `UseHsts` 확
 
 ![새 ASP.NET Core 웹 응용 프로그램 대화 상자 표시 HTTPS 확인란의 선택을 취소에 대 한 구성입니다.](enforcing-ssl/_static/out.png)
 
-#   <a name="net-core-clitabnetcore-cli"></a>[.NET Core CLI](#tab/netcore-cli) 
+# <a name="net-core-clitabnetcore-cli"></a>[.NET Core CLI](#tab/netcore-cli) 
 
-`--no-https` 옵션을 사용합니다. 예
+
+  `--no-https` 옵션을 사용합니다. 예
 
 ```console
 dotnet new webapp --no-https

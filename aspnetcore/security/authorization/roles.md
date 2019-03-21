@@ -5,12 +5,12 @@ description: Authorize 특성에 역할을 전달하여 ASP.NET Core의 컨트�
 ms.author: riande
 ms.date: 10/14/2016
 uid: security/authorization/roles
-ms.openlocfilehash: c38e7144166ce7741eee6e3acb4d1c952ad4f024
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 0e01e1976e2721ca64720a67c6341661f646395c
+ms.sourcegitcommit: 5f299daa7c8102d56a63b214b9a34cc4bc87bc42
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "56899166"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58209098"
 ---
 # <a name="role-based-authorization-in-aspnet-core"></a>ASP.NET Core의 역할 기반 권한 부여
 
@@ -108,7 +108,6 @@ public class UpdateModel : PageModel
 > [!IMPORTANT]
 > 필터 특성을 포함 하 여 `AuthorizeAttribute`PageModel에만 적용할 수 있습니다 하 고 특정 페이지 처리기 메서드를 적용할 수 없습니다.
 ::: moniker-end
-
 
 <a name="security-authorization-role-policy"></a>
 

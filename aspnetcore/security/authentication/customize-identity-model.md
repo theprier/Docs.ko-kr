@@ -5,12 +5,12 @@ description: 이 문서에서는 ASP.NET Core Id에 대 한 기본 Entity Framew
 ms.author: avickers
 ms.date: 09/24/2018
 uid: security/authentication/customize_identity_model
-ms.openlocfilehash: 90c867eeac0e64bfe77cc7a829d61e831a2fb8e1
-ms.sourcegitcommit: 9bdba90b2c97a4016188434657194b2d7027d6e3
+ms.openlocfilehash: 55346c571f180fa17a1108a622d991d15f365bae
+ms.sourcegitcommit: 5f299daa7c8102d56a63b214b9a34cc4bc87bc42
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47402258"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58209464"
 ---
 # <a name="identity-model-customization-in-aspnet-core"></a>ASP.NET core에서 identity 모델 사용자 지정 합니다.
 
@@ -301,7 +301,6 @@ public abstract class IdentityUserContext<
 ### <a name="custom-user-data"></a>사용자 지정 사용자 데이터
 
 [사용자 지정 사용자 데이터](xref:security/authentication/add-user-data) 에서 상속 하 여 사용할 `IdentityUser`합니다. 이 형식의 이름에 `ApplicationUser`:
-
 
 ```csharp
 public class ApplicationUser : IdentityUser

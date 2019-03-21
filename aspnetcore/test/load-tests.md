@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 01/04/2019
 uid: test/loadtests
-ms.openlocfilehash: 587df6e216943d3eeec779df4d0554dd0fc2fda0
-ms.sourcegitcommit: 036d4b03fd86ca5bb378198e29ecf2704257f7b2
+ms.openlocfilehash: 39632af2c92dac548c03e24d35a5e8a03e00890d
+ms.sourcegitcommit: 5f299daa7c8102d56a63b214b9a34cc4bc87bc42
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57345430"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58209835"
 ---
 # <a name="load-and-stress-testing-aspnet-core"></a>부하 및 스트레스 테스트 ASP.NET Core
 
@@ -22,7 +22,7 @@ ms.locfileid: "57345430"
 **스트레스 테스트**: 테스트 앱 안정성 꼭 필요한 경우 종종 긴 기간으로 실행 하는 경우:
 
 * 높은 사용자 부하 – 스파이크 또는 서서히 늘려봅니다.
-* 컴퓨팅 리소스를 제한 합니다.  
+* 컴퓨팅 리소스를 제한 합니다.
 
 스트레스 상태에서 응용 프로그램 오류 로부터 복구를 정상적으로 예상 되는 동작을 반환? 앱은 부하가 *되지* 정상 조건에서 실행 합니다.
 
@@ -44,41 +44,42 @@ Visual Studio를 사용 하면 만들기, 개발 및 웹 성능 및 부하 테�
 
 사용 하 여 부하 테스트 실행을 시작할 수 있습니다 합니다 [Azure DevOps 테스트 계획](/azure/devops/test/load-test/index?view=vsts) 서비스입니다.
 
-![](./load-tests/_static/azure-devops-load-test.png)
+![Azure DevOps 테스트 방문 페이지를 로드합니다.](./load-tests/_static/azure-devops-load-test.png)
 
 서비스는 다음과 같은 유형의 테스트 형식 지원합니다.
 
-- Visual Studio 테스트를 Visual Studio에서 만든 웹 테스트 합니다.
-- 보관 파일 내의 캡처된 HTTP 트래픽을 HTTP 보관 기반 테스트를 테스트 하는 동안 재생 됩니다.
-- [URL 기반 테스트](/azure/devops/test/load-test/get-started-simple-cloud-load-test?view=vsts) -테스트, 요청 형식, 헤더 및 쿼리 문자열을 로드 하는 Url을 지정할 수 있습니다. 실행 지속 시간 같은 매개 변수를 설정, 부하 패턴, 사용자 수 등을 구성할 수 있습니다.
-- [Apache JMeter](https://jmeter.apache.org/) 테스트 합니다.
+* Visual Studio 테스트를 Visual Studio에서 만든 웹 테스트 합니다.
+* 보관 파일 내의 캡처된 HTTP 트래픽을 HTTP 보관 기반 테스트를 테스트 하는 동안 재생 됩니다.
+* [URL 기반 테스트](/azure/devops/test/load-test/get-started-simple-cloud-load-test?view=vsts) -테스트, 요청 형식, 헤더 및 쿼리 문자열을 로드 하는 Url을 지정할 수 있습니다. 실행 지속 시간 같은 매개 변수를 설정, 부하 패턴, 사용자 수 등을 구성할 수 있습니다.
+* [Apache JMeter](https://jmeter.apache.org/) 테스트 합니다.
 
 ## <a name="azure-portal"></a>Azure 포털
 
 [Azure 포털을 통해 설정 하 고 웹 앱 부하 테스트 실행](/azure/devops/test/load-test/app-service-web-app-performance-test?view=vsts) Azure portal에서 App Service의 성능 탭에서 직접.
 
-![](./load-tests/_static/azure-appservice-perf-test.png)
+![Azure Portal에서 azure App Service](./load-tests/_static/azure-appservice-perf-test.png)
 
 테스트는 지정 된 URL 또는 Url을 여러 개를 테스트할 수 있는 Visual Studio 웹 테스트 파일을 사용 하 여 수동 테스트를 수 있습니다.
 
-![](./load-tests/_static/azure-appservice-perf-test-config.png)
+![Azure Portal에서 새 성능 테스트 페이지](./load-tests/_static/azure-appservice-perf-test-config.png)
 
 테스트의 끝이 보고서는 앱의 성능 특성을 표시 하도록 생성 됩니다. 예제에서는 통계 포함 됩니다.
 
-- 평균 응답 시간
-- 최대 처리량: 초당 요청 수
-- 실패 백분율
+* 평균 응답 시간
+* 최대 처리량: 초당 요청 수
+* 실패 백분율
 
 ## <a name="third-party-tools"></a>타사 도구
 
 다음 목록은 다양 한 기능 집합을 사용 하 여 타사 웹 성능 도구를 보여 줍니다.
 
-- [Apache JMeter](https://jmeter.apache.org/) : 부하 테스트 도구의 전체 기능 갖춘된 도구 모음입니다. 스레드 바인딩된: 사용자 당 하나의 스레드를 해야 합니다.
-- [ab-Apache HTTP server 벤치마킹 도구](https://httpd.apache.org/docs/2.4/programs/ab.html)
-- [Gatling](https://gatling.io/) : GUI 및 테스트 레코더를 사용 하 여 데스크톱 도구입니다. JMeter 보다 우수 합니다.
-- [Locust.io](https://locust.io/) : 스레드에 의해 제한 되지 않습니다.
+* [Apache JMeter](https://jmeter.apache.org/) : 부하 테스트 도구의 전체 기능 갖춘된 도구 모음입니다. 스레드 바인딩된: 사용자 당 하나의 스레드를 해야 합니다.
+* [ab-Apache HTTP server 벤치마킹 도구](https://httpd.apache.org/docs/2.4/programs/ab.html)
+* [Gatling](https://gatling.io/) : GUI 및 테스트 레코더를 사용 하 여 데스크톱 도구입니다. JMeter 보다 우수 합니다.
+* [Locust.io](https://locust.io/) : 스레드에 의해 제한 되지 않습니다.
 
 <a name="add"></a>
+
 ## <a name="additional-resources"></a>추가 리소스
 
 [부하 테스트 블로그 시리즈](https://blogs.msdn.microsoft.com/charles_sterling/2015/06/01/load-test-series-part-i-creating-web-performance-tests-for-a-load-test/) 작성자: Charles Sterling 합니다. 날짜가 지정 된 항목 중 대부분은 여전히 관련이 있지만.

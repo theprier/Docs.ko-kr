@@ -5,12 +5,12 @@ description: ''
 ms.author: tdykstra
 ms.date: 12/07/2016
 uid: migration/http-modules
-ms.openlocfilehash: 601b93fb12ab5b37b7d8ad8fd9825accc6e314cd
-ms.sourcegitcommit: b3894b65e313570e97a2ab78b8addd22f427cac8
+ms.openlocfilehash: 516230a66ee3edba986c91d79684256aa8e4c994
+ms.sourcegitcommit: 5f299daa7c8102d56a63b214b9a34cc4bc87bc42
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56743857"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58209848"
 ---
 # <a name="migrate-http-handlers-and-modules-to-aspnet-core-middleware"></a>HTTP 처리기 및 모듈을 ASP.NET Core 미들웨어로 마이그레이션
 
@@ -26,29 +26,29 @@ ASP.NET Core 미들웨어를 계속 하기 전에 먼저 요약해 보면 HTTP �
 
 **처리기는:**
 
-   * 구현 하는 클래스 [IHttpHandler](/dotnet/api/system.web.ihttphandler)
+* 구현 하는 클래스 [IHttpHandler](/dotnet/api/system.web.ihttphandler)
 
-   * 지정 된 파일 이름 또는 확장명으로 요청을 처리 하는 데 *보고서*
+* 지정 된 파일 이름 또는 확장명으로 요청을 처리 하는 데 *보고서*
 
-   * [구성할](/iis/configuration/system.webserver/handlers/) 에서 *Web.config*
+* [구성할](/iis/configuration/system.webserver/handlers/) 에서 *Web.config*
 
 **모듈은 됩니다.**
 
-   * 구현 하는 클래스 [IHttpModule](/dotnet/api/system.web.ihttpmodule)
+* 구현 하는 클래스 [IHttpModule](/dotnet/api/system.web.ihttpmodule)
 
-   * 모든 요청에 대 한 호출
+* 모든 요청에 대 한 호출
 
-   * (이후 처리를 중지 요청)를 단락 (short-circuit) 할
+* (이후 처리를 중지 요청)를 단락 (short-circuit) 할
 
-   * HTTP 응답에 추가 하거나 직접 만들 수
+* HTTP 응답에 추가 하거나 직접 만들 수
 
-   * [구성할](/iis/configuration/system.webserver/modules/) 에서 *Web.config*
+* [구성할](/iis/configuration/system.webserver/modules/) 에서 *Web.config*
 
 **모듈에는 들어오는 요청을 처리 하는 순서는 의해 결정 됩니다.**
 
-   1. 합니다 [응용 프로그램 수명 주기](https://msdn.microsoft.com/library/ms227673.aspx), ASP.NET에 의해 발생 하는 시리즈 이벤트는: [BeginRequest](/dotnet/api/system.web.httpapplication.beginrequest), [AuthenticateRequest](/dotnet/api/system.web.httpapplication.authenticaterequest), etc. 각 모듈에는 하나 이상의 이벤트 처리기를 만들 수 있습니다.
+1. 합니다 [응용 프로그램 수명 주기](https://msdn.microsoft.com/library/ms227673.aspx), ASP.NET에 의해 발생 하는 시리즈 이벤트는: [BeginRequest](/dotnet/api/system.web.httpapplication.beginrequest), [AuthenticateRequest](/dotnet/api/system.web.httpapplication.authenticaterequest), etc. 각 모듈에는 하나 이상의 이벤트 처리기를 만들 수 있습니다.
 
-   2. 동일한 이벤트에서 구성 하는 순서에 대 한 *Web.config*합니다.
+2. 동일한 이벤트에서 구성 하는 순서에 대 한 *Web.config*합니다.
 
 모듈 외에도 수명 주기 이벤트에 대 한 처리기를 추가할 수 있습니다 하 *Global.asax.cs* 파일입니다. 이러한 처리기는 구성 된 모듈의 처리기 후 실행합니다.
 
@@ -56,29 +56,29 @@ ASP.NET Core 미들웨어를 계속 하기 전에 먼저 요약해 보면 HTTP �
 
 **미들웨어는 HTTP 모듈 및 처리기 보다 간단 합니다.**
 
-   * 모듈, 처리기 *Global.asax.cs*를 *Web.config* (제외 IIS 구성)은 응용 프로그램 수명 주기 및
+* 모듈, 처리기 *Global.asax.cs*를 *Web.config* (제외 IIS 구성)은 응용 프로그램 수명 주기 및
 
-   * 미들웨어를 통해 수행 된 모듈 및 처리기의 역할
+* 미들웨어를 통해 수행 된 모듈 및 처리기의 역할
 
-   * 미들웨어는 코드를 사용 하 여 구성 된 대신 *Web.config*
+* 미들웨어는 코드를 사용 하 여 구성 된 대신 *Web.config*
 
-   * [파이프라인 분기](xref:fundamentals/middleware/index#use-run-and-map) 뿐 아니라 요청 헤더, 쿼리 문자열에도 URL을 기준으로 특정 미들웨어에서 요청을 보낼 수 있습니다.
+* [파이프라인 분기](xref:fundamentals/middleware/index#use-run-and-map) 뿐 아니라 요청 헤더, 쿼리 문자열에도 URL을 기준으로 특정 미들웨어에서 요청을 보낼 수 있습니다.
 
 **미들웨어 모듈 매우 비슷합니다.**
 
-   * 모든 요청에 대 한 원칙에서 호출
+* 모든 요청에 대 한 원칙에서 호출
 
-   * 요청에 의해 단락 (short-circuit) 할 [다음 미들웨어에 요청을 전달 하지 않고](#http-modules-shortcircuiting-middleware)
+* 요청에 의해 단락 (short-circuit) 할 [다음 미들웨어에 요청을 전달 하지 않고](#http-modules-shortcircuiting-middleware)
 
-   * HTTP 응답 자체를 만들려면
+* HTTP 응답 자체를 만들려면
 
 **미들웨어 및 모듈을 다른 순서로 처리 됩니다.**
 
-   * 에 삽입할 요청 파이프라인을 모듈의 순서는 주로 기반으로 하는 동안 순서를 기반으로 하는 미들웨어 순서 [응용 프로그램 수명 주기](https://msdn.microsoft.com/library/ms227673.aspx) 이벤트
+* 에 삽입할 요청 파이프라인을 모듈의 순서는 주로 기반으로 하는 동안 순서를 기반으로 하는 미들웨어 순서 [응용 프로그램 수명 주기](https://msdn.microsoft.com/library/ms227673.aspx) 이벤트
 
-   * 미들웨어의 응답에 대 한 순서가 반대로 하는 요청에 대 한 요청 및 응답에 대 한 동일한 모듈의 순서는
+* 미들웨어의 응답에 대 한 순서가 반대로 하는 요청에 대 한 요청 및 응답에 대 한 동일한 모듈의 순서는
 
-   * 참조 [IApplicationBuilder로 미들웨어 파이프라인 만들기](xref:fundamentals/middleware/index#create-a-middleware-pipeline-with-iapplicationbuilder)
+* 참조 [IApplicationBuilder로 미들웨어 파이프라인 만들기](xref:fundamentals/middleware/index#create-a-middleware-pipeline-with-iapplicationbuilder)
 
 ![미들웨어](http-modules/_static/middleware.png)
 
