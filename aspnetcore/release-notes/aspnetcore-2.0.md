@@ -5,12 +5,12 @@ description: ASP.NET Core 2.0의 새로운 기능에 대해 알아봅니다.
 ms.author: riande
 ms.date: 07/10/2017
 uid: aspnetcore-2.0
-ms.openlocfilehash: a6d3179c84bfef0b15c2772e696466b88d228de5
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: 60e44e64bd1cfada0143e374f6f51dec0e4e84f8
+ms.sourcegitcommit: 5f299daa7c8102d56a63b214b9a34cc4bc87bc42
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50207123"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58209887"
 ---
 # <a name="whats-new-in-aspnet-core-20"></a>ASP.NET Core 2.0의 새로운 기능
 
@@ -33,7 +33,7 @@ Razor 페이지는 더 쉽고 더 생산적으로 코딩 페이지에 초점을 
 
 ## <a name="runtime-store"></a>런타임 저장소
 
-`Microsoft.AspNetCore.All` 메타패키지를 사용하는 응용 프로그램은 새로운 .NET Core 런타임 저장소를 자동으로 활용합니다. 저장소에는 ASP.NET Core 2.0 응용 프로그램을 실행하는 데 필요한 모든 런타임 자산이 포함됩니다. `Microsoft.AspNetCore.All` 메타패키지를 사용할 경우 참조되는 ASP.NET Core NuGet 패키지의 자산은 대상 시스템에 있기 때문에 응용 프로그램과 함께 배포되지 않습니다. 또한 응용 프로그램 시작 시간을 개선하기 위해 런타임 저장소의 자산은 미리 컴파일됩니다.
+`Microsoft.AspNetCore.All` 메타패키지를 사용하는 애플리케이션은 새로운 .NET Core 런타임 저장소를 자동으로 활용합니다. 저장소에는 ASP.NET Core 2.0 애플리케이션을 실행하는 데 필요한 모든 런타임 자산이 포함됩니다. `Microsoft.AspNetCore.All` 메타패키지를 사용할 경우 참조되는 ASP.NET Core NuGet 패키지의 자산은 대상 시스템에 있기 때문에 애플리케이션과 함께 배포되지 않습니다. 또한 애플리케이션 시작 시간을 개선하기 위해 런타임 저장소의 자산은 미리 컴파일됩니다.
 
 자세한 내용은 [런타임 저장소](/dotnet/core/deploying/runtime-store)를 참조하세요.
 
@@ -45,7 +45,7 @@ ASP.NET Core 2.0 패키지는 .NET Standard 2.0을 대상으로 합니다. 패�
 
 ## <a name="configuration-update"></a>구성 업데이트
 
-`IConfiguration` 인스턴스는 기본적으로 ASP.NET Core 2.0의 서비스 컨테이너에 추가됩니다. 서비스 컨테이너의 `IConfiguration`을 사용하면 응용 프로그램이 컨테이너에서 구성 값을 더 쉽게 검색할 수 있습니다.
+`IConfiguration` 인스턴스는 기본적으로 ASP.NET Core 2.0의 서비스 컨테이너에 추가됩니다. 서비스 컨테이너의 `IConfiguration`을 사용하면 애플리케이션이 컨테이너에서 구성 값을 더 쉽게 검색할 수 있습니다.
 
 계획된 문서의 상태에 대한 자세한 내용은 [GitHub issue](https://github.com/aspnet/Docs/issues/3387)(GitHub 문제)를 참조하세요.
 
@@ -57,7 +57,7 @@ ASP.NET Core 2.0에서 로깅은 기본적으로 DI(종속성 주입) 시스템�
 
 ## <a name="authentication-update"></a>인증 업데이트
 
-새 인증 모델을 사용하면 DI를 사용하는 응용 프로그램에 대한 인증을 더 쉽게 구성할 수 있습니다.
+새 인증 모델을 사용하면 DI를 사용하는 애플리케이션에 대한 인증을 더 쉽게 구성할 수 있습니다.
 
 새 템플릿을 사용하여 [Azure AD B2C](https://azure.microsoft.com/services/active-directory-b2c/))를 통해 웹앱 및 Web API에 대한 인증을 구성할 수 있습니다.
 
@@ -75,15 +75,15 @@ ASP.NET Core 2.0에서는 ID를 사용하여 보안 Web API를 더 쉽게 빌드
 
 ## <a name="spa-templates"></a>SPA 템플릿
 
-Angular, Aurelia, Knockout.js, React.js 및 React.js에 대한 SPA(단일 페이지 응용 프로그램) 프로젝트 템플릿을 사용할 수 있습니다. Angular 템플릿은 Angular 4로 업데이트되었습니다. Angular 및 React 템플릿은 기본적으로 제공됩니다. 다른 템플릿을 가져오는 방법에 대한 자세한 내용은 [새 SPA 프로젝트 만들기](xref:client-side/spa-services#creating-a-new-project)를 참조하세요. ASP.NET Core에서 SPA를 빌드하는 방법에 대한 자세한 내용은 [단일 페이지 응용 프로그램 만들기에 JavaScriptServices 사용](xref:client-side/spa-services)을 참조하세요.
+Angular, Aurelia, Knockout.js, React.js 및 React.js에 대한 SPA(단일 페이지 애플리케이션) 프로젝트 템플릿을 사용할 수 있습니다. Angular 템플릿은 Angular 4로 업데이트되었습니다. Angular 및 React 템플릿은 기본적으로 제공됩니다. 다른 템플릿을 가져오는 방법에 대한 자세한 내용은 [새 SPA 프로젝트 만들기](xref:client-side/spa-services#creating-a-new-project)를 참조하세요. ASP.NET Core에서 SPA를 빌드하는 방법에 대한 자세한 내용은 [단일 페이지 애플리케이션 만들기에 JavaScriptServices 사용](xref:client-side/spa-services)을 참조하세요.
 
 ## <a name="kestrel-improvements"></a>Kestrel 기능 향상
 
 Kestrel 웹 서버에는 인터넷 연결 서버로서 더 적합하도록 도와주는 새로운 기능이 있습니다. 다양한 서버 제약 조건 구성 옵션이 `KestrelServerOptions` 클래스의 새 `Limits` 속성에 추가됩니다. 다음에 대한 제한을 추가합니다.
 
-- 최대 클라이언트 연결
-- 최대 요청 본문 크기
-- 최소 요청 본문 데이터 속도
+* 최대 클라이언트 연결
+* 최대 요청 본문 크기
+* 최소 요청 본문 데이터 속도
 
 자세한 내용은 [ASP.NET Core의 Kestrel 웹 서버 구현](xref:fundamentals/servers/kestrel)을 참조하세요.
 
@@ -105,11 +105,11 @@ return File(data, "text/plain", "downloadName.txt", lastModified: DateTime.UtcNo
 
 방문자에게 반환된 파일이 `ETag` 및 `LastModified` 값에 해당하는 HTTP 헤더로 데코레이트됩니다.
 
-응용 프로그램 방문자가 범위 요청 헤더가 포함된 콘텐츠를 요청하면 ASP.NET Core는 요청을 인식하고 헤더를 처리합니다. 요청된 콘텐츠가 부분적으로 전달될 수 있으면 ASP.NET Core는 적절히 건너뛰고 요청된 바이트 집합만 반환합니다. 이 기능에 맞게 조정하거나 이 기능을 처리하기 위해 메서드에 특수 처리기를 작성할 필요가 없습니다. 기능이 자동으로 처리됩니다.
+애플리케이션 방문자가 범위 요청 헤더가 포함된 콘텐츠를 요청하면 ASP.NET Core는 요청을 인식하고 헤더를 처리합니다. 요청된 콘텐츠가 부분적으로 전달될 수 있으면 ASP.NET Core는 적절히 건너뛰고 요청된 바이트 집합만 반환합니다. 이 기능에 맞게 조정하거나 이 기능을 처리하기 위해 메서드에 특수 처리기를 작성할 필요가 없습니다. 기능이 자동으로 처리됩니다.
 
 ## <a name="hosting-startup-and-application-insights"></a>호스팅 시작 및 Application Insights
 
-이제 호스팅 환경에서는 응용 프로그램이 명시적으로 종속성을 사용하거나 메서드를 호출할 필요 없이 추가 패키지 종속성을 삽입하고 응용 프로그램 시작 중에 코드를 실행할 수 있습니다. 이 기능을 사용하면 응용 프로그램이 미리 인식할 필요 없이 특정 환경이 해당 환경에 고유한 기능을 “강화”할 수 있습니다. 
+이제 호스팅 환경에서는 애플리케이션이 명시적으로 종속성을 사용하거나 메서드를 호출할 필요 없이 추가 패키지 종속성을 삽입하고 애플리케이션 시작 중에 코드를 실행할 수 있습니다. 이 기능을 사용하면 애플리케이션이 미리 인식할 필요 없이 특정 환경이 해당 환경에 고유한 기능을 “강화”할 수 있습니다. 
 
 ASP.NET Core 2.0에서 이 기능은 Visual Studio에서 디버그할 경우 및 Azure App Services에서 실행될 경우(옵트인(opt in) 후) 자동으로 Application Insights 진단을 사용하도록 설정하는 데 사용됩니다. 따라서 프로젝트 템플릿은 더 이상 기본적으로 Application Insights 패키지와 코드를 추가하지 않습니다.
 
@@ -123,7 +123,7 @@ ASP.NET Core는 언제나 기본적으로 콘텐츠를 HTML 인코딩하는 기�
 
 ## <a name="automatic-precompilation"></a>자동으로 미리 컴파일
 
-Razor 뷰 미리 컴파일이 기본적으로 게시 중에 사용하도록 설정되므로 게시 출력 크기와 응용 프로그램 시작 시간이 감소합니다.
+Razor 뷰 미리 컴파일이 기본적으로 게시 중에 사용하도록 설정되므로 게시 출력 크기와 애플리케이션 시작 시간이 감소합니다.
 
 자세한 내용은 [ASP.NET Core에서 Razor 뷰 컴파일 및 미리 컴파일](xref:mvc/views/view-compilation)을 참조하세요.
 
@@ -148,7 +148,7 @@ C# 7.1 기능 상태에 대한 자세한 내용은 [the Roslyn GitHub repository
 
 ## <a name="migration-guidance"></a>마이그레이션 지침
 
-ASP.NET Core 1.x 응용 프로그램을 ASP.NET Core 2.0으로 마이그레이션하는 방법에 대한 자세한 내용은 다음 리소스를 참조하세요.
+ASP.NET Core 1.x 애플리케이션을 ASP.NET Core 2.0으로 마이그레이션하는 방법에 대한 자세한 내용은 다음 리소스를 참조하세요.
 
 * [ASP.NET Core 1.x에서 ASP.NET Core 2.0으로 마이그레이션](xref:migration/1x-to-2x/index)
 * [ASP.NET Core 2.0으로 인증 및 ID 마이그레이션](xref:migration/1x-to-2x/identity-2x)

@@ -7,12 +7,12 @@ ms.author: scaddie
 ms.custom: mvc
 ms.date: 12/13/2018
 uid: web-api/advanced/conventions
-ms.openlocfilehash: 5ae96b213a19464045e1d0b1a76f8eb81089dc5b
-ms.sourcegitcommit: c47d7c131eebbcd8811e31edda210d64cf4b9d6b
+ms.openlocfilehash: 64be4984779724eb60af3b70d4f52b22eae32213
+ms.sourcegitcommit: 10e14b85490f064395e9b2f423d21e3c2d39ed8b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55236343"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58142312"
 ---
 # <a name="use-web-api-conventions"></a>웹 API 규칙 사용
 
@@ -25,7 +25,7 @@ ASP.NET Core 2.2 이상에는 일반적인 [API 설명서](xref:tutorials/web-ap
 * 특정 유형의 작업에서 반환되는 가장 일반적인 반환 형식 및 상태 코드를 정의합니다.
 * 정의된 표준에서 벗어나는 작업을 식별합니다.
 
-ASP.NET Core MVC 2.2 이상에는 `Microsoft.AspNetCore.Mvc.DefaultApiConventions`의 기본 규칙 집합이 포함되어 있습니다. 규칙은 ASP.NET Core **API** 프로젝트 템플릿에서 제공되는 컨트롤러(*ValuesController.cs*)를 기반으로 합니다. 작업이 템플릿의 패턴을 따르는 경우, 기본 규칙을 성공적으로 사용해야 합니다. 기본 규칙이 요구 사항을 충족하지 못하는 경우 [웹 API 규칙 만들기](#create-web-api-conventions)를 참조하세요.
+ASP.NET Core MVC 2.2 이상에는 <xref:Microsoft.AspNetCore.Mvc.DefaultApiConventions?displayProperty=fullName>의 기본 규칙 집합이 포함되어 있습니다. 규칙은 ASP.NET Core **API** 프로젝트 템플릿에서 제공되는 컨트롤러(*ValuesController.cs*)를 기반으로 합니다. 작업이 템플릿의 패턴을 따르는 경우, 기본 규칙을 성공적으로 사용해야 합니다. 기본 규칙이 요구 사항을 충족하지 못하는 경우 [웹 API 규칙 만들기](#create-web-api-conventions)를 참조하세요.
 
 런타임 시 <xref:Microsoft.AspNetCore.Mvc.ApiExplorer>가 규칙을 이해합니다. `ApiExplorer`는 [OpenAPI](https://www.openapis.org/)(Swagger라고도 함) 문서 생성기와 통신하기 위한 MVC의 추상화입니다. 적용된 규칙의 특성은 작업과 연결되며 작업의 OpenAPI 설명서에 포함됩니다. [API 분석기](xref:web-api/advanced/analyzers)도 규칙을 이해합니다. 작업이 색다른 경우(예를 들어 적용된 규칙에 의해 문서화되지 않은 상태 코드를 반환하는 경우) 경고는 상태 코드를 문서화할 것을 권장합니다.
 

@@ -5,12 +5,12 @@ description: ASP.NET Core MVC에서 뷰가 앱의 데이터 프레젠테이션�
 ms.author: riande
 ms.date: 12/12/2017
 uid: mvc/views/overview
-ms.openlocfilehash: 6c5b4d7b89ac07a85b5aad626e37855de98064eb
-ms.sourcegitcommit: d75d8eb26c2cce19876c8d5b65ac8a4b21f625ef
+ms.openlocfilehash: 0ee1fef9e9da15d91427a2eb5b5f530a0b77ce33
+ms.sourcegitcommit: 57792e5f594db1574742588017c708350958bdf0
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/19/2019
-ms.locfileid: "56410441"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58265384"
 ---
 # <a name="views-in-aspnet-core-mvc"></a>ASP.NET Core MVC에서 뷰
 
@@ -70,11 +70,13 @@ ASP.NET Core MVC에서 뷰는 Razor 태그에서 [C# 프로그래밍 언어](/do
   ```csharp
   return View("Orders");
   ```
+
 * 뷰에 전달할 [모델](xref:mvc/models/model-binding):
 
   ```csharp
   return View(Orders);
   ```
+
 * 뷰 및 모델 모두:
 
   ```csharp
@@ -194,7 +196,7 @@ viewmodel 형식 및 비즈니스 모델 형식 모두에 같은 클래스를 �
 
 강력한 형식의 뷰 외에도, 뷰는 *약한 형식*(*느슨한 형식*이라고도 함) 데이터 컬렉션에 액세스할 수 있습니다. 강력한 형식과 달리, *약한 형식*(또는 *느슨한 형식*)은 사용 중인 데이터 형식을 명시적으로 선언하지 않는 것을 의미합니다. 컨트롤러 및 뷰 간에 적은 양의 데이터를 전달하기 위해 약한 형식의 데이터 컬렉션을 사용할 수 있습니다.
 
-| 다음 사이에 데이터 전달 ...                        | 예                                                                        |
+| 다음 사이에 데이터 전달 ...                        | 예제                                                                        |
 | ------------------------------------------------- | ------------------------------------------------------------------------------ |
 | 컨트롤러 및 뷰                             | 드롭다운 목록을 데이터로 채웁니다.                                          |
 | 뷰 및 [레이아웃 뷰](xref:mvc/views/layout)   | 뷰 파일의 레이아웃 뷰에서 **\<title>** 요소 콘텐츠를 설정합니다.  |

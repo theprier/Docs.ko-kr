@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 12/07/2018
 uid: data/ef-rp/concurrency
-ms.openlocfilehash: a6c264e460855c9f1d6f5a363eb7ee2cf69619ee
-ms.sourcegitcommit: 036d4b03fd86ca5bb378198e29ecf2704257f7b2
+ms.openlocfilehash: 3fb8ebe415d0619d33302a08e97da78db0ad1d1e
+ms.sourcegitcommit: 57792e5f594db1574742588017c708350958bdf0
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57346296"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58265507"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---concurrency---8-of-8"></a>ASP.NET Core에서 EF Core를 사용한 Razor 페이지 - 동시성 - 8/8
 
@@ -95,9 +95,9 @@ John이 예산이 여전히 $350,000.00인 편집 페이지에서 **저장**을 
 
 DB는 행이 업데이트될 때마다 증가되는 순차적 `rowversion` 번호를 생성합니다. `Update` 또는 `Delete` 명령에서 `Where` 절은 `rowversion`의 페치된 값을 포함합니다. 업데이트되는 행이 변경되는 경우:
 
- * `rowversion`은 페치된 값에 일치하지 않습니다.
- * `Update` 또는 `Delete` 명령은 `Where` 절이 페치된 `rowversion`을 포함하므로 행을 찾지 않습니다.
- * `DbUpdateConcurrencyException`이 throw됩니다.
+* `rowversion`은 페치된 값에 일치하지 않습니다.
+* `Update` 또는 `Delete` 명령은 `Where` 절이 페치된 `rowversion`을 포함하므로 행을 찾지 않습니다.
+* `DbUpdateConcurrencyException`이 throw됩니다.
 
 EF Core에서 `Update` 또는 `Delete` 명령에 의해 업데이트된 행이 없는 경우 동시성 예외가 throw됩니다.
 
@@ -152,6 +152,7 @@ dotnet ef database update
 * 마이그레이션을 실행하여 DB를 업데이트합니다.
 
 <a name="scaffold"></a>
+
 ## <a name="scaffold-the-departments-model"></a>부서 모델 스캐폴드
 
 # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio) 
@@ -272,7 +273,6 @@ dotnet ef database update
 *Pages/Departments/Delete.cshtml*을 다음 코드로 업데이트합니다.
 
 [!code-html[](intro/samples/cu/Pages/Departments/Delete.cshtml?highlight=1,10,39,51)]
-
 
 위의 표시는 다음과 같이 변경합니다.
 

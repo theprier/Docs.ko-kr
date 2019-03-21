@@ -5,12 +5,12 @@ description: 기본 ASP.NET Core MVC 앱에 검색을 추가하는 방법을 보
 ms.author: riande
 ms.date: 12/13/2018
 uid: tutorials/first-mvc-app/search
-ms.openlocfilehash: e5dce35b60080ef752f8e6c6004158219015cbf5
-ms.sourcegitcommit: d75d8eb26c2cce19876c8d5b65ac8a4b21f625ef
+ms.openlocfilehash: 41d7494b77edaddbf719cab087142f0132dd3ed6
+ms.sourcegitcommit: 5f299daa7c8102d56a63b214b9a34cc4bc87bc42
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/19/2019
-ms.locfileid: "56410640"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58208384"
 ---
 # <a name="add-search-to-an-aspnet-core-mvc-app"></a>ASP.NET Core MVC 앱에 검색 추가
 
@@ -37,7 +37,7 @@ var movies = from m in _context.Movie
 
 위의 `s => s.Title.Contains()` 코드는 [람다 식](/dotnet/csharp/programming-guide/statements-expressions-operators/lambda-expressions)입니다. 람다 식은 메서드 기반 [LINQ](/dotnet/standard/using-linq) 쿼리에서 [Where](/dotnet/api/system.linq.enumerable.where) 메서드 또는 `Contains`(위의 코드에서 사용됨)와 같은 표준 쿼리 연산자 메서드의 인수로 사용됩니다. LINQ 쿼리는 정의될 때 또는 메서드(예: `Where`, `Contains` 또는 `OrderBy`)를 호출하여 수정될 때 실행되지 않습니다. 대신 쿼리 실행이 지연됩니다.  즉, 실제로 실현된 값이 반복되거나 `ToListAsync` 메서드가 호출될 때까지 식의 계산이 지연되는 것을 의미합니다. 지연된 쿼리 실행에 대한 자세한 내용은 [쿼리 실행](/dotnet/framework/data/adonet/ef/language-reference/query-execution)을 참조하세요.
 
-참고: [Contains](/dotnet/api/system.data.objects.dataclasses.entitycollection-1.contains) 메서드는 위에 표시된 C# 코드에서가 아닌 데이터베이스에서 실행됩니다. 쿼리에 대한 대/소문자 구분은 데이터베이스 및 데이터 정렬에 따라 달라집니다. SQL Server에서 [Contains](/dotnet/api/system.data.objects.dataclasses.entitycollection-1.contains)는 대/소문자를 구분하는 [SQL LIKE](/sql/t-sql/language-elements/like-transact-sql)로 매핑됩니다. SQLlite에서 기본 데이터 정렬과 함께 대/소문자를 구분합니다.
+참고: [Contains](/dotnet/api/system.data.objects.dataclasses.entitycollection-1.contains) 메서드는 위에 표시된 C# 코드에서가 아닌 데이터베이스에서 실행됩니다. 쿼리에 대한 대/소문자 구분은 데이터베이스 및 데이터 정렬에 따라 달라집니다. SQL Server에서 [Contains](/dotnet/api/system.data.objects.dataclasses.entitycollection-1.contains)는 대/소문자를 구분하는 [SQL LIKE](/sql/t-sql/language-elements/like-transact-sql)로 매핑됩니다. SQLite에서 기본 데이터 정렬과 함께 대/소문자를 구분합니다.
 
 `/Movies/Index`로 이동합니다. 쿼리 문자열(예: `?searchString=Ghost`)을 URL에 추가합니다. 필터링된 영화가 표시됩니다.
 
@@ -113,10 +113,10 @@ HTML `<form>` 태그는 [양식 태그 도우미](xref:mvc/views/working-with-fo
 
 영화 장르 보기 모델은 다음을 포함합니다.
 
-   * 영화 목록
-   * 장르 목록을 포함한 `SelectList` 이를 통해 사용자는 목록에서 장르를 선택할 수 있습니다.
-   * 선택한 장르가 포함된 `MovieGenre`
-   * 사용자가 검색 텍스트 상자에 입력한 텍스트가 포함된 `SearchString`.
+* 영화 목록
+* 장르 목록을 포함한 `SelectList` 이를 통해 사용자는 목록에서 장르를 선택할 수 있습니다.
+* 선택한 장르가 포함된 `MovieGenre`
+* 사용자가 검색 텍스트 상자에 입력한 텍스트가 포함된 `SearchString`.
 
 `MoviesController.cs`에서 `Index` 메서드를 다음 코드로 바꿉니다.
 
@@ -148,4 +148,4 @@ HTML `<form>` 태그는 [양식 태그 도우미](xref:mvc/views/working-with-fo
 
 > [!div class="step-by-step"]
 > [이전](controller-methods-views.md)
-> [다음](new-field.md)  
+> [다음](new-field.md)

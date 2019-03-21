@@ -5,12 +5,12 @@ description: 관련 기능을 별도의 네임스페이스(라우팅용) 및 폴
 ms.author: riande
 ms.date: 02/14/2019
 uid: mvc/controllers/areas
-ms.openlocfilehash: 8904d217a18fff65113ae3469efe60258d20d5f0
-ms.sourcegitcommit: 6ddd8a7675c1c1d997c8ab2d4498538e44954cac
+ms.openlocfilehash: 79bc023a7bd00a9d4de375e3cddaafd148251469
+ms.sourcegitcommit: 57792e5f594db1574742588017c708350958bdf0
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57400647"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58264762"
 ---
 # <a name="areas-in-aspnet-core"></a>ASP.NET Core의 영역
 
@@ -38,6 +38,7 @@ Razor Pages를 사용하는 경우 이 문서에서 [Razor Pages가 있는 영�
 * [시작 시 영역 경로 추가](#add-area-route): [!code-csharp[](areas/samples/MVCareas/Startup.cs?name=snippet2&highlight=3-6)]
 
 ### <a name="area-folder-structure"></a>영역 폴더 구조
+
 *제품* 및 *서비스*의 두 논리 그룹이 있는 앱을 고려합니다. 영역을 사용하면 폴더 구조는 다음과 유사합니다.
 
 * 프로젝트 이름
@@ -172,7 +173,7 @@ Razor Pages가 있는 영역은 앱 루트에 *Areas/&lt;area name&gt;/Pages* �
 위의 태그에서
 
 * 모델(`@model RPareas.Areas.Services.Pages.Manage.AboutModel`)을 지정하려면 정규화된 도메인 이름을 사용해야 합니다.
-* [태그 도우미]()는 `@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers`를 통해 사용할 수 있습니다.
+* [태그 도우미](xref:mvc/views/tag-helpers/intro)는 `@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers`를 통해 사용할 수 있습니다.
 
 샘플 다운로드에서 Products 영역에는 다음과 같은 *_ViewImports* 파일이 있습니다.
 

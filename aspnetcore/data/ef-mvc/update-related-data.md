@@ -7,12 +7,12 @@ ms.custom: mvc
 ms.date: 02/05/2019
 ms.topic: tutorial
 uid: data/ef-mvc/update-related-data
-ms.openlocfilehash: ac94f2e2876c2d8d571a451e4641787ffe37b3d2
-ms.sourcegitcommit: 5e3797a02ff3c48bb8cb9ad4320bfd169ebe8aba
+ms.openlocfilehash: 1606b872df2df839266ef17efee1948065c4efae
+ms.sourcegitcommit: 5f299daa7c8102d56a63b214b9a34cc4bc87bc42
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56103035"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58209416"
 ---
 # <a name="tutorial-update-related-data---aspnet-mvc-with-ef-core"></a>자습서: 관련 데이터 업데이트 - ASP.NET MVC 및 EF Core 사용
 
@@ -131,11 +131,11 @@ HttpPost `Edit` 메서드를 다음 코드로 바꿔 사무실 할당 업데이�
 
 코드는 다음을 수행합니다.
 
--  서명은 이제 HttpGet `Edit` 메서드와 동일하므로 메서드 이름을 `EditPost`로 변경합니다(`ActionName` 특성은 `/Edit/` URL이 여전히 사용됨을 지정함).
+* 서명은 이제 HttpGet `Edit` 메서드와 동일하므로 메서드 이름을 `EditPost`로 변경합니다(`ActionName` 특성은 `/Edit/` URL이 여전히 사용됨을 지정함).
 
--  `OfficeAssignment` 탐색 속성에 대한 즉시 로드를 사용하여 데이터베이스에서 현재 강사 엔터티를 가져옵니다. 이는 HttpGet `Edit` 메서드에서 수행한 것과 동일합니다.
+* `OfficeAssignment` 탐색 속성에 대한 즉시 로드를 사용하여 데이터베이스에서 현재 강사 엔터티를 가져옵니다. 이는 HttpGet `Edit` 메서드에서 수행한 것과 동일합니다.
 
--  모델 바인더의 값으로 검색된 강사 엔터티를 업데이트합니다. `TryUpdateModel` 오버로드를 통해 포함하려는 속성을 허용 목록에 추가할 수 있습니다. 이렇게 하면 [두 번째 자습서](crud.md)에 설명된 대로 초과 게시를 방지합니다.
+* 모델 바인더의 값으로 검색된 강사 엔터티를 업데이트합니다. `TryUpdateModel` 오버로드를 통해 포함하려는 속성을 허용 목록에 추가할 수 있습니다. 이렇게 하면 [두 번째 자습서](crud.md)에 설명된 대로 초과 게시를 방지합니다.
 
     <!-- Snippets don't play well with <ul> [!code-csharp[](intro/samples/cu/Controllers/InstructorsController.cs?range=241-244)] -->
 
@@ -146,7 +146,7 @@ HttpPost `Edit` 메서드를 다음 코드로 바꿔 사무실 할당 업데이�
         i => i.FirstMidName, i => i.LastName, i => i.HireDate, i => i.OfficeAssignment))
     ```
 
--   사무실 위치가 비어 있는 경우 OfficeAssignment 테이블의 관련된 행이 삭제되도록 Instructor.OfficeAssignment 속성을 Null로 설정합니다.
+* 사무실 위치가 비어 있는 경우 OfficeAssignment 테이블의 관련된 행이 삭제되도록 Instructor.OfficeAssignment 속성을 Null로 설정합니다.
 
     <!-- Snippets don't play well with <ul>  "intro/samples/cu/Controllers/InstructorsController.cs"} -->
 
@@ -157,7 +157,7 @@ HttpPost `Edit` 메서드를 다음 코드로 바꿔 사무실 할당 업데이�
     }
     ```
 
-- 변경 내용을 데이터베이스에 저장합니다.
+* 변경 내용을 데이터베이스에 저장합니다.
 
 ### <a name="update-the-instructor-edit-view"></a>강사 편집 보기 업데이트
 
@@ -225,7 +225,7 @@ HttpPost `Edit` 메서드를 다음 코드로 바꿔 사무실 할당 업데이�
 
 <a id="notepad"></a>
 > [!NOTE]
-> Visual Studio에서 코드를 붙여 넣을 때 줄 바꿈이 코드를 중단하는 방식으로 변경됩니다.  자동 서식 지정을 실행 취소하려면 Ctrl+Z를 한 번 누릅니다.  여기와 같은 모양이 되도록 줄 바꿈을 수정합니다. 들여쓰기는 완벽할 필요가 없지만 `@</tr><tr>`, `@:<td>`, `@:</td>` 및 `@:</tr>` 줄은 표시된 것처럼 각각 한 줄에 있어야 합니다. 그렇지 않으면 런타임 오류가 발생합니다. 선택된 새 코드의 블록과 함께 Tab 키를 세 번 눌러 기존 코드와 함께 새 코드를 정렬합니다. [여기](https://developercommunity.visualstudio.com/content/problem/147795/razor-editor-malforms-pasted-markup-and-creates-in.html)합니다.에서 이 문제의 상태를 확인할 수 있습니다.
+> Visual Studio에서 코드를 붙여 넣을 때 줄 바꿈이 코드를 중단하는 방식으로 변경됩니다. 자동 서식 지정을 실행 취소하려면 Ctrl+Z를 한 번 누릅니다. 여기와 같은 모양이 되도록 줄 바꿈을 수정합니다. 들여쓰기는 완벽할 필요가 없지만 `@</tr><tr>`, `@:<td>`, `@:</td>` 및 `@:</tr>` 줄은 표시된 것처럼 각각 한 줄에 있어야 합니다. 그렇지 않으면 런타임 오류가 발생합니다. 선택된 새 코드의 블록과 함께 Tab 키를 세 번 눌러 기존 코드와 함께 새 코드를 정렬합니다. [여기](https://developercommunity.visualstudio.com/content/problem/147795/razor-editor-malforms-pasted-markup-and-creates-in.html)합니다.에서 이 문제의 상태를 확인할 수 있습니다.
 
 [!code-html[](intro/samples/cu/Views/Instructors/Edit.cshtml?range=35-61)]
 
@@ -250,7 +250,7 @@ HttpPost `Edit` 메서드를 다음 코드로 바꿔 사무실 할당 업데이�
 
 이 코드로 다음이 변경됩니다.
 
-* `CourseAssignments` 탐색 속성에 대해 즉시 로드를 수행합니다.  이를 포함해야 합니다. 그렇지 않으면 EF는 관련된 `CourseAssignment` 엔터티에 대해 알지 못하고 삭제하지 않습니다.  읽을 필요가 없도록 하려면 여기에서 데이터베이스에 계단식 삭제를 구성할 수 있습니다.
+* `CourseAssignments` 탐색 속성에 대해 즉시 로드를 수행합니다. 이를 포함해야 합니다. 그렇지 않으면 EF는 관련된 `CourseAssignment` 엔터티에 대해 알지 못하고 삭제하지 않습니다. 읽을 필요가 없도록 하려면 여기에서 데이터베이스에 계단식 삭제를 구성할 수 있습니다.
 
 * 삭제될 강사가 부서의 관리자로 할당된 경우 해당 부서에서 강사 할당을 제거합니다.
 

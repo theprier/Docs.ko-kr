@@ -7,12 +7,12 @@ ms.author: jkotalik
 ms.custom: mvc
 ms.date: 02/26/2019
 uid: fundamentals/middleware/request-response
-ms.openlocfilehash: f29c0aff95887d639cf3d1a8c8fe9f9228159f7a
-ms.sourcegitcommit: 6ddd8a7675c1c1d997c8ab2d4498538e44954cac
+ms.openlocfilehash: b6e3cd4b79e0c062b271c65cd5ecbdb4ef80c3a1
+ms.sourcegitcommit: 5f299daa7c8102d56a63b214b9a34cc4bc87bc42
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57400734"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58208059"
 ---
 # <a name="request-and-response-operations-in-aspnet-core"></a>ASP.NET Core의 요청 및 응답 작업
 
@@ -80,5 +80,5 @@ ASP.NET Core 3.0에는 요청 및 응답 본문에 대한 두 가지 추상(<xre
 
 ## <a name="additional-resources"></a>추가 자료
 
-* [System.IO.Pipelines 소개](https://devblogs.microsoft.com/dotnet/system-io-pipelines-high-performance-io-in-net/)
-* <xref:fundamentals/middleware/write>
+- [System.IO.Pipelines 소개](https://devblogs.microsoft.com/dotnet/system-io-pipelines-high-performance-io-in-net/)
+- <xref:fundamentals/middleware/write>

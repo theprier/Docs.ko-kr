@@ -5,12 +5,12 @@ description: 간단한 ASP.NET Core MVC 앱에 컨트롤러를 추가하는 방�
 ms.author: riande
 ms.date: 02/28/2017
 uid: tutorials/first-mvc-app/adding-controller
-ms.openlocfilehash: bbb7b06e2c9c63f44cb7f7a8ee63bffa1e316b3e
-ms.sourcegitcommit: 4e87712029de2aceb1cf2c52e9e3dda8195a5b8e
+ms.openlocfilehash: dad9262e544fc216ddc694b11b0dfb88b58db9cd
+ms.sourcegitcommit: 57792e5f594db1574742588017c708350958bdf0
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53381870"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58265018"
 ---
 # <a name="add-a-controller-to-an-aspnet-core-mvc-app"></a>ASP.NET Core MVC 앱에 컨트롤러 추가
 
@@ -30,7 +30,6 @@ MVC 패턴을 통해 이러한 요소 간의 느슨한 결합을 제공하는 �
 
 ## <a name="add-a-controller"></a>컨트롤러 추가
 
-<!-- VS -------------------------->
 # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
 
 * **솔루션 탐색기**에서 ** 컨트롤러 > 추가 > 컨트롤러**
@@ -42,14 +41,12 @@ MVC 패턴을 통해 이러한 요소 간의 느슨한 결합을 제공하는 �
 
 * **빈 MVC 컨트롤러 추가 대화 상자**에 **HelloWorldController**를 입력하고 **추가**를 선택합니다.
 
-<!-- Code -------------------------->
 # <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code)
 
 **탐색기** 아이콘을 선택한 다음, **컨트롤러 > 새 파일**을 컨트롤 클릭(마우스 오른쪽 단추로 클릭)하고 새 파일의 이름을 *HelloWorldController.cs*로 지정합니다.
 
   ![바로 가기 메뉴](~/tutorials/first-mvc-app-xplat/adding-controller/_static/new_file.png)
 
-<!-- Mac -------------------------->
 # <a name="visual-studio-for-mactabvisual-studio-mac"></a>[Visual Studio for Mac](#tab/visual-studio-mac)
 
 **솔루션 탐색기**에서 **컨트롤러 > 추가 > 새 파일**을 마우스 오른쪽 단추로 클릭합니다.
@@ -62,7 +59,6 @@ MVC 패턴을 통해 이러한 요소 간의 느슨한 결합을 제공하는 �
 ![MVC 컨트롤러 추가 및 이름 지정](~/tutorials/first-mvc-app-mac/adding-controller/_static/ac.png)
 
 ---
-<!-- End of VS tabs -->
 
 *Controllers/HelloWorldController.cs*의 내용을 다음으로 바꿉니다.
 
@@ -99,7 +95,7 @@ Remove link for simplified tutorial.
 
 ![브라우저 창은 시작 작업 메서드입니다.라는 애플리케이션 응답을 표시합니다.](~/tutorials/first-mvc-app/adding-controller/_static/welcome.png)
 
-URL의 일부 매개 변수 정보를 컨트롤러에 전달하도록 코드를 수정합니다. 예를 들어 `/HelloWorld/Welcome?name=Rick&numtimes=4`과 같은 형식입니다. `Welcome` 메서드가 다음 코드와 같이 두 개의 매개 변수를 포함하도록 변경합니다.
+URL의 일부 매개 변수 정보를 컨트롤러에 전달하도록 코드를 수정합니다. 예를 들어, `/HelloWorld/Welcome?name=Rick&numtimes=4`을 입력합니다. `Welcome` 메서드가 다음 코드와 같이 두 개의 매개 변수를 포함하도록 변경합니다.
 
 [!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Controllers/HelloWorldController.cs?name=snippet_2)]
 
@@ -119,7 +115,8 @@ URL의 일부 매개 변수 정보를 컨트롤러에 전달하도록 코드를 
 
 위의 이미지에서 URL 세그먼트(`Parameters`)를 사용하지 않고 `name` 및 `numTimes` 매개 변수가 [쿼리 문자열](https://wikipedia.org/wiki/Query_string)로 전달됩니다. 위 URL에서 `?`(물음표)는 구분 기호이고 쿼리 문자열이 이어집니다. `&` 문자는 쿼리 문자열을 구분합니다.
 
-`Welcome` 메서드를 다음 코드로 바꿉니다.
+
+  `Welcome` 메서드를 다음 코드로 바꿉니다.
 
 [!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Controllers/HelloWorldController.cs?name=snippet_3)]
 
@@ -130,7 +127,6 @@ URL의 일부 매개 변수 정보를 컨트롤러에 전달하도록 코드를 
 [!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Startup.cs?name=snippet_1&highlight=5)]
 
 이러한 예제에서 컨트롤러는 MVC의 "VC" 부분을 사용했습니다. 즉, 보기 및 컨트롤러 작업입니다. 컨트롤러는 HTML을 직접 반환합니다. 일반적으로 코드 및 유지 관리가 매우 복잡해지므로 컨트롤러에서 HTML을 직접 반환하지 않으려고 합니다. 대신 일반적으로 별도의 Razor 뷰 템플릿 파일을 사용하여 HTML 응답을 생성하는 데 도움이 됩니다. 다음 자습서에서 해당 작업을 수행합니다.
-
 
 > [!div class="step-by-step"]
 > [이전](start-mvc.md)

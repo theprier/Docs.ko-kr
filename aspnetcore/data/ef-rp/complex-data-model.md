@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/24/2018
 uid: data/ef-rp/complex-data-model
-ms.openlocfilehash: 56c2d783e8c75aad7487aa03309bb962f4354567
-ms.sourcegitcommit: 036d4b03fd86ca5bb378198e29ecf2704257f7b2
+ms.openlocfilehash: fbe43e019ddab6f9acc2ea46799f0a39aa7c2e7c
+ms.sourcegitcommit: 5f299daa7c8102d56a63b214b9a34cc4bc87bc42
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57346530"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58208992"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---data-model---5-of-8"></a>ASP.NET Core에서 EF Core를 사용한 Razor 페이지 - 데이터 모델 - 5/8
 
@@ -223,8 +223,8 @@ public ICollection<CourseAssignment> CourseAssignments { get; set; }
 탐색 속성 유형은 다음을 포함합니다.
 
 * `ICollection<T>`
-*  `List<T>`
-*  `HashSet<T>`
+* `List<T>`
+* `HashSet<T>`
 
 `ICollection<T>`가 지정되는 경우 EF Core는 기본적으로 `HashSet<T>` 컬렉션을 만듭니다.
 
@@ -267,7 +267,6 @@ public int InstructorID { get; set; }
 
 * 참조 형식(예: 클래스는 nullable)
 * 강사는 사무실 할당이 없을 수 있습니다.
-
 
 `OfficeAssignment` 엔터티는 다음과 같은 이유로 비 nullable `Instructor` 탐색 속성을 갖습니다.
 

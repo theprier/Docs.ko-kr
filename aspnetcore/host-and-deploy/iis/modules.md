@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 02/28/2019
 uid: host-and-deploy/iis/modules
-ms.openlocfilehash: e5bb1a86453bb945789cc1f4b56616551e316615
-ms.sourcegitcommit: 6ddd8a7675c1c1d997c8ab2d4498538e44954cac
+ms.openlocfilehash: de740775e124298f7c3d3be0c6f5a7311174116d
+ms.sourcegitcommit: 57792e5f594db1574742588017c708350958bdf0
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57400686"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58265489"
 ---
 # <a name="iis-modules-with-aspnet-core"></a>IIS 모듈 및 ASP.NET Core
 
@@ -123,7 +123,7 @@ IIS 모듈이 앱에 대해 사용되지 않아야 하는 서버 수준에서 �
     </system.webServer>
    </configuration>
    ```
-   
+
 *web.config*를 사용하여 IIS Express용 모듈을 추가 또는 제거하려면 *applicationHost.config*를 수정하여 `<modules>` 섹션을 잠금 해제합니다.
 
 1. *{APPLICATION ROOT}\\.vs\config\applicationhost.config*를 엽니다.
@@ -131,17 +131,17 @@ IIS 모듈이 앱에 대해 사용되지 않아야 하는 서버 수준에서 �
 1. IIS 모듈에 대한 `<section>` 요소를 찾고 `overrideModeDefault`를 `Deny`에서 `Allow`로 변경합니다.
 
    ```xml
-   <section name="modules" 
-            allowDefinition="MachineToApplication" 
+   <section name="modules"
+            allowDefinition="MachineToApplication"
             overrideModeDefault="Allow" />
    ```
-   
+
 1. `<location path="" overrideMode="Allow"><system.webServer><modules>` 섹션을 찾습니다. 제거하려는 모듈의 경우 `lockItem`을 `true`에서 `false`로 설정합니다. 다음 예제에서는 CGI 모듈의 잠금이 해제됩니다.
 
    ```xml
    <add name="CgiModule" lockItem="false" />
    ```
-   
+
 1. `<modules>` 섹션과 개별 모듈의 잠금이 해제된 후에는 IIS Express에서 앱을 실행하기 위한 앱의 *web.config* 파일을 사용하여 IIS 모듈을 추가하거나 제거할 수 있습니다.
 
 IIS 모듈을 *Appcmd.exe*를 사용하여 제거할 수도 있습니다. 다음 명령에 `MODULE_NAME` 및 `APPLICATION_NAME`을 제공합니다.

@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 12/06/2018
 uid: tutorials/publish-to-azure-webapp-using-vs
-ms.openlocfilehash: e71cb8badbbc852685c845e6bbb0bbb12ab5499f
-ms.sourcegitcommit: 68a3081dd175d6518d1bfa31b4712bd8a2dd3864
+ms.openlocfilehash: b2b5a155d0dff28e471af449731da787f19d1faf
+ms.sourcegitcommit: 5f299daa7c8102d56a63b214b9a34cc4bc87bc42
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/18/2018
-ms.locfileid: "53577814"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58208361"
 ---
 # <a name="publish-an-aspnet-core-app-to-azure-with-visual-studio"></a>Visual Studio를 사용하여 Azure에 ASP.NET Core 앱 게시
 
@@ -127,7 +127,7 @@ Visual Studio가 **App Service 만들기** 대화 상자로 돌아갑니다.
 
 ![SQL Database 구성 대화 상자](publish-to-azure-webapp-using-vs/_static/conf_final.png)
 
-Visual Studio는 Azure에서 웹앱 및 SQL Server를 만듭니다. 이 단계는 몇 분 정도 걸릴 수 있습니다. 만든 리소스에 대한 자세한 내용은 [추가 리소스](#additonal-resources)를 참조하세요.
+Visual Studio는 Azure에서 웹앱 및 SQL Server를 만듭니다. 이 단계는 몇 분 정도 걸릴 수 있습니다. 만든 리소스에 대한 자세한 내용은 [추가 리소스](#additional-resources)를 참조하세요.
 
 배포가 완료되면 **설정**을 선택합니다.
 
@@ -135,8 +135,8 @@ Visual Studio는 Azure에서 웹앱 및 SQL Server를 만듭니다. 이 단계�
 
 **게시** 대화 상자의 **설정** 페이지에서:
 
-  * **데이터베이스**를 확장하고 **런타임 시 이 연결 문자열 사용**을 선택합니다.
-  * **Entity Framework 마이그레이션**을 확장하고 **게시에 이 마이그레이션 적용**을 선택합니다.
+* **데이터베이스**를 확장하고 **런타임 시 이 연결 문자열 사용**을 선택합니다.
+* **Entity Framework 마이그레이션**을 확장하고 **게시에 이 마이그레이션 적용**을 선택합니다.
 
 * **저장**을 선택합니다. Visual Studio가 **게시** 대화 상자로 돌아갑니다. 
 
@@ -184,7 +184,7 @@ Visual Studio는 Azure에서 웹앱 및 SQL Server를 만듭니다. 이 단계�
 
 * <xref:host-and-deploy/azure-apps/azure-continuous-deployment>
 
-## <a name="additonal-resources"></a>추가 리소스
+## <a name="additional-resources"></a>추가 자료
 
 * [Azure App Service](/azure/app-service/app-service-web-overview)
 * [Azure 리소스 그룹](/azure/azure-resource-manager/resource-group-overview#resource-groups)

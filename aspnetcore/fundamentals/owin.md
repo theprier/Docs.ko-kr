@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: H1Hack27Feb2017
 ms.date: 12/18/2018
 uid: fundamentals/owin
-ms.openlocfilehash: 51982c7ebc4f66c2b0b73bf425d9ecbd0bf37826
-ms.sourcegitcommit: 816f39e852a8f453e8682081871a31bc66db153a
+ms.openlocfilehash: de8548fe2396102fe44a8e6a000b44d4eea63285
+ms.sourcegitcommit: 5f299daa7c8102d56a63b214b9a34cc4bc87bc42
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53637796"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58209933"
 ---
 # <a name="open-web-interface-for-net-owin-with-aspnet-core"></a>ASP.NET Core가 있는 OWIN(Open Web Interface for .NET)
 
@@ -234,7 +234,7 @@ OWIN은 HTTP 요청/응답 교환 전체에서 정보를 전달하는 `IDictiona
 
 ### <a name="request-data-owin-v100"></a>요청 데이터(OWIN v1.0.0)
 
-| Key               | 값(형식) | 설명 |
+| 키               | 값(형식) | 설명 |
 | ----------------- | ------------ | ----------- |
 | owin.RequestScheme | `String` |  |
 | owin.RequestMethod  | `String` | |    
@@ -247,31 +247,29 @@ OWIN은 HTTP 요청/응답 교환 전체에서 정보를 전달하는 `IDictiona
 
 ### <a name="request-data-owin-v110"></a>요청 데이터(OWIN v1.1.0)
 
-| Key               | 값(형식) | 설명 |
+| 키               | 값(형식) | 설명 |
 | ----------------- | ------------ | ----------- |
 | owin.RequestId | `String` | Optional |
 
 ### <a name="response-data-owin-v100"></a>응답 데이터(OWIN v1.0.0)
 
-| Key               | 값(형식) | 설명 |
+| 키               | 값(형식) | 설명 |
 | ----------------- | ------------ | ----------- |
 | owin.ResponseStatusCode | `int` | Optional |
 | owin.ResponseReasonPhrase | `String` | Optional |
 | owin.ResponseHeaders | `IDictionary<string,string[]>`  | |
 | owin.ResponseBody | `Stream`  | |
 
-
 ### <a name="other-data-owin-v100"></a>기타 데이터(OWIN v1.0.0)
 
-| Key               | 값(형식) | 설명 |
+| 키               | 값(형식) | 설명 |
 | ----------------- | ------------ | ----------- |
 | owin.CallCancelled | `CancellationToken` |  |
 | owin.Version  | `String` | |   
 
-
 ### <a name="common-keys"></a>공통 키
 
-| Key               | 값(형식) | 설명 |
+| 키               | 값(형식) | 설명 |
 | ----------------- | ------------ | ----------- |
 | ssl.ClientCertificate | `X509Certificate` |  |
 | ssl.LoadClientCertAsync  | `Func<Task>` | |    
@@ -282,27 +280,24 @@ OWIN은 HTTP 요청/응답 교환 전체에서 정보를 전달하는 `IDictiona
 | server.IsLocal  | `bool` | |    
 | server.OnSendingHeaders  | `Action<Action<object>,object>` | |
 
-
 ### <a name="sendfiles-v030"></a>SendFiles v0.3.0
 
-| Key               | 값(형식) | 설명 |
+| 키               | 값(형식) | 설명 |
 | ----------------- | ------------ | ----------- |
 | sendfile.SendAsync | [대리자 시그니처](http://owin.org/spec/extensions/owin-SendFile-Extension-v0.3.0.htm) 참조 | 요청당 |
 
-
 ### <a name="opaque-v030"></a>불투명 v0.3.0
 
-| Key               | 값(형식) | 설명 |
+| 키               | 값(형식) | 설명 |
 | ----------------- | ------------ | ----------- |
 | opaque.Version | `String` |  |
 | opaque.Upgrade | `OpaqueUpgrade` | [대리자 시그니처](http://owin.org/spec/extensions/owin-SendFile-Extension-v0.3.0.htm) 참조 |
 | opaque.Stream | `Stream` |  |
 | opaque.CallCancelled | `CancellationToken` |  |
 
-
 ### <a name="websocket-v030"></a>WebSocket v0.3.0
 
-| Key               | 값(형식) | 설명 |
+| 키               | 값(형식) | 설명 |
 | ----------------- | ------------ | ----------- |
 | websocket.Version | `String` |  |
 | websocket.Accept | `WebSocketAccept` | [대리자 시그니처](http://owin.org/spec/extensions/owin-SendFile-Extension-v0.3.0.htm) 참조 |

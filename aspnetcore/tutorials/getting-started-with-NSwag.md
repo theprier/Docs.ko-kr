@@ -6,12 +6,12 @@ ms.author: scaddie
 ms.custom: mvc
 ms.date: 12/30/2018
 uid: tutorials/get-started-with-nswag
-ms.openlocfilehash: c03e7513edc3240f3f13f0c190e1ca9480e476af
-ms.sourcegitcommit: 97d7a00bd39c83a8f6bccb9daa44130a509f75ce
+ms.openlocfilehash: 43f0f04ae63f4e74d8de6001a4a7518e4eb23d77
+ms.sourcegitcommit: 5f299daa7c8102d56a63b214b9a34cc4bc87bc42
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54098734"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58209147"
 ---
 # <a name="get-started-with-nswag-and-aspnet-core"></a>NSwag 및 ASP.NET Core 시작
 
@@ -31,8 +31,8 @@ ms.locfileid: "54098734"
 
 NSwag는 다음 기능을 제공합니다.
 
- * Swagger UI 및 Swagger 생성기를 사용하는 기능
- * 유연한 코드 생성 기능
+* Swagger UI 및 Swagger 생성기를 사용하는 기능
+* 유연한 코드 생성 기능
 
 NSwag를 사용하면 기존 API가 필요하지 않으므로 Swagger를 통합하고 클라이언트 구현을 생성하는 타사 API를 사용할 수 있습니다. NSwag를 사용하면 개발 주기를 단축하고 API 변경에 쉽게 대응할 수 있습니다.
 
@@ -40,8 +40,8 @@ NSwag를 사용하면 기존 API가 필요하지 않으므로 Swagger를 통합�
 
 다음 작업을 수행하려면 NSwag 미들웨어를 등록합니다.
 
- * 구현된 Web API에 대한 Swagger 사양을 생성합니다.
- * Web API를 찾아보고 테스트하는 Swagger UI를 제공합니다.
+* 구현된 Web API에 대한 Swagger 사양을 생성합니다.
+* Web API를 찾아보고 테스트하는 Swagger UI를 제공합니다.
 
 [NSwag](https://github.com/RSuter/NSwag) ASP.NET Core 미들웨어를 사용하려면 [NSwag.AspNetCore](https://www.nuget.org/packages/NSwag.AspNetCore/) NuGet 패키지를 설치합니다. 이 패키지에는 Swagger 사양, Swagger UI(v2 및 v3) 및 [ReDoc UI](https://github.com/Rebilly/ReDoc)를 생성하고 제공하는 미들웨어가 포함되어 있습니다.
 
@@ -101,33 +101,32 @@ dotnet add TodoApi.csproj package NSwag.AspNetCore
 
 [!code-csharp[](../tutorials/web-api-help-pages-using-swagger/samples/2.0/TodoApi.NSwag/Startup.cs?name=snippet_ConfigureServices&highlight=8)]
 
- * `Configure` 메서드에서 생성된 Swagger 사양 및 Swagger UI를 지원하기 위해 미들웨어를 사용하도록 설정합니다.
+* `Configure` 메서드에서 생성된 Swagger 사양 및 Swagger UI를 지원하기 위해 미들웨어를 사용하도록 설정합니다.
 
 [!code-csharp[](../tutorials/web-api-help-pages-using-swagger/samples/2.0/TodoApi.NSwag/Startup.cs?name=snippet_Configure&highlight=6-7)]
 
- * 앱을 시작합니다. 다음으로 이동합니다.
-   * `http://localhost:<port>/swagger` - Swagger UI를 봅니다.
-   * `http://localhost:<port>/swagger/v1/swagger.json` - Swagger 사양을 봅니다.
+* 앱을 시작합니다. 다음으로 이동합니다.
+  * `http://localhost:<port>/swagger` - Swagger UI를 봅니다.
+  * `http://localhost:<port>/swagger/v1/swagger.json` - Swagger 사양을 봅니다.
 
 ## <a name="code-generation"></a>코드 생성
 
 다음 옵션 중 하나를 선택하여 NSwag의 코드 생성 기능을 활용할 수 있습니다.
 
- * [NSwagStudio](https://github.com/NSwag/NSwag/wiki/NSwagStudio) &ndash; C# 또는 TypeScript에서 API 클라이언트 코드를 생성하기 위한 Windows 데스크톱 앱.
- * 프로젝트 내에서 코드 생성을 위한 [NSwag.CodeGeneration.CSharp](https://www.nuget.org/packages/NSwag.CodeGeneration.CSharp/) 또는 [NSwag.CodeGeneration.TypeScript](https://www.nuget.org/packages/NSwag.CodeGeneration.TypeScript/) NuGet 패키지.
+* [NSwagStudio](https://github.com/NSwag/NSwag/wiki/NSwagStudio) &ndash; C# 또는 TypeScript에서 API 클라이언트 코드를 생성하기 위한 Windows 데스크톱 앱.
+* 프로젝트 내에서 코드 생성을 위한 [NSwag.CodeGeneration.CSharp](https://www.nuget.org/packages/NSwag.CodeGeneration.CSharp/) 또는 [NSwag.CodeGeneration.TypeScript](https://www.nuget.org/packages/NSwag.CodeGeneration.TypeScript/) NuGet 패키지.
 * [명령줄](https://github.com/NSwag/NSwag/wiki/CommandLine)의 NSwag.
- * [NSwag.MSBuild](https://github.com/NSwag/NSwag/wiki/MSBuild) NuGet 패키지.
-
+* [NSwag.MSBuild](https://github.com/NSwag/NSwag/wiki/MSBuild) NuGet 패키지.
 
 ### <a name="generate-code-with-nswagstudio"></a>NSwagStudio로 코드 생성
 
 * [NSwagStudio GitHub 리포지토리](https://github.com/RSuter/NSwag/wiki/NSwagStudio)의 지침에 따라 NSwagStudio를 설치합니다.
- * NSwagStudio를 시작하고 **Swagger 사양 URL** 텍스트 상자에 *swagger.json* 파일 URL을 입력합니다. 예: *http://localhost:44354/swagger/v1/swagger.json*.
+* NSwagStudio를 시작하고 **Swagger 사양 URL** 텍스트 상자에 *swagger.json* 파일 URL을 입력합니다. 예: *http://localhost:44354/swagger/v1/swagger.json*.
 * **로컬 복사본 만들기** 단추를 클릭하여 Swagger 사양의 JSON 표시를 생성합니다.
 
   ![Swagger 사양의 로컬 복사본 만들기](web-api-help-pages-using-swagger/_static/CreateLocalCopy-NSwagStudio.PNG)
 
- * **출력** 영역에서 **CSharp 클라이언트** 확인란을 클릭합니다. 프로젝트에 따라 **TypeScript 클라이언트** 또는 **CSharp 웹 API 컨트롤러**를 선택할 수도 있습니다. **CSharp 웹 API 컨트롤러**를 선택하면 서비스 사양에서 역방향 생성으로 사용되는 서비스를 다시 빌드합니다.
+* **출력** 영역에서 **CSharp 클라이언트** 확인란을 클릭합니다. 프로젝트에 따라 **TypeScript 클라이언트** 또는 **CSharp 웹 API 컨트롤러**를 선택할 수도 있습니다. **CSharp 웹 API 컨트롤러**를 선택하면 서비스 사양에서 역방향 생성으로 사용되는 서비스를 다시 빌드합니다.
 * **출력 생성**을 클릭하여 *TodoApi.NSwag* 프로젝트의 완전한 C# 클라이언트 구현을 생성합니다. 생성된 클라이언트 코드를 보려면 **CSharp 클라이언트** 탭을 클릭합니다.
 
 ```csharp
@@ -142,24 +141,24 @@ namespace MyNamespace
     #pragma warning disable
 
     [System.CodeDom.Compiler.GeneratedCode("NSwag", "12.0.9.0 (NJsonSchema v9.13.10.0 (Newtonsoft.Json v11.0.0.0))")]
-    public partial class TodoClient 
+    public partial class TodoClient
     {
         private string _baseUrl = "https://localhost:44354";
         private System.Net.Http.HttpClient _httpClient;
         private System.Lazy<Newtonsoft.Json.JsonSerializerSettings> _settings;
-    
+
         public TodoClient(System.Net.Http.HttpClient httpClient)
         {
-            _httpClient = httpClient; 
-            _settings = new System.Lazy<Newtonsoft.Json.JsonSerializerSettings>(() => 
+            _httpClient = httpClient;
+            _settings = new System.Lazy<Newtonsoft.Json.JsonSerializerSettings>(() =>
             {
                 var settings = new Newtonsoft.Json.JsonSerializerSettings();
                 UpdateJsonSerializerSettings(settings);
                 return settings;
             });
         }
-    
-        public string BaseUrl 
+
+        public string BaseUrl
         {
             get { return _baseUrl; }
             set { _baseUrl = value; }
@@ -169,9 +168,9 @@ namespace MyNamespace
 ```
 
 > [!TIP]
- > C# 클라이언트 코드는 **설정** 탭의 선택에 따라 생성됩니다. 기본 네임 스페이스 이름 바꾸기 및 동기 메서드 생성 등의 작업을 수행하도록 설정을 수정합니다.
+> C# 클라이언트 코드는 **설정** 탭의 선택에 따라 생성됩니다. 기본 네임 스페이스 이름 바꾸기 및 동기 메서드 생성 등의 작업을 수행하도록 설정을 수정합니다.
 
- * API를 사용할 클라이언트 프로젝트의 파일에 생성된 C# 코드를 복사합니다.
+* API를 사용할 클라이언트 프로젝트의 파일에 생성된 C# 코드를 복사합니다.
 * Web API를 사용하기 시작합니다.
 
 ```csharp
@@ -263,13 +262,13 @@ Swagger UI는 버전의 정보를 표시합니다.
 
 ::: moniker range="<= aspnetcore-2.0"
 
- NSwag는 [리플렉션](/dotnet/csharp/programming-guide/concepts/reflection)을 사용하고 웹 API 작업의 권장 반환 형식은 [IActionResult](xref:Microsoft.AspNetCore.Mvc.IActionResult)이므로 작업이 수행 중인 작업과 반환 결과를 유추할 수 없습니다.
+NSwag는 [리플렉션](/dotnet/csharp/programming-guide/concepts/reflection)을 사용하고 웹 API 작업의 권장 반환 형식은 [IActionResult](xref:Microsoft.AspNetCore.Mvc.IActionResult)이므로 작업이 수행 중인 작업과 반환 결과를 유추할 수 없습니다.
 
 다음 예제를 참조하세요.
 
 [!code-csharp[](../tutorials/web-api-help-pages-using-swagger/samples/2.0/TodoApi.NSwag/Controllers/TodoController.cs?name=snippet_CreateAction)]
 
- 이전 작업은 `IActionResult`를 반환하지만 작업 내에서는 [CreatedAtRoute](xref:System.Web.Http.ApiController.CreatedAtRoute*) 또는 [BadRequest](xref:System.Web.Http.ApiController.BadRequest*)를 반환합니다. 데이터 주석을 사용하여 이 작업이 반환하는 것으로 알려진 HTTP 상태 코드를 클라이언트에 알립니다. 다음 특성으로 작업을 데코레이트하세요.
+이전 작업은 `IActionResult`를 반환하지만 작업 내에서는 [CreatedAtRoute](xref:System.Web.Http.ApiController.CreatedAtRoute*) 또는 [BadRequest](xref:System.Web.Http.ApiController.BadRequest*)를 반환합니다. 데이터 주석을 사용하여 이 작업이 반환하는 것으로 알려진 HTTP 상태 코드를 클라이언트에 알립니다. 다음 특성으로 작업을 데코레이트하세요.
 
 [!code-csharp[](../tutorials/web-api-help-pages-using-swagger/samples/2.0/TodoApi.NSwag/Controllers/TodoController.cs?name=snippet_CreateActionAttributes)]
 
@@ -277,7 +276,7 @@ Swagger UI는 버전의 정보를 표시합니다.
 
 ::: moniker range=">= aspnetcore-2.1"
 
- NSwag는 [리플렉션](/dotnet/csharp/programming-guide/concepts/reflection)을 사용하고 웹 API 작업의 권장 반환 형식은 [ActionResult\<T>](xref:Microsoft.AspNetCore.Mvc.ActionResult`1)이므로 `T`로 정의된 반환 형식만 유추할 수 있습니다. 다른 가능한 반환 형식은 자동으로 유추할 수 없습니다. 
+NSwag는 [리플렉션](/dotnet/csharp/programming-guide/concepts/reflection)을 사용하고 웹 API 작업의 권장 반환 형식은 [ActionResult\<T>](xref:Microsoft.AspNetCore.Mvc.ActionResult`1)이므로 `T`로 정의된 반환 형식만 유추할 수 있습니다. 다른 가능한 반환 형식은 자동으로 유추할 수 없습니다.
 
 다음 예제를 참조하세요.
 
@@ -291,6 +290,6 @@ ASP.NET Core 2.2 이상에서는 `[ProducesResponseType]`을 사용하여 명시
 
 ::: moniker-end
 
- 이제 Swagger 생성기는 이 작업을 정확하게 설명할 수 있으며, 생성된 클라이언트가 엔드포인트를 호출할 때 수신한 내용을 알 수 있습니다. 이러한 특성으로 모든 작업을 데코레이트하는 것이 좋습니다. 
+이제 Swagger 생성기는 이 작업을 정확하게 설명할 수 있으며, 생성된 클라이언트가 엔드포인트를 호출할 때 수신한 내용을 알 수 있습니다. 이러한 특성으로 모든 작업을 데코레이트하는 것이 좋습니다.
 
 API 작업에서 반환해야 하는 HTTP 응답에 대한 지침은 [RFC 7231 사양](https://tools.ietf.org/html/rfc7231#section-4.3)을 참조하세요.

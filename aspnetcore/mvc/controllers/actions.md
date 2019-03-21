@@ -5,12 +5,12 @@ description: ''
 ms.author: riande
 ms.date: 07/03/2017
 uid: mvc/controllers/actions
-ms.openlocfilehash: 8289424b3cd3678bea18a25c7850e409795d1577
-ms.sourcegitcommit: d75d8eb26c2cce19876c8d5b65ac8a4b21f625ef
+ms.openlocfilehash: 952e4dbb2c4343ca87ace1535e4a5968faf088cf
+ms.sourcegitcommit: 5f299daa7c8102d56a63b214b9a34cc4bc87bc42
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/19/2019
-ms.locfileid: "56410440"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58209017"
 ---
 # <a name="handle-requests-with-controllers-in-aspnet-core-mvc"></a>ASP.NET Core MVC에서 컨트롤러를 사용한 요청 처리
 
@@ -98,7 +98,7 @@ ms.locfileid: "56410440"
 `[Authorize]`와 같은 대부분의 필터 특성은 원하는 세분성 수준에 따라 컨트롤러 또는 작업 수준에 적용할 수 있습니다.
 
 오류 처리 및 응답 캐시는 종종 교차 편집 문제입니다.
-   * [오류 처리](xref:mvc/controllers/filters#exception-filters)
-   * [응답 캐싱](xref:performance/caching/response)
+* [오류 처리](xref:mvc/controllers/filters#exception-filters)
+* [응답 캐싱](xref:performance/caching/response)
 
 많은 교차 편집 문제는 필터 또는 사용자 지정 [미들웨어](xref:fundamentals/middleware/index)를 사용하여 처리할 수 있습니다.

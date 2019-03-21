@@ -5,12 +5,12 @@ description: 이 자습서 시리즈는 ASP.NET Core에서 Razor Pages를 사용
 ms.author: riande
 ms.date: 12/5/2018
 uid: tutorials/razor-pages/razor-pages-start
-ms.openlocfilehash: 29d9369cfa6a4c76f015b5a819a27dfa280d4075
-ms.sourcegitcommit: 036d4b03fd86ca5bb378198e29ecf2704257f7b2
+ms.openlocfilehash: 88449a0064dad42d8d2bf9fbdd67078e4c2ba8de
+ms.sourcegitcommit: 5f299daa7c8102d56a63b214b9a34cc4bc87bc42
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57346413"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58210056"
 ---
 # <a name="tutorial-get-started-with-razor-pages-in-aspnet-core"></a>자습서: ASP.NET Core에서 Razor 페이지 시작
 
@@ -146,7 +146,6 @@ Razor 페이지 및 지원 파일이 들어 있습니다. 각 Razor 페이지는
 * 페이지 이벤트를 처리하는 C# 코드가 포함된 *.cshtml.cs* 파일.
 
 지원 파일에는 밑줄로 시작하는 이름이 있습니다. 예를 들어 *_Layout.cshtml* 파일은 모든 페이지에 공통되는 UI 요소를 구성합니다. 이 파일은 페이지 맨 위에 있는 탐색 메뉴를 설정하고 페이지 맨 아래에 저작권 표시를 설정합니다. 자세한 내용은 <xref:mvc/views/layout>을 참조하세요.
-
 
 ### <a name="wwwroot-folder"></a>wwwroot 폴더
 

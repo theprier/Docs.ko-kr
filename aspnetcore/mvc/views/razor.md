@@ -5,12 +5,12 @@ description: 웹 페이지에 서버 기반 코드를 포함하는 Razor 태그 
 ms.author: riande
 ms.date: 10/26/2018
 uid: mvc/views/razor
-ms.openlocfilehash: 8e9ec3c5040e5a24cd5f773b1232897338741c0c
-ms.sourcegitcommit: 184ba5b44d1c393076015510ac842b77bc9d4d93
+ms.openlocfilehash: 254c85ee9e74dc72170b19d27fbc5f1ae7ccd3dc
+ms.sourcegitcommit: 57792e5f594db1574742588017c708350958bdf0
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/18/2019
-ms.locfileid: "54396261"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58264750"
 ---
 # <a name="razor-syntax-reference-for-aspnet-core"></a>ASP.NET Core에 대한 Razor 구문 참조
 
@@ -69,9 +69,9 @@ C# `await` 키워드를 제외하고, 암시적 식에 공백이 있으면 안 �
 
 위의 코드는 다음 중 하나와 비슷한 컴파일러 오류를 생성합니다.
 
- * "Int" 요소가 종료되지 않았습니다. 모든 요소는 하나 있어야 자체적으로 닫히거나 일치하는 끝 태그가 있어야 합니다.
- *  'GenericMethod' 메서드 그룹을 비대리자 형식 '개체'로 변환할 수 없습니다. 메서드를 호출할 생각이었나요? 
- 
+* "Int" 요소가 종료되지 않았습니다. 모든 요소는 하나 있어야 자체적으로 닫히거나 일치하는 끝 태그가 있어야 합니다.
+* 'GenericMethod' 메서드 그룹을 비대리자 형식 '개체'로 변환할 수 없습니다. 메서드를 호출할 생각이었나요?
+
 제네릭 메서드 호출은 [명시적 Razor 식](#explicit-razor-expressions) 또는 [Razor 코드 블록](#razor-code-blocks)에 래핑되어야 합니다.
 
 ## <a name="explicit-razor-expressions"></a>명시적 Razor 식
@@ -199,7 +199,7 @@ HTML 태그로 묶이지 않은 HTML을 렌더링하려면 이 방법을 사용�
 
 **\<text>** 태그는 콘텐츠를 렌더링할 때 공백을 제어하는 데 유용합니다.
 
-* **\<text>** 태그 사이의 콘텐츠만 렌더링됩니다. 
+* **\<text>** 태그 사이의 콘텐츠만 렌더링됩니다.
 * **\<text>** 태그 앞 또는 뒤에 있는 공백은 HTML 출력에 나타나지 않습니다.
 
 ### <a name="explicit-line-transition-with-"></a>@을 사용하여 명시적 줄 전환:
@@ -337,7 +337,6 @@ else
 
 C#에서 `using` 문은 개체가 삭제되도록 보장하는 데 사용됩니다. Razor에서는 동일한 메커니즘을 사용하여 추가 콘텐츠를 포함하는 HTML 도우미를 만듭니다. 다음 코드에서 HTML 도우미는 `@using` 문을 사용하여 form 태그를 렌더링합니다.
 
-
 ```cshtml
 @using (Html.BeginForm())
 {
@@ -425,6 +424,7 @@ public class _Views_Something_cshtml : RazorPage<dynamic>
 이 문서의 뒷부분에 나오는 [보기용으로 생성된 Razor C# 클래스 검사](#inspect-the-razor-c-class-generated-for-a-view) 섹션에서는 생성된 이 클래스를 보는 방법에 대해 설명합니다.
 
 <a name="using"></a>
+
 ### <a name="using"></a>@using
 
 `@using` 지시문은 C# `using` 지시문을 생성된 보기에 추가합니다.
@@ -579,7 +579,7 @@ public class Pet
 @using Microsoft.AspNetCore.Html
 
 @functions {
-    public static IHtmlContent Repeat(IEnumerable<dynamic> items, int times, 
+    public static IHtmlContent Repeat(IEnumerable<dynamic> items, int times,
         Func<dynamic, IHtmlContent> template)
     {
         var html = new HtmlContentBuilder();
