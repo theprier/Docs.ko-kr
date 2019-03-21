@@ -7,12 +7,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 02/25/2019
 uid: test/integration-tests
-ms.openlocfilehash: 50cb6b26be187c7f36f189e77fd29b4559221f2c
-ms.sourcegitcommit: 5f299daa7c8102d56a63b214b9a34cc4bc87bc42
+ms.openlocfilehash: 11a8f4296e1b0b229c736645f1aa598307b88ec4
+ms.sourcegitcommit: 088e6744cd67a62f214f25146313a53949b17d35
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58209241"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58320188"
 ---
 # <a name="integration-tests-in-aspnet-core"></a>ASP.NET Core에서 통합 테스트
 
@@ -311,7 +311,7 @@ _client = _factory.CreateClient(clientOptions);
 
 ## <a name="disable-shadow-copying"></a>섀도 복사를 사용 하지 않도록 설정
 
-출력 폴더와 다른 폴더에서 실행할 테스트를 사용 하면 섀도 복사 합니다. 제대로 작동 하려면 테스트에 대 한 섀도 복사를 비활성화 해야 합니다. [샘플 앱](https://github.com/aspnet/Docs/tree/master/aspnetcore/test/integration-tests/samples) xUnit을 사용 하 고 포함 하 여 xunit 섀도 복사를 사용 하지 않도록 설정 된 *xunit.runner.json* 올바른 구성 설정 사용 하 여 파일. 자세한 내용은 [JSON을 사용 하 여 xUnit.net 구성](https://xunit.github.io/docs/configuring-with-json.html)합니다.
+출력 폴더와 다른 폴더에서 실행할 테스트를 사용 하면 섀도 복사 합니다. 제대로 작동 하려면 테스트에 대 한 섀도 복사를 비활성화 해야 합니다. [샘플 앱](https://github.com/aspnet/Docs/tree/master/aspnetcore/test/integration-tests/samples) xUnit을 사용 하 고 포함 하 여 xunit 섀도 복사를 사용 하지 않도록 설정 된 *xunit.runner.json* 올바른 구성 설정 사용 하 여 파일. 자세한 내용은 [JSON을 사용 하 여 xUnit 구성](https://xunit.github.io/docs/configuring-with-json.html)합니다.
 
 추가 된 *xunit.runner.json* 다음 콘텐츠를 사용 하 여 테스트 프로젝트의 루트에 파일:
 

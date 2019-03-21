@@ -7,12 +7,12 @@ ms.author: bradyg
 ms.custom: mvc
 ms.date: 11/20/2018
 uid: signalr/hubs
-ms.openlocfilehash: 9bc74079235338c75c47e06bde2b78dc1c466bd6
-ms.sourcegitcommit: ebf4e5a7ca301af8494edf64f85d4a8deb61d641
+ms.openlocfilehash: 244ddc40e647bfcc3ca8cda2797c51bc49174822
+ms.sourcegitcommit: 088e6744cd67a62f214f25146313a53949b17d35
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54836690"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58320149"
 ---
 # <a name="use-hubs-in-signalr-for-aspnet-core"></a>ASP.NET Core SignalR에서 허브 사용하기
 
@@ -52,6 +52,7 @@ public class ChatHub : Hub
 
 > [!NOTE]
 > 일시적인 hubs 같습니다.
+>
 > * 허브 클래스의 속성에서 상태를 저장 하지 마십시오. 허브 메서드 호출 마다 새 허브 인스턴스에서 실행 됩니다.  
 > * 사용 하 여 `await` 활성 상태로 유지 하는 허브에 의존 하는 비동기 메서드를 호출할 때. 예를 들어,와 같은 메서드 `Clients.All.SendAsync(...)` 없이 호출 되는 경우 실패할 수 있습니다 `await` 허브 메서드를 완료 하기 전에 `SendAsync` 완료 합니다.
 
