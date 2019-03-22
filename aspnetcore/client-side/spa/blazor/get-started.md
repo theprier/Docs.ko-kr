@@ -7,12 +7,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 02/12/2019
 uid: spa/blazor/get-started
-ms.openlocfilehash: 667c57d536450fa2f8ae1cabc7c5a76a16d38a55
-ms.sourcegitcommit: 191d21c1e37b56f0df0187e795d9a56388bbf4c7
+ms.openlocfilehash: f46bd9af0f0762e794349d4e98de5c086a690d72
+ms.sourcegitcommit: a1c43150ed46aa01572399e8aede50d4668745ca
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57665589"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58327231"
 ---
 # <a name="get-started-with-blazor"></a>Blazor 시작
 
@@ -28,7 +28,7 @@ ms.locfileid: "57665589"
 
 Visual Studio에서 첫 번째 Blazor 프로젝트를 만들려면:
 
-1. 최신 설치 [Blazor 언어 서비스 확장](https://go.microsoft.com/fwlink/?linkid=870389) Visual Studio Marketplace에서. 이 단계에 게 Blazor 템플릿을 사용할 수 있는 Visual Studio입니다.
+1. 최신 설치 [Blazor 확장](https://go.microsoft.com/fwlink/?linkid=870389) Visual Studio Marketplace에서. 이 단계에 게 Blazor 템플릿을 사용할 수 있는 Visual Studio입니다.
 1. 명령 셸에서 다음 명령을 실행 하 여.NET Core CLI와 함께 사용할 Blazor 템플릿을 확인:
 
    ```console

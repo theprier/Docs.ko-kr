@@ -5,12 +5,12 @@ description: 이 문서에서는 ASP.NET Core Id에 대 한 기본 Entity Framew
 ms.author: avickers
 ms.date: 09/24/2018
 uid: security/authentication/customize_identity_model
-ms.openlocfilehash: 55346c571f180fa17a1108a622d991d15f365bae
-ms.sourcegitcommit: 5f299daa7c8102d56a63b214b9a34cc4bc87bc42
+ms.openlocfilehash: 0aa7448ac37a97a4d09a04caf365f641f22f5997
+ms.sourcegitcommit: a1c43150ed46aa01572399e8aede50d4668745ca
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58209464"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58327303"
 ---
 # <a name="identity-model-customization-in-aspnet-core"></a>ASP.NET core에서 identity 모델 사용자 지정 합니다.
 
@@ -253,7 +253,7 @@ public abstract class IdentityDbContext<
          where TUserToken : IdentityUserToken<TKey>
 ```
 
-것도 가능 역할 (클레임만),이 경우 Id를 사용 하는 <xref:Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityUserContext`1> 클래스를 사용 해야 합니다.
+것도 가능 역할 (클레임만),이 경우 Id를 사용 하는 <xref:Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityUserContext%601> 클래스를 사용 해야 합니다.
 
 ```csharp
 // Uses the built-in non-role Identity types except with a custom User type
@@ -368,7 +368,7 @@ PK 유형을 변경 하려면 다음이 단계를 수행 합니다.
 
 1. 데이터베이스를 만든 경우 PK 변경 하기 전에 실행 `Drop-Database` (PMC) 또는 `dotnet ef database drop` (.NET Core CLI)를 삭제 합니다.
 2. 데이터베이스의 삭제를 확인 한 후 제거 된 초기 마이그레이션을 `Remove-Migration` (PMC) 또는 `dotnet ef migrations remove` (.NET Core CLI).
-3. 업데이트를 `ApplicationDbContext` 에서 파생 된 클래스 <xref:Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityDbContext`3>합니다. 새 키 유형을 지정 `TKey`합니다. 예를 들어 사용 하는 `Guid` 키 유형:
+3. 업데이트를 `ApplicationDbContext` 에서 파생 된 클래스 <xref:Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityDbContext%603>합니다. 새 키 유형을 지정 `TKey`합니다. 예를 들어 사용 하는 `Guid` 키 유형:
 
     ```csharp
     public class ApplicationDbContext
@@ -383,13 +383,13 @@ PK 유형을 변경 하려면 다음이 단계를 수행 합니다.
 
     ::: moniker range=">= aspnetcore-2.0"
 
-    위의 코드에서 제네릭 클래스 <xref:Microsoft.AspNetCore.Identity.IdentityUser`1> 고 <xref:Microsoft.AspNetCore.Identity.IdentityRole`1> 새 키 유형을 사용 하려면 반드시 지정 해야 합니다.
+    위의 코드에서 제네릭 클래스 <xref:Microsoft.AspNetCore.Identity.IdentityUser%601> 고 <xref:Microsoft.AspNetCore.Identity.IdentityRole%601> 새 키 유형을 사용 하려면 반드시 지정 해야 합니다.
 
     ::: moniker-end
 
     ::: moniker range="<= aspnetcore-1.1"
 
-    위의 코드에서 제네릭 클래스 <xref:Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityUser`1> 고 <xref:Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityRole`1> 새 키 유형을 사용 하려면 반드시 지정 해야 합니다.
+    위의 코드에서 제네릭 클래스 <xref:Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityUser%601> 고 <xref:Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityRole%601> 새 키 유형을 사용 하려면 반드시 지정 해야 합니다.
 
     ::: moniker-end
 
