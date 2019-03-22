@@ -18,7 +18,7 @@ ASP.NET Core는 클라우드 기반 인터넷에 연결된 최신 애플리케�
 * 클라우드 또는 온-프레미스에 배포합니다.
 * [.NET Core 또는.NET Framework](/dotnet/articles/standard/choosing-core-framework-server)를 실행합니다.
 
-## <a name="why-use-aspnet-core"></a>ASP.NET Core를 사용하는 이유는 무엇인가요?
+## <a name="why-to-use-aspnet-core"></a>ASP.NET Core를 사용하는 이유
 
 수백만 명의 개발자가 [ASP.NET 4.x](/aspnet/overview)를 사용하여 웹앱을 만들었습니다(계속 사용 중). ASP.NET Core는 간결한 모듈식 프레임워크를 만드는 아키텍처 변경 내용을 포함한 ASP.NET 4.x의 새로운 디자인입니다.
 
@@ -136,7 +136,7 @@ WebHost.CreateDefaultBuilder(args)
 
 이전 C# 코드 조각은 다음 줄을 포함한 항목의 markdown 파일에서 참조됩니다.
 
-```
+```md
 [!code-csharp[](sample/SampleApp/Program.cs?name=snippet_FilterInCode)]
 ```
 
