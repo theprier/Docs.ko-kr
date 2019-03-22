@@ -56,7 +56,7 @@ ASP.NET Core [DI(종속성 주입](xref:fundamentals/dependency-injection))는 `
 
 ## <a name="create-logs"></a>로그 만들기
 
-DI에서 <xref:Microsoft.Extensions.Logging.ILogger`1> 개체를 가져옵니다.
+DI에서 <xref:Microsoft.Extensions.Logging.ILogger%601> 개체를 가져옵니다.
 
 ::: moniker range=">= aspnetcore-2.0"
 
