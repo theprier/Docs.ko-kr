@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/24/2018
 uid: data/ef-rp/read-related-data
-ms.openlocfilehash: a264cdaf0f577be6ea2043935b485f4fd16e0229
-ms.sourcegitcommit: 57792e5f594db1574742588017c708350958bdf0
+ms.openlocfilehash: 4b564e9e407dcb6b7fd71d0a6c41596269ed5e09
+ms.sourcegitcommit: 088e6744cd67a62f214f25146313a53949b17d35
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58264952"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58320123"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---read-related-data---6-of-8"></a>ASP.NET Core에서 EF Core를 사용한 Razor 페이지 - 관련 데이터 읽기 - 6/8
 
@@ -83,7 +83,7 @@ ms.locfileid: "58264952"
   dotnet aspnet-codegenerator razorpage -m Course -dc SchoolContext -udl -outDir Pages\Courses --referenceScriptLibraries
   ```
 
-------
+---
 
 위의 명령은 `Course` 모델을 스캐폴드합니다. Visual Studio에서 프로젝트를 엽니다.
 
@@ -170,7 +170,7 @@ ms.locfileid: "58264952"
   dotnet aspnet-codegenerator razorpage -m Instructor -dc SchoolContext -udl -outDir Pages\Instructors --referenceScriptLibraries
   ```
 
-------
+---
 
 위의 명령은 `Instructor` 모델을 스캐폴드합니다. 앱을 실행하고 강사 페이지로 이동합니다.
 
