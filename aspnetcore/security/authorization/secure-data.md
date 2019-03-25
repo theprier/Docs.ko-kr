@@ -6,12 +6,12 @@ ms.author: riande
 ms.date: 12/18/2018
 ms.custom: seodec18
 uid: security/authorization/secure-data
-ms.openlocfilehash: bdba706c1ef24ebe35129cb8bb2d9949196245a1
-ms.sourcegitcommit: 97d7a00bd39c83a8f6bccb9daa44130a509f75ce
+ms.openlocfilehash: 748de9264a1b22b50e0832fdd350e06eeefd5cb3
+ms.sourcegitcommit: 7d6019f762fc5b8cbedcd69801e8310f51a17c18
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54098924"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58419461"
 ---
 # <a name="create-an-aspnet-core-app-with-user-data-protected-by-authorization"></a>권한 부여로 보호 되는 사용자 데이터를 사용 하 여 ASP.NET Core 앱 만들기
 
@@ -89,7 +89,7 @@ ASP.NET Core 2.1에서 `User.IsInRole` 사용 하는 경우 실패 `AddDefaultId
 
 ## <a name="the-starter-and-completed-app"></a>시작 및 완료 된 앱
 
-[다운로드](xref:index#how-to-download-a-sample) 는 [완료](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/secure-data/samples/final2) 앱. [테스트](#test-the-completed-app) 완성된 된 앱의 보안 기능에 익숙해질 수 있도록 합니다.
+[다운로드](xref:index#how-to-download-a-sample) 는 [완료](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/secure-data/samples) 앱. [테스트](#test-the-completed-app) 완성된 된 앱의 보안 기능에 익숙해질 수 있도록 합니다.
 
 ### <a name="the-starter-app"></a>시작 앱
 

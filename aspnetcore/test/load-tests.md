@@ -6,16 +6,16 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 01/04/2019
 uid: test/loadtests
-ms.openlocfilehash: 39632af2c92dac548c03e24d35a5e8a03e00890d
-ms.sourcegitcommit: 5f299daa7c8102d56a63b214b9a34cc4bc87bc42
+ms.openlocfilehash: 08c4251059b7d9f4549ad710054d8299c4943465
+ms.sourcegitcommit: 7d6019f762fc5b8cbedcd69801e8310f51a17c18
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58209835"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58419383"
 ---
 # <a name="load-and-stress-testing-aspnet-core"></a>부하 및 스트레스 테스트 ASP.NET Core
 
-부하 테스트 및 스트레스 테스트 성능이 뛰어난 웹 앱을 확인 해야 하 고 확장 가능한 됩니다. 목표는 서로 다른도 비슷한 테스트 자주 공유 합니다.
+부하 테스트 및 스트레스 테스트 성능이 뛰어난 웹 앱을 확인 해야 하 고 확장 가능한 됩니다. 목표는 종종 비슷한 테스트를 공유 하는 경우에 다릅니다.
 
 **부하 테스트**: 앱 응답 목표를 만족 하면서 특정 시나리오에 대 한 사용자 지정된 부하를 처리할 수 있는지 테스트 합니다. 앱이 정상 조건에서 실행 됩니다.
 
