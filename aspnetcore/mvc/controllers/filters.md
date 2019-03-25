@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 02/08/2019
 uid: mvc/controllers/filters
-ms.openlocfilehash: a9081a9938d56b7612bba13937eba384ff02455b
-ms.sourcegitcommit: 2c7ffe349eabdccf2ed748dd303ffd0ba6e1cfe3
+ms.openlocfilehash: 4fe04cde2a234302845b2cbded106f1e809842bc
+ms.sourcegitcommit: 5f299daa7c8102d56a63b214b9a34cc4bc87bc42
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56833737"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58209296"
 ---
 # <a name="filters-in-aspnet-core"></a>ASP.NET Core에서 필터링
 
@@ -19,11 +19,11 @@ ms.locfileid: "56833737"
 
 ASP.NET Core MVC에서 *필터*를 사용하면 요청 처리 파이프라인의 특정 단계 전후에 코드를 실행할 수 있습니다.
 
- 기본 제공 필터는 다음과 같은 작업을 처리합니다.
+기본 제공 필터는 다음과 같은 작업을 처리합니다.
 
- * 권한 부여(사용자가 권한이 없는 리소스에 액세스 방지).
- * 모든 요청이 HTTPS를 사용하는지 확인합니다.
- * 응답 캐싱(요청 파이프라인을 단락하면 캐시된 응답을 반환합니다). 
+* 권한 부여(사용자가 권한이 없는 리소스에 액세스 방지).
+* 모든 요청이 HTTPS를 사용하는지 확인합니다.
+* 응답 캐싱(요청 파이프라인을 단락하면 캐시된 응답을 반환합니다). 
 
 사용자 지정 필터를 만들어 교차 편집 문제를 처리할 수 있습니다. 필터는 작업 간 코드 중복을 방지할 수 있습니다. 예를 들어 오류 처리 예외 필터는 오류 처리를 통합할 수 있습니다.
 
@@ -373,7 +373,7 @@ HTTP 헤더를 추가하는 결과 필터의 예는 다음과 같습니다.
 
 `ResultExecutedContext.Exception`은 작업 결과 또는 후속 결과 필터에서 예외가 throw된 경우 null이 아닌 값으로 설정됩니다. `Exception`을 효과적으로 null로 설정하면 예외를 '처리'하고 예외가 파이프라인의 뒷부분에 나오는 MVC 에 의해 다시 throw되지 않습니다. 결과 필터에서 예외를 처리하는 경우 응답에 모든 데이터를 쓸 수 없습니다. 작업 결과가 해당 실행을 통해 일부 throw되고 헤더가 이미 클라이언트에 플러시된 경우 오류 코드를 전송하는 신뢰할 수 있는 메커니즘이 없습니다.
 
-`IAsyncResultFilter`의 경우 `ResultExecutionDelegate`에서 `await next`에 대한 호출은 후속 결과 필터 및 작업 결과를 실행합니다. 단락(short-circuit) 처리하려면 `ResultExecutingContext.Cancel`를 true로 설정하고 `ResultExectionDelegate`를 호출하지 않습니다.
+`IAsyncResultFilter`의 경우 `ResultExecutionDelegate`에서 `await next`에 대한 호출은 후속 결과 필터 및 작업 결과를 실행합니다. 단락(short-circuit) 처리하려면 `ResultExecutingContext.Cancel`를 true로 설정하고 `ResultExecutionDelegate`를 호출하지 않습니다.
 
 프레임워크는 하위 클래스를 지정할 수 있는 추상 `ResultFilterAttribute`을 제공합니다. 앞에 표시된 [AddHeaderAttribute](#add-header-attribute) 클래스는 결과 필터 특성의 예제입니다.
 

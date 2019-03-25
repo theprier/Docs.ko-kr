@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: H1Hack27Feb2017
 ms.date: 10/14/2016
 uid: web-api/advanced/formatting
-ms.openlocfilehash: 819bf1b49b56e953a9a4398e82866ba0b01ab4db
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: b0fce0632fd2d885cb8e9a056923ec365d2f327d
+ms.sourcegitcommit: 5f299daa7c8102d56a63b214b9a34cc4bc87bc42
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50207110"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58209988"
 ---
 # <a name="format-response-data-in-aspnet-core-web-api"></a>ASP.NET Core Web API에서 응답 데이터 서식 지정
 
@@ -19,7 +19,7 @@ ms.locfileid: "50207110"
 
 ASP.NET Core MVC에는 지정된 형식을 사용하거나 클라이언트 사양에 대한 응답으로 응답 데이터의 서식을 지정하기 위한 기본적인 지원 기능이 있습니다.
 
-[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/web-api/advanced/formatting/sample)([다운로드 방법](xref:index#how-to-download-a-sample))
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/web-api/advanced/formatting/sample) ([다운로드 방법](xref:index#how-to-download-a-sample))
 
 ## <a name="format-specific-action-results"></a>형식별 작업 결과
 
@@ -86,9 +86,9 @@ JSON 형식의 데이터 반환:
 
 ### <a name="browsers-and-content-negotiation"></a>브라우저 및 콘텐츠 협상
 
-일반적인 API 클라이언트와 달리 웹 브라우저는 와일드카드를 비롯한 다양한 형식 범위를 포함하는 `Accept` 헤더를 제공합니다. 기본적으로 프레임워크가 브라우저에서 오는 요청을 감지하면 `Accept` 헤더를 무시하고, 대신에 콘텐츠를 응용 프로그램에 구성된 기본 형식으로 반환합니다(달리 구성되지 않은 경우 JSON). 이는 API를 통해 다양한 브라우저를 사용하는 경우에 더 일관된 환경을 제공합니다.
+일반적인 API 클라이언트와 달리 웹 브라우저는 와일드카드를 비롯한 다양한 형식 범위를 포함하는 `Accept` 헤더를 제공합니다. 기본적으로 프레임워크가 브라우저에서 오는 요청을 감지하면 `Accept` 헤더를 무시하고, 대신에 콘텐츠를 애플리케이션에 구성된 기본 형식으로 반환합니다(달리 구성되지 않은 경우 JSON). 이는 API를 통해 다양한 브라우저를 사용하는 경우에 더 일관된 환경을 제공합니다.
 
-응용 프로그램 적용 브라우저 accept 헤더를 선호하는 경우, *Startup.cs*의 `ConfigureServices` 메서드에서 `RespectBrowserAcceptHeader`를 `true`로 설정하여 MVC 구성의 일부로 구성할 수 있습니다.
+애플리케이션 적용 브라우저 accept 헤더를 선호하는 경우, *Startup.cs*의 `ConfigureServices` 메서드에서 `RespectBrowserAcceptHeader`를 `true`로 설정하여 MVC 구성의 일부로 구성할 수 있습니다.
 
 ```csharp
 services.AddMvc(options =>
@@ -99,7 +99,7 @@ services.AddMvc(options =>
 
 ## <a name="configuring-formatters"></a>포맷터 구성
 
-응용 프로그램이 기본 JSON 외에 추가 형식을 지원해야 하는 경우 NuGet 패키지를 추가하고 이를 지원하도록 MVC를 구성할 수 있습니다. 입력 및 출력에 대한 개별 포맷터가 있습니다. 입력 포맷터는 [모델 바인딩](xref:mvc/models/model-binding)에서 사용되며, 출력 포맷터는 응답 형식을 지정하는 데 사용됩니다. [사용자 지정 포맷터](xref:web-api/advanced/custom-formatters)를 구성할 수 있습니다.
+애플리케이션이 기본 JSON 외에 추가 형식을 지원해야 하는 경우 NuGet 패키지를 추가하고 이를 지원하도록 MVC를 구성할 수 있습니다. 입력 및 출력에 대한 개별 포맷터가 있습니다. 입력 포맷터는 [모델 바인딩](xref:mvc/models/model-binding)에서 사용되며, 출력 포맷터는 응답 형식을 지정하는 데 사용됩니다. [사용자 지정 포맷터](xref:web-api/advanced/custom-formatters)를 구성할 수 있습니다.
 
 ### <a name="adding-xml-format-support"></a>XML 형식 지원 추가
 
@@ -148,7 +148,7 @@ Inspectors 탭에서 `Accept: application/xml` 헤더 집합으로 Raw GET 요�
 public class AuthorsController
 ```
 
-`[Produces]` 필터는 다른 포맷터가 응용 프로그램에 구성되고 클라이언트가 다른 사용 가능한 형식을 요청하는 `Accept` 헤더를 제공하는 경우에도 JSON 형식의 응답을 반환하도록 `AuthorsController` 내에서 모든 작업을 강제로 수행합니다. 필터를 전역에서 적용하는 방법을 비롯한 자세한 내용은 [필터](xref:mvc/controllers/filters)를 참조하세요.
+`[Produces]` 필터는 다른 포맷터가 애플리케이션에 구성되고 클라이언트가 다른 사용 가능한 형식을 요청하는 `Accept` 헤더를 제공하는 경우에도 JSON 형식의 응답을 반환하도록 `AuthorsController` 내에서 모든 작업을 강제로 수행합니다. 필터를 전역에서 적용하는 방법을 비롯한 자세한 내용은 [필터](xref:mvc/controllers/filters)를 참조하세요.
 
 ### <a name="special-case-formatters"></a>특수한 사례 포맷터
 
@@ -180,10 +180,8 @@ public class ProductsController
 
 이 경로를 사용하면 요청된 형식을 선택적 파일 확장명으로 지정할 수 있습니다. `[FormatFilter]` 특성은 `RouteData`에서 형식 값의 존재 여부를 검사하며 응답이 생성될 때 응답 형식을 적절한 포맷터에 매핑합니다.
 
-
 |           경로            |             포맷터              |
 |----------------------------|------------------------------------|
 |   `/products/GetById/5`    |    기본 출력 포맷터    |
 | `/products/GetById/5.json` | JSON 포맷터(구성된 경우) |
 | `/products/GetById/5.xml`  | XML 포맷터(구성된 경우)  |
-

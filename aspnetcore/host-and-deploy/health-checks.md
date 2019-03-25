@@ -7,12 +7,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 02/13/2019
 uid: host-and-deploy/health-checks
-ms.openlocfilehash: e186a3cb484035199a8f355540c3e985db87ad98
-ms.sourcegitcommit: 6ba5fb1fd0b7f9a6a79085b0ef56206e462094b7
+ms.openlocfilehash: 9157c94c6e8f433869c8163ebf7772a7271b11ba
+ms.sourcegitcommit: 57792e5f594db1574742588017c708350958bdf0
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56248577"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58265312"
 ---
 # <a name="health-checks-in-aspnet-core"></a>ASP.NET Core의 상태 검사
 
@@ -92,7 +92,7 @@ public class ExampleHealthCheck : IHealthCheck
     }
 
     public Task<HealthCheckResult> CheckHealthAsync(
-        HealthCheckContext context, 
+        HealthCheckContext context,
         CancellationToken cancellationToken = default(CancellationToken))
     {
         // Execute health check logic here. This example sets a dummy
@@ -130,8 +130,8 @@ public void ConfigureServices(IServiceCollection services)
 ```csharp
 services.AddHealthChecks()
     .AddCheck<ExampleHealthCheck>(
-        "example_health_check", 
-        failureStatus: HealthStatus.Degraded, 
+        "example_health_check",
+        failureStatus: HealthStatus.Degraded,
         tags: new[] { "example" });
 ```
 
@@ -141,7 +141,7 @@ services.AddHealthChecks()
 public void ConfigureServices(IServiceCollection services)
 {
     services.AddHealthChecks()
-        .AddCheck("Example", () => 
+        .AddCheck("Example", () =>
             HealthCheckResult.Healthy("Example is OK!"), tags: new[] { "example" })
 }
 ```
@@ -186,11 +186,11 @@ using Microsoft.Extensions.Diagnostics.HealthChecks;
 public void ConfigureServices(IServiceCollection services)
 {
     services.AddHealthChecks()
-        .AddCheck("Foo", () => 
+        .AddCheck("Foo", () =>
             HealthCheckResult.Healthy("Foo is OK!"), tags: new[] { "foo_tag" })
-        .AddCheck("Bar", () => 
+        .AddCheck("Bar", () =>
             HealthCheckResult.Unhealthy("Bar is unhealthy!"), tags: new[] { "bar_tag" })
-        .AddCheck("Baz", () => 
+        .AddCheck("Baz", () =>
             HealthCheckResult.Healthy("Baz is OK!"), tags: new[] { "baz_tag" });
 }
 
@@ -199,7 +199,7 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
     app.UseHealthChecks("/health", new HealthCheckOptions()
     {
         // Filter out the 'Bar' health check. Only Foo and Baz execute.
-        Predicate = (check) => check.Tags.Contains("foo_tag") || 
+        Predicate = (check) => check.Tags.Contains("foo_tag") ||
             check.Tags.Contains("baz_tag")
     });
 }
@@ -264,7 +264,7 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
     });
 }
 
-private static Task WriteResponse(HttpContext httpContext, 
+private static Task WriteResponse(HttpContext httpContext,
     HealthReport result)
 {
     httpContext.Response.ContentType = "application/json";
@@ -323,7 +323,7 @@ dotnet run --scenario db
 
 `AddDbContextCheck<TContext>`는 `DbContext`에 대한 상태 검사를 등록합니다. `DbContext`는 메서드에 `TContext`로 제공됩니다. 오버로드는 오류 상태, 태그 및 사용자 지정 테스트 쿼리를 구성할 수 있습니다.
 
-기본적으로:
+기본적으로 다음과 같습니다.
 
 * `DbContextHealthCheck`는 EF Core의 `CanConnectAsync` 메서드를 호출합니다. `AddDbContextCheck` 메서드 오버로드를 사용하여 상태를 검사할 때 실행되는 작업을 사용자 정의할 수 있습니다.
 * 상태 검사의 이름은 `TContext` 형식의 이름입니다.
@@ -340,7 +340,7 @@ dotnet run --scenario db
 
 [!code-csharp[](health-checks/samples/2.x/HealthChecksSample/DbContextHealthStartup.cs?name=snippet_Configure)]
 
-샘플 앱을 사용하여 `DbContext` 프로브 시나리오를 실행하려면 연결 문자열에 의해 지정된 데이터베이스가 SQL Server 인스턴스에 존재하지 않는지 확인합니다. 데이터베이스가 있으면 삭제합니다.
+샘플 앱을 사용하여 `DbContext` 프로브 시나리오를 실행하려면 연결 문자열로 지정된 데이터베이스가 SQL Server 인스턴스에 있지 않은지 확인합니다. 데이터베이스가 있으면 삭제합니다.
 
 명령 셸의 프로젝트 폴더에서 다음 명령을 실행합니다.
 
@@ -615,11 +615,11 @@ dotnet run --scenario port
        const string NAME = "example_health_check";
 
        public static IHealthChecksBuilder AddExampleHealthCheck(
-           this IHealthChecksBuilder builder, 
-           string name = default, 
-           string data1, 
-           int data2 = 1, 
-           HealthStatus? failureStatus = default, 
+           this IHealthChecksBuilder builder,
+           string name = default,
+           string data1,
+           int data2 = 1,
+           HealthStatus? failureStatus = default,
            IEnumerable<string> tags = default)
        {
            return builder.Add(new HealthCheckRegistration(
@@ -666,14 +666,14 @@ Task PublishAsync(HealthReport report, CancellationToken cancellationToken);
 ::: moniker range="= aspnetcore-2.2"
 
 > [!NOTE]
-> 다음 해결 방법에서는 하나 이상의 다른 호스트 서비스가 이미 앱에 추가되었을 때 서비스 컨테이너에 <xref:Microsoft.Extensions.Diagnostics.HealthChecks.IHealthCheckPublisher> 인스턴스를 추가하는 것을 허용합니다. 이 해결 방법은 ASP.NET Core 3.0 릴리스에는 필요하지 않습니다. 자세한 내용은 https://github.com/aspnet/Extensions/issues/639을 참조하십시오.
+> 다음 해결 방법에서는 하나 이상의 다른 호스트 서비스가 이미 앱에 추가되었을 때 서비스 컨테이너에 <xref:Microsoft.Extensions.Diagnostics.HealthChecks.IHealthCheckPublisher> 인스턴스를 추가하는 것을 허용합니다. 이 해결 방법은 ASP.NET Core 3.0 릴리스에는 필요하지 않습니다. 자세한 내용은 https://github.com/aspnet/Extensions/issues/639를 참조하세요.
 >
 > ```csharp
-> private const string HealthCheckServiceAssembly = 
+> private const string HealthCheckServiceAssembly =
 >     "Microsoft.Extensions.Diagnostics.HealthChecks.HealthCheckPublisherHostedService";
 >
 > services.TryAddEnumerable(
->     ServiceDescriptor.Singleton(typeof(IHostedService), 
+>     ServiceDescriptor.Singleton(typeof(IHostedService),
 >         typeof(HealthCheckPublisherOptions).Assembly
 >             .GetType(HealthCheckServiceAssembly)));
 > ```

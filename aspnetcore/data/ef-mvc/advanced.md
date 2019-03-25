@@ -7,12 +7,12 @@ ms.custom: mvc
 ms.date: 02/05/2019
 ms.topic: tutorial
 uid: data/ef-mvc/advanced
-ms.openlocfilehash: f02aa1d6d8e431e7e2613835b3216786aed4ecd4
-ms.sourcegitcommit: 5e3797a02ff3c48bb8cb9ad4320bfd169ebe8aba
+ms.openlocfilehash: c4804bd6614c7d5a2a30c8f59a645f603929ad52
+ms.sourcegitcommit: 57792e5f594db1574742588017c708350958bdf0
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56103100"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58264591"
 ---
 # <a name="tutorial-learn-about-advanced-scenarios---aspnet-mvc-with-ef-core"></a>자습서: 고급 시나리오에 대해 알아보기 - ASP.NET MVC 및 EF Core 사용
 
@@ -81,7 +81,7 @@ Contoso University 관리자가 모든 과정의 학점 수를 변경하는 등 
 
 ![[Course Credits(과정 학점)] 페이지 업데이트](advanced/_static/update-credits.png)
 
-*CoursesContoller.cs*에서 HttpGet 및 HttpPost에 대한 UpdateCourseCredits 메서드를 추가합니다.
+*CoursesController.cs*에서 HttpGet 및 HttpPost의 UpdateCourseCredits 메서드를 추가합니다.
 
 [!code-csharp[](intro/samples/cu/Controllers/CoursesController.cs?name=snippet_UpdateGet)]
 
@@ -202,6 +202,7 @@ Entity Framework Core 소스는 [https://github.com/aspnet/EntityFrameworkCore](
 Tom Dykstra 및 Rick Anderson(twitter @RickAndMSFT)이 본 자습서를 작성했습니다. Rowan Miller, Diego Vega 및 기타 Entity Framework 팀원은 코드를 검토해 주었고 자습서에 사용할 코드를 작성하는 동안 발생하는 디버그 문제를 도와주었습니다. John Parente 및 Paul Goldman은 ASP.NET Core 2.2 자습서를 업데이트하는 작업을 수행했습니다.
 
 <a id="common-errors"></a>
+
 ## <a name="troubleshoot-common-errors"></a>일반적인 오류 문제 해결
 
 ### <a name="contosouniversitydll-used-by-another-process"></a>다른 프로세스에 ContosoUniversity.dll 사용됨

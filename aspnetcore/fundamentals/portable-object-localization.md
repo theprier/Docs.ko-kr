@@ -1,26 +1,26 @@
 ---
 title: ASP.NET Core에서 이식 가능 개체 지역화 구성
 author: sebastienros
-description: 이 문서는 이식 가능 개체 파일을 소개하고 ASP.NET Core 응용 프로그램에서 Orchard Core 프레임워크와 사용하는 단계를 간략하게 설명합니다.
+description: 이 문서는 이식 가능 개체 파일을 소개하고 ASP.NET Core 애플리케이션에서 Orchard Core 프레임워크와 사용하는 단계를 간략하게 설명합니다.
 ms.author: scaddie
 ms.date: 09/26/2017
 uid: fundamentals/portable-object-localization
-ms.openlocfilehash: c9f892f5a886d7167b4705595ed2277279495201
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: 466759b30e756a7cac8abab7352025df0462bb6f
+ms.sourcegitcommit: 5f299daa7c8102d56a63b214b9a34cc4bc87bc42
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50207630"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58210095"
 ---
 # <a name="configure-portable-object-localization-in-aspnet-core"></a>ASP.NET Core에서 이식 가능 개체 지역화 구성
 
 작성자: [Sébastien Ros](https://github.com/sebastienros) 및 [Scott Addie](https://twitter.com/Scott_Addie)
 
-이 문서는 ASP.NET Core 응용 프로그램에서 PO(이식 가능 개체) 파일을 [Orchard Core](https://github.com/OrchardCMS/OrchardCore) 프레임워크와 함께 사용하는 단계를 안내합니다.
+이 문서는 ASP.NET Core 애플리케이션에서 PO(이식 가능 개체) 파일을 [Orchard Core](https://github.com/OrchardCMS/OrchardCore) 프레임워크와 함께 사용하는 단계를 안내합니다.
 
 **참고:** Orchard Core는 Microsoft 제품이 아닙니다. 따라서 Microsoft는 이 기능에 대한 지원을 제공하지 않습니다.
 
-[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/localization/sample/POLocalization)([다운로드 방법](xref:index#how-to-download-a-sample))
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/localization/sample/POLocalization) ([다운로드 방법](xref:index#how-to-download-a-sample))
 
 ## <a name="what-is-a-po-file"></a>PO 파일이란?
 
@@ -29,7 +29,7 @@ PO 파일은 지정된 언어에 대한 번역된 문자열을 포함하는 텍�
 - PO 파일은 *.resx* 파일처럼 컴파일되지 않습니다. 이와 같이 특수화된 도구 및 빌드 단계는 필요하지 않습니다.
 - PO 파일은 공동 온라인 편집 도구와 함께 잘 작동합니다.
 
-### <a name="example"></a>예
+### <a name="example"></a>예제
 
 복수 형태로 하나를 포함하여 프랑스어로 두 개의 문자열에 대한 번역을 포함하는 샘플 PO 파일은 다음과 같습니다.
 
@@ -49,21 +49,21 @@ msgstr[1] "Les adresses email sont \"{0}\""
 
 이 예제에서는 다음 구문을 사용합니다.
 
-- `#:`: 변환되는 문자열의 컨텍스트를 나타내는 설명입니다. 동일한 문자열은 사용되는 위치에 따라 다르게 변환될 수 있습니다.
+- `#:`: 변환되는 문자열의 컨텍스트를 나타내는 주석입니다. 동일한 문자열은 사용되는 위치에 따라 다르게 변환될 수 있습니다.
 - `msgid`: 번역되지 않은 문자열입니다.
 - `msgstr`: 번역된 문자열입니다.
 
 복수화 지원의 경우 더 많은 항목을 정의할 수 있습니다.
 
 - `msgid_plural`: 번역되지 않은 복수형 문자열입니다.
-- `msgstr[0]`: 사례 0에 대한 번역된 문자열입니다.
-- `msgstr[N]`: 사례 N에 대한 번역된 문자열입니다.
+- `msgstr[0]`: 사례 0의 번역된 문자열입니다.
+- `msgstr[N]`: 사례 N의 번역된 문자열입니다.
 
 PO 파일 사양은 [여기](https://www.gnu.org/savannah-checkouts/gnu/gettext/manual/html_node/PO-Files.html)에서 찾을 수 있습니다.
 
 ## <a name="configuring-po-file-support-in-aspnet-core"></a>ASP.NET Core에서 PO 파일 구성 지원
 
-이 예제는 Visual Studio 2017 프로젝트 템플릿에서 생성된 ASP.NET Core MVC 응용 프로그램을 기반으로 합니다.
+이 예제는 Visual Studio 2017 프로젝트 템플릿에서 생성된 ASP.NET Core MVC 애플리케이션을 기반으로 합니다.
 
 ### <a name="referencing-the-package"></a>패키지 참조
 
@@ -91,15 +91,15 @@ PO 파일 사양은 [여기](https://www.gnu.org/savannah-checkouts/gnu/gettext/
 
 ### <a name="creating-a-po-file"></a>PO 파일 만들기
 
-응용 프로그램 루트 폴더에 *<culture code>.po*라는 파일을 만듭니다. 이 예제에서는 프랑스어가 사용되므로 파일 이름은 *fr.po*입니다.
+애플리케이션 루트 폴더에 *\<culture code>.po*라는 파일을 만듭니다. 이 예제에서는 프랑스어가 사용되므로 파일 이름은 *fr.po*입니다.
 
 [!code-text[](localization/sample/POLocalization/fr.po)]
 
 이 파일은 번역할 문자열 및 프랑스어로 번역된 문자열 모두를 저장합니다. 필요한 경우 번역은 해당 부모 문화권으로 되돌립니다. 이 예제에서 요청된 문화권이 `fr-FR` 또는 `fr-CA`인 경우 *fr.po* 파일이 사용됩니다.
 
-### <a name="testing-the-application"></a>응용 프로그램 테스트
+### <a name="testing-the-application"></a>애플리케이션 테스트
 
-응용 프로그램을 실행하고 `/Home/About` URL로 이동합니다. 텍스트 **Hello world!** 가 표시됩니다.
+애플리케이션을 실행하고 `/Home/About` URL로 이동합니다. 텍스트 **Hello world!** 가 표시됩니다.
 
 `/Home/About?culture=fr-FR` URL로 이동합니다. 텍스트 **Bonjour le monde!** 가 표시됩니다.
 
@@ -187,7 +187,7 @@ Existuje 5 položek.
 
 ### <a name="contextualizing-strings"></a>문자열 맥락화
 
-응용 프로그램은 종종 여러 위치에서 번역되는 문자열을 포함합니다. 동일한 문자열은 앱 내의 특정 위치에서 다른 번역을 가질 수 있습니다(Razor 뷰 또는 클래스 파일). PO 파일은 표시되는 문자열을 분류하는 데 사용될 수 있는 파일 컨텍스트의 개념을 지원합니다. 파일 컨텍스트를 사용하여 문자열은 파일 컨텍스트(또는 파일 컨텍스트 부족)에 따라 다르게 번역될 수 있습니다.
+애플리케이션은 종종 여러 위치에서 번역되는 문자열을 포함합니다. 동일한 문자열은 앱 내의 특정 위치에서 다른 번역을 가질 수 있습니다(Razor 뷰 또는 클래스 파일). PO 파일은 표시되는 문자열을 분류하는 데 사용될 수 있는 파일 컨텍스트의 개념을 지원합니다. 파일 컨텍스트를 사용하여 문자열은 파일 컨텍스트(또는 파일 컨텍스트 부족)에 따라 다르게 번역될 수 있습니다.
 
 PO 지역화 서비스는 전체 클래스 또는 문자열을 변역할 때 사용되는 뷰의 이름을 사용합니다. `msgctxt` 항목의 값을 설정하여 수행됩니다.
 

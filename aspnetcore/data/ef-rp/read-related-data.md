@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/24/2018
 uid: data/ef-rp/read-related-data
-ms.openlocfilehash: 140f482e136acf4daba1248fecc87e06db6866f3
-ms.sourcegitcommit: 036d4b03fd86ca5bb378198e29ecf2704257f7b2
+ms.openlocfilehash: a264cdaf0f577be6ea2043935b485f4fd16e0229
+ms.sourcegitcommit: 57792e5f594db1574742588017c708350958bdf0
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57345896"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58264952"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---read-related-data---6-of-8"></a>ASP.NET Core에서 EF Core를 사용한 Razor 페이지 - 관련 데이터 읽기 - 6/8
 
@@ -65,9 +65,10 @@ ms.locfileid: "57345896"
 * `Department` 엔터티에서 `Name` 속성을 가져옵니다.
 * `Department` 엔터티는 `Course.Department` 탐색 속성에서 가져옵니다.
 
-![ourse.Department](read-related-data/_static/dep-crs.png)
+![Course.Department](read-related-data/_static/dep-crs.png)
 
 <a name="scaffold"></a>
+
 ### <a name="scaffold-the-course-model"></a>과정 모델 스캐폴드
 
 # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio) 
@@ -115,6 +116,7 @@ ms.locfileid: "57345896"
 ![과정 인덱스 페이지](read-related-data/_static/courses-index.png)
 
 <a name="select"></a>
+
 ### <a name="loading-related-data-with-select"></a>Select로 관련된 데이터 로드
 
 `OnGetAsync` 메서드는 `Include` 메서드로 관련된 데이터를 로드합니다.
@@ -187,7 +189,6 @@ ms.locfileid: "57345896"
 * `OfficeAssignment`: [강사 뷰](#IP)에 표시됩니다.
 * `CourseAssignments`: 가르친 과정을 가져옵니다.
 
-
 ### <a name="update-the-instructors-index-page"></a>강사 인덱스 페이지 업데이트
 
 *Pages/Instructors/Index.cshtml*을 다음 표시로 업데이트합니다.
@@ -198,11 +199,11 @@ ms.locfileid: "57345896"
 
 * `page` 지시문을 `@page`에서 `@page "{id:int?}"`로 업데이트합니다. `"{id:int?}"`는 경로 템플릿입니다. 경로 템플릿은 데이터를 라우팅할 URL에서 정수 쿼리 문자열을 변경합니다. 예를 들어, `@page` 지시문만 있는 강사에 대해 **Select** 링크를 클릭하면 다음과 같은 URL이 생성됩니다.
 
-    `http://localhost:1234/Instructors?id=2`
+  `http://localhost:1234/Instructors?id=2`
 
-    page 지시문이 `@page "{id:int?}"`이면, 이전 URL은 다음과 같습니다.
+  page 지시문이 `@page "{id:int?}"`이면, 이전 URL은 다음과 같습니다.
 
-    `http://localhost:1234/Instructors/2`
+  `http://localhost:1234/Instructors/2`
 
 * 페이지 제목은 **Instructors(강사)** 입니다.
 * `item.OfficeAssignment`가 Null이 아닌 경우에만 `item.OfficeAssignment.Location`을 표시하는 **Office** 열을 추가했습니다. 이는 일대영 또는 일 관계이기 때문에 관련된 OfficeAssignment 엔터티가 있을 수 없습니다.

@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 02/28/2019
 uid: host-and-deploy/azure-iis-errors-reference
-ms.openlocfilehash: 1c8cb31b306b38ec17596af0a84f22ca0e3d911c
-ms.sourcegitcommit: 036d4b03fd86ca5bb378198e29ecf2704257f7b2
+ms.openlocfilehash: 053dcce7f8c59b7afe7e52d2f704c992afce0b67
+ms.sourcegitcommit: 57792e5f594db1574742588017c708350958bdf0
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57346228"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58265168"
 ---
 # <a name="common-errors-reference-for-azure-app-service-and-iis-with-aspnet-core"></a>ASP.NET Core를 사용하는 Azure App Service 및 IIS에 대한 일반적인 오류 참조
 
@@ -61,7 +61,7 @@ OS를 업그레이드하는 동안 **C:\Windows\SysWOW64\inetsrv** 디렉터리�
 
 Azure App Services에서 호스트하는 앱에 적용됩니다.
 
-* **브라우저:** HTTP 오류 500.0 - ANCM In-Process 처리기 로드 실패 
+* **브라우저:** HTTP 오류 500.0 - ANCM In-Process 처리기 로드 실패
 
 * **애플리케이션 로그:** hostfxr를 호출하여 inprocess 요청 처리기를 찾는 데 실패했으며 네이티브 종속성을 찾지 못했습니다. inprocess 요청 처리기를 찾을 수 없습니다. hostfxr 호출에서 캡처된 출력: 호환 가능한 프레임워크 버전을 찾을 수 없습니다. 지정된 프레임워크 ‘Microsoft.AspNetCore.App’, 버전 ‘{VERSION}-preview-\*’를 찾을 수 없습니다. ‘/LM/W3SVC/1416782824/ROOT’ 애플리케이션을 시작하지 못했습니다. 오류 코드 ‘0x8000ffff’.
 
@@ -80,7 +80,7 @@ Azure App Services에서 호스트하는 앱에 적용됩니다.
   * ASP.NET Core {RUNTIME VERSION}(x86) 런타임
   * ASP.NET Core {RUNTIME VERSION}(x64) 런타임
 
-  앱을 다시 시작합니다. 앱이 다시 시작될 때까지 몇 초간 기다립니다. 
+  앱을 다시 시작합니다. 앱이 다시 시작될 때까지 몇 초간 기다립니다.
 
 * 미리 보기 런타임에서 앱을 실행 중이며 32비트(x86) 및 64비트(x64) [사이트 확장](xref:host-and-deploy/azure-apps/index#install-the-preview-site-extension)이 둘 다 설치된 경우 앱의 비트 수와 일치하지 않는 사이트 확장을 제거합니다. 사이트 확장을 제거한 후 앱을 다시 시작합니다. 앱이 다시 시작될 때까지 몇 초간 기다립니다.
 
@@ -201,7 +201,7 @@ IIS 웹 사이트 **기본 설정**과 실제 앱 폴더를 확인합니다. 앱
   ```xml
   <section name="aspNetCore" overrideModeDefault="Allow" />
   ```
-  
+
   또는 최신 버전의 ASP.NET Core 호스팅 번들을 설치합니다. 최신 버전은 지원되는 이전 버전의 ASP.NET Core 앱과 호환 가능합니다.
 
 ## <a name="incorrect-processpath-missing-path-variable-hosting-bundle-not-installed-systemiis-not-restarted-vc-redistributable-not-installed-or-dotnetexe-access-violation"></a>잘못된 processPath, 누락된 PATH 변수, 설치되지 않은 호스팅 번들, 다시 시작되지 않은 시스템/IIS, 설치되지 않은 VC++ 재배포 가능 패키지 또는 dotnet.exe 액세스 위반

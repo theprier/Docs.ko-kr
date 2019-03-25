@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 03/06/2019
 uid: host-and-deploy/azure-apps/troubleshoot
-ms.openlocfilehash: 326f66070d51c04298abbf6292d2d350414311de
-ms.sourcegitcommit: 34bf9fc6ea814c039401fca174642f0acb14be3c
+ms.openlocfilehash: 36c2bdfa585a0fd54ca93bf4c0edb4cf6f7d934a
+ms.sourcegitcommit: 57792e5f594db1574742588017c708350958bdf0
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57841405"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58265442"
 ---
 # <a name="troubleshoot-aspnet-core-on-azure-app-service"></a>Azure App Service에서 ASP.NET Core 문제 해결
 
@@ -23,8 +23,7 @@ ms.locfileid: "57841405"
 
 ## <a name="app-startup-errors"></a>앱 시작 오류
 
-**502.5 프로세스 실패**  
-작업자 프로세스가 실패합니다. 앱이 시작되지 않습니다.
+**502.5 프로세스 실패** 작업자 프로세스가 실패합니다. 앱이 시작되지 않습니다.
 
 [ASP.NET Core 모듈](xref:host-and-deploy/aspnet-core-module)이 작업자 프로세스를 시작하려고 하지만 시작할 수 없습니다. 애플리케이션 이벤트 로그를 검토하면 이 유형의 문제를 해결하는 데 도움이 될 수 있습니다. [애플리케이션 이벤트 로그](#application-event-log) 섹션에서는 로그 액세스에 대해 설명합니다.
 
@@ -32,7 +31,8 @@ ms.locfileid: "57841405"
 
 ![502.5 프로세스 실패 페이지를 보여주는 브라우저 창](troubleshoot/_static/process-failure-page.png)
 
-**500 내부 서버 오류**  
+**500 내부 서버 오류**
+
 앱이 시작되지만 오류로 인해 서버에서 요청을 처리할 수 없습니다.
 
 이 오류는 시작하는 동안 또는 응답을 만드는 동안 앱 코드 내에서 발생합니다. 응답에 콘텐츠가 없거나 응답이 브라우저에 ‘500 내부 서버 오류’로 표시될 수 있습니다. 애플리케이션 이벤트 로그는 일반적으로 앱이 정상적으로 시작되었음을 나타냅니다. 서버의 관점에서 보면 맞습니다. 앱이 시작되었지만 유효한 응답을 생성할 수 없습니다. [Kudu 콘솔에서 앱을 실행](#run-the-app-in-the-kudu-console)하거나 [ASP.NET Core 모듈 stdout 로그를 사용](#aspnet-core-module-stdout-log)하여 문제를 해결합니다.
@@ -83,15 +83,16 @@ ASP.NET Core 모듈은 기본 *startupTimeLimit*이 120초로 구성됩니다. �
      ```console
      dotnet .\{ASSEMBLY NAME}.dll
      ```
+
    * 앱이 [자체 포함 배포](/dotnet/core/deploying/#self-contained-deployments-scd)인 경우:
 
      ```console
      {ASSEMBLY NAME}.exe
      ```
-   
+
 오류를 표시하는 앱의 콘솔 출력이 Kudu 콘솔에 파이프됩니다.
-   
-##### <a name="framework-depdendent-deployment-running-on-a-preview-release"></a>미리 보기 릴리스에서 실행되는 프레임워크 종속 배포
+
+##### <a name="framework-dependent-deployment-running-on-a-preview-release"></a>미리 보기 릴리스에서 실행되는 프레임워크 종속 배포
 
 ASP.NET Core {VERSION}(x86) 런타임 사이트 확장을 설치해야 합니다.
 
@@ -113,7 +114,7 @@ ASP.NET Core {VERSION}(x86) 런타임 사이트 확장을 설치해야 합니다
 
 오류를 표시하는 앱의 콘솔 출력이 Kudu 콘솔에 파이프됩니다.
 
-##### <a name="framework-depdendent-deployment-running-on-a-preview-release"></a>미리 보기 릴리스에서 실행되는 프레임워크 종속 배포
+##### <a name="framework-dependent-deployment-running-on-a-preview-release"></a>미리 보기 릴리스에서 실행되는 프레임워크 종속 배포
 
 ASP.NET Core {VERSION}(x64) 런타임 사이트 확장을 설치해야 합니다.
 
@@ -170,7 +171,7 @@ ASP.NET Core 모듈 디버그 로그는 ASP.NET Core 모듈에서 추가로 심�
 
 문제 해결이 완료되면 디버그 로깅을 사용하지 않도록 설정합니다.
 
-1. 향상된 디버그 로그를 비활성하려면 다음 중 하나를 수행합니다.
+1. 향상된 디버그 로그를 사용하지 않도록 설정하려면 다음 중 하나를 수행합니다.
    * *web.config* 파일에서 `<handlerSettings>`를 로컬에서 제거하고 앱을 다시 배포합니다.
    * Kudu 콘솔을 사용하여 *web.config* 파일을 편집하고 `<handlerSettings>` 섹션을 제거합니다. 파일을 저장합니다.
 
@@ -230,7 +231,7 @@ stdout 로깅을 사용할 수 없는 경우 다음 단계를 따릅니다.
 
 1. Azure Portal에서 **진단 로그** 블레이드를 선택합니다.
 1. **애플리케이션 로깅(파일 시스템)** 및 **자세한 오류 메시지**에 대해 **켜기** 스위치를 선택합니다. 블레이드 위쪽에 있는 **저장** 단추를 선택합니다.
-1. FREB(실패한 요청 이벤트 버퍼링) 로깅이라고도 하는 실패한 요청 추적을 포함하려면 **실패한 요청 추적**에 대해 **켜기** 스위치를 선택합니다. 
+1. FREB(실패한 요청 이벤트 버퍼링) 로깅이라고도 하는 실패한 요청 추적을 포함하려면 **실패한 요청 추적**에 대해 **켜기** 스위치를 선택합니다.
 1. 포털의 **진단 로그** 블레이드 바로 아래에 나열된 **로그 스트림** 블레이드를 선택합니다.
 1. 앱에 대한 요청을 실행합니다.
 1. 로그 스트림 데이터 내에 오류의 원인이 표시됩니다.

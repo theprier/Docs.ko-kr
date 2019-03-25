@@ -4,14 +4,14 @@ author: guardrex
 description: ASP.NET Core 앱의 IIS(인터넷 정보 서비스) 배포에 대한 문제 진단 방법을 알아봅니다.
 ms.author: riande
 ms.custom: mvc
-ms.date: 03/06/2019
+ms.date: 03/14/2019
 uid: host-and-deploy/iis/troubleshoot
-ms.openlocfilehash: 2f36ae2bda8537e91a3bc925505986bdd6a22a47
-ms.sourcegitcommit: 34bf9fc6ea814c039401fca174642f0acb14be3c
+ms.openlocfilehash: 1fa90737aadebe3f714c702fbce649629d79dcd4
+ms.sourcegitcommit: 57792e5f594db1574742588017c708350958bdf0
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57841555"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58264549"
 ---
 # <a name="troubleshoot-aspnet-core-on-iis"></a>IIS에서 ASP.NET Core 문제 해결
 
@@ -33,17 +33,13 @@ Visual Studio에서 ASP.NET Core 프로젝트는 기본적으로 디버그 중�
 
 추가 문제 해결 항목:
 
-<xref:host-and-deploy/azure-apps/troubleshoot>  
-App Service는 [ASP.NET Core 모듈](xref:host-and-deploy/aspnet-core-module)과 IIS를 사용하여 앱을 호스트하지만 App Service 관련 지침은 전용 항목을 참조하세요.
+<xref:host-and-deploy/azure-apps/troubleshoot>App Service는 [ASP.NET Core 모듈](xref:host-and-deploy/aspnet-core-module)과 IIS를 사용하여 앱을 호스트하지만 App Service 관련 지침은 전용 항목을 참조하세요.
 
-<xref:fundamentals/error-handling>  
-로컬 시스템에서 개발하는 동안 ASP.NET Core 앱에서 오류를 처리하는 방법을 알아봅니다.
+<xref:fundamentals/error-handling>로컬 시스템에서 개발하는 동안 ASP.NET Core 앱에서 오류를 처리하는 방법을 알아봅니다.
 
-[Visual Studio를 사용하여 디버깅하는 자세한 내용](/visualstudio/debugger/getting-started-with-the-debugger)  
-이 항목에서는 Visual Studio 디버거의 기능을 소개합니다.
+[Visual Studio를 사용하여 디버그하는 방법 알아보기](/visualstudio/debugger/getting-started-with-the-debugger) 이 항목에서는 Visual Studio 디버거의 기능을 소개합니다.
 
-[Debugging with Visual Studio Code](https://code.visualstudio.com/docs/editor/debugging)(Visual Studio Code를 사용한 디버깅)  
-Visual Studio Code에 기본 제공되는 디버깅 지원에 대해 알아봅니다.
+[Visual Studio Code를 사용한 디버깅](https://code.visualstudio.com/docs/editor/debugging) Visual Studio Code에 기본 제공되는 디버깅 지원을 알아봅니다.
 
 ## <a name="app-startup-errors"></a>앱 시작 오류
 
@@ -51,7 +47,7 @@ Visual Studio Code에 기본 제공되는 디버깅 지원에 대해 알아봅�
 
 작업자 프로세스가 실패합니다. 앱이 시작되지 않습니다.
 
-ASP.NET Core 모듈이 백엔드 dotnet 프로세스를 시작하려고 하지만 시작할 수 없습니다. 프로세스 시작 실패의 원인은 일반적으로 [애플리케이션 이벤트 로그](#application-event-log) 및 [ASP.NET Core 모듈 stdout 로그](#aspnet-core-module-stdout-log)의 항목에서 확인할 수 있습니다. 
+ASP.NET Core 모듈이 백엔드 dotnet 프로세스를 시작하려고 하지만 시작할 수 없습니다. 프로세스 시작 실패의 원인은 일반적으로 [애플리케이션 이벤트 로그](#application-event-log) 및 [ASP.NET Core 모듈 stdout 로그](#aspnet-core-module-stdout-log)의 항목에서 확인할 수 있습니다.
 
 일반적인 실패 조건은 존재하지 않는 ASP.NET Core 공유 프레임워크의 버전을 대상으로 하여 앱이 잘못 구성되었다는 것입니다. 대상 머신에 설치된 ASP.NET Core 공유 프레임워크의 버전을 확인합니다.
 
@@ -65,7 +61,7 @@ ASP.NET Core 모듈이 백엔드 dotnet 프로세스를 시작하려고 하지�
 
 작업자 프로세스가 실패합니다. 앱이 시작되지 않습니다.
 
-ASP.NET Core 모듈이 .NET Core CLR in-process를 시작하려고 하지만 시작할 수 없습니다. 프로세스 시작 실패의 원인은 일반적으로 [애플리케이션 이벤트 로그](#application-event-log) 및 [ASP.NET Core 모듈 stdout 로그](#aspnet-core-module-stdout-log)의 항목에서 확인할 수 있습니다. 
+ASP.NET Core 모듈이 .NET Core CLR in-process를 시작하려고 하지만 시작할 수 없습니다. 프로세스 시작 실패의 원인은 일반적으로 [애플리케이션 이벤트 로그](#application-event-log) 및 [ASP.NET Core 모듈 stdout 로그](#aspnet-core-module-stdout-log)의 항목에서 확인할 수 있습니다.
 
 일반적인 실패 조건은 존재하지 않는 ASP.NET Core 공유 프레임워크의 버전을 대상으로 하여 앱이 잘못 구성되었다는 것입니다. 대상 머신에 설치된 ASP.NET Core 공유 프레임워크의 버전을 확인합니다.
 
@@ -82,7 +78,7 @@ ASP.NET Core 모듈이 .NET Core CLR을 찾지 못하고 in-process 요청 처�
 
 작업자 프로세스가 실패합니다. 앱이 시작되지 않습니다.
 
-ASP.NET Core 모듈이 out-of-process 호스팅 요청 처리기를 찾지 못했습니다. *aspnetcorev2_outofprocess.dll*이 *aspnetcorev2.dll* 옆의 하위 폴더에 있는지 확인하세요. 
+ASP.NET Core 모듈이 out-of-process 호스팅 요청 처리기를 찾지 못했습니다. *aspnetcorev2_outofprocess.dll*이 *aspnetcorev2.dll* 옆의 하위 폴더에 있는지 확인하세요.
 
 ::: moniker-end
 
@@ -172,7 +168,7 @@ stdout 로그를 사용하고 보려면:
 
 1. 호스팅 시스템에서 사이트의 배포 폴더로 이동합니다.
 1. *logs* 폴더가 없으면 폴더를 만듭니다. MSBuild를 사용하여 배포에서 *logs* 폴더를 자동으로 만드는 방법에 대한 지침은 [디렉터리 구조](xref:host-and-deploy/directory-structure) 항목을 참조하세요.
-1. *web.config* 파일을 편집합니다. **stdoutLogEnabled**를 `true`로 설정하고 **stdoutLogFile** 경로가 *logs* 폴더를 가리키도록 변경합니다(예: `.\logs\stdout`). 경로의 `stdout`은 로그 파일 이름 접두사입니다. 로그가 만들어질 때 타임스탬프, 프로세스 ID 및 파일 확장명이 자동으로 추가됩니다. `stdout`을 파일 이름 접두사로 사용하여 일반적인 로그 파일의 이름은 *stdout_20180205184032_5412.log*로 지정됩니다. 
+1. *web.config* 파일을 편집합니다. **stdoutLogEnabled**를 `true`로 설정하고 **stdoutLogFile** 경로가 *logs* 폴더를 가리키도록 변경합니다(예: `.\logs\stdout`). 경로의 `stdout`은 로그 파일 이름 접두사입니다. 로그가 만들어질 때 타임스탬프, 프로세스 ID 및 파일 확장명이 자동으로 추가됩니다. `stdout`을 파일 이름 접두사로 사용하여 일반적인 로그 파일의 이름은 *stdout_20180205184032_5412.log*로 지정됩니다.
 1. 애플리케이션 풀의 ID에 *로그* 폴더에 대한 쓰기 권한이 있는지 확인합니다.
 1. 업데이트된 *web.config* 파일을 저장합니다.
 1. 앱에 대한 요청을 실행합니다.
@@ -245,24 +241,27 @@ stdout 로그를 사용하고 보려면:
 [WER(Windows 오류 보고)](/windows/desktop/wer/windows-error-reporting)에서 덤프를 얻고 분석합니다.
 
 1. `c:\dumps`에 크래시 덤프 파일을 저장할 폴더를 만듭니다. 앱 풀에는 폴더에 대한 쓰기 액세스 권한이 있어야 합니다.
-1. [EnableDumps PowerShell 스크립트](https://github.com/aspnet/Docs/tree/master/aspnetcore/host-and-deploy/troubleshoot/scripts/EnableDumps.ps1) 실행:
+1. [EnableDumps PowerShell 스크립트](https://github.com/aspnet/Docs/blob/master/aspnetcore/host-and-deploy/iis/troubleshoot/scripts/EnableDumps.ps1) 실행:
    * 앱에서 [in-process 호스팅 모델](xref:fundamentals/servers/index#in-process-hosting-model)을 사용하는 경우 *w3wp.exe*에 대한 스크립트 실행:
 
      ```console
      .\EnableDumps w3wp.exe c:\dumps
      ```
+
    * 앱에서 [out-of-process 호스팅 모델](xref:fundamentals/servers/index#out-of-process-hosting-model)을 사용하는 경우 *dotnet.exe*에 대한 스크립트 실행:
 
      ```console
      .\EnableDumps dotnet.exe c:\dumps
      ```
+
 1. 충돌이 발생하는 조건에서 앱을 실행합니다.
-1. 충돌이 발생한 후 [DisableDumps PowerShell 스크립트](https://github.com/aspnet/Docs/tree/master/aspnetcore/host-and-deploy/troubleshoot/scripts/DisableDumps.ps1) 실행:
+1. 충돌이 발생한 후 [DisableDumps PowerShell 스크립트](https://github.com/aspnet/Docs/blob/master/aspnetcore/host-and-deploy/iis/troubleshoot/scripts/DisableDumps.ps1) 실행:
    * 앱에서 [in-process 호스팅 모델](xref:fundamentals/servers/index#in-process-hosting-model)을 사용하는 경우 *w3wp.exe*에 대한 스크립트 실행:
 
      ```console
      .\DisableDumps w3wp.exe
      ```
+
    * 앱에서 [out-of-process 호스팅 모델](xref:fundamentals/servers/index#out-of-process-hosting-model)을 사용하는 경우 *dotnet.exe*에 대한 스크립트 실행:
 
      ```console

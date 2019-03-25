@@ -7,12 +7,12 @@ ms.custom: mvc
 ms.date: 02/04/2019
 ms.topic: tutorial
 uid: data/ef-mvc/crud
-ms.openlocfilehash: 368b1774ba977ec8020a02d48705200fd54c3bbd
-ms.sourcegitcommit: 5e3797a02ff3c48bb8cb9ad4320bfd169ebe8aba
+ms.openlocfilehash: 83f5d4bdc3d5872109649818b61a6dbb656fd8be
+ms.sourcegitcommit: 57792e5f594db1574742588017c708350958bdf0
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56102983"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58264829"
 ---
 # <a name="tutorial-implement-crud-functionality---aspnet-mvc-with-ef-core"></a>자습서: CRUD 기능 구현 - ASP.NET MVC 및 EF Core 사용
 
@@ -123,6 +123,7 @@ ID는 행이 삽입될 때 SQL 서버가 자동으로 설정하는 기본 키 �
 `ValidateAntiForgeryToken` 특성은 CSRF(사이트 간 요청 위조) 공격을 방지하도록 돕습니다. 토큰은 [FormTagHelper](xref:mvc/views/working-with-forms#the-form-tag-helper)에 의한 보기로 자동으로 주입되며 사용자에 의해 양식이 제출될 때 포함됩니다. 토큰은 `ValidateAntiForgeryToken` 특성으로 유효성이 검사됩니다. CSRF에 대한 자세한 내용은 [위조 방지 요청](../../security/anti-request-forgery.md)을 참조하세요.
 
 <a id="overpost"></a>
+
 ### <a name="security-note-about-overposting"></a>초과 게시에 대한 보안 정보
 
 스캐폴드된 코드가 `Create` 메서드에 포함하는 `Bind` 특성은 만들기 시나리오에서 초과 게시를 방지하는 한 가지 방법입니다. 예를 들어 학생 엔터티가 이 웹 페이지에서 설정하는 것을 원하지 않는 `Secret` 속성을 포함한다고 가정합니다.

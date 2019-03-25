@@ -4,14 +4,14 @@ author: rick-anderson
 description: 태그 도우미란 무엇이며 ASP.NET Core에서 어떻게 사용하는지 알아봅니다.
 ms.author: riande
 ms.custom: H1Hack27Feb2017
-ms.date: 2/14/2018
+ms.date: 03/18/2019
 uid: mvc/views/tag-helpers/intro
-ms.openlocfilehash: 4b9bceb3ce0153af2d9a30c402febe09707145b7
-ms.sourcegitcommit: f5d403004f3550e8c46585fdbb16c49e75f495f3
+ms.openlocfilehash: 7768dd45bdbe40c16176d57a76823cbb9dd0b91b
+ms.sourcegitcommit: 57792e5f594db1574742588017c708350958bdf0
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "49477308"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58264610"
 ---
 # <a name="tag-helpers-in-aspnet-core"></a>ASP.NET Core의 태그 도우미
 
@@ -122,6 +122,7 @@ FQN을 사용하여 보기에 태그 도우미를 추가하려면 먼저 FQN(`Au
 ```cshtml
 @tagHelperPrefix th:
 ```
+
 아래의 코드 이미지에서 태그 도우미 접두사가 `th:`로 지정되고, 따라서 `th:` 접두사를 사용하는 요소만 태그 도우미를 지원합니다(태그 도우미 지원 요소에는 고유한 글꼴이 있음). `<label>` 및 `<input>` 요소는 태그 도우미 접두사가 있고 태그 도우미를 사용할 수 있지만 `<span>` 요소는 그렇지 않습니다.
 
 ![이미지](intro/_static/thp.png)
@@ -186,37 +187,21 @@ IntelliSense는 페이지에서 모델에 사용할 수 있는 속성과 메서�
 new {@class="caption"}
 ```
 
-특성을 표시하는 데 사용되는 익명 개체입니다. <strong>클래스</strong>는 C#에서 예약된 키워드이므로 `@` 기호를 사용하여 C#이 "@class="를 기호(속성 이름)로 해석하게 합니다. 프런트 엔드 디자이너(HTML/CSS/JavaScript 및 기타 클라이언트에 익숙하지만 C# 및 Razor에는 익숙하지 않은 사람)에게는 대부분의 줄이 이질적입니다. IntelliSense의 도움 없이 전체 줄을 작성해야 합니다.
+특성을 표시하는 데 사용되는 익명 개체입니다. `class`는 C#에서 예약된 키워드이므로 `@` 기호를 사용하여 C#이 `@class=`를 기호(속성 이름)로 해석하게 합니다. 프런트 엔드 디자이너(HTML/CSS/JavaScript 및 기타 클라이언트에 익숙하지만 C# 및 Razor에는 익숙하지 않은 사람)에게는 대부분의 줄이 이질적입니다. IntelliSense의 도움 없이 전체 줄을 작성해야 합니다.
 
 `LabelTagHelper`를 사용하면 동일한 태그를 작성할 수 있습니다.
 
-![이미지](intro/_static/label2.png)
+```cshtml
+<label class="caption" asp-for="FirstName"></label>
+```
 
 태그 도우미 버전을 사용하면 Visual Studio 편집기에서 `<l`를 입력하는 즉시 IntelliSense는 일치하는 요소를 표시합니다.
 
 ![이미지](intro/_static/label.png)
 
-IntelliSense의 도움을 받아 전체 줄을 작성할 수 있습니다. 또한 `LabelTagHelper`는 기본적으로 `asp-for` 특성 값("FirstName")의 콘텐츠를 "First Name"으로 설정합니다. 카멜식 대/소문자 속성을 공백이 있는 속성 이름으로 구성된 문장으로 변환하며 여기서는 새로운 대문자 문자가 발생합니다. 다음 태그에서:
+IntelliSense의 도움을 받아 전체 줄을 작성할 수 있습니다.
 
-![이미지](intro/_static/label2.png)
-
-생성:
-
-```cshtml
-<label class="caption" for="FirstName">First Name</label>
-```
-
-`<label>`에 콘텐츠를 추가하면 카멜식 대/소문자-문장식 대/소문자 콘텐츠가 사용되지 않습니다. 예:
-
-![이미지](intro/_static/1stName.png)
-
-생성:
-
-```cshtml
-<label class="caption" for="FirstName">Name First</label>
-```
-
-다음 코드 이미지는 Visual Studio 2015에 포함된 기존 ASP.NET 4.5.x MVC 템플릿으로 생성한 *Views/Account/Register.cshtml* Razor 보기의 양식 부분을 보여줍니다.
+다음 코드 이미지는 Visual Studio에 포함된 ASP.NET 4.5.x MVC 템플릿으로 생성한 *Views/Account/Register.cshtml* Razor 보기의 양식 부분을 보여줍니다.
 
 ![이미지](intro/_static/regCS.png)
 

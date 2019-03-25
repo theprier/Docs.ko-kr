@@ -7,12 +7,12 @@ ms.custom: mvc
 ms.date: 02/06/2019
 ms.topic: tutorial
 uid: data/ef-mvc/intro
-ms.openlocfilehash: f7b557c8e560393ae886c46fad95c48ccbcc65b4
-ms.sourcegitcommit: 5e3797a02ff3c48bb8cb9ad4320bfd169ebe8aba
+ms.openlocfilehash: 31fca1b32942f9246e099c01669f77824edf521e
+ms.sourcegitcommit: 57792e5f594db1574742588017c708350958bdf0
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56102970"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58264843"
 ---
 # <a name="tutorial-get-started-with-ef-core-in-an-aspnet-mvc-web-app"></a>자습서: ASP.NET MVC 웹앱에서 EF Core 시작
 
@@ -316,7 +316,7 @@ SSOX에서 **(localdb) \MSSQLLocalDB > 데이터베이스**를 클릭한 다음,
 
 ![SSOX의 학생 테이블](intro/_static/ssox-student-table.png)
 
-<em>.mdf</em> 및 <em>.ldf</em> 데이터베이스 파일은 <em>C:\Users\\<yourusername></em> 폴더에 있습니다.
+*.mdf* 및 *.ldf* 데이터베이스 파일은 *C:\Users\\\<yourusername>* 폴더에 있습니다.
 
 앱 시작 시 실행되는 이니셜라이저 메서드에서 `EnsureCreated`를 호출하기 때문에 이제 `Student` 클래스에 변경 내용을 만들고, 데이터베이스를 삭제하고, 애플리케이션을 다시 시작할 수 있으며, 데이터베이스는 변경 내용에 맞도록 자동으로 다시 생성됩니다. 예를 들어 `EmailAddress` 속성을 `Student` 클래스에 추가하는 경우 다시 만들어진 테이블에 새 `EmailAddress` 열이 표시됩니다.
 
@@ -330,7 +330,7 @@ Entity Framework에서 전체 데이터베이스를 만들 수 있도록 작성�
 
 * ID 또는 classnameID로 명명된 엔터티 속성은 기본 키 속성으로 인식됩니다.
 
-* 속성 이름이 *<navigation property name><primary key property name>* 인 경우 외래 키 속성으로는 해석됩니다(예: `Student` 엔터티의 기본 키가 `ID`이므로 `Student` 탐색 속성의 경우 `StudentID`). 외래 키 속성의 이름을 단순히 *<primary key property name>* 으로 지정할 수 있습니다(예: `Enrollment` 엔터티의 기본 키가 `EnrollmentID`이므로 `EnrollmentID`).
+* 속성은 이름이 ‘\<탐색 속성 이름>\<기본 키 속성 이름>’인 경우 외래 키 속성으로 해석됩니다(예: `Student` 엔터티의 기본 키가 `ID`인 경우 `Student` 탐색 속성의 경우 `StudentID`). 외래 키 속성의 이름을 단순히 ‘\<기본 키 속성 이름>’으로 지정할 수 있습니다(예: `Enrollment` 엔터티의 기본 키가 `EnrollmentID`이므로 `EnrollmentID`).
 
 기본 동작은 재정의될 수 있습니다. 예를 들어 이 자습서의 앞부분에서 본 것처럼 테이블 이름을 명시적으로 지정할 수 있습니다. 또한 이 시리즈의 [이후의 자습서](complex-data-model.md)에서 볼 수 있듯이 열 이름을 설정하고 기본 키 또는 외래 키로 속성을 설정할 수 있습니다.
 

@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 02/27/2019
 uid: mvc/views/working-with-forms
-ms.openlocfilehash: a0fbeac51bd1bfbc50c4d369a479ce5f3091358b
-ms.sourcegitcommit: 036d4b03fd86ca5bb378198e29ecf2704257f7b2
+ms.openlocfilehash: 2d5168ed4b1e14e507262361de9fa959924b82f6
+ms.sourcegitcommit: 5f299daa7c8102d56a63b214b9a34cc4bc87bc42
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57346257"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58209559"
 ---
 # <a name="tag-helpers-in-forms-in-aspnet-core"></a>ASP.NET Core 형식의 태그 도우미
 
@@ -205,9 +205,7 @@ Type expected
 |Int|type="number"|
 |Single, Double|type="number"|
 
-
 다음 표에서는 입력 태그 도우미가 특정 입력 형식에 매핑되는 몇 가지 일반적인 [데이터 주석](/dotnet/api/microsoft.aspnetcore.mvc.dataannotations.iattributeadapter) 특성을 보여줍니다(유효성 검사 특성의 일부만 나열됨).
-
 
 |특성|입력 형식|
 |---|---|
@@ -215,10 +213,9 @@ Type expected
 |[Url]|type="url"|
 |[HiddenInput]|type="hidden"|
 |[Phone]|type="tel"|
-|[DataType(DataType.Password)]| type="password"|
-|[DataType(DataType.Date)]| type="date"|
-|[DataType(DataType.Time)]| type="time"|
-
+|[DataType(DataType.Password)]|type="password"|
+|[DataType(DataType.Date)]|type="date"|
+|[DataType(DataType.Time)]|type="time"|
 
 예제:
 
@@ -378,7 +375,7 @@ public IActionResult Edit(int id, int colorIndex)
 
 ## <a name="the-label-tag-helper"></a>레이블 태그 도우미
 
-* 식 이름의 [<label>](https://www.w3.org/wiki/HTML/Elements/label) 요소에서 레이블 캡션 및 `for` 특성을 생성합니다.
+* 식 이름의 [\<label>](https://www.w3.org/wiki/HTML/Elements/label) 요소에서 레이블 캡션 및 `for` 특성을 생성합니다.
 
 * HTML 도우미 대안: `Html.LabelFor`
 

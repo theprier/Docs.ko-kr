@@ -5,12 +5,12 @@ description: ASP.NET Core MVC를 시작하는 방법을 알아봅니다.
 ms.author: riande
 ms.date: 12/12/2018
 uid: tutorials/first-mvc-app/start-mvc
-ms.openlocfilehash: c09c06f55c4179e9e2174f0063ab7387b7e4c31b
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: dbc07558d7d7672e60e8834dc3e4e9d8aab437e3
+ms.sourcegitcommit: 57792e5f594db1574742588017c708350958bdf0
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "56899231"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58265283"
 ---
 # <a name="get-started-with-aspnet-core-mvc"></a>ASP.NET Core MVC 시작
 
@@ -36,7 +36,6 @@ ms.locfileid: "56899231"
 
 ## <a name="create-a-web-app"></a>웹앱 만들기
 
-<!-- VS -------------------------->
 # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
 
 Visual Studio에서 **파일 > 새로 만들기 > 프로젝트**를 선택합니다.
@@ -50,7 +49,7 @@ Visual Studio에서 **파일 > 새로 만들기 > 프로젝트**를 선택합니
 * 프로젝트 이름을 “MvcMovie”로 지정합니다(코드를 복사할 때 네임스페이스가 일치하도록 프로젝트 이름을 “MvcMovie”로 지정해야 함).
 * **확인** 선택
 
-![새 프로젝트 대화 상자, 왼쪽 창의 .Net core, ASP.NET Core 웹 ](start-mvc/_static/new_project2-21.png)
+![새 프로젝트 대화 상자, 왼쪽 창의 .NET Core, ASP.NET Core 웹 ](start-mvc/_static/new_project2-21.png)
 
 **새 ASP.NET Core 웹 애플리케이션(.NET Core) - MvcMovie** 대화 상자를 완료합니다.
 
@@ -58,11 +57,10 @@ Visual Studio에서 **파일 > 새로 만들기 > 프로젝트**를 선택합니
 * **웹 애플리케이션(모델-뷰-컨트롤러)** 을 선택합니다.
 * **확인**을 선택합니다.
 
-![새 프로젝트 대화 상자, 왼쪽 창의 .Net core, ASP.NET Core 웹 ](start-mvc/_static/new_project22-21.png)
+![새 프로젝트 대화 상자, 왼쪽 창의 .NET Core, ASP.NET Core 웹 ](start-mvc/_static/new_project22-21.png)
 
 Visual Studio에서는 방금 만든 MVC 프로젝트에 대한 기본 템플릿을 사용했습니다. 프로젝트 이름을 입력하고 몇 가지 옵션을 선택하면 바로 앱이 작동합니다. 다음은 기본 시작 프로젝트이며 여기서 시작하는 것이 좋습니다.
 
-<!-- Code -------------------------->
 # <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code)
 
 이 자습서에서는 VS 코드를 잘 알고 있다고 가정합니다. 자세한 내용은 [VS 코드 시작](https://code.visualstudio.com/docs) 및 [Visual Studio Code 도움말](#visual-studio-code-help)을 참조하세요.
@@ -81,7 +79,6 @@ Visual Studio에서는 방금 만든 MVC 프로젝트에 대한 기본 템플릿
   * `dotnet new mvc -o MvcMovie`: *MvcMovie* 폴더에 새 ASP.NET Core MVC 포로젝트를 만듭니다.
   * `code -r MvcMovie`: Visual Studio Code에서 *MvcMovie.csproj* 프로젝트 파일을 로드합니다.
 
-<!-- Mac -------------------------->
 # <a name="visual-studio-for-mactabvisual-studio-mac"></a>[Visual Studio for Mac](#tab/visual-studio-mac)
 
 * **파일** > **새 솔루션**을 선택합니다.
@@ -96,12 +93,11 @@ Visual Studio에서는 방금 만든 MVC 프로젝트에 대한 기본 템플릿
 
 * 프로젝트 이름을 **MvcMovie**로 지정하고 **만들기**를 선택합니다.
 
----  
-<!-- End of VS tabs -->
+---
 
 ### <a name="run-the-app"></a>앱 실행
 
-# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio) 
+# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
 
 **Ctrl-F5**를 선택하여 비디버그 모드에서 앱을 실행합니다.
 
@@ -117,7 +113,7 @@ Visual Studio에서는 방금 만든 MVC 프로젝트에 대한 기본 템플릿
 
   ![IIS Express](start-mvc/_static/iis_express.png)
 
-# <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code) 
+# <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code)
 
 Ctrl+F5를 눌러 디버거 없이 실행합니다.
 
@@ -136,7 +132,7 @@ Ctrl+F5를 눌러 디버거 없이 실행합니다.
 * 주소 표시줄에 `localhost:port#`이 표시되고 `example.com` 등은 표시되지 않습니다. 그 이유는 `localhost`가 로컬 컴퓨터의 표준 이름이기 때문입니다. Visual Studio에서 웹 프로젝트를 만들 경우 웹 서버에는 임의 포트가 사용됩니다. 앱을 실행할 경우 다른 포트 번호가 표시됩니다.
 * **실행** 메뉴 항목에서 앱을 디버그 또는 디버그 이외 모드로 시작할 수 있습니다.
 
-------
+---
 
 * **승인**을 선택하여 추적에 동의합니다. 이 앱은 개인 정보를 추적하지 않습니다. 템플릿 생성 코드는 [GDPR(일반 데이터 보호 규정)](xref:security/gdpr)을 충족할 수 있도록 자산을 포함합니다.
 
@@ -151,4 +147,4 @@ Ctrl+F5를 눌러 디버거 없이 실행합니다.
 이 자습서의 다음 부분에서는 MVC에 대해 알아보고 일부 코드 작성을 시작합니다.
 
 > [!div class="step-by-step"]
-> [다음](adding-controller.md)  
+> [다음](adding-controller.md)

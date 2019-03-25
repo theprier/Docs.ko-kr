@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 02/26/2019
 uid: host-and-deploy/aspnet-core-module
-ms.openlocfilehash: 302cfb00127c223aeb5e51e4d0a9ef3cb69b10eb
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: ead3732d2c272f0868e823726ffd415a6c74f444
+ms.sourcegitcommit: 57792e5f594db1574742588017c708350958bdf0
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "56899374"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58265456"
 ---
 # <a name="aspnet-core-module"></a>ASP.NET Core 모듈
 
@@ -72,7 +72,7 @@ In-process 호스팅 모델은 .NET Framework를 대상으로 하는 ASP.NET Cor
 * ASP.NET Core 2.2.1 이하에서 <xref:System.IO.Directory.GetCurrentDirectory*>는 앱 디렉터리가 아닌 IIS에 의해 시작된 프로세스의 작업자 디렉터리를 반환합니다(예: *w3wp.exe*에 대한 *C:\Windows\System32\inetsrv*).
 
   앱의 현재 디렉터리를 설정하는 샘플 코드는 [CurrentDirectoryHelpers 클래스](https://github.com/aspnet/Docs/tree/master/aspnetcore/host-and-deploy/aspnet-core-module/samples_snapshot/2.x/CurrentDirectoryHelpers.cs)를 참조하세요. `SetCurrentDirectory` 메서드를 호출합니다. <xref:System.IO.Directory.GetCurrentDirectory*>에 대한 후속 호출은 앱의 디렉터리를 제공합니다.
-  
+
 * In-process로 호스팅하는 경우 사용자를 초기화하기 위해 <xref:Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync*>를 내부적으로 호출하지 않습니다. 따라서 모든 인증 후에 클레임을 변환하는 데 사용되는 <xref:Microsoft.AspNetCore.Authentication.IClaimsTransformation> 구현은 기본적으로 활성화되지 않습니다. <xref:Microsoft.AspNetCore.Authentication.IClaimsTransformation> 구현으로 클레임을 변환할 때 <xref:Microsoft.Extensions.DependencyInjection.AuthenticationServiceCollectionExtensions.AddAuthentication*>을 호출하여 인증 서비스를 추가합니다.
 
   ```csharp
@@ -81,7 +81,7 @@ In-process 호스팅 모델은 .NET Framework를 대상으로 하는 ASP.NET Cor
       services.AddTransient<IClaimsTransformation, ClaimsTransformer>();
       services.AddAuthentication(IISServerDefaults.AuthenticationScheme);
   }
-  
+
   public void Configure(IApplicationBuilder app)
   {
       app.UseAuthentication();
@@ -173,10 +173,10 @@ ASP.NET Core 모듈은 사이트의 *web.config* 파일에 있는 `system.webSer
       <handlers>
         <add name="aspNetCore" path="*" verb="*" modules="AspNetCoreModuleV2" resourceType="Unspecified" />
       </handlers>
-      <aspNetCore processPath="dotnet" 
-                  arguments=".\MyApp.dll" 
-                  stdoutLogEnabled="false" 
-                  stdoutLogFile=".\logs\stdout" 
+      <aspNetCore processPath="dotnet"
+                  arguments=".\MyApp.dll"
+                  stdoutLogEnabled="false"
+                  stdoutLogFile=".\logs\stdout"
                   hostingModel="InProcess" />
     </system.webServer>
   </location>
@@ -194,9 +194,9 @@ ASP.NET Core 모듈은 사이트의 *web.config* 파일에 있는 `system.webSer
     <handlers>
       <add name="aspNetCore" path="*" verb="*" modules="AspNetCoreModule" resourceType="Unspecified" />
     </handlers>
-    <aspNetCore processPath="dotnet" 
-                arguments=".\MyApp.dll" 
-                stdoutLogEnabled="false" 
+    <aspNetCore processPath="dotnet"
+                arguments=".\MyApp.dll"
+                stdoutLogEnabled="false"
                 stdoutLogFile=".\logs\stdout" />
   </system.webServer>
 </configuration>
@@ -216,9 +216,9 @@ ASP.NET Core 모듈은 사이트의 *web.config* 파일에 있는 `system.webSer
       <handlers>
         <add name="aspNetCore" path="*" verb="*" modules="AspNetCoreModuleV2" resourceType="Unspecified" />
       </handlers>
-      <aspNetCore processPath=".\MyApp.exe" 
-                  stdoutLogEnabled="false" 
-                  stdoutLogFile=".\logs\stdout" 
+      <aspNetCore processPath=".\MyApp.exe"
+                  stdoutLogEnabled="false"
+                  stdoutLogFile=".\logs\stdout"
                   hostingModel="InProcess" />
     </system.webServer>
   </location>
@@ -238,8 +238,8 @@ ASP.NET Core 모듈은 사이트의 *web.config* 파일에 있는 `system.webSer
     <handlers>
       <add name="aspNetCore" path="*" verb="*" modules="AspNetCoreModule" resourceType="Unspecified" />
     </handlers>
-    <aspNetCore processPath=".\MyApp.exe" 
-                stdoutLogEnabled="false" 
+    <aspNetCore processPath=".\MyApp.exe"
+                stdoutLogEnabled="false"
                 stdoutLogFile=".\logs\stdout" />
   </system.webServer>
 </configuration>
@@ -255,7 +255,7 @@ IIS 하위 애플리케이션 구성에 대한 자세한 내용은 <xref:host-an
 
 ::: moniker range=">= aspnetcore-2.2"
 
-| 특성 | 설명 | 기본 |
+| 특성 | 설명 | 기본값 |
 | --------- | ----------- | :-----: |
 | `arguments` | <p>선택적 문자열 특성입니다.</p><p>**processPath**에 지정된 실행 파일에 대한 인수입니다.</p> | |
 | `disableStartUpErrorPage` | <p>선택적 부울 특성입니다.</p><p>true인 경우 **502.5 - 프로세스 실패** 페이지가 표시되지 않고 *web.config*에 구성된 502 상태 코드 페이지가 우선 적용됩니다.</p> | `false` |
@@ -274,7 +274,7 @@ IIS 하위 애플리케이션 구성에 대한 자세한 내용은 <xref:host-an
 
 ::: moniker range="= aspnetcore-2.1"
 
-| 특성 | 설명 | 기본 |
+| 특성 | 설명 | 기본값 |
 | --------- | ----------- | :-----: |
 | `arguments` | <p>선택적 문자열 특성입니다.</p><p>**processPath**에 지정된 실행 파일에 대한 인수입니다.</p>| |
 | `disableStartUpErrorPage` | <p>선택적 부울 특성입니다.</p><p>true인 경우 **502.5 - 프로세스 실패** 페이지가 표시되지 않고 *web.config*에 구성된 502 상태 코드 페이지가 우선 적용됩니다.</p> | `false` |
@@ -292,7 +292,7 @@ IIS 하위 애플리케이션 구성에 대한 자세한 내용은 <xref:host-an
 
 ::: moniker range="<= aspnetcore-2.0"
 
-| 특성 | 설명 | 기본 |
+| 특성 | 설명 | 기본값 |
 | --------- | ----------- | :-----: |
 | `arguments` | <p>선택적 문자열 특성입니다.</p><p>**processPath**에 지정된 실행 파일에 대한 인수입니다.</p>| |
 | `disableStartUpErrorPage` | <p>선택적 부울 특성입니다.</p><p>true인 경우 **502.5 - 프로세스 실패** 페이지가 표시되지 않고 *web.config*에 구성된 502 상태 코드 페이지가 우선 적용됩니다.</p> | `false` |
@@ -487,7 +487,7 @@ ASP.NET Core 모듈은 개선된 진단 로그를 제공하도록 구성할 수 
 
 * CONSOLE
 * EVENTLOG
-* 파일
+* FILE
 
 처리기 설정은 환경 변수를 통해서도 제공할 수 있습니다.
 
@@ -588,29 +588,29 @@ IIS 공유 구성을 사용할 경우 다음 단계를 수행합니다.
 
 **IIS(x86/amd64):**
 
-   * %windir%\System32\inetsrv\aspnetcore.dll
+* %windir%\System32\inetsrv\aspnetcore.dll
 
-   * %windir%\SysWOW64\inetsrv\aspnetcore.dll
+* %windir%\SysWOW64\inetsrv\aspnetcore.dll
 
 ::: moniker range=">= aspnetcore-2.2"
 
-   * %ProgramFiles%\IIS\Asp.Net Core Module\V2\aspnetcorev2.dll
+* %ProgramFiles%\IIS\Asp.Net Core Module\V2\aspnetcorev2.dll
 
-   * %ProgramFiles(x86)%\IIS\Asp.Net Core Module\V2\aspnetcorev2.dll
+* %ProgramFiles(x86)%\IIS\Asp.Net Core Module\V2\aspnetcorev2.dll
 
 ::: moniker-end
 
 **IIS Express(x86/amd64):**
 
-   * %ProgramFiles%\IIS Express\aspnetcore.dll
+* %ProgramFiles%\IIS Express\aspnetcore.dll
 
-   * %ProgramFiles(x86)%\IIS Express\aspnetcore.dll
+* %ProgramFiles(x86)%\IIS Express\aspnetcore.dll
 
 ::: moniker range=">= aspnetcore-2.2"
 
-   * %ProgramFiles%\IIS Express\Asp.Net Core Module\V2\aspnetcorev2.dll
+* %ProgramFiles%\IIS Express\Asp.Net Core Module\V2\aspnetcorev2.dll
 
-   * %ProgramFiles(x86)%\IIS Express\Asp.Net Core Module\V2\aspnetcorev2.dll
+* %ProgramFiles(x86)%\IIS Express\Asp.Net Core Module\V2\aspnetcorev2.dll
 
 ::: moniker-end
 
@@ -618,20 +618,21 @@ IIS 공유 구성을 사용할 경우 다음 단계를 수행합니다.
 
 **IIS**
 
-   * %windir%\System32\inetsrv\config\schema\aspnetcore_schema.xml
+* %windir%\System32\inetsrv\config\schema\aspnetcore_schema.xml
 
 ::: moniker range=">= aspnetcore-2.2"
 
-   * %windir%\System32\inetsrv\config\schema\aspnetcore_schema_v2.xml
+* %windir%\System32\inetsrv\config\schema\aspnetcore_schema_v2.xml
 
 ::: moniker-end
+
 **IIS Express**
 
-   * %ProgramFiles%\IIS Express\config\schema\aspnetcore_schema.xml
+* %ProgramFiles%\IIS Express\config\schema\aspnetcore_schema.xml
 
 ::: moniker range=">= aspnetcore-2.2"
 
-   * %ProgramFiles%\IIS Express\config\schema\aspnetcore_schema_v2.xml
+* %ProgramFiles%\IIS Express\config\schema\aspnetcore_schema_v2.xml
 
 ::: moniker-end
 
@@ -639,13 +640,13 @@ IIS 공유 구성을 사용할 경우 다음 단계를 수행합니다.
 
 **IIS**
 
-   * %windir%\System32\inetsrv\config\applicationHost.config
+* %windir%\System32\inetsrv\config\applicationHost.config
 
 **IIS Express**
 
-   * Visual Studio: {APPLICATION ROOT}\\.vs\config\applicationHost.config
-   
-   * *iisexpress.exe* CLI: %USERPROFILE%\Documents\IISExpress\config\applicationhost.config
+* Visual Studio: {APPLICATION ROOT}\\.vs\config\applicationHost.config
+
+* *iisexpress.exe* CLI: %USERPROFILE%\Documents\IISExpress\config\applicationhost.config
 
 *applicationHost.config* 파일에서 *aspnetcore*를 검색하여 파일을 찾을 수 있습니다.
 

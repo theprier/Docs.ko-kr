@@ -1,4 +1,12 @@
-# <a name="contribute-to-the-aspnet-documentation"></a>ASP.NET 설명서에 참가
+---
+ms.openlocfilehash: 98a03118954baa85b093a0514e1ac6f0fb6353e8
+ms.sourcegitcommit: 088e6744cd67a62f214f25146313a53949b17d35
+ms.translationtype: HT
+ms.contentlocale: ko-KR
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58320110"
+---
+# <a name="contribute-to-the-aspnet-core-documentation"></a>ASP.NET Core 설명서에 참가
 
 이 문서에서는 [ASP.NET 문서 사이트](https://docs.microsoft.com/aspnet/)에서 호스팅되는 문서 및 코드 샘플에 참여하는 프로세스를 설명합니다. 오타 수정 및 새 문서 작성을 통한 참여를 환영합니다.
 
@@ -18,7 +26,7 @@
 
 예를 들어 이 프로세스를 통해 새 문서가 게시되는 경우 .NET Docs 리포지토리에서 [문제 &num;67](https://github.com/dotnet/docs/issues/67) 및 [끌어오기 요청 &num;798](https://github.com/dotnet/docs/pull/798)을 참조하세요. 새 문서는 [코드 문서화](https://docs.microsoft.com/dotnet/articles/csharp/codedoc)입니다.
 
-## <a name="docs-authoring-pack-extension-in-visual-studio-code"></a>Visual Studio Code에서 Docs Authoring Pack 확장 
+## <a name="docs-authoring-pack-extension-in-visual-studio-code"></a>Visual Studio Code에서 Docs Authoring Pack 확장
 
 Visual Studio Code를 사용하여 ASP.NET 문서에 참여하는 경우 [Docs Authoring Pack](https://marketplace.visualstudio.com/items?itemName=docsmsft.docs-authoring-pack) 확장을 설치하여 생산성을 높일 수 있습니다. 이 확장은 Markdown 린팅, 코드 맞춤법 검사 및 문서 서식 파일에 도움이 되는 다양한 도구를 제공합니다.
 
@@ -30,7 +38,7 @@ Visual Studio Code를 사용하여 ASP.NET 문서에 참여하는 경우 [Docs A
 
 각 Markdown 파일에는 이미지 폴더와 샘플 코드 폴더가 있을 수 있습니다. 문서가 [fundamentals/configuration/index.md](https://github.com/aspnet/Docs/blob/master/aspnetcore/fundamentals/configuration/index.md)일 경우 이미지는 [fundamentals/configuration/index/\_static](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/configuration/index/_static)에 있으며, 샘플 앱 프로젝트 파일은 [fundamentals/configuration/index/sample](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/configuration/index/sample)에 있습니다. *fundamentals/configuration/index.md* 파일의 이미지는 다음과 같은 Markdown으로 렌더링됩니다.
 
-```
+```md
 ![description of image for alt attribute](configuration/index/_static/imagename.png)
 ```
 
@@ -42,13 +50,13 @@ Markdown 파일 이름 및 이미지 파일 이름에는 소문자를 사용하�
 
 내부 링크는 xref 링크가 있는 대상 문서의 `uid`를 사용해야 합니다(링크 텍스트는 연결된 콘텐츠의 제목으로 설정됨).
 
-```
+```md
 <xref:uid_of_the_topic>
 ```
 
 문서의 제목이 링크 텍스트에 적합하지 않은 경우(예: 문장의 단어나 구문이 링크 텍스트인 경우) 다음을 사용하여 xref 링크 및 링크 텍스트를 지정하세요.
 
-```
+```md
 [link text](xref:uid_of_the_topic)
 ```
 
@@ -73,13 +81,13 @@ Markdown 파일 이름 및 이미지 파일 이름에는 소문자를 사용하�
 
 전체 코드 파일을 코드 조각으로 렌더링하려면
 
-```
+```md
 [!code-csharp[](configuration/index/sample/Program.cs)]
 ```
 
 줄 번호를 사용하여 파일의 일부를 코드 조각으로 렌더링하려면
 
-```
+```md
 [!code-csharp[](configuration/index/sample/Program.cs?range=1-10,20,30,40-50]
 [!code-html[](configuration/index/sample/Views/Home/Index.cshtml?range=1-10,20,30,40-50]
 ```
@@ -88,13 +96,13 @@ C# 코드 조각의 경우 [C# 지역](https://docs.microsoft.com/dotnet/csharp/
 
 "snippet_Example"이라는 C# 지역을 렌더링하려면
 
-```
+```md
 [!code-csharp[](configuration/index/sample/Program.cs?name=snippet_Example)]
 ```
 
 렌더링된 코드 조각에서 선택된 줄을 강조 표시하려면(일반적으로 노란색 배경으로 렌더링됨)
 
-```
+```md
 [!code-csharp[](configuration/index/sample/Program.cs?name=snippet_Example&highlight=1-3,10,20-25)]
 [!code-csharp[](configuration/index/sample/Program.cs?range=10-20&highlight=1-3]
 [!code-html[](configuration/index/sample/Views/Home/Index.cshtml?range=10-20&highlight=1-3]
@@ -119,6 +127,7 @@ DocFX 요구 사항:
   ```console
   docfx --serve
   ```
+
 * 브라우저에서 `http://localhost:8080/group1-dest/`로 이동합니다.
 
 ### <a name="mono-instructions"></a>Mono 지침
@@ -128,6 +137,7 @@ DocFX 요구 사항:
   ```console
   brew install mono
   ```
+
 * [최신 버전의 DocFX](https://github.com/dotnet/docfx/releases)를 다운로드합니다.
 * *$HOME/bin/docfx*에 보관 파일을 추출합니다.
 * bash 셸에서 **docfx**의 별칭 쌍을 만듭니다. 첫 번째 별칭은 문서를 작성하는 데 사용됩니다. 두 번째 별칭은 문서를 작성하고 서비스를 제공하는 데 사용됩니다.
@@ -136,11 +146,13 @@ DocFX 요구 사항:
   alias docfx='mono $HOME/bin/docfx/docfx.exe'
   alias docfx-serve='mono $HOME/bin/docfx/docfx.exe --serve'
   ```
+
 * 명령 셸에서 *docfx.json* 파일(ASP.NET 콘텐츠용 *aspnet* 또는 ASP.NET Core 콘텐츠용 *aspnetcore*)이 포함된 폴더로 이동하고 다음 명령을 실행하여 해당 별칭을 통해 문서를 빌드하고 제공합니다.
 
   ```console
   docfx-serve
   ```
+
 * 브라우저에서 `http://localhost:8080/group1-dest/`로 이동합니다.
 
 ## <a name="voice-and-tone"></a>어투 및 어조
