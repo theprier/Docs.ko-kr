@@ -3,14 +3,14 @@ title: ASP.NET Core Identity 소개
 author: rick-anderson
 description: ASP.NET Core 앱을 사용 하 여 Id를 사용 합니다. 암호 요구 사항 (RequireDigit, RequiredLength, RequiredUniqueChars, 등)을 설정 하는 방법에 알아봅니다.
 ms.author: riande
-ms.date: 08/08/2018
+ms.date: 03/26/2019
 uid: security/authentication/identity
-ms.openlocfilehash: 355c53e0c957944cb35c37c6b01e724af5f93f44
-ms.sourcegitcommit: 57792e5f594db1574742588017c708350958bdf0
+ms.openlocfilehash: efe8119c2d18db50dce3df57fa0e300d0d0df2cd
+ms.sourcegitcommit: 687ffb15ebe65379f75c84739ea851d5a0d788b7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58265464"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58488675"
 ---
 # <a name="introduction-to-identity-on-aspnet-core"></a>ASP.NET Core Identity 소개
 
@@ -64,6 +64,24 @@ dotnet new webapp --auth Individual -o WebApp1
 * /Identity/Account/Login
 * /Identity/Account/Logout
 * /Identity/Account/Manage
+
+### <a name="apply-migrations"></a>마이그레이션 적용
+
+데이터베이스를 초기화 하 여 마이그레이션을 적용 합니다.
+
+# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
+
+다음 명령은 패키지 관리자 콘솔 (PMC)에서 실행 합니다.
+
+```PM> Update-Database```
+
+# <a name="net-core-clitabnetcore-cli"></a>[.NET Core CLI](#tab/netcore-cli)
+
+```cli
+dotnet ef database update
+```
+
+---
 
 ### <a name="test-register-and-login"></a>테스트 등록 및 로그인
 

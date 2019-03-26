@@ -4,14 +4,14 @@ author: Rick-Anderson
 description: ASP.NET Core 프로젝트를 사용하여 경고 및 오류를 이해하고 문제를 해결합니다.
 ms.author: riande
 ms.custom: mvc
-ms.date: 02/26/2019
+ms.date: 03/13/2019
 uid: test/troubleshoot
-ms.openlocfilehash: 1f53375a6aa504c989920a0bff83b400b7bd83ec
-ms.sourcegitcommit: 5f299daa7c8102d56a63b214b9a34cc4bc87bc42
+ms.openlocfilehash: 3d755b2f0c509d65dea86bbe719e42935d87d546
+ms.sourcegitcommit: 687ffb15ebe65379f75c84739ea851d5a0d788b7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58208845"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58488743"
 ---
 # <a name="troubleshoot-aspnet-core-projects"></a>ASP.NET Core 프로젝트 문제 해결
 
@@ -33,8 +33,6 @@ ms.locfileid: "58208845"
 
 > 모두 32 비트 및 64 비트 버전의.NET Core SDK 설치 됩니다. 에 설치 된 64 비트 버전의 템플릿만 ' c:\\Program Files\\dotnet\\sdk\\' 표시 됩니다.
 
-![경고 메시지를 보여 주는 OneASP.NET 대화 상자의 스크린샷](troubleshoot/_static/both32and64bit.png)
-
 이 경고를 표시 하는 경우 32 비트 (x86)와 버전의 64 비트 (x64) 합니다 [.NET Core SDK](https://www.microsoft.com/net/download/all) 설치 됩니다. 두 버전을 설치할 수 있습니다 하는 일반적인 이유는 다음과 같습니다.
 
 * 원래 32 비트 컴퓨터를 사용 하 여.NET Core SDK 설치 관리자를 다운로드 하지만 다음 복사 하는 것을 64 비트 컴퓨터에 설치.
@@ -49,24 +47,28 @@ ms.locfileid: "58208845"
 
 > .NET Core SDK는 여러 위치에 설치 됩니다. Sdk의 템플릿만에 설치 된 템플릿 ' c:\\Program Files\\dotnet\\sdk\\' 표시 됩니다.
 
-![경고 메시지를 보여 주는 OneASP.NET 대화 상자의 스크린샷](troubleshoot/_static/multiplelocations.png)
-
 하나 이상의.NET Core SDK 설치 디렉터리 외부에 있는 경우에이 메시지를 참조 하세요 *c:\\Program Files\\dotnet\\sdk\\* 합니다. 일반적으로.NET Core SDK MSI 설치 관리자 대신 복사/붙여넣기를 사용 하는 컴퓨터에 배포 된 경우 발생 합니다.
 
 모든 32 비트.NET Core Sdk 및 런타임을이 경고를 방지 하기 위해 제거 합니다. 제거할 **Control Panel** > **프로그램 및 기능** > **제거 또는 변경 프로그램**합니다. 경고가 발생 하는 이유 및 그 의미를 이해 하면 경고를 무시할 수 있습니다.
 
 ### <a name="no-net-core-sdks-were-detected"></a>.NET Core Sdk 발견
 
-에 **새 프로젝트** 대화 ASP.NET Core에 대 한 다음과 같은 경고가 표시 될 수 있습니다.
+* Visual studio에서 **새 프로젝트** 대화 ASP.NET Core에 대 한 다음과 같은 경고가 표시 될 수 있습니다.
 
-> .NET Core Sdk 발견, 'PATH' 환경 변수에 포함 되도록 합니다.
+  > .NET Core Sdk 발견, 환경 변수에 포함 되도록 `PATH`합니다.
 
-![경고 메시지를 보여 주는 OneASP.NET 대화 상자의 스크린샷](troubleshoot/_static/NoNetCore.png)
+* 실행 하는 경우는 `dotnet` 명령으로 경고가 표시 됩니다.
 
-이 경고를 표시 하는 경우 환경 변수 `PATH` 컴퓨터에서 모든.NET Core Sdk를 가리키지 않습니다. (예를 들어 `C:\Program Files\dotnet\` 고 `C:\Program Files (x86)\dotnet\`). 이 문제를 해결 하려면
+  > 설치 된 모든 dotnet Sdk를 찾을 수 없습니다.
 
-* 설치 또는.NET Core SDK 설치 되었는지 확인 합니다. 최신 설치 관리자를 가져옵니다 [.NET 다운로드](https://dotnet.microsoft.com/download)합니다. 
-* 확인을 `PATH` 환경 변수는 SDK를 설치할 위치를 가리킵니다. 설치 관리자가 일반적으로 설정 된 `PATH`합니다.
+이러한 경고를 표시 하는 경우 환경 변수 `PATH` 컴퓨터에서 모든.NET Core Sdk를 가리키지 않습니다. 이 문제를 해결 하려면
+
+* .NET Core SDK를 설치합니다. 최신 설치 관리자를 가져옵니다 [.NET 다운로드](https://dotnet.microsoft.com/download)합니다.
+* 있는지 확인 합니다 `PATH` 환경 변수는 SDK를 설치한 위치를 가리키는 (`C:\Program Files\dotnet\` 64 비트 x64에 대 한 또는 `C:\Program Files (x86)\dotnet\` 32-bit/x86 용). SDK 설치 관리자가 일반적으로 설정 된 `PATH`합니다. 항상 동일한 비트 Sdk 및 런타임을 동일한 컴퓨터에 설치 합니다.
+
+### <a name="missing-sdk-after-installing-the-net-core-hosting-bundle"></a>.NET Core 호스팅 번들을 설치한 후 누락 된 SDK
+
+설치를 [.NET Core 호스팅 번들](xref:host-and-deploy/iis/index#install-the-net-core-hosting-bundle) 수정 합니다 `PATH` .NET Core의 32 비트 (x86) 버전을 가리키도록.NET Core 런타임을 설치 하면 (`C:\Program Files (x86)\dotnet\`). Sdk 누락이 발생할 수 있습니다 때 32 비트 (x86).NET Core `dotnet` 명령을 사용 하 여 ([.NET Core Sdk 발견](#no-net-core-sdks-were-detected)). 이 문제를 해결 하려면 이동할 `C:\Program Files\dotnet\` 를 앞으로 `C:\Program Files (x86)\dotnet\` 에 `PATH`합니다.
 
 ## <a name="obtain-data-from-an-app"></a>앱에서 데이터 얻기
 
