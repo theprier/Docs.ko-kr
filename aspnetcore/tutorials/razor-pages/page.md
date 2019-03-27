@@ -52,8 +52,7 @@ Razor는 HTML에서 C# 또는 Razor 관련 태그로 전환될 수 있습니다.
 
 <a name="md"></a>
 
-### <a name="the-model-directive"></a>
-  @model 지시문
+### <a name="the-model-directive"></a>@model 지시문
 
 [!code-cshtml[](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Index.cshtml?range=1-2&highlight=2)]
 
