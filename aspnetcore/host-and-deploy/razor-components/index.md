@@ -5,7 +5,7 @@ description: 'ASP.NET Core, 콘텐츠 전송 네트워크(CDN), 파일 서버 �
 monikerRange: '>= aspnetcore-3.0'
 ms.author: riande
 ms.custom: mvc
-ms.date: 01/29/2019
+ms.date: 03/22/2019
 uid: host-and-deploy/razor-components/index
 ---
 # <a name="host-and-deploy-razor-components"></a>Razor 구성 요소 호스트 및 배포
@@ -285,7 +285,7 @@ URL 다시 생성을 처리하려면 *index.html* 페이지로 요청 리디렉�
 
 [서버 쪽 호스팅 모델](xref:razor-components/hosting-models#server-side-hosting-model)을 사용하는 경우 Razor 구성 요소는 서버의 ASP.NET Core 앱에서 실행됩니다. UI 업데이트, 이벤트 처리 및 JavaScript 호출은 SignalR 연결상에서 처리됩니다.
 
-이 앱은 ASP.NET Core 앱과 함께 배포되도록 게시된 출력의 후자 앱과 함께 포함됩니다. ASP.NET Core 앱을 호스트할 수 있는 웹 서버가 필요합니다. 서버 쪽 배포의 경우, Visual Studio는 **Blazor(ASP.NET Core의 서버 쪽)** 프로젝트 템플릿([dotnet new](/dotnet/core/tools/dotnet-new) 명령을 사용하는 경우 `blazorserver` 템플릿)을 포함합니다.
+이 앱은 ASP.NET Core 앱과 함께 배포되도록 게시된 출력의 후자 앱과 함께 포함됩니다. ASP.NET Core 앱을 호스트할 수 있는 웹 서버가 필요합니다. 서버 쪽 배포의 경우 Visual Studio에는 **Razor 구성 요소** 프로젝트 템플릿([dotnet new](/dotnet/core/tools/dotnet-new) 명령을 사용하는 경우 `razorcomponents` 템플릿)이 포함됩니다.
 
 <!--
 

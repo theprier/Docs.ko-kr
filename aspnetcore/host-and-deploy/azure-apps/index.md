@@ -5,7 +5,7 @@ description: 이 문서에는 Azure 호스트 및 배포 리소스의 링크가 
 monikerRange: '>= aspnetcore-2.1'
 ms.author: riande
 ms.custom: mvc
-ms.date: 02/26/2019
+ms.date: 03/23/2019
 uid: host-and-deploy/azure-apps/index
 ---
 # <a name="deploy-aspnet-core-apps-to-azure-app-service"></a>Azure App Service에 ASP.NET Core 앱 배포
@@ -78,7 +78,17 @@ Azure Portal에서 앱 설정을 만들거나 수정하고**저장** 단추를 �
 
 ## <a name="monitoring-and-logging"></a>모니터링 및 로깅
 
-App Service에 배포된 ASP.NET Core 앱은 자동으로 App Service 확장인 **ASP.NET Core 로깅 확장**을 받습니다. 이 확장은 Azure 로깅을 사용하도록 설정합니다.
+::: moniker range=">= aspnetcore-3.0"
+
+App Service에 배포된 ASP.NET Core 앱은 자동으로 App Service 확장인 **ASP.NET Core 로깅 통합**을 받습니다. 확장을 사용하면 Azure App Service에서 ASP.NET Core 앱에서 로깅 통합이 가능합니다.
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-3.0"
+
+App Service에 배포된 ASP.NET Core 앱은 자동으로 App Service 확장인 **ASP.NET Core 로깅 확장**을 받습니다. 확장을 사용하면 Azure App Service에서 ASP.NET Core 앱에서 로깅 통합이 가능합니다.
+
+::: moniker-end
 
 모니터링, 로깅 및 문제 해결에 대한 자세한 내용은 다음 문서를 참조하세요.
 
