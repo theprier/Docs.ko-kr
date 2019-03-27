@@ -4,7 +4,7 @@ author: guardrex
 description: Windows Server IIS(인터넷 정보 서비스)에서 ASP.NET Core 앱을 호스팅하는 방법을 알아봅니다.
 ms.author: riande
 ms.custom: mvc
-ms.date: 03/21/2019
+ms.date: 03/23/2019
 uid: host-and-deploy/iis/index
 ---
 # <a name="host-aspnet-core-on-windows-with-iis"></a>IIS가 있는 Windows에서 ASP.NET Core 호스팅
@@ -269,6 +269,8 @@ services.Configure<IISOptions>(options =>
 
 > [!IMPORTANT]
 > IIS 이전에 호스팅 번들이 설치된 경우 번들 설치를 복구해야 합니다. IIS를 설치한 후 호스팅 번들 설치 프로그램을 다시 실행합니다.
+>
+> .NET Core의 64비트(x64) 버전을 설치한 후 호스팅 번들이 설치된 경우 SDK가 누락된 것처럼 보일 수 있습니다([ .NET Core SDK가 검색되지 않음](xref:test/troubleshoot#no-net-core-sdks-were-detected)). 이 문제를 해결 하려면 <xref:test/troubleshoot#missing-sdk-after-installing-the-net-core-hosting-bundle>을 참조합니다.
 
 ### <a name="direct-download-current-version"></a>직접 다운로드(현재 버전)
 
