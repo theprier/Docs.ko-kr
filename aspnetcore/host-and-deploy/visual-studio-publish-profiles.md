@@ -87,10 +87,10 @@ ms.locfileid: "56248357"
 MSBuild 또는 Visual Studio가 프로젝트를 로드하면 다음 높은 수준의 작업이 수행됩니다.
 
 * 프로젝트 빌드
-* 게시할 파일 계산
+* 게시할 파일 컴퓨팅
 * 대상에 파일 게시
 
-## <a name="compute-project-items"></a>프로젝트 항목 계산
+## <a name="compute-project-items"></a>프로젝트 항목 컴퓨팅
 
 프로젝트가 로드되면 프로젝트 항목(파일)이 계산됩니다. `item type` 특성에 따라 파일 처리 방법이 결정됩니다. 기본적으로 *.cs* 파일은 `Compile` 항목 목록에 포함됩니다. `Compile` 항목 목록의 파일이 컴파일됩니다.
 
