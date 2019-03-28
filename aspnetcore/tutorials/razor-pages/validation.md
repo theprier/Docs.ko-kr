@@ -21,7 +21,7 @@ ms.locfileid: "58208241"
 
 ## <a name="validation"></a>유효성 검사
 
-소프트웨어 개발의 주요 개념은 [반복 금지](https://wikipedia.org/wiki/Don%27t_repeat_yourself)라고 합니다************. Razor 페이지는 기능이 한번 정의된 곳의 개발을 원활하게 하고 앱 전체에서 반영됩니다. DRY는 다음 작업에 도움이 됩니다.
+소프트웨어 개발의 주요 개념은 [반복 금지](https://wikipedia.org/wiki/Don%27t_repeat_yourself)라고 합니다 ************. Razor 페이지는 기능이 한번 정의된 곳의 개발을 원활하게 하고 앱 전체에서 반영됩니다. DRY는 다음 작업에 도움이 됩니다.
 
 * 앱에서 코드의 양 감소
 * 코드에 오류 감소 및 쉽게 테스트 및 유지 관리
