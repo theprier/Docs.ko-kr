@@ -5,12 +5,12 @@ description: ASP.NET Core에서 다른 언어와 문화권으로의 콘텐츠 �
 ms.author: riande
 ms.date: 01/14/2017
 uid: fundamentals/localization
-ms.openlocfilehash: 4e87423a02a275eae7e2f6054e7a3b6c22cd7cee
-ms.sourcegitcommit: 088e6744cd67a62f214f25146313a53949b17d35
+ms.openlocfilehash: 3192ad150b914c00b315f38bd9fe077ebf402b37
+ms.sourcegitcommit: 687ffb15ebe65379f75c84739ea851d5a0d788b7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58320222"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58488704"
 ---
 # <a name="globalization-and-localization-in-aspnet-core"></a>ASP.NET Core에서 세계화 및 지역화
 
@@ -343,6 +343,7 @@ services.Configure<RequestLocalizationOptions>(options =>
 
 ## <a name="additional-resources"></a>추가 자료
 
+* <xref:fundamentals/troubleshoot-aspnet-core-localization>
 * [Localization.StarterWeb 프로젝트](https://github.com/aspnet/Entropy/tree/master/samples/Localization.StarterWeb)는 문서에서 사용됩니다.
 * [.NET 애플리케이션 전역화 및 지역화](/dotnet/standard/globalization-localization/index)
 * [.resx 파일의 리소스](/dotnet/framework/resources/working-with-resx-files-programmatically)

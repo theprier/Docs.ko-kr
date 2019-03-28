@@ -5,12 +5,12 @@ description: 웹 페이지에 서버 기반 코드를 포함하는 Razor 태그 
 ms.author: riande
 ms.date: 10/26/2018
 uid: mvc/views/razor
-ms.openlocfilehash: 254c85ee9e74dc72170b19d27fbc5f1ae7ccd3dc
-ms.sourcegitcommit: 57792e5f594db1574742588017c708350958bdf0
+ms.openlocfilehash: 53d4dc608fbfd45bcc015a3af83f5d87f86c7f15
+ms.sourcegitcommit: a1c43150ed46aa01572399e8aede50d4668745ca
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58264750"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58327367"
 ---
 # <a name="razor-syntax-reference-for-aspnet-core"></a>ASP.NET Core에 대한 Razor 구문 참조
 
@@ -534,7 +534,7 @@ Razor 템플릿을 사용하면 UI 코드 조각을 다음 형식으로 정의�
 @<tag>...</tag>
 ```
 
-다음 예제에서는 템플릿에 작성된 Razor 대리자를 <xref:System.Func`2>로 지정하는 방법을 보여 줍니다. [dynamic 형식](/dotnet/csharp/programming-guide/types/using-type-dynamic)은 대리자에서 캡슐화하는 메서드의 매개 변수로 지정됩니다. [object 형식](/dotnet/csharp/language-reference/keywords/object)은 대리자의 반환 값으로 지정됩니다. 템플릿은 `Name` 속성이 있는 `Pet`의 <xref:System.Collections.Generic.List`1>에서 사용됩니다.
+다음 예제에서는 템플릿에 작성된 Razor 대리자를 <xref:System.Func%602>로 지정하는 방법을 보여 줍니다. [dynamic 형식](/dotnet/csharp/programming-guide/types/using-type-dynamic)은 대리자에서 캡슐화하는 메서드의 매개 변수로 지정됩니다. [object 형식](/dotnet/csharp/language-reference/keywords/object)은 대리자의 반환 값으로 지정됩니다. 템플릿은 `Name` 속성이 있는 `Pet`의 <xref:System.Collections.Generic.List%601>에서 사용됩니다.
 
 ```csharp
 public class Pet
@@ -599,7 +599,7 @@ public class Pet
 
 이전 예제의 애완 동물 목록을 사용하여 `Repeat` 메서드는 다음 항목과 함께 호출됩니다.
 
-* <xref:System.Collections.Generic.List`1>의 `Pet`입니다.
+* <xref:System.Collections.Generic.List%601>의 `Pet`입니다.
 * 각 애완 동물에 대한 반복 횟수
 * 순서가 지정되지 않은 목록의 목록 항목에 사용할 인라인 템플릿
 
