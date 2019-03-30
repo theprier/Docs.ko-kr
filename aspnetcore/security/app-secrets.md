@@ -6,12 +6,12 @@ ms.author: scaddie
 ms.custom: mvc
 ms.date: 03/13/2019
 uid: security/app-secrets
-ms.openlocfilehash: 1a10c4d035510c689e3eccadc5986df0cc06b71e
-ms.sourcegitcommit: 34bf9fc6ea814c039401fca174642f0acb14be3c
+ms.openlocfilehash: 18313f8284e81d196cbe786f494a607ee97a299f
+ms.sourcegitcommit: 3e9e1f6d572947e15347e818f769e27dea56b648
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57841516"
+ms.lasthandoff: 03/30/2019
+ms.locfileid: "58750980"
 ---
 # <a name="safe-storage-of-app-secrets-in-development-in-aspnet-core"></a>ASP.NET Core에서 개발 앱 암호의 안전한 저장소
 
@@ -37,6 +37,8 @@ ASP.NET Core 웹 앱을는 것이 좋습니다 **개별 사용자 계정** 보�
 
 > [!WARNING]
 > 환경 변수는 암호화 되지 않은 일반 텍스트에 일반적으로 저장 됩니다. 컴퓨터 또는 프로세스가 손상 된 경우 환경 변수는 신뢰할 수 없는 당사자가 액세스할 수 있습니다. 사용자 암호의 공개 되지 않도록 추가 조치가 필요할 수 있습니다.
+
+[!INCLUDE[](~/includes/environmentVarableColon.md)]
 
 ## <a name="secret-manager"></a>암호 관리자
 

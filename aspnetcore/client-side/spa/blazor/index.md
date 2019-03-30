@@ -5,7 +5,7 @@ description: WebAssembly를 통해 브라우저에서 실행되는 대화형 클
 monikerRange: '>= aspnetcore-3.0'
 ms.author: riande
 ms.custom: mvc
-ms.date: 02/11/2019
+ms.date: 03/27/2019
 uid: spa/blazor/index
 ---
 # <a name="introduction-to-blazor"></a>Blazor 소개
@@ -50,7 +50,7 @@ Blazor는 다음을 포함한 대부분의 앱에 필요한 핵심 기능을 지
 
 다운로드된 앱의 크기를 줄이기 위해 [IL(중간 언어) 링커](xref:host-and-deploy/razor-components/configure-linker)에서 게시하면 사용되지 않는 코드가 앱에서 제거됩니다.
 
-Blazor는 Razor 구성 요소의 클라이언트 쪽 호스팅 모델입니다. Razor 구성 요소는 UI 업데이트 적용 방식에서 구성 요소의 렌더링 논리를 분리하기 때문에 Razor 구성 요소를 호스트하는 방법에 유연성이 있습니다. ASP.NET Core Razor 구성 요소를 사용하여 SignalR 연결을 통해 모든 UI 업데이트가 처리되는 ASP.NET Core 앱의 서버에서 Razor 구성 요소를 호스트합니다. 자세한 내용은 <xref:razor-components/hosting-models#server-side-hosting-model>을 참조하세요. 
+Blazor는 Razor 구성 요소의 클라이언트 쪽 호스팅 모델입니다. Razor 구성 요소는 UI 업데이트 적용 방식에서 구성 요소의 렌더링 논리를 분리하기 때문에 Razor 구성 요소를 호스트하는 방법에 유연성이 있습니다. ASP.NET Core Razor 구성 요소를 사용하여 SignalR 연결을 통해 모든 UI 업데이트가 처리되는 ASP.NET Core 앱의 서버에서 Razor 구성 요소를 호스트합니다. 자세한 내용은 <xref:razor-components/index> 및 <xref:razor-components/hosting-models#server-side-hosting-model>를 참조하세요. 
 
 ## <a name="components"></a>구성 요소
 

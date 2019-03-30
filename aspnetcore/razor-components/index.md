@@ -5,7 +5,7 @@ description: ASP.NET Core 앱에서 .NET을 사용하여 대화형 클라이언�
 monikerRange: '>= aspnetcore-3.0'
 ms.author: riande
 ms.custom: mvc
-ms.date: 03/13/2019
+ms.date: 03/27/2019
 uid: razor-components/index
 ---
 # <a name="introduction-to-razor-components"></a>Razor 구성 요소 소개
@@ -42,7 +42,7 @@ Razor 구성 요소가 브라우저와 통신하는 데 사용하는 연결은 J
 
 자세한 내용은 <xref:razor-components/hosting-models#server-side-hosting-model>을 참조하세요.
 
-*Blazor*는 Razor 구성 요소의 실험적 클라이언트 쪽 호스팅 모델입니다. Blazor는 플러그 인이나 코드 소스 간 컴파일 없이 개방형 웹 표준을 사용하여 브라우저의 .NET에서 실행됩니다. 자세한 내용은 <xref:razor-components/hosting-models#client-side-hosting-model>을 참조하세요.
+*Blazor*는 Razor 구성 요소의 실험적 클라이언트 쪽 호스팅 모델입니다. Blazor는 플러그 인이나 코드 소스 간 컴파일 없이 개방형 웹 표준을 사용하여 브라우저의 .NET에서 실행됩니다. 자세한 내용은 <xref:spa/blazor/index> 및 <xref:razor-components/hosting-models#client-side-hosting-model>를 참조하세요.
 
 ## <a name="components"></a>구성 요소
 
