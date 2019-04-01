@@ -5,18 +5,18 @@ description: ASP.NET Core MVC를 사용하여 네이티브 모바일 앱을 지�
 ms.author: riande
 ms.date: 10/14/2016
 uid: mobile/native-mobile-backend
-ms.openlocfilehash: 3ebd30ad1ffbd66b256e7f3954a07d682f76a754
-ms.sourcegitcommit: 517bb1366da2a28b0014e384fa379755c21b47d8
+ms.openlocfilehash: 13149dd4b877b8c17d33d428779ad31d8c51ae9e
+ms.sourcegitcommit: 687ffb15ebe65379f75c84739ea851d5a0d788b7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47230180"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58488730"
 ---
 # <a name="create-backend-services-for-native-mobile-apps-with-aspnet-core"></a>ASP.NET Core를 사용하여 네이티브 모바일 앱용 백 엔드 서비스 만들기
 
 작성자: [Steve Smith](https://ardalis.com/)
 
-모바일 앱은 ASP.NET Core 백 엔드 서비스와 쉽게 통신할 수 있습니다.
+모바일 앱은 ASP.NET Core 백 엔드 서비스와 통신할 수 있습니다. iOS 시뮬레이터 및 Android 에뮬레이터에서 로컬 웹 서비스를 연결하는 방법에 대한 지침은 [iOS 시뮬레이터 및 Android 에뮬레이터에서 로컬 웹 서비스에 연결](/xamarin/cross-platform/deploy-test/connect-to-local-web-services)을 참조하세요.
 
 [샘플 백 엔드 서비스 코드 보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/mobile/native-mobile-backend/sample)
 
@@ -24,7 +24,7 @@ ms.locfileid: "47230180"
 
 이 자습서에서는 네이티브 모바일 앱을 지원하기 위해 ASP.NET Core MVC를 사용하여 백 엔드 서비스를 만드는 방법을 보여 줍니다. Android, iOS, Windows 유니버설 및 Window Phone 디바이스에 대한 별도 네이티브 클라이언트를 포함하는 네이티브 클라이언트로 [Xamarin Forms ToDoRest 앱](/xamarin/xamarin-forms/data-cloud/consuming/rest)을 사용합니다. 연결된 자습서를 따라 네이티브 앱을 만들고(필요한 무료 Xamarin 도구 설치) Xamarin 샘플 솔루션을 다운로드할 수 있습니다. Xamarin 샘플에는 이 문서의 ASP.NET Core 앱이 바꾸는 ASP.NET Web API 2 서비스 프로젝트가 포함되어 있습니다(클라이언트에서 필요한 변경 내용 없이).
 
-![Android 스마트폰에서 실행되는 To Do Rest 응용 프로그램](native-mobile-backend/_static/todo-android.png)
+![Android 스마트폰에서 실행되는 To Do Rest 애플리케이션](native-mobile-backend/_static/todo-android.png)
 
 ### <a name="features"></a>기능
 
@@ -40,7 +40,7 @@ ToDoRest 앱은 할 일 항목 나열, 추가, 삭제 및 업데이트를 지원
 
 ![항목 편집 대화 상자](native-mobile-backend/_static/todo-android-edit-item.png)
 
-이 샘플은 기본적으로 읽기 전용 작업을 허용하는 developer.xamarin.com에서 호스팅되는 백 엔드 서비스를 사용하도록 구성됩니다. 컴퓨터에서 실행되는 다음 섹션에서 만든 ASP.NET Core 앱을 직접 테스트하려면 앱의 `RestUrl` 상수를 업데이트해야 합니다. `ToDoREST` 프로젝트로 이동하고 *Constants.cs* 파일을 엽니다. `RestUrl`을 컴퓨터의 IP 주소를 포함하는 URL로 바꿉니다(이 주소는 컴퓨터에서가 아니라 장치 에뮬레이터에서 사용되므로 localhost 또는 127.0.0.1이 아님). 포트 번호도 포함합니다(5000). 서비스가 디바이스와 작동하는지 테스트하기 위해 이 포트에 대한 액세스를 차단하는 활성 방화벽이 없는지 확인합니다.
+이 샘플은 기본적으로 읽기 전용 작업을 허용하는 developer.xamarin.com에서 호스팅되는 백 엔드 서비스를 사용하도록 구성됩니다. 컴퓨터에서 실행되는 다음 섹션에서 만든 ASP.NET Core 앱을 직접 테스트하려면 앱의 `RestUrl` 상수를 업데이트해야 합니다. `ToDoREST` 프로젝트로 이동하고 *Constants.cs* 파일을 엽니다. `RestUrl`을 컴퓨터의 IP 주소를 포함하는 URL로 바꿉니다(이 주소는 컴퓨터에서가 아니라 디바이스 에뮬레이터에서 사용되므로 localhost 또는 127.0.0.1이 아님). 포트 번호도 포함합니다(5000). 서비스가 디바이스와 작동하는지 테스트하기 위해 이 포트에 대한 액세스를 차단하는 활성 방화벽이 없는지 확인합니다.
 
 ```csharp
 // URL of REST service (Xamarin ReadOnly Service)
@@ -52,16 +52,16 @@ public static string RestUrl = "http://192.168.1.207:5000/api/todoitems/{0}";
 
 ## <a name="creating-the-aspnet-core-project"></a>ASP.NET Core 프로젝트 만들기
 
-Visual Studio에서 새 ASP.NET Core 웹 응용 프로그램을 만듭니다. 웹 API 템플릿과 인증 안 함을 선택합니다. 프로젝트 이름을 *ToDoApi*로 지정합니다.
+Visual Studio에서 새 ASP.NET Core 웹 애플리케이션을 만듭니다. 웹 API 템플릿과 인증 안 함을 선택합니다. 프로젝트 이름을 *ToDoApi*로 지정합니다.
 
-![Web API 프로젝트 템플릿이 선택된 새 ASP.NET 웹 응용 프로그램 대화 상자](native-mobile-backend/_static/web-api-template.png)
+![Web API 프로젝트 템플릿이 선택된 새 ASP.NET 웹 애플리케이션 대화 상자](native-mobile-backend/_static/web-api-template.png)
 
-응용 프로그램은 포트 5000에 대한 모든 요청에 응답해야 합니다. 이를 수행하기 위해 `.UseUrls("http://*:5000")`를 포함하도록 *Program.cs*를 업데이트합니다.
+애플리케이션은 포트 5000에 대한 모든 요청에 응답해야 합니다. 이를 수행하기 위해 `.UseUrls("http://*:5000")`를 포함하도록 *Program.cs*를 업데이트합니다.
 
 [!code-csharp[](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Program.cs?range=10-16&highlight=3)]
 
 > [!NOTE]
-> 기본적으로 로컬이 아닌 요청을 무시하는 IIS Express 뒤에서보다 응용 프로그램을 직접 실행해야 합니다. 명령 프롬프트에서 [dotnet run](/dotnet/core/tools/dotnet-run)을 실행하거나 Visual Studio 도구 모음의 디버그 대상 드롭다운에서 응용 프로그램 이름 프로필을 선택합니다.
+> 기본적으로 로컬이 아닌 요청을 무시하는 IIS Express 뒤에서보다 애플리케이션을 직접 실행해야 합니다. 명령 프롬프트에서 [dotnet run](/dotnet/core/tools/dotnet-run)을 실행하거나 Visual Studio 도구 모음의 디버그 대상 드롭다운에서 애플리케이션 이름 프로필을 선택합니다.
 
 할 일 항목을 나타내도록 모델 클래스를 추가합니다. `[Required]` 특성을 사용하여 필수 필드를 표시합니다.
 
@@ -150,7 +150,7 @@ Postman으로 테스트하려면 동사를 PUT으로 변경합니다. 요청의 
 
 앱에 대해 백 엔드 서비스를 개발하는 경우 교차 편집 문제 처리를 위해 일관적인 규칙의 집합 또는 정책을 찾을 수 있습니다. 예를 들어 위에 표시된 서비스에서 발견되지 않았던 특정 레코드에 대한 요청은 `BadRequest` 응답 대신 `NotFound` 응답을 받았습니다. 마찬가지로, 모델 바인딩 형식을 전달한 이 서비스에 대해 만든 명령은 항상 `ModelState.IsValid`를 확인했고 잘못된 모델 유형에 대해 `BadRequest`를 반환했습니다.
 
-API에 대한 일반적인 정책을 식별했으면 [필터](../mvc/controllers/filters.md)에서 캡슐화할 수 있습니다. [ASP.NET Core MVC 응용 프로그램에서 일반적인 API 정책을 캡슐화하는 방법](https://msdn.microsoft.com/magazine/mt767699.aspx)에 대해 자세히 알아봅니다.
+API에 대한 일반적인 정책을 식별했으면 [필터](../mvc/controllers/filters.md)에서 캡슐화할 수 있습니다. [ASP.NET Core MVC 애플리케이션에서 일반적인 API 정책을 캡슐화하는 방법](https://msdn.microsoft.com/magazine/mt767699.aspx)에 대해 자세히 알아봅니다.
 
 ## <a name="additional-resources"></a>추가 자료
 

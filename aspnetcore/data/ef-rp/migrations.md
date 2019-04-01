@@ -5,12 +5,12 @@ description: 이 자습서에서는 ASP.NET Core MVC 앱에서 데이터 모델 
 ms.author: riande
 ms.date: 6/31/2017
 uid: data/ef-rp/migrations
-ms.openlocfilehash: 5848e5e1e45708c3ab5c2a79614111662701aa77
-ms.sourcegitcommit: 088e6744cd67a62f214f25146313a53949b17d35
+ms.openlocfilehash: 1803c6d3956121e4e7091f4f951917425e87c335
+ms.sourcegitcommit: 7d6019f762fc5b8cbedcd69801e8310f51a17c18
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58320162"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58419474"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---migrations---4-of-8"></a>ASP.NET Core에서 EF Core를 사용한 Razor 페이지 - 마이그레이션 - 4/8
 
@@ -133,7 +133,7 @@ dotnet ef migrations remove
 * 마이그레이션에 사용할 수 *없습니다*.
 * DB를 삭제하고 자주 다시 생성하는 테스트 또는 신속한 프로토타입 만들기를 위해 설계되었습니다.
 
-`DbInitializer`에서 다음 줄을 제거합니다.
+`EnsureCreated`를 제거합니다.
 
 ```csharp
 context.Database.EnsureCreated();

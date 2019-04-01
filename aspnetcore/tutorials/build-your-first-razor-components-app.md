@@ -5,14 +5,14 @@ description: Blazor 구성 요소 앱을 단계별로 빌드하고 기본 Razor 
 monikerRange: '>= aspnetcore-3.0'
 ms.author: riande
 ms.custom: mvc
-ms.date: 03/14/2019
+ms.date: 03/24/2019
 uid: tutorials/first-razor-components-app
-ms.openlocfilehash: c0f7b27fdfc770f8001625ecb3bf8d50af517b99
-ms.sourcegitcommit: 10e14b85490f064395e9b2f423d21e3c2d39ed8b
+ms.openlocfilehash: 2a987b3f2e687cd9d4dffa2c573c938e68ea3cc8
+ms.sourcegitcommit: 7d6019f762fc5b8cbedcd69801e8310f51a17c18
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57978425"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58419367"
 ---
 # <a name="build-your-first-razor-components-app"></a>첫 번째 Razor 구성 요소 앱 빌드
 
@@ -36,7 +36,7 @@ Blazor를 사용하는 환경의 경우:
 
 ## <a name="build-components"></a>구성 요소 빌드
 
-1. *Components/Pages* 폴더(Blazor의 *Pages*)에서 앱의 세 페이지 홈, 카운터 및 페치 데이터 각각으로 이동합니다. 이러한 페이지는 Razor 구성 요소 파일 *Index.razor*, *Counter.razor* 및 *FetchData.razor*로 구현됩니다. (Blazor는 *.cshtml* 파일 확장명을 계속 사용하므로 *Index.cshtml*, *Counter.cshtml* 및 *FetchData.cshtml*입니다.)
+1. *Components/Pages* 폴더(Blazor의 *Pages*)에서 앱의 세 페이지 홈, 카운터 및 Fetch 데이터. 이러한 페이지는 Razor 구성 요소 파일 *Index.razor*, *Counter.razor* 및 *FetchData.razor*로 구현됩니다. (Blazor는 *.cshtml* 파일 확장명을 계속 사용하므로 *Index.cshtml*, *Counter.cshtml* 및 *FetchData.cshtml*입니다.)
 
 1. 카운터 페이지에서 **Click me** 단추를 선택하여 페이지 새로 고침 없이 카운터를 증분합니다. 웹 페이지의 카운터를 증분하려면 일반적으로 JavaScript를 작성해야 하지만, Razor 구성 요소는 C#를 사용하여 더 나은 접근 방식을 제공합니다.
 
@@ -67,7 +67,7 @@ Blazor를 사용하는 환경의 경우:
 
 HTML 유사 구문을 사용하여 구성 요소를 다른 구성 요소에 포함합니다.
 
-1. Index 구성 요소에 `<Counter />` 요소를 추가하여 앱의 Index(홈페이지) 구성 요소에 Counter 구성 요소를 추가합니다.
+1. Index 구성 요소에 `<Counter />` 요소를 추가하여 앱의 Index(홈) 구성 요소에 Counter 구성 요소를 추가합니다.
 
    이 환경에 Blazor를 사용하는 경우에는 Survey Prompt 구성 요소(`<SurveyPrompt>` 요소)가 Index 구성 요소에 있습니다. `<SurveyPrompt>` 요소를 `<Counter>` 요소로 바꿉니다.
 
@@ -75,7 +75,7 @@ HTML 유사 구문을 사용하여 구성 요소를 다른 구성 요소에 포�
 
    [!code-cshtml[](build-your-first-razor-components-app/samples_snapshot/3.x/Index.razor?highlight=7)]
 
-1. 앱을 다시 빌드하고 실행합니다. 홈페이지에는 자체 카운터가 있습니다.
+1. 앱을 다시 빌드하고 실행합니다. 홈페이지에는 고유한 카운터가 있습니다.
 
 ## <a name="component-parameters"></a>구성 요소 매개 변수
 
@@ -101,7 +101,7 @@ HTML 유사 구문을 사용하여 구성 요소를 다른 구성 요소에 포�
 
    [!code-cshtml[](build-your-first-razor-components-app/samples/3.x/RazorComponents/Components/Pages/Index.razor?highlight=7)]
 
-1. 페이지를 다시 로드합니다. **Click me** 단추가 선택될 때마다 홈페이지 카운터가 10씩 증분됩니다. ‘카운터’ 페이지의 카운터는 1씩 증분됩니다.
+1. 홈페이지를 다시 로드합니다. **여기를 클릭** 단추가 선택될 때마다 해당 카운터가 10씩 증분됩니다. 카운터 페이지의 카운터는 1씩 증분됩니다.
 
 ## <a name="route-to-components"></a>구성 요소 경로
 
@@ -111,29 +111,38 @@ HTML 유사 구문을 사용하여 구성 요소를 다른 구성 요소에 포�
 
 앱의 서비스 컨테이너에 등록된 서비스는 [DI(종속성 주입)](xref:fundamentals/dependency-injection)를 통해 구성 요소에서 사용할 수 있습니다. `@inject` 지시문을 사용하여 서비스를 구성 요소에 삽입합니다.
 
-FetchData 구성 요소의 지시문을 검사합니다. `@inject` 지시문은 `WeatherForecastService` 서비스의 인스턴스를 구성 요소에 삽입하는 데 사용됩니다.
+샘플 앱에서 FetchData 구성 요소의 지시문을 검사합니다.
 
-*Components/Pages/FetchData.razor*(Blazor의 *Pages/FetchData.cshtml*):
+Razor 구성 요소 샘플 앱에서 `WeatherForecastService` 서비스는 [싱글톤](xref:fundamentals/dependency-injection#service-lifetimes)으로 등록되므로, 서비스의 한 인스턴스를 앱 전체에서 사용할 수 있습니다. `@inject` 지시문은 `WeatherForecastService` 서비스의 인스턴스를 구성 요소에 삽입하는 데 사용됩니다.
+
+*Components/Pages/FetchData.razor*:
 
 [!code-cshtml[](build-your-first-razor-components-app/samples_snapshot/3.x/FetchData1.razor?highlight=3)]
-
-`WeatherForecastService` 서비스는 [싱글톤](xref:fundamentals/dependency-injection#service-lifetimes)으로 등록되므로, 서비스의 한 인스턴스를 앱 전체에서 사용할 수 있습니다.
 
 FetchData 구성 요소는 삽입된 서비스를 `ForecastService`로 사용하여 `WeatherForecast` 개체의 배열을 검색합니다.
 
 [!code-cshtml[](build-your-first-razor-components-app/samples_snapshot/3.x/FetchData2.razor?highlight=6)]
 
-[@foreach](/dotnet/csharp/language-reference/keywords/foreach-in) 루프는 각 예측 인스턴스를 날씨 데이터 테이블의 행으로 렌더링하는 데 사용됩니다.
+Blazor 버전의 샘플 앱에서 `HttpClient`를 삽입하여 *wwwroot/sample-data* 폴더의 *weather.json* 파일에서 일기 예보 데이터를 가져옵니다.
+
+*Pages/FetchData.cshtml*:
+
+[!code-cshtml[](build-your-first-razor-components-app/samples_snapshot/3.x/FetchData1.cshtml?highlight=7)]
+
+두 샘플 앱에서 [@foreach](/dotnet/csharp/language-reference/keywords/foreach-in) 루프를 사용하여 각 예보 인스턴스를 날씨 데이터 테이블의 행으로 렌더링합니다.
 
 [!code-cshtml[](build-your-first-razor-components-app/samples_snapshot/3.x/FetchData3.razor?highlight=11-19)]
 
 ## <a name="build-a-todo-list"></a>할 일 목록 빌드
 
-간단한 할 일 목록을 구현하는 앱에 새 페이지를 추가합니다.
+간단한 할 일 목록을 구현하는 앱에 새 구성 요소를 추가합니다.
 
-1. *Todo.razor*라는 빈 파일을 *Components/Pages* 폴더(Blazor의 *Pages* 폴더)에 추가합니다.
+1. 샘플 앱에 빈 파일을 추가합니다.
 
-1. 페이지의 초기 태그를 제공합니다.
+   * Razor 구성 요소 환경의 경우 *Components/Pages* 폴더에 *Todo.razor* 파일을 추가합니다.
+   * Blazor 환경의 경우 *Pages* 폴더에 *Todo.cshtml* 파일을 추가합니다.
+
+1. 구성 요소의 초기 태그를 제공합니다.
 
    ```cshtml
    @page "/todo"
@@ -141,11 +150,11 @@ FetchData 구성 요소는 삽입된 서비스를 `ForecastService`로 사용하
    <h1>Todo</h1>
    ```
 
-1. Todo 페이지를 탐색 모음에 추가합니다.
+1. Todo 구성 요소를 탐색 모음에 추가합니다.
 
    NavMenu 구성 요소(*Components/Shared/NavMenu.razor* 또는 Blazor의 *Shared/NavMenu.cshtml*)는 앱의 레이아웃에서 사용됩니다. 레이아웃은 앱의 콘텐츠 중복을 방지할 수 있는 구성 요소입니다. 자세한 내용은 <xref:razor-components/layouts>을 참조하세요.
 
-   *Components/Shared/NavMenu.razor*(Blazor의 *Shared/NavMenu.cshtml*) 파일의 기존 목록 항목 아래에 다음 목록 항목 태그를 추가하여 Todo 페이지의 `<NavLink>`를 추가합니다.
+   *Components/Shared/NavMenu.razor*(Blazor의 *Shared/NavMenu.cshtml*) 파일의 기존 목록 항목 아래에 다음 목록 항목 태그를 추가하여 Todo 구성 요소의 `<NavLink>`를 추가합니다.
 
    ```cshtml
    <li class="nav-item px-3">
@@ -155,7 +164,7 @@ FetchData 구성 요소는 삽입된 서비스를 `ForecastService`로 사용하
    </li>
    ```
 
-1. 앱을 다시 빌드하고 실행합니다. 새 Todo 페이지를 방문하여 Todo 페이지 링크가 작동하는지 확인합니다.
+1. 앱을 다시 빌드하고 실행합니다. 새 Todo 페이지를 방문하여 Todo 구성 요소에 대한 링크가 작동하는지 확인합니다.
 
 1. 프로젝트 루트에 *TodoItem.cs* 파일을 추가하여 Todo 항목을 나타내는 클래스를 저장합니다. `TodoItem` 클래스에 대해 다음 C# 코드를 사용합니다.
 

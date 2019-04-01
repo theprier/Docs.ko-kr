@@ -6,12 +6,12 @@ ms.author: scaddie
 ms.custom: mvc
 ms.date: 12/30/2018
 uid: tutorials/get-started-with-nswag
-ms.openlocfilehash: 43f0f04ae63f4e74d8de6001a4a7518e4eb23d77
-ms.sourcegitcommit: 5f299daa7c8102d56a63b214b9a34cc4bc87bc42
+ms.openlocfilehash: af07ad771c582cfad80f297748c3c1049ff4a7d6
+ms.sourcegitcommit: 7d6019f762fc5b8cbedcd69801e8310f51a17c18
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58209147"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58419409"
 ---
 # <a name="get-started-with-nswag-and-aspnet-core"></a>NSwag 및 ASP.NET Core 시작
 
@@ -47,7 +47,7 @@ NSwag를 사용하면 기존 API가 필요하지 않으므로 Swagger를 통합�
 
 다음 방법 중 하나를 사용하여 NSwag NuGet 패키지를 설치합니다.
 
-### <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
+# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
 
 * **패키지 관리자 콘솔** 창에서:
   * **보기** > **다른 창** > **패키지 관리자 콘솔**로 이동
@@ -64,14 +64,14 @@ NSwag를 사용하면 기존 API가 필요하지 않으므로 Swagger를 통합�
   * 검색 상자에 “NSwag.AspNetCore” 입력
   * **찾아보기** 탭에서 "NSwag.AspNetCore" 패키지를 선택하고 **설치** 클릭
 
-### <a name="visual-studio-for-mactabvisual-studio-mac"></a>[Visual Studio for Mac](#tab/visual-studio-mac)
+# <a name="visual-studio-for-mactabvisual-studio-mac"></a>[Visual Studio for Mac](#tab/visual-studio-mac)
 
 * **Solution Pad**에서 *Packages* 폴더를 마우스 오른쪽 단추로 클릭 > **패키지 추가...** 선택
 * **패키지 추가** 창의 **소스** 드롭다운을 “nuget.org”로 설정
 * 검색 상자에 “NSwag.AspNetCore” 입력
 * 결과 창에서 "NSwag.AspNetCore" 패키지를 선택하고 **패키지 추가** 클릭
 
-### <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code)
+# <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code)
 
 **통합 터미널**에서 다음 명령을 실행합니다.
 
@@ -79,7 +79,7 @@ NSwag를 사용하면 기존 API가 필요하지 않으므로 Swagger를 통합�
 dotnet add TodoApi.csproj package NSwag.AspNetCore
 ```
 
-### <a name="net-core-clitabnetcore-cli"></a>[.NET Core CLI](#tab/netcore-cli)
+# <a name="net-core-clitabnetcore-cli"></a>[.NET Core CLI](#tab/netcore-cli)
 
 다음 명령을 실행합니다.
 
@@ -202,9 +202,9 @@ Swagger UI는 버전의 정보를 표시합니다.
 
 ### <a name="xml-comments"></a>XML 주석
 
- XML 주석을 사용하려면 다음 단계를 수행합니다.
+XML 주석을 사용하려면 다음 단계를 수행합니다.
 
-# <a name="visual-studiotabvisual-studio-xml"></a>[Visual Studio](#tab/visual-studio-xml/)
+# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
 
 ::: moniker range=">= aspnetcore-2.0"
 
@@ -222,7 +222,7 @@ Swagger UI는 버전의 정보를 표시합니다.
 
 ::: moniker-end
 
-# <a name="visual-studio-for-mactabvisual-studio-mac-xml"></a>[Visual Studio for Mac](#tab/visual-studio-mac-xml/)
+# <a name="visual-studio-for-mactabvisual-studio-mac"></a>[Visual Studio for Mac](#tab/visual-studio-mac)
 
 ::: moniker range=">= aspnetcore-2.0"
 
@@ -240,7 +240,7 @@ Swagger UI는 버전의 정보를 표시합니다.
 
 ::: moniker-end
 
-# <a name="visual-studio-codetabvisual-studio-code-xml"></a>[Visual Studio Code](#tab/visual-studio-code-xml/)
+# <a name="visual-studio-code--net-core-clitabvisual-studio-codenetcore-cli"></a>[Visual Studio Code/.NET Core CLI](#tab/visual-studio-code+netcore-cli)
 
 강조 표시된 줄을 *.csproj* 파일에 수동으로 추가합니다.
 
@@ -276,7 +276,7 @@ NSwag는 [리플렉션](/dotnet/csharp/programming-guide/concepts/reflection)을
 
 ::: moniker range=">= aspnetcore-2.1"
 
-NSwag는 [리플렉션](/dotnet/csharp/programming-guide/concepts/reflection)을 사용하고 웹 API 작업의 권장 반환 형식은 [ActionResult\<T>](xref:Microsoft.AspNetCore.Mvc.ActionResult`1)이므로 `T`로 정의된 반환 형식만 유추할 수 있습니다. 다른 가능한 반환 형식은 자동으로 유추할 수 없습니다.
+ NSwag는 [리플렉션](/dotnet/csharp/programming-guide/concepts/reflection)을 사용하고 웹 API 작업의 권장 반환 형식은 [ActionResult\<T>](xref:Microsoft.AspNetCore.Mvc.ActionResult%601)이므로 `T`로 정의된 반환 형식만 유추할 수 있습니다. 다른 가능한 반환 형식은 자동으로 유추할 수 없습니다. 
 
 다음 예제를 참조하세요.
 

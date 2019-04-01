@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 09/11/2018
 uid: mvc/views/partial
-ms.openlocfilehash: ff4b99580990edbd768128d77214e664a1e29e56
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: b7c1545007086053e879bce6781802959da77901
+ms.sourcegitcommit: a1c43150ed46aa01572399e8aede50d4668745ca
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50207227"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58327380"
 ---
 # <a name="partial-views-in-aspnet-core"></a>ASP.NET Core의 부분 보기
 
@@ -25,7 +25,7 @@ ms.locfileid: "50207227"
 
 ::: moniker-end
 
-[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/views/partial/sample)([다운로드 방법](xref:index#how-to-download-a-sample))
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/views/partial/sample) ([다운로드 방법](xref:index#how-to-download-a-sample))
 
 ## <a name="when-to-use-partial-views"></a>부분 보기를 사용하는 경우
 
@@ -136,7 +136,7 @@ MVC 보기 렌더링과 달리 부분 보기는 *_ViewStart.cshtml*을 실행하
 
 ### <a name="asynchronous-html-helper"></a>비동기 HTML 도우미
 
-HTML 도우미를 사용할 때 가장 좋은 방법은 <xref:Microsoft.AspNetCore.Mvc.Rendering.HtmlHelperPartialExtensions.PartialAsync*>를 사용하는 것입니다. `PartialAsync`는 <xref:System.Threading.Tasks.Task`1>에 래핑된 <xref:Microsoft.AspNetCore.Html.IHtmlContent> 형식을 반환합니다. 대기된 호출 접두사로 `@` 문자를 사용하여 메서드를 참조합니다.
+HTML 도우미를 사용할 때 가장 좋은 방법은 <xref:Microsoft.AspNetCore.Mvc.Rendering.HtmlHelperPartialExtensions.PartialAsync*>를 사용하는 것입니다. `PartialAsync`는 <xref:System.Threading.Tasks.Task%601>에 래핑된 <xref:Microsoft.AspNetCore.Html.IHtmlContent> 형식을 반환합니다. 대기된 호출 접두사로 `@` 문자를 사용하여 메서드를 참조합니다.
 
 ```cshtml
 @await Html.PartialAsync("_PartialName")
@@ -191,7 +191,7 @@ HTML 도우미를 사용할 때 가장 좋은 방법은 <xref:Microsoft.AspNetCo
 
 `Partial` 또는 `RenderPartial` 호출 시 Visual Studio 분석기 경고가 발생합니다. 예를 들어 `Partial`의 존재는 다음 경고 메시지를 생성합니다.
 
-> IHtmlHelper.Partial 사용 시 응용 프로그램이 교착 상태가 될 수 있습니다. &lt;부분&gt; 태그 도우미 또는 IHtmlHelper.PartialAsync를 사용하세요.
+> IHtmlHelper.Partial 사용 시 애플리케이션이 교착 상태가 될 수 있습니다. &lt;부분&gt; 태그 도우미 또는 IHtmlHelper.PartialAsync를 사용하세요.
 
 `@Html.Partial` 호출을 `@await Html.PartialAsync` 또는 [부분 태그 도우미](xref:mvc/views/tag-helpers/builtin-th/partial-tag-helper)로 바꿉니다. 부분 태그 도우미 마이그레이션에 대한 자세한 내용은 [HTML 도우미에서 마이그레이션](xref:mvc/views/tag-helpers/builtin-th/partial-tag-helper#migrate-from-an-html-helper)을 참조합니다.
 
