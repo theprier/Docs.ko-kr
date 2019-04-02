@@ -5,7 +5,7 @@ description: 이 문서에는 Azure 호스트 및 배포 리소스의 링크가 
 monikerRange: '>= aspnetcore-2.1'
 ms.author: riande
 ms.custom: mvc
-ms.date: 03/23/2019
+ms.date: 03/30/2019
 uid: host-and-deploy/azure-apps/index
 ---
 # <a name="deploy-aspnet-core-apps-to-azure-app-service"></a>Azure App Service에 ASP.NET Core 앱 배포
@@ -14,7 +14,7 @@ uid: host-and-deploy/azure-apps/index
 
 ## <a name="useful-resources"></a>유용한 리소스
 
-Azure [Web Apps 설명서](/azure/app-service/)는 Azure 앱 설명서, 샘플, 방법 가이드 및 기타 리소스를 제공합니다. ASP.NET Core 앱 호스트와 관련하여 두 가지 주목할 만한 자습서는 다음과 같습니다.
+[App Service 설명서](/azure/app-service/)에서는 Azure 앱 설명서, 자습서, 샘플, 방법 가이드 및 기타 리소스를 제공합니다. ASP.NET Core 앱 호스트와 관련하여 두 가지 주목할 만한 자습서는 다음과 같습니다.
 
 [Azure에서 ASP.NET Core 웹앱 만들기](/azure/app-service/app-service-web-get-started-dotnet)  
 Visual Studio를 사용하여 ASP.NET Core 웹앱을 만들고 Windows의 Azure App Service에 배포합니다.
@@ -30,7 +30,7 @@ Visual Studio를 사용하여 Azure App Service에 ASP.NET Core 앱을 게시하
 <xref:host-and-deploy/azure-apps/azure-continuous-deployment>  
 Visual Studio를 사용하여 ASP.NET Core 웹앱을 만들고 연속 배포를 위한 Git을 사용하여 Azure App Service에 배포하는 방법을 알아봅니다.
 
-[Azure Pipelines를 사용하여 첫 번째 파이프라인 만들기](/azure/devops/pipelines/get-started-yaml)  
+[첫 번째 파이프라인 만들기](/azure/devops/pipelines/get-started-yaml)  
 ASP.NET Core 앱에 대한 CI 빌드를 설정하고 Azure App Service에 대한 연속 배포 릴리스를 만듭니다.
 
 [Azure Web App 샌드박스](https://github.com/projectkudu/kudu/wiki/Azure-Web-App-sandbox)  
@@ -92,10 +92,10 @@ App Service에 배포된 ASP.NET Core 앱은 자동으로 App Service 확장인 
 
 모니터링, 로깅 및 문제 해결에 대한 자세한 내용은 다음 문서를 참조하세요.
 
-[방법: Azure App Service에서 앱 모니터링](/azure/app-service/web-sites-monitor)  
+[Azure App Service에서 앱 모니터링](/azure/app-service/web-sites-monitor)  
 앱 및 App Service 계획의 할당량 및 메트릭을 검토하는 방법을 알아봅니다.
 
-[Azure App Service에서 웹앱에 대한 진단 로깅 사용](/azure/app-service/web-sites-enable-diagnostic-log)  
+[Azure App Service에서 앱에 대한 진단 로깅 사용](/azure/app-service/web-sites-enable-diagnostic-log)  
 HTTP 상태 코드, 실패한 요청 및 웹 서버 활동에 대한 진단 로깅을 활성화하고 액세스하는 방법을 알아봅니다.
 
 <xref:fundamentals/error-handling>  
@@ -220,7 +220,7 @@ ARM 템플릿을 사용하여 앱을 만들고 배포하는 경우 `siteextensio
 
 ## <a name="protocol-settings-https"></a>프로토콜 설정(HTTPS)
 
-보안 프로토콜 바인딩을 사용하면 HTTPS를 통한 요청에 응답할 때 사용할 인증서를 지정할 수 있습니다. 바인딩을 위해서는 특정 호스트 이름에 대해 발행된 유효한 개인 인증서(*.pfx*)가 필요합니다. 자세한 내용은 [자습서: 기존 사용자 지정 SSL 인증서를 Azure Web Apps에 바인딩](/azure/app-service/app-service-web-tutorial-custom-ssl)을 참조하세요.
+보안 프로토콜 바인딩을 사용하면 HTTPS를 통한 요청에 응답할 때 사용할 인증서를 지정할 수 있습니다. 바인딩을 위해서는 특정 호스트 이름에 대해 발행된 유효한 개인 인증서(*.pfx*)가 필요합니다. 자세한 내용은 [자습서: 기존 사용자 지정 SSL 인증서를 Azure App Service에 바인딩](/azure/app-service/app-service-web-tutorial-custom-ssl)을 참조하세요.
 
 ## <a name="transform-webconfig"></a>web.config 변환
 
@@ -228,7 +228,7 @@ ARM 템플릿을 사용하여 앱을 만들고 배포하는 경우 `siteextensio
 
 ## <a name="additional-resources"></a>추가 자료
 
-* [Web Apps 개요(5분 개요 비디오)](/azure/app-service/app-service-web-overview)
+* [App Service 개요](/azure/app-service/app-service-web-overview)
 * [Azure App Service: .NET 앱을 호스트하기에 가장 좋은 서비스(55분 개요 동영상)](https://channel9.msdn.com/events/dotnetConf/2017/T222)
 * [Azure Friday: Azure App Service 진단 및 문제 해결 환경(12분 동영상)](https://channel9.msdn.com/Shows/Azure-Friday/Azure-App-Service-Diagnostic-and-Troubleshooting-Experience)
 * [Azure App Service 진단 개요](/azure/app-service/app-service-diagnostics)
@@ -239,4 +239,4 @@ Windows Server의 Azure App Service는 [IIS(인터넷 정보 서비스)](https:/
 * <xref:host-and-deploy/iis/index>
 * <xref:host-and-deploy/aspnet-core-module>
 * <xref:host-and-deploy/iis/modules>
-* [Microsoft TechNet 라이브러리: Windows Server](/windows-server/windows-server-versions)
+* [Windows Server - 현재 및 이전 릴리스에 대한 IT 관리자 콘텐츠](/windows-server/windows-server-versions)
