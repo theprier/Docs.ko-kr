@@ -7,6 +7,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 03/27/2019
 uid: razor-components/index
+ms.openlocfilehash: 8b2e87fe856598a5ac231e3bc1d413957829b448
+ms.sourcegitcommit: 3e9e1f6d572947e15347e818f769e27dea56b648
+ms.translationtype: HT
+ms.contentlocale: ko-KR
+ms.lasthandoff: 03/30/2019
+ms.locfileid: "58751011"
 ---
 # <a name="introduction-to-razor-components"></a><span data-ttu-id="b641b-103">Razor 구성 요소 소개</span><span class="sxs-lookup"><span data-stu-id="b641b-103">Introduction to Razor Components</span></span>
 
