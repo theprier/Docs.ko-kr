@@ -7,12 +7,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 01/17/2019
 uid: fundamentals/startup
-ms.openlocfilehash: d629c2f02f9021454d8f8539018f3e2ca4703a00
-ms.sourcegitcommit: 036d4b03fd86ca5bb378198e29ecf2704257f7b2
+ms.openlocfilehash: 9556ec076fce3500115cf0e934202f11b175ccd3
+ms.sourcegitcommit: 3e9e1f6d572947e15347e818f769e27dea56b648
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57346400"
+ms.lasthandoff: 03/30/2019
+ms.locfileid: "58750791"
 ---
 # <a name="app-startup-in-aspnet-core"></a>ASP.NET Core에서 앱 시작
 
@@ -95,7 +95,7 @@ ASP.NET Core 앱은 규칙에 따라 `Startup`으로 이름이 지정된 `Startu
 
 `Startup` 클래스를 사용하지 않고 서비스 및 요청 처리 파이프라인을 구성하려면 호스트 작성기에서 `ConfigureServices` 및 `Configure` 편의성 메서드를 호출합니다. `ConfigureServices`에 대한 여러 호출은 서로 추가합니다. 여러 `Configure` 메서드 호출이 있는 경우 마지막 `Configure` 호출이 사용됩니다.
 
-[!code-csharp[](startup/sample_snapshot/Program1.cs?highlight=18,22)]
+[!code-csharp[](startup/sample_snapshot/Program1.cs?highlight=16,20)]
 
 ## <a name="extend-startup-with-startup-filters"></a>시작 필터로 시작 확장
 
