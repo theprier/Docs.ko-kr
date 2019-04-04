@@ -1,12 +1,18 @@
 ---
 title: Razor 구성 요소 호스트 및 배포
 author: guardrex
-description: 'ASP.NET Core, 콘텐츠 전송 네트워크(CDN), 파일 서버 및 GitHub 페이지를 사용하여 Razor 구성 요소 및 Blazor 앱을 호스트하고 배포하는 방법을 알아봅니다.'
+description: ASP.NET Core, 콘텐츠 전송 네트워크(CDN), 파일 서버 및 GitHub 페이지를 사용하여 Razor 구성 요소 및 Blazor 앱을 호스트하고 배포하는 방법을 알아봅니다.
 monikerRange: '>= aspnetcore-3.0'
 ms.author: riande
 ms.custom: mvc
 ms.date: 03/22/2019
 uid: host-and-deploy/razor-components/index
+ms.openlocfilehash: 236e8da27b80dbdb3e0ea885413b6cfd563dde60
+ms.sourcegitcommit: 7d6019f762fc5b8cbedcd69801e8310f51a17c18
+ms.translationtype: HT
+ms.contentlocale: ko-KR
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58419422"
 ---
 # <a name="host-and-deploy-razor-components"></a>Razor 구성 요소 호스트 및 배포
 

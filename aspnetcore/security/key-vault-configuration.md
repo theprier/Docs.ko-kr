@@ -5,14 +5,14 @@ description: Azure 키 자격 증명 모음 구성 공급자를 사용 하 여 �
 monikerRange: '>= aspnetcore-2.1'
 ms.author: riande
 ms.custom: mvc
-ms.date: 02/22/2019
+ms.date: 02/25/2019
 uid: security/key-vault-configuration
-ms.openlocfilehash: 2188929d6f380327465e8ce0fd8ad659188416d3
-ms.sourcegitcommit: b3894b65e313570e97a2ab78b8addd22f427cac8
+ms.openlocfilehash: 8fd1cca1803d3f1d44d80ec63c5cfc259cbdaf55
+ms.sourcegitcommit: 1a7000630e55da90da19b284e1b2f2f13a393d74
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56743987"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "59012697"
 ---
 # <a name="azure-key-vault-configuration-provider-in-aspnet-core"></a>ASP.NET Core에서 azure Key Vault 구성 공급자
 
@@ -34,13 +34,13 @@ Azure 키 자격 증명 모음 구성 공급자를 사용 하려면 패키지 �
 채택 하는 [Azure 리소스에 대 한 id 관리](/azure/active-directory/managed-identities-azure-resources/overview) 시나리오에 대 한 패키지 참조를 추가 합니다 [Microsoft.Azure.Services.AppAuthentication](https://www.nuget.org/packages/Microsoft.Azure.Services.AppAuthentication/) 패키지.
 
 > [!NOTE]
-> 안정적인 최신 릴리스를 작성할 당시 `Microsoft.Azure.Services.AppAuthentication`, 버전 `1.0.3`에 대 한 지원을 제공 [identities 관리 되는 시스템 할당](/azure/active-directory/managed-identities-azure-resources/overview#how-does-the-managed-identities-for-azure-resources-worka-namehow-does-it-worka)합니다. 에 대 한 지원 *identities 관리 되는 사용자 할당* 에서 사용할 수는 `1.0.2-preview` 패키지 있습니다. 이 항목에서는 시스템 관리 id 사용을 보여 줍니다. 및 버전을 사용 하 여 제공된 된 샘플 앱 `1.0.3` 의 `Microsoft.Azure.Services.AppAuthentication` 패키지 있습니다.
+> 안정적인 최신 릴리스를 작성할 당시 `Microsoft.Azure.Services.AppAuthentication`, 버전 `1.0.3`에 대 한 지원을 제공 [identities 관리 되는 시스템 할당](/azure/active-directory/managed-identities-azure-resources/overview#how-does-the-managed-identities-for-azure-resources-worka-namehow-does-it-worka)합니다. 에 대 한 지원 *identities 관리 되는 사용자 할당* 에서 사용할 수는 `1.2.0-preview2` 패키지 있습니다. 이 항목에서는 시스템 관리 id 사용을 보여 줍니다. 및 버전을 사용 하 여 제공된 된 샘플 앱 `1.0.3` 의 `Microsoft.Azure.Services.AppAuthentication` 패키지 있습니다.
 
 ## <a name="sample-app"></a>샘플 앱
 
 샘플 앱에 의해 결정 되는 두 가지 모드 중 하나에서 실행 되는 `#define` 맨 위에 있는 문을 합니다 *Program.cs* 파일:
 
-* `Basic` &ndash; Key vault에 저장 된 비밀에 액세스 하려면 Azure Key Vault 응용 프로그램 ID 및 암호 (클라이언트 암호)를 사용 방법을 보여 줍니다. 배포는 `Basic` 버전의 ASP.NET Core 앱을 처리할 수 있는 모든 호스트 샘플입니다. 지침에 따라 합니다 [사용 하 여 응용 프로그램 ID 및 Azure 호스트 되는 앱에 대 한 클라이언트 암호](#use-application-id-and-client-secret-for-non-azure-hosted-apps) 섹션입니다.
+* `Certificate` &ndash; Azure Key Vault에 저장 된 액세스 비밀을 Azure Key Vault 클라이언트 ID 및 X.509 인증서의 사용을 보여 줍니다. Azure App Service 또는 ASP.NET Core 앱을 처리할 수 있는 모든 호스트에 배포 된 모든 위치에서이 버전의 샘플을 실행할 수 있습니다.
 * `Managed` &ndash; 사용 하는 방법을 보여 줍니다 [Azure 리소스에 대 한 id 관리](/azure/active-directory/managed-identities-azure-resources/overview) 앱의 코드 또는 구성에 저장 된 자격 증명 없이 Azure AD 인증을 사용 하 여 Azure Key Vault에 앱을 인증할 수 있습니다. 관리 되는 id를 사용 하 여 인증을 하는 경우 Azure AD 응용 프로그램 ID 및 암호 (클라이언트 암호)를 사용할 필요가 없습니다. `Managed` 버전 샘플의 Azure에 배포 되어야 합니다. 지침에 따라 합니다 [관리 되는 id를 사용 하 여 Azure 리소스에 대 한](#use-managed-identities-for-azure-resources) 섹션입니다.
 
 전처리기 지시문을 사용 하 여 샘플 앱을 구성 하는 방법에 대 한 자세한 내용은 (`#define`)를 참조 하세요 <xref:index#preprocessor-directives-in-sample-code>합니다.
@@ -113,15 +113,19 @@ dotnet user-secrets set "Section:SecretName" "secret_value_2_dev"
 
 ## <a name="use-application-id-and-client-secret-for-non-azure-hosted-apps"></a>응용 프로그램 ID 및 클라이언트 암호를 사용 하 여 Azure 호스트 되는 앱에 대 한
 
-Azure AD를 구성 합니다. key vault에 인증 하는 응용 프로그램 ID 및 암호 (클라이언트 암호)을 사용 하는 Azure Key Vault 및 앱 **앱 Azure 외부에서 호스트 되는 경우**합니다.
+Azure AD를 구성 하 고, Azure Active Directory 응용 프로그램 ID 및 X.509를 사용 하는 Azure Key Vault 및 앱 인증서를 key vault에 인증 **앱 Azure 외부에서 호스트 되는 경우**합니다. 자세한 내용은 [키, 비밀 및 인증서에 대 한](/azure/key-vault/about-keys-secrets-and-certificates)합니다.
 
 > [!NOTE]
-> 응용 프로그램 ID 및 암호 (클라이언트 암호)를 사용 하는 Azure에서 호스트 되는 앱에 대 한 지원 되지만 사용 하는 것이 좋습니다 [Azure 리소스에 대 한 id 관리](#use-managed-identities-for-azure-resources) Azure에서 앱을 호스팅하는 경우. 관리 되는 id는 일반적으로 더 안전한 방법으로 간주 됩니다 있도록 앱 또는 해당 구성에서 자격 증명을 저장 필요 하지 않습니다.
+> 응용 프로그램 ID 및 X.509 인증서를 사용 하는 Azure에서 호스트 되는 앱에 대 한 지원 되지만 사용 하는 것이 좋습니다 [Azure 리소스에 대 한 id 관리](#use-managed-identities-for-azure-resources) Azure에서 앱을 호스팅하는 경우. 관리 되는 id는 앱에서 또는 개발 환경에서 인증서를 저장할 필요 하지 않습니다.
 
-샘플 앱은 응용 프로그램 ID 및 암호 (클라이언트 암호)를 사용 하면 합니다 `#define` 맨 위에 있는 문을 합니다 *Program.cs* 파일을 설정 `Basic`.
+샘플 앱에서는 경우 응용 프로그램 ID 및 X.509 인증서를 `#define` 맨 위에 있는 문을 합니다 *Program.cs* 파일을 설정 `Certificate`합니다.
 
-1. Azure AD를 사용 하 여 앱을 등록 하 고 앱의 id에 대 한 암호 (클라이언트 암호)을 설정 합니다.
-1. 앱의 키 자격 증명 모음 이름, 응용 프로그램 ID 및 클라이언트 암호/암호를 저장할 *appsettings.json* 파일입니다.
+1. Azure AD에 앱 등록 (**앱 등록**).
+1. 공개 키를 업로드 합니다.
+   1. Azure AD에서 앱을 선택 합니다.
+   1. 이동할 **설정을** > **키**합니다.
+   1. 선택 **공개 키 업로드** 공개 키를 포함 하는 인증서를 업로드 합니다. 사용 하는 것 외에도 *.cer*를 *.pem*, 또는 *.crt* 인증서를 *.pfx* 인증서를 업로드할 수 있습니다.
+1. 앱의 키 자격 증명 모음 이름 및 응용 프로그램 ID를 저장할 *appsettings.json* 파일입니다. 앱 또는 앱의 인증서 저장소에 루트 인증서를 배치&dagger;합니다.
 1. 이동할 **Key vault** Azure portal에서 합니다.
 1. 만든 키 자격 증명 모음을 선택 합니다 [Azure Key Vault를 사용 하 여 프로덕션 환경에서 비밀 저장소](#secret-storage-in-the-production-environment-with-azure-key-vault) 섹션입니다.
 1. 선택 **액세스 정책**합니다.
@@ -132,7 +136,9 @@ Azure AD를 구성 합니다. key vault에 인증 하는 응용 프로그램 ID 
 1. **저장**을 선택합니다.
 1. 앱을 배포 합니다.
 
-합니다 `Basic` 샘플 앱에서 해당 구성 값을 가져옵니다 `IConfigurationRoot` 비밀 이름으로 같은 이름의:
+&dagger;샘플 앱에서 인증서 사용 되는 앱의 루트에서 실제 인증서 파일에서 직접 새 `X509Certificate2` 호출할 때 `AddAzureKeyVault`합니다. 또 다른 방법은 OS가 인증서를 관리할 수 있도록 하는 것입니다. 자세한 내용은 참조는 [OS가 X.509 인증서를 관리할 수 있도록](#allow-the-os-to-manage-the-x509-certificate) 섹션입니다.
+
+합니다 `Certificate` 샘플 앱에서 해당 구성 값을 가져옵니다 `IConfigurationRoot` 비밀 이름으로 같은 이름의:
 
 * 비 계층 값: 에 대 한 값 `SecretName` 사용 하 여 가져오는 `config["SecretName"]`합니다.
 * 계층 값 (섹션): 사용 하 여 `:` (콜론) 표기법 또는 `GetSection` 확장 메서드. 이러한 방법 중 하나를 사용 하 여 구성 값을 가져옵니다.
@@ -141,13 +147,12 @@ Azure AD를 구성 합니다. key vault에 인증 하는 응용 프로그램 ID 
 
 앱 호출 `AddAzureKeyVault` 에서 제공 하는 값을 *appsettings.json* 파일:
 
-[!code-csharp[](key-vault-configuration/sample/Program.cs?name=snippet1&highlight=11-14)]
+[!code-csharp[](key-vault-configuration/sample/Program.cs?name=snippet1&highlight=12-15)]
 
 예제 값:
 
 * 키 자격 증명 모음 이름: `contosovault`
 * 응용 프로그램 ID: `627e911e-43cc-61d4-992e-12db9c81b413`
-* 암호: `g58K3dtg59o1Pa+e59v2Tx829w6VxTB2yv9sv/101di=`
 
 *appsettings.json*:
 
@@ -257,35 +262,51 @@ az keyvault set-policy --name '{KEY VAULT NAME}' --object-id {OBJECT ID} --secre
 > [!NOTE]
 > 제공할 수도 있습니다 고유한 `KeyVaultClient` 구현을 `AddAzureKeyVault`합니다. 사용자 지정 클라이언트 앱에 클라이언트의 단일 인스턴스를 공유할 수 있습니다.
 
-## <a name="authenticate-to-azure-key-vault-with-an-x509-certificate"></a>X.509 인증서를 사용 하 여 Azure Key Vault에 인증
+## <a name="allow-the-os-to-manage-the-x509-certificate"></a>X.509 인증서를 관리 하는 OS를 허용 합니다.
 
-인증서를 지 원하는 환경에서.NET Framework 앱을 개발 하는 경우 X.509 인증서를 사용 하 여 Azure Key Vault에 인증할 수 있습니다. X.509 인증서의 개인 키 OS에 의해 관리 됩니다. 자세한 내용은 [클라이언트 암호 대신 인증서를 사용 하 여 인증](/azure/key-vault/key-vault-use-from-web-application#authenticate-with-a-certificate-instead-of-a-client-secret)합니다. 사용 된 `AddAzureKeyVault` 받아들이는 오버 로드는 `X509Certificate2` (`_env` 다음 예제에서:
+OS에서 X.509 인증서를 관리할 수 있습니다. 다음 예제에서는 합니다 `AddAzureKeyVault` 받아들이는 오버 로드는 `X509Certificate2` 컴퓨터의 현재 사용자 인증서 저장소를 구성 하 여 제공 된 인증서 지문:
 
 ```csharp
-var builtConfig = config.Build();
+// using System.Linq;
+// using System.Security.Cryptography.X509Certificates;
+// using Microsoft.Extensions.Configuration;
 
-var store = new X509Store(StoreLocation.CurrentUser);
-store.Open(OpenFlags.ReadOnly);
-var cert = store.Certificates
-    .Find(X509FindType.FindByThumbprint, 
-        config["CertificateThumbprint"], false);
+WebHost.CreateDefaultBuilder(args)
+    .ConfigureAppConfiguration((context, config) =>
+    {
+        if (context.HostingEnvironment.IsProduction())
+        {
+            var builtConfig = config.Build();
 
-config.AddAzureKeyVault(
-    builtConfig["KeyVaultName"],
-    builtConfig["AzureADApplicationId"],
-    cert.OfType<X509Certificate2>().Single(),
-    new EnvironmentSecretManager(context.HostingEnvironment.ApplicationName));
+            using (var store = new X509Store(StoreName.My, 
+                StoreLocation.CurrentUser))
+            {
+                store.Open(OpenFlags.ReadOnly);
+                var certs = store.Certificates
+                    .Find(X509FindType.FindByThumbprint, 
+                        builtConfig["CertificateThumbprint"], false);
 
-store.Close();
+                config.AddAzureKeyVault(
+                    builtConfig["KeyVaultName"], 
+                    builtConfig["AzureADApplicationId"], 
+                    certs.OfType<X509Certificate2>().Single());
+
+                store.Close();
+            }
+        }
+    })
+    .UseStartup<Startup>();
 ```
+
+자세한 내용은 [클라이언트 암호 대신 인증서를 사용 하 여 인증](/azure/key-vault/key-vault-use-from-web-application#authenticate-with-a-certificate-instead-of-a-client-secret)합니다.
 
 ## <a name="bind-an-array-to-a-class"></a>클래스에 배열 바인딩
 
 공급자는 POCO 배열에 대 한 바인딩에 배열로 구성 값을 읽을 수 있습니다.
 
-콜론을 포함 하는 키를 허용 하는 구성 소스에서 읽을 때 (`:`) 구분 기호, 숫자 키 세그먼트 배열을 구성 하는 키를 구분 하기 위해 사용 됩니다 (`:0:`, `:1:`,... `:{n}:`). 자세한 내용은 참조 하세요. [구성: 클래스에 배열을 바인딩할](xref:fundamentals/configuration/index#bind-an-array-to-a-class)합니다.
+콜론을 포함 하는 키를 허용 하는 구성 소스에서 읽을 때 (`:`) 구분 기호, 숫자 키 세그먼트 배열을 구성 하는 키를 구분 하기 위해 사용 됩니다 (`:0:`, `:1:`,... `:{n}:`)를 사용하여 저장하는 값에 액세스할 수 있습니다. 자세한 내용은 참조 하세요. [구성: 클래스에 배열을 바인딩할](xref:fundamentals/configuration/index#bind-an-array-to-a-class)합니다.
 
-Azure Key Vault 키를 구분 기호로 콜론을 사용할 수 없습니다. 이 항목에서 설명한 접근 방식을 사용 하 여 이중 대시 (`--`) 계층 값 (섹션)에 대 한 구분 기호로 사용 합니다. 배열 키는 이중 대시 및 숫자 키 세그먼트를 사용 하 여 Azure Key Vault에 저장 됩니다 (`--0--`, `--1--`,... `--{n}--`).
+Azure Key Vault 키를 구분 기호로 콜론을 사용할 수 없습니다. 이 항목에서 설명한 접근 방식을 사용 하 여 이중 대시 (`--`) 계층 값 (섹션)에 대 한 구분 기호로 사용 합니다. 배열 키는 이중 대시 및 숫자 키 세그먼트를 사용 하 여 Azure Key Vault에 저장 됩니다 (`--0--`, `--1--`하십시오 &hellip; `--{n}--`).
 
 다음 검사 [Serilog](https://serilog.net/) 로깅 공급자 구성이 JSON 파일에서 제공 합니다. 두 개체에 정의 된 리터럴을 가지는 `WriteTo` 두 Serilog를 반영 하는 배열 *싱크*, 로깅 출력의 대상을 설명 하는:
 
@@ -349,7 +370,9 @@ Configuration.Reload();
 ## <a name="additional-resources"></a>추가 자료
 
 * <xref:fundamentals/configuration/index>
-* [Microsoft Azure: 키 자격 증명 모음](https://azure.microsoft.com/services/key-vault/)
+* [Microsoft Azure: Key Vault](https://azure.microsoft.com/services/key-vault/)
 * [Microsoft Azure: Key Vault 설명서](/azure/key-vault/)
 * [Azure Key Vault에 대 한 키 생성 및 HSM 보호 된 전송 하는 방법](/azure/key-vault/key-vault-hsm-protected-keys)
 * [KeyVaultClient 클래스](/dotnet/api/microsoft.azure.keyvault.keyvaultclient)
+* [빠른 시작: 설정 및.NET 웹 앱을 사용 하 여 Azure Key Vault에서 비밀을 검색](/azure/key-vault/quick-create-net)
+* [자습서: Azure Key Vault 사용 하 여 Azure Windows 가상 컴퓨터에.NET을 사용 하는 방법](/azure/key-vault/tutorial-net-windows-virtual-machine)

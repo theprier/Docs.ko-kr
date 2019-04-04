@@ -5,6 +5,12 @@ description: 기존 ASP.NET MVC 또는 Web API 앱을 ASP.NET Core.web으로 마
 ms.author: scaddie
 ms.date: 12/11/2018
 uid: migration/proper-to-2x/index
+ms.openlocfilehash: 7b6aec621efa5e1400fcfd4396a2322733113ec1
+ms.sourcegitcommit: 5f299daa7c8102d56a63b214b9a34cc4bc87bc42
+ms.translationtype: HT
+ms.contentlocale: ko-KR
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58209143"
 ---
 # <a name="migrate-from-aspnet-to-aspnet-core"></a>ASP.NET에서 ASP.NET Core로 마이그레이션
 
