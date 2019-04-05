@@ -49,7 +49,7 @@ MVC 패턴을 통해 이러한 요소 간의 느슨한 결합을 제공하는 �
 
 # <a name="visual-studio-for-mactabvisual-studio-mac"></a>[Visual Studio for Mac](#tab/visual-studio-mac)
 
-**솔루션 탐색기**에서 **컨트롤러 > 추가 > 새 파일** 을 마우스 오른쪽 단추로 클릭합니다.
+**솔루션 탐색기** 에서 **컨트롤러 > 추가 > 새 파일** 을 마우스 오른쪽 단추로 클릭합니다.
 ![바로 가기 메뉴](~/tutorials/first-mvc-app-mac/adding-controller/_static/add_controller.png)
 
 **ASP.NET Core** 및 **MVC 컨트롤러 클래스**를 선택합니다.
