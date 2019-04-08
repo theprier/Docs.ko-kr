@@ -32,7 +32,7 @@ MVC 패턴을 통해 이러한 요소 간의 느슨한 결합을 제공하는 �
 
 # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
 
-* **솔루션 탐색기**에서 ** 컨트롤러 > 추가 > 컨트롤러**
+* **솔루션 탐색기** 에서 **컨트롤러 > 추가 > 컨트롤러**
   ![바로 가기 메뉴](adding-controller/_static/add_controller.png)를 오른쪽 단추로 클릭
 
 * **스캐폴드 추가** 대화 상자에서 **MVC 컨트롤러 - 비어 있음**을 선택

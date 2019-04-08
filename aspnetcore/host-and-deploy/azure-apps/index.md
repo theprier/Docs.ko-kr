@@ -7,12 +7,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 03/30/2019
 uid: host-and-deploy/azure-apps/index
-ms.openlocfilehash: f9a74fdd94da4c913ac8822ee7bd58c85a9ce72c
-ms.sourcegitcommit: 3e9e1f6d572947e15347e818f769e27dea56b648
+ms.openlocfilehash: 009ee97d954a21f5fca1713b2b45218cac235e33
+ms.sourcegitcommit: 1a7000630e55da90da19b284e1b2f2f13a393d74
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/30/2019
-ms.locfileid: "58750917"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "59012840"
 ---
 # <a name="deploy-aspnet-core-apps-to-azure-app-service"></a>Azure App Service에 ASP.NET Core 앱 배포
 
@@ -168,6 +168,7 @@ Azure App Service/IIS에서 호스트하는 앱의 일반적인 배포 구성 �
 > ```powershell
 > Test-Path D:\home\SiteExtensions\AspNetCoreRuntime.{X.Y}.x64\
 > ```
+>
 > x64 미리 보기 런타임이 설치된 경우 명령이 `True`를 반환합니다.
 
 > [!NOTE]
