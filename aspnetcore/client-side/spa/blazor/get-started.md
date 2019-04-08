@@ -5,14 +5,14 @@ description: 만들고 Blazor 프로젝트를 수정 하 여 Blazor를 사용 �
 monikerRange: '>= aspnetcore-3.0'
 ms.author: riande
 ms.custom: mvc
-ms.date: 02/12/2019
+ms.date: 04/07/2019
 uid: spa/blazor/get-started
-ms.openlocfilehash: f46bd9af0f0762e794349d4e98de5c086a690d72
-ms.sourcegitcommit: a1c43150ed46aa01572399e8aede50d4668745ca
+ms.openlocfilehash: b3928c2812be6f34cdf2f17295a1251106f651e5
+ms.sourcegitcommit: 6bde1fdf686326c080a7518a6725e56e56d8886e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58327231"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59068237"
 ---
 # <a name="get-started-with-blazor"></a>Blazor 시작
 
@@ -20,7 +20,7 @@ ms.locfileid: "58327231"
 
 [!INCLUDE[](~/includes/razor-components-preview-notice.md)]
 
-# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
+# [<a name="visual-studio"></a>Visual Studio](#tab/visual-studio)
 
 필수 구성 요소:
 
@@ -28,16 +28,22 @@ ms.locfileid: "58327231"
 
 Visual Studio에서 첫 번째 Blazor 프로젝트를 만들려면:
 
+1. 최신 설치 [.NET Core 3.0 미리 보기 SDK](https://dotnet.microsoft.com/download/dotnet-core/3.0) 릴리스 합니다.
+1. 미리 보기 Sdk를 사용 하도록 Visual Studio를 사용 하도록 설정 합니다.
+   1. 오픈 **도구가** > **옵션** 메뉴 모음에서.
+   1. 엽니다는 **프로젝트 및 솔루션** 노드. 엽니다는 **.NET Core** 탭 합니다.
+   1. 확인란 **.NET Core SDK의 미리 보기를 사용 하 여**입니다. **확인**을 선택합니다.
 1. 최신 설치 [Blazor 확장](https://go.microsoft.com/fwlink/?linkid=870389) Visual Studio Marketplace에서. 이 단계에 게 Blazor 템플릿을 사용할 수 있는 Visual Studio입니다.
 1. 명령 셸에서 다음 명령을 실행 하 여.NET Core CLI와 함께 사용할 Blazor 템플릿을 확인:
 
    ```console
    dotnet new -i Microsoft.AspNetCore.Blazor.Templates::0.9.0-preview3-19154-02
    ```
-
-1. 선택 **파일** > **새 프로젝트** > **Web** > **ASP.NET Core 웹 응용 프로그램**합니다.
+1. 새 프로젝트를 만듭니다.
+1. **새 ASP.NET Core 웹 응용 프로그램**을 선택합니다. **새로 만들기**를 선택합니다.
+1. 에 이름을 제공 합니다 **프로젝트 이름** 필드입니다. 확인 합니다 **위치** 항목이 올바른 또는 프로젝트의 위치를 지정 합니다. **만들기**를 선택합니다.
 1. 했는지 **.NET Core** 하 고 **ASP.NET Core 3.0** 맨 위에 있는 선택 됩니다.
-1. **Blazor** 템플릿을 선택하고 **확인**을 선택합니다.
+1. 선택 된 **Blazor** 템플릿과 선택 **만들기**합니다.
 1. **F5** 키를 눌러 앱을 실행합니다.
 
 지금까지 지금까지 첫 번째 Blazor 앱을 실행 했습니다!
@@ -88,7 +94,7 @@ To create your first project Blazor project in Visual Studio for Mac:
 Congratulations! You just ran your first Blazor app!
 -->
 
-# <a name="net-core-clitabnetcore-cli"></a>[.NET Core CLI](#tab/netcore-cli/)
+# [<a name="net-core-cli"></a>.NET Core CLI](#tab/netcore-cli/)
 
 필수 구성 요소:
 

@@ -5,14 +5,14 @@ description: ASP.NET core에서 IIS Express, IIS 및 HTTP.sys를 사용 하 여 
 monikerRange: '>= aspnetcore-2.1'
 ms.author: riande
 ms.custom: mvc, seodec18
-ms.date: 02/25/2019
+ms.date: 04/03/2019
 uid: security/authentication/windowsauth
-ms.openlocfilehash: 15fc41efba77f88fc8129f875b85836ac1b5f886
-ms.sourcegitcommit: 2c7ffe349eabdccf2ed748dd303ffd0ba6e1cfe3
+ms.openlocfilehash: 9b53f523cf579aeb0e7dd37ccf5f161269a54913
+ms.sourcegitcommit: 6bde1fdf686326c080a7518a6725e56e56d8886e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56833698"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59068263"
 ---
 # <a name="configure-windows-authentication-in-aspnet-core"></a>ASP.NET Core에서 Windows 인증을 구성 합니다.
 
@@ -26,15 +26,19 @@ Windows 인증은 ASP.NET Core 앱의 사용자를 인증 하는 운영 체제�
 
 합니다 **웹 응용 프로그램** Windows 인증을 지원 하도록 Visual Studio 또는.NET Core CLI를 통해 사용할 수 있는 템플릿을 구성할 수 있습니다.
 
-# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
+# [<a name="visual-studio"></a>Visual Studio](#tab/visual-studio)
 
 ### <a name="use-the-windows-authentication-app-template-for-a-new-project"></a>새 프로젝트를 위해 Windows 인증 앱 템플릿 사용
 
 Visual Studio에서 다음을 수행합니다.
 
-1. 새 **ASP.NET Core 웹 응용 프로그램**합니다.
-1. 선택 **웹 응용 프로그램** 템플릿 목록에서.
-1. 선택 된 **인증 변경** 단추를 선택 **Windows 인증**합니다.
+1. 새 프로젝트를 만듭니다.
+1. **새 ASP.NET Core 웹 응용 프로그램**을 선택합니다. **새로 만들기**를 선택합니다.
+1. 에 이름을 제공 합니다 **프로젝트 이름** 필드입니다. 확인 합니다 **위치** 항목이 올바른 또는 프로젝트의 위치를 지정 합니다. **만들기**를 선택합니다.
+1. 선택 **변경** 아래에서 **인증**합니다.
+1. 에 **인증 변경** 창에서 **Windows 인증**합니다. **확인**을 선택합니다.
+1. **웹 애플리케이션**을 선택합니다.
+1. **만들기**를 선택합니다.
 
 앱을 실행합니다. 렌더링 된 앱의 사용자 인터페이스에 사용자 이름이 표시 됩니다.
 
@@ -51,7 +55,7 @@ Visual Studio에서 다음을 수행합니다.
 
 [!code-json[](windowsauth/sample_snapshot/launchSettings.json?highlight=2-3)]
 
-# <a name="net-core-clitabnetcore-cli"></a>[.NET Core CLI](#tab/netcore-cli)
+# [<a name="net-core-cli"></a>.NET Core CLI](#tab/netcore-cli)
 
 사용 된 **Windows 인증** 앱 템플릿.
 
@@ -195,4 +199,4 @@ Asp.net 가장을 구현 하지 않습니다. 앱 풀 또는 프로세스 id를 
 
 ### <a name="claims-transformations"></a>클레임 변환
 
-IIS에서 프로세스 모드를 사용 하 여 호스팅하는 경우 <xref:Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync*> 사용자를 초기화 하기 위해 내부적으로 호출 되지 않습니다. 따라서는 <xref:Microsoft.AspNetCore.Authentication.IClaimsTransformation> 구현 후 기본적으로 활성화 되지 않은 모든 인증 클레임을 변환 하는 데 사용 합니다. In process를 호스트 하는 경우 클레임 변환을 활성화 하는 코드 예제 및 자세한 내용은 참조 하세요. <xref:host-and-deploy/aspnet-core-module#in-process-hosting-model>합니다.
+IIS에서 프로세스 모드를 사용 하 여 호스팅하는 경우 <xref:Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync*> 사용자를 초기화 하기 위해 내부적으로 호출 되지 않습니다. 따라서 모든 인증 후에 클레임을 변환하는 데 사용되는 <xref:Microsoft.AspNetCore.Authentication.IClaimsTransformation> 구현은 기본적으로 활성화되지 않습니다. In process를 호스트 하는 경우 클레임 변환을 활성화 하는 코드 예제 및 자세한 내용은 참조 하세요. <xref:host-and-deploy/aspnet-core-module#in-process-hosting-model>합니다.

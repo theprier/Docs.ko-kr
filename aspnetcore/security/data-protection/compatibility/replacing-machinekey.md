@@ -1,16 +1,16 @@
 ---
 title: ASP.NET Core에서 ASP.NET 컴퓨터 키를 대체 합니다.
 author: rick-anderson
-description: Asp.net는 새롭고 보다 안전한 데이터 보호 시스템의 사용을 허용 하도록 machineKey를 대체 하는 방법을 검색 합니다.
+description: 새롭고 보다 안전한 데이터 보호 시스템의 사용을 허용 하는 ASP.NET에 machineKey를 교체 하는 방법을 검색 합니다.
 ms.author: riande
-ms.date: 10/14/2016
+ms.date: 04/06/2019
 uid: security/data-protection/compatibility/replacing-machinekey
-ms.openlocfilehash: 5f9e5cec02b66e1315548c4e7c18fe168ad161eb
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: ff36382d22a218a228b42a31ae4f8ad2eb2d5b5f
+ms.sourcegitcommit: 6bde1fdf686326c080a7518a6725e56e56d8886e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36278826"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59068286"
 ---
 # <a name="replace-the-aspnet-machinekey-in-aspnet-core"></a>ASP.NET Core에서 ASP.NET 컴퓨터 키를 대체 합니다.
 
@@ -21,11 +21,11 @@ ASP.NET의 `<machineKey>` 요소의 구현은 [대체가 가능합니다.](https
 ## <a name="package-installation"></a>패키지 설치하기
 
 > [!NOTE]
-> 새로운 데이터 보호 시스템은 .NET 4.5.1 이상을 대상으로 하는 기존 ASP.NET 응용 프로그램에만 설치할 수 있습니다. 응용 프로그램이 .NET 4.5 이하를 대상으로 할 경우, 설치에 실패합니다.
+> .NET 4.5.1을 대상으로 하는 기존 ASP.NET 응용 프로그램에 어셈블리를 설치 하거나 나중에 새 데이터 보호 시스템 수만 있습니다. 응용 프로그램이 .NET 4.5 이하를 대상으로 할 경우, 설치에 실패합니다.
 
 새로운 데이터 보호 시스템을 기존의 ASP.NET 4.5.1 이상의 프로젝트에 설치하려면 `Microsoft.AspNetCore.DataProtection.SystemWeb` 패키지를 설치하면 됩니다. 이 패키지는 [기본 구성](xref:security/data-protection/configuration/default-settings) 설정을 이용해서 데이터 보호 시스템의 인스턴스를 생성합니다.
 
-이 패키지를 설치하면 폼 인증, ViewState 및 MachineKey.Protect 메서드 호출을 비롯한 [대부분의 암호화 작업](https://blogs.msdn.microsoft.com/webdev/2012/10/23/cryptographic-improvements-in-asp-net-4-5-pt-2/)에 이 패키지를 사용하도록 ASP.NET에게 지시하는 다음과 같은 라인이 *Web.config* 파일에 추가됩니다. 삽입 되는 행의 내용이 다음과 같습니다.
+이 패키지를 설치하면 폼 인증, ViewState 및 MachineKey.Protect 메서드 호출을 비롯한 [대부분의 암호화 작업](https://blogs.msdn.microsoft.com/webdev/2012/10/23/cryptographic-improvements-in-asp-net-4-5-pt-2/)에 이 패키지를 사용하도록 ASP.NET에게 지시하는 다음과 같은 라인이 *Web.config* 파일에 추가됩니다. 삽입 되는 줄 아래와 같이 합니다.
 
 ```xml
 <machineKey compatibilityMode="Framework45" dataProtectorType="..." />

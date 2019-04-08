@@ -4,14 +4,14 @@ author: rick-anderson
 description: 에 대해 알아봅니다 어떻게 CORS 허용 하거나 거부 하는 ASP.NET Core 앱에서 크로스-원본 요청에 대 한 표준으로 합니다.
 ms.author: riande
 ms.custom: mvc
-ms.date: 02/27/2019
+ms.date: 04/07/2019
 uid: security/cors
-ms.openlocfilehash: 2cad26d0f61519f63888a2bc399bb7e8a0f1ee04
-ms.sourcegitcommit: 5f299daa7c8102d56a63b214b9a34cc4bc87bc42
+ms.openlocfilehash: fe5b750c44e5fad9ba80efb2cc8116d0a64b1a17
+ms.sourcegitcommit: 6bde1fdf686326c080a7518a6725e56e56d8886e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58210134"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59068299"
 ---
 # <a name="enable-cross-origin-requests-cors-in-aspnet-core"></a>ASP.NET Core에서 원본 간 요청 (CORS)를 사용 하도록 설정
 
@@ -57,7 +57,7 @@ CORS 미들웨어는 크로스-원본 요청을 처리합니다. 다음 코드�
 위의 코드는:
 
 * 정책 이름 설정 "\_myAllowSpecificOrigins"입니다. 정책 이름은 임의로 지정 됩니다.
-* 호출 된 <xref:Microsoft.AspNetCore.Builder.CorsMiddlewareExtensions.UseCors*> 코어 수 있도록 하는 확장 메서드.
+* 호출 된 <xref:Microsoft.AspNetCore.Builder.CorsMiddlewareExtensions.UseCors*> CORS를 사용 하도록 설정 하는 확장 메서드.
 * 호출 <xref:Microsoft.Extensions.DependencyInjection.CorsServiceCollectionExtensions.AddCors*> 사용 하 여는 [람다 식](/dotnet/csharp/programming-guide/statements-expressions-operators/lambda-expressions)합니다. 람다는 <xref:Microsoft.AspNetCore.Cors.Infrastructure.CorsPolicyBuilder> 개체를 전달받습니다. [구성 옵션](#cors-policy-options)와 같은 `WithOrigins`,이 문서의 뒷부분에 설명 되어 있습니다.
 
 <xref:Microsoft.Extensions.DependencyInjection.MvcCorsMvcCoreBuilderExtensions.AddCors*> CORS 서비스 앱의 서비스 컨테이너를 추가 하는 메서드를 호출 합니다.
