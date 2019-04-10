@@ -561,10 +561,14 @@ items:
       name: 개요
     - uid: razor-components/get-started
       name: 시작
+    - uid: razor-components/hosting-models
+      name: 호스팅 모델
     - uid: tutorials/first-razor-components-app
       name: 첫 번째 앱 빌드
     - uid: razor-components/components
       name: 구성 요소
+    - uid: razor-components/forms-validation
+      name: 양식 및 유효성 검사
     - uid: razor-components/class-libraries
       name: 구성 요소 라이브러리
     - uid: razor-components/layouts
@@ -577,14 +581,12 @@ items:
       name: JavaScript interop
     - uid: razor-components/debug
       name: 디버그
-    - uid: razor-components/hosting-models
-      name: 호스팅 모델
     - name: 호스트 및 배포
       items:
-      - uid: host-and-deploy/razor-components/index
+      - uid: host-and-deploy/razor-components-blazor/index
         name: 개요
-      - uid: host-and-deploy/razor-components/configure-linker
-        name: 링커 구성
+      - uid: host-and-deploy/razor-components-blazor/razor-components
+        name: Razor 구성 요소
   - name: 단일 페이지 앱
     items:
     - name: Blazor
@@ -593,10 +595,14 @@ items:
         name: 개요
       - uid: spa/blazor/get-started
         name: 시작
+      - uid: razor-components/hosting-models
+        name: 호스팅 모델
       - uid: tutorials/first-razor-components-app
         name: 첫 번째 앱 빌드
       - uid: razor-components/components
         name: 구성 요소
+      - uid: razor-components/forms-validation
+        name: 양식 및 유효성 검사
       - uid: razor-components/class-libraries
         name: 구성 요소 라이브러리
       - uid: razor-components/layouts
@@ -609,13 +615,13 @@ items:
         name: JavaScript interop
       - uid: razor-components/debug
         name: 디버그
-      - uid: razor-components/hosting-models
-        name: 호스팅 모델
       - name: 호스트 및 배포
         items:
-        - uid: host-and-deploy/razor-components/index
+        - uid: host-and-deploy/razor-components-blazor/index
           name: 개요
-        - uid: host-and-deploy/razor-components/configure-linker
+        - uid: host-and-deploy/razor-components-blazor/blazor
+          name: Blazor
+        - uid: host-and-deploy/razor-components-blazor/configure-linker
           name: 링커 구성
     - uid: spa/angular
       name: Angular
@@ -774,11 +780,15 @@ items:
   - uid: host-and-deploy/health-checks
     name: 상태 확인
     displayName: deploy, publish
-  - name: Razor 구성 요소
+  - name: Razor 구성 요소/Blazor
     items:
-    - uid: host-and-deploy/razor-components/index
+    - uid: host-and-deploy/razor-components-blazor/index
       name: 개요
-    - uid: host-and-deploy/razor-components/configure-linker
+    - uid: host-and-deploy/razor-components-blazor/blazor
+      name: Blazor
+    - uid: host-and-deploy/razor-components-blazor/razor-components
+      name: Razor 구성 요소
+    - uid: host-and-deploy/razor-components-blazor/configure-linker
       name: 링커 구성
 - name: 보안 및 ID
   displayName: authentication, authorization
@@ -1083,9 +1093,9 @@ items:
   href: /dotnet/api/?view=aspnetcore-2.2
 - name: 참가
   href: https://github.com/aspnet/Docs/blob/master/CONTRIBUTING.md
-ms.openlocfilehash: d9ab9beacab19a0e004878d2645b1106bf5dc0d6
-ms.sourcegitcommit: 3e9e1f6d572947e15347e818f769e27dea56b648
+ms.openlocfilehash: 0065707eeaf77327e553b3c43b65e11063edd7e0
+ms.sourcegitcommit: 6bde1fdf686326c080a7518a6725e56e56d8886e
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/30/2019
-ms.locfileid: "58751101"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59068393"
