@@ -4,15 +4,15 @@ description: 이 자습서에는 여러 사용자가 동시에 같은 엔터티�
 author: rick-anderson
 ms.author: tdykstra
 ms.custom: mvc
-ms.date: 02/05/2019
+ms.date: 03/27/2019
 ms.topic: tutorial
 uid: data/ef-mvc/concurrency
-ms.openlocfilehash: 7b18927d5d528ec2951087502e26b2b30214f389
-ms.sourcegitcommit: 5e3797a02ff3c48bb8cb9ad4320bfd169ebe8aba
+ms.openlocfilehash: 668cdafc078091b65035ecad854d2ecc62555721
+ms.sourcegitcommit: 3e9e1f6d572947e15347e818f769e27dea56b648
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56103022"
+ms.lasthandoff: 03/30/2019
+ms.locfileid: "58750860"
 ---
 # <a name="tutorial-handle-concurrency---aspnet-mvc-with-ef-core"></a>자습서: 동시성 처리 - ASP.NET MVC 및 EF Core 사용
 
@@ -39,7 +39,7 @@ ms.locfileid: "56103022"
 
 ## <a name="prerequisites"></a>전제 조건
 
-* [ASP.NET Core MVC 웹앱에서 EF Core를 사용하여 관련 데이터 업데이트](update-related-data.md)
+* [관련 데이터 업데이트](update-related-data.md)
 
 ## <a name="concurrency-conflicts"></a>동시성 충돌
 
@@ -148,7 +148,7 @@ dotnet ef database update
 
 HttpGet `Edit` 메서드 및 `Details` 메서드 모두에 `AsNoTracking`을 추가합니다. HttpGet `Edit` 메서드에서 관리자에 대해 즉시 로드를 추가합니다.
 
-[!code-csharp[](intro/samples/cu/Controllers/DepartmentsController.cs?name=snippet_EagerLoading&highlight=2,3)]
+[!code-csharp[](intro/samples/cu/Controllers/DepartmentsController.cs?name=snippet_EagerLoading)]
 
 HttpPost `Edit` 메서드에 대한 기존 코드를 다음 코드로 바꿉니다.
 
@@ -309,6 +309,7 @@ public async Task<IActionResult> Delete(Department department)
 > * 삭제 페이지 업데이트
 > * 세부 정보 및 만들기 뷰 업데이트
 
-강사 및 학생 엔터티에 대한 계층당 테이블 상속을 구현하는 방법을 알아보려면 다음 문서로 진행합니다.
+강사 및 학생 엔터티에 대한 계층당 테이블 상속을 구현하는 방법을 알아보려면 다음 자습서로 진행합니다.
+
 > [!div class="nextstepaction"]
-> [계층당 하나의 테이블 상속 구현](inheritance.md)
+> [다음: 계층당 하나의 테이블 상속 구현](inheritance.md)

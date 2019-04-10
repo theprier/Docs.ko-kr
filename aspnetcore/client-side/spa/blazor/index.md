@@ -5,14 +5,14 @@ description: WebAssembly를 통해 브라우저에서 실행되는 대화형 클
 monikerRange: '>= aspnetcore-3.0'
 ms.author: riande
 ms.custom: mvc
-ms.date: 03/27/2019
+ms.date: 03/28/2019
 uid: spa/blazor/index
-ms.openlocfilehash: c42363b0ce70a1a8edc19b1c428ee802a6eff3dd
-ms.sourcegitcommit: 3e9e1f6d572947e15347e818f769e27dea56b648
+ms.openlocfilehash: 87e294a975e4168add046166a95e02e485db131d
+ms.sourcegitcommit: 6bde1fdf686326c080a7518a6725e56e56d8886e
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/30/2019
-ms.locfileid: "58750483"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59068250"
 ---
 # <a name="introduction-to-blazor"></a>Blazor 소개
 
@@ -54,7 +54,7 @@ Blazor는 다음을 포함한 대부분의 앱에 필요한 핵심 기능을 지
 * 템플릿
 * 연계 값
 
-다운로드된 앱의 크기를 줄이기 위해 [IL(중간 언어) 링커](xref:host-and-deploy/razor-components/configure-linker)에서 게시하면 사용되지 않는 코드가 앱에서 제거됩니다.
+다운로드된 앱의 크기를 줄이기 위해 [IL(중간 언어) 링커](xref:host-and-deploy/razor-components-blazor/configure-linker)에서 게시하면 사용되지 않는 코드가 앱에서 제거됩니다.
 
 Blazor는 Razor 구성 요소의 클라이언트 쪽 호스팅 모델입니다. Razor 구성 요소는 UI 업데이트 적용 방식에서 구성 요소의 렌더링 논리를 분리하기 때문에 Razor 구성 요소를 호스트하는 방법에 유연성이 있습니다. ASP.NET Core Razor 구성 요소를 사용하여 SignalR 연결을 통해 모든 UI 업데이트가 처리되는 ASP.NET Core 앱의 서버에서 Razor 구성 요소를 호스트합니다. 자세한 내용은 <xref:razor-components/index> 및 <xref:razor-components/hosting-models#server-side-hosting-model>를 참조하세요. 
 
@@ -92,7 +92,7 @@ Blazor는 Razor 구성 요소의 클라이언트 쪽 호스팅 모델입니다. 
 
 ## <a name="code-sharing-and-net-standard"></a>코드 공유 및 .NET Standard
 
-앱은 기존 [.NET Standard](/dotnet/standard/net-standard) 라이브러리를 참조하고 사용할 수 있습니다. .NET Standard는 .NET 구현에서 공통적인 .NET API의 공식 사양입니다. .NET Standard 2.0 이상이 지원됩니다. 웹 브라우저 내에서 적용되지 않는 API(예: 파일 시스템 액세스, 소켓 열기, 스레딩 및 기타 기능)에서 <xref:System.PlatformNotSupportedException>을 throw합니다. .NET Standard 클래스 라이브러리는 서버 코드와 브라우저 기반 앱에서 공유할 수 있습니다.
+앱은 기존 [.NET Standard](/dotnet/standard/net-standard) 라이브러리를 참조하고 사용할 수 있습니다. .NET Standard는 .NET 구현에서 공통적인 .NET API의 공식 사양입니다. Blazor는 .NET Standard 2.0을 구현합니다. 웹 브라우저 내에서 적용되지 않는 API(예: 파일 시스템 액세스, 소켓 열기, 스레딩 및 기타 기능)에서 <xref:System.PlatformNotSupportedException>을 throw합니다. .NET Standard 클래스 라이브러리는 Blazor, .NET Framework, .NET Core, Xamarin, Mono, Unity 등 다양한 .NET 플랫폼 간에 공유할 수 있습니다.
 
 ## <a name="optimization"></a>최적화
 

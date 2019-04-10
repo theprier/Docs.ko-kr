@@ -3,15 +3,15 @@ title: '자습서: 정렬, 필터링 및 페이징 추가 - ASP.NET MVC 및 EF C
 description: 이 자습서에서는 학생 인덱스 페이지에 정렬, 필터링 및 페이징 기능을 추가합니다. 단순 그룹화를 수행하는 페이지도 만듭니다.
 author: rick-anderson
 ms.author: tdykstra
-ms.date: 02/04/2019
+ms.date: 03/27/2019
 ms.topic: tutorial
 uid: data/ef-mvc/sort-filter-page
-ms.openlocfilehash: 51b6b08d2410652f93427371aec299eb4c8789f1
-ms.sourcegitcommit: 5e3797a02ff3c48bb8cb9ad4320bfd169ebe8aba
+ms.openlocfilehash: dff5a5b1ba3c8ed07ccc8d134f8cfeb25b9f6689
+ms.sourcegitcommit: 3e9e1f6d572947e15347e818f769e27dea56b648
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56103061"
+ms.lasthandoff: 03/30/2019
+ms.locfileid: "58751046"
 ---
 # <a name="tutorial-add-sorting-filtering-and-paging---aspnet-mvc-with-ef-core"></a>자습서: 정렬, 필터링 및 페이징 추가 - ASP.NET MVC 및 EF Core 사용
 
@@ -33,7 +33,7 @@ ms.locfileid: "56103061"
 
 ## <a name="prerequisites"></a>전제 조건
 
-* [ASP.NET Core MVC 웹앱에서 EF Core를 사용하여 CRUD 기능 구현](crud.md)
+* [CRUD 기능 구현](crud.md)
 
 ## <a name="add-column-sort-links"></a>열 정렬 링크 추가
 
@@ -144,7 +144,7 @@ public async Task<IActionResult> Index(
     string sortOrder,
     string currentFilter,
     string searchString,
-    int? page)
+    int? pageNumber)
 ```
 
 페이지가 처음 표시되거나 사용자가 페이징 또는 정렬 링크를 클릭하지 않으면 모든 매개 변수가 Null이 됩니다.  페이징 링크를 클릭하면 페이지 변수에 표시할 페이지 번호가 포함됩니다.
@@ -158,7 +158,7 @@ CurrentFilter라는 `ViewData` 요소는 현재 필터 문자열이 포함된 �
 ```csharp
 if (searchString != null)
 {
-    page = 1;
+    pageNumber = 1;
 }
 else
 {
@@ -169,10 +169,10 @@ else
 `Index` 메서드의 끝에서 `PaginatedList.CreateAsync` 메서드는 학생 쿼리를 페이징을 지원하는 컬렉션 형식의 단일 학생 페이지로 변환합니다. 그러면 단일 학생 페이지가 뷰에 전달됩니다.
 
 ```csharp
-return View(await PaginatedList<Student>.CreateAsync(students.AsNoTracking(), page ?? 1, pageSize));
+return View(await PaginatedList<Student>.CreateAsync(students.AsNoTracking(), pageNumber ?? 1, pageSize));
 ```
 
-`PaginatedList.CreateAsync` 메서드는 페이지 번호를 사용합니다. 두 개의 물음표는 Null 병합 연산자를 나타냅니다. Null 병합 연산자는 nullable 형식의 기본값을 정의합니다. `(page ?? 1)` 식은 값이 있는 경우 `page` 값을 반환하고 `page`가 Null이면 1일 반환합니다.
+`PaginatedList.CreateAsync` 메서드는 페이지 번호를 사용합니다. 두 개의 물음표는 Null 병합 연산자를 나타냅니다. Null 병합 연산자는 nullable 형식의 기본값을 정의합니다. `(pageNumber ?? 1)` 식은 값이 있는 경우 `pageNumber` 값을 반환하고 `pageNumber`가 Null이면 1일 반환합니다.
 
 ## <a name="add-paging-links"></a>페이징 링크 추가
 
@@ -193,7 +193,7 @@ return View(await PaginatedList<Student>.CreateAsync(students.AsNoTracking(), pa
 ```html
 <a asp-action="Index"
    asp-route-sortOrder="@ViewData["CurrentSort"]"
-   asp-route-page="@(Model.PageIndex - 1)"
+   asp-route-pageNumber="@(Model.PageIndex - 1)"
    asp-route-currentFilter="@ViewData["CurrentFilter"]"
    class="btn btn-default @prevDisabled">
    Previous
@@ -234,8 +234,7 @@ Contoso University 웹 사이트의 **정보** 페이지에는 각 등록 날짜
 
 [!code-csharp[](intro/samples/cu/Controllers/HomeController.cs?name=snippet_AddContext&highlight=3,5,7)]
 
-
-  `About` 메서드를 다음 코드로 바꿉니다.
+다음 코드를 통해 `About` 메서드를 추가합니다.
 
 [!code-csharp[](intro/samples/cu/Controllers/HomeController.cs?name=snippet_UseDbSet)]
 
@@ -245,7 +244,7 @@ LINQ 문은 등록 날짜별로 학생 엔터티를 그룹화하고 각 그룹�
 
 ### <a name="modify-the-about-view"></a>정보 뷰 수정
 
-*Views/Home/About.cshtml* 파일의 코드를 다음 코드로 바꿉니다.
+다음 코드를 사용하여 *Views/Home/About.cshtml* 파일을 추가합니다.
 
 [!code-html[](intro/samples/cu/Views/Home/About.cshtml)]
 
@@ -267,6 +266,7 @@ LINQ 문은 등록 날짜별로 학생 엔터티를 그룹화하고 각 그룹�
 > * 페이징 링크 추가
 > * 정보 페이지 만들기
 
-마이그레이션을 사용하여 데이터 모델 변경 내용을 처리하는 방법을 알아보려면 다음 문서로 진행합니다.
+마이그레이션을 사용하여 데이터 모델 변경 내용을 처리하는 방법을 알아보려면 다음 자습서로 진행합니다.
+
 > [!div class="nextstepaction"]
-> [데이터 모델 변경 처리](migrations.md)
+> [다음: 데이터 모델 변경 처리](migrations.md)

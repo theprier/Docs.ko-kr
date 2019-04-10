@@ -6,30 +6,30 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 12/18/2018
 uid: aspnetcore-2.2
-ms.openlocfilehash: 6dcdf71ec5271690718dd1fe750a9a74d498a0f8
-ms.sourcegitcommit: d75d8eb26c2cce19876c8d5b65ac8a4b21f625ef
+ms.openlocfilehash: cdc761b645b91777bdf6084c3ad4659fcea55039
+ms.sourcegitcommit: 3e9e1f6d572947e15347e818f769e27dea56b648
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/19/2019
-ms.locfileid: "56410338"
+ms.lasthandoff: 03/30/2019
+ms.locfileid: "58750946"
 ---
 # <a name="whats-new-in-aspnet-core-22"></a>ASP.NET Core 2.2의 새로운 기능
 
 이 문서에서는 ASP.NET Core 2.2의 가장 큰 변경 내용을 중점적으로 설명하고 관련 문서의 링크를 제공합니다.
 
-## <a name="open-api-analyzers--conventions"></a>공개 API 분석기 및 규칙
+## <a name="openapi-analyzers--conventions"></a>OpenAPI 분석기 및 규칙
 
-공개 API(Swagger라고도 함)는 REST API를 설명하는 언어 중립적 사양입니다. 공개 API 에코시스템에는 사양을 사용하여 클라이언트 코드를 검색, 테스트 및 생성할 수 있는 도구가 있습니다. ASP.NET Core MVC에서 공개 API 문서 만들기 및 시각화 지원은 [NSwag](https://github.com/RSuter/NSwag) 및 [Swashbuckle.AspNetCore](https://github.com/domaindrivendev/Swashbuckle.AspNetCore)와 같은 커뮤니티 기반 프로젝트를 통해 제공됩니다. ASP.NET Core 2.2는 공개 API 문서를 만들기 위해 향상된 툴링 및 런타임 환경을 제공합니다.
+OpenAPI(이전에 Swagger라고도 함)는 REST API를 설명하는 언어 중립적 사양입니다. OpenAPI 에코시스템에는 사양을 사용하여 클라이언트 코드를 검색, 테스트 및 생성할 수 있는 도구가 있습니다. ASP.NET Core MVC에서 OpenAPI 문서 생성 및 시각화 지원은 [NSwag](https://github.com/RSuter/NSwag) 및 [Swashbuckle.AspNetCore](https://github.com/domaindrivendev/Swashbuckle.AspNetCore)와 같은 커뮤니티 기반 프로젝트를 통해 제공됩니다. ASP.NET Core 2.2는 OpenAPI 문서를 만들기 위해 향상된 도구 및 런타임 환경을 제공합니다.
 
 자세한 내용은 다음 리소스를 참조하세요.
 
 * <xref:web-api/advanced/analyzers>
 * <xref:web-api/advanced/conventions>
-* [ASP.NET Core 2.2.0 미리 보기1: Open API 분석기 및 규칙](https://blogs.msdn.microsoft.com/webdev/2018/08/23/asp-net-core-2-20-preview1-open-api-analyzers-conventions/)
+* [ASP.NET Core 2.2.0 미리 보기1: OpenAPI 분석기 및 규칙](https://blogs.msdn.microsoft.com/webdev/2018/08/23/asp-net-core-2-20-preview1-open-api-analyzers-conventions/)
 
 ## <a name="problem-details-support"></a>문제 세부 정보 지원
 
-ASP.NET Core 2.1은 HTTP 응답과 관련된 오류 세부 정보를 포함하는 [RFC 7807](https://tools.ietf.org/html/rfc7807) 사양에 따라 `ProblemDetails`를 도입했습니다. 2.2에서 `ProblemDetails`는 `ApiControllerAttribute`로 인한 컨트롤러의 클라이언트 오류 코드의 표준 응답입니다. 클라이언트 오류 상태 코드(4xx)를 반환하는 `IActionResult`는 이제 `ProblemDetails` 본문을 반환합니다. 결과에는 요청 로그를 사용하여 오류를 상관시키는 데 사용할 수 있는 상관 관계 ID도 포함됩니다. 클라이언트 오류의 경우 `ProducesResponseType`은 응답 유형으로 `ProblemDetails` 사용을 기본으로 합니다. 이는 NSwag 또는 Swashbuckle.AspNetCore를 사용하여 생성된 공개 API/Swagger 출력에 설명되어 있습니다.
+ASP.NET Core 2.1은 HTTP 응답과 관련된 오류 세부 정보를 포함하는 [RFC 7807](https://tools.ietf.org/html/rfc7807) 사양에 따라 `ProblemDetails`를 도입했습니다. 2.2에서 `ProblemDetails`는 `ApiControllerAttribute`로 인한 컨트롤러의 클라이언트 오류 코드의 표준 응답입니다. 클라이언트 오류 상태 코드(4xx)를 반환하는 `IActionResult`는 이제 `ProblemDetails` 본문을 반환합니다. 결과에는 요청 로그를 사용하여 오류를 상관시키는 데 사용할 수 있는 상관 관계 ID도 포함됩니다. 클라이언트 오류의 경우 `ProducesResponseType`은 응답 유형으로 `ProblemDetails` 사용을 기본으로 합니다. 이는 NSwag 또는 Swashbuckle.AspNetCore를 사용하여 생성된 OpenAPI/Swagger 출력에 설명되어 있습니다.
 
 ## <a name="endpoint-routing"></a>엔드포인트 라우팅
 

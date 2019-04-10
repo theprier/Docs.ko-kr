@@ -5,12 +5,12 @@ description: 스캐폴딩을 통해 생성된 Razor 페이지를 설명합니다
 ms.author: riande
 ms.date: 12/4/2018
 uid: tutorials/razor-pages/page
-ms.openlocfilehash: 9acb30bbed6aaed893b8a6373a210ef18e5ee60b
-ms.sourcegitcommit: 088e6744cd67a62f214f25146313a53949b17d35
+ms.openlocfilehash: b654138231440a0c63492cae70f794da0151890d
+ms.sourcegitcommit: 5995f44e9e13d7e7aa8d193e2825381c42184e47
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58320136"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58809304"
 ---
 # <a name="scaffolded-razor-pages-in-aspnet-core"></a>ASP.NET Core의 스캐폴드된 Razor 페이지
 
@@ -87,7 +87,7 @@ changing in in the next step.
 
 ### <a name="update-the-layout"></a>레이아웃 업데이트
 
-*Pages/Shared/_Layout.cshtml* 파일에서 `<title>` 요소를 변경합니다. **RazorPagesMovie**가 아닌 **Movie**를 표시합니다.
+*Pages/Shared/_Layout.cshtml* 파일의 `<title>` 요소를 변경하여 **RazorPagesMovie** 대신 **Movie**를 표시합니다.
 
 [!code-cshtml[](razor-pages-start/sample/RazorPagesMovie22/Pages/Shared/_Layout.cshtml?range=1-6&highlight=6)]
 

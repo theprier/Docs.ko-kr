@@ -3,15 +3,15 @@ title: '자습서: 관련 데이터 읽기 - ASP.NET MVC 및 EF Core 사용'
 description: 이 자습서에서는 관련 데이터 즉, Entity Framework에서 탐색 속성으로 로드하는 데이터를 읽고 표시합니다.
 author: rick-anderson
 ms.author: tdykstra
-ms.date: 02/05/2019
+ms.date: 03/27/2019
 ms.topic: tutorial
 uid: data/ef-mvc/read-related-data
-ms.openlocfilehash: 73e225c2cd6d9f88079c54115cccad48f43d7d0c
-ms.sourcegitcommit: 5e3797a02ff3c48bb8cb9ad4320bfd169ebe8aba
+ms.openlocfilehash: a2ae878fd861b68a17de19af1b33b6ffbf5a268c
+ms.sourcegitcommit: 3e9e1f6d572947e15347e818f769e27dea56b648
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56103048"
+ms.lasthandoff: 03/30/2019
+ms.locfileid: "58751073"
 ---
 # <a name="tutorial-read-related-data---aspnet-mvc-with-ef-core"></a>자습서: 관련 데이터 읽기 - ASP.NET MVC 및 EF Core 사용
 
@@ -33,7 +33,7 @@ ms.locfileid: "56103048"
 
 ## <a name="prerequisites"></a>전제 조건
 
-* [ASP.NET Core MVC 웹앱용 EF Core를 사용하여 더 복잡한 데이터 모델 만들기](complex-data-model.md)
+* [복합 데이터 모델 만들기](complex-data-model.md)
 
 ## <a name="learn-how-to-load-related-data"></a>관련 데이터를 로드하는 방법 알아보기
 
@@ -257,6 +257,7 @@ Entity Framework와 같은 ORM(개체-관계형 매핑) 소프트웨어에서 �
 > * 강사 페이지 만들기
 > * 명시적 로드에 대해 알아보기
 
-관련 데이터를 업데이트하는 방법을 알아보려면 다음 문서로 진행합니다.
+관련 데이터를 업데이트하는 방법을 알아보려면 다음 자습서로 진행합니다.
+
 > [!div class="nextstepaction"]
 > [관련 데이터 업데이트](update-related-data.md)

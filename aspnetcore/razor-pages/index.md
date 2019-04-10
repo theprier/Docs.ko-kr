@@ -6,12 +6,12 @@ monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 05/12/2018
 uid: razor-pages/index
-ms.openlocfilehash: afdaa11c55b66366badf8facde62e3f215b6deb2
-ms.sourcegitcommit: 57792e5f594db1574742588017c708350958bdf0
+ms.openlocfilehash: 50db8cd9b0523239acb1d439b472ea5d3cb6cb7c
+ms.sourcegitcommit: 6bde1fdf686326c080a7518a6725e56e56d8886e
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58264812"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59068380"
 ---
 # <a name="introduction-to-razor-pages-in-aspnet-core"></a>ASP.NET Core의 Razor 페이지 소개
 
@@ -31,11 +31,11 @@ Razor 페이지는 페이지 코딩 중심의 시나리오를 보다 쉽고 생�
 
 ## <a name="create-a-razor-pages-project"></a>Razor Pages 프로젝트 만들기
 
-# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
+# [<a name="visual-studio"></a>Visual Studio](#tab/visual-studio)
 
 Razor Pages 프로젝트를 만드는 방법에 대한 자세한 내용은 [Razor Pages 시작](xref:tutorials/razor-pages/razor-pages-start)을 참조하세요.
 
-# <a name="visual-studio-for-mactabvisual-studio-mac"></a>[Visual Studio for Mac](#tab/visual-studio-mac)
+# [<a name="visual-studio-for-mac"></a>Visual Studio for Mac](#tab/visual-studio-mac)
 
 ::: moniker range=">= aspnetcore-2.1"
 
@@ -51,7 +51,7 @@ Razor Pages 프로젝트를 만드는 방법에 대한 자세한 내용은 [Razo
 
 Mac용 Visual Studio에서 생성된 *.csproj* 파일을 엽니다.
 
-# <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code)
+# [<a name="visual-studio-code"></a>Visual Studio Code](#tab/visual-studio-code)
 
 ::: moniker range=">= aspnetcore-2.1"
 
@@ -77,7 +77,7 @@ Razor 페이지는 *Startup.cs*에서 사용할 수 있게 설정됩니다.
 
 [!code-cshtml[](index/sample/RazorPagesIntro/Pages/Index.cshtml)]
 
-위의 코드는 Razor 뷰 파일과 매우 비슷합니다. 차이점은 `@page` 지시문입니다. `@page`는 파일을 MVC 액션으로 만드는데, 이 말은 컨트롤러를 거치지 않고 이 파일이 요청을 직접 처리한다는 뜻입니다. `@page`는 페이지의 첫 번째 Razor 지시문이어야 합니다. `@page`는 다른 Razor 구조의 동작에 영향을 줍니다.
+앞의 코드는 컨트롤러 및 뷰가 포함된 ASP.NET Core 앱에서 사용되는 [Razor 뷰 파일](xref:tutorials/first-mvc-app/adding-view)과 매우 유사합니다. 차이점은 `@page` 지시문입니다. `@page` 는 파일을 MVC 작업으로 만듭니다. 즉, 컨트롤러를 거치지 않고 이 파일이 요청을 직접 처리합니다. `@page` 는 페이지의 첫 번째 Razor 지시문이어야 합니다. `@page` 는 다른 Razor 구조의 동작에 영향을 줍니다.
 
 다음 두 파일은 `PageModel` 클래스를 사용하는 비슷한 페이지를 보여줍니다. *Pages/Index2.cshtml* 파일은 다음과 같습니다.
 
@@ -101,7 +101,7 @@ Razor 페이지는 *Startup.cs*에서 사용할 수 있게 설정됩니다.
 메모:
 
 * 런타임은 기본적으로 *Pages* 폴더에서 Razor 페이지 파일을 검색합니다.
-* URL에 페이지가 지정되어 있지 않을 경우 `Index`가 기본 페이지입니다.
+* `Index` 는 URL에 페이지가 포함되어 있지 않은 경우 기본 페이지입니다.
 
 ## <a name="write-a-basic-form"></a>기본적인 양식 작성하기
 
@@ -133,8 +133,8 @@ db 컨텍스트는 다음과 같습니다.
 
 이 페이지는 `POST` 요청 시(사용자가 양식을 게시할 때) 실행되는 `OnPostAsync` *처리기 메서드*를 갖고 있습니다. 모든 HTTP 동사에 대한 처리기 메서드를 추가할 수 있습니다. 가장 일반적인 처리기는 다음과 같습니다.
 
-* `OnGet`: 페이지에 필요한 상태를 초기화합니다. [OnGet](#OnGet) 예제.
-* `OnPost`: 양식 제출을 처리합니다.
+* `OnGet` : 페이지에 필요한 상태를 초기화합니다. [OnGet](#OnGet) 예제.
+* `OnPost` : 양식 제출을 처리합니다.
 
 `Async` 명명 접미사는 선택 사항이지만 비동기 함수에 대한 규약으로 자주 사용됩니다. 위의 예제에 사용된 `OnPostAsync`의 코드는 일반적으로 컨트롤러에서 작성하던 코드와 비슷해 보입니다. 위의 코드는 Razor 페이지의 일반적인 코드입니다. [모델 바인딩](xref:mvc/models/model-binding), [유효성 검사](xref:mvc/models/validation) 및 액션 결과 같은 MVC의 기본적인 기능들이 대부분 공유됩니다.  <!-- Review: Ryan, can we get a list of what is shared and what isn't? -->
 
@@ -149,9 +149,9 @@ db 컨텍스트는 다음과 같습니다.
 * 오류가 없는 경우 데이터를 저장하고 리디렉션합니다.
 * 오류가 있을 경우 유효성 검사 메시지가 포함된 페이지를 다시 표시합니다. 클라이언트 측 유효성 검사는 기존의 ASP.NET Core MVC 애플리케이션과 동일합니다. 대부분의 경우 유효성 검사 오류는 클라이언트에서 감지되어 서버에는 제출되지 않습니다.
 
-데이터가 성공적으로 입력되면 `OnPostAsync` 처리기 메서드가 `RedirectToPage` 도우미 메서드를 호출하여 `RedirectToPageResult`의 인스턴스를 반환합니다. `RedirectToPage`는 `RedirectToAction`이나 `RedirectToRoute`와 비슷하지만 페이지에 맞춰진 새로운 액션 결과입니다. 위의 예제에서 이 메서드는 루트 인덱스 페이지(`/Index`)로 리디렉션합니다. `RedirectToPage`는 [페이지에 대한 URL 생성](#url_gen) 섹션에서 자세히 설명합니다.
+데이터가 성공적으로 입력되면 `OnPostAsync` 처리기 메서드가 `RedirectToPage` 도우미 메서드를 호출하여 `RedirectToPageResult`의 인스턴스를 반환합니다. `RedirectToPage` 는 `RedirectToAction` 또는 `RedirectToRoute`와 비슷하지만, 페이지에 맞춰진 새로운 작업 결과입니다. 위의 예제에서 이 메서드는 루트 인덱스 페이지(`/Index`)로 리디렉션합니다. `RedirectToPage` 는 [페이지에 대한 URL 생성하기](#url_gen) 섹션에서 자세히 설명합니다.
 
-서버로 전달된 제출 양식에 유효성 검사 오류가 존재할 경우 `OnPostAsync` 처리기 메서드가 `Page` 도우미 메서드를 호출합니다. `Page`는 `PageResult`의 인스턴스를 반환합니다. `Page`를 반환하는 것은 컨트롤의 액션에서 `View`를 반환하는 것과 비슷합니다. `PageResult`는 <!-- Review  --> 처리기 메서드의 기본 반환 형식입니다. `void`를 반환하는 처리기 메서드는 페이지를 렌더링합니다.
+서버로 전달된 제출 양식에 유효성 검사 오류가 존재할 경우 `OnPostAsync` 처리기 메서드가 `Page` 도우미 메서드를 호출합니다. `Page` 는 `PageResult`의 인스턴스를 반환합니다. `Page`를 반환하는 것은 컨트롤의 액션에서 `View`를 반환하는 것과 비슷합니다. `PageResult` 는 <!-- Review  --> 처리기 메서드의 기본 반환 형식입니다. `void`를 반환하는 처리기 메서드는 페이지를 렌더링합니다.
 
 `Customer` 속성은 `[BindProperty]` 특성을 이용해서 모델 바인딩 대상으로 명시적으로 지정(opt in)합니다.
 
@@ -324,7 +324,7 @@ Razor 페이지의 뷰 검색에는 *Pages* 폴더가 포함됩니다. MVC 컨�
 
 [!code-cshtml[](index/sample/RazorPagesContacts2/Pages/_ViewImports.cshtml)]
 
-`@namespace`는 잠시 뒤에 설명합니다. `@addTagHelper` 지시문은 [기본 제공 태그 도우미](xref:mvc/views/tag-helpers/builtin-th/Index)를 *Pages* 폴더의 모든 페이지에 도입합니다.
+`@namespace` 는 잠시 뒤에 설명합니다. `@addTagHelper` 지시문은 [기본 제공 태그 도우미](xref:mvc/views/tag-helpers/builtin-th/Index)를 *Pages* 폴더의 모든 페이지에 도입합니다.
 
 <a name="namespace"></a>
 
@@ -346,7 +346,7 @@ Razor 페이지의 뷰 검색에는 *Pages* 폴더가 포함됩니다. MVC 컨�
 
 *Pages/Customers/Edit.cshtml* Razor 페이지에 대해 생성되는 네임스페이스는 `PageModel` 클래스와 동일합니다.
 
-`@namespace`*는 기존 Razor 뷰에서도 동작합니다.*
+`@namespace` *는 기존 Razor 뷰에서도 동작합니다.*
 
 기존의 *Pages/Create.cshtml* 뷰 파일은 다음과 같습니다.
 
@@ -396,7 +396,7 @@ Razor 페이지의 뷰 검색에는 *Pages* 폴더가 포함됩니다. MVC 컨�
 | RedirectToPage("../Index") | *Pages/Index* |
 | RedirectToPage("Index")  | *Pages/Customers/Index* |
 
-`RedirectToPage("Index")`, `RedirectToPage("./Index")` 및 `RedirectToPage("../Index")`는 *상대적 이름*입니다. `RedirectToPage`의 매개 변수는 현재 페이지의 경로와 *결합*되어 대상 페이지의 이름을 계산합니다.  <!-- Review: Original had The provided string is combined with the page name of the current page to compute the name of the destination page.  page name, not page path -->
+`RedirectToPage("Index")`, `RedirectToPage("./Index")` 및 `RedirectToPage("../Index")`는 *상대적 이름*입니다. `RedirectToPage`의 매개 변수는 현재 페이지의 경로와 *결합*되어 대상 페이지의 이름을 컴퓨팅합니다.  <!-- Review: Original had The provided string is combined with the page name of the current page to compute the name of the destination page.  page name, not page path -->
 
 상대적 이름 연결은 구조가 복잡한 사이트를 만들때 유용합니다. 상대적 이름을 사용하여 한 폴더의 여러 페이지들을 연결하면 해당 폴더의 이름을 바꿀 수 있습니다. 그래도 여전히 모든 링크는 동작합니다(링크에 폴더 이름이 포함되어 있지 않기 때문입니다).
 
@@ -448,7 +448,7 @@ public class AboutModel : PageModel
 
 ## <a name="tempdata"></a>TempData
 
-ASP.NET Core는 [컨트롤러](/dotnet/api/microsoft.aspnetcore.mvc.controller)에서 [TempData](/dotnet/api/microsoft.aspnetcore.mvc.controller.tempdata?view=aspnetcore-2.0#Microsoft_AspNetCore_Mvc_Controller_TempData) 속성을 노출합니다. 이 속성은 해당 속성이 읽혀질 때까지만 데이터를 저장합니다. `Keep` 및 `Peek` 메서드를 사용하면 삭제하지 않고도 데이터를 확인할 수 있습니다. `TempData`는 두 단계 이상의 요청에 대한 데이터가 필요할 경우의 리디렉션에 유용합니다.
+ASP.NET Core는 [컨트롤러](/dotnet/api/microsoft.aspnetcore.mvc.controller)에서 [TempData](/dotnet/api/microsoft.aspnetcore.mvc.controller.tempdata?view=aspnetcore-2.0#Microsoft_AspNetCore_Mvc_Controller_TempData) 속성을 노출합니다. 이 속성은 해당 속성이 읽혀질 때까지만 데이터를 저장합니다. `Keep` 및 `Peek` 메서드를 사용하면 삭제하지 않고도 데이터를 확인할 수 있습니다. `TempData` 는 데이터가 둘 이상의 요청에 필요한 경우 리디렉션에 유용합니다.
 
 `[TempData]` 특성은 ASP.NET Core 2.0의 새로운 기능으로 컨트롤러 및 페이지에서 지원됩니다.
 
@@ -481,7 +481,7 @@ public string Message { get; set; }
 
 <!-- Review: the FormActionTagHelper applies to all <form /> elements on a Razor page, even when there's no `asp-` attribute   -->
 
-위 예제의 양식에는 두 개의 제출 단추가 존재하며, 각 단추는 `FormActionTagHelper`를 사용하여 서로 다른 URL로 제출됩니다. `asp-page-handler` 특성은 `asp-page`와 함께 사용됩니다. `asp-page-handler`는 페이지에 정의된 각 처리기 메서드로 제출되는 URL을 생성합니다. 이 예제의 경우 현재 페이지로 연결므로 `asp-page`는 지정되지 않았습니다.
+위 예제의 양식에는 두 개의 제출 단추가 존재하며, 각 단추는 `FormActionTagHelper`를 사용하여 서로 다른 URL로 제출됩니다. `asp-page-handler` 특성은 `asp-page`와 함께 사용됩니다. `asp-page-handler` 는 페이지에 정의된 각 처리기 메서드로 제출되는 URL을 생성합니다. `asp-page` 는 지정되지 않았는데 샘플이 현재 페이지에 연결되기 때문입니다.
 
 페이지 모델은 다음과 같습니다.
 

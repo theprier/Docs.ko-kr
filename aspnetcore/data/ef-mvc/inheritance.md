@@ -4,15 +4,15 @@ description: 이 자습서에서는 ASP.NET Core 애플리케이션에서 Entity
 author: rick-anderson
 ms.author: tdykstra
 ms.custom: mvc
-ms.date: 02/05/2019
+ms.date: 03/27/2019
 ms.topic: tutorial
 uid: data/ef-mvc/inheritance
-ms.openlocfilehash: 0a5eb1aba43bc2adf746202772c7f98eff49b4ff
-ms.sourcegitcommit: 5e3797a02ff3c48bb8cb9ad4320bfd169ebe8aba
+ms.openlocfilehash: ba688b259206f21045376b6a38a266ad7528aec1
+ms.sourcegitcommit: 3e9e1f6d572947e15347e818f769e27dea56b648
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56103009"
+ms.lasthandoff: 03/30/2019
+ms.locfileid: "58750772"
 ---
 # <a name="tutorial-implement-inheritance---aspnet-mvc-with-ef-core"></a>자습서: 상속 구현 - ASP.NET MVC 및 EF Core 사용
 
@@ -32,7 +32,7 @@ ms.locfileid: "56103009"
 
 ## <a name="prerequisites"></a>전제 조건
 
-* [ASP.NET Core MVC 웹앱에서 EF Core를 사용하여 동시성 처리](concurrency.md)
+* [동시성 처리](concurrency.md)
 
 ## <a name="map-inheritance-to-database"></a>데이터베이스에 상속 매핑
 
@@ -168,6 +168,7 @@ Entity Framework Core의 상속에 대한 자세한 내용은 [상속](/ef/core/
 > * 마이그레이션 만들기 및 업데이트
 > * 구현 테스트
 
-다양한 고급 Entity Framework 시나리오를 처리하는 방법을 알아보려면 다음 문서로 진행합니다.
+다양한 고급 Entity Framework 시나리오를 처리하는 방법을 알아보려면 다음 자습서로 진행합니다.
+
 > [!div class="nextstepaction"]
-> [고급 항목](advanced.md)
+> [다음: 고급 항목](advanced.md)

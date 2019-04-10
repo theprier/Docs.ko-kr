@@ -4,15 +4,15 @@ description: 이 자습서에서는 Entity Framework Core를 사용하는 ASP.NE
 author: rick-anderson
 ms.author: tdykstra
 ms.custom: mvc
-ms.date: 02/05/2019
+ms.date: 03/27/2019
 ms.topic: tutorial
 uid: data/ef-mvc/advanced
-ms.openlocfilehash: c4804bd6614c7d5a2a30c8f59a645f603929ad52
-ms.sourcegitcommit: 57792e5f594db1574742588017c708350958bdf0
+ms.openlocfilehash: c6255e2b4fc67c6174bab4458ec82035b1886002
+ms.sourcegitcommit: 3e9e1f6d572947e15347e818f769e27dea56b648
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58264591"
+ms.lasthandoff: 03/30/2019
+ms.locfileid: "58750626"
 ---
 # <a name="tutorial-learn-about-advanced-scenarios---aspnet-mvc-with-ef-core"></a>자습서: 고급 시나리오에 대해 알아보기 - ASP.NET MVC 및 EF Core 사용
 
@@ -33,7 +33,7 @@ ms.locfileid: "58264591"
 
 ## <a name="prerequisites"></a>전제 조건
 
-* [ASP.NET Core MVC 웹앱에서 EF Core를 사용하여 상속 구현](inheritance.md)
+* [상속 구현](inheritance.md)
 
 ## <a name="perform-raw-sql-queries"></a>원시 SQL 쿼리 수행
 
@@ -53,7 +53,7 @@ Entity Framework를 사용할 때 장점 중 하나는 코드가 데이터를 �
 
 다음 강조 표시된 코드에서처럼 *DepartmentsController.cs*의 `Details` 메서드에서 `FromSql` 메서드 호출로 부서를 검색하는 코드를 바꿉니다.
 
-[!code-csharp[](intro/samples/cu/Controllers/DepartmentsController.cs?name=snippet_RawSQL&highlight=8,9,10,13)]
+[!code-csharp[](intro/samples/cu/Controllers/DepartmentsController.cs?name=snippet_RawSQL&highlight=8,9,10)]
 
 새 코드가 올바르게 작동하는지 확인하려면 **부서** 탭을 선택한 후 부서 중 하나에 대해 **세부 정보**를 선택합니다.
 
@@ -276,6 +276,7 @@ EF Core에 대한 자세한 내용은 [Entity Framework Core 설명서](/ef/core
 > * EF Core 소스 코드 및 개발 계획에 대해 알아보기
 > * 동적 LINQ를 사용하여 코드를 단순화하는 방법 알아보기
 
-이것으로 ASP.NET Core MVC 애플리케이션에서 Entity Framework Core 사용에 대한 자습서 시리즈를 마칩니다. ASP.NET Core에서 EF 6을 사용하는 방법을 알아보려면 다음 문서를 참조하세요.
+이것으로 ASP.NET Core MVC 애플리케이션에서 Entity Framework Core 사용에 대한 자습서 시리즈를 마칩니다. 이 시리즈는 새 데이터베이스로 작업했습니다. 대안은 기존 데이터베이스에서 모델을 리버스 엔지니어링하는 것입니다.
+
 > [!div class="nextstepaction"]
-> [ASP.NET Core를 사용한 EF 6](../entity-framework-6.md)
+> [자습서: MVC가 있는 EF Core, 기존 데이터베이스](/ef/core/get-started/aspnetcore/new-db?toc=/aspnet/core/toc.json&bc=/aspnet/core/breadcrumb/toc.json)

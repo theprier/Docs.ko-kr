@@ -7,12 +7,12 @@ ms.custom: mvc
 ms.date: 02/04/2019
 ms.topic: tutorial
 uid: data/ef-mvc/crud
-ms.openlocfilehash: 83f5d4bdc3d5872109649818b61a6dbb656fd8be
-ms.sourcegitcommit: 57792e5f594db1574742588017c708350958bdf0
+ms.openlocfilehash: cee521eec3172c04b4d9d93c12076c42c9adff18
+ms.sourcegitcommit: 3e9e1f6d572947e15347e818f769e27dea56b648
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58264829"
+ms.lasthandoff: 03/30/2019
+ms.locfileid: "58750609"
 ---
 # <a name="tutorial-implement-crud-functionality---aspnet-mvc-with-ef-core"></a>자습서: CRUD 기능 구현 - ASP.NET MVC 및 EF Core 사용
 
@@ -32,7 +32,7 @@ ms.locfileid: "58264829"
 
 ## <a name="prerequisites"></a>전제 조건
 
-* [ASP.NET Core MVC 웹앱에서 EF Core 시작](intro.md)
+* [EF Core 및 ASP.NET Core MVC 시작](intro.md)
 
 ## <a name="customize-the-details-page"></a>세부 정보 사용자 지정 페이지
 
@@ -243,7 +243,7 @@ HttpGet `Delete` 작업 메서드를 오류 보고를 관리하는 다음 코드
 
 HttpPost `Delete` 작업 메서드(`DeleteConfirmed`라는)를 실제 삭제 작업을 수행하고 모든 데이터베이스 업데이트 오류를 catch하는 다음 코드로 바꿉니다.
 
-[!code-csharp[](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_DeleteWithReadFirst&highlight=6,8-11,13-14,18-23)]
+[!code-csharp[](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_DeleteWithReadFirst&highlight=6-9,11-12,16-21)]
 
 이 코드는 선택한 엔터티를 검색한 다음, `Remove` 메서드를 호출하여 엔터티의 상태를 `Deleted`로 설정합니다. `SaveChanges`가 호출되면 SQL DELETE 명령이 생성됩니다.
 
@@ -306,6 +306,7 @@ HttpPost `Delete` 작업 메서드(`DeleteConfirmed`라는)를 실제 삭제 작
 > * 삭제 페이지 업데이트
 > * 데이터베이스 연결 닫기
 
-정렬, 필터링 및 페이징을 추가하여 **인덱스** 페이지의 기능을 확장하는 방법을 알아보려면 다음 문서로 진행합니다.
+정렬, 필터링 및 페이징을 추가하여 **인덱스** 페이지의 기능을 확장하는 방법을 알아보려면 다음 자습서로 진행합니다.
+
 > [!div class="nextstepaction"]
-> [정렬, 필터링 및 페이징](sort-filter-page.md)
+> [다음: 정렬, 필터링 및 페이징](sort-filter-page.md)

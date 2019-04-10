@@ -4,15 +4,15 @@ description: 이 자습서에서는 외래 키 필드 및 탐색 속성을 업�
 author: rick-anderson
 ms.author: tdykstra
 ms.custom: mvc
-ms.date: 02/05/2019
+ms.date: 03/27/2019
 ms.topic: tutorial
 uid: data/ef-mvc/update-related-data
-ms.openlocfilehash: 1606b872df2df839266ef17efee1948065c4efae
-ms.sourcegitcommit: 5f299daa7c8102d56a63b214b9a34cc4bc87bc42
+ms.openlocfilehash: 6add725430380f0855fe660a70b90a4546ef0637
+ms.sourcegitcommit: 3e9e1f6d572947e15347e818f769e27dea56b648
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58209416"
+ms.lasthandoff: 03/30/2019
+ms.locfileid: "58750907"
 ---
 # <a name="tutorial-update-related-data---aspnet-mvc-with-ef-core"></a>자습서: 관련 데이터 업데이트 - ASP.NET MVC 및 EF Core 사용
 
@@ -35,7 +35,7 @@ ms.locfileid: "58209416"
 
 ## <a name="prerequisites"></a>전제 조건
 
-* [ASP.NET Core MVC 웹앱용 EF Core를 사용하여 관련 데이터 읽기](read-related-data.md)
+* [관련 데이터 읽기](read-related-data.md)
 
 ## <a name="customize-courses-pages"></a>강좌 페이지 사용자 지정
 
@@ -123,7 +123,7 @@ HttpGet `Edit` 메서드는 편집 중인 강좌에 이미 할당되어 있는 �
 
 *InstructorsController.cs*에서 강사 엔터티의 `OfficeAssignment` 탐색 속성을 로드하고 `AsNoTracking`을 호출하도록 HttpGet `Edit` 메서드에서 코드를 변경합니다.
 
-[!code-csharp[](intro/samples/cu/Controllers/InstructorsController.cs?highlight=9,10&name=snippet_EditGetOA)]
+[!code-csharp[](intro/samples/cu/Controllers/InstructorsController.cs?highlight=8-11&name=snippet_EditGetOA)]
 
 HttpPost `Edit` 메서드를 다음 코드로 바꿔 사무실 할당 업데이트를 처리합니다.
 
@@ -225,7 +225,7 @@ HttpPost `Edit` 메서드를 다음 코드로 바꿔 사무실 할당 업데이�
 
 <a id="notepad"></a>
 > [!NOTE]
-> Visual Studio에서 코드를 붙여 넣을 때 줄 바꿈이 코드를 중단하는 방식으로 변경됩니다. 자동 서식 지정을 실행 취소하려면 Ctrl+Z를 한 번 누릅니다. 여기와 같은 모양이 되도록 줄 바꿈을 수정합니다. 들여쓰기는 완벽할 필요가 없지만 `@</tr><tr>`, `@:<td>`, `@:</td>` 및 `@:</tr>` 줄은 표시된 것처럼 각각 한 줄에 있어야 합니다. 그렇지 않으면 런타임 오류가 발생합니다. 선택된 새 코드의 블록과 함께 Tab 키를 세 번 눌러 기존 코드와 함께 새 코드를 정렬합니다. [여기](https://developercommunity.visualstudio.com/content/problem/147795/razor-editor-malforms-pasted-markup-and-creates-in.html)합니다.에서 이 문제의 상태를 확인할 수 있습니다.
+> Visual Studio에서 코드를 붙여넣을 때 줄 바꿈이 코드를 중단하는 방식으로 변경될 수 있습니다. 붙여넣은 후 코드가 다르게 보이면 Ctrl+Z를 한 번 눌러 자동 서식 지정을 실행 취소합니다. 여기와 같은 모양이 되도록 줄 바꿈을 수정합니다. 들여쓰기는 완벽할 필요가 없지만 `@</tr><tr>`, `@:<td>`, `@:</td>` 및 `@:</tr>` 줄은 표시된 것처럼 각각 한 줄에 있어야 합니다. 그렇지 않으면 런타임 오류가 발생합니다. 선택된 새 코드의 블록과 함께 Tab 키를 세 번 눌러 기존 코드와 함께 새 코드를 정렬합니다. 이 문제는 Visual Studio 2019에서 해결되었습니다.
 
 [!code-html[](intro/samples/cu/Views/Instructors/Edit.cshtml?range=35-61)]
 
@@ -314,6 +314,7 @@ public ICollection<CourseAssignment> CourseAssignments
 > * 삭제 페이지 업데이트
 > * 만들기 페이지에 사무실 위치 및 강좌 추가
 
-동시성 충돌을 처리하는 방법을 알아보려면 다음 문서로 진행합니다.
+동시성 충돌을 처리하는 방법을 알아보려면 다음 자습서로 진행합니다.
+
 > [!div class="nextstepaction"]
 > [동시성 충돌 처리](concurrency.md)

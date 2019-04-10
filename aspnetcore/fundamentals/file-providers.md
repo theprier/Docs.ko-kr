@@ -2,16 +2,17 @@
 title: ASP.NET Core의 파일 공급자
 author: guardrex
 description: ASP.NET Core에서 파일 공급자를 사용하여 파일 시스템 액세스를 추상화하는 방법을 알아봅니다.
+monikerRange: '>= aspnetcore-2.1'
 ms.author: riande
 ms.custom: mvc
-ms.date: 08/01/2018
+ms.date: 03/30/2019
 uid: fundamentals/file-providers
-ms.openlocfilehash: 5d0d46ba82cd84e48e5a9b23d6d330d8888beb41
-ms.sourcegitcommit: 408921a932448f66cb46fd53c307a864f5323fe5
+ms.openlocfilehash: 2ce40ea0d576d08a6b42c3eb6693754f2a0bddce
+ms.sourcegitcommit: 5995f44e9e13d7e7aa8d193e2825381c42184e47
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51570102"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58809223"
 ---
 # <a name="file-providers-in-aspnet-core"></a>ASP.NET Core의 파일 공급자
 
@@ -50,25 +51,11 @@ ASP.NET Core에서 파일 공급자를 사용하여 파일 시스템 액세스�
 
 `IFileProvider`의 세 가지 구현을 사용할 수 있습니다.
 
-::: moniker range=">= aspnetcore-2.0"
-
 | 구현 | 설명 |
 | -------------- | ----------- |
 | [PhysicalFileProvider](#physicalfileprovider) | 물리적 공급자는 시스템의 물리적 파일에 액세스하기 위해서 사용됩니다. |
 | [ManifestEmbeddedFileProvider](#manifestembeddedfileprovider) | 매니페스트 임베디드 공급자는 어셈블리에 포함된 파일에 액세스하기 위해서 사용됩니다. |
 | [CompositeFileProvider](#compositefileprovider) | 마지막으로 복합 공급자는 하나 이상의 개별 공급자로부터 얻어진 파일 및 디렉터리에 대한 복합적인 접근을 지원하기 위해서 사용됩니다. |
-
-::: moniker-end
-
-::: moniker range="< aspnetcore-2.0"
-
-| 구현 | 설명 |
-| -------------- | ----------- |
-| [PhysicalFileProvider](#physicalfileprovider) | 물리적 공급자는 시스템의 물리적 파일에 액세스하기 위해서 사용됩니다. |
-| [EmbeddedFileProvider](#embeddedfileprovider) | 그리고 임베디드 공급자는 어셈블리에 포함된 파일에 접근하기 위해서 사용됩니다. |
-| [CompositeFileProvider](#compositefileprovider) | 마지막으로 복합 공급자는 하나 이상의 개별 공급자로부터 얻어진 파일 및 디렉터리에 대한 복합적인 접근을 지원하기 위해서 사용됩니다. |
-
-::: moniker-end
 
 ### <a name="physicalfileprovider"></a>PhysicalFileProvider
 
@@ -102,8 +89,6 @@ var physicalProvider = _env.ContentRootFileProvider;
 
 클래스 생성자에 공급자를 주입하고 이를 로컬 필드에 할당합니다. 클래스의 메서드 전체에 있는 필드를 사용하여 파일에 액세스합니다.
 
-::: moniker range=">= aspnetcore-2.0"
-
 샘플 앱에서 `IndexModel` 클래스는 `IFileProvider` 인스턴스를 받아 앱의 기본 경로에 대한 디렉터리 콘텐츠를 가져옵니다.
 
 *Pages/Index.cshtml.cs*:
@@ -116,32 +101,9 @@ var physicalProvider = _env.ContentRootFileProvider;
 
 [!code-cshtml[](file-providers/samples/2.x/FileProviderSample/Pages/Index.cshtml?name=snippet1)]
 
-::: moniker-end
-
-::: moniker range="< aspnetcore-2.0"
-
-샘플 앱에서 `HomeController` 클래스는 `IFileProvider` 인스턴스를 받아 앱의 기본 경로에 대한 디렉터리 콘텐츠를 가져옵니다.
-
-*Controllers/HomeController.cs*:
-
-[!code-csharp[](file-providers/samples/1.x/FileProviderSample/Controllers/HomeController.cs?name=snippet1)]
-
-`IDirectoryContents`는 보기에서 반복됩니다.
-
-*Views/Home/Index.cshtml*:
-
-[!code-cshtml[](file-providers/samples/1.x/FileProviderSample/Views/Home/Index.cshtml?name=snippet1)]
-
-::: moniker-end
-
-::: moniker range=">= aspnetcore-2.0"
-
 ### <a name="manifestembeddedfileprovider"></a>ManifestEmbeddedFileProvider
 
 [ManifestEmbeddedFileProvider](/dotnet/api/microsoft.extensions.fileproviders.manifestembeddedfileprovider)는 어셈블리에 포함된 파일에 액세스하기 위해서 사용됩니다. `ManifestEmbeddedFileProvider`는 어셈블리로 컴파일된 매니페스트를 사용하여 포함된 파일의 원래 경로를 재구성합니다.
-
-> [!NOTE]
-> `ManifestEmbeddedFileProvider`는 ASP.NET Core 2.1 이상에서 사용할 수 있습니다. ASP.NET Core 2.0 또는 그 이전 버전의 어셈블리에 포함된 파일에 액세스하려면 [이 항목의 ASP.NET Core 1.x 버전](/aspnet/core/fundamentals/file-providers?view=aspnetcore-1.1)을 참조하세요.
 
 포함된 파일의 매니페스트를 생성하려면 `<GenerateEmbeddedFilesManifest>` 속성을 `true`로 설정합니다. [&lt;EmbeddedResource&gt;](/dotnet/core/tools/csproj#default-compilation-includes-in-net-core-projects)를 사용하여 포함할 파일을 지정합니다.
 
@@ -170,55 +132,13 @@ var manifestEmbeddedProvider =
 | [ManifestEmbeddedFileProvider(Assembly, String, DateTimeOffset)](/dotnet/api/microsoft.extensions.fileproviders.manifestembeddedfileprovider.-ctor#Microsoft_Extensions_FileProviders_ManifestEmbeddedFileProvider__ctor_System_Reflection_Assembly_System_String_System_DateTimeOffset_) | 선택적인 `root` 상대 경로 매개 변수 및 `lastModified` 날짜([DateTimeOffset](/dotnet/api/system.datetimeoffset)) 매개 변수를 허용합니다. `lastModified` 날짜는 [IFileProvider](/dotnet/api/microsoft.extensions.fileproviders.ifileprovider)로 반환된 [IFileInfo](/dotnet/api/microsoft.extensions.fileproviders.ifileinfo) 인스턴스에 대한 마지막 수정 날짜의 범위를 지정합니다. |
 | [ManifestEmbeddedFileProvider(Assembly, String, String, DateTimeOffset)](/dotnet/api/microsoft.extensions.fileproviders.manifestembeddedfileprovider.-ctor#Microsoft_Extensions_FileProviders_ManifestEmbeddedFileProvider__ctor_System_Reflection_Assembly_System_String_System_String_System_DateTimeOffset_) | 선택적인 `root` 상대 경로, `lastModified` 날짜 및 `manifestName` 매개 변수를 허용합니다. `manifestName`은 매니페스트가 포함된 포함 리소스의 이름을 나타냅니다. |
 
-::: moniker-end
-
-::: moniker range="< aspnetcore-2.0"
-
-### <a name="embeddedfileprovider"></a>EmbeddedFileProvider
-
-[EmbeddedFileProvider](/dotnet/api/microsoft.extensions.fileproviders.embeddedfileprovider)는 어셈블리에 포함된 파일에 액세스하기 위해 사용됩니다. 프로젝트 파일에서 [&lt;EmbeddedResource&gt;](/dotnet/core/tools/csproj#default-compilation-includes-in-net-core-projects) 속성을 사용하여 포함할 파일을 지정합니다.
-
-```xml
-<ItemGroup>
-  <EmbeddedResource Include="Resource.txt" />
-</ItemGroup>
-```
-
-[GLOB 패턴](#glob-patterns)을 사용하여 어셈블리에 포함할 파일을 하나 이상 지정합니다.
-
-샘플 앱은 `EmbeddedFileProvider`를 생성하고 현재 실행 중인 어셈블리를 생성자에 전달합니다.
-
-*Startup.cs*:
-
-```csharp
-var embeddedProvider = new EmbeddedFileProvider(Assembly.GetEntryAssembly());
-```
-
-어셈블리에 포함된 리소스는 디렉터리를 노출하지 않는 반면. 대신, 리소스에 대한 경로(해당 네임스페이스를 통해)는 `.` 구분 기호를 사용하여 해당 파일 이름에서 포함됩니다. 샘플 앱에서 `baseNamespace`는 `FileProviderSample.`입니다.
-
-[EmbeddedFileProvider(Assembly, String)](/dotnet/api/microsoft.extensions.fileproviders.embeddedfileprovider.-ctor#Microsoft_Extensions_FileProviders_EmbeddedFileProvider__ctor_System_Reflection_Assembly_) 생성자는 선택적인 `baseNamespace` 매개 변수를 허용합니다. 기본 네임스페이스를 지정하여 [GetDirectoryContents](/dotnet/api/microsoft.extensions.fileproviders.ifileprovider.getdirectorycontents)에 대한 호출의 범위를 제공된 네임스페이스 아래의 해당 리소스로 지정합니다.
-
-::: moniker-end
-
 ### <a name="compositefileprovider"></a>CompositeFileProvider
 
 [CompositeFileProvider](/dotnet/api/microsoft.extensions.fileproviders.compositefileprovider)는 `IFileProvider` 인스턴스를 결합해서 다수의 공급자를 이용한 파일 작업을 처리할 수 있는 단일 인터페이스를 제공합니다. `CompositeFileProvider`를 생성할 때는 생성자에 하나 이상의 `IFileProvider` 인스턴스를 전달합니다.
 
-::: moniker range=">= aspnetcore-2.0"
-
 샘플 앱에서 `PhysicalFileProvider` 및 `ManifestEmbeddedFileProvider`는 앱의 서비스 컨테이너에 등록된 `CompositeFileProvider`에 파일을 제공합니다.
 
 [!code-csharp[](file-providers/samples/2.x/FileProviderSample/Startup.cs?name=snippet1)]
-
-::: moniker-end
-
-::: moniker range="< aspnetcore-2.0"
-
-샘플 앱에서 `PhysicalFileProvider` 및 `EmbeddedFileProvider`는 앱의 서비스 컨테이너에 등록된 `CompositeFileProvider`에 파일을 제공합니다.
-
-[!code-csharp[](file-providers/samples/1.x/FileProviderSample/Startup.cs?name=snippet1)]
-
-::: moniker-end
 
 ## <a name="watch-for-changes"></a>변경 내용 관찰
 
@@ -229,17 +149,7 @@ var embeddedProvider = new EmbeddedFileProvider(Assembly.GetEntryAssembly());
 
 샘플 앱에서 *WatchConsole* 콘솔 앱은 텍스트 파일이 수정될 때마다 메시지를 표시하도록 구성됩니다.
 
-::: moniker range=">= aspnetcore-2.0"
-
 [!code-csharp[](file-providers/samples/2.x/WatchConsole/Program.cs?name=snippet1&highlight=1-2,16,19-20)]
-
-::: moniker-end
-
-::: moniker range="< aspnetcore-2.0"
-
-[!code-csharp[](file-providers/samples/1.x/WatchConsole/Program.cs?name=snippet1&highlight=1-2,16,19-20)]
-
-::: moniker-end
 
 Docker 컨테이너나 네트워크 공유 같은 일부 파일 시스템은 변경 알림을 안정적으로 전송할 수 없습니다. `DOTNET_USE_POLLING_FILE_WATCHER` 환경 변수를 `1` 또는 `true`로 설정하여 변경에 대해 파일 시스템을 4초마다 폴링합니다(구성할 수 없음).
 
