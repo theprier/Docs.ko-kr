@@ -4,14 +4,14 @@ author: rick-anderson
 description: ASP.NET Core에서 데이터를 메모리에 캐시하는 방법을 알아봅니다.
 ms.author: riande
 ms.custom: mvc
-ms.date: 02/11/2019
+ms.date: 04/11/2019
 uid: performance/caching/memory
-ms.openlocfilehash: c115e43b9dd4f838ab9600c2e105d86732d857ad
-ms.sourcegitcommit: 5f299daa7c8102d56a63b214b9a34cc4bc87bc42
+ms.openlocfilehash: 6433df36023b79bc679186bee8b0a92371661dbe
+ms.sourcegitcommit: 258a97159da206f9009f23fdf6f8fa32f178e50b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58208275"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59425051"
 ---
 # <a name="cache-in-memory-in-aspnet-core"></a>ASP.NET Core의 메모리 내 캐시
 
@@ -21,9 +21,9 @@ ms.locfileid: "58208275"
 
 ## <a name="caching-basics"></a>캐싱 기본 사항
 
-캐싱은 콘텐츠를 생성하기 위해 필요한 작업을 줄임으로써 응용 프로그램의 성능 및 확장성을 크게 향상시킵니다. 캐싱은 자주 변경되지 않는 데이터에 가장 효과가 좋습니다. 캐싱은 원본에서 가져와서 반환하는 것보다 더 빠르게 반환할 수 있는 데이터의 복사본을 만듭니다. 응용 프로그램이 캐시된 데이터에 의존하지 않도록 만들어야 하고 테스트해야 합니다.
+캐싱은 콘텐츠를 생성하기 위해 필요한 작업을 줄임으로써 응용 프로그램의 성능 및 확장성을 크게 향상시킵니다. 캐싱은 자주 변경되지 않는 데이터에 가장 효과가 좋습니다. 캐싱은 원본에서 가져와서 반환하는 것보다 더 빠르게 반환할 수 있는 데이터의 복사본을 만듭니다. 앱 작성 되 고 테스트 해야 **되지** 캐시 된 데이터에 따라 달라 집니다.
 
-ASP.NET Core는 몇 가지 다른 종류의 캐시를 지원합니다. 가장 간단한 캐시는 웹 서버의 메모리에 저장된 캐시를 나타내는 [IMemoryCache](/dotnet/api/microsoft.extensions.caching.memory.imemorycache)를 기반으로 합니다. 다수의 서버로 구성된 서버 팜에서 실행되는 응용 프로그램이 메모리 내 캐시를 사용할 경우에는 세션이 고정적인지 확인해야 합니다. 고정 세션은 클라이언트의 이어지는 후속 요청이 모두 동일한 서버로 전달되도록 보장해줍니다. 예를 들어 Azure 웹 앱은 이어지는 모든 후속 요청을 동일한 서버로 라우트하기 위해서 [응용 프로그램 요청 라우팅](https://www.iis.net/learn/extensions/planning-for-arr)(ARR)을 사용합니다.
+ASP.NET Core는 몇 가지 다른 종류의 캐시를 지원합니다. 가장 간단한 캐시는 웹 서버의 메모리에 저장된 캐시를 나타내는 [IMemoryCache](/dotnet/api/microsoft.extensions.caching.memory.imemorycache)를 기반으로 합니다. 여러 서버의 서버 팜에서 실행 되는 앱은 메모리 내 캐시를 사용 하는 경우 세션 고정 되는지 확인 해야 합니다. 고정 세션은 클라이언트의 이어지는 후속 요청이 모두 동일한 서버로 전달되도록 보장해줍니다. 예를 들어 Azure 웹 앱은 이어지는 모든 후속 요청을 동일한 서버로 라우트하기 위해서 [응용 프로그램 요청 라우팅](https://www.iis.net/learn/extensions/planning-for-arr)(ARR)을 사용합니다.
 
 웹 팜에서 비-고정 세션을 사용할 경우에는 캐시 일관성 문제가 발생하지 않도록 [분산 캐시](distributed.md)가 필요합니다. 일부 앱에서는 분산된 된 캐시는 메모리 내 캐시 보다 더 높은 규모를 지원할 수 있습니다. 분산 캐시를 사용하면 캐시 메모리를 외부 프로세스에서 관리합니다.
 
@@ -43,7 +43,7 @@ ASP.NET Core는 몇 가지 다른 종류의 캐시를 지원합니다. 가장 �
 * 모든 [.NET 구현](/dotnet/standard/net-standard#net-implementation-support) .NET Standard 2.0 이상을 대상으로 합니다. 예를 들어, ASP.NET Core 2.0 이상.
 * .NET framework 4.5 이상
 
-[Microsoft.Extensions.Caching.Memory](https://www.nuget.org/packages/Microsoft.Extensions.Caching.Memory/) / `IMemoryCache` (이 항목에서 설명)는 것이 좋습니다 `System.Runtime.Caching` / `MemoryCache` ASP.NET Core를 더 잘 통합 되기 때문입니다. 예를 들어 `IMemoryCache` ASP.NET Core를 사용 하 여 고유 하 게 작동 [종속성 주입](xref:fundamentals/dependency-injection)합니다.
+[Microsoft.Extensions.Caching.Memory](https://www.nuget.org/packages/Microsoft.Extensions.Caching.Memory/) / `IMemoryCache` (이 문서에서 설명)는 것이 좋습니다 `System.Runtime.Caching` / `MemoryCache` ASP.NET Core를 더 잘 통합 되기 때문입니다. 예를 들어 `IMemoryCache` ASP.NET Core를 사용 하 여 고유 하 게 작동 [종속성 주입](xref:fundamentals/dependency-injection)합니다.
 
 사용 하 여 `System.Runtime.Caching` / `MemoryCache` ASP.NET에서 코드를 이식 하는 경우 호환성 다리 4.x ASP.NET Core에서.
 
@@ -53,7 +53,7 @@ ASP.NET Core는 몇 가지 다른 종류의 캐시를 지원합니다. 가장 �
 * 캐시는 메모리 부족 한 리소스를 사용합니다. 캐시 증가 제한 합니다.
   * 수행할 **되지** 캐시 키로 외부 입력을 사용 합니다.
   * 캐시 증가 제한 하려면 만료를 사용 합니다.
-  * [SetSize, 크기 및 SizeLimit를 사용 하 여 캐시 크기를 제한 하려면](#use-setsize-size-and-sizelimit-to-limit-cache-size)
+  * [SetSize, 크기 및 SizeLimit 최대 캐시 크기를 사용 하 여](#use-setsize-size-and-sizelimit-to-limit-cache-size)입니다. ASP.NET Core 런타임이 메모리 압력에 따라 캐시 크기를 제한 하지 않습니다. 캐시 크기를 제한 하는 개발자가.
 
 ## <a name="using-imemorycache"></a>IMemoryCache 사용하기
 
@@ -93,7 +93,7 @@ ASP.NET Core는 몇 가지 다른 종류의 캐시를 지원합니다. 가장 �
 
 [!code-cshtml[](memory/sample/WebCache/Views/Home/Cache.cshtml)]
 
-제한 시간 안에 요청이 전달되는 동안에는 (그리고 메모리 부족으로 제거되지 않은 경우에는) 캐시된 `DateTime` 값이 캐시에 남아 있습니다. 다음 그림은 현재 시간과 캐시에서 조회한 그보다 오래된 시간을 보여줍니다.
+캐시 된 `DateTime` 값은 제한 시간 내에 요청이 있는 동안 캐시에 유지 됩니다. 다음 그림은 현재 시간과 캐시에서 조회한 그보다 오래된 시간을 보여줍니다.
 
 ![두 개의 서로 다른 시간을 표시하는 Index 뷰](memory/_static/time.png)
 
@@ -122,7 +122,7 @@ ASP.NET Core는 몇 가지 다른 종류의 캐시를 지원합니다. 가장 �
 
 ## <a name="use-setsize-size-and-sizelimit-to-limit-cache-size"></a>SetSize, 크기 및 SizeLimit를 사용 하 여 캐시 크기를 제한 하려면
 
-`MemoryCache` 인스턴스 수 선택적으로 지정 하 고 크기 제한을 적용 합니다. 메모리 크기 제한 없는 정의 된 측정 단위를 캐시에 항목의 크기를 측정 하는 메커니즘이 없기 때문에 합니다. 캐시 메모리 크기 제한을 설정 된 경우 모든 항목 크기를 지정 해야 합니다. 지정 된 크기가 단위는 개발자가 선택 합니다.
+`MemoryCache` 인스턴스 수 선택적으로 지정 하 고 크기 제한을 적용 합니다. 메모리 크기 제한 없는 정의 된 측정 단위를 캐시에 항목의 크기를 측정 하는 메커니즘이 없기 때문에 합니다. 캐시 메모리 크기 제한을 설정 된 경우 모든 항목 크기를 지정 해야 합니다. ASP.NET Core 런타임이 메모리 압력에 따라 캐시 크기를 제한 하지 않습니다. 캐시 크기를 제한 하는 개발자가. 지정 된 크기가 단위는 개발자가 선택 합니다.
 
 예를 들어:
 
