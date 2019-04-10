@@ -5,14 +5,14 @@ description: WebAssembly를 통해 브라우저에서 실행되는 대화형 클
 monikerRange: '>= aspnetcore-3.0'
 ms.author: riande
 ms.custom: mvc
-ms.date: 03/28/2019
+ms.date: 04/08/2019
 uid: spa/blazor/index
-ms.openlocfilehash: 87e294a975e4168add046166a95e02e485db131d
-ms.sourcegitcommit: 6bde1fdf686326c080a7518a6725e56e56d8886e
+ms.openlocfilehash: be8fdb7bcbf9ce8c80bc6e21be455dfbfcaf404b
+ms.sourcegitcommit: 948e533e02c2a7cb6175ada20b2c9cabb7786d0b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59068250"
+ms.lasthandoff: 04/10/2019
+ms.locfileid: "59468613"
 ---
 # <a name="introduction-to-blazor"></a>Blazor 소개
 
@@ -72,7 +72,7 @@ Blazor는 Razor 구성 요소의 클라이언트 쪽 호스팅 모델입니다. 
 <div>
     <h2>@Title</h2>
     @BodyContent
-    <button onclick=@OnOK>OK</button>
+    <button onclick="@OnOK">OK</button>
 </div>
 
 @functions {

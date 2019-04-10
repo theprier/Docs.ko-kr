@@ -4,14 +4,14 @@ author: Rick-Anderson
 description: 페이지 코딩 중심의 시나리오에서 ASP.NET Core의 Razor 페이지를 사용하면 MVC를 사용할 때보다 어떻게 더 쉽고 생산적인지 알아봅니다.
 monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
-ms.date: 05/12/2018
+ms.date: 04/06/2019
 uid: razor-pages/index
-ms.openlocfilehash: 50db8cd9b0523239acb1d439b472ea5d3cb6cb7c
-ms.sourcegitcommit: 6bde1fdf686326c080a7518a6725e56e56d8886e
+ms.openlocfilehash: e79ce1e2ddfc0e1a4d72e3f67f702d6eb938b8d3
+ms.sourcegitcommit: 948e533e02c2a7cb6175ada20b2c9cabb7786d0b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59068380"
+ms.lasthandoff: 04/10/2019
+ms.locfileid: "59468697"
 ---
 # <a name="introduction-to-razor-pages-in-aspnet-core"></a>ASP.NET Core의 Razor 페이지 소개
 
@@ -157,7 +157,7 @@ db 컨텍스트는 다음과 같습니다.
 
 [!code-cs[](index/sample/RazorPagesContacts/Pages/Create.cshtml.cs?name=snippet_PageModel&highlight=10-11)]
 
-Razor 페이지는 기본적으로 비 GET 동사에 대해서만 속성을 바인딩합니다. 속성을 바인딩하면 작성해야 하는 코드의 양을 줄일 수 있습니다. 바인딩은 양식 필드 렌더링할 때와 (`<input asp-for="Customer.Name" />`) 입력을 받아들일 때 동일한 속성을 사용하여 코드를 줄입니다.
+Razor 페이지는 기본적으로 비 GET 동사에 대해서만 속성을 바인딩합니다. 속성을 바인딩하면 작성해야 하는 코드의 양을 줄일 수 있습니다. 바인딩은 양식 필드 렌더링할 때와 (`<input asp-for="Customer.Name">`) 입력을 받아들일 때 동일한 속성을 사용하여 코드를 줄입니다.
 
 [!INCLUDE[](~/includes/bind-get.md)]
 

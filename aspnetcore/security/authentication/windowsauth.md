@@ -7,12 +7,12 @@ ms.author: riande
 ms.custom: mvc, seodec18
 ms.date: 04/03/2019
 uid: security/authentication/windowsauth
-ms.openlocfilehash: 9b53f523cf579aeb0e7dd37ccf5f161269a54913
-ms.sourcegitcommit: 6bde1fdf686326c080a7518a6725e56e56d8886e
+ms.openlocfilehash: bd4ffa79c4d1e0070c820fa9c06b0a84c3aaae74
+ms.sourcegitcommit: 948e533e02c2a7cb6175ada20b2c9cabb7786d0b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59068263"
+ms.lasthandoff: 04/10/2019
+ms.locfileid: "59468655"
 ---
 # <a name="configure-windows-authentication-in-aspnet-core"></a>ASP.NET Core에서 Windows 인증을 구성 합니다.
 
@@ -167,7 +167,7 @@ Windows 인증 및 익명 액세스를 모두 설정 된 경우 사용 합니다
 ASP.NET Core에서 2.x의 경우는 `[Authorize]` 특성 추가 구성이 필요 *Startup.cs* Windows 인증에 대 한 익명 요청 수입니다. 권장된 구성에 사용 중인 웹 서버에 따라 약간씩 달라 집니다.
 
 > [!NOTE]
-> 기본적으로 권한 부여를 페이지에 액세스할 수 없는 사용자는 빈 HTTP 403 응답으로 표시 됩니다. 합니다 [StatusCodePages 미들웨어](xref:fundamentals/error-handling#configure-status-code-pages) "액세스 거부" 더 나은 환경을 제공 하기 위해 구성할 수 있습니다.
+> 기본적으로 권한 부여를 페이지에 액세스할 수 없는 사용자는 빈 HTTP 403 응답으로 표시 됩니다. 합니다 [StatusCodePages 미들웨어](xref:fundamentals/error-handling#usestatuscodepages) "액세스 거부" 더 나은 환경을 제공 하기 위해 구성할 수 있습니다.
 
 #### <a name="iis"></a>IIS
 
