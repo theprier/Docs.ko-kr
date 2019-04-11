@@ -4,14 +4,14 @@ author: pkellner
 description: 이미지 태그 도우미의 사용 방법을 알아봅니다.
 ms.author: riande
 ms.custom: mvc
-ms.date: 10/10/2018
+ms.date: 04/06/2019
 uid: mvc/views/tag-helpers/builtin-th/image-tag-helper
-ms.openlocfilehash: 5eb74a6698911a1c594d11573192cb1b9ed53b49
-ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
+ms.openlocfilehash: 916a68c187cbf516a59d3c5d7578cdb6ada01b86
+ms.sourcegitcommit: 948e533e02c2a7cb6175ada20b2c9cabb7786d0b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49325837"
+ms.lasthandoff: 04/10/2019
+ms.locfileid: "59468820"
 ---
 # <a name="image-tag-helper-in-aspnet-core"></a>ASP.NET Core의 이미지 태그 도우미
 
@@ -43,13 +43,13 @@ ms.locfileid: "49325837"
 다음 예에서는 이미지 태그 도우미를 사용합니다.
 
 ```cshtml
-<img src="~/images/asplogo.png" asp-append-version="true" />
+<img src="~/images/asplogo.png" asp-append-version="true">
 ```
 
 정적 파일이 */wwwroot/images/* 디렉터리에 있을 경우, 생성되는 HTML은 다음과 비슷합니다(해시는 다름).
 
 ```html
-<img src="/images/asplogo.png?v=Kl_dqr9NVtnMdsM2MUg4qthUnWZm5T1fCEimBPWDNgM" />
+<img src="/images/asplogo.png?v=Kl_dqr9NVtnMdsM2MUg4qthUnWZm5T1fCEimBPWDNgM">
 ```
 
 매개 변수 `v`에 할당된 값은 디스크에 존재하는 *asplogo.png* 파일의 해시 값입니다. 웹 서버가 정적 파일에 대한 읽기 액세스 권한을 얻을 수 없으면 렌더링된 태그의 `src` 특성에 `v` 매개 변수가 추가되지 않습니다.

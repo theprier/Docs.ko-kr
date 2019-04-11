@@ -5,14 +5,14 @@ description: Blazor 구성 요소 앱을 단계별로 빌드하고 기본 Razor 
 monikerRange: '>= aspnetcore-3.0'
 ms.author: riande
 ms.custom: mvc
-ms.date: 03/24/2019
+ms.date: 04/06/2019
 uid: tutorials/first-razor-components-app
-ms.openlocfilehash: 2a987b3f2e687cd9d4dffa2c573c938e68ea3cc8
-ms.sourcegitcommit: 7d6019f762fc5b8cbedcd69801e8310f51a17c18
+ms.openlocfilehash: 697c4659bcc9952ffe9868fe9b3c0d28019bc369
+ms.sourcegitcommit: 948e533e02c2a7cb6175ada20b2c9cabb7786d0b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58419367"
+ms.lasthandoff: 04/10/2019
+ms.locfileid: "59468778"
 ---
 # <a name="build-your-first-razor-components-app"></a>첫 번째 Razor 구성 요소 앱 빌드
 
@@ -194,7 +194,7 @@ Blazor 버전의 샘플 앱에서 `HttpClient`를 삽입하여 *wwwroot/sample-d
    [!code-cshtml[](build-your-first-razor-components-app/samples_snapshot/3.x/ToDo7.razor?highlight=2)]
 
    ```cshtml
-   <input placeholder="Something todo" bind="@newTodo" />
+   <input placeholder="Something todo" bind="@newTodo">
    ```
 
 1. `AddTodo` 메서드를 업데이트하여 지정된 제목이 있는 `TodoItem`을 목록에 추가합니다. `newTodo`를 빈 문자열로 설정하여 텍스트 입력 값을 지웁니다.
@@ -221,4 +221,4 @@ Blazor 버전의 샘플 앱에서 `HttpClient`를 삽입하여 *wwwroot/sample-d
 
 ## <a name="publish-and-deploy-the-app"></a>앱 게시 및 배포
 
-앱을 게시하려면 <xref:host-and-deploy/razor-components/index#publish-the-app>을 참조하세요.
+앱을 게시하려면 <xref:host-and-deploy/razor-components-blazor/index>을 참조하세요.

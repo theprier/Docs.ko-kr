@@ -5,12 +5,12 @@ description: 기본적인 ASP.NET Core MVC 앱에서 Details 컨트롤러 메서
 ms.author: riande
 ms.date: 12/13/2018
 uid: tutorials/first-mvc-app/details
-ms.openlocfilehash: f674ca1761f85ce127121603286c97d5936f6716
-ms.sourcegitcommit: c47d7c131eebbcd8811e31edda210d64cf4b9d6b
+ms.openlocfilehash: 056017ea4f4073fa0b1cd747d06775b2a33616cf
+ms.sourcegitcommit: 1a7000630e55da90da19b284e1b2f2f13a393d74
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55236330"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "59012671"
 ---
 # <a name="examine-the-details-and-delete-methods-of-an-aspnet-core-app"></a>ASP.NET Core 앱의 Details 및 Delete 메서드 검사
 
@@ -46,6 +46,7 @@ CLR(공용 언어 런타임)은 고유한 매개 변수 서명을 갖기 위해 
 
 ```csharp
 // POST: Movies/Delete/6
+[HttpPost]
 [ValidateAntiForgeryToken]
 public async Task<IActionResult> Delete(int id, bool notUsed)
 ```
