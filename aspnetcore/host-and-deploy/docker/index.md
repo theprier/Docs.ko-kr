@@ -6,19 +6,19 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 01/08/2018
 uid: host-and-deploy/docker/index
-ms.openlocfilehash: 272bd0a0dad2fb62c33dcedd1ce8430eefb2c238
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: e56f90ec7272ce0411651ee6f8e7c754ae44b78d
+ms.sourcegitcommit: 9b7fcb4ce00a3a32e153a080ebfaae4ef417aafa
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36276090"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59516263"
 ---
 # <a name="host-aspnet-core-in-docker-containers"></a>Docker 컨테이너에서 ASP.NET Core 호스트
 
 다음 문서는 Docker에서 ASP.NET Core 앱을 호스팅하는 학습에서 사용할 수 있습니다.
 
 [컨테이너 및 Docker 소개](/dotnet/standard/microservices-architecture/container-docker-introduction/index)  
-응용 프로그램 또는 서비스, 이에 해당하는 종속성 및 구성이 컨테이너 이미지로 패키지되는 소프트웨어 개발 방법인 컨테이너화에 대해 살펴볼 수 있습니다. 이미지를 테스트한 후 호스트에 배포할 수 있습니다.
+애플리케이션 또는 서비스, 이에 해당하는 종속성 및 구성이 컨테이너 이미지로 패키지되는 소프트웨어 개발 방법인 컨테이너화에 대해 살펴볼 수 있습니다. 이미지를 테스트한 후 호스트에 배포할 수 있습니다.
 
 [Docker란?](/dotnet/standard/microservices-architecture/container-docker-introduction/docker-defined)  
 클라우드 또는 온-프레미스로 실행될 수 있는 이식 가능하고 문제를 스스로 해결할 수 있는 컨테이너로서 앱 배포를 자동화하기 위한 오픈 소스 프로젝트인 Docker에 대해 살펴볼 수 있습니다.
@@ -28,9 +28,6 @@ Docker 기술에 대한 용어 및 정의를 알아봅니다.
 
 [Docker 컨테이너, 이미지 및 레지스트리](/dotnet/standard/microservices-architecture/container-docker-introduction/docker-containers-images-registries)  
 여러 환경 간의 일관된 배포를 위해 Docker 컨테이너 이미지가 이미지 레지스트리에 저장되는 방법을 확인합니다.
-
-[.NET Core 응용 프로그램에 대한 Docker 이미지 빌드](/dotnet/articles/core/docker/building-net-docker-images)  
-ASP.NET Core 앱을 빌드하고 Docker화하는 방법을 배웁니다. Microsoft에서 관리하는 Docker 이미지를 살펴보고 사용 사례를 검토합니다.
 
 [Docker용 Visual Studio Tools](xref:host-and-deploy/docker/visual-studio-tools-for-docker)  
 Visual Studio 2017에서 Windows용 Docker에 대해 .NET Framework 또는 .NET Core를 대상으로 하는 ASP.NET Core 앱의 빌드, 디버깅 및 실행을 지원하는 방법을 살펴볼 수 있습니다. Windows 및 Linux 컨테이너가 모두 지원됩니다.
