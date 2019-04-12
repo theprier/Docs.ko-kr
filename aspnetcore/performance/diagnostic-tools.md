@@ -4,14 +4,14 @@ author: mjrousos
 description: ASP.NET Core 앱에서 성능 문제를 진단 하는 데 유용한 도구입니다.
 monikerRange: '>= aspnetcore-1.1'
 ms.author: riande
-ms.date: 12/07/2018
+ms.date: 04/11/2019
 uid: performance/diagnostic-tools
-ms.openlocfilehash: 0fb9944d1082090f4f58f641a26ee96286920456
-ms.sourcegitcommit: 5f299daa7c8102d56a63b214b9a34cc4bc87bc42
+ms.openlocfilehash: 66676b5a2b95b87bfbbd50022e279e35a12b9793
+ms.sourcegitcommit: 9b7fcb4ce00a3a32e153a080ebfaae4ef417aafa
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58210004"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59516224"
 ---
 # <a name="performance-diagnostic-tools"></a>성능 진단 도구
 
@@ -32,7 +32,7 @@ ms.locfileid: "58210004"
 Azure Application Insights는 모니터링 되는 앱에서 통찰력을 제공 하는 여러 방법을 제공 합니다.
 
 - [응용 프로그램 맵](/azure/application-insights/app-insights-app-map) – 분산된 되는 앱의 모든 구성 요소에서 성능 병목 상태 또는 실패 핫스폿을 수 있습니다.
-- [Application Insights 포털의 메트릭 블레이드에서](/azure/application-insights/app-insights-metrics-explorer?toc=/azure/azure-monitor/toc.json) 표시 측정 값 및 이벤트 수를 계산 합니다.
+- [Azure 메트릭 탐색기](/azure/azure-monitor/platform/metrics-getting-started) 차트를 시각적으로 추세를 상호 연결을 허용 하는 Microsoft Azure 포털의 구성 요소인 및 급증 및 급락 메트릭 값에서 조사 합니다.
 - [Application Insights 포털에서 성능 블레이드](/azure/application-insights/app-insights-tutorial-performance):
 
   - 모니터링 되는 앱에서 다른 작업에 대 한 성능 정보를 보여 줍니다.

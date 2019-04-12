@@ -4,14 +4,14 @@ author: rick-anderson
 description: ASP.NET core에서 데이터 보호를 구성 하는 방법에 알아봅니다.
 ms.author: riande
 ms.custom: mvc
-ms.date: 03/08/2019
+ms.date: 04/11/2019
 uid: security/data-protection/configuration/overview
-ms.openlocfilehash: 36a06246513215ec29891df02688d113db11f914
-ms.sourcegitcommit: 32bc00435767189fa3ae5fb8a91a307bf889de9d
+ms.openlocfilehash: ee43427fa1e82a365d49df50567b4ca7afb5a5d3
+ms.sourcegitcommit: 9b7fcb4ce00a3a32e153a080ebfaae4ef417aafa
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/11/2019
-ms.locfileid: "57733500"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59516250"
 ---
 # <a name="configure-aspnet-core-data-protection"></a>ASP.NET Core 데이터 보호를 구성 합니다.
 
@@ -44,7 +44,7 @@ public void ConfigureServices(IServiceCollection services)
 
 키 링 저장소 위치를 설정 (예를 들어 [PersistKeysToAzureBlobStorage](/dotnet/api/microsoft.aspnetcore.dataprotection.azuredataprotectionbuilderextensions.persistkeystoazureblobstorage)). 호출 하기 때문에 위치를 설정 해야 합니다 `ProtectKeysWithAzureKeyVault` 를 구현 하는 [IXmlEncryptor](/dotnet/api/microsoft.aspnetcore.dataprotection.xmlencryption.ixmlencryptor) 키 링 저장소 위치를 포함 하 여 자동으로 데이터 보호 설정을 사용 하지 않도록 설정 하는 합니다. 키 링을 유지 하기 위해 Azure Blob Storage를 사용 하는 앞의 예제입니다. 자세한 내용은 참조 하세요. [키 저장소 공급자: Azure 및 Redis](xref:security/data-protection/implementation/key-storage-providers#azure-and-redis)합니다. 키 링을 사용 하 여 로컬로 유지할 수도 있습니다 [PersistKeysToFileSystem](xref:security/data-protection/implementation/key-storage-providers#file-system)합니다.
 
-합니다 `keyIdentifier` 는 키 암호화에 사용 되는 키 자격 증명 모음 키 식별자 (예를 들어 `https://contosokeyvault.vault.azure.net/keys/dataprotection/`).
+`keyIdentifier` 키 암호화에 사용 되는 키 자격 증명 모음 키 식별자입니다. 예를 들어 라는 key vault에서 만든 키 `dataprotection` 에 `contosokeyvault` 키 식별자를 가진 `https://contosokeyvault.vault.azure.net/keys/dataprotection/`합니다. 앱에 부여할 **키 래핑 해제** 및 **래핑할 키** key vault에 대 한 사용 권한.
 
 `ProtectKeysWithAzureKeyVault` 오버 로드 합니다.
 
@@ -154,7 +154,7 @@ public void ConfigureServices(IServiceCollection services)
 
 ## <a name="disableautomatickeygeneration"></a>DisableAutomaticKeyGeneration
 
-키 만료가 다가오더라도 앱이 자동으로 키를 롤링하지 않도록 (새로운 키를 생성하지 않도록) 구성해야 하는 시나리오도 있을 수 있습니다. 한 가지 사례는 앱들이 주/보조 관계를 갖도록 설정되어 있어서 주 앱만 키 관리 작업을 수행하고 나머지 모든 보조 앱들은 단순히 키 링의 읽기 전용 뷰만 갖고 있는 경우입니다. 그런 경우에는 [DisableAutomaticKeyGeneration](/dotnet/api/microsoft.aspnetcore.dataprotection.dataprotectionbuilderextensions.disableautomatickeygeneration)으로 보조 앱은 키 링을 읽기 전용으로만 처리하도록 시스템을 구성할 수 있습니다.
+키 만료가 다가오더라도 앱이 자동으로 키를 롤링하지 않도록 (새로운 키를 생성하지 않도록) 구성해야 하는 시나리오도 있을 수 있습니다. 한 가지 사례는 앱들이 주/보조 관계를 갖도록 설정되어 있어서 주 앱만 키 관리 작업을 수행하고 나머지 모든 보조 앱들은 단순히 키 링의 읽기 전용 뷰만 갖고 있는 경우입니다. 키 링을 사용 하 여 시스템을 구성 하 여 읽기 전용으로 취급 하도록 보조 앱을 구성할 수 있습니다 <xref:Microsoft.AspNetCore.DataProtection.DataProtectionBuilderExtensions.DisableAutomaticKeyGeneration*>:
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
@@ -166,15 +166,14 @@ public void ConfigureServices(IServiceCollection services)
 
 ## <a name="per-application-isolation"></a>응용 프로그램별 격리
 
-ASP.NET Core 호스트에 의해서 데이터 보호 시스템이 제공되는 경우, 여러 앱이 동일한 작업자 프로세스 계정으로 실행되고 동일한 마스터 키 관련 자료를 사용하더라도 서로 자동으로 격리됩니다 이런 특징은 System.Web의  **\<machineKey >** 요소에서 제공되는 IsolateApps 한정자의 동작과 다소 유사합니다.
+ASP.NET Core 호스트에 의해서 데이터 보호 시스템이 제공되는 경우, 여러 앱이 동일한 작업자 프로세스 계정으로 실행되고 동일한 마스터 키 관련 자료를 사용하더라도 서로 자동으로 격리됩니다 이 다소 비슷합니다 IsolateApps 한정자 System.Web의에서 `<machineKey>` 요소입니다.
 
-이 격리 메커니즘은 로컬 컴퓨터의 각 응용 프로그램들을 고유한 테넌트로 간주하는 방식으로 동작하며, 따라서 해당하는 모든 응용 프로그램에 루트로 제공되는 [IDataProtector](/dotnet/api/microsoft.aspnetcore.dataprotection.idataprotector) 에는 자동으로 응용 프로그램 ID가 판별자로 포함됩니다. 여기에 사용되는 응용 프로그램 고유 ID는 다음 두 가지 방법 중 한 가지 방식으로 얻어집니다.
+따라서 고유 테 넌 트를 로컬 컴퓨터의 각 앱을 고려 하 여 격리 메커니즘의 작동을 <xref:Microsoft.AspNetCore.DataProtection.IDataProtector> 판별자로 앱 ID를 자동으로 포함 하는 지정 된 모든 앱에 대 한 루트입니다. 앱의 고유 ID는 앱의 실제 경로:
 
-1. 응용 프로그램이 IIS에서 호스트 될 경우, 응용 프로그램의 구성 경로가 고유 식별자로 사용됩니다. 만약 응용 프로그램이 팜 환경에 배포된다면 팜에 포함된 모든 컴퓨터 간에 IIS 환경이 비슷하게 구성되었다는 전제하에 이 값이 일정해야 합니다.
+* 에 호스팅된 앱 [IIS](xref:fundamentals/servers/index#iis-http-server), 고유 ID를 앱의 IIS 실제 경로입니다. 웹 팜 환경에서 앱을 배포한 경우이 값은 안정적인 가정할 경우 웹 팜의 모든 컴퓨터에서 IIS 환경 비슷하게 구성 됩니다.
+* 자체 호스팅된 앱 실행에 대 한 합니다 [Kestrel 서버](xref:fundamentals/servers/index#kestrel), 고유 ID가 디스크에 앱의 실제 경로입니다.
 
-2. 응용 프로그램이 IIS에서 호스트 되지 않을 경우, 응용 프로그램의 물리적 경로가 고유 식별자로 사용됩니다.
-
-고유 식별자는 재설정 효력을 유지 하도록 설계 되었습니다 &mdash; 개별 앱 및 컴퓨터 자체입니다.
+고유 식별자는 재설정 효력을 유지 하도록 설계 되었습니다&mdash;개별 앱 및 컴퓨터 자체입니다.
 
 이 격리 메커니즘은 응용 프로그램에 악의적인 의사가 없음을 전제로 합니다. 악의적인 응용 프로그램은 언제든지 동일한 작업자 프로세스 계정으로 동작하는 다른 모든 응용 프로그램에 영향을 미칠 수 있습니다. 응용 프로그램들 간에 서로 신뢰할 수 없는 공유 호스팅 환경에서는 호스팅 공급자가 응용 프로그램의 기본 키 저장소를 분리하는 등, OS 수준에서 응용 프로그램 간에 격리를 담보할 수 있는 조치를 취해야만 합니다. 
 
