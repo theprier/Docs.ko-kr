@@ -4,14 +4,14 @@ author: rick-anderson
 description: 이 자습서에는 외부 인증 공급자에 OAuth 2.0을 사용하여 ASP.NET Core 2.x 앱을 빌드하는 방법을 보여줍니다.
 ms.author: riande
 ms.custom: mvc
-ms.date: 1/19/2019
+ms.date: 4/19/2019
 uid: security/authentication/social/index
-ms.openlocfilehash: 48dd8b772234ff18158423a36ed1716102bc2f31
-ms.sourcegitcommit: 184ba5b44d1c393076015510ac842b77bc9d4d93
+ms.openlocfilehash: 61482481358256dc9ddd1a0a894541040a8a452f
+ms.sourcegitcommit: 9b7fcb4ce00a3a32e153a080ebfaae4ef417aafa
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/18/2019
-ms.locfileid: "54396144"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59516328"
 ---
 # <a name="facebook-google-and-external-provider-authentication-in-aspnet-core"></a>ASP.NET Core에서 Facebook, Google 및 외부 공급자 인증
 
@@ -23,14 +23,60 @@ ms.locfileid: "54396144"
 
 ![Facebook, Twitter, Google Plus 및 Windows용 소셜 미디어 아이콘](index/_static/social.png)
 
-사용자가 자신의 기존 자격 증명을 사용하여 로그인할 수 있게 되면 사용자에게 편리하고 로그인 프로세스를 관리하는 복잡성을 타사에 양도합니다. 소셜 로그인이 트래픽 및 고객 변환을 제공할 수 있는 방법에 대한 예제는 [Facebook](https://www.facebook.com/unsupportedbrowser) 및 [Twitter](https://dev.twitter.com/resources/case-studies)의 사례 연구를 참조하세요.
+사용자가 기존 자격 증명으로 로그인할 수 있도록 설정:
+* 사용자에게 편리합니다.
+* 로그인 프로세스를 관리하는 많은 복잡한 과정을 타사로 이전합니다. 
+
+소셜 로그인이 트래픽 및 고객 변환을 제공할 수 있는 방법에 대한 예제는 [Facebook](https://www.facebook.com/unsupportedbrowser) 및 [Twitter](https://dev.twitter.com/resources/case-studies)의 사례 연구를 참조하세요.
 
 ## <a name="create-a-new-aspnet-core-project"></a>새 ASP.NET Core 프로젝트 만들기
 
-* Visual Studio 2017의 시작 페이지에서 또는 **파일** > **새로 만들기** > **프로젝트**를 통해 새 프로젝트를 만듭니다.
+# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
 
-* **Visual C#** > **.NET Core** 범주에서 사용할 수 있는 **ASP.NET Core 웹 애플리케이션** 템플릿을 선택합니다.
+* Visual Studio **파일** 메뉴에서 **새로 만들기** > **프로젝트**를 선택합니다.
+* 새 ASP.NET Core 웹 애플리케이션을 만듭니다.
+* 드롭다운에서 **ASP.NET Core 2.2**를 선택한 다음, **웹 애플리케이션**을 선택합니다.
 * **인증 변경**을 선택하고 인증을 **개별 사용자 계정**으로 설정합니다.
+
+# <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code)
+
+* [통합 터미널](https://code.visualstudio.com/docs/editor/integrated-terminal)을 엽니다.
+
+* 디렉터리(`cd`)를 프로젝트를 포함하는 폴더로 변경합니다.
+
+* 다음 명령을 실행합니다.
+
+  ```console
+  dotnet new webapp -o WebApp1
+  code -r WebApp1
+  ```
+
+  * `dotnet new` 명령은 *WebApp1* 폴더에서 새 Razor Pages 프로젝트를 만듭니다.
+  * `code` 명령은 Visual Studio Code의 새 인스턴스에서 *WebApp1* 폴더를 엽니다.
+
+  **가 있는 대화 상자가 나타나고 'WebApp1'에서 빌드 및 디버그에 필요한 자산이 누락되었습니다. 추가할까요?**
+
+* **예**를 선택합니다.
+
+# <a name="visual-studio-for-mactabvisual-studio-mac"></a>[Visual Studio for Mac](#tab/visual-studio-mac)
+
+터미널에서 다음 명령을 실행합니다.
+
+<!-- TODO: update these instruction once mac support 2.2 projects -->
+
+```console
+dotnet new webapp -o WebApp1
+```
+
+이전 명령은 [.NET Core CLI](/dotnet/core/tools/dotnet)를 사용하여 Razor Pages 프로젝트를 만듭니다.
+
+## <a name="open-the-project"></a>프로젝트 열기
+
+Visual Studio에서 **파일 > 열기**를 선택한 다음, *WebApp1.csproj* 파일을 선택합니다.
+
+<!-- End of VS tabs -->
+
+---
 
 ## <a name="apply-migrations"></a>마이그레이션 적용
 
