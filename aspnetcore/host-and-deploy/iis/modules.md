@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 02/28/2019
 uid: host-and-deploy/iis/modules
-ms.openlocfilehash: de740775e124298f7c3d3be0c6f5a7311174116d
-ms.sourcegitcommit: 57792e5f594db1574742588017c708350958bdf0
+ms.openlocfilehash: 9770801b527829b131257da7c6e670bd33c23634
+ms.sourcegitcommit: 948e533e02c2a7cb6175ada20b2c9cabb7786d0b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58265489"
+ms.lasthandoff: 04/10/2019
+ms.locfileid: "59468875"
 ---
 # <a name="iis-modules-with-aspnet-core"></a>IIS 모듈 및 ASP.NET Core
 
@@ -30,7 +30,7 @@ ms.locfileid: "58265489"
 | **클라이언트 인증 매핑 인증**<br>`CertificateMappingAuthenticationModule`      | 예 | |
 | **CGI**<br>`CgiModule`                                                                           | 아니요  | |
 | **구성 유효성 검사**<br>`ConfigurationValidationModule`                                  | 예 | |
-| **HTTP 오류**<br>`CustomErrorModule`                                                           | 아니요  | [상태 코드 페이지 미들웨어](xref:fundamentals/error-handling#configure-status-code-pages) |
+| **HTTP 오류**<br>`CustomErrorModule`                                                           | 아니요  | [상태 코드 페이지 미들웨어](xref:fundamentals/error-handling#usestatuscodepages) |
 | **사용자 지정 로깅**<br>`CustomLoggingModule`                                                      | 예 | |
 | **기본 문서**<br>`DefaultDocumentModule`                                                  | 아니요  | [기본 파일 미들웨어](xref:fundamentals/static-files#serve-a-default-document) |
 | **다이제스트 인증**<br>`DigestAuthenticationModule`                                        | 예 | |
@@ -47,7 +47,7 @@ ms.locfileid: "58265489"
 | **ISAPI 필터**<br>`IsapiFilterModule`                                                         | 예 | [미들웨어](xref:fundamentals/middleware/index) |
 | **ISAPI**<br>`IsapiModule`                                                                       | 예 | [미들웨어](xref:fundamentals/middleware/index) |
 | **프로토콜 지원**<br>`ProtocolSupportModule`                                                  | 예 | |
-| **요청 필터링**<br>`RequestFilteringModule`                                                | 예 | [URL 재작성 미들웨어`IRule`](xref:fundamentals/url-rewriting#irule-based-rule) |
+| **요청 필터링**<br>`RequestFilteringModule`                                                | 예 | [URL 재작성 미들웨어 `IRule`](xref:fundamentals/url-rewriting#irule-based-rule) |
 | **요청 모니터**<br>`RequestMonitorModule`                                                    | 예 | |
 | **URL 재작성**&#8224;<br>`RewriteModule`                                                      | 예 | [URL 재작성 미들웨어](xref:fundamentals/url-rewriting) |
 | **서버 쪽 포함**<br>`ServerSideIncludeModule`                                            | 아니요  | |
@@ -160,9 +160,9 @@ Appcmd.exe delete module MODULE_NAME /app.name:APPLICATION_NAME
 
 ASP.NET Core 앱을 실행하는 데 필요한 유일한 모듈은 익명 인증 모듈 및 ASP.NET Core 모듈입니다.
 
-URI 캐싱 모듈(`UriCacheModule`)을 통해 IIS가 URL 수준에서 웹 사이트 구성을 캐시할 수 있습니다. 이 모듈이 없으면 동일한 URL이 반복적으로 요청되더라도 IIS는 요청될 때마다 구성을 읽고 구문 분석해야 합니다. 요청될 때마다 구성을 구문 분석하면 성능이 크게 저하됩니다. ‘URI 캐싱 모듈은 호스트된 ASP.NET Core 앱을 실행하는 데 꼭 필요하지는 않지만, 모든 ASP.NET Core 배포에 대해 URI 캐싱 모듈을 사용하도록 설정하는 것이 좋습니다.’
+URI 캐싱 모듈(`UriCacheModule`)을 통해 IIS가 URL 수준에서 웹 사이트 구성을 캐시할 수 있습니다. 이 모듈이 없으면 동일한 URL이 반복적으로 요청되더라도 IIS는 요청될 때마다 구성을 읽고 구문 분석해야 합니다. 요청될 때마다 구성을 구문 분석하면 성능이 크게 저하됩니다. *URI 캐싱 모듈은 호스트된 ASP.NET Core 앱을 실행하는 데 꼭 필요하지는 않지만, 모든 ASP.NET Core 배포에 대해 URI 캐싱 모듈을 사용하도록 설정하는 것이 좋습니다.*
 
-HTTP 캐싱 모듈(`HttpCacheModule`)은 IIS 출력 캐시 및 HTTP.sys 캐시에 있는 항목을 캐시하기 위한 논리를 구현합니다. 이 모듈이 없으면 콘텐츠가 커널 모드에서 더 이상 캐시되지 않으며 캐시 프로필이 무시됩니다. 일반적으로 HTTP 캐싱 모듈을 제거하면 성능 및 리소스 사용에 부정적인 영향을 줍니다. ‘HTTP 캐싱 모듈은 호스트된 ASP.NET Core 앱을 실행하는 데 꼭 필요하지는 않지만, 모든 ASP.NET Core 배포에 대해 HTTP 캐싱 모듈을 사용하도록 설정하는 것이 좋습니다.’
+HTTP 캐싱 모듈(`HttpCacheModule`)은 IIS 출력 캐시 및 HTTP.sys 캐시에 있는 항목을 캐시하기 위한 논리를 구현합니다. 이 모듈이 없으면 콘텐츠가 커널 모드에서 더 이상 캐시되지 않으며 캐시 프로필이 무시됩니다. 일반적으로 HTTP 캐싱 모듈을 제거하면 성능 및 리소스 사용에 부정적인 영향을 줍니다. *HTTP 캐싱 모듈은 호스트된 ASP.NET Core 앱을 실행하는 데 꼭 필요하지는 않지만, 모든 ASP.NET Core 배포에 대해 HTTP 캐싱 모듈을 사용하도록 설정하는 것이 좋습니다.*
 
 ## <a name="additional-resources"></a>추가 자료
 

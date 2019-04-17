@@ -4,14 +4,14 @@ author: rick-anderson
 description: 형식과 함께 사용되는 기본 제공 태그 도우미를 설명합니다.
 ms.author: riande
 ms.custom: mvc
-ms.date: 02/27/2019
+ms.date: 04/06/2019
 uid: mvc/views/working-with-forms
-ms.openlocfilehash: 2d5168ed4b1e14e507262361de9fa959924b82f6
-ms.sourcegitcommit: 5f299daa7c8102d56a63b214b9a34cc4bc87bc42
+ms.openlocfilehash: 6eff3bf03e650e154b5c767c9bcdd915e7db8b47
+ms.sourcegitcommit: 948e533e02c2a7cb6175ada20b2c9cabb7786d0b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58209559"
+ms.lasthandoff: 04/10/2019
+ms.locfileid: "59468804"
 ---
 # <a name="tag-helpers-in-forms-in-aspnet-core"></a>ASP.NET Core 형식의 태그 도우미
 
@@ -33,7 +33,7 @@ ms.locfileid: "58209559"
 
 * `asp-route-<Parameter Name>` 특성을 제공합니다. 여기서 `<Parameter Name>`을 경로 값에 추가합니다. `Html.BeginForm` 및 `Html.BeginRouteForm`에 대한 `routeValues` 매개 변수는 유사한 기능을 제공합니다.
 
-* HTML 도우미 대안 `Html.BeginForm` 및 `Html.BeginRouteForm`가 있습니다.
+* HTML 도우미 대안 `Html.BeginForm`이 있습니다. `Html.BeginRouteForm`
 
 예제:
 
@@ -44,7 +44,7 @@ ms.locfileid: "58209559"
 ```HTML
 <form method="post" action="/Demo/Register">
     <!-- Input and Submit elements -->
-    <input name="__RequestVerificationToken" type="hidden" value="<removed for brevity>" />
+    <input name="__RequestVerificationToken" type="hidden" value="<removed for brevity>">
 </form>
 ```
 
@@ -93,7 +93,7 @@ MVC 런타임은 형식 태그 도우미 특성 `asp-controller` 및 `asp-action
 <form method="post">
     <button asp-controller="Home" asp-action="Index">Click Me</button>
     <input type="image" src="..." alt="Or Click Me" asp-controller="Home" 
-                                asp-action="Index" />
+                                asp-action="Index">
 </form>
 ```
 
@@ -102,7 +102,7 @@ MVC 런타임은 형식 태그 도우미 특성 `asp-controller` 및 `asp-action
 ```html
 <form method="post">
     <button formaction="/Home">Click Me</button>
-    <input type="image" src="..." alt="Or Click Me" formaction="/Home" />
+    <input type="image" src="..." alt="Or Click Me" formaction="/Home">
 </form>
 ```
 
@@ -113,7 +113,7 @@ MVC 런타임은 형식 태그 도우미 특성 `asp-controller` 및 `asp-action
 ```cshtml
 <form method="post">
     <button asp-page="About">Click Me</button>
-    <input type="image" src="..." alt="Or Click Me" asp-page="About" />
+    <input type="image" src="..." alt="Or Click Me" asp-page="About">
 </form>
 ```
 
@@ -122,7 +122,7 @@ MVC 런타임은 형식 태그 도우미 특성 `asp-controller` 및 `asp-action
 ```html
 <form method="post">
     <button formaction="/About">Click Me</button>
-    <input type="image" src="..." alt="Or Click Me" formaction="/About" />
+    <input type="image" src="..." alt="Or Click Me" formaction="/About">
 </form>
 ```
 
@@ -146,7 +146,7 @@ public class HomeController : Controller
 ```cshtml
 <form method="post">
     <button asp-route="Custom">Click Me</button>
-    <input type="image" src="..." alt="Or Click Me" asp-route="Custom" />
+    <input type="image" src="..." alt="Or Click Me" asp-route="Custom">
 </form>
 ```
 
@@ -155,7 +155,7 @@ public class HomeController : Controller
 ```html
 <form method="post">
     <button formaction="/Home/Test">Click Me</button>
-    <input type="image" src="..." alt="Or Click Me" formaction="/Home/Test" />
+    <input type="image" src="..." alt="Or Click Me" formaction="/Home/Test">
 </form>
 ```
 
@@ -166,12 +166,12 @@ public class HomeController : Controller
 구문:
 
 ```HTML
-<input asp-for="<Expression Name>" />
+<input asp-for="<Expression Name>">
 ```
 
 입력 태그 도우미:
 
-* `asp-for` 특성에 지정된 식 이름에 대해 `id` 및 `name` HTML 특성을 만듭니다. `asp-for="Property1.Property2"`는 `m => m.Property1.Property2`와 같습니다. 식의 이름은 `asp-for` 특성 값에 사용됩니다. 추가 정보는 [식 이름](#expression-names) 섹션을 참조하세요.
+* `asp-for` 특성에 지정된 식 이름에 대해 `id` 및 `name` HTML 특성을 만듭니다. `asp-for="Property1.Property2"` `m => m.Property1.Property2`와 같습니다. 식의 이름은 `asp-for` 특성 값에 사용됩니다. 추가 정보는 [식 이름](#expression-names) 섹션을 참조하세요.
 
 * 모델 속성에 적용된 모델 형식 및 [데이터 주석](/dotnet/api/microsoft.aspnetcore.mvc.dataannotations.iattributeadapter) 특성에 따라 HTML `type` 특성 값을 설정합니다.
 
@@ -227,17 +227,17 @@ Type expected
 
 ```HTML
   <form method="post" action="/Demo/RegisterInput">
-       Email:
-       <input type="email" data-val="true"
-              data-val-email="The Email Address field is not a valid email address."
-              data-val-required="The Email Address field is required."
-              id="Email" name="Email" value="" /> <br>
-       Password:
-       <input type="password" data-val="true"
-              data-val-required="The Password field is required."
-              id="Password" name="Password" /><br>
-       <button type="submit">Register</button>
-     <input name="__RequestVerificationToken" type="hidden" value="<removed for brevity>" />
+      Email:
+      <input type="email" data-val="true"
+             data-val-email="The Email Address field is not a valid email address."
+             data-val-required="The Email Address field is required."
+             id="Email" name="Email" value=""><br>
+      Password:
+      <input type="password" data-val="true"
+             data-val-required="The Password field is required."
+             id="Password" name="Password"><br>
+      <button type="submit">Register</button>
+      <input name="__RequestVerificationToken" type="hidden" value="<removed for brevity>">
    </form>
 ```
 
@@ -264,20 +264,20 @@ Type expected
 @{
        var joe = "Joe";
    }
-   <input asp-for="@joe" />
+   <input asp-for="@joe">
 ```
 
 다음 항목을 생성합니다.
 
 ```HTML
-<input type="text" id="joe" name="joe" value="Joe" />
+<input type="text" id="joe" name="joe" value="Joe">
 ```
 
 컬렉션 속성을 가진 `asp-for="CollectionProperty[23].Member"`은 `i`에 `23` 값이 포함될 경우 `asp-for="CollectionProperty[i].Member"`와 동일한 이름을 생성합니다.
 
-ASP.NET Core MVC가 `ModelExpression`의 값을 계산하는 경우 `ModelState`를 비롯한 여러 원본을 검사합니다. `<input type="text" asp-for="@Name" />`을 고려합니다. 계산된 `value` 특성은 첫 번째 null이 아닌 값입니다.
+ASP.NET Core MVC가 `ModelExpression`의 값을 계산하는 경우 `ModelState`를 비롯한 여러 원본을 검사합니다. `<input type="text" asp-for="@Name">`을 고려합니다. 계산된 `value` 특성은 첫 번째 null이 아닌 값입니다.
 
-* "Name" 키를 가진 `ModelState` 항목입니다.
+* `ModelState` “Name” 키를 가진 항목입니다.
 * 식 `Model.Name`의 결과입니다.
 
 ### <a name="navigating-child-properties"></a>자식 속성 탐색
@@ -295,7 +295,7 @@ ASP.NET Core MVC가 `ModelExpression`의 값을 계산하는 경우 `ModelState`
 다음 HTML이 `Address.AddressLine1`에 생성됩니다.
 
 ```HTML
-<input type="text" id="Address_AddressLine1" name="Address.AddressLine1" value="" />
+<input type="text" id="Address_AddressLine1" name="Address.AddressLine1" value="">
 ```
 
 ### <a name="expression-names-and-collections"></a>식 이름 및 컬렉션
@@ -334,7 +334,7 @@ public IActionResult Edit(int id, int colorIndex)
 
 [!code-HTML[](working-with-forms/sample/final/Views/Shared/EditorTemplates/ToDoItem.cshtml)]
 
-값이 `asp-for` 또는 `Html.DisplayFor` 해당 컨텍스트에서 사용될 때 가능한 경우 `foreach`를 사용해야 합니다. 일반적으로, `for`는 열거자를 할당할 필요가 없으므로 `foreach`보다 좋습니다(시나리오에서 허용하는 경우). 그러나 LINQ 식에서 인덱서를 평가하는 작업은 비용이 많이 들기 때문에 최소화해야 합니다.
+`foreach` 값이 `asp-for` 또는 `Html.DisplayFor` 해당 컨텍스트에서 사용될 때 가능한 경우 사용해야 합니다. 일반적으로, `for`는 열거자를 할당할 필요가 없으므로 `foreach`보다 좋습니다(시나리오에서 허용하는 경우). 그러나 LINQ 식에서 인덱서를 평가하는 작업은 비용이 많이 들기 때문에 최소화해야 합니다.
 
 &nbsp;
 
@@ -369,7 +369,7 @@ public IActionResult Edit(int id, int colorIndex)
    id="Description" name="Description">
   </textarea>
   <button type="submit">Test</button>
-  <input name="__RequestVerificationToken" type="hidden" value="<removed for brevity>" />
+  <input name="__RequestVerificationToken" type="hidden" value="<removed for brevity>">
 </form>
 ```
 
@@ -472,7 +472,7 @@ public IActionResult Edit(int id, int colorIndex)
   Email:  <input name="Email" id="Email" type="email" value=""
    data-val-required="The Email field is required."
    data-val-email="The Email field is not a valid email address."
-   data-val="true"> <br>
+   data-val="true"><br>
   <span class="field-validation-valid" data-valmsg-replace="true"
    data-valmsg-for="Email"></span><br>
   Password: <input name="Password" id="Password" type="password"
@@ -480,7 +480,7 @@ public IActionResult Edit(int id, int colorIndex)
   <span class="field-validation-valid" data-valmsg-replace="true"
    data-valmsg-for="Password"></span><br>
   <button type="submit">Register</button>
-  <input name="__RequestVerificationToken" type="hidden" value="<removed for brevity>" />
+  <input name="__RequestVerificationToken" type="hidden" value="<removed for brevity>">
 </form>
 ```
 
@@ -488,7 +488,7 @@ public IActionResult Edit(int id, int colorIndex)
 
 * 모델의 속성에 대한 [선택](https://www.w3.org/wiki/HTML/Elements/select) 및 관련된 [옵션](https://www.w3.org/wiki/HTML/Elements/option) 요소를 생성합니다.
 
-* HTML 도우미 대안 `Html.DropDownListFor` 및 `Html.ListBoxFor`가 있습니다.
+* HTML 도우미 대안 `Html.DropDownListFor`가 있습니다. `Html.ListBoxFor`
 
 `Select Tag Helper` `asp-for`는 [선택](https://www.w3.org/wiki/HTML/Elements/select) 요소에 대한 모델 속성 이름을 지정하고 `asp-items`는 [옵션](https://www.w3.org/wiki/HTML/Elements/option) 요소를 지정합니다.  예:
 
@@ -520,7 +520,7 @@ HTTP POST `Index` 메서드는 선택 항목을 표시합니다.
        <option value="US">USA</option>
      </select>
        <br /><button type="submit">Register</button>
-     <input name="__RequestVerificationToken" type="hidden" value="<removed for brevity>" />
+     <input name="__RequestVerificationToken" type="hidden" value="<removed for brevity>">
    </form>
 ```
 
@@ -563,7 +563,7 @@ HTTP POST `Index` 메서드는 선택 항목을 표시합니다.
              <option selected="selected" value="5">Spain</option>
          </select>
          <br /><button type="submit">Register</button>
-         <input name="__RequestVerificationToken" type="hidden" value="<removed for brevity>" />
+         <input name="__RequestVerificationToken" type="hidden" value="<removed for brevity>">
     </form>
 ```
 
@@ -596,7 +596,7 @@ HTTP POST `Index` 메서드는 선택 항목을 표시합니다.
           </optgroup>
       </select>
       <br /><button type="submit">Register</button>
-      <input name="__RequestVerificationToken" type="hidden" value="<removed for brevity>" />
+      <input name="__RequestVerificationToken" type="hidden" value="<removed for brevity>">
  </form>
 ```
 
@@ -624,7 +624,7 @@ HTTP POST `Index` 메서드는 선택 항목을 표시합니다.
 <option value="DE">Germany</option>
 </select>
     <br /><button type="submit">Register</button>
-  <input name="__RequestVerificationToken" type="hidden" value="<removed for brevity>" />
+  <input name="__RequestVerificationToken" type="hidden" value="<removed for brevity>">
 </form>
 ```
 
@@ -655,14 +655,14 @@ HTML [\<option>](https://www.w3.org/wiki/HTML/Elements/option) 요소를 추가�
           <option value="US">USA</option>
       </select>
       <br /><button type="submit">Register</button>
-   <input name="__RequestVerificationToken" type="hidden" value="<removed for brevity>" />
+   <input name="__RequestVerificationToken" type="hidden" value="<removed for brevity>">
  </form>
  ```
 
 ## <a name="additional-resources"></a>추가 자료
 
 * <xref:mvc/views/tag-helpers/intro>
-* [HTML 형식 요소](https://www.w3.org/TR/html401/interact/forms.html)
+* [HTML 양식 요소](https://www.w3.org/TR/html401/interact/forms.html)
 * [요청 확인 토큰](/aspnet/mvc/overview/security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages)
 * <xref:mvc/models/model-binding>
 * <xref:mvc/models/validation>

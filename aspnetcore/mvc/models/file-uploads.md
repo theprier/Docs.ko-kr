@@ -4,14 +4,14 @@ author: ardalis
 description: 모델 바인딩 및 스트리밍을 사용하여 ASP.NET Core MVC에서 파일을 업로드하는 방법입니다.
 ms.author: riande
 ms.custom: mvc
-ms.date: 10/24/2018
+ms.date: 04/06/2019
 uid: mvc/models/file-uploads
-ms.openlocfilehash: 5e6e2cd5fac25e2abe27915c2f4caa64b13e90bd
-ms.sourcegitcommit: d75d8eb26c2cce19876c8d5b65ac8a4b21f625ef
+ms.openlocfilehash: 831f0c84f0ff062e9e24ccbf4ca81b7143c66e66
+ms.sourcegitcommit: 948e533e02c2a7cb6175ada20b2c9cabb7786d0b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/19/2019
-ms.locfileid: "56409985"
+ms.lasthandoff: 04/10/2019
+ms.locfileid: "59468555"
 ---
 # <a name="file-uploads-in-aspnet-core"></a>ASP.NET Core에서 파일 업로드
 
@@ -30,12 +30,12 @@ ASP.NET MVC 작업은 소규모 파일에 대해서는 단순 모델 바인딩�
     <div class="form-group">
         <div class="col-md-10">
             <p>Upload one or more files using this form:</p>
-            <input type="file" name="files" multiple />
+            <input type="file" name="files" multiple>
         </div>
     </div>
     <div class="form-group">
         <div class="col-md-10">
-            <input type="submit" value="Upload" />
+            <input type="submit" value="Upload">
         </div>
     </div>
 </form>
@@ -45,7 +45,7 @@ ASP.NET MVC 작업은 소규모 파일에 대해서는 단순 모델 바인딩�
 
 ![파일 업로드 양식](file-uploads/_static/upload-form.png)
 
-서버에 업로드된 개별 파일은 [IFormFile](/dotnet/api/microsoft.aspnetcore.http.iformfile) 인터페이스를 사용하여 [모델 바인딩](xref:mvc/models/model-binding)을 통해 액세스할 수 있습니다. `IFormFile`에는 다음 구조체가 있습니다.
+서버에 업로드된 개별 파일은 [IFormFile](/dotnet/api/microsoft.aspnetcore.http.iformfile) 인터페이스를 사용하여 [모델 바인딩](xref:mvc/models/model-binding)을 통해 액세스할 수 있습니다. `IFormFile` 다음 구조체가 있습니다.
 
 ```csharp
 public interface IFormFile
@@ -94,7 +94,7 @@ public class RegisterViewModel
 ```
 
 > [!NOTE]
-> 위에 표시된 것처럼 `IFormFile`을 작업 메서드 매개 변수 또는 viewmodel 속성으로 직접 사용할 수 있습니다.
+> `IFormFile` 위에 표시된 것처럼 작업 메서드 매개 변수 또는 viewmodel 속성으로 직접 사용할 수 있습니다.
 
 `IFormFile`을 스트림에 복사하고 바이트 배열로 저장합니다.
 

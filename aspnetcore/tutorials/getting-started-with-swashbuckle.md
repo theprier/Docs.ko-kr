@@ -4,14 +4,14 @@ author: zuckerthoben
 description: ASP.NET Core Web API 프로젝트에 Swashbuckle을 추가하여 Swagger UI를 통합하는 방법을 알아봅니다.
 ms.author: scaddie
 ms.custom: mvc
-ms.date: 02/06/2019
+ms.date: 04/04/2019
 uid: tutorials/get-started-with-swashbuckle
-ms.openlocfilehash: 9239a46889691135dce5c99f8fc9b8c7b38ab457
-ms.sourcegitcommit: 3c2ba9a0d833d2a096d9d800ba67a1a7f9491af0
+ms.openlocfilehash: 31d45eaa684118ab78d1b3ecac594e95712f631f
+ms.sourcegitcommit: 6bde1fdf686326c080a7518a6725e56e56d8886e
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55854421"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59068351"
 ---
 # <a name="get-started-with-swashbuckle-and-aspnet-core"></a>Swashbuckle 및 ASP.NET Core 시작
 
@@ -31,7 +31,7 @@ Swashbuckle에 대한 세 가지 주 구성 요소는 다음과 같습니다.
 
 다음 방법으로 Swashbuckle을 추가할 수 있습니다.
 
-### <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
+### [<a name="visual-studio"></a>Visual Studio](#tab/visual-studio)
 
 * **패키지 관리자 콘솔** 창에서:
   * **보기** > **다른 창** > **패키지 관리자 콘솔**로 이동
@@ -48,14 +48,14 @@ Swashbuckle에 대한 세 가지 주 구성 요소는 다음과 같습니다.
   * 검색 상자에 “Swashbuckle.AspNetCore” 입력
   * **찾아보기** 탭에서 “Swashbuckle.AspNetCore” 패키지를 선택하고 **설치** 클릭
 
-### <a name="visual-studio-for-mactabvisual-studio-mac"></a>[Visual Studio for Mac](#tab/visual-studio-mac)
+### [<a name="visual-studio-for-mac"></a>Visual Studio for Mac](#tab/visual-studio-mac)
 
 * **Solution Pad**에서 *Packages* 폴더를 마우스 오른쪽 단추로 클릭 > **패키지 추가...** 선택
 * **패키지 추가** 창의 **소스** 드롭다운을 “nuget.org”로 설정
 * 검색 상자에 “Swashbuckle.AspNetCore” 입력
 * 결과 창에서 "Swashbuckle.AspNetCore" 패키지를 선택하고 **패키지 추가** 클릭
 
-### <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code)
+### [<a name="visual-studio-code"></a>Visual Studio Code](#tab/visual-studio-code)
 
 **통합 터미널**에서 다음 명령을 실행합니다.
 
@@ -63,7 +63,7 @@ Swashbuckle에 대한 세 가지 주 구성 요소는 다음과 같습니다.
 dotnet add TodoApi.csproj package Swashbuckle.AspNetCore
 ```
 
-### <a name="net-core-clitabnetcore-cli"></a>[.NET Core CLI](#tab/netcore-cli)
+### [<a name="net-core-cli"></a>.NET Core CLI](#tab/netcore-cli)
 
 다음 명령을 실행합니다.
 
@@ -108,7 +108,7 @@ Swagger UI는 `http://localhost:<port>/swagger`에 있습니다. Swagger UI를 �
 >
 > [!code-csharp[](../tutorials/web-api-help-pages-using-swagger/samples/2.0/TodoApi.Swashbuckle/Startup3.cs?name=snippet_UseSwaggerUI&highlight=4)]
 
-IIS 또는 역방향 프록시에서 디렉터리를 사용하는 경우 `./` 접두사를 사용하여 Swagger 엔드포인트를 상대 경로로 설정합니다. 예를 들어 `./swagger/v1/swagger.json`과 같은 형식입니다. `/swagger/v1/swagger.json`을 사용하면 앱이 URL의 실제 루트(사용되는 경우 경로 접두사)에서 JSON 파일을 찾도록 지시합니다. 예를 들어 `http://localhost:<port>/<virtual_directory>/<route_prefix>/swagger/v1/swagger.json` 대신 `http://localhost:<port>/<route_prefix>/swagger/v1/swagger.json`을 사용합니다.
+IIS 또는 역방향 프록시에서 디렉터리를 사용하는 경우 `./` 접두사를 사용하여 Swagger 엔드포인트를 상대 경로로 설정합니다. 예를 들어, `./swagger/v1/swagger.json`을 입력합니다. `/swagger/v1/swagger.json`을 사용하면 앱이 URL의 실제 루트(사용되는 경우 경로 접두사)에서 JSON 파일을 찾도록 지시합니다. 예를 들어 `http://localhost:<port>/<virtual_directory>/<route_prefix>/swagger/v1/swagger.json` 대신 `http://localhost:<port>/<route_prefix>/swagger/v1/swagger.json`을 사용합니다.
 
 ## <a name="customize-and-extend"></a>사용자 지정 및 확장
 
@@ -128,7 +128,7 @@ Swagger UI는 버전의 정보를 표시합니다.
 
 XML 주석은 다음 방법으로 사용하도록 설정할 수 있습니다.
 
-#### <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
+#### [<a name="visual-studio"></a>Visual Studio](#tab/visual-studio)
 
 ::: moniker range=">= aspnetcore-2.0"
 
@@ -146,7 +146,7 @@ XML 주석은 다음 방법으로 사용하도록 설정할 수 있습니다.
 
 ::: moniker-end
 
-#### <a name="visual-studio-for-mactabvisual-studio-mac"></a>[Visual Studio for Mac](#tab/visual-studio-mac)
+#### [<a name="visual-studio-for-mac"></a>Visual Studio for Mac](#tab/visual-studio-mac)
 
 ::: moniker range=">= aspnetcore-2.0"
 
@@ -164,7 +164,7 @@ XML 주석은 다음 방법으로 사용하도록 설정할 수 있습니다.
 
 ::: moniker-end
 
-#### <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code)
+#### [<a name="visual-studio-code"></a>Visual Studio Code](#tab/visual-studio-code)
 
 강조 표시된 줄을 *.csproj* 파일에 수동으로 추가합니다.
 
@@ -180,7 +180,7 @@ XML 주석은 다음 방법으로 사용하도록 설정할 수 있습니다.
 
 ::: moniker-end
 
-#### <a name="net-core-clitabnetcore-cli"></a>[.NET Core CLI](#tab/netcore-cli)
+#### [<a name="net-core-cli"></a>.NET Core CLI](#tab/netcore-cli)
 
 강조 표시된 줄을 *.csproj* 파일에 수동으로 추가합니다.
 
@@ -238,7 +238,7 @@ namespace TodoApi
 }
 ```
 
-생성된 XML 파일을 사용하도록 Swagger를 구성합니다. Linux 또는 Windows가 아닌 운영 체제의 경우 파일 이름 및 경로는 대/소문자를 구분할 수 있습니다. 예를 들어 *TodoApi.XML* 파일은 Windows에는 유효하지만 CentOS에는 그렇지 않습니다.
+이전 지침에 따라 생성된 XML 파일을 사용하도록 Swagger를 구성합니다. Linux 또는 Windows가 아닌 운영 체제의 경우 파일 이름 및 경로는 대/소문자를 구분할 수 있습니다. 예를 들어 *TodoApi.XML* 파일은 Windows에는 유효하지만 CentOS에는 그렇지 않습니다.
 
 ::: moniker range=">= aspnetcore-2.1"
 
@@ -258,7 +258,7 @@ namespace TodoApi
 
 ::: moniker-end
 
-이전 코드에서 [리플렉션](/dotnet/csharp/programming-guide/concepts/reflection)은 웹 API 프로젝트의 이름과 일치하는 XML 파일 이름을 빌드하는 데 사용됩니다. [AppContext.BaseDirectory](xref:System.AppContext.BaseDirectory*) 속성은 XML 파일에 대한 경로를 생성하는 데 사용됩니다.
+이전 코드에서 [리플렉션](/dotnet/csharp/programming-guide/concepts/reflection)은 웹 API 프로젝트의 이름과 일치하는 XML 파일 이름을 빌드하는 데 사용됩니다. [AppContext.BaseDirectory](xref:System.AppContext.BaseDirectory*) 속성은 XML 파일에 대한 경로를 생성하는 데 사용됩니다. 일부 Swagger 기능(예: 각 특성에서 입력 매개 변수 또는 HTTP 메서드와 응답 코드의 schemata)은 XML 문서 파일을 사용하지 않고 작동합니다. 대부분 기능, 메서드 요약 및 매개 변수/응답 코드 설명의 경우 XML 파일을 사용해야 합니다.
 
 작업에 3중 슬래시 주석을 추가하면 섹션 헤더에 설명이 추가되어 Swagger UI가 향상됩니다. `Delete` 작업 위에 [\<요약>](/dotnet/csharp/programming-guide/xmldoc/summary) 요소를 추가합니다.
 

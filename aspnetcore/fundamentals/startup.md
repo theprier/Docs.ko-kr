@@ -7,12 +7,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 01/17/2019
 uid: fundamentals/startup
-ms.openlocfilehash: 9556ec076fce3500115cf0e934202f11b175ccd3
-ms.sourcegitcommit: 3e9e1f6d572947e15347e818f769e27dea56b648
+ms.openlocfilehash: 362186be6feeeefeca3c56688ee6420de5fb9659
+ms.sourcegitcommit: 948e533e02c2a7cb6175ada20b2c9cabb7786d0b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/30/2019
-ms.locfileid: "58750791"
+ms.lasthandoff: 04/10/2019
+ms.locfileid: "59468626"
 ---
 # <a name="app-startup-in-aspnet-core"></a>ASP.NET Core에서 앱 시작
 
@@ -39,9 +39,9 @@ ASP.NET Core 앱은 규칙에 따라 `Startup`으로 이름이 지정된 `Startu
 
 `Startup` 클래스에 대한 [종속성 주입](xref:fundamentals/dependency-injection)의 일반적인 용도는 다음을 삽입하는 것입니다.
 
-* 환경별로 서비스를 구성하는 <xref:Microsoft.AspNetCore.Hosting.IHostingEnvironment>.
-* 구성을 읽는 <xref:Microsoft.Extensions.Configuration.IConfiguration>.
-* `Startup.ConfigureServices`의 로거를 만드는 <xref:Microsoft.Extensions.Logging.ILoggerFactory>.
+* <xref:Microsoft.AspNetCore.Hosting.IHostingEnvironment> 환경별로 서비스를 구성합니다.
+* <xref:Microsoft.Extensions.Configuration.IConfiguration> 구성을 읽습니다.
+* <xref:Microsoft.Extensions.Logging.ILoggerFactory> `Startup.ConfigureServices`의 로거를 만듭니다.
 
 [!code-csharp[](startup/sample_snapshot/Startup2.cs?highlight=7-8)]
 
@@ -63,18 +63,20 @@ ASP.NET Core 앱은 규칙에 따라 `Startup`으로 이름이 지정된 `Startu
 
 대부분의 설치가 필요한 기능의 경우 <xref:Microsoft.Extensions.DependencyInjection.IServiceCollection>에 `Add{Service}` 확장 메서드가 있습니다. 일반적인 ASP.NET Core 앱은 Entity Framework, ID 및 MVC에 대한 서비스를 등록합니다.
 
-[!code-csharp[](startup/sample_snapshot/Startup3.cs?highlight=4,7,11)]
+[!code-csharp[](startup/sample_snapshot/Startup3.cs)]
 
 서비스 컨테이너에 서비스를 추가하면 앱 내 및 `Configure` 메서드에서 사용할 수 있습니다. 서비스는 [종속성 주입](xref:fundamentals/dependency-injection) 또는 <xref:Microsoft.AspNetCore.Builder.IApplicationBuilder.ApplicationServices*>를 통해 해결됩니다.
 
+`SetCompatibilityVersion`에 대한 자세한 내용은 [SetCompatibilityVersion](xref:mvc/compatibility-version)을 참조하세요.
+
 ## <a name="the-configure-method"></a>Configure 메서드
 
-<xref:Microsoft.AspNetCore.Hosting.StartupBase.Configure*> 메서드는 앱이 HTTP 요청에 응답하는 방식을 지정하는 데 사용됩니다. 요청 파이프라인은 [미들웨어](xref:fundamentals/middleware/index) 구성 요소를 <xref:Microsoft.AspNetCore.Builder.IApplicationBuilder> 인스턴스에 추가하여 구성됩니다. `IApplicationBuilder`는 `Configure` 메서드에 사용할 수 있지만 서비스 컨테이너에 등록되지 않습니다. 호스팅은 `IApplicationBuilder`를 만들고 `Configure`에 직접 전달합니다.
+<xref:Microsoft.AspNetCore.Hosting.StartupBase.Configure*> 메서드는 앱이 HTTP 요청에 응답하는 방식을 지정하는 데 사용됩니다. 요청 파이프라인은 [미들웨어](xref:fundamentals/middleware/index) 구성 요소를 <xref:Microsoft.AspNetCore.Builder.IApplicationBuilder> 인스턴스에 추가하여 구성됩니다. `IApplicationBuilder` `Configure` 메서드에 사용할 수 있지만 서비스 컨테이너에 등록되지 않습니다. 호스팅은 `IApplicationBuilder`를 만들고 `Configure`에 직접 전달합니다.
 
 [ASP.NET Core 템플릿](/dotnet/core/tools/dotnet-new)은 다음을 지원하는 파이프라인을 구성합니다.
 
 * [개발자 예외 페이지](xref:fundamentals/error-handling#developer-exception-page)
-* [예외 처리기](xref:fundamentals/error-handling#configure-a-custom-exception-handling-page)
+* [예외 처리기](xref:fundamentals/error-handling#exception-handler-page)
 * [HSTS(HTTP 엄격한 전송 보안)](xref:security/enforcing-ssl#http-strict-transport-security-protocol-hsts)
 * [HTTPS 리디렉션](xref:security/enforcing-ssl)
 * [정적 파일](xref:fundamentals/static-files)
@@ -99,9 +101,9 @@ ASP.NET Core 앱은 규칙에 따라 `Startup`으로 이름이 지정된 `Startu
 
 ## <a name="extend-startup-with-startup-filters"></a>시작 필터로 시작 확장
 
-<xref:Microsoft.AspNetCore.Hosting.IStartupFilter>를 사용하여 앱의 [구성](#the-configure-method) 미들웨어 파이프라인의 시작 또는 끝에 미들웨어를 구성합니다. `IStartupFilter`는 미들웨어가 앱의 요청 처리 파이프라인의 시작 또는 끝에 라이브러리에 의해 추가되는 미들웨어 전이나 후에 실행되도록 하는데 유용합니다.
+<xref:Microsoft.AspNetCore.Hosting.IStartupFilter>를 사용하여 앱의 [구성](#the-configure-method) 미들웨어 파이프라인의 시작 또는 끝에 미들웨어를 구성합니다. `IStartupFilter` 미들웨어가 앱의 요청 처리 파이프라인의 시작 또는 끝에 라이브러리에 의해 추가되는 미들웨어 앞이나 뒤에 실행되도록 하는 데 유용합니다.
 
-`IStartupFilter`는 `Action<IApplicationBuilder>`를 받고 반환하는 단일 메서드, <xref:Microsoft.AspNetCore.Hosting.StartupBase.Configure*>를 구성합니다. <xref:Microsoft.AspNetCore.Builder.IApplicationBuilder>는 앱의 요청 파이프라인을 구성하는 클래스를 정의합니다. 자세한 내용은 [IApplicationBuilder로 미들웨어 파이프라인 만들기](xref:fundamentals/middleware/index#create-a-middleware-pipeline-with-iapplicationbuilder)를 참조하세요.
+`IStartupFilter` `Action<IApplicationBuilder>`를 받고 반환하는 단일 메서드, <xref:Microsoft.AspNetCore.Hosting.StartupBase.Configure*>를 구성합니다. <xref:Microsoft.AspNetCore.Builder.IApplicationBuilder>는 앱의 요청 파이프라인을 구성하는 클래스를 정의합니다. 자세한 내용은 [IApplicationBuilder로 미들웨어 파이프라인 만들기](xref:fundamentals/middleware/index#create-a-middleware-pipeline-with-iapplicationbuilder)를 참조하세요.
 
 각 `IStartupFilter`는 요청 파이프라인에서 하나 이상의 미들웨어를 구현합니다. 필터는 서비스 컨테이너에 추가된 순서 대로 호출됩니다. 필터는 다음 필터에 컨트롤을 전달하기 전이나 후에 미들웨어를 추가할 수 있으므로 앱 파이프라인의 시작 또는 끝에 추가합니다.
 

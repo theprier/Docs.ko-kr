@@ -4,14 +4,15 @@ author: tdykstra
 description: ASP.NET Core MVC 및 Razor Pages의 모델 유효성 검사에 대해 알아봅니다.
 ms.author: riande
 ms.custom: mvc
-ms.date: 04/01/2019
+ms.date: 04/06/2019
+monikerRange: '>= aspnetcore-2.1'
 uid: mvc/models/validation
-ms.openlocfilehash: b766d47f296745ba4be6ea8cb6335db9c3e2d975
-ms.sourcegitcommit: 5995f44e9e13d7e7aa8d193e2825381c42184e47
+ms.openlocfilehash: 1ae3c20478b02d6f654e65fdf34c88e1ffb837f8
+ms.sourcegitcommit: 948e533e02c2a7cb6175ada20b2c9cabb7786d0b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58809317"
+ms.lasthandoff: 04/10/2019
+ms.locfileid: "59468739"
 ---
 # <a name="model-validation-in-aspnet-core-mvc-and-razor-pages"></a>ASP.NET Core MVC 및 Razor Pages의 모델 유효성 검사
 
@@ -23,23 +24,11 @@ ms.locfileid: "58809317"
 
 모델 상태는 모델 바인딩 및 모델 유효성 검사 두 하위 시스템에서 발생하는 오류를 나타냅니다. [모델 바인딩](model-binding.md)에서 발생하는 오류는 일반적으로 데이터 변환 오류입니다(예를 들어 정수를 입력해야 하는 필드에 "x"를 입력하는 오류). 모델 유효성 검사는 모델 바인딩 후에 실행되며 데이터가 비즈니스 규칙을 준수하지 않는 경우(예를 들어 1에서 5 사이의등급을 입력해야 하는 필드에 0을 입력) 오류를 보고합니다.
 
-::: moniker range=">= aspnetcore-2.1"
-
-모델 바인딩과 유효성 검사 모두 컨트롤러 작업 또는 Razor Pages 처리기 메서드를 실행하기 전에 실행됩니다. `ModelState.IsValid`를 검사하고 적절히 반응하는 기능은 앱에서 실행합니다. 일반적으로 웹앱은 페이지를 오류 메시지와 함께 다시 표시합니다.
-
-[!code-csharp[](validation/sample_snapshot/Create.cshtml.cs?name=snippet&highlight=3-6)]
-
-::: moniker-end
-
-::: moniker range=">= aspnetcore-2.1"
-
 모델 바인딩과 유효성 검사 모두 컨트롤러 작업 또는 Razor Pages 처리기 메서드를 실행하기 전에 실행됩니다. 웹앱의 경우 `ModelState.IsValid`를 검사하고 적절히 반응하는 기능은 앱에서 실행합니다. 일반적으로 웹앱은 페이지를 오류 메시지와 함께 다시 표시합니다.
 
 [!code-csharp[](validation/sample_snapshot/Create.cshtml.cs?name=snippet&highlight=3-6)]
 
 웹 API 컨트롤러는 `[ApiController]` 특성을 포함하는 경우 `ModelState.IsValid`를 확인할 필요가 없습니다. 이 경우 모델 상태가 잘못되면 이슈 세부 정보를 포함하는 자동 HTTP 400 응답이 반환됩니다. 자세한 정보는 [자동 HTTP 400 응답](xref:web-api/index#automatic-http-400-responses)을 참조하세요.
-
-::: moniker-end
 
 ## <a name="rerun-validation"></a>유효성 검사 다시 실행
 
@@ -122,7 +111,7 @@ ms.locfileid: "58809317"
 
 1. JavaScript가 호출할 작업 메서드를 만듭니다.  jQuery 유효성 검사 [remote](https://jqueryvalidation.org/remote-method/) 메서드는 JSON 응답을 수신해야 합니다.
 
-   * `"true"`는 입력 데이터가 유효함을 의미합니다.
+   * `"true"` 입력 데이터가 유효함을 의미합니다.
    * `"false"`, `undefined` 또는 `null`은 입력이 잘못되었음을 의미합니다.  기본 오류 메시지를 표시합니다.
    * 다른 문자열은 모두 입력이 잘못되었음을 의미합니다. 문자열을 사용자 지정 오류 메시지로 표시합니다.
 
@@ -140,7 +129,7 @@ ms.locfileid: "58809317"
 
 [!code-csharp[](validation/sample/Models/User.cs?name=snippet_UserNameProperties)]
 
-`AdditionalFields`를 명시적으로 문자열 `"FirstName"` 및 `"LastName"`으로 설정할 수 있지만 [`nameof`](/dotnet/csharp/language-reference/keywords/nameof) 연산자를 사용하면 이후 리팩터링이 단순해집니다. 이 유효성 검사에 대한 작업 메서드에 대해서는 이름과 성 인수를 모두 지정할 수 있습니다.
+`AdditionalFields` 명시적으로 문자열 `"FirstName"` 및 `"LastName"`으로 설정할 수 있지만 [`nameof`](/dotnet/csharp/language-reference/keywords/nameof) 연산자를 사용하면 이후 리팩터링이 단순해집니다. 이 유효성 검사에 대한 작업 메서드에 대해서는 이름과 성 인수를 모두 지정할 수 있습니다.
 
 [!code-csharp[](validation/sample/Controllers/UsersController.cs?name=snippet_VerifyName)]
 
@@ -153,7 +142,7 @@ ms.locfileid: "58809317"
 public string MiddleName { get; set; }
 ```
 
-모든 특성 인수와 같은 `AdditionalFields`은 상수 식이어야 합니다. 따라서 `AdditionalFields`를 초기화하기 위해 [보간된 문자열](/dotnet/csharp/language-reference/keywords/interpolated-strings)을 사용하거나 <xref:System.String.Join*>을 호출하지 마십시오.
+`AdditionalFields`모든 특성 인수와 같이 상수 식이어야 합니다. 따라서 `AdditionalFields`를 초기화하기 위해 [보간된 문자열](/dotnet/csharp/language-reference/keywords/interpolated-strings)을 사용하거나 <xref:System.String.Join*>을 호출하지 마십시오.
 
 ## <a name="alternatives-to-built-in-attributes"></a>기본 제공 특성에 대한 대안
 
@@ -161,7 +150,6 @@ public string MiddleName { get; set; }
 
 * [사용자 지정 특성을 만듭니다](#custom-attributes).
 * [IValidatableObject](#ivalidatableobject)를 구현합니다.
-
 
 ## <a name="custom-attributes"></a>사용자 지정 특성
 
@@ -180,8 +168,6 @@ public string MiddleName { get; set; }
 앞의 예제는 `Movie` 형식에 대해서만 작동합니다. 또 다른 클래스 수준 유효성 검사 방법은 다음 예제와 같이 모델 클래스 내에 `IValidatableObject`를 구현하는 것입니다.
 
 [!code-csharp[](validation/sample/Models/MovieIValidatable.cs?name=snippet&highlight=1,26-34)]
-
-::: moniker range=">= aspnetcore-2.1"
 
 ## <a name="top-level-node-validation"></a>최상위 노드 유효성 검사
 
@@ -210,25 +196,19 @@ public string MiddleName { get; set; }
 
 [!code-csharp[](validation/sample_snapshot/Startup.cs?name=snippet_AddMvc&highlight=4)]
 
-::: moniker-end
-
 ## <a name="maximum-errors"></a>최대 오류 수
 
 유효성 검사는 최대 오류 수(기본값 200)에 도달하면 중지됩니다. `Startup.ConfigureServices`에 다음 코드로 이 번호를 구성할 수 있습니다.
 
 [!code-csharp[](validation/sample/Startup.cs?name=snippet_MaxModelValidationErrors&highlight=3)]
 
-::: moniker range=">= aspnetcore-2.1"
-
 ## <a name="maximum-recursion"></a>최대 재귀
 
-<xref:Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationVisitor>는 유효성 검사 중인 모델의 개체 그래프를 트래버스합니다. 매우 깊거나 무한히 재귀하는 모델의 경우 유효성 검사를 실행하면 스택 오버플로가 발생할 수 있습니다. [MvcOptions.MaxValidationDepth](xref:Microsoft.AspNetCore.Mvc.MvcOptions.MaxValidationDepth)는 방문자 재귀가 구성된 깊이를 초과하는 경우 유효성 검사를 조기에 중지하는 방법을 제공합니다. `MvcOptions.MaxValidationDepth`의 기본값은 `CompatibilityVersion.Version_2_2` 이상에서 실행하는 경우 200입니다. 그보다 이전 버전의 경우 이 값은 Null이며, 이는 깊이 제약 조건이 없음을 의미합니다.
+<xref:Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationVisitor> 유효성 검사 중인 모델의 개체 그래프를 트래버스합니다. 매우 깊거나 무한히 재귀하는 모델의 경우 유효성 검사를 실행하면 스택 오버플로가 발생할 수 있습니다. [MvcOptions.MaxValidationDepth](xref:Microsoft.AspNetCore.Mvc.MvcOptions.MaxValidationDepth)는 방문자 재귀가 구성된 깊이를 초과하는 경우 유효성 검사를 조기에 중지하는 방법을 제공합니다. `MvcOptions.MaxValidationDepth`의 기본값은 `CompatibilityVersion.Version_2_2` 이상에서 실행하는 경우 200입니다. 그보다 이전 버전의 경우 이 값은 Null이며, 이는 깊이 제약 조건이 없음을 의미합니다.
 
 ## <a name="automatic-short-circuit"></a>자동 단락
 
 모델 그래프에 대한 유효성 검사가 필요하지 않은 경우 유효성 검사는 자동으로 단락됩니다(건너뜀). 런타임에 유효성 검사를 건너뛰는 개체로는 기본 형식(`byte[]`, `string[]`, `Dictionary<string, string>`) 수집 및 유효성 검사기를 포함하지 않은 복합 개체 그래프가 있습니다.
-
-::: moniker-end
 
 ## <a name="disable-validation"></a>유효성 검사를 사용하지 않도록 설정
 
@@ -270,7 +250,7 @@ public string MiddleName { get; set; }
             <div class="col-md-10">
                 <input class="form-control" type="datetime"
                 data-val="true" data-val-required="The ReleaseDate field is required."
-                id="ReleaseDate" name="ReleaseDate" value="" />
+                id="ReleaseDate" name="ReleaseDate" value="">
                 <span class="text-danger field-validation-valid"
                 data-valmsg-for="ReleaseDate" data-valmsg-replace="true"></span>
             </div>
@@ -308,7 +288,7 @@ $.get({
 
 ### <a name="add-validation-to-dynamic-controls"></a>동적 컨트롤에 유효성 검사 추가
 
-`$.validator.unobtrusive.parse()` 메서드는 `<input/>` 및 `<select/>`와 같은 동적으로 생성된 개별 컨트롤이 아닌 전체 양식에 대해 작용합니다. 양식을 다시 구문 분석하려면 다음 예제와 같이 이전에 양식을 구문 분석했을 때 추가된 유효성 검사 데이터를 제거합니다.
+`$.validator.unobtrusive.parse()` 메서드는 `<input>` 및 `<select/>`와 같은 동적으로 생성된 개별 컨트롤이 아닌 전체 양식에 대해 작용합니다. 양식을 다시 구문 분석하려면 다음 예제와 같이 이전에 양식을 구문 분석했을 때 추가된 유효성 검사 데이터를 제거합니다.
 
 ```js
 $.get({
@@ -349,7 +329,7 @@ $.get({
     data-val-classicmovie1="Classic movies must have a release year earlier than 1960."
     data-val-classicmovie1-year="1960"
     data-val-required="The ReleaseDate field is required."
-    id="ReleaseDate" name="ReleaseDate" value="" />
+    id="ReleaseDate" name="ReleaseDate" value="">
 ```
 
 앞에서 설명했듯이 [태그 도우미](xref:mvc/views/tag-helpers/intro) 및 [HTML 도우미](xref:mvc/views/overview)는 유효성 검사 특성의 정보를 사용하여 `data-` 특성을 렌더링합니다. 사용자 지정 `data-` HTML 특성을 생성하는 코드를 작성하는 두 가지 방법이 있습니다.

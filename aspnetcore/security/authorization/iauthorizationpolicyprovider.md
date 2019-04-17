@@ -4,14 +4,14 @@ author: mjrousos
 description: ASP.NET Core 앱에서 사용자 지정 IAuthorizationPolicyProvider를 사용 하 여 동적으로 권한 부여 정책을 생성 하는 방법에 알아봅니다.
 ms.author: riande
 ms.custom: mvc
-ms.date: 01/21/2019
+ms.date: 04/15/2019
 uid: security/authorization/iauthorizationpolicyprovider
-ms.openlocfilehash: ca57a9fd8e3c11f15fe14bbe4538bc748c4c84b6
-ms.sourcegitcommit: 728f4e47be91e1c87bb7c0041734191b5f5c6da3
+ms.openlocfilehash: e17372bb0ec9091c385a70b1e907eaa3cff24003
+ms.sourcegitcommit: 017b673b3c700d2976b77201d0ac30172e2abc87
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54444157"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59614411"
 ---
 # <a name="custom-authorization-policy-providers-using-iauthorizationpolicyprovider-in-aspnet-core"></a>ASP.NET Core에서 IAuthorizationPolicyProvider를 사용 하 여 사용자 지정 권한 부여 정책 공급자 
 
@@ -119,12 +119,32 @@ internal class MinimumAgePolicyProvider : IAuthorizationPolicyProvider
 
 ## <a name="multiple-authorization-policy-providers"></a>여러 권한 부여 정책 공급자
 
-사용자 지정을 사용 하는 경우 `IAuthorizationPolicyProvider` 구현에서는 ASP.NET Core의 인스턴스 하나에 사용 하 여 있다는 사실을 잊지 마십시오 `IAuthorizationPolicyProvider`합니다. 사용자 지정 공급자를 모든 정책 이름에 대 한 권한 부여 정책을 제공할 수 없으면 백업 공급자에 다시 포함 되어야 합니다. 정책 이름에 대 한 기본 정책에서 발생 하는 포함 될 수 있습니다 `[Authorize]` 이름이 없는 특성입니다.
+사용자 지정을 사용 하는 경우 `IAuthorizationPolicyProvider` 구현에서는 ASP.NET Core의 인스턴스 하나에 사용 하 여 있다는 사실을 잊지 마십시오 `IAuthorizationPolicyProvider`합니다. 사용자 지정 공급자를 사용 되는 모든 정책 이름에 대 한 권한 부여 정책을 제공할 수 없으면 백업 공급자에 다시 포함 되어야 합니다. 
 
-예를 들어, 응용 프로그램에 필요한 사용자 지정 보존 기간 정책 및 기존의 역할 기반 정책 검색 하는 것이 좋습니다. 이러한 앱을 사용자 지정 권한 부여 정책 공급자를 사용할 수 있는:
+예를 들어, 사용자 지정 보존 기간 정책 및 기존의 역할 기반 정책 검색 하는 응용 프로그램을 고려 합니다. 이러한 앱을 사용자 지정 권한 부여 정책 공급자를 사용할 수 있는:
 
 * 정책 이름을 구문 분석 하려고 시도 합니다. 
 * 다른 정책 공급자에 대 한 호출 (같은 `DefaultAuthorizationPolicyProvider`) 정책 이름이 나 포함 되지 않은 경우.
+
+이 예제에서는 `IAuthorizationPolicyProvider` 위에서 보여드린 구현은 사용 하도록 업데이트할 수 있습니다는 `DefaultAuthorizationPolicyProvider` (하는 데 정책 이름이 예상된 패턴 'MinimumAge' + 시대에 일치 하지 않습니다 하는 경우) 생성자에서 대체 (fallback) 정책 공급자를 만들어 합니다.
+
+```csharp
+private DefaultAuthorizationPolicyProvider FallbackPolicyProvider { get; }
+
+public MinimumAgePolicyProvider(IOptions<AuthorizationOptions> options)
+{
+    // ASP.NET Core only uses one authorization policy provider, so if the custom implementation
+    // doesn't handle all policies it should fall back to an alternate provider.
+    FallbackPolicyProvider = new DefaultAuthorizationPolicyProvider(options);
+}
+```
+
+그런 다음, `GetPolicyAsync` 메서드를 사용 하도록 업데이트할 수는 `FallbackPolicyProvider` null을 반환 하는 대신:
+
+```csharp
+...
+return FallbackPolicyProvider.GetPolicyAsync(policyName);
+```
 
 ## <a name="default-policy"></a>기본 정책
 
@@ -137,10 +157,18 @@ public Task<AuthorizationPolicy> GetDefaultPolicyAsync() =>
     Task.FromResult(new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build());
 ```
 
-사용자 지정의 모든 측면으로 `IAuthorizationPolicyProvider`를 사용자 지정할 수 있습니다 따라서 필요에 따라 합니다. 일부의 경우:
+사용자 지정의 모든 측면으로 `IAuthorizationPolicyProvider`를 사용자 지정할 수 있습니다 따라서 필요에 따라 합니다. 일부 경우에는 대체 (fallback)에서 기본 정책을 검색 하는 것이 바람직 수 `IAuthorizationPolicyProvider`입니다.
 
-* 기본 권한 부여 정책은 사용할 수 없습니다.
-* 기본 정책을 검색 하는 대체 (fallback)에 위임할 수 있습니다 `IAuthorizationPolicyProvider`합니다.
+## <a name="required-policy"></a>필요한 정책
+
+사용자 지정 `IAuthorizationPolicyProvider` 를 구현 해야 `GetRequiredPolicyAsync` 를 필요에 따라 항상 필요한 것은 하는 정책을 제공 합니다. 경우 `GetRequiredPolicyAsync` null이 아닌 정책을 반환 합니다. 해당 정책이 다른 (명명 된 또는 기본값)와 결합 하는 요청 되는 정책입니다.
+
+필요한 정책 없음, 필요한 경우 공급자 null을 반환 하거나 대체 (fallback) 공급자에 게 맡기는 것 수 있습니다.
+
+```csharp
+public Task<AuthorizationPolicy> GetRequiredPolicyAsync() => 
+    Task.FromResult<AuthorizationPolicy>(null);
+```
 
 ## <a name="use-a-custom-iauthorizationpolicyprovider"></a>사용자 지정 IAuthorizationPolicyProvider 사용
 

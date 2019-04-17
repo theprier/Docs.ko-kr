@@ -5,14 +5,14 @@ description: Windows 서비스에서 ASP.NET Core 앱을 호스트하는 방법�
 monikerRange: '>= aspnetcore-2.1'
 ms.author: tdykstra
 ms.custom: mvc
-ms.date: 03/08/2019
+ms.date: 04/04/2019
 uid: host-and-deploy/windows-service
-ms.openlocfilehash: ecc7f3a8cd813c2803d03294e38d726905eeb1b8
-ms.sourcegitcommit: 34bf9fc6ea814c039401fca174642f0acb14be3c
+ms.openlocfilehash: 544eefa87898e82ec2bf8f9f61ce4e26dd554bb7
+ms.sourcegitcommit: 6bde1fdf686326c080a7518a6725e56e56d8886e
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57841425"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59068338"
 ---
 # <a name="host-aspnet-core-in-a-windows-service"></a>Windows 서비스에서 ASP.NET Core 호스트
 
@@ -20,11 +20,19 @@ ms.locfileid: "57841425"
 
 IIS를 사용하지 않고 Windows에서 ASP.NET Core 앱을 [Windows 서비스](/dotnet/framework/windows-services/introduction-to-windows-service-applications)로 호스트할 수 있습니다. Windows Service로 호스팅되는 앱은 재부팅 후 자동으로 시작됩니다.
 
-[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/host-and-deploy/windows-service/samples) ([다운로드 방법](xref:index#how-to-download-a-sample))
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/host-and-deploy/windows-service/) ([다운로드 방법](xref:index#how-to-download-a-sample))
 
 ## <a name="prerequisites"></a>전제 조건
 
-* [PowerShell 6](https://github.com/PowerShell/PowerShell)
+* [PowerShell 6.2 이상](https://github.com/PowerShell/PowerShell)
+
+> [!NOTE]
+> Windows 10 2018년 10월 업데이트(버전 1809/빌드 10.0.17763) 이전 Windows OS의 경우[사용자 계정 만들기](#create-a-user-account) 섹션에서 사용되는 [New-LocalUser](/powershell/module/microsoft.powershell.localaccounts/new-localuser) cmdlet에 액세스하려면 [Microsoft.PowerShell.LocalAccounts](/powershell/module/microsoft.powershell.localaccounts) 모듈을 [WindowsCompatibility 모듈](https://github.com/PowerShell/WindowsCompatibility)과 함께 가져와야 합니다.
+>
+> ```powershell
+> Install-Module WindowsCompatibility -Scope CurrentUser
+> Import-WinModule Microsoft.PowerShell.LocalAccounts
+> ```
 
 ## <a name="deployment-type"></a>배포 유형
 
@@ -129,7 +137,7 @@ Windows 이벤트 로그 로깅을 사용하도록 설정하려면 [Microsoft.Ex
 
 [dotnet publish](/dotnet/articles/core/tools/dotnet-publish), [Visual Studio 게시 프로필](xref:host-and-deploy/visual-studio-publish-profiles) 또는 Visual Studio Code를 사용하여 앱을 게시합니다. Visual Studio를 사용하는 경우 **FolderProfile**을 선택하고 **대상 위치**를 구성한 후 **게시** 단추를 선택합니다.
 
-CLI(명령줄 인터페이스) 도구를 사용하여 샘플 앱을 게시하려면 [-c|--configuration](/dotnet/core/tools/dotnet-publish#options) 옵션에 릴리스 구성을 전달하여 프로젝트 폴더의 명령 프롬프트에서 [dotnet publish](/dotnet/core/tools/dotnet-publish) 명령을 실행합니다. 앱 외부 폴더에 게시하려면 [-o|--output](/dotnet/core/tools/dotnet-publish#options) 옵션에 경로를 사용합니다.
+CLI(명령줄 인터페이스) 도구를 사용하여 샘플 앱을 게시하려면 [-c|--configuration](/dotnet/core/tools/dotnet-publish#options) 옵션에 릴리스 구성을 전달하여 프로젝트 폴더의 Windows 명령 셸에서 [dotnet publish](/dotnet/core/tools/dotnet-publish) 명령을 실행합니다. 앱 외부 폴더에 게시하려면 [-o|--output](/dotnet/core/tools/dotnet-publish#options) 옵션에 경로를 사용합니다.
 
 ### <a name="publish-a-framework-dependent-deployment-fdd"></a>FDD(프레임워크 종속 배포) 게시
 
@@ -151,36 +159,32 @@ dotnet publish --configuration Release --runtime win7-x64 --output c:\svc
 
 ## <a name="create-a-user-account"></a>사용자 계정 만들기
 
-관리 PowerShell 6 명령 셸에서 `net user` 명령을 사용하여 서비스에 대한 사용자 계정을 만듭니다.
+관리 PowerShell 6 명령 셸에서 [New-LocalUser](/powershell/module/microsoft.powershell.localaccounts/new-localuser) cmdlet을 사용하여 서비스에 대한 사용자 계정을 만듭니다.
 
 ```powershell
-net user {USER ACCOUNT} {PASSWORD} /add
+New-LocalUser -Name {NAME}
 ```
 
-기본 암호 만료는 6주입니다.
+메시지가 표시되면 [강력한 암호](/windows/security/threat-protection/security-policy-settings/password-must-meet-complexity-requirements)를 제공합니다.
 
-샘플 앱의 경우, 이름이 `ServiceUser`인 사용자 계정과 암호를 만듭니다. 다음 명령에서 `{PASSWORD}`를 [강력한 암호](/windows/security/threat-protection/security-policy-settings/password-must-meet-complexity-requirements)로 바꿉니다.
+샘플 앱의 경우 이름이 `ServiceUser`인 사용자 계정을 만듭니다.
 
 ```powershell
-net user ServiceUser {PASSWORD} /add
+New-LocalUser -Name ServiceUser
 ```
 
-그룹에 사용자를 추가해야 하는 경우 `net localgroup` 명령을 사용합니다. 여기서 `{GROUP}`은 그룹의 이름입니다.
+만료 <xref:System.DateTime>과 함께 `-AccountExpires` 매개 변수를 [New-LocalUser](/powershell/module/microsoft.powershell.localaccounts/new-localuser) cmdlet에 제공한 경우가 아니면 계정이 만료되지 않습니다.
 
-```powershell
-net localgroup {GROUP} {USER ACCOUNT} /add
-```
-
-자세한 내용은 [서비스 사용자 계정](/windows/desktop/services/service-user-accounts)을 참조하세요.
+자세한 내용은 [Microsoft.PowerShell.LocalAccounts](/powershell/module/microsoft.powershell.localaccounts/) 및 [서비스 사용자 계정](/windows/desktop/services/service-user-accounts)을 참조하세요.
 
 Active Directory를 사용할 때 사용자를 관리하는 대체 방법은 관리 서비스 계정을 사용하는 것입니다. 자세한 내용은 [그룹 관리 서비스 계정 개요](/windows-server/security/group-managed-service-accounts/group-managed-service-accounts-overview)를 참조하세요.
 
 ## <a name="set-permission-log-on-as-a-service"></a>사용 권한 설정: 서비스로 로그온
 
-[icacls](/windows-server/administration/windows-commands/icacls) 명령을 사용하여 앱의 폴더에 쓰기/읽기/실행 액세스 권한을 부여합니다.
+관리 PowerShell 6 명령 셸에서 [icacls](/windows-server/administration/windows-commands/icacls) 명령을 사용하여 앱 폴더에 대한 쓰기/읽기/실행 액세스 권한을 부여합니다.
 
 ```powershell
-icacls "{PATH}" /grant {USER ACCOUNT}:(OI)(CI){PERMISSION FLAGS} /t
+icacls "{PATH}" /grant "{USER ACCOUNT}:(OI)(CI){PERMISSION FLAGS}" /t
 ```
 
 * `{PATH}` &ndash; 앱의 폴더에 대한 경로입니다.
@@ -195,25 +199,24 @@ icacls "{PATH}" /grant {USER ACCOUNT}:(OI)(CI){PERMISSION FLAGS} /t
   * 수정(`M`)
 * `/t` &ndash; 기존 하위 폴더 및 파일에 재귀적으로 적용합니다.
 
-*c:\\svc* 폴더에 게시된 샘플 앱과 쓰기/읽기/실행 권한이 있는 `ServiceUser` 계정의 경우 다음 명령을 사용합니다.
+*c:\\svc* 폴더에 게시된 샘플 앱과 쓰기/읽기/실행 권한이 있는 `ServiceUser` 계정의 경우 관리 PowerShell 6 명령 셸에서 다음 명령을 사용합니다.
 
 ```powershell
-icacls "c:\svc" /grant ServiceUser:(OI)(CI)WRX /t
+icacls "c:\svc" /grant "ServiceUser:(OI)(CI)WRX" /t
 ```
 
 자세한 내용은 [icacls](/windows-server/administration/windows-commands/icacls)를 참조하세요.
 
 ## <a name="create-the-service"></a>서비스 만들기
 
-[RegisterService.ps1](https://github.com/aspnet/Docs/tree/master/aspnetcore/host-and-deploy/windows-service/scripts) PowerShell 스크립트를 사용하여 서비스를 등록합니다. 관리 PowerShell 6 명령 프롬프트에서 다음 명령을 실행합니다.
+[RegisterService.ps1](https://github.com/aspnet/Docs/tree/master/aspnetcore/host-and-deploy/windows-service/scripts) PowerShell 스크립트를 사용하여 서비스를 등록합니다. 관리 PowerShell 6 명령 셸에서 다음 명령이 있는 스크립트를 실행합니다.
 
 ```powershell
 .\RegisterService.ps1 
     -Name {NAME} 
     -DisplayName "{DISPLAY NAME}" 
     -Description "{DESCRIPTION}" 
-    -Path "{PATH}" 
-    -Exe {ASSEMBLY}.exe 
+    -Exe "{PATH TO EXE}\{ASSEMBLY NAME}.exe" 
     -User {DOMAIN\USER}
 ```
 
@@ -221,15 +224,14 @@ icacls "c:\svc" /grant ServiceUser:(OI)(CI)WRX /t
 
 * 서비스의 이름은 **MyService**입니다.
 * 게시된 서비스는 *c:\\svc* 폴더에 있습니다. 앱 실행 파일의 이름은 *SampleApp.exe*입니다.
-* 서비스는 `ServiceUser` 계정으로 실행됩니다. 다음 예제에서 로컬 머신 이름은 `Desktop-PC`입니다.
+* 서비스는 `ServiceUser` 계정으로 실행됩니다. 다음 예제 명령에서 로컬 머신 이름은 `Desktop-PC`입니다. `Desktop-PC`를 시스템의 컴퓨터 이름 또는 도메인으로 바꿉니다.
 
 ```powershell
 .\RegisterService.ps1 
     -Name MyService 
     -DisplayName "My Cool Service" 
     -Description "This is the Sample App service." 
-    -Path "c:\svc" 
-    -Exe SampleApp.exe 
+    -Exe "c:\svc\SampleApp.exe" 
     -User Desktop-PC\ServiceUser
 ```
 

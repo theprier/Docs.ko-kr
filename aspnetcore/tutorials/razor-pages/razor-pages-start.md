@@ -5,12 +5,12 @@ description: 이 자습서 시리즈는 ASP.NET Core에서 Razor Pages를 사용
 ms.author: riande
 ms.date: 12/5/2018
 uid: tutorials/razor-pages/razor-pages-start
-ms.openlocfilehash: 88449a0064dad42d8d2bf9fbdd67078e4c2ba8de
-ms.sourcegitcommit: 5f299daa7c8102d56a63b214b9a34cc4bc87bc42
+ms.openlocfilehash: 1d264ca4a605d8291e273a8f054c92e7eefa5548
+ms.sourcegitcommit: 948e533e02c2a7cb6175ada20b2c9cabb7786d0b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58210056"
+ms.lasthandoff: 04/10/2019
+ms.locfileid: "59468849"
 ---
 # <a name="tutorial-get-started-with-razor-pages-in-aspnet-core"></a>자습서: ASP.NET Core에서 Razor 페이지 시작
 
@@ -39,7 +39,7 @@ ms.locfileid: "58210056"
 
 ## <a name="create-a-razor-pages-web-app"></a>Razor 페이지 웹앱 만들기
 
-# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
+# [<a name="visual-studio"></a>Visual Studio](#tab/visual-studio)
 
 * Visual Studio **파일** 메뉴에서 **새로 만들기** > **프로젝트**를 선택합니다.
 
@@ -55,7 +55,7 @@ ms.locfileid: "58210056"
 
   ![솔루션 탐색기](razor-pages-start/_static/se2.2.png)
 
-# <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code)
+# [<a name="visual-studio-code"></a>Visual Studio Code](#tab/visual-studio-code)
 
 * [통합 터미널](https://code.visualstudio.com/docs/editor/integrated-terminal)을 엽니다.
 
@@ -75,7 +75,7 @@ ms.locfileid: "58210056"
 
 * **예**를 선택합니다.
 
-# <a name="visual-studio-for-mactabvisual-studio-mac"></a>[Visual Studio for Mac](#tab/visual-studio-mac)
+# [<a name="visual-studio-for-mac"></a>Visual Studio for Mac](#tab/visual-studio-mac)
 
 터미널에서 다음 명령을 실행합니다.
 
@@ -83,7 +83,6 @@ ms.locfileid: "58210056"
 
 ```console
 dotnet new webapp -o RazorPagesMovie
-cd RazorPagesMovie
 ```
 
 이전 명령은 [.NET Core CLI](/dotnet/core/tools/dotnet)를 사용하여 Razor Pages 프로젝트를 만듭니다.
@@ -98,31 +97,13 @@ Visual Studio에서 **파일 > 열기**를 선택하고 *RazorPagesMovie.csproj*
 
 ## <a name="run-the-app"></a>앱 실행
 
-# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
+# [<a name="visual-studio"></a>Visual Studio](#tab/visual-studio)
 
 * Ctrl+F5를 눌러 디버거 없이 실행합니다.
 
   [!INCLUDE[](~/includes/trustCertVS.md)]
 
   Visual Studio가 [IIS Express](/iis/extensions/introduction-to-iis-express/iis-express-overview)를 시작하고 앱을 실행합니다. 주소 표시줄에 `localhost:port#`이 표시되고 `example.com` 등은 표시되지 않습니다. `localhost`가 로컬 컴퓨터의 표준 호스트 이름이기 때문입니다. Localhost는 로컬 컴퓨터의 웹 요청만 지원합니다. Visual Studio에서 웹 프로젝트를 만들 경우 웹 서버에는 임의 포트가 사용됩니다.
-  
-# <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code)
-
-* **Ctrl-F5** 키를 눌러서 디버거 없이 실행합니다.
-
-  [!INCLUDE[](~/includes/trustCertVSC.md)]
-
-  Visual Studio Code가 [Kestrel](xref:fundamentals/servers/kestrel)을 시작하고, 브라우저를 시작하고, `http://localhost:5001`로 이동합니다. 주소 표시줄에 `localhost:port#`이 표시되고 `example.com` 등은 표시되지 않습니다. 그 이유는 `localhost`가 로컬 컴퓨터의 표준 이름이기 때문입니다. Localhost는 로컬 컴퓨터의 웹 요청만 지원합니다.
-  
-# <a name="visual-studio-for-mactabvisual-studio-mac"></a>[Visual Studio for Mac](#tab/visual-studio-mac)
-
-**실행 > 디버깅하지 않고 시작**을 선택하여 앱을 시작합니다. Visual Studio가 [Kestrel](xref:fundamentals/servers/kestrel)을 시작하고, 브라우저를 시작하고, `http://localhost:5001`으로 이동합니다.
-
-[!INCLUDE[](~/includes/trustCertMac.md)]
-
-<!-- End of VS tabs -->
-
----
 
 * 앱의 홈페이지에서 **승인**을 선택하여 추적에 동의합니다.
 
@@ -133,6 +114,46 @@ Visual Studio에서 **파일 > 열기**를 선택하고 *RazorPagesMovie.csproj*
   다음 이미지에서는 추적에 동의한 후에 앱을 보여줍니다.
 
   ![홈 또는 인덱스 페이지](razor-pages-start/_static/home2.2.png)
+  
+# [<a name="visual-studio-code"></a>Visual Studio Code](#tab/visual-studio-code)
+
+  [!INCLUDE[](~/includes/trustCertVSC.md)]
+
+* **Ctrl-F5** 키를 눌러서 디버거 없이 실행합니다.
+
+  Visual Studio Code가 [Kestrel](xref:fundamentals/servers/kestrel)을 시작하고, 브라우저를 시작하고, `http://localhost:5001`로 이동합니다. 주소 표시줄에 `localhost:port#`이 표시되고 `example.com` 등은 표시되지 않습니다. 그 이유는 `localhost`가 로컬 컴퓨터의 표준 이름이기 때문입니다. Localhost는 로컬 컴퓨터의 웹 요청만 지원합니다.
+
+* 앱의 홈페이지에서 **승인**을 선택하여 추적에 동의합니다.
+
+  이 앱은 개인 정보를 추적하지 않지만 유럽 연합의 [GDPR(일반 데이터 보호 규정)](xref:security/gdpr)을 준수하기 위해 필요한 경우 프로젝트 템플릿에는 동의 기능이 포함됩니다.
+
+  ![홈 또는 인덱스 페이지](razor-pages-start/_static/homeGDPR2.2.png)
+
+  다음 이미지에서는 추적에 동의한 후에 앱을 보여줍니다.
+
+  ![홈 또는 인덱스 페이지](razor-pages-start/_static/home2.2.png)
+  
+# [<a name="visual-studio-for-mac"></a>Visual Studio for Mac](#tab/visual-studio-mac)
+
+  [!INCLUDE[](~/includes/trustCertMac.md)]
+
+* 디버거 없이 실행하려면 **Cmd-Opt-F5**를 누릅니다.
+
+  Visual Studio가 [Kestrel](xref:fundamentals/servers/kestrel)을 시작하고, 브라우저를 시작하고, `http://localhost:5001`으로 이동합니다.
+
+* 앱의 홈페이지에서 **승인**을 선택하여 추적에 동의합니다.
+
+  이 앱은 개인 정보를 추적하지 않지만 유럽 연합의 [GDPR(일반 데이터 보호 규정)](xref:security/gdpr)을 준수하기 위해 필요한 경우 프로젝트 템플릿에는 동의 기능이 포함됩니다.
+
+  ![홈 또는 인덱스 페이지](razor-pages-start/_static/homeGDPR2.2_safari.png)
+
+  다음 이미지에서는 추적에 동의한 후에 앱을 보여줍니다.
+
+  ![홈 또는 인덱스 페이지](razor-pages-start/_static/home2.2_safari.png)
+
+<!-- End of VS tabs -->
+
+---
 
 ## <a name="examine-the-project-files"></a>프로젝트 파일 검사
 
