@@ -6,12 +6,12 @@ monikerRange: '>= aspnetcore-3.0'
 ms.author: johluo
 ms.date: 03/31/2019
 uid: grpc/migration
-ms.openlocfilehash: ffe5ccbd99c6920e093eddc00fc60a9f66aab527
-ms.sourcegitcommit: 5995f44e9e13d7e7aa8d193e2825381c42184e47
+ms.openlocfilehash: 4d489b5aecf2e15fbbe3ac472b991a4365cd47c1
+ms.sourcegitcommit: 57a974556acd09363a58f38c26f74dc21e0d4339
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "59515630"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59672621"
 ---
 # <a name="migrating-grpc-services-from-c-core-to-aspnet-core"></a>ASP.NET Core로 C 코어에서 gRPC services 마이그레이션
 
@@ -27,7 +27,7 @@ Scoped 수명 서비스 구현을 수명 범위를 사용 하 여 다른 서비�
 
 * 서비스 구현의 새 인스턴스는 각 요청에 대해 생성 됩니다.
 * 구현 형식에 인스턴스 멤버를 통해 요청 간에 상태를 공유 하는 것이 불가능 합니다.
-* 예상 DI 컨테이너의 단일 서비스에서 공유 상태를 저장 하는 것입니다. 공유 상태 저장된 서비스 구현의 gRPC 생성자에서 확인 됩니다. 
+* 예상 DI 컨테이너의 단일 서비스에서 공유 상태를 저장 하는 것입니다. 공유 상태 저장된 서비스 구현의 gRPC 생성자에서 확인 됩니다.
 
 서비스 수명에 대 한 자세한 내용은 참조 하세요. <xref:fundamentals/dependency-injection#service-lifetimes>합니다.
 
